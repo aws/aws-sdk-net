@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace ServiceClientGenerator
@@ -61,47 +58,72 @@ namespace ServiceClientGenerator
 
             var searchPattern = "*." + ProjectSuffix() + ".csproj";
 
-            bool changed = false;
+            List<ServiceProjectRefernece> references = new List<ServiceProjectRefernece>();
             foreach (var projectFile in Directory.GetFiles(ServiceRoot, searchPattern, SearchOption.AllDirectories))
             {
                 var guid = ExtractProjectGuid(projectFile);
-                if (!existingGuids.Contains(guid))
-                {
-                    Console.WriteLine("Adding reference to unit test project {0} : {1}",
-                        Path.GetFileName(this.ProjectFilePath),
-                        Path.GetFileName(projectFile));
-
-                    AddServiceReference(rootServiceItemGroup, projectFile, guid);
-                    changed = true;
-                }
+                references.Add(GetServiceReference(projectFile, guid));
             }
 
-            if (changed)
+            references.Sort();
+            RemoveAllAWSSDKServiceDependencies(rootServiceItemGroup);
+
+            foreach (var reference in references)
             {
-                this._projectFileXml.Save(this.ProjectFilePath);
-                Console.WriteLine("Writing new version of project file {0}", Path.GetFileName(this.ProjectFilePath));
+                AddServiceReference(rootServiceItemGroup, reference.Include, reference.Guid, reference.Name);
+            }
+
+            this._projectFileXml.Save(this.ProjectFilePath);
+            Console.WriteLine("Writing new version of project file {0}", Path.GetFileName(this.ProjectFilePath));
+        }
+
+        void RemoveAllAWSSDKServiceDependencies(XmlElement itemGroupNode)
+        {
+            var child = itemGroupNode.FirstChild;
+            while(child != null)
+            {
+                var nextChild = child.NextSibling;
+
+                XmlAttribute attribute = child.Attributes["Include"];
+                if (attribute != null &&
+                    attribute.Value.Contains("AWSSDK.") &&
+                    !attribute.Value.Contains("AWSSDK.Core"))
+                {
+                    itemGroupNode.RemoveChild(child);
+                }
+
+                child = nextChild;
             }
         }
 
-        void AddServiceReference(XmlElement itemGroupNode, string projectFile, string guid)
+        ServiceProjectRefernece GetServiceReference(string projectFile, string guid)
         {
             var pathTokens = projectFile.Split('\\');
             string relativePath = string.Format(@"..\..\src\Services\{0}\{1}", pathTokens[pathTokens.Length - 2], Path.GetFileName(projectFile));
 
+            return new ServiceProjectRefernece
+            {
+                Include = relativePath,
+                Guid = guid,
+                Name = Path.GetFileNameWithoutExtension(projectFile)
+            };
+        }
+
+        void AddServiceReference(XmlElement itemGroupNode, string include, string guid, string projectName)
+        {
             var projectReference = itemGroupNode.OwnerDocument.CreateElement("ProjectReference", VS_NAMESPACE);
-            projectReference.SetAttribute("Include", relativePath);
+            projectReference.SetAttribute("Include", include);
 
             var project = itemGroupNode.OwnerDocument.CreateElement("Project", VS_NAMESPACE);
             project.InnerText = guid;
 
             var name = itemGroupNode.OwnerDocument.CreateElement("Name", VS_NAMESPACE);
-            name.InnerText = Path.GetFileNameWithoutExtension(projectFile);
+            name.InnerText = projectName;
 
             projectReference.AppendChild(project);
             projectReference.AppendChild(name);
             itemGroupNode.AppendChild(projectReference);
         }
-
 
         HashSet<string> FetchExistingProjectGuids()
         {
@@ -139,6 +161,18 @@ namespace ServiceClientGenerator
 
             var projectGuidNode = project.SelectSingleNode("//vs:PropertyGroup/vs:ProjectGuid", NamespaceManager) as XmlElement;
             return projectGuidNode.InnerText;
+        }
+
+        private class ServiceProjectRefernece : IComparable<ServiceProjectRefernece>
+        {
+            public string Include;
+            public string Guid;
+            public string Name;
+
+            public int CompareTo(ServiceProjectRefernece other)
+            {
+                return Name.CompareTo(other.Name);
+            }
         }
     }
 }
