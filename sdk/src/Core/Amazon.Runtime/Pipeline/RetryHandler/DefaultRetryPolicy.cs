@@ -129,17 +129,16 @@ namespace Amazon.Runtime.Internal
         /// <returns>Return true if the request should be retried.</returns>
         public override bool RetryForException(IExecutionContext executionContext, Exception exception)
         {
-            return RetryForExceptionSync(executionContext, exception);
+            return RetryForExceptionSync(exception);
         }
 
         /// <summary>
         /// Perform the processor-bound portion of the RetryForException logic.
         /// This is shared by the sync, async, and APM versions of the RetryForException method.
         /// </summary>
-        /// <param name="executionContext">Request context containing the state of the request.</param>
         /// <param name="exception">The exception thrown by the previous request.</param>
         /// <returns>Return true if the request should be retried.</returns>
-        private bool RetryForExceptionSync(IExecutionContext executionContext, Exception exception)
+        private bool RetryForExceptionSync(Exception exception)
         {
             // An IOException was thrown by the underlying http client.
             if (exception is IOException)
