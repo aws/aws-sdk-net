@@ -40,6 +40,7 @@ namespace Amazon.RDS.Model
         private string _name;
         private List<OptionGroupOptionSetting> _optionGroupOptionSettings = new List<OptionGroupOptionSetting>();
         private List<OptionVersion> _optionGroupOptionVersions = new List<OptionVersion>();
+        private List<string> _optionsConflictsWith = new List<string>();
         private List<string> _optionsDependedOn = new List<string>();
         private bool? _permanent;
         private bool? _persistent;
@@ -188,6 +189,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptionGroupOptionVersions()
         {
             return this._optionGroupOptionVersions != null && this._optionGroupOptionVersions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptionsConflictsWith. 
+        /// <para>
+        /// The options that conflict with this option.
+        /// </para>
+        /// </summary>
+        public List<string> OptionsConflictsWith
+        {
+            get { return this._optionsConflictsWith; }
+            set { this._optionsConflictsWith = value; }
+        }
+
+        // Check to see if OptionsConflictsWith property is set
+        internal bool IsSetOptionsConflictsWith()
+        {
+            return this._optionsConflictsWith != null && this._optionsConflictsWith.Count > 0; 
         }
 
         /// <summary>

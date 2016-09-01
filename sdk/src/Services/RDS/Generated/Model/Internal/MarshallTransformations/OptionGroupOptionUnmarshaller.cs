@@ -104,6 +104,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.OptionGroupOptionVersions.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("OptionsConflictsWith/OptionConflictName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.OptionsConflictsWith.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("OptionsDependedOn/OptionName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
