@@ -52,10 +52,14 @@ namespace Amazon
 
         static AWSConfigsS3()
         {
+#if NET35 || NET45 || CORECLR
             _useSignatureVersion4 = true;
+#else
+            _useSignatureVersion4 = false;
+#endif
             UseSigV4SetExplicitly = false;
 
-#if BCL||UNITY
+#if BCL || UNITY
 
             var appSettingValue = AWSConfigs.GetConfig(S3UseSignatureVersion4Key);
             if (!string.IsNullOrEmpty(appSettingValue))
