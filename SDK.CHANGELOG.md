@@ -1,3 +1,15 @@
+### 3.1.97.0 (2016-09-02 00:53 UTC)
+* ApplicationAutoScaling (3.1.1.0)
+	* ApplicationAutoScaling adds support for automatically scaling an Amazon EC2 Spot fleet in order to manage application availability and costs during changes in demand based on conditions you define.
+* CognitoIdentityProvider (3.1.2.0)
+	* Added support for bulk import of users.
+* ConfigService (3.1.7.0)
+	* ResourceType Enum Update for AWS Config: Supporting a application loadbalancer resource type in AWS Config 
+* GameLift (3.1.3.0)
+	* Customers can use Linux in addition to Windows EC2 instances.
+* RDS (3.1.17.0)
+	* We currently allow customers to add options to a rds option group that are mutually exclusive. We want to avoid that while validating the request to add an option to the option group. As part of this effort we are modifying the describe-option-group-options api response to include information about options that conflict with each other.
+
 ### 3.1.96.0 (2016-08-30 21:02 UTC)
 * AutoScaling (3.1.4.1)
 	* Documentation update.
