@@ -28,9 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Provides the source and the message type that trigger AWS Config to evaluate your
+    /// Provides the source and the message types that trigger AWS Config to evaluate your
     /// AWS resources against a rule. It also provides the frequency with which you want AWS
-    /// Config to run evaluations for the rule if the trigger type is periodic.
+    /// Config to run evaluations for the rule if the trigger type is periodic. You can specify
+    /// the parameter values for <code>SourceDetail</code> only for custom rules.
     /// </summary>
     public partial class SourceDetail
     {
@@ -40,6 +41,10 @@ namespace Amazon.ConfigService.Model
 
         /// <summary>
         /// Gets and sets the property EventSource. 
+        /// <para>
+        ///  
+        /// </para>
+        ///  
         /// <para>
         /// The source of the event, such as an AWS service, that triggers AWS Config to evaluate
         /// your AWS resources.
@@ -60,9 +65,9 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property MaximumExecutionFrequency. 
         /// <para>
-        /// If the trigger type for your rule includes periodic, AWS Config runs evaluations for
-        /// the rule at a frequency that you choose. If you specify a value for <code>MaximumExecutionFrequency</code>,
-        /// then <code>MessageType</code> must use the <code>ScheduledNotification</code> value.
+        /// The frequency that you want AWS Config to run evaluations for a rule that is triggered
+        /// periodically. If you specify a value for <code>MaximumExecutionFrequency</code>, then
+        /// <code>MessageType</code> must use the <code>ScheduledNotification</code> value.
         /// </para>
         /// </summary>
         public MaximumExecutionFrequency MaximumExecutionFrequency
@@ -80,22 +85,23 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property MessageType. 
         /// <para>
-        /// The type of SNS message that triggers AWS Config to run an evaluation.
+        /// The type of notification that triggers AWS Config to run an evaluation. You can specify
+        /// the following notification types:
         /// </para>
         ///  
         /// <para>
-        /// For evaluations that are initiated when AWS Config delivers a configuration item change
-        /// notification, you must use <code>ConfigurationItemChangeNotification</code>. 
+        /// <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when AWS
+        /// Config delivers a configuration item change notification.
         /// </para>
         ///  
         /// <para>
-        /// For evaluations that are initiated at a frequency that you choose (for example, every
-        /// 24 hours), you must use <code>ScheduledNotification</code>.
+        /// <code>ScheduledNotification</code> - Triggers a periodic evaluation at the frequency
+        /// specified for <code>MaximumExecutionFrequency</code>.
         /// </para>
         ///  
         /// <para>
-        /// For evaluations that are initiated when AWS Config delivers a configuration snapshot,
-        /// you must use <code>ConfigurationSnapshotDeliveryCompleted</code>.
+        /// <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic evaluation
+        /// when AWS Config delivers a configuration snapshot.
         /// </para>
         /// </summary>
         public MessageType MessageType

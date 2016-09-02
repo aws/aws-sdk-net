@@ -639,6 +639,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSEC2VPNGateway = new ResourceType("AWS::EC2::VPNGateway");
         /// <summary>
+        /// Constant AWSElasticLoadBalancingV2LoadBalancer for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSElasticLoadBalancingV2LoadBalancer = new ResourceType("AWS::ElasticLoadBalancingV2::LoadBalancer");
+        /// <summary>
         /// Constant AWSIAMGroup for ResourceType
         /// </summary>
         public static readonly ResourceType AWSIAMGroup = new ResourceType("AWS::IAM::Group");
