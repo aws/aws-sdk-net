@@ -37,17 +37,25 @@ namespace Amazon.ApplicationAutoScaling
     /// AWS resources. With Application Auto Scaling, you can automatically scale your AWS
     /// resources, with an experience similar to that of Auto Scaling.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    /// At this time, Application Auto Scaling only supports scaling Amazon ECS services.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// For example, you can use Application Auto Scaling to accomplish the following tasks:
+    /// Application Auto Scaling supports scaling the following AWS resources:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Define scaling policies for automatically adjusting your application’s resources
+    /// Amazon ECS services
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon EC2 Spot fleet instances
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can use Application Auto Scaling to accomplish the following tasks:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Define scaling policies for automatically adjusting your AWS resources
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -292,7 +300,7 @@ namespace Amazon.ApplicationAutoScaling
         ///  
         /// <para>
         /// Deleting a policy deletes the underlying alarm action, but does not delete the CloudWatch
-        /// alarm, even if it no longer has an associated action.
+        /// alarm associated with the scaling policy, even if it no longer has an associated action.
         /// </para>
         ///  
         /// <para>
@@ -769,15 +777,11 @@ namespace Amazon.ApplicationAutoScaling
 
         /// <summary>
         /// Registers or updates a scalable target. A scalable target is a resource that can be
-        /// scaled up or down with Application Auto Scaling. After you have registered a scalable
-        /// target, you can use this command to update the minimum and maximum values for your
+        /// scaled out or in with Application Auto Scaling. After you have registered a scalable
+        /// target, you can use this operation to update the minimum and maximum values for your
         /// scalable dimension.
         /// 
-        ///  <note> 
-        /// <para>
-        /// At this time, Application Auto Scaling only supports scaling Amazon ECS services.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// After you register a scalable target with Application Auto Scaling, you can create
         /// and apply scaling policies to it with <a>PutScalingPolicy</a>. You can view the existing
