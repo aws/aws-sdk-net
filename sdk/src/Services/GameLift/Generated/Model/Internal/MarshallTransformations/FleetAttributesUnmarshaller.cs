@@ -106,6 +106,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.NewGameSessionProtectionPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OperatingSystem", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OperatingSystem = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServerLaunchParameters", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

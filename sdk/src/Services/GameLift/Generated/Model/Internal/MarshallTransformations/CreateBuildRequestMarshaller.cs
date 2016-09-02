@@ -73,6 +73,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetOperatingSystem())
+                {
+                    context.Writer.WritePropertyName("OperatingSystem");
+                    context.Writer.Write(publicRequest.OperatingSystem);
+                }
+
                 if(publicRequest.IsSetStorageLocation())
                 {
                     context.Writer.WritePropertyName("StorageLocation");

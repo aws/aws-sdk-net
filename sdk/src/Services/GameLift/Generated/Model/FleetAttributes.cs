@@ -39,6 +39,7 @@ namespace Amazon.GameLift.Model
         private List<string> _logPaths = new List<string>();
         private string _name;
         private ProtectionPolicy _newGameSessionProtectionPolicy;
+        private OperatingSystem _operatingSystem;
         private string _serverLaunchParameters;
         private string _serverLaunchPath;
         private FleetStatus _status;
@@ -180,10 +181,30 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OperatingSystem. 
+        /// <para>
+        /// Operating system of the fleet's computing resources. A fleet's operating system depends
+        /// on the OS specified for the build that is deployed on this fleet.
+        /// </para>
+        /// </summary>
+        public OperatingSystem OperatingSystem
+        {
+            get { return this._operatingSystem; }
+            set { this._operatingSystem = value; }
+        }
+
+        // Check to see if OperatingSystem property is set
+        internal bool IsSetOperatingSystem()
+        {
+            return this._operatingSystem != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerLaunchParameters. 
         /// <para>
-        /// Deprecated. Server launch parameters are now specified using a <code><a>RuntimeConfiguration</a></code>
-        /// object.
+        /// Game server launch parameters specified for fleets created prior to 2016-08-04 (or
+        /// AWS SDK v. 0.12.16). Server launch parameters for fleets created after this date are
+        /// specified in the fleet's <code><a>RuntimeConfiguration</a></code>.
         /// </para>
         /// </summary>
         public string ServerLaunchParameters
@@ -201,8 +222,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ServerLaunchPath. 
         /// <para>
-        /// Deprecated. Server launch parameters are now set using a <code><a>RuntimeConfiguration</a></code>
-        /// object.
+        /// Path to a game server executable in the fleet's build, specified for fleets created
+        /// prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for fleets created
+        /// after this date are specified in the fleet's <code><a>RuntimeConfiguration</a></code>.
         /// </para>
         /// </summary>
         public string ServerLaunchPath
