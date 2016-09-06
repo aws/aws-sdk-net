@@ -64,10 +64,10 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("artifactRevisionInformations", targetDepth))
+                if (context.TestExpression("artifactRevisions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ArtifactRevisionInformation, ArtifactRevisionInformationUnmarshaller>(ArtifactRevisionInformationUnmarshaller.Instance);
-                    unmarshalledObject.ArtifactRevisionInformations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ArtifactRevision, ArtifactRevisionUnmarshaller>(ArtifactRevisionUnmarshaller.Instance);
+                    unmarshalledObject.ArtifactRevisions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("pipelineExecutionId", targetDepth))

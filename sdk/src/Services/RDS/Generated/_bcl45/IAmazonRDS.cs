@@ -2703,6 +2703,32 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeSourceRegions
+
+
+        /// <summary>
+        /// Returns a list that includes the status of each source AWS Region that the current
+        /// region can get a Read Replica or a DB snapshot from. This API action supports pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSourceRegions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSourceRegions service method, as returned by RDS.</returns>
+        DescribeSourceRegionsResponse DescribeSourceRegions(DescribeSourceRegionsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSourceRegions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSourceRegions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeSourceRegionsResponse> DescribeSourceRegionsAsync(DescribeSourceRegionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DownloadDBLogFilePortion
 
 

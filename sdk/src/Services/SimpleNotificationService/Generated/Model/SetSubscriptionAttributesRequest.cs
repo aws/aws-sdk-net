@@ -46,7 +46,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Instantiates SetSubscriptionAttributesRequest with the parameterized properties
         /// </summary>
         /// <param name="subscriptionArn">The ARN of the subscription to modify.</param>
-        /// <param name="attributeName">The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable. Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code></param>
+        /// <param name="attributeName">The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable. Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code> </param>
         /// <param name="attributeValue">The new value for the attribute in JSON format.</param>
         public SetSubscriptionAttributesRequest(string subscriptionArn, string attributeName, string attributeValue)
         {
@@ -63,7 +63,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+        /// Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code> 
         /// </para>
         /// </summary>
         public string AttributeName

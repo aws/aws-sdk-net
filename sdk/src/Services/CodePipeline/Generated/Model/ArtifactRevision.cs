@@ -33,6 +33,7 @@ namespace Amazon.CodePipeline.Model
     public partial class ArtifactRevision
     {
         private DateTime? _created;
+        private string _name;
         private string _revisionChangeIdentifier;
         private string _revisionId;
         private string _revisionSummary;
@@ -55,6 +56,25 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetCreated()
         {
             return this._created.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of an artifact. This name might be system-generated, such as "MyApp", or
+        /// might be defined by the user when an action is created.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
         }
 
         /// <summary>
@@ -99,7 +119,7 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// Summary information about the most recent revision of the artifact. For GitHub and
         /// AWS CodeCommit repositories, the commit message. For Amazon S3 buckets or actions,
-        /// the user-provided value of an <code>x-amz-meta-codepipeline-artifact-revision-summary</code>
+        /// the user-provided content of a <code>codepipeline-artifact-revision-summary</code>
         /// key specified in the object metadata.
         /// </para>
         /// </summary>

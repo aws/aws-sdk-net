@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the sns-2010-03-31.normal.json service model.
+ * Do not modify this file. This file is generated from the rds-2014-10-31.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -24,17 +24,17 @@ using System.Net;
 using System.Text;
 using System.Xml.Serialization;
 
-using Amazon.SimpleNotificationService.Model;
+using Amazon.RDS.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
+namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SetSMSAttributes operation
+    /// Response Unmarshaller for DescribeSourceRegions operation
     /// </summary>  
-    public class SetSMSAttributesResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DescribeSourceRegionsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            SetSMSAttributesResponse response = new SetSMSAttributesResponse();
+            DescribeSourceRegionsResponse response = new DescribeSourceRegionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("SetSMSAttributesResult", 2))
+                    if(context.TestExpression("DescribeSourceRegionsResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,8 +67,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             return response;
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
-        private static void UnmarshallResult(XmlUnmarshallerContext context, SetSMSAttributesResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeSourceRegionsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -82,6 +81,19 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("Marker", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.Marker = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SourceRegions/SourceRegion", targetDepth))
+                    {
+                        var unmarshaller = SourceRegionUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.SourceRegions.Add(item);
+                        continue;
+                    }
                 } 
            }
 
@@ -99,27 +111,11 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("AuthorizationError"))
-            {
-                return new AuthorizationErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InternalError"))
-            {
-                return new InternalErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameter"))
-            {
-                return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("Throttled"))
-            {
-                return new ThrottledException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            return new AmazonSimpleNotificationServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static SetSMSAttributesResponseUnmarshaller _instance = new SetSMSAttributesResponseUnmarshaller();        
+        private static DescribeSourceRegionsResponseUnmarshaller _instance = new DescribeSourceRegionsResponseUnmarshaller();        
 
-        internal static SetSMSAttributesResponseUnmarshaller GetInstance()
+        internal static DescribeSourceRegionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -127,7 +123,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SetSMSAttributesResponseUnmarshaller Instance
+        public static DescribeSourceRegionsResponseUnmarshaller Instance
         {
             get
             {

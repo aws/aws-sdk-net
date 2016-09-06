@@ -346,6 +346,12 @@
     <max>5</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.ArtifactRevision.Name</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9_\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.ArtifactRevision.RevisionChangeIdentifier</property>
     <min>1</min>
     <max>100</max>
@@ -364,12 +370,6 @@
     <property>Amazon.CodePipeline.Model.ArtifactRevision.RevisionUrl</property>
     <min>1</min>
     <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.CodePipeline.Model.ArtifactRevisionInformation.Name</property>
-    <min>1</min>
-    <max>100</max>
-    <pattern>[a-zA-Z0-9_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodePipeline.Model.ArtifactStore.Location</property>

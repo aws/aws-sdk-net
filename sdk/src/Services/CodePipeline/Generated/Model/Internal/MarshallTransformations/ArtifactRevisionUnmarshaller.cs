@@ -70,6 +70,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.Created = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("name", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("revisionChangeIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

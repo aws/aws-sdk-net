@@ -68,6 +68,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Gets and sets the property Attributes. 
         /// <para>
         /// For a list of attributes, see <a href="http://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>
+        /// 
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes

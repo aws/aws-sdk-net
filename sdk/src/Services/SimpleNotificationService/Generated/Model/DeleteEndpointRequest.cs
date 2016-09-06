@@ -36,7 +36,7 @@ namespace Amazon.SimpleNotificationService.Model
     ///  
     /// <para>
     /// When you delete an endpoint that is also subscribed to a topic, then you must also
-    /// unsubscribe the endpoint from the topic. 
+    /// unsubscribe the endpoint from the topic.
     /// </para>
     /// </summary>
     public partial class DeleteEndpointRequest : AmazonSimpleNotificationServiceRequest

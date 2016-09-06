@@ -3169,6 +3169,44 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeSourceRegions
+
+
+        /// <summary>
+        /// Returns a list that includes the status of each source AWS Region that the current
+        /// region can get a Read Replica or a DB snapshot from. This API action supports pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSourceRegions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSourceRegions service method, as returned by RDS.</returns>
+        DescribeSourceRegionsResponse DescribeSourceRegions(DescribeSourceRegionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSourceRegions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSourceRegions operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSourceRegions
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeSourceRegions(DescribeSourceRegionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSourceRegions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSourceRegions.</param>
+        /// 
+        /// <returns>Returns a  DescribeSourceRegionsResult from RDS.</returns>
+        DescribeSourceRegionsResponse EndDescribeSourceRegions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DownloadDBLogFilePortion
 
 

@@ -32,28 +32,28 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class PipelineExecution
     {
-        private List<ArtifactRevisionInformation> _artifactRevisionInformations = new List<ArtifactRevisionInformation>();
+        private List<ArtifactRevision> _artifactRevisions = new List<ArtifactRevision>();
         private string _pipelineExecutionId;
         private string _pipelineName;
         private int? _pipelineVersion;
         private PipelineExecutionStatus _status;
 
         /// <summary>
-        /// Gets and sets the property ArtifactRevisionInformations. 
+        /// Gets and sets the property ArtifactRevisions. 
         /// <para>
-        /// A list of ArtifactRevisionInformation objects included in a pipeline execution.
+        /// A list of ArtifactRevision objects included in a pipeline execution.
         /// </para>
         /// </summary>
-        public List<ArtifactRevisionInformation> ArtifactRevisionInformations
+        public List<ArtifactRevision> ArtifactRevisions
         {
-            get { return this._artifactRevisionInformations; }
-            set { this._artifactRevisionInformations = value; }
+            get { return this._artifactRevisions; }
+            set { this._artifactRevisions = value; }
         }
 
-        // Check to see if ArtifactRevisionInformations property is set
-        internal bool IsSetArtifactRevisionInformations()
+        // Check to see if ArtifactRevisions property is set
+        internal bool IsSetArtifactRevisions()
         {
-            return this._artifactRevisionInformations != null && this._artifactRevisionInformations.Count > 0; 
+            return this._artifactRevisions != null && this._artifactRevisions.Count > 0; 
         }
 
         /// <summary>
