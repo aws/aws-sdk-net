@@ -1,3 +1,17 @@
+### 3.1.98.0 (2016-09-06 21:59 UTC)
+* CodePipeline (3.1.5.0)
+	* Incorporated API updates to correct naming of members in types used in the recently published view changes APIs. Please note these are breaking changes in the model shapes.
+* EC2 (3.1.20.1)
+	* Documentation updates.
+* ECR (3.1.2.1)
+	* Documentation updates.
+* ECS (3.1.8.1)
+	* Documentation updates.
+* RDS (3.1.18.0)
+	* New API for RDS: DescribeSourceRegions. The DescribeSourceRegions API provides a list of all the source region names and endpoints for any region. Source regions are the regions where current region can get a replica or copy a snapshot from.
+* SimpleNotificationService (3.1.2.0)
+	* Declaring AuthorizationErrorException on the 5 new SNS-SMS APIs.
+
 ### 3.1.97.0 (2016-09-02 00:53 UTC)
 * ApplicationAutoScaling (3.1.1.0)
 	* ApplicationAutoScaling adds support for automatically scaling an Amazon EC2 Spot fleet in order to manage application availability and costs during changes in demand based on conditions you define.
