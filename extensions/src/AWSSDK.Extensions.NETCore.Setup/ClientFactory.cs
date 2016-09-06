@@ -81,8 +81,17 @@ namespace Amazon.Extensions.NETCore.Setup
         {
             var clientTypeName = serviceInterfaceType.Namespace + "." + serviceInterfaceType.Name.Substring(1) + "Client";
             var clientType = serviceInterfaceType.GetTypeInfo().Assembly.GetType(clientTypeName);
+            if(clientType == null)
+            {
+                throw new AmazonClientException($"Failed to find service client {clientTypeName} which implements {serviceInterfaceType.FullName}.");
+            }
 
             var constructor = clientType.GetConstructor(new Type[] { typeof(AWSCredentials), config.GetType() });
+            if(constructor == null)
+            {
+                throw new AmazonClientException($"Service client {clientTypeName} misisng a constructor with parameters AWSCredentials and {config.GetType().FullName}.");
+            }
+
             var client = constructor.Invoke(new object[] { credentials, config }) as AmazonServiceClient;
             return client;
         }
