@@ -43,14 +43,15 @@ namespace Amazon.Route53.Model
         /// <para>
         /// The type of the resource.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// - The resource type for health checks is <code>healthcheck</code>.
+        /// The resource type for health checks is <code>healthcheck</code>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// - The resource type for hosted zones is <code>hostedzone</code>.
+        /// The resource type for hosted zones is <code>hostedzone</code>.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public TagResourceType ResourceType
         {
@@ -85,8 +86,13 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property AddTags. 
         /// <para>
-        /// A complex type that contains a list of <code>Tag</code> elements. Each <code>Tag</code>
-        /// element identifies a tag that you want to add or update for the specified resource.
+        /// A complex type that contains a list of the tags that you want to add to the specified
+        /// health check or hosted zone and/or the tags for which you want to edit the <code>Value</code>
+        /// element.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can add a maximum of 10 tags to a health check or a hosted zone.
         /// </para>
         /// </summary>
         public List<Tag> AddTags
@@ -104,7 +110,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property RemoveTagKeys. 
         /// <para>
-        /// A list of <code>Tag</code> keys that you want to remove from the specified resource.
+        /// A complex type that contains a list of the tags that you want to delete from the specified
+        /// health check or hosted zone. You can specify up to 10 keys.
         /// </para>
         /// </summary>
         public List<string> RemoveTagKeys

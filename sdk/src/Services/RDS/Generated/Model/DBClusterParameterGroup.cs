@@ -40,9 +40,28 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DBClusterParameterGroup
     {
+        private string _dbClusterParameterGroupArn;
         private string _dbClusterParameterGroupName;
         private string _dbParameterGroupFamily;
         private string _description;
+
+        /// <summary>
+        /// Gets and sets the property DBClusterParameterGroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the DB cluster parameter group.
+        /// </para>
+        /// </summary>
+        public string DBClusterParameterGroupArn
+        {
+            get { return this._dbClusterParameterGroupArn; }
+            set { this._dbClusterParameterGroupArn = value; }
+        }
+
+        // Check to see if DBClusterParameterGroupArn property is set
+        internal bool IsSetDBClusterParameterGroupArn()
+        {
+            return this._dbClusterParameterGroupArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 

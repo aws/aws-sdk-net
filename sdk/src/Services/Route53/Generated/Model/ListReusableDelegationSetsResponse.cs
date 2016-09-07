@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the response for the request.
+    /// A complex type that contains information about the reusable delegation sets that are
+    /// associated with the current AWS account.
     /// </summary>
     public partial class ListReusableDelegationSetsResponse : AmazonWebServiceResponse
     {
@@ -41,8 +42,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property DelegationSets. 
         /// <para>
-        /// A complex type that contains information about the reusable delegation sets associated
-        /// with the current AWS account.
+        /// A complex type that contains one <code>DelegationSet</code> element for each reusable
+        /// delegation set that was created by the current AWS account.
         /// </para>
         /// </summary>
         public List<DelegationSet> DelegationSets
@@ -60,9 +61,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// If the request returned more than one page of results, submit another request and
-        /// specify the value of <code>NextMarker</code> from the last response in the <code>marker</code>
-        /// parameter to get the next page of results.
+        /// For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code>
+        /// is the value that you specified for the marker parameter in the request that produced
+        /// the current response.
         /// </para>
         /// </summary>
         public string Marker
@@ -80,13 +81,11 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property IsTruncated. 
         /// <para>
-        /// A flag indicating whether there are more reusable delegation sets to be listed. If
-        /// your results were truncated, you can make a follow-up request for the next page of
-        /// results by using the <code>Marker</code> element.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code>
+        /// A flag that indicates whether there are more reusable delegation sets to be listed.
+        /// If the response is truncated, you can get the next group of <code>maxitems</code>
+        /// reusable delegation sets by calling <code>ListReusableDelegationSets</code> again
+        /// and specifying the value of the <code>NextMarker</code> element in the <code>marker</code>
+        /// parameter.
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -104,10 +103,10 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// Indicates where to continue listing reusable delegation sets. If <code>IsTruncated</code>
-        /// is <code>true</code>, make another request to <code>ListReusableDelegationSets</code>
-        /// and include the value of the <code>NextMarker</code> element in the <code>Marker</code>
-        /// element of the previous response to get the next page of results.
+        /// If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code>
+        /// identifies the first reusable delegation set in the next group of <code>maxitems</code>
+        /// reusable delegation sets. Call <code>ListReusableDelegationSets</code> again and specify
+        /// the value of <code>NextMarker</code> in the <code>marker</code> parameter.
         /// </para>
         /// </summary>
         public string NextMarker
@@ -125,12 +124,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of reusable delegation sets to be included in the response body.
-        /// If the number of reusable delegation sets associated with this AWS account exceeds
-        /// <code>MaxItems</code>, the value of <code>IsTruncated</code> in the response is <code>true</code>.
-        /// To get the next page of results, call <code>ListReusableDelegationSets</code> again
-        /// and specify the value of <code>NextMarker</code> from the previous response in the
-        /// <code>Marker</code> element of the request.
+        /// The value that you specified for the <code>maxitems</code> parameter in the call to
+        /// <code>ListReusableDelegationSets</code> that produced the current response.
         /// </para>
         /// </summary>
         public string MaxItems

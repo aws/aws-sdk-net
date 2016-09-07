@@ -35,6 +35,7 @@ namespace Amazon.GameLift.Model
         private string _buildId;
         private DateTime? _creationTime;
         private string _name;
+        private OperatingSystem _operatingSystem;
         private long? _sizeOnDisk;
         private BuildStatus _status;
         private string _version;
@@ -93,6 +94,25 @@ namespace Amazon.GameLift.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperatingSystem. 
+        /// <para>
+        /// Operating system that the game server binaries are built to run on. This value determines
+        /// the type of fleet resources that you can use for this build.
+        /// </para>
+        /// </summary>
+        public OperatingSystem OperatingSystem
+        {
+            get { return this._operatingSystem; }
+            set { this._operatingSystem = value; }
+        }
+
+        // Check to see if OperatingSystem property is set
+        internal bool IsSetOperatingSystem()
+        {
+            return this._operatingSystem != null;
         }
 
         /// <summary>

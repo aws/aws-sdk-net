@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains identifying information about the health check.
+    /// A complex type that contains information about one health check that is associated
+    /// with the current AWS account.
     /// </summary>
     public partial class HealthCheck
     {
@@ -41,7 +42,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the specified health check.
+        /// The identifier that Amazon Route 53assigned to the health check when you created it.
+        /// When you add or update a resource record set, you use this value to specify which
+        /// health check to use. The value can be up to 64 characters long. 
         /// </para>
         /// </summary>
         public string Id
@@ -59,7 +62,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property CallerReference. 
         /// <para>
-        /// A unique string that identifies the request to create the health check.
+        /// A unique string that you specified when you created the health check.
         /// </para>
         /// </summary>
         public string CallerReference
@@ -77,7 +80,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HealthCheckConfig. 
         /// <para>
-        /// A complex type that contains the health check configuration.
+        /// A complex type that contains detailed information about one health check.
         /// </para>
         /// </summary>
         public HealthCheckConfig HealthCheckConfig
@@ -114,8 +117,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property CloudWatchAlarmConfiguration. 
         /// <para>
-        /// For CLOUDWATCH_METRIC health checks, a complex type that contains information about
-        /// the CloudWatch alarm that you're associating with the health check.
+        /// A complex type that contains information about the CloudWatch alarm that Amazon Route
+        /// 53 is monitoring for this health check.
         /// </para>
         /// </summary>
         public CloudWatchAlarmConfiguration CloudWatchAlarmConfiguration

@@ -33,8 +33,8 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// To update the comment, send a <code>POST</code> request to the <code>/<i>Route 53
-    /// API version</i>/trafficpolicy/</code> resource.
+    /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy/</code>
+    /// resource.
     /// </para>
     ///  
     /// <para>

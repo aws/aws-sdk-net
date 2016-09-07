@@ -37,7 +37,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property PipelineExecutionId. 
         /// <para>
-        /// The unique system-generated ID of the pipeline that was started.
+        /// The unique system-generated ID of the pipeline execution that was started.
         /// </para>
         /// </summary>
         public string PipelineExecutionId

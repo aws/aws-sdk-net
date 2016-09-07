@@ -235,18 +235,29 @@ namespace Amazon.Route53
         #region  AssociateVPCWithHostedZone
 
         /// <summary>
-        /// This action associates a VPC with an hosted zone. 
+        /// Associates an Amazon VPC with a private hosted zone. 
         /// 
-        ///  
+        ///  <important> 
         /// <para>
-        /// To associate a VPC with an hosted zone, send a <code>POST</code> request to the <code>/<i>Route
-        /// 53 API version</i>/hostedzone/<i>hosted zone ID</i>/associatevpc</code> resource.
-        /// The request body must include a document with a <code>AssociateVPCWithHostedZoneRequest</code>
-        /// element. The response returns the <code>AssociateVPCWithHostedZoneResponse</code>
-        /// element that contains <code>ChangeInfo</code> for you to track the progress of the
-        /// <code>AssociateVPCWithHostedZoneRequest</code> you made. See <code>GetChange</code>
-        /// operation for how to track the progress of your change.
+        /// The VPC and the hosted zone must already exist, and you must have created a private
+        /// hosted zone. You cannot convert a public hosted zone into a private hosted zone.
         /// </para>
+        ///  </important> 
+        /// <para>
+        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/hostedzone/<i>hosted
+        /// zone ID</i>/associatevpc</code> resource. The request body must include an XML document
+        /// with a <code>AssociateVPCWithHostedZoneRequest</code> element. The response returns
+        /// the <code>AssociateVPCWithHostedZoneResponse</code> element.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you used different accounts to create the hosted zone and to create the Amazon
+        /// VPCs that you want to associate with the hosted zone, we need to update account permissions
+        /// for you. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zone-private-associate-vpcs-different-accounts.html">Associating
+        /// Amazon VPCs and Private Hosted Zones That You Create with Different AWS Accounts</a>
+        /// in the Amazon Route 53 Developer Guide.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateVPCWithHostedZone service method.</param>
         /// 
@@ -255,7 +266,7 @@ namespace Amazon.Route53
         /// 
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
         /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Amazon
@@ -266,11 +277,10 @@ namespace Amazon.Route53
         /// The limits specified for a resource have been exceeded.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
-        /// 
+        /// No hosted zone exists with the ID that you specified.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PublicZoneVPCAssociationException">
-        /// The hosted zone you are trying to associate VPC with doesn't have any VPC association.
-        /// Amazon Route 53 currently doesn't support associate a VPC with a public hosted zone.
+        /// The hosted zone specified in <code>HostedZoneId</code> is a public hosted zone.
         /// </exception>
         public AssociateVPCWithHostedZoneResponse AssociateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest request)
         {
@@ -317,55 +327,159 @@ namespace Amazon.Route53
         #region  ChangeResourceRecordSets
 
         /// <summary>
-        /// Use this action to create or change your authoritative DNS information. To use this
-        /// action, send a <code>POST</code> request to the <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted
-        /// Zone ID</i>/rrset</code> resource. The request body must include a document with a
-        /// <code>ChangeResourceRecordSetsRequest</code> element.
+        /// Create, change, update, or delete authoritative DNS information on all Amazon Route
+        /// 53 servers. Send a <code>POST</code> request to: 
         /// 
         ///  
         /// <para>
-        /// Changes are a list of change items and are considered transactional. For more information
-        /// on transactional changes, also known as change batches, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">POST
-        /// ChangeResourceRecordSets</a> in the <i>Amazon Route 53 API Reference</i>.
+        ///  <code>/2013-04-01/hostedzone/<i>Amazon Route 53 hosted Zone ID</i>/rrset</code> resource.
+        /// 
         /// </para>
-        ///  <important>Due to the nature of transactional changes, you cannot delete the same
-        /// resource record set more than once in a single change batch. If you attempt to delete
-        /// the same change batch more than once, Amazon Route 53 returns an <code>InvalidChangeBatch</code>
-        /// error.</important> 
+        ///  
         /// <para>
-        /// In response to a <code>ChangeResourceRecordSets</code> request, your DNS data is changed
-        /// on all Amazon Route 53 DNS servers. Initially, the status of a change is <code>PENDING</code>.
-        /// This means the change has not yet propagated to all the authoritative Amazon Route
-        /// 53 DNS servers. When the change is propagated to all hosts, the change returns a status
+        /// The request body must include a document with a <code>ChangeResourceRecordSetsRequest</code>
+        /// element. The request body contains a list of change items, known as a change batch.
+        /// Change batches are considered transactional changes. When using the Amazon Route 53
+        /// API to change resource record sets, Amazon Route 53 either makes all or none of the
+        /// changes in a change batch request. This ensures that Amazon Route 53 never partially
+        /// implements the intended changes to the resource record sets in a hosted zone. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, a change batch request that deletes the <code>CNAME</code>record for
+        /// www.example.com and creates an alias resource record set for www.example.com. Amazon
+        /// Route 53 deletes the first resource record set and creates the second resource record
+        /// set in a single operation. If either the <code>DELETE</code> or the <code>CREATE</code>
+        /// action fails, then both changes (plus any other changes in the batch) fail, and the
+        /// original <code>CNAME</code> record continues to exist.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Due to the nature of transactional changes, you cannot delete the same resource record
+        /// set more than once in a single change batch. If you attempt to delete the same change
+        /// batch more than once, Amazon Route 53 returns an <code>InvalidChangeBatch</code> error.
+        /// </para>
+        ///  </important> <note> 
+        /// <para>
+        /// To create resource record sets for complex routing configurations, use either the
+        /// traffic flow visual editor in the Amazon Route 53 console or the API actions for traffic
+        /// policies and traffic policy instances. Save the configuration as a traffic policy,
+        /// then associate the traffic policy with one or more domain names (such as example.com)
+        /// or subdomain names (such as www.example.com), in the same hosted zone or in multiple
+        /// hosted zones. You can roll back the updates if the new configuration isn't performing
+        /// as expected. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using
+        /// Traffic Flow to Route DNS Traffic</a> in the Amazon Route 53 API Reference or <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/actions-on-polices">Actions
+        /// on Traffic Policies and Traffic Policy Instances</a> in this guide.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Use <code>ChangeResourceRecordsSetsRequest</code> to perform the following actions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATE</code>:Creates a resource record set that has the specified values.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DELETE</code>: Deletes an existing resource record set that has the specified
+        /// values for <code>Name</code>, <code>Type</code>, <code>Set Identifier</code> (for
+        /// code latency, weighted, geolocation, and failover resource record sets), and <code>TTL</code>
+        /// (except alias resource record sets, for which the TTL is determined by the AWS resource
+        /// you're routing queries to).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPSERT</code>: If a resource record set does not already exist, AWS creates
+        /// it. If a resource set does exist, Amazon Route 53 updates it with the values in the
+        /// request. Amazon Route 53 can update an existing resource record set only when all
+        /// of the following values match: <code>Name</code>, <code>Type</code>, and <code>Set
+        /// Identifier</code> (for weighted, latency, geolocation, and failover resource record
+        /// sets).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// In response to a <code>ChangeResourceRecordSets</code> request, the DNS data is changed
+        /// on all Amazon Route 53 DNS servers. Initially, the status of a change is <code>PENDING</code>,
+        /// meaning the change has not yet propagated to all the authoritative Amazon Route 53
+        /// DNS servers. When the change is propagated to all hosts, the change returns a status
         /// of <code>INSYNC</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// After sending a change request, confirm your change has propagated to all Amazon Route
+        /// 53 DNS servers. Changes generally propagate to all Amazon Route 53 name servers in
+        /// a few minutes. In rare circumstances, propagation can take up to 30 minutes. For more
+        /// information, see <a>GetChange</a>.
         /// </para>
         ///  
         /// <para>
         /// Note the following limitations on a <code>ChangeResourceRecordSets</code> request:
         /// </para>
-        ///  <ul> <li>A request cannot contain more than 100 Change elements.</li> <li> A request
-        /// cannot contain more than 1000 ResourceRecord elements.</li> <li>The sum of the number
-        /// of characters (including spaces) in all <code>Value</code> elements in a request cannot
-        /// exceed 32,000 characters.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  A request cannot contain more than 100 Change elements.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  A request cannot contain more than 1000 ResourceRecord elements.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The sum of the number of characters (including spaces) in all <code>Value</code> elements
+        /// in a request cannot exceed 32,000 characters.
+        /// </para>
+        ///  </li> <li> <note> 
+        /// <para>
+        /// If the value of the Action element in a ChangeResourceRecordSets request is <code>UPSERT</code>
+        /// and the resource record set already exists, Amazon Route 53 automatically performs
+        /// a <code>DELETE</code> request and a <code>CREATE</code> request. When Amazon Route
+        /// 53 calculates the number of characters in the Value elements of a change batch request,
+        /// it adds the number of characters in the Value element of the resource record set being
+        /// deleted and the number of characters in the Value element of the resource record set
+        /// being created.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// The same resource cannot be deleted more than once in a single batch.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If the value of the Action element in a ChangeResourceRecordSets request is <code>UPSERT</code>
+        /// and the resource record set already exists, Amazon Route 53 automatically performs
+        /// a <code>DELETE</code> request and a <code>CREATE</code> request. When Amazon Route
+        /// 53 calculates the number of characters in the Value elements of a change batch request,
+        /// it adds the number of characters in the Value element of the resource record set being
+        /// deleted and the number of characters in the Value element of the resource record set
+        /// being created.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information on transactional changes, see <a>ChangeResourceRecordSets</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ChangeResourceRecordSets service method.</param>
         /// 
         /// <returns>The response from the ChangeResourceRecordSets service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidChangeBatchException">
-        /// This error contains a list of one or more error messages. Each error message indicates
-        /// one error in the change batch.
+        /// This exception contains a list of messages that might contain one or more error messages.
+        /// Each error message indicates one error in the change batch.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
-        /// The health check you are trying to get or delete does not exist.
+        /// No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code>
+        /// request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
-        /// 
+        /// No hosted zone exists with the ID that you specified.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
-        /// The request was rejected because Amazon Route 53 was still processing a prior request.
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
+        /// (<code>Bad request</code>). If Amazon Route 53 returns this error repeatedly for the
+        /// same request, we recommend that you wait, in intervals of increasing duration, before
+        /// you try the request again.
         /// </exception>
         public ChangeResourceRecordSetsResponse ChangeResourceRecordSets(ChangeResourceRecordSetsRequest request)
         {
@@ -418,16 +532,21 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ChangeTagsForResource service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
-        /// The health check you are trying to get or delete does not exist.
+        /// No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code>
+        /// request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
-        /// 
+        /// No hosted zone exists with the ID that you specified.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
-        /// The request was rejected because Amazon Route 53 was still processing a prior request.
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
+        /// (<code>Bad request</code>). If Amazon Route 53 returns this error repeatedly for the
+        /// same request, we recommend that you wait, in intervals of increasing duration, before
+        /// you try the request again.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.ThrottlingException">
         /// 
@@ -477,25 +596,67 @@ namespace Amazon.Route53
         #region  CreateHealthCheck
 
         /// <summary>
-        /// This action creates a new health check.
+        /// Creates a new health check.
         /// 
         ///  
         /// <para>
-        /// To create a new health check, send a <code>POST</code> request to the <code>/<i>Route
-        /// 53 API version</i>/healthcheck</code> resource. The request body must include a document
-        /// with a <code>CreateHealthCheckRequest</code> element. The response returns the <code>CreateHealthCheckResponse</code>
-        /// element that contains metadata about the health check.
+        /// To create a new health check, send a <code>POST</code> request to the <code>/2013-04-01/healthcheck</code>
+        /// resource. The request body must include an XML document with a <code>CreateHealthCheckRequest</code>
+        /// element. The response returns the <code>CreateHealthCheckResponse</code> element,
+        /// containing the health check ID specified when adding health check to a resource record
+        /// set. For information about adding health checks to resource record sets, see <a>ResourceRecordSet$HealthCheckId</a>
+        /// in <a>ChangeResourceRecordSets</a>. 
         /// </para>
+        ///  
+        /// <para>
+        /// If you are registering Amazon EC2 instances with an Elastic Load Balancing (ELB) load
+        /// balancer, do not create Amazon Route 53 health checks for the Amazon EC2 instances.
+        /// When you register an Amazon EC2 instance with a load balancer, you configure settings
+        /// for an ELB health check, which performs a similar function to an Amazon Route 53 health
+        /// check.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can associate health checks with failover resource record sets in a private hosted
+        /// zone. Note the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Route 53 health checkers are outside the VPC. To check the health of an endpoint
+        /// within a VPC by IP address, you must assign a public IP address to the instance in
+        /// the VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can configure a health checker to check the health of an external resource that
+        /// the instance relies on, such as a database server.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can create a CloudWatch metric, associate an alarm with the metric, and then create
+        /// a health check that is based on the state of the alarm. For example, you might create
+        /// a CloudWatch metric that checks the status of the Amazon EC2 <code>StatusCheckFailed</code>
+        /// metric, add an alarm to the metric, and then create a health check that is based on
+        /// the state of the alarm. For information about creating CloudWatch metrics and alarms
+        /// by using the CloudWatch console, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
+        /// CloudWatch Developer Guide</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHealthCheck service method.</param>
         /// 
         /// <returns>The response from the CreateHealthCheck service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.HealthCheckAlreadyExistsException">
-        /// The health check you are trying to create already exists. Amazon Route 53 returns
-        /// this error when a health check has already been created with the specified <code>CallerReference</code>.
+        /// The health check you're attempting to create already exists.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Route 53 returns this error when a health check has already been created with
+        /// the specified value for <code>CallerReference</code>.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TooManyHealthChecksException">
         /// 
@@ -545,34 +706,59 @@ namespace Amazon.Route53
         #region  CreateHostedZone
 
         /// <summary>
-        /// This action creates a new hosted zone.
+        /// Creates a new public hosted zone, used to specify how the Domain Name System (DNS)
+        /// routes traffic on the Internet for a domain, such as example.com, and its subdomains.
         /// 
-        ///  
+        /// 
+        ///  <important> 
         /// <para>
-        /// To create a new hosted zone, send a <code>POST</code> request to the <code>/<i>Route
-        /// 53 API version</i>/hostedzone</code> resource. The request body must include a document
-        /// with a <code>CreateHostedZoneRequest</code> element. The response returns the <code>CreateHostedZoneResponse</code>
-        /// element that contains metadata about the hosted zone.
+        /// Public hosted zones cannot be converted to a private hosted zone or vice versa. Instead,
+        /// create a new hosted zone with the same name and create new resource record sets.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/hostedzone</code>
+        /// resource. The request body must include an XML document with a <code>CreateHostedZoneRequest</code>
+        /// element. The response returns the <code>CreateHostedZoneResponse</code> element containing
+        /// metadata about the hosted zone.
         /// </para>
         ///  
         /// <para>
+        /// Fore more information about charges for hosted zones, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/pricing/">AmazonAmazon
+        /// Route 53 Pricing</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You cannot create a hosted zone for a top-level domain (TLD).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Amazon Route 53 automatically creates a default SOA record and four NS records for
-        /// the zone. The NS records in the hosted zone are the name servers you give your registrar
-        /// to delegate your domain to. For more information about SOA and NS records, see <a
-        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
+        /// the zone. For more information about SOA and NS records, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html">NS
         /// and SOA Records that Amazon Route 53 Creates for a Hosted Zone</a> in the <i>Amazon
         /// Route 53 Developer Guide</i>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// When you create a zone, its initial status is <code>PENDING</code>. This means that
+        /// If your domain is registered with a registrar other than Amazon Route 53, you must
+        /// update the name servers with your registrar to make Amazon Route 53 your DNS service.
+        /// For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/creating-migrating.html">Configuring
+        /// Amazon Route 53 as your DNS Service</a> in the <i>Amazon Route 53 Developer's Guide</i>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// After creating a zone, its initial status is <code>PENDING</code>. This means that
         /// it is not yet available on all DNS servers. The status of the zone changes to <code>INSYNC</code>
         /// when the NS and SOA records are available on all Amazon Route 53 DNS servers. 
         /// </para>
         ///  
         /// <para>
-        /// When trying to create a hosted zone using a reusable delegation set, you could specify
-        /// an optional DelegationSetId, and Route53 would assign those 4 NS records for the zone,
+        /// When trying to create a hosted zone using a reusable delegation set, specify an optional
+        /// DelegationSetId, and Amazon Route 53 would assign those 4 NS records for the zone,
         /// instead of alloting a new one.
         /// </para>
         /// </summary>
@@ -583,24 +769,23 @@ namespace Amazon.Route53
         /// 
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.DelegationSetNotAvailableException">
-        /// Amazon Route 53 allows some duplicate domain names, but there is a maximum number
-        /// of duplicate names. This error indicates that you have reached that maximum. If you
-        /// want to create another hosted zone with the same name and Amazon Route 53 generates
-        /// this error, you can request an increase to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact
-        /// Us</a> page.
+        /// You can create a hosted zone that has the same name as an existing hosted zone (example.com
+        /// is common), but there is a limit to the number of hosted zones that have the same
+        /// name. If you get this error, Amazon Route 53 has reached that limit. If you own the
+        /// domain name and Amazon Route 53 generates this error, contact Customer Support.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.DelegationSetNotReusableException">
-        /// The specified delegation set has not been marked as reusable.
+        /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.HostedZoneAlreadyExistsException">
         /// The hosted zone you are trying to create already exists. Amazon Route 53 returns this
         /// error when a hosted zone has already been created with the specified <code>CallerReference</code>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidDomainNameException">
-        /// This error indicates that the specified domain name is not valid.
+        /// The specified domain name is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
         /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Amazon
@@ -608,12 +793,12 @@ namespace Amazon.Route53
         /// belong to you.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
-        /// The specified delegation set does not exist.
+        /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TooManyHostedZonesException">
-        /// This error indicates that you've reached the maximum number of hosted zones that can
-        /// be created for the current AWS account. You can request an increase to the limit on
-        /// the <a href="http://aws.amazon.com/route53-request/">Contact Us</a> page.
+        /// This hosted zone cannot be created because the hosted zone limit is exceeded. To request
+        /// a limit increase, go to the Amazon Route 53 <a href="http://aws.amazon.com/route53-request/">Contact
+        /// Us</a> page.
         /// </exception>
         public CreateHostedZoneResponse CreateHostedZone(CreateHostedZoneRequest request)
         {
@@ -660,20 +845,25 @@ namespace Amazon.Route53
         #region  CreateReusableDelegationSet
 
         /// <summary>
-        /// This action creates a reusable delegationSet.
+        /// Creates a delegation set (a group of four anem servers) that can be reused by multiple
+        /// hosted zones. If a hosted zoned ID is specified, <code>CreateReusableDelegationSet</code>
+        /// marks the delegation set associated with that zone as reusable
         /// 
         ///  
         /// <para>
-        /// To create a new reusable delegationSet, send a <code>POST</code> request to the <code>/<i>Route
-        /// 53 API version</i>/delegationset</code> resource. The request body must include a
-        /// document with a <code>CreateReusableDelegationSetRequest</code> element. The response
-        /// returns the <code>CreateReusableDelegationSetResponse</code> element that contains
-        /// metadata about the delegationSet. 
+        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/delegationset</code>
+        /// resource. The request body must include an XML document with a <code>CreateReusableDelegationSetRequest</code>
+        /// element.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// If the optional parameter HostedZoneId is specified, it marks the delegationSet associated
-        /// with that particular hosted zone as reusable. 
+        /// A reusable delegation set cannot be associated with a private hosted zone/
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, including a procedure on how to create and configure a reusable
+        /// delegation set (also known as white label name servers), see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/white-label-name-servers.html">Configuring
+        /// White Label Name Servers</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReusableDelegationSet service method.</param>
@@ -687,20 +877,19 @@ namespace Amazon.Route53
         /// The specified delegation set has already been marked as reusable.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.DelegationSetNotAvailableException">
-        /// Amazon Route 53 allows some duplicate domain names, but there is a maximum number
-        /// of duplicate names. This error indicates that you have reached that maximum. If you
-        /// want to create another hosted zone with the same name and Amazon Route 53 generates
-        /// this error, you can request an increase to the limit on the <a href="http://aws.amazon.com/route53-request/">Contact
-        /// Us</a> page.
+        /// You can create a hosted zone that has the same name as an existing hosted zone (example.com
+        /// is common), but there is a limit to the number of hosted zones that have the same
+        /// name. If you get this error, Amazon Route 53 has reached that limit. If you own the
+        /// domain name and Amazon Route 53 generates this error, contact Customer Support.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.HostedZoneNotFoundException">
         /// The specified HostedZone cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidArgumentException">
-        /// At least one of the specified arguments is invalid.
+        /// Parameter name and problem.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
         /// The limits specified for a resource have been exceeded.
@@ -755,18 +944,17 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// To create a traffic policy, send a <code>POST</code> request to the <code>/<i>Route
-        /// 53 API version</i>/trafficpolicy</code> resource. The request body must include a
-        /// document with a <code>CreateTrafficPolicyRequest</code> element. The response includes
-        /// the <code>CreateTrafficPolicyResponse</code> element, which contains information about
-        /// the new traffic policy.
+        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code>
+        /// resource. The request body must include a document with a <code>CreateTrafficPolicyRequest</code>
+        /// element. The response includes the <code>CreateTrafficPolicyResponse</code> element,
+        /// which contains information about the new traffic policy.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrafficPolicy service method.</param>
         /// 
         /// <returns>The response from the CreateTrafficPolicy service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidTrafficPolicyDocumentException">
         /// The format of the traffic policy document that you specified in the <code>Document</code>
@@ -834,21 +1022,20 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// To create a traffic policy instance, send a <code>POST</code> request to the <code>/<i>Route
-        /// 53 API version</i>/trafficpolicyinstance</code> resource. The request body must include
-        /// a document with a <code>CreateTrafficPolicyRequest</code> element. The response returns
-        /// the <code>CreateTrafficPolicyInstanceResponse</code> element, which contains information
-        /// about the traffic policy instance.
+        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code>
+        /// resource. The request body must include a document with a <code>CreateTrafficPolicyRequest</code>
+        /// element. The response returns the <code>CreateTrafficPolicyInstanceResponse</code>
+        /// element, which contains information about the traffic policy instance.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrafficPolicyInstance service method.</param>
         /// 
         /// <returns>The response from the CreateTrafficPolicyInstance service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
-        /// 
+        /// No hosted zone exists with the ID that you specified.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
         /// No traffic policy exists with the specified ID.
@@ -908,20 +1095,18 @@ namespace Amazon.Route53
         /// <summary>
         /// Creates a new version of an existing traffic policy. When you create a new version
         /// of a traffic policy, you specify the ID of the traffic policy that you want to update
-        /// and a JSON-formatted document that describes the new version.
+        /// and a JSON-formatted document that describes the new version. You use traffic policies
+        /// to create multiple DNS resource record sets for one domain name (such as example.com)
+        /// or one subdomain name (such as www.example.com). You can create a maximum of 1000
+        /// versions of a traffic policy. If you reach the limit and need to create another version,
+        /// you'll need to start a new traffic policy.
         /// 
         ///  
         /// <para>
-        /// You use traffic policies to create multiple DNS resource record sets for one domain
-        /// name (such as example.com) or one subdomain name (such as www.example.com).
-        /// </para>
-        ///  
-        /// <para>
-        /// To create a new version, send a <code>POST</code> request to the <code>/<i>Route 53
-        /// API version</i>/trafficpolicy/</code> resource. The request body includes a document
-        /// with a <code>CreateTrafficPolicyVersionRequest</code> element. The response returns
-        /// the <code>CreateTrafficPolicyVersionResponse</code> element, which contains information
-        /// about the new version of the traffic policy.
+        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 version</i>/trafficpolicy/</code>
+        /// resource. The request body includes a document with a <code>CreateTrafficPolicyVersionRequest</code>
+        /// element. The response returns the <code>CreateTrafficPolicyVersionResponse</code>
+        /// element, which contains information about the new version of the traffic policy.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrafficPolicyVersion service method.</param>
@@ -932,7 +1117,7 @@ namespace Amazon.Route53
         /// Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidTrafficPolicyDocumentException">
         /// The format of the traffic policy document that you specified in the <code>Document</code>
@@ -986,29 +1171,34 @@ namespace Amazon.Route53
         #region  DeleteHealthCheck
 
         /// <summary>
-        /// This action deletes a health check. To delete a health check, send a <code>DELETE</code>
-        /// request to the <code>/<i>Route 53 API version</i>/healthcheck/<i>health check ID</i></code>
-        /// resource.
+        /// Deletes a health check. Send a <code>DELETE</code> request to the <code>/2013-04-01/healthcheck/<i>health
+        /// check ID</i> </code> resource.
         /// 
-        ///  <important> You can delete a health check only if there are no resource record sets
-        /// associated with this health check. If resource record sets are associated with this
-        /// health check, you must disassociate them before you can delete your health check.
-        /// If you try to delete a health check that is associated with resource record sets,
-        /// Amazon Route 53 will deny your request with a <code>HealthCheckInUse</code> error.
-        /// For information about disassociating the records from your health check, see <code>ChangeResourceRecordSets</code>.</important>
+        ///  <important> 
+        /// <para>
+        /// Amazon Route 53 does not prevent you from deleting a health check even if the health
+        /// check is associated with one or more resource record sets. If you delete a health
+        /// check and you don't update the associated resource record sets, the future status
+        /// of the health check cannot be predicted and may change. This will affect the routing
+        /// of DNS queries for your DNS failover configuration. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
+        /// and Deleting Health Checks</a> in the Amazon Route 53 Developer Guide.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHealthCheck service method.</param>
         /// 
         /// <returns>The response from the DeleteHealthCheck service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.HealthCheckInUseException">
-        /// There are resource records associated with this health check. Before you can delete
-        /// the health check, you must disassociate it from the resource record sets.
+        /// The health check ID for this health check is referenced in the <code>HealthCheckId</code>
+        /// element in one of the resource record sets in one of the hosted zones that are owned
+        /// by the current AWS account.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
-        /// The health check you are trying to get or delete does not exist.
+        /// No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code>
+        /// request.
         /// </exception>
         public DeleteHealthCheckResponse DeleteHealthCheck(DeleteHealthCheckRequest request)
         {
@@ -1055,36 +1245,41 @@ namespace Amazon.Route53
         #region  DeleteHostedZone
 
         /// <summary>
-        /// This action deletes a hosted zone. To delete a hosted zone, send a <code>DELETE</code>
-        /// request to the <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i></code>
-        /// resource.
+        /// Deletes a hosted zone. Send a <code>DELETE</code> request to the <code>/<i>Amazon
+        /// Route 53 API version</i>/hostedzone/<i>hosted zone ID</i> </code> resource.
         /// 
-        ///  <important>You can delete a hosted zone only if there are no resource record sets
-        /// other than the default SOA record and NS resource record sets. If your hosted zone
-        /// contains other resource record sets, you must delete them before you can delete your
-        /// hosted zone. If you try to delete a hosted zone that contains other resource record
-        /// sets, Amazon Route 53 will deny your request with a <code>HostedZoneNotEmpty</code>
-        /// error. For information about deleting records from your hosted zone, see <code>ChangeResourceRecordSets</code>.</important>
+        ///  <important> 
+        /// <para>
+        /// Delete a hosted zone only if there are no resource record sets other than the default
+        /// SOA record and NS resource record sets. If the hosted zone contains other resource
+        /// record sets, delete them before deleting the hosted zone. If you try to delete a hosted
+        /// zone that contains other resource record sets, Amazon Route 53 denies your request
+        /// with a <code>HostedZoneNotEmpty</code> error. For information about deleting records
+        /// from your hosted zone, see <a>ChangeResourceRecordSets</a>.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHostedZone service method.</param>
         /// 
         /// <returns>The response from the DeleteHostedZone service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.HostedZoneNotEmptyException">
-        /// The hosted zone contains resource record sets in addition to the default NS and SOA
-        /// resource record sets. Before you can delete the hosted zone, you must delete the additional
-        /// resource record sets.
+        /// The hosted zone contains resource records that are not SOA or NS records.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidDomainNameException">
-        /// This error indicates that the specified domain name is not valid.
+        /// The specified domain name is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
-        /// 
+        /// No hosted zone exists with the ID that you specified.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
-        /// The request was rejected because Amazon Route 53 was still processing a prior request.
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
+        /// (<code>Bad request</code>). If Amazon Route 53 returns this error repeatedly for the
+        /// same request, we recommend that you wait, in intervals of increasing duration, before
+        /// you try the request again.
         /// </exception>
         public DeleteHostedZoneResponse DeleteHostedZone(DeleteHostedZoneRequest request)
         {
@@ -1131,15 +1326,19 @@ namespace Amazon.Route53
         #region  DeleteReusableDelegationSet
 
         /// <summary>
-        /// This action deletes a reusable delegation set. To delete a reusable delegation set,
-        /// send a <code>DELETE</code> request to the <code>/<i>Route 53 API version</i>/delegationset/<i>delegation
-        /// set ID</i></code> resource.
+        /// Deletes a reusable delegation set. Send a <code>DELETE</code> request to the <code>/2013-04-01/delegationset/<i>delegation
+        /// set ID</i> </code> resource.
         /// 
-        ///  <important> You can delete a reusable delegation set only if there are no associated
-        /// hosted zones. If your reusable delegation set contains associated hosted zones, you
-        /// must delete them before you can delete your reusable delegation set. If you try to
-        /// delete a reusable delegation set that contains associated hosted zones, Amazon Route
-        /// 53 will deny your request with a <code>DelegationSetInUse</code> error.</important>
+        ///  <important> 
+        /// <para>
+        ///  You can delete a reusable delegation set only if there are no associated hosted zones.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// To verify that the reusable delegation set is not associated with any hosted zones,
+        /// run the <a>GetReusableDelegationSet</a> action and specify the ID of the reusable
+        /// delegation set that you want to delete.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteReusableDelegationSet service method.</param>
         /// 
@@ -1149,13 +1348,13 @@ namespace Amazon.Route53
         /// the reusable delegation set can be deleted.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.DelegationSetNotReusableException">
-        /// The specified delegation set has not been marked as reusable.
+        /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
-        /// The specified delegation set does not exist.
+        /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
         public DeleteReusableDelegationSetResponse DeleteReusableDelegationSet(DeleteReusableDelegationSetRequest request)
         {
@@ -1202,8 +1401,13 @@ namespace Amazon.Route53
         #region  DeleteTrafficPolicy
 
         /// <summary>
-        /// Deletes a traffic policy. To delete a traffic policy, send a <code>DELETE</code> request
-        /// to the <code>/<i>Route 53 API version</i>/trafficpolicy</code> resource.
+        /// Deletes a traffic policy.
+        /// 
+        ///  
+        /// <para>
+        /// Send a <code>DELETE</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code>
+        /// resource.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficPolicy service method.</param>
         /// 
@@ -1213,7 +1417,7 @@ namespace Amazon.Route53
         /// Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
         /// No traffic policy exists with the specified ID.
@@ -1271,24 +1475,30 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// To delete a traffic policy instance, send a <code>DELETE</code> request to the <code>/<i>Route
-        /// 53 API version</i>/trafficpolicy/<i>traffic policy instance ID</i></code> resource.
+        /// Send a <code>DELETE</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy/<i>traffic
+        /// policy instance ID</i> </code> resource.
         /// </para>
-        ///  <important>When you delete a traffic policy instance, Amazon Route 53 also deletes
-        /// all of the resource record sets that were created when you created the traffic policy
-        /// instance.</important>
+        ///  <note> 
+        /// <para>
+        /// In the Amazon Route 53 console, traffic policy instances are known as policy records.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrafficPolicyInstance service method.</param>
         /// 
         /// <returns>The response from the DeleteTrafficPolicyInstance service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyInstanceException">
         /// No traffic policy instance exists with the specified ID.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
-        /// The request was rejected because Amazon Route 53 was still processing a prior request.
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
+        /// (<code>Bad request</code>). If Amazon Route 53 returns this error repeatedly for the
+        /// same request, we recommend that you wait, in intervals of increasing duration, before
+        /// you try the request again.
         /// </exception>
         public DeleteTrafficPolicyInstanceResponse DeleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest request)
         {
@@ -1335,24 +1545,28 @@ namespace Amazon.Route53
         #region  DisassociateVPCFromHostedZone
 
         /// <summary>
-        /// This action disassociates a VPC from an hosted zone. 
+        /// Disassociates a VPC from a Amazon Route 53 private hosted zone. 
         /// 
         ///  
         /// <para>
-        /// To disassociate a VPC to a hosted zone, send a <code>POST</code> request to the <code>/<i>Route
-        /// 53 API version</i>/hostedzone/<i>hosted zone ID</i>/disassociatevpc</code> resource.
-        /// The request body must include a document with a <code>DisassociateVPCFromHostedZoneRequest</code>
-        /// element. The response returns the <code>DisassociateVPCFromHostedZoneResponse</code>
-        /// element that contains <code>ChangeInfo</code> for you to track the progress of the
-        /// <code>DisassociateVPCFromHostedZoneRequest</code> you made. See <code>GetChange</code>
-        /// operation for how to track the progress of your change.
+        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/hostedzone/<i>hosted
+        /// zone ID</i>/disassociatevpc</code> resource. The request body must include an XML
+        /// document with a <code>DisassociateVPCFromHostedZoneRequest</code> element. The response
+        /// returns the <code>DisassociateVPCFromHostedZoneResponse</code> element.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You can only disassociate a VPC from a private hosted zone when two or more VPCs are
+        /// associated with that hosted zone. You cannot convert a private hosted zone into a
+        /// public hosted zone.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateVPCFromHostedZone service method.</param>
         /// 
         /// <returns>The response from the DisassociateVPCFromHostedZone service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
         /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Amazon
@@ -1360,15 +1574,15 @@ namespace Amazon.Route53
         /// belong to you.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.LastVPCAssociationException">
-        /// The VPC you are trying to disassociate from the hosted zone is the last the VPC that
-        /// is associated with the hosted zone. Amazon Route 53 currently doesn't support disassociate
-        /// the last VPC from the hosted zone.
+        /// Only one VPC is currently associated with the hosted zone. You cannot convert a private
+        /// hosted zone into a public hosted zone by disassociating the last VPC from a hosted
+        /// zone.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
-        /// 
+        /// No hosted zone exists with the ID that you specified.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.VPCAssociationNotFoundException">
-        /// The VPC you specified is not currently associated with the hosted zone.
+        /// The specified VPC and hosted zone are not currently associated.
         /// </exception>
         public DisassociateVPCFromHostedZoneResponse DisassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request)
         {
@@ -1415,26 +1629,27 @@ namespace Amazon.Route53
         #region  GetChange
 
         /// <summary>
-        /// This action returns the current status of a change batch request. The status is one
-        /// of the following values:
+        /// Returns the current status of a change batch request. The status is one of the following
+        /// values:
         /// 
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// - <code>PENDING</code> indicates that the changes in this request have not replicated
+        ///  <code>PENDING</code> indicates that the changes in this request have not replicated
         /// to all Amazon Route 53 DNS servers. This is the initial status of all change batch
         /// requests.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// - <code>INSYNC</code> indicates that the changes have replicated to all Amazon Route
+        ///  <code>INSYNC</code> indicates that the changes have replicated to all Amazon Route
         /// 53 DNS servers. 
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChange service method.</param>
         /// 
         /// <returns>The response from the GetChange service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchChangeException">
         /// 
@@ -1484,13 +1699,13 @@ namespace Amazon.Route53
         #region  GetChangeDetails
 
         /// <summary>
-        /// This action returns the status and changes of a change batch request.
+        /// Returns the status and changes of a change batch request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChangeDetails service method.</param>
         /// 
         /// <returns>The response from the GetChangeDetails service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchChangeException">
         /// 
@@ -1543,11 +1758,11 @@ namespace Amazon.Route53
         #region  GetCheckerIpRanges
 
         /// <summary>
-        /// To retrieve a list of the IP ranges used by Amazon Route 53 health checkers to check
-        /// the health of your resources, send a <code>GET</code> request to the <code>/<i>Route
-        /// 53 API version</i>/checkeripranges</code> resource. You can use these IP addresses
-        /// to configure router and firewall rules to allow health checkers to check the health
-        /// of your resources.
+        /// Retrieves a list of the IP ranges used by Amazon Route 53 health checkers to check
+        /// the health of your resources. Send a <code>GET</code> request to the <code>/<i>Amazon
+        /// Route 53 API version</i>/checkeripranges</code> resource. Use these IP addresses to
+        /// configure router and firewall rules to allow health checkers to check the health of
+        /// your resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCheckerIpRanges service method.</param>
         /// 
@@ -1597,18 +1812,18 @@ namespace Amazon.Route53
         #region  GetGeoLocation
 
         /// <summary>
-        /// To retrieve a single geo location, send a <code>GET</code> request to the <code>/<i>Route
-        /// 53 API version</i>/geolocation</code> resource with one of these options: continentcode
-        /// | countrycode | countrycode and subdivisioncode.
+        /// Retrieves a single geo location. Send a <code>GET</code> request to the <code>/2013-04-01/geolocation</code>
+        /// resource with one of these options: continentcode | countrycode | countrycode and
+        /// subdivisioncode.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGeoLocation service method.</param>
         /// 
         /// <returns>The response from the GetGeoLocation service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchGeoLocationException">
-        /// The geo location you are trying to get does not exist.
+        /// Amazon Route 53 doesn't support the specified geolocation.
         /// </exception>
         public GetGeoLocationResponse GetGeoLocation(GetGeoLocationRequest request)
         {
@@ -1655,8 +1870,10 @@ namespace Amazon.Route53
         #region  GetHealthCheck
 
         /// <summary>
-        /// To retrieve the health check, send a <code>GET</code> request to the <code>/<i>Route
-        /// 53 API version</i>/healthcheck/<i>health check ID</i></code> resource.
+        /// Gets information about a specified health check. Send a <code>GET</code> request to
+        /// the <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource. For more
+        /// information about using the console to perform this operation, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
+        /// Route 53 Health Checks and DNS Failover</a> in the Amazon Route 53 Developer Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheck service method.</param>
         /// 
@@ -1666,10 +1883,11 @@ namespace Amazon.Route53
         /// Please consider using a newer endpoint or a tool that does so.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
-        /// The health check you are trying to get or delete does not exist.
+        /// No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code>
+        /// request.
         /// </exception>
         public GetHealthCheckResponse GetHealthCheck(GetHealthCheckRequest request)
         {
@@ -1717,7 +1935,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// To retrieve a count of all your health checks, send a <code>GET</code> request to
-        /// the <code>/<i>Route 53 API version</i>/healthcheckcount</code> resource.
+        /// the <code>/2013-04-01/healthcheckcount</code> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckCount service method.</param>
         /// 
@@ -1769,17 +1987,18 @@ namespace Amazon.Route53
         /// <summary>
         /// If you want to learn why a health check is currently failing or why it failed most
         /// recently (if at all), you can get the failure reason for the most recent failure.
-        /// Send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/healthcheck/<i>health
+        /// Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/healthcheck/<i>health
         /// check ID</i>/lastfailurereason</code> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckLastFailureReason service method.</param>
         /// 
         /// <returns>The response from the GetHealthCheckLastFailureReason service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
-        /// The health check you are trying to get or delete does not exist.
+        /// No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code>
+        /// request.
         /// </exception>
         public GetHealthCheckLastFailureReasonResponse GetHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest request)
         {
@@ -1826,18 +2045,19 @@ namespace Amazon.Route53
         #region  GetHealthCheckStatus
 
         /// <summary>
-        /// To retrieve the health check status, send a <code>GET</code> request to the <code>/<i>Route
-        /// 53 API version</i>/healthcheck/<i>health check ID</i>/status</code> resource. You
-        /// can use this call to get a health check's current status.
+        /// Gets status of a specified health check. Send a <code>GET</code> request to the <code>/2013-04-01/healthcheck/<i>health
+        /// check ID</i>/status</code> resource. You can use this call to get a health check's
+        /// current status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckStatus service method.</param>
         /// 
         /// <returns>The response from the GetHealthCheckStatus service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
-        /// The health check you are trying to get or delete does not exist.
+        /// No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code>
+        /// request.
         /// </exception>
         public GetHealthCheckStatusResponse GetHealthCheckStatus(GetHealthCheckStatusRequest request)
         {
@@ -1884,19 +2104,18 @@ namespace Amazon.Route53
         #region  GetHostedZone
 
         /// <summary>
-        /// To retrieve the delegation set for a hosted zone, send a <code>GET</code> request
-        /// to the <code>/<i>Route 53 API version</i>/hostedzone/<i>hosted zone ID</i></code>
-        /// resource. The delegation set is the four Amazon Route 53 name servers that were assigned
-        /// to the hosted zone when you created it.
+        /// Retrieves the delegation set for a hosted zone, including the four name servers assigned
+        /// to the hosted zone. Send a <code>GET</code> request to the <code>/<i>Amazon Route
+        /// 53 API version</i>/hostedzone/<i>hosted zone ID</i> </code> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHostedZone service method.</param>
         /// 
         /// <returns>The response from the GetHostedZone service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
-        /// 
+        /// No hosted zone exists with the ID that you specified.
         /// </exception>
         public GetHostedZoneResponse GetHostedZone(GetHostedZoneRequest request)
         {
@@ -1943,13 +2162,13 @@ namespace Amazon.Route53
         #region  GetHostedZoneCount
 
         /// <summary>
-        /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to the
-        /// <code>/<i>Route 53 API version</i>/hostedzonecount</code> resource.
+        /// Retrieves a count of all your hosted zones. Send a <code>GET</code> request to the
+        /// <code>/2013-04-01/hostedzonecount</code> resource.
         /// </summary>
         /// 
         /// <returns>The response from the GetHostedZoneCount service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         public GetHostedZoneCountResponse GetHostedZoneCount()
         {
@@ -1957,14 +2176,14 @@ namespace Amazon.Route53
         }
 
         /// <summary>
-        /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to the
-        /// <code>/<i>Route 53 API version</i>/hostedzonecount</code> resource.
+        /// Retrieves a count of all your hosted zones. Send a <code>GET</code> request to the
+        /// <code>/2013-04-01/hostedzonecount</code> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHostedZoneCount service method.</param>
         /// 
         /// <returns>The response from the GetHostedZoneCount service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         public GetHostedZoneCountResponse GetHostedZoneCount(GetHostedZoneCountRequest request)
         {
@@ -2011,20 +2230,20 @@ namespace Amazon.Route53
         #region  GetReusableDelegationSet
 
         /// <summary>
-        /// To retrieve the reusable delegation set, send a <code>GET</code> request to the <code>/<i>Route
-        /// 53 API version</i>/delegationset/<i>delegation set ID</i></code> resource.
+        /// Retrieves the reusable delegation set. Send a <code>GET</code> request to the <code>/2013-04-01/delegationset/<i>delegation
+        /// set ID</i> </code> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReusableDelegationSet service method.</param>
         /// 
         /// <returns>The response from the GetReusableDelegationSet service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.DelegationSetNotReusableException">
-        /// The specified delegation set has not been marked as reusable.
+        /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
-        /// The specified delegation set does not exist.
+        /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
         public GetReusableDelegationSetResponse GetReusableDelegationSet(GetReusableDelegationSetRequest request)
         {
@@ -2071,15 +2290,19 @@ namespace Amazon.Route53
         #region  GetTrafficPolicy
 
         /// <summary>
-        /// Gets information about a specific traffic policy version. To get the information,
-        /// send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicy</code>
+        /// Gets information about a specific traffic policy version.
+        /// 
+        ///  
+        /// <para>
+        /// Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code>
         /// resource.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicy service method.</param>
         /// 
         /// <returns>The response from the GetTrafficPolicy service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
         /// No traffic policy exists with the specified ID.
@@ -2133,19 +2356,27 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// To get information about the traffic policy instance, send a <code>GET</code> request
-        /// to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource.
+        /// Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code>
+        /// resource.
         /// </para>
-        ///  <note>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
+        ///  <note> 
+        /// <para>
+        /// After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
         /// request, there's a brief delay while Amazon Route 53 creates the resource record sets
         /// that are specified in the traffic policy definition. For more information, see the
-        /// <code>State</code> response element.</note>
+        /// <code>State</code> response element.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// In the Amazon Route 53 console, traffic policy instances are known as policy records.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicyInstance service method.</param>
         /// 
         /// <returns>The response from the GetTrafficPolicyInstance service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyInstanceException">
         /// No traffic policy instance exists with the specified ID.
@@ -2201,7 +2432,7 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// To get the number of traffic policy instances, send a <code>GET</code> request to
-        /// the <code>/<i>Route 53 API version</i>/trafficpolicyinstancecount</code> resource.
+        /// the <code>/2013-04-01/trafficpolicyinstancecount</code> resource.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicyInstanceCount service method.</param>
@@ -2252,17 +2483,16 @@ namespace Amazon.Route53
         #region  ListChangeBatchesByHostedZone
 
         /// <summary>
-        /// This action gets the list of ChangeBatches in a given time period for a given hosted
-        /// zone.
+        /// Gets the list of ChangeBatches in a given time period for a given hosted zone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByHostedZone service method.</param>
         /// 
         /// <returns>The response from the ListChangeBatchesByHostedZone service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
-        /// 
+        /// No hosted zone exists with the ID that you specified.
         /// </exception>
         [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
         public ListChangeBatchesByHostedZoneResponse ListChangeBatchesByHostedZone(ListChangeBatchesByHostedZoneRequest request)
@@ -2312,17 +2542,17 @@ namespace Amazon.Route53
         #region  ListChangeBatchesByRRSet
 
         /// <summary>
-        /// This action gets the list of ChangeBatches in a given time period for a given hosted
-        /// zone and RRSet.
+        /// Gets the list of ChangeBatches in a given time period for a given hosted zone and
+        /// RRSet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByRRSet service method.</param>
         /// 
         /// <returns>The response from the ListChangeBatchesByRRSet service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
-        /// 
+        /// No hosted zone exists with the ID that you specified.
         /// </exception>
         [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
         public ListChangeBatchesByRRSetResponse ListChangeBatchesByRRSet(ListChangeBatchesByRRSetRequest request)
@@ -2372,28 +2602,23 @@ namespace Amazon.Route53
         #region  ListGeoLocations
 
         /// <summary>
-        /// To retrieve a list of supported geo locations, send a <code>GET</code> request to
-        /// the <code>/<i>Route 53 API version</i>/geolocations</code> resource. The response
-        /// to this request includes a <code>GeoLocationDetailsList</code> element with zero,
-        /// one, or multiple <code>GeoLocationDetails</code> child elements. The list is sorted
-        /// by country code, and then subdivision code, followed by continents at the end of the
-        /// list. 
+        /// Retrieves a list of supported geo locations. Send a <code>GET</code> request to the
+        /// <code>/2013-04-01/geolocations</code> resource. The response to this request includes
+        /// a <code>GeoLocationDetailsList</code> element for each location that Amazon Route
+        /// 53 supports.
         /// 
         ///  
         /// <para>
-        /// By default, the list of geo locations is displayed on a single page. You can control
-        /// the length of the page that is displayed by using the <code>MaxItems</code> parameter.
-        /// If the list is truncated, <code>IsTruncated</code> will be set to <i>true</i> and
-        /// a combination of <code>NextContinentCode, NextCountryCode, NextSubdivisionCode</code>
-        /// will be populated. You can pass these as parameters to <code>StartContinentCode, StartCountryCode,
-        /// StartSubdivisionCode</code> to control the geo location that the list begins with.
-        /// 
+        /// Countries are listed first, and continents are listed last. If Amazon Route 53 supports
+        /// subdivisions for a country (for example, states or provinces), the subdivisions for
+        /// that country are listed in alphabetical order immediately after the corresponding
+        /// country. 
         /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListGeoLocations service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         public ListGeoLocationsResponse ListGeoLocations()
         {
@@ -2401,29 +2626,24 @@ namespace Amazon.Route53
         }
 
         /// <summary>
-        /// To retrieve a list of supported geo locations, send a <code>GET</code> request to
-        /// the <code>/<i>Route 53 API version</i>/geolocations</code> resource. The response
-        /// to this request includes a <code>GeoLocationDetailsList</code> element with zero,
-        /// one, or multiple <code>GeoLocationDetails</code> child elements. The list is sorted
-        /// by country code, and then subdivision code, followed by continents at the end of the
-        /// list. 
+        /// Retrieves a list of supported geo locations. Send a <code>GET</code> request to the
+        /// <code>/2013-04-01/geolocations</code> resource. The response to this request includes
+        /// a <code>GeoLocationDetailsList</code> element for each location that Amazon Route
+        /// 53 supports.
         /// 
         ///  
         /// <para>
-        /// By default, the list of geo locations is displayed on a single page. You can control
-        /// the length of the page that is displayed by using the <code>MaxItems</code> parameter.
-        /// If the list is truncated, <code>IsTruncated</code> will be set to <i>true</i> and
-        /// a combination of <code>NextContinentCode, NextCountryCode, NextSubdivisionCode</code>
-        /// will be populated. You can pass these as parameters to <code>StartContinentCode, StartCountryCode,
-        /// StartSubdivisionCode</code> to control the geo location that the list begins with.
-        /// 
+        /// Countries are listed first, and continents are listed last. If Amazon Route 53 supports
+        /// subdivisions for a country (for example, states or provinces), the subdivisions for
+        /// that country are listed in alphabetical order immediately after the corresponding
+        /// country. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGeoLocations service method.</param>
         /// 
         /// <returns>The response from the ListGeoLocations service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         public ListGeoLocationsResponse ListGeoLocations(ListGeoLocationsRequest request)
         {
@@ -2470,16 +2690,19 @@ namespace Amazon.Route53
         #region  ListHealthChecks
 
         /// <summary>
-        /// To retrieve a list of your health checks, send a <code>GET</code> request to the <code>/<i>Route
-        /// 53 API version</i>/healthcheck</code> resource. The response to this request includes
-        /// a <code>HealthChecks</code> element with zero, one, or multiple <code>HealthCheck</code>
-        /// child elements. By default, the list of health checks is displayed on a single page.
-        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
-        /// parameter. You can use the <code>Marker</code> parameter to control the health check
-        /// that the list begins with. 
+        /// Retrieve a list of your health checks. Send a <code>GET</code> request to the <code>/2013-04-01/healthcheck</code>
+        /// resource. The response to this request includes a <code>HealthChecks</code> element
+        /// with zero or more <code>HealthCheck</code> child elements. By default, the list of
+        /// health checks is displayed on a single page. You can control the length of the page
+        /// that is displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+        /// parameter to control the health check that the list begins with.
         /// 
-        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
-        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        ///  
+        /// <para>
+        /// For information about listing health checks using the Amazon Route 53 console, see
+        /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
+        /// Route 53 Health Checks and DNS Failover</a>.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the ListHealthChecks service method, as returned by Route53.</returns>
@@ -2488,7 +2711,7 @@ namespace Amazon.Route53
         /// Please consider using a newer endpoint or a tool that does so.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         public ListHealthChecksResponse ListHealthChecks()
         {
@@ -2496,16 +2719,19 @@ namespace Amazon.Route53
         }
 
         /// <summary>
-        /// To retrieve a list of your health checks, send a <code>GET</code> request to the <code>/<i>Route
-        /// 53 API version</i>/healthcheck</code> resource. The response to this request includes
-        /// a <code>HealthChecks</code> element with zero, one, or multiple <code>HealthCheck</code>
-        /// child elements. By default, the list of health checks is displayed on a single page.
-        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
-        /// parameter. You can use the <code>Marker</code> parameter to control the health check
-        /// that the list begins with. 
+        /// Retrieve a list of your health checks. Send a <code>GET</code> request to the <code>/2013-04-01/healthcheck</code>
+        /// resource. The response to this request includes a <code>HealthChecks</code> element
+        /// with zero or more <code>HealthCheck</code> child elements. By default, the list of
+        /// health checks is displayed on a single page. You can control the length of the page
+        /// that is displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+        /// parameter to control the health check that the list begins with.
         /// 
-        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
-        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        ///  
+        /// <para>
+        /// For information about listing health checks using the Amazon Route 53 console, see
+        /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
+        /// Route 53 Health Checks and DNS Failover</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHealthChecks service method.</param>
         /// 
@@ -2515,7 +2741,7 @@ namespace Amazon.Route53
         /// Please consider using a newer endpoint or a tool that does so.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         public ListHealthChecksResponse ListHealthChecks(ListHealthChecksRequest request)
         {
@@ -2562,27 +2788,58 @@ namespace Amazon.Route53
         #region  ListHostedZones
 
         /// <summary>
-        /// To retrieve a list of your hosted zones, send a <code>GET</code> request to the <code>/<i>Route
-        /// 53 API version</i>/hostedzone</code> resource. The response to this request includes
-        /// a <code>HostedZones</code> element with zero, one, or multiple <code>HostedZone</code>
-        /// child elements. By default, the list of hosted zones is displayed on a single page.
-        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
-        /// parameter. You can use the <code>Marker</code> parameter to control the hosted zone
-        /// that the list begins with. 
+        /// To retrieve a list of your public and private hosted zones, send a <code>GET</code>
+        /// request to the <code>/2013-04-01/hostedzone</code> resource. The response to this
+        /// request includes a <code>HostedZones</code> child element for each hosted zone created
+        /// by the current AWS account.
         /// 
-        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
-        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        ///  
+        /// <para>
+        /// Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot
+        /// of hosted zones, you can use the <code>maxitems</code> parameter to list them in groups
+        /// of up to 100. The response includes four values that help navigate from one group
+        /// of <code>maxitems</code> hosted zones to the next:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>MaxItems</code>is the value specified for the <code>maxitems</code> parameter
+        /// in the request that produced the current response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the value of <code>IsTruncated</code> in the response is true, there are more hosted
+        /// zones associated with the current AWS account. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NextMarker</code>is the hosted zone ID of the next hosted zone that is associated
+        /// with the current AWS account. If you want to list more hosted zones, make another
+        /// call to <code>ListHostedZones</code>, and specify the value of the <code>NextMarker</code>
+        /// element in the marker parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>IsTruncated</code> is false, the <code>NextMarker</code> element is omitted
+        /// from the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you're making the second or subsequent call to <code>ListHostedZones</code>, the
+        /// <code>Marker</code> element matches the value that you specified in the <code>marker</code>
+        /// parameter in the previous request.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// 
         /// <returns>The response from the ListHostedZones service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.DelegationSetNotReusableException">
-        /// The specified delegation set has not been marked as reusable.
+        /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
-        /// The specified delegation set does not exist.
+        /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
         public ListHostedZonesResponse ListHostedZones()
         {
@@ -2590,28 +2847,59 @@ namespace Amazon.Route53
         }
 
         /// <summary>
-        /// To retrieve a list of your hosted zones, send a <code>GET</code> request to the <code>/<i>Route
-        /// 53 API version</i>/hostedzone</code> resource. The response to this request includes
-        /// a <code>HostedZones</code> element with zero, one, or multiple <code>HostedZone</code>
-        /// child elements. By default, the list of hosted zones is displayed on a single page.
-        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
-        /// parameter. You can use the <code>Marker</code> parameter to control the hosted zone
-        /// that the list begins with. 
+        /// To retrieve a list of your public and private hosted zones, send a <code>GET</code>
+        /// request to the <code>/2013-04-01/hostedzone</code> resource. The response to this
+        /// request includes a <code>HostedZones</code> child element for each hosted zone created
+        /// by the current AWS account.
         /// 
-        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
-        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        ///  
+        /// <para>
+        /// Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot
+        /// of hosted zones, you can use the <code>maxitems</code> parameter to list them in groups
+        /// of up to 100. The response includes four values that help navigate from one group
+        /// of <code>maxitems</code> hosted zones to the next:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>MaxItems</code>is the value specified for the <code>maxitems</code> parameter
+        /// in the request that produced the current response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the value of <code>IsTruncated</code> in the response is true, there are more hosted
+        /// zones associated with the current AWS account. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NextMarker</code>is the hosted zone ID of the next hosted zone that is associated
+        /// with the current AWS account. If you want to list more hosted zones, make another
+        /// call to <code>ListHostedZones</code>, and specify the value of the <code>NextMarker</code>
+        /// element in the marker parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>IsTruncated</code> is false, the <code>NextMarker</code> element is omitted
+        /// from the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you're making the second or subsequent call to <code>ListHostedZones</code>, the
+        /// <code>Marker</code> element matches the value that you specified in the <code>marker</code>
+        /// parameter in the previous request.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHostedZones service method.</param>
         /// 
         /// <returns>The response from the ListHostedZones service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.DelegationSetNotReusableException">
-        /// The specified delegation set has not been marked as reusable.
+        /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
-        /// The specified delegation set does not exist.
+        /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
         public ListHostedZonesResponse ListHostedZones(ListHostedZonesRequest request)
         {
@@ -2658,26 +2946,92 @@ namespace Amazon.Route53
         #region  ListHostedZonesByName
 
         /// <summary>
-        /// To retrieve a list of your hosted zones in lexicographic order, send a <code>GET</code>
-        /// request to the <code>/<i>Route 53 API version</i>/hostedzonesbyname</code> resource.
-        /// The response to this request includes a <code>HostedZones</code> element with zero
-        /// or more <code>HostedZone</code> child elements lexicographically ordered by DNS name.
-        /// By default, the list of hosted zones is displayed on a single page. You can control
-        /// the length of the page that is displayed by using the <code>MaxItems</code> parameter.
-        /// You can use the <code>DNSName</code> and <code>HostedZoneId</code> parameters to control
-        /// the hosted zone that the list begins with.
+        /// Retrieves a list of your hosted zones in lexicographic order. Send a <code>GET</code>
+        /// request to the <code>/2013-04-01/hostedzonesbyname</code> resource. The response includes
+        /// a <code>HostedZones</code> child element for each hosted zone created by the current
+        /// AWS account. 
         /// 
-        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
-        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        ///  
+        /// <para>
+        ///  <code>ListHostedZonesByName</code> sorts hosted zones by name with the labels reversed.
+        /// For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>com.example.www.</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note the trailing dot, which can change the sort order in some circumstances.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the domain name includes escape characters or Punycode, <code>ListHostedZonesByName</code>
+        /// alphabetizes the domain name using the escaped or Punycoded value, which is the format
+        /// that Amazon Route 53 saves in its database. For example, to create a hosted zone for
+        /// example.com, specify ex\344mple.com for the domain name. <code>ListHostedZonesByName</code>
+        /// alphabetizes it as:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>com.ex\344mple.</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The labels are reversed and alphabetized using the escaped value. For more information
+        /// about valid domain name formats, including internationalized domain names, see <a
+        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+        /// Domain Name Format</a> in the Amazon Route 53 Developer Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Route 53 returns up to 100 items in each response. If you have a lot of hosted
+        /// zones, use the <code>MaxItems</code> parameter to list them in groups of up to 100.
+        /// The response includes values that help navigate from one group of <code>MaxItems</code>
+        /// hosted zones to the next:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <code>DNSName</code> and <code>HostedZoneId</code> elements in the response contain
+        /// the values, if any, specified for the <code>dnsname</code> and <code>hostedzoneid</code>
+        /// parameters in the request that produced the current response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>MaxItems</code> element in the response contains the value, if any, that
+        /// you specified for the <code>maxitems</code> parameter in the request that produced
+        /// the current response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the value of <code>IsTruncated</code> in the response is true, there are more hosted
+        /// zones associated with the current AWS account. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>IsTruncated</code> is false, this response includes the last hosted zone
+        /// that is associated with the current account. The <code>NextDNSName</code> element
+        /// and <code>NextHostedZoneId</code> elements are omitted from the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in the response
+        /// contain the domain name and the hosted zone ID of the next hosted zone that is associated
+        /// with the current AWS account. If you want to list more hosted zones, make another
+        /// call to <code>ListHostedZonesByName</code>, and specify the value of <code>NextDNSName</code>
+        /// and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code>
+        /// parameters, respectively.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHostedZonesByName service method.</param>
         /// 
         /// <returns>The response from the ListHostedZonesByName service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidDomainNameException">
-        /// This error indicates that the specified domain name is not valid.
+        /// The specified domain name is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         public ListHostedZonesByNameResponse ListHostedZonesByName(ListHostedZonesByNameRequest request)
         {
@@ -2724,60 +3078,16 @@ namespace Amazon.Route53
         #region  ListResourceRecordSets
 
         /// <summary>
-        /// List the resource record sets in a specified hosted zone. Send a GET request to the
-        /// <code>2013-04-01/hostedzone/<i>hosted zone ID</i>/rrset</code> resource.
         /// 
-        ///  
-        /// <para>
-        /// <code>ListResourceRecordSets</code> returns up to 100 resource record sets at a time
-        /// in ASCII order, beginning at a position specified by the name and type elements. The
-        /// action sorts results first by DNS name with the labels reversed, for example:
-        /// </para>
-        ///  
-        /// <para>
-        /// <code>com.example.www.</code>
-        /// </para>
-        ///  
-        /// <para>
-        /// Note the trailing dot, which can change the sort order in some circumstances. When
-        /// multiple records have the same DNS name, the action sorts results by the record type.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can use the name and type elements to adjust the beginning position of the list
-        /// of resource record sets returned:
-        /// </para>
-        ///  <ul> <li><b>If you do not specify <code>Name</code> or <code>Type</code></b>: The
-        /// results begin with the first resource record set that the hosted zone contains.</li>
-        /// <li><b>If you specify <code>Name</code> but not <code>Type</code></b>: The results
-        /// begin with the first resource record set in the list whose name is greater than or
-        /// equal to Name.</li> <li><b>If you specify <code>Type</code> but not <code>Name</code></b>:
-        /// Amazon Route 53 returns the <code>InvalidInput</code> error.</li> <li><b>If you specify
-        /// both <code>Name</code> and <code>Type</code></b>: The results begin with the first
-        /// resource record set in the list whose name is greater than or equal to <code>Name</code>,
-        /// and whose type is greater than or equal to <code>Type</code>.</li> </ul> 
-        /// <para>
-        /// This action returns the most current version of the records. This includes records
-        /// that are <code>PENDING</code>, and that are not yet available on all Amazon Route
-        /// 53 DNS servers.
-        /// </para>
-        ///  
-        /// <para>
-        /// To ensure that you get an accurate listing of the resource record sets for a hosted
-        /// zone at a point in time, do not submit a <code>ChangeResourceRecordSets</code> request
-        /// while you are paging through the results of a <code>ListResourceRecordSets</code>
-        /// request. If you do, some pages may display results without the latest changes while
-        /// other pages display results with the latest changes.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourceRecordSets service method.</param>
         /// 
         /// <returns>The response from the ListResourceRecordSets service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
-        /// 
+        /// No hosted zone exists with the ID that you specified.
         /// </exception>
         public ListResourceRecordSetsResponse ListResourceRecordSets(ListResourceRecordSetsRequest request)
         {
@@ -2825,20 +3135,24 @@ namespace Amazon.Route53
 
         /// <summary>
         /// To retrieve a list of your reusable delegation sets, send a <code>GET</code> request
-        /// to the <code>/<i>Route 53 API version</i>/delegationset</code> resource. The response
-        /// to this request includes a <code>DelegationSets</code> element with zero, one, or
-        /// multiple <code>DelegationSet</code> child elements. By default, the list of delegation
-        /// sets is displayed on a single page. You can control the length of the page that is
-        /// displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code>
-        /// parameter to control the delegation set that the list begins with. 
+        /// to the <code>/2013-04-01/delegationset</code> resource. The response to this request
+        /// includes a <code>DelegationSets</code> element with zero, one, or multiple <code>DelegationSet</code>
+        /// child elements. By default, the list of delegation sets is displayed on a single page.
+        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
+        /// parameter. You can use the <code>Marker</code> parameter to control the delegation
+        /// set that the list begins with. 
         /// 
-        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
-        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        ///  <note> 
+        /// <para>
+        ///  Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater
+        /// than 100, Amazon Route 53 returns only the first 100.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the ListReusableDelegationSets service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         public ListReusableDelegationSetsResponse ListReusableDelegationSets()
         {
@@ -2847,21 +3161,25 @@ namespace Amazon.Route53
 
         /// <summary>
         /// To retrieve a list of your reusable delegation sets, send a <code>GET</code> request
-        /// to the <code>/<i>Route 53 API version</i>/delegationset</code> resource. The response
-        /// to this request includes a <code>DelegationSets</code> element with zero, one, or
-        /// multiple <code>DelegationSet</code> child elements. By default, the list of delegation
-        /// sets is displayed on a single page. You can control the length of the page that is
-        /// displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code>
-        /// parameter to control the delegation set that the list begins with. 
+        /// to the <code>/2013-04-01/delegationset</code> resource. The response to this request
+        /// includes a <code>DelegationSets</code> element with zero, one, or multiple <code>DelegationSet</code>
+        /// child elements. By default, the list of delegation sets is displayed on a single page.
+        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
+        /// parameter. You can use the <code>Marker</code> parameter to control the delegation
+        /// set that the list begins with. 
         /// 
-        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
-        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        ///  <note> 
+        /// <para>
+        ///  Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater
+        /// than 100, Amazon Route 53 returns only the first 100.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReusableDelegationSets service method.</param>
         /// 
         /// <returns>The response from the ListReusableDelegationSets service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         public ListReusableDelegationSetsResponse ListReusableDelegationSets(ListReusableDelegationSetsRequest request)
         {
@@ -2914,16 +3232,21 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
-        /// The health check you are trying to get or delete does not exist.
+        /// No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code>
+        /// request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
-        /// 
+        /// No hosted zone exists with the ID that you specified.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
-        /// The request was rejected because Amazon Route 53 was still processing a prior request.
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
+        /// (<code>Bad request</code>). If Amazon Route 53 returns this error repeatedly for the
+        /// same request, we recommend that you wait, in intervals of increasing duration, before
+        /// you try the request again.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.ThrottlingException">
         /// 
@@ -2979,16 +3302,21 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListTagsForResources service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
-        /// The health check you are trying to get or delete does not exist.
+        /// No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code>
+        /// request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
-        /// 
+        /// No hosted zone exists with the ID that you specified.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
-        /// The request was rejected because Amazon Route 53 was still processing a prior request.
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
+        /// (<code>Bad request</code>). If Amazon Route 53 returns this error repeatedly for the
+        /// same request, we recommend that you wait, in intervals of increasing duration, before
+        /// you try the request again.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.ThrottlingException">
         /// 
@@ -3039,8 +3367,8 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Gets information about the latest version for every traffic policy that is associated
-        /// with the current AWS account. To get the information, send a <code>GET</code> request
-        /// to the <code>/<i>Route 53 API version</i>/trafficpolicy</code> resource.
+        /// with the current AWS account. Send a <code>GET</code> request to the <code>/<i>Amazon
+        /// Route 53 API version</i>/trafficpolicy</code> resource.
         /// 
         ///  
         /// <para>
@@ -3053,7 +3381,11 @@ namespace Amazon.Route53
         /// The response includes three values that help you navigate from one group of <code>maxitems</code>
         /// traffic policies to the next:
         /// </para>
-        ///  <ul> <li><b>IsTruncated</b></li> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>IsTruncated</b> 
+        /// </para>
+        ///  
         /// <para>
         /// If the value of <code>IsTruncated</code> in the response is <code>true</code>, there
         /// are more traffic policies associated with the current AWS account.
@@ -3063,7 +3395,11 @@ namespace Amazon.Route53
         /// If <code>IsTruncated</code> is <code>false</code>, this response includes the last
         /// traffic policy that is associated with the current account.
         /// </para>
-        ///  <li><b>TrafficPolicyIdMarker</b></li> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>TrafficPolicyIdMarker</b> 
+        /// </para>
+        ///  
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code>
         /// is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic
@@ -3076,18 +3412,22 @@ namespace Amazon.Route53
         /// If <code>IsTruncated</code> is <code>false</code>, the <code>TrafficPolicyIdMarker</code>
         /// element is omitted from the response.
         /// </para>
-        ///  <li><b>MaxItems</b></li> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MaxItems</b> 
+        /// </para>
+        ///  
         /// <para>
         /// The value that you specified for the <code>MaxItems</code> parameter in the request
         /// that produced the current response.
         /// </para>
-        ///  </ul>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicies service method.</param>
         /// 
         /// <returns>The response from the ListTrafficPolicies service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         public ListTrafficPoliciesResponse ListTrafficPolicies(ListTrafficPoliciesRequest request)
         {
@@ -3137,14 +3477,17 @@ namespace Amazon.Route53
         /// Gets information about the traffic policy instances that you created by using the
         /// current AWS account.
         /// 
-        ///  <note>After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's
-        /// a brief delay while Amazon Route 53 creates the resource record sets that are specified
-        /// in the traffic policy definition. For more information, see the <code>State</code>
-        /// response element.</note> 
+        ///  <note> 
         /// <para>
-        /// To get information about the traffic policy instances that are associated with the
-        /// current AWS account, send a <code>GET</code> request to the <code>/<i>Route 53 API
-        /// version</i>/trafficpolicyinstance</code> resource.
+        /// After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's a brief
+        /// delay while Amazon Route 53 creates the resource record sets that are specified in
+        /// the traffic policy definition. For more information, see the <code>State</code> response
+        /// element.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code>
+        /// resource.
         /// </para>
         ///  
         /// <para>
@@ -3157,7 +3500,11 @@ namespace Amazon.Route53
         /// The response includes five values that help you navigate from one group of <code>MaxItems</code>
         /// traffic policy instances to the next:
         /// </para>
-        ///  <ul> <li><b>IsTruncated</b></li> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>IsTruncated</b> 
+        /// </para>
+        ///  
         /// <para>
         /// If the value of <code>IsTruncated</code> in the response is <code>true</code>, there
         /// are more traffic policy instances associated with the current AWS account.
@@ -3167,13 +3514,21 @@ namespace Amazon.Route53
         /// If <code>IsTruncated</code> is <code>false</code>, this response includes the last
         /// traffic policy instance that is associated with the current account.
         /// </para>
-        ///  <li><b>MaxItems</b></li> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MaxItems</b> 
+        /// </para>
+        ///  
         /// <para>
         /// The value that you specified for the <code>MaxItems</code> parameter in the request
         /// that produced the current response.
         /// </para>
-        ///  <li><b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and <b>TrafficPolicyInstanceTypeMarker</b></li>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and <b>TrafficPolicyInstanceTypeMarker</b>
         /// 
+        /// </para>
+        ///  
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, these three values in the response
         /// represent the first traffic policy instance in the next group of <code>MaxItems</code>
@@ -3186,13 +3541,13 @@ namespace Amazon.Route53
         /// If <code>IsTruncated</code> is <code>false</code>, all three elements are omitted
         /// from the response.
         /// </para>
-        ///  </ul>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyInstances service method.</param>
         /// 
         /// <returns>The response from the ListTrafficPolicyInstances service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyInstanceException">
         /// No traffic policy instance exists with the specified ID.
@@ -3245,13 +3600,16 @@ namespace Amazon.Route53
         /// Gets information about the traffic policy instances that you created in a specified
         /// hosted zone.
         /// 
-        ///  <note>After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's
-        /// a brief delay while Amazon Route 53 creates the resource record sets that are specified
-        /// in the traffic policy definition. For more information, see the <code>State</code>
-        /// response element.</note> 
+        ///  <note> 
         /// <para>
-        /// To get information about the traffic policy instances that you created in a specified
-        /// hosted zone, send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
+        /// After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's a brief
+        /// delay while Amazon Route 53 creates the resource record sets that are specified in
+        /// the traffic policy definition. For more information, see the <code>State</code> response
+        /// element.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code>
         /// resource and include the ID of the hosted zone.
         /// </para>
         ///  
@@ -3265,7 +3623,11 @@ namespace Amazon.Route53
         /// The response includes four values that help you navigate from one group of <code>MaxItems</code>
         /// traffic policy instances to the next:
         /// </para>
-        ///  <ul> <li><b>IsTruncated</b></li> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>IsTruncated</b> 
+        /// </para>
+        ///  
         /// <para>
         /// If the value of <code/>IsTruncated in the response is <code>true</code>, there are
         /// more traffic policy instances associated with the current AWS account.
@@ -3275,13 +3637,21 @@ namespace Amazon.Route53
         /// If <code>IsTruncated</code> is <code>false</code>, this response includes the last
         /// traffic policy instance that is associated with the current account.
         /// </para>
-        ///  <li><b>MaxItems</b></li> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MaxItems</b> 
+        /// </para>
+        ///  
         /// <para>
         /// The value that you specified for the <code>MaxItems</code> parameter in the request
         /// that produced the current response.
         /// </para>
-        ///  <li><b>TrafficPolicyInstanceNameMarker</b> and <b>TrafficPolicyInstanceTypeMarker</b></li>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>TrafficPolicyInstanceNameMarker</b> and <b>TrafficPolicyInstanceTypeMarker</b>
         /// 
+        /// </para>
+        ///  
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, these two values in the response
         /// represent the first traffic policy instance in the next group of <code>MaxItems</code>
@@ -3294,16 +3664,16 @@ namespace Amazon.Route53
         /// If <code>IsTruncated</code> is <code>false</code>, all three elements are omitted
         /// from the response.
         /// </para>
-        ///  </ul>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyInstancesByHostedZone service method.</param>
         /// 
         /// <returns>The response from the ListTrafficPolicyInstancesByHostedZone service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
-        /// 
+        /// No hosted zone exists with the ID that you specified.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyInstanceException">
         /// No traffic policy instance exists with the specified ID.
@@ -3356,15 +3726,17 @@ namespace Amazon.Route53
         /// Gets information about the traffic policy instances that you created by using a specify
         /// traffic policy version.
         /// 
-        ///  <note>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
+        ///  <note> 
+        /// <para>
+        /// After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
         /// request, there's a brief delay while Amazon Route 53 creates the resource record sets
         /// that are specified in the traffic policy definition. For more information, see the
-        /// <code>State</code> response element.</note> 
+        /// <code>State</code> response element.
+        /// </para>
+        ///  </note> 
         /// <para>
-        /// To get information about the traffic policy instances that you created by using a
-        /// specify traffic policy version, send a <code>GET</code> request to the <code>/<i>Route
-        /// 53 API version</i>/trafficpolicyinstance</code> resource and include the ID and version
-        /// of the traffic policy.
+        /// Send a <code>GET</code> request to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code>
+        /// resource and include the ID and version of the traffic policy.
         /// </para>
         ///  
         /// <para>
@@ -3377,7 +3749,11 @@ namespace Amazon.Route53
         /// The response includes five values that help you navigate from one group of <code>MaxItems</code>
         /// traffic policy instances to the next:
         /// </para>
-        ///  <ul> <li><b>IsTruncated</b> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>IsTruncated</b> 
+        /// </para>
+        ///  
         /// <para>
         /// If the value of <code>IsTruncated</code> in the response is <code>true</code>, there
         /// are more traffic policy instances associated with the specified traffic policy.
@@ -3387,13 +3763,21 @@ namespace Amazon.Route53
         /// If <code>IsTruncated</code> is <code>false</code>, this response includes the last
         /// traffic policy instance that is associated with the specified traffic policy.
         /// </para>
-        ///  </li> <li><b>MaxItems</b> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MaxItems</b> 
+        /// </para>
+        ///  
         /// <para>
         /// The value that you specified for the <code>MaxItems</code> parameter in the request
         /// that produced the current response.
         /// </para>
-        ///  </li> <li><b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and
-        /// <b>TrafficPolicyInstanceTypeMarker</b> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>HostedZoneIdMarker</b>, <b>TrafficPolicyInstanceNameMarker</b>, and <b>TrafficPolicyInstanceTypeMarker</b>
+        /// 
+        /// </para>
+        ///  
         /// <para>
         /// If <code>IsTruncated</code> is <code>true</code>, these values in the response represent
         /// the first traffic policy instance in the next group of <code>MaxItems</code> traffic
@@ -3411,7 +3795,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListTrafficPolicyInstancesByPolicy service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
         /// No traffic policy exists with the specified ID.
@@ -3464,9 +3848,13 @@ namespace Amazon.Route53
         #region  ListTrafficPolicyVersions
 
         /// <summary>
-        /// Gets information about all of the versions for a specified traffic policy. <code>ListTrafficPolicyVersions</code>
-        /// lists only versions that have not been deleted.
+        /// Gets information about all of the versions for a specified traffic policy.
         /// 
+        ///  
+        /// <para>
+        /// Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code>
+        /// resource and specify the ID of the traffic policy for which you want to list versions.
+        /// </para>
         ///  
         /// <para>
         /// Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot
@@ -3478,7 +3866,11 @@ namespace Amazon.Route53
         /// The response includes three values that help you navigate from one group of <code>maxitems</code>maxitems
         /// traffic policies to the next:
         /// </para>
-        ///  <ul> <li><b>IsTruncated</b></li> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>IsTruncated</b> 
+        /// </para>
+        ///  
         /// <para>
         /// If the value of <code>IsTruncated</code> in the response is <code>true</code>, there
         /// are more traffic policy versions associated with the specified traffic policy.
@@ -3488,7 +3880,11 @@ namespace Amazon.Route53
         /// If <code>IsTruncated</code> is <code>false</code>, this response includes the last
         /// traffic policy version that is associated with the specified traffic policy.
         /// </para>
-        ///  <li><b>TrafficPolicyVersionMarker</b></li> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>TrafficPolicyVersionMarker</b> 
+        /// </para>
+        ///  
         /// <para>
         /// The ID of the next traffic policy version that is associated with the current AWS
         /// account. If you want to list more traffic policies, make another call to <code>ListTrafficPolicyVersions</code>,
@@ -3500,18 +3896,22 @@ namespace Amazon.Route53
         /// If <code>IsTruncated</code> is <code>false</code>, Amazon Route 53 omits the <code>TrafficPolicyVersionMarker</code>
         /// element from the response.
         /// </para>
-        ///  <li><b>MaxItems</b></li> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MaxItems</b> 
+        /// </para>
+        ///  
         /// <para>
         /// The value that you specified for the <code>MaxItems</code> parameter in the request
         /// that produced the current response.
         /// </para>
-        ///  </ul>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyVersions service method.</param>
         /// 
         /// <returns>The response from the ListTrafficPolicyVersions service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
         /// No traffic policy exists with the specified ID.
@@ -3558,18 +3958,74 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  TestDNSAnswer
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestDNSAnswer service method.</param>
+        /// 
+        /// <returns>The response from the TestDNSAnswer service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        public TestDNSAnswerResponse TestDNSAnswer(TestDNSAnswerRequest request)
+        {
+            var marshaller = new TestDNSAnswerRequestMarshaller();
+            var unmarshaller = TestDNSAnswerResponseUnmarshaller.Instance;
+
+            return Invoke<TestDNSAnswerRequest,TestDNSAnswerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestDNSAnswer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestDNSAnswer operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestDNSAnswer
+        ///         operation.</returns>
+        public IAsyncResult BeginTestDNSAnswer(TestDNSAnswerRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new TestDNSAnswerRequestMarshaller();
+            var unmarshaller = TestDNSAnswerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<TestDNSAnswerRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TestDNSAnswer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestDNSAnswer.</param>
+        /// 
+        /// <returns>Returns a  TestDNSAnswerResult from Route53.</returns>
+        public  TestDNSAnswerResponse EndTestDNSAnswer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TestDNSAnswerResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateHealthCheck
 
         /// <summary>
-        /// This action updates an existing health check.
+        /// Updates an existing health check.
         /// 
         ///  
         /// <para>
-        /// To update a health check, send a <code>POST</code> request to the <code>/<i>Route
-        /// 53 API version</i>/healthcheck/<i>health check ID</i></code> resource. The request
-        /// body must include a document with an <code>UpdateHealthCheckRequest</code> element.
-        /// The response returns an <code>UpdateHealthCheckResponse</code> element, which contains
-        /// metadata about the health check.
+        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/healthcheck/<i>health
+        /// check ID</i> </code> resource. The request body must include an XML document with
+        /// an <code>UpdateHealthCheckRequest</code> element. For more information about updating
+        /// health checks, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
+        /// Updating, and Deleting Health Checks</a> in the Amazon Route 53 Developer Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHealthCheck service method.</param>
@@ -3579,10 +4035,11 @@ namespace Amazon.Route53
         /// 
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHealthCheckException">
-        /// The health check you are trying to get or delete does not exist.
+        /// No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code>
+        /// request.
         /// </exception>
         public UpdateHealthCheckResponse UpdateHealthCheck(UpdateHealthCheckRequest request)
         {
@@ -3629,21 +4086,17 @@ namespace Amazon.Route53
         #region  UpdateHostedZoneComment
 
         /// <summary>
-        /// To update the hosted zone comment, send a <code>POST</code> request to the <code>/<i>Route
-        /// 53 API version</i>/hostedzone/<i>hosted zone ID</i></code> resource. The request body
-        /// must include a document with a <code>UpdateHostedZoneCommentRequest</code> element.
-        /// The response to this request includes the modified <code>HostedZone</code> element.
-        /// 
-        ///  <note> The comment can have a maximum length of 256 characters.</note>
+        /// Updates the hosted zone comment. Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted
+        /// zone ID</i> </code> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneComment service method.</param>
         /// 
         /// <returns>The response from the UpdateHostedZoneComment service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
-        /// 
+        /// No hosted zone exists with the ID that you specified.
         /// </exception>
         public UpdateHostedZoneCommentResponse UpdateHostedZoneComment(UpdateHostedZoneCommentRequest request)
         {
@@ -3694,8 +4147,8 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// To update the comment, send a <code>POST</code> request to the <code>/<i>Route 53
-        /// API version</i>/trafficpolicy/</code> resource.
+        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy/</code>
+        /// resource.
         /// </para>
         ///  
         /// <para>
@@ -3711,7 +4164,7 @@ namespace Amazon.Route53
         /// Retry the request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
         /// No traffic policy exists with the specified ID.
@@ -3764,29 +4217,37 @@ namespace Amazon.Route53
         /// Updates the resource record sets in a specified hosted zone that were created based
         /// on the settings in a specified traffic policy version.
         /// 
-        ///  <important>The DNS type of the resource record sets that you're updating must match
-        /// the DNS type in the JSON document that is associated with the traffic policy version
-        /// that you're using to update the traffic policy instance.</important> 
+        ///  
+        /// <para>
+        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance/<i>traffic
+        /// policy ID</i> </code> resource. The request body must include a document with an <code>UpdateTrafficPolicyInstanceRequest</code>
+        /// element.
+        /// </para>
+        ///  
         /// <para>
         /// When you update a traffic policy instance, Amazon Route 53 continues to respond to
         /// DNS queries for the root resource record set name (such as example.com) while it replaces
         /// one group of resource record sets with another. Amazon Route 53 performs the following
         /// operations:
         /// </para>
-        ///  <ol> <li>Amazon Route 53 creates a new group of resource record sets based on the
-        /// specified traffic policy. This is true regardless of how substantial the differences
-        /// are between the existing resource record sets and the new resource record sets. </li>
-        /// <li>When all of the new resource record sets have been created, Amazon Route 53 starts
-        /// to respond to DNS queries for the root resource record set name (such as example.com)
-        /// by using the new resource record sets.</li> <li>Amazon Route 53 deletes the old group
-        /// of resource record sets that are associated with the root resource record set name.</li>
-        /// </ol> 
+        ///  <ol> <li> 
         /// <para>
-        /// To update a traffic policy instance, send a <code>POST</code> request to the <code>/<i>Route
-        /// 53 API version</i>/trafficpolicyinstance/<i>traffic policy ID</i></code> resource.
-        /// The request body must include a document with an <code>UpdateTrafficPolicyInstanceRequest</code>
-        /// element.
+        /// Amazon Route 53 creates a new group of resource record sets based on the specified
+        /// traffic policy. This is true regardless of how substantial the differences are between
+        /// the existing resource record sets and the new resource record sets. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When all of the new resource record sets have been created, Amazon Route 53 starts
+        /// to respond to DNS queries for the root resource record set name (such as example.com)
+        /// by using the new resource record sets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Route 53 deletes the old group of resource record sets that are associated
+        /// with the root resource record set name.
+        /// </para>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrafficPolicyInstance service method.</param>
         /// 
@@ -3797,7 +4258,7 @@ namespace Amazon.Route53
         /// type in the JSON document in the <code>CreateTrafficPolicy</code> or <code>CreateTrafficPolicyVersion</code>request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
         /// No traffic policy exists with the specified ID.
@@ -3806,7 +4267,11 @@ namespace Amazon.Route53
         /// No traffic policy instance exists with the specified ID.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
-        /// The request was rejected because Amazon Route 53 was still processing a prior request.
+        /// If Amazon Route 53 can't process a request before the next request arrives, it will
+        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
+        /// (<code>Bad request</code>). If Amazon Route 53 returns this error repeatedly for the
+        /// same request, we recommend that you wait, in intervals of increasing duration, before
+        /// you try the request again.
         /// </exception>
         public UpdateTrafficPolicyInstanceResponse UpdateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest request)
         {

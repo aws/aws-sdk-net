@@ -29,26 +29,26 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteHealthCheck operation.
-    /// This action deletes a health check. To delete a health check, send a <code>DELETE</code>
-    /// request to the <code>/<i>Route 53 API version</i>/healthcheck/<i>health check ID</i></code>
-    /// resource.
+    /// Deletes a health check. Send a <code>DELETE</code> request to the <code>/2013-04-01/healthcheck/<i>health
+    /// check ID</i> </code> resource.
     /// 
-    ///  <important> You can delete a health check only if there are no resource record sets
-    /// associated with this health check. If resource record sets are associated with this
-    /// health check, you must disassociate them before you can delete your health check.
-    /// If you try to delete a health check that is associated with resource record sets,
-    /// Amazon Route 53 will deny your request with a <code>HealthCheckInUse</code> error.
-    /// For information about disassociating the records from your health check, see <code>ChangeResourceRecordSets</code>.</important>
+    ///  <important> 
+    /// <para>
+    /// Amazon Route 53 does not prevent you from deleting a health check even if the health
+    /// check is associated with one or more resource record sets. If you delete a health
+    /// check and you don't update the associated resource record sets, the future status
+    /// of the health check cannot be predicted and may change. This will affect the routing
+    /// of DNS queries for your DNS failover configuration. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
+    /// and Deleting Health Checks</a> in the Amazon Route 53 Developer Guide.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteHealthCheckRequest : AmazonRoute53Request
     {
         private string _healthCheckId;
 
         /// <summary>
-        /// Gets and sets the property HealthCheckId. 
-        /// <para>
-        /// The ID of the health check to delete.
-        /// </para>
+        /// Gets and sets the property HealthCheckId.
         /// </summary>
         public string HealthCheckId
         {

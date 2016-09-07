@@ -143,6 +143,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly CloudWatchRegion ApNortheast2 = new CloudWatchRegion("ap-northeast-2");
         /// <summary>
+        /// Constant ApSouth1 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion ApSouth1 = new CloudWatchRegion("ap-south-1");
+        /// <summary>
         /// Constant ApSoutheast1 for CloudWatchRegion
         /// </summary>
         public static readonly CloudWatchRegion ApSoutheast1 = new CloudWatchRegion("ap-southeast-1");
@@ -628,6 +632,10 @@ namespace Amazon.Route53
         /// Constant MX for RRType
         /// </summary>
         public static readonly RRType MX = new RRType("MX");
+        /// <summary>
+        /// Constant NAPTR for RRType
+        /// </summary>
+        public static readonly RRType NAPTR = new RRType("NAPTR");
         /// <summary>
         /// Constant NS for RRType
         /// </summary>

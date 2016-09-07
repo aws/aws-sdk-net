@@ -234,9 +234,11 @@ namespace Amazon.Runtime.Internal.Transform
                 case JsonToken.PropertyName:
                     text = data as string;
                     break;
-                case JsonToken.Boolean:                
+                case JsonToken.Boolean:
                 case JsonToken.Int:
+                case JsonToken.UInt:
                 case JsonToken.Long:
+                case JsonToken.ULong:
                     IFormattable iformattable = data as IFormattable;
                     if (iformattable != null)
                         text = iformattable.ToString(null, CultureInfo.InvariantCulture);

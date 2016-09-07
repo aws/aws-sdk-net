@@ -151,6 +151,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </summary>
         public static readonly AuthFlowType CUSTOM_AUTH = new AuthFlowType("CUSTOM_AUTH");
         /// <summary>
+        /// Constant REFRESH_TOKEN for AuthFlowType
+        /// </summary>
+        public static readonly AuthFlowType REFRESH_TOKEN = new AuthFlowType("REFRESH_TOKEN");
+        /// <summary>
         /// Constant REFRESH_TOKEN_AUTH for AuthFlowType
         /// </summary>
         public static readonly AuthFlowType REFRESH_TOKEN_AUTH = new AuthFlowType("REFRESH_TOKEN_AUTH");
@@ -370,6 +374,10 @@ namespace Amazon.CognitoIdentityProvider
         /// Constant ADMIN_NO_SRP_AUTH for ExplicitAuthFlowsType
         /// </summary>
         public static readonly ExplicitAuthFlowsType ADMIN_NO_SRP_AUTH = new ExplicitAuthFlowsType("ADMIN_NO_SRP_AUTH");
+        /// <summary>
+        /// Constant CUSTOM_AUTH_FLOW_ONLY for ExplicitAuthFlowsType
+        /// </summary>
+        public static readonly ExplicitAuthFlowsType CUSTOM_AUTH_FLOW_ONLY = new ExplicitAuthFlowsType("CUSTOM_AUTH_FLOW_ONLY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -450,6 +458,80 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UserImportJobStatusType.
+    /// </summary>
+    public class UserImportJobStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Created for UserImportJobStatusType
+        /// </summary>
+        public static readonly UserImportJobStatusType Created = new UserImportJobStatusType("Created");
+        /// <summary>
+        /// Constant Expired for UserImportJobStatusType
+        /// </summary>
+        public static readonly UserImportJobStatusType Expired = new UserImportJobStatusType("Expired");
+        /// <summary>
+        /// Constant Failed for UserImportJobStatusType
+        /// </summary>
+        public static readonly UserImportJobStatusType Failed = new UserImportJobStatusType("Failed");
+        /// <summary>
+        /// Constant InProgress for UserImportJobStatusType
+        /// </summary>
+        public static readonly UserImportJobStatusType InProgress = new UserImportJobStatusType("InProgress");
+        /// <summary>
+        /// Constant Pending for UserImportJobStatusType
+        /// </summary>
+        public static readonly UserImportJobStatusType Pending = new UserImportJobStatusType("Pending");
+        /// <summary>
+        /// Constant Stopped for UserImportJobStatusType
+        /// </summary>
+        public static readonly UserImportJobStatusType Stopped = new UserImportJobStatusType("Stopped");
+        /// <summary>
+        /// Constant Stopping for UserImportJobStatusType
+        /// </summary>
+        public static readonly UserImportJobStatusType Stopping = new UserImportJobStatusType("Stopping");
+        /// <summary>
+        /// Constant Succeeded for UserImportJobStatusType
+        /// </summary>
+        public static readonly UserImportJobStatusType Succeeded = new UserImportJobStatusType("Succeeded");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserImportJobStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserImportJobStatusType FindValue(string value)
+        {
+            return FindValue<UserImportJobStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserImportJobStatusType(string value)
         {
             return FindValue(value);
         }

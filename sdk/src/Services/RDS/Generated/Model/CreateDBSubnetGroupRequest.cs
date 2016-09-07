@@ -64,8 +64,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must contain no more than 255 alphanumeric characters. Cannot contain
-        /// periods, underscores, spaces, or hyphens. Must not be <code>default</code>.
+        /// Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores,
+        /// spaces, or hyphens. Must not be default.
         /// </para>
         ///  
         /// <para>

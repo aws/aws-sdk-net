@@ -29,11 +29,11 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCheckerIpRanges operation.
-    /// To retrieve a list of the IP ranges used by Amazon Route 53 health checkers to check
-    /// the health of your resources, send a <code>GET</code> request to the <code>/<i>Route
-    /// 53 API version</i>/checkeripranges</code> resource. You can use these IP addresses
-    /// to configure router and firewall rules to allow health checkers to check the health
-    /// of your resources.
+    /// Retrieves a list of the IP ranges used by Amazon Route 53 health checkers to check
+    /// the health of your resources. Send a <code>GET</code> request to the <code>/<i>Amazon
+    /// Route 53 API version</i>/checkeripranges</code> resource. Use these IP addresses to
+    /// configure router and firewall rules to allow health checkers to check the health of
+    /// your resources.
     /// </summary>
     public partial class GetCheckerIpRangesRequest : AmazonRoute53Request
     {

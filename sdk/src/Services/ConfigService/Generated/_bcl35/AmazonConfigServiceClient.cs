@@ -1992,10 +1992,44 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// An existing <a>StartConfigRulesEvaluation</a> call must complete for the rules that
-        /// you specified before you can call the API again. If you chose to have AWS Config stream
-        /// to an Amazon SNS topic, you will receive a notification when the evaluation starts.
+        /// An existing <a>StartConfigRulesEvaluation</a> call must complete for the specified
+        /// rules before you can call the API again. If you chose to have AWS Config stream to
+        /// an Amazon SNS topic, you will receive a <code>ConfigRuleEvaluationStarted</code> notification
+        /// when the evaluation starts.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You don't need to call the <code>StartConfigRulesEvaluation</code> API to run an evaluation
+        /// for a new rule. When you create a new rule, AWS Config automatically evaluates your
+        /// resources against the rule. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The <code>StartConfigRulesEvaluation</code> API is useful if you want to run on-demand
+        /// evaluations, such as the following example:
+        /// </para>
+        ///  <ol> <li>
+        /// <para>
+        /// You have a custom rule that evaluates your IAM resources every 24 hours.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// You update your Lambda function to add additional conditions to your rule.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// Instead of waiting for the next periodic evaluation, you call the <code>StartConfigRulesEvaluation</code>
+        /// API.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// AWS Config invokes your Lambda function and evaluates your IAM resources.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// Your custom rule will still run periodic evaluations every 24 hours.
+        /// </para>
+        /// </li> </ol>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartConfigRulesEvaluation service method.</param>
         /// 
@@ -2005,8 +2039,8 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.LimitExceededException">
-        /// This exception is thrown when the previous <a>StartConfigRulesEvaluation</a> call
-        /// is in progress or a previous evaluation is in progress.
+        /// This exception is thrown if an evaluation is in progress or if you call the <a>StartConfigRulesEvaluation</a>
+        /// API more than once per minute.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
         /// One or more AWS Config rules in the request are invalid. Verify that the rule names

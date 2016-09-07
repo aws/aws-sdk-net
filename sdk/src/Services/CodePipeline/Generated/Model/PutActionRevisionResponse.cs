@@ -38,7 +38,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property NewRevision. 
         /// <para>
-        /// The new revision number or ID for the revision after the action completes.
+        /// Indicates whether the artifact revision was previously used in an execution of the
+        /// specified pipeline.
         /// </para>
         /// </summary>
         public bool NewRevision

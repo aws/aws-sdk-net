@@ -97,7 +97,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchSpecification. 
         /// <para>
-        /// The launch specification.
+        /// The launch specification. You must match the instance type, Availability Zone, network,
+        /// and platform of the schedule that you purchased.
         /// </para>
         /// </summary>
         public ScheduledInstancesLaunchSpecification LaunchSpecification

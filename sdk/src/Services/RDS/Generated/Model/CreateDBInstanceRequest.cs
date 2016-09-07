@@ -814,12 +814,6 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  <b>Version 5.5 (available in all AWS regions):</b> <code> 5.5.46</code> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 5.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-        /// eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code>
-        /// 5.1.73a | 5.1.73b</code> 
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  <b>Oracle Database Enterprise Edition (oracle-ee)</b> 
@@ -843,23 +837,6 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b> <code> 12.1.0.2.v2
         /// | 12.1.0.2.v3 | 12.1.0.2.v4</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-        /// eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code>
-        /// 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 11.2 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
-        /// <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-        /// eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code>
-        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -888,23 +865,6 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-        /// eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code>
-        /// 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 11.2 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
-        /// <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-        /// eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <b>Version 11.2 (available in all AWS regions):</b> <code> 11.2.0.4.v1 | 11.2.0.4.v3
         /// | 11.2.0.4.v4</code> 
         /// </para>
@@ -927,23 +887,6 @@ namespace Amazon.RDS.Model
         ///  <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
         /// eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3
         /// | 12.1.0.1.v4 | 12.1.0.1.v5</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-        /// eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code>
-        /// 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 11.2 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
-        /// <code> 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 11.2 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
-        /// eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 11.2.0.3.v4</code>
-        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>

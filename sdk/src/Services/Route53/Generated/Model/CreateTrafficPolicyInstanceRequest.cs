@@ -38,11 +38,10 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// To create a traffic policy instance, send a <code>POST</code> request to the <code>/<i>Route
-    /// 53 API version</i>/trafficpolicyinstance</code> resource. The request body must include
-    /// a document with a <code>CreateTrafficPolicyRequest</code> element. The response returns
-    /// the <code>CreateTrafficPolicyInstanceResponse</code> element, which contains information
-    /// about the traffic policy instance.
+    /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code>
+    /// resource. The request body must include a document with a <code>CreateTrafficPolicyRequest</code>
+    /// element. The response returns the <code>CreateTrafficPolicyInstanceResponse</code>
+    /// element, which contains information about the traffic policy instance.
     /// </para>
     /// </summary>
     public partial class CreateTrafficPolicyInstanceRequest : AmazonRoute53Request
@@ -95,8 +94,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property TTL. 
         /// <para>
-        /// The TTL that you want Amazon Route 53 to assign to all of the resource record sets
-        /// that it creates in the specified hosted zone.
+        /// (Optional) The TTL that you want Amazon Route 53 to assign to all of the resource
+        /// record sets that it creates in the specified hosted zone.
         /// </para>
         /// </summary>
         public long TTL

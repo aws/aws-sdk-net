@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// The name and value of a dimension for a CloudWatch metric.
+    /// For the metric that the CloudWatch alarm is associated with, a complex type that contains
+    /// information about one dimension.
     /// </summary>
     public partial class Dimension
     {
@@ -38,7 +39,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the dimension.
+        /// For the metric that the CloudWatch alarm is associated with, the name of one dimension.
         /// </para>
         /// </summary>
         public string Name
@@ -56,7 +57,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the dimension.
+        /// For the metric that the CloudWatch alarm is associated with, the value of one dimension.
         /// </para>
         /// </summary>
         public string Value

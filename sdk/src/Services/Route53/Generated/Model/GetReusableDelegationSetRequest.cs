@@ -29,8 +29,8 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetReusableDelegationSet operation.
-    /// To retrieve the reusable delegation set, send a <code>GET</code> request to the <code>/<i>Route
-    /// 53 API version</i>/delegationset/<i>delegation set ID</i></code> resource.
+    /// Retrieves the reusable delegation set. Send a <code>GET</code> request to the <code>/2013-04-01/delegationset/<i>delegation
+    /// set ID</i> </code> resource.
     /// </summary>
     public partial class GetReusableDelegationSetRequest : AmazonRoute53Request
     {

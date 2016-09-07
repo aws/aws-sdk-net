@@ -37,6 +37,7 @@ namespace Amazon.RDS.Model
         private string _custSubscriptionId;
         private bool? _enabled;
         private List<string> _eventCategoriesList = new List<string>();
+        private string _eventSubscriptionArn;
         private string _snsTopicArn;
         private List<string> _sourceIdsList = new List<string>();
         private string _sourceType;
@@ -114,6 +115,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetEventCategoriesList()
         {
             return this._eventCategoriesList != null && this._eventCategoriesList.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventSubscriptionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the event subscription.
+        /// </para>
+        /// </summary>
+        public string EventSubscriptionArn
+        {
+            get { return this._eventSubscriptionArn; }
+            set { this._eventSubscriptionArn = value; }
+        }
+
+        // Check to see if EventSubscriptionArn property is set
+        internal bool IsSetEventSubscriptionArn()
+        {
+            return this._eventSubscriptionArn != null;
         }
 
         /// <summary>

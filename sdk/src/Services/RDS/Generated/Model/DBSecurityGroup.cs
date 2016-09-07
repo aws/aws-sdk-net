@@ -54,12 +54,31 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DBSecurityGroup
     {
+        private string _dbSecurityGroupArn;
         private string _dbSecurityGroupDescription;
         private string _dbSecurityGroupName;
         private List<EC2SecurityGroup> _ec2SecurityGroups = new List<EC2SecurityGroup>();
         private List<IPRange> _ipRanges = new List<IPRange>();
         private string _ownerId;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property DBSecurityGroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the DB security group.
+        /// </para>
+        /// </summary>
+        public string DBSecurityGroupArn
+        {
+            get { return this._dbSecurityGroupArn; }
+            set { this._dbSecurityGroupArn = value; }
+        }
+
+        // Check to see if DBSecurityGroupArn property is set
+        internal bool IsSetDBSecurityGroupArn()
+        {
+            return this._dbSecurityGroupArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DBSecurityGroupDescription. 

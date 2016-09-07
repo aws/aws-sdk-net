@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type containing information about the specified health check.
+    /// A complex type that contains the response to a <code>GetHealthCheck</code> request.
     /// </summary>
     public partial class GetHealthCheckResponse : AmazonWebServiceResponse
     {
@@ -37,7 +37,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HealthCheck. 
         /// <para>
-        /// A complex type that contains the information about the specified health check.
+        /// A complex type that contains information about one health check that is associated
+        /// with the current AWS account.
         /// </para>
         /// </summary>
         public HealthCheck HealthCheck

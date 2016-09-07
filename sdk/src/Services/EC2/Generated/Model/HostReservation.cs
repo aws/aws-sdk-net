@@ -87,7 +87,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Duration. 
         /// <para>
         /// The length of the reservation's term, specified in seconds. Can be <code>31536000
-        /// (1 year)</code> | <code>94608000 (3 years)</code> | <code>157680000 (5 years)</code>.
+        /// (1 year)</code> | <code>94608000 (3 years)</code>.
         /// </para>
         /// </summary>
         public int Duration

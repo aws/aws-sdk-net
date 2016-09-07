@@ -41,29 +41,29 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>SubscriptionArn</code> -- the subscription's ARN
+        ///  <code>SubscriptionArn</code> -- the subscription's ARN
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>TopicArn</code> -- the topic ARN that the subscription is associated with
+        ///  <code>TopicArn</code> -- the topic ARN that the subscription is associated with
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>Owner</code> -- the AWS account ID of the subscription's owner
+        ///  <code>Owner</code> -- the AWS account ID of the subscription's owner
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>ConfirmationWasAuthenticated</code> -- true if the subscription confirmation
+        ///  <code>ConfirmationWasAuthenticated</code> -- true if the subscription confirmation
         /// request was authenticated
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>DeliveryPolicy</code> -- the JSON serialization of the subscription's delivery
+        ///  <code>DeliveryPolicy</code> -- the JSON serialization of the subscription's delivery
         /// policy
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the effective delivery
+        ///  <code>EffectiveDeliveryPolicy</code> -- the JSON serialization of the effective delivery
         /// policy that takes into account the topic delivery policy and account system defaults
         /// </para>
         ///  </li> </ul>

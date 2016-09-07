@@ -1,3 +1,62 @@
+### 3.1.98.0 (2016-09-06 21:59 UTC)
+* CodePipeline (3.1.5.0)
+	* Incorporated API updates to correct naming of members in types used in the recently published view changes APIs. Please note these are breaking changes in the model shapes.
+* EC2 (3.1.20.1)
+	* Documentation updates.
+* ECR (3.1.2.1)
+	* Documentation updates.
+* ECS (3.1.8.1)
+	* Documentation updates.
+* RDS (3.1.18.0)
+	* New API for RDS: DescribeSourceRegions. The DescribeSourceRegions API provides a list of all the source region names and endpoints for any region. Source regions are the regions where current region can get a replica or copy a snapshot from.
+* SimpleNotificationService (3.1.2.0)
+	* Declaring AuthorizationErrorException on the 5 new SNS-SMS APIs.
+
+### 3.1.97.0 (2016-09-02 00:53 UTC)
+* ApplicationAutoScaling (3.1.1.0)
+	* ApplicationAutoScaling adds support for automatically scaling an Amazon EC2 Spot fleet in order to manage application availability and costs during changes in demand based on conditions you define.
+* CognitoIdentityProvider (3.1.2.0)
+	* Added support for bulk import of users.
+* ConfigService (3.1.7.0)
+	* ResourceType Enum Update for AWS Config: Supporting a application loadbalancer resource type in AWS Config 
+* GameLift (3.1.3.0)
+	* Customers can use Linux in addition to Windows EC2 instances.
+* RDS (3.1.17.0)
+	* We currently allow customers to add options to a rds option group that are mutually exclusive. We want to avoid that while validating the request to add an option to the option group. As part of this effort we are modifying the describe-option-group-options api response to include information about options that conflict with each other.
+
+### 3.1.96.0 (2016-08-30 21:02 UTC)
+* AutoScaling (3.1.4.1)
+	* Documentation update.
+* CloudFront (3.1.6.0)
+	* CloudFront is adding a Querystring Whitelist Option. Customers will be able to choose to forward certain querystring keys instead of a.) all of them or b.) none of them.
+* CodePipeline (3.1.4.0)
+	* CodePiepline has introduced a new feature to return pipeline execution details. Execution details consists of source revisions that are running in the pipeline. Customers will be able to tell what source revisions that are running through the stages in pipeline by fetching execution details of each stage.
+* Route53 (3.1.6.0)
+	* With this release, Route 53 will support the following new features: support for the NAPTR DNS record type, a new TestDNSAnswer API which enables customers to send a test query against a specific name server using spoofed delegation nameserver, resolver, and ECS IPs, and support metric-based health check in ap-south-1 region.
+* SimpleSystemsManagement (3.1.4.2)
+	* Documentation update.
+* Core 3.1.11.0
+	* Fixed issue with UnityWebRequest for Unity 5.4.
+Deprecated ClientConfig.ReadEntireResponse property.
+
+
+
+### 3.1.95.0 (2016-08-24 00:11 UTC)
+* OpsWorks (3.1.3.5)
+	* Documentation updates for expanded region support.
+* RDS (3.1.16.0)
+	* Addition of resource ARNs to Describe APIs.
+
+### 3.1.94.0 (2016-08-19 02:24 UTC)
+* EC2 (3.1.20.0)
+	* Schema Update for Dedicated Host Reservations and API Update for EC2-SpotFleet: Adding new parameters to DescribeSpotFleerRequest API
+* IdentityManagement (3.1.4.9)
+	* Doc only update
+* KeyManagementService (3.1.3.1)
+	* Updating the version numbers
+* WorkSpaces (3.1.3.0)
+	* New APIs to support the launch and management of WorkSpaces that are paid for and used by the hour.
+
 ### 3.1.93.0 (2016-08-17 01:52 UTC)
 * APIGateway (3.1.7.0)
 	* Amazon API Gateway now supports API usage plans. You can now easily define plans for 3rd party developers by associating them with individual API keys. This allows you to configure which APIs the caller can access as well as define throttling and request quota limits. You can also extract utilization data on a per-API key basis to analyze API usage and generate billing documents. Usage plans allows you to easily manage and monetize your APIs for your API-based business.

@@ -115,23 +115,29 @@ namespace Amazon.Runtime.Internal
             bool shouldRetry = false;
             do
             {
+                System.Runtime.ExceptionServices.ExceptionDispatchInfo capturedException = null;
                 try
                 {
                     return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
                 }
-                catch (Exception exception)
+                catch (Exception e)
                 {
-                    shouldRetry = await this.RetryPolicy.RetryAsync(executionContext, exception).ConfigureAwait(false);
+                    capturedException = System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(e);
+                }
+
+                if (capturedException != null)
+                {
+                    shouldRetry = await this.RetryPolicy.RetryAsync(executionContext, capturedException.SourceException).ConfigureAwait(false);
                     if (!shouldRetry)
                     {
-                        LogForError(requestContext, exception);
-                        throw;
+                        LogForError(requestContext, capturedException.SourceException);
+                        capturedException.Throw();
                     }
                     else
                     {
                         requestContext.Retries++;
                         requestContext.Metrics.SetCounter(Metric.AttemptCount, requestContext.Retries);
-                        LogForRetry(requestContext, exception);
+                        LogForRetry(requestContext, capturedException.SourceException);
                     }
                 }
 

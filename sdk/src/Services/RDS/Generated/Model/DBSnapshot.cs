@@ -48,6 +48,7 @@ namespace Amazon.RDS.Model
         private int? _allocatedStorage;
         private string _availabilityZone;
         private string _dbInstanceIdentifier;
+        private string _dbSnapshotArn;
         private string _dbSnapshotIdentifier;
         private bool? _encrypted;
         private string _engine;
@@ -123,6 +124,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBInstanceIdentifier()
         {
             return this._dbInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBSnapshotArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the DB snapshot.
+        /// </para>
+        /// </summary>
+        public string DBSnapshotArn
+        {
+            get { return this._dbSnapshotArn; }
+            set { this._dbSnapshotArn = value; }
+        }
+
+        // Check to see if DBSnapshotArn property is set
+        internal bool IsSetDBSnapshotArn()
+        {
+            return this._dbSnapshotArn != null;
         }
 
         /// <summary>

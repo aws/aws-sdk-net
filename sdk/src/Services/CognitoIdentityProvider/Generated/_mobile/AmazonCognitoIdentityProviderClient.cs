@@ -891,6 +891,37 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  CreateUserImportJob
+
+        internal CreateUserImportJobResponse CreateUserImportJob(CreateUserImportJobRequest request)
+        {
+            var marshaller = new CreateUserImportJobRequestMarshaller();
+            var unmarshaller = CreateUserImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserImportJobRequest,CreateUserImportJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUserImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserImportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateUserImportJobResponse> CreateUserImportJobAsync(CreateUserImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateUserImportJobRequestMarshaller();
+            var unmarshaller = CreateUserImportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateUserImportJobRequest,CreateUserImportJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateUserPool
 
         internal CreateUserPoolResponse CreateUserPool(CreateUserPoolRequest request)
@@ -1077,6 +1108,37 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  DescribeUserImportJob
+
+        internal DescribeUserImportJobResponse DescribeUserImportJob(DescribeUserImportJobRequest request)
+        {
+            var marshaller = new DescribeUserImportJobRequestMarshaller();
+            var unmarshaller = DescribeUserImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUserImportJobRequest,DescribeUserImportJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUserImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserImportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeUserImportJobResponse> DescribeUserImportJobAsync(DescribeUserImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeUserImportJobRequestMarshaller();
+            var unmarshaller = DescribeUserImportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeUserImportJobRequest,DescribeUserImportJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeUserPool
 
         internal DescribeUserPoolResponse DescribeUserPool(DescribeUserPoolRequest request)
@@ -1196,6 +1258,37 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = ForgotPasswordResponseUnmarshaller.Instance;
 
             return InvokeAsync<ForgotPasswordRequest,ForgotPasswordResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCSVHeader
+
+        internal GetCSVHeaderResponse GetCSVHeader(GetCSVHeaderRequest request)
+        {
+            var marshaller = new GetCSVHeaderRequestMarshaller();
+            var unmarshaller = GetCSVHeaderResponseUnmarshaller.Instance;
+
+            return Invoke<GetCSVHeaderRequest,GetCSVHeaderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCSVHeader operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCSVHeader operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetCSVHeaderResponse> GetCSVHeaderAsync(GetCSVHeaderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetCSVHeaderRequestMarshaller();
+            var unmarshaller = GetCSVHeaderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCSVHeaderRequest,GetCSVHeaderResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1382,6 +1475,37 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = ListDevicesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDevicesRequest,ListDevicesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListUserImportJobs
+
+        internal ListUserImportJobsResponse ListUserImportJobs(ListUserImportJobsRequest request)
+        {
+            var marshaller = new ListUserImportJobsRequestMarshaller();
+            var unmarshaller = ListUserImportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListUserImportJobsRequest,ListUserImportJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUserImportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUserImportJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListUserImportJobsResponse> ListUserImportJobsAsync(ListUserImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListUserImportJobsRequestMarshaller();
+            var unmarshaller = ListUserImportJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListUserImportJobsRequest,ListUserImportJobsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1599,6 +1723,68 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = SignUpResponseUnmarshaller.Instance;
 
             return InvokeAsync<SignUpRequest,SignUpResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartUserImportJob
+
+        internal StartUserImportJobResponse StartUserImportJob(StartUserImportJobRequest request)
+        {
+            var marshaller = new StartUserImportJobRequestMarshaller();
+            var unmarshaller = StartUserImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartUserImportJobRequest,StartUserImportJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartUserImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartUserImportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<StartUserImportJobResponse> StartUserImportJobAsync(StartUserImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartUserImportJobRequestMarshaller();
+            var unmarshaller = StartUserImportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartUserImportJobRequest,StartUserImportJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopUserImportJob
+
+        internal StopUserImportJobResponse StopUserImportJob(StopUserImportJobRequest request)
+        {
+            var marshaller = new StopUserImportJobRequestMarshaller();
+            var unmarshaller = StopUserImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopUserImportJobRequest,StopUserImportJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopUserImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopUserImportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<StopUserImportJobResponse> StopUserImportJobAsync(StopUserImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StopUserImportJobRequestMarshaller();
+            var unmarshaller = StopUserImportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopUserImportJobRequest,StopUserImportJobResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

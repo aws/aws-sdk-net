@@ -185,6 +185,10 @@ namespace Amazon.ApplicationAutoScaling
     {
 
         /// <summary>
+        /// Constant Ec2SpotFleetRequestTargetCapacity for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension Ec2SpotFleetRequestTargetCapacity = new ScalableDimension("ec2:spot-fleet-request:TargetCapacity");
+        /// <summary>
         /// Constant EcsServiceDesiredCount for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension EcsServiceDesiredCount = new ScalableDimension("ecs:service:DesiredCount");
@@ -296,6 +300,10 @@ namespace Amazon.ApplicationAutoScaling
     public class ServiceNamespace : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Ec2 for ServiceNamespace
+        /// </summary>
+        public static readonly ServiceNamespace Ec2 = new ServiceNamespace("ec2");
         /// <summary>
         /// Constant Ecs for ServiceNamespace
         /// </summary>

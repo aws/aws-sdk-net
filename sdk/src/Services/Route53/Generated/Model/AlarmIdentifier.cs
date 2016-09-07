@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains information to uniquely identify the CloudWatch alarm
-    /// that you're associating with a Route 53 health check.
+    /// A complex type that identifies the CloudWatch alarm that you want Amazon Route 53
+    /// health checkers to use to determine whether this health check is healthy.
     /// </summary>
     public partial class AlarmIdentifier
     {
@@ -39,7 +39,14 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The <code>CloudWatchRegion</code> that the CloudWatch alarm was created in.
+        /// A complex type that identifies the CloudWatch alarm that you want Amazon Route 53
+        /// health checkers to use to determine whether this health check is healthy.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the current list of CloudWatch regions, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon
+        /// CloudWatch</a> in <i>AWS Regions and Endpoints</i> in the <i>Amazon Web Services General
+        /// Reference</i>.
         /// </para>
         /// </summary>
         public CloudWatchRegion Region
@@ -57,7 +64,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the CloudWatch alarm.
+        /// The name of the CloudWatch alarm that you want Amazon Route 53 health checkers to
+        /// use to determine whether this health check is healthy.
         /// </para>
         /// </summary>
         public string Name

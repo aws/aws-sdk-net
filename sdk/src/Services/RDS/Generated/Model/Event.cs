@@ -35,6 +35,7 @@ namespace Amazon.RDS.Model
         private DateTime? _date;
         private List<string> _eventCategories = new List<string>();
         private string _message;
+        private string _sourceArn;
         private string _sourceIdentifier;
         private SourceType _sourceType;
 
@@ -95,6 +96,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetMessage()
         {
             return this._message != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the event.
+        /// </para>
+        /// </summary>
+        public string SourceArn
+        {
+            get { return this._sourceArn; }
+            set { this._sourceArn = value; }
+        }
+
+        // Check to see if SourceArn property is set
+        internal bool IsSetSourceArn()
+        {
+            return this._sourceArn != null;
         }
 
         /// <summary>

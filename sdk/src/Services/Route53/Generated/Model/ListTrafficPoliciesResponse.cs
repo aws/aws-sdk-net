@@ -67,7 +67,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code>
+        /// Valid Values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool IsTruncated

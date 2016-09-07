@@ -141,7 +141,6 @@ namespace Amazon.Runtime.Internal
                 {
                     var unmarshaller = requestContext.Unmarshaller;
                     var readEntireResponse = requestContext.ClientConfig.LogResponse ||
-                            requestContext.ClientConfig.ReadEntireResponse ||
                             AWSConfigs.LoggingConfig.LogResponses != ResponseLoggingOption.Never;
 
                     UnmarshallerContext errorContext = unmarshaller.CreateContext(

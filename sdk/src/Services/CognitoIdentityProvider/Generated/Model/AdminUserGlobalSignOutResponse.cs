@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The global signot response, as an administrator.
+    /// The global sign-out response, as an administrator.
     /// </summary>
     public partial class AdminUserGlobalSignOutResponse : AmazonWebServiceResponse
     {

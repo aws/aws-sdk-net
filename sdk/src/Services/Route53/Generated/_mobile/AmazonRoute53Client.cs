@@ -1001,8 +1001,8 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// To retrieve a count of all your hosted zones, send a <code>GET</code> request to the
-        /// <code>/<i>Route 53 API version</i>/hostedzonecount</code> resource.
+        /// Retrieves a count of all your hosted zones. Send a <code>GET</code> request to the
+        /// <code>/2013-04-01/hostedzonecount</code> resource.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1010,7 +1010,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the GetHostedZoneCount service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         public Task<GetHostedZoneCountResponse> GetHostedZoneCountAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1244,22 +1244,17 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// To retrieve a list of supported geo locations, send a <code>GET</code> request to
-        /// the <code>/<i>Route 53 API version</i>/geolocations</code> resource. The response
-        /// to this request includes a <code>GeoLocationDetailsList</code> element with zero,
-        /// one, or multiple <code>GeoLocationDetails</code> child elements. The list is sorted
-        /// by country code, and then subdivision code, followed by continents at the end of the
-        /// list. 
+        /// Retrieves a list of supported geo locations. Send a <code>GET</code> request to the
+        /// <code>/2013-04-01/geolocations</code> resource. The response to this request includes
+        /// a <code>GeoLocationDetailsList</code> element for each location that Amazon Route
+        /// 53 supports.
         /// 
         ///  
         /// <para>
-        /// By default, the list of geo locations is displayed on a single page. You can control
-        /// the length of the page that is displayed by using the <code>MaxItems</code> parameter.
-        /// If the list is truncated, <code>IsTruncated</code> will be set to <i>true</i> and
-        /// a combination of <code>NextContinentCode, NextCountryCode, NextSubdivisionCode</code>
-        /// will be populated. You can pass these as parameters to <code>StartContinentCode, StartCountryCode,
-        /// StartSubdivisionCode</code> to control the geo location that the list begins with.
-        /// 
+        /// Countries are listed first, and continents are listed last. If Amazon Route 53 supports
+        /// subdivisions for a country (for example, states or provinces), the subdivisions for
+        /// that country are listed in alphabetical order immediately after the corresponding
+        /// country. 
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -1268,7 +1263,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListGeoLocations service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         public Task<ListGeoLocationsResponse> ListGeoLocationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1312,16 +1307,19 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// To retrieve a list of your health checks, send a <code>GET</code> request to the <code>/<i>Route
-        /// 53 API version</i>/healthcheck</code> resource. The response to this request includes
-        /// a <code>HealthChecks</code> element with zero, one, or multiple <code>HealthCheck</code>
-        /// child elements. By default, the list of health checks is displayed on a single page.
-        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
-        /// parameter. You can use the <code>Marker</code> parameter to control the health check
-        /// that the list begins with. 
+        /// Retrieve a list of your health checks. Send a <code>GET</code> request to the <code>/2013-04-01/healthcheck</code>
+        /// resource. The response to this request includes a <code>HealthChecks</code> element
+        /// with zero or more <code>HealthCheck</code> child elements. By default, the list of
+        /// health checks is displayed on a single page. You can control the length of the page
+        /// that is displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code>
+        /// parameter to control the health check that the list begins with.
         /// 
-        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
-        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        ///  
+        /// <para>
+        /// For information about listing health checks using the Amazon Route 53 console, see
+        /// <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
+        /// Route 53 Health Checks and DNS Failover</a>.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1333,7 +1331,7 @@ namespace Amazon.Route53
         /// Please consider using a newer endpoint or a tool that does so.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         public Task<ListHealthChecksResponse> ListHealthChecksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1377,16 +1375,47 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// To retrieve a list of your hosted zones, send a <code>GET</code> request to the <code>/<i>Route
-        /// 53 API version</i>/hostedzone</code> resource. The response to this request includes
-        /// a <code>HostedZones</code> element with zero, one, or multiple <code>HostedZone</code>
-        /// child elements. By default, the list of hosted zones is displayed on a single page.
-        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
-        /// parameter. You can use the <code>Marker</code> parameter to control the hosted zone
-        /// that the list begins with. 
+        /// To retrieve a list of your public and private hosted zones, send a <code>GET</code>
+        /// request to the <code>/2013-04-01/hostedzone</code> resource. The response to this
+        /// request includes a <code>HostedZones</code> child element for each hosted zone created
+        /// by the current AWS account.
         /// 
-        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
-        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        ///  
+        /// <para>
+        /// Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot
+        /// of hosted zones, you can use the <code>maxitems</code> parameter to list them in groups
+        /// of up to 100. The response includes four values that help navigate from one group
+        /// of <code>maxitems</code> hosted zones to the next:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>MaxItems</code>is the value specified for the <code>maxitems</code> parameter
+        /// in the request that produced the current response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the value of <code>IsTruncated</code> in the response is true, there are more hosted
+        /// zones associated with the current AWS account. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NextMarker</code>is the hosted zone ID of the next hosted zone that is associated
+        /// with the current AWS account. If you want to list more hosted zones, make another
+        /// call to <code>ListHostedZones</code>, and specify the value of the <code>NextMarker</code>
+        /// element in the marker parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>IsTruncated</code> is false, the <code>NextMarker</code> element is omitted
+        /// from the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you're making the second or subsequent call to <code>ListHostedZones</code>, the
+        /// <code>Marker</code> element matches the value that you specified in the <code>marker</code>
+        /// parameter in the previous request.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1394,13 +1423,13 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListHostedZones service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.DelegationSetNotReusableException">
-        /// The specified delegation set has not been marked as reusable.
+        /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
-        /// The specified delegation set does not exist.
+        /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
         public Task<ListHostedZonesResponse> ListHostedZonesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1507,15 +1536,19 @@ namespace Amazon.Route53
 
         /// <summary>
         /// To retrieve a list of your reusable delegation sets, send a <code>GET</code> request
-        /// to the <code>/<i>Route 53 API version</i>/delegationset</code> resource. The response
-        /// to this request includes a <code>DelegationSets</code> element with zero, one, or
-        /// multiple <code>DelegationSet</code> child elements. By default, the list of delegation
-        /// sets is displayed on a single page. You can control the length of the page that is
-        /// displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code>
-        /// parameter to control the delegation set that the list begins with. 
+        /// to the <code>/2013-04-01/delegationset</code> resource. The response to this request
+        /// includes a <code>DelegationSets</code> element with zero, one, or multiple <code>DelegationSet</code>
+        /// child elements. By default, the list of delegation sets is displayed on a single page.
+        /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
+        /// parameter. You can use the <code>Marker</code> parameter to control the delegation
+        /// set that the list begins with. 
         /// 
-        ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
-        /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+        ///  <note> 
+        /// <para>
+        ///  Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater
+        /// than 100, Amazon Route 53 returns only the first 100.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1523,7 +1556,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the ListReusableDelegationSets service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// Some value specified in the request is invalid or the XML document is malformed.
+        /// The input is not valid.
         /// </exception>
         public Task<ListReusableDelegationSetsResponse> ListReusableDelegationSetsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1763,6 +1796,37 @@ namespace Amazon.Route53
             var unmarshaller = ListTrafficPolicyVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTrafficPolicyVersionsRequest,ListTrafficPolicyVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TestDNSAnswer
+
+        internal TestDNSAnswerResponse TestDNSAnswer(TestDNSAnswerRequest request)
+        {
+            var marshaller = new TestDNSAnswerRequestMarshaller();
+            var unmarshaller = TestDNSAnswerResponseUnmarshaller.Instance;
+
+            return Invoke<TestDNSAnswerRequest,TestDNSAnswerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TestDNSAnswer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TestDNSAnswer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<TestDNSAnswerResponse> TestDNSAnswerAsync(TestDNSAnswerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new TestDNSAnswerRequestMarshaller();
+            var unmarshaller = TestDNSAnswerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TestDNSAnswerRequest,TestDNSAnswerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

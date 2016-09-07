@@ -464,7 +464,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The stack's AWS region, such as "us-east-1". For more information about Amazon regions,
+        /// The stack's AWS region, such as "ap-south-1". For more information about Amazon regions,
         /// see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
         /// Endpoints</a>.
         /// </para>

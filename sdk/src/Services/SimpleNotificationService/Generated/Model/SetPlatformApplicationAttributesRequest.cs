@@ -45,55 +45,55 @@ namespace Amazon.SimpleNotificationService.Model
         /// <para>
         /// A map of the platform application attributes. Attributes in this map include the following:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>PlatformCredential</code> -- The credential received from the notification service.
-        /// For APNS/APNS_SANDBOX, PlatformCredential is private key. For GCM, PlatformCredential
+        ///  <code>PlatformCredential</code> -- The credential received from the notification
+        /// service. For APNS/APNS_SANDBOX, PlatformCredential is private key. For GCM, PlatformCredential
         /// is "API key". For ADM, PlatformCredential is "client secret".
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>PlatformPrincipal</code> -- The principal received from the notification service.
+        ///  <code>PlatformPrincipal</code> -- The principal received from the notification service.
         /// For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM, PlatformPrincipal
         /// is not applicable. For ADM, PlatformPrincipal is "client id".
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications
+        ///  <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event notifications
         /// should be sent.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications
+        ///  <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event notifications
         /// should be sent.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications
+        ///  <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event notifications
         /// should be sent.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications
+        ///  <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event notifications
         /// should be sent upon Direct Publish delivery failure (permanent) to one of the application's
         /// endpoints.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>SuccessFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write
+        ///  <code>SuccessFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write
         /// access to use CloudWatch Logs on your behalf.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>FailureFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write
+        ///  <code>FailureFeedbackRoleArn</code> -- IAM role ARN used to give Amazon SNS write
         /// access to use CloudWatch Logs on your behalf.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>SuccessFeedbackSampleRate</code> -- Sample rate percentage (0-100) of successfully
+        ///  <code>SuccessFeedbackSampleRate</code> -- Sample rate percentage (0-100) of successfully
         /// delivered messages.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public Dictionary<string, string> Attributes
         {

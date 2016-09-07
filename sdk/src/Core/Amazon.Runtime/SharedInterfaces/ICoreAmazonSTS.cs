@@ -13,6 +13,12 @@ namespace Amazon.Runtime.SharedInterfaces
     {
 #if BCL
         /// <summary>
+        /// <para>
+        /// This method is used internally to access the Amazon Security Token
+        /// service within other service assemblies.
+        /// Please use AmazonSecurityTokenServiceClient to access the Amazon Security Token
+        /// service instead.
+        /// </para>
         /// Authenticates against a federated identity endpoint supporting SAML and returns 
         /// temporary AWS credentials for the supplied role. 
         /// </summary>

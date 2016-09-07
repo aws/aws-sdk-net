@@ -195,10 +195,10 @@ namespace Amazon.GameLift.Model
         /// Current status of the scaling policy. The scaling policy is only in force when in
         /// an <code>ACTIVE</code> status.
         /// </para>
-        ///  <ul> <li> <b>ACTIVE</b> – The scaling policy is currently in force.</li> <li> <b>UPDATEREQUESTED</b>
+        ///  <ul> <li> <b>ACTIVE</b> – The scaling policy is currently in force.</li> <li> <b>UPDATE_REQUESTED</b>
         /// – A request to update the scaling policy has been received.</li> <li> <b>UPDATING</b>
-        /// – A change is being made to the scaling policy.</li> <li> <b>DELETEREQUESTED</b> –
-        /// A request to delete the scaling policy has been received.</li> <li> <b>DELETING</b>
+        /// – A change is being made to the scaling policy.</li> <li> <b>DELETE_REQUESTED</b>
+        /// – A request to delete the scaling policy has been received.</li> <li> <b>DELETING</b>
         /// – The scaling policy is being deleted.</li> <li> <b>DELETED</b> – The scaling policy
         /// has been deleted.</li> <li> <b>ERROR</b> – An error occurred in creating the policy.
         /// It should be removed and recreated.</li> </ul>

@@ -29,8 +29,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the ListChangeBatchesByHostedZone operation.
-    /// This action gets the list of ChangeBatches in a given time period for a given hosted
-    /// zone.
+    /// Gets the list of ChangeBatches in a given time period for a given hosted zone.
     /// </summary>
     public partial class ListChangeBatchesByHostedZoneRequest : AmazonRoute53Request
     {

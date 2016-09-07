@@ -3115,7 +3115,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Adds or overwrites one or more tags for the specified Amazon EC2 resource or resources.
-        /// Each resource can have a maximum of 10 tags. Each tag consists of a key and optional
+        /// Each resource can have a maximum of 50 tags. Each tag consists of a key and optional
         /// value. Tag keys must be unique per resource.
         /// 
         ///  
@@ -10828,13 +10828,17 @@ namespace Amazon.EC2
         #region  ModifyIdentityIdFormat
 
         /// <summary>
-        /// Modifies the ID format of a resource for the specified IAM user, IAM role, or root
-        /// user. You can specify that resources should receive longer IDs (17-character IDs)
-        /// when they are created. The following resource types support longer IDs: <code>instance</code>
-        /// | <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
-        /// IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
+        /// Modifies the ID format of a resource for a specified IAM user, IAM role, or the root
+        /// user for an account; or all IAM users, IAM roles, and the root user for an account.
+        /// You can specify that resources should receive longer IDs (17-character IDs) when they
+        /// are created. 
         /// 
+        ///  
+        /// <para>
+        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>
+        /// | <code>snapshot</code> | <code>volume</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+        /// IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
+        /// </para>
         ///  
         /// <para>
         /// This setting applies to the principal specified in the request; it does not apply

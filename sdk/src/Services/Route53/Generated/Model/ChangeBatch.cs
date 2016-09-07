@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains an optional comment and the changes that you want to
-    /// make with a change batch request.
+    /// The information for a change request.
     /// </summary>
     public partial class ChangeBatch
     {
@@ -44,7 +43,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates ChangeBatch with the parameterized properties
         /// </summary>
-        /// <param name="changes">A complex type that contains one <code>Change</code> element for each resource record set that you want to create or delete.</param>
+        /// <param name="changes">Information about the changes to make to the record sets.</param>
         public ChangeBatch(List<Change> changes)
         {
             _changes = changes;
@@ -53,7 +52,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// <i>Optional:</i> Any comments you want to include about a change batch request.
+        ///  <i>Optional:</i> Any comments you want to include about a change batch request.
         /// </para>
         /// </summary>
         public string Comment
@@ -71,8 +70,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Changes. 
         /// <para>
-        /// A complex type that contains one <code>Change</code> element for each resource record
-        /// set that you want to create or delete.
+        /// Information about the changes to make to the record sets.
         /// </para>
         /// </summary>
         public List<Change> Changes

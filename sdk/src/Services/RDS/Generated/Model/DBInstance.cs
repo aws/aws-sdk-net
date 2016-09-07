@@ -57,6 +57,7 @@ namespace Amazon.RDS.Model
         private string _characterSetName;
         private bool? _copyTagsToSnapshot;
         private string _dbClusterIdentifier;
+        private string _dbInstanceArn;
         private string _dbInstanceClass;
         private string _dbInstanceIdentifier;
         private int? _dbInstancePort;
@@ -239,6 +240,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBClusterIdentifier()
         {
             return this._dbClusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the DB instance.
+        /// </para>
+        /// </summary>
+        public string DBInstanceArn
+        {
+            get { return this._dbInstanceArn; }
+            set { this._dbInstanceArn = value; }
+        }
+
+        // Check to see if DBInstanceArn property is set
+        internal bool IsSetDBInstanceArn()
+        {
+            return this._dbInstanceArn != null;
         }
 
         /// <summary>

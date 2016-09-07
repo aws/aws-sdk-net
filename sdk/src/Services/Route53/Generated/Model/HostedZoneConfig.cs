@@ -29,8 +29,8 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// A complex type that contains an optional comment about your hosted zone. If you don't
-    /// want to specify a comment, you can omit the <code>HostedZoneConfig</code> and <code>Comment</code>
-    /// elements from the XML document.
+    /// want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code>
+    /// elements.
     /// </summary>
     public partial class HostedZoneConfig
     {
@@ -45,9 +45,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// An optional comment about your hosted zone. If you don't want to specify a comment,
-        /// you can omit the <code>HostedZoneConfig</code> and <code>Comment</code> elements from
-        /// the XML document.
+        /// Any comments that you want to include about the hosted zone.
         /// </para>
         /// </summary>
         public string Comment
@@ -65,14 +63,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property PrivateZone. 
         /// <para>
-        /// <code>GetHostedZone</code> and <code>ListHostedZone</code> responses: A Boolean value
-        /// that indicates whether a hosted zone is private.
-        /// </para>
-        ///  
-        /// <para>
-        /// <code>CreateHostedZone</code> requests: When you're creating a private hosted zone
-        /// (when you specify values for VPCId and VPCRegion), you can optionally specify true
-        /// for PrivateZone. 
+        /// A value that indicates whether this is a private hosted zone.
         /// </para>
         /// </summary>
         public bool PrivateZone

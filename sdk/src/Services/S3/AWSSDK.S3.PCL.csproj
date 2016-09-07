@@ -78,13 +78,10 @@
     <Compile Include="Custom\Util\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+coreclr+pcl\*.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Custom\Util\_async\*.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Custom\_bcl+pcl\*.cs">
+    <Compile Include="Custom\_bcl+coreclr+pcl\*.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Custom\_bcl+coreclr+pcl\Transfer\*.cs">

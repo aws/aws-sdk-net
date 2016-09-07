@@ -81,9 +81,7 @@ namespace Amazon
             {
                 if (value == HttpClientOption.UnityWebRequest)
                 {
-                    var unityWebRequestType = Type.GetType("UnityEngine.Experimental.Networking.UnityWebRequest, UnityEngine");
-
-                    if (unityWebRequestType == null)
+                    if (!UnityWebRequestWrapper.IsUnityWebRequestSupported)
                     {
                         UnityWebRequestInitialized = false;
                         throw new InvalidOperationException("UnityWebRequest is not supported in the current version of unity");

@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains information about the number of traffic policy instances
-    /// that are associated with the current AWS account.
+    /// A complex type that contains information about the resource record sets that Amazon
+    /// Route 53 created based on a specified traffic policy.
     /// </summary>
     public partial class GetTrafficPolicyInstanceCountResponse : AmazonWebServiceResponse
     {

@@ -29,18 +29,29 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateVPCWithHostedZone operation.
-    /// This action associates a VPC with an hosted zone. 
+    /// Associates an Amazon VPC with a private hosted zone. 
     /// 
-    ///  
+    ///  <important> 
     /// <para>
-    /// To associate a VPC with an hosted zone, send a <code>POST</code> request to the <code>/<i>Route
-    /// 53 API version</i>/hostedzone/<i>hosted zone ID</i>/associatevpc</code> resource.
-    /// The request body must include a document with a <code>AssociateVPCWithHostedZoneRequest</code>
-    /// element. The response returns the <code>AssociateVPCWithHostedZoneResponse</code>
-    /// element that contains <code>ChangeInfo</code> for you to track the progress of the
-    /// <code>AssociateVPCWithHostedZoneRequest</code> you made. See <code>GetChange</code>
-    /// operation for how to track the progress of your change.
+    /// The VPC and the hosted zone must already exist, and you must have created a private
+    /// hosted zone. You cannot convert a public hosted zone into a private hosted zone.
     /// </para>
+    ///  </important> 
+    /// <para>
+    /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/hostedzone/<i>hosted
+    /// zone ID</i>/associatevpc</code> resource. The request body must include an XML document
+    /// with a <code>AssociateVPCWithHostedZoneRequest</code> element. The response returns
+    /// the <code>AssociateVPCWithHostedZoneResponse</code> element.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// If you used different accounts to create the hosted zone and to create the Amazon
+    /// VPCs that you want to associate with the hosted zone, we need to update account permissions
+    /// for you. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zone-private-associate-vpcs-different-accounts.html">Associating
+    /// Amazon VPCs and Private Hosted Zones That You Create with Different AWS Accounts</a>
+    /// in the Amazon Route 53 Developer Guide.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AssociateVPCWithHostedZoneRequest : AmazonRoute53Request
     {
@@ -74,7 +85,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property VPC. 
         /// <para>
-        /// The VPC that you want your hosted zone to be associated with. 
+        /// A complex type containing information about the Amazon VPC that you're associating
+        /// with the specified hosted zone.
         /// </para>
         /// </summary>
         public VPC VPC
@@ -92,7 +104,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// <i>Optional:</i> Any comments you want to include about a <code>AssociateVPCWithHostedZoneRequest</code>.
+        ///  <i>Optional:</i> A comment about the association request.
         /// </para>
         /// </summary>
         public string Comment

@@ -2496,7 +2496,7 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Disables monitoring of the specified metrics for the specified Auto Scaling group.
+        /// Disables group metrics for the specified Auto Scaling group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableMetricsCollection service method.</param>
         /// 
@@ -2537,13 +2537,9 @@ namespace Amazon.AutoScaling
 
 
         /// <summary>
-        /// Enables monitoring of the specified metrics for the specified Auto Scaling group.
-        /// 
-        ///  
-        /// <para>
-        /// You can only enable metrics collection if <code>InstanceMonitoring</code> in the launch
-        /// configuration for the group is set to <code>True</code>.
-        /// </para>
+        /// Enables group metrics for the specified Auto Scaling group. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/userguide/as-instance-monitoring.html">Monitoring
+        /// Your Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableMetricsCollection service method.</param>
         /// 

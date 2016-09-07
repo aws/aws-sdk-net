@@ -51,10 +51,22 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ChangeIdentifier);
             }
 
+            if(requestObject.IsSetCreated())
+            {
+                context.Writer.WritePropertyName("created");
+                context.Writer.Write(requestObject.Created);
+            }
+
             if(requestObject.IsSetRevision())
             {
                 context.Writer.WritePropertyName("revision");
                 context.Writer.Write(requestObject.Revision);
+            }
+
+            if(requestObject.IsSetRevisionSummary())
+            {
+                context.Writer.WritePropertyName("revisionSummary");
+                context.Writer.Write(requestObject.RevisionSummary);
             }
 
         }

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Shows the options for how often AWS Config delivers configuration snapshots to the
+    /// Provides options for how often AWS Config delivers configuration snapshots to the
     /// Amazon S3 bucket in your delivery channel.
     /// 
     ///  <note> 
@@ -58,16 +58,21 @@ namespace Amazon.ConfigService.Model
     /// <para>
     /// If the <code>deliveryFrequency</code> value is less frequent than the <code>MaximumExecutionFrequency</code>
     /// value for a rule, AWS Config invokes the rule only as often as the <code>deliveryFrequency</code>
-    /// value. 
+    /// value.
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// For example, you have a rule and you specify the <code>MaximumExecutionFrequency</code>
-    /// value to be <code>Six_Hours</code>. 
+    /// For example, you want your rule to run evaluations when AWS Config delivers the configuration
+    /// snapshot. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You then specify the delivery channel <code>deliveryFrequency</code> value to <code>TwentyFour_Hours</code>.
+    /// You specify the <code>MaximumExecutionFrequency</code> value for <code>Six_Hours</code>.
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You then specify the delivery channel <code>deliveryFrequency</code> value for <code>TwentyFour_Hours</code>.
     /// 
     /// </para>
     ///  </li> <li> 
@@ -83,8 +88,8 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// To update the frequency with which AWS Config delivers your configuration snapshots,
-    /// use the <code>PutDeliveryChannel</code> action.
+    /// To update the <code>deliveryFrequency</code> with which AWS Config delivers your configuration
+    /// snapshots, use the <code>PutDeliveryChannel</code> action.
     /// </para>
     /// </summary>
     public partial class ConfigSnapshotDeliveryProperties

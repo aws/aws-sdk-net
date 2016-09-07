@@ -39,17 +39,17 @@ namespace Amazon.SimpleNotificationService.Model
         /// <para>
         /// Indicates whether the phone number is opted out:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>true</code> – The phone number is opted out, meaning you cannot publish SMS
+        ///  <code>true</code> – The phone number is opted out, meaning you cannot publish SMS
         /// messages to it.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>false</code> – The phone number is opted in, meaning you can publish SMS messages
+        ///  <code>false</code> – The phone number is opted in, meaning you can publish SMS messages
         /// to it.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public bool IsOptedOut
         {

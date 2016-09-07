@@ -97,7 +97,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceFamily. 
         /// <para>
-        /// The instance family that the offering covers.
+        /// The instance family of the offering.
         /// </para>
         /// </summary>
         public string InstanceFamily

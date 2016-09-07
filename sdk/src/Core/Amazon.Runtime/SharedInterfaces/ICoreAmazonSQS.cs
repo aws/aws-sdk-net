@@ -14,6 +14,10 @@ namespace Amazon.Runtime.SharedInterfaces
     {
 #if BCL
         /// <summary>
+        /// <para>
+        /// This method is used internally to access the Amazon SQS service within other service assemblies.
+        /// Please use AmazonSQSClient to access Amazon SQS instead.
+        /// </para>
         /// Get the attributes for the queue identified by the queue URL.
         /// </summary>
         /// <param name="queueUrl">The queue URL to get attributes for.</param>
@@ -31,6 +35,10 @@ namespace Amazon.Runtime.SharedInterfaces
 
 #if BCL
         /// <summary>
+        /// <para>
+        /// This method is used internally to access the Amazon SQS service within other service assemblies.
+        /// Please use AmazonSQSClient to access Amazon SQS instead.
+        /// </para>
         /// Set the attributes on the queue identified by the queue URL.
         /// </summary>
         /// <param name="queueUrl">The queue URL to set the attributues.</param>
