@@ -32,13 +32,13 @@ namespace Amazon.Runtime.Internal.Transform
         HashSet<string> _headerNamesSet;
 
         internal HttpClientResponseData(HttpResponseMessage response)
-            : this(response, null)
+            : this(response, null, false)
         {            
         }
 
-        internal HttpClientResponseData(HttpResponseMessage response, HttpClient httpClient)
+        internal HttpClientResponseData(HttpResponseMessage response, HttpClient httpClient, bool disposeClient)
         {
-            _response = new HttpResponseMessageBody(response, httpClient);
+            _response = new HttpResponseMessageBody(response, httpClient, disposeClient);
 
             this.StatusCode = response.StatusCode;
             this.IsSuccessStatusCode = response.IsSuccessStatusCode;
@@ -126,12 +126,14 @@ namespace Amazon.Runtime.Internal.Transform
     {
         HttpClient _httpClient;
         HttpResponseMessage _response;
+        bool _disposeClient = false;
         bool _disposed = false;
 
-        public HttpResponseMessageBody(HttpResponseMessage response, HttpClient httpClient)
+        public HttpResponseMessageBody(HttpResponseMessage response, HttpClient httpClient, bool disposeClient)
         {
             _httpClient = httpClient;
             _response = response;
+            _disposeClient = disposeClient;
         }
 
         public Stream OpenResponse()
@@ -166,7 +168,7 @@ namespace Amazon.Runtime.Internal.Transform
                 if (_response != null)
                     _response.Dispose();
 
-                if (_httpClient != null)
+                if (_httpClient != null && _disposeClient)
                     _httpClient.Dispose();
 
                 _disposed = true;

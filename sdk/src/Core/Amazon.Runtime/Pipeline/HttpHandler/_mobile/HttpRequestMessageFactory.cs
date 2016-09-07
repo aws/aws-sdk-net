@@ -25,6 +25,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -36,6 +37,14 @@ namespace Amazon.Runtime
     [CLSCompliant(false)]
     public class HttpRequestMessageFactory : IHttpRequestFactory<HttpContent>
     {
+        // This is the global cache of HttpClient for service clients that are using 
+        static readonly ReaderWriterLockSlim _httpClientCacheRWLock = new ReaderWriterLockSlim();
+        static readonly IDictionary<string, HttpClient> _httpClientCache = new Dictionary<string, HttpClient>();
+
+        // This lock is used for when the instance variable is set.
+        readonly object _httpClientCacheCreateLock = new object();
+
+        HttpClient _cachedHttpClient;
         private IClientConfig _clientConfig;
 
         /// <summary>
@@ -54,7 +63,94 @@ namespace Amazon.Runtime
         /// <returns>An HTTP request.</returns>
         public IHttpRequest<HttpContent> CreateHttpRequest(Uri requestUri)
         {
-            return new HttpWebRequestMessage(requestUri, _clientConfig);
+            HttpClient httpClient;
+            if(_clientConfig.CacheHttpClient)
+            {
+                // If a HttpClient has already been created for the service client then just reuse it.
+                if(_cachedHttpClient != null)
+                {
+                    httpClient = _cachedHttpClient;
+                }
+                else if (!CanClientConfigBeSerialized(_clientConfig))
+                {
+                    lock (_httpClientCacheCreateLock)
+                    {
+                        // Check if the HttpClient was created by some other thread 
+                        // while this thread was waiting for the lock.
+                        if (_cachedHttpClient != null)
+                        {
+                            httpClient = _cachedHttpClient;
+                        }
+                        else
+                        {
+                            httpClient = CreateHttpClient(_clientConfig);
+                            _cachedHttpClient = httpClient;
+                        }
+                    }
+                }
+                else
+                {
+                    // Check to see if an HttpClient was created by another service client with the 
+                    // same settings on the ClientConfig.
+                    var configUniqueString = CreateConfigUniqueString(_clientConfig);
+                    bool found;
+                    _httpClientCacheRWLock.EnterReadLock();
+                    try
+                    {
+                        found = _httpClientCache.TryGetValue(configUniqueString, out httpClient);
+                    }
+                    finally
+                    {
+                        _httpClientCacheRWLock.ExitReadLock();
+                    }
+
+                    if (found)
+                    {
+                        _cachedHttpClient = httpClient;
+                    }
+                    else
+                    {
+                        _httpClientCacheRWLock.EnterWriteLock();
+                        try
+                        {
+                            found = _httpClientCache.TryGetValue(configUniqueString, out httpClient);
+                            if (found)
+                            {
+                                _cachedHttpClient = httpClient;
+                            }
+                            else
+                            {
+                                lock (_httpClientCacheCreateLock)
+                                {
+                                    // Check if the HttpClient was created by some other thread 
+                                    // while this thread was waiting for the lock.
+                                    if (_cachedHttpClient != null)
+                                    {
+                                        httpClient = _cachedHttpClient;
+                                    }
+                                    else
+                                    {
+                                        httpClient = CreateHttpClient(_clientConfig);
+                                        _cachedHttpClient = httpClient;
+                                        _httpClientCache[configUniqueString] = httpClient;
+                                    }
+                                }
+                            }
+                        }
+                        finally
+                        {
+                            _httpClientCacheRWLock.ExitWriteLock();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                httpClient = CreateHttpClient(_clientConfig);
+            }
+
+
+            return new HttpWebRequestMessage(httpClient, requestUri, _clientConfig);
         }
 
         /// <summary>
@@ -66,8 +162,78 @@ namespace Amazon.Runtime
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Dispose the factory
+        /// </summary>
+        /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
         {
+        }
+
+        private static HttpClient CreateHttpClient(IClientConfig clientConfig)
+        {
+            var httpMessageHandler = new HttpClientHandler();
+
+            // If HttpClientHandler.AllowAutoRedirect is set to true (default value),
+            // redirects for GET requests are automatically followed and redirects for POST
+            // requests are thrown back as exceptions.
+            // If HttpClientHandler.AllowAutoRedirect is set to false (e.g. S3),
+            // redirects are returned as responses.
+            httpMessageHandler.AllowAutoRedirect = clientConfig.AllowAutoRedirect;
+
+#if CORECLR
+            var proxy = clientConfig.GetWebProxy();
+            if (proxy != null)
+            {
+                httpMessageHandler.Proxy = proxy;
+            }
+#endif
+
+            if (httpMessageHandler.Proxy != null && clientConfig.ProxyCredentials != null)
+            {
+                httpMessageHandler.Proxy.Credentials = clientConfig.ProxyCredentials;
+            }
+
+            var httpClient = new HttpClient(httpMessageHandler);
+            if (clientConfig.Timeout.HasValue)
+            {
+                // Timeout value is set to ClientConfig.MaxTimeout for S3 and Glacier.
+                // Use default value (100 seconds) for other services.
+                httpClient.Timeout = clientConfig.Timeout.Value;
+            }
+
+            return httpClient;
+        }
+
+    /// <summary>
+        ///  Create a unique string used for caching the HttpClient based on the settings that are used from the ClientConfig that are set on the HttpClient.
+        /// </summary>
+        /// <param name="clientConfig"></param>
+        /// <returns></returns>
+        private static string CreateConfigUniqueString(IClientConfig clientConfig)
+        {
+            string uniqueString = string.Empty;
+            uniqueString = string.Concat("AllowAutoRedirect:", clientConfig.AllowAutoRedirect.ToString());
+
+            if (clientConfig.Timeout.HasValue)
+            {
+                uniqueString = string.Concat(uniqueString, "Timeout:", clientConfig.Timeout.Value.ToString());
+            }
+
+            return uniqueString;
+        }
+
+        /// <summary>
+        /// If proxy or proxy credentials are set this returns false because those properties can't be
+        /// serialized as part of the key in the global http client cache.
+        /// </summary>
+        private static bool CanClientConfigBeSerialized(IClientConfig clientConfig)
+        {
+#if CORECLR
+            return clientConfig.ProxyCredentials == null && clientConfig.GetWebProxy() == null;
+#else
+            return clientConfig.ProxyCredentials == null;
+#endif
         }
     }
 
@@ -77,6 +243,7 @@ namespace Amazon.Runtime
     [CLSCompliant(false)]
     public class HttpWebRequestMessage : IHttpRequest<HttpContent>
     {
+
         /// <summary>
         /// Set of content header names.
         /// </summary>
@@ -99,17 +266,21 @@ namespace Amazon.Runtime
         /// <summary>
         /// The constructor for HttpWebRequestMessage.
         /// </summary>
+        /// <param name="httpClient">The HttpClient used to make the request.</param>
         /// <param name="requestUri">The request URI.</param>
         /// <param name="config">The service client config.</param>
-        public HttpWebRequestMessage(Uri requestUri, IClientConfig config)
+        public HttpWebRequestMessage(HttpClient httpClient, Uri requestUri, IClientConfig config)
         {
             _clientConfig = config;
-            _httpClient = CreateHttpClient();
+            _httpClient = httpClient;
 
             _request = new HttpRequestMessage();
             _request.RequestUri = requestUri;
         }
 
+        /// <summary>
+        /// The underlying HttpClient
+        /// </summary>
         public HttpClient HttpClient
         {
             get { return _httpClient; }
@@ -149,7 +320,7 @@ namespace Amazon.Runtime
             // Configure the Expect 100-continue header
             if (requestContext != null && requestContext.OriginalRequest != null)
             {
-                _httpClient.DefaultRequestHeaders.ExpectContinue = requestContext.OriginalRequest.GetExpect100Continue();
+                _request.Headers.ExpectContinue = requestContext.OriginalRequest.GetExpect100Continue();
             }
         }
 
@@ -220,22 +391,23 @@ namespace Amazon.Runtime
                 var responseMessage = await _httpClient.SendAsync(_request, HttpCompletionOption.ResponseHeadersRead, cancellationToken)
                     .ConfigureAwait(continueOnCapturedContext: false);
 
+                bool disposeClient = !_clientConfig.CacheHttpClient;
                 // If AllowAutoRedirect is set to false, HTTP 3xx responses are returned back as response.
                 if (!_clientConfig.AllowAutoRedirect &&
                     responseMessage.StatusCode >= HttpStatusCode.Ambiguous &&
                     responseMessage.StatusCode < HttpStatusCode.BadRequest)
                 {
-                    return new HttpClientResponseData(responseMessage, _httpClient);
+                    return new HttpClientResponseData(responseMessage, _httpClient, disposeClient);
                 }
 
                 if (!responseMessage.IsSuccessStatusCode)
                 {
                     // For all responses other than HTTP 2xx, return an exception.
                     throw new Amazon.Runtime.Internal.HttpErrorResponseException(
-                        new HttpClientResponseData(responseMessage, _httpClient));
+                        new HttpClientResponseData(responseMessage, _httpClient, disposeClient));
                 }
 
-                return new HttpClientResponseData(responseMessage, _httpClient);
+                return new HttpClientResponseData(responseMessage, _httpClient, disposeClient);
             }
             catch (HttpRequestException e)
             {
@@ -329,41 +501,10 @@ namespace Amazon.Runtime
             GC.SuppressFinalize(this);
         }
 
-        private HttpClient CreateHttpClient()
-        {
-            var httpMessageHandler = new HttpClientHandler();
-
-            // If HttpClientHandler.AllowAutoRedirect is set to true (default value),
-            // redirects for GET requests are automatically followed and redirects for POST
-            // requests are thrown back as exceptions.
-
-            // If HttpClientHandler.AllowAutoRedirect is set to false (e.g. S3),
-            // redirects are returned as responses.
-            httpMessageHandler.AllowAutoRedirect = _clientConfig.AllowAutoRedirect;
-#if CORECLR
-            var proxy = _clientConfig.GetWebProxy();
-            if (proxy != null)
-            {
-                httpMessageHandler.Proxy = proxy;
-            }
-#endif
-
-            if (httpMessageHandler.Proxy != null && _clientConfig.ProxyCredentials != null)
-            {
-                httpMessageHandler.Proxy.Credentials = _clientConfig.ProxyCredentials;
-            }
-
-            var httpClient = new HttpClient(httpMessageHandler);
-            if (_clientConfig.Timeout.HasValue)
-            {
-                // Timeout value is set to ClientConfig.MaxTimeout for S3 and Glacier.
-                // Use default value (100 seconds) for other services.
-                httpClient.Timeout = _clientConfig.Timeout.Value;
-            }
-
-            return httpClient;
-        }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
         {
             if (_disposed)

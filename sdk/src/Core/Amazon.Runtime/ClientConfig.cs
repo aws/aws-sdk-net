@@ -436,5 +436,34 @@ namespace Amazon.Runtime
             return requestTimeout.HasValue ? requestTimeout
                 : (clientTimeout.HasValue ? clientTimeout : null);
         }
+
+#if CORECLR || PCL
+
+
+#if CORECLR
+        bool cacheHttpClient = true;
+#else
+        bool cacheHttpClient = false;
+#endif
+        /// <summary>
+        /// <para>
+        /// This is a switch used for performance testing and is not intended for production applications 
+        /// to change. This switch may be removed in a future version of the SDK as the .NET Core platform matures.
+        /// </para>
+        /// <para>
+        /// If true, the HttpClient is cached and reused for every request made by the service client 
+        /// and shared with other service clients.
+        /// </para>
+        /// <para>
+        /// For the .NET Core platform this is default to true because the HttpClient manages the connection
+        /// pool.
+        /// </para>
+        /// </summary>
+        public bool CacheHttpClient
+        {
+            get { return this.cacheHttpClient; }
+            set { this.cacheHttpClient = value; }
+        }
+#endif
     }
 }

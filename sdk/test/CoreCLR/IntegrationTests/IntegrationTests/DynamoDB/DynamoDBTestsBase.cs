@@ -65,7 +65,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
 
         public DynamoDBTestsFixture()
         {
-            // CoreCLR does not support config files yet, so programmatically configure the settings.  See App.45.config
+            // .NET Core does not support config files yet, so programmatically configure the settings.  See App.45.config
             AWSConfigsDynamoDB.Context.AddAlias(new TableAlias("FakeTable", "HashRangeTable"));
             TypeMapping mapping = new TypeMapping(typeof(DynamoDBTests.Employee), "HashRangeTable");
                 mapping.AddProperty(new PropertyConfig("ManagerName") { Attribute = "Manager" });

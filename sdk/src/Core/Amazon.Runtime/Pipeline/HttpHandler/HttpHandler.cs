@@ -361,7 +361,7 @@ namespace Amazon.Runtime.Internal
         {
             IRequest wrappedRequest = requestContext.Request;
 
-            // This code path ends up using a ByteArrayContent for System.Net.HttpClient used by CoreCLR.
+            // This code path ends up using a ByteArrayContent for System.Net.HttpClient used by .NET Core.
             // HttpClient can't seem to handle ByteArrayContent with 0 length so in that case use
             // the StreamContent code path.
             if (wrappedRequest.Content != null && wrappedRequest.Content.Length > 0)

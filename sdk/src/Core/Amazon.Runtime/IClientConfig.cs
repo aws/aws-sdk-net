@@ -189,6 +189,24 @@ namespace Amazon.Runtime
         /// <exception cref="Amazon.Runtime.AmazonClientException">The timeout specified is null.</exception>
         void Validate();
 
+#if CORECLR || PCL
 
+
+        /// <summary>
+        /// <para>
+        /// This is a switch used for performance testing and is not intended for production applications 
+        /// to change. This switch may be removed in a future version of the SDK as the .NET Core platform matures.
+        /// </para>
+        /// <para>
+        /// If true, the HttpClient is cached and reused for every request made by the service client 
+        /// and shared with other service clients.
+        /// </para>
+        /// <para>
+        /// For the .NET Core platform this is default to true because the HttpClient manages the connection
+        /// pool.
+        /// </para>
+        /// </summary>
+        bool CacheHttpClient { get; }
+#endif
     }
 }

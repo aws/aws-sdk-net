@@ -56,6 +56,12 @@ namespace Amazon.Runtime.Internal
 #endif
         };
 
+        private static readonly HashSet<string> _coreCLRRetryErrorMessages = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        {
+            "The server returned an invalid or unrecognized response",
+            "The connection with the server was terminated abnormally"
+        };
+
         // Set of AWS error codes to retry on.
         private ICollection<string> _errorCodesToRetryOn = new HashSet<string>
         {
@@ -155,6 +161,21 @@ namespace Amazon.Runtime.Internal
                 return true;
             }
 
+#if CORECLR
+            // Version 7.35 libcurl which is the default version installed with Ubuntu 14.04 
+            // has issues under high concurrency causing response streams being disposed
+            // during unmarshalling. To work around this issue will add the ObjectDisposedException
+            // to the list of exceptions to retry.
+            if (IsInnerException<ObjectDisposedException>(exception))
+                return true;
+
+            if (exception is System.Net.Http.HttpRequestException)
+            {
+                if (ContainErrorMessage(exception))
+                    return true;
+            }
+#endif
+
             // A AmazonServiceException was thrown by ErrorHandler
             var serviceException = exception as AmazonServiceException;
             if (serviceException != null)
@@ -231,6 +252,16 @@ namespace Amazon.Runtime.Internal
             if (retries > 0 && (delay > maxBackoffInMilliseconds || delay <= 0))
                 delay = maxBackoffInMilliseconds;
             return delay;
+        }
+
+        protected static bool ContainErrorMessage(Exception exception)
+        {
+            if (exception == null)
+                return false;
+
+            if (_coreCLRRetryErrorMessages.Contains(exception.Message))
+                return true;
+            return ContainErrorMessage(exception.InnerException);
         }
 
         protected static bool IsInnerException<T>(Exception exception)
