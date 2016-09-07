@@ -136,7 +136,7 @@ namespace Amazon.EC2.Util
 
                 int delay = (int)(Math.Pow(4, retries) * 100);
                 delay = Math.Min(delay, 30 * 1000);
-                await Task.Delay(delay);
+                await Task.Delay(delay).ConfigureAwait(false);
             }
         }
         private static async Task<HttpWebResponse> DownloadControlFileAsync(string location, IWebProxy proxy)

@@ -43,7 +43,7 @@ namespace Amazon.Glacier.Transfer.Internal
     {
         internal async Task ExecuteAsync()
         {
-            await this.setupTopicAndQueueAsync();
+            await this.setupTopicAndQueueAsync().ConfigureAwait(false);
             try
             {
                 var jobId = await initiateJobAsync().ConfigureAwait(false);
@@ -137,7 +137,7 @@ namespace Amazon.Glacier.Transfer.Internal
                 Endpoint = this.queueArn,
                 Protocol = "sqs",
                 TopicArn = this.topicArn
-            });
+            }).ConfigureAwait(false);
 
             var policy = SQS_POLICY.Replace("{QuereArn}", this.queueArn).Replace("{TopicArn}", this.topicArn);
             var setQueueAttributesRequest = new SetQueueAttributesRequest()

@@ -162,7 +162,7 @@ namespace Amazon.SimpleNotificationService
 
             do
             {
-                var response = await this.ListTopicsAsync(new ListTopicsRequest { NextToken = nextToken });
+                var response = await this.ListTopicsAsync(new ListTopicsRequest { NextToken = nextToken }).ConfigureAwait(false);
 
                 var matchedTopic = response.Topics.FirstOrDefault(x => TopicNameMatcher(x.TopicArn, topicName));
 
@@ -190,7 +190,7 @@ namespace Amazon.SimpleNotificationService
             var attributes = (await this.GetTopicAttributesAsync(new GetTopicAttributesRequest
                 {
                     TopicArn = topicArn
-                })).Attributes;
+                }).ConfigureAwait(false)).Attributes;
 
             Policy policy;
             Statement newStatement;
@@ -206,7 +206,7 @@ namespace Amazon.SimpleNotificationService
                     TopicArn = topicArn,
                     AttributeName = "Policy",
                     AttributeValue = policyString
-                });
+                }).ConfigureAwait(false);
             }
         }
     }
