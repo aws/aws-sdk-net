@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+
 using Amazon.Runtime;
 using Amazon.SimpleEmail.Model;
 
@@ -40,7 +41,7 @@ namespace Amazon.SimpleEmail
     /// </para>
     ///  </note>
     /// </summary>
-    public partial interface IAmazonSimpleEmailService : IDisposable
+    public partial interface IAmazonSimpleEmailService : IAmazonService, IDisposable
     {
 
         

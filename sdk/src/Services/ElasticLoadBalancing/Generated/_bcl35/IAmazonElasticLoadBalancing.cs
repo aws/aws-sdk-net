@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ElasticLoadBalancing.Model;
 
 namespace Amazon.ElasticLoadBalancing
@@ -66,7 +67,7 @@ namespace Amazon.ElasticLoadBalancing
     /// code.
     /// </para>
     /// </summary>
-    public partial interface IAmazonElasticLoadBalancing : IDisposable
+    public partial interface IAmazonElasticLoadBalancing : IAmazonService, IDisposable
     {
 
         

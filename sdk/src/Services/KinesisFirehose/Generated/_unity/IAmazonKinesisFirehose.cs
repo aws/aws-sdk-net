@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+
 using Amazon.Runtime;
 using Amazon.KinesisFirehose.Model;
 
@@ -34,7 +35,7 @@ namespace Amazon.KinesisFirehose
     /// Service (Amazon ES), and Amazon Redshift.
     /// </para>
     /// </summary>
-    public partial interface IAmazonKinesisFirehose : IDisposable
+    public partial interface IAmazonKinesisFirehose : IAmazonService, IDisposable
     {
 
         

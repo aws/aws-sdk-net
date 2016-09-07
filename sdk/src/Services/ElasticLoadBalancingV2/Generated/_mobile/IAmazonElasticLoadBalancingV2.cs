@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ElasticLoadBalancingV2.Model;
 
 namespace Amazon.ElasticLoadBalancingV2
@@ -101,7 +102,7 @@ namespace Amazon.ElasticLoadBalancingV2
     /// at most one time. If you repeat an operation, it succeeds.
     /// </para>
     /// </summary>
-    public partial interface IAmazonElasticLoadBalancingV2 : IDisposable
+    public partial interface IAmazonElasticLoadBalancingV2 : IAmazonService, IDisposable
     {
                 
         #region  AddTags

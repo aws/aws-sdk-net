@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ConfigService.Model;
 
 namespace Amazon.ConfigService
@@ -64,7 +65,7 @@ namespace Amazon.ConfigService
     /// Is AWS Config?</a> in the <i>AWS Config Developer Guide</i>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonConfigService : IDisposable
+    public partial interface IAmazonConfigService : IAmazonService, IDisposable
     {
                 
         #region  DeleteConfigRule

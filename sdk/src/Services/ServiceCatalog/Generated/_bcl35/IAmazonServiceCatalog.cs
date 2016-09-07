@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ServiceCatalog.Model;
 
 namespace Amazon.ServiceCatalog
@@ -57,7 +58,7 @@ namespace Amazon.ServiceCatalog
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial interface IAmazonServiceCatalog : IDisposable
+    public partial interface IAmazonServiceCatalog : IAmazonService, IDisposable
     {
 
         

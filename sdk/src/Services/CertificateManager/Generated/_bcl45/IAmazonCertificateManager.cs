@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CertificateManager.Model;
 
 namespace Amazon.CertificateManager
@@ -42,7 +43,7 @@ namespace Amazon.CertificateManager
     /// Certificate Manager API Reference</a>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCertificateManager : IDisposable
+    public partial interface IAmazonCertificateManager : IAmazonService, IDisposable
     {
 
         

@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CodeCommit.Model;
 
 namespace Amazon.CodeCommit
@@ -66,7 +67,7 @@ namespace Amazon.CodeCommit
     /// CodeCommit User Guide</a>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCodeCommit : IDisposable
+    public partial interface IAmazonCodeCommit : IAmazonService, IDisposable
     {
 
         

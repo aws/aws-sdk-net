@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.AWSSupport.Model;
 
 namespace Amazon.AWSSupport
@@ -80,7 +81,7 @@ namespace Amazon.AWSSupport
     /// Advisor for results of checks on your resources. 
     /// </para>
     /// </summary>
-    public partial interface IAmazonAWSSupport : IDisposable
+    public partial interface IAmazonAWSSupport : IAmazonService, IDisposable
     {
 
         

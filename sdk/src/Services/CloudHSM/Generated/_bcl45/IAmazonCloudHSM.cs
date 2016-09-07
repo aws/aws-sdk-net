@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CloudHSM.Model;
 
 namespace Amazon.CloudHSM
@@ -32,7 +33,7 @@ namespace Amazon.CloudHSM
     ///
     /// AWS CloudHSM Service
     /// </summary>
-    public partial interface IAmazonCloudHSM : IDisposable
+    public partial interface IAmazonCloudHSM : IAmazonService, IDisposable
     {
 
         

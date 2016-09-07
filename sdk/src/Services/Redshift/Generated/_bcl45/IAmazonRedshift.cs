@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.Redshift.Model;
 
 namespace Amazon.Redshift
@@ -62,7 +63,7 @@ namespace Amazon.Redshift
     /// the databases that make up your data warehouse. 
     /// </para>
     /// </summary>
-    public partial interface IAmazonRedshift : IDisposable
+    public partial interface IAmazonRedshift : IAmazonService, IDisposable
     {
 
         

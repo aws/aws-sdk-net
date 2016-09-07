@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+
 using Amazon.Runtime;
 using Amazon.CognitoSync.Model;
 
@@ -53,7 +54,7 @@ namespace Amazon.CognitoSync
     /// Guide for iOS</a>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCognitoSync : IDisposable
+    public partial interface IAmazonCognitoSync : IAmazonService, IDisposable
     {
 
         

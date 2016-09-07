@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.KinesisAnalytics.Model;
 
 namespace Amazon.KinesisAnalytics
@@ -32,7 +33,7 @@ namespace Amazon.KinesisAnalytics
     ///
     /// 
     /// </summary>
-    public partial interface IAmazonKinesisAnalytics : IDisposable
+    public partial interface IAmazonKinesisAnalytics : IAmazonService, IDisposable
     {
 
         

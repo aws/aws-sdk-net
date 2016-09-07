@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.DeviceFarm.Model;
 
 namespace Amazon.DeviceFarm
@@ -31,7 +32,7 @@ namespace Amazon.DeviceFarm
     /// AWS Device Farm is a service that enables mobile app developers to test Android, iOS,
     /// and Fire OS apps on physical phones, tablets, and other devices in the cloud.
     /// </summary>
-    public partial interface IAmazonDeviceFarm : IDisposable
+    public partial interface IAmazonDeviceFarm : IAmazonService, IDisposable
     {
 
         

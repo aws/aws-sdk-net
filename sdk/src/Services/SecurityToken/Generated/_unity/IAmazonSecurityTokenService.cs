@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+
 using Amazon.Runtime;
 using Amazon.SecurityToken.Model;
 
@@ -91,7 +92,7 @@ namespace Amazon.SecurityToken
     /// CloudTrail User Guide</a>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonSecurityTokenService : IDisposable
+    public partial interface IAmazonSecurityTokenService : IAmazonService, IDisposable
     {
 
         

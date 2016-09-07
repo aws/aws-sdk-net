@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CognitoIdentity.Model;
 
 namespace Amazon.CognitoIdentity
@@ -73,7 +74,7 @@ namespace Amazon.CognitoIdentity
     /// href="http://docs.aws.amazon.com/mobile/index.html">AWS Mobile SDK Developer Guide</a>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCognitoIdentity : IDisposable
+    public partial interface IAmazonCognitoIdentity : IAmazonService, IDisposable
     {
                 
         #region  CreateIdentityPool

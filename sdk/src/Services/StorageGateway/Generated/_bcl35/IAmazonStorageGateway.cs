@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.StorageGateway.Model;
 
 namespace Amazon.StorageGateway
@@ -108,7 +109,7 @@ namespace Amazon.StorageGateway
     /// </para>
     ///  </important>
     /// </summary>
-    public partial interface IAmazonStorageGateway : IDisposable
+    public partial interface IAmazonStorageGateway : IAmazonService, IDisposable
     {
 
         

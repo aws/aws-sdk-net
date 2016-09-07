@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.Route53.Model;
 
 namespace Amazon.Route53
@@ -30,7 +31,7 @@ namespace Amazon.Route53
     ///
     /// 
     /// </summary>
-    public partial interface IAmazonRoute53 : IDisposable
+    public partial interface IAmazonRoute53 : IAmazonService, IDisposable
     {
 
         

@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ImportExport.Model;
 
 namespace Amazon.ImportExport
@@ -37,7 +38,7 @@ namespace Amazon.ImportExport
     /// is often faster than Internet transfer and more cost effective than upgrading your
     /// connectivity.
     /// </summary>
-    public partial interface IAmazonImportExport : IDisposable
+    public partial interface IAmazonImportExport : IAmazonService, IDisposable
     {
                 
         #region  CancelJob

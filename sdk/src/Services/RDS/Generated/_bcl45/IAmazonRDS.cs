@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.RDS.Model;
 
 namespace Amazon.RDS
@@ -103,7 +104,7 @@ namespace Amazon.RDS
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial interface IAmazonRDS : IDisposable
+    public partial interface IAmazonRDS : IAmazonService, IDisposable
     {
 
         

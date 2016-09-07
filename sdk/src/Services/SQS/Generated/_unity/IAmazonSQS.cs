@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+
 using Amazon.Runtime;
 using Amazon.SQS.Model;
 
@@ -95,7 +96,7 @@ namespace Amazon.SQS
     /// Amazon Web Services</a>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonSQS : IDisposable
+    public partial interface IAmazonSQS : IAmazonService, IDisposable
     {
 
         

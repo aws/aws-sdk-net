@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.Inspector.Model;
 
 namespace Amazon.Inspector
@@ -35,7 +36,7 @@ namespace Amazon.Inspector
     /// Amazon Inspector User Guide</a>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonInspector : IDisposable
+    public partial interface IAmazonInspector : IAmazonService, IDisposable
     {
 
         
