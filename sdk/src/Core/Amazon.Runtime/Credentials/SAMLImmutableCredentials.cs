@@ -83,7 +83,7 @@ namespace Amazon.Runtime
 
         public override int GetHashCode()
         {
-            return Hashing.Hash(AccessKey, SecretKey, Token, Subject);
+            return Hashing.Hash(AccessKey, SecretKey, Token, Subject, Expires);
         }
 
         public override bool Equals(object obj)
@@ -96,7 +96,8 @@ namespace Amazon.Runtime
                 return false;
 
             if (base.Equals(obj))
-                return string.Equals(Subject, ic.Subject, StringComparison.Ordinal);
+                return string.Equals(Subject, ic.Subject, StringComparison.Ordinal) &&
+                    DateTime.Equals(Expires, ic.Expires);
 
             return false;
         }
