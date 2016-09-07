@@ -17,6 +17,7 @@
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
     <TargetFrameworkProfile />
+    <ReferenceServiceDLLs Condition="'$(ReferenceServiceDLLs)'==''">false</ReferenceServiceDLLs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -60,6 +61,283 @@
       <Project>{740165b9-e662-4b09-a990-683dd332f61d}</Project>
       <Name>AWSSDK.CommonTest.Net35</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup Condition="$(ReferenceServiceDLLs)">
+    <Reference Include="AWSSDK.APIGateway">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.APIGateway.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.ApplicationAutoScaling">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.ApplicationAutoScaling.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.ApplicationDiscoveryService">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.ApplicationDiscoveryService.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.AppStream">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.AppStream.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.AutoScaling">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.AutoScaling.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.AWSHealth">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.AWSHealth.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.AWSMarketplaceCommerceAnalytics">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.AWSMarketplaceCommerceAnalytics.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.AWSMarketplaceMetering">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.AWSMarketplaceMetering.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.AWSSupport">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.AWSSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Batch">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.Batch.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Budgets">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.Budgets.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CertificateManager">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CertificateManager.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CloudDirectory">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CloudDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CloudFormation">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CloudFormation.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CloudFront">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CloudFront.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CloudHSM">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CloudHSM.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CloudSearch">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CloudSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CloudSearchDomain">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CloudSearchDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CloudTrail">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CloudTrail.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CloudWatch">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CloudWatch.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CloudWatchEvents">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CloudWatchEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CloudWatchLogs">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CloudWatchLogs.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CodeBuild">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CodeBuild.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CodeCommit">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CodeCommit.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CodeDeploy">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CodeDeploy.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CodePipeline">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CodePipeline.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CognitoIdentity">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CognitoIdentity.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CognitoIdentityProvider">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CognitoIdentityProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CognitoSync">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CognitoSync.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.ConfigService">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.ConfigService.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.CostAndUsageReport">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.CostAndUsageReport.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.DatabaseMigrationService">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.DatabaseMigrationService.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.DataPipeline">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.DataPipeline.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.DeviceFarm">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.DeviceFarm.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.DirectConnect">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.DirectConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.DirectoryService">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.DirectoryService.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.DynamoDBv2">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.DynamoDBv2.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.EC2">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.EC2.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.ECR">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.ECR.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.ECS">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.ECS.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.ElastiCache">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.ElastiCache.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.ElasticBeanstalk">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.ElasticBeanstalk.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.ElasticFileSystem">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.ElasticFileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.ElasticLoadBalancing">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.ElasticLoadBalancing.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.ElasticLoadBalancingV2">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.ElasticLoadBalancingV2.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.ElasticMapReduce">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.ElasticMapReduce.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Elasticsearch">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.Elasticsearch.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.ElasticTranscoder">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.ElasticTranscoder.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.GameLift">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.GameLift.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Glacier">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.Glacier.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.IdentityManagement">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.IdentityManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.ImportExport">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.ImportExport.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Inspector">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.Inspector.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.IoT">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.IoT.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.IotData">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.IotData.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.KeyManagementService">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.KeyManagementService.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Kinesis">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.Kinesis.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.KinesisAnalytics">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.KinesisAnalytics.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.KinesisFirehose">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.KinesisFirehose.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Lambda">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.Lambda.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Lex">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.Lex.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Lightsail">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.Lightsail.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.MachineLearning">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.MachineLearning.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.MobileAnalytics">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.MobileAnalytics.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.OpsWorks">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.OpsWorks.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.OpsWorksCM">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.OpsWorksCM.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Pinpoint">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.Pinpoint.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Polly">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.RDS">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.RDS.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Redshift">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.Redshift.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Rekognition">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.Rekognition.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Route53">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.Route53.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Route53Domains">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.Route53Domains.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.S3">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SecurityToken">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.SecurityToken.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.ServerMigrationService">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.ServerMigrationService.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.ServiceCatalog">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.ServiceCatalog.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Shield">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.Shield.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SimpleDB">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.SimpleDB.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SimpleEmail">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.SimpleEmail.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SimpleNotificationService">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.SimpleNotificationService.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SimpleSystemsManagement">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.SimpleSystemsManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SimpleWorkflow">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.SimpleWorkflow.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Snowball">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.Snowball.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SQS">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.SQS.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.StepFunctions">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.StepFunctions.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.StorageGateway">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.StorageGateway.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.WAF">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.WAF.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.WAFRegional">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.WAFRegional.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.WorkSpaces">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.WorkSpaces.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.XRay">
+      <HintPath>..\..\..\Deployment\assemblies\net35\AWSSDK.XRay.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="!$(ReferenceServiceDLLs)">
     <ProjectReference Include="..\..\src\Services\APIGateway\AWSSDK.APIGateway.Net35.csproj">
       <Project>{0432452B-8310-4672-95EB-9491782640F1}</Project>
       <Name>AWSSDK.APIGateway.Net35</Name>

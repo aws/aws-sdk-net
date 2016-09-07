@@ -52,3 +52,6 @@ generator/.vs/**
 *.meta
 /sdk/test/Unity/AWSAndroidHelper/.settings
 /sdk/test/Unity3DTests/Assets/SDK/*.mdb
+
+/sdk/*.partial.sln
+**/*.partial.FxCop

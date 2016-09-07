@@ -1,3 +1,7 @@
+param(
+    [string]$PackageList = ""
+)
+
 #$ErrorActionPreference = "Stop"
 $OriginalDirectory = Get-Location
 $OutputDirectory = Join-Path -Path $OriginalDirectory.Path -ChildPath "..\Deployment\nuget"
@@ -12,7 +16,41 @@ If (Test-Path $OutputDirectory)
 
 New-Item $OutputDirectory -type directory
 
-$nuspecs = Get-ChildItem -Recurse ..\sdk\src\*.nuspec
+$allNuspecs= Get-ChildItem -Recurse ..\sdk\src\*.nuspec
+
+#
+# When performaing a partial build, we want to create packages of only services that changed
+#
+if (![string]::IsNullOrEmpty($PackageList))
+{
+    $nuspecs = New-Object System.Collections.ArrayList
+    $buildAll = $false
+    foreach($nuspec in $allNuspecs)
+    {
+        foreach($package in $PackageList.split(';'))
+        {
+            if ($package -eq "Core")
+            {
+                $nuspecs = $allNuspecs
+                $buildAll = $true
+                break
+            }
+            elseif ($nuspec.Directory.Name -contains $package)
+            {
+                $nuspecs.Add($nuspec)
+            }
+        }
+
+        if ($buildAll)
+        {
+            break
+        }
+    }
+}
+else
+{
+    $nuspecs = $allNuspecs
+}
 foreach($nuspec in $nuspecs) 
 {
 	Write-Output "Create package: " + $nuspec.FullName

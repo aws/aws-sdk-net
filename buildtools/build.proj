@@ -5,6 +5,7 @@
         <InternalBuildTools Condition="'$(InternalBuildTools)'==''">..\..\AWSDotNetBuildTools</InternalBuildTools>
         <DisablePCLSupport Condition="'$(DisablePCLSupport)'==''">false</DisablePCLSupport>
         <DisableUnitySupport Condition="'$(DisableUnitySupport)'==''">false</DisableUnitySupport>
+        <PartialBuildList Condition="'$(PartialBuildList)'==''"></PartialBuildList>
 
 		<VSToolsPath Condition="'$(VSToolsPath)' == ''">C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0</VSToolsPath>
 		
@@ -35,9 +36,35 @@
     <PropertyGroup>
         <!-- resources folder where test settings should be placed -->
         <TestSettingsLocation>..\sdk\test\CrossPlatformTests\CommonTests\Resources</TestSettingsLocation>
-
         <RunKeyScan Condition="'$(RunKeyScan)'==''">false</RunKeyScan>
     </PropertyGroup>
+
+    <Choose>
+        <When Condition="'$(PartialBuildList)'==''">
+            <PropertyGroup>
+                <DesktopSolutionsFile>AWSSDK.Desktop.sln</DesktopSolutionsFile>
+                <PCLSolutionsFile>AWSSDK.PCL.sln</PCLSolutionsFile>
+                <UnitySolutionsFile>AWSSDK.Unity.sln</UnitySolutionsFile>
+                <CoreCLRSolutionsFile>AWSSDK.CoreCLR.sln</CoreCLRSolutionsFile>
+                <GeneratorPartialBuildArgument></GeneratorPartialBuildArgument>
+                <ReferenceServiceDLLs>false</ReferenceServiceDLLs>
+                <FxCop35TargetFileName>SDK-3.5.FxCop</FxCop35TargetFileName>
+                <FxCop45TargetFileName>SDK-4.5.FxCop</FxCop45TargetFileName>
+            </PropertyGroup>
+        </When>
+        <Otherwise>
+            <PropertyGroup>
+                <DesktopSolutionsFile>AWSSDK.Desktop.partial.sln</DesktopSolutionsFile>
+                <PCLSolutionsFile>AWSSDK.PCL.partial.sln</PCLSolutionsFile>
+                <UnitySolutionsFile>AWSSDK.Unity.sln</UnitySolutionsFile>
+                <CoreCLRSolutionsFile>AWSSDK.CoreCLR.partial.sln</CoreCLRSolutionsFile>
+                <GeneratorPartialBuildArgument>--partial-build-list $(PartialBuildList)</GeneratorPartialBuildArgument>
+                <ReferenceServiceDLLs>true</ReferenceServiceDLLs>
+                <FxCop35TargetFileName>SDK-3.5.partial.FxCop</FxCop35TargetFileName>
+                <FxCop45TargetFileName>SDK-4.5.partial.FxCop</FxCop45TargetFileName>
+            </PropertyGroup>
+        </Otherwise>
+    </Choose>
 
     <Target Name="build-buildtools"
             DependsOnTargets="build-custom-tasks;build-test-wrapper;build-test-analyzer" />
@@ -94,37 +121,37 @@
     <Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;copy-service-models;unity-pack;keyscan;consolidate-docartifacts;save-build"/>
 
     <Target Name="full-build-nodocs" DependsOnTargets="test-sdk;package-netcore-extensions;keyscan;copy-assemblies;copy-service-models;unity-pack;save-build"/>
-	
-	<Target Name="restore-nuget">
-		<Message Text="Restore nuget packages"/>
-        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.Desktop.sln"/>
-        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.PCL.sln"/>
-        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.Unity.sln"/>		
-		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.CodeAnalysis.sln"/>
-	</Target>
 
-	<Target Name="run-generator" DependsOnTargets="">
+    <Target Name="restore-nuget">
+        <Message Text="Restore nuget packages"/>
+        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\$(DesktopSolutionsFile)"/>
+        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\$(PCLSolutionsFile)"/>
+        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\$(UnitySolutionsFile)"/>
+        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.CodeAnalysis.sln"/>
+    </Target>
+
+    <Target Name="run-generator">
         <Message Text="Build and run code generator"/>
-		<Exec Command="..\sdk\.nuget\NuGet.exe restore ..\generator\AWSSDKGenerator.sln"/>
-		<MSBuild Projects="..\generator\AWSSDKGenerator.sln"
-			Targets="Clean;Build"
-			Properties="Configuration=Release" />
-        <Exec Command="ServiceClientGenerator.exe $(GeneratorDisablePCLSupport) $(GeneratorUnityPath)"
-			WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
-	</Target>
+        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\generator\AWSSDKGenerator.sln"/>
+        <MSBuild Projects="..\generator\AWSSDKGenerator.sln"
+            Targets="Clean;Build"
+            Properties="Configuration=Release" />
+        <Exec Command="ServiceClientGenerator.exe $(GeneratorDisablePCLSupport) $(GeneratorUnityPath) $(GeneratorPartialBuildArgument)"
+            WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
+    </Target>
 
-    <Target Name="build-sdk" DependsOnTargets="build-sdk-desktop;build-code-analysis;build-sdk-pcl;build-sdk-unity;build-sdk-coreclr">
+    <Target Name="build-sdk" DependsOnTargets="populate-deployment;build-sdk-desktop;build-code-analysis;build-sdk-pcl;build-sdk-unity;build-sdk-coreclr">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
     </Target>
 
-	<Target Name="build-sdk-desktop" DependsOnTargets="run-generator;restore-nuget">
-		<Message Text="Compile the Desktop SDK"/>
-		<MSBuild Projects="..\sdk\AWSSDK.Desktop.sln"
-			Targets="Clean;Build"
-			Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
-	</Target>
+    <Target Name="build-sdk-desktop" DependsOnTargets="run-generator;restore-nuget">
+        <Message Text="Compile the Desktop SDK"/>
+        <MSBuild Projects="..\sdk\$(DesktopSolutionsFile)"
+            Targets="Clean; Build"
+            Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false;ReferenceServiceDLLs=$(ReferenceServiceDLLs)"/>
+    </Target>
 
 	<Target Name="build-code-analysis" DependsOnTargets="restore-nuget;run-generator">
 		<MSBuild Projects="..\sdk\AWSSDK.CodeAnalysis.sln"
@@ -132,20 +159,18 @@
 					Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation)" />
 	</Target>
 
-	<Target Name="build-sdk-pcl" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisablePCLSupport)">
-		<Message Text="Compile the Portable Class Library SDK"/>
-		<MSBuild Projects="..\sdk\AWSSDK.PCL.sln"
-			Targets="Clean;Build"
-			Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
-	</Target>
+    <Target Name="build-sdk-pcl" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisablePCLSupport)">
+        <Message Text="Compile the Portable Class Library SDK"/>
+        <MSBuild Projects="..\sdk\$(PCLSolutionsFile)"
+            Targets="Clean;Build"
+            Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+    </Target>
 
 	<Target Name="build-sdk-coreclr" DependsOnTargets="GetSDKToolingInfoTarget">
-	
-		<!-- depends: restore-nuget;run-generator -->
-		<Exec Command="&quot;$(SDKToolingExe)&quot; restore" 
-			WorkingDirectory="..\sdk"/>		
-			
-			
+        <!-- depends: restore-nuget;run-generator -->
+        <Exec Command="&quot;$(SDKToolingExe)&quot; restore" 
+            WorkingDirectory="..\sdk"/>
+
 		<Message Text="Compile the CoreCLR version of the SDK"/>
 		<Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) --no-incremental" 
 			WorkingDirectory="..\sdk\test\CoreCLR\IntegrationTests"/>
@@ -157,19 +182,11 @@
 	
 	<Target Name="build-sdk-unity" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisableUnitySupport)">
 		<Message Text="Compile the Unity SDK"/>
-		<MSBuild Projects="..\sdk\AWSSDK.Unity.sln"
+		<MSBuild Projects="..\sdk\$(UnitySolutionsFile)"
 			Targets="Clean;Build"
 			Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
 	</Target>
 
-	<Target Name="dnxcore-nuget" DependsOnTargets="">
-	
-		<!-- build-sdk-coreclr;build-sdk-desktop -->
-	
-		<Exec LogStandardErrorAsError="true"
-              Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />			
-	</Target>
-	
     <Target Name="test-sdk" DependsOnTargets="init;build-sdk;fxcop;run-unit-tests;run-integ-tests" />
 
     <Target Name="validate-integ-tests" DependsOnTargets="build-custom-tasks">
@@ -188,19 +205,22 @@
             TestSuiteRunner="$(mstest2013exe)"
             TestContainer="..\sdk\test\UnitTests\bin\$(Configuration)\net35\AWSSDK.UnitTests.Net35.dll"
             ResultsOutputDir="$(Deployment)"
+            Categories="$(PartialBuildList)"
             WaitForDebugger="false"
             />
         <MsTestWrapperTask
             TestSuiteRunner="$(mstest2013exe)"
             TestContainer="..\sdk\test\UnitTests\bin\$(Configuration)\net45\AWSSDK.UnitTests.Net45.dll"
             ResultsOutputDir="$(Deployment)"
+            Categories="$(PartialBuildList)"
             />
         <XUnitWrapperTask
             TestSuiteRunner="$(SDKToolingExe)"
             TestContainer="..\sdk\test\CoreCLR\UnitTests\project.json"
             Configuration="$(Configuration)"
+            Categories="$(PartialBuildList)"
             />
-	</Target>
+    </Target>
 
     <Target Name="run-integ-tests" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'" DependsOnTargets="init;build-sdk;validate-integ-tests">
         <MsTestWrapperTask
@@ -221,7 +241,7 @@
 
     <Target Name="nuget-pack" DependsOnTargets="build-sdk" Condition="'$(Configuration)' == 'Release'">
         <Exec LogStandardErrorAsError="true"
-              Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />
+              Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1 -PackageList &quot;$(PartialBuildList)&quot;"/>
     </Target>
 
     <Target Name="xam-pack" DependsOnTargets="build-custom-tasks;nuget-pack" Condition="!$(DisablePCLSupport) AND Exists('$(xpkgexe)')  And $(SmokeBuild) == ''">
@@ -364,8 +384,8 @@
 
     <Target Name="fxcop" DependsOnTargets="init;copy-assemblies" Condition="Exists('$(fxcopcmdexe)') And ($(Configuration) == 'Release')">
         <!-- Update FxCop project files -->
-        <UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net35" FxCopProject="..\sdk\SDK-3.5.FxCop" BinSuffix="net35"/>
-        <UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net45" FxCopProject="..\sdk\SDK-4.5.FxCop" BinSuffix="net45"/>
+        <UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net35" FxCopProject="..\sdk\SDK-3.5.FxCop" FxCopTargetProject="..\sdk\$(FxCop35TargetFileName)" BinSuffix="net35" TargetServices="$(PartialBuildList)"/>
+        <UpdateFxCopProject Assemblies="$(Deployment)\assemblies\net45" FxCopProject="..\sdk\SDK-4.5.FxCop" FxCopTargetProject="..\sdk\$(FxCop45TargetFileName)" BinSuffix="net45" TargetServices="$(PartialBuildList)"/>
 
         <!-- Compile custom FxCop rules -->
         <MSBuild Projects="..\buildtools\CustomFxCopRules\CustomFxCopRules.sln"
@@ -373,8 +393,8 @@
             Properties="Configuration=Release" />
 
         <!-- Run FxCop -->
-        <Exec Command="$(fxcopcmd) /p:..\sdk\SDK-3.5.FxCop /o:..\fxcop-report-3.5.xml /s"/>
-        <Exec Command="$(fxcopcmd) /p:..\sdk\SDK-4.5.FxCop /o:..\fxcop-report-4.5.xml /s"/>
+        <Exec Command="$(fxcopcmd) /p:..\sdk\$(FxCop35TargetFileName) /o:..\fxcop-report-3.5.xml /s"/>
+        <Exec Command="$(fxcopcmd) /p:..\sdk\$(FxCop45TargetFileName) /o:..\fxcop-report-4.5.xml /s"/>
 
         <Error Condition="Exists('..\fxcop-report-3.5.xml') or Exists('..\fxcop-report-4.5.xml')" Text="There are FxCop violations!" />
     </Target>
@@ -423,13 +443,21 @@
 
     </Target>
 
-    <Target Name="save-build" Condition="Exists('$(InternalBuildTools)\references.targets')" DependsOnTargets="build-tools">
+    <Target Name="save-build" Condition="Exists('$(InternalBuildTools)\references.targets') And '$(ReferenceServiceDLLs)' == 
+    'true'" DependsOnTargets="build-tools">
         <SaveBuildArtifactTask
             RepositoryRoot="$(MSBuildProjectDirectory)\.."
             BuildArtifactType="sdk"
             GitBranch="$(SaveReferenceGitBranch)"
             LocalArchiveRootFolder="$(LocalArchiveRootFolder)"
             />
+    </Target>
+
+    <Target Name="populate-deployment" Condition="Exists('$(InternalBuildTools)\references.targets')" DependsOnTargets="build-tools">
+        <PrepopulateDeploymentFolder
+            BuildArtifactType="sdk"
+            DeploymentFolder="$(Deployment)"
+            GitBranch="staged-release"/>
     </Target>
 
     <Target Name="prepare-tests" Condition="'$(TestSettingsFile)' != ''">

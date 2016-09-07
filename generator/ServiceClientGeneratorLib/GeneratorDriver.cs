@@ -652,6 +652,7 @@ namespace ServiceClientGenerator
                 Options = options,
                 ProjectFileConfigurations = manifest.ProjectFileConfigurations
             };
+
             solutionFileCreator.Execute(NewlyCreatedProjectFiles);
         }
 
@@ -1126,10 +1127,12 @@ namespace ServiceClientGenerator
 
             if(hasChanged)
             {
-                var newContent = new System.Text.StringBuilder();
-                JsonWriter writer = new JsonWriter(newContent) { PrettyPrint = true };
-                rootData.ToJson(writer);
-                File.WriteAllText(projectJsonPath, newContent.ToString().Trim());
+                using (FileStream stream = new FileStream(projectJsonPath, FileMode.Create))
+                using (var newContent = new System.IO.StreamWriter(stream))
+                {
+                    JsonWriter writer = new JsonWriter(newContent) { PrettyPrint = true };
+                    rootData.ToJson(writer);
+                }
             }
         }
 

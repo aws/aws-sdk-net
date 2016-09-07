@@ -86,36 +86,52 @@ namespace ServiceClientGenerator
             AddSupportProjects();
             ScanForExistingProjects();
 
-            // build one uber-solution for every project and platform
-            GenerateAllPlatformsSolution("AWSSDK.All.sln", ProjectFileConfigurations);
-
-            GenerateCombinedSolution("AWSSDK.Desktop.sln", true,
-                new List<ProjectFileConfiguration> { 
+            // build project configuraitons for each solution
+            var desktopProjectConfigs = new List<ProjectFileConfiguration> {
                     GetProjectConfig(ProjectTypes.Net35),
                     GetProjectConfig(ProjectTypes.Net45)
-            });
+                };
 
-            GenerateCombinedSolution("AWSSDK.PCL.sln", true,
-                new List<ProjectFileConfiguration> { 
+            var pclProjectConfigs = new List<ProjectFileConfiguration> {
                     GetProjectConfig(ProjectTypes.PCL),
                     GetProjectConfig(ProjectTypes.Android),
                     GetProjectConfig(ProjectTypes.IOS),
                     GetProjectConfig(ProjectTypes.Win8),
                     GetProjectConfig(ProjectTypes.WinPhone81),
                     GetProjectConfig(ProjectTypes.WinPhoneSilverlight8)
-            });
+                };
 
-
-            GenerateCombinedSolution("AWSSDK.Unity.sln", false,
-                new List<ProjectFileConfiguration>{
+            var unityProjectConfigs = new List<ProjectFileConfiguration>{
                     GetProjectConfig(ProjectTypes.Unity)
-                });
+                };
 
-            GenerateCoreCLRSolution();
+            // build one uber-solution for every project and platform
+            GenerateAllPlatformsSolution("AWSSDK.All.sln", ProjectFileConfigurations);
+
+            GenerateCombinedSolution("AWSSDK.Desktop.sln", true, desktopProjectConfigs);
+            GenerateCombinedSolution("AWSSDK.PCL.sln", true, pclProjectConfigs);
+            GenerateCombinedSolution("AWSSDK.Unity.sln", false, unityProjectConfigs);
+
+            GenerateCoreCLRSolution("AWSSDK.CoreCLR.sln", true);
 
             // Include solutions that Travis CI can build
             GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net35), false, true, "AWSSDK.Net35.Travis.sln");
             GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net45), false, true, "AWSSDK.Net45.Travis.sln");
+
+            ICollection<string> projectsForPartialBuild = Options.PartialBuildList;
+            if (projectsForPartialBuild != null && projectsForPartialBuild.Count != 0)
+            {
+                // If we are explicitly rebuilding Core, all service projects must be rebuilt as well.
+                if (projectsForPartialBuild.Contains("Core", StringComparer.InvariantCultureIgnoreCase))
+                {
+                    projectsForPartialBuild = null;
+                }
+
+                GenerateCombinedSolution("AWSSDK.Desktop.partial.sln", true, desktopProjectConfigs, projectsForPartialBuild);
+                GenerateCombinedSolution("AWSSDK.PCL.partial.sln", false, pclProjectConfigs, projectsForPartialBuild);
+
+                GenerateCoreCLRSolution("AWSSDK.CoreCLR.partial.sln", false, projectsForPartialBuild);
+            }
         }
 
         // adds any necessary projects to the collection prior to generating the solution file(s)
@@ -298,7 +314,7 @@ namespace ServiceClientGenerator
             GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionFileName, content, true, false);
         }
 
-        private void GenerateCombinedSolution(string solutionFileName, bool includeTests, IEnumerable<ProjectFileConfiguration> projectFileConfigurations)
+        private void GenerateCombinedSolution(string solutionFileName, bool includeTests, IEnumerable<ProjectFileConfiguration> projectFileConfigurations, ICollection<string> serviceProjectsForPartialBuild = null)
         {            
             Console.WriteLine("Generating solution file {0}", solutionFileName);
 
@@ -327,6 +343,13 @@ namespace ServiceClientGenerator
             foreach (var servicePath in Directory.GetDirectories(serviceProjectsRoot))
             {
                 var di = new DirectoryInfo(servicePath);
+
+                // If we are generating a partial solution, and the service project has not changed, omit it from the partial solution.
+                if (serviceProjectsForPartialBuild != null && !serviceProjectsForPartialBuild.Contains(di.Name, StringComparer.InvariantCultureIgnoreCase))
+                {
+                    continue;
+                }
+
                 var folder = ServiceSolutionFolderFromPath(di.Name);
                 foreach (var pfc in projectFileConfigurations)
                 {
@@ -351,7 +374,11 @@ namespace ServiceClientGenerator
                     var projectTypeWildCard = string.Format("AWSSDK.*.{0}.csproj", pfc.Name);
 
                     var sdkTestsFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
-                    foreach (var testFoldername in new[] { GeneratorDriver.CommonTestSubFoldername, GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
+                    string[] testFolderNames = (serviceProjectsForPartialBuild == null)
+                        ? new string[] { GeneratorDriver.CommonTestSubFoldername, GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName }
+                        : new string[] { GeneratorDriver.CommonTestSubFoldername, GeneratorDriver.UnitTestsSubFoldername};
+
+                    foreach (var testFoldername in testFolderNames)
                     {
                         var testFolder = Path.Combine(sdkTestsFolder, testFoldername);
                         foreach (var projectFile in Directory.GetFiles(testFolder, projectTypeWildCard, SearchOption.TopDirectoryOnly))
@@ -391,7 +418,7 @@ namespace ServiceClientGenerator
         }
 
 
-        private void GenerateCoreCLRSolution()
+        private void GenerateCoreCLRSolution(string solutionFileName, bool includeTests, ICollection<string> serviceProjectsForPartialBuild = null)
         {
             var sdkSourceFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.SourceSubFoldername);
             var session = new Dictionary<string, object>();
@@ -399,6 +426,7 @@ namespace ServiceClientGenerator
             var coreProjectsRoot = Path.Combine(sdkSourceFolder, GeneratorDriver.CoreSubFoldername);
             var coreProjects = new List<Project>() { CoreProjectFromFile(Path.Combine(coreProjectsRoot, "AWSSDK.Core.CoreCLR.xproj")) };
             session["CoreProjects"] = coreProjects;
+            session["IncludeTests"] = includeTests;
 
             var buildConfigurations = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             var solutionProjects = new Dictionary<string, ProjectFileCreator.ProjectConfigurationData>();
@@ -409,6 +437,13 @@ namespace ServiceClientGenerator
             {
                 var di = new DirectoryInfo(servicePath);
                 var folder = ServiceSolutionFolderFromPath(di.Name);
+
+                // If we are generating a partial solution, and the service project has not changed, omit it from the partial solution.
+                bool omitService = serviceProjectsForPartialBuild != null && !serviceProjectsForPartialBuild.Contains(di.Name, StringComparer.InvariantCultureIgnoreCase);
+                if (omitService)
+                {
+                    continue;
+                }
 
                 foreach (var projectFile in Directory.GetFiles(servicePath, "*CoreCLR.xproj", SearchOption.TopDirectoryOnly))
                 {
@@ -423,7 +458,7 @@ namespace ServiceClientGenerator
 
             var generator = new CoreCLRSolutionFile() { Session = session };
             var content = generator.TransformText();
-            GeneratorDriver.WriteFile(Options.SdkRootFolder, null, "AWSSDK.CoreCLR.sln", content, true, false);
+            GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionFileName, content, true, false);
         }
 
         private void GeneratePlatformSpecificSolution(ProjectFileConfiguration projectConfig, bool includeTests, bool travisSolution, string solutionFileName = null)

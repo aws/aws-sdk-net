@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 namespace ServiceClientGenerator
 {
     /// <summary>
@@ -84,6 +85,11 @@ namespace ServiceClientGenerator
         /// If true the nuspec files will be generated without including references to PCL versions.
         /// </summary>
         public bool DisablePCLSupport { get; set; }
+
+        /// <summary>
+        /// If generating a partial build solution, 
+        /// </summary>
+        public ICollection<string> PartialBuildList { get; set; }
 
         public string SelfServiceModel { get; set; }
         public string SelfServiceBaseName { get; set; }

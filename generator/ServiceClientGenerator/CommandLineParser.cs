@@ -150,65 +150,65 @@ namespace ServiceClientGenerator
         {
             new ArgDeclaration
             {
-                OptionName = "verbose", 
-                ShortName = "v", 
-                Parse = (arguments, argValue) => arguments.ParsedOptions.Verbose = true, 
+                OptionName = "verbose",
+                ShortName = "v",
+                Parse = (arguments, argValue) => arguments.ParsedOptions.Verbose = true,
                 HelpText = "Enable verbose output."
-            },    
+            },
             new ArgDeclaration
             {
-                OptionName = "waitonexit", 
-                ShortName = "w", 
-                Parse = (arguments, argValue) => arguments.ParsedOptions.WaitOnExit = true, 
+                OptionName = "waitonexit",
+                ShortName = "w",
+                Parse = (arguments, argValue) => arguments.ParsedOptions.WaitOnExit = true,
                 HelpText = "Pauses waiting for a keypress after code generation completes."
-            },    
+            },
             new ArgDeclaration
             {
-                OptionName = "manifest", 
-                ShortName = "m", 
+                OptionName = "manifest",
+                ShortName = "m",
                 HasValue = true,
-                Parse = (arguments, argValue) => arguments.ParsedOptions.Manifest = argValue, 
+                Parse = (arguments, argValue) => arguments.ParsedOptions.Manifest = argValue,
                 HelpText = "The name and location of the control manifest listing all supported services for generation."
-            },    
+            },
             new ArgDeclaration
             {
-                OptionName = "versions", 
-                ShortName = "vs", 
+                OptionName = "versions",
+                ShortName = "vs",
                 HasValue = true,
-                Parse = (arguments, argValue) => arguments.ParsedOptions.Versions = argValue, 
+                Parse = (arguments, argValue) => arguments.ParsedOptions.Versions = argValue,
                 HelpText = "The name and location of the manifest listing versions of all supported services."
-            },    
+            },
             new ArgDeclaration
             {
-                OptionName = "modelsfolder", 
-                ShortName = "mf", 
+                OptionName = "modelsfolder",
+                ShortName = "mf",
                 HasValue = true,
-                Parse = (arguments, argValue) => arguments.ParsedOptions.ModelsFolder = argValue, 
+                Parse = (arguments, argValue) => arguments.ParsedOptions.ModelsFolder = argValue,
                 HelpText = "The location of the folder containing the service model files."
-            },    
+            },
             new ArgDeclaration
             {
-                OptionName = "sdkroot", 
-                ShortName = "sdk", 
+                OptionName = "sdkroot",
+                ShortName = "sdk",
                 HasValue = true,
-                Parse = (arguments, argValue) => arguments.ParsedOptions.SdkRootFolder = argValue, 
+                Parse = (arguments, argValue) => arguments.ParsedOptions.SdkRootFolder = argValue,
                 HelpText = "The root folder beneath which the source and test code for the SDK is arranged."
-            },    
+            },
             new ArgDeclaration
             {
-                OptionName = "servicemodels", 
-                ShortName = "sm", 
+                OptionName = "servicemodels",
+                ShortName = "sm",
                 HasValue = true,
-                Parse = (arguments, argValue) => arguments.ParsedOptions.ServiceModels = argValue, 
+                Parse = (arguments, argValue) => arguments.ParsedOptions.ServiceModels = argValue,
                 HelpText = "Collection of one or more service model identifiers, separated by the ';' character.\n"
                             + "If specified only these service(s) will be generated. The values specified are matched with\n"
                             + "the 'model' entry values in the service manifest file."
             },
             new ArgDeclaration
             {
-                OptionName = "clean", 
-                ShortName = "c", 
-                Parse = (arguments, argValue) => arguments.ParsedOptions.Clean = true, 
+                OptionName = "clean",
+                ShortName = "c",
+                Parse = (arguments, argValue) => arguments.ParsedOptions.Clean = true,
                 HelpText = "Deletes all content in the 'Generated' subfolder for services prior to generation.\n"
                             + "The default behavior is to keep existing generated content."
             },
@@ -221,39 +221,46 @@ namespace ServiceClientGenerator
             },
             new ArgDeclaration
             {
-                OptionName = "unitypath", 
-                ShortName = "u", 
+                OptionName = "unitypath",
+                ShortName = "u",
                 HasValue = true,
-                Parse = (arguments, argValue) => arguments.ParsedOptions.UnityPath = argValue, 
+                Parse = (arguments, argValue) => arguments.ParsedOptions.UnityPath = argValue,
                 HelpText = "Specifies the path to the Unity installation directory, e.g. 'C:\\Program Files\\Unity'."
             },
             new ArgDeclaration
             {
-                OptionName = "self.modelpath", 
-                Parse = (arguments, argValue) => arguments.ParsedOptions.SelfServiceModel = argValue, 
+                OptionName = "self.modelpath",
+                Parse = (arguments, argValue) => arguments.ParsedOptions.SelfServiceModel = argValue,
                 HasValue = true,
                 HelpText = "Path to service model for self service."
             },
             new ArgDeclaration
             {
-                OptionName = "self.basename", 
-                Parse = (arguments, argValue) => arguments.ParsedOptions.SelfServiceBaseName = argValue, 
+                OptionName = "self.basename",
+                Parse = (arguments, argValue) => arguments.ParsedOptions.SelfServiceBaseName = argValue,
                 HasValue = true,
                 HelpText = "Self Service base name used for namespace and client name."
             },
             new ArgDeclaration
             {
-                OptionName = "self.endpoint-prefix", 
-                Parse = (arguments, argValue) => arguments.ParsedOptions.SelfServiceEndpointPrefix = argValue, 
+                OptionName = "self.endpoint-prefix",
+                Parse = (arguments, argValue) => arguments.ParsedOptions.SelfServiceEndpointPrefix = argValue,
                 HasValue = true,
                 HelpText = "Endpoint prefix for self service."
             },
             new ArgDeclaration
             {
-                OptionName = "self.sig-v4-service-name", 
-                Parse = (arguments, argValue) => arguments.ParsedOptions.SelfServiceSigV4Name = argValue, 
+                OptionName = "self.sig-v4-service-name",
+                Parse = (arguments, argValue) => arguments.ParsedOptions.SelfServiceSigV4Name = argValue,
                 HasValue = true,
                 HelpText = "Sig V4 service signing name."
+            },
+            new ArgDeclaration
+            {
+                OptionName = "partial-build-list",
+                Parse = (arguments, argValue) => arguments.ParsedOptions.PartialBuildList  = argValue.Split(','),
+                HasValue = true,
+                HelpText = "A list of services to rebuild.  If the list contains Core, all services are included in the .partial.sln file."
             }
         };
 

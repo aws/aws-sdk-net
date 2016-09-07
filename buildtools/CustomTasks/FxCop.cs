@@ -14,7 +14,9 @@ namespace CustomTasks
     {
         public string Assemblies { get; set; }
         public string FxCopProject { get; set; }
+        public string FxCopTargetProject { get; set; }
         public string BinSuffix { get; set; }
+        public string TargetServices { get; set; }
 
         public override bool Execute()
         {
@@ -32,7 +34,13 @@ namespace CustomTasks
             Log.LogMessage("FxCopProject = " + FxCopProject);
 			
             Log.LogMessage("Updating project...");
-            FxCop.UpdateFxCopProject(Assemblies, FxCopProject, BinSuffix);
+
+            FxCop.UpdateFxCopProject(
+                Assemblies,
+                FxCopProject,
+                string.IsNullOrEmpty(FxCopTargetProject) ? FxCopProject : FxCopTargetProject,
+                BinSuffix,
+                TargetServices != null ? TargetServices.Split(',') : null);
             Log.LogMessage("Project updated");
 
             return true;
@@ -41,7 +49,7 @@ namespace CustomTasks
 
     public static class FxCop
     {
-        public static void UpdateFxCopProject(string assembliesFolder, string fxCopProjectPath, string binSuffix)
+        public static void UpdateFxCopProject(string assembliesFolder, string fxCopProjectPath, string fxCopTargetProjectPath, string binSuffix, string[] targetServices)
         {
             var allAssemblies = Directory.GetFiles(assembliesFolder, "*.dll").ToList();
 
@@ -53,7 +61,7 @@ namespace CustomTasks
             var doc = new XmlDocument();
             doc.Load(fxCopProjectPath);
 
-            var referenceDirectoriesNode = doc.SelectSingleNode(AssemblyReferenceDirectoriesXpath);            
+            var referenceDirectoriesNode = doc.SelectSingleNode(AssemblyReferenceDirectoriesXpath);
 
             var targetsNode = doc.SelectSingleNode(TargetsXpath);
             RemoveAllNodes(doc, targetsNode, TargetXpath);
@@ -64,6 +72,25 @@ namespace CustomTasks
                 var assemblyName = Path.GetFileName(assembly).ToLower();
                 var assemblyFolderName = assemblyName.Split('.')[1];
                 var isCore = string.Equals(CoreAssemblyName, assemblyName, StringComparison.OrdinalIgnoreCase);
+
+                var skipAssembly = true;
+                if (targetServices == null || targetServices.Count() == 0)
+                {
+                    skipAssembly = false;
+                }
+                else 
+                {
+                    foreach (var service in targetServices)
+                    {
+                        if (isCore || service.ToLower().Equals(assemblyFolderName)) 
+                        {
+                            skipAssembly = false;
+                            break;
+                        }
+                    }
+                }
+                
+                if (skipAssembly) continue;
 
                 var newTarget = AddChildNode(targetsNode, "Target");
                 AddAttribute(newTarget, "Name", MakeRelativePath(assembly));
@@ -77,7 +104,6 @@ namespace CustomTasks
                     // Add assembly reference directory for Core
                     // <Directory>$(ProjectDir)/src/Core/bin/Release/net35/</Directory>
                     dirNode.InnerText = string.Format("$(ProjectDir)/src/Core/bin/Release/{0}/", binSuffix);
-                    
                 }
                 else
                 {
@@ -92,7 +118,7 @@ namespace CustomTasks
                        assemblyFolderName, binSuffix);
                 }
             }
-            doc.Save(fxCopProjectPath);
+            doc.Save(fxCopTargetProjectPath);
         }
 
         private static void AddCoreAssembly(string coreAssemblyPath, XmlNode newTarget)

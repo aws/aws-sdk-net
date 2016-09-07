@@ -55,26 +55,48 @@ namespace ServiceClientGenerator
         {
             var existingGuids = FetchExistingProjectGuids();
             var rootServiceItemGroup = FindRootItemGroupForServices();
+            var rootDllReferenceGroup = FindRootDllReferenceGroup();
 
             var searchPattern = "*." + ProjectSuffix() + ".csproj";
 
+            List<string> assemblyNames = new List<string>();
             List<ServiceProjectRefernece> references = new List<ServiceProjectRefernece>();
             foreach (var projectFile in Directory.GetFiles(ServiceRoot, searchPattern, SearchOption.AllDirectories))
             {
                 var guid = ExtractProjectGuid(projectFile);
                 references.Add(GetServiceReference(projectFile, guid));
+                assemblyNames.Add(ExtractAssemblyName(projectFile));
             }
 
+            assemblyNames.Sort();
             references.Sort();
+
             RemoveAllAWSSDKServiceDependencies(rootServiceItemGroup);
+            RemoveAllServiceDllReference(rootDllReferenceGroup);
 
             foreach (var reference in references)
             {
                 AddServiceReference(rootServiceItemGroup, reference.Include, reference.Guid, reference.Name);
             }
 
+            foreach (var assemblyName in assemblyNames)
+            {
+                AddDllReference(rootDllReferenceGroup, assemblyName, this.ProjectFilePath.ToLower().Contains("net35") ? "net35" : "net45");
+            }
+
             this._projectFileXml.Save(this.ProjectFilePath);
             Console.WriteLine("Writing new version of project file {0}", Path.GetFileName(this.ProjectFilePath));
+        }
+
+        void RemoveAllServiceDllReference(XmlElement itemGroupNode)
+        {
+            var child = itemGroupNode.FirstChild;
+            while(child != null)
+            {
+                var nextSibling = child.NextSibling;
+                itemGroupNode.RemoveChild(child);
+                child = nextSibling;
+            }
         }
 
         void RemoveAllAWSSDKServiceDependencies(XmlElement itemGroupNode)
@@ -126,6 +148,18 @@ namespace ServiceClientGenerator
             itemGroupNode.AppendChild(projectReference);
         }
 
+        void AddDllReference(XmlElement itemGroupNode, string assemblyName, string targetFramework)
+        {
+            var hintPath = itemGroupNode.OwnerDocument.CreateElement("HintPath", VS_NAMESPACE);
+            hintPath.InnerText = string.Format(@"..\..\..\Deployment\assemblies\{0}\{1}.dll", targetFramework, assemblyName);
+
+            var reference = itemGroupNode.OwnerDocument.CreateElement("Reference", VS_NAMESPACE);
+            reference.SetAttribute("Include", assemblyName);
+            reference.AppendChild(hintPath);
+
+            itemGroupNode.AppendChild(reference);
+        }
+
         HashSet<string> FetchExistingProjectGuids()
         {
             HashSet<string> existingProjectGuids = new HashSet<string>();
@@ -146,6 +180,15 @@ namespace ServiceClientGenerator
             return itemGroup;
         }
 
+        XmlElement FindRootDllReferenceGroup()
+        {
+            var projectFileNameNode =
+                ProjectFileXml.SelectSingleNode("//vs:ItemGroup/vs:Reference[contains(@Include, 'AWSSDK.AutoScaling')]", NamespaceManager) as XmlElement;
+
+            var itemGroup = projectFileNameNode.ParentNode as XmlElement;
+            return itemGroup;
+        }
+
         string ProjectSuffix()
         {
             var projectFileNameNode =
@@ -161,6 +204,15 @@ namespace ServiceClientGenerator
             project.Load(serviceProjectFile);
 
             var projectGuidNode = project.SelectSingleNode("//vs:PropertyGroup/vs:ProjectGuid", NamespaceManager) as XmlElement;
+            return projectGuidNode.InnerText;
+        }
+
+        string ExtractAssemblyName(string serviceProjectFile)
+        {
+            XmlDocument project = new XmlDocument();
+            project.Load(serviceProjectFile);
+
+            var projectGuidNode = project.SelectSingleNode("//vs:PropertyGroup/vs:AssemblyName", NamespaceManager) as XmlElement;
             return projectGuidNode.InnerText;
         }
 
