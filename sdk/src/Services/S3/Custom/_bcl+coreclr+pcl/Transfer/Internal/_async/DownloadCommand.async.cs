@@ -46,8 +46,8 @@ namespace Amazon.S3.Transfer.Internal
                 if (retries != 0)
                 {
 #if PCL
-                    ByteRange bytesRemaining = await ByteRangeRemainingForDownloadAsync(this._request.FilePath);
-#else
+                    ByteRange bytesRemaining = await ByteRangeRemainingForDownloadAsync(this._request.FilePath).ConfigureAwait(false);
+#else   
                     ByteRange bytesRemaining = ByteRangeRemainingForDownload(this._request.FilePath);
 #endif
                     getRequest.ByteRange = bytesRemaining;
