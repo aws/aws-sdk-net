@@ -3,7 +3,7 @@
     "ProductVersion" : "3.2.8.0",
     "CoreVersion"    : "3.2.8.0",
     "DefaultToPreview" : true,
-	"PreviewLabel" : "beta",
+	"PreviewLabel" : "rc",
     "ServiceVersions"  : {
         "CloudHSM" : {
             "Version" : "3.2.8.0",
