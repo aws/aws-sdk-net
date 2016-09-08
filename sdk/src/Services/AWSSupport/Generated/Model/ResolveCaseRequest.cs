@@ -29,7 +29,7 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the ResolveCase operation.
-    /// Takes a <code>CaseId</code> and returns the initial state of the case along with the
+    /// Takes a <code>caseId</code> and returns the initial state of the case along with the
     /// state of the case after the call to <a>ResolveCase</a> completed.
     /// </summary>
     public partial class ResolveCaseRequest : AmazonAWSSupportRequest
@@ -41,6 +41,7 @@ namespace Amazon.AWSSupport.Model
         /// <para>
         /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric
         /// string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// 
         /// </para>
         /// </summary>
         public string CaseId

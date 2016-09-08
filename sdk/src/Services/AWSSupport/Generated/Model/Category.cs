@@ -39,7 +39,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The category code for the support case. 
+        /// The category code for the support case.
         /// </para>
         /// </summary>
         public string Code
@@ -57,7 +57,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The category name for the support case. 
+        /// The category name for the support case.
         /// </para>
         /// </summary>
         public string Name
