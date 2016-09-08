@@ -2,12 +2,12 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// General Information about an assembly is controlled through the following
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
+[assembly: AssemblyTitle("AWSSDK.Extensions.NETCore.Setup")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AWSSDK.Extensions.NETCore.DependencyInjection")]
+[assembly: AssemblyCompany("Amazon.com, Inc")]
+[assembly: AssemblyProduct("Amazon Web Services SDK for .NET extensions for .NET Core setup")]
+[assembly: AssemblyDescription("Amazon Web Services SDK for .NET extensions for .NET Core setup")]
+[assembly: AssemblyCopyright("Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.")]
 [assembly: AssemblyTrademark("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -15,5 +15,6 @@ using System.Runtime.InteropServices;
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
-// The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c5aa3f6e-7bc8-4e26-8a4d-406938fc95ff")]
+
+[assembly: AssemblyVersion("3.2")]
+[assembly: AssemblyFileVersion("3.2.8.0")]
