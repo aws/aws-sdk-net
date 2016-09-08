@@ -17,6 +17,7 @@ using System;
 using System.Globalization;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Amazon.Runtime.Internal.Auth
 {
@@ -34,6 +35,10 @@ namespace Amazon.Runtime.Internal.Auth
         private const string accessKeyPropertyName = "aws_access_key_id";
         private const string secretKeyPropertyName = "aws_secret_access_key";
         private const string tokenPropertyName = "aws_session_token";
+        private const string sourceProfilePropertyName = "source_profile";
+        private const string roleArnPropertyName = "role_arn";
+        private const string mfaSerialPropertyName = "mfa_serial";
+        private const string externalIDPropertyName = "external_id";
 
         private IniFile iniFile;
 
@@ -65,9 +70,9 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         /// <param name="profileName">name of profile to find credentials for</param>
         /// <returns>true if the profile exists and has valid credentials, false otherwise</returns>
-        public ImmutableCredentials GetCredentials(string profileName)
+        public AWSCredentials GetAWSCredentials(string profileName)
         {
-            return GetCredentials(profileName, true);
+            return GetAWSCredentials(profileName, true);
         }
 
         /// <summary>
@@ -76,9 +81,9 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="profileName">name of profile to find credentials for</param>
         /// <param name="credentials">the credentials for the profile</param>
         /// <returns>true if the profile was found and it contained valid credentials, false otherwise</returns>
-        public bool TryGetCredentials(string profileName, out ImmutableCredentials credentials)
+        public bool TryGetAWSCredentials(string profileName, out AWSCredentials credentials)
         {
-            credentials = GetCredentials(profileName, false);
+            credentials = GetAWSCredentials(profileName, false);
             return credentials != null;
         }
 
@@ -144,41 +149,137 @@ namespace Amazon.Runtime.Internal.Auth
             iniFile.Persist();
         }
 
-        private ImmutableCredentials GetCredentials(string profileName, bool throwIfInvalid)
+        private AWSCredentials GetAWSCredentials(string profileName, bool throwIfInvalid)
         {
             Dictionary<string, string> properties;
             if (iniFile.TryGetSection(profileName, out properties))
             {
-                string accessKey = null;
-                string secretKey = null;
-                string token = null;
+                var detector = new ProfileTypeDetector(properties);
+
+                switch (detector.ProfileType)
+                {
+                    case ProfileType.Basic:
+                        return new BasicAWSCredentials(detector.AccessKey, detector.SecretKey);
+                    case ProfileType.Session:
+                        return new SessionAWSCredentials(detector.AccessKey, detector.SecretKey, detector.Token);
+                    case ProfileType.AssumeRole:
+                    case ProfileType.AssumeRoleExternal:
+                    case ProfileType.AssumeRoleMFA:
+                    case ProfileType.AssumeRoleExternalMFA:
+                        if (throwIfInvalid)
+                        {
+                            throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture,
+                                "Credential profile [{0}] uses the source_profile key, which is not yet supported by the .NET SDK.", profileName));
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    case ProfileType.Invalid:
+                    default:
+                        if (throwIfInvalid)
+                        {
+                            throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture,
+                                "Credential profile [{0}] was not found, or is invalid.", profileName));
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                }
+            }
+            return null;
+        }
+
+        private enum ProfileType
+        {
+            Basic,
+            Session,
+            AssumeRole,
+            AssumeRoleMFA,
+            AssumeRoleExternal,
+            AssumeRoleExternalMFA,
+            Invalid
+        }
+
+        private class ProfileTypeDetector
+        {
+            public readonly string[] ProfileBasic = new string[] { accessKeyPropertyName, secretKeyPropertyName };
+            public readonly string[] ProfileSession = new string[] { accessKeyPropertyName, secretKeyPropertyName, tokenPropertyName };
+            public readonly string[] ProfileAssumeRole = new string[] { sourceProfilePropertyName, roleArnPropertyName };
+            public readonly string[] ProfileAssumeRoleMFA = new string[] { sourceProfilePropertyName, roleArnPropertyName, mfaSerialPropertyName };
+            public readonly string[] ProfileAssumeRoleExternal = new string[] { sourceProfilePropertyName, roleArnPropertyName, externalIDPropertyName };
+            public readonly string[] ProfileAssumeRoleExternalMFA = new string[] { sourceProfilePropertyName, roleArnPropertyName, externalIDPropertyName, mfaSerialPropertyName };
+            public readonly string[] AllKeys = new string[] { accessKeyPropertyName, secretKeyPropertyName, tokenPropertyName, sourceProfilePropertyName, roleArnPropertyName, mfaSerialPropertyName, externalIDPropertyName };
+
+            private string accessKey = null;
+            private string secretKey = null;
+            private string token = null;
+            private string sourceProfile = null;
+            private string roleArn = null;
+            private string mfaSerial = null;
+            private string externalID = null;
+
+            public string AccessKey { get { return accessKey; } }
+            public string SecretKey { get { return secretKey; } }
+            public string Token { get { return token; } }
+            public string SourceProfile { get { return sourceProfile; } }
+            public string RoleArn { get { return roleArn; } }
+            public string MFASerial { get { return mfaSerial; } }
+            public string ExternalID { get { return externalID; } }
+
+            public ProfileType ProfileType { get; private set; }
+
+            public ProfileTypeDetector(Dictionary<string, string> properties)
+            {
                 properties.TryGetValue(accessKeyPropertyName, out accessKey);
                 properties.TryGetValue(secretKeyPropertyName, out secretKey);
                 properties.TryGetValue(tokenPropertyName, out token);
+                properties.TryGetValue(sourceProfilePropertyName, out sourceProfile);
+                properties.TryGetValue(roleArnPropertyName, out roleArn);
+                properties.TryGetValue(mfaSerialPropertyName, out mfaSerial);
+                properties.TryGetValue(externalIDPropertyName, out externalID);
 
-                if (string.IsNullOrEmpty(accessKey) || string.IsNullOrEmpty(secretKey))
+                if (HasOnlyExpectedProperties(properties, ProfileBasic))
                 {
-                    if (throwIfInvalid)
-                    {
-                        throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture,
-                                                                    "Credential profile [{0}] does not contain valid access and/or secret key materials.", 
-                                                                    profileName));
-                    }
-                    else
-                    {
-                        return null;
-                    }
+                    ProfileType = ProfileType.Basic;
+                }
+                else if (HasOnlyExpectedProperties(properties, ProfileSession))
+                {
+                    ProfileType = ProfileType.Session;
+                }
+                else if (HasOnlyExpectedProperties(properties, ProfileAssumeRole))
+                {
+                    ProfileType = ProfileType.AssumeRole;
+                }
+                else if (HasOnlyExpectedProperties(properties, ProfileAssumeRoleMFA))
+                {
+                    ProfileType = ProfileType.AssumeRoleExternalMFA;
+                }
+                else if (HasOnlyExpectedProperties(properties, ProfileAssumeRoleExternal))
+                {
+                    ProfileType = ProfileType.AssumeRoleExternal;
+                }
+                else if (HasOnlyExpectedProperties(properties, ProfileAssumeRoleExternalMFA))
+                {
+                    ProfileType = ProfileType.AssumeRoleExternalMFA;
                 }
                 else
                 {
-                    return new ImmutableCredentials(accessKey, secretKey, token);
+                    ProfileType = ProfileType.Invalid;
                 }
             }
-            else
+
+            private bool HasOnlyExpectedProperties(IEnumerable<KeyValuePair<string, string>> properties, string[] expectedProperties)
             {
-                return null;
+                // count of all properties that matter for a credentials profile
+                var numRelevantProperties = properties.Count(pair => AllKeys.Contains(pair.Key) && !string.IsNullOrEmpty(pair.Value));
+                // count of all expected properties
+                var numExpectedProperties = properties.Count(pair => expectedProperties.Contains(pair.Key) && !string.IsNullOrEmpty(pair.Value));
+
+                // assumes that the readonly arrays are set up correctly and that expectedProperties is a subset of AllKeys
+                return numExpectedProperties == expectedProperties.Length && numRelevantProperties == numExpectedProperties;
             }
         }
-
     }
 }

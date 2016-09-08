@@ -25,7 +25,8 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class SharedCredentialsFileTest
     {
-        private const string ErrorFormat = "Credential profile [{0}] does not contain valid access and/or secret key materials.";
+        private const string ErrorFormat = "Credential profile [{0}] was not found, or is invalid.";
+        private const string TemporaryErrorFormat = "Credential profile [{0}] uses the source_profile key, which is not yet supported by the .NET SDK.";
 
         private static readonly string BasicProfileText = new StringBuilder()
             .AppendLine("[basic_profile]")
@@ -38,6 +39,12 @@ namespace AWSSDK.UnitTests
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
             .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
             .Append("aws_session_token=session_aws_session_token")
+            .ToString();
+
+        private static readonly string AssumeRoleProfileText = new StringBuilder()
+            .AppendLine("[assume_role_profile]")
+            .AppendLine("source_profile=assume_role_other_profile")
+            .Append("role_arn=assume_role_role_arn")
             .ToString();
 
         private static readonly string InvalidNoAccessKeyProfileText = new StringBuilder()
@@ -100,7 +107,7 @@ namespace AWSSDK.UnitTests
                 AssertExtensions.ExpectException(() =>
                 {
                     tester.AssertReadProfile("invalid_profile", null);
-                }, typeof(InvalidDataException), String.Format(ErrorFormat, "invalid_profile"));
+                }, typeof(InvalidDataException), string.Format(ErrorFormat, "invalid_profile"));
             }
         }
 
@@ -112,7 +119,19 @@ namespace AWSSDK.UnitTests
                 AssertExtensions.ExpectException(() =>
                 {
                     tester.AssertReadProfile("invalid_profile", null);
-                }, typeof(InvalidDataException), String.Format(ErrorFormat, "invalid_profile"));
+                }, typeof(InvalidDataException), string.Format(ErrorFormat, "invalid_profile"));
+            }
+        }
+
+        [TestMethod]
+        public void ReadInvalidAssumeRoleProfile()
+        {
+            using (var tester = new SharedCredentialsFileTester(AssumeRoleProfileText))
+            {
+                AssertExtensions.ExpectException(() =>
+                {
+                    tester.AssertReadProfile("assume_role_profile", null);
+                }, typeof(InvalidDataException), string.Format(TemporaryErrorFormat, "assume_role_profile"));
             }
         }
 
@@ -167,10 +186,10 @@ namespace AWSSDK.UnitTests
 
             public void AssertReadProfile(string profileName, ImmutableCredentials expectedCredentials)
             {
-                Assert.IsNotNull(CredentialsFile.GetCredentials(profileName));
-                ImmutableCredentials credentials;
-                Assert.IsTrue(CredentialsFile.TryGetCredentials(profileName, out credentials));
-                Assert.AreEqual(expectedCredentials, credentials);
+                Assert.IsNotNull(CredentialsFile.GetAWSCredentials(profileName));
+                AWSCredentials credentials;
+                Assert.IsTrue(CredentialsFile.TryGetAWSCredentials(profileName, out credentials));
+                Assert.AreEqual(expectedCredentials, credentials.GetCredentials());
             }
 
             public void AssertWriteProfile(string profileName, ImmutableCredentials credentials, string expectedFileContents)

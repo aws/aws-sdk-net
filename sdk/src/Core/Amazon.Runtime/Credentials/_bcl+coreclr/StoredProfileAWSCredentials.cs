@@ -41,7 +41,7 @@ namespace Amazon.Runtime
     {
         #region Private members
 
-        private ImmutableCredentials _wrappedCredentials;
+        private AWSCredentials _wrappedCredentials;
 
         #endregion
 
@@ -105,8 +105,7 @@ namespace Amazon.Runtime
             {
                 if (ProfileManager.IsProfileKnown(lookupName) && AWSCredentialsProfile.CanCreateFrom(lookupName))
                 {
-                    var credentials = ProfileManager.GetAWSCredentials(lookupName);
-                    this._wrappedCredentials = credentials.GetCredentials();
+                    _wrappedCredentials = ProfileManager.GetAWSCredentials(lookupName);
                     var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
                     logger.InfoFormat("Credentials found using account name {0} and looking in SDK account store.", lookupName);
                 }
@@ -119,10 +118,8 @@ namespace Amazon.Runtime
                 if (!string.IsNullOrEmpty(credentialsFilePath))
                 {
                     var file = new SharedCredentialsFile(credentialsFilePath);
-                    ImmutableCredentials credentials;
-                    if (file.TryGetCredentials(lookupName, out credentials))
+                    if (file.TryGetAWSCredentials(lookupName, out _wrappedCredentials))
                     {
-                        this._wrappedCredentials = credentials;
                         var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
                         logger.InfoFormat("Credentials found using account name {0} and looking in {1}.", lookupName, credentialsFilePath);
                     }
@@ -212,7 +209,7 @@ namespace Amazon.Runtime
                 try
                 {
                     var file = new SharedCredentialsFile(credentialsFilePath);
-                    if (file.GetCredentials(profileName) != null)
+                    if (file.GetAWSCredentials(profileName) != null)
                     {
                         return true;
                     }
@@ -248,7 +245,7 @@ namespace Amazon.Runtime
         /// <returns></returns>
         public override ImmutableCredentials GetCredentials()
         {
-            return this._wrappedCredentials.Copy();
+            return _wrappedCredentials.GetCredentials();
         }
 
         #endregion
