@@ -351,7 +351,7 @@
             <Project>$([System.IO.Path]::GetFullPath($(ProjectJSON)))</Project>
         </PropertyGroup>
 
-        <Exec Command=".\TestWrapper\TestRunners\bin\Debug\TestWrapper.exe xunit &quot;$(SDKToolingExe)&quot; test &quot;$(Project)&quot;"/>
+        <Exec Command=".\TestWrapper\TestRunners\bin\Debug\TestWrapper.exe xunit -c $(Configuration) &quot;$(SDKToolingExe)&quot; test &quot;$(Project)&quot;"/>
 
          <!-- Clear our properties -->
         <PropertyGroup >
