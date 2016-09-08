@@ -1,3 +1,11 @@
+### 3.1.99.0 (2016-09-08 21:56 UTC)
+* AWSSupport (3.1.0.10)
+	* Documentation update.
+* CloudFront (3.1.7.0)
+	* Adds HTTP2 support for Amazon CloudFront distributions.This includes a new API version, 2016-09-07.
+* SimpleNotificationService (3.1.2.1)
+	* Documentation update.
+
 ### 3.1.98.0 (2016-09-06 21:59 UTC)
 * CodePipeline (3.1.5.0)
 	* Incorporated API updates to correct naming of members in types used in the recently published view changes APIs. Please note these are breaking changes in the model shapes.

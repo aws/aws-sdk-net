@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.AWSSupport</id>
     <title>AWSSDK - AWS Support</title>
-    <version>3.1.0.9</version> 
+    <version>3.1.0.10</version> 
     <authors>Amazon Web Services</authors>
     <description>The AWS Support API provides methods for creating and managing AWS Support cases and for retrieving the results of AWS Trusted Advisor checks.</description>
     <language>en-US</language>
