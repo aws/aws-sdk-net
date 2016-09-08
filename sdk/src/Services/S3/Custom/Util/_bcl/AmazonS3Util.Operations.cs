@@ -74,7 +74,7 @@ namespace Amazon.S3.Util
             var url = s3Client.GetPreSignedURL(request);
             var uri = new Uri(url);
 
-            var config = (s3Client as AmazonS3Client).Config;
+            var config = s3Client.Config;
             var response = AmazonS3HttpUtil.GetHead(s3Client, config, url, HeaderKeys.XAmzBucketRegion);
             if (response.StatusCode == null)
             {
