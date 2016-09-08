@@ -102,13 +102,30 @@ namespace Microsoft.Extensions.Configuration
             {
                 options.Profile = section["Profile"];
             }
+            // Check legacy name if the new name isn't set
+            else if (!string.IsNullOrEmpty(section["AWSProfileName"]))
+            {
+                options.Profile = section["AWSProfileName"];
+            }
+
             if (!string.IsNullOrEmpty(section["ProfilesLocation"]))
             {
-                options.ProfilesLocation = section["Profile"];
+                options.ProfilesLocation = section["ProfilesLocation"];
             }
+            // Check legacy name if the new name isn't set
+            else if (!string.IsNullOrEmpty(section["AWSProfilesLocation"]))
+            {
+                options.ProfilesLocation = section["AWSProfilesLocation"];
+            }
+
             if (!string.IsNullOrEmpty(section["Region"]))
             {
                 options.Region = RegionEndpoint.GetBySystemName(section["Region"]);
+            }
+            // Check legacy name if the new name isn't set
+            else if (!string.IsNullOrEmpty(section["AWSRegion"]))
+            {
+                options.Region = RegionEndpoint.GetBySystemName(section["AWSRegion"]);
             }
 
             return options;

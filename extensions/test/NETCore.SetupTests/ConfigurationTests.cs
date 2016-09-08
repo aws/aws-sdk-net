@@ -29,6 +29,25 @@ namespace NETCore.SetupTests
 
             Assert.Equal(RegionEndpoint.USWest2, options.Region);
             Assert.Equal("myProfile", options.Profile);
+            Assert.Equal("myProfileLocation", options.ProfilesLocation);
+
+            IAmazonS3 client = options.CreateServiceClient<IAmazonS3>();
+            Assert.NotNull(client);
+            Assert.Equal(RegionEndpoint.USWest2, client.Config.RegionEndpoint);
+        }
+
+        [Fact]
+        public void LegacyNamesTest()
+        {
+            var builder = new ConfigurationBuilder();
+            builder.AddJsonFile("./TestFiles/LegacyNamesTest.json");
+
+            IConfiguration config = builder.Build();
+            var options = config.GetAWSOptions();
+
+            Assert.Equal(RegionEndpoint.USWest2, options.Region);
+            Assert.Equal("myProfile", options.Profile);
+            Assert.Equal("myProfileLocation", options.ProfilesLocation);
 
             IAmazonS3 client = options.CreateServiceClient<IAmazonS3>();
             Assert.NotNull(client);
