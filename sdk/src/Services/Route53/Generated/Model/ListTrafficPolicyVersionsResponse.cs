@@ -62,11 +62,7 @@ namespace Amazon.Route53.Model
         /// A flag that indicates whether there are more traffic policies to be listed. If the
         /// response was truncated, you can get the next group of <code>maxitems</code> traffic
         /// policies by calling <code>ListTrafficPolicyVersions</code> again and specifying the
-        /// value of the <code>NextMarker</code> element in the marker parameter.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code>
+        /// value of the <code>NextMarker</code> element in the <code>marker</code> parameter.
         /// </para>
         /// </summary>
         public bool IsTruncated

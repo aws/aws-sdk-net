@@ -29,8 +29,10 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the GetHealthCheck operation.
-    /// To retrieve the health check, send a <code>GET</code> request to the <code>/<i>Route
-    /// 53 API version</i>/healthcheck/<i>health check ID</i></code> resource.
+    /// Gets information about a specified health check. Send a <code>GET</code> request to
+    /// the <code>/2013-04-01/healthcheck/<i>health check ID</i> </code> resource. For more
+    /// information about using the console to perform this operation, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon
+    /// Route 53 Health Checks and DNS Failover</a> in the Amazon Route 53 Developer Guide.
     /// </summary>
     public partial class GetHealthCheckRequest : AmazonRoute53Request
     {
@@ -39,7 +41,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HealthCheckId. 
         /// <para>
-        /// The ID of the health check to retrieve.
+        /// The identifier that Amazon Route 53 assigned to the health check when you created
+        /// it. When you add or update a resource record set, you use this value to specify which
+        /// health check to use. The value can be up to 64 characters long.
         /// </para>
         /// </summary>
         public string HealthCheckId

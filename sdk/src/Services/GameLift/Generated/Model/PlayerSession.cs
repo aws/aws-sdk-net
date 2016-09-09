@@ -45,8 +45,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Time stamp indicating when this object was created. Format is an integer representing
-        /// the number of seconds since the Unix epoch (Unix time).
+        /// Time stamp indicating when this data object was created. Format is a number expressed
+        /// in Unix time as milliseconds (ex: "1469498468.057".
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -174,14 +174,18 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Current status of the player session. Possible player session states include the following:
-        /// <ul><li><b>RESERVED</b> – The player session request has been received, but the player
+        /// Current status of the player session.
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible player session statuses include the following:
+        /// </para>
+        ///  <ul><li><b>RESERVED</b> – The player session request has been received, but the player
         /// has not yet connected to the server process and/or been validated. </li><li><b>ACTIVE</b>
         /// – The player has been validated by the server process and is currently connected.</li><li><b>COMPLETED</b>
         /// – The player connection has been dropped.</li><li><b>TIMEDOUT</b> – A player session
         /// request was received, but the player did not connect and/or was not validated within
         /// the time-out limit (60 seconds).</li></ul>
-        /// </para>
         /// </summary>
         public PlayerSessionStatus Status
         {
@@ -198,8 +202,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property TerminationTime. 
         /// <para>
-        /// Time stamp indicating when this fleet was terminated. Format is an integer representing
-        /// the number of seconds since the Unix epoch (Unix time).
+        /// Time stamp indicating when this data object was terminated. Format is a number expressed
+        /// in Unix time as milliseconds (ex: "1469498468.057".
         /// </para>
         /// </summary>
         public DateTime TerminationTime

@@ -323,6 +323,10 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>CentOS 7</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>Red Hat Enterprise Linux 7</code> 
         /// </para>
         ///  </li> <li> 

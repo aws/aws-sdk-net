@@ -32,10 +32,33 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class SpotFleetRequestConfig
     {
+        private ActivityStatus _activityStatus;
         private SpotFleetRequestConfigData _configData;
         private DateTime? _createTime;
         private string _spotFleetRequestId;
         private BatchState _spotFleetRequestState;
+
+        /// <summary>
+        /// Gets and sets the property ActivityStatus. 
+        /// <para>
+        /// The progress of the Spot fleet request. If there is an error, the status is <code>error</code>.
+        /// After all bids are placed, the status is <code>pending_fulfillment</code>. If the
+        /// size of the fleet is equal to or greater than its target capacity, the status is <code>fulfilled</code>.
+        /// If the size of the fleet is decreased, the status is <code>pending_termination</code>
+        /// while Spot instances are terminating.
+        /// </para>
+        /// </summary>
+        public ActivityStatus ActivityStatus
+        {
+            get { return this._activityStatus; }
+            set { this._activityStatus = value; }
+        }
+
+        // Check to see if ActivityStatus property is set
+        internal bool IsSetActivityStatus()
+        {
+            return this._activityStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConfigData. 

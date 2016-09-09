@@ -135,6 +135,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void CopyDBClusterParameterGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("CopyDBClusterParameterGroup");
+
+            var request = InstantiateClassGenerator.Execute<CopyDBClusterParameterGroupRequest>();
+            var marshaller = new CopyDBClusterParameterGroupRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CopyDBClusterParameterGroupResponseUnmarshaller.Instance.Unmarshall(context)
+                as CopyDBClusterParameterGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void CopyDBClusterSnapshotMarshallTest()
         {
             var operation = service_model.FindOperation("CopyDBClusterSnapshot");
@@ -1358,6 +1382,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void DescribeSourceRegionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeSourceRegions");
+
+            var request = InstantiateClassGenerator.Execute<DescribeSourceRegionsRequest>();
+            var marshaller = new DescribeSourceRegionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeSourceRegionsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeSourceRegionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void DownloadDBLogFilePortionMarshallTest()
         {
             var operation = service_model.FindOperation("DownloadDBLogFilePortion");
@@ -1824,6 +1872,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = ResetDBParameterGroupResponseUnmarshaller.Instance.Unmarshall(context)
                 as ResetDBParameterGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void RestoreDBClusterFromS3MarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBClusterFromS3");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBClusterFromS3Request>();
+            var marshaller = new RestoreDBClusterFromS3RequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = RestoreDBClusterFromS3ResponseUnmarshaller.Instance.Unmarshall(context)
+                as RestoreDBClusterFromS3Response;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

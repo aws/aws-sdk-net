@@ -40,15 +40,20 @@ namespace Amazon.MachineLearning.Model
     {
         private string _batchPredictionDataSourceId;
         private string _batchPredictionId;
+        private long? _computeTime;
         private DateTime? _createdAt;
         private string _createdByIamUser;
+        private DateTime? _finishedAt;
         private string _inputDataLocationS3;
+        private long? _invalidRecordCount;
         private DateTime? _lastUpdatedAt;
         private string _message;
         private string _mlModelId;
         private string _name;
         private string _outputUri;
+        private DateTime? _startedAt;
         private EntityStatus _status;
+        private long? _totalRecordCount;
 
         /// <summary>
         /// Gets and sets the property BatchPredictionDataSourceId. 
@@ -86,6 +91,21 @@ namespace Amazon.MachineLearning.Model
         internal bool IsSetBatchPredictionId()
         {
             return this._batchPredictionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputeTime.
+        /// </summary>
+        public long ComputeTime
+        {
+            get { return this._computeTime.GetValueOrDefault(); }
+            set { this._computeTime = value; }
+        }
+
+        // Check to see if ComputeTime property is set
+        internal bool IsSetComputeTime()
+        {
+            return this._computeTime.HasValue; 
         }
 
         /// <summary>
@@ -128,6 +148,21 @@ namespace Amazon.MachineLearning.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FinishedAt.
+        /// </summary>
+        public DateTime FinishedAt
+        {
+            get { return this._finishedAt.GetValueOrDefault(); }
+            set { this._finishedAt = value; }
+        }
+
+        // Check to see if FinishedAt property is set
+        internal bool IsSetFinishedAt()
+        {
+            return this._finishedAt.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property InputDataLocationS3. 
         /// <para>
         /// The location of the data file or directory in Amazon Simple Storage Service (Amazon
@@ -144,6 +179,21 @@ namespace Amazon.MachineLearning.Model
         internal bool IsSetInputDataLocationS3()
         {
             return this._inputDataLocationS3 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvalidRecordCount.
+        /// </summary>
+        public long InvalidRecordCount
+        {
+            get { return this._invalidRecordCount.GetValueOrDefault(); }
+            set { this._invalidRecordCount = value; }
+        }
+
+        // Check to see if InvalidRecordCount property is set
+        internal bool IsSetInvalidRecordCount()
+        {
+            return this._invalidRecordCount.HasValue; 
         }
 
         /// <summary>
@@ -241,6 +291,21 @@ namespace Amazon.MachineLearning.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StartedAt.
+        /// </summary>
+        public DateTime StartedAt
+        {
+            get { return this._startedAt.GetValueOrDefault(); }
+            set { this._startedAt = value; }
+        }
+
+        // Check to see if StartedAt property is set
+        internal bool IsSetStartedAt()
+        {
+            return this._startedAt.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the <code>BatchPrediction</code>. This element can have one of the following
@@ -263,6 +328,21 @@ namespace Amazon.MachineLearning.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalRecordCount.
+        /// </summary>
+        public long TotalRecordCount
+        {
+            get { return this._totalRecordCount.GetValueOrDefault(); }
+            set { this._totalRecordCount = value; }
+        }
+
+        // Check to see if TotalRecordCount property is set
+        internal bool IsSetTotalRecordCount()
+        {
+            return this._totalRecordCount.HasValue; 
         }
 
     }

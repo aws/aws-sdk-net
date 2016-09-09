@@ -34,11 +34,10 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// To create a traffic policy, send a <code>POST</code> request to the <code>/<i>Route
-    /// 53 API version</i>/trafficpolicy</code> resource. The request body must include a
-    /// document with a <code>CreateTrafficPolicyRequest</code> element. The response includes
-    /// the <code>CreateTrafficPolicyResponse</code> element, which contains information about
-    /// the new traffic policy.
+    /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code>
+    /// resource. The request body must include a document with a <code>CreateTrafficPolicyRequest</code>
+    /// element. The response includes the <code>CreateTrafficPolicyResponse</code> element,
+    /// which contains information about the new traffic policy.
     /// </para>
     /// </summary>
     public partial class CreateTrafficPolicyRequest : AmazonRoute53Request
@@ -69,7 +68,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Document. 
         /// <para>
         /// The definition of this traffic policy in JSON format. For more information, see <a
-        /// href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+        /// href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/api-policies-traffic-policy-document-format.html">Traffic
         /// Policy Document Format</a> in the <i>Amazon Route 53 API Reference</i>.
         /// </para>
         /// </summary>
@@ -88,7 +87,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// Any comments that you want to include about the traffic policy.
+        /// (Optional) Any comments that you want to include about the traffic policy.
         /// </para>
         /// </summary>
         public string Comment

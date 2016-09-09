@@ -29,9 +29,9 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the AddCommunicationToCase operation.
-    /// Adds additional customer communication to an AWS Support case. You use the <code>CaseId</code>
+    /// Adds additional customer communication to an AWS Support case. You use the <code>caseId</code>
     /// value to identify the case to add communication to. You can list a set of email addresses
-    /// to copy on the communication using the <code>CcEmailAddresses</code> value. The <code>CommunicationBody</code>
+    /// to copy on the communication using the <code>ccEmailAddresses</code> value. The <code>communicationBody</code>
     /// value contains the text of the communication.
     /// 
     ///  
@@ -54,7 +54,7 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property AttachmentSetId. 
         /// <para>
         /// The ID of a set of one or more attachments for the communication to add to the case.
-        /// Create the set by calling <a>AddAttachmentsToSet</a>
+        /// Create the set by calling <a>AddAttachmentsToSet</a> 
         /// </para>
         /// </summary>
         public string AttachmentSetId
@@ -74,6 +74,7 @@ namespace Amazon.AWSSupport.Model
         /// <para>
         /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric
         /// string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// 
         /// </para>
         /// </summary>
         public string CaseId

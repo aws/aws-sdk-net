@@ -93,7 +93,8 @@ namespace Amazon.ConfigService
         /// are correct and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
-        /// The rule is currently being deleted. Wait for a while and try again.
+        /// The rule is currently being deleted or the rule is deleting your evaluation results.
+        /// Try your request again later.
         /// </exception>
         DeleteConfigRuleResponse DeleteConfigRule(DeleteConfigRuleRequest request);
 
@@ -111,17 +112,57 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DeleteConfigurationRecorder
+
+
+        /// <summary>
+        /// Deletes the configuration recorder.
+        /// 
+        ///  
+        /// <para>
+        /// After the configuration recorder is deleted, AWS Config will not record resource configuration
+        /// changes until you create a new configuration recorder.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action does not delete the configuration information that was previously recorded.
+        /// You will be able to access the previously recorded information by using the <code>GetResourceConfigHistory</code>
+        /// action, but you will not be able to access this information in the AWS Config console
+        /// until you create a new configuration recorder.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationRecorder service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConfigurationRecorder service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
+        /// You have specified a configuration recorder that does not exist.
+        /// </exception>
+        DeleteConfigurationRecorderResponse DeleteConfigurationRecorder(DeleteConfigurationRecorderRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConfigurationRecorder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationRecorder operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteConfigurationRecorderResponse> DeleteConfigurationRecorderAsync(DeleteConfigurationRecorderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteDeliveryChannel
 
 
         /// <summary>
-        /// Deletes the specified delivery channel.
+        /// Deletes the delivery channel.
         /// 
         ///  
         /// <para>
-        /// The delivery channel cannot be deleted if it is the only delivery channel and the
-        /// configuration recorder is still running. To delete the delivery channel, stop the
-        /// running configuration recorder using the <a>StopConfigurationRecorder</a> action.
+        /// Before you can delete the delivery channel, you must stop the configuration recorder
+        /// by using the <a>StopConfigurationRecorder</a> action.
         /// </para>
         /// </summary>
         /// <param name="deliveryChannelName">The name of the delivery channel to delete.</param>
@@ -137,13 +178,12 @@ namespace Amazon.ConfigService
         DeleteDeliveryChannelResponse DeleteDeliveryChannel(string deliveryChannelName);
 
         /// <summary>
-        /// Deletes the specified delivery channel.
+        /// Deletes the delivery channel.
         /// 
         ///  
         /// <para>
-        /// The delivery channel cannot be deleted if it is the only delivery channel and the
-        /// configuration recorder is still running. To delete the delivery channel, stop the
-        /// running configuration recorder using the <a>StopConfigurationRecorder</a> action.
+        /// Before you can delete the delivery channel, you must stop the configuration recorder
+        /// by using the <a>StopConfigurationRecorder</a> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeliveryChannel service method.</param>
@@ -160,13 +200,12 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deletes the specified delivery channel.
+        /// Deletes the delivery channel.
         /// 
         ///  
         /// <para>
-        /// The delivery channel cannot be deleted if it is the only delivery channel and the
-        /// configuration recorder is still running. To delete the delivery channel, stop the
-        /// running configuration recorder using the <a>StopConfigurationRecorder</a> action.
+        /// Before you can delete the delivery channel, you must stop the configuration recorder
+        /// by using the <a>StopConfigurationRecorder</a> action.
         /// </para>
         /// </summary>
         /// <param name="deliveryChannelName">The name of the delivery channel to delete.</param>
@@ -194,6 +233,42 @@ namespace Amazon.ConfigService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteDeliveryChannelResponse> DeleteDeliveryChannelAsync(DeleteDeliveryChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteEvaluationResults
+
+
+        /// <summary>
+        /// Deletes the evaluation results for the specified Config rule. You can specify one
+        /// Config rule per request. After you delete the evaluation results, you can call the
+        /// <a>StartConfigRulesEvaluation</a> API to start evaluating your AWS resources against
+        /// the rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEvaluationResults service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEvaluationResults service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
+        /// are correct and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
+        /// The rule is currently being deleted or the rule is deleting your evaluation results.
+        /// Try your request again later.
+        /// </exception>
+        DeleteEvaluationResultsResponse DeleteEvaluationResults(DeleteEvaluationResultsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEvaluationResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEvaluationResults operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteEvaluationResultsResponse> DeleteEvaluationResultsAsync(DeleteEvaluationResultsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -304,17 +379,18 @@ namespace Amazon.ConfigService
         ///  
         /// <para>
         /// If AWS Config has no current evaluation results for the rule, it returns <code>INSUFFICIENT_DATA</code>.
-        /// This result might indicate one of the following conditions: <ul> <li>AWS Config has
-        /// never invoked an evaluation for the rule. To check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code>
-        /// action to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li>
+        /// This result might indicate one of the following conditions:
+        /// </para>
+        ///  <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether
+        /// it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the
+        /// <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li>
         /// <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
         /// Verify that the role that you assigned to your configuration recorder includes the
-        /// <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule,
-        /// verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
+        /// <code>config:PutEvaluations</code> permission. If the rule is a custom rule, verify
+        /// that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
         /// permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code>
         /// for all evaluation results. This can occur if the resources were deleted or removed
-        /// from the rule's scope.</li></ul>
-        /// </para>
+        /// from the rule's scope.</li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByConfigRule service method.</param>
         /// 
@@ -360,17 +436,18 @@ namespace Amazon.ConfigService
         /// <para>
         /// If AWS Config has no current evaluation results for the resource, it returns <code>INSUFFICIENT_DATA</code>.
         /// This result might indicate one of the following conditions about the rules that evaluate
-        /// the resource: <ul> <li>AWS Config has never invoked an evaluation for the rule. To
-        /// check whether it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action
-        /// to get the <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li>
+        /// the resource:
+        /// </para>
+        ///  <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether
+        /// it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the
+        /// <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li>
         /// <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
         /// Verify that the role that you assigned to your configuration recorder includes the
-        /// <code>config:PutEvaluations</code> permission. If the rule is a customer managed rule,
-        /// verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
+        /// <code>config:PutEvaluations</code> permission. If the rule is a custom rule, verify
+        /// that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
         /// permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code>
         /// for all evaluation results. This can occur if the resources were deleted or removed
-        /// from the rule's scope.</li></ul>
-        /// </para>
+        /// from the rule's scope.</li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByResource service method.</param>
         /// 
@@ -544,7 +621,11 @@ namespace Amazon.ConfigService
         /// recorder is not specified, this action returns the status of all configuration recorder
         /// associated with the account.
         /// 
-        ///  <note>Currently, you can specify only one configuration recorder per account.</note>
+        ///  <note> 
+        /// <para>
+        /// Currently, you can specify only one configuration recorder per account.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeConfigurationRecorderStatus service method, as returned by ConfigService.</returns>
@@ -559,7 +640,11 @@ namespace Amazon.ConfigService
         /// recorder is not specified, this action returns the status of all configuration recorder
         /// associated with the account.
         /// 
-        ///  <note>Currently, you can specify only one configuration recorder per account.</note>
+        ///  <note> 
+        /// <para>
+        /// Currently, you can specify only one configuration recorder per account.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationRecorderStatus service method.</param>
         /// 
@@ -575,7 +660,11 @@ namespace Amazon.ConfigService
         /// recorder is not specified, this action returns the status of all configuration recorder
         /// associated with the account.
         /// 
-        ///  <note>Currently, you can specify only one configuration recorder per account.</note>
+        ///  <note> 
+        /// <para>
+        /// Currently, you can specify only one configuration recorder per account.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -686,7 +775,11 @@ namespace Amazon.ConfigService
         /// is not specified, this action returns the current status of all delivery channels
         /// associated with the account. 
         /// 
-        ///  <note>Currently, you can specify only one delivery channel per account.</note>
+        ///  <note> 
+        /// <para>
+        /// Currently, you can specify only one delivery channel per account.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeDeliveryChannelStatus service method, as returned by ConfigService.</returns>
@@ -701,7 +794,11 @@ namespace Amazon.ConfigService
         /// is not specified, this action returns the current status of all delivery channels
         /// associated with the account. 
         /// 
-        ///  <note>Currently, you can specify only one delivery channel per account.</note>
+        ///  <note> 
+        /// <para>
+        /// Currently, you can specify only one delivery channel per account.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDeliveryChannelStatus service method.</param>
         /// 
@@ -717,7 +814,11 @@ namespace Amazon.ConfigService
         /// is not specified, this action returns the current status of all delivery channels
         /// associated with the account. 
         /// 
-        ///  <note>Currently, you can specify only one delivery channel per account.</note>
+        ///  <note> 
+        /// <para>
+        /// Currently, you can specify only one delivery channel per account.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -943,8 +1044,11 @@ namespace Amazon.ConfigService
         /// including those that AWS Config is not currently recording. You can narrow the results
         /// to include only resources that have specific resource IDs or a resource name.
         /// 
-        ///  <note>You can specify either resource IDs or a resource name but not both in the
-        /// same request.</note> 
+        ///  <note> 
+        /// <para>
+        /// You can specify either resource IDs or a resource name but not both in the same request.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The response is paginated, and by default AWS Config lists 100 resource identifiers
         /// on each page. You can customize this number with the <code>limit</code> parameter.
@@ -995,19 +1099,18 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
-        /// You can use this action for customer managed Config rules and AWS managed Config rules.
-        /// A customer managed Config rule is a custom rule that you develop and maintain. An
-        /// AWS managed Config rule is a customizable, predefined rule that is provided by AWS
-        /// Config.
+        /// You can use this action for custom Config rules and AWS managed Config rules. A custom
+        /// Config rule is a rule that you develop and maintain. An AWS managed Config rule is
+        /// a customizable, predefined rule that AWS Config provides.
         /// </para>
         ///  
         /// <para>
-        /// If you are adding a new customer managed Config rule, you must first create the AWS
-        /// Lambda function that the rule invokes to evaluate your resources. When you use the
-        /// <code>PutConfigRule</code> action to add the rule to AWS Config, you must specify
-        /// the Amazon Resource Name (ARN) that AWS Lambda assigns to the function. Specify the
-        /// ARN for the <code>SourceIdentifier</code> key. This key is part of the <code>Source</code>
-        /// object, which is part of the <code>ConfigRule</code> object. 
+        /// If you are adding a new custom Config rule, you must first create the AWS Lambda function
+        /// that the rule invokes to evaluate your resources. When you use the <code>PutConfigRule</code>
+        /// action to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN)
+        /// that AWS Lambda assigns to the function. Specify the ARN for the <code>SourceIdentifier</code>
+        /// key. This key is part of the <code>Source</code> object, which is part of the <code>ConfigRule</code>
+        /// object. 
         /// </para>
         ///  
         /// <para>
@@ -1056,8 +1159,13 @@ namespace Amazon.ConfigService
         /// Failed to add the AWS Config rule because the account already contains the maximum
         /// number of 25 rules. Consider deleting any deactivated rules before adding new rules.
         /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
+        /// There are no configuration recorders available to provide the role needed to describe
+        /// your resources. Create a configuration recorder.
+        /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
-        /// The rule is currently being deleted. Wait for a while and try again.
+        /// The rule is currently being deleted or the rule is deleting your evaluation results.
+        /// Try your request again later.
         /// </exception>
         PutConfigRuleResponse PutConfigRule(PutConfigRuleRequest request);
 
@@ -1134,20 +1242,24 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Creates a new delivery channel object to deliver the configuration information to
-        /// an Amazon S3 bucket, and to an Amazon SNS topic. 
+        /// Creates a delivery channel object to deliver configuration information to an Amazon
+        /// S3 bucket and Amazon SNS topic.
         /// 
+        ///  
+        /// <para>
+        /// Before you can create a delivery channel, you must create a configuration recorder.
+        /// </para>
         ///  
         /// <para>
         /// You can use this action to change the Amazon S3 bucket or an Amazon SNS topic of the
         /// existing delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic,
         /// call this action and specify the changed values for the S3 bucket and the SNS topic.
         /// If you specify a different value for either the S3 bucket or the SNS topic, this action
-        /// will keep the existing value for the parameter that is not changed. 
+        /// will keep the existing value for the parameter that is not changed.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one delivery channel per account.
+        /// You can have only one delivery channel per AWS account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1226,6 +1338,89 @@ namespace Amazon.ConfigService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutEvaluationsResponse> PutEvaluationsAsync(PutEvaluationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartConfigRulesEvaluation
+
+
+        /// <summary>
+        /// Evaluates your resources against the specified Config rules. You can specify up to
+        /// 25 Config rules per request.
+        /// 
+        ///  
+        /// <para>
+        /// An existing <a>StartConfigRulesEvaluation</a> call must complete for the specified
+        /// rules before you can call the API again. If you chose to have AWS Config stream to
+        /// an Amazon SNS topic, you will receive a <code>ConfigRuleEvaluationStarted</code> notification
+        /// when the evaluation starts.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You don't need to call the <code>StartConfigRulesEvaluation</code> API to run an evaluation
+        /// for a new rule. When you create a new rule, AWS Config automatically evaluates your
+        /// resources against the rule. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The <code>StartConfigRulesEvaluation</code> API is useful if you want to run on-demand
+        /// evaluations, such as the following example:
+        /// </para>
+        ///  <ol> <li>
+        /// <para>
+        /// You have a custom rule that evaluates your IAM resources every 24 hours.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// You update your Lambda function to add additional conditions to your rule.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// Instead of waiting for the next periodic evaluation, you call the <code>StartConfigRulesEvaluation</code>
+        /// API.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// AWS Config invokes your Lambda function and evaluates your IAM resources.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// Your custom rule will still run periodic evaluations every 24 hours.
+        /// </para>
+        /// </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartConfigRulesEvaluation service method.</param>
+        /// 
+        /// <returns>The response from the StartConfigRulesEvaluation service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.LimitExceededException">
+        /// This exception is thrown if an evaluation is in progress or if you call the <a>StartConfigRulesEvaluation</a>
+        /// API more than once per minute.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
+        /// One or more AWS Config rules in the request are invalid. Verify that the rule names
+        /// are correct and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
+        /// The rule is currently being deleted or the rule is deleting your evaluation results.
+        /// Try your request again later.
+        /// </exception>
+        StartConfigRulesEvaluationResponse StartConfigRulesEvaluation(StartConfigRulesEvaluationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartConfigRulesEvaluation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartConfigRulesEvaluation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<StartConfigRulesEvaluationResponse> StartConfigRulesEvaluationAsync(StartConfigRulesEvaluationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

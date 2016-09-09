@@ -30,8 +30,8 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the ListTrafficPolicies operation.
     /// Gets information about the latest version for every traffic policy that is associated
-    /// with the current AWS account. To get the information, send a <code>GET</code> request
-    /// to the <code>/<i>Route 53 API version</i>/trafficpolicy</code> resource.
+    /// with the current AWS account. Send a <code>GET</code> request to the <code>/<i>Amazon
+    /// Route 53 API version</i>/trafficpolicy</code> resource.
     /// 
     ///  
     /// <para>
@@ -44,7 +44,11 @@ namespace Amazon.Route53.Model
     /// The response includes three values that help you navigate from one group of <code>maxitems</code>
     /// traffic policies to the next:
     /// </para>
-    ///  <ul> <li><b>IsTruncated</b></li> 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>IsTruncated</b> 
+    /// </para>
+    ///  
     /// <para>
     /// If the value of <code>IsTruncated</code> in the response is <code>true</code>, there
     /// are more traffic policies associated with the current AWS account.
@@ -54,7 +58,11 @@ namespace Amazon.Route53.Model
     /// If <code>IsTruncated</code> is <code>false</code>, this response includes the last
     /// traffic policy that is associated with the current account.
     /// </para>
-    ///  <li><b>TrafficPolicyIdMarker</b></li> 
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>TrafficPolicyIdMarker</b> 
+    /// </para>
+    ///  
     /// <para>
     /// If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code>
     /// is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic
@@ -67,12 +75,16 @@ namespace Amazon.Route53.Model
     /// If <code>IsTruncated</code> is <code>false</code>, the <code>TrafficPolicyIdMarker</code>
     /// element is omitted from the response.
     /// </para>
-    ///  <li><b>MaxItems</b></li> 
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>MaxItems</b> 
+    /// </para>
+    ///  
     /// <para>
     /// The value that you specified for the <code>MaxItems</code> parameter in the request
     /// that produced the current response.
     /// </para>
-    ///  </ul>
+    ///  </li> </ul>
     /// </summary>
     public partial class ListTrafficPoliciesRequest : AmazonRoute53Request
     {
@@ -82,8 +94,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property TrafficPolicyIdMarker. 
         /// <para>
-        /// For your first request to <code>ListTrafficPolicies</code>, do not include the <code>TrafficPolicyIdMarker</code>
-        /// parameter.
+        /// (Conditional) For your first request to <code>ListTrafficPolicies</code>, do not include
+        /// the <code>TrafficPolicyIdMarker</code> parameter.
         /// </para>
         ///  
         /// <para>
@@ -113,11 +125,11 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of traffic policies to be included in the response body for this
-        /// request. If you have more than <code>MaxItems</code> traffic policies, the value of
-        /// the <code>IsTruncated</code> element in the response is <code>true</code>, and the
-        /// value of the <code>TrafficPolicyIdMarker</code> element is the ID of the first traffic
-        /// policy in the next group of <code>MaxItems</code> traffic policies.
+        /// (Optional) The maximum number of traffic policies to be included in the response body
+        /// for this request. If you have more than <code>MaxItems</code> traffic policies, the
+        /// value of the <code>IsTruncated</code> element in the response is <code>true</code>,
+        /// and the value of the <code>TrafficPolicyIdMarker</code> element is the ID of the first
+        /// traffic policy in the next group of <code>MaxItems</code> traffic policies.
         /// </para>
         /// </summary>
         public string MaxItems

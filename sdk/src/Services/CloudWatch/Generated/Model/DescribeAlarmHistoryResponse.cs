@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// The output for the <a>DescribeAlarmHistory</a> action.
+    /// The output for <a>DescribeAlarmHistory</a>.
     /// </summary>
     public partial class DescribeAlarmHistoryResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmHistoryItems. 
         /// <para>
-        ///  A list of alarm histories in JSON format. 
+        /// A list of alarm histories in JSON format.
         /// </para>
         /// </summary>
         public List<AlarmHistoryItem> AlarmHistoryItems
@@ -56,7 +56,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A string that marks the start of the next batch of returned results. 
+        /// A string that marks the start of the next batch of returned results.
         /// </para>
         /// </summary>
         public string NextToken

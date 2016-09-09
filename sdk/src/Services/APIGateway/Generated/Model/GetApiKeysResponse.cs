@@ -28,12 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents a collection of <a>ApiKey</a> resources.
+    /// Represents a collection of API keys as represented by an <a>ApiKeys</a> resource.
+    /// 
+    ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use
+    /// API Keys</a> </div>
     /// </summary>
     public partial class GetApiKeysResponse : AmazonWebServiceResponse
     {
         private List<ApiKey> _items = new List<ApiKey>();
         private string _position;
+        private List<string> _warnings = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Items. 
@@ -67,6 +71,25 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetPosition()
         {
             return this._position != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Warnings. 
+        /// <para>
+        /// A list of warning messages logged during the import of API keys when the <code>failOnWarnings</code>
+        /// option is set to true.
+        /// </para>
+        /// </summary>
+        public List<string> Warnings
+        {
+            get { return this._warnings; }
+            set { this._warnings = value; }
+        }
+
+        // Check to see if Warnings property is set
+        internal bool IsSetWarnings()
+        {
+            return this._warnings != null && this._warnings.Count > 0; 
         }
 
     }

@@ -25,11 +25,61 @@ namespace Amazon.APIGateway
 {
 
     /// <summary>
+    /// Constants used for properties of type ApiKeysFormat.
+    /// </summary>
+    public class ApiKeysFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Csv for ApiKeysFormat
+        /// </summary>
+        public static readonly ApiKeysFormat Csv = new ApiKeysFormat("csv");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApiKeysFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApiKeysFormat FindValue(string value)
+        {
+            return FindValue<ApiKeysFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApiKeysFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthorizerType.
     /// </summary>
     public class AuthorizerType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant COGNITO_USER_POOLS for AuthorizerType
+        /// </summary>
+        public static readonly AuthorizerType COGNITO_USER_POOLS = new AuthorizerType("COGNITO_USER_POOLS");
         /// <summary>
         /// Constant TOKEN for AuthorizerType
         /// </summary>
@@ -370,6 +420,60 @@ namespace Amazon.APIGateway
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PutMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QuotaPeriodType.
+    /// </summary>
+    public class QuotaPeriodType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAY for QuotaPeriodType
+        /// </summary>
+        public static readonly QuotaPeriodType DAY = new QuotaPeriodType("DAY");
+        /// <summary>
+        /// Constant MONTH for QuotaPeriodType
+        /// </summary>
+        public static readonly QuotaPeriodType MONTH = new QuotaPeriodType("MONTH");
+        /// <summary>
+        /// Constant WEEK for QuotaPeriodType
+        /// </summary>
+        public static readonly QuotaPeriodType WEEK = new QuotaPeriodType("WEEK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QuotaPeriodType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QuotaPeriodType FindValue(string value)
+        {
+            return FindValue<QuotaPeriodType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QuotaPeriodType(string value)
         {
             return FindValue(value);
         }

@@ -52,7 +52,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to
+        ///  <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to
         /// spend each month to send SMS messages. When Amazon SNS determines that sending an
         /// SMS message would incur a cost that exceeds this limit, it stops sending SMS messages
         /// within minutes.
@@ -65,7 +65,13 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon SNS
+        /// By default, the spend limit is set to the maximum allowed by Amazon SNS. If you want
+        /// to exceed the maximum, contact <a href="https://aws.amazon.com/premiumsupport/">AWS
+        /// Support</a> or your AWS sales representative for a service limit increase.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon SNS
         /// to write logs about SMS deliveries in CloudWatch Logs. For each SMS message that you
         /// send, Amazon SNS writes a log that includes the message price, the success or failure
         /// status, the reason for failure (if the message failed), the message dwell time, and
@@ -73,7 +79,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful SMS
+        ///  <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful SMS
         /// deliveries for which Amazon SNS will write logs in CloudWatch Logs. The value can
         /// be an integer from 0 - 100. For example, to write logs only for failed deliveries,
         /// set this value to <code>0</code>. To write logs for 10% of your successful deliveries,
@@ -81,30 +87,30 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>DefaultSenderID</code> – A string, such as your business brand, that is displayed
+        ///  <code>DefaultSenderID</code> – A string, such as your business brand, that is displayed
         /// as the sender on the receiving device. Support for sender IDs varies by country. The
         /// sender ID can be 1 - 11 alphanumeric characters, and it must contain at least one
         /// letter.
         /// </para>
         ///  
         /// <para>
-        /// <code>DefaultSMSType</code> – The type of SMS message that you will send by default.
+        ///  <code>DefaultSMSType</code> – The type of SMS message that you will send by default.
         /// You can assign the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <code>Promotional</code> – Noncritical messages, such as marketing messages. Amazon
-        /// SNS optimizes the message delivery to incur the lowest cost.
+        ///  <code>Promotional</code> – (Default) Noncritical messages, such as marketing messages.
+        /// Amazon SNS optimizes the message delivery to incur the lowest cost.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <code>Transactional</code> – (Default) Critical messages that support customer transactions,
+        ///  <code>Transactional</code> – Critical messages that support customer transactions,
         /// such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the
         /// message delivery to achieve the highest reliability.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily
+        ///  <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily
         /// SMS usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report
         /// as a CSV file to the bucket. The report includes the following information for each
         /// SMS message that was successfully delivered by your account:
@@ -150,8 +156,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  
         /// <para>
-        /// For an example bucket policy and usage report, see <a href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Viewing
-        /// Statistics About SMS Message Delivery</a> in the <i>Amazon SNS Developer Guide</i>.
+        /// For an example bucket policy and usage report, see <a href="http://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring
+        /// SMS Activity</a> in the <i>Amazon SNS Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes

@@ -28,12 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// An AWS Lambda function that evaluates configuration items to assess whether your AWS
-    /// resources comply with your desired configurations. This function can run when AWS
-    /// Config detects a configuration change to an AWS resource, or when it delivers a configuration
-    /// snapshot of the resources in the account.
+    /// An AWS Config rule represents an AWS Lambda function that you create for a custom
+    /// rule or a predefined function for an AWS managed rule. The function evaluates configuration
+    /// items to assess whether your AWS resources comply with your desired configurations.
+    /// This function can run when AWS Config detects a configuration change to an AWS resource
+    /// and at a periodic frequency that you choose (for example, every 24 hours).
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// You can use the AWS CLI and AWS SDKs if you want to create a rule that triggers evaluations
+    /// for your resources when AWS Config delivers the configuration snapshot. For more information,
+    /// see <a>ConfigSnapshotDeliveryProperties</a>.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// For more information about developing and using AWS Config rules, see <a href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
     /// AWS Resource Configurations with AWS Config</a> in the <i>AWS Config Developer Guide</i>.
@@ -109,20 +116,27 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigRuleState. 
         /// <para>
-        /// Indicates whether the AWS Config rule is active or currently being deleted by AWS
-        /// Config.
+        /// Indicates whether the AWS Config rule is active or is currently being deleted by AWS
+        /// Config. It can also indicate the evaluation status for the Config rule.
+        /// </para>
+        ///  
+        /// <para>
+        /// AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after
+        /// you use the <code>StartConfigRulesEvaluation</code> request to evaluate your resources
+        /// against the Config rule.
+        /// </para>
+        ///  
+        /// <para>
+        /// AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily
+        /// after you use the <code>DeleteEvaluationResults</code> request to delete the current
+        /// evaluation results for the Config rule.
         /// </para>
         ///  
         /// <para>
         /// AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you
         /// use the <code>DeleteConfigRule</code> request to delete the rule. After AWS Config
-        /// finishes deleting a rule, the rule and all of its evaluations are erased and no longer
+        /// deletes the rule, the rule and all of its evaluations are erased and are no longer
         /// available.
-        /// </para>
-        ///  
-        /// <para>
-        /// You cannot add a rule to AWS Config that has the state set to <code>DELETING</code>.
-        /// If you want to delete a rule, you must use the <code>DeleteConfigRule</code> request.
         /// </para>
         /// </summary>
         public ConfigRuleState ConfigRuleState
@@ -176,17 +190,20 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property MaximumExecutionFrequency. 
         /// <para>
-        /// The maximum frequency at which the AWS Config rule runs evaluations.
+        /// The maximum frequency with which AWS Config runs evaluations for a rule. You can specify
+        /// a value for <code>MaximumExecutionFrequency</code> when: 
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// If your rule is periodic, meaning it runs an evaluation when AWS Config delivers a
-        /// configuration snapshot, then it cannot run evaluations more frequently than AWS Config
-        /// delivers the snapshots. For periodic rules, set the value of the <code>MaximumExecutionFrequency</code>
-        /// key to be equal to or greater than the value of the <code>deliveryFrequency</code>
-        /// key, which is part of <code>ConfigSnapshotDeliveryProperties</code>. To update the
-        /// frequency with which AWS Config delivers your snapshots, use the <code>PutDeliveryChannel</code>
-        /// action.
+        /// You are using an AWS managed rule that is triggered at a periodic frequency.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your custom rule is triggered when AWS Config delivers the configuration snapshot.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a>ConfigSnapshotDeliveryProperties</a>.
         /// </para>
         /// </summary>
         public MaximumExecutionFrequency MaximumExecutionFrequency
@@ -226,8 +243,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// Provides the rule owner (AWS or customer), the rule identifier, and the events that
-        /// cause the function to evaluate your AWS resources.
+        /// Provides the rule owner (AWS or customer), the rule identifier, and the notifications
+        /// that cause the function to evaluate your AWS resources.
         /// </para>
         /// </summary>
         public Source Source

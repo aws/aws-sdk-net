@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This is the response object from the AttachLoadBalancers operation.
+    /// Contains the output of AttachLoadBalancers.
     /// </summary>
     public partial class AttachLoadBalancersResponse : AmazonWebServiceResponse
     {

@@ -30,6 +30,9 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Represents a domain name that is contained in a simpler, more intuitive URL that can
     /// be called.
+    /// 
+    ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use
+    /// Client-Side Certificate</a> </div>
     /// </summary>
     public partial class UpdateDomainNameResponse : AmazonWebServiceResponse
     {

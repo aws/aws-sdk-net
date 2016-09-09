@@ -32,11 +32,30 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class Certificate
     {
+        private string _certificateArn;
         private string _certificateIdentifier;
         private string _certificateType;
         private string _thumbprint;
         private DateTime? _validFrom;
         private DateTime? _validTill;
+
+        /// <summary>
+        /// Gets and sets the property CertificateArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the certificate.
+        /// </para>
+        /// </summary>
+        public string CertificateArn
+        {
+            get { return this._certificateArn; }
+            set { this._certificateArn = value; }
+        }
+
+        // Check to see if CertificateArn property is set
+        internal bool IsSetCertificateArn()
+        {
+            return this._certificateArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CertificateIdentifier. 

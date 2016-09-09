@@ -306,6 +306,52 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CopyDBClusterParameterGroup
+
+
+        /// <summary>
+        /// Copies the specified DB cluster parameter group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterParameterGroup service method.</param>
+        /// 
+        /// <returns>The response from the CopyDBClusterParameterGroup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupAlreadyExistsException">
+        /// A DB parameter group with the same name exists.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupNotFoundException">
+        /// <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBParameterGroupQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB parameter groups.
+        /// </exception>
+        CopyDBClusterParameterGroupResponse CopyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyDBClusterParameterGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterParameterGroup operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyDBClusterParameterGroup
+        ///         operation.</returns>
+        IAsyncResult BeginCopyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CopyDBClusterParameterGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyDBClusterParameterGroup.</param>
+        /// 
+        /// <returns>Returns a  CopyDBClusterParameterGroupResult from RDS.</returns>
+        CopyDBClusterParameterGroupResponse EndCopyDBClusterParameterGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CopyDBClusterSnapshot
 
 
@@ -322,6 +368,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBClusterSnapshotNotFoundException">
         /// <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
+        /// The supplied value is not a valid DB cluster snapshot state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The DB cluster is not in a valid state.
@@ -3120,6 +3169,44 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeSourceRegions
+
+
+        /// <summary>
+        /// Returns a list that includes the status of each source AWS Region that the current
+        /// region can get a Read Replica or a DB snapshot from. This API action supports pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSourceRegions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSourceRegions service method, as returned by RDS.</returns>
+        DescribeSourceRegionsResponse DescribeSourceRegions(DescribeSourceRegionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSourceRegions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSourceRegions operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSourceRegions
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeSourceRegions(DescribeSourceRegionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSourceRegions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSourceRegions.</param>
+        /// 
+        /// <returns>Returns a  DescribeSourceRegionsResult from RDS.</returns>
+        DescribeSourceRegionsResponse EndDescribeSourceRegions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DownloadDBLogFilePortion
 
 
@@ -3196,6 +3283,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
         FailoverDBClusterResponse FailoverDBCluster(FailoverDBClusterRequest request);
 
@@ -3495,7 +3585,7 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Modify settings for a DB instance. You can change one or more database configuration
+        /// Modifies settings for a DB instance. You can change one or more database configuration
         /// parameters by specifying these parameters and the new values in the request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDBInstance service method.</param>
@@ -4290,6 +4380,94 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  RestoreDBClusterFromS3
+
+
+        /// <summary>
+        /// Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon
+        /// RDS must be authorized to access the Amazon S3 bucket and the data must be created
+        /// using the Percona XtraBackup utility as described in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.html">Migrating
+        /// Data from an External MySQL Database to an Amazon Aurora DB Cluster</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromS3 service method.</param>
+        /// 
+        /// <returns>The response from the RestoreDBClusterFromS3 service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterAlreadyExistsException">
+        /// User already has a DB cluster with the given identifier.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterParameterGroupNotFoundException">
+        /// <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter
+        /// group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterQuotaExceededException">
+        /// User attempted to create a new DB cluster and the user has already reached the maximum
+        /// allowed DB cluster quota.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBSubnetGroupNotFoundException">
+        /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InsufficientStorageClusterCapacityException">
+        /// There is insufficient storage available for the current action. You may be able to
+        /// resolve this error by updating your subnet group to use different Availability Zones
+        /// that have more storage available.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
+        /// The DB subnet group cannot be deleted because it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidS3BucketException">
+        /// The specified Amazon S3 bucket name could not be found or Amazon RDS is not authorized
+        /// to access the specified Amazon S3 bucket. Verify the <b>SourceS3BucketName</b> and
+        /// <b>S3IngestionRoleArn</b> values and try again.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidSubnetException">
+        /// The requested subnet is invalid, or multiple subnets were requested that are not all
+        /// in a common VPC.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
+        /// DB subnet group does not cover all Availability Zones after it is created because
+        /// users' change.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// Error accessing KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageQuotaExceededException">
+        /// Request would result in user exceeding the allowed amount of storage available across
+        /// all DB instances.
+        /// </exception>
+        RestoreDBClusterFromS3Response RestoreDBClusterFromS3(RestoreDBClusterFromS3Request request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreDBClusterFromS3 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromS3 operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreDBClusterFromS3
+        ///         operation.</returns>
+        IAsyncResult BeginRestoreDBClusterFromS3(RestoreDBClusterFromS3Request request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RestoreDBClusterFromS3 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreDBClusterFromS3.</param>
+        /// 
+        /// <returns>Returns a  RestoreDBClusterFromS3Result from RDS.</returns>
+        RestoreDBClusterFromS3Response EndRestoreDBClusterFromS3(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RestoreDBClusterFromSnapshot
 
 
@@ -4434,6 +4612,11 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InsufficientDBClusterCapacityException">
         /// The DB cluster does not have enough capacity for the current operation.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InsufficientStorageClusterCapacityException">
+        /// There is insufficient storage available for the current action. You may be able to
+        /// resolve this error by updating your subnet group to use different Availability Zones
+        /// that have more storage available.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterSnapshotStateException">
         /// The supplied value is not a valid DB cluster snapshot state.

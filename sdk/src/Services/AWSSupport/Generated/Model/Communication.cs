@@ -43,7 +43,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property AttachmentSet. 
         /// <para>
-        /// Information about the attachments to the case communication. 
+        /// Information about the attachments to the case communication.
         /// </para>
         /// </summary>
         public List<AttachmentDetails> AttachmentSet
@@ -81,6 +81,7 @@ namespace Amazon.AWSSupport.Model
         /// <para>
         /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric
         /// string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// 
         /// </para>
         /// </summary>
         public string CaseId
@@ -98,7 +99,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property SubmittedBy. 
         /// <para>
-        /// The email address of the account that submitted the AWS Support case. 
+        /// The email address of the account that submitted the AWS Support case.
         /// </para>
         /// </summary>
         public string SubmittedBy
@@ -116,7 +117,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property TimeCreated. 
         /// <para>
-        /// The time the communication was created. 
+        /// The time the communication was created.
         /// </para>
         /// </summary>
         public string TimeCreated

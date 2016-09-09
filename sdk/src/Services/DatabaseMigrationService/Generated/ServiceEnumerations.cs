@@ -25,6 +25,64 @@ namespace Amazon.DatabaseMigrationService
 {
 
     /// <summary>
+    /// Constants used for properties of type DmsSslModeValue.
+    /// </summary>
+    public class DmsSslModeValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant None for DmsSslModeValue
+        /// </summary>
+        public static readonly DmsSslModeValue None = new DmsSslModeValue("none");
+        /// <summary>
+        /// Constant Require for DmsSslModeValue
+        /// </summary>
+        public static readonly DmsSslModeValue Require = new DmsSslModeValue("require");
+        /// <summary>
+        /// Constant VerifyCa for DmsSslModeValue
+        /// </summary>
+        public static readonly DmsSslModeValue VerifyCa = new DmsSslModeValue("verify-ca");
+        /// <summary>
+        /// Constant VerifyFull for DmsSslModeValue
+        /// </summary>
+        public static readonly DmsSslModeValue VerifyFull = new DmsSslModeValue("verify-full");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DmsSslModeValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DmsSslModeValue FindValue(string value)
+        {
+            return FindValue<DmsSslModeValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DmsSslModeValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MigrationTypeValue.
     /// </summary>
     public class MigrationTypeValue : ConstantClass

@@ -169,6 +169,14 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly ArtifactType UNKNOWN = new ArtifactType("UNKNOWN");
         /// <summary>
+        /// Constant VIDEO for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType VIDEO = new ArtifactType("VIDEO");
+        /// <summary>
+        /// Constant VIDEO_LOG for ArtifactType
+        /// </summary>
+        public static readonly ArtifactType VIDEO_LOG = new ArtifactType("VIDEO_LOG");
+        /// <summary>
         /// Constant WEBKIT_LOG for ArtifactType
         /// </summary>
         public static readonly ArtifactType WEBKIT_LOG = new ArtifactType("WEBKIT_LOG");
@@ -330,6 +338,10 @@ namespace Amazon.DeviceFarm
         /// Constant PLATFORM for DeviceAttribute
         /// </summary>
         public static readonly DeviceAttribute PLATFORM = new DeviceAttribute("PLATFORM");
+        /// <summary>
+        /// Constant REMOTE_ACCESS_ENABLED for DeviceAttribute
+        /// </summary>
+        public static readonly DeviceAttribute REMOTE_ACCESS_ENABLED = new DeviceAttribute("REMOTE_ACCESS_ENABLED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -600,6 +612,18 @@ namespace Amazon.DeviceFarm
         /// Constant PENDING for ExecutionStatus
         /// </summary>
         public static readonly ExecutionStatus PENDING = new ExecutionStatus("PENDING");
+        /// <summary>
+        /// Constant PENDING_CONCURRENCY for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus PENDING_CONCURRENCY = new ExecutionStatus("PENDING_CONCURRENCY");
+        /// <summary>
+        /// Constant PENDING_DEVICE for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus PENDING_DEVICE = new ExecutionStatus("PENDING_DEVICE");
+        /// <summary>
+        /// Constant PREPARING for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus PREPARING = new ExecutionStatus("PREPARING");
         /// <summary>
         /// Constant PROCESSING for ExecutionStatus
         /// </summary>

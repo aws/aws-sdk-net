@@ -35,8 +35,8 @@ namespace Amazon.APIGateway
     ///
     /// Amazon API Gateway 
     /// <para>
-    /// Amazon API Gateway helps developers deliver robust, secure and scalable mobile and
-    /// web application backends. Amazon API Gateway allows developers to securely connect
+    /// Amazon API Gateway helps developers deliver robust, secure, and scalable mobile and
+    /// web application back ends. Amazon API Gateway allows developers to securely connect
     /// mobile and web applications to APIs that run on AWS Lambda, Amazon EC2, or other publicly
     /// addressable web services that are hosted outside of AWS.
     /// </para>
@@ -232,12 +232,18 @@ namespace Amazon.APIGateway
         #region  CreateApiKey
 
         /// <summary>
-        /// Create an <a>ApiKey</a> resource.
+        /// Create an <a>ApiKey</a> resource. 
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApiKey service method.</param>
         /// 
         /// <returns>The response from the CreateApiKey service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
@@ -298,6 +304,9 @@ namespace Amazon.APIGateway
 
         /// <summary>
         /// Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a> resource.
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAuthorizer service method.</param>
         /// 
@@ -825,6 +834,137 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  CreateUsagePlan
+
+        /// <summary>
+        /// Creates a usage plan with the throttle and quota limits, as well as the associated
+        /// API stages, specified in the payload.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlan service method.</param>
+        /// 
+        /// <returns>The response from the CreateUsagePlan service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public CreateUsagePlanResponse CreateUsagePlan(CreateUsagePlanRequest request)
+        {
+            var marshaller = new CreateUsagePlanRequestMarshaller();
+            var unmarshaller = CreateUsagePlanResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUsagePlanRequest,CreateUsagePlanResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlan operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUsagePlan
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateUsagePlan(CreateUsagePlanRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateUsagePlanRequestMarshaller();
+            var unmarshaller = CreateUsagePlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateUsagePlanRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUsagePlan.</param>
+        /// 
+        /// <returns>Returns a  CreateUsagePlanResult from APIGateway.</returns>
+        public  CreateUsagePlanResponse EndCreateUsagePlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateUsagePlanResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateUsagePlanKey
+
+        /// <summary>
+        /// Creates a usage plan key for adding an existing API key to a usage plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlanKey service method.</param>
+        /// 
+        /// <returns>The response from the CreateUsagePlanKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public CreateUsagePlanKeyResponse CreateUsagePlanKey(CreateUsagePlanKeyRequest request)
+        {
+            var marshaller = new CreateUsagePlanKeyRequestMarshaller();
+            var unmarshaller = CreateUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUsagePlanKeyRequest,CreateUsagePlanKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUsagePlanKey operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUsagePlanKey
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateUsagePlanKey(CreateUsagePlanKeyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateUsagePlanKeyRequestMarshaller();
+            var unmarshaller = CreateUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateUsagePlanKeyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateUsagePlanKey.</param>
+        /// 
+        /// <returns>Returns a  CreateUsagePlanKeyResult from APIGateway.</returns>
+        public  CreateUsagePlanKeyResponse EndCreateUsagePlanKey(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateUsagePlanKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteApiKey
 
         /// <summary>
@@ -888,6 +1028,9 @@ namespace Amazon.APIGateway
 
         /// <summary>
         /// Deletes an existing <a>Authorizer</a> resource.
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAuthorizer service method.</param>
         /// 
@@ -1200,6 +1343,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
         /// 
         /// <returns>The response from the DeleteIntegration service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -1259,6 +1405,12 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegrationResponse service method.</param>
         /// 
         /// <returns>The response from the DeleteIntegrationResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -1318,6 +1470,9 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteMethod service method.</param>
         /// 
         /// <returns>The response from the DeleteMethod service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -1377,6 +1532,12 @@ namespace Amazon.APIGateway
         /// <param name="request">Container for the necessary parameters to execute the DeleteMethodResponse service method.</param>
         /// 
         /// <returns>The response from the DeleteMethodResponse service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -1678,6 +1839,134 @@ namespace Amazon.APIGateway
         public  DeleteStageResponse EndDeleteStage(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteUsagePlan
+
+        /// <summary>
+        /// Deletes a usage plan of a given plan Id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlan service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUsagePlan service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public DeleteUsagePlanResponse DeleteUsagePlan(DeleteUsagePlanRequest request)
+        {
+            var marshaller = new DeleteUsagePlanRequestMarshaller();
+            var unmarshaller = DeleteUsagePlanResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUsagePlanRequest,DeleteUsagePlanResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlan operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUsagePlan
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteUsagePlan(DeleteUsagePlanRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteUsagePlanRequestMarshaller();
+            var unmarshaller = DeleteUsagePlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteUsagePlanRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUsagePlan.</param>
+        /// 
+        /// <returns>Returns a  DeleteUsagePlanResult from APIGateway.</returns>
+        public  DeleteUsagePlanResponse EndDeleteUsagePlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteUsagePlanResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteUsagePlanKey
+
+        /// <summary>
+        /// Deletes a usage plan key and remove the underlying API key from the associated usage
+        /// plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlanKey service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUsagePlanKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public DeleteUsagePlanKeyResponse DeleteUsagePlanKey(DeleteUsagePlanKeyRequest request)
+        {
+            var marshaller = new DeleteUsagePlanKeyRequestMarshaller();
+            var unmarshaller = DeleteUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteUsagePlanKeyRequest,DeleteUsagePlanKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUsagePlanKey operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUsagePlanKey
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteUsagePlanKey(DeleteUsagePlanKeyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteUsagePlanKeyRequestMarshaller();
+            var unmarshaller = DeleteUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteUsagePlanKeyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUsagePlanKey.</param>
+        /// 
+        /// <returns>Returns a  DeleteUsagePlanKeyResult from APIGateway.</returns>
+        public  DeleteUsagePlanKeyResponse EndDeleteUsagePlanKey(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteUsagePlanKeyResponse>(asyncResult);
         }
 
         #endregion
@@ -2046,6 +2335,9 @@ namespace Amazon.APIGateway
 
         /// <summary>
         /// Describe an existing <a>Authorizer</a> resource.
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAuthorizer service method.</param>
         /// 
@@ -2105,6 +2397,9 @@ namespace Amazon.APIGateway
 
         /// <summary>
         /// Describe an existing <a>Authorizers</a> resource.
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAuthorizers service method.</param>
         /// 
@@ -3546,6 +3841,385 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  GetUsage
+
+        /// <summary>
+        /// Gets the usage data of a usage plan in a specified time interval.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsage service method.</param>
+        /// 
+        /// <returns>The response from the GetUsage service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetUsageResponse GetUsage(GetUsageRequest request)
+        {
+            var marshaller = new GetUsageRequestMarshaller();
+            var unmarshaller = GetUsageResponseUnmarshaller.Instance;
+
+            return Invoke<GetUsageRequest,GetUsageResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsage operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsage
+        ///         operation.</returns>
+        public IAsyncResult BeginGetUsage(GetUsageRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetUsageRequestMarshaller();
+            var unmarshaller = GetUsageResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetUsageRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsage.</param>
+        /// 
+        /// <returns>Returns a  GetUsageResult from APIGateway.</returns>
+        public  GetUsageResponse EndGetUsage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetUsageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetUsagePlan
+
+        /// <summary>
+        /// Gets a usage plan of a given plan identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlan service method.</param>
+        /// 
+        /// <returns>The response from the GetUsagePlan service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetUsagePlanResponse GetUsagePlan(GetUsagePlanRequest request)
+        {
+            var marshaller = new GetUsagePlanRequestMarshaller();
+            var unmarshaller = GetUsagePlanResponseUnmarshaller.Instance;
+
+            return Invoke<GetUsagePlanRequest,GetUsagePlanResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlan operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsagePlan
+        ///         operation.</returns>
+        public IAsyncResult BeginGetUsagePlan(GetUsagePlanRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetUsagePlanRequestMarshaller();
+            var unmarshaller = GetUsagePlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetUsagePlanRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsagePlan.</param>
+        /// 
+        /// <returns>Returns a  GetUsagePlanResult from APIGateway.</returns>
+        public  GetUsagePlanResponse EndGetUsagePlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetUsagePlanResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetUsagePlanKey
+
+        /// <summary>
+        /// Gets a usage plan key of a given key identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKey service method.</param>
+        /// 
+        /// <returns>The response from the GetUsagePlanKey service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetUsagePlanKeyResponse GetUsagePlanKey(GetUsagePlanKeyRequest request)
+        {
+            var marshaller = new GetUsagePlanKeyRequestMarshaller();
+            var unmarshaller = GetUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return Invoke<GetUsagePlanKeyRequest,GetUsagePlanKeyResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKey operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsagePlanKey
+        ///         operation.</returns>
+        public IAsyncResult BeginGetUsagePlanKey(GetUsagePlanKeyRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetUsagePlanKeyRequestMarshaller();
+            var unmarshaller = GetUsagePlanKeyResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetUsagePlanKeyRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUsagePlanKey operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsagePlanKey.</param>
+        /// 
+        /// <returns>Returns a  GetUsagePlanKeyResult from APIGateway.</returns>
+        public  GetUsagePlanKeyResponse EndGetUsagePlanKey(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetUsagePlanKeyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetUsagePlanKeys
+
+        /// <summary>
+        /// Gets all the usage plan keys representing the API keys added to a specified usage
+        /// plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKeys service method.</param>
+        /// 
+        /// <returns>The response from the GetUsagePlanKeys service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetUsagePlanKeysResponse GetUsagePlanKeys(GetUsagePlanKeysRequest request)
+        {
+            var marshaller = new GetUsagePlanKeysRequestMarshaller();
+            var unmarshaller = GetUsagePlanKeysResponseUnmarshaller.Instance;
+
+            return Invoke<GetUsagePlanKeysRequest,GetUsagePlanKeysResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsagePlanKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlanKeys operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsagePlanKeys
+        ///         operation.</returns>
+        public IAsyncResult BeginGetUsagePlanKeys(GetUsagePlanKeysRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetUsagePlanKeysRequestMarshaller();
+            var unmarshaller = GetUsagePlanKeysResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetUsagePlanKeysRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUsagePlanKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsagePlanKeys.</param>
+        /// 
+        /// <returns>Returns a  GetUsagePlanKeysResult from APIGateway.</returns>
+        public  GetUsagePlanKeysResponse EndGetUsagePlanKeys(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetUsagePlanKeysResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetUsagePlans
+
+        /// <summary>
+        /// Gets all the usage plans of the caller's account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlans service method.</param>
+        /// 
+        /// <returns>The response from the GetUsagePlans service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetUsagePlansResponse GetUsagePlans(GetUsagePlansRequest request)
+        {
+            var marshaller = new GetUsagePlansRequestMarshaller();
+            var unmarshaller = GetUsagePlansResponseUnmarshaller.Instance;
+
+            return Invoke<GetUsagePlansRequest,GetUsagePlansResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUsagePlans operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUsagePlans operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUsagePlans
+        ///         operation.</returns>
+        public IAsyncResult BeginGetUsagePlans(GetUsagePlansRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetUsagePlansRequestMarshaller();
+            var unmarshaller = GetUsagePlansResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetUsagePlansRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUsagePlans operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUsagePlans.</param>
+        /// 
+        /// <returns>Returns a  GetUsagePlansResult from APIGateway.</returns>
+        public  GetUsagePlansResponse EndGetUsagePlans(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetUsagePlansResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ImportApiKeys
+
+        /// <summary>
+        /// Import API keys from an external source, such as a CSV-formatted file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportApiKeys service method.</param>
+        /// 
+        /// <returns>The response from the ImportApiKeys service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public ImportApiKeysResponse ImportApiKeys(ImportApiKeysRequest request)
+        {
+            var marshaller = new ImportApiKeysRequestMarshaller();
+            var unmarshaller = ImportApiKeysResponseUnmarshaller.Instance;
+
+            return Invoke<ImportApiKeysRequest,ImportApiKeysResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportApiKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportApiKeys operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportApiKeys
+        ///         operation.</returns>
+        public IAsyncResult BeginImportApiKeys(ImportApiKeysRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ImportApiKeysRequestMarshaller();
+            var unmarshaller = ImportApiKeysResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ImportApiKeysRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportApiKeys operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportApiKeys.</param>
+        /// 
+        /// <returns>Returns a  ImportApiKeysResult from APIGateway.</returns>
+        public  ImportApiKeysResponse EndImportApiKeys(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ImportApiKeysResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ImportRestApi
 
         /// <summary>
@@ -3556,6 +4230,9 @@ namespace Amazon.APIGateway
         /// 
         /// <returns>The response from the ImportRestApi service method, as returned by APIGateway.</returns>
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
@@ -3891,6 +4568,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// 
         /// </exception>
@@ -3950,6 +4630,9 @@ namespace Amazon.APIGateway
         /// <summary>
         /// Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with headers,
         /// parameters, and an incoming request body.
+        /// 
+        ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
+        /// custom authorizers</a> </div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestInvokeAuthorizer service method.</param>
         /// 
@@ -4144,6 +4827,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
@@ -4199,6 +4885,9 @@ namespace Amazon.APIGateway
 
         /// <summary>
         /// Updates an existing <a>Authorizer</a> resource.
+        /// 
+        ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS
+        /// CLI</a></div>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAuthorizer service method.</param>
         /// 
@@ -5033,6 +5722,134 @@ namespace Amazon.APIGateway
         public  UpdateStageResponse EndUpdateStage(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateStageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateUsage
+
+        /// <summary>
+        /// Grants a temporary extension to the reamining quota of a usage plan associated with
+        /// a specified API key.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsage service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUsage service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public UpdateUsageResponse UpdateUsage(UpdateUsageRequest request)
+        {
+            var marshaller = new UpdateUsageRequestMarshaller();
+            var unmarshaller = UpdateUsageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUsageRequest,UpdateUsageResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsage operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUsage
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateUsage(UpdateUsageRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateUsageRequestMarshaller();
+            var unmarshaller = UpdateUsageResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateUsageRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUsage.</param>
+        /// 
+        /// <returns>Returns a  UpdateUsageResult from APIGateway.</returns>
+        public  UpdateUsageResponse EndUpdateUsage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateUsageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateUsagePlan
+
+        /// <summary>
+        /// Updates a usage plan of a given plan Id.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsagePlan service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUsagePlan service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public UpdateUsagePlanResponse UpdateUsagePlan(UpdateUsagePlanRequest request)
+        {
+            var marshaller = new UpdateUsagePlanRequestMarshaller();
+            var unmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUsagePlanRequest,UpdateUsagePlanResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUsagePlan operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUsagePlan
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateUsagePlan(UpdateUsagePlanRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateUsagePlanRequestMarshaller();
+            var unmarshaller = UpdateUsagePlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateUsagePlanRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateUsagePlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUsagePlan.</param>
+        /// 
+        /// <returns>Returns a  UpdateUsagePlanResult from APIGateway.</returns>
+        public  UpdateUsagePlanResponse EndUpdateUsagePlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateUsagePlanResponse>(asyncResult);
         }
 
         #endregion

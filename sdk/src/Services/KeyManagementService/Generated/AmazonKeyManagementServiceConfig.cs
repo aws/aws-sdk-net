@@ -32,7 +32,7 @@ namespace Amazon.KeyManagementService
     public partial class AmazonKeyManagementServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.1.2.3");
+            InternalSDKUtils.BuildUserAgentString("3.1.3.1");
 
         private string _userAgent = UserAgentString;
 

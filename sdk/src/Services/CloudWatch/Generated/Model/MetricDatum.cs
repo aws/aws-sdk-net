@@ -44,9 +44,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        ///  A list of dimensions associated with the metric. Note, when using the Dimensions
-        /// value in a query, you need to append .member.N to it (e.g., Dimensions.member.N).
-        /// 
+        /// A list of dimensions associated with the metric. Note, when using the Dimensions value
+        /// in a query, you need to append .member.N to it (e.g., Dimensions.member.N).
         /// </para>
         /// </summary>
         public List<Dimension> Dimensions
@@ -64,7 +63,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        ///  The name of the metric. 
+        /// The name of the metric.
         /// </para>
         /// </summary>
         public string MetricName
@@ -82,7 +81,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StatisticValues. 
         /// <para>
-        ///  A set of statistical values describing the metric. 
+        /// A set of statistical values describing the metric.
         /// </para>
         /// </summary>
         public StatisticSet StatisticValues
@@ -100,9 +99,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        ///  The time stamp used for the metric in ISO 8601 Universal Coordinated Time (UTC) format.
+        /// The time stamp used for the metric in ISO 8601 Universal Coordinated Time (UTC) format.
         /// If not specified, the default value is set to the time the metric data was received.
-        /// 
         /// </para>
         /// </summary>
         public DateTime Timestamp
@@ -120,7 +118,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        ///  The unit of the metric. 
+        /// The unit of the metric.
         /// </para>
         /// </summary>
         public StandardUnit Unit
@@ -138,13 +136,16 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  The value for the metric. 
+        /// The value for the metric.
         /// </para>
-        ///  <important>Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>,
+        ///  <important> 
+        /// <para>
+        /// Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>,
         /// Amazon CloudWatch rejects values that are either too small or too large. Values must
         /// be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
         /// 2). In addition, special values (e.g., NaN, +Infinity, -Infinity) are not supported.
-        /// </important>
+        /// </para>
+        ///  </important>
         /// </summary>
         public double Value
         {

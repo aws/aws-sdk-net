@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the IP address of a Amazon Route 53 health checker and
-    /// the reason for the health check status.
+    /// A complex type that contains the last failure reason as reported by one Amazon Route
+    /// 53 health checker.
     /// </summary>
     public partial class HealthCheckObservation
     {
@@ -40,8 +40,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The <code>HealthCheckRegion</code> of the Amazon Route 53 health checker that performed
-        /// this health check.
+        /// The region of the Amazon Route 53 health checker that provided the status in StatusReport.
         /// </para>
         /// </summary>
         public HealthCheckRegion Region
@@ -59,7 +58,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property IPAddress. 
         /// <para>
-        /// The IP address of the Amazon Route 53 health checker that performed this health check.
+        /// The IP address of the Amazon Route 53 health checker that provided the failure reason
+        /// in <code>StatusReport</code>.
         /// </para>
         /// </summary>
         public string IPAddress
@@ -77,8 +77,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property StatusReport. 
         /// <para>
-        /// A complex type that contains information about the health check status for the current
-        /// observation.
+        /// A complex type that contains the last failure reason as reported by one Amazon Route
+        /// 53 health checker and the time of the failed health check.
         /// </para>
         /// </summary>
         public StatusReport StatusReport

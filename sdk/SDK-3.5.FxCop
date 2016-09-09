@@ -59,6 +59,7 @@
       <Directory>$(ProjectDir)/src/Services/elasticbeanstalk/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticfilesystem/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticloadbalancing/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/elasticloadbalancingv2/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticmapreduce/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/elasticsearch/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/elastictranscoder/bin/Release/net35/</Directory>
@@ -71,6 +72,7 @@
       <Directory>$(ProjectDir)/src/Services/iotdata/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/keymanagementservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesis/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/kinesisanalytics/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesisfirehose/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/lambda/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/machinelearning/bin/Release/net35/</Directory>
@@ -82,11 +84,13 @@
       <Directory>$(ProjectDir)/src/Services/route53domains/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/s3/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/securitytoken/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/servicecatalog/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/simpledb/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/simpleemail/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/simplenotificationservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/simplesystemsmanagement/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/simpleworkflow/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/snowball/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/sqs/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/storagegateway/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/waf/bin/Release/net35/</Directory>
@@ -130,6 +134,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElasticBeanstalk.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElasticFileSystem.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElasticLoadBalancing.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElasticLoadBalancingV2.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElasticMapReduce.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Elasticsearch.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElasticTranscoder.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -142,6 +147,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.IotData.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.KeyManagementService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Kinesis.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.KinesisAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.KinesisFirehose.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Lambda.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MachineLearning.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -153,11 +159,13 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Route53Domains.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.S3.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SecurityToken.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ServiceCatalog.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SimpleDB.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SimpleEmail.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SimpleNotificationService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SimpleSystemsManagement.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SimpleWorkflow.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Snowball.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SQS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.StorageGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.WAF.dll" Analyze="True" AnalyzeAllChildren="True" />

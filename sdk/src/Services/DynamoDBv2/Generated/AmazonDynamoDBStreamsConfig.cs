@@ -32,7 +32,7 @@ namespace Amazon.DynamoDBv2
     public partial class AmazonDynamoDBStreamsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.1.5.1");
+            InternalSDKUtils.BuildUserAgentString("3.1.5.3");
 
         private string _userAgent = UserAgentString;
 

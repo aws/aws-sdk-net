@@ -211,7 +211,8 @@ namespace AWSSDK.Tests
 
             var httpClients = new List<AWSConfigs.HttpClientOption>(){ AWSConfigs.HttpClientOption.UnityWWW };
 
-            if (Type.GetType("UnityEngine.Experimental.Networking.UnityWebRequest, UnityEngine") != null)
+            if (Type.GetType("UnityEngine.Networking.UnityWebRequest, UnityEngine") != null 
+                || Type.GetType("UnityEngine.Experimental.Networking.UnityWebRequest, UnityEngine") != null)
             {
                 httpClients.Add(AWSConfigs.HttpClientOption.UnityWebRequest);
             }
@@ -226,6 +227,7 @@ namespace AWSSDK.Tests
             EnsureBackgroundExecution(() =>
             {
                 int count = 0;
+                
                 foreach (var httpClient in httpClients)
                 {
                     retryCount = 0;

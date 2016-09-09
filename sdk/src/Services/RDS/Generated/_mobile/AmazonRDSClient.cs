@@ -365,6 +365,37 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  CopyDBClusterParameterGroup
+
+        internal CopyDBClusterParameterGroupResponse CopyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest request)
+        {
+            var marshaller = new CopyDBClusterParameterGroupRequestMarshaller();
+            var unmarshaller = CopyDBClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CopyDBClusterParameterGroupRequest,CopyDBClusterParameterGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CopyDBClusterParameterGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CopyDBClusterParameterGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CopyDBClusterParameterGroupResponse> CopyDBClusterParameterGroupAsync(CopyDBClusterParameterGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CopyDBClusterParameterGroupRequestMarshaller();
+            var unmarshaller = CopyDBClusterParameterGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CopyDBClusterParameterGroupRequest,CopyDBClusterParameterGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CopyDBClusterSnapshot
 
         internal CopyDBClusterSnapshotResponse CopyDBClusterSnapshot(CopyDBClusterSnapshotRequest request)
@@ -2271,6 +2302,37 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DescribeSourceRegions
+
+        internal DescribeSourceRegionsResponse DescribeSourceRegions(DescribeSourceRegionsRequest request)
+        {
+            var marshaller = new DescribeSourceRegionsRequestMarshaller();
+            var unmarshaller = DescribeSourceRegionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSourceRegionsRequest,DescribeSourceRegionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSourceRegions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSourceRegions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeSourceRegionsResponse> DescribeSourceRegionsAsync(DescribeSourceRegionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeSourceRegionsRequestMarshaller();
+            var unmarshaller = DescribeSourceRegionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSourceRegionsRequest,DescribeSourceRegionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DownloadDBLogFilePortion
 
         internal DownloadDBLogFilePortionResponse DownloadDBLogFilePortion(DownloadDBLogFilePortionRequest request)
@@ -2886,6 +2948,37 @@ namespace Amazon.RDS
             var unmarshaller = ResetDBParameterGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<ResetDBParameterGroupRequest,ResetDBParameterGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RestoreDBClusterFromS3
+
+        internal RestoreDBClusterFromS3Response RestoreDBClusterFromS3(RestoreDBClusterFromS3Request request)
+        {
+            var marshaller = new RestoreDBClusterFromS3RequestMarshaller();
+            var unmarshaller = RestoreDBClusterFromS3ResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreDBClusterFromS3Request,RestoreDBClusterFromS3Response>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RestoreDBClusterFromS3 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromS3 operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RestoreDBClusterFromS3Response> RestoreDBClusterFromS3Async(RestoreDBClusterFromS3Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RestoreDBClusterFromS3RequestMarshaller();
+            var unmarshaller = RestoreDBClusterFromS3ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreDBClusterFromS3Request,RestoreDBClusterFromS3Response>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

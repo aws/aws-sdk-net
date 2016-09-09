@@ -67,6 +67,11 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>GetPipelineExecution</a>, which returns information about a specific execution
+    /// of a pipeline.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>GetPipelineState</a>, which returns information about the current state of the
     /// stages and actions of a pipeline.
     /// </para>
@@ -828,6 +833,54 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>Returns a  GetPipelineResult from CodePipeline.</returns>
         GetPipelineResponse EndGetPipeline(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetPipelineExecution
+
+
+        /// <summary>
+        /// Returns information about an execution of a pipeline, including details about artifacts,
+        /// the pipeline execution ID, and the name, version, and status of the pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPipelineExecution service method.</param>
+        /// 
+        /// <returns>The response from the GetPipelineExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineExecutionNotFoundException">
+        /// The pipeline execution was specified in an invalid format or cannot be found, or an
+        /// execution ID does not belong to the specified pipeline.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        GetPipelineExecutionResponse GetPipelineExecution(GetPipelineExecutionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPipelineExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPipelineExecution operation on AmazonCodePipelineClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPipelineExecution
+        ///         operation.</returns>
+        IAsyncResult BeginGetPipelineExecution(GetPipelineExecutionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPipelineExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPipelineExecution.</param>
+        /// 
+        /// <returns>Returns a  GetPipelineExecutionResult from CodePipeline.</returns>
+        GetPipelineExecutionResponse EndGetPipelineExecution(IAsyncResult asyncResult);
 
         #endregion
         

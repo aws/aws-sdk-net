@@ -29,7 +29,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBInstance operation.
-    /// Modify settings for a DB instance. You can change one or more database configuration
+    /// Modifies settings for a DB instance. You can change one or more database configuration
     /// parameters by specifying these parameters and the new values in the request.
     /// </summary>
     public partial class ModifyDBInstanceRequest : AmazonRDSRequest
@@ -46,10 +46,12 @@ namespace Amazon.RDS.Model
         private string _dbParameterGroupName;
         private int? _dbPortNumber;
         private List<string> _dbSecurityGroups = new List<string>();
+        private string _dbSubnetGroupName;
         private string _domain;
         private string _domainIAMRoleName;
         private string _engineVersion;
         private int? _iops;
+        private string _licenseModel;
         private string _masterUserPassword;
         private int? _monitoringInterval;
         private string _monitoringRoleArn;
@@ -627,6 +629,43 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DBSubnetGroupName. 
+        /// <para>
+        /// The new DB subnet group for the DB instance. You can use this parameter to move your
+        /// DB instance to a different VPC, or to a different subnet group in the same VPC. If
+        /// your DB instance is not in a VPC, you can also use this parameter to move your DB
+        /// instance into a VPC. For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
+        /// the VPC for a DB Instance</a>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Changing the subnet group causes an outage during the change. The change is applied
+        /// during the next maintenance window, unless you specify <code>true</code> for the <code>ApplyImmediately</code>
+        /// parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Must contain no more than 255 alphanumeric characters, periods, underscores,
+        /// spaces, or hyphens.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>mySubnetGroup</code> 
+        /// </para>
+        /// </summary>
+        public string DBSubnetGroupName
+        {
+            get { return this._dbSubnetGroupName; }
+            set { this._dbSubnetGroupName = value; }
+        }
+
+        // Check to see if DBSubnetGroupName property is set
+        internal bool IsSetDBSubnetGroupName()
+        {
+            return this._dbSubnetGroupName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
         /// Specify the Active Directory Domain to move the instance to.
@@ -757,6 +796,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetIops()
         {
             return this._iops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LicenseModel. 
+        /// <para>
+        /// The license model for the DB instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>license-included</code> | <code>bring-your-own-license</code>
+        /// | <code>general-public-license</code> 
+        /// </para>
+        /// </summary>
+        public string LicenseModel
+        {
+            get { return this._licenseModel; }
+            set { this._licenseModel = value; }
+        }
+
+        // Check to see if LicenseModel property is set
+        internal bool IsSetLicenseModel()
+        {
+            return this._licenseModel != null;
         }
 
         /// <summary>

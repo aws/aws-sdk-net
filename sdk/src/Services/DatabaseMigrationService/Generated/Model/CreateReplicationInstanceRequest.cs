@@ -38,6 +38,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _availabilityZone;
         private string _engineVersion;
         private string _kmsKeyId;
+        private bool? _multiAZ;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
         private string _replicationInstanceClass;
@@ -152,6 +153,26 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetKmsKeyId()
         {
             return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        ///  Specifies if the replication instance is a Multi-AZ deployment. You cannot set the
+        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public bool MultiAZ
+        {
+            get { return this._multiAZ.GetValueOrDefault(); }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ.HasValue; 
         }
 
         /// <summary>

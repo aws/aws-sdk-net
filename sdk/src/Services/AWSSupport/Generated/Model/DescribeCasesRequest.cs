@@ -30,23 +30,30 @@ namespace Amazon.AWSSupport.Model
     /// <summary>
     /// Container for the parameters to the DescribeCases operation.
     /// Returns a list of cases that you specify by passing one or more case IDs. In addition,
-    /// you can filter the cases by date by setting values for the <code>AfterTime</code>
-    /// and <code>BeforeTime</code> request parameters. You can set values for the <code>IncludeResolvedCases</code>
-    /// and <code>IncludeCommunications</code> request parameters to control how much information
+    /// you can filter the cases by date by setting values for the <code>afterTime</code>
+    /// and <code>beforeTime</code> request parameters. You can set values for the <code>includeResolvedCases</code>
+    /// and <code>includeCommunications</code> request parameters to control how much information
     /// is returned. 
     /// 
     ///  
     /// <para>
     /// Case data is available for 12 months after creation. If a case was created more than
-    /// 12 months ago, a request for data might cause an error. 
+    /// 12 months ago, a request for data might cause an error.
     /// </para>
     ///  
     /// <para>
     /// The response returns the following in JSON format:
     /// </para>
-    ///  <ol> <li>One or more <a>CaseDetails</a> data types. </li> <li>One or more <code>NextToken</code>
-    /// values, which specify where to paginate the returned records represented by the <code>CaseDetails</code>
-    /// objects.</li> </ol>
+    ///  <ul> <li> 
+    /// <para>
+    /// One or more <a>CaseDetails</a> data types. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// One or more <code>nextToken</code> values, which specify where to paginate the returned
+    /// records represented by the <code>CaseDetails</code> objects.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeCasesRequest : AmazonAWSSupportRequest
     {
@@ -102,7 +109,7 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property CaseIdList. 
         /// <para>
         /// A list of ID numbers of the support cases you want returned. The maximum number of
-        /// cases is 100. 
+        /// cases is 100.
         /// </para>
         /// </summary>
         public List<string> CaseIdList
@@ -120,7 +127,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property DisplayId. 
         /// <para>
-        /// The ID displayed for a case in the AWS Support Center user interface. 
+        /// The ID displayed for a case in the AWS Support Center user interface.
         /// </para>
         /// </summary>
         public string DisplayId

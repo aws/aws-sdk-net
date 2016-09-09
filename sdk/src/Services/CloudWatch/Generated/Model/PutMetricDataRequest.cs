@@ -32,19 +32,21 @@ namespace Amazon.CloudWatch.Model
     /// Publishes metric data points to Amazon CloudWatch. Amazon CloudWatch associates the
     /// data points with the specified metric. If the specified metric does not exist, Amazon
     /// CloudWatch creates the metric. When Amazon CloudWatch creates a metric, it can take
-    /// up to fifteen minutes for the metric to appear in calls to the <a>ListMetrics</a>
-    /// action. 
+    /// up to fifteen minutes for the metric to appear in calls to <a>ListMetrics</a>. 
     /// 
     ///  
     /// <para>
     ///  Each <code>PutMetricData</code> request is limited to 8 KB in size for HTTP GET requests
     /// and is limited to 40 KB in size for HTTP POST requests. 
     /// </para>
-    ///  <important>Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>,
+    ///  <important> 
+    /// <para>
+    /// Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>,
     /// Amazon CloudWatch rejects values that are either too small or too large. Values must
     /// be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
     /// 2). In addition, special values (e.g., NaN, +Infinity, -Infinity) are not supported.
-    /// </important> 
+    /// </para>
+    ///  </important> 
     /// <para>
     /// Data that is timestamped 24 hours or more in the past may take in excess of 48 hours
     /// to become available from submission time using <code>GetMetricStatistics</code>.
@@ -58,7 +60,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MetricData. 
         /// <para>
-        ///  A list of data describing the metric. 
+        /// A list of data describing the metric.
         /// </para>
         /// </summary>
         public List<MetricDatum> MetricData
@@ -76,11 +78,15 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  The namespace for the metric data. 
+        /// The namespace for the metric data.
         /// </para>
-        ///  <note> You cannot specify a namespace that begins with "AWS/". Namespaces that begin
-        /// with "AWS/" are reserved for other Amazon Web Services products that send metrics
-        /// to Amazon CloudWatch. </note>
+        ///  <note> 
+        /// <para>
+        /// You cannot specify a namespace that begins with "AWS/". Namespaces that begin with
+        /// "AWS/" are reserved for other Amazon Web Services products that send metrics to Amazon
+        /// CloudWatch.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Namespace
         {

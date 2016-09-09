@@ -34,17 +34,25 @@ namespace Amazon.ApplicationAutoScaling
     /// AWS resources. With Application Auto Scaling, you can automatically scale your AWS
     /// resources, with an experience similar to that of Auto Scaling.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    /// At this time, Application Auto Scaling only supports scaling Amazon ECS services.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// For example, you can use Application Auto Scaling to accomplish the following tasks:
+    /// Application Auto Scaling supports scaling the following AWS resources:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Define scaling policies for automatically adjusting your application’s resources
+    /// Amazon ECS services
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon EC2 Spot fleet instances
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can use Application Auto Scaling to accomplish the following tasks:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Define scaling policies for automatically adjusting your AWS resources
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -64,7 +72,27 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>us-west-1</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>us-west-2</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ap-southeast-1</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ap-southeast-2</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ap-northeast-1</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>eu-central-1</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>

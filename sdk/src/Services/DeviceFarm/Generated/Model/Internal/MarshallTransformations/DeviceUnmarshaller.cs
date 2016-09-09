@@ -82,6 +82,18 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.Cpu = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fleetName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FleetName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("fleetType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FleetType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("formFactor", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -140,6 +152,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Radio = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("remoteAccessEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RemoteAccessEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resolution", targetDepth))

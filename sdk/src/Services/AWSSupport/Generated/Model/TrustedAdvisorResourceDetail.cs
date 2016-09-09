@@ -82,7 +82,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS region in which the identified resource is located. 
+        /// The AWS region in which the identified resource is located.
         /// </para>
         /// </summary>
         public string Region

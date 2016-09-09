@@ -51,9 +51,9 @@
 
     <Target Name="init" DependsOnTargets="clean;build-custom-tasks"/>
 
-    <Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;unity-pack;keyscan;consolidate-docartifacts;save-build"/>
+    <Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;copy-service-models;unity-pack;keyscan;consolidate-docartifacts;save-build"/>
 
-    <Target Name="full-build-nodocs" DependsOnTargets="test-sdk;keyscan;copy-assemblies;unity-pack;save-build"/>
+    <Target Name="full-build-nodocs" DependsOnTargets="test-sdk;keyscan;copy-assemblies;copy-service-models;unity-pack;save-build"/>
 
     <Target Name="restore-nuget">
         <Message Text="Restore nuget packages"/>
@@ -233,6 +233,16 @@
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File copy-sdkassemblies.ps1 -PublicKeyTokenToCheck $(CustomSnkPublicKeyToken) -BuildType $(Configuration)" />
     </Target>
 
+    <Target Name="copy-service-models" DependsOnTargets="copy-assemblies">
+        <Message Text="Collating service models for downstream tooling" />
+		
+		<ItemGroup>
+			<ServiceModels Include="..\generator\ServiceModels\*" />
+		</ItemGroup>
+		
+		<Copy SourceFiles="@(ServiceModels)" DestinationFolder="$(Deployment)\models" />
+	</Target>
+	
     <!-- TEST TARGETS/TASKS -->
 
     <Target Name="fxcop" DependsOnTargets="init;copy-assemblies" Condition="Exists('$(fxcopcmdexe)') And ($(Configuration) == 'Release')">

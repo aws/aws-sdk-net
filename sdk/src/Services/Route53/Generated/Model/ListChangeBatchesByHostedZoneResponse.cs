@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// The input for a ListChangeBatchesByHostedZone request.
+    /// A complex type containing the response information for the request.
     /// </summary>
     public partial class ListChangeBatchesByHostedZoneResponse : AmazonWebServiceResponse
     {
@@ -41,7 +41,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The maximum number of items on a page.
+        /// The value that you specified for the <code>maxitems</code> parameter in the call to
+        /// <code>ListHostedZones</code> that produced the current response. 
         /// </para>
         /// </summary>
         public string MaxItems
@@ -59,7 +60,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The page marker.
+        /// For the second and subsequent calls to ListHostedZones, Marker is the value that you
+        /// specified for the marker parameter in the request that produced the current response.
+        /// 
         /// </para>
         /// </summary>
         public string Marker

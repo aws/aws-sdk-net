@@ -93,6 +93,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.StageKeys = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("value", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Value = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

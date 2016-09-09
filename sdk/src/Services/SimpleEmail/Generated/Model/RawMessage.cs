@@ -42,7 +42,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Instantiates RawMessage with the parameterized properties
         /// </summary>
-        /// <param name="data">The raw data of the message. The client must ensure that the message format complies with Internet email standards regarding email header fields, MIME types, MIME encoding, and base64 encoding (if necessary). The To:, CC:, and BCC: headers in the raw message can contain a group list. If you are using <code>SendRawEmail</code> with sending authorization, you can include X-headers in the raw message to specify the "Source," "From," and "Return-Path" addresses. For more information, see the documentation for <code>SendRawEmail</code>.  <important> Do not include these X-headers in the DKIM signature, because they are removed by Amazon SES before sending the email. </important> For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>. </param>
+        /// <param name="data">The raw data of the message. The client must ensure that the message format complies with Internet email standards regarding email header fields, MIME types, MIME encoding, and base64 encoding. The To:, CC:, and BCC: headers in the raw message can contain a group list. If you are using <code>SendRawEmail</code> with sending authorization, you can include X-headers in the raw message to specify the "Source," "From," and "Return-Path" addresses. For more information, see the documentation for <code>SendRawEmail</code>.  <important> Do not include these X-headers in the DKIM signature, because they are removed by Amazon SES before sending the email. </important> For more information, go to the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-raw.html">Amazon SES Developer Guide</a>. </param>
         public RawMessage(MemoryStream data)
         {
             _data = data;
@@ -53,7 +53,7 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// The raw data of the message. The client must ensure that the message format complies
         /// with Internet email standards regarding email header fields, MIME types, MIME encoding,
-        /// and base64 encoding (if necessary).
+        /// and base64 encoding.
         /// </para>
         ///  
         /// <para>

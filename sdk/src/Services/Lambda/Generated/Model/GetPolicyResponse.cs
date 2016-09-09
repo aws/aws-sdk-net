@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// This is the response object from the GetPolicy operation.
+    /// 
     /// </summary>
     public partial class GetPolicyResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Policy. 
         /// <para>
         /// The resource policy associated with the specified function. The response returns the
-        /// same as a string using a backslash ("\") as an escape character in the JSON. 
+        /// same as a string using a backslash ("\") as an escape character in the JSON.
         /// </para>
         /// </summary>
         public string Policy

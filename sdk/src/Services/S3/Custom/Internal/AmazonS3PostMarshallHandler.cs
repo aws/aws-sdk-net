@@ -103,7 +103,7 @@ namespace Amazon.S3.Internal
             if (request.Headers.TryGetValue(HeaderKeys.XAmzServerSideEncryptionHeader, out sseHeaderValue) &&
                 string.Equals(sseHeaderValue, ServerSideEncryptionMethod.AWSKMS.Value, StringComparison.Ordinal))
             {
-                    request.UseSigV4 = true;
+                request.UseSigV4 = true;
             }
 
             var bucketName = GetBucketName(request.ResourcePath);
@@ -141,7 +141,7 @@ namespace Amazon.S3.Internal
                     request.CanonicalResourcePrefix = canonicalBucketName;
                 }
             }
-                        
+
             if (s3Config.UseAccelerateEndpoint)
             {
                 // Validate if bucket name is accelerate compatible and enable acceleration by using

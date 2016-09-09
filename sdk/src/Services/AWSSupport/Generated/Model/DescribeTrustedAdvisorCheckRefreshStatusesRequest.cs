@@ -31,6 +31,14 @@ namespace Amazon.AWSSupport.Model
     /// Container for the parameters to the DescribeTrustedAdvisorCheckRefreshStatuses operation.
     /// Returns the refresh status of the Trusted Advisor checks that have the specified check
     /// IDs. Check IDs can be obtained by calling <a>DescribeTrustedAdvisorChecks</a>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Some checks are refreshed automatically, and their refresh statuses cannot be retrieved
+    /// by using this operation. Use of the <code>DescribeTrustedAdvisorCheckRefreshStatuses</code>
+    /// operation for these checks causes an <code>InvalidParameterValue</code> error.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeTrustedAdvisorCheckRefreshStatusesRequest : AmazonAWSSupportRequest
     {
@@ -39,7 +47,9 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property CheckIds. 
         /// <para>
-        /// The IDs of the Trusted Advisor checks.
+        /// The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b> Specifying
+        /// the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code>
+        /// error.
         /// </para>
         /// </summary>
         public List<string> CheckIds

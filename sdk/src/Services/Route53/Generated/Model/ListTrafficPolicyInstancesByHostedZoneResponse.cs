@@ -107,10 +107,6 @@ namespace Amazon.Route53.Model
         /// and <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request
         /// parameters.
         /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code>
-        /// </para>
         /// </summary>
         public bool IsTruncated
         {

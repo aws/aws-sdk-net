@@ -29,9 +29,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyHosts operation.
-    /// Modify the auto-placement setting of a Dedicated host. When auto-placement is enabled,
+    /// Modify the auto-placement setting of a Dedicated Host. When auto-placement is enabled,
     /// AWS will place instances that you launch with a tenancy of <code>host</code>, but
-    /// without targeting a specific host ID, onto any available Dedicated host in your account
+    /// without targeting a specific host ID, onto any available Dedicated Host in your account
     /// which has auto-placement enabled. When auto-placement is disabled, you need to provide
     /// a host ID if you want the instance to launch onto a specific host. If no host ID is
     /// provided, the instance will be launched onto a suitable host which has auto-placement
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HostIds. 
         /// <para>
-        /// The host IDs of the Dedicated hosts you want to modify.
+        /// The host IDs of the Dedicated Hosts you want to modify.
         /// </para>
         /// </summary>
         public List<string> HostIds

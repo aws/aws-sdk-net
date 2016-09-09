@@ -103,8 +103,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix time in seconds and milliseconds when the task was created (the task entered
-        /// the <code>PENDING</code> state).
+        /// The Unix timestamp for when the task was created (the task entered the <code>PENDING</code>
+        /// state).
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -176,8 +176,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The Unix time in seconds and milliseconds when the task was started (the task transitioned
-        /// from the <code>PENDING</code> state to the <code>RUNNING</code> state).
+        /// The Unix timestamp for when the task was started (the task transitioned from the <code>PENDING</code>
+        /// state to the <code>RUNNING</code> state).
         /// </para>
         /// </summary>
         public DateTime StartedAt
@@ -215,8 +215,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StoppedAt. 
         /// <para>
-        /// The Unix time in seconds and milliseconds when the task was stopped (the task transitioned
-        /// from the <code>RUNNING</code> state to the <code>STOPPED</code> state).
+        /// The Unix timestamp for when the task was stopped (the task transitioned from the <code>RUNNING</code>
+        /// state to the <code>STOPPED</code> state).
         /// </para>
         /// </summary>
         public DateTime StoppedAt

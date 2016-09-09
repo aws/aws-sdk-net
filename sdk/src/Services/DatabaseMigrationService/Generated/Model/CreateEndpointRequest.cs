@@ -33,6 +33,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class CreateEndpointRequest : AmazonDatabaseMigrationServiceRequest
     {
+        private string _certificateArn;
         private string _databaseName;
         private string _endpointIdentifier;
         private ReplicationEndpointTypeValue _endpointType;
@@ -42,8 +43,27 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _password;
         private int? _port;
         private string _serverName;
+        private DmsSslModeValue _sslMode;
         private List<Tag> _tags = new List<Tag>();
         private string _username;
+
+        /// <summary>
+        /// Gets and sets the property CertificateArn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) for the certificate.
+        /// </para>
+        /// </summary>
+        public string CertificateArn
+        {
+            get { return this._certificateArn; }
+            set { this._certificateArn = value; }
+        }
+
+        // Check to see if CertificateArn property is set
+        internal bool IsSetCertificateArn()
+        {
+            return this._certificateArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DatabaseName. 
@@ -211,6 +231,32 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServerName()
         {
             return this._serverName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SslMode. 
+        /// <para>
+        /// The SSL mode to use for the SSL connection.
+        /// </para>
+        ///  
+        /// <para>
+        /// SSL mode can be one of four values: none, require, verify-ca, verify-full. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is none.
+        /// </para>
+        /// </summary>
+        public DmsSslModeValue SslMode
+        {
+            get { return this._sslMode; }
+            set { this._sslMode = value; }
+        }
+
+        // Check to see if SslMode property is set
+        internal bool IsSetSslMode()
+        {
+            return this._sslMode != null;
         }
 
         /// <summary>

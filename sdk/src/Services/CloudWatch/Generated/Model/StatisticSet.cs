@@ -42,7 +42,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Maximum. 
         /// <para>
-        ///  The maximum value of the sample set. 
+        /// The maximum value of the sample set.
         /// </para>
         /// </summary>
         public double Maximum
@@ -60,7 +60,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Minimum. 
         /// <para>
-        ///  The minimum value of the sample set. 
+        /// The minimum value of the sample set.
         /// </para>
         /// </summary>
         public double Minimum
@@ -78,7 +78,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property SampleCount. 
         /// <para>
-        ///  The number of samples used for the statistic set. 
+        /// The number of samples used for the statistic set.
         /// </para>
         /// </summary>
         public double SampleCount
@@ -96,7 +96,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Sum. 
         /// <para>
-        ///  The sum of values for the sample set. 
+        /// The sum of values for the sample set.
         /// </para>
         /// </summary>
         public double Sum

@@ -171,7 +171,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property TableMappings. 
         /// <para>
-        /// The path of the JSON file that contains the table mappings.
+        /// The path of the JSON file that contains the table mappings. Preceed the path with
+        /// "file://".
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, --table-mappings file://mappingfile.json
         /// </para>
         /// </summary>
         public string TableMappings

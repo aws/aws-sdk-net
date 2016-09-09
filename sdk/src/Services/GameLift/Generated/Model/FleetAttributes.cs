@@ -39,6 +39,7 @@ namespace Amazon.GameLift.Model
         private List<string> _logPaths = new List<string>();
         private string _name;
         private ProtectionPolicy _newGameSessionProtectionPolicy;
+        private OperatingSystem _operatingSystem;
         private string _serverLaunchParameters;
         private string _serverLaunchPath;
         private FleetStatus _status;
@@ -65,8 +66,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Time stamp indicating when this object was created. Format is an integer representing
-        /// the number of seconds since the Unix epoch (Unix time).
+        /// Time stamp indicating when this data object was created. Format is a number expressed
+        /// in Unix time as milliseconds (ex: "1469498468.057".
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -162,10 +163,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property NewGameSessionProtectionPolicy. 
         /// <para>
         /// Type of game session protection to set for all new instances started in the fleet.
-        /// <ul><li><b>NoProtection</b> – The game session can be terminated during a scale-down
+        /// </para>
+        ///  <ul><li><b>NoProtection</b> – The game session can be terminated during a scale-down
         /// event.</li> <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code>
         /// status, it cannot be terminated during a scale-down event.</li></ul>
-        /// </para>
         /// </summary>
         public ProtectionPolicy NewGameSessionProtectionPolicy
         {
@@ -180,10 +181,30 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OperatingSystem. 
+        /// <para>
+        /// Operating system of the fleet's computing resources. A fleet's operating system depends
+        /// on the OS specified for the build that is deployed on this fleet.
+        /// </para>
+        /// </summary>
+        public OperatingSystem OperatingSystem
+        {
+            get { return this._operatingSystem; }
+            set { this._operatingSystem = value; }
+        }
+
+        // Check to see if OperatingSystem property is set
+        internal bool IsSetOperatingSystem()
+        {
+            return this._operatingSystem != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerLaunchParameters. 
         /// <para>
-        /// Deprecated. Server launch parameters are now specified using a <code><a>RuntimeConfiguration</a></code>
-        /// object.
+        /// Game server launch parameters specified for fleets created prior to 2016-08-04 (or
+        /// AWS SDK v. 0.12.16). Server launch parameters for fleets created after this date are
+        /// specified in the fleet's <code><a>RuntimeConfiguration</a></code>.
         /// </para>
         /// </summary>
         public string ServerLaunchParameters
@@ -201,8 +222,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ServerLaunchPath. 
         /// <para>
-        /// Deprecated. Server launch parameters are now set using a <code><a>RuntimeConfiguration</a></code>
-        /// object.
+        /// Path to a game server executable in the fleet's build, specified for fleets created
+        /// prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for fleets created
+        /// after this date are specified in the fleet's <code><a>RuntimeConfiguration</a></code>.
         /// </para>
         /// </summary>
         public string ServerLaunchPath
@@ -220,14 +242,19 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Current status of the fleet. Possible fleet states include the following: <ul><li><b>NEW</b>
-        /// – A new fleet has been defined and desired instances is set to 1. </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b>
-        /// – GameLift is setting up the new fleet, creating new instances with the game build
-        /// and starting server processes.</li><li><b>ACTIVE</b> – Hosts can now accept game sessions.</li><li><b>ERROR</b>
-        /// – An error occurred when downloading, validating, building, or activating the fleet.</li><li><b>DELETING</b>
+        /// Current status of the fleet.
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible fleet statuses include the following:
+        /// </para>
+        ///  <ul><li><b>NEW</b> – A new fleet has been defined and desired instances is set to
+        /// 1. </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting
+        /// up the new fleet, creating new instances with the game build and starting server processes.</li><li><b>ACTIVE</b>
+        /// – Hosts can now accept game sessions.</li><li><b>ERROR</b> – An error occurred when
+        /// downloading, validating, building, or activating the fleet.</li><li><b>DELETING</b>
         /// – Hosts are responding to a delete fleet request.</li><li><b>TERMINATED</b> – The
         /// fleet no longer exists.</li></ul>
-        /// </para>
         /// </summary>
         public FleetStatus Status
         {
@@ -244,8 +271,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property TerminationTime. 
         /// <para>
-        /// Time stamp indicating when this fleet was terminated. Format is an integer representing
-        /// the number of seconds since the Unix epoch (Unix time).
+        /// Time stamp indicating when this data object was terminated. Format is a number expressed
+        /// in Unix time as milliseconds (ex: "1469498468.057".
         /// </para>
         /// </summary>
         public DateTime TerminationTime

@@ -64,6 +64,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("FailureDetails", targetDepth))
+                {
+                    var unmarshaller = FailureDetailsUnmarshaller.Instance;
+                    unmarshalledObject.FailureDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

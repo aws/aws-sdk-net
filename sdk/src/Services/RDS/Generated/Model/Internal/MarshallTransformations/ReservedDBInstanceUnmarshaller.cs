@@ -109,6 +109,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.RecurringCharges.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ReservedDBInstanceArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReservedDBInstanceArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ReservedDBInstanceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

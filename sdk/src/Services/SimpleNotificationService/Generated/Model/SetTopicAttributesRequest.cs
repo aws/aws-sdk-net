@@ -46,7 +46,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Instantiates SetTopicAttributesRequest with the parameterized properties
         /// </summary>
         /// <param name="topicArn">The ARN of the topic to modify.</param>
-        /// <param name="attributeName">The name of the attribute you want to set. Only a subset of the topic's attributes are mutable. Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code></param>
+        /// <param name="attributeName">The name of the attribute you want to set. Only a subset of the topic's attributes are mutable. Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code> </param>
         /// <param name="attributeValue">The new value for the attribute.</param>
         public SetTopicAttributesRequest(string topicArn, string attributeName, string attributeValue)
         {
@@ -64,6 +64,7 @@ namespace Amazon.SimpleNotificationService.Model
         ///  
         /// <para>
         /// Valid values: <code>Policy</code> | <code>DisplayName</code> | <code>DeliveryPolicy</code>
+        /// 
         /// </para>
         /// </summary>
         public string AttributeName

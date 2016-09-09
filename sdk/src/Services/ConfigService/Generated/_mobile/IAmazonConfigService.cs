@@ -83,17 +83,32 @@ namespace Amazon.ConfigService
 
         #endregion
                 
+        #region  DeleteConfigurationRecorder
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConfigurationRecorder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationRecorder operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteConfigurationRecorderResponse> DeleteConfigurationRecorderAsync(DeleteConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteDeliveryChannel
 
 
         /// <summary>
-        /// Deletes the specified delivery channel.
+        /// Deletes the delivery channel.
         /// 
         ///  
         /// <para>
-        /// The delivery channel cannot be deleted if it is the only delivery channel and the
-        /// configuration recorder is still running. To delete the delivery channel, stop the
-        /// running configuration recorder using the <a>StopConfigurationRecorder</a> action.
+        /// Before you can delete the delivery channel, you must stop the configuration recorder
+        /// by using the <a>StopConfigurationRecorder</a> action.
         /// </para>
         /// </summary>
         /// <param name="deliveryChannelName">The name of the delivery channel to delete.</param>
@@ -121,6 +136,22 @@ namespace Amazon.ConfigService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteDeliveryChannelResponse> DeleteDeliveryChannelAsync(DeleteDeliveryChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteEvaluationResults
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEvaluationResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEvaluationResults operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteEvaluationResultsResponse> DeleteEvaluationResultsAsync(DeleteEvaluationResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -277,7 +308,11 @@ namespace Amazon.ConfigService
         /// recorder is not specified, this action returns the status of all configuration recorder
         /// associated with the account.
         /// 
-        ///  <note>Currently, you can specify only one configuration recorder per account.</note>
+        ///  <note> 
+        /// <para>
+        /// Currently, you can specify only one configuration recorder per account.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -349,7 +384,11 @@ namespace Amazon.ConfigService
         /// is not specified, this action returns the current status of all delivery channels
         /// associated with the account. 
         /// 
-        ///  <note>Currently, you can specify only one delivery channel per account.</note>
+        ///  <note> 
+        /// <para>
+        /// Currently, you can specify only one delivery channel per account.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -532,6 +571,22 @@ namespace Amazon.ConfigService
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutEvaluationsResponse> PutEvaluationsAsync(PutEvaluationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartConfigRulesEvaluation
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartConfigRulesEvaluation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartConfigRulesEvaluation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<StartConfigRulesEvaluationResponse> StartConfigRulesEvaluationAsync(StartConfigRulesEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

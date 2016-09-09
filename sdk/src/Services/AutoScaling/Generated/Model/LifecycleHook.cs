@@ -32,12 +32,18 @@ namespace Amazon.AutoScaling.Model
     /// when an instance launches or terminates. When you have a lifecycle hook in place,
     /// the Auto Scaling group will either:
     /// 
-    ///  <ul> <li>Pause the instance after it launches, but before it is put into service</li>
-    /// <li>Pause the instance as it terminates, but before it is fully terminated</li> </ul>
-    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// Pause the instance after it launches, but before it is put into service
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Pause the instance as it terminates, but before it is fully terminated
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-    /// Scaling Lifecycle</a> in the <i>Auto Scaling Developer Guide</i>.
+    /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
     public partial class LifecycleHook
@@ -194,9 +200,35 @@ namespace Amazon.AutoScaling.Model
         /// SQS queue or an SNS topic. The notification message sent to the target includes the
         /// following:
         /// </para>
-        ///  <ul> <li>Lifecycle action token</li> <li>User account ID</li> <li>Name of the Auto
-        /// Scaling group</li> <li>Lifecycle hook name</li> <li>EC2 instance ID</li> <li>Lifecycle
-        /// transition</li> <li>Notification metadata</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Lifecycle action token
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// User account ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Name of the Auto Scaling group
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Lifecycle hook name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// EC2 instance ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Lifecycle transition
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Notification metadata
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string NotificationTargetARN
         {

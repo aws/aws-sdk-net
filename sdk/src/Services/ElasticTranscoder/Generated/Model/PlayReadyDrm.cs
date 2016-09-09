@@ -169,7 +169,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// path, and is referenced by the PlayReady header. The PlayReady header is referenced
         /// in the protection header of the client manifest for Smooth Streaming outputs, and
         /// in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example
-        /// URL looks like this: <programlisting>https://www.example.com/exampleKey/</programlisting>
+        /// URL looks like this: <code>https://www.example.com/exampleKey/</code>
         /// </para>
         /// </summary>
         public string LicenseAcquisitionUrl

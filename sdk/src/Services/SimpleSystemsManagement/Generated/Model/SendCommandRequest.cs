@@ -38,9 +38,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DocumentHashType _documentHashType;
         private string _documentName;
         private List<string> _instanceIds = new List<string>();
+        private NotificationConfig _notificationConfig;
         private string _outputS3BucketName;
         private string _outputS3KeyPrefix;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
+        private string _serviceRoleArn;
         private int? _timeoutSeconds;
 
         /// <summary>
@@ -163,6 +165,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NotificationConfig. 
+        /// <para>
+        /// Configurations for sending notifications.
+        /// </para>
+        /// </summary>
+        public NotificationConfig NotificationConfig
+        {
+            get { return this._notificationConfig; }
+            set { this._notificationConfig = value; }
+        }
+
+        // Check to see if NotificationConfig property is set
+        internal bool IsSetNotificationConfig()
+        {
+            return this._notificationConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OutputS3BucketName. 
         /// <para>
         /// The name of the S3 bucket where command execution responses should be stored.
@@ -214,6 +234,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceRoleArn. 
+        /// <para>
+        /// The IAM role that SSM uses to send notifications. 
+        /// </para>
+        /// </summary>
+        public string ServiceRoleArn
+        {
+            get { return this._serviceRoleArn; }
+            set { this._serviceRoleArn = value; }
+        }
+
+        // Check to see if ServiceRoleArn property is set
+        internal bool IsSetServiceRoleArn()
+        {
+            return this._serviceRoleArn != null;
         }
 
         /// <summary>

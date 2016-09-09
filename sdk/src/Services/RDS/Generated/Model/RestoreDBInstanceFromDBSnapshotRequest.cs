@@ -232,7 +232,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter doesn't apply to the MySQL or MariaDB engines.
+        /// This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB engines.
         /// </para>
         ///  </note>
         /// </summary>

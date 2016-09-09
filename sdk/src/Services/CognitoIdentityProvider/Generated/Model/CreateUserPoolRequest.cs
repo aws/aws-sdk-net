@@ -35,6 +35,8 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private List<string> _aliasAttributes = new List<string>();
         private List<string> _autoVerifiedAttributes = new List<string>();
+        private DeviceConfigurationType _deviceConfiguration;
+        private EmailConfigurationType _emailConfiguration;
         private string _emailVerificationMessage;
         private string _emailVerificationSubject;
         private LambdaConfigType _lambdaConfig;
@@ -42,6 +44,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private UserPoolPolicyType _policies;
         private string _poolName;
         private string _smsAuthenticationMessage;
+        private SmsConfigurationType _smsConfiguration;
         private string _smsVerificationMessage;
 
         /// <summary>
@@ -79,6 +82,42 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetAutoVerifiedAttributes()
         {
             return this._autoVerifiedAttributes != null && this._autoVerifiedAttributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceConfiguration. 
+        /// <para>
+        /// The device configuration.
+        /// </para>
+        /// </summary>
+        public DeviceConfigurationType DeviceConfiguration
+        {
+            get { return this._deviceConfiguration; }
+            set { this._deviceConfiguration = value; }
+        }
+
+        // Check to see if DeviceConfiguration property is set
+        internal bool IsSetDeviceConfiguration()
+        {
+            return this._deviceConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailConfiguration. 
+        /// <para>
+        /// The email configuration.
+        /// </para>
+        /// </summary>
+        public EmailConfigurationType EmailConfiguration
+        {
+            get { return this._emailConfiguration; }
+            set { this._emailConfiguration = value; }
+        }
+
+        // Check to see if EmailConfiguration property is set
+        internal bool IsSetEmailConfiguration()
+        {
+            return this._emailConfiguration != null;
         }
 
         /// <summary>
@@ -205,6 +244,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetSmsAuthenticationMessage()
         {
             return this._smsAuthenticationMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SmsConfiguration. 
+        /// <para>
+        /// The SMS configuration.
+        /// </para>
+        /// </summary>
+        public SmsConfigurationType SmsConfiguration
+        {
+            get { return this._smsConfiguration; }
+            set { this._smsConfiguration = value; }
+        }
+
+        // Check to see if SmsConfiguration property is set
+        internal bool IsSetSmsConfiguration()
+        {
+            return this._smsConfiguration != null;
         }
 
         /// <summary>

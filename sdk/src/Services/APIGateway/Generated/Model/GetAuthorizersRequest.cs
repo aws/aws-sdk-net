@@ -30,6 +30,9 @@ namespace Amazon.APIGateway.Model
     /// <summary>
     /// Container for the parameters to the GetAuthorizers operation.
     /// Describe an existing <a>Authorizers</a> resource.
+    /// 
+    ///  <div class="seeAlso"><a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS
+    /// CLI</a></div>
     /// </summary>
     public partial class GetAuthorizersRequest : AmazonAPIGatewayRequest
     {
@@ -59,7 +62,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Position. 
         /// <para>
         /// If not all <a>Authorizer</a> resources in the response were present, the position
-        /// will specificy where to start the next page of results.
+        /// will specify where to start the next page of results.
         /// </para>
         /// </summary>
         public string Position

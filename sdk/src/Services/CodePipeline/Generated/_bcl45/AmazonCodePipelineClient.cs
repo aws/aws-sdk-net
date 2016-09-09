@@ -75,6 +75,11 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>GetPipelineExecution</a>, which returns information about a specific execution
+    /// of a pipeline.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>GetPipelineState</a>, which returns information about the current state of the
     /// stages and actions of a pipeline.
     /// </para>
@@ -1274,6 +1279,54 @@ namespace Amazon.CodePipeline
             var unmarshaller = GetPipelineResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetPipelineRequest,GetPipelineResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPipelineExecution
+
+
+        /// <summary>
+        /// Returns information about an execution of a pipeline, including details about artifacts,
+        /// the pipeline execution ID, and the name, version, and status of the pipeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPipelineExecution service method.</param>
+        /// 
+        /// <returns>The response from the GetPipelineExecution service method, as returned by CodePipeline.</returns>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineExecutionNotFoundException">
+        /// The pipeline execution was specified in an invalid format or cannot be found, or an
+        /// execution ID does not belong to the specified pipeline.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
+        /// The specified pipeline was specified in an invalid format or cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
+        /// The validation was specified in an invalid format.
+        /// </exception>
+        public GetPipelineExecutionResponse GetPipelineExecution(GetPipelineExecutionRequest request)
+        {
+            var marshaller = new GetPipelineExecutionRequestMarshaller();
+            var unmarshaller = GetPipelineExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<GetPipelineExecutionRequest,GetPipelineExecutionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPipelineExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPipelineExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetPipelineExecutionResponse> GetPipelineExecutionAsync(GetPipelineExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetPipelineExecutionRequestMarshaller();
+            var unmarshaller = GetPipelineExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPipelineExecutionRequest,GetPipelineExecutionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

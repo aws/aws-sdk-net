@@ -38,7 +38,8 @@ namespace Amazon.ECS.Model
     /// <para>
     /// In addition to maintaining the desired count of tasks in your service, you can optionally
     /// run your service behind a load balancer. The load balancer distributes traffic across
-    /// the tasks that are associated with the service.
+    /// the tasks that are associated with the service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+    /// Load Balancing</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -185,9 +186,26 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LoadBalancers. 
         /// <para>
-        /// A list of load balancer objects, containing the load balancer name, the container
-        /// name (as it appears in a container definition), and the container port to access from
-        /// the load balancer.
+        /// A load balancer object representing the load balancer to use with your service. Currently,
+        /// you are limited to one load balancer per service. After you create a service, the
+        /// load balancer name, container name, and container port specified in the service definition
+        /// are immutable.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Elastic Load Balancing Classic load balancers, this object must contain the load
+        /// balancer name, the container name (as it appears in a container definition), and the
+        /// container port to access from the load balancer. When a task from this service is
+        /// placed on a container instance, the container instance is registered with the load
+        /// balancer specified here.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Elastic Load Balancing Application load balancers, this object must contain the
+        /// load balancer target group ARN, the container name (as it appears in a container definition),
+        /// and the container port to access from the load balancer. When a task from this service
+        /// is placed on a container instance, the container instance and port combination is
+        /// registered as a target in the target group specified here.
         /// </para>
         /// </summary>
         public List<LoadBalancer> LoadBalancers

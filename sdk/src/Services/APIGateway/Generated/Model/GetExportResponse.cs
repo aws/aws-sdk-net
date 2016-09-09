@@ -57,7 +57,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ContentDisposition. 
         /// <para>
-        /// The content-disposition header value in the HTTP reseponse.
+        /// The content-disposition header value in the HTTP response.
         /// </para>
         /// </summary>
         public string ContentDisposition

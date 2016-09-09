@@ -102,6 +102,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetNotificationConfig())
+                {
+                    context.Writer.WritePropertyName("NotificationConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NotificationConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NotificationConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetOutputS3BucketName())
                 {
                     context.Writer.WritePropertyName("OutputS3BucketName");
@@ -131,6 +142,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetServiceRoleArn())
+                {
+                    context.Writer.WritePropertyName("ServiceRoleArn");
+                    context.Writer.Write(publicRequest.ServiceRoleArn);
                 }
 
                 if(publicRequest.IsSetTimeoutSeconds())

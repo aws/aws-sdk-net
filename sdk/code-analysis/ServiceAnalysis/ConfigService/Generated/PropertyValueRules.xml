@@ -6,9 +6,19 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.DeleteConfigurationRecorderRequest.ConfigurationRecorderName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.DeleteDeliveryChannelRequest.DeliveryChannelName</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DeleteEvaluationResultsRequest.ConfigRuleName</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.DeliverConfigSnapshotRequest.DeliveryChannelName</property>

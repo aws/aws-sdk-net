@@ -32,12 +32,32 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class CACertificateDescription
     {
+        private AutoRegistrationStatus _autoRegistrationStatus;
         private string _certificateArn;
         private string _certificateId;
         private string _certificatePem;
         private DateTime? _creationDate;
         private string _ownedBy;
         private CACertificateStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property AutoRegistrationStatus. 
+        /// <para>
+        /// Whether the CA certificate configured for auto registration of device certificates.
+        /// Valid values are "ENABLE" and "DISABLE"
+        /// </para>
+        /// </summary>
+        public AutoRegistrationStatus AutoRegistrationStatus
+        {
+            get { return this._autoRegistrationStatus; }
+            set { this._autoRegistrationStatus = value; }
+        }
+
+        // Check to see if AutoRegistrationStatus property is set
+        internal bool IsSetAutoRegistrationStatus()
+        {
+            return this._autoRegistrationStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CertificateArn. 

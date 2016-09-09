@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type containing information about the specified reusable delegation set.
+    /// A complex type that contains the response to the <code>GetReusableDelegationSet</code>
+    /// request.
     /// </summary>
     public partial class GetReusableDelegationSetResponse : AmazonWebServiceResponse
     {
@@ -37,8 +38,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property DelegationSet. 
         /// <para>
-        /// A complex type that contains the information about the nameservers for the specified
-        /// delegation set ID.
+        /// A complex type that contains information about the reusable delegation set.
         /// </para>
         /// </summary>
         public DelegationSet DelegationSet

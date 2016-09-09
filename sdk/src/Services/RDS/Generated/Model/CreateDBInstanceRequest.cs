@@ -682,14 +682,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Version 5.6 (only available in AWS regions ap-northeast-1, ap-northeast-2, ap-southeast-2,
-        /// eu-west-1, us-east-1, us-west-2):</b> <code> 5.6.10a</code> 
+        ///  <b>Version 5.6 (only available in AWS regions ap-northeast-1, ap-northeast-2, ap-south-1,
+        /// ap-southeast-2, eu-west-1, us-east-1, us-west-2):</b> <code> 5.6.10a</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  <b>MariaDB</b> 
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <b>Version 10.1 (available in all AWS regions except us-gov-west-1):</b> <code> 10.1.14</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b>Version 10.0 (available in all AWS regions):</b> <code> 10.0.17 | 10.0.24</code>
         /// 
@@ -776,33 +781,38 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 5.6 (available in all AWS regions except ap-northeast-2):</b> <code> 5.6.19a
-        /// | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code> 
+        ///  <b>Version 5.6 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+        /// <code> 5.6.19a | 5.6.19b | 5.6.21 | 5.6.21b | 5.6.22</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 5.6 (available in all AWS regions):</b> <code> 5.6.23 | 5.6.27 | 5.6.29</code>
+        ///  <b>Version 5.6 (available in all AWS regions except ap-south-1):</b> <code> 5.6.23</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 5.5 (available in all AWS regions except eu-central-1, ap-northeast-2):</b>
-        /// <code> 5.5.40 | 5.5.40a</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 5.5 (available in all AWS regions except ap-northeast-2):</b> <code> 5.5.40b
-        /// | 5.5.41</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 5.5 (available in all AWS regions):</b> <code> 5.5.42 | 5.5.46</code>
+        ///  <b>Version 5.6 (available in all AWS regions):</b> <code> 5.6.27 | 5.6.29</code>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 5.1 (available in all AWS regions except eu-central-1, ap-northeast-2):</b>
-        /// <code> 5.1.73a | 5.1.73b</code> 
+        ///  <b>Version 5.5 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+        /// eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code>
+        /// 5.5.40 | 5.5.40a</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Version 5.5 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+        /// <code> 5.5.40b | 5.5.41</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Version 5.5 (available in all AWS regions except ap-south-1):</b> <code> 5.5.42</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Version 5.5 (available in all AWS regions):</b> <code> 5.5.46</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -810,13 +820,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Version 12.1 (available in all AWS regions except ap-northeast-2):</b> <code>
-        /// 12.1.0.1.v1 | 12.1.0.1.v2</code> 
+        ///  <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+        /// <code> 12.1.0.1.v1 | 12.1.0.1.v2</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 12.1 (available in all AWS regions except ap-northeast-2, us-gov-west-1):</b>
-        /// <code> 12.1.0.1.v3 | 12.1.0.1.v4</code> 
+        ///  <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+        /// eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3
+        /// | 12.1.0.1.v4 | 12.1.0.1.v5</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -825,23 +836,7 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b> <code> 12.1.0.2.v2
-        /// | 12.1.0.2.v3</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 11.2 (available in all AWS regions except eu-central-1, ap-northeast-2):</b>
-        /// <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 11.2 (available in all AWS regions except ap-northeast-2):</b> <code>
-        /// 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 11.2 (available in all AWS regions except ap-northeast-2, us-gov-west-1):</b>
-        /// <code> 11.2.0.3.v4</code> 
+        /// | 12.1.0.2.v3 | 12.1.0.2.v4</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -851,7 +846,7 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-        /// | 11.2.0.4.v6 | 11.2.0.4.v7</code> 
+        /// | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -859,29 +854,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Version 12.1 (available in all AWS regions except ap-northeast-2):</b> <code>
-        /// 12.1.0.1.v1 | 12.1.0.1.v2</code> 
+        ///  <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+        /// <code> 12.1.0.1.v1 | 12.1.0.1.v2</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 12.1 (available in all AWS regions except ap-northeast-2, us-gov-west-1):</b>
-        /// <code> 12.1.0.1.v3 | 12.1.0.1.v4</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 11.2 (available in all AWS regions except eu-central-1, ap-northeast-2):</b>
-        /// <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 11.2 (available in all AWS regions except ap-northeast-2):</b> <code>
-        /// 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 11.2 (available in all AWS regions except ap-northeast-2, us-gov-west-1):</b>
-        /// <code> 11.2.0.3.v4</code> 
+        ///  <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+        /// eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3
+        /// | 12.1.0.1.v4 | 12.1.0.1.v5</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -891,7 +871,7 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-        /// | 11.2.0.4.v6 | 11.2.0.4.v7</code> 
+        /// | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -899,29 +879,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Version 12.1 (available in all AWS regions except ap-northeast-2):</b> <code>
-        /// 12.1.0.1.v1 | 12.1.0.1.v2</code> 
+        ///  <b>Version 12.1 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+        /// <code> 12.1.0.1.v1 | 12.1.0.1.v2</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 12.1 (available in all AWS regions except ap-northeast-2, us-gov-west-1):</b>
-        /// <code> 12.1.0.1.v3 | 12.1.0.1.v4</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 11.2 (available in all AWS regions except eu-central-1, ap-northeast-2):</b>
-        /// <code> 11.2.0.2.v3 | 11.2.0.2.v4 | 11.2.0.2.v5 | 11.2.0.2.v6 | 11.2.0.2.v7</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 11.2 (available in all AWS regions except ap-northeast-2):</b> <code>
-        /// 11.2.0.3.v1 | 11.2.0.3.v2 | 11.2.0.3.v3</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Version 11.2 (available in all AWS regions except ap-northeast-2, us-gov-west-1):</b>
-        /// <code> 11.2.0.3.v4</code> 
+        ///  <b>Version 12.1 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+        /// eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 12.1.0.1.v3
+        /// | 12.1.0.1.v4 | 12.1.0.1.v5</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -931,7 +896,7 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Version 11.2 (available in all AWS regions except us-gov-west-1):</b> <code> 11.2.0.4.v5
-        /// | 11.2.0.4.v6 | 11.2.0.4.v7</code> 
+        /// | 11.2.0.4.v6 | 11.2.0.4.v7 | 11.2.0.4.v8</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -940,7 +905,7 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         ///  <b>Version 12.1 (available in all AWS regions except us-gov-west-1):</b> <code> 12.1.0.2.v2
-        /// | 12.1.0.2.v3</code> 
+        /// | 12.1.0.2.v3 | 12.1.0.2.v4</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -953,8 +918,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 9.4 (available in all AWS regions):</b> <code> 9.4.1 | 9.4.4 | 9.4.5</code>
-        /// 
+        ///  <b>Version 9.4 (available in all AWS regions except ap-south-1):</b> <code> 9.4.1
+        /// | 9.4.4</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Version 9.4 (available in all AWS regions):</b> <code> 9.4.5</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -963,18 +932,20 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 9.3 (available in all AWS regions except eu-central-1, ap-northeast-2):</b>
-        /// <code> 9.3.1 | 9.3.2</code> 
+        ///  <b>Version 9.3 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+        /// eu-west-1, sa-east-1, us-east-1, us-gov-west-1, us-west-1, us-west-2):</b> <code>
+        /// 9.3.1 | 9.3.2</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 9.3 (available in all AWS regions except ap-northeast-2):</b> <code> 9.3.10
-        /// | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code> 
+        ///  <b>Version 9.3 (available in all AWS regions except ap-south-1, ap-northeast-2):</b>
+        /// <code> 9.3.10 | 9.3.3 | 9.3.5 | 9.3.6 | 9.3.9</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version 9.3 (available in all AWS regions except ap-northeast-2, us-gov-west-1):</b>
-        /// <code> 9.3.12</code> 
+        ///  <b>Version 9.3 (only available in AWS regions ap-northeast-1, ap-southeast-1, ap-southeast-2,
+        /// eu-central-1, eu-west-1, sa-east-1, us-east-1, us-west-1, us-west-2):</b> <code> 9.3.12</code>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -48,8 +48,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Time stamp indicating when this object was created. Format is an integer representing
-        /// the number of seconds since the Unix epoch (Unix time).
+        /// Time stamp indicating when this data object was created. Format is a number expressed
+        /// in Unix time as milliseconds (ex: "1469498468.057".
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -233,7 +233,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// Current status of the game session. A game session must be in an <code>ACTIVE</code>
-        /// state to have player sessions.
+        /// status to have player sessions.
         /// </para>
         /// </summary>
         public GameSessionStatus Status
@@ -251,8 +251,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property TerminationTime. 
         /// <para>
-        /// Time stamp indicating when this fleet was terminated. Format is an integer representing
-        /// the number of seconds since the Unix epoch (Unix time).
+        /// Time stamp indicating when this data object was terminated. Format is a number expressed
+        /// in Unix time as milliseconds (ex: "1469498468.057".
         /// </para>
         /// </summary>
         public DateTime TerminationTime

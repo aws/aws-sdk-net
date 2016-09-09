@@ -141,7 +141,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Allocates a Dedicated host to your account. At minimum you need to specify the instance
+        /// Allocates a Dedicated Host to your account. At minimum you need to specify the instance
         /// size type, Availability Zone, and quantity of hosts you want to allocate.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateHosts service method.</param>
@@ -862,9 +862,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-        /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
+        /// a Virtual Machine Using the Amazon EC2 CLI</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelConversionTask service method.</param>
@@ -1217,6 +1216,11 @@ namespace Amazon.EC2
         /// To copy an encrypted snapshot that has been shared from another account, you must
         /// have permissions for the CMK used to encrypt the snapshot.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Snapshots created by the CopySnapshot action have an arbitrary volume ID that should
+        /// not be used for any purpose.
+        /// </para>
         ///  </note> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
@@ -1339,18 +1343,21 @@ namespace Amazon.EC2
         ///  <code>domain-name-servers</code> - The IP addresses of up to four domain name servers,
         /// or AmazonProvidedDNS. The default DHCP option set specifies AmazonProvidedDNS. If
         /// specifying more than one domain name server, specify the IP addresses in a single
-        /// parameter, separated by commas.
+        /// parameter, separated by commas. If you want your instance to receive a custom DNS
+        /// hostname as specified in <code>domain-name</code>, you must set <code>domain-name-servers</code>
+        /// to a custom DNS server.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>domain-name</code> - If you're using AmazonProvidedDNS in "us-east-1", specify
         /// "ec2.internal". If you're using AmazonProvidedDNS in another region, specify "region.compute.internal"
         /// (for example, "ap-northeast-1.compute.internal"). Otherwise, specify a domain name
-        /// (for example, "MyCompany.com"). <b>Important</b>: Some Linux operating systems accept
-        /// multiple domain names separated by spaces. However, Windows and other Linux operating
-        /// systems treat the value as a single domain, which results in unexpected behavior.
-        /// If your DHCP options set is associated with a VPC that has instances with multiple
-        /// operating systems, specify only one domain name.
+        /// (for example, "MyCompany.com"). This value is used to complete unqualified DNS hostnames.
+        /// <b>Important</b>: Some Linux operating systems accept multiple domain names separated
+        /// by spaces. However, Windows and other Linux operating systems treat the value as a
+        /// single domain, which results in unexpected behavior. If your DHCP options set is associated
+        /// with a VPC that has instances with multiple operating systems, specify only one domain
+        /// name.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1517,8 +1524,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For information about the supported operating systems, image formats, and known limitations
-        /// for the types of instances you can export, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExportingEC2Instances.html">Exporting
-        /// EC2 Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// for the types of instances you can export, see <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
+        /// an Instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInstanceExportTask service method.</param>
@@ -2332,7 +2339,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Adds or overwrites one or more tags for the specified Amazon EC2 resource or resources.
-        /// Each resource can have a maximum of 10 tags. Each tag consists of a key and optional
+        /// Each resource can have a maximum of 50 tags. Each tag consists of a key and optional
         /// value. Tag keys must be unique per resource.
         /// 
         ///  
@@ -4101,9 +4108,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more of your conversion tasks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-        /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i>.
+        /// Describes one or more of your conversion tasks. For more information, see the <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/">VM
+        /// Import/Export User Guide</a>.
         /// 
         ///  
         /// <para>
@@ -4116,9 +4122,8 @@ namespace Amazon.EC2
         DescribeConversionTasksResponse DescribeConversionTasks();
 
         /// <summary>
-        /// Describes one or more of your conversion tasks. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-        /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i>.
+        /// Describes one or more of your conversion tasks. For more information, see the <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/">VM
+        /// Import/Export User Guide</a>.
         /// 
         ///  
         /// <para>
@@ -4354,16 +4359,101 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeHostReservationOfferings
+
+
+        /// <summary>
+        /// Describes the Dedicated Host Reservations that are available to purchase.
+        /// 
+        ///  
+        /// <para>
+        /// The results describe all the Dedicated Host Reservation offerings, including offerings
+        /// that may not match the instance family and region of your Dedicated Hosts. When purchasing
+        /// an offering, ensure that the the instance family and region of the offering matches
+        /// that of the Dedicated Host/s it will be associated with. For an overview of supported
+        /// instance types, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+        /// Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservationOfferings service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHostReservationOfferings service method, as returned by EC2.</returns>
+        DescribeHostReservationOfferingsResponse DescribeHostReservationOfferings(DescribeHostReservationOfferingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHostReservationOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservationOfferings operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHostReservationOfferings
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeHostReservationOfferings(DescribeHostReservationOfferingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeHostReservationOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHostReservationOfferings.</param>
+        /// 
+        /// <returns>Returns a  DescribeHostReservationOfferingsResult from EC2.</returns>
+        DescribeHostReservationOfferingsResponse EndDescribeHostReservationOfferings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeHostReservations
+
+
+        /// <summary>
+        /// Describes Dedicated Host Reservations which are associated with Dedicated Hosts in
+        /// your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHostReservations service method, as returned by EC2.</returns>
+        DescribeHostReservationsResponse DescribeHostReservations(DescribeHostReservationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHostReservations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHostReservations
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeHostReservations(DescribeHostReservationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeHostReservations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHostReservations.</param>
+        /// 
+        /// <returns>Returns a  DescribeHostReservationsResult from EC2.</returns>
+        DescribeHostReservationsResponse EndDescribeHostReservations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeHosts
 
 
         /// <summary>
-        /// Describes one or more of your Dedicated hosts.
+        /// Describes one or more of your Dedicated Hosts.
         /// 
         ///  
         /// <para>
-        /// The results describe only the Dedicated hosts in the region you're currently using.
-        /// All listed instances consume capacity on your Dedicated host. Dedicated hosts that
+        /// The results describe only the Dedicated Hosts in the region you're currently using.
+        /// All listed instances consume capacity on your Dedicated Host. Dedicated Hosts that
         /// have recently been released will be listed with the state <code>released</code>.
         /// </para>
         /// </summary>
@@ -7348,13 +7438,12 @@ namespace Amazon.EC2
         /// <summary>
         /// Detaches an EBS volume from an instance. Make sure to unmount any file systems on
         /// the device within your operating system before detaching the volume. Failure to do
-        /// so results in the volume being stuck in a busy state while detaching.
+        /// so can result in the volume becoming stuck in the <code>busy</code> state while detaching.
+        /// If this happens, detachment can be delayed indefinitely until you unmount the volume,
+        /// force detachment, reboot the instance, or all three. If an EBS volume is the root
+        /// device of an instance, it can't be detached while the instance is running. To detach
+        /// the root volume, stop the instance first.
         /// 
-        ///  
-        /// <para>
-        /// If an Amazon EBS volume is the root device of an instance, it can't be detached while
-        /// the instance is running. To detach the root volume, stop the instance first.
-        /// </para>
         ///  
         /// <para>
         /// When a volume with an AWS Marketplace product code is detached from an instance, the
@@ -7920,6 +8009,50 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetHostReservationPurchasePreview
+
+
+        /// <summary>
+        /// Preview a reservation purchase with configurations that match those of your Dedicated
+        /// Host. You must have active Dedicated Hosts in your account before you purchase a reservation.
+        /// 
+        ///  
+        /// <para>
+        /// This is a preview of the <a>PurchaseHostReservation</a> action and does not result
+        /// in the offering being purchased.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHostReservationPurchasePreview service method.</param>
+        /// 
+        /// <returns>The response from the GetHostReservationPurchasePreview service method, as returned by EC2.</returns>
+        GetHostReservationPurchasePreviewResponse GetHostReservationPurchasePreview(GetHostReservationPurchasePreviewRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetHostReservationPurchasePreview operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetHostReservationPurchasePreview operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHostReservationPurchasePreview
+        ///         operation.</returns>
+        IAsyncResult BeginGetHostReservationPurchasePreview(GetHostReservationPurchasePreviewRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetHostReservationPurchasePreview operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHostReservationPurchasePreview.</param>
+        /// 
+        /// <returns>Returns a  GetHostReservationPurchasePreviewResult from EC2.</returns>
+        GetHostReservationPurchasePreviewResponse EndGetHostReservationPurchasePreview(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetPasswordData
 
 
@@ -7982,7 +8115,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Import single or multi-volume disk images or EBS snapshots into an Amazon Machine
-        /// Image (AMI).
+        /// Image (AMI). For more information, see <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
+        /// a VM as an Image Using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportImage service method.</param>
         /// 
@@ -8021,10 +8155,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates an import instance task using metadata from the specified disk image. <code>ImportInstance</code>
         /// only supports single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a>.
-        /// After importing the image, you then upload it using the <code>ec2-import-volume</code>
-        /// command in the EC2 command line tools. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-        /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
+        /// a Virtual Machine Using the Amazon EC2 CLI</a>.
         /// 
         ///  
         /// <para>
@@ -8151,12 +8283,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates an import volume task using metadata from the specified disk image. After
-        /// importing the image, you then upload it using the <code>ec2-import-volume</code> command
-        /// in the Amazon EC2 command-line interface (CLI) tools. For more information, see <a
-        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UploadingYourInstancesandVolumes.html">Using
-        /// the Command Line Tools to Import Your Virtual Machine to Amazon EC2</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i>.
+        /// Creates an import volume task using metadata from the specified disk image.For more
+        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html">Importing
+        /// Disks to Amazon EBS</a>.
         /// 
         ///  
         /// <para>
@@ -8199,9 +8328,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modify the auto-placement setting of a Dedicated host. When auto-placement is enabled,
+        /// Modify the auto-placement setting of a Dedicated Host. When auto-placement is enabled,
         /// AWS will place instances that you launch with a tenancy of <code>host</code>, but
-        /// without targeting a specific host ID, onto any available Dedicated host in your account
+        /// without targeting a specific host ID, onto any available Dedicated Host in your account
         /// which has auto-placement enabled. When auto-placement is disabled, you need to provide
         /// a host ID if you want the instance to launch onto a specific host. If no host ID is
         /// provided, the instance will be launched onto a suitable host which has auto-placement
@@ -8242,13 +8371,17 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the ID format of a resource for the specified IAM user, IAM role, or root
-        /// user. You can specify that resources should receive longer IDs (17-character IDs)
-        /// when they are created. The following resource types support longer IDs: <code>instance</code>
-        /// | <code>reservation</code> | <code>snapshot</code> | <code>volume</code>. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
-        /// IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
+        /// Modifies the ID format of a resource for a specified IAM user, IAM role, or the root
+        /// user for an account; or all IAM users, IAM roles, and the root user for an account.
+        /// You can specify that resources should receive longer IDs (17-character IDs) when they
+        /// are created. 
         /// 
+        ///  
+        /// <para>
+        /// The following resource types support longer IDs: <code>instance</code> | <code>reservation</code>
+        /// | <code>snapshot</code> | <code>volume</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+        /// IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
+        /// </para>
         ///  
         /// <para>
         /// This setting applies to the principal specified in the request; it does not apply
@@ -8360,6 +8493,12 @@ namespace Amazon.EC2
         /// AWS Marketplace product codes cannot be modified. Images with an AWS Marketplace product
         /// code cannot be made public.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// The SriovNetSupport enhanced networking attribute cannot be changed using this command.
+        /// Instead, enable SriovNetSupport on an instance and create an AMI from the instance.
+        /// This will result in an image with SriovNetSupport enabled.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyImageAttribute service method.</param>
@@ -8448,7 +8587,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// Instance affinity is disabled by default. When instance affinity is <code>host</code>
-        /// and it is not associated with a specific Dedicated host, the next time it is launched
+        /// and it is not associated with a specific Dedicated Host, the next time it is launched
         /// it will automatically be associated with the host it lands on. This relationship will
         /// persist if the instance is stopped/started, or rebooted.
         /// </para>
@@ -8878,14 +9017,19 @@ namespace Amazon.EC2
         /// Enable/disable communication over the peering connection between instances in your
         /// VPC and an EC2-Classic instance that's linked to the peer VPC.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Enable/disable a local VPC to resolve public DNS hostnames to private IP addresses
+        /// when queried from instances in the peer VPC.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If the peered VPCs are in different accounts, each owner must initiate a separate
-        /// request to enable or disable communication in either direction, depending on whether
-        /// their VPC was the requester or accepter for the VPC peering connection. If the peered
-        /// VPCs are in the same account, you can modify the requester and accepter options in
-        /// the same request. To confirm which VPC is the accepter and requester for a VPC peering
-        /// connection, use the <a>DescribeVpcPeeringConnections</a> command.
+        /// request to modify the peering connection options, depending on whether their VPC was
+        /// the requester or accepter for the VPC peering connection. If the peered VPCs are in
+        /// the same account, you can modify the requester and accepter options in the same request.
+        /// To confirm which VPC is the accepter and requester for a VPC peering connection, use
+        /// the <a>DescribeVpcPeeringConnections</a> command.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcPeeringConnectionOptions service method.</param>
@@ -8998,6 +9142,46 @@ namespace Amazon.EC2
         /// 
         /// <returns>Returns a  MoveAddressToVpcResult from EC2.</returns>
         MoveAddressToVpcResponse EndMoveAddressToVpc(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PurchaseHostReservation
+
+
+        /// <summary>
+        /// Purchase a reservation with configurations that match those of your Dedicated Host.
+        /// You must have active Dedicated Hosts in your account before you purchase a reservation.
+        /// This action results in the specified reservation being purchased and charged to your
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseHostReservation service method.</param>
+        /// 
+        /// <returns>The response from the PurchaseHostReservation service method, as returned by EC2.</returns>
+        PurchaseHostReservationResponse PurchaseHostReservation(PurchaseHostReservationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PurchaseHostReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseHostReservation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseHostReservation
+        ///         operation.</returns>
+        IAsyncResult BeginPurchaseHostReservation(PurchaseHostReservationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PurchaseHostReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseHostReservation.</param>
+        /// 
+        /// <returns>Returns a  PurchaseHostReservationResult from EC2.</returns>
+        PurchaseHostReservationResponse EndPurchaseHostReservation(IAsyncResult asyncResult);
 
         #endregion
         
@@ -9340,20 +9524,21 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// When you no longer want to use a Dedicated host it can be released. On-Demand billing
-        /// is stopped and the host goes into <code>released</code> state. The host ID of Dedicated
-        /// hosts that have been released can no longer be specified in another request, e.g.,
-        /// ModifyHosts. You must stop or terminate all instances on a host before it can be released.
+        /// When you no longer want to use an On-Demand Dedicated Host it can be released. On-Demand
+        /// billing is stopped and the host goes into <code>released</code> state. The host ID
+        /// of Dedicated Hosts that have been released can no longer be specified in another request,
+        /// e.g., ModifyHosts. You must stop or terminate all instances on a host before it can
+        /// be released.
         /// 
         ///  
         /// <para>
-        /// When Dedicated hosts are released, it make take some time for them to stop counting
+        /// When Dedicated Hosts are released, it make take some time for them to stop counting
         /// toward your limit and you may receive capacity errors when trying to allocate new
         /// Dedicated hosts. Try waiting a few minutes, and then try again.
         /// </para>
         ///  
         /// <para>
-        /// Released hosts will still appear in a DescribeHosts response.
+        /// Released hosts will still appear in a <a>DescribeHosts</a> response.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReleaseHosts service method.</param>

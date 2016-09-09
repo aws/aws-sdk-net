@@ -821,6 +821,122 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type NotificationEvent.
+    /// </summary>
+    public class NotificationEvent : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant All for NotificationEvent
+        /// </summary>
+        public static readonly NotificationEvent All = new NotificationEvent("All");
+        /// <summary>
+        /// Constant Cancelled for NotificationEvent
+        /// </summary>
+        public static readonly NotificationEvent Cancelled = new NotificationEvent("Cancelled");
+        /// <summary>
+        /// Constant Failed for NotificationEvent
+        /// </summary>
+        public static readonly NotificationEvent Failed = new NotificationEvent("Failed");
+        /// <summary>
+        /// Constant InProgress for NotificationEvent
+        /// </summary>
+        public static readonly NotificationEvent InProgress = new NotificationEvent("InProgress");
+        /// <summary>
+        /// Constant Success for NotificationEvent
+        /// </summary>
+        public static readonly NotificationEvent Success = new NotificationEvent("Success");
+        /// <summary>
+        /// Constant TimedOut for NotificationEvent
+        /// </summary>
+        public static readonly NotificationEvent TimedOut = new NotificationEvent("TimedOut");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotificationEvent(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotificationEvent FindValue(string value)
+        {
+            return FindValue<NotificationEvent>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotificationEvent(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotificationType.
+    /// </summary>
+    public class NotificationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Command for NotificationType
+        /// </summary>
+        public static readonly NotificationType Command = new NotificationType("Command");
+        /// <summary>
+        /// Constant Invocation for NotificationType
+        /// </summary>
+        public static readonly NotificationType Invocation = new NotificationType("Invocation");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotificationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotificationType FindValue(string value)
+        {
+            return FindValue<NotificationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotificationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PingStatus.
     /// </summary>
     public class PingStatus : ConstantClass

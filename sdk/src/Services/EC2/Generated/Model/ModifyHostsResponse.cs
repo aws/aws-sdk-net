@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Successful. 
         /// <para>
-        /// The IDs of the Dedicated hosts that were successfully modified.
+        /// The IDs of the Dedicated Hosts that were successfully modified.
         /// </para>
         /// </summary>
         public List<string> Successful
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Unsuccessful. 
         /// <para>
-        /// The IDs of the Dedicated hosts that could not be modified. Check whether the setting
+        /// The IDs of the Dedicated Hosts that could not be modified. Check whether the setting
         /// you requested can be used.
         /// </para>
         /// </summary>

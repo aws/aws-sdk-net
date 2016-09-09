@@ -99,7 +99,12 @@ namespace SDKDocGenerator
             return element;
         }
 
-        public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, MethodInfoWrapper info)
+        public static string DetermineNDocNameLookupSignature(MethodInfo info)
+        {
+            return DetermineNDocNameLookupSignature(new MethodInfoWrapper(info));
+        }
+
+        public static string DetermineNDocNameLookupSignature(MethodInfoWrapper info)
         {
             var type = info.DeclaringType;
             var parameters = new StringBuilder();
@@ -107,26 +112,56 @@ namespace SDKDocGenerator
             {
                 if (parameters.Length > 0)
                     parameters.Append(",");
-                if (param.ParameterType.IsGenericType)
+                DetermineParameterName(param.ParameterType, parameters);
+                if (param.IsOut)
                 {
-
-                    parameters
-                        .Append(param.ParameterType.GenericTypeName)
-                        .Append("{")
-                        .Append(string.Join(",", param.ParameterType.GenericTypeArguments().Select(a => a.FullName)))
-                        .Append("}");
-                }
-                else
-                {
-                    parameters.Append(param.ParameterType.FullName);
-                    if (param.IsOut)
-                        parameters.Append("@");
+                    parameters.Append("@");
                 }
             }
 
-            var signature = parameters.Length > 0 
-                ? string.Format("M:{0}.{1}({2})", type.FullName, info.Name, parameters) 
-                : string.Format("M:{0}.{1}", type.FullName, info.Name);
+            var genericTag = "";
+            if (info.IsGenericMethod)
+            {
+                genericTag = "``" + info.GetGenericArguments().Length;
+            }
+
+            var signature = parameters.Length > 0
+                ? string.Format("M:{0}.{1}{2}({3})", type.FullName, info.Name, genericTag, parameters)
+                : string.Format("M:{0}.{1}{2}", type.FullName, info.Name, genericTag);
+
+            return signature;
+        }
+
+        private static void DetermineParameterName(TypeWrapper parameterTypeInfo, StringBuilder parameters)
+        {
+
+            if (parameterTypeInfo.IsGenericType)
+            {
+                parameters
+                    .Append(parameterTypeInfo.GenericTypeName)
+                    .Append("{");
+                IList<TypeWrapper> args = parameterTypeInfo.GenericTypeArguments();
+
+                for (var i = 0; i < args.Count; i++)
+                {
+                    if (i != 0)
+                    {
+                        parameters.Append(",");
+                    }
+                    DetermineParameterName(args[i], parameters);
+                }
+                parameters.Append("}");
+
+            }
+            else
+            {
+                parameters.Append(parameterTypeInfo.FullName);
+            }
+        }
+
+        public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, MethodInfoWrapper info)
+        {
+            var signature = DetermineNDocNameLookupSignature(info);
 
             XElement element;
             if (!ndoc.TryGetValue(signature, out element))
@@ -379,8 +414,8 @@ namespace SDKDocGenerator
                 parameters.Append(param.ParameterType.FullName);
             }
 
-            var formattedParmaters = parameters.Length > 0 
-                ? string.Format("({0})", parameters) 
+            var formattedParmaters = parameters.Length > 0
+                ? string.Format("({0})", parameters)
                 : parameters.ToString();
 
             var signature = string.Format("M:{0}.#ctor{1}", type.FullName, formattedParmaters);
@@ -491,7 +526,7 @@ namespace SDKDocGenerator
                         scanIndex++;
                 }
 
-                scanIndex = innerText.IndexOf(crossReferenceOpeningTagText, scanIndex, StringComparison.Ordinal);                
+                scanIndex = innerText.IndexOf(crossReferenceOpeningTagText, scanIndex, StringComparison.Ordinal);
             }
 
             return innerText;
@@ -502,7 +537,7 @@ namespace SDKDocGenerator
             var attrTargetStart = crefAttrStart + innerCrefAttributeText.Length;
 
             var crefTargetEnd = nodeText.IndexOf('"', attrTargetStart);
-            crossRefTagEndIndex = nodeText.IndexOf(crossReferenceClosingTagText, crefTargetEnd, StringComparison.Ordinal) 
+            crossRefTagEndIndex = nodeText.IndexOf(crossReferenceClosingTagText, crefTargetEnd, StringComparison.Ordinal)
                                     + crossReferenceClosingTagText.Length;
 
             var cref = nodeText.Substring(attrTargetStart, crefTargetEnd - attrTargetStart);
@@ -655,15 +690,15 @@ namespace SDKDocGenerator
         {
             if (!string.IsNullOrEmpty(samplesDir))
             {
-                var extraDocNodes = new List<XmlNode>(); 
-                foreach (var pattern in new [] {".extra.xml", ".GeneratedSamples.extra.xml"})
+                var extraDocNodes = new List<XmlNode>();
+                foreach (var pattern in new[] { ".extra.xml", ".GeneratedSamples.extra.xml" })
                 {
                     var extraFile = Path.Combine(samplesDir, DOC_SAMPLES_SUBFOLDER, serviceName + pattern);
                     if (File.Exists(extraFile))
                     {
                         var extraDoc = new XmlDocument();
                         extraDoc.Load(extraFile);
-                        foreach(XmlNode node in extraDoc.SelectNodes("docs/doc"))
+                        foreach (XmlNode node in extraDoc.SelectNodes("docs/doc"))
                         {
                             extraDocNodes.Add(node);
                         }
@@ -714,7 +749,7 @@ namespace SDKDocGenerator
 
             return map;
         }
-            
+
         private static void ProcessExtraDoc(XmlDocument sdkDocument, IDictionary<string, string> examplesMap)
         {
             foreach (var memberSpec in examplesMap.Keys)

@@ -28,8 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents a Client Certificate used to configure client-side SSL authentication while
+    /// Represents a client certificate used to configure client-side SSL authentication while
     /// sending requests to the integration endpoint.
+    /// 
+    ///  <div class="remarks">Client certificates are used authenticate an API by the back-end
+    /// server. To authenticate an API client (or user), use a custom <a>Authorizer</a>.</div>
+    /// <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started-client-side-ssl-authentication.html">Use
+    /// Client-Side Certificate</a> </div>
     /// </summary>
     public partial class ClientCertificate
     {
@@ -42,7 +47,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ClientCertificateId. 
         /// <para>
-        /// The identifier of the Client Certificate.
+        /// The identifier of the client certificate.
         /// </para>
         /// </summary>
         public string ClientCertificateId
@@ -60,7 +65,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
-        /// The date when the Client Certificate was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
+        /// The date when the client certificate was created, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
         /// target="_blank">ISO 8601 format</a>.
         /// </para>
         /// </summary>
@@ -79,7 +84,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the Client Certificate.
+        /// The description of the client certificate.
         /// </para>
         /// </summary>
         public string Description
@@ -97,7 +102,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ExpirationDate. 
         /// <para>
-        /// The date when the Client Certificate will expire, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
+        /// The date when the client certificate will expire, in <a href="http://www.iso.org/iso/home/standards/iso8601.htm"
         /// target="_blank">ISO 8601 format</a>.
         /// </para>
         /// </summary>
@@ -116,7 +121,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property PemEncodedCertificate. 
         /// <para>
-        /// The PEM-encoded public key of the Client Certificate, that can be used to configure
+        /// The PEM-encoded public key of the client certificate, which can be used to configure
         /// certificate authentication in the integration endpoint .
         /// </para>
         /// </summary>

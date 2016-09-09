@@ -38,7 +38,7 @@ namespace Amazon.WorkSpaces.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// This operation is asynchronous and will return before the WorkSpaces have rebooted.
+    /// This operation is asynchronous and returns before the WorkSpaces have rebooted.
     /// </para>
     ///  </note>
     /// </summary>

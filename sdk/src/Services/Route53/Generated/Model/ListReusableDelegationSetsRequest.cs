@@ -30,15 +30,19 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the ListReusableDelegationSets operation.
     /// To retrieve a list of your reusable delegation sets, send a <code>GET</code> request
-    /// to the <code>/<i>Route 53 API version</i>/delegationset</code> resource. The response
-    /// to this request includes a <code>DelegationSets</code> element with zero, one, or
-    /// multiple <code>DelegationSet</code> child elements. By default, the list of delegation
-    /// sets is displayed on a single page. You can control the length of the page that is
-    /// displayed by using the <code>MaxItems</code> parameter. You can use the <code>Marker</code>
-    /// parameter to control the delegation set that the list begins with. 
+    /// to the <code>/2013-04-01/delegationset</code> resource. The response to this request
+    /// includes a <code>DelegationSets</code> element with zero, one, or multiple <code>DelegationSet</code>
+    /// child elements. By default, the list of delegation sets is displayed on a single page.
+    /// You can control the length of the page that is displayed by using the <code>MaxItems</code>
+    /// parameter. You can use the <code>Marker</code> parameter to control the delegation
+    /// set that the list begins with. 
     /// 
-    ///  <note> Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value
-    /// greater than 100, Amazon Route 53 returns only the first 100.</note>
+    ///  <note> 
+    /// <para>
+    ///  Amazon Route 53 returns a maximum of 100 items. If you set MaxItems to a value greater
+    /// than 100, Amazon Route 53 returns only the first 100.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListReusableDelegationSetsRequest : AmazonRoute53Request
     {
@@ -48,9 +52,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// If the request returned more than one page of results, submit another request and
-        /// specify the value of <code>NextMarker</code> from the last response in the <code>marker</code>
-        /// parameter to get the next page of results.
+        /// If you're making the second or subsequent call to <code>ListReusableDelegationSets</code>,
+        /// the <code>Marker</code> element matches the value that you specified in the <code>marker</code>
+        /// parameter in the previous request.
         /// </para>
         /// </summary>
         public string Marker
@@ -68,7 +72,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// Specify the maximum number of reusable delegation sets to return per page of results.
+        /// The value that you specified for the <code>maxitems</code> parameter in the request
+        /// that produced the current response.
         /// </para>
         /// </summary>
         public string MaxItems

@@ -201,5 +201,36 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
 
         #endregion
         
+        #region  StartSupportDataExport
+
+        internal StartSupportDataExportResponse StartSupportDataExport(StartSupportDataExportRequest request)
+        {
+            var marshaller = new StartSupportDataExportRequestMarshaller();
+            var unmarshaller = StartSupportDataExportResponseUnmarshaller.Instance;
+
+            return Invoke<StartSupportDataExportRequest,StartSupportDataExportResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSupportDataExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSupportDataExport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<StartSupportDataExportResponse> StartSupportDataExportAsync(StartSupportDataExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartSupportDataExportRequestMarshaller();
+            var unmarshaller = StartSupportDataExportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartSupportDataExportRequest,StartSupportDataExportResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
     }
 }

@@ -118,14 +118,16 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
                     {
                         if (tok.IsString)
                         {
-                            Principal principal = new Principal(kvp.Key, (string)tok);
+                            // Don't strip '-' and assume the policy being deserialized is already valid.
+                            Principal principal = new Principal(kvp.Key, (string)tok, false);
                             statement.Principals.Add(principal);
                         }
                     }
                 }
                 else if(kvp.Value.IsString)
                 {
-                    Principal principal = new Principal(kvp.Key, (string)kvp.Value);
+                    // Don't strip '-' and assume the policy being deserialized is already valid.
+                    Principal principal = new Principal(kvp.Key, (string)kvp.Value, false);
                     statement.Principals.Add(principal);
                 }
             }

@@ -28,8 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents the base path that callers of the API that must provide as part of the
-    /// URL after the domain name.
+    /// Represents the base path that callers of the API must provide as part of the URL after
+    /// the domain name.
+    /// 
+    ///  <div class="remarks">A custom domain name plus a <code>BasePathMapping</code> specification
+    /// identifies a deployed <a>RestApi</a> in a given stage of the owner <a>Account</a>.</div>
+    /// <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use
+    /// Custom Domain Names</a> </div>
     /// </summary>
     public partial class UpdateBasePathMappingResponse : AmazonWebServiceResponse
     {

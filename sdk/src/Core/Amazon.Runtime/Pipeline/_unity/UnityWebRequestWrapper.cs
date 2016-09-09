@@ -42,8 +42,11 @@ namespace Amazon.Runtime.Internal
 
         static UnityWebRequestWrapper()
         {
-            unityWebRequestType = Type.GetType("UnityEngine.Experimental.Networking.UnityWebRequest, UnityEngine");
-
+            unityWebRequestType = Type.GetType("UnityEngine.Networking.UnityWebRequest, UnityEngine");
+            if (unityWebRequestType == null)
+            {
+                unityWebRequestType = Type.GetType("UnityEngine.Experimental.Networking.UnityWebRequest, UnityEngine");
+            }
             unityWebRequestMethods = unityWebRequestType.GetMethods();
             unityWebRequestProperties = unityWebRequestType.GetProperties();
 
@@ -110,6 +113,18 @@ namespace Amazon.Runtime.Internal
 
             unityWebRequestInstance = Activator.CreateInstance(unityWebRequestType, url, method, downloadHandler.Instance, uploadHandler.Instance);
         }
+
+        /// <summary>
+        /// A flag that indicates is the UnityWebRequest is supported or not.
+        /// </summary>
+        internal static bool IsUnityWebRequestSupported
+        {
+            get
+            {
+                return unityWebRequestType != null;
+            }
+        }
+        
 
         /// <summary>
         /// Get and Sets an instance of Download Handler
@@ -307,7 +322,11 @@ namespace Amazon.Runtime.Internal
 
         static DownloadHandlerBufferWrapper()
         {
-            downloadHandlerBufferType = Type.GetType("UnityEngine.Experimental.Networking.DownloadHandlerBuffer, UnityEngine");
+            downloadHandlerBufferType = Type.GetType("UnityEngine.Networking.DownloadHandlerBuffer, UnityEngine");
+            if(downloadHandlerBufferType == null)
+            {
+                downloadHandlerBufferType = Type.GetType("UnityEngine.Experimental.Networking.DownloadHandlerBuffer, UnityEngine");
+            }
             downloadHandlerBufferMethods = downloadHandlerBufferType.GetMethods();
             downloadHandlerBufferProperties = downloadHandlerBufferType.GetProperties();
 
@@ -375,7 +394,11 @@ namespace Amazon.Runtime.Internal
 
         static UploadHandlerRawWrapper()
         {
-            uploadHandlerRawType = Type.GetType("UnityEngine.Experimental.Networking.UploadHandlerRaw, UnityEngine");
+            uploadHandlerRawType = Type.GetType("UnityEngine.Networking.UploadHandlerRaw, UnityEngine");
+            if(uploadHandlerRawType == null)
+            {
+                uploadHandlerRawType = Type.GetType("UnityEngine.Experimental.Networking.UploadHandlerRaw, UnityEngine");
+            }
         }
 
         /// <summary>

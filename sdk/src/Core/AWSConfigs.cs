@@ -341,7 +341,7 @@ namespace Amazon
         /// &lt;configSections&gt;
         ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
         /// &lt;/configSections&gt;
-        /// &lt;aws endpointDefinition="c:\config\endpoints.xml" /&gt;
+        /// &lt;aws endpointDefinition="c:\config\endpoints.json" /&gt;
         /// </code>
         /// </summary>
         public static string EndpointDefinition

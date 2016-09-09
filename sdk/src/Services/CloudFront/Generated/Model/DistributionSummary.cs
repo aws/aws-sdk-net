@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,12 +33,14 @@ namespace Amazon.CloudFront.Model
     public partial class DistributionSummary
     {
         private Aliases _aliases;
+        private string _arn;
         private CacheBehaviors _cacheBehaviors;
         private string _comment;
         private CustomErrorResponses _customErrorResponses;
         private DefaultCacheBehavior _defaultCacheBehavior;
         private string _domainName;
         private bool? _enabled;
+        private HttpVersion _httpVersion;
         private string _id;
         private DateTime? _lastModifiedTime;
         private Origins _origins;
@@ -67,6 +69,23 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetAliases()
         {
             return this._aliases != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ARN. The ARN (Amazon Resource Name) for the distribution.
+        /// For example: arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where
+        /// 123456789012 is your AWS account Id.
+        /// </summary>
+        public string ARN
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if ARN property is set
+        internal bool IsSetARN()
+        {
+            return this._arn != null;
         }
 
         /// <summary>
@@ -165,6 +184,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HttpVersion. Specify the maximum HTTP version that you
+        /// want viewers to use to communicate with CloudFront. The default value for new web
+        /// distributions is http2. Viewers that don't support HTTP/2 will automatically use an
+        /// earlier version.
+        /// </summary>
+        public HttpVersion HttpVersion
+        {
+            get { return this._httpVersion; }
+            set { this._httpVersion = value; }
+        }
+
+        // Check to see if HttpVersion property is set
+        internal bool IsSetHttpVersion()
+        {
+            return this._httpVersion != null;
         }
 
         /// <summary>

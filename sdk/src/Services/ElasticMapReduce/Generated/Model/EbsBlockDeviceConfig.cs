@@ -59,7 +59,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property VolumesPerInstance. 
         /// <para>
         /// Number of EBS volumes with specific volume configuration, that will be associated
-        /// with every instance in the instance group 
+        /// with every instance in the instance group
         /// </para>
         /// </summary>
         public int VolumesPerInstance

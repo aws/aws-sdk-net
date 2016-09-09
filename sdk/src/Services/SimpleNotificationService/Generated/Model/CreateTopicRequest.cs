@@ -46,7 +46,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Instantiates CreateTopicRequest with the parameterized properties
         /// </summary>
-        /// <param name="name">The name of the topic you want to create. Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long. </param>
+        /// <param name="name">The name of the topic you want to create. Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.</param>
         public CreateTopicRequest(string name)
         {
             _name = name;
@@ -61,7 +61,6 @@ namespace Amazon.SimpleNotificationService.Model
         /// <para>
         /// Constraints: Topic names must be made up of only uppercase and lowercase ASCII letters,
         /// numbers, underscores, and hyphens, and must be between 1 and 256 characters long.
-        /// 
         /// </para>
         /// </summary>
         public string Name

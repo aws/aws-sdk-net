@@ -40,9 +40,28 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DBParameterGroup
     {
+        private string _dbParameterGroupArn;
         private string _dbParameterGroupFamily;
         private string _dbParameterGroupName;
         private string _description;
+
+        /// <summary>
+        /// Gets and sets the property DBParameterGroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the DB parameter group.
+        /// </para>
+        /// </summary>
+        public string DBParameterGroupArn
+        {
+            get { return this._dbParameterGroupArn; }
+            set { this._dbParameterGroupArn = value; }
+        }
+
+        // Check to see if DBParameterGroupArn property is set
+        internal bool IsSetDBParameterGroupArn()
+        {
+            return this._dbParameterGroupArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DBParameterGroupFamily. 

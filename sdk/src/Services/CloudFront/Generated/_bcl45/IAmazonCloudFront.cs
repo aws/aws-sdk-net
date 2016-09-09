@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
  */
 
 
@@ -30,7 +30,13 @@ namespace Amazon.CloudFront
     /// <summary>
     /// Interface for accessing CloudFront
     ///
-    /// 
+    /// Amazon CloudFront 
+    /// <para>
+    /// Amazon CloudFront is a global content delivery network (CDN) service that accelerates
+    /// delivery of your websites, APIs, video content or other web assets. It integrates
+    /// with other Amazon Web Services products to give developers and businesses an easy
+    /// way to accelerate content to end users with no minimum usage commitments.
+    /// </para>
     /// </summary>
     public partial interface IAmazonCloudFront : IDisposable
     {
@@ -139,6 +145,9 @@ namespace Amazon.CloudFront
         /// You cannot specify SSLv3 as the minimum protocol version if you only want to support
         /// only clients that Support Server Name Indication (SNI).
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
         /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
         /// </exception>
@@ -191,6 +200,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
         /// You cannot create anymore origins for the distribution.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
         /// Your request contains more trusted signers than are allowed per distribution.
         /// </exception>
@@ -210,6 +222,148 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<CreateDistributionResponse> CreateDistributionAsync(CreateDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateDistributionWithTags
+
+
+        /// <summary>
+        /// Create a new distribution with tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDistributionWithTags service method.</param>
+        /// 
+        /// <returns>The response from the CreateDistributionWithTags service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
+        /// The caller reference you attempted to create the distribution with is associated with
+        /// another distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of Quantity and the size of Items do not match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidDefaultRootObjectException">
+        /// The default root object file name is too big or contains an invalid character.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidErrorCodeException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
+        /// Your request contains forward cookies option which doesn't match with the expectation
+        /// for the whitelisted list of cookie names. Either list of cookie names has been specified
+        /// when not allowed or list of cookie names is missing when expected.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidMinimumProtocolVersionException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginException">
+        /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidProtocolSettingsException">
+        /// You cannot specify SSLv3 as the minimum protocol version if you only want to support
+        /// only clients that Support Server Name Indication (SNI).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
+        /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
+        /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
+        /// in your request, or omit the RequiredProtocols element from your distribution configuration.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The specified tagging for a CloudFront resource is invalid. For more information,
+        /// see the error text.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidViewerCertificateException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
+        /// No origin exists with the specified Origin Id.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
+        /// You cannot create anymore cache behaviors for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
+        /// You cannot create anymore custom ssl certificates.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
+        /// Your request contains more cookie names in the whitelist than are allowed per cache
+        /// behavior.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
+        /// Your request contains more CNAMEs than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsException">
+        /// Processing your request would cause you to exceed the maximum number of distributions
+        /// allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
+        /// You cannot create anymore origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers do not exist.
+        /// </exception>
+        CreateDistributionWithTagsResponse CreateDistributionWithTags(CreateDistributionWithTagsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDistributionWithTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDistributionWithTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateDistributionWithTagsResponse> CreateDistributionWithTagsAsync(CreateDistributionWithTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -321,6 +475,73 @@ namespace Amazon.CloudFront
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<CreateStreamingDistributionResponse> CreateStreamingDistributionAsync(CreateStreamingDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateStreamingDistributionWithTags
+
+
+        /// <summary>
+        /// Create a new streaming distribution with tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStreamingDistributionWithTags service method.</param>
+        /// 
+        /// <returns>The response from the CreateStreamingDistributionWithTags service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of Quantity and the size of Items do not match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
+        /// The origin access identity is not valid or doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidOriginException">
+        /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The specified tagging for a CloudFront resource is invalid. For more information,
+        /// see the error text.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
+        /// This operation requires a body. Ensure that the body is present and the Content-Type
+        /// header is set.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionAlreadyExistsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionsException">
+        /// Processing your request would cause you to exceed the maximum number of streaming
+        /// distributions allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
+        /// Your request contains more trusted signers than are allowed per distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TrustedSignerDoesNotExistException">
+        /// One or more of your trusted signers do not exist.
+        /// </exception>
+        CreateStreamingDistributionWithTagsResponse CreateStreamingDistributionWithTags(CreateStreamingDistributionWithTagsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateStreamingDistributionWithTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateStreamingDistributionWithTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateStreamingDistributionWithTagsResponse> CreateStreamingDistributionWithTagsAsync(CreateStreamingDistributionWithTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1221,6 +1442,120 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// List tags for a CloudFront resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The specified tagging for a CloudFront resource is invalid. For more information,
+        /// see the error text.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// The specified CloudFront resource does not exist.
+        /// </exception>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Add tags to a CloudFront resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The specified tagging for a CloudFront resource is invalid. For more information,
+        /// see the error text.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// The specified CloudFront resource does not exist.
+        /// </exception>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Remove tags from a CloudFront resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// The argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The specified tagging for a CloudFront resource is invalid. For more information,
+        /// see the error text.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
+        /// The specified CloudFront resource does not exist.
+        /// </exception>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateCloudFrontOriginAccessIdentity
 
 
@@ -1324,6 +1659,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRelativePathException">
         /// The relative path is too big, is not URL-encoded, or does not begin with a slash (/).
         /// </exception>
@@ -1377,6 +1715,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
         /// You cannot create anymore origins for the distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyTrustedSignersException">
         /// Your request contains more trusted signers than are allowed per distribution.

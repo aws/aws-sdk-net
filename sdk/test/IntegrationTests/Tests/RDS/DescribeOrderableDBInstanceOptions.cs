@@ -41,7 +41,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
         public void TestFiltering()
         {
             const string engine = "mysql";
-            const string engineVersion = "5.1.73a";
+            const string engineVersion = "5.5.46";
 
             var desResponse = Client.DescribeDBEngineVersions(new DescribeDBEngineVersionsRequest { Engine = engine });
 

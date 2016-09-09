@@ -28,15 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// This is the response object from the CreateTrust operation.
+    /// The result of a CreateTrust request.
     /// </summary>
     public partial class CreateTrustResponse : AmazonWebServiceResponse
     {
         private string _trustId;
 
         /// <summary>
-        /// Gets and sets the property TrustId. A unique identifier for the trust relationship
-        /// that was created.
+        /// Gets and sets the property TrustId. 
+        /// <para>
+        /// A unique identifier for the trust relationship that was created.
+        /// </para>
         /// </summary>
         public string TrustId
         {

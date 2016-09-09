@@ -1,3 +1,213 @@
+### 3.1.99.0 (2016-09-08 21:56 UTC)
+* AWSSupport (3.1.0.10)
+	* Documentation update.
+* CloudFront (3.1.7.0)
+	* Adds HTTP2 support for Amazon CloudFront distributions.This includes a new API version, 2016-09-07.
+* SimpleNotificationService (3.1.2.1)
+	* Documentation update.
+
+### 3.1.98.0 (2016-09-06 21:59 UTC)
+* CodePipeline (3.1.5.0)
+	* Incorporated API updates to correct naming of members in types used in the recently published view changes APIs. Please note these are breaking changes in the model shapes.
+* EC2 (3.1.20.1)
+	* Documentation updates.
+* ECR (3.1.2.1)
+	* Documentation updates.
+* ECS (3.1.8.1)
+	* Documentation updates.
+* RDS (3.1.18.0)
+	* New API for RDS: DescribeSourceRegions. The DescribeSourceRegions API provides a list of all the source region names and endpoints for any region. Source regions are the regions where current region can get a replica or copy a snapshot from.
+* SimpleNotificationService (3.1.2.0)
+	* Declaring AuthorizationErrorException on the 5 new SNS-SMS APIs.
+
+### 3.1.97.0 (2016-09-02 00:53 UTC)
+* ApplicationAutoScaling (3.1.1.0)
+	* ApplicationAutoScaling adds support for automatically scaling an Amazon EC2 Spot fleet in order to manage application availability and costs during changes in demand based on conditions you define.
+* CognitoIdentityProvider (3.1.2.0)
+	* Added support for bulk import of users.
+* ConfigService (3.1.7.0)
+	* ResourceType Enum Update for AWS Config: Supporting a application loadbalancer resource type in AWS Config 
+* GameLift (3.1.3.0)
+	* Customers can use Linux in addition to Windows EC2 instances.
+* RDS (3.1.17.0)
+	* We currently allow customers to add options to a rds option group that are mutually exclusive. We want to avoid that while validating the request to add an option to the option group. As part of this effort we are modifying the describe-option-group-options api response to include information about options that conflict with each other.
+
+### 3.1.96.0 (2016-08-30 21:02 UTC)
+* AutoScaling (3.1.4.1)
+	* Documentation update.
+* CloudFront (3.1.6.0)
+	* CloudFront is adding a Querystring Whitelist Option. Customers will be able to choose to forward certain querystring keys instead of a.) all of them or b.) none of them.
+* CodePipeline (3.1.4.0)
+	* CodePiepline has introduced a new feature to return pipeline execution details. Execution details consists of source revisions that are running in the pipeline. Customers will be able to tell what source revisions that are running through the stages in pipeline by fetching execution details of each stage.
+* Route53 (3.1.6.0)
+	* With this release, Route 53 will support the following new features: support for the NAPTR DNS record type, a new TestDNSAnswer API which enables customers to send a test query against a specific name server using spoofed delegation nameserver, resolver, and ECS IPs, and support metric-based health check in ap-south-1 region.
+* SimpleSystemsManagement (3.1.4.2)
+	* Documentation update.
+* Core 3.1.11.0
+	* Fixed issue with UnityWebRequest for Unity 5.4.
+Deprecated ClientConfig.ReadEntireResponse property.
+
+
+
+### 3.1.95.0 (2016-08-24 00:11 UTC)
+* OpsWorks (3.1.3.5)
+	* Documentation updates for expanded region support.
+* RDS (3.1.16.0)
+	* Addition of resource ARNs to Describe APIs.
+
+### 3.1.94.0 (2016-08-19 02:24 UTC)
+* EC2 (3.1.20.0)
+	* Schema Update for Dedicated Host Reservations and API Update for EC2-SpotFleet: Adding new parameters to DescribeSpotFleerRequest API
+* IdentityManagement (3.1.4.9)
+	* Doc only update
+* KeyManagementService (3.1.3.1)
+	* Updating the version numbers
+* WorkSpaces (3.1.3.0)
+	* New APIs to support the launch and management of WorkSpaces that are paid for and used by the hour.
+
+### 3.1.93.0 (2016-08-17 01:52 UTC)
+* APIGateway (3.1.7.0)
+	* Amazon API Gateway now supports API usage plans. You can now easily define plans for 3rd party developers by associating them with individual API keys. This allows you to configure which APIs the caller can access as well as define throttling and request quota limits. You can also extract utilization data on a per-API key basis to analyze API usage and generate billing documents. Usage plans allows you to easily manage and monetize your APIs for your API-based business.
+* CognitoSync (3.1.2.0)
+	* Merged GitHub PR 409: Improve DataConflictException handling in case of partial local modification (https://github.com/aws/aws-sdk-net/pull/409)
+* ECS (3.1.8.0)
+	* Regenerating from latest service model ecs-2014-11-13.normal.json
+
+### 3.1.92.0 (2016-08-11 07:53 UTC)
+* AutoScaling (3.1.4.0)
+	* New API for AutoScaling - ELB L7 integration.
+* ECS (3.1.7.0)
+	* Amazon EC2 Container services support Application Load Balancer target groups to enable dynamic ports and path-based routing.
+* ElasticLoadBalancing (3.1.1.0)
+	* Documentation and other minor changes to the classic Elastic Load Balancing model to support the launch of Elastic Load Balancing V2 API which can be found in the Amazon.ElasticLoadBalancingV2 namespace.
+* ElasticLoadBalancingV2 (3.1.0.0)
+	* Application load balancers are a new load balancer that is now supported by the Elastic Load Balancing service. Application load balancers support HTTP/2, WebSockets, routing based on URL path, and routing to multiple ports on a single instance.
+* KeyManagementService (3.1.3.0)
+	* New import key feature lets you import keys from your own key management infrastructure to KMS for greater control over generation and storage of keys and meeting compliance requirements of sensitive workloads.
+* KinesisAnalytics (3.1.0.0)
+	* Added support for Amazon Kinesis Analytics, a fully managed service for continuously querying streaming data using standard SQL. With Kinesis Analytics, you can write standard SQL queries on streaming data and gain actionable insights in real-time, without having to learn any new programming skills. The service allows you to build applications that continuously read data from streaming data sources, process that data using standard SQL, and send the processed data to up to four destinations of your choice. Kinesis Analytics enables you to generate time-series analytics, feed a real-time dashboard, create real-time alarms and notifications, and much more.
+* S3 (3.1.9.0)
+	* Updated to use new Core, version 3.1.10.0
+	* Added support for requesting dualstack (ipv6) endpoints using a new UseDualstackEndpoint property on the service configuration class. Note that not all regions currently support dualstack endpoints - you should consult S3 documentation to verify a dualstack endpoint is available for the region you intend to use before setting this switch.
+* Snowball (3.1.0.0)
+	* Added support for the Snowball job management API.
+* Core 3.1.10.0
+	* Added a new flag, UseDualstackEndpoint, to the base configuration class for all services. Currently this flag is for use with Amazon S3 only. Other services will add dualstack (ipv6) endpoints in the future.
+
+### 3.1.91.0 (2016-08-10 00:12 UTC)
+* AWSMarketplaceCommerceAnalytics (3.1.3.0)
+	* In this release, we added a new API, StartSupportDataExport, to the AWS Marketplace Commerce Analytics Service. StartSupportDataExport returns static test data only at this time. The AWS Marketplace Commerce Analytics Service allows AWS Marketplace Sellers to programmatically access product and customer data on AWS Marketplace. For more information, contact aws-marketplace-seller-ops@amazon.com.
+* CloudFront (3.1.5.0)
+	* Amazon CloudFront now supports tagging for Web and Streaming distributions. Tags make it easier for you to allocate costs and optimize spending by categorizing and grouping AWS resources.
+* ECR (3.1.2.0)
+	* Adds filtering of ListImages requests based on whether an image is tagged or untagged
+* S3 (3.1.8.3)
+	* Minor update to PutBucket operation
+
+### 3.1.90.1 (2016-08-09 00:44 UTC)
+* Core 3.1.9.2
+	* Fix issue with LitJSON not properly deserializing dictionaries
+	* all services packages updated to require new core
+
+### 3.1.90.0 (2016-08-04 23:43 UTC)
+* CognitoIdentityProvider (3.1.1.0)
+	* Adding Auth Support for Cognito User Pools 
+* GameLift (3.1.2.0)
+	* Added support for GameSession Search API
+* Lambda (3.1.4.6)
+	* Doc only update
+* RDS (3.1.15.0)
+	* S3 Snapshot Ingestion and MoveToVpc feature added
+
+### 3.1.89.0 (2016-08-02 21:00 UTC)
+* ApplicationAutoScaling (3.1.0.5)
+	* Documentation update reflecting scalable target limit increase.
+* AWSMarketplaceMetering (3.1.0.5)
+	* Add path shortening for new discovery service
+* CloudWatch (3.1.0.10)
+	* Documentation update for MetricDatum.
+* CloudWatchLogs (3.1.3.0)
+	* Documentation update. Adding an optional parameter, DefaultValue, to PutMetricFilterRequest.
+* DirectoryService (3.1.5.1)
+	* Documentation update.
+* ElasticMapReduce (3.1.6.0)
+	* API Update for EMR: Enhanced Debugging
+* IoT (3.1.8.0)
+	* Regenerating from latest service model iot-2015-05-28.normal.json
+* MachineLearning (3.1.3.0)
+	* Added the timestamps StartedAt, FinishedAt, and ComputeTime to the following API responses:DescribeBatchPredictionsOutput DescribeDataSourcesOutput DescribeEvaluationsOutput DescribeMLModelsOutput GetBatchPredictionsOutput GetDataSourcesOutput GetEvaluationsOutput GetMLModelsOutput. Added TotalRecordCount and InvalidRecordCount to the following API responses: DescribeBatchPredictionsOutput GetBatchPredictionsOutput.
+* RDS (3.1.14.0)
+	* Support for License model and versioning of option groups.
+* Route53Domains (3.1.2.0)
+	*  Adds new APIs to renew domains for a specified duration, get domain suggestions, and view billing.
+
+### 3.1.88.0 (2016-07-29 02:27 UTC)
+* APIGateway (3.1.6.0)
+	* Added support for Cognito User Pools Auth 
+* DirectoryService (3.1.5.0)
+	* New APIs for Microsoft AD to manage routing 
+* EC2 (3.1.19.0)
+	* Updated for DNS for VPC Peering 
+* Elasticsearch (3.1.1.0)
+	* Amazon Elasticsearch Service now supports elasticsearch version 2.3. Version 2.3 offers improved performance, memory management, and security. It also offers several new features including: pipeline aggregations to perform advanced analytics like moving averages and derivatives, and enhancements to geospatial queries
+* SecurityToken (3.1.4.4)
+	* Doc only update
+* SimpleEmail (3.1.4.3)
+	* Doc update
+
+### 3.1.87.0 (2016-07-26 23:19 UTC)
+* CognitoSync (3.1.1.6)
+	* Github pull request 400 fixing an issue when deleting a merged dataset after the deletion is complete.
+* IoT (3.1.7.0)
+	* This update adds support for thing types. Thing types are entities that store a description of common features of Things that are of the same logical type.
+* MobileAnalytics (3.1.1.11)
+	*     Github pull request 417 making the event parsing more robust.
+
+### 3.1.86.0 (2016-07-21 23:04 UTC)
+* CertificateManager (3.1.4.0)
+	* Add reason for failure when describing certificates.
+* CloudFormation (3.1.6.0)
+	* Added support for specifying IAM capabilities for stacks.
+* ConfigService (3.1.6.0)
+	* Adding support for ACM and RDS resource types.
+Two new features (Hybrid Rules & Forced Evaluation).
+* ECS (3.1.6.1)
+	* Documentation update.
+* ElasticTranscoder (3.1.0.10)
+	* Updated documentation for WAV file output format support.
+* Lambda (3.1.4.5)
+	* Minor documentation update.
+* Core 3.1.9.1
+	* Fixed issue where hyphens were automatically stripped from access policies during unmarshall.
+
+### 3.1.85.0 (2016-07-19 21:11 UTC)
+* DeviceFarm (3.1.7.0)
+	* Add support for managing remote access sessions.
+* SimpleSystemsManagement (3.1.4.0)
+	* Added notification support,allowing customers to be notified when a command reaches a terminated status.
+
+### 3.1.84.0 (2016-07-13 22:00 UTC)
+* DatabaseMigrationService (3.1.2.0)
+	* API updates to enable SSL-enabled endpoints.
+* ECS (3.1.6.0)
+	* Added support for specifying an IAM role ARN for tasks.
+* RDS (3.1.13.0)
+	* API Update for RDS Aurora: new parameter TargetDBInstanceIdentifier of FailoverDBCluster API. 
+API Update for RDS Aurora: New method CopyDBClusterParameterGroup.
+* Core 3.1.9.0
+	* Updated to support ECS container credentials.
+	* all services packages updated to require new core
+
+### 3.1.83.0 (2016-07-07 23:26 UTC)
+* ConfigService (3.1.5.0)
+	* API Update for AWS Config: DeleteConfigurationRecorder API.
+* DirectoryService (3.1.4.0)
+	* API Update for AWS Directory Service: Tagging APIs (Add, Remove and List).
+* OpsWorks (3.1.3.2)
+	* Documentation update.
+* ServiceCatalog (3.1.0.0)
+	* Added support for AWS Service Catalog. This service allows organizations to create and manage catalogs of IT services that are approved for use on AWS.
+
 ### 3.1.82.0 (2016-07-05 19:32 UTC)
 * CodePipeline (3.1.3.0)
 	* Updates CodePipeline API to support manual approvals.

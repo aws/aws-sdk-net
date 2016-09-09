@@ -32,14 +32,34 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class StepStatus
     {
+        private FailureDetails _failureDetails;
         private StepState _state;
         private StepStateChangeReason _stateChangeReason;
         private StepTimeline _timeline;
 
         /// <summary>
+        /// Gets and sets the property FailureDetails. 
+        /// <para>
+        /// The details for the step failure including reason, message, and log file path where
+        /// the root cause was identified.
+        /// </para>
+        /// </summary>
+        public FailureDetails FailureDetails
+        {
+            get { return this._failureDetails; }
+            set { this._failureDetails = value; }
+        }
+
+        // Check to see if FailureDetails property is set
+        internal bool IsSetFailureDetails()
+        {
+            return this._failureDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The execution state of the cluster step. 
+        /// The execution state of the cluster step.
         /// </para>
         /// </summary>
         public StepState State
@@ -57,7 +77,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property StateChangeReason. 
         /// <para>
-        /// The reason for the step execution status change. 
+        /// The reason for the step execution status change.
         /// </para>
         /// </summary>
         public StepStateChangeReason StateChangeReason
@@ -75,7 +95,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Timeline. 
         /// <para>
-        /// The timeline of the cluster step status over time. 
+        /// The timeline of the cluster step status over time.
         /// </para>
         /// </summary>
         public StepTimeline Timeline

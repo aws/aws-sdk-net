@@ -233,6 +233,37 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  DeleteConfigurationRecorder
+
+        internal DeleteConfigurationRecorderResponse DeleteConfigurationRecorder(DeleteConfigurationRecorderRequest request)
+        {
+            var marshaller = new DeleteConfigurationRecorderRequestMarshaller();
+            var unmarshaller = DeleteConfigurationRecorderResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConfigurationRecorderRequest,DeleteConfigurationRecorderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConfigurationRecorder operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationRecorder operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteConfigurationRecorderResponse> DeleteConfigurationRecorderAsync(DeleteConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteConfigurationRecorderRequestMarshaller();
+            var unmarshaller = DeleteConfigurationRecorderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConfigurationRecorderRequest,DeleteConfigurationRecorderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDeliveryChannel
 
         internal DeleteDeliveryChannelResponse DeleteDeliveryChannel(DeleteDeliveryChannelRequest request)
@@ -245,13 +276,12 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Deletes the specified delivery channel.
+        /// Deletes the delivery channel.
         /// 
         ///  
         /// <para>
-        /// The delivery channel cannot be deleted if it is the only delivery channel and the
-        /// configuration recorder is still running. To delete the delivery channel, stop the
-        /// running configuration recorder using the <a>StopConfigurationRecorder</a> action.
+        /// Before you can delete the delivery channel, you must stop the configuration recorder
+        /// by using the <a>StopConfigurationRecorder</a> action.
         /// </para>
         /// </summary>
         /// <param name="deliveryChannelName">The name of the delivery channel to delete.</param>
@@ -290,6 +320,37 @@ namespace Amazon.ConfigService
             var unmarshaller = DeleteDeliveryChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDeliveryChannelRequest,DeleteDeliveryChannelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteEvaluationResults
+
+        internal DeleteEvaluationResultsResponse DeleteEvaluationResults(DeleteEvaluationResultsRequest request)
+        {
+            var marshaller = new DeleteEvaluationResultsRequestMarshaller();
+            var unmarshaller = DeleteEvaluationResultsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEvaluationResultsRequest,DeleteEvaluationResultsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEvaluationResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEvaluationResults operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteEvaluationResultsResponse> DeleteEvaluationResultsAsync(DeleteEvaluationResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteEvaluationResultsRequestMarshaller();
+            var unmarshaller = DeleteEvaluationResultsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEvaluationResultsRequest,DeleteEvaluationResultsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -563,7 +624,11 @@ namespace Amazon.ConfigService
         /// recorder is not specified, this action returns the status of all configuration recorder
         /// associated with the account.
         /// 
-        ///  <note>Currently, you can specify only one configuration recorder per account.</note>
+        ///  <note> 
+        /// <para>
+        /// Currently, you can specify only one configuration recorder per account.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -679,7 +744,11 @@ namespace Amazon.ConfigService
         /// is not specified, this action returns the current status of all delivery channels
         /// associated with the account. 
         /// 
-        ///  <note>Currently, you can specify only one delivery channel per account.</note>
+        ///  <note> 
+        /// <para>
+        /// Currently, you can specify only one delivery channel per account.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1020,6 +1089,37 @@ namespace Amazon.ConfigService
             var unmarshaller = PutEvaluationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutEvaluationsRequest,PutEvaluationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartConfigRulesEvaluation
+
+        internal StartConfigRulesEvaluationResponse StartConfigRulesEvaluation(StartConfigRulesEvaluationRequest request)
+        {
+            var marshaller = new StartConfigRulesEvaluationRequestMarshaller();
+            var unmarshaller = StartConfigRulesEvaluationResponseUnmarshaller.Instance;
+
+            return Invoke<StartConfigRulesEvaluationRequest,StartConfigRulesEvaluationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartConfigRulesEvaluation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartConfigRulesEvaluation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<StartConfigRulesEvaluationResponse> StartConfigRulesEvaluationAsync(StartConfigRulesEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartConfigRulesEvaluationRequestMarshaller();
+            var unmarshaller = StartConfigRulesEvaluationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartConfigRulesEvaluationRequest,StartConfigRulesEvaluationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

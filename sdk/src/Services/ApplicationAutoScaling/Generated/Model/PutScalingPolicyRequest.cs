@@ -77,7 +77,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// The policy type. This parameter is required if you are creating a new policy.
+        /// The policy type. If you are creating a new policy, this parameter is required. If
+        /// you are updating an existing policy, this parameter is not required.
         /// </para>
         /// </summary>
         public PolicyType PolicyType
@@ -96,8 +97,10 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property ResourceId. 
         /// <para>
         /// The unique resource identifier string for the scalable target that this scaling policy
-        /// applies to. For Amazon ECS services, this value is the resource type, followed by
-        /// the cluster name and service name, such as <code>service/default/sample-webapp</code>.
+        /// applies to. For Amazon ECS services, the resource type is <code>services</code>, and
+        /// the identifier is the cluster name and service name; for example, <code>service/default/sample-webapp</code>.
+        /// For Amazon EC2 Spot fleet requests, the resource type is <code>spot-fleet-request</code>,
+        /// and the identifier is the Spot fleet request ID; for example, <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
         /// </para>
         /// </summary>
         public string ResourceId
@@ -118,7 +121,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// The scalable dimension of the scalable target that this scaling policy applies to.
         /// The scalable dimension contains the service namespace, resource type, and scaling
         /// property, such as <code>ecs:service:DesiredCount</code> for the desired task count
-        /// of an Amazon ECS service.
+        /// of an Amazon ECS service, or <code>ec2:spot-fleet-request:TargetCapacity</code> for
+        /// the target capacity of an Amazon EC2 Spot fleet request.
         /// </para>
         /// </summary>
         public ScalableDimension ScalableDimension
@@ -156,9 +160,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property StepScalingPolicyConfiguration. 
         /// <para>
-        /// The configuration for the step scaling policy. This parameter is required if you are
-        /// creating a new policy. For more information, see <a>StepScalingPolicyConfiguration</a>
-        /// and <a>StepAdjustment</a>.
+        /// The configuration for the step scaling policy. If you are creating a new policy, this
+        /// parameter is required. If you are updating an existing policy, this parameter is not
+        /// required. For more information, see <a>StepScalingPolicyConfiguration</a> and <a>StepAdjustment</a>.
         /// </para>
         /// </summary>
         public StepScalingPolicyConfiguration StepScalingPolicyConfiguration

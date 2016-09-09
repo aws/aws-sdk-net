@@ -34,13 +34,23 @@ namespace Amazon.IoT.Model
     public partial class UpdateThingRequest : AmazonIoTRequest
     {
         private AttributePayload _attributePayload;
+        private long? _expectedVersion;
+        private bool? _removeThingType;
         private string _thingName;
+        private string _thingTypeName;
 
         /// <summary>
         /// Gets and sets the property AttributePayload. 
         /// <para>
-        /// The attribute payload, a JSON string containing up to three key-value pairs (for example,
-        /// {\"attributes\":{\"string1\":\"string2\"}}).
+        /// A list of thing attributes, a JSON string containing name-value pairs. For example:
+        /// </para>
+        ///  
+        /// <para>
+        /// <code>{\"attributes\":{\"name1\":\"value2\"}})</code>
+        /// </para>
+        ///  
+        /// <para>
+        /// This data is used to add new attributes or update existing attributes.
         /// </para>
         /// </summary>
         public AttributePayload AttributePayload
@@ -56,9 +66,47 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExpectedVersion. 
+        /// <para>
+        /// The expected version of the thing record in the registry. If the version of the record
+        /// in the registry does not match the expected version specified in the request, the
+        /// <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.
+        /// </para>
+        /// </summary>
+        public long ExpectedVersion
+        {
+            get { return this._expectedVersion.GetValueOrDefault(); }
+            set { this._expectedVersion = value; }
+        }
+
+        // Check to see if ExpectedVersion property is set
+        internal bool IsSetExpectedVersion()
+        {
+            return this._expectedVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoveThingType. 
+        /// <para>
+        /// Remove a thing type association. If <b>true</b>, the assocation is removed.
+        /// </para>
+        /// </summary>
+        public bool RemoveThingType
+        {
+            get { return this._removeThingType.GetValueOrDefault(); }
+            set { this._removeThingType = value; }
+        }
+
+        // Check to see if RemoveThingType property is set
+        internal bool IsSetRemoveThingType()
+        {
+            return this._removeThingType.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ThingName. 
         /// <para>
-        /// The thing name.
+        /// The name of the thing to update.
         /// </para>
         /// </summary>
         public string ThingName
@@ -71,6 +119,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetThingName()
         {
             return this._thingName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThingTypeName. 
+        /// <para>
+        /// The name of the thing type.
+        /// </para>
+        /// </summary>
+        public string ThingTypeName
+        {
+            get { return this._thingTypeName; }
+            set { this._thingTypeName = value; }
+        }
+
+        // Check to see if ThingTypeName property is set
+        internal bool IsSetThingTypeName()
+        {
+            return this._thingTypeName != null;
         }
 
     }

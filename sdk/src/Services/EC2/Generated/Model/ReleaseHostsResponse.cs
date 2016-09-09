@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Successful. 
         /// <para>
-        /// The IDs of the Dedicated hosts that were successfully released.
+        /// The IDs of the Dedicated Hosts that were successfully released.
         /// </para>
         /// </summary>
         public List<string> Successful
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Unsuccessful. 
         /// <para>
-        /// The IDs of the Dedicated hosts that could not be released, including an error message.
+        /// The IDs of the Dedicated Hosts that could not be released, including an error message.
         /// </para>
         /// </summary>
         public List<UnsuccessfulItem> Unsuccessful

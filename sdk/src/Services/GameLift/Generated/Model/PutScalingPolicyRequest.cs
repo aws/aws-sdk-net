@@ -134,8 +134,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property MetricName. 
         /// <para>
         /// Name of the Amazon GameLift-defined metric that is used to trigger an adjustment.
-        /// <ul> <li> <b>ActivatingGameSessions</b> – number of game sessions in the process of
-        /// being created (game session status = <code>ACTIVATING</code>).</li> <li> <b>ActiveGameSessions</b>
+        /// </para>
+        ///  <ul> <li> <b>ActivatingGameSessions</b> – number of game sessions in the process
+        /// of being created (game session status = <code>ACTIVATING</code>).</li> <li> <b>ActiveGameSessions</b>
         /// – number of game sessions currently running (game session status = <code>ACTIVE</code>).</li>
         /// <li> <b>CurrentPlayerSessions</b> – number of active or reserved player sessions (player
         /// session status = <code>ACTIVE</code> or <code>RESERVED</code>). </li> <li> <b>AvailablePlayerSessions</b>
@@ -146,7 +147,6 @@ namespace Amazon.GameLift.Model
         /// = <code>DENY_ALL</code>).</li> <li> <b>ActiveInstances</b> – number of instances currently
         /// running a game session.</li> <li> <b>IdleInstances</b> – number of instances not currently
         /// running a game session.</li> </ul>
-        /// </para>
         /// </summary>
         public MetricName MetricName
         {
@@ -201,14 +201,14 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ScalingAdjustmentType. 
         /// <para>
         /// Type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
-        /// <ul> <li> <b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment value
+        /// </para>
+        ///  <ul> <li> <b>ChangeInCapacity</b> – add (or subtract) the scaling adjustment value
         /// from the current instance count. Positive values scale up while negative values scale
         /// down.</li> <li> <b>ExactCapacity</b> – set the instance count to the scaling adjustment
         /// value.</li> <li> <b>PercentChangeInCapacity</b> – increase or reduce the current instance
         /// count by the scaling adjustment, read as a percentage. Positive values scale up while
         /// negative values scale down; for example, a value of "-10" scales the fleet down by
         /// 10%.</li> </ul>
-        /// </para>
         /// </summary>
         public ScalingAdjustmentType ScalingAdjustmentType
         {

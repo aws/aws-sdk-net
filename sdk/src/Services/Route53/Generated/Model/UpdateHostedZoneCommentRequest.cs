@@ -29,12 +29,8 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateHostedZoneComment operation.
-    /// To update the hosted zone comment, send a <code>POST</code> request to the <code>/<i>Route
-    /// 53 API version</i>/hostedzone/<i>hosted zone ID</i></code> resource. The request body
-    /// must include a document with a <code>UpdateHostedZoneCommentRequest</code> element.
-    /// The response to this request includes the modified <code>HostedZone</code> element.
-    /// 
-    ///  <note> The comment can have a maximum length of 256 characters.</note>
+    /// Updates the hosted zone comment. Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted
+    /// zone ID</i> </code> resource.
     /// </summary>
     public partial class UpdateHostedZoneCommentRequest : AmazonRoute53Request
     {
@@ -44,7 +40,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the hosted zone you want to update.
+        /// The ID for the hosted zone for which you want to update the comment.
         /// </para>
         /// </summary>
         public string Id
@@ -62,7 +58,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// A comment about your hosted zone.
+        /// The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>,
+        /// Amazon Route 53 deletes the existing value of the <code>Comment</code> element, if
+        /// any.
         /// </para>
         /// </summary>
         public string Comment

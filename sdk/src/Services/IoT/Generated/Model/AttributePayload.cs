@@ -28,17 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// The attribute payload, a JSON string containing up to three key-value pairs (for example,
-    /// {\"attributes\":{\"string1\":\"string2\"}}).
+    /// The attribute payload.
     /// </summary>
     public partial class AttributePayload
     {
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private bool? _merge;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A JSON string containing up to three key-value pair in JSON format (for example, {\"attributes\":{\"string1\":\"string2\"}}).
+        /// A JSON string containing up to three key-value pair in JSON format. For example:
+        /// </para>
+        ///  
+        /// <para>
+        /// <code>{\"attributes\":{\"string1\":\"string2\"}})</code>
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -51,6 +55,34 @@ namespace Amazon.IoT.Model
         internal bool IsSetAttributes()
         {
             return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Merge. 
+        /// <para>
+        /// Specifies whether the list of attributes provided in the <code>AttributePayload</code>
+        /// is merged with the attributes stored in the registry, instead of overwriting them.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool Merge
+        {
+            get { return this._merge.GetValueOrDefault(); }
+            set { this._merge = value; }
+        }
+
+        // Check to see if Merge property is set
+        internal bool IsSetMerge()
+        {
+            return this._merge.HasValue; 
         }
 
     }

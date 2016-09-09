@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceClientGenerator", "ServiceClientGenerator\ServiceClientGenerator.csproj", "{A9222452-4269-4844-BBCC-45874C113745}"
 EndProject
@@ -70,6 +70,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceModels", "ServiceMod
 		ServiceModels\elasticloadbalancing-2012-06-01.normal.json = ServiceModels\elasticloadbalancing-2012-06-01.normal.json
 		ServiceModels\elasticloadbalancing.customizations.constructors.json = ServiceModels\elasticloadbalancing.customizations.constructors.json
 		ServiceModels\elasticloadbalancing.customizations.json = ServiceModels\elasticloadbalancing.customizations.json
+		ServiceModels\elasticloadbalancingv2-2015-12-01.normal.json = ServiceModels\elasticloadbalancingv2-2015-12-01.normal.json
 		ServiceModels\elasticmapreduce-2009-03-31.normal.json = ServiceModels\elasticmapreduce-2009-03-31.normal.json
 		ServiceModels\elasticmapreduce.customizations.constructors.json = ServiceModels\elasticmapreduce.customizations.constructors.json
 		ServiceModels\elasticmapreduce.customizations.json = ServiceModels\elasticmapreduce.customizations.json

@@ -360,6 +360,11 @@ namespace SDKDocGenerator
             get { return this._type.IsEnum; }
         }
 
+        public bool ContainsGenericParameters
+        {
+            get { return this._type.ContainsGenericParameters; }
+        }
+
         public bool IsGenericParameter
         {
             get { return this._type.IsGenericParameter; }
@@ -584,6 +589,26 @@ namespace SDKDocGenerator
         public TypeWrapper ReturnType
         {
             get { return new TypeWrapper(this._info.ReturnType); }
+        }
+
+        public bool IsGenericMethod
+        {
+            get { return this._info.IsGenericMethod; }
+        }
+
+        public TypeWrapper[] GetGenericArguments()
+        {
+            if (!this.IsGenericMethod)
+                return null;
+
+            var types = this._info.GetGenericArguments();
+            var wrappers = new TypeWrapper[types.Length];
+            for(int i = 0; i < types.Length; i++)
+            {
+                wrappers[i] = new TypeWrapper(types[i]);
+            }
+
+            return wrappers;
         }
     }
 

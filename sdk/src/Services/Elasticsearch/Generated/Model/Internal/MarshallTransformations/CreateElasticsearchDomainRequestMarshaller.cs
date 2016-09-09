@@ -113,6 +113,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetElasticsearchVersion())
+                {
+                    context.Writer.WritePropertyName("ElasticsearchVersion");
+                    context.Writer.Write(publicRequest.ElasticsearchVersion);
+                }
+
                 if(publicRequest.IsSetSnapshotOptions())
                 {
                     context.Writer.WritePropertyName("SnapshotOptions");

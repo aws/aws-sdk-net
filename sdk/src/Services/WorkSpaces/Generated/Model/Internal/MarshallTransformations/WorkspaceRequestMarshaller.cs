@@ -97,6 +97,17 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.VolumeEncryptionKey);
             }
 
+            if(requestObject.IsSetWorkspaceProperties())
+            {
+                context.Writer.WritePropertyName("WorkspaceProperties");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = WorkspacePropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.WorkspaceProperties, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// This is the response object from the DetachLoadBalancerFromSubnets operation.
+    /// Contains the output of DetachLoadBalancerFromSubnets.
     /// </summary>
     public partial class DetachLoadBalancerFromSubnetsResponse : AmazonWebServiceResponse
     {

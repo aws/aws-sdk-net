@@ -17,4 +17,21 @@
     <property>Amazon.AWSMarketplaceCommerceAnalytics.Model.GenerateDataSetRequest.SnsTopicArn</property>
     <min>1</min>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSMarketplaceCommerceAnalytics.Model.StartSupportDataExportRequest.DataSetType</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSMarketplaceCommerceAnalytics.Model.StartSupportDataExportRequest.DestinationS3BucketName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSMarketplaceCommerceAnalytics.Model.StartSupportDataExportRequest.RoleNameArn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSMarketplaceCommerceAnalytics.Model.StartSupportDataExportRequest.SnsTopicArn</property>
+    <min>1</min>
+  </property-value-rule>
 </property-value-rules>

@@ -37,9 +37,9 @@ namespace Amazon.ElasticMapReduce.Model
     /// 
     ///  
     /// <para>
-    ///  SetTerminationProtection is used to prevent accidental termination of a job flow
-    /// and to ensure that in the event of an error, the instances will persist so you can
-    /// recover any data stored in their ephemeral instance storage.
+    /// SetTerminationProtection is used to prevent accidental termination of a job flow and
+    /// to ensure that in the event of an error, the instances will persist so you can recover
+    /// any data stored in their ephemeral instance storage.
     /// </para>
     ///  
     /// <para>
@@ -51,6 +51,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <para>
     ///  For more information, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">Protecting
     /// a Job Flow from Termination</a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
+    /// 
     /// </para>
     /// </summary>
     public partial class SetTerminationProtectionRequest : AmazonElasticMapReduceRequest
@@ -81,9 +82,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property TerminationProtected. 
         /// <para>
-        ///  A Boolean that indicates whether to protect the job flow and prevent the Amazon EC2
+        /// A Boolean that indicates whether to protect the job flow and prevent the Amazon EC2
         /// instances in the cluster from shutting down due to API calls, user intervention, or
-        /// job-flow error. 
+        /// job-flow error.
         /// </para>
         /// </summary>
         public bool TerminationProtected

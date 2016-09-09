@@ -30,13 +30,41 @@ namespace Amazon.ECR.Model
     /// <summary>
     /// Container for the parameters to the ListImages operation.
     /// Lists all the image IDs for a given repository.
+    /// 
+    ///  
+    /// <para>
+    /// You can filter images based on whether or not they are tagged by setting the <code>tagStatus</code>
+    /// parameter to <code>TAGGED</code> or <code>UNTAGGED</code>. For example, you can filter
+    /// your results to return only <code>UNTAGGED</code> images and then pipe that result
+    /// to a <a>BatchDeleteImage</a> operation to delete them. Or, you can filter your results
+    /// to return only <code>TAGGED</code> images to list all of the tags in your repository.
+    /// </para>
     /// </summary>
     public partial class ListImagesRequest : AmazonECRRequest
     {
+        private ListImagesFilter _filter;
         private int? _maxResults;
         private string _nextToken;
         private string _registryId;
         private string _repositoryName;
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// The filter key and value with which to filter your <code>ListImages</code> results.
+        /// </para>
+        /// </summary>
+        public ListImagesFilter Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -71,6 +99,12 @@ namespace Amazon.ECR.Model
         /// returned the <code>nextToken</code> value. This value is <code>null</code> when there
         /// are no more results to return.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This token should be treated as an opaque identifier that is only used to retrieve
+        /// the next items in a list and not for other programmatic purposes.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string NextToken
         {

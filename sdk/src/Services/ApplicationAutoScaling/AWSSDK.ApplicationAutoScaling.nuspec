@@ -3,7 +3,7 @@
   <metadata> 
     <id>AWSSDK.ApplicationAutoScaling</id>
     <title>AWSSDK - Application Auto Scaling</title>
-    <version>3.1.0.3</version> 
+    <version>3.1.1.0</version> 
     <authors>Amazon Web Services</authors>
     <description>Application Auto Scaling is a general purpose Auto Scaling service for supported elastic AWS resources. With Application Auto Scaling, you can automatically scale your AWS resources, with an experience similar to that of Amazon EC2 Auto Scaling.</description>
     <language>en-US</language>
@@ -14,11 +14,11 @@
     <dependencies>
 
       <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-        <dependency id="AWSSDK.Core" version="[3.1.8.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.9.2, 3.2)" />
       </group>
 
       <group>
-        <dependency id="AWSSDK.Core" version="[3.1.8.0, 3.2)" />
+        <dependency id="AWSSDK.Core" version="[3.1.9.2, 3.2)" />
       </group>
     </dependencies>
   </metadata> 

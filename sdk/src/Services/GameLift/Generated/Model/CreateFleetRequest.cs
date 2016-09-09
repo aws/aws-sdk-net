@@ -34,8 +34,8 @@ namespace Amazon.GameLift.Model
     /// game sessions. You configure a fleet to create instances with certain hardware specifications
     /// (see <a href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
     /// for more information), and deploy a specified game build to each instance. A newly
-    /// created fleet passes through several states; once it reaches the <code>ACTIVE</code>
-    /// state, it can begin hosting game sessions.
+    /// created fleet passes through several statuses; once it reaches the <code>ACTIVE</code>
+    /// status, it can begin hosting game sessions.
     /// 
     ///  
     /// <para>
@@ -44,15 +44,15 @@ namespace Amazon.GameLift.Model
     /// settings: (1) a runtime configuration describing what server processes to run on each
     /// instance in the fleet (required to create fleet), (2) access permissions for inbound
     /// traffic, (3) fleet-wide game session protection, and (4) the location of default log
-    /// files for GameLift to upload and store. 
+    /// files for GameLift to upload and store.
     /// </para>
     ///  
     /// <para>
     /// If the <code>CreateFleet</code> call is successful, Amazon GameLift performs the following
     /// tasks:
     /// </para>
-    ///  <ul> <li>Creates a fleet record and sets the state to <code>NEW</code> (followed
-    /// by other states as the fleet is activated).</li> <li>Sets the fleet's capacity to
+    ///  <ul> <li>Creates a fleet record and sets the status to <code>NEW</code> (followed
+    /// by other statuses as the fleet is activated).</li> <li>Sets the fleet's capacity to
     /// 1 "desired", which causes GameLift to start one new EC2 instance.</li> <li>Starts
     /// launching server processes on the instance. If the fleet is configured to run multiple
     /// server processes per instance, GameLift staggers each launch by a few seconds.</li>
@@ -88,7 +88,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property BuildId. 
         /// <para>
         /// Unique identifier of the build to be deployed on the new fleet. The build must have
-        /// been successfully uploaded to GameLift and be in a <code>READY</code> state. This
+        /// been successfully uploaded to GameLift and be in a <code>READY</code> status. This
         /// fleet setting cannot be changed once the fleet is created.
         /// </para>
         /// </summary>
@@ -213,11 +213,11 @@ namespace Amazon.GameLift.Model
         /// is not set, instances in this fleet default to no protection. You can change a fleet's
         /// protection policy using UpdateFleetAttributes, but this change will only affect sessions
         /// created after the policy change. You can also set protection for individual instances
-        /// using <a>UpdateGameSession</a>. <ul><li><b>NoProtection</b> – The game session can
-        /// be terminated during a scale-down event.</li> <li><b>FullProtection</b> – If the game
-        /// session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down
-        /// event.</li></ul>
+        /// using <a>UpdateGameSession</a>.
         /// </para>
+        ///  <ul><li><b>NoProtection</b> – The game session can be terminated during a scale-down
+        /// event.</li> <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code>
+        /// status, it cannot be terminated during a scale-down event.</li></ul>
         /// </summary>
         public ProtectionPolicy NewGameSessionProtectionPolicy
         {

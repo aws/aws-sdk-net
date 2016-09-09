@@ -56,6 +56,7 @@ namespace Amazon.Runtime
         private bool disableLogging = false;
         private TimeSpan? timeout = null;
         private bool allowAutoRedirect = true;
+        private bool useDualstackEndpoint = false;
 
         /// <summary>
         /// Gets Service Version
@@ -115,7 +116,7 @@ namespace Amazon.Runtime
 
                 if (this.regionEndpoint != null)
                 {
-                    var endpoint = this.regionEndpoint.GetEndpointForService(RegionEndpointServiceName);
+                    var endpoint = this.regionEndpoint.GetEndpointForService(RegionEndpointServiceName, this.UseDualstackEndpoint);
                     if (endpoint != null && endpoint.SignatureVersionOverride != null)
                         this.SignatureVersion = endpoint.SignatureVersionOverride;
                 }
@@ -169,15 +170,15 @@ namespace Amazon.Runtime
             }
             else
             {
-                url = GetUrl(this.RegionEndpoint, this.RegionEndpointServiceName, this.UseHttp);
+                url = GetUrl(this.RegionEndpoint, this.RegionEndpointServiceName, this.UseHttp, this.UseDualstackEndpoint);
             }
 
             return url;
         }
 
-        internal static string GetUrl(RegionEndpoint regionEndpoint, string regionEndpointServiceName, bool useHttp)
+        internal static string GetUrl(RegionEndpoint regionEndpoint, string regionEndpointServiceName, bool useHttp, bool useDualStack)
         {
-            var endpoint = regionEndpoint.GetEndpointForService(regionEndpointServiceName);
+            var endpoint = regionEndpoint.GetEndpointForService(regionEndpointServiceName, useDualStack);
             string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", useHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
             return url;
         }
@@ -215,9 +216,9 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Gets and sets the LogResponse.
-        /// If this property is set to true, the service response
-        /// is read in its entirety and logged.
+        /// Gets and sets the LogResponse property.
+        /// If this property is set to true, the service response is logged.
+        /// The size of response being logged is controlled by the AWSConfigs.LoggingConfig.LogResponsesSizeLimit property.
         /// </summary>
         public bool LogResponse
         {
@@ -226,10 +227,13 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Gets and sets the ReadEntireResponse.
-        /// If this property is set to true, the service response
-        /// is read in its entirety before being processed.
+        /// Gets and sets the ReadEntireResponse property.
+        /// NOTE: This property does not effect response processing and is deprecated.
+        /// To enable response logging, the ClientConfig.LogResponse and AWSConfigs.LoggingConfig
+        /// properties can be used.
         /// </summary>
+        [Obsolete("This property does not effect response processing and is deprecated." +
+            "To enable response logging, the ClientConfig.LogResponse and AWSConfigs.LoggingConfig.LogResponses properties can be used.")]
         public bool ReadEntireResponse
         {
             get { return this.readEntireResponse; }
@@ -372,6 +376,21 @@ namespace Amazon.Runtime
                 ValidateTimeout(value);
                 this.timeout = value;
             }
+        }
+
+        /// <summary>
+        /// Configures the endpoint calculation for a service to go to a dual stack (ipv6 enabled) endpoint
+        /// for the configured region.
+        /// </summary>
+        /// <remarks>
+        /// Note: AWS services are enabling dualstack endpoints over time. It is your responsibility to check 
+        /// that the service actually supports a dualstack endpoint in the configured region before enabling 
+        /// this option for a service.
+        /// </remarks>
+        public bool UseDualstackEndpoint
+        {
+            get { return useDualstackEndpoint; }
+            set { useDualstackEndpoint = value; }
         }
 
         /// <summary>

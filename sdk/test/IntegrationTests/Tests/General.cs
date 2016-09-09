@@ -26,7 +26,6 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.S3.Util;
 using Amazon.SecurityToken.SAML;
 
-
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
     [TestClass]
@@ -254,6 +253,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     }
                 }
             }
+        }
+
+        [TestMethod]
+        [TestCategory("General")]
+        public void JsonCountSerializationBug()
+        {
+            var json = @"{""Data"":{""NotCount"":""42""}}";
+            var poco = ThirdParty.Json.LitJson.JsonMapper.ToObject<Poco>(json);
+            Assert.AreEqual(1, poco.Data.Count);
+            Assert.AreEqual("42", poco.Data["NotCount"]);
+
+            json = @"{""Data"":{""Count"":""Dracula""}}";
+            poco = ThirdParty.Json.LitJson.JsonMapper.ToObject<Poco>(json);
+            Assert.AreEqual(1, poco.Data.Count);
+            Assert.AreEqual("Dracula", poco.Data["Count"]);
+        }
+        private class Poco
+        {
+            public Dictionary<string, string> Data { get; set; }
         }
 
         [TestMethod]

@@ -36,6 +36,7 @@ namespace Amazon.Elasticsearch.Model
         private AdvancedOptionsStatus _advancedOptions;
         private EBSOptionsStatus _ebsOptions;
         private ElasticsearchClusterConfigStatus _elasticsearchClusterConfig;
+        private ElasticsearchVersionStatus _elasticsearchVersion;
         private SnapshotOptionsStatus _snapshotOptions;
 
         /// <summary>
@@ -109,6 +110,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetElasticsearchClusterConfig()
         {
             return this._elasticsearchClusterConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElasticsearchVersion. 
+        /// <para>
+        /// String of format X.Y to specify version for the Elasticsearch domain.
+        /// </para>
+        /// </summary>
+        public ElasticsearchVersionStatus ElasticsearchVersion
+        {
+            get { return this._elasticsearchVersion; }
+            set { this._elasticsearchVersion = value; }
+        }
+
+        // Check to see if ElasticsearchVersion property is set
+        internal bool IsSetElasticsearchVersion()
+        {
+            return this._elasticsearchVersion != null;
         }
 
         /// <summary>

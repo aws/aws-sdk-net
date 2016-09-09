@@ -207,7 +207,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceMonitoring. 
         /// <para>
-        /// Controls whether instances in this group are launched with detailed monitoring.
+        /// Controls whether instances in this group are launched with detailed (<code>true</code>)
+        /// or basic (<code>false</code>) monitoring.
         /// </para>
         /// </summary>
         public InstanceMonitoring InstanceMonitoring

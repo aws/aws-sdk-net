@@ -75,8 +75,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property WorkspaceRequest. 
         /// <para>
-        /// A <a>WorkspaceRequest</a> object that contains the information about the WorkSpace
-        /// that could not be created.
+        /// A <a>FailedCreateWorkspaceRequest$WorkspaceRequest</a> object that contains the information
+        /// about the WorkSpace that could not be created.
         /// </para>
         /// </summary>
         public WorkspaceRequest WorkspaceRequest

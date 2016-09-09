@@ -41,8 +41,11 @@ namespace Amazon.CognitoIdentityProvider
     /// 
     ///  
     /// <para>
-    /// This API reference provides information about user pools in Amazon Cognito Identity,
-    /// which is a new capability that is available as a beta.
+    /// This API reference provides information about user pools in Amazon Cognito Identity.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://aws.amazon.com/cognito/">Amazon Cognito</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCognitoIdentityProviderClient : AmazonServiceClient, IAmazonCognitoIdentityProvider
@@ -363,6 +366,68 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  AdminForgetDevice
+
+        internal AdminForgetDeviceResponse AdminForgetDevice(AdminForgetDeviceRequest request)
+        {
+            var marshaller = new AdminForgetDeviceRequestMarshaller();
+            var unmarshaller = AdminForgetDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<AdminForgetDeviceRequest,AdminForgetDeviceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminForgetDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminForgetDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AdminForgetDeviceResponse> AdminForgetDeviceAsync(AdminForgetDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminForgetDeviceRequestMarshaller();
+            var unmarshaller = AdminForgetDeviceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminForgetDeviceRequest,AdminForgetDeviceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AdminGetDevice
+
+        internal AdminGetDeviceResponse AdminGetDevice(AdminGetDeviceRequest request)
+        {
+            var marshaller = new AdminGetDeviceRequestMarshaller();
+            var unmarshaller = AdminGetDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<AdminGetDeviceRequest,AdminGetDeviceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminGetDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminGetDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AdminGetDeviceResponse> AdminGetDeviceAsync(AdminGetDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminGetDeviceRequestMarshaller();
+            var unmarshaller = AdminGetDeviceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminGetDeviceRequest,AdminGetDeviceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AdminGetUser
 
         internal AdminGetUserResponse AdminGetUser(AdminGetUserRequest request)
@@ -389,6 +454,68 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = AdminGetUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<AdminGetUserRequest,AdminGetUserResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AdminInitiateAuth
+
+        internal AdminInitiateAuthResponse AdminInitiateAuth(AdminInitiateAuthRequest request)
+        {
+            var marshaller = new AdminInitiateAuthRequestMarshaller();
+            var unmarshaller = AdminInitiateAuthResponseUnmarshaller.Instance;
+
+            return Invoke<AdminInitiateAuthRequest,AdminInitiateAuthResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminInitiateAuth operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminInitiateAuth operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AdminInitiateAuthResponse> AdminInitiateAuthAsync(AdminInitiateAuthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminInitiateAuthRequestMarshaller();
+            var unmarshaller = AdminInitiateAuthResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminInitiateAuthRequest,AdminInitiateAuthResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AdminListDevices
+
+        internal AdminListDevicesResponse AdminListDevices(AdminListDevicesRequest request)
+        {
+            var marshaller = new AdminListDevicesRequestMarshaller();
+            var unmarshaller = AdminListDevicesResponseUnmarshaller.Instance;
+
+            return Invoke<AdminListDevicesRequest,AdminListDevicesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminListDevices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminListDevices operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AdminListDevicesResponse> AdminListDevicesAsync(AdminListDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminListDevicesRequestMarshaller();
+            var unmarshaller = AdminListDevicesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminListDevicesRequest,AdminListDevicesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -425,6 +552,37 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  AdminRespondToAuthChallenge
+
+        internal AdminRespondToAuthChallengeResponse AdminRespondToAuthChallenge(AdminRespondToAuthChallengeRequest request)
+        {
+            var marshaller = new AdminRespondToAuthChallengeRequestMarshaller();
+            var unmarshaller = AdminRespondToAuthChallengeResponseUnmarshaller.Instance;
+
+            return Invoke<AdminRespondToAuthChallengeRequest,AdminRespondToAuthChallengeResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminRespondToAuthChallenge operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminRespondToAuthChallenge operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AdminRespondToAuthChallengeResponse> AdminRespondToAuthChallengeAsync(AdminRespondToAuthChallengeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminRespondToAuthChallengeRequestMarshaller();
+            var unmarshaller = AdminRespondToAuthChallengeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminRespondToAuthChallengeRequest,AdminRespondToAuthChallengeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AdminSetUserSettings
 
         internal AdminSetUserSettingsResponse AdminSetUserSettings(AdminSetUserSettingsRequest request)
@@ -451,6 +609,37 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = AdminSetUserSettingsResponseUnmarshaller.Instance;
 
             return InvokeAsync<AdminSetUserSettingsRequest,AdminSetUserSettingsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AdminUpdateDeviceStatus
+
+        internal AdminUpdateDeviceStatusResponse AdminUpdateDeviceStatus(AdminUpdateDeviceStatusRequest request)
+        {
+            var marshaller = new AdminUpdateDeviceStatusRequestMarshaller();
+            var unmarshaller = AdminUpdateDeviceStatusResponseUnmarshaller.Instance;
+
+            return Invoke<AdminUpdateDeviceStatusRequest,AdminUpdateDeviceStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminUpdateDeviceStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminUpdateDeviceStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AdminUpdateDeviceStatusResponse> AdminUpdateDeviceStatusAsync(AdminUpdateDeviceStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminUpdateDeviceStatusRequestMarshaller();
+            var unmarshaller = AdminUpdateDeviceStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminUpdateDeviceStatusRequest,AdminUpdateDeviceStatusResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -487,6 +676,37 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  AdminUserGlobalSignOut
+
+        internal AdminUserGlobalSignOutResponse AdminUserGlobalSignOut(AdminUserGlobalSignOutRequest request)
+        {
+            var marshaller = new AdminUserGlobalSignOutRequestMarshaller();
+            var unmarshaller = AdminUserGlobalSignOutResponseUnmarshaller.Instance;
+
+            return Invoke<AdminUserGlobalSignOutRequest,AdminUserGlobalSignOutResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminUserGlobalSignOut operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminUserGlobalSignOut operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AdminUserGlobalSignOutResponse> AdminUserGlobalSignOutAsync(AdminUserGlobalSignOutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminUserGlobalSignOutRequestMarshaller();
+            var unmarshaller = AdminUserGlobalSignOutResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminUserGlobalSignOutRequest,AdminUserGlobalSignOutResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ChangePassword
 
         internal ChangePasswordResponse ChangePassword(ChangePasswordRequest request)
@@ -513,6 +733,37 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = ChangePasswordResponseUnmarshaller.Instance;
 
             return InvokeAsync<ChangePasswordRequest,ChangePasswordResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ConfirmDevice
+
+        internal ConfirmDeviceResponse ConfirmDevice(ConfirmDeviceRequest request)
+        {
+            var marshaller = new ConfirmDeviceRequestMarshaller();
+            var unmarshaller = ConfirmDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<ConfirmDeviceRequest,ConfirmDeviceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ConfirmDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ConfirmDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ConfirmDeviceResponse> ConfirmDeviceAsync(ConfirmDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ConfirmDeviceRequestMarshaller();
+            var unmarshaller = ConfirmDeviceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ConfirmDeviceRequest,ConfirmDeviceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -575,6 +826,37 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = ConfirmSignUpResponseUnmarshaller.Instance;
 
             return InvokeAsync<ConfirmSignUpRequest,ConfirmSignUpResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateUserImportJob
+
+        internal CreateUserImportJobResponse CreateUserImportJob(CreateUserImportJobRequest request)
+        {
+            var marshaller = new CreateUserImportJobRequestMarshaller();
+            var unmarshaller = CreateUserImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateUserImportJobRequest,CreateUserImportJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateUserImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateUserImportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateUserImportJobResponse> CreateUserImportJobAsync(CreateUserImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateUserImportJobRequestMarshaller();
+            var unmarshaller = CreateUserImportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateUserImportJobRequest,CreateUserImportJobResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -766,6 +1048,37 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  DescribeUserImportJob
+
+        internal DescribeUserImportJobResponse DescribeUserImportJob(DescribeUserImportJobRequest request)
+        {
+            var marshaller = new DescribeUserImportJobRequestMarshaller();
+            var unmarshaller = DescribeUserImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUserImportJobRequest,DescribeUserImportJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUserImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUserImportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeUserImportJobResponse> DescribeUserImportJobAsync(DescribeUserImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeUserImportJobRequestMarshaller();
+            var unmarshaller = DescribeUserImportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeUserImportJobRequest,DescribeUserImportJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeUserPool
 
         internal DescribeUserPoolResponse DescribeUserPool(DescribeUserPoolRequest request)
@@ -828,6 +1141,37 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  ForgetDevice
+
+        internal ForgetDeviceResponse ForgetDevice(ForgetDeviceRequest request)
+        {
+            var marshaller = new ForgetDeviceRequestMarshaller();
+            var unmarshaller = ForgetDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<ForgetDeviceRequest,ForgetDeviceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ForgetDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ForgetDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ForgetDeviceResponse> ForgetDeviceAsync(ForgetDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ForgetDeviceRequestMarshaller();
+            var unmarshaller = ForgetDeviceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ForgetDeviceRequest,ForgetDeviceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ForgotPassword
 
         internal ForgotPasswordResponse ForgotPassword(ForgotPasswordRequest request)
@@ -854,6 +1198,68 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = ForgotPasswordResponseUnmarshaller.Instance;
 
             return InvokeAsync<ForgotPasswordRequest,ForgotPasswordResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCSVHeader
+
+        internal GetCSVHeaderResponse GetCSVHeader(GetCSVHeaderRequest request)
+        {
+            var marshaller = new GetCSVHeaderRequestMarshaller();
+            var unmarshaller = GetCSVHeaderResponseUnmarshaller.Instance;
+
+            return Invoke<GetCSVHeaderRequest,GetCSVHeaderResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCSVHeader operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCSVHeader operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetCSVHeaderResponse> GetCSVHeaderAsync(GetCSVHeaderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetCSVHeaderRequestMarshaller();
+            var unmarshaller = GetCSVHeaderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCSVHeaderRequest,GetCSVHeaderResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDevice
+
+        internal GetDeviceResponse GetDevice(GetDeviceRequest request)
+        {
+            var marshaller = new GetDeviceRequestMarshaller();
+            var unmarshaller = GetDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<GetDeviceRequest,GetDeviceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDevice operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDevice operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetDeviceResponse> GetDeviceAsync(GetDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDeviceRequestMarshaller();
+            var unmarshaller = GetDeviceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDeviceRequest,GetDeviceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -916,6 +1322,130 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = GetUserAttributeVerificationCodeResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetUserAttributeVerificationCodeRequest,GetUserAttributeVerificationCodeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GlobalSignOut
+
+        internal GlobalSignOutResponse GlobalSignOut(GlobalSignOutRequest request)
+        {
+            var marshaller = new GlobalSignOutRequestMarshaller();
+            var unmarshaller = GlobalSignOutResponseUnmarshaller.Instance;
+
+            return Invoke<GlobalSignOutRequest,GlobalSignOutResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GlobalSignOut operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GlobalSignOut operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GlobalSignOutResponse> GlobalSignOutAsync(GlobalSignOutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GlobalSignOutRequestMarshaller();
+            var unmarshaller = GlobalSignOutResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GlobalSignOutRequest,GlobalSignOutResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  InitiateAuth
+
+        internal InitiateAuthResponse InitiateAuth(InitiateAuthRequest request)
+        {
+            var marshaller = new InitiateAuthRequestMarshaller();
+            var unmarshaller = InitiateAuthResponseUnmarshaller.Instance;
+
+            return Invoke<InitiateAuthRequest,InitiateAuthResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the InitiateAuth operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the InitiateAuth operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<InitiateAuthResponse> InitiateAuthAsync(InitiateAuthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new InitiateAuthRequestMarshaller();
+            var unmarshaller = InitiateAuthResponseUnmarshaller.Instance;
+
+            return InvokeAsync<InitiateAuthRequest,InitiateAuthResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDevices
+
+        internal ListDevicesResponse ListDevices(ListDevicesRequest request)
+        {
+            var marshaller = new ListDevicesRequestMarshaller();
+            var unmarshaller = ListDevicesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDevicesRequest,ListDevicesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDevices operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDevices operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListDevicesResponse> ListDevicesAsync(ListDevicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListDevicesRequestMarshaller();
+            var unmarshaller = ListDevicesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDevicesRequest,ListDevicesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListUserImportJobs
+
+        internal ListUserImportJobsResponse ListUserImportJobs(ListUserImportJobsRequest request)
+        {
+            var marshaller = new ListUserImportJobsRequestMarshaller();
+            var unmarshaller = ListUserImportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListUserImportJobsRequest,ListUserImportJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUserImportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUserImportJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListUserImportJobsResponse> ListUserImportJobsAsync(ListUserImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListUserImportJobsRequestMarshaller();
+            var unmarshaller = ListUserImportJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListUserImportJobsRequest,ListUserImportJobsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1045,6 +1575,37 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  RespondToAuthChallenge
+
+        internal RespondToAuthChallengeResponse RespondToAuthChallenge(RespondToAuthChallengeRequest request)
+        {
+            var marshaller = new RespondToAuthChallengeRequestMarshaller();
+            var unmarshaller = RespondToAuthChallengeResponseUnmarshaller.Instance;
+
+            return Invoke<RespondToAuthChallengeRequest,RespondToAuthChallengeResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RespondToAuthChallenge operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RespondToAuthChallenge operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RespondToAuthChallengeResponse> RespondToAuthChallengeAsync(RespondToAuthChallengeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RespondToAuthChallengeRequestMarshaller();
+            var unmarshaller = RespondToAuthChallengeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RespondToAuthChallengeRequest,RespondToAuthChallengeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SetUserSettings
 
         internal SetUserSettingsResponse SetUserSettings(SetUserSettingsRequest request)
@@ -1102,6 +1663,99 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = SignUpResponseUnmarshaller.Instance;
 
             return InvokeAsync<SignUpRequest,SignUpResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartUserImportJob
+
+        internal StartUserImportJobResponse StartUserImportJob(StartUserImportJobRequest request)
+        {
+            var marshaller = new StartUserImportJobRequestMarshaller();
+            var unmarshaller = StartUserImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartUserImportJobRequest,StartUserImportJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartUserImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartUserImportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<StartUserImportJobResponse> StartUserImportJobAsync(StartUserImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartUserImportJobRequestMarshaller();
+            var unmarshaller = StartUserImportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartUserImportJobRequest,StartUserImportJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopUserImportJob
+
+        internal StopUserImportJobResponse StopUserImportJob(StopUserImportJobRequest request)
+        {
+            var marshaller = new StopUserImportJobRequestMarshaller();
+            var unmarshaller = StopUserImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopUserImportJobRequest,StopUserImportJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopUserImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopUserImportJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<StopUserImportJobResponse> StopUserImportJobAsync(StopUserImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StopUserImportJobRequestMarshaller();
+            var unmarshaller = StopUserImportJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopUserImportJobRequest,StopUserImportJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDeviceStatus
+
+        internal UpdateDeviceStatusResponse UpdateDeviceStatus(UpdateDeviceStatusRequest request)
+        {
+            var marshaller = new UpdateDeviceStatusRequestMarshaller();
+            var unmarshaller = UpdateDeviceStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDeviceStatusRequest,UpdateDeviceStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDeviceStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeviceStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateDeviceStatusResponse> UpdateDeviceStatusAsync(UpdateDeviceStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateDeviceStatusRequestMarshaller();
+            var unmarshaller = UpdateDeviceStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDeviceStatusRequest,UpdateDeviceStatusResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

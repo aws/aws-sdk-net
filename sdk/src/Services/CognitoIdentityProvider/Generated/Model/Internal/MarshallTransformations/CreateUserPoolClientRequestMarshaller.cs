@@ -73,16 +73,55 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClientName);
                 }
 
+                if(publicRequest.IsSetExplicitAuthFlows())
+                {
+                    context.Writer.WritePropertyName("ExplicitAuthFlows");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestExplicitAuthFlowsListValue in publicRequest.ExplicitAuthFlows)
+                    {
+                            context.Writer.Write(publicRequestExplicitAuthFlowsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetGenerateSecret())
                 {
                     context.Writer.WritePropertyName("GenerateSecret");
                     context.Writer.Write(publicRequest.GenerateSecret);
                 }
 
+                if(publicRequest.IsSetReadAttributes())
+                {
+                    context.Writer.WritePropertyName("ReadAttributes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestReadAttributesListValue in publicRequest.ReadAttributes)
+                    {
+                            context.Writer.Write(publicRequestReadAttributesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetRefreshTokenValidity())
+                {
+                    context.Writer.WritePropertyName("RefreshTokenValidity");
+                    context.Writer.Write(publicRequest.RefreshTokenValidity);
+                }
+
                 if(publicRequest.IsSetUserPoolId())
                 {
                     context.Writer.WritePropertyName("UserPoolId");
                     context.Writer.Write(publicRequest.UserPoolId);
+                }
+
+                if(publicRequest.IsSetWriteAttributes())
+                {
+                    context.Writer.WritePropertyName("WriteAttributes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestWriteAttributesListValue in publicRequest.WriteAttributes)
+                    {
+                            context.Writer.Write(publicRequestWriteAttributesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         

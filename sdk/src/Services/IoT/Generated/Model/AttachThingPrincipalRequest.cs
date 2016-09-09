@@ -39,7 +39,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The principal (certificate or other credential).
+        /// The principal, such as a certificate or other credential.
         /// </para>
         /// </summary>
         public string Principal

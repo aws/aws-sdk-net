@@ -44,9 +44,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        ///  The list of dimensions associated with the metric. If the metric has any associated
+        /// The list of dimensions associated with the metric. If the metric has any associated
         /// dimensions, you must specify them in order for the DescribeAlarmsForMetric to succeed.
-        /// 
         /// </para>
         /// </summary>
         public List<Dimension> Dimensions
@@ -64,7 +63,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        ///  The name of the metric. 
+        /// The name of the metric.
         /// </para>
         /// </summary>
         public string MetricName
@@ -82,7 +81,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  The namespace of the metric. 
+        /// The namespace of the metric.
         /// </para>
         /// </summary>
         public string Namespace
@@ -100,7 +99,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        ///  The period in seconds over which the statistic is applied. 
+        /// The period in seconds over which the statistic is applied.
         /// </para>
         /// </summary>
         public int Period
@@ -118,7 +117,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Statistic. 
         /// <para>
-        ///  The statistic for the metric. 
+        /// The statistic for the metric.
         /// </para>
         /// </summary>
         public Statistic Statistic
@@ -136,7 +135,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        ///  The unit for the metric. 
+        /// The unit for the metric.
         /// </para>
         /// </summary>
         public StandardUnit Unit

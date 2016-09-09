@@ -29,8 +29,12 @@ namespace ThirdParty.Json.LitJson
         private IList<JsonData>               inst_array;
         private bool                          inst_boolean;
         private double                        inst_double;
-        private int                           inst_int;
-        private long                          inst_long;
+
+        // number datatype that holds int, uint, long, and ulong values.
+        // type field keeps track of the actual type of the value
+        // and casted before returning the value to the client code.
+        private ulong                         inst_number;
+
         private IDictionary<string, JsonData> inst_object;
         private string                        inst_string;
         private string                        json;
@@ -62,8 +66,16 @@ namespace ThirdParty.Json.LitJson
             get { return type == JsonType.Int; }
         }
 
+        public bool IsUInt {
+            get { return type == JsonType.UInt; }
+        }
+
         public bool IsLong {
             get { return type == JsonType.Long; }
+        }
+
+        public bool IsULong {
+            get { return type == JsonType.ULong; }
         }
 
         public bool IsObject {
@@ -337,13 +349,19 @@ namespace ThirdParty.Json.LitJson
         public JsonData (int number)
         {
             type = JsonType.Int;
-            inst_int = number;
+            inst_number = (ulong)number;
         }
 
         public JsonData (long number)
         {
             type = JsonType.Long;
-            inst_long = number;
+            inst_number = (ulong)number;
+        }
+
+        public JsonData(ulong number)
+        {
+            type = JsonType.ULong;
+            inst_number = number;
         }
 
         public JsonData (object obj)
@@ -362,13 +380,20 @@ namespace ThirdParty.Json.LitJson
 
             if (obj is Int32) {
                 type = JsonType.Int;
-                inst_int = (int) obj;
+                inst_number = (ulong)obj;
                 return;
             }
 
             if (obj is Int64) {
                 type = JsonType.Long;
-                inst_long = (long) obj;
+                inst_number = (ulong) obj;
+                return;
+            }
+
+            if (obj is UInt64)
+            {
+                type = JsonType.Long;
+                inst_number = (ulong)obj;
                 return;
             }
 
@@ -439,24 +464,47 @@ namespace ThirdParty.Json.LitJson
 
         public static explicit operator Int32 (JsonData data)
         {
-            if (data.type != JsonType.Int && data.type != JsonType.Long)
+            if (data.type != JsonType.Int)
             {
                 throw new InvalidCastException (
                     "Instance of JsonData doesn't hold an int");
             }
             
-            return data.type == JsonType.Int?data.inst_int:(int)data.inst_long;
+            return (int)data.inst_number;
+        }
+
+        public static explicit operator UInt32(JsonData data)
+        {
+            if (data.type != JsonType.UInt)
+            {
+                throw new InvalidCastException(
+                    "Instance of JsonData doesn't hold an int");
+            }
+
+            return (uint)data.inst_number;
         }
 
         public static explicit operator Int64 (JsonData data)
         {
-            if (data.type != JsonType.Long && data.type != JsonType.Int)
+            if (data.type != JsonType.Int && data.type != JsonType.Long)
             {
                 throw new InvalidCastException (
                     "Instance of JsonData doesn't hold an long");
             }
-            
-            return data.type == JsonType.Long? data.inst_long:data.inst_int;
+
+            return (long)data.inst_number;
+        }
+
+        [CLSCompliant(false)]
+        public static explicit operator UInt64(JsonData data)
+        {
+            if (data.type != JsonType.UInt && data.type != JsonType.ULong)
+            {
+                throw new InvalidCastException(
+                    "Instance of JsonData doesn't hold an long");
+            }
+
+            return (ulong)data.inst_number;
         }
 
         public static explicit operator String (JsonData data)
@@ -554,20 +602,38 @@ namespace ThirdParty.Json.LitJson
 
         int IJsonWrapper.GetInt ()
         {
-            if (type != JsonType.Int && type!=JsonType.Long)
+            if (type != JsonType.Int)
                 throw new InvalidOperationException (
                     "JsonData instance doesn't hold an int");
 
-            return type == JsonType.Int ? inst_int : (int) inst_long;
+            return (int)inst_number;
+        }
+
+        uint IJsonWrapper.GetUInt()
+        {
+            if (type != JsonType.UInt)
+                throw new InvalidOperationException(
+                    "JsonData instance doesn't hold an int");
+
+            return (uint)inst_number;
         }
 
         long IJsonWrapper.GetLong ()
         {
-            if (type != JsonType.Long && type!=JsonType.Int)
+            if (type != JsonType.Long)
                 throw new InvalidOperationException (
                     "JsonData instance doesn't hold a long");
 
-            return type == JsonType.Long?inst_long:inst_int;
+            return (long)inst_number;
+        }
+
+        ulong IJsonWrapper.GetULong()
+        {
+            if (type != JsonType.ULong)
+                throw new InvalidOperationException(
+                    "JsonData instance doesn't hold a long");
+
+            return inst_number;
         }
 
         string IJsonWrapper.GetString ()
@@ -596,14 +662,28 @@ namespace ThirdParty.Json.LitJson
         void IJsonWrapper.SetInt (int val)
         {
             type = JsonType.Int;
-            inst_int = val;
+            inst_number = (ulong) val;
+            json = null;
+        }
+
+        void IJsonWrapper.SetUInt(uint val)
+        {
+            type = JsonType.UInt;
+            inst_number = (ulong)val;
             json = null;
         }
 
         void IJsonWrapper.SetLong (long val)
         {
             type = JsonType.Long;
-            inst_long = val;
+            inst_number = (ulong)val;
+            json = null;
+        }
+
+        void IJsonWrapper.SetULong(ulong val)
+        {
+            type = JsonType.ULong;
+            inst_number = val;
             json = null;
         }
 
@@ -860,22 +940,12 @@ namespace ThirdParty.Json.LitJson
             case JsonType.String:
                 return this.inst_string.Equals (x.inst_string);
 
-            case JsonType.Int:{
-                if(x.IsLong){
-                    if(x.inst_long <  Int32.MinValue || x.inst_long > Int32.MaxValue)
-                        return false;
-                    return this.inst_int.Equals((int)x.inst_long);
-                }
-                return this.inst_int.Equals (x.inst_int);
-            }
-            case JsonType.Long:{
-                if(x.IsInt){
-                    if(this.inst_long < Int32.MinValue || this.inst_long > Int32.MaxValue)
-                        return false;
-                    return x.inst_int.Equals((int)this.inst_long);
-                }
-                return this.inst_long.Equals (x.inst_long);
-            }
+            case JsonType.Int:
+            case JsonType.UInt:
+            case JsonType.Long:
+            case JsonType.ULong:
+                return this.inst_number.Equals (x.inst_number);
+
             case JsonType.Double:
                 return this.inst_double.Equals (x.inst_double);
 
@@ -914,11 +984,19 @@ namespace ThirdParty.Json.LitJson
                 break;
 
             case JsonType.Int:
-                inst_int = default (Int32);
+                inst_number = default (Int32);
+                break;
+            
+            case JsonType.UInt:
+                inst_number = default(UInt32);
                 break;
 
             case JsonType.Long:
-                inst_long = default (Int64);
+                inst_number = default (Int64);
+                break;
+            
+            case JsonType.ULong:
+                inst_number = default(UInt64);
                 break;
 
             case JsonType.Double:
@@ -972,10 +1050,10 @@ namespace ThirdParty.Json.LitJson
                 return inst_double.ToString ();
 
             case JsonType.Int:
-                return inst_int.ToString ();
-
+            case JsonType.UInt:
             case JsonType.Long:
-                return inst_long.ToString ();
+            case JsonType.ULong:
+                return inst_number.ToString ();
 
             case JsonType.Object:
                 return "JsonData object";

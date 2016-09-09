@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>affinity</code> - The affinity setting for an instance running on a Dedicated
-        /// host (<code>default</code> | <code>host</code>).
+        /// Host (<code>default</code> | <code>host</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -122,7 +122,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>host-Id</code> - The ID of the Dedicated host on which the instance is running,
+        ///  <code>host-id</code> - The ID of the Dedicated Host on which the instance is running,
         /// if applicable.
         /// </para>
         ///  </li> <li> 

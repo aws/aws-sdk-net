@@ -139,8 +139,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The instance type. For more information about the instance types that you can import,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/VMImportPrerequisites.html">Before
-        /// You Get Started</a> in the Amazon Elastic Compute Cloud User Guide.
+        /// see <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#vmimport-instance-types">Instance
+        /// Types</a> in the VM Import/Export User Guide.
         /// </para>
         /// </summary>
         public InstanceType InstanceType

@@ -33,13 +33,21 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// To get information about the traffic policy instance, send a <code>GET</code> request
-    /// to the <code>/<i>Route 53 API version</i>/trafficpolicyinstance</code> resource.
+    /// Send a <code>GET</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code>
+    /// resource.
     /// </para>
-    ///  <note>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
+    ///  <note> 
+    /// <para>
+    /// After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
     /// request, there's a brief delay while Amazon Route 53 creates the resource record sets
     /// that are specified in the traffic policy definition. For more information, see the
-    /// <code>State</code> response element.</note>
+    /// <code>State</code> response element.
+    /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// In the Amazon Route 53 console, traffic policy instances are known as policy records.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetTrafficPolicyInstanceRequest : AmazonRoute53Request
     {

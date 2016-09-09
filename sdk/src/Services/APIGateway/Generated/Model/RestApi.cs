@@ -29,6 +29,9 @@ namespace Amazon.APIGateway.Model
 {
     /// <summary>
     /// Represents a REST API.
+    /// 
+    ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create
+    /// an API</a> </div>
     /// </summary>
     public partial class RestApi
     {
@@ -113,7 +116,11 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Warnings.
+        /// Gets and sets the property Warnings. 
+        /// <para>
+        /// The warning messages reported when <code>failonwarnings</code> is turned on during
+        /// API import.
+        /// </para>
         /// </summary>
         public List<string> Warnings
         {

@@ -445,7 +445,7 @@ namespace ServiceClientGenerator
                         }
                         else
                         {
-                            queryParams.Add(nameValuePair[0], string.Empty);
+                            queryParams.Add(nameValuePair[0], null);
                         }
                     }
                 }

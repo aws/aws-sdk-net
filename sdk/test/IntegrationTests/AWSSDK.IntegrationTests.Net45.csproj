@@ -83,7 +83,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup Condition="Exists('$(AnalyzerPath)')">
-    <Analyzer Include="$(AnalyzerPath)"/>
+    <Analyzer Include="$(AnalyzerPath)" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -216,6 +216,10 @@
       <Project>{156D9313-7650-4141-8DCD-D3C8DBBF7642}</Project>
       <Name>AWSSDK.ElasticBeanstalk.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ElasticLoadBalancingV2\AWSSDK.ElasticLoadBalancingV2.Net45.csproj">
+      <Project>{98942fe9-3700-42f2-8092-56611f4fc0b1}</Project>
+      <Name>AWSSDK.ElasticLoadBalancingV2.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ElasticLoadBalancing\AWSSDK.ElasticLoadBalancing.Net45.csproj">
       <Project>{AB715742-9EE8-4D2A-AD38-F0E75723A9AB}</Project>
       <Name>AWSSDK.ElasticLoadBalancing.Net45</Name>
@@ -332,6 +336,10 @@
       <Project>{E8FF4CE2-1557-428B-97CE-859C8DCBA2D2}</Project>
       <Name>AWSSDK.SimpleWorkflow.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Snowball\AWSSDK.Snowball.Net45.csproj">
+      <Project>{48de2dba-d6de-4677-8a5c-df42cd34ebe1}</Project>
+      <Name>AWSSDK.Snowball.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\SQS\AWSSDK.SQS.Net45.csproj">
       <Project>{3E6F35CA-693B-45D6-8AC0-BAE9BE94F2BB}</Project>
       <Name>AWSSDK.SQS.Net45</Name>
@@ -347,6 +355,10 @@
     <ProjectReference Include="..\..\src\Services\WorkSpaces\AWSSDK.WorkSpaces.Net45.csproj">
       <Project>{60819F67-5CD7-41A4-9E02-BB27E5A3F715}</Project>
       <Name>AWSSDK.WorkSpaces.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnitTests\AWSSDK.UnitTests.Net45.csproj">
+      <Project>{12d065e5-0745-4c75-af9d-34794913346f}</Project>
+      <Name>AWSSDK.UnitTests.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

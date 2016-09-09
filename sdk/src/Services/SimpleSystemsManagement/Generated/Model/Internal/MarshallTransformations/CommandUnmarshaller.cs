@@ -94,6 +94,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NotificationConfig", targetDepth))
+                {
+                    var unmarshaller = NotificationConfigUnmarshaller.Instance;
+                    unmarshalledObject.NotificationConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OutputS3BucketName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -116,6 +122,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.RequestedDateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ServiceRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

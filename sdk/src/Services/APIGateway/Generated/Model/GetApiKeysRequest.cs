@@ -33,8 +33,29 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class GetApiKeysRequest : AmazonAPIGatewayRequest
     {
+        private bool? _includeValues;
         private int? _limit;
+        private string _nameQuery;
         private string _position;
+
+        /// <summary>
+        /// Gets and sets the property IncludeValues. 
+        /// <para>
+        /// A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>)
+        /// the result contains key values.
+        /// </para>
+        /// </summary>
+        public bool IncludeValues
+        {
+            get { return this._includeValues.GetValueOrDefault(); }
+            set { this._includeValues = value; }
+        }
+
+        // Check to see if IncludeValues property is set
+        internal bool IsSetIncludeValues()
+        {
+            return this._includeValues.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Limit. 
@@ -52,6 +73,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetLimit()
         {
             return this._limit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NameQuery. 
+        /// <para>
+        /// The name of queried API keys.
+        /// </para>
+        /// </summary>
+        public string NameQuery
+        {
+            get { return this._nameQuery; }
+            set { this._nameQuery = value; }
+        }
+
+        // Check to see if NameQuery property is set
+        internal bool IsSetNameQuery()
+        {
+            return this._nameQuery != null;
         }
 
         /// <summary>

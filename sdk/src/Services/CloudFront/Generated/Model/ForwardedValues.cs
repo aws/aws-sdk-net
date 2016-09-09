@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-01-28.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,6 +35,7 @@ namespace Amazon.CloudFront.Model
         private CookiePreference _cookies;
         private Headers _headers;
         private bool? _queryString;
+        private QueryStringCacheKeys _queryStringCacheKeys;
 
         /// <summary>
         /// Gets and sets the property Cookies. A complex type that specifies how CloudFront handles
@@ -69,9 +70,23 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QueryString. Indicates whether you want CloudFront to forward
-        /// query strings to the origin that is associated with this cache behavior. If so, specify
-        /// true; if not, specify false.
+        /// Gets and sets the property QueryString. 
+        /// <para>
+        /// Indicates whether you want CloudFront to forward query strings to the origin that
+        /// is associated with this cache behavior and cache based on the query string parameters.
+        /// CloudFront behavior depends on the value of QueryString and on the values that you
+        /// specify for QueryStringCacheKeys, if any:
+        /// </para>
+        ///  <ul> <li>If you specify true for QueryString and you don't specify any values for
+        /// QueryStringCacheKeys, CloudFront forwards all query string parameters to the origin
+        /// and caches based on all query string parameters. Depending on how many query string
+        /// parameters and values you have, this can adversely affect performance because CloudFront
+        /// must forward more requests to the origin.</li> <li>If you specify true for QueryString
+        /// and you specify one or more values for QueryStringCacheKeys, CloudFront forwards all
+        /// query string parameters to the origin, but it only caches based on the query string
+        /// parameters that you specify.</li> <li>If you specify false for QueryString, CloudFront
+        /// doesn't forward any query string parameters to the origin, and doesn't cache based
+        /// on query string parameters.</li> </ul>
         /// </summary>
         public bool QueryString
         {
@@ -83,6 +98,25 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetQueryString()
         {
             return this._queryString.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryStringCacheKeys. 
+        /// <para>
+        /// A complex type that contains information about the query string parameters that you
+        /// want CloudFront to use for caching for this cache behavior.
+        /// </para>
+        /// </summary>
+        public QueryStringCacheKeys QueryStringCacheKeys
+        {
+            get { return this._queryStringCacheKeys; }
+            set { this._queryStringCacheKeys = value; }
+        }
+
+        // Check to see if QueryStringCacheKeys property is set
+        internal bool IsSetQueryStringCacheKeys()
+        {
+            return this._queryStringCacheKeys != null;
         }
 
     }

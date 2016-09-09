@@ -46,9 +46,9 @@ namespace Amazon.GameLift
     ///  
     /// <para>
     /// This reference describes the low-level service API for GameLift. You can call this
-    /// API directly or use the <a href="https://aws.amazon.com/tools/">AWS SDK</a> for your
-    /// preferred language. The AWS SDK includes a set of high-level GameLift actions multiplayer
-    /// game sessions. Alternatively, you can use the <a href="https://aws.amazon.com/cli/">AWS
+    /// API directly or use the <a href="https://aws.amazon.com/tools/#sdk">AWS SDK</a> for
+    /// your preferred language. The AWS SDK includes a set of high-level GameLift actions
+    /// multiplayer game sessions. Alternatively, you can use the <a href="https://aws.amazon.com/cli/">AWS
     /// command-line interface</a> (CLI) tool, which includes commands for GameLift. For administrative
     /// actions, you can also use the Amazon GameLift console. 
     /// </para>
@@ -72,8 +72,8 @@ namespace Amazon.GameLift
     /// game sessions and player sessions.
     /// </para>
     ///  <ul> <li> <b>Game sessions</b> <ul> <li><a>CreateGameSession</a></li> <li><a>DescribeGameSessions</a></li>
-    /// <li><a>DescribeGameSessionDetails</a></li> <li><a>UpdateGameSession</a></li> </ul>
-    /// </li> <li> <b>Player sessions</b> <ul> <li><a>CreatePlayerSession</a></li> <li><a>CreatePlayerSessions</a></li>
+    /// <li><a>DescribeGameSessionDetails</a></li> <li><a>UpdateGameSession</a></li> <li><a>SearchGameSessions</a></li>
+    /// </ul> </li> <li> <b>Player sessions</b> <ul> <li><a>CreatePlayerSession</a></li> <li><a>CreatePlayerSessions</a></li>
     /// <li><a>DescribePlayerSessions</a></li> </ul> </li> <li> <b>Other actions:</b> <ul>
     /// <li><a>GetGameSessionLogUrl</a></li> </ul> </li> </ul> 
     /// <para>
@@ -369,25 +369,26 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Initializes a new build record and generates information required to upload a game
-        /// build to Amazon GameLift. Once the build record has been created and is in an <code>INITIALIZED</code>
-        /// state, you can upload your game build.
+        /// build to Amazon GameLift. Once the build record has been created and its status is
+        /// <code>INITIALIZED</code>, you can upload your game build.
         /// 
         ///  <important> 
         /// <para>
         /// Do not use this API action unless you are using your own Amazon Simple Storage Service
         /// (Amazon S3) client and need to manually upload your build files. Instead, to create
         /// a build, use the CLI command <code>upload-build</code>, which creates a new build
-        /// record and uploads the build files in one step. (See the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
-        /// GameLift Developer Guide</a> for more details on the CLI and the upload process.)
-        /// 
+        /// record and uploads the build files in one step. (See the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Amazon
+        /// GameLift Developer Guide</a> help on packaging and uploading your build.) 
         /// </para>
         ///  </important> 
         /// <para>
-        /// To create a new build, optionally specify a build name and version. This metadata
-        /// is stored with other properties in the build record and is displayed in the GameLift
-        /// console (it is not visible to players). If successful, this action returns the newly
-        /// created build record along with the Amazon S3 storage location and AWS account credentials.
-        /// Use the location and credentials to upload your game build.
+        /// To create a new build, identify the operating system of the game server binaries.
+        /// All game servers in a build must use the same operating system. Optionally, specify
+        /// a build name and version; this metadata is stored with other properties in the build
+        /// record and is displayed in the GameLift console (it is not visible to players). If
+        /// successful, this action returns the newly created build record along with the Amazon
+        /// S3 storage location and AWS account credentials. Use the location and credentials
+        /// to upload your game build.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBuild service method.</param>
@@ -445,8 +446,8 @@ namespace Amazon.GameLift
         /// game sessions. You configure a fleet to create instances with certain hardware specifications
         /// (see <a href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
         /// for more information), and deploy a specified game build to each instance. A newly
-        /// created fleet passes through several states; once it reaches the <code>ACTIVE</code>
-        /// state, it can begin hosting game sessions.
+        /// created fleet passes through several statuses; once it reaches the <code>ACTIVE</code>
+        /// status, it can begin hosting game sessions.
         /// 
         ///  
         /// <para>
@@ -455,15 +456,15 @@ namespace Amazon.GameLift
         /// settings: (1) a runtime configuration describing what server processes to run on each
         /// instance in the fleet (required to create fleet), (2) access permissions for inbound
         /// traffic, (3) fleet-wide game session protection, and (4) the location of default log
-        /// files for GameLift to upload and store. 
+        /// files for GameLift to upload and store.
         /// </para>
         ///  
         /// <para>
         /// If the <code>CreateFleet</code> call is successful, Amazon GameLift performs the following
         /// tasks:
         /// </para>
-        ///  <ul> <li>Creates a fleet record and sets the state to <code>NEW</code> (followed
-        /// by other states as the fleet is activated).</li> <li>Sets the fleet's capacity to
+        ///  <ul> <li>Creates a fleet record and sets the status to <code>NEW</code> (followed
+        /// by other statuses as the fleet is activated).</li> <li>Sets the fleet's capacity to
         /// 1 "desired", which causes GameLift to start one new EC2 instance.</li> <li>Starts
         /// launching server processes on the instance. If the fleet is configured to run multiple
         /// server processes per instance, GameLift staggers each launch by a few seconds.</li>
@@ -543,7 +544,7 @@ namespace Amazon.GameLift
         /// Creates a multiplayer game session for players. This action creates a game session
         /// record and assigns the new session to an instance in the specified fleet, which initializes
         /// a new server process to host the game session. A fleet must be in an <code>ACTIVE</code>
-        /// state before a game session can be created in it.
+        /// status before a game session can be created in it.
         /// 
         ///  
         /// <para>
@@ -586,8 +587,8 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
         /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in this
-        /// exception is the message defined in the TerminalRoutingStrategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests
@@ -625,7 +626,7 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Adds a player to a game session and creates a player session record. A game session
-        /// must be in an <code>ACTIVE</code> state, have a creation policy of <code>ALLOW_ALL</code>,
+        /// must be in an <code>ACTIVE</code> status, have a creation policy of <code>ALLOW_ALL</code>,
         /// and have an open player slot before players can be added to the session.
         /// 
         ///  
@@ -663,8 +664,8 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
         /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in this
-        /// exception is the message defined in the TerminalRoutingStrategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests
@@ -680,7 +681,7 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Adds a player to a game session and creates a player session record. A game session
-        /// must be in an <code>ACTIVE</code> state, have a creation policy of <code>ALLOW_ALL</code>,
+        /// must be in an <code>ACTIVE</code> status, have a creation policy of <code>ALLOW_ALL</code>,
         /// and have an open player slot before players can be added to the session.
         /// 
         ///  
@@ -717,8 +718,8 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
         /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in this
-        /// exception is the message defined in the TerminalRoutingStrategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests
@@ -734,7 +735,7 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Adds a player to a game session and creates a player session record. A game session
-        /// must be in an <code>ACTIVE</code> state, have a creation policy of <code>ALLOW_ALL</code>,
+        /// must be in an <code>ACTIVE</code> status, have a creation policy of <code>ALLOW_ALL</code>,
         /// and have an open player slot before players can be added to the session.
         /// 
         ///  
@@ -775,8 +776,8 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
         /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in this
-        /// exception is the message defined in the TerminalRoutingStrategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests
@@ -816,8 +817,8 @@ namespace Amazon.GameLift
         /// Adds a group of players to a game session. Similar to <a>CreatePlayerSession</a>,
         /// this action allows you to add multiple players in a single call, which is useful for
         /// games that provide party and/or matchmaking features. A game session must be in an
-        /// <code>ACTIVE</code> state, have a creation policy of <code>ALLOW_ALL</code>, and have
-        /// an open player slot before players can be added to the session.
+        /// <code>ACTIVE</code> status, have a creation policy of <code>ALLOW_ALL</code>, and
+        /// have an open player slot before players can be added to the session.
         /// 
         ///  
         /// <para>
@@ -854,8 +855,8 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
         /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in this
-        /// exception is the message defined in the TerminalRoutingStrategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests
@@ -873,8 +874,8 @@ namespace Amazon.GameLift
         /// Adds a group of players to a game session. Similar to <a>CreatePlayerSession</a>,
         /// this action allows you to add multiple players in a single call, which is useful for
         /// games that provide party and/or matchmaking features. A game session must be in an
-        /// <code>ACTIVE</code> state, have a creation policy of <code>ALLOW_ALL</code>, and have
-        /// an open player slot before players can be added to the session.
+        /// <code>ACTIVE</code> status, have a creation policy of <code>ALLOW_ALL</code>, and
+        /// have an open player slot before players can be added to the session.
         /// 
         ///  
         /// <para>
@@ -910,8 +911,8 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
         /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in this
-        /// exception is the message defined in the TerminalRoutingStrategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests
@@ -929,8 +930,8 @@ namespace Amazon.GameLift
         /// Adds a group of players to a game session. Similar to <a>CreatePlayerSession</a>,
         /// this action allows you to add multiple players in a single call, which is useful for
         /// games that provide party and/or matchmaking features. A game session must be in an
-        /// <code>ACTIVE</code> state, have a creation policy of <code>ALLOW_ALL</code>, and have
-        /// an open player slot before players can be added to the session.
+        /// <code>ACTIVE</code> status, have a creation policy of <code>ALLOW_ALL</code>, and
+        /// have an open player slot before players can be added to the session.
         /// 
         ///  
         /// <para>
@@ -970,8 +971,8 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
         /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in this
-        /// exception is the message defined in the TerminalRoutingStrategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests
@@ -2229,8 +2230,8 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
         /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in this
-        /// exception is the message defined in the TerminalRoutingStrategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests
@@ -2298,8 +2299,8 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
         /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in this
-        /// exception is the message defined in the TerminalRoutingStrategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests
@@ -2714,8 +2715,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves build records for all builds associated with the AWS account in use. You
-        /// can limit results to builds in a specific state using the <code>Status</code> parameter.
-        /// Use the pagination parameters to retrieve results in a set of sequential pages. 
+        /// can limit results to builds that are in a specific status by using the <code>Status</code>
+        /// parameter. Use the pagination parameters to retrieve results in a set of sequential
+        /// pages. 
         /// 
         ///  <note> 
         /// <para>
@@ -2928,7 +2930,7 @@ namespace Amazon.GameLift
         /// <para>
         /// Upload credentials are returned when you create the build, but they have a limited
         /// lifespan. You can get fresh credentials and use them to re-upload game files until
-        /// the state of that build changes to <code>READY</code>. Once this happens, you must
+        /// the status of that build changes to <code>READY</code>. Once this happens, you must
         /// create a brand new build.
         /// </para>
         /// </summary>
@@ -2974,7 +2976,7 @@ namespace Amazon.GameLift
         /// <para>
         /// Upload credentials are returned when you create the build, but they have a limited
         /// lifespan. You can get fresh credentials and use them to re-upload game files until
-        /// the state of that build changes to <code>READY</code>. Once this happens, you must
+        /// the status of that build changes to <code>READY</code>. Once this happens, you must
         /// create a brand new build.
         /// </para>
         /// </summary>
@@ -3021,7 +3023,7 @@ namespace Amazon.GameLift
         /// <para>
         /// Upload credentials are returned when you create the build, but they have a limited
         /// lifespan. You can get fresh credentials and use them to re-upload game files until
-        /// the state of that build changes to <code>READY</code>. Once this happens, you must
+        /// the status of that build changes to <code>READY</code>. Once this happens, you must
         /// create a brand new build.
         /// </para>
         /// </summary>
@@ -3097,8 +3099,8 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
         /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in this
-        /// exception is the message defined in the TerminalRoutingStrategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests
@@ -3132,8 +3134,8 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
         /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in this
-        /// exception is the message defined in the TerminalRoutingStrategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests
@@ -3171,8 +3173,8 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
         /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in this
-        /// exception is the message defined in the TerminalRoutingStrategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests
@@ -3199,6 +3201,101 @@ namespace Amazon.GameLift
             var unmarshaller = ResolveAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<ResolveAliasRequest,ResolveAliasResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchGameSessions
+
+
+        /// <summary>
+        /// Retrieves a list of game sessions in a fleet that match a set of search criteria and
+        /// sorts them in a specified order. Currently game session searches are limited to a
+        /// single fleet. Search results include only game sessions that are in ACTIVE status.
+        /// 
+        ///  
+        /// <para>
+        /// You can search or sort by the following game session attributes:
+        /// </para>
+        ///  <ul> <li> <b>gameSessionId</b> -- ID value assigned to a game session. This unique
+        /// value is returned in a <a>GameSession</a> object when a new game session is created.
+        /// </li> <li> <b>gameSessionName</b> -- Name assigned to a game session. This value is
+        /// set when requesting a new game session with <a>CreateGameSession</a> or updating with
+        /// <a>UpdateGameSession</a>. Game session names do not need to be unique to a game session.</li>
+        /// <li> <b>creationTimeMillis</b> -- Value indicating when a game session was created.
+        /// It is expressed in Unix time as milliseconds.</li> <li> <b>playerSessionCount</b>
+        /// -- Number of players currently connected to a game session. This value changes rapidly
+        /// as players join the session or drop out.</li> <li> <b>maximumSessions</b> -- Maximum
+        /// number of player sessions allowed for a game session. This value is set when requesting
+        /// a new game session with <a>CreateGameSession</a> or updating with <a>UpdateGameSession</a>.</li>
+        /// <li> <b>hasAvailablePlayerSessions</b> -- Boolean value indicating whether or not
+        /// a game session has reached its maximum number of players. When searching with this
+        /// attribute, the search value must be <code>true</code> or <code>false</code>. It is
+        /// highly recommended that all search requests include this filter attribute to optimize
+        /// search performance and return only sessions that players can join. </li> </ul> 
+        /// <para>
+        /// To search or sort, specify either a fleet ID or an alias ID, and provide a search
+        /// filter expression, a sort expression, or both. Use the pagination parameters to retrieve
+        /// results as a set of sequential pages. If successful, a collection of <a>GameSession</a>
+        /// objects matching the request is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Returned values for <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
+        /// change quickly as players join sessions and others drop out. Results should be considered
+        /// a snapshot in time. Be sure to refresh search results often, and handle sessions that
+        /// fill up before a player can join. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchGameSessions service method.</param>
+        /// 
+        /// <returns>The response from the SearchGameSessions service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests, either immediately or after a back-off period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameters specified as part of the request are invalid. Correct the invalid
+        /// parameters before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// A service resource associated with the request could not be found. Clients should
+        /// not retry such requests
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
+        /// The service is unable to resolve the routing for a particular alias because it has
+        /// a terminal <a>RoutingStrategy</a> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests
+        /// </exception>
+        public SearchGameSessionsResponse SearchGameSessions(SearchGameSessionsRequest request)
+        {
+            var marshaller = new SearchGameSessionsRequestMarshaller();
+            var unmarshaller = SearchGameSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchGameSessionsRequest,SearchGameSessionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchGameSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchGameSessions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<SearchGameSessionsResponse> SearchGameSessionsAsync(SearchGameSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new SearchGameSessionsRequestMarshaller();
+            var unmarshaller = SearchGameSessionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchGameSessionsRequest,SearchGameSessionsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3605,7 +3702,7 @@ namespace Amazon.GameLift
         /// Updates the current runtime configuration for the specified fleet, which tells GameLift
         /// how to launch server processes on instances in the fleet. You can update a fleet's
         /// runtime configuration at any time after the fleet is created; it does not need to
-        /// be in an <code>ACTIVE</code> state.
+        /// be in an <code>ACTIVE</code> status.
         /// 
         ///  
         /// <para>

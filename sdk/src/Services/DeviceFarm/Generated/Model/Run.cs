@@ -235,7 +235,15 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li>
         /// <para>
-        /// ERRORED: An error condition.
+        /// PENDING: A pending condition.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// PASSED: A passing condition.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// WARNED: A warning condition.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -247,19 +255,11 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
+        /// ERRORED: An error condition.
+        /// </para>
+        /// </li> <li>
+        /// <para>
         /// STOPPED: A stopped condition.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// PASSED: A passing condition.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// PENDING: A pending condition.
-        /// </para>
-        /// </li> <li>
-        /// <para>
-        /// WARNED: A warning condition.
         /// </para>
         /// </li> </ul>
         /// </summary>
@@ -304,11 +304,15 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li>
         /// <para>
-        /// COMPLETED: A completed status.
+        /// PENDING: A pending status.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// PENDING: A pending status.
+        /// PENDING_CONCURRENCY: A pending concurrency status.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// PENDING_DEVICE: A pending device status.
         /// </para>
         /// </li> <li>
         /// <para>
@@ -316,11 +320,23 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         /// </li> <li>
         /// <para>
+        /// SCHEDULING: A scheduling status.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// PREPARING: A preparing status.
+        /// </para>
+        /// </li> <li>
+        /// <para>
         /// RUNNING: A running status.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// SCHEDULING: A scheduling status.
+        /// COMPLETED: A completed status.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// STOPPING: A stopping status.
         /// </para>
         /// </li> </ul>
         /// </summary>

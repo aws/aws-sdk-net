@@ -30,12 +30,12 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// <summary>
     /// Container for the parameters to the ConfigureHealthCheck operation.
     /// Specifies the health check settings to use when evaluating the health state of your
-    /// back-end instances.
+    /// EC2 instances.
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/elb-healthchecks.html">Configure
-    /// Health Checks</a> in the <i>Elastic Load Balancing Developer Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html">Configure
+    /// Health Checks for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
     /// </para>
     /// </summary>
     public partial class ConfigureHealthCheckRequest : AmazonElasticLoadBalancingRequest
@@ -52,7 +52,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Instantiates ConfigureHealthCheckRequest with the parameterized properties
         /// </summary>
         /// <param name="loadBalancerName">The name of the load balancer.</param>
-        /// <param name="healthCheck">The configuration information for the new health check.</param>
+        /// <param name="healthCheck">The configuration information.</param>
         public ConfigureHealthCheckRequest(string loadBalancerName, HealthCheck healthCheck)
         {
             _loadBalancerName = loadBalancerName;
@@ -62,7 +62,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property HealthCheck. 
         /// <para>
-        /// The configuration information for the new health check.
+        /// The configuration information.
         /// </para>
         /// </summary>
         public HealthCheck HealthCheck

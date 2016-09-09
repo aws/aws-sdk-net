@@ -35,6 +35,7 @@ namespace Amazon.RDS.Model
         private bool? _allowsVpcAndNonVpcInstanceMemberships;
         private string _engineName;
         private string _majorEngineVersion;
+        private string _optionGroupArn;
         private string _optionGroupDescription;
         private string _optionGroupName;
         private List<Option> _options = new List<Option>();
@@ -94,6 +95,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetMajorEngineVersion()
         {
             return this._majorEngineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OptionGroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the option group.
+        /// </para>
+        /// </summary>
+        public string OptionGroupArn
+        {
+            get { return this._optionGroupArn; }
+            set { this._optionGroupArn = value; }
+        }
+
+        // Check to see if OptionGroupArn property is set
+        internal bool IsSetOptionGroupArn()
+        {
+            return this._optionGroupArn != null;
         }
 
         /// <summary>

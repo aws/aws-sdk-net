@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains information about the most recent failure for the specified
-    /// health check.
+    /// A complex type that contains the response to a <code>GetHealthCheckLastFailureReason</code>
+    /// request.
     /// </summary>
     public partial class GetHealthCheckLastFailureReasonResponse : AmazonWebServiceResponse
     {
@@ -38,8 +38,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HealthCheckObservations. 
         /// <para>
-        /// A list that contains one <code>HealthCheckObservation</code> element for each Amazon
-        /// Route 53 health checker.
+        /// A list that contains one <code>Observation</code> element for each Amazon Route 53
+        /// health checker that is reporting a last failure reason. 
         /// </para>
         /// </summary>
         public List<HealthCheckObservation> HealthCheckObservations

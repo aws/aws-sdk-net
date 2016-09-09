@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contain information about the specified hosted zone.
+    /// A complex type that contains general information about the hosted zone.
     /// </summary>
     public partial class HostedZone
     {
@@ -46,9 +46,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates HostedZone with the parameterized properties
         /// </summary>
-        /// <param name="id">The ID of the specified hosted zone.</param>
-        /// <param name="name">The name of the domain. This must be a fully-specified domain, for example, www.example.com. The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified. This means that Amazon Route 53 treats www.example.com (without a trailing dot) and www.example.com. (with a trailing dot) as identical. This is the name you have registered with your DNS registrar. You should ask your registrar to change the authoritative name servers for your domain to the set of <code>NameServers</code> elements returned in <code>DelegationSet</code>.</param>
-        /// <param name="callerReference">A unique string that identifies the request to create the hosted zone.</param>
+        /// <param name="id">The ID that Amazon Route 53 assigned to the hosted zone when you created it.</param>
+        /// <param name="name">The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar. For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>, and <code>-</code> (hyphen) and how to specify internationalized domain names, see <a>CreateHostedZone</a>.</param>
+        /// <param name="callerReference">The value that you specified for <code>CallerReference</code> when you created the hosted zone.</param>
         public HostedZone(string id, string name, string callerReference)
         {
             _id = id;
@@ -59,7 +59,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the specified hosted zone.
+        /// The ID that Amazon Route 53 assigned to the hosted zone when you created it.
         /// </para>
         /// </summary>
         public string Id
@@ -77,16 +77,14 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the domain. This must be a fully-specified domain, for example, www.example.com.
-        /// The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
-        /// qualified. This means that Amazon Route 53 treats www.example.com (without a trailing
-        /// dot) and www.example.com. (with a trailing dot) as identical.
+        /// The name of the domain. For public hosted zones, this is the name that you have registered
+        /// with your DNS registrar.
         /// </para>
         ///  
         /// <para>
-        /// This is the name you have registered with your DNS registrar. You should ask your
-        /// registrar to change the authoritative name servers for your domain to the set of <code>NameServers</code>
-        /// elements returned in <code>DelegationSet</code>.
+        /// For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>,
+        /// and <code>-</code> (hyphen) and how to specify internationalized domain names, see
+        /// <a>CreateHostedZone</a>.
         /// </para>
         /// </summary>
         public string Name
@@ -104,7 +102,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property CallerReference. 
         /// <para>
-        /// A unique string that identifies the request to create the hosted zone.
+        /// The value that you specified for <code>CallerReference</code> when you created the
+        /// hosted zone.
         /// </para>
         /// </summary>
         public string CallerReference
@@ -122,7 +121,10 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Config. 
         /// <para>
-        /// A complex type that contains the <code>Comment</code> element.
+        /// A complex type that includes the <code>Comment</code> and <code>PrivateZone</code>
+        /// elements. If you omitted the <code>HostedZoneConfig</code> and <code>Comment</code>
+        /// elements from the request, the <code>Config</code> and <code>Comment</code> elements
+        /// don't appear in the response.
         /// </para>
         /// </summary>
         public HostedZoneConfig Config
@@ -140,7 +142,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property ResourceRecordSetCount. 
         /// <para>
-        /// Total number of resource record sets in the hosted zone.
+        /// The number of resource record sets in the hosted zone.
         /// </para>
         /// </summary>
         public long ResourceRecordSetCount

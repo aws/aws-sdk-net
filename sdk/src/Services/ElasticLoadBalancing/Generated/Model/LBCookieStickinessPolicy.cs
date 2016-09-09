@@ -43,7 +43,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Instantiates LBCookieStickinessPolicy with the parameterized properties
         /// </summary>
-        /// <param name="policyName">The name for the policy being created. The name must be unique within the set of policies for this load balancer.</param>
+        /// <param name="policyName">The name of the policy. This name must be unique within the set of policies for this load balancer.</param>
         /// <param name="cookieExpirationPeriod">The time period, in seconds, after which the cookie should be considered stale. If this parameter is not specified, the stickiness session lasts for the duration of the browser session.</param>
         public LBCookieStickinessPolicy(string policyName, long cookieExpirationPeriod)
         {
@@ -74,8 +74,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// The name for the policy being created. The name must be unique within the set of policies
-        /// for this load balancer.
+        /// The name of the policy. This name must be unique within the set of policies for this
+        /// load balancer.
         /// </para>
         /// </summary>
         public string PolicyName

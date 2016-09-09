@@ -103,7 +103,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// format to another. All captions must be in UTF-8. Elastic Transcoder supports two
         /// types of captions:
         /// </para>
-        ///  <ul> <li> 
+        ///  <ul> <li>
         /// <para>
         /// <b>Embedded:</b> Embedded captions are included in the same file as the audio and
         /// video. Elastic Transcoder supports only one embedded caption per language, to a maximum
@@ -122,7 +122,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// Elastic Transcoder supports a maximum of one embedded format per output.
         /// </para>
-        ///  </li> <li> 
+        /// </li> <li>
         /// <para>
         /// <b>Sidecar:</b> Sidecar captions are kept in a separate metadata file from the audio
         /// and video data. Sidecar captions require a player that is capable of understanding
@@ -140,7 +140,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Valid outputs include: <code>dfxp</code> (first div element only), <code>scc</code>,
         /// <code>srt</code>, and <code>webvtt</code>.
         /// </para>
-        ///  </li> </ul> 
+        /// </li> </ul> 
         /// <para>
         ///  If you want ttml or smpte-tt compatible captions, specify dfxp as your output format.
         /// </para>
@@ -443,7 +443,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         ///  The status of one output in a job. If you specified only one output for the job,
         /// <code>Outputs:Status</code> is always the same as <code>Job:Status</code>. If you
-        /// specified more than one output: <ul> <li> <code>Job:Status</code> and <code>Outputs:Status</code>
+        /// specified more than one output: <ul> <li><code>Job:Status</code> and <code>Outputs:Status</code>
         /// for all of the outputs is Submitted until Elastic Transcoder starts to process the
         /// first output.</li> <li>When Elastic Transcoder starts to process the first output,
         /// <code>Outputs:Status</code> for that output and <code>Job:Status</code> both change
@@ -578,11 +578,11 @@ namespace Amazon.ElasticTranscoder.Model
         ///  
         /// <para>
         /// Watermarks are added to the output video in the sequence in which you list them in
-        /// the job output&#x2014;the first watermark in the list is added to the output video
-        /// first, the second watermark in the list is added next, and so on. As a result, if
-        /// the settings in a preset cause Elastic Transcoder to place all watermarks in the same
-        /// location, the second watermark that you add will cover the first one, the third one
-        /// will cover the second, and the fourth one will cover the third.
+        /// the job output—the first watermark in the list is added to the output video first,
+        /// the second watermark in the list is added next, and so on. As a result, if the settings
+        /// in a preset cause Elastic Transcoder to place all watermarks in the same location,
+        /// the second watermark that you add will cover the first one, the third one will cover
+        /// the second, and the fourth one will cover the third.
         /// </para>
         /// </summary>
         public List<JobWatermark> Watermarks

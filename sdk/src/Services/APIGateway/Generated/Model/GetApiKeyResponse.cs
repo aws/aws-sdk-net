@@ -31,6 +31,9 @@ namespace Amazon.APIGateway.Model
     /// A resource that can be distributed to callers for executing <a>Method</a> resources
     /// that require an API key. API keys can be mapped to any <a>Stage</a> on any <a>RestApi</a>,
     /// which indicates that the callers with the API key can make requests to that stage.
+    /// 
+    ///  <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-api-keys.html">Use
+    /// API Keys</a> </div>
     /// </summary>
     public partial class GetApiKeyResponse : AmazonWebServiceResponse
     {
@@ -41,6 +44,7 @@ namespace Amazon.APIGateway.Model
         private DateTime? _lastUpdatedDate;
         private string _name;
         private List<string> _stageKeys = new List<string>();
+        private string _value;
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
@@ -167,6 +171,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetStageKeys()
         {
             return this._stageKeys != null && this._stageKeys.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The value of the API Key.
+        /// </para>
+        /// </summary>
+        public string Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
         }
 
     }

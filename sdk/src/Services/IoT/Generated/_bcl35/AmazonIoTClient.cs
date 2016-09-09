@@ -427,7 +427,7 @@ namespace Amazon.IoT
         /// Attaches the specified principal to the specified thing.
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
-        /// <param name="principal">The principal (certificate or other credential).</param>
+        /// <param name="principal">The principal, such as a certificate or other credential.</param>
         /// 
         /// <returns>The response from the AttachThingPrincipal service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
@@ -1419,7 +1419,7 @@ namespace Amazon.IoT
         #region  CreateThing
 
         /// <summary>
-        /// Creates a thing in the Thing Registry.
+        /// Creates a thing record in the thing registry.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateThing service method.</param>
         /// 
@@ -1432,6 +1432,9 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
         /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
@@ -1480,6 +1483,74 @@ namespace Amazon.IoT
         public  CreateThingResponse EndCreateThing(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateThingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateThingType
+
+        /// <summary>
+        /// Creates a new thing type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThingType service method.</param>
+        /// 
+        /// <returns>The response from the CreateThingType service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public CreateThingTypeResponse CreateThingType(CreateThingTypeRequest request)
+        {
+            var marshaller = new CreateThingTypeRequestMarshaller();
+            var unmarshaller = CreateThingTypeResponseUnmarshaller.Instance;
+
+            return Invoke<CreateThingTypeRequest,CreateThingTypeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateThingType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateThingType operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateThingType
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateThingType(CreateThingTypeRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateThingTypeRequestMarshaller();
+            var unmarshaller = CreateThingTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateThingTypeRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateThingType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateThingType.</param>
+        /// 
+        /// <returns>Returns a  CreateThingTypeResult from IoT.</returns>
+        public  CreateThingTypeResponse EndCreateThingType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateThingTypeResponse>(asyncResult);
         }
 
         #endregion
@@ -2069,9 +2140,9 @@ namespace Amazon.IoT
         #region  DeleteThing
 
         /// <summary>
-        /// Deletes the specified thing from the Thing Registry.
+        /// Deletes the specified thing.
         /// </summary>
-        /// <param name="thingName">The thing name.</param>
+        /// <param name="thingName">The name of the thing to delete.</param>
         /// 
         /// <returns>The response from the DeleteThing service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
@@ -2092,6 +2163,10 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of a thing passed to a command is different than
+        /// the version specified with the --version parameter.
+        /// </exception>
         public DeleteThingResponse DeleteThing(string thingName)
         {
             var request = new DeleteThingRequest();
@@ -2101,7 +2176,7 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes the specified thing from the Thing Registry.
+        /// Deletes the specified thing.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteThing service method.</param>
         /// 
@@ -2123,6 +2198,10 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of a thing passed to a command is different than
+        /// the version specified with the --version parameter.
         /// </exception>
         public DeleteThingResponse DeleteThing(DeleteThingRequest request)
         {
@@ -2162,6 +2241,78 @@ namespace Amazon.IoT
         public  DeleteThingResponse EndDeleteThing(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteThingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteThingType
+
+        /// <summary>
+        /// Deletes the specified thing type . You cannot delete a thing type if it has things
+        /// associated with it. To delete a thing type, first mark it as deprecated by calling
+        /// <a>DeprecateThingType</a>, then remove any associated things by calling <a>UpdateThing</a>
+        /// to change the thing type on any associated thing, and finally use <a>DeleteThingType</a>
+        /// to delete the thing type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThingType service method.</param>
+        /// 
+        /// <returns>The response from the DeleteThingType service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public DeleteThingTypeResponse DeleteThingType(DeleteThingTypeRequest request)
+        {
+            var marshaller = new DeleteThingTypeRequestMarshaller();
+            var unmarshaller = DeleteThingTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteThingTypeRequest,DeleteThingTypeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteThingType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteThingType operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteThingType
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteThingType(DeleteThingTypeRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteThingTypeRequestMarshaller();
+            var unmarshaller = DeleteThingTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteThingTypeRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteThingType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteThingType.</param>
+        /// 
+        /// <returns>Returns a  DeleteThingTypeResult from IoT.</returns>
+        public  DeleteThingTypeResponse EndDeleteThingType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteThingTypeResponse>(asyncResult);
         }
 
         #endregion
@@ -2250,6 +2401,74 @@ namespace Amazon.IoT
         public  DeleteTopicRuleResponse EndDeleteTopicRule(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTopicRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeprecateThingType
+
+        /// <summary>
+        /// Deprecates a thing type. You can not associate new things with deprecated thing type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeprecateThingType service method.</param>
+        /// 
+        /// <returns>The response from the DeprecateThingType service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public DeprecateThingTypeResponse DeprecateThingType(DeprecateThingTypeRequest request)
+        {
+            var marshaller = new DeprecateThingTypeRequestMarshaller();
+            var unmarshaller = DeprecateThingTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DeprecateThingTypeRequest,DeprecateThingTypeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeprecateThingType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeprecateThingType operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeprecateThingType
+        ///         operation.</returns>
+        public IAsyncResult BeginDeprecateThingType(DeprecateThingTypeRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeprecateThingTypeRequestMarshaller();
+            var unmarshaller = DeprecateThingTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeprecateThingTypeRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeprecateThingType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeprecateThingType.</param>
+        /// 
+        /// <returns>Returns a  DeprecateThingTypeResult from IoT.</returns>
+        public  DeprecateThingTypeResponse EndDeprecateThingType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeprecateThingTypeResponse>(asyncResult);
         }
 
         #endregion
@@ -2602,6 +2821,74 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DescribeThingType
+
+        /// <summary>
+        /// Gets information about the specified thing type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThingType service method.</param>
+        /// 
+        /// <returns>The response from the DescribeThingType service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public DescribeThingTypeResponse DescribeThingType(DescribeThingTypeRequest request)
+        {
+            var marshaller = new DescribeThingTypeRequestMarshaller();
+            var unmarshaller = DescribeThingTypeResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeThingTypeRequest,DescribeThingTypeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeThingType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeThingType operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeThingType
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeThingType(DescribeThingTypeRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeThingTypeRequestMarshaller();
+            var unmarshaller = DescribeThingTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeThingTypeRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeThingType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeThingType.</param>
+        /// 
+        /// <returns>Returns a  DescribeThingTypeResult from IoT.</returns>
+        public  DescribeThingTypeResponse EndDescribeThingType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeThingTypeResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DetachPrincipalPolicy
 
         /// <summary>
@@ -2710,7 +2997,7 @@ namespace Amazon.IoT
         /// Detaches the specified principal from the specified thing.
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
-        /// <param name="principal">The principal. If the principal is a certificate, specify the certificate ARN. If the principal is an Amazon Cognito identity, specify the identity ID.</param>
+        /// <param name="principal">If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</param>
         /// 
         /// <returns>The response from the DetachThingPrincipal service method, as returned by IoT.</returns>
         /// <exception cref="Amazon.IoT.Model.InternalFailureException">
@@ -3586,6 +3873,71 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListOutgoingCertificates
+
+        /// <summary>
+        /// Lists certificates that are being transfered but not yet accepted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOutgoingCertificates service method.</param>
+        /// 
+        /// <returns>The response from the ListOutgoingCertificates service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public ListOutgoingCertificatesResponse ListOutgoingCertificates(ListOutgoingCertificatesRequest request)
+        {
+            var marshaller = new ListOutgoingCertificatesRequestMarshaller();
+            var unmarshaller = ListOutgoingCertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListOutgoingCertificatesRequest,ListOutgoingCertificatesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOutgoingCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOutgoingCertificates operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOutgoingCertificates
+        ///         operation.</returns>
+        public IAsyncResult BeginListOutgoingCertificates(ListOutgoingCertificatesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListOutgoingCertificatesRequestMarshaller();
+            var unmarshaller = ListOutgoingCertificatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListOutgoingCertificatesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOutgoingCertificates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOutgoingCertificates.</param>
+        /// 
+        /// <returns>Returns a  ListOutgoingCertificatesResult from IoT.</returns>
+        public  ListOutgoingCertificatesResponse EndListOutgoingCertificates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListOutgoingCertificatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListPolicies
 
         /// <summary>
@@ -3964,6 +4316,9 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
@@ -3992,6 +4347,9 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
@@ -4058,6 +4416,9 @@ namespace Amazon.IoT
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
         /// </exception>
@@ -4086,6 +4447,9 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
         /// The service is temporarily unavailable.
@@ -4141,8 +4505,10 @@ namespace Amazon.IoT
         #region  ListThings
 
         /// <summary>
-        /// Lists your things. You can pass an AttributeName or AttributeValue to filter your
-        /// things (for example, "ListThings where AttributeName=Color and AttributeValue=Red").
+        /// Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters
+        /// to filter your things. For example, calling <code>ListThings</code> with attributeName=Color
+        /// and attributeValue=Red retrieves all things in the registry that contain an attribute
+        /// <b>Color</b> with the value <b>Red</b>.
         /// </summary>
         /// 
         /// <returns>The response from the ListThings service method, as returned by IoT.</returns>
@@ -4169,8 +4535,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists your things. You can pass an AttributeName or AttributeValue to filter your
-        /// things (for example, "ListThings where AttributeName=Color and AttributeValue=Red").
+        /// Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters
+        /// to filter your things. For example, calling <code>ListThings</code> with attributeName=Color
+        /// and attributeValue=Red retrieves all things in the registry that contain an attribute
+        /// <b>Color</b> with the value <b>Red</b>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListThings service method.</param>
         /// 
@@ -4228,6 +4596,71 @@ namespace Amazon.IoT
         public  ListThingsResponse EndListThings(IAsyncResult asyncResult)
         {
             return EndInvoke<ListThingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListThingTypes
+
+        /// <summary>
+        /// Lists the existing thing types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThingTypes service method.</param>
+        /// 
+        /// <returns>The response from the ListThingTypes service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        public ListThingTypesResponse ListThingTypes(ListThingTypesRequest request)
+        {
+            var marshaller = new ListThingTypesRequestMarshaller();
+            var unmarshaller = ListThingTypesResponseUnmarshaller.Instance;
+
+            return Invoke<ListThingTypesRequest,ListThingTypesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListThingTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListThingTypes operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListThingTypes
+        ///         operation.</returns>
+        public IAsyncResult BeginListThingTypes(ListThingTypesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListThingTypesRequestMarshaller();
+            var unmarshaller = ListThingTypesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListThingTypesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListThingTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListThingTypes.</param>
+        /// 
+        /// <returns>Returns a  ListThingTypesResult from IoT.</returns>
+        public  ListThingTypesResponse EndListThingTypes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListThingTypesResponse>(asyncResult);
         }
 
         #endregion
@@ -5216,6 +5649,10 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of a thing passed to a command is different than
+        /// the version specified with the --version parameter.
         /// </exception>
         public UpdateThingResponse UpdateThing(UpdateThingRequest request)
         {
