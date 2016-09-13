@@ -35,13 +35,14 @@ namespace Amazon.ServiceCatalog.Model
     public partial class ScanProvisionedProductsRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
+        private AccessLevelFilter _accessLevelFilter;
         private int? _pageSize;
         private string _pageToken;
 
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
         /// <para>
-        /// Optional language code. Supported language codes are as follows:
+        /// The language code to use for this operation. Supported language codes are as follows:
         /// </para>
         ///  
         /// <para>
@@ -73,6 +74,25 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AccessLevelFilter. 
+        /// <para>
+        /// The access level for obtaining results. If left unspecified, <code>User</code> level
+        /// access is used.
+        /// </para>
+        /// </summary>
+        public AccessLevelFilter AccessLevelFilter
+        {
+            get { return this._accessLevelFilter; }
+            set { this._accessLevelFilter = value; }
+        }
+
+        // Check to see if AccessLevelFilter property is set
+        internal bool IsSetAccessLevelFilter()
+        {
+            return this._accessLevelFilter != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PageSize. 
         /// <para>
         /// The maximum number of items to return in the results. If more results exist than fit
@@ -95,7 +115,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PageToken. 
         /// <para>
-        /// The page token of the first page retrieve. If null, this retrieves the first page
+        /// The page token of the first page retrieved. If null, this retrieves the first page
         /// of size <code>PageSize</code>.
         /// </para>
         /// </summary>

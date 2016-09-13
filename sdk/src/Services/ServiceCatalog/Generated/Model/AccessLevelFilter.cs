@@ -28,21 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Key/value pairs to associate with this provisioning. These tags are entirely discretionary
-    /// and are propagated to the resources created in the provisioning.
+    /// The access level to limit results.
     /// </summary>
-    public partial class Tag
+    public partial class AccessLevelFilter
     {
-        private string _key;
+        private AccessLevelFilterKey _key;
         private string _value;
 
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The <code>ProvisioningArtifactParameter.TagKey</code> parameter from <a>DescribeProvisioningParameters</a>.
+        /// Specifies the access level.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Account</code> allows results at the account level. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>Role</code> allows results based on the federated role of the specified user.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>User</code> allows results limited to the specified user. 
         /// </para>
         /// </summary>
-        public string Key
+        public AccessLevelFilterKey Key
         {
             get { return this._key; }
             set { this._key = value; }
@@ -57,7 +68,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The esired value for this key.
+        /// Specifies the user to which the access level applies. A value of <code>Self</code>
+        /// is currently supported.
         /// </para>
         /// </summary>
         public string Value
