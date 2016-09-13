@@ -74,7 +74,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             foreach (var s3Object in response.S3Objects)
             {
-                Assert.AreSame(s3Object.BucketName, bucketName);
+                Assert.AreEqual(s3Object.BucketName, bucketName);
             }
         }
 
@@ -108,7 +108,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsNull(response.ContinuationToken);
             Assert.IsNotNull(response.NextContinuationToken);
             Assert.IsNotNull(response.S3Objects[0].Owner);
-            Assert.AreSame(response.S3Objects[0].BucketName, bucketName);
+            Assert.AreEqual(response.S3Objects[0].BucketName, bucketName);
 
             response = Client.ListObjectsV2(new ListObjectsV2Request
             {
@@ -124,7 +124,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsNotNull(response.NextContinuationToken);
             Assert.AreEqual(1, response.S3Objects.Count);
             Assert.IsNotNull(response.S3Objects[0].Owner);
-            Assert.AreSame(response.S3Objects[0].BucketName, bucketName);
+            Assert.AreEqual(response.S3Objects[0].BucketName, bucketName);
 
 
             response = Client.ListObjectsV2(new ListObjectsV2Request
@@ -139,7 +139,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsNull(response.ContinuationToken);
             Assert.IsNotNull(response.NextContinuationToken);
             Assert.IsNull(response.S3Objects[0].Owner);
-            Assert.AreSame(response.S3Objects[0].BucketName, bucketName);
+            Assert.AreEqual(response.S3Objects[0].BucketName, bucketName);
 
             response = Client.ListObjectsV2(new ListObjectsV2Request
             {
@@ -154,7 +154,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsNotNull(response.NextContinuationToken);
             Assert.AreEqual(1, response.S3Objects.Count);
             Assert.IsNull(response.S3Objects[0].Owner);
-            Assert.AreSame(response.S3Objects[0].BucketName, bucketName);
+            Assert.AreEqual(response.S3Objects[0].BucketName, bucketName);
         }
 
     }
