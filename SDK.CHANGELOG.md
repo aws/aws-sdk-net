@@ -1,3 +1,11 @@
+### 3.1.100.0 (2016-09-13 22:23 UTC)
+* EC2 (3.1.20.2)
+	* Minor documentation update.
+* S3 (3.1.10.0)
+	* Updated the Amazon.S3.Model.S3Object type to contain a new property, BucketName. This is the name of the bucket containing the object.
+* ServiceCatalog (3.1.1.0)
+	* Adding an optional parameter to 2 existing APIs.
+
 ### 3.1.99.0 (2016-09-08 21:56 UTC)
 * AWSSupport (3.1.0.10)
 	* Documentation update.
