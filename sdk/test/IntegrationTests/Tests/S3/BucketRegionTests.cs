@@ -171,6 +171,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 DurationSeconds = 0 // invalid value for DurationSeconds - credentials will be null when retrying request
             };
+            // keep this unit test even though STSAssumeRoleAWSCredentials is obsolete
+            // the condition it's testing doesn't exist when AssumeRoleAWSCredentials (STSAssumeRoleAWSCredentials's replacement) is used
+#pragma warning disable 0618
             var credentials = new STSAssumeRoleAWSCredentials(new AmazonSecurityTokenServiceClient(), request);
             var s3Client = new AmazonS3Client(credentials);
             AssertExtensions.ExpectException(() => { s3Client.ListBuckets(); }, typeof(AmazonSecurityTokenServiceException), new Regex("3 validation errors detected"));

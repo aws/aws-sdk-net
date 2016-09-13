@@ -18,6 +18,8 @@ using System.Globalization;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Amazon.Runtime;
+using Amazon.Runtime.SharedInterfaces;
 
 namespace Amazon.Runtime.Internal.Auth
 {
@@ -32,6 +34,8 @@ namespace Amazon.Runtime.Internal.Auth
     /// </summary>
     public class SharedCredentialsFile
     {
+        public const string RoleSessionNamePrefix = "aws-dotnet-sdk-session-";
+
         private const string accessKeyPropertyName = "aws_access_key_id";
         private const string secretKeyPropertyName = "aws_secret_access_key";
         private const string tokenPropertyName = "aws_session_token";
@@ -164,12 +168,38 @@ namespace Amazon.Runtime.Internal.Auth
                         return new SessionAWSCredentials(detector.AccessKey, detector.SecretKey, detector.Token);
                     case ProfileType.AssumeRole:
                     case ProfileType.AssumeRoleExternal:
+                        Dictionary<string, string> sourceProperties;
+                        if (iniFile.TryGetSection(detector.SourceProfile, out sourceProperties))
+                        {
+                            var sourceDetector = new ProfileTypeDetector(sourceProperties);
+                            if (sourceDetector.ProfileType == ProfileType.Basic)
+                            {
+                                var sourceCredentials = new BasicAWSCredentials(sourceDetector.AccessKey, sourceDetector.SecretKey);
+                                var roleSessionName = RoleSessionNamePrefix + DateTime.UtcNow.Ticks;
+                                var options = new AssumeRoleAWSCredentialsOptions()
+                                {
+                                    ExternalId = detector.ExternalID
+                                };
+                                return new AssumeRoleAWSCredentials(
+                                    sourceCredentials, detector.RoleArn, roleSessionName, options);
+                            }
+                        }
+
+                        if (throwIfInvalid)
+                        {
+                            throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture,
+                               "Credential profile [{0}] references source profile [{1}], which was not found, or is invalid.", profileName, detector.SourceProfile));
+                        }
+                        else
+                        {
+                            return null;
+                        }
                     case ProfileType.AssumeRoleMFA:
                     case ProfileType.AssumeRoleExternalMFA:
                         if (throwIfInvalid)
                         {
                             throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture,
-                                "Credential profile [{0}] uses the source_profile key, which is not yet supported by the .NET SDK.", profileName));
+                                "Credential profile [{0}] uses the mfa_serial key, which is not yet supported by the AWS .NET SDK.", profileName));
                         }
                         else
                         {

@@ -42,5 +42,25 @@ namespace Amazon.Runtime.SharedInterfaces
                                                                    TimeSpan credentialDuration,
                                                                    ICredentials userCredential);
 #endif
+
+        /// <summary>
+        /// <para>
+        /// This method is used internally to access the Amazon Security Token
+        /// service within other service assemblies.
+        /// Please use AmazonSecurityTokenServiceClient to access the Amazon Security Token
+        /// service instead.
+        /// </para>
+        /// Use Amazon Security Token Service to assume a role.
+        /// <remarks>
+        /// Proxy settings that are required for the HTTPS and STS calls made during the authentication/credential
+        /// generation process are supported and should have been configured on the STS ClientConfig instance
+        /// associated with the STS client instance exposing this interface.
+        /// </remarks>
+        /// </summary>
+        /// <param name="roleArn">The Amazon Resource Name (ARN) of the role to assume.</param>
+        /// <param name="roleSessionName"> An identifier for the assumed role session.</param>
+        /// <param name="options">Options to be used in the call to AssumeRole.</param>
+        /// <returns></returns>
+        AssumeRoleImmutableCredentials CredentialsFromAssumeRoleAuthentication(string roleArn, string roleSessionName, AssumeRoleAWSCredentialsOptions options);
     }
 }

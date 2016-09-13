@@ -176,6 +176,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 ExternalId = clientId.ToString()
             };
 
+            // keep this unit test even though STSAssumeRoleAWSCredentials is obsolete
+#pragma warning disable 0618
             var credentials = new STSAssumeRoleAWSCredentials(sts, request);
 
             var client = new AmazonIdentityManagementServiceClient(credentials);

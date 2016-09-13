@@ -18,6 +18,8 @@ using System.Net;
 using Amazon.Runtime;
 
 using Amazon.Runtime.SharedInterfaces;
+using Amazon.SecurityToken.Model;
+using Amazon.Runtime.Internal;
 
 #if BCL
 using Amazon.SecurityToken.SAML;
@@ -56,5 +58,45 @@ namespace Amazon.SecurityToken
             }
         }
 #endif
+
+        /// <summary>
+        /// <see cref="ICoreAmazonSTS"/>
+        /// </summary>
+        /// <param name="roleArn"></param>
+        /// <param name="roleSessionName"></param>
+        /// <param name="options"></param>
+        /// <returns></returns>
+        AssumeRoleImmutableCredentials ICoreAmazonSTS.CredentialsFromAssumeRoleAuthentication(string roleArn,
+            string roleSessionName, AssumeRoleAWSCredentialsOptions options)
+        {
+            try
+            {
+                var request = new AssumeRoleRequest
+                {
+                    RoleArn = roleArn,
+                    RoleSessionName = roleSessionName
+                };
+                if (options != null)
+                {
+                    request.ExternalId = options.ExternalId;
+                    request.SerialNumber = options.MfaSerialNumber;
+                    request.TokenCode = options.MfaTokenCode;
+                    request.Policy = options.Policy;
+
+                    if (options.DurationSeconds.HasValue)
+                    {
+                        request.DurationSeconds = options.DurationSeconds.Value;
+                    }
+                }
+
+                var response = AssumeRole(request);
+                return new AssumeRoleImmutableCredentials(response.Credentials.AccessKeyId, response.Credentials.SecretAccessKey,
+                    response.Credentials.SessionToken, response.Credentials.Expiration);
+            }
+            catch (Exception e)
+            {
+                throw new AmazonClientException("Error calling AssumeRole for role " + roleArn, e);
+            }
+        }
     }
 }

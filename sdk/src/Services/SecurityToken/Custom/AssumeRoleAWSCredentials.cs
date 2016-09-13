@@ -12,6 +12,7 @@ namespace Amazon.SecurityToken
     /// Credentials that are retrieved by invoking AWS Security Token Service
     /// AssumeRole or AssumeRoleWithSAML action.
     /// </summary>
+    [Obsolete("This class has been replaced by Amazon.Runtime.AssumeRoleAWSCredentials and Amazon.Runtime.StoredProfileFederatedCredentials, and will be removed in a future version.", false)]
     public partial class STSAssumeRoleAWSCredentials : RefreshingAWSCredentials, IDisposable
     {
 #if !UNITY

@@ -16,6 +16,7 @@
 using System.Diagnostics.CodeAnalysis;
 
 [module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.SecurityToken.AmazonSecurityTokenServiceClient.#Amazon.Runtime.SharedInterfaces.ICoreAmazonSTS.CredentialsFromSAMLAuthentication(System.String,System.String,System.String,System.TimeSpan,System.Net.ICredentials)")]
+[module: SuppressMessage("Microsoft.Design", "CA1033:InterfaceMethodsShouldBeCallableByChildTypes", Scope = "member", Target = "Amazon.SecurityToken.AmazonSecurityTokenServiceClient.#Amazon.Runtime.SharedInterfaces.ICoreAmazonSTS.CredentialsFromAssumeRoleAuthentication(System.String,System.String,Amazon.Runtime.AssumeRoleAWSCredentialsOptions)")]
 
 
 [module: SuppressMessage("Microsoft.Security", "CA2122:DoNotIndirectlyExposeMethodsWithLinkDemands", Scope = "member", Target = "Amazon.SecurityToken.SAML.ImpersonationState.#Impersonate(System.Net.NetworkCredential)")]
