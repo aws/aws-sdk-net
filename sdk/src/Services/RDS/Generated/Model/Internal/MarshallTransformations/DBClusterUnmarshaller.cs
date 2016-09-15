@@ -201,6 +201,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.PreferredMaintenanceWindow = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ReaderEndpoint", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReaderEndpoint = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ReadReplicaIdentifiers/ReadReplicaIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
