@@ -402,6 +402,7 @@
             <PrivateKeyException Include="generator\ServiceModels\iam-2010-05-08.normal.json" />
 			<PrivateKeyException Include="sdk\code-analysis\ServiceAnalysis\CertificateManager\Generated\PropertyValueRules.xml" />
             <PrivateKeyException Include="sdk\test\UnitTests\Custom\EC2\PasswordTest.cs" />
+            <PrivateKeyException Include="sdk\test\CoreCLR\UnitTests\sample.rsa.private.key.txt" />
         </ItemGroup>
 		
 		<ItemGroup>
