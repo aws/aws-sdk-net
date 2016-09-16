@@ -1,3 +1,25 @@
+### 3.1.101.0 (2016-09-16 00:49 UTC)
+* IoT (3.1.9.0)
+	* Changes in RegisterCertificate API & Adding a new field "cannedAcl" in S3 action
+* RDS (3.1.19.0)
+	* Aurora cluster reader end-point. Customers have requested we provide them an endpoint that gives access to their cluster readers. We are adding a single field to the output of the DescribeDbCluster operation, namely "ReaderEndpoint" to serve this purpose.
+
+### 3.1.100.0 (2016-09-13 22:23 UTC)
+* EC2 (3.1.20.2)
+	* Minor documentation update.
+* S3 (3.1.10.0)
+	* Updated the Amazon.S3.Model.S3Object type to contain a new property, BucketName. This is the name of the bucket containing the object.
+* ServiceCatalog (3.1.1.0)
+	* Adding an optional parameter to 2 existing APIs.
+
+### 3.1.99.0 (2016-09-08 21:56 UTC)
+* AWSSupport (3.1.0.10)
+	* Documentation update.
+* CloudFront (3.1.7.0)
+	* Adds HTTP2 support for Amazon CloudFront distributions.This includes a new API version, 2016-09-07.
+* SimpleNotificationService (3.1.2.1)
+	* Documentation update.
+
 ### 3.1.98.0 (2016-09-06 21:59 UTC)
 * CodePipeline (3.1.5.0)
 	* Incorporated API updates to correct naming of members in types used in the recently published view changes APIs. Please note these are breaking changes in the model shapes.

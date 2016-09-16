@@ -38,7 +38,7 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The current refresh status for a check, including the amount of time until the check
-        /// is eligible for refresh. 
+        /// is eligible for refresh.
         /// </para>
         /// </summary>
         public TrustedAdvisorCheckRefreshStatus Status

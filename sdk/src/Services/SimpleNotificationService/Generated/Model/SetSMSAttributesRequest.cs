@@ -65,6 +65,12 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </important> 
         /// <para>
+        /// By default, the spend limit is set to the maximum allowed by Amazon SNS. If you want
+        /// to exceed the maximum, contact <a href="https://aws.amazon.com/premiumsupport/">AWS
+        /// Support</a> or your AWS sales representative for a service limit increase.
+        /// </para>
+        ///  
+        /// <para>
         ///  <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon SNS
         /// to write logs about SMS deliveries in CloudWatch Logs. For each SMS message that you
         /// send, Amazon SNS writes a log that includes the message price, the success or failure
@@ -93,12 +99,12 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Promotional</code> – Noncritical messages, such as marketing messages. Amazon
-        /// SNS optimizes the message delivery to incur the lowest cost.
+        ///  <code>Promotional</code> – (Default) Noncritical messages, such as marketing messages.
+        /// Amazon SNS optimizes the message delivery to incur the lowest cost.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Transactional</code> – (Default) Critical messages that support customer transactions,
+        ///  <code>Transactional</code> – Critical messages that support customer transactions,
         /// such as one-time passcodes for multi-factor authentication. Amazon SNS optimizes the
         /// message delivery to achieve the highest reliability.
         /// </para>

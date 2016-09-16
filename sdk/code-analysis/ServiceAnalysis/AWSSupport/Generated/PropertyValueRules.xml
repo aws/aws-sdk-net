@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
-    <property>Amazon.AWSSupport.Model.CreateCaseRequest.ServiceCode</property>
-    <pattern>[0-9a-z\-_]+</pattern>
+    <property>Amazon.AWSSupport.Model.AddCommunicationToCaseRequest.CommunicationBody</property>
+    <min>1</min>
+    <max>8000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.CreateCaseRequest.CommunicationBody</property>
+    <min>1</min>
+    <max>8000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSSupport.Model.DescribeCasesRequest.MaxResults</property>
@@ -15,11 +21,8 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AWSSupport.Model.CaseDetails.ServiceCode</property>
-    <pattern>[0-9a-z\-_]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AWSSupport.Model.Service.Code</property>
-    <pattern>[0-9a-z\-_]+</pattern>
+    <property>Amazon.AWSSupport.Model.Communication.Body</property>
+    <min>1</min>
+    <max>8000</max>
   </property-value-rule>
 </property-value-rules>

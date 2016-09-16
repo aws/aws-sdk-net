@@ -32,24 +32,63 @@ namespace Amazon.AWSSupport.Model
     /// the response from a <a>DescribeCases</a> request. <b>CaseDetails</b> contains the
     /// following fields:
     /// 
-    ///  <ol> <li> <b>CaseID.</b> The AWS Support case ID requested or returned in the call.
-    /// The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.</li>
-    /// <li> <b>CategoryCode.</b> The category of problem for the AWS Support case. Corresponds
-    /// to the CategoryCode values returned by a call to <a>DescribeServices</a>.</li> <li>
-    /// <b>DisplayId.</b> The identifier for the case on pages in the AWS Support Center.</li>
-    /// <li> <b>Language.</b> The ISO 639-1 code for the language in which AWS provides support.
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>caseId.</b> The AWS Support case ID requested or returned in the call. The case
+    /// ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>categoryCode.</b> The category of problem for the AWS Support case. Corresponds
+    /// to the CategoryCode values returned by a call to <a>DescribeServices</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>displayId.</b> The identifier for the case on pages in the AWS Support Center.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>language.</b> The ISO 639-1 code for the language in which AWS provides support.
     /// AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters
-    /// must be passed explicitly for operations that take them.</li> <li> <b>RecentCommunications.</b>
-    /// One or more <a>Communication</a> objects. Fields of these objects are <code>Attachments</code>,
-    /// <code>Body</code>, <code>CaseId</code>, <code>SubmittedBy</code>, and <code>TimeCreated</code>.</li>
-    /// <li> <b>NextToken.</b> A resumption point for pagination.</li> <li> <b>ServiceCode.</b>
-    /// The identifier for the AWS service that corresponds to the service code defined in
-    /// the call to <a>DescribeServices</a>.</li> <li> <b>SeverityCode. </b>The severity code
-    /// assigned to the case. Contains one of the values returned by the call to <a>DescribeSeverityLevels</a>.</li>
-    /// <li> <b>Status.</b> The status of the case in the AWS Support Center.</li> <li> <b>Subject.</b>
-    /// The subject line of the case.</li> <li> <b>SubmittedBy.</b> The email address of the
-    /// account that submitted the case.</li> <li> <b>TimeCreated.</b> The time the case was
-    /// created, in ISO-8601 format.</li> </ol>
+    /// must be passed explicitly for operations that take them.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>recentCommunications.</b> One or more <a>Communication</a> objects. Fields of
+    /// these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>,
+    /// <code>submittedBy</code>, and <code>timeCreated</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>nextToken.</b> A resumption point for pagination.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>serviceCode.</b> The identifier for the AWS service that corresponds to the service
+    /// code defined in the call to <a>DescribeServices</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>severityCode. </b>The severity code assigned to the case. Contains one of the
+    /// values returned by the call to <a>DescribeSeverityLevels</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>status.</b> The status of the case in the AWS Support Center.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>subject.</b> The subject line of the case.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>submittedBy.</b> The email address of the account that submitted the case.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>timeCreated.</b> The time the case was created, in ISO-8601 format.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CaseDetails
     {
@@ -71,6 +110,7 @@ namespace Amazon.AWSSupport.Model
         /// <para>
         /// The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric
         /// string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// 
         /// </para>
         /// </summary>
         public string CaseId
@@ -125,7 +165,6 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property DisplayId. 
         /// <para>
         /// The ID displayed for the case in the AWS Support Center. This is a numeric string.
-        /// 
         /// </para>
         /// </summary>
         public string DisplayId
@@ -219,7 +258,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the case. 
+        /// The status of the case.
         /// </para>
         /// </summary>
         public string Status
@@ -273,7 +312,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property TimeCreated. 
         /// <para>
-        /// The time that the case was case created in the AWS Support Center. 
+        /// The time that the case was case created in the AWS Support Center.
         /// </para>
         /// </summary>
         public string TimeCreated

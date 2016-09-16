@@ -70,6 +70,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.BucketName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("cannedAcl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CannedAcl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("key", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

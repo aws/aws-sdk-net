@@ -54,7 +54,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
         /// <para>
-        /// Optional language code. Supported language codes are as follows:
+        /// The language code to use for this operation. Supported language codes are as follows:
         /// </para>
         ///  
         /// <para>

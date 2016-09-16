@@ -3645,8 +3645,8 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Returns a list that includes the status of each source AWS Region that the current
-        /// region can get a Read Replica or a DB snapshot from. This API action supports pagination.
+        /// Returns a list of the source AWS regions where the current AWS region can create a
+        /// Read Replica or copy a DB snapshot from. This API action supports pagination.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSourceRegions service method.</param>
         /// 

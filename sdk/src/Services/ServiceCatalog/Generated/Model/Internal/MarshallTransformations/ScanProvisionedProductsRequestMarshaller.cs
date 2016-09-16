@@ -73,6 +73,17 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AcceptLanguage);
                 }
 
+                if(publicRequest.IsSetAccessLevelFilter())
+                {
+                    context.Writer.WritePropertyName("AccessLevelFilter");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AccessLevelFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AccessLevelFilter, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPageSize())
                 {
                     context.Writer.WritePropertyName("PageSize");

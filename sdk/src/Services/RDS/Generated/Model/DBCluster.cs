@@ -85,6 +85,7 @@ namespace Amazon.RDS.Model
         private int? _port;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
+        private string _readerEndpoint;
         private List<string> _readReplicaIdentifiers = new List<string>();
         private string _replicationSourceIdentifier;
         private string _status;
@@ -532,6 +533,35 @@ namespace Amazon.RDS.Model
         internal bool IsSetPreferredMaintenanceWindow()
         {
             return this._preferredMaintenanceWindow != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReaderEndpoint. 
+        /// <para>
+        /// The reader endpoint for the DB cluster. The reader endpoint for a DB cluster load-balances
+        /// connections across the Aurora Replicas that are available in a DB cluster. As clients
+        /// request new connections to the reader endpoint, Aurora distributes the connection
+        /// requests among the Aurora Replicas in the DB cluster. This functionality can help
+        /// balance your read workload across multiple Aurora Replicas in your DB cluster. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If a failover occurs, and the Aurora Replica that you are connected to is promoted
+        /// to be the primary instance, your connection will be dropped. To continue sending your
+        /// read workload to other Aurora Replicas in the cluster, you can then recoonect to the
+        /// reader endpoint.
+        /// </para>
+        /// </summary>
+        public string ReaderEndpoint
+        {
+            get { return this._readerEndpoint; }
+            set { this._readerEndpoint = value; }
+        }
+
+        // Check to see if ReaderEndpoint property is set
+        internal bool IsSetReaderEndpoint()
+        {
+            return this._readerEndpoint != null;
         }
 
         /// <summary>

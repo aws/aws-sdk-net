@@ -65,7 +65,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Contents", targetDepth))
                     {
-                        response.S3Objects.Add(ContentsItemUnmarshaller.Instance.Unmarshall(context));
+                        // adding the bucket name into the S3Object instance enables
+                        // a better pipelining experience in PowerShell
+                        var s3Object = ContentsItemUnmarshaller.Instance.Unmarshall(context);
+                        s3Object.BucketName = response.Name;
+                        response.S3Objects.Add(s3Object);
 
                         continue;
                     }

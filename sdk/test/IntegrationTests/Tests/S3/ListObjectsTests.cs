@@ -41,7 +41,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             bucketName = S3TestUtils.CreateBucket(Client);
 
-            foreach(var key in keys)
+            foreach (var key in keys)
             {
                 if (key.EndsWith("/"))
                     continue;
@@ -62,6 +62,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             BaseClean();
         }
 
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestS3ObjectsContainBucketName()
+        {
+            var response = Client.ListObjects(new ListObjectsRequest
+            {
+                BucketName = bucketName
+            });
+
+            foreach (var s3Object in response.S3Objects)
+            {
+                Assert.AreEqual(s3Object.BucketName, bucketName);
+            }
+        }
 
         [TestMethod]
         [TestCategory("S3")]
@@ -93,6 +108,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsNull(response.ContinuationToken);
             Assert.IsNotNull(response.NextContinuationToken);
             Assert.IsNotNull(response.S3Objects[0].Owner);
+            Assert.AreEqual(response.S3Objects[0].BucketName, bucketName);
 
             response = Client.ListObjectsV2(new ListObjectsV2Request
             {
@@ -108,6 +124,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsNotNull(response.NextContinuationToken);
             Assert.AreEqual(1, response.S3Objects.Count);
             Assert.IsNotNull(response.S3Objects[0].Owner);
+            Assert.AreEqual(response.S3Objects[0].BucketName, bucketName);
 
 
             response = Client.ListObjectsV2(new ListObjectsV2Request
@@ -122,6 +139,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsNull(response.ContinuationToken);
             Assert.IsNotNull(response.NextContinuationToken);
             Assert.IsNull(response.S3Objects[0].Owner);
+            Assert.AreEqual(response.S3Objects[0].BucketName, bucketName);
 
             response = Client.ListObjectsV2(new ListObjectsV2Request
             {
@@ -136,6 +154,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsNotNull(response.NextContinuationToken);
             Assert.AreEqual(1, response.S3Objects.Count);
             Assert.IsNull(response.S3Objects[0].Owner);
+            Assert.AreEqual(response.S3Objects[0].BucketName, bucketName);
         }
 
     }

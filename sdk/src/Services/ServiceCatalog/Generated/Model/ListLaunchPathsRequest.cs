@@ -43,7 +43,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
         /// <para>
-        /// Optional language code. Supported language codes are as follows:
+        /// The language code to use for this operation. Supported language codes are as follows:
         /// </para>
         ///  
         /// <para>
@@ -97,7 +97,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PageToken. 
         /// <para>
-        /// The page token of the first page retrieve. If null, this retrieves the first page
+        /// The page token of the first page retrieved. If null, this retrieves the first page
         /// of size <code>PageSize</code>.
         /// </para>
         /// </summary>
