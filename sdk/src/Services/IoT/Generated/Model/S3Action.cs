@@ -33,6 +33,7 @@ namespace Amazon.IoT.Model
     public partial class S3Action
     {
         private string _bucketName;
+        private CannedAccessControlList _cannedAcl;
         private string _key;
         private string _roleArn;
 
@@ -52,6 +53,26 @@ namespace Amazon.IoT.Model
         internal bool IsSetBucketName()
         {
             return this._bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CannedAcl. 
+        /// <para>
+        /// The Amazon S3 canned ACL that controls access to the object identified by the object
+        /// key. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3
+        /// canned ACLs</a>.
+        /// </para>
+        /// </summary>
+        public CannedAccessControlList CannedAcl
+        {
+            get { return this._cannedAcl; }
+            set { this._cannedAcl = value; }
+        }
+
+        // Check to see if CannedAcl property is set
+        internal bool IsSetCannedAcl()
+        {
+            return this._cannedAcl != null;
         }
 
         /// <summary>

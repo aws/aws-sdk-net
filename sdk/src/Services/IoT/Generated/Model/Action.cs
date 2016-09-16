@@ -101,7 +101,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Elasticsearch. 
         /// <para>
-        /// Write data to an Amazon Elasticsearch Service; domain.
+        /// Write data to an Amazon Elasticsearch Service domain.
         /// </para>
         /// </summary>
         public ElasticsearchAction Elasticsearch

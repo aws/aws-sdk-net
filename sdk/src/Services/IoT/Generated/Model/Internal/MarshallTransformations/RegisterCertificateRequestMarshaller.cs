@@ -80,6 +80,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CertificatePem);
                 }
 
+                if(publicRequest.IsSetStatus())
+                {
+                    context.Writer.WritePropertyName("status");
+                    context.Writer.Write(publicRequest.Status);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
