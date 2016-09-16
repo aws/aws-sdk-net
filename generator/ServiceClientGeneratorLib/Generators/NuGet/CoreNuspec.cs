@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class CoreNuspec : CoreNuspecBase
     {
@@ -31,13 +31,13 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write("\r\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<package> \r\n  <metadata> \r\n    <id>AWSS" +
                     "DK.Core</id>\r\n    <title>AWSSDK - Core Runtime</title>\r\n    <version>");
             
-            #line 12 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 12 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default
             #line hidden
             
-            #line 12 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 12 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NuGetPreviewFlag"]));
             
             #line default
@@ -57,7 +57,7 @@ namespace ServiceClientGenerator.Generators.NuGet
       </group>
 ");
             
-            #line 25 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 25 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
@@ -72,7 +72,7 @@ namespace ServiceClientGenerator.Generators.NuGet
       </group>
 ");
             
-            #line 34 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 34 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 
 	}
 
@@ -107,7 +107,7 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "ore.xml\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.p" +
                     "db\" target=\"lib\\net45\" />\r\n\r\n");
             
-            #line 74 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 74 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
@@ -138,16 +138,19 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.xml\" target=\"lib\\wp8\" />\r\n    <fi" +
                     "le src=\".\\bin\\Release\\wp8\\AWSSDK.Core.pdb\" target=\"lib\\wp8\" />\r\n\r\n");
             
-            #line 104 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 104 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
 	}
 
             
             #line default
             #line hidden
-            this.Write("\t<file src=\".\\bin\\Release\\netstandard1.3\\AWSSDK.Core.dll\" target=\"lib\\netstandard" +
-                    "1.3\"/>\r\n\t<file src=\".\\bin\\Release\\netstandard1.3\\AWSSDK.Core.pdb\" target=\"lib\\ne" +
-                    "tstandard1.3\"/>\r\n  </files>\r\n</package>");
+            this.Write(@"	<file src="".\bin\Release\netstandard1.3\AWSSDK.Core.dll"" target=""lib\netstandard1.3""/>
+	<file src="".\bin\Release\netstandard1.3\AWSSDK.Core.xml"" target=""lib\netstandard1.3""/>
+	<file src="".\bin\Release\netstandard1.3\AWSSDK.Core.pdb"" target=""lib\netstandard1.3""/>
+
+  </files>
+</package>");
             return this.GenerationEnvironment.ToString();
         }
     }

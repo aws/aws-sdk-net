@@ -144,6 +144,7 @@
 	{
 #>
     <file src="<#=Path.Combine(".", "bin", "Release", "netstandard1.3", (string)this.Session["AssemblyName"] + ".dll")#>" target="lib\netstandard1.3" />
+    <file src="<#=Path.Combine(".", "bin", "Release", "netstandard1.3", (string)this.Session["AssemblyName"] + ".xml")#>" target="lib\netstandard1.3" />
     <file src="<#=Path.Combine(".", "bin", "Release", "netstandard1.3", (string)this.Session["AssemblyName"] + ".pdb")#>" target="lib\netstandard1.3" />
 <#
 	}

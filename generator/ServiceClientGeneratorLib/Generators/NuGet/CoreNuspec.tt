@@ -105,6 +105,8 @@
 	}
 #>
 	<file src=".\bin\Release\netstandard1.3\AWSSDK.Core.dll" target="lib\netstandard1.3"/>
+	<file src=".\bin\Release\netstandard1.3\AWSSDK.Core.xml" target="lib\netstandard1.3"/>
 	<file src=".\bin\Release\netstandard1.3\AWSSDK.Core.pdb" target="lib\netstandard1.3"/>
+
   </files>
 </package>
