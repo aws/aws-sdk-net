@@ -1,3 +1,9 @@
+### 3.1.101.0 (2016-09-16 00:49 UTC)
+* IoT (3.1.9.0)
+	* Changes in RegisterCertificate API & Adding a new field "cannedAcl" in S3 action
+* RDS (3.1.19.0)
+	* Aurora cluster reader end-point. Customers have requested we provide them an endpoint that gives access to their cluster readers. We are adding a single field to the output of the DescribeDbCluster operation, namely "ReaderEndpoint" to serve this purpose.
+
 ### 3.1.100.0 (2016-09-13 22:23 UTC)
 * EC2 (3.1.20.2)
 	* Minor documentation update.

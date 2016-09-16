@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.1.100.0",
+    "ProductVersion" : "3.1.101.0",
     "CoreVersion"    : "3.1.11.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -247,7 +247,7 @@
             "InPreview"    : false
         },
         "RDS"                  : {
-            "Version" : "3.1.18.0",
+            "Version" : "3.1.19.0",
             "Dependencies" : {
                 "Core" : "3.1.9.2"
             },
@@ -408,7 +408,7 @@
             "InPreview"    : false
         },
         "IoT"                             : {
-            "Version" : "3.1.8.1",
+            "Version" : "3.1.9.0",
             "Dependencies" : {
                 "Core" : "3.1.9.2"
             },
