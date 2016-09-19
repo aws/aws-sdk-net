@@ -53,7 +53,10 @@ namespace Amazon.S3.Internal
                 if (AmazonS3Uri.TryParseAmazonS3Uri(executionContext.RequestContext.Request.Endpoint, out s3BucketUri))
                 {
                     var credentials = executionContext.RequestContext.ImmutableCredentials;
-                    correctedRegion = BucketRegionDetector.DetectMismatchWithHeadBucketFallback(s3BucketUri, serviceException, credentials);
+                    if (credentials != null)
+                    {
+                        correctedRegion = BucketRegionDetector.DetectMismatchWithHeadBucketFallback(s3BucketUri, serviceException, credentials);
+                    }
                 }
 
                 if (correctedRegion == null)

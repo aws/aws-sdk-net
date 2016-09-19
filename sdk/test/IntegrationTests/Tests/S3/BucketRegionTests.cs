@@ -1,9 +1,14 @@
 using Amazon;
+using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
+using Amazon.SecurityToken;
+using Amazon.SecurityToken.Model;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Net;
+using System.Text.RegularExpressions;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -156,6 +161,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     Assert.AreEqual(HttpStatusCode.BadRequest, GetHttpStatusCode(runner.USEast1Client.GetPreSignedURL(runner.PreSignedUrlRequest)));
                 }
             }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void NoCredentialsOnContext()
+        {
+            var request = new AssumeRoleRequest()
+            {
+                DurationSeconds = 0 // invalid value for DurationSeconds - credentials will be null when retrying request
+            };
+            var credentials = new STSAssumeRoleAWSCredentials(new AmazonSecurityTokenServiceClient(), request);
+            var s3Client = new AmazonS3Client(credentials);
+            AssertExtensions.ExpectException(() => { s3Client.ListBuckets(); }, typeof(AmazonSecurityTokenServiceException), new Regex("3 validation errors detected"));
         }
 
         private HttpStatusCode GetHttpStatusCode(string url)
