@@ -1,5 +1,5 @@
 ### 3.3.0.0 (2016-09-19 17:15 UTC)
-* GA release of support for .NET Core in the AWS SDK for .NET
+* [GA release](http://blogs.aws.amazon.com/net/post/Tx3O6TT4NKFM0FU/General-Availability-for-NET-Core-Support-in-the-AWS-SDK-for-NET) of support for .NET Core in the AWS SDK for .NET 
 
 ### 3.1.101.0 (2016-09-16 00:49 UTC)
 * IoT (3.1.9.0)
