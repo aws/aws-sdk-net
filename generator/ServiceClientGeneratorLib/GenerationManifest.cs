@@ -123,7 +123,10 @@ namespace ServiceClientGenerator
             var versions = versionsManifest["ServiceVersions"];
 
             generationManifest.DefaultToPreview = (bool)versionsManifest["DefaultToPreview"];
-            generationManifest.PreviewLabel = (string)versionsManifest["PreviewLabel"];
+			if (generationManifest.DefaultToPreview)
+			{
+				generationManifest.PreviewLabel = (string)versionsManifest["PreviewLabel"];
+			}
             if (!string.IsNullOrEmpty(generationManifest.PreviewLabel))
                 generationManifest.PreviewLabel = "-" + generationManifest.PreviewLabel;
 
