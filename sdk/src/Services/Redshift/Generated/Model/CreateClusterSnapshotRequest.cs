@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model
     ///  
     /// <para>
     ///  For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
-    /// Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
+    /// Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateClusterSnapshotRequest : AmazonRedshiftRequest
@@ -47,7 +47,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///  The cluster identifier for which you want a snapshot. 
+        /// The cluster identifier for which you want a snapshot.
         /// </para>
         /// </summary>
         public string ClusterIdentifier
@@ -65,18 +65,32 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SnapshotIdentifier. 
         /// <para>
-        ///  A unique identifier for the snapshot that you are requesting. This identifier must
-        /// be unique for all snapshots within the AWS account. 
+        /// A unique identifier for the snapshot that you are requesting. This identifier must
+        /// be unique for all snapshots within the AWS account.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Cannot be null, empty, or blank</li> <li>Must contain from 1 to 255 alphanumeric
-        /// characters or hyphens</li> <li>First character must be a letter</li> <li>Cannot end
-        /// with a hyphen or contain two consecutive hyphens</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>my-snapshot-id</code>
+        /// Cannot be null, empty, or blank
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain from 1 to 255 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>my-snapshot-id</code> 
         /// </para>
         /// </summary>
         public string SnapshotIdentifier

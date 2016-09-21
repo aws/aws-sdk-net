@@ -29,7 +29,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateClusterParameterGroup operation.
-    /// Creates an Amazon Redshift parameter group. 
+    /// Creates an Amazon Redshift parameter group.
     /// 
     ///  
     /// <para>
@@ -40,11 +40,10 @@ namespace Amazon.Redshift.Model
     /// </para>
     ///  
     /// <para>
-    ///  Parameters in the parameter group define specific behavior that applies to the databases
+    /// Parameters in the parameter group define specific behavior that applies to the databases
     /// you create on the cluster. For more information about parameters and parameter groups,
     /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
     /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// 
     /// </para>
     /// </summary>
     public partial class CreateClusterParameterGroupRequest : AmazonRedshiftRequest
@@ -57,7 +56,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  A description of the parameter group. 
+        /// A description of the parameter group.
         /// </para>
         /// </summary>
         public string Description
@@ -75,8 +74,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterGroupFamily. 
         /// <para>
-        ///  The Amazon Redshift engine version to which the cluster parameter group applies.
-        /// The cluster engine version determines the set of parameters. 
+        /// The Amazon Redshift engine version to which the cluster parameter group applies. The
+        /// cluster engine version determines the set of parameters.
         /// </para>
         ///  
         /// <para>
@@ -103,16 +102,33 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterGroupName. 
         /// <para>
-        ///  The name of the cluster parameter group. 
+        /// The name of the cluster parameter group.
         /// </para>
         ///  
         /// <para>
-        ///  Constraints: 
+        /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li> <li>First character
-        /// must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-        /// <li>Must be unique withing your AWS account.</li> </ul> <note>This value is stored
-        /// as a lower-case string.</note>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be unique withing your AWS account.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// This value is stored as a lower-case string.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string ParameterGroupName
         {

@@ -40,7 +40,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupName. 
         /// <para>
-        ///  The name of the EC2 Security Group. 
+        /// The name of the EC2 Security Group.
         /// </para>
         /// </summary>
         public string EC2SecurityGroupName
@@ -58,7 +58,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupOwnerId. 
         /// <para>
-        ///  The AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code>
+        /// The AWS ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code>
         /// field. 
         /// </para>
         /// </summary>
@@ -77,7 +77,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of the EC2 security group. 
+        /// The status of the EC2 security group.
         /// </para>
         /// </summary>
         public string Status

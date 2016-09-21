@@ -37,7 +37,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property EventCategoriesMapList. 
         /// <para>
-        ///  A list of event categories descriptions. 
+        /// A list of event categories descriptions.
         /// </para>
         /// </summary>
         public List<EventCategoriesMap> EventCategoriesMapList

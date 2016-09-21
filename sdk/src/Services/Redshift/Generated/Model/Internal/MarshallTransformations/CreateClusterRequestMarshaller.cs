@@ -115,6 +115,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Encrypted", StringUtils.FromBool(publicRequest.Encrypted));
                 }
+                if(publicRequest.IsSetEnhancedVpcRouting())
+                {
+                    request.Parameters.Add("EnhancedVpcRouting", StringUtils.FromBool(publicRequest.EnhancedVpcRouting));
+                }
                 if(publicRequest.IsSetHsmClientCertificateIdentifier())
                 {
                     request.Parameters.Add("HsmClientCertificateIdentifier", StringUtils.FromString(publicRequest.HsmClientCertificateIdentifier));

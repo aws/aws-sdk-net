@@ -38,7 +38,7 @@ namespace Amazon.Redshift.Model
     ///  
     /// <para>
     ///  For more information about reserved node offerings, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html">Purchasing
-    /// Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
+    /// Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// </para>
     /// </summary>
     public partial class PurchaseReservedNodeOfferingRequest : AmazonRedshiftRequest
@@ -53,7 +53,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>1</code>
+        /// Default: <code>1</code> 
         /// </para>
         /// </summary>
         public int NodeCount

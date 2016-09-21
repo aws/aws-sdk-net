@@ -218,7 +218,7 @@ namespace Amazon.Redshift.Model
         ///  
         /// <para>
         /// Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
-        /// <code>PENDING</code>, <code>IN_PROGRESS</code>
+        /// <code>PENDING</code>, <code>IN_PROGRESS</code> 
         /// </para>
         /// </summary>
         public TableRestoreStatusType Status

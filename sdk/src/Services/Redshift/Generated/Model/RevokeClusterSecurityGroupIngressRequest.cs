@@ -45,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property CIDRIP. 
         /// <para>
-        ///  The IP range for which to revoke access. This range must be a valid Classless Inter-Domain
+        /// The IP range for which to revoke access. This range must be a valid Classless Inter-Domain
         /// Routing (CIDR) block of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>
         /// and <code>EC2SecurityGroupOwnerId</code> cannot be provided. 
         /// </para>
@@ -65,7 +65,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterSecurityGroupName. 
         /// <para>
-        ///  The name of the security Group from which to revoke the ingress rule. 
+        /// The name of the security Group from which to revoke the ingress rule.
         /// </para>
         /// </summary>
         public string ClusterSecurityGroupName
@@ -83,7 +83,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupName. 
         /// <para>
-        ///  The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code>
+        /// The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code>
         /// is specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code>
         /// cannot be provided. 
         /// </para>
@@ -103,14 +103,14 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupOwnerId. 
         /// <para>
-        ///  The AWS account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
+        /// The AWS account number of the owner of the security group specified in the <code>EC2SecurityGroupName</code>
         /// parameter. The AWS access key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code>
         /// is specified, <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code>
         /// cannot be provided. 
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>111122223333</code>
+        /// Example: <code>111122223333</code> 
         /// </para>
         /// </summary>
         public string EC2SecurityGroupOwnerId

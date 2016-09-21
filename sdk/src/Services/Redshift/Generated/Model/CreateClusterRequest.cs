@@ -29,12 +29,16 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCluster operation.
-    /// Creates a new cluster. To create the cluster in virtual private cloud (VPC), you
-    /// must provide cluster subnet group name. If you don't provide a cluster subnet group
-    /// name or the cluster security group parameter, Amazon Redshift creates a non-VPC cluster,
-    /// it associates the default cluster security group with the cluster. For more information
-    /// about managing clusters, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-    /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i> .
+    /// Creates a new cluster.
+    /// 
+    ///  
+    /// <para>
+    /// To create the cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet
+    /// group name. The cluster subnet group identifies the subnets of your VPC that Amazon
+    /// Redshift uses when creating the cluster. For more information about managing clusters,
+    /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+    /// </para>
     /// </summary>
     public partial class CreateClusterRequest : AmazonRedshiftRequest
     {
@@ -51,6 +55,7 @@ namespace Amazon.Redshift.Model
         private string _dbName;
         private string _elasticIp;
         private bool? _encrypted;
+        private bool? _enhancedVpcRouting;
         private string _hsmClientCertificateIdentifier;
         private string _hsmConfigurationIdentifier;
         private List<string> _iamRoles = new List<string>();
@@ -91,13 +96,13 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        ///  When a new major version of the Amazon Redshift engine is released, you can request
+        /// When a new major version of the Amazon Redshift engine is released, you can request
         /// that the service automatically apply upgrades during the maintenance window to the
-        /// Amazon Redshift engine that is running on your cluster. 
+        /// Amazon Redshift engine that is running on your cluster.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>true</code>
+        /// Default: <code>true</code> 
         /// </para>
         /// </summary>
         public bool AllowVersionUpgrade
@@ -115,13 +120,13 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AutomatedSnapshotRetentionPeriod. 
         /// <para>
-        ///  The number of days that automated snapshots are retained. If the value is 0, automated
+        /// The number of days that automated snapshots are retained. If the value is 0, automated
         /// snapshots are disabled. Even if automated snapshots are disabled, you can still create
         /// manual snapshots when you want with <a>CreateClusterSnapshot</a>. 
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>1</code> 
+        /// Default: <code>1</code> 
         /// </para>
         ///  
         /// <para>
@@ -143,24 +148,24 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        ///  The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the
+        /// The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the
         /// cluster. For example, if you have several EC2 instances running in a specific Availability
         /// Zone, then you might want the cluster to be provisioned in the same zone in order
-        /// to decrease network latency. 
+        /// to decrease network latency.
         /// </para>
         ///  
         /// <para>
-        ///  Default: A random, system-chosen Availability Zone in the region that is specified
-        /// by the endpoint. 
+        /// Default: A random, system-chosen Availability Zone in the region that is specified
+        /// by the endpoint.
         /// </para>
         ///  
         /// <para>
-        ///  Example: <code>us-east-1d</code> 
+        /// Example: <code>us-east-1d</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Constraint: The specified Availability Zone must be in the same region as the current
-        /// endpoint. 
+        /// Constraint: The specified Availability Zone must be in the same region as the current
+        /// endpoint.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -178,20 +183,37 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///  A unique identifier for the cluster. You use this identifier to refer to the cluster
+        /// A unique identifier for the cluster. You use this identifier to refer to the cluster
         /// for any subsequent cluster operations such as deleting or modifying. The identifier
-        /// also appears in the Amazon Redshift console. 
+        /// also appears in the Amazon Redshift console.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>Alphabetic
-        /// characters must be lowercase.</li> <li>First character must be a letter.</li> <li>Cannot
-        /// end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for
-        /// all clusters within an AWS account.</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>myexamplecluster</code>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alphabetic characters must be lowercase.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be unique for all clusters within an AWS account.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>myexamplecluster</code> 
         /// </para>
         /// </summary>
         public string ClusterIdentifier
@@ -209,21 +231,31 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterParameterGroupName. 
         /// <para>
-        ///  The name of the parameter group to be associated with this cluster. 
+        /// The name of the parameter group to be associated with this cluster.
         /// </para>
         ///  
         /// <para>
         /// Default: The default Amazon Redshift cluster parameter group. For information about
         /// the default parameter group, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Working
-        /// with Amazon Redshift Parameter Groups</a>
+        /// with Amazon Redshift Parameter Groups</a> 
         /// </para>
         ///  
         /// <para>
-        ///  Constraints: 
+        /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens.</li> <li>First character
-        /// must be a letter.</li> <li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 alphanumeric characters or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ClusterParameterGroupName
         {
@@ -240,11 +272,11 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterSecurityGroups. 
         /// <para>
-        ///  A list of security groups to be associated with this cluster. 
+        /// A list of security groups to be associated with this cluster.
         /// </para>
         ///  
         /// <para>
-        ///  Default: The default cluster security group for Amazon Redshift. 
+        /// Default: The default cluster security group for Amazon Redshift.
         /// </para>
         /// </summary>
         public List<string> ClusterSecurityGroups
@@ -262,12 +294,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterSubnetGroupName. 
         /// <para>
-        ///  The name of a cluster subnet group to be associated with this cluster. 
+        /// The name of a cluster subnet group to be associated with this cluster.
         /// </para>
         ///  
         /// <para>
-        ///  If this parameter is not provided the resulting cluster will be deployed outside
-        /// virtual private cloud (VPC). 
+        /// If this parameter is not provided the resulting cluster will be deployed outside virtual
+        /// private cloud (VPC).
         /// </para>
         /// </summary>
         public string ClusterSubnetGroupName
@@ -285,17 +317,23 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterType. 
         /// <para>
-        ///  The type of the cluster. When cluster type is specified as <ul> <li><code>single-node</code>,
-        /// the <b>NumberOfNodes</b> parameter is not required.</li> <li><code>multi-node</code>,
-        /// the <b>NumberOfNodes</b> parameter is required.</li> </ul> 
+        /// The type of the cluster. When cluster type is specified as
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not required.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Valid Values: <code>multi-node</code> | <code>single-node</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>multi-node</code> | <code>single-node</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>multi-node</code>
+        /// Default: <code>multi-node</code> 
         /// </para>
         /// </summary>
         public string ClusterType
@@ -313,12 +351,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterVersion. 
         /// <para>
-        ///  The version of the Amazon Redshift engine software that you want to deploy on the
-        /// cluster. 
+        /// The version of the Amazon Redshift engine software that you want to deploy on the
+        /// cluster.
         /// </para>
         ///  
         /// <para>
-        ///  The version selected runs on all the nodes in the cluster. 
+        /// The version selected runs on all the nodes in the cluster.
         /// </para>
         ///  
         /// <para>
@@ -326,7 +364,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>1.0</code>
+        /// Example: <code>1.0</code> 
         /// </para>
         /// </summary>
         public string ClusterVersion
@@ -344,7 +382,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DBName. 
         /// <para>
-        /// The name of the first database to be created when the cluster is created. 
+        /// The name of the first database to be created when the cluster is created.
         /// </para>
         ///  
         /// <para>
@@ -355,16 +393,27 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>dev</code>
+        /// Default: <code>dev</code> 
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain 1 to 64 alphanumeric characters.</li> <li>Must contain only
-        /// lowercase letters.</li> <li>Cannot be a word that is reserved by the service. A list
-        /// of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
-        /// Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain 1 to 64 alphanumeric characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain only lowercase letters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot be a word that is reserved by the service. A list of reserved words can be
+        /// found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+        /// Words</a> in the Amazon Redshift Database Developer Guide. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DBName
         {
@@ -426,6 +475,35 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnhancedVpcRouting. 
+        /// <para>
+        /// An option that specifies whether to create the cluster with enhanced VPC routing enabled.
+        /// To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC.
+        /// For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
+        /// VPC Routing</a> in the Amazon Redshift Cluster Management Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this option is <code>true</code>, enhanced VPC routing is enabled. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: false
+        /// </para>
+        /// </summary>
+        public bool EnhancedVpcRouting
+        {
+            get { return this._enhancedVpcRouting.GetValueOrDefault(); }
+            set { this._enhancedVpcRouting = value; }
+        }
+
+        // Check to see if EnhancedVpcRouting property is set
+        internal bool IsSetEnhancedVpcRouting()
+        {
+            return this._enhancedVpcRouting.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property HsmClientCertificateIdentifier. 
         /// <para>
         /// Specifies the name of the HSM client certificate the Amazon Redshift cluster uses
@@ -472,7 +550,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// A cluster can have up to 10 IAM roles associated at any time. 
+        /// A cluster can have up to 10 IAM roles associated with it at any time.
         /// </para>
         /// </summary>
         public List<string> IamRoles
@@ -509,17 +587,27 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        ///  The user name associated with the master user account for the cluster that is being
-        /// created. 
+        /// The user name associated with the master user account for the cluster that is being
+        /// created.
         /// </para>
         ///  
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 - 128 alphanumeric characters.</li> <li>First character must be
-        /// a letter.</li> <li>Cannot be a reserved word. A list of reserved words can be found
-        /// in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
-        /// Words</a> in the Amazon Redshift Database Developer Guide. </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 - 128 alphanumeric characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot be a reserved word. A list of reserved words can be found in <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+        /// Words</a> in the Amazon Redshift Database Developer Guide. 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string MasterUsername
         {
@@ -536,18 +624,35 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        ///  The password associated with the master user account for the cluster that is being
-        /// created. 
+        /// The password associated with the master user account for the cluster that is being
+        /// created.
         /// </para>
         ///  
         /// <para>
-        ///  Constraints: 
+        /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be between 8 and 64 characters in length.</li> <li>Must contain at
-        /// least one uppercase letter.</li> <li>Must contain at least one lowercase letter.</li>
-        /// <li>Must contain one number.</li> <li>Can be any printable ASCII character (ASCII
-        /// code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be between 8 and 64 characters in length.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain at least one uppercase letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain at least one lowercase letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain one number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote),
+        /// " (double quote), \, /, @, or space.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string MasterUserPassword
         {
@@ -564,14 +669,14 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
-        ///  The node type to be provisioned for the cluster. For information about node types,
+        /// The node type to be provisioned for the cluster. For information about node types,
         /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
         /// Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code>ds2.xlarge</code>
+        /// Valid Values: <code>ds1.xlarge</code> | <code>ds1.8xlarge</code> | <code>ds2.xlarge</code>
         /// | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code>. 
         /// </para>
         /// </summary>
@@ -590,7 +695,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
-        ///  The number of compute nodes in the cluster. This parameter is required when the <b>ClusterType</b>
+        /// The number of compute nodes in the cluster. This parameter is required when the <b>ClusterType</b>
         /// parameter is specified as <code>multi-node</code>. 
         /// </para>
         ///  
@@ -606,7 +711,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>1</code>
+        /// Default: <code>1</code> 
         /// </para>
         ///  
         /// <para>
@@ -628,7 +733,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        ///  The port number on which the cluster accepts incoming connections. 
+        /// The port number on which the cluster accepts incoming connections.
         /// </para>
         ///  
         /// <para>
@@ -638,11 +743,11 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>5439</code> 
+        /// Default: <code>5439</code> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>1150-65535</code> 
+        /// Valid Values: <code>1150-65535</code> 
         /// </para>
         /// </summary>
         public int Port
@@ -660,8 +765,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        ///  The weekly time range (in UTC) during which automated cluster maintenance can occur.
-        /// 
+        /// The weekly time range (in UTC) during which automated cluster maintenance can occur.
         /// </para>
         ///  
         /// <para>

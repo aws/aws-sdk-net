@@ -77,8 +77,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        ///  An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.
-        /// 
+        /// An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.
         /// </para>
         /// </summary>
         public List<string> SubnetIds

@@ -41,7 +41,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterSecurityGroupName. 
         /// <para>
-        ///  The name of the cluster security group to which the operation was applied. 
+        /// The name of the cluster security group to which the operation was applied.
         /// </para>
         /// </summary>
         public string ClusterSecurityGroupName
@@ -59,7 +59,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  A description of the security group. 
+        /// A description of the security group.
         /// </para>
         /// </summary>
         public string Description
@@ -77,8 +77,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroups. 
         /// <para>
-        ///  A list of EC2 security groups that are permitted to access clusters associated with
-        /// this cluster security group. 
+        /// A list of EC2 security groups that are permitted to access clusters associated with
+        /// this cluster security group.
         /// </para>
         /// </summary>
         public List<EC2SecurityGroup> EC2SecurityGroups
@@ -96,8 +96,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property IPRanges. 
         /// <para>
-        ///  A list of IP ranges (CIDR blocks) that are permitted to access clusters associated
-        /// with this cluster security group. 
+        /// A list of IP ranges (CIDR blocks) that are permitted to access clusters associated
+        /// with this cluster security group.
         /// </para>
         /// </summary>
         public List<IPRange> IPRanges

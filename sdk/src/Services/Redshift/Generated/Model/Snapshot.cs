@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         private long? _elapsedTimeInSeconds;
         private bool? _encrypted;
         private bool? _encryptedWithHSM;
+        private bool? _enhancedVpcRouting;
         private long? _estimatedSecondsToCompletion;
         private string _kmsKeyId;
         private string _masterUsername;
@@ -64,7 +65,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AccountsWithRestoreAccess. 
         /// <para>
-        ///  A list of the AWS customer accounts authorized to restore the snapshot. Returns <code>null</code>
+        /// A list of the AWS customer accounts authorized to restore the snapshot. Returns <code>null</code>
         /// if no accounts are authorized. Visible only to the snapshot owner. 
         /// </para>
         /// </summary>
@@ -83,7 +84,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ActualIncrementalBackupSizeInMegaBytes. 
         /// <para>
-        ///  The size of the incremental backup. 
+        /// The size of the incremental backup.
         /// </para>
         /// </summary>
         public double ActualIncrementalBackupSizeInMegaBytes
@@ -101,7 +102,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        ///  The Availability Zone in which the cluster was created. 
+        /// The Availability Zone in which the cluster was created.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -119,7 +120,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property BackupProgressInMegaBytes. 
         /// <para>
-        ///  The number of megabytes that have been transferred to the snapshot backup. 
+        /// The number of megabytes that have been transferred to the snapshot backup.
         /// </para>
         /// </summary>
         public double BackupProgressInMegaBytes
@@ -137,7 +138,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterCreateTime. 
         /// <para>
-        ///  The time (UTC) when the cluster was originally created. 
+        /// The time (UTC) when the cluster was originally created.
         /// </para>
         /// </summary>
         public DateTime ClusterCreateTime
@@ -155,7 +156,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///  The identifier of the cluster for which the snapshot was taken. 
+        /// The identifier of the cluster for which the snapshot was taken.
         /// </para>
         /// </summary>
         public string ClusterIdentifier
@@ -173,7 +174,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterVersion. 
         /// <para>
-        ///  The version ID of the Amazon Redshift engine that is running on the cluster. 
+        /// The version ID of the Amazon Redshift engine that is running on the cluster.
         /// </para>
         /// </summary>
         public string ClusterVersion
@@ -191,7 +192,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property CurrentBackupRateInMegaBytesPerSecond. 
         /// <para>
-        ///  The number of megabytes per second being transferred to the snapshot backup. Returns
+        /// The number of megabytes per second being transferred to the snapshot backup. Returns
         /// <code>0</code> for a completed backup. 
         /// </para>
         /// </summary>
@@ -210,7 +211,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DBName. 
         /// <para>
-        /// The name of the database that was created when the cluster was created. 
+        /// The name of the database that was created when the cluster was created.
         /// </para>
         /// </summary>
         public string DBName
@@ -228,8 +229,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ElapsedTimeInSeconds. 
         /// <para>
-        ///  The amount of time an in-progress snapshot backup has been running, or the amount
-        /// of time it took a completed backup to finish. 
+        /// The amount of time an in-progress snapshot backup has been running, or the amount
+        /// of time it took a completed backup to finish.
         /// </para>
         /// </summary>
         public long ElapsedTimeInSeconds
@@ -283,9 +284,38 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnhancedVpcRouting. 
+        /// <para>
+        /// An option that specifies whether to create the cluster with enhanced VPC routing enabled.
+        /// To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC.
+        /// For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
+        /// VPC Routing</a> in the Amazon Redshift Cluster Management Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this option is <code>true</code>, enhanced VPC routing is enabled. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: false
+        /// </para>
+        /// </summary>
+        public bool EnhancedVpcRouting
+        {
+            get { return this._enhancedVpcRouting.GetValueOrDefault(); }
+            set { this._enhancedVpcRouting = value; }
+        }
+
+        // Check to see if EnhancedVpcRouting property is set
+        internal bool IsSetEnhancedVpcRouting()
+        {
+            return this._enhancedVpcRouting.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EstimatedSecondsToCompletion. 
         /// <para>
-        ///  The estimate of the time remaining before the snapshot backup will complete. Returns
+        /// The estimate of the time remaining before the snapshot backup will complete. Returns
         /// <code>0</code> for a completed backup. 
         /// </para>
         /// </summary>
@@ -323,7 +353,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        ///  The master user name for the cluster. 
+        /// The master user name for the cluster.
         /// </para>
         /// </summary>
         public string MasterUsername
@@ -377,9 +407,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property OwnerAccount. 
         /// <para>
-        ///  For manual snapshots, the AWS customer account used to create or copy the snapshot.
+        /// For manual snapshots, the AWS customer account used to create or copy the snapshot.
         /// For automatic snapshots, the owner of the cluster. The owner can perform all snapshot
-        /// actions, such as sharing a manual snapshot. 
+        /// actions, such as sharing a manual snapshot.
         /// </para>
         /// </summary>
         public string OwnerAccount
@@ -397,7 +427,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        ///  The port that the cluster is listening on. 
+        /// The port that the cluster is listening on.
         /// </para>
         /// </summary>
         public int Port
@@ -433,8 +463,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SnapshotCreateTime. 
         /// <para>
-        ///  The time (UTC) when Amazon Redshift began the snapshot. A snapshot contains a copy
-        /// of the cluster data as of this exact time. 
+        /// The time (UTC) when Amazon Redshift began the snapshot. A snapshot contains a copy
+        /// of the cluster data as of this exact time.
         /// </para>
         /// </summary>
         public DateTime SnapshotCreateTime
@@ -452,7 +482,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SnapshotIdentifier. 
         /// <para>
-        ///  The snapshot identifier that is provided in the request. 
+        /// The snapshot identifier that is provided in the request.
         /// </para>
         /// </summary>
         public string SnapshotIdentifier
@@ -470,7 +500,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SnapshotType. 
         /// <para>
-        ///  The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
+        /// The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
         /// will be of type "manual". 
         /// </para>
         /// </summary>
@@ -489,7 +519,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SourceRegion. 
         /// <para>
-        ///  The source region from which the snapshot was copied. 
+        /// The source region from which the snapshot was copied.
         /// </para>
         /// </summary>
         public string SourceRegion
@@ -507,12 +537,23 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The snapshot status. The value of the status depends on the API operation used. <ul>
-        /// <li><a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> returns status as
-        /// "creating". </li> <li><a>DescribeClusterSnapshots</a> returns status as "creating",
-        /// "available", "final snapshot", or "failed".</li> <li><a>DeleteClusterSnapshot</a>
-        /// returns status as "deleted".</li> </ul> 
+        /// The snapshot status. The value of the status depends on the API operation used. 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a> returns status as "creating".
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DescribeClusterSnapshots</a> returns status as "creating", "available", "final
+        /// snapshot", or "failed".
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>DeleteClusterSnapshot</a> returns status as "deleted".
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {
@@ -547,8 +588,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property TotalBackupSizeInMegaBytes. 
         /// <para>
-        ///  The size of the complete set of backup data that would be used to restore the cluster.
-        /// 
+        /// The size of the complete set of backup data that would be used to restore the cluster.
         /// </para>
         /// </summary>
         public double TotalBackupSizeInMegaBytes
