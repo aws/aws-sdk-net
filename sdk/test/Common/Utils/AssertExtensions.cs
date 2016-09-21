@@ -19,6 +19,7 @@ using System.Text;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Text.RegularExpressions;
+using System.Security.Cryptography;
 
 namespace AWSSDK_DotNet.IntegrationTests.Utils
 {
@@ -92,6 +93,29 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             Assert.IsTrue(gotException, message);
 
             return exception;
+        }
+
+        /// <summary>
+        /// Checks if properties have been added, removed, or changed on a type since the previous run.
+        /// The check works by comparing a hard-coded hash to the current hash of the type's property names.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="expectedHash"></param>
+        /// <param name="notes"></param>
+        public static void AssertPropertiesUnchanged(Type type, string expectedHash, string notes)
+        {
+            SHA256CryptoServiceProvider provider = new SHA256CryptoServiceProvider();
+
+            var properties = type.GetProperties().Select((p) => p.Name).ToList();
+            // make sure string to hash is repeatable
+            properties.Sort();
+            var stringToHash = string.Join("::", properties.ToArray());
+            var actualHash = BitConverter.ToString(provider.ComputeHash(Encoding.Default.GetBytes(stringToHash))).Replace("-", "");
+
+            Assert.AreEqual(expectedHash, actualHash,
+                "The " + type.Name + " class has added, removed, or changed properties.  Please read the following notes and " +
+                "make any necessary changes.  Once the changes have been made use the value " + actualHash + " as the new expectedHash.\n" +
+                "NOTES:\n" + notes);
         }
     }
 }
