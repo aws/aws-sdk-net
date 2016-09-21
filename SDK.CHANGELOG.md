@@ -1,3 +1,15 @@
+### 3.3.1.0 (2016-09-21 21:17 UTC)
+* CodeDeploy (3.3.1.0)
+	* AWS CodeDeploy now integrates with Amazon CloudWatch alarms, making it possible to stop a deployment if there is a change in the state of a specified alarm for a number of consecutive periods, as specified in the alarm threshold. AWS CodeDeploy also now supports automatically rolling back a deployment if certain conditions are met, such as a deployment failure or an activated alarm.
+* ElasticMapReduce (3.3.1.0)
+	* Added support for Security Configurations which can be used to enable encryption at-rest and in-transit for certain applications on Amazon EMR.
+* RDS (3.3.1.0)
+	* Provide local time zone support for AWS RDS SqlServer database instances.
+* Redshift (3.3.1.0)
+	* This release of Amazon Redshift introduces Enhanced VPC Routing. When you use Amazon Redshift Enhanced VPC Routing, Amazon Redshift forces all COPY and UNLOAD traffic between your cluster and your data repositories through your Amazon VPC.
+* S3 (3.3.0.1)
+	* Fix null reference exception when validation error occurrs in STS.
+
 ### 3.3.0.0 (2016-09-19 17:15 UTC)
 * [GA release](http://blogs.aws.amazon.com/net/post/Tx3O6TT4NKFM0FU/General-Availability-for-NET-Core-Support-in-the-AWS-SDK-for-NET) of support for .NET Core in the AWS SDK for .NET 
 
