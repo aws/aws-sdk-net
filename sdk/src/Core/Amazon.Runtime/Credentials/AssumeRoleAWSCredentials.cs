@@ -27,8 +27,6 @@ namespace Amazon.Runtime
     /// </summary>
     public class AssumeRoleAWSCredentials : RefreshingAWSCredentials
     {
-        private static ILogger Logger = Amazon.Runtime.Internal.Util.Logger.GetLogger(typeof(AssumeRoleAWSCredentials));
-
         private RegionEndpoint DefaultSTSClientRegion = RegionEndpoint.USEast1;
 
         /// <summary>
@@ -103,22 +101,12 @@ namespace Amazon.Runtime
                     "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use Amazon.Runtime.AssumeRoleAWSCredentials.",
                     ServiceClientHelpers.STS_ASSEMBLY_NAME);
                 var exception = new InvalidOperationException(msg, e);
-                Logger.Error(exception, exception.Message);
+                Logger.GetLogger(typeof(AssumeRoleAWSCredentials)).Error(exception, exception.Message);
                 throw exception;
             }
 
-            try
-            {
-                var credentials = coreSTSClient.CredentialsFromAssumeRoleAuthentication(RoleArn, RoleSessionName, Options);
-                return new CredentialsRefreshState(credentials, credentials.Expiration);
-            }
-            catch (Exception e)
-            {
-                var msg = "Credential generation from AssumeRole authentication failed.";
-                var exception = new InvalidOperationException(msg, e);
-                Logger.Error(exception, exception.Message);
-                throw exception;
-            }
+            var credentials = coreSTSClient.CredentialsFromAssumeRoleAuthentication(RoleArn, RoleSessionName, Options);
+            return new CredentialsRefreshState(credentials, credentials.Expiration);
         }
     }
 }

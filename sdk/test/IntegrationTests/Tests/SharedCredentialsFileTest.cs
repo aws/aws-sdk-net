@@ -30,10 +30,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     [TestClass]
     public class SharedCredentialsFileTest
     {
-        private const string CredentialErrorMessage = "Credential generation from AssumeRole authentication failed.";
+        private const string CredentialErrorMessage = "Error calling AssumeRole for role ";
         private const string NotFoundErrorFormat = "Credential profile [{0}] was not found, or is invalid.";
         private const string BadSourceErrorFormat = "Credential profile [{0}] references source profile [{1}], which was not found, or is invalid.";
-        private const string TemporaryErrorFormat = "Credential profile [{0}] uses the mfa_serial key, which is not yet supported by the .NET SDK.";
+        private const string TemporaryErrorFormat = "Credential profile [{0}] uses the mfa_serial key, which is not yet supported by the AWS .NET SDK.";
         private const string TestUserName = "shared-credentials-file-user";
         private const string TestRoleName = "shared-credentials-file-role";
 
@@ -50,6 +50,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
             .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
             .Append("aws_session_token=session_aws_session_token")
+            .ToString();
+
+        private static readonly string BasicProfileTextCredentialsPartial = new StringBuilder()
+            .AppendLine("[basic_profile]")
+            .Append("aws_access_key_id=basic_aws_access_key_id")
+            .ToString();
+
+        private static readonly string BasicProfileTextCredentialsPrecedence = new StringBuilder()
+            .AppendLine("[basic_profile]")
+            .AppendLine("aws_access_key_id=basic_aws_access_key_id_CREDENTIALS")
+            .Append("aws_secret_access_key=basic_aws_secret_access_key")
+            .ToString();
+
+        private static readonly string BasicProfileTextConfigPartial = new StringBuilder()
+            .AppendLine("[profile basic_profile]")
+            .Append("aws_secret_access_key=basic_aws_secret_access_key")
+            .ToString();
+
+        private static readonly string BasicProfileTextConfigPrecedence = new StringBuilder()
+            .AppendLine("[profile basic_profile]")
+            .AppendLine("aws_access_key_id=basic_aws_access_key_id_CONFIG")
+            .Append("aws_secret_access_key=basic_aws_secret_access_key")
             .ToString();
 
         private static readonly string AssumeRoleProfileTextInvalidSource = new StringBuilder()
@@ -96,6 +118,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         private static readonly BasicAWSCredentials BasicCredentials =
             new BasicAWSCredentials("basic_aws_access_key_id", "basic_aws_secret_access_key");
+
+        private static readonly BasicAWSCredentials BasicCredentialsPrecedence =
+            new BasicAWSCredentials("basic_aws_access_key_id_CREDENTIALS", "basic_aws_secret_access_key");
 
         private static readonly SessionAWSCredentials SessionCredentials =
             new SessionAWSCredentials("session_aws_access_key_id", "session_aws_secret_access_key", "session_aws_session_token");
@@ -201,7 +226,61 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 tester.CredentialsFile.DeleteProfile("session_profile");
                 tester.CredentialsFile.Persist();
-                tester.AssertFileContents(BasicProfileText);
+                tester.AssertCredentialsFileContents(BasicProfileText);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("General")]
+        public void ReadBasicProfileAllConfig()
+        {
+            var basicProfileInConfig = BasicProfileText.Replace("basic_profile", "profile basic_profile");
+            using (var tester = new SharedCredentialsFileTester(null, basicProfileInConfig))
+            {
+                tester.AssertReadProfile("basic_profile", BasicCredentials);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("General")]
+        public void ReadBasicProfileAllConfigExtraSpacesAndTabInName()
+        {
+            var basicProfileInConfig = BasicProfileText.Replace("basic_profile", "profile \t basic_profile");
+            using (var tester = new SharedCredentialsFileTester(null, basicProfileInConfig))
+            {
+                tester.AssertReadProfile("basic_profile", BasicCredentials);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("General")]
+        public void ReadBasicProfileAllConfigForgotProfileKeyword()
+        {
+            using (var tester = new SharedCredentialsFileTester(null, BasicProfileText))
+            {
+                Assert.IsNull(tester.CredentialsFile.GetAWSCredentials("basic_profile"));
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("General")]
+        public void ReadBasicProfileSplit()
+        {
+            using (var tester = new SharedCredentialsFileTester(
+                BasicProfileTextCredentialsPartial, BasicProfileTextConfigPartial))
+            {
+                tester.AssertReadProfile("basic_profile", BasicCredentials);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("General")]
+        public void ReadBasicProfileCredentialsTakesPrecedence()
+        {
+            using (var tester = new SharedCredentialsFileTester(
+                BasicProfileTextCredentialsPrecedence, BasicProfileTextConfigPrecedence))
+            {
+                tester.AssertReadProfile("basic_profile", BasicCredentialsPrecedence);
             }
         }
 
@@ -254,7 +333,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             try
             {
-                // in case a test dies in the middle of clean up and is restarted
+                // clean up at start in case a test dies in the middle of clean up and is restarted
                 IAMTestUtil.CleanupTestRoleAndUser(TestRoleName, TestUserName);
 
                 var roleArn = "arn:aws:iam::" + UtilityMethods.AccountId + ":role/" + TestRoleName;
@@ -282,7 +361,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             using (var client = new AmazonS3Client(assumeRoleCredentials))
             {
                 // user/role setup may not be complete
-                // so try for up to 10 seconds before giving up
+                // so retry for a bit before giving up
                 var stopTime = DateTime.Now.AddSeconds(15);
                 while (response == null && DateTime.Now < stopTime)
                 {
@@ -295,7 +374,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     }
                     catch (AmazonClientException e)
                     {
-                        if (expectAuthenticationFailure && string.Equals(CredentialErrorMessage, e.Message, StringComparison.Ordinal))
+                        if (expectAuthenticationFailure && e.Message.StartsWith(CredentialErrorMessage, StringComparison.Ordinal))
                         {
                             return;
                         }
@@ -323,27 +402,42 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         private class SharedCredentialsFileTester : IDisposable
         {
-            private string FilePath { get; set; }
+            private const string CredentialsFileName = "credentials";
+
+            private string CredentialsFilePath { get; set; }
+            private string ConfigFilePath { get; set; }
+            private string DirectoryPath { get; set; }
+
             public SharedCredentialsFile CredentialsFile { get; private set; }
 
-            public SharedCredentialsFileTester(string fileContents)
+            public SharedCredentialsFileTester(string credentialsFileContents, string configFileContents = null,
+                bool createEmptyFile = false)
             {
-                FilePath = Path.GetTempFileName();
-                File.WriteAllText(FilePath, fileContents);
-                CredentialsFile = new SharedCredentialsFile(FilePath);
-            }
+                PrepareTempFilePaths();
 
-            public SharedCredentialsFileTester(bool createFile = false)
-            {
-                if (createFile)
+                if (credentialsFileContents == null)
                 {
-                    FilePath = Path.GetTempFileName();
+                    if (createEmptyFile)
+                    {
+                        File.WriteAllText(CredentialsFilePath, "");
+                    }
                 }
                 else
                 {
-                    FilePath = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+                    File.WriteAllText(CredentialsFilePath, credentialsFileContents);
                 }
-                CredentialsFile = new SharedCredentialsFile(FilePath);
+
+                if (configFileContents != null)
+                {
+                    File.WriteAllText(ConfigFilePath, configFileContents);
+                }
+
+                CredentialsFile = new SharedCredentialsFile(CredentialsFilePath);
+            }
+
+            public SharedCredentialsFileTester(bool createEmptyFile = false)
+                : this(null, null, createEmptyFile)
+            {
             }
 
             public AssumeRoleAWSCredentials GetAndAssertAssumeRoleProfile(string profileName, BasicAWSCredentials expectedSourceCredentials,
@@ -371,20 +465,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.AreEqual(expectedCredentials?.GetCredentials(), AssertReadProfile(profileName).GetCredentials());
             }
 
-            private AWSCredentials AssertReadProfile(string profileName)
-            {
-                Assert.IsNotNull(CredentialsFile.GetAWSCredentials(profileName));
-                AWSCredentials credentials;
-                Assert.IsTrue(CredentialsFile.TryGetAWSCredentials(profileName, out credentials));
-                return credentials;
-            }
-
             public void AssertWriteProfile(string profileName, SessionAWSCredentials credentials, string expectedFileContents)
             {
                 CredentialsFile.AddOrUpdateCredentials(profileName, credentials.GetCredentials().AccessKey,
                     credentials.GetCredentials().SecretKey, credentials.GetCredentials().Token);
                 CredentialsFile.Persist();
-                AssertFileContents(expectedFileContents);
+                AssertCredentialsFileContents(expectedFileContents);
             }
 
             public void AssertWriteProfile(string profileName, BasicAWSCredentials credentials, string expectedFileContents)
@@ -392,17 +478,36 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 CredentialsFile.AddOrUpdateCredentials(profileName, credentials.GetCredentials().AccessKey,
                     credentials.GetCredentials().SecretKey);
                 CredentialsFile.Persist();
-                AssertFileContents(expectedFileContents);
+                AssertCredentialsFileContents(expectedFileContents);
             }
 
-            public void AssertFileContents(string expectedContents)
+            public void AssertCredentialsFileContents(string expectedContents)
             {
-                Assert.AreEqual(expectedContents, File.ReadAllText(FilePath));
+                Assert.AreEqual(expectedContents, File.ReadAllText(CredentialsFilePath));
             }
 
             public void Dispose()
             {
-                File.Delete(FilePath);
+                File.Delete(CredentialsFilePath);
+                File.Delete(ConfigFilePath);
+                Directory.Delete(DirectoryPath);
+            }
+
+            private void PrepareTempFilePaths()
+            {
+                DirectoryPath = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+                Directory.CreateDirectory(DirectoryPath);
+
+                CredentialsFilePath = Path.Combine(DirectoryPath, CredentialsFileName);
+                ConfigFilePath = Path.Combine(DirectoryPath, SharedCredentialsFile.ConfigFileName);
+            }
+
+            private AWSCredentials AssertReadProfile(string profileName)
+            {
+                Assert.IsNotNull(CredentialsFile.GetAWSCredentials(profileName));
+                AWSCredentials credentials;
+                Assert.IsTrue(CredentialsFile.TryGetAWSCredentials(profileName, out credentials));
+                return credentials;
             }
 
         }

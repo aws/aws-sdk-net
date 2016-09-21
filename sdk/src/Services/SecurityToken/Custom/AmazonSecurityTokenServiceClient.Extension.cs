@@ -19,7 +19,7 @@ using Amazon.Runtime;
 
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.SecurityToken.Model;
-using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Util;
 
 #if BCL
 using Amazon.SecurityToken.SAML;
@@ -29,6 +29,7 @@ namespace Amazon.SecurityToken
 {
     public partial class AmazonSecurityTokenServiceClient : AmazonServiceClient, IAmazonSecurityTokenService
     {
+
 #if BCL
         SAMLImmutableCredentials ICoreAmazonSTS.CredentialsFromSAMLAuthentication(string endpoint,
                                                                                   string authenticationType,
@@ -95,7 +96,10 @@ namespace Amazon.SecurityToken
             }
             catch (Exception e)
             {
-                throw new AmazonClientException("Error calling AssumeRole for role " + roleArn, e);
+                var msg = "Error calling AssumeRole for role " + roleArn;
+                var exception = new AmazonClientException(msg, e);
+                Logger.GetLogger(typeof(AmazonSecurityTokenServiceClient)).Error(exception, exception.Message);
+                throw exception;
             }
         }
     }

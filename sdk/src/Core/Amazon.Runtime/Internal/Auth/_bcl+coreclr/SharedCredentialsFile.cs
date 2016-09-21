@@ -20,6 +20,7 @@ using System.IO;
 using System.Linq;
 using Amazon.Runtime;
 using Amazon.Runtime.SharedInterfaces;
+using System.Text.RegularExpressions;
 
 namespace Amazon.Runtime.Internal.Auth
 {
@@ -35,16 +36,19 @@ namespace Amazon.Runtime.Internal.Auth
     public class SharedCredentialsFile
     {
         public const string RoleSessionNamePrefix = "aws-dotnet-sdk-session-";
+        public const string ConfigFileName = "config";
+        private const string ProfileMarker = "profile";
 
-        private const string accessKeyPropertyName = "aws_access_key_id";
-        private const string secretKeyPropertyName = "aws_secret_access_key";
-        private const string tokenPropertyName = "aws_session_token";
-        private const string sourceProfilePropertyName = "source_profile";
-        private const string roleArnPropertyName = "role_arn";
-        private const string mfaSerialPropertyName = "mfa_serial";
-        private const string externalIDPropertyName = "external_id";
+        private const string AccessKeyPropertyName = "aws_access_key_id";
+        private const string SecretKeyPropertyName = "aws_secret_access_key";
+        private const string TokenPropertyName = "aws_session_token";
+        private const string SourceProfilePropertyName = "source_profile";
+        private const string RoleArnPropertyName = "role_arn";
+        private const string MFASerialPropertyName = "mfa_serial";
+        private const string ExternalIDPropertyName = "external_id";
 
-        private IniFile iniFile;
+        private IniFile credentialsFile;
+        private IniFile configFile;
 
         /// <summary>
         /// Construct a new SharedCredentialsFile.
@@ -52,7 +56,15 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="filePath">path of the shared credentials file</param>
         public SharedCredentialsFile(string filePath)
         {
-            iniFile = new IniFile(filePath);
+            credentialsFile = new IniFile(filePath);
+
+            // If a config file exists in the same location as the credentials file
+            // load it for use as a read-only source of profile properties.
+            var configPath = Path.Combine(Path.GetDirectoryName(filePath), ConfigFileName);
+            if (File.Exists(configPath))
+            {
+                configFile = new IniFile(configPath);
+            }
         }
 
         public List<string> ListProfileNames()
@@ -126,13 +138,13 @@ namespace Amazon.Runtime.Internal.Auth
                 throw new ArgumentNullException("secretAccessKey", "secretAccessKey cannot be null or empty.");
             }
             var properties = new List<KeyValuePair<string, string>>();
-            properties.Add(new KeyValuePair<string, string>(accessKeyPropertyName, accessKey));
-            properties.Add(new KeyValuePair<string, string>(secretKeyPropertyName, secretAccessKey));
+            properties.Add(new KeyValuePair<string, string>(AccessKeyPropertyName, accessKey));
+            properties.Add(new KeyValuePair<string, string>(SecretKeyPropertyName, secretAccessKey));
             if (!string.IsNullOrEmpty(token))
             {
-                properties.Add(new KeyValuePair<string, string>(tokenPropertyName, token));
+                properties.Add(new KeyValuePair<string, string>(TokenPropertyName, token));
             }
-            iniFile.EditSection(profileName, properties);
+            credentialsFile.EditSection(profileName, properties);
         }
 
         /// <summary>
@@ -142,7 +154,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="profileName">ProfileName of section to delete</param>
         public void DeleteProfile(string profileName)
         {
-            iniFile.DeleteSection(profileName);
+            credentialsFile.DeleteSection(profileName);
         }
 
         /// <summary>
@@ -150,13 +162,13 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         public void Persist()
         {
-            iniFile.Persist();
+            credentialsFile.Persist();
         }
 
         private AWSCredentials GetAWSCredentials(string profileName, bool throwIfInvalid)
         {
             Dictionary<string, string> properties;
-            if (iniFile.TryGetSection(profileName, out properties))
+            if (TryGetSection(profileName, out properties))
             {
                 var detector = new ProfileTypeDetector(properties);
 
@@ -169,7 +181,7 @@ namespace Amazon.Runtime.Internal.Auth
                     case ProfileType.AssumeRole:
                     case ProfileType.AssumeRoleExternal:
                         Dictionary<string, string> sourceProperties;
-                        if (iniFile.TryGetSection(detector.SourceProfile, out sourceProperties))
+                        if (TryGetSection(detector.SourceProfile, out sourceProperties))
                         {
                             var sourceDetector = new ProfileTypeDetector(sourceProperties);
                             if (sourceDetector.ProfileType == ProfileType.Basic)
@@ -221,6 +233,47 @@ namespace Amazon.Runtime.Internal.Auth
             return null;
         }
 
+        /// <summary>
+        /// Try to get a profile that may be partially in the credentials file and partially in the config file.
+        /// If there are any properties in both files, the properties in the credentials file take precedence.
+        /// </summary>
+        /// <param name="sectionName"></param>
+        /// <param name="properties"></param>
+        /// <returns></returns>
+        private bool TryGetSection(string sectionName, out Dictionary<string, string> properties)
+        {
+            Dictionary<string, string> credentialsProperties = null;
+            Dictionary<string, string> configProperties = null;
+
+            var hasCredentialsProperties = credentialsFile.TryGetSection(sectionName, out credentialsProperties);
+
+            // INI sections in the config file must be prefixed with "profile " to be recognized as a profile.
+            var configSectionNameRegex = new Regex(ProfileMarker + "[ \t]+" + Regex.Escape(sectionName));
+            var hasConfigProperties = configFile?.TryGetSection(configSectionNameRegex, out configProperties);
+
+            if (hasConfigProperties.GetValueOrDefault())
+            {
+                properties = configProperties;
+                if (hasCredentialsProperties)
+                {
+                    // Add all the properties from the credentials file.
+                    // If a property exits in both, the one from the credentials
+                    // file takes precedence and overwrites the one from
+                    // the config file.
+                    foreach (var pair in credentialsProperties)
+                    {
+                        properties[pair.Key] = pair.Value;
+                    }
+                }
+                return true;
+            }
+else
+            {
+                properties = credentialsProperties;
+                return hasCredentialsProperties;
+            }
+        }
+
         private enum ProfileType
         {
             Basic,
@@ -234,13 +287,13 @@ namespace Amazon.Runtime.Internal.Auth
 
         private class ProfileTypeDetector
         {
-            public readonly string[] ProfileBasic = new string[] { accessKeyPropertyName, secretKeyPropertyName };
-            public readonly string[] ProfileSession = new string[] { accessKeyPropertyName, secretKeyPropertyName, tokenPropertyName };
-            public readonly string[] ProfileAssumeRole = new string[] { sourceProfilePropertyName, roleArnPropertyName };
-            public readonly string[] ProfileAssumeRoleMFA = new string[] { sourceProfilePropertyName, roleArnPropertyName, mfaSerialPropertyName };
-            public readonly string[] ProfileAssumeRoleExternal = new string[] { sourceProfilePropertyName, roleArnPropertyName, externalIDPropertyName };
-            public readonly string[] ProfileAssumeRoleExternalMFA = new string[] { sourceProfilePropertyName, roleArnPropertyName, externalIDPropertyName, mfaSerialPropertyName };
-            public readonly string[] AllKeys = new string[] { accessKeyPropertyName, secretKeyPropertyName, tokenPropertyName, sourceProfilePropertyName, roleArnPropertyName, mfaSerialPropertyName, externalIDPropertyName };
+            public readonly string[] ProfileBasic = new string[] { AccessKeyPropertyName, SecretKeyPropertyName };
+            public readonly string[] ProfileSession = new string[] { AccessKeyPropertyName, SecretKeyPropertyName, TokenPropertyName };
+            public readonly string[] ProfileAssumeRole = new string[] { SourceProfilePropertyName, RoleArnPropertyName };
+            public readonly string[] ProfileAssumeRoleMFA = new string[] { SourceProfilePropertyName, RoleArnPropertyName, MFASerialPropertyName };
+            public readonly string[] ProfileAssumeRoleExternal = new string[] { SourceProfilePropertyName, RoleArnPropertyName, ExternalIDPropertyName };
+            public readonly string[] ProfileAssumeRoleExternalMFA = new string[] { SourceProfilePropertyName, RoleArnPropertyName, ExternalIDPropertyName, MFASerialPropertyName };
+            public readonly string[] AllKeys = new string[] { AccessKeyPropertyName, SecretKeyPropertyName, TokenPropertyName, SourceProfilePropertyName, RoleArnPropertyName, MFASerialPropertyName, ExternalIDPropertyName };
 
             private string accessKey = null;
             private string secretKey = null;
@@ -262,13 +315,13 @@ namespace Amazon.Runtime.Internal.Auth
 
             public ProfileTypeDetector(Dictionary<string, string> properties)
             {
-                properties.TryGetValue(accessKeyPropertyName, out accessKey);
-                properties.TryGetValue(secretKeyPropertyName, out secretKey);
-                properties.TryGetValue(tokenPropertyName, out token);
-                properties.TryGetValue(sourceProfilePropertyName, out sourceProfile);
-                properties.TryGetValue(roleArnPropertyName, out roleArn);
-                properties.TryGetValue(mfaSerialPropertyName, out mfaSerial);
-                properties.TryGetValue(externalIDPropertyName, out externalID);
+                properties.TryGetValue(AccessKeyPropertyName, out accessKey);
+                properties.TryGetValue(SecretKeyPropertyName, out secretKey);
+                properties.TryGetValue(TokenPropertyName, out token);
+                properties.TryGetValue(SourceProfilePropertyName, out sourceProfile);
+                properties.TryGetValue(RoleArnPropertyName, out roleArn);
+                properties.TryGetValue(MFASerialPropertyName, out mfaSerial);
+                properties.TryGetValue(ExternalIDPropertyName, out externalID);
 
                 if (HasOnlyExpectedProperties(properties, ProfileBasic))
                 {
