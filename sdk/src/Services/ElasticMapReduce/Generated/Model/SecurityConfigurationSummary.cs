@@ -28,31 +28,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// 
+    /// The creation date and time, and name, of a security configuration.
     /// </summary>
-    public partial class BootstrapActionConfig
+    public partial class SecurityConfigurationSummary
     {
+        private DateTime? _creationDateTime;
         private string _name;
-        private ScriptBootstrapActionConfig _scriptBootstrapAction;
 
         /// <summary>
-        /// Empty constructor used to set  properties independently even when a simple constructor is available
+        /// Gets and sets the property CreationDateTime. 
+        /// <para>
+        /// The date and time the security configuration was created.
+        /// </para>
         /// </summary>
-        public BootstrapActionConfig() { }
-
-        /// <summary>
-        /// Instantiates BootstrapActionConfig with the parameterized properties
-        /// </summary>
-        /// <param name="name">Sets the BootstrapActionConfig Name property</param>
-        /// <param name="scriptBootstrapAction">Sets the BootstrapActionConfig ScriptBootstrapAction property</param>
-        public BootstrapActionConfig(string name, ScriptBootstrapActionConfig scriptBootstrapAction)
+        public DateTime CreationDateTime
         {
-            _name = name;
-            _scriptBootstrapAction = scriptBootstrapAction;
+            get { return this._creationDateTime.GetValueOrDefault(); }
+            set { this._creationDateTime = value; }
+        }
+
+        // Check to see if CreationDateTime property is set
+        internal bool IsSetCreationDateTime()
+        {
+            return this._creationDateTime.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the security configuration.
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -64,21 +69,6 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetName()
         {
             return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ScriptBootstrapAction.
-        /// </summary>
-        public ScriptBootstrapActionConfig ScriptBootstrapAction
-        {
-            get { return this._scriptBootstrapAction; }
-            set { this._scriptBootstrapAction = value; }
-        }
-
-        // Check to see if ScriptBootstrapAction property is set
-        internal bool IsSetScriptBootstrapAction()
-        {
-            return this._scriptBootstrapAction != null;
         }
 
     }

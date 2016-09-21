@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Configuration of the script to run during a bootstrap action.
+    /// 
     /// </summary>
     public partial class ScriptBootstrapActionConfig
     {
@@ -43,8 +43,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Instantiates ScriptBootstrapActionConfig with the parameterized properties
         /// </summary>
-        /// <param name="path">Location of the script to run during a bootstrap action. Can be either a location in Amazon S3 or on a local file system.</param>
-        /// <param name="args">A list of command line arguments to pass to the bootstrap action script.</param>
+        /// <param name="path">Sets the ScriptBootstrapActionConfig Path property</param>
+        /// <param name="args">Sets the ScriptBootstrapActionConfig Args property</param>
         public ScriptBootstrapActionConfig(string path, List<string> args)
         {
             _path = path;
@@ -52,10 +52,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Args. 
-        /// <para>
-        /// A list of command line arguments to pass to the bootstrap action script.
-        /// </para>
+        /// Gets and sets the property Args.
         /// </summary>
         public List<string> Args
         {
@@ -70,11 +67,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Path. 
-        /// <para>
-        /// Location of the script to run during a bootstrap action. Can be either a location
-        /// in Amazon S3 or on a local file system.
-        /// </para>
+        /// Gets and sets the property Path.
         /// </summary>
         public string Path
         {

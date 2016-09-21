@@ -178,6 +178,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ReleaseLabel);
                 }
 
+                if(publicRequest.IsSetSecurityConfiguration())
+                {
+                    context.Writer.WritePropertyName("SecurityConfiguration");
+                    context.Writer.Write(publicRequest.SecurityConfiguration);
+                }
+
                 if(publicRequest.IsSetServiceRole())
                 {
                     context.Writer.WritePropertyName("ServiceRole");

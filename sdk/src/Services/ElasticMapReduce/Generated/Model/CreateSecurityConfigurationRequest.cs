@@ -28,31 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// 
+    /// Container for the parameters to the CreateSecurityConfiguration operation.
+    /// Creates a security configuration using EMR Security Configurations, which are stored
+    /// in the service. Security Configurations enable you to more easily create a configuration,
+    /// reuse it, and apply it whenever a cluster is created.
     /// </summary>
-    public partial class BootstrapActionConfig
+    public partial class CreateSecurityConfigurationRequest : AmazonElasticMapReduceRequest
     {
         private string _name;
-        private ScriptBootstrapActionConfig _scriptBootstrapAction;
+        private string _securityConfiguration;
 
         /// <summary>
-        /// Empty constructor used to set  properties independently even when a simple constructor is available
-        /// </summary>
-        public BootstrapActionConfig() { }
-
-        /// <summary>
-        /// Instantiates BootstrapActionConfig with the parameterized properties
-        /// </summary>
-        /// <param name="name">Sets the BootstrapActionConfig Name property</param>
-        /// <param name="scriptBootstrapAction">Sets the BootstrapActionConfig ScriptBootstrapAction property</param>
-        public BootstrapActionConfig(string name, ScriptBootstrapActionConfig scriptBootstrapAction)
-        {
-            _name = name;
-            _scriptBootstrapAction = scriptBootstrapAction;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the security configuration.
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -67,18 +57,21 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScriptBootstrapAction.
+        /// Gets and sets the property SecurityConfiguration. 
+        /// <para>
+        /// The security configuration details in JSON format.
+        /// </para>
         /// </summary>
-        public ScriptBootstrapActionConfig ScriptBootstrapAction
+        public string SecurityConfiguration
         {
-            get { return this._scriptBootstrapAction; }
-            set { this._scriptBootstrapAction = value; }
+            get { return this._securityConfiguration; }
+            set { this._securityConfiguration = value; }
         }
 
-        // Check to see if ScriptBootstrapAction property is set
-        internal bool IsSetScriptBootstrapAction()
+        // Check to see if SecurityConfiguration property is set
+        internal bool IsSetSecurityConfiguration()
         {
-            return this._scriptBootstrapAction != null;
+            return this._securityConfiguration != null;
         }
 
     }

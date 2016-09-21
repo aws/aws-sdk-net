@@ -28,36 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListBootstrapActions operation.
-    /// Provides information about the bootstrap actions associated with a cluster.
+    /// Container for the parameters to the ListSecurityConfigurations operation.
+    /// Lists all the security configurations visible to this account, providing their creation
+    /// dates and times, and their names. This call returns a maximum of 50 clusters per call,
+    /// but returns a marker to track the paging of the cluster list across multiple ListSecurityConfigurations
+    /// calls.
     /// </summary>
-    public partial class ListBootstrapActionsRequest : AmazonElasticMapReduceRequest
+    public partial class ListSecurityConfigurationsRequest : AmazonElasticMapReduceRequest
     {
-        private string _clusterId;
         private string _marker;
-
-        /// <summary>
-        /// Gets and sets the property ClusterId. 
-        /// <para>
-        /// The cluster identifier for the bootstrap actions to list .
-        /// </para>
-        /// </summary>
-        public string ClusterId
-        {
-            get { return this._clusterId; }
-            set { this._clusterId = value; }
-        }
-
-        // Check to see if ClusterId property is set
-        internal bool IsSetClusterId()
-        {
-            return this._clusterId != null;
-        }
 
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The pagination token that indicates the next set of results to retrieve.
+        /// The pagination token that indicates the set of results to retrieve.
         /// </para>
         /// </summary>
         public string Marker

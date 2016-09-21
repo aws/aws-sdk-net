@@ -74,6 +74,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _name;
         private List<SupportedProductConfig> _newSupportedProducts = new List<SupportedProductConfig>();
         private string _releaseLabel;
+        private string _securityConfiguration;
         private string _serviceRole;
         private List<StepConfig> _steps = new List<StepConfig>();
         private List<string> _supportedProducts = new List<string>();
@@ -377,6 +378,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetReleaseLabel()
         {
             return this._releaseLabel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityConfiguration. 
+        /// <para>
+        /// The name of a security configuration to apply to the cluster.
+        /// </para>
+        /// </summary>
+        public string SecurityConfiguration
+        {
+            get { return this._securityConfiguration; }
+            set { this._securityConfiguration = value; }
+        }
+
+        // Check to see if SecurityConfiguration property is set
+        internal bool IsSetSecurityConfiguration()
+        {
+            return this._securityConfiguration != null;
         }
 
         /// <summary>
