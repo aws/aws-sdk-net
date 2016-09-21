@@ -330,6 +330,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.TdeCredentialArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Timezone", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Timezone = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("VpcSecurityGroups/VpcSecurityGroupMembership", targetDepth))
                     {
                         var unmarshaller = VpcSecurityGroupMembershipUnmarshaller.Instance;

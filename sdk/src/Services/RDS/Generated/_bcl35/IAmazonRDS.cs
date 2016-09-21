@@ -4387,8 +4387,8 @@ namespace Amazon.RDS
         /// <summary>
         /// Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon
         /// RDS must be authorized to access the Amazon S3 bucket and the data must be created
-        /// using the Percona XtraBackup utility as described in <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Migrate.html">Migrating
-        /// Data from an External MySQL Database to an Amazon Aurora DB Cluster</a>.
+        /// using the Percona XtraBackup utility as described in <a href="AmazonRDS/latest/UserGuide/Aurora.Migrate.MySQL.html#Aurora.Migrate.MySQL.S3">Migrating
+        /// Data from MySQL by Using an Amazon S3 Bucket</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreDBClusterFromS3 service method.</param>
         /// 

@@ -69,6 +69,7 @@ namespace Amazon.RDS.Model
         private List<Tag> _tags = new List<Tag>();
         private string _tdeCredentialArn;
         private string _tdeCredentialPassword;
+        private string _timezone;
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
         /// <summary>
@@ -1699,6 +1700,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetTdeCredentialPassword()
         {
             return this._tdeCredentialPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timezone. 
+        /// <para>
+        /// The time zone of the DB instance. The time zone parameter is currently supported only
+        /// by <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
+        /// SQL Server</a>. 
+        /// </para>
+        /// </summary>
+        public string Timezone
+        {
+            get { return this._timezone; }
+            set { this._timezone = value; }
+        }
+
+        // Check to see if Timezone property is set
+        internal bool IsSetTimezone()
+        {
+            return this._timezone != null;
         }
 
         /// <summary>

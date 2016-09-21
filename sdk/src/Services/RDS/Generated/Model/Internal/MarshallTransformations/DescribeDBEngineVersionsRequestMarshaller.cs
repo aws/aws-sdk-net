@@ -99,6 +99,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ListSupportedCharacterSets", StringUtils.FromBool(publicRequest.ListSupportedCharacterSets));
                 }
+                if(publicRequest.IsSetListSupportedTimezones())
+                {
+                    request.Parameters.Add("ListSupportedTimezones", StringUtils.FromBool(publicRequest.ListSupportedTimezones));
+                }
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
