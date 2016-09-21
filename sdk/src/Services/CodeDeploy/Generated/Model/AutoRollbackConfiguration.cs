@@ -28,56 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a stop deployment operation.
+    /// Information about a configuration for automatically rolling back to a previous version
+    /// of an application revision when a deployment doesn't complete successfully.
     /// </summary>
-    public partial class StopDeploymentResponse : AmazonWebServiceResponse
+    public partial class AutoRollbackConfiguration
     {
-        private StopStatus _status;
-        private string _statusMessage;
+        private bool? _enabled;
+        private List<string> _events = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property Enabled. 
         /// <para>
-        /// The status of the stop deployment operation:
+        /// Indicates whether a defined automatic rollback configuration is currently enabled.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Pending: The stop operation is pending.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Succeeded: The stop operation was successful.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
-        public StopStatus Status
+        public bool Enabled
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
         {
-            return this._status != null;
+            return this._enabled.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property StatusMessage. 
+        /// Gets and sets the property Events. 
         /// <para>
-        /// An accompanying status message.
+        /// The event type or types that trigger a rollback.
         /// </para>
         /// </summary>
-        public string StatusMessage
+        public List<string> Events
         {
-            get { return this._statusMessage; }
-            set { this._statusMessage = value; }
+            get { return this._events; }
+            set { this._events = value; }
         }
 
-        // Check to see if StatusMessage property is set
-        internal bool IsSetStatusMessage()
+        // Check to see if Events property is set
+        internal bool IsSetEvents()
         {
-            return this._statusMessage != null;
+            return this._events != null && this._events.Count > 0; 
         }
 
     }

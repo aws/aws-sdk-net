@@ -67,10 +67,32 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAlarmConfiguration())
+                {
+                    context.Writer.WritePropertyName("alarmConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AlarmConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AlarmConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetApplicationName())
                 {
                     context.Writer.WritePropertyName("applicationName");
                     context.Writer.Write(publicRequest.ApplicationName);
+                }
+
+                if(publicRequest.IsSetAutoRollbackConfiguration())
+                {
+                    context.Writer.WritePropertyName("autoRollbackConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AutoRollbackConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AutoRollbackConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetAutoScalingGroups())

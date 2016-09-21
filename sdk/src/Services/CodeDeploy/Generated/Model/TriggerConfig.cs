@@ -41,13 +41,6 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The event type or types for which notifications are triggered.
         /// </para>
-        ///  
-        /// <para>
-        /// The following event type values are supported:
-        /// </para>
-        ///  <ul> <li>DEPLOYMENT_START</li> <li>DEPLOYMENT_SUCCESS</li> <li>DEPLOYMENT_FAILURE</li>
-        /// <li>DEPLOYMENT_STOP</li> <li>INSTANCE_START</li> <li>INSTANCE_SUCCESS</li> <li>INSTANCE_FAILURE</li>
-        /// </ul>
         /// </summary>
         public List<string> TriggerEvents
         {

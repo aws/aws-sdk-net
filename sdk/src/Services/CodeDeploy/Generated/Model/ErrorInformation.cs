@@ -40,24 +40,68 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The error code:
         /// </para>
-        ///  <ul> <li>APPLICATION_MISSING: The application was missing. This error code will most
-        /// likely be raised if the application is deleted after the deployment is created but
-        /// before it is started.</li> <li>DEPLOYMENT_GROUP_MISSING: The deployment group was
-        /// missing. This error code will most likely be raised if the deployment group is deleted
-        /// after the deployment is created but before it is started.</li> <li>HEALTH_CONSTRAINTS:
-        /// The deployment failed on too many instances to be successfully deployed within the
-        /// instance health constraints specified.</li> <li>HEALTH_CONSTRAINTS_INVALID: The revision
-        /// cannot be successfully deployed within the instance health constraints specified.</li>
-        /// <li>IAM_ROLE_MISSING: The service role cannot be accessed.</li> <li>IAM_ROLE_PERMISSIONS:
-        /// The service role does not have the correct permissions.</li> <li>INTERNAL_ERROR: There
-        /// was an internal error.</li> <li>NO_EC2_SUBSCRIPTION: The calling account is not subscribed
-        /// to the Amazon EC2 service.</li> <li>NO_INSTANCES: No instance were specified, or no
-        /// instance can be found.</li> <li>OVER_MAX_INSTANCES: The maximum number of instance
-        /// was exceeded.</li> <li>THROTTLED: The operation was throttled because the calling
-        /// account exceeded the throttling limits of one or more AWS services.</li> <li>TIMEOUT:
-        /// The deployment has timed out.</li> <li>REVISION_MISSING: The revision ID was missing.
-        /// This error code will most likely be raised if the revision is deleted after the deployment
-        /// is created but before it is started.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// APPLICATION_MISSING: The application was missing. This error code will most likely
+        /// be raised if the application is deleted after the deployment is created but before
+        /// it is started.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DEPLOYMENT_GROUP_MISSING: The deployment group was missing. This error code will most
+        /// likely be raised if the deployment group is deleted after the deployment is created
+        /// but before it is started.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// HEALTH_CONSTRAINTS: The deployment failed on too many instances to be successfully
+        /// deployed within the instance health constraints specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// HEALTH_CONSTRAINTS_INVALID: The revision cannot be successfully deployed within the
+        /// instance health constraints specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IAM_ROLE_MISSING: The service role cannot be accessed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IAM_ROLE_PERMISSIONS: The service role does not have the correct permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INTERNAL_ERROR: There was an internal error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NO_EC2_SUBSCRIPTION: The calling account is not subscribed to the Amazon EC2 service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NO_INSTANCES: No instance were specified, or no instance can be found.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OVER_MAX_INSTANCES: The maximum number of instance was exceeded.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// THROTTLED: The operation was throttled because the calling account exceeded the throttling
+        /// limits of one or more AWS services.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TIMEOUT: The deployment has timed out.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// REVISION_MISSING: The revision ID was missing. This error code will most likely be
+        /// raised if the revision is deleted after the deployment is created but before it is
+        /// started.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ErrorCode Code
         {

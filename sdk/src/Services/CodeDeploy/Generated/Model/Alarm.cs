@@ -28,37 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDeploymentConfig operation.
-    /// Deletes a deployment configuration.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// A deployment configuration cannot be deleted if it is currently in use. Predefined
-    /// configurations cannot be deleted.
-    /// </para>
-    ///  </note>
+    /// Information about an alarm.
     /// </summary>
-    public partial class DeleteDeploymentConfigRequest : AmazonCodeDeployRequest
+    public partial class Alarm
     {
-        private string _deploymentConfigName;
+        private string _name;
 
         /// <summary>
-        /// Gets and sets the property DeploymentConfigName. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The name of a deployment configuration associated with the applicable IAM user or
-        /// AWS account.
+        /// The name of the alarm. Maximum length is 255 characters. Each alarm name can be used
+        /// only once in a list of alarms.
         /// </para>
         /// </summary>
-        public string DeploymentConfigName
+        public string Name
         {
-            get { return this._deploymentConfigName; }
-            set { this._deploymentConfigName = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if DeploymentConfigName property is set
-        internal bool IsSetDeploymentConfigName()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._deploymentConfigName != null;
+            return this._name != null;
         }
 
     }

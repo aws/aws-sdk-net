@@ -73,6 +73,17 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ApplicationName);
                 }
 
+                if(publicRequest.IsSetAutoRollbackConfiguration())
+                {
+                    context.Writer.WritePropertyName("autoRollbackConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AutoRollbackConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AutoRollbackConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDeploymentConfigName())
                 {
                     context.Writer.WritePropertyName("deploymentConfigName");
@@ -106,6 +117,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.Revision, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetUpdateOutdatedInstancesOnly())
+                {
+                    context.Writer.WritePropertyName("updateOutdatedInstancesOnly");
+                    context.Writer.Write(publicRequest.UpdateOutdatedInstancesOnly);
                 }
 
         

@@ -70,6 +70,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApplicationName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("autoRollbackConfiguration", targetDepth))
+                {
+                    var unmarshaller = AutoRollbackConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AutoRollbackConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("completeTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -136,6 +142,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.Revision = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rollbackInfo", targetDepth))
+                {
+                    var unmarshaller = RollbackInfoUnmarshaller.Instance;
+                    unmarshalledObject.RollbackInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -146,6 +158,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("updateOutdatedInstancesOnly", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.UpdateOutdatedInstancesOnly = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

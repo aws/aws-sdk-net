@@ -31,13 +31,21 @@ namespace Amazon.CodeDeploy
     /// <summary>
     /// Interface for accessing CodeDeploy
     ///
-    /// AWS CodeDeploy <b>Overview</b> 
+    /// AWS CodeDeploy 
+    /// <para>
+    ///  <b>Overview</b> 
+    /// </para>
+    ///  
     /// <para>
     /// This reference guide provides descriptions of the AWS CodeDeploy APIs. For more information
-    /// about AWS CodeDeploy, see the <a href="docs.aws.amazon.com/codedeploy/latest/userguide">AWS
+    /// about AWS CodeDeploy, see the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS
     /// CodeDeploy User Guide</a>.
     /// </para>
+    ///  
+    /// <para>
     ///  <b>Using the APIs</b> 
+    /// </para>
+    ///  
     /// <para>
     /// You can use the AWS CodeDeploy APIs to work with the following:
     /// </para>
@@ -93,7 +101,7 @@ namespace Amazon.CodeDeploy
     /// These revisions contain source content (such as source code, web pages, executable
     /// files, and deployment scripts) along with an application specification (AppSpec) file.
     /// (The AppSpec file is unique to AWS CodeDeploy; it defines the deployment actions you
-    /// want AWS CodeDeploy to execute.) Ffor application revisions stored in Amazon S3 buckets,
+    /// want AWS CodeDeploy to execute.) For application revisions stored in Amazon S3 buckets,
     /// an application revision is uniquely identified by its Amazon S3 object key and its
     /// ETag, version, or both. For application revisions stored in GitHub repositories, an
     /// application revision is uniquely identified by its repository name and commit ID.

@@ -64,12 +64,19 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The type parameter takes either of the following values:
         /// </para>
-        ///  <ul> <li>HOST_COUNT: The value parameter represents the minimum number of healthy
-        /// instances as an absolute value.</li> <li>FLEET_PERCENT: The value parameter represents
-        /// the minimum number of healthy instances as a percentage of the total number of instances
-        /// in the deployment. If you specify FLEET_PERCENT, at the start of the deployment, AWS
-        /// CodeDeploy converts the percentage to the equivalent number of instance and rounds
-        /// up fractional instances.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// HOST_COUNT: The value parameter represents the minimum number of healthy instances
+        /// as an absolute value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FLEET_PERCENT: The value parameter represents the minimum number of healthy instances
+        /// as a percentage of the total number of instances in the deployment. If you specify
+        /// FLEET_PERCENT, at the start of the deployment, AWS CodeDeploy converts the percentage
+        /// to the equivalent number of instance and rounds up fractional instances.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// The value parameter takes an integer.
         /// </para>

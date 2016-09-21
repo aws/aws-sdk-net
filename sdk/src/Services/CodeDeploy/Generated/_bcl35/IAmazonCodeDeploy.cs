@@ -29,13 +29,21 @@ namespace Amazon.CodeDeploy
     /// <summary>
     /// Interface for accessing CodeDeploy
     ///
-    /// AWS CodeDeploy <b>Overview</b> 
+    /// AWS CodeDeploy 
+    /// <para>
+    ///  <b>Overview</b> 
+    /// </para>
+    ///  
     /// <para>
     /// This reference guide provides descriptions of the AWS CodeDeploy APIs. For more information
-    /// about AWS CodeDeploy, see the <a href="docs.aws.amazon.com/codedeploy/latest/userguide">AWS
+    /// about AWS CodeDeploy, see the <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS
     /// CodeDeploy User Guide</a>.
     /// </para>
+    ///  
+    /// <para>
     ///  <b>Using the APIs</b> 
+    /// </para>
+    ///  
     /// <para>
     /// You can use the AWS CodeDeploy APIs to work with the following:
     /// </para>
@@ -91,7 +99,7 @@ namespace Amazon.CodeDeploy
     /// These revisions contain source content (such as source code, web pages, executable
     /// files, and deployment scripts) along with an application specification (AppSpec) file.
     /// (The AppSpec file is unique to AWS CodeDeploy; it defines the deployment actions you
-    /// want AWS CodeDeploy to execute.) Ffor application revisions stored in Amazon S3 buckets,
+    /// want AWS CodeDeploy to execute.) For application revisions stored in Amazon S3 buckets,
     /// an application revision is uniquely identified by its Amazon S3 object key and its
     /// ETag, version, or both. For application revisions stored in GitHub repositories, an
     /// application revision is uniquely identified by its repository name and commit ID.
@@ -551,6 +559,11 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoRollbackConfigException">
+        /// The automatic rollback configuration was specified in an invalid format. For example,
+        /// automatic rollback is enabled but an invalid triggering event type or no event types
+        /// were listed.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentConfigNameException">
         /// The deployment configuration name was specified in an invalid format.
         /// </exception>
@@ -559,6 +572,9 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidRevisionException">
         /// The revision was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.RevisionDoesNotExistException">
+        /// The named revision does not exist with the applicable IAM user or AWS account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.RevisionRequiredException">
         /// The revision ID was not specified.
@@ -653,6 +669,9 @@ namespace Amazon.CodeDeploy
         /// <param name="request">Container for the necessary parameters to execute the CreateDeploymentGroup service method.</param>
         /// 
         /// <returns>The response from the CreateDeploymentGroup service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.AlarmsLimitExceededException">
+        /// The maximum number of alarms for a deployment group (10) was exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
         /// The application does not exist with the applicable IAM user or AWS account.
         /// </exception>
@@ -672,8 +691,38 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
         /// The deployment group name was not specified.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidAlarmConfigException">
+        /// The format of the alarm configuration is invalid. Possible causes include:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The alarm list is null.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm object is null.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm name is empty or null or exceeds the 255 character limit.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Two alarms with the same name have been specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm configuration is enabled but the alarm list is empty.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoRollbackConfigException">
+        /// The automatic rollback configuration was specified in an invalid format. For example,
+        /// automatic rollback is enabled but an invalid triggering event type or no event types
+        /// were listed.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoScalingGroupException">
         /// The Auto Scaling group was specified in an invalid format or does not exist.
@@ -784,8 +833,12 @@ namespace Amazon.CodeDeploy
         /// <summary>
         /// Deletes a deployment configuration.
         /// 
-        ///  <note>A deployment configuration cannot be deleted if it is currently in use. Predefined
-        /// configurations cannot be deleted.</note>
+        ///  <note> 
+        /// <para>
+        /// A deployment configuration cannot be deleted if it is currently in use. Predefined
+        /// configurations cannot be deleted.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeploymentConfig service method.</param>
         /// 
@@ -1940,6 +1993,9 @@ namespace Amazon.CodeDeploy
         /// <param name="request">Container for the necessary parameters to execute the UpdateDeploymentGroup service method.</param>
         /// 
         /// <returns>The response from the UpdateDeploymentGroup service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.AlarmsLimitExceededException">
+        /// The maximum number of alarms for a deployment group (10) was exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
         /// The application does not exist with the applicable IAM user or AWS account.
         /// </exception>
@@ -1959,8 +2015,38 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
         /// The deployment group name was not specified.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidAlarmConfigException">
+        /// The format of the alarm configuration is invalid. Possible causes include:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The alarm list is null.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm object is null.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm name is empty or null or exceeds the 255 character limit.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Two alarms with the same name have been specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The alarm configuration is enabled but the alarm list is empty.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidApplicationNameException">
         /// The application name was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoRollbackConfigException">
+        /// The automatic rollback configuration was specified in an invalid format. For example,
+        /// automatic rollback is enabled but an invalid triggering event type or no event types
+        /// were listed.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoScalingGroupException">
         /// The Auto Scaling group was specified in an invalid format or does not exist.
