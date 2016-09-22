@@ -200,8 +200,7 @@ namespace Amazon.APIGateway.Model
         /// A map that defines the method settings for a <a>Stage</a> resource. Keys (designated
         /// as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code>
         /// for an individual method override, or <code>/\*/\*</code> for overriding all methods
-        /// in the stage. Any forward slash ("/") characters in the <code>resource_path</code>
-        /// part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.
+        /// in the stage. 
         /// </para>
         /// </summary>
         public Dictionary<string, MethodSetting> MethodSettings

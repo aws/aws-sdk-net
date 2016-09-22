@@ -241,8 +241,11 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specifies the integration's type. The valid value is <code>HTTP</code>, <code>AWS</code>,
-        /// or <code>MOCK</code>.
+        /// Specifies the integration's type. The valid value is <code>HTTP</code> for integrating
+        /// with an HTTP back end, <code>AWS</code> for any AWS service endpoints, <code>MOCK</code>
+        /// for testing without actually invoking the back end, <code>HTTP_PROXY</code> for integrating
+        /// with the HTTP proxy integration, or <code>AWS_PROXY</code> for integrating with the
+        /// Lambda proxy integration type.
         /// </para>
         /// </summary>
         public IntegrationType Type

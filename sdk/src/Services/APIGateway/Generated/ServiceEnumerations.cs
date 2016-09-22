@@ -267,9 +267,17 @@ namespace Amazon.APIGateway
         /// </summary>
         public static readonly IntegrationType AWS = new IntegrationType("AWS");
         /// <summary>
+        /// Constant AWS_PROXY for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType AWS_PROXY = new IntegrationType("AWS_PROXY");
+        /// <summary>
         /// Constant HTTP for IntegrationType
         /// </summary>
         public static readonly IntegrationType HTTP = new IntegrationType("HTTP");
+        /// <summary>
+        /// Constant HTTP_PROXY for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType HTTP_PROXY = new IntegrationType("HTTP_PROXY");
         /// <summary>
         /// Constant MOCK for IntegrationType
         /// </summary>
