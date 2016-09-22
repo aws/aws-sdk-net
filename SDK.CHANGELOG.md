@@ -1,3 +1,7 @@
+### 3.3.2.0 (2016-09-22 20:34 UTC)
+* APIGateway (3.3.1.0)
+	* Simple Proxy support includes three new features: new greedy path formats (no API change), new pseudo-HTTP method (ANY), and two new integration types (AWS_PROXY, HTTP_PROXY).
+
 ### 3.3.1.0 (2016-09-21 21:17 UTC)
 * CodeDeploy (3.3.1.0)
 	* AWS CodeDeploy now integrates with Amazon CloudWatch alarms, making it possible to stop a deployment if there is a change in the state of a specified alarm for a number of consecutive periods, as specified in the alarm threshold. AWS CodeDeploy also now supports automatically rolling back a deployment if certain conditions are met, such as a deployment failure or an activated alarm.
