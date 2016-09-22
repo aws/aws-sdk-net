@@ -53,7 +53,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Construct a new SharedCredentialsFile.
         /// </summary>
-        /// <param name="filePath">path of the shared credentials file</param>
+        /// <param name="filePath">The path of the shared credentials file.</param>
         public SharedCredentialsFile(string filePath)
         {
             credentialsFile = new IniFile(filePath);
@@ -84,8 +84,8 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Get credentials for the given profile.
         /// </summary>
-        /// <param name="profileName">name of profile to find credentials for</param>
-        /// <returns>true if the profile exists and has valid credentials, false otherwise</returns>
+        /// <param name="profileName">The name of profile to find credentials for.</param>
+        /// <returns>True if the profile exists and has valid credentials, false otherwise.</returns>
         public AWSCredentials GetAWSCredentials(string profileName)
         {
             return GetAWSCredentials(profileName, true);
@@ -94,9 +94,9 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Return the credentials for the profile if valid credentials can be found.
         /// </summary>
-        /// <param name="profileName">name of profile to find credentials for</param>
-        /// <param name="credentials">the credentials for the profile</param>
-        /// <returns>true if the profile was found and it contained valid credentials, false otherwise</returns>
+        /// <param name="profileName">The name of profile to find credentials for.</param>
+        /// <param name="credentials">The credentials for the profile.</param>
+        /// <returns>True if the profile was found and it contained valid credentials, false otherwise.</returns>
         public bool TryGetAWSCredentials(string profileName, out AWSCredentials credentials)
         {
             credentials = GetAWSCredentials(profileName, false);
@@ -107,9 +107,9 @@ namespace Amazon.Runtime.Internal.Auth
         /// Add credentials for the profile given.  If credentials for the profile already exist, update them.
         /// Changes are not written to disk until the Persist() method is called.
         /// </summary>
-        /// <param name="profileName">name of profile</param>
-        /// <param name="accessKey">access key for the credentials</param>
-        /// <param name="secretAccessKey">secret access key for the credentials</param>
+        /// <param name="profileName">The name of profile.</param>
+        /// <param name="accessKey">The access key for the credentials.</param>
+        /// <param name="secretAccessKey">The secret access key for the credentials.</param>
         public void AddOrUpdateCredentials(string profileName, string accessKey, string secretAccessKey)
         {
             AddOrUpdateCredentials(profileName, accessKey, secretAccessKey, null);
@@ -119,10 +119,10 @@ namespace Amazon.Runtime.Internal.Auth
         /// Add credentials for the profile given.  If credentials for the profile already exist, update them.
         /// Changes are not written to disk until the Persist() method is called.
         /// </summary>
-        /// <param name="profileName">name of profile</param>
-        /// <param name="accessKey">access key for the credentials</param>
-        /// <param name="secretAccessKey">secret access key for the credentials</param>
-        /// <param name="token">token for the credentials</param>
+        /// <param name="profileName">The name of profile.</param>
+        /// <param name="accessKey">The access key for the credentials.</param>
+        /// <param name="secretAccessKey">The secret access key for the credentials.</param>
+        /// <param name="token">The token for the credentials.</param>
         public void AddOrUpdateCredentials(string profileName, string accessKey, string secretAccessKey, string token)
         {
             if (string.IsNullOrEmpty(profileName))
@@ -151,7 +151,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// Deletes the section with the given ProfileName from the SharedCredentialsFile, if one exists.
         /// Changes are not written to disk until the Persist() method is called.
         /// </summary>
-        /// <param name="profileName">ProfileName of section to delete</param>
+        /// <param name="profileName">The ProfileName of the section to delete.</param>
         public void DeleteProfile(string profileName)
         {
             credentialsFile.DeleteSection(profileName);
@@ -180,6 +180,8 @@ namespace Amazon.Runtime.Internal.Auth
                         return new SessionAWSCredentials(detector.AccessKey, detector.SecretKey, detector.Token);
                     case ProfileType.AssumeRole:
                     case ProfileType.AssumeRoleExternal:
+                    case ProfileType.AssumeRoleMFA:
+                    case ProfileType.AssumeRoleExternalMFA:
                         Dictionary<string, string> sourceProperties;
                         if (TryGetSection(detector.SourceProfile, out sourceProperties))
                         {
@@ -190,7 +192,8 @@ namespace Amazon.Runtime.Internal.Auth
                                 var roleSessionName = RoleSessionNamePrefix + DateTime.UtcNow.Ticks;
                                 var options = new AssumeRoleAWSCredentialsOptions()
                                 {
-                                    ExternalId = detector.ExternalID
+                                    ExternalId = detector.ExternalID,
+                                    MfaSerialNumber = detector.MfaSerial
                                 };
                                 return new AssumeRoleAWSCredentials(
                                     sourceCredentials, detector.RoleArn, roleSessionName, options);
@@ -201,17 +204,6 @@ namespace Amazon.Runtime.Internal.Auth
                         {
                             throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture,
                                "Credential profile [{0}] references source profile [{1}], which was not found, or is invalid.", profileName, detector.SourceProfile));
-                        }
-                        else
-                        {
-                            return null;
-                        }
-                    case ProfileType.AssumeRoleMFA:
-                    case ProfileType.AssumeRoleExternalMFA:
-                        if (throwIfInvalid)
-                        {
-                            throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture,
-                                "Credential profile [{0}] uses the mfa_serial key, which is not yet supported by the AWS .NET SDK.", profileName));
                         }
                         else
                         {
@@ -308,7 +300,7 @@ else
             public string Token { get { return token; } }
             public string SourceProfile { get { return sourceProfile; } }
             public string RoleArn { get { return roleArn; } }
-            public string MFASerial { get { return mfaSerial; } }
+            public string MfaSerial { get { return mfaSerial; } }
             public string ExternalID { get { return externalID; } }
 
             public ProfileType ProfileType { get; private set; }

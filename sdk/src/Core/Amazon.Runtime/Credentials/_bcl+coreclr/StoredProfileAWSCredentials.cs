@@ -39,11 +39,15 @@ namespace Amazon.Runtime
     /// </summary>
     public class StoredProfileAWSCredentials : AWSCredentials
     {
-        #region Private members
-
         private AWSCredentials _wrappedCredentials;
 
-        #endregion
+        public AWSCredentials WrappedCredentials
+        {
+            get
+            {
+                return _wrappedCredentials;
+            }
+        }
 
         #region Public constructors
 

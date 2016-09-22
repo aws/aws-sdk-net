@@ -30,14 +30,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     [TestClass]
     public class SharedCredentialsFileTest
     {
+        private const string MfaErrorMessage = "The MfaSerialNumber has been set but the MfaTokenCodeCallback hasn't.  " +
+            "MfaTokenCodeCallback is required in order to determine the MfaTokenCode when MfaSerialNumber is set.";
         private const string CredentialErrorMessage = "Error calling AssumeRole for role ";
         private const string NotFoundErrorFormat = "Credential profile [{0}] was not found, or is invalid.";
         private const string BadSourceErrorFormat = "Credential profile [{0}] references source profile [{1}], which was not found, or is invalid.";
-        private const string TemporaryErrorFormat = "Credential profile [{0}] uses the mfa_serial key, which is not yet supported by the AWS .NET SDK.";
         private const string TestUserName = "shared-credentials-file-user";
         private const string TestRoleName = "shared-credentials-file-role";
 
         private static readonly string ExternalId = Guid.NewGuid().ToString();
+        private static readonly string MfaSerialNumber = Guid.NewGuid().ToString();
+        private static readonly string MfaTokenCode = Guid.NewGuid().ToString();
 
         private static readonly string BasicProfileText = new StringBuilder()
             .AppendLine("[basic_profile]")
@@ -77,14 +80,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         private static readonly string AssumeRoleProfileTextInvalidSource = new StringBuilder()
             .AppendLine("[assume_role_profile]")
             .AppendLine("source_profile=basic_profile")
-            .Append("role_arn=assume_role_role_arn")
+            .Append("role_arn=assume_role_arn")
             .ToString();
 
-        private static readonly string AssumeRoleMFAProfileText = new StringBuilder()
+        private static readonly string AssumeRoleMfaProfileText = new StringBuilder()
             .AppendLine("[assume_role_mfa_profile]")
             .AppendLine("source_profile=basic_profile")
-            .AppendLine("role_arn=assume_role_role_arn")
-            .Append("mfa_serial=assume_role_mfa_serial")
+            .AppendLine("role_arn=assume_role_arn")
+            .Append("mfa_serial=").Append(MfaSerialNumber)
             .ToString();
 
         private static readonly string LiveAssumeRoleProfileTextFormat = new StringBuilder()
@@ -125,7 +128,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         private static readonly SessionAWSCredentials SessionCredentials =
             new SessionAWSCredentials("session_aws_access_key_id", "session_aws_secret_access_key", "session_aws_session_token");
 
-        [TestMethod]
+        private static readonly AssumeRoleAWSCredentialsOptions MfaCredentialsOptions;
+        private static readonly AssumeRoleAWSCredentials MfaCredentials;
+        private static readonly Func<string> MfaTokenCodeCallback;
+
+        static SharedCredentialsFileTest()
+        {
+            MfaTokenCodeCallback = () => { return MfaTokenCode; };
+            MfaCredentialsOptions = new AssumeRoleAWSCredentialsOptions()
+            {
+                MfaSerialNumber = MfaSerialNumber,
+                MfaTokenCodeCallback = MfaTokenCodeCallback
+            };
+            MfaCredentials = new AssumeRoleAWSCredentials(BasicCredentials, "assume_role_role_arn", "unchecked", MfaCredentialsOptions);
+        }
+
+    [TestMethod]
         [TestCategory("General")]
         public void ReadBasicProfile()
         {
@@ -193,14 +211,30 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         [TestMethod]
         [TestCategory("General")]
-        public void ReadAssumeRoleMFAProfile()
+        public void ReadAssumeRoleMfaProfile()
         {
-            using (var tester = new SharedCredentialsFileTester(AssumeRoleMFAProfileText))
+            using (var tester = new SharedCredentialsFileTester(AssumeRoleMfaProfileText + Environment.NewLine + BasicProfileText))
+            {
+                var mfaAssumeRoleCredentials = tester.GetAndAssertAssumeRoleProfile("assume_role_mfa_profile",
+                    BasicCredentials, "assume_role_arn", null, TimeSpan.Zero, MfaSerialNumber);
+                mfaAssumeRoleCredentials.Options.MfaTokenCodeCallback = MfaTokenCodeCallback;
+                Assert.AreEqual(MfaTokenCode, mfaAssumeRoleCredentials.Options.MfaTokenCode);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("General")]
+        public void ReadAssumeRoleMfaProfileNoTokenCodeCallback()
+        {
+            var profileName = "assume_role_mfa_profile";
+            using (var tester = new SharedCredentialsFileTester(AssumeRoleMfaProfileText + Environment.NewLine + BasicProfileText))
             {
                 AssertExtensions.ExpectException(() =>
                 {
-                    tester.AssertReadProfile("assume_role_mfa_profile", null);
-                }, typeof(InvalidDataException), string.Format(TemporaryErrorFormat, "assume_role_mfa_profile"));
+                    var mfaAssumeRoleCredentials = tester.GetAndAssertAssumeRoleProfile(profileName,
+                        BasicCredentials, "assume_role_arn", null, TimeSpan.Zero, MfaSerialNumber);
+                    var mfaTokenCode = mfaAssumeRoleCredentials.Options.MfaTokenCode;
+                }, typeof(InvalidOperationException), MfaErrorMessage);
             }
         }
 
@@ -344,7 +378,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     sourceCredentials.GetCredentials().AccessKey, sourceCredentials.GetCredentials().SecretKey, roleArn)))
                 {
                     var assumeRoleCredentials = tester.GetAndAssertAssumeRoleProfile(TestRoleName + "-profile",
-                        sourceCredentials, roleArn, credentialsFileExternalId, TimeSpan.Zero, null, null);
+                        sourceCredentials, roleArn, credentialsFileExternalId, TimeSpan.Zero, null);
 
                     AssertCredentials(assumeRoleCredentials, !string.Equals(credentialsFileExternalId, roleExternalId, StringComparison.Ordinal));
                 }
@@ -362,7 +396,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 // user/role setup may not be complete
                 // so retry for a bit before giving up
-                var stopTime = DateTime.Now.AddSeconds(15);
+                var stopTime = DateTime.Now.AddSeconds(20);
                 while (response == null && DateTime.Now < stopTime)
                 {
                     var doSleep = true;
@@ -440,9 +474,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
             }
 
-            public AssumeRoleAWSCredentials GetAndAssertAssumeRoleProfile(string profileName, BasicAWSCredentials expectedSourceCredentials,
-                string expectedRoleArn, string expectedExternalId, TimeSpan expectedPreemptExpiryTime,
-                string expectedMFASerialNumber, string expectedMFATokenCode)
+            public AssumeRoleAWSCredentials GetAndAssertAssumeRoleProfile(string profileName,
+                BasicAWSCredentials expectedSourceCredentials, string expectedRoleArn, string expectedExternalId,
+                TimeSpan expectedPreemptExpiryTime, string expectedMfaSerialNumber)
             {
                 var actualCredentials = AssertReadProfile(profileName) as AssumeRoleAWSCredentials;
 
@@ -451,10 +485,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.AreEqual(expectedRoleArn, actualCredentials.RoleArn);
                 Assert.AreEqual(expectedExternalId, actualCredentials.Options.ExternalId);
                 Assert.AreEqual(expectedPreemptExpiryTime, actualCredentials.PreemptExpiryTime);
-                Assert.AreEqual(expectedMFASerialNumber, actualCredentials.Options.MfaSerialNumber);
-                Assert.AreEqual(expectedMFATokenCode, actualCredentials.Options.MfaTokenCode);
+                Assert.AreEqual(expectedMfaSerialNumber, actualCredentials.Options.MfaSerialNumber);
 
-                //role session name is not an exact match since DateTime.Now.Ticks is part of it
+                //role session name is not an exact match since DateTime.UtcNow.Ticks is part of it
                 Assert.IsTrue(actualCredentials.RoleSessionName.StartsWith(SharedCredentialsFile.RoleSessionNamePrefix));
 
                 return actualCredentials;
@@ -509,7 +542,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 Assert.IsTrue(CredentialsFile.TryGetAWSCredentials(profileName, out credentials));
                 return credentials;
             }
-
         }
     }
 }

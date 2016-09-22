@@ -29,16 +29,6 @@ namespace Amazon.Runtime
         public string ExternalId { get; set; }
 
         /// <summary>
-        /// The identification number of the MFA device that is associated with the user who is making the assume-role call.
-        /// </summary>
-        public string MfaSerialNumber { get; set; }
-
-        /// <summary>
-        /// The value provided by the MFA device, if the trust policy of the role being assumed requires MFA.
-        /// </summary>
-        public string MfaTokenCode { get; set; }
-
-        /// <summary>
         ///  An IAM policy in JSON format.
         /// </summary>
         public string Policy { get; set; }
@@ -55,5 +45,37 @@ namespace Amazon.Runtime
         public WebProxy ProxySettings { get; set; }
 #endif
 
+        /// <summary>
+        /// The identification number of the MFA device that is associated with the user who is making the assume-role call.
+        /// </summary>
+        public string MfaSerialNumber { get; set; }
+
+        /// <summary>
+        /// The value provided by the MFA device, if the trust policy of the role being assumed requires MFA.
+        /// </summary>
+        public string MfaTokenCode
+        {
+            get
+            {
+                if (String.IsNullOrEmpty(MfaSerialNumber))
+                {
+                    return null;
+                }
+                else if (MfaTokenCodeCallback == null)
+                {
+                    throw new InvalidOperationException("The MfaSerialNumber has been set but the MfaTokenCodeCallback hasn't.  " +
+                        "MfaTokenCodeCallback is required in order to determine the MfaTokenCode when MfaSerialNumber is set.");
+                }
+                else
+                {
+                    return MfaTokenCodeCallback();
+                }
+            }
+        }
+
+        /// <summary>
+        /// A callback that's used to obtain the MFA token code when the AssumeRoleAWSCredentials are refreshed.
+        /// </summary>
+        public Func<string> MfaTokenCodeCallback { get; set; }
     }
 }
