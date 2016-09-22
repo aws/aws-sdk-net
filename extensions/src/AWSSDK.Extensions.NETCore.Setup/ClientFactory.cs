@@ -81,13 +81,13 @@ namespace Amazon.Extensions.NETCore.Setup
         {
             var clientTypeName = serviceInterfaceType.Namespace + "." + serviceInterfaceType.Name.Substring(1) + "Client";
             var clientType = serviceInterfaceType.GetTypeInfo().Assembly.GetType(clientTypeName);
-            if(clientType == null)
+            if (clientType == null)
             {
                 throw new AmazonClientException($"Failed to find service client {clientTypeName} which implements {serviceInterfaceType.FullName}.");
             }
 
             var constructor = clientType.GetConstructor(new Type[] { typeof(AWSCredentials), config.GetType() });
-            if(constructor == null)
+            if (constructor == null)
             {
                 throw new AmazonClientException($"Service client {clientTypeName} misisng a constructor with parameters AWSCredentials and {config.GetType().FullName}.");
             }
@@ -127,22 +127,23 @@ namespace Amazon.Extensions.NETCore.Setup
             var constructor = configType.GetConstructor(EMPTY_TYPES);
             ClientConfig config = constructor.Invoke(EMPTY_PARAMETERS) as ClientConfig;
 
-            if(options.IsDefaultClientConfigSet)
+            var defaultConfig = options.DefaultClientConfig;
+            if (options.IsDefaultClientConfigSet)
             {
                 var emptyArray = new object[0];
                 var singleArray = new object[1];
 
                 var clientConfigTypeInfo = typeof(ClientConfig).GetTypeInfo();
-                foreach(var property in clientConfigTypeInfo.DeclaredProperties)
+                foreach (var property in clientConfigTypeInfo.DeclaredProperties)
                 {
-                    if(property.GetMethod != null && property.SetMethod != null)
+                    if (property.GetMethod != null && property.SetMethod != null)
                     {
                         // Skip RegionEndpoint because it is set below and calling the get method on the
                         // property triggers the default region fallback mechanism.
                         if (string.Equals(property.Name, "RegionEndpoint", StringComparison.Ordinal))
                             continue;
 
-                        singleArray[0] = property.GetMethod.Invoke(options.DefaultClientConfig, emptyArray);
+                        singleArray[0] = property.GetMethod.Invoke(defaultConfig, emptyArray);
                         if (singleArray[0] != null)
                         {
                             property.SetMethod.Invoke(config, singleArray);
@@ -151,7 +152,8 @@ namespace Amazon.Extensions.NETCore.Setup
                 }
             }
 
-            if (options != null)
+            // Setting RegionEndpoint only if ServiceURL was not set, because ServiceURL value will be lost otherwise
+            if (string.IsNullOrEmpty(defaultConfig.ServiceURL))
             {
                 config.RegionEndpoint = options.Region;
             }
@@ -159,5 +161,4 @@ namespace Amazon.Extensions.NETCore.Setup
             return config;
         }
     }
-
 }
