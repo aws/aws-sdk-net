@@ -70,7 +70,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The amount of seconds that have elapsed since the resize operation began. After the
         /// resize operation completes, this value shows the total actual time, in seconds, for
-        /// the resize operation. 
+        /// the resize operation.
         /// </para>
         /// </summary>
         public long ElapsedTimeInSeconds
@@ -91,7 +91,7 @@ namespace Amazon.Redshift.Model
         /// The estimated time remaining, in seconds, until the resize operation is complete.
         /// This value is calculated based on the average resize rate and the estimated amount
         /// of data remaining to be processed. Once the resize operation is complete, this value
-        /// will be 0. 
+        /// will be 0.
         /// </para>
         /// </summary>
         public long EstimatedTimeToCompletionInSeconds
@@ -179,7 +179,7 @@ namespace Amazon.Redshift.Model
         /// data, in megabytes, that has been processed so far. When the resize operation is complete,
         /// this value shows the total amount of data, in megabytes, on the cluster, which may
         /// be more or less than TotalResizeDataInMegaBytes (the estimated total amount of data
-        /// before resize). 
+        /// before resize).
         /// </para>
         /// </summary>
         public long ProgressInMegaBytes
@@ -202,7 +202,7 @@ namespace Amazon.Redshift.Model
         ///  
         /// <para>
         /// Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> |
-        /// <code>SUCCEEDED</code>
+        /// <code>SUCCEEDED</code> 
         /// </para>
         /// </summary>
         public string Status
@@ -224,7 +224,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>multi-node</code> | <code>single-node</code>
+        /// Valid Values: <code>multi-node</code> | <code>single-node</code> 
         /// </para>
         /// </summary>
         public string TargetClusterType

@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.WAF.Model;
 
 namespace Amazon.WAF
@@ -35,7 +36,7 @@ namespace Amazon.WAF
     /// about AWS WAF features and an overview of how to use the AWS WAF API, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS
     /// WAF Developer Guide</a>.
     /// </summary>
-    public partial interface IAmazonWAF : IDisposable
+    public partial interface IAmazonWAF : IAmazonService, IDisposable
     {
                 
         #region  CreateByteMatchSet

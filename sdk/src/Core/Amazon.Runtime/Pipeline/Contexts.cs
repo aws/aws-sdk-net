@@ -29,7 +29,7 @@ namespace Amazon.Runtime
         ResponseUnmarshaller Unmarshaller { get; }
         RequestMetrics Metrics { get; }
         AbstractAWSSigner Signer { get; }
-        ClientConfig ClientConfig { get; }
+        IClientConfig ClientConfig { get; }
         ImmutableCredentials ImmutableCredentials { get; set; }
 
         IRequest Request { get; set; }
@@ -96,7 +96,7 @@ namespace Amazon.Runtime.Internal
         public IRequest Request { get; set; }
         public RequestMetrics Metrics { get; private set; }
         public AbstractAWSSigner Signer { get; set; }
-        public ClientConfig ClientConfig { get; set; }
+        public IClientConfig ClientConfig { get; set; }
         public int Retries { get; set; }
         public bool IsSigned { get; set; }
         public bool IsAsync { get; set; }

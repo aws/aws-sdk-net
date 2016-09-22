@@ -29,8 +29,6 @@ namespace Amazon.S3.Model
         private string prefix;
         private LifecycleRuleExpiration expiration;
         private LifecycleRuleStatus status = LifecycleRuleStatus.Disabled;
-        private LifecycleTransition transition;
-        private LifecycleRuleNoncurrentVersionTransition noncurrentVersionTransition;
         private LifecycleRuleNoncurrentVersionExpiration noncurrentVersionExpiration;
         private List<LifecycleTransition> transitions;
         private List<LifecycleRuleNoncurrentVersionTransition> noncurrentVersionTransitions;
@@ -128,7 +126,7 @@ namespace Amazon.S3.Model
         // Check to see if Transition property is set
         internal bool IsSetTransition()
         {
-            return this.transition != null;
+            return this.Transitions != null && this.Transitions.Count > 0 && this.Transitions[0] != null;
         }
 
         /// <summary>
@@ -177,7 +175,7 @@ namespace Amazon.S3.Model
         // Check to see if Transition property is set
         internal bool IsSetNoncurrentVersionTransition()
         {
-            return this.noncurrentVersionTransition != null;
+            return this.NoncurrentVersionTransitions != null && this.NoncurrentVersionTransitions.Count > 0 && this.NoncurrentVersionTransitions[0] != null;
         }
 
 

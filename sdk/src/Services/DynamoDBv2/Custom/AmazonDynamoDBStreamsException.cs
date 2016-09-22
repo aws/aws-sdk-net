@@ -29,7 +29,7 @@ namespace Amazon.DynamoDBv2
     /// Common exception for the DynamoDBStreams service.
     /// </summary>
 	[Obsolete("This exception type is never thrown and will be removed in a future version.")]
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonDynamoDBStreamsException : AmazonServiceException
@@ -89,7 +89,7 @@ namespace Amazon.DynamoDBv2
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonClientException class with serialized data.
         /// </summary>

@@ -21,6 +21,7 @@ namespace ServiceClientGenerator
         {
             public const string Net35 = "Net35";
             public const string Net45 = "Net45";
+            public const string CoreCLR = "CoreCLR";
             public const string Win8 = "Win8";
             public const string WinPhone81 = "WinPhone81";
             public const string WinPhoneSilverlight8 = "WinPhoneSilverlight8";
@@ -28,6 +29,7 @@ namespace ServiceClientGenerator
             public const string Android = "Android";
             public const string IOS = "iOS";
             public const string Unity = "Unity";
+
         }
 
         // build configuration platforms used for net 3.5, 4.5 and portable project types
@@ -109,6 +111,8 @@ namespace ServiceClientGenerator
                     GetProjectConfig(ProjectTypes.Unity)
                 });
 
+            GenerateCoreCLRSolution();
+
             // Include solutions that Travis CI can build
             GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net35), false, true, "AWSSDK.Net35.Travis.sln");
             GeneratePlatformSpecificSolution(GetProjectConfig(ProjectTypes.Net45), false, true, "AWSSDK.Net45.Travis.sln");
@@ -127,7 +131,7 @@ namespace ServiceClientGenerator
         /// </summary>
         private void ScanForExistingProjects()
         {
-            const string awssdkProjectNamePattern = "AWSSDK.*.csproj";
+            const string awssdkProjectNamePattern = "AWSSDK.*.*proj";
 
             var foldersToProcess = new[]
             {
@@ -205,6 +209,7 @@ namespace ServiceClientGenerator
 
                 case ProjectTypes.Net35:
                 case ProjectTypes.Net45:
+                case ProjectTypes.CoreCLR:
                 case ProjectTypes.PCL:
                 case ProjectTypes.Android:
                 case ProjectTypes.IOS:
@@ -255,7 +260,7 @@ namespace ServiceClientGenerator
             };
 
             var sdkTestsFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
-            foreach (var testFoldername in new[] { GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
+            foreach (var testFoldername in new[] { GeneratorDriver.CommonTestSubFoldername, GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
             {
                 var testsFolder = Path.Combine(sdkTestsFolder, testFoldername);
                 foreach (var projectFile in Directory.GetFiles(testsFolder, awssdkProjectFileNamePattern, SearchOption.TopDirectoryOnly))
@@ -346,7 +351,7 @@ namespace ServiceClientGenerator
                     var projectTypeWildCard = string.Format("AWSSDK.*.{0}.csproj", pfc.Name);
 
                     var sdkTestsFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
-                    foreach (var testFoldername in new[] { GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
+                    foreach (var testFoldername in new[] { GeneratorDriver.CommonTestSubFoldername, GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
                     {
                         var testFolder = Path.Combine(sdkTestsFolder, testFoldername);
                         foreach (var projectFile in Directory.GetFiles(testFolder, projectTypeWildCard, SearchOption.TopDirectoryOnly))
@@ -383,6 +388,42 @@ namespace ServiceClientGenerator
             var generator = new SolutionFileGenerator { Session = session };
             var content = generator.TransformText();            
             GeneratorDriver.WriteFile(Options.SdkRootFolder, null, solutionFileName, content, true, false);
+        }
+
+
+        private void GenerateCoreCLRSolution()
+        {
+            var sdkSourceFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.SourceSubFoldername);
+            var session = new Dictionary<string, object>();
+
+            var coreProjectsRoot = Path.Combine(sdkSourceFolder, GeneratorDriver.CoreSubFoldername);
+            var coreProjects = new List<Project>() { CoreProjectFromFile(Path.Combine(coreProjectsRoot, "AWSSDK.Core.CoreCLR.xproj")) };
+            session["CoreProjects"] = coreProjects;
+
+            var buildConfigurations = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var solutionProjects = new Dictionary<string, ProjectFileCreator.ProjectConfigurationData>();
+
+            var serviceSolutionFolders = new List<ServiceSolutionFolder>();
+            var serviceProjectsRoot = Path.Combine(sdkSourceFolder, GeneratorDriver.ServicesSubFoldername);
+            foreach (var servicePath in Directory.GetDirectories(serviceProjectsRoot))
+            {
+                var di = new DirectoryInfo(servicePath);
+                var folder = ServiceSolutionFolderFromPath(di.Name);
+
+                foreach (var projectFile in Directory.GetFiles(servicePath, "*CoreCLR.xproj", SearchOption.TopDirectoryOnly))
+                {
+                    folder.Projects.Add(ServiceProjectFromFile(di.Name, projectFile));
+                    SelectProjectAndConfigurationsForSolution(projectFile, solutionProjects, buildConfigurations);
+                }
+
+                if(folder.Projects.Count > 0)
+                    serviceSolutionFolders.Add(folder);
+            }
+            session["ServiceSolutionFolders"] = serviceSolutionFolders;
+
+            var generator = new CoreCLRSolutionFile() { Session = session };
+            var content = generator.TransformText();
+            GeneratorDriver.WriteFile(Options.SdkRootFolder, null, "AWSSDK.CoreCLR.sln", content, true, false);
         }
 
         private void GeneratePlatformSpecificSolution(ProjectFileConfiguration projectConfig, bool includeTests, bool travisSolution, string solutionFileName = null)
@@ -436,7 +477,7 @@ namespace ServiceClientGenerator
             if (includeTests)
             {
                 var sdkTestsFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
-                foreach (var testFoldername in new[] { GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
+                foreach (var testFoldername in new[] { GeneratorDriver.CommonTestSubFoldername, GeneratorDriver.UnitTestsSubFoldername, GeneratorDriver.IntegrationTestsSubFolderName })
                 {
                     var testFolder = Path.Combine(sdkTestsFolder, testFoldername);
                     foreach (var projectFile in Directory.GetFiles(testFolder, projectTypeWildCard, SearchOption.TopDirectoryOnly))

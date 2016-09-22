@@ -25,7 +25,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///<summary>
     /// CognitoIdentityProvider exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InternalErrorException : AmazonCognitoIdentityProviderException 
@@ -79,7 +79,7 @@ namespace Amazon.CognitoIdentityProvider.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InternalErrorException class with serialized data.
         /// </summary>

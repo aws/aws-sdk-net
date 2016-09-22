@@ -25,7 +25,7 @@ namespace Amazon.MobileAnalytics.Model
     ///<summary>
     /// MobileAnalytics exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class BadRequestException : AmazonMobileAnalyticsException 
@@ -79,7 +79,7 @@ namespace Amazon.MobileAnalytics.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the BadRequestException class with serialized data.
         /// </summary>

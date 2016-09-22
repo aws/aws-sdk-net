@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2EC2B116-E51B-439C-A2AC-96F18B6B1FA6}</ProjectGuid>
+    <ProjectGuid>{54CACE73-BB80-4215-9E0C-6E3712098DE2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.KinesisAnalytics</RootNamespace>

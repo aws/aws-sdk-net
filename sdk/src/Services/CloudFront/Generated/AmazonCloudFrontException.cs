@@ -28,7 +28,7 @@ namespace Amazon.CloudFront
     ///<summary>
     /// Common exception for the CloudFront service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonCloudFrontException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CloudFront
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonCloudFrontException class with serialized data.
         /// </summary>

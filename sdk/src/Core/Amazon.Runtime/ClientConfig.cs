@@ -28,7 +28,7 @@ namespace Amazon.Runtime
     /// This class is the base class of all the configurations settings to connect
     /// to a service.
     /// </summary>
-    public abstract partial class ClientConfig
+    public abstract partial class ClientConfig : IClientConfig
     {
         // Represents infinite timeout. http://msdn.microsoft.com/en-us/library/system.threading.timeout.infinite.aspx
         internal static readonly TimeSpan InfiniteTimeout = TimeSpan.FromMilliseconds(-1);
@@ -99,7 +99,7 @@ namespace Amazon.Runtime
         {
             get
             {
-#if BCL
+#if BCL || CORECLR
                 if (probeForRegionEndpoint)
                 {
                     RegionEndpoint = GetDefaultRegionEndpoint();
@@ -282,7 +282,7 @@ namespace Amazon.Runtime
         /// This flag controls if .NET HTTP infrastructure should follow redirection
         ///  responses (e.g. HTTP 307 - temporary redirect).
         /// </summary>
-        protected internal bool AllowAutoRedirect
+        public bool AllowAutoRedirect
         {
             get
             {
@@ -439,5 +439,34 @@ namespace Amazon.Runtime
             return requestTimeout.HasValue ? requestTimeout
                 : (clientTimeout.HasValue ? clientTimeout : null);
         }
+
+#if CORECLR || PCL
+
+
+#if CORECLR
+        bool cacheHttpClient = true;
+#else
+        bool cacheHttpClient = false;
+#endif
+        /// <summary>
+        /// <para>
+        /// This is a switch used for performance testing and is not intended for production applications 
+        /// to change. This switch may be removed in a future version of the SDK as the .NET Core platform matures.
+        /// </para>
+        /// <para>
+        /// If true, the HttpClient is cached and reused for every request made by the service client 
+        /// and shared with other service clients.
+        /// </para>
+        /// <para>
+        /// For the .NET Core platform this is default to true because the HttpClient manages the connection
+        /// pool.
+        /// </para>
+        /// </summary>
+        public bool CacheHttpClient
+        {
+            get { return this.cacheHttpClient; }
+            set { this.cacheHttpClient = value; }
+        }
+#endif
     }
 }

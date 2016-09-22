@@ -24,7 +24,7 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Returns information about the  DeleteObjects response and response metadata.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class DeleteObjectsResponse : AmazonWebServiceResponse

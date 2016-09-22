@@ -100,11 +100,31 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// A subset of deployments to list by status:
         /// </para>
-        ///  <ul> <li>Created: Include created deployments in the resulting list.</li> <li>Queued:
-        /// Include queued deployments in the resulting list.</li> <li>In Progress: Include in-progress
-        /// deployments in the resulting list.</li> <li>Succeeded: Include successful deployments
-        /// in the resulting list.</li> <li>Failed: Include failed deployments in the resulting
-        /// list.</li> <li>Stopped: Include stopped deployments in the resulting list.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Created: Include created deployments in the resulting list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Queued: Include queued deployments in the resulting list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// In Progress: Include in-progress deployments in the resulting list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Succeeded: Include successful deployments in the resulting list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Failed: Include failed deployments in the resulting list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Stopped: Include stopped deployments in the resulting list.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> IncludeOnlyStatuses
         {

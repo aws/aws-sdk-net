@@ -30,11 +30,11 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the ModifyClusterIamRoles operation.
     /// Modifies the list of AWS Identity and Access Management (IAM) roles that can be used
-    /// by the cluster to access other AWS services. 
+    /// by the cluster to access other AWS services.
     /// 
     ///  
     /// <para>
-    /// A cluster can have up to 10 IAM roles associated at any time. 
+    /// A cluster can have up to 10 IAM roles associated at any time.
     /// </para>
     /// </summary>
     public partial class ModifyClusterIamRolesRequest : AmazonRedshiftRequest
@@ -46,8 +46,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AddIamRoles. 
         /// <para>
-        /// Zero or more IAM roles (in their ARN format) to associate with the cluster. You can
-        /// associate up to 10 IAM roles with a single cluster in a single request.
+        /// Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon
+        /// Resource Name (ARN) format. You can associate up to 10 IAM roles with a single cluster
+        /// in a single request.
         /// </para>
         /// </summary>
         public List<string> AddIamRoles
@@ -84,8 +85,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property RemoveIamRoles. 
         /// <para>
-        /// Zero or more IAM roles (in their ARN format) to disassociate from the cluster. You
-        /// can disassociate up to 10 IAM roles from a single cluster in a single request.
+        /// Zero or more IAM roles in ARN format to disassociate from the cluster. You can disassociate
+        /// up to 10 IAM roles from a single cluster in a single request.
         /// </para>
         /// </summary>
         public List<string> RemoveIamRoles

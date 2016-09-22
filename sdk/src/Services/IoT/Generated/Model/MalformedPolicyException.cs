@@ -25,7 +25,7 @@ namespace Amazon.IoT.Model
     ///<summary>
     /// IoT exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class MalformedPolicyException : AmazonIoTException 
@@ -79,7 +79,7 @@ namespace Amazon.IoT.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the MalformedPolicyException class with serialized data.
         /// </summary>

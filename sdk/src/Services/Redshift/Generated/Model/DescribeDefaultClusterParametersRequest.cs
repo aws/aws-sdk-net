@@ -29,13 +29,12 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDefaultClusterParameters operation.
-    /// Returns a list of parameter settings for the specified parameter group family. 
+    /// Returns a list of parameter settings for the specified parameter group family.
     /// 
     ///  
     /// <para>
     ///  For more information about parameters and parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
     /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// 
     /// </para>
     /// </summary>
     public partial class DescribeDefaultClusterParametersRequest : AmazonRedshiftRequest
@@ -47,7 +46,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional parameter that specifies the starting point to return a set of response
+        /// An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeDefaultClusterParameters</a> request exceed
         /// the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code>
         /// field of the response. You can retrieve the next set of response records by providing
@@ -70,14 +69,14 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of response records to return in each call. If the number of remaining
+        /// The maximum number of response records to return in each call. If the number of remaining
         /// response records exceeds the specified <code>MaxRecords</code> value, a value is returned
         /// in a <code>marker</code> field of the response. You can retrieve the next set of records
         /// by retrying the command with the returned marker value. 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>100</code>
+        /// Default: <code>100</code> 
         /// </para>
         ///  
         /// <para>
@@ -99,7 +98,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterGroupFamily. 
         /// <para>
-        ///  The name of the cluster parameter group family. 
+        /// The name of the cluster parameter group family.
         /// </para>
         /// </summary>
         public string ParameterGroupFamily

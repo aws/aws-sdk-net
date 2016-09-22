@@ -28,7 +28,7 @@ namespace Amazon.S3
     /// Thrown when DeleteObjects returns successfully, but some of the objects
     /// were not deleted.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class DeleteObjectsException : AmazonS3Exception
@@ -68,7 +68,7 @@ namespace Amazon.S3
             return message;
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the DeleteObjectsException class with serialized data.
         /// </summary>

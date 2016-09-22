@@ -44,6 +44,7 @@ namespace Amazon.ElasticMapReduce.Model
         private string _releaseLabel;
         private string _requestedAmiVersion;
         private string _runningAmiVersion;
+        private string _securityConfiguration;
         private string _serviceRole;
         private ClusterStatus _status;
         private List<Tag> _tags = new List<Tag>();
@@ -270,6 +271,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetRunningAmiVersion()
         {
             return this._runningAmiVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecurityConfiguration. 
+        /// <para>
+        /// The name of the security configuration applied to the cluster.
+        /// </para>
+        /// </summary>
+        public string SecurityConfiguration
+        {
+            get { return this._securityConfiguration; }
+            set { this._securityConfiguration = value; }
+        }
+
+        // Check to see if SecurityConfiguration property is set
+        internal bool IsSetSecurityConfiguration()
+        {
+            return this._securityConfiguration != null;
         }
 
         /// <summary>

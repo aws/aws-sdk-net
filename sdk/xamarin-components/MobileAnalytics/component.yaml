@@ -14,17 +14,17 @@ samples:
 publisher-url: http://aws.amazon.com/mobile/sdk/
 packages:
   android:
-  - AWSSDK.Core, Version=3.1.9.2
-  - AWSSDK.MobileAnalytics,Version=3.1.1.12
+  - AWSSDK.Core, Version=3.3.0.0
+  - AWSSDK.MobileAnalytics,Version=3.3.0.0
   ios-unified:
-  - AWSSDK.Core, Version=3.1.9.2
-  - AWSSDK.MobileAnalytics,Version=3.1.1.12
+  - AWSSDK.Core, Version=3.3.0.0
+  - AWSSDK.MobileAnalytics,Version=3.3.0.0
   winphone-8.0:
-  - AWSSDK.Core, Version=3.1.9.2
-  - AWSSDK.MobileAnalytics,Version=3.1.1.12
+  - AWSSDK.Core, Version=3.3.0.0
+  - AWSSDK.MobileAnalytics,Version=3.3.0.0
   winphone-8.1:
-  - AWSSDK.Core, Version=3.1.9.2
-  - AWSSDK.MobileAnalytics,Version=3.1.1.12
-version: 3.1.1.12
+  - AWSSDK.Core, Version=3.3.0.0
+  - AWSSDK.MobileAnalytics,Version=3.3.0.0
+version: 3.3.0.0
 is-shell: true
 no_build: true

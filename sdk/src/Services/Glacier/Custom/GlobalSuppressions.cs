@@ -20,3 +20,7 @@ using System.Diagnostics.CodeAnalysis;
 // Normalize strings to uppercase, breaking change
 [module: SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase", Scope = "member", Target = "Amazon.Glacier.TreeHashGenerator.#CalculateTreeHash(System.Collections.Generic.IEnumerable`1<System.String>)")]
 [module: SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase", Scope = "member", Target = "Amazon.Glacier.TreeHashGenerator.#CalculateTreeHash(System.IO.Stream)")]
+
+
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Glacier.Transfer.Internal.SinglepartUploadCommand.#Execute()")]
+[module: SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Scope = "member", Target = "Amazon.Glacier.Transfer.Internal.MultipartUploadCommand.#Execute()")]

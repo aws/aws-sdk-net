@@ -340,6 +340,10 @@
       <Project>{63422F3B-8FAC-4E5F-A27C-07FB8742E8BD}</Project>
       <Name>AWSSDK.WorkSpaces.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common\AWSSDK.CommonTest.Net35.csproj">
+      <Project>{740165b9-e662-4b09-a990-683dd332f61d}</Project>
+      <Name>AWSSDK.CommonTest.Net35</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Config\App.35.config">

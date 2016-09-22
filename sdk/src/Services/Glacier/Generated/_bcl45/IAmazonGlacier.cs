@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.Glacier.Model;
 
 namespace Amazon.Glacier
@@ -75,7 +76,7 @@ namespace Amazon.Glacier
     /// </para>
     /// </li> </ul>
     /// </summary>
-    public partial interface IAmazonGlacier : IDisposable
+    public partial interface IAmazonGlacier : IAmazonService, IDisposable
     {
 
         

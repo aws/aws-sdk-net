@@ -40,8 +40,15 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The status of the stop deployment operation:
         /// </para>
-        ///  <ul> <li>Pending: The stop operation is pending.</li> <li>Succeeded: The stop operation
-        /// was successful.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Pending: The stop operation is pending.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Succeeded: The stop operation was successful.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public StopStatus Status
         {

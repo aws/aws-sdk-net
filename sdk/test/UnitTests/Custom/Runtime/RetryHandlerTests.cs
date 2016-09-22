@@ -14,6 +14,7 @@ using System.Threading;
 using System.Net;
 using Amazon.Runtime.Internal;
 using Amazon.S3;
+using Amazon;
 
 namespace AWSSDK.UnitTests
 {
@@ -92,7 +93,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("Runtime")]
         public void RetryForHttpStatus200WithErrorResponse()
         {
-            var s3Client = new MockS3Client(new BasicAWSCredentials("access_key", "secret_key"),
+               var s3Client = new MockS3Client(new BasicAWSCredentials("access_key", "secret_key"),
                 new Amazon.S3.AmazonS3Config
                 {
                     ServiceURL = @"http://S3200WithErrorResponse",

@@ -25,7 +25,7 @@ namespace Amazon.SecurityToken.Model
     ///<summary>
     /// SecurityTokenService exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class ExpiredTokenException : AmazonSecurityTokenServiceException 
@@ -79,7 +79,7 @@ namespace Amazon.SecurityToken.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the ExpiredTokenException class with serialized data.
         /// </summary>

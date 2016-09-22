@@ -28,7 +28,7 @@ namespace Amazon.SQS
     ///<summary>
     /// Common exception for the SQS service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonSQSException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.SQS
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonSQSException class with serialized data.
         /// </summary>

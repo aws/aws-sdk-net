@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+
 using Amazon.Runtime;
 using Amazon.SimpleNotificationService.Model;
 
@@ -46,7 +47,7 @@ namespace Amazon.SimpleNotificationService
     /// for Amazon Web Services</a>. 
     /// </para>
     /// </summary>
-    public partial interface IAmazonSimpleNotificationService : IDisposable
+    public partial interface IAmazonSimpleNotificationService : IAmazonService, IDisposable
     {
 
         

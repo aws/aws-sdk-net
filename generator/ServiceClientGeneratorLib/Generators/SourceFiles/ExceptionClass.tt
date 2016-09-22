@@ -15,7 +15,7 @@ namespace <#=this.Config.Namespace#>.Model
     ///<summary>
     /// <#= this.Config.BaseName#> exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class <#=this.Exception.Name#> : <#=BaseException#> 
@@ -85,7 +85,7 @@ namespace <#=this.Config.Namespace#>.Model
 		}
 #>
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the <#=this.Exception.Name#> class with serialized data.
         /// </summary>

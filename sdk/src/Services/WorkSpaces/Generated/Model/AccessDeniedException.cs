@@ -25,7 +25,7 @@ namespace Amazon.WorkSpaces.Model
     ///<summary>
     /// WorkSpaces exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AccessDeniedException : AmazonWorkSpacesException 
@@ -79,7 +79,7 @@ namespace Amazon.WorkSpaces.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AccessDeniedException class with serialized data.
         /// </summary>

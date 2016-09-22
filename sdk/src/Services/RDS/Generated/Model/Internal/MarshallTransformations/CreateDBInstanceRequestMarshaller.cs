@@ -219,6 +219,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("TdeCredentialPassword", StringUtils.FromString(publicRequest.TdeCredentialPassword));
                 }
+                if(publicRequest.IsSetTimezone())
+                {
+                    request.Parameters.Add("Timezone", StringUtils.FromString(publicRequest.Timezone));
+                }
                 if(publicRequest.IsSetVpcSecurityGroupIds())
                 {
                     int publicRequestlistValueIndex = 1;

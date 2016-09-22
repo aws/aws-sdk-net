@@ -28,7 +28,7 @@ namespace Amazon.AutoScaling
     ///<summary>
     /// Common exception for the AutoScaling service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonAutoScalingException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.AutoScaling
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonAutoScalingException class with serialized data.
         /// </summary>

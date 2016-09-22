@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.EC2.Model;
 
 namespace Amazon.EC2
@@ -37,7 +38,7 @@ namespace Amazon.EC2
     /// in hardware up front, so you can develop and deploy applications faster.
     /// </para>
     /// </summary>
-    public partial interface IAmazonEC2 : IDisposable
+    public partial interface IAmazonEC2 : IAmazonService, IDisposable
     {
 
         
@@ -222,11 +223,14 @@ namespace Amazon.EC2
         /// already associated with a different instance or a network interface, you get an error
         /// unless you allow reassociation.
         /// </para>
-        ///  
+        ///  <important> 
         /// <para>
         /// This is an idempotent operation. If you perform the operation more than once, Amazon
-        /// EC2 doesn't return an error.
+        /// EC2 doesn't return an error, and you may be charged for each time the Elastic IP address
+        /// is remapped to the same instance. For more information, see the <i>Elastic IP Addresses</i>
+        /// section of <a href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.
         /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAddress service method.</param>
         /// 

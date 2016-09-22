@@ -25,7 +25,7 @@ namespace Amazon.CognitoIdentity.Model
     ///<summary>
     /// CognitoIdentity exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class TooManyRequestsException : AmazonCognitoIdentityException 
@@ -79,7 +79,7 @@ namespace Amazon.CognitoIdentity.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the TooManyRequestsException class with serialized data.
         /// </summary>

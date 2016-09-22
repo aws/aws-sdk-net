@@ -13,6 +13,14 @@ namespace Amazon.Runtime.Internal.Util
 {
     internal class InternalFileLogger : InternalLogger
     {
+		enum LogLevel
+		{
+			Verbose,
+			Debug,
+			Info,
+			Error
+		}
+
         private const string DebugMsgFormat = "AWSSDK DEBUG {0} {1}";
         private const string ErrorMsgFormat = "AWSSDK ERROR {0} {1}";
         private const string InfoMsgFormat = "AWSSDK INFO {0} {1}";

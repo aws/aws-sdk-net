@@ -18,6 +18,8 @@
     <tags>AWS Amazon cloud aws-sdk-v3</tags>
     <iconUrl>http://media.amazonwebservices.com/aws_singlebox_01.png</iconUrl>
     <dependencies>
+      <group targetFramework="net35">
+      </group>
       <group targetFramework="net45">
       </group>
 <#	
@@ -32,6 +34,29 @@
 <#
 	}
 #>
+      <group targetFramework="netstandard1.3">
+        <dependency id="System.Collections" version="4.0.11" />
+        <dependency id="System.Collections.NonGeneric" version="4.0.1" />
+        <dependency id="System.Console" version="4.0.0" />
+		<dependency id="System.Diagnostics.Debug" version="4.0.11" />
+        <dependency id="System.Diagnostics.Tools" version="4.0.1" />
+        <dependency id="System.IO.FileSystem" version="4.0.1" />
+        <dependency id="System.Linq" version="4.1.0" />
+        <dependency id="System.Net.Http" version="4.1.0" />
+        <dependency id="System.Net.Requests" version="4.0.11" />
+        <dependency id="System.Reflection.Extensions" version="4.0.1" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.1.0" />
+        <dependency id="System.Runtime.Extensions" version="4.1.0" />
+        <dependency id="System.Runtime.InteropServices" version="4.1.0" />
+        <dependency id="System.Security.Cryptography.Algorithms" version="4.2.0" />
+        <dependency id="System.Security.Cryptography.Csp" version="4.0.0" />
+        <dependency id="System.Text.Encoding.Extensions" version="4.0.11" />
+        <dependency id="System.Text.RegularExpressions" version="4.1.0" />
+        <dependency id="System.Threading" version="4.0.11" />
+        <dependency id="System.Threading.Thread" version="4.0.0" />
+        <dependency id="System.Xml.XDocument" version="4.0.11" />
+        <dependency id="Microsoft.CSharp" version="4.0.1" />
+      </group>
     </dependencies>
   </metadata> 
   <files>
@@ -75,8 +100,13 @@
     <file src=".\bin\Release\wp8\AWSSDK.Core.dll" target="lib\wp8" />
     <file src=".\bin\Release\wp8\AWSSDK.Core.xml" target="lib\wp8" />
     <file src=".\bin\Release\wp8\AWSSDK.Core.pdb" target="lib\wp8" />
-<#
+
+<#	
 	}
 #>
+	<file src=".\bin\Release\netstandard1.3\AWSSDK.Core.dll" target="lib\netstandard1.3"/>
+	<file src=".\bin\Release\netstandard1.3\AWSSDK.Core.xml" target="lib\netstandard1.3"/>
+	<file src=".\bin\Release\netstandard1.3\AWSSDK.Core.pdb" target="lib\netstandard1.3"/>
+
   </files>
 </package>

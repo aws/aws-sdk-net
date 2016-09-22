@@ -28,7 +28,7 @@ namespace Amazon.CloudSearchDomain
     ///<summary>
     /// Common exception for the CloudSearchDomain service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonCloudSearchDomainException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CloudSearchDomain
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonCloudSearchDomainException class with serialized data.
         /// </summary>

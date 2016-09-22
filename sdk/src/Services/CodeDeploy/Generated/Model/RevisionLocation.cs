@@ -56,8 +56,15 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The type of application revision:
         /// </para>
-        ///  <ul> <li>S3: An application revision stored in Amazon S3.</li> <li>GitHub: An application
-        /// revision stored in GitHub.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// S3: An application revision stored in Amazon S3.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// GitHub: An application revision stored in GitHub.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public RevisionLocationType RevisionType
         {

@@ -25,7 +25,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     ///<summary>
     /// ApplicationDiscoveryService exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class OperationNotPermittedException : AmazonApplicationDiscoveryServiceException 
@@ -79,7 +79,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the OperationNotPermittedException class with serialized data.
         /// </summary>

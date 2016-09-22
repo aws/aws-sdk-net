@@ -1,3 +1,38 @@
+### 3.3.2.0 (2016-09-22 20:34 UTC)
+* APIGateway (3.3.1.0)
+	* Simple Proxy support includes three new features: new greedy path formats (no API change), new pseudo-HTTP method (ANY), and two new integration types (AWS_PROXY, HTTP_PROXY).
+* AWSSDK.Extensions.NETCore.Setup (3.3.0.1)
+	* Pull request 456, fix issue with setting RegionEndpoint property overriding a previous set ServiceURL
+
+### 3.3.1.0 (2016-09-21 21:17 UTC)
+* CodeDeploy (3.3.1.0)
+	* AWS CodeDeploy now integrates with Amazon CloudWatch alarms, making it possible to stop a deployment if there is a change in the state of a specified alarm for a number of consecutive periods, as specified in the alarm threshold. AWS CodeDeploy also now supports automatically rolling back a deployment if certain conditions are met, such as a deployment failure or an activated alarm.
+* ElasticMapReduce (3.3.1.0)
+	* Added support for Security Configurations which can be used to enable encryption at-rest and in-transit for certain applications on Amazon EMR.
+* RDS (3.3.1.0)
+	* Provide local time zone support for AWS RDS SqlServer database instances.
+* Redshift (3.3.1.0)
+	* This release of Amazon Redshift introduces Enhanced VPC Routing. When you use Amazon Redshift Enhanced VPC Routing, Amazon Redshift forces all COPY and UNLOAD traffic between your cluster and your data repositories through your Amazon VPC.
+* S3 (3.3.0.1)
+	* Fix null reference exception when validation error occurrs in STS.
+
+### 3.3.0.0 (2016-09-19 17:15 UTC)
+* [GA release](http://blogs.aws.amazon.com/net/post/Tx3O6TT4NKFM0FU/General-Availability-for-NET-Core-Support-in-the-AWS-SDK-for-NET) of support for .NET Core in the AWS SDK for .NET 
+
+### 3.1.101.0 (2016-09-16 00:49 UTC)
+* IoT (3.1.9.0)
+	* Changes in RegisterCertificate API & Adding a new field "cannedAcl" in S3 action
+* RDS (3.1.19.0)
+	* Aurora cluster reader end-point. Customers have requested we provide them an endpoint that gives access to their cluster readers. We are adding a single field to the output of the DescribeDbCluster operation, namely "ReaderEndpoint" to serve this purpose.
+
+### 3.1.100.0 (2016-09-13 22:23 UTC)
+* EC2 (3.1.20.2)
+	* Minor documentation update.
+* S3 (3.1.10.0)
+	* Updated the Amazon.S3.Model.S3Object type to contain a new property, BucketName. This is the name of the bucket containing the object.
+* ServiceCatalog (3.1.1.0)
+	* Adding an optional parameter to 2 existing APIs.
+
 ### 3.1.99.0 (2016-09-08 21:56 UTC)
 * AWSSupport (3.1.0.10)
 	* Documentation update.

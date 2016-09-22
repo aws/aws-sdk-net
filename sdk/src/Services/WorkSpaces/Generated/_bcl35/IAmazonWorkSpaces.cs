@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.WorkSpaces.Model;
 
 namespace Amazon.WorkSpaces
@@ -33,7 +34,7 @@ namespace Amazon.WorkSpaces
     /// This reference provides detailed information about the Amazon WorkSpaces operations.
     /// </para>
     /// </summary>
-    public partial interface IAmazonWorkSpaces : IDisposable
+    public partial interface IAmazonWorkSpaces : IAmazonService, IDisposable
     {
 
         

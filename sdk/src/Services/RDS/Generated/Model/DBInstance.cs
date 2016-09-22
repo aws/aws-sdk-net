@@ -94,6 +94,7 @@ namespace Amazon.RDS.Model
         private bool? _storageEncrypted;
         private string _storageType;
         private string _tdeCredentialArn;
+        private string _timezone;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
 
         /// <summary>
@@ -959,7 +960,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TdeCredentialArn. 
         /// <para>
-        /// The ARN from the Key Store with which the instance is associated for TDE encryption.
+        /// The ARN from the key store with which the instance is associated for TDE encryption.
         /// </para>
         /// </summary>
         public string TdeCredentialArn
@@ -975,9 +976,29 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Timezone. 
+        /// <para>
+        /// The time zone of the DB instance. In most cases, the <code>Timezone</code> element
+        /// is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances
+        /// that were created with a time zone specified. 
+        /// </para>
+        /// </summary>
+        public string Timezone
+        {
+            get { return this._timezone; }
+            set { this._timezone = value; }
+        }
+
+        // Check to see if Timezone property is set
+        internal bool IsSetTimezone()
+        {
+            return this._timezone != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VpcSecurityGroups. 
         /// <para>
-        /// Provides List of VPC security group elements that the DB instance belongs to.
+        /// Provides a list of VPC security group elements that the DB instance belongs to.
         /// </para>
         /// </summary>
         public List<VpcSecurityGroupMembership> VpcSecurityGroups

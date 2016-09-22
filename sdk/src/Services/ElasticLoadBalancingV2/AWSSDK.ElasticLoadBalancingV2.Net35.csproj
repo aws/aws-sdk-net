@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{61A7A84F-A00C-420A-BF81-E5A54815CA4F}</ProjectGuid>
+    <ProjectGuid>{042F5168-A61D-4D4D-A2E1-9B955C849F8A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.ElasticLoadBalancingV2</RootNamespace>

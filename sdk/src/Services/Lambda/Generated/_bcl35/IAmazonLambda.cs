@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.Lambda.Model;
 
 namespace Amazon.Lambda
@@ -40,7 +41,7 @@ namespace Amazon.Lambda
     /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonLambda : IDisposable
+    public partial interface IAmazonLambda : IAmazonService, IDisposable
     {
 
         

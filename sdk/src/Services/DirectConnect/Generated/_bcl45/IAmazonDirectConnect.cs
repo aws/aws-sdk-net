@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.DirectConnect.Model;
 
 namespace Amazon.DirectConnect
@@ -42,7 +43,7 @@ namespace Amazon.DirectConnect
     /// in the US and use it to access public AWS services in all US Regions and AWS GovCloud
     /// (US).
     /// </summary>
-    public partial interface IAmazonDirectConnect : IDisposable
+    public partial interface IAmazonDirectConnect : IAmazonService, IDisposable
     {
 
         

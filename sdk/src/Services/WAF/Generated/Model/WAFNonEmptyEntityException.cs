@@ -25,7 +25,7 @@ namespace Amazon.WAF.Model
     ///<summary>
     /// WAF exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class WAFNonEmptyEntityException : AmazonWAFException 
@@ -79,7 +79,7 @@ namespace Amazon.WAF.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the WAFNonEmptyEntityException class with serialized data.
         /// </summary>

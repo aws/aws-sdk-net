@@ -95,6 +95,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ElasticIp", StringUtils.FromString(publicRequest.ElasticIp));
                 }
+                if(publicRequest.IsSetEnhancedVpcRouting())
+                {
+                    request.Parameters.Add("EnhancedVpcRouting", StringUtils.FromBool(publicRequest.EnhancedVpcRouting));
+                }
                 if(publicRequest.IsSetHsmClientCertificateIdentifier())
                 {
                     request.Parameters.Add("HsmClientCertificateIdentifier", StringUtils.FromString(publicRequest.HsmClientCertificateIdentifier));

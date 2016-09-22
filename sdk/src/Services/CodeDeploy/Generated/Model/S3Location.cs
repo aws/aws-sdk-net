@@ -61,8 +61,19 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The file type of the application revision. Must be one of the following:
         /// </para>
-        ///  <ul> <li>tar: A tar archive file.</li> <li>tgz: A compressed tar archive file.</li>
-        /// <li>zip: A zip archive file.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// tar: A tar archive file.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// tgz: A compressed tar archive file.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// zip: A zip archive file.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public BundleType BundleType
         {

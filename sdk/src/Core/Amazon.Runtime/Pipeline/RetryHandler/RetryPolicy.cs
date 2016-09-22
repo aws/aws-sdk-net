@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ namespace Amazon.Runtime
     /// A retry policy specifies all aspects of retry behavior. This includes conditions when the request should be retried,
     /// checks of retry limit, preparing the request before retry and introducing delay (backoff) before retries.
     /// </summary>
-    public abstract class RetryPolicy
+    public abstract partial class RetryPolicy
     {
         /// <summary>
         /// Maximum number of retries to be performed.
@@ -49,11 +49,36 @@ namespace Amazon.Runtime
         /// <returns>Returns true if the request should be retried, else false.</returns>
         public bool Retry(IExecutionContext executionContext, Exception exception)
         {
-            return
-                !RetryLimitReached(executionContext) &&
-                CanRetry(executionContext) &&
-                RetryForExceptionHelper(executionContext, exception);
+            var syncResult = RetrySync(executionContext, exception);
+            if (syncResult.HasValue)
+            {
+                return syncResult.Value;
+            }
+            else
+            {
+                return RetryForException(executionContext, exception);
+            }
         }
+
+        #region Clock skew correction
+
+        private static HashSet<string> clockSkewErrorCodes = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        {
+            "RequestTimeTooSkewed",
+            "RequestExpired",
+            "InvalidSignatureException",
+            "SignatureDoesNotMatch",
+            "AuthFailure",
+            "RequestExpired",
+            "RequestInTheFuture",
+        };
+        
+        private const string clockSkewMessageFormat = "Identified clock skew: local time = {0}, local time with correction = {1}, current clock skew correction = {2}, server time = {3}.";
+        private const string clockSkewUpdatedFormat = "Setting clock skew correction: new clock skew correction = {0}.";
+        private const string clockSkewMessageParen = "(";
+        private const string clockSkewMessagePlusSeparator = " + ";
+        private const string clockSkewMessageMinusSeparator = " - ";
+        private static TimeSpan clockSkewMaxThreshold = TimeSpan.FromMinutes(5);
 
         /// <summary>
         /// Returns true if the request is in a state where it can be retried, else false.
@@ -87,33 +112,31 @@ namespace Amazon.Runtime
         /// requests and response context.</param>
         public abstract void WaitBeforeRetry(IExecutionContext executionContext);
 
-
-        private bool RetryForExceptionHelper(IExecutionContext executionContext, Exception exception)
+        /// <summary>
+        /// Perform the processor-bound portion of the Retry logic.
+        /// This is shared by the sync, async, and APM versions of the Retry method.
+        /// </summary>
+        /// <param name="executionContext"></param>
+        /// <param name="exception"></param>
+        /// <returns>a value if it can be determined, or null if the IO-bound calculations need to be done</returns>
+        private bool? RetrySync(IExecutionContext executionContext, Exception exception)
         {
-            if (IsClockskew(executionContext, exception))
-                return true;
-            return RetryForException(executionContext, exception);
+            if (!RetryLimitReached(executionContext) && CanRetry(executionContext))
+            {
+                if (IsClockskew(executionContext, exception))
+                {
+                    return true;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
-
-        #region Clock skew correction
-
-        private static HashSet<string> clockSkewErrorCodes = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
-        {
-            "RequestTimeTooSkewed",
-            "RequestExpired",
-            "InvalidSignatureException",
-            "SignatureDoesNotMatch",
-            "AuthFailure",
-            "RequestExpired",
-            "RequestInTheFuture",
-        };
-        
-        private const string clockSkewMessageFormat = "Identified clock skew: local time = {0}, local time with correction = {1}, current clock skew correction = {2}, server time = {3}.";
-        private const string clockSkewUpdatedFormat = "Setting clock skew correction: new clock skew correction = {0}.";
-        private const string clockSkewMessageParen = "(";
-        private const string clockSkewMessagePlusSeparator = " + ";
-        private const string clockSkewMessageMinusSeparator = " - ";
-        private static TimeSpan clockSkewMaxThreshold = TimeSpan.FromMinutes(5);
 
         private bool IsClockskew(IExecutionContext executionContext, Exception exception)
         {

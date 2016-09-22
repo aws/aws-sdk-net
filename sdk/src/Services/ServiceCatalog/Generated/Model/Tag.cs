@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Optional key/value pairs to associate with this provisioning. These tags are propagated
-    /// to the resources created in the provisioning.
+    /// Key/value pairs to associate with this provisioning. These tags are entirely discretionary
+    /// and are propagated to the resources created in the provisioning.
     /// </summary>
     public partial class Tag
     {

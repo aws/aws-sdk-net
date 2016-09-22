@@ -28,7 +28,7 @@ namespace Amazon.ElastiCache
     ///<summary>
     /// Common exception for the ElastiCache service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonElastiCacheException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ElastiCache
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonElastiCacheException class with serialized data.
         /// </summary>

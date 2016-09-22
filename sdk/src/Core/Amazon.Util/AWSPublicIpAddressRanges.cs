@@ -108,23 +108,12 @@ namespace Amazon.Util
             {
                 try
                 {
-                    // use async calls so same code works across mobile platforms
-                    var request = WebRequest.Create(IpAddressRangeEndpoint) as HttpWebRequest;
-                    var asynResult = request.BeginGetResponse(null, null);
-                    var response = request.EndGetResponse(asynResult) as HttpWebResponse;
-
-                    AWSPublicIpAddressRanges instance;
-                    using (response)
-                    {
-                        using (var reader = new StreamReader(response.GetResponseStream()))
-                        {
-                            instance = Parse(reader.ReadToEnd());
-                        }
-                    }
+                    var content = AWSSDKUtils.DownloadStringContent(IpAddressRangeEndpoint);
+                    AWSPublicIpAddressRanges instance = Parse(content);
 
                     return instance;
                 }
-                catch (WebException e)
+                catch (Exception e)
                 {
                     retries++;
                     if (retries == maxDownloadRetries)

@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.S3.Model;
 
 namespace Amazon.S3
@@ -30,7 +31,7 @@ namespace Amazon.S3
     ///
     /// 
     /// </summary>
-    public partial interface IAmazonS3 : IDisposable
+    public partial interface IAmazonS3 : IAmazonService, IDisposable
     {
 
         

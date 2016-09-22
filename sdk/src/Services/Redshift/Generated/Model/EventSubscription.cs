@@ -209,10 +209,17 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Can be one of the following: active | no-permission | topic-not-exist</li>
-        /// <li>The status "no-permission" indicates that Amazon Redshift no longer has permission
+        ///  <ul> <li> 
+        /// <para>
+        /// Can be one of the following: active | no-permission | topic-not-exist
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The status "no-permission" indicates that Amazon Redshift no longer has permission
         /// to post to the Amazon SNS topic. The status "topic-not-exist" indicates that the topic
-        /// was deleted after the subscription was created.</li> </ul>
+        /// was deleted after the subscription was created.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {

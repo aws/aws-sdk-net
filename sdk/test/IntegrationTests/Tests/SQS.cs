@@ -183,6 +183,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("SQS")]
         public void TestGetQueueUrl()
         {
+            Client.ListQueues(new ListQueuesRequest());
             string queueName = "TestGetQueueUrl" + DateTime.Now.Ticks;
             CreateQueueResponse createResponse = Client.CreateQueue(new CreateQueueRequest()
             {

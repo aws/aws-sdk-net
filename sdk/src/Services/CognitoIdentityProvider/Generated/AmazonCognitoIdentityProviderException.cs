@@ -28,7 +28,7 @@ namespace Amazon.CognitoIdentityProvider
     ///<summary>
     /// Common exception for the CognitoIdentityProvider service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonCognitoIdentityProviderException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CognitoIdentityProvider
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonCognitoIdentityProviderException class with serialized data.
         /// </summary>

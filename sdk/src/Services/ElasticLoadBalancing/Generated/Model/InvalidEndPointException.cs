@@ -25,7 +25,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///<summary>
     /// ElasticLoadBalancing exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InvalidEndPointException : AmazonElasticLoadBalancingException 
@@ -79,7 +79,7 @@ namespace Amazon.ElasticLoadBalancing.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InvalidEndPointException class with serialized data.
         /// </summary>

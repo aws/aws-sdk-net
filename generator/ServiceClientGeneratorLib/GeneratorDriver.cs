@@ -13,6 +13,8 @@ using ServiceClientGenerator.Generators.TestFiles;
 using StructureGenerator = ServiceClientGenerator.Generators.SourceFiles.StructureGenerator;
 using ServiceClientGenerator.Generators.Component;
 
+using Json.LitJson;
+
 namespace ServiceClientGenerator
 {
     public class GeneratorDriver
@@ -92,12 +94,11 @@ namespace ServiceClientGenerator
         public const string ServicesSubFoldername = "Services";
         public const string CoreSubFoldername = "Core";
         public const string GeneratedCodeFoldername = "Generated";
+        public const string CommonTestSubFoldername = "Common";
         public const string UnitTestsSubFoldername = "UnitTests";
         public const string IntegrationTestsSubFolderName = "IntegrationTests";
         public const string XamarinComponentsSubFolderName = "xamarin-components";
 
-
-        public const string NuGetPreviewFlag = "-preview";
 
         // Records any new project files we produce as part of generation. If this collection is
         // not empty when we've processed all source, we must update the solution files to add
@@ -124,14 +125,14 @@ namespace ServiceClientGenerator
                 ? Configuration.Namespace.Substring(7)
                 : Configuration.Namespace;
 
-            ServiceFilesRoot = Path.Combine(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, serviceNameRoot);
+            ServiceFilesRoot = Path.Combine(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, config.ServiceFolderName);
             GeneratedFilesRoot = Path.Combine(ServiceFilesRoot, GeneratedCodeFoldername);
 
             CodeAnalysisRoot = Path.Combine(Options.SdkRootFolder, CodeAnalysisFoldername, "ServiceAnalysis", serviceNameRoot);
 
             TestFilesRoot = Path.Combine(Options.SdkRootFolder, TestsSubFoldername);
 
-            ComponentsFilesRoot = Path.Combine(Options.SdkRootFolder, XamarinComponentsSubFolderName, serviceNameRoot);
+            ComponentsFilesRoot = Path.Combine(Options.SdkRootFolder, XamarinComponentsSubFolderName, config.ServiceFolderName);
 
             SampleFilesRoot = options.SamplesRootFolder;
         }
@@ -869,11 +870,11 @@ namespace ServiceClientGenerator
                     string previewFlag;
                     if (dependentService != null && dependentService.InPreview)
                     {
-                        previewFlag = GeneratorDriver.NuGetPreviewFlag;
+                        previewFlag = GenerationManifest.PreviewLabel;
                     }
                     else if (string.Equals(service, "Core", StringComparison.InvariantCultureIgnoreCase) && GenerationManifest.DefaultToPreview)
                     {
-                        previewFlag = GeneratorDriver.NuGetPreviewFlag;
+                        previewFlag = GenerationManifest.PreviewLabel;
                     }
                     else
                     {
@@ -915,7 +916,7 @@ namespace ServiceClientGenerator
                 { "ExtraTags", Configuration.Tags.Count == 0 ? string.Empty : " " + string.Join(" ", Configuration.Tags) }
             };
 
-            session["NuGetPreviewFlag"] = Configuration.InPreview ? GeneratorDriver.NuGetPreviewFlag : "";
+            session["NuGetPreviewFlag"] = Configuration.InPreview ? this.GenerationManifest.PreviewLabel : "";
 
             var componentGenerator = new Component { Session = session };
             var text = componentGenerator.TransformText();
@@ -977,11 +978,11 @@ namespace ServiceClientGenerator
                     string previewFlag;
                     if (dependentService != null && dependentService.InPreview)
                     {
-                        previewFlag = GeneratorDriver.NuGetPreviewFlag;
+                        previewFlag = GenerationManifest.PreviewLabel;
                     }
                     else if (string.Equals(service, "Core", StringComparison.InvariantCultureIgnoreCase) && GenerationManifest.DefaultToPreview)
                     {
-                        previewFlag = GeneratorDriver.NuGetPreviewFlag;
+                        previewFlag = GenerationManifest.PreviewLabel;
                     }
                     else
                     {
@@ -1013,6 +1014,8 @@ namespace ServiceClientGenerator
             {
                 { "AssemblyName", assemblyName },
                 { "AssemblyTitle",  assemblyTitle },
+                { "CoreCLRSupport",  Configuration.CoreCLRSupport },
+                { "CoreCLRCoreAssemblyName",  Configuration.ServiceFolderName },
                 { "NuGetTitle",  nugetTitle },
                 { "AssemblyDescription", Configuration.AssemblyDescription },
                 { "AssemblyVersion", assemblyVersion },
@@ -1024,12 +1027,12 @@ namespace ServiceClientGenerator
                 { "licenseUrl", Configuration.LicenseUrl },
                 { "requireLicenseAcceptance",Configuration.RequireLicenseAcceptance?"true":"false" },
                 {"DisablePCLSupport", this.Options.DisablePCLSupport}
-        };
+            };
 
             if (Configuration.NugetDependencies != null)
                 session.Add("NugetDependencies", Configuration.NugetDependencies);
 
-            session["NuGetPreviewFlag"] = Configuration.InPreview ? GeneratorDriver.NuGetPreviewFlag : "";
+            session["NuGetPreviewFlag"] = Configuration.InPreview ? this.GenerationManifest.PreviewLabel : "";
 
             var nuspecGenerator = new Nuspec { Session = session };
             var text = nuspecGenerator.TransformText();
@@ -1091,6 +1094,39 @@ namespace ServiceClientGenerator
 
             command.ProjectFilePath = Path.Combine(testRoot, "AWSSDK.UnitTests.Net45.csproj");
             command.Execute();
+        }
+
+        public static void UpdateCoreCLRTestDependencies(GenerationManifest manifest, GeneratorOptions options)
+        {
+            var projectJsonPath = Path.Combine(options.SdkRootFolder, "test/CoreCLR/IntegrationTests/project.json");
+            var originalProjectJson = File.ReadAllText(projectJsonPath);
+
+            var rootData = JsonMapper.ToObject(originalProjectJson);
+            var dependency = rootData["dependencies"] as JsonData;
+
+            bool hasChanged = false;
+
+            foreach (var service in manifest.ServiceConfigurations.OrderBy(x => x.ServiceFolderName))
+            {
+                if (service.ParentConfig != null)
+                    continue;
+
+                if(service.CoreCLRSupport && dependency[service.ServiceFolderName] == null)
+                {
+                    hasChanged = true;
+                    dependency[service.ServiceFolderName] = "1.0.0-*";
+                }
+            }
+
+
+
+            if(hasChanged)
+            {
+                var newContent = new System.Text.StringBuilder();
+                JsonWriter writer = new JsonWriter(newContent) { PrettyPrint = true };
+                rootData.ToJson(writer);
+                File.WriteAllText(projectJsonPath, newContent.ToString().Trim());
+            }
         }
 
         /// <summary>
@@ -1311,7 +1347,7 @@ namespace ServiceClientGenerator
                 {
                     Console.Error.WriteLine("**** Warning: Removing orphaned generated code " + Path.GetFileName(file));
                     File.Delete(file);
-                }
+    }
             }
         }
     }

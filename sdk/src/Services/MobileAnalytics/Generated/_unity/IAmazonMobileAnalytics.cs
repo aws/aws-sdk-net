@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+
 using Amazon.Runtime;
 using Amazon.MobileAnalytics.Model;
 
@@ -30,7 +31,7 @@ namespace Amazon.MobileAnalytics
     /// Amazon Mobile Analytics is a service for collecting, visualizing, and understanding
     /// app usage data at scale.
     /// </summary>
-    public partial interface IAmazonMobileAnalytics : IDisposable
+    public partial interface IAmazonMobileAnalytics : IAmazonService, IDisposable
     {
 
         

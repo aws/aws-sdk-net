@@ -50,11 +50,13 @@ namespace Amazon.Runtime.Internal
                         exception = e;
                     }
                 });
+#if !CORECLR
                 using (var ctr = cancellationToken.Register(() =>
                 {
                     if (thread.IsAlive)
                         thread.Abort();
                 }))
+#endif
                 {
                     thread.Start();
                     thread.Join();

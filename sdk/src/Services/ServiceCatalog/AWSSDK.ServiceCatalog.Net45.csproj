@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4C063C79-E34D-4984-9C1F-EF978FD7E018}</ProjectGuid>
+    <ProjectGuid>{440F01E4-310D-4514-8478-7F7E12DBFE34}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.ServiceCatalog</RootNamespace>

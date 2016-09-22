@@ -28,7 +28,7 @@ namespace Amazon.MachineLearning
     ///<summary>
     /// Common exception for the MachineLearning service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonMachineLearningException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.MachineLearning
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonMachineLearningException class with serialized data.
         /// </summary>

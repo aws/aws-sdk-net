@@ -77,7 +77,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NewTableName. 
         /// <para>
-        /// The name of the table to create as a result of the current request. 
+        /// The name of the table to create as a result of the current request.
         /// </para>
         /// </summary>
         public string NewTableName

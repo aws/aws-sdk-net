@@ -1,4 +1,4 @@
-<Project ToolsVersion="4.0"
+<Project ToolsVersion="14.0" 
     DefaultTargets="full-build-nodocs"
     xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
@@ -6,22 +6,27 @@
         <DisablePCLSupport Condition="'$(DisablePCLSupport)'==''">false</DisablePCLSupport>
         <DisableUnitySupport Condition="'$(DisableUnitySupport)'==''">false</DisableUnitySupport>
 
+		<VSToolsPath Condition="'$(VSToolsPath)' == ''">C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0</VSToolsPath>
+		
         <GeneratorDisablePCLSupport Condition="'$(DisablePCLSupport)'=='true'">-disable.pcl-support</GeneratorDisablePCLSupport>
 
         <SmokeBuild></SmokeBuild>
+
+        <!-- perform a release build by default -->
+        <Configuration Condition="'$(Configuration)'==''">Release</Configuration>
+
     </PropertyGroup>
 
     <Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
     <Import Project="common.targets" />
+	
+	<Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
+	<Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.targets" Condition="'$(VSToolsPath)' != ''" />
 
-    <!-- properties used in sdk generation/build -->
-    <PropertyGroup>
-        <!-- perform a release build by default -->
-        <Configuration Condition="'$(Configuration)'==''">Release</Configuration>
-
+	<PropertyGroup>
 		<GeneratorUnityPath>--unitypath &quot;$(unitypath)&quot;</GeneratorUnityPath>
-    </PropertyGroup>
-
+	</PropertyGroup>
+	
     <!-- properties used in documentation generation -->
     <PropertyGroup>
         <!-- resources folder where test settings should be placed -->
@@ -49,31 +54,33 @@
     <UsingTask TaskName="CustomTasks.UnityPackage" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
 	<UsingTask TaskName="CustomTasks.UnityBuild" AssemblyFile=".\CustomTasks\bin\Release\CustomTasks.dll"/>
 
-    <Target Name="init" DependsOnTargets="clean;build-custom-tasks"/>
+    <Target Name="init" DependsOnTargets="clean;build-custom-tasks">
+        <Message Text="Running SDK generation and build for configuration: $(Configuration)" Importance="normal" />
+    </Target>
 
     <Target Name="full-build" DependsOnTargets="test-sdk;copy-assemblies;copy-service-models;unity-pack;keyscan;consolidate-docartifacts;save-build"/>
 
-    <Target Name="full-build-nodocs" DependsOnTargets="test-sdk;keyscan;copy-assemblies;copy-service-models;unity-pack;save-build"/>
+    <Target Name="full-build-nodocs" DependsOnTargets="test-sdk;package-netcore-extensions;keyscan;copy-assemblies;copy-service-models;unity-pack;save-build"/>
+	
+	<Target Name="restore-nuget">
+		<Message Text="Restore nuget packages"/>
+        <Exec Command="..\sdk\.nuget\NuGet.v28.exe restore ..\sdk\AWSSDK.Desktop.sln"/>
+        <Exec Command="..\sdk\.nuget\NuGet.v28.exe restore ..\sdk\AWSSDK.PCL.sln"/>
+        <Exec Command="..\sdk\.nuget\NuGet.v28.exe restore ..\sdk\AWSSDK.Unity.sln"/>
+		<Exec Command="..\sdk\.nuget\NuGet.v28.exe restore ..\generator\AWSSDKGenerator.sln"/>
+		<Exec Command="..\sdk\.nuget\NuGet.v28.exe restore ..\sdk\AWSSDK.CodeAnalysis.sln"/>
+	</Target>
 
-    <Target Name="restore-nuget">
-        <Message Text="Restore nuget packages"/>
-        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.Desktop.sln"/>
-        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.PCL.sln"/>
-        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.Unity.sln"/>
-        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\generator\AWSSDKGenerator.sln"/>
-        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\AWSSDK.CodeAnalysis.sln"/>
-    </Target>
-
-    <Target Name="run-generator" DependsOnTargets="restore-nuget">
+	<Target Name="run-generator" DependsOnTargets="restore-nuget">
         <Message Text="Build and run code generator"/>
-        <MSBuild Projects="..\generator\AWSSDKGenerator.sln"
-            Targets="Clean;Build"
-            Properties="Configuration=Release" />
+		<MSBuild Projects="..\generator\AWSSDKGenerator.sln"
+			Targets="Clean;Build"
+			Properties="Configuration=Release" />
         <Exec Command="ServiceClientGenerator.exe $(GeneratorDisablePCLSupport) $(GeneratorUnityPath)"
-            WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
-    </Target>
+			WorkingDirectory="..\generator\ServiceClientGenerator\bin\Release"/>
+	</Target>
 
-    <Target Name="build-sdk" DependsOnTargets="build-sdk-desktop;build-code-analysis;build-sdk-pcl;build-sdk-unity">
+    <Target Name="build-sdk" DependsOnTargets="build-sdk-desktop;build-code-analysis;build-sdk-pcl;build-sdk-unity;build-sdk-coreclr">
         <Copy
             SourceFiles="..\generator\ServiceModels\_sdk-versions.json"
             DestinationFolder="$(Deployment)" />
@@ -83,7 +90,7 @@
 		<Message Text="Compile the Desktop SDK"/>
 		<MSBuild Projects="..\sdk\AWSSDK.Desktop.sln"
 			Targets="Clean;Build"
-			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+			Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
 	</Target>
 
 	<Target Name="build-code-analysis" DependsOnTargets="restore-nuget;run-generator">
@@ -96,37 +103,67 @@
 		<Message Text="Compile the Portable Class Library SDK"/>
 		<MSBuild Projects="..\sdk\AWSSDK.PCL.sln"
 			Targets="Clean;Build"
-			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+			Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
 	</Target>
 
+	<Target Name="build-sdk-coreclr" DependsOnTargets="GetSDKToolingInfoTarget">
+	
+		<!-- depends: restore-nuget;run-generator -->
+		<Exec Command="&quot;$(SDKToolingExe)&quot; restore" 
+			WorkingDirectory="..\sdk"/>		
+			
+			
+		<Message Text="Compile the CoreCLR version of the SDK"/>
+		<Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration) --no-incremental" 
+			WorkingDirectory="..\sdk\test\CoreCLR\IntegrationTests"/>		
+
+	</Target>
+	
 	<Target Name="build-sdk-unity" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisableUnitySupport)">
 		<Message Text="Compile the Unity SDK"/>
 		<MSBuild Projects="..\sdk\AWSSDK.Unity.sln"
 			Targets="Clean;Build"
-			Properties="Configuration=Release;AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+			Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
 	</Target>
 
+	<Target Name="dnxcore-nuget" DependsOnTargets="">
+	
+		<!-- build-sdk-coreclr;build-sdk-desktop -->
+	
+		<Exec LogStandardErrorAsError="true"
+              Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />			
+	</Target>
+	
     <Target Name="test-sdk" DependsOnTargets="init;build-sdk;fxcop;run-unit-tests;run-integ-tests" />
 
     <Target Name="run-unit-tests" DependsOnTargets="init;build-sdk">
         <MSBuild
             Projects="$(MSBuildProjectFile)"
-            Targets="run-tests"
-            Properties="TestContainer=..\sdk\test\UnitTests\bin\$(Configuration)\net35\AWSSDK.UnitTests.Net35.dll" />
+            Targets="run-ms-tests"
+            Properties="TestContainer=..\sdk\test\UnitTests\bin\$(Configuration)\net35\AWSSDK.UnitTests.Net35.dll;Configuration=$(Configuration)" />
         <MSBuild
             Projects="$(MSBuildProjectFile)"
-            Targets="run-tests"
-            Properties="TestContainer=..\sdk\test\UnitTests\bin\$(Configuration)\net45\AWSSDK.UnitTests.Net45.dll" />
+            Targets="run-ms-tests"
+            Properties="TestContainer=..\sdk\test\UnitTests\bin\$(Configuration)\net45\AWSSDK.UnitTests.Net45.dll;Configuration=$(Configuration)" />
+        <MSBuild
+            Projects="$(MSBuildProjectFile)"
+            Targets="run-xunit-tests"
+            Properties="ProjectJSON=..\sdk\test\CoreCLR\UnitTests\project.json;Configuration=$(Configuration)"/>
     </Target>
 
     <Target Name="run-integ-tests" DependsOnTargets="init;build-sdk" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'">
         <MSBuild
             Projects="$(MSBuildProjectFile)"
-            Targets="run-tests"
-            Properties="TestContainer=..\sdk\test\IntegrationTests\bin\$(Configuration)\net45\AWSSDK.IntegrationTests.Net45.dll" />
+            Targets="run-ms-tests"
+            Properties="TestContainer=..\sdk\test\IntegrationTests\bin\$(Configuration)\net45\AWSSDK.IntegrationTests.Net45.dll;Configuration=$(Configuration)" />
+
+        <MSBuild
+            Projects="$(MSBuildProjectFile)"
+            Targets="run-xunit-tests"
+            Properties="ProjectJSON=..\sdk\test\CoreCLR\IntegrationTests\project.json;Configuration=$(Configuration)"/>
     </Target>
 
-    <Target Name="nuget-pack" DependsOnTargets="build-sdk" Condition="$(Configuration) == 'Release'">
+    <Target Name="nuget-pack" DependsOnTargets="build-sdk" Condition="'$(Configuration)' == 'Release'">
         <Exec LogStandardErrorAsError="true"
               Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File create-nuget-packages.ps1" />
     </Target>
@@ -175,11 +212,11 @@
 
 		<!-- copy all new assemblies to the test project -->
 		<ItemGroup>
-			<DllFiles Include="..\sdk\src\Core\bin\Release\unity\AWSSDK.*.dll"/>
-			<PdbFiles Include="..\sdk\src\Core\bin\Release\unity\AWSSDK.*.pdb"/>
+			<DllFiles Include="..\sdk\src\Core\bin\$(Configuration)\unity\AWSSDK.*.dll"/>
+			<PdbFiles Include="..\sdk\src\Core\bin\$(Configuration)\unity\AWSSDK.*.pdb"/>
 
-			<DllFiles Include="..\sdk\src\Services\**\bin\Release\unity\AWSSDK.*.dll"/>
-			<PdbFiles Include="..\sdk\src\Services\**\bin\Release\unity\AWSSDK.*.pdb"/>
+			<DllFiles Include="..\sdk\src\Services\**\bin\$(Configuration)\unity\AWSSDK.*.dll"/>
+			<PdbFiles Include="..\sdk\src\Services\**\bin\$(Configuration)\unity\AWSSDK.*.pdb"/>
 		</ItemGroup>
 
 		<Copy
@@ -223,7 +260,27 @@
 			/>
 		-->
 	</Target>
-
+	
+	
+	<Target Name="build-netcore-extensions" DependsOnTargets="build-sdk-coreclr;GetSDKToolingInfoTarget">
+	
+		<!-- depends: restore-nuget;run-generator -->
+		<Exec Command="&quot;$(SDKToolingExe)&quot; restore" 
+			WorkingDirectory="..\extensions"/>		
+			
+			
+		<Message Text="Build and Test .NET Core Setup Extension"/>
+        <MSBuild
+            Projects="$(MSBuildProjectFile)"
+            Targets="run-xunit-tests"
+            Properties="ProjectJSON=..\extensions\test\NETCore.SetupTests\project.json;Configuration=$(Configuration)"/>
+			
+	</Target>	
+	
+	<Target Name="package-netcore-extensions" DependsOnTargets="build-netcore-extensions">
+		<Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack .\AWSSDK.Extensions.NETCore.Setup.nuspec -BasePath . -OutputDirectory ..\..\..\Deployment\nuget" WorkingDirectory="..\extensions\src\AWSSDK.Extensions.NETCore.Setup" />
+	</Target>	
+	
     <Target Name="copy-assemblies" DependsOnTargets="nuget-pack;xam-pack">
         <Message Text="Collating assemblies for downstream doc generation" />
         <PropertyGroup>
@@ -262,29 +319,44 @@
         <Error Condition="Exists('..\fxcop-report-3.5.xml') or Exists('..\fxcop-report-4.5.xml')" Text="There are FxCop violations!" />
     </Target>
 
-    <Target Name="run-tests">
-        <Message Text="TestContainer = $(TestContainer)" Condition="$(TestContainer.Length) > 0"/>
-        <Message Text="TestCategory = $(TestCategory)" Condition="$(TestCategory.Length) > 0"/>
+    <Target Name="build-test-wrapper">
+	    <Exec Command="..\sdk\.nuget\NuGet.exe restore .\TestWrapper\TestWrapper.sln" />
+		
+        <MSBuild Projects=".\TestWrapper\TestWrapper.sln"
+            Targets="Clean;Build"
+            Properties="Configuration=Debug"/>        
+    </Target>
 
-        <Exec Command="$(devenv2013) /Rebuild Debug .\MSTestWrapper\MSTestWrapper.sln"/>
+    <Target Name="run-ms-tests" DependsOnTargets="build-test-wrapper">
+        <Message Text="TestContainer = $(TestContainer)" Condition="$(TestContainer.Length) > 0"/>
 
         <PropertyGroup >
-            <Container>/testcontainer:$([System.IO.Path]::GetFullPath($(TestContainer)))</Container>
-            <Category></Category>
-        </PropertyGroup>
-        <PropertyGroup Condition="$(TestCategory.Length) > 0">
-            <Category>/category:$(TestCategory)</Category>
+            <Container>/testcontainer:&quot;$([System.IO.Path]::GetFullPath($(TestContainer)))&quot;</Container>
         </PropertyGroup>
 
-        <Exec Command=".\MSTestWrapper\MSTestWrapper\bin\Debug\MSTestWrapper.exe  $(mstest2013) &quot;$(Container)&quot; &quot;$(Category)&quot;"/>
+        <Exec Command=".\TestWrapper\TestRunners\bin\Debug\TestWrapper.exe  mstest $(mstest2013) $(Container)" IgnoreStandardErrorWarningFormat="true"/>
 
         <!-- Clear our properties -->
         <PropertyGroup >
             <TestContainer></TestContainer>
-            <TestCategory></TestCategory>
         </PropertyGroup>
         <CallTarget Targets="deploy-test-results" />
         <OnError ExecuteTargets="deploy-test-results" />
+    </Target>
+
+    <Target Name="run-xunit-tests" DependsOnTargets="build-test-wrapper;GetSDKToolingInfoTarget">
+        <Message Text="TestContainer = $(TestContainer)" Condition="$(TestContainer.Length) > 0"/>
+
+        <PropertyGroup>
+            <Project>$([System.IO.Path]::GetFullPath($(ProjectJSON)))</Project>
+        </PropertyGroup>
+
+        <Exec Command=".\TestWrapper\TestRunners\bin\Debug\TestWrapper.exe xunit &quot;$(SDKToolingExe)&quot; test &quot;$(Project)&quot; -c $(Configuration)"/>
+
+         <!-- Clear our properties -->
+        <PropertyGroup >
+            <TestContainer></TestContainer>
+        </PropertyGroup>
     </Target>
 
     <UsingTask TaskName="PrepareTestResults" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
@@ -330,6 +402,7 @@
             <PrivateKeyException Include="generator\ServiceModels\iam-2010-05-08.normal.json" />
 			<PrivateKeyException Include="sdk\code-analysis\ServiceAnalysis\CertificateManager\Generated\PropertyValueRules.xml" />
             <PrivateKeyException Include="sdk\test\UnitTests\Custom\EC2\PasswordTest.cs" />
+            <PrivateKeyException Include="sdk\test\CoreCLR\UnitTests\sample.rsa.private.key.txt" />
         </ItemGroup>
 		
 		<ItemGroup>
@@ -361,8 +434,4 @@
             SourceFiles="$(TestSettingsFile)"
             DestinationFolder="$(TestSettingsLocation)" />
     </Target>
-
-
-
-
 </Project>

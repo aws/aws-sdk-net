@@ -51,7 +51,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal Table.DynamoDBConsumer TableConsumer { get; private set; }
         internal DynamoDBEntryConversion Conversion { get; private set; }
 
-#if PCL ||UNITY
+#if PCL || UNITY || CORECLR
         internal AmazonDynamoDBClient DDBClient { get; private set; }
 #else
         internal IAmazonDynamoDB DDBClient { get; private set; }
@@ -251,14 +251,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     string currentUserAgent = wsArgs.Headers[HeaderKeys.UserAgentHeader];
                     wsArgs.Headers[HeaderKeys.UserAgentHeader] =
-                        currentUserAgent + " " + this.TableConsumer.ToString() + " " + (isAsync ? "TableAsync" : "TableSync");
-                }
+                    currentUserAgent + " " + this.TableConsumer.ToString() + " " + (isAsync ? "TableAsync" : "TableSync");
+            }
                 else if(wsArgs.Headers.Keys.Contains(HeaderKeys.XAmzUserAgentHeader))
                 {
                     string currentUserAgent = wsArgs.Headers[HeaderKeys.XAmzUserAgentHeader];
                     wsArgs.Headers[HeaderKeys.XAmzUserAgentHeader] =
                         currentUserAgent + " " + this.TableConsumer.ToString() + " " + (isAsync ? "TableAsync" : "TableSync");
-                }
+        }
             }
         }
 
@@ -340,7 +340,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private Table(IAmazonDynamoDB ddbClient, string tableName, Table.DynamoDBConsumer consumer, DynamoDBEntryConversion conversion)
         {
-#if PCL || UNITY
+#if PCL || UNITY || CORECLR
             DDBClient = ddbClient as AmazonDynamoDBClient;
 #else
             DDBClient = ddbClient;

@@ -25,7 +25,7 @@ namespace Amazon.ConfigService.Model
     ///<summary>
     /// ConfigService exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InvalidDeliveryChannelNameException : AmazonConfigServiceException 
@@ -79,7 +79,7 @@ namespace Amazon.ConfigService.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InvalidDeliveryChannelNameException class with serialized data.
         /// </summary>

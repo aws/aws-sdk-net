@@ -25,7 +25,7 @@ namespace Amazon.ImportExport.Model
     ///<summary>
     /// ImportExport exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class MultipleRegionsException : AmazonImportExportException 
@@ -79,7 +79,7 @@ namespace Amazon.ImportExport.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the MultipleRegionsException class with serialized data.
         /// </summary>

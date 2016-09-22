@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.DirectoryService.Model;
 
 namespace Amazon.DirectoryService
@@ -34,7 +35,7 @@ namespace Amazon.DirectoryService
     /// information about AWS Directory Service operations, data types, parameters, and errors.
     /// </para>
     /// </summary>
-    public partial interface IAmazonDirectoryService : IDisposable
+    public partial interface IAmazonDirectoryService : IAmazonService, IDisposable
     {
 
         

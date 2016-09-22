@@ -34,6 +34,7 @@ namespace ServiceClientGenerator
             public const string AppendServiceKey = "append-service";
             public const string MaxRetriesKey = "max-retries";
             public const string SynopsisKey = "synopsis";
+            public const string CoreCLRSupportKey = "coreclr-support";
             public const string DependenciesKey = "dependencies";
             public const string PlatformsKey = "platforms";
             public const string ReferenceDependenciesKey = "reference-dependencies";
@@ -98,6 +99,12 @@ namespace ServiceClientGenerator
             private set;
         }
 
+        public string PreviewLabel
+        {
+            get;
+            private set;
+        }
+ 
         /// <summary>
         /// Processes the control manifest to yield the set of services available to
         /// generate and the Visual Studio project file information used to create
@@ -116,6 +123,12 @@ namespace ServiceClientGenerator
             var versions = versionsManifest["ServiceVersions"];
 
             generationManifest.DefaultToPreview = (bool)versionsManifest["DefaultToPreview"];
+			if (generationManifest.DefaultToPreview)
+			{
+				generationManifest.PreviewLabel = (string)versionsManifest["PreviewLabel"];
+			}
+            if (!string.IsNullOrEmpty(generationManifest.PreviewLabel))
+                generationManifest.PreviewLabel = "-" + generationManifest.PreviewLabel;
 
             generationManifest.LoadServiceConfigurations(manifest, generationManifest.CoreFileVersion, versions, modelsFolder);
             generationManifest.LoadProjectConfigurations(manifest);
@@ -164,7 +177,7 @@ namespace ServiceClientGenerator
                 if (modelNode[ModelsSectionKeys.PclVariantsKey] != null)
                 {
                     config.PclVariants = (from object pcf in modelNode[ModelsSectionKeys.PclVariantsKey]
-                                          select pcf.ToString()).ToList();
+                     select pcf.ToString()).ToList();
                 }
 
                 if (modelNode[ModelsSectionKeys.NugetPackageTitleSuffix] != null)
@@ -233,6 +246,10 @@ namespace ServiceClientGenerator
                 if (modelNode[ModelsSectionKeys.SynopsisKey] != null)
                     config.Synopsis = (string)modelNode[ModelsSectionKeys.SynopsisKey];
 
+                if (modelNode[ModelsSectionKeys.CoreCLRSupportKey] != null)
+                    config.CoreCLRSupport = (bool)modelNode[ModelsSectionKeys.CoreCLRSupportKey];
+                else
+                    config.CoreCLRSupport = true;
 
                 config.ServiceDependencies = new Dictionary<string, string>(StringComparer.Ordinal);
                 if (modelNode[ModelsSectionKeys.DependenciesKey] != null && modelNode[ModelsSectionKeys.DependenciesKey].IsArray)
@@ -271,13 +288,17 @@ namespace ServiceClientGenerator
                     var versionText = versionInfoJson["Version"].ToString();
                     config.ServiceFileVersion = versionText;
 
-                    config.InPreview = versionInfoJson["InPreview"] != null ? (bool)versionInfoJson["InPreview"] : this.DefaultToPreview;
+                    if(versionInfoJson["InPreview"] != null && (bool)versionInfoJson["InPreview"])
+                        config.InPreview = true;
+                    else
+                        config.InPreview = this.DefaultToPreview;
                 }
                 else
                 {
                     config.ServiceDependencies["Core"] = coreVersion;
                     var versionTokens = coreVersion.Split('.');
                     config.ServiceFileVersion = string.Format("{0}.{1}.0.0", versionTokens[0], versionTokens[1]);
+                    config.InPreview = this.DefaultToPreview;
                 }
 
                 // The parent model for current model, if set, the client will be generated

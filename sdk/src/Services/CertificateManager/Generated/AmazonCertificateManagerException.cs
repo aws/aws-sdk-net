@@ -28,7 +28,7 @@ namespace Amazon.CertificateManager
     ///<summary>
     /// Common exception for the CertificateManager service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonCertificateManagerException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CertificateManager
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonCertificateManagerException class with serialized data.
         /// </summary>

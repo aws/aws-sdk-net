@@ -54,7 +54,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
         /// <para>
-        /// Optional language code. Supported language codes are as follows:
+        /// The language code to use for this operation. Supported language codes are as follows:
         /// </para>
         ///  
         /// <para>
@@ -88,8 +88,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property IgnoreErrors. 
         /// <para>
-        /// Optional Boolean parameter. If set to true, AWS Service Catalog stops managing the
-        /// specified ProvisionedProduct object even if it cannot delete the underlying resources.
+        /// If set to true, AWS Service Catalog stops managing the specified ProvisionedProduct
+        /// object even if it cannot delete the underlying resources.
         /// </para>
         /// </summary>
         public bool IgnoreErrors

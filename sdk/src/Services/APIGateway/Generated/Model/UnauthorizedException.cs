@@ -25,7 +25,7 @@ namespace Amazon.APIGateway.Model
     ///<summary>
     /// APIGateway exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class UnauthorizedException : AmazonAPIGatewayException 
@@ -79,7 +79,7 @@ namespace Amazon.APIGateway.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the UnauthorizedException class with serialized data.
         /// </summary>

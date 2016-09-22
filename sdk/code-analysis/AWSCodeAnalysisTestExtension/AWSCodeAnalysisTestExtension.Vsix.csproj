@@ -205,7 +205,7 @@
       <Name>AWSSDK.ElasticLoadBalancing.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ElasticLoadBalancingV2/AWSSDK.ElasticLoadBalancingV2.CodeAnalysis.csproj">
-      <Project>{CE716C60-4511-4428-A25C-58C45677943F}</Project>
+      <Project>{F4504FC4-8AFB-43DC-A2FF-5C1F06D43978}</Project>
       <Name>AWSSDK.ElasticLoadBalancingV2.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ElasticMapReduce/AWSSDK.ElasticMapReduce.CodeAnalysis.csproj">
@@ -257,7 +257,7 @@
       <Name>AWSSDK.Kinesis.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/KinesisAnalytics/AWSSDK.KinesisAnalytics.CodeAnalysis.csproj">
-      <Project>{CCC41B19-FAF7-45B1-8D74-1371B3D6F0F4}</Project>
+      <Project>{C8CA4E5A-31A2-4932-990C-25C84DAFFA8C}</Project>
       <Name>AWSSDK.KinesisAnalytics.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/KinesisFirehose/AWSSDK.KinesisFirehose.CodeAnalysis.csproj">
@@ -305,7 +305,7 @@
       <Name>AWSSDK.SecurityToken.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ServiceCatalog/AWSSDK.ServiceCatalog.CodeAnalysis.csproj">
-      <Project>{C3F067D9-9A46-4B4D-85C6-490C0410C924}</Project>
+      <Project>{89E9593C-1969-4C92-8722-989E3AE1E3B4}</Project>
       <Name>AWSSDK.ServiceCatalog.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SimpleDB/AWSSDK.SimpleDB.CodeAnalysis.csproj">
@@ -329,7 +329,7 @@
       <Name>AWSSDK.SimpleWorkflow.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Snowball/AWSSDK.Snowball.CodeAnalysis.csproj">
-      <Project>{1E74BAED-F5D6-4F90-B35B-32A8554EFD03}</Project>
+      <Project>{185C5678-DA64-4941-AA03-AE7E781BA180}</Project>
       <Name>AWSSDK.Snowball.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SQS/AWSSDK.SQS.CodeAnalysis.csproj">

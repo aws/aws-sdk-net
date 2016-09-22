@@ -361,7 +361,10 @@ namespace Amazon.Runtime.Internal
         {
             IRequest wrappedRequest = requestContext.Request;
 
-            if (wrappedRequest.ContentStream == null)
+            // This code path ends up using a ByteArrayContent for System.Net.HttpClient used by .NET Core.
+            // HttpClient can't seem to handle ByteArrayContent with 0 length so in that case use
+            // the StreamContent code path.
+            if (wrappedRequest.Content != null && wrappedRequest.Content.Length > 0)
             {
                 byte[] requestData = wrappedRequest.Content;
                 requestContext.Metrics.AddProperty(Metric.RequestSize, requestData.Length);
@@ -369,7 +372,18 @@ namespace Amazon.Runtime.Internal
             }
             else
             {
-                var originalStream = wrappedRequest.ContentStream;
+                System.IO.Stream originalStream;
+                if (wrappedRequest.ContentStream == null)
+                {
+                    originalStream = new System.IO.MemoryStream();
+                    originalStream.Write(wrappedRequest.Content, 0, wrappedRequest.Content.Length);
+                    originalStream.Position = 0;
+                }
+                else
+                {
+                    originalStream = wrappedRequest.ContentStream;
+                }
+
                 var callback = ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)wrappedRequest.OriginalRequest).StreamUploadProgressCallback;
                 if (callback != null)
                     originalStream = httpRequest.SetupProgressListeners(originalStream, requestContext.ClientConfig.ProgressUpdateInterval, this.CallbackSender, callback);

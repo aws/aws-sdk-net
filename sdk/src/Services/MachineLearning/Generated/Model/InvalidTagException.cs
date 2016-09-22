@@ -25,7 +25,7 @@ namespace Amazon.MachineLearning.Model
     ///<summary>
     /// MachineLearning exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InvalidTagException : AmazonMachineLearningException 
@@ -79,7 +79,7 @@ namespace Amazon.MachineLearning.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InvalidTagException class with serialized data.
         /// </summary>

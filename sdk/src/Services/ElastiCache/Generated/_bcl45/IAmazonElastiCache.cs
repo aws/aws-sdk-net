@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ElastiCache.Model;
 
 namespace Amazon.ElastiCache
@@ -49,7 +50,7 @@ namespace Amazon.ElastiCache
     /// if a part of their cache runs hot.
     /// </para>
     /// </summary>
-    public partial interface IAmazonElastiCache : IDisposable
+    public partial interface IAmazonElastiCache : IAmazonService, IDisposable
     {
 
         

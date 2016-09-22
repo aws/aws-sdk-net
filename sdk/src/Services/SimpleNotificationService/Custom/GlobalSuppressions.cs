@@ -25,3 +25,5 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.SimpleNotificationService.Util.Message.#UnsubscribeURL")]
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.SimpleNotificationService.Util.Message.#SigningCertURL")]
 [module: SuppressMessage("Microsoft.Design", "CA1056:UriPropertiesShouldNotBeStrings", Scope = "member", Target = "Amazon.SimpleNotificationService.Util.Message.#SubscribeURL")]
+// Nested generic types
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.SimpleNotificationService.IAmazonSimpleNotificationService.#SubscribeQueueToTopicsAsync(System.Collections.Generic.IList`1<System.String>,Amazon.Runtime.SharedInterfaces.ICoreAmazonSQS,System.String)")]

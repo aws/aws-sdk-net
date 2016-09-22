@@ -25,7 +25,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///<summary>
     /// SimpleSystemsManagement exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InvalidDocumentOperationException : AmazonSimpleSystemsManagementException 
@@ -79,7 +79,7 @@ namespace Amazon.SimpleSystemsManagement.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InvalidDocumentOperationException class with serialized data.
         /// </summary>

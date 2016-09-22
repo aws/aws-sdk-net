@@ -29,17 +29,17 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTags operation.
-    /// Adds one or more tags to a specified resource. 
+    /// Adds one or more tags to a specified resource.
     /// 
     ///  
     /// <para>
-    ///  A resource can have up to 10 tags. If you try to create more than 10 tags for a resource,
-    /// you will receive an error and the attempt will fail. 
+    /// A resource can have up to 10 tags. If you try to create more than 10 tags for a resource,
+    /// you will receive an error and the attempt will fail.
     /// </para>
     ///  
     /// <para>
-    ///  If you specify a key that already exists for the resource, the value for that key
-    /// will be updated with the new value. 
+    /// If you specify a key that already exists for the resource, the value for that key
+    /// will be updated with the new value.
     /// </para>
     /// </summary>
     public partial class CreateTagsRequest : AmazonRedshiftRequest
@@ -50,7 +50,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example,
+        /// The Amazon Resource Name (ARN) to which you want to add the tag or tags. For example,
         /// <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. 
         /// </para>
         /// </summary>
@@ -69,7 +69,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  One or more name/value pairs to add as tags to the specified resource. Each tag name
+        /// One or more name/value pairs to add as tags to the specified resource. Each tag name
         /// is passed in with the parameter <code>Key</code> and the corresponding value is passed
         /// in with the parameter <code>Value</code>. The <code>Key</code> and <code>Value</code>
         /// parameters are separated by a comma (,). Separate multiple tags with a space. For

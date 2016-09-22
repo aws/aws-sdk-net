@@ -73,15 +73,29 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        ///  
-        /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>Alphabetic
-        /// characters must be lowercase.</li> <li>First character must be a letter.</li> <li>Cannot
-        /// end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for
-        /// all clusters within an AWS account.</li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alphabetic characters must be lowercase.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be unique for all clusters within an AWS account.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string SnapshotCopyGrantName
         {

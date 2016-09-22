@@ -25,7 +25,7 @@ namespace Amazon.CloudWatchEvents.Model
     ///<summary>
     /// CloudWatchEvents exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class ConcurrentModificationException : AmazonCloudWatchEventsException 
@@ -79,7 +79,7 @@ namespace Amazon.CloudWatchEvents.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the ConcurrentModificationException class with serialized data.
         /// </summary>

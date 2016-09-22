@@ -40,13 +40,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        ///  The source type, such as cluster or parameter group, to which the described event
-        /// categories apply. 
+        /// The source type, such as cluster or parameter group, to which the described event
+        /// categories apply.
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: cluster, cluster-snapshot, cluster-parameter-group, and cluster-security-group.
-        /// 
+        /// Valid values: cluster, cluster-snapshot, cluster-parameter-group, and cluster-security-group.
         /// </para>
         /// </summary>
         public string SourceType

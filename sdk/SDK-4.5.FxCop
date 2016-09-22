@@ -179,6 +179,7 @@
             <Namespace Name="Amazon.Auth.AccessControlPolicy" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Auth.AccessControlPolicy.ActionIdentifiers" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Auth.AccessControlPolicy.Internal" Analyze="True" AnalyzeAllChildren="True" />
+            <Namespace Name="Amazon.Internal" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.MissingTypes" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Runtime" Analyze="True" AnalyzeAllChildren="True" />
             <Namespace Name="Amazon.Runtime.Internal" Analyze="True" AnalyzeAllChildren="True" />

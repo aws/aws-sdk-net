@@ -20,7 +20,6 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <NuGetPackageImportStamp>5208bbe2</NuGetPackageImportStamp>
-    <AnalyzerPath>..\TestAnalyzer\IntegrationTestsAnalyzer\bin\Debug\IntegrationTestsAnalyzer.dll</AnalyzerPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,14 +41,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
@@ -82,9 +73,6 @@
       </ItemGroup>
     </Otherwise>
   </Choose>
-  <ItemGroup Condition="Exists('$(AnalyzerPath)')">
-    <Analyzer Include="$(AnalyzerPath)" />
-  </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include=".\Tests\*.cs" />
@@ -217,7 +205,7 @@
       <Name>AWSSDK.ElasticBeanstalk.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ElasticLoadBalancingV2\AWSSDK.ElasticLoadBalancingV2.Net45.csproj">
-      <Project>{98942fe9-3700-42f2-8092-56611f4fc0b1}</Project>
+      <Project>{4449e966-e00f-4673-b468-48866576da5c}</Project>
       <Name>AWSSDK.ElasticLoadBalancingV2.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ElasticLoadBalancing\AWSSDK.ElasticLoadBalancing.Net45.csproj">
@@ -337,7 +325,7 @@
       <Name>AWSSDK.SimpleWorkflow.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Snowball\AWSSDK.Snowball.Net45.csproj">
-      <Project>{48de2dba-d6de-4677-8a5c-df42cd34ebe1}</Project>
+      <Project>{f54015b4-1f57-474e-8351-b9819bebc5b0}</Project>
       <Name>AWSSDK.Snowball.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\SQS\AWSSDK.SQS.Net45.csproj">
@@ -356,9 +344,9 @@
       <Project>{60819F67-5CD7-41A4-9E02-BB27E5A3F715}</Project>
       <Name>AWSSDK.WorkSpaces.Net45</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UnitTests\AWSSDK.UnitTests.Net45.csproj">
-      <Project>{12d065e5-0745-4c75-af9d-34794913346f}</Project>
-      <Name>AWSSDK.UnitTests.Net45</Name>
+    <ProjectReference Include="..\Common\AWSSDK.CommonTest.Net45.csproj">
+      <Project>{5de41572-b345-4727-ad6d-0d08ab92e49b}</Project>
+      <Name>AWSSDK.CommonTest.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,17 +1,17 @@
-﻿/*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- * 
- *  http://aws.amazon.com/apache2.0
- * 
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
+/*
+* Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
 
 using Amazon.Util;
 using System;
@@ -25,7 +25,7 @@ namespace Amazon.Runtime.Internal
     /// <summary>
     /// The default implementation of the retry policy.
     /// </summary>
-    public class DefaultRetryPolicy : RetryPolicy
+    public partial class DefaultRetryPolicy : RetryPolicy
     {
         private int _maxBackoffInMilliseconds = (int)TimeSpan.FromSeconds(30).TotalMilliseconds;
 
@@ -54,6 +54,12 @@ namespace Amazon.Runtime.Internal
             (WebExceptionStatus)1,
             (WebExceptionStatus)3,
 #endif
+        };
+
+        private static readonly HashSet<string> _coreCLRRetryErrorMessages = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        {
+            "The server returned an invalid or unrecognized response",
+            "The connection with the server was terminated abnormally"
         };
 
         // Set of AWS error codes to retry on.
@@ -117,7 +123,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="executionContext">Request context containing the state of the request.</param>
         /// <returns>Returns true if the request is in a state where it can be retried, else false.</returns>
         public override bool CanRetry(IExecutionContext executionContext)
-        {            
+        {
             return executionContext.RequestContext.Request.IsRequestStreamRewindable();
         }
 
@@ -128,12 +134,23 @@ namespace Amazon.Runtime.Internal
         /// <param name="exception">The exception thrown by the previous request.</param>
         /// <returns>Return true if the request should be retried.</returns>
         public override bool RetryForException(IExecutionContext executionContext, Exception exception)
-        {            
+        {
+            return RetryForExceptionSync(exception);
+        }
+
+        /// <summary>
+        /// Perform the processor-bound portion of the RetryForException logic.
+        /// This is shared by the sync, async, and APM versions of the RetryForException method.
+        /// </summary>
+        /// <param name="exception">The exception thrown by the previous request.</param>
+        /// <returns>Return true if the request should be retried.</returns>
+        private bool RetryForExceptionSync(Exception exception)
+        {
             // An IOException was thrown by the underlying http client.
             if (exception is IOException)
             {
 
-#if !PCL   // ThreadAbortException is not available on WIN RT
+#if !PCL && !CORECLR  // ThreadAbortException is not PCL and CoreCLR
 
                 // Don't retry IOExceptions that are caused by a ThreadAbortException
                 if (IsInnerException<ThreadAbortException>(exception))
@@ -143,12 +160,27 @@ namespace Amazon.Runtime.Internal
                 // Retry all other IOExceptions
                 return true;
             }
-                        
+
+#if CORECLR
+            // Version 7.35 libcurl which is the default version installed with Ubuntu 14.04 
+            // has issues under high concurrency causing response streams being disposed
+            // during unmarshalling. To work around this issue will add the ObjectDisposedException
+            // to the list of exceptions to retry.
+            if (IsInnerException<ObjectDisposedException>(exception))
+                return true;
+
+            if (exception is System.Net.Http.HttpRequestException)
+            {
+                if (ContainErrorMessage(exception))
+                    return true;
+            }
+#endif
+
             // A AmazonServiceException was thrown by ErrorHandler
             var serviceException = exception as AmazonServiceException;
             if (serviceException != null)
             {
-                
+
                 // For 500 internal server errors and 503 service
                 // unavailable errors, we want to retry, but we need to use
                 // an exponential back-off strategy so that we don't overload
@@ -162,7 +194,7 @@ namespace Amazon.Runtime.Internal
                 {
                     return true;
                 }
-                                
+
                 // Throttling is reported as a 400 or 503 error from services. To try and
                 // smooth out an occasional throttling error, we'll pause and retry,
                 // hoping that the pause is long enough for the request to get through
@@ -205,16 +237,31 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="executionContext">Request context containing the state of the request.</param>
         public override void WaitBeforeRetry(IExecutionContext executionContext)
-        {            
+        {
             DefaultRetryPolicy.WaitBeforeRetry(executionContext.RequestContext.Retries, this.MaxBackoffInMilliseconds);
         }
 
         public static void WaitBeforeRetry(int retries, int maxBackoffInMilliseconds)
         {
+            AWSSDKUtils.Sleep(CalculateRetryDelay(retries, maxBackoffInMilliseconds));
+        }
+
+        private static int CalculateRetryDelay(int retries, int maxBackoffInMilliseconds)
+        {
             int delay = (int)(Math.Pow(4, retries) * 100);
             if (retries > 0 && (delay > maxBackoffInMilliseconds || delay <= 0))
                 delay = maxBackoffInMilliseconds;
-            AWSSDKUtils.Sleep(delay);
+            return delay;
+        }
+
+        protected static bool ContainErrorMessage(Exception exception)
+        {
+            if (exception == null)
+                return false;
+
+            if (_coreCLRRetryErrorMessages.Contains(exception.Message))
+                return true;
+            return ContainErrorMessage(exception.InnerException);
         }
 
         protected static bool IsInnerException<T>(Exception exception)

@@ -521,6 +521,63 @@ namespace Amazon.S3.Model
                 throw new StreamSizeMismatchException(message, this.ContentLength, bytesWritten, this.ResponseMetadata.RequestId, amzId2, amzCfId);
             }
         }
+
+#if BCL45 || CORECLR
+        /// <summary>
+        /// Writes the content of the ResponseStream a file indicated by the filePath argument.
+        /// </summary>
+        /// <param name="filePath">The location where to write the ResponseStream</param>
+        /// <param name="append">Whether or not to append to the file if it exists</param>
+        /// <param name="cancellationToken">Cancellation token which can be used to cancel this operation.</param>
+        public async System.Threading.Tasks.Task WriteResponseStreamToFileAsync(string filePath, bool append, System.Threading.CancellationToken cancellationToken)
+        {
+            // Make sure the directory exists to write too.
+            FileInfo fi = new FileInfo(filePath);
+            Directory.CreateDirectory(fi.DirectoryName);
+
+            Stream downloadStream;
+            if (append && File.Exists(filePath))
+                downloadStream = new FileStream(filePath, FileMode.Append, FileAccess.Write, FileShare.Read, S3Constants.DefaultBufferSize);
+            else
+                downloadStream = new FileStream(filePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read, S3Constants.DefaultBufferSize);
+
+            try
+            {
+                long current = 0;
+#if CORECLR
+                Stream stream = this.ResponseStream;
+#else
+                Stream stream = new BufferedStream(this.ResponseStream);
+#endif
+                byte[] buffer = new byte[S3Constants.DefaultBufferSize];
+                int bytesRead = 0;
+                long totalIncrementTransferred = 0;
+                while ((bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length)
+                    .ConfigureAwait(continueOnCapturedContext: false)) > 0)
+                {
+                    cancellationToken.ThrowIfCancellationRequested();
+
+                    await downloadStream.WriteAsync(buffer, 0, bytesRead)
+                        .ConfigureAwait(continueOnCapturedContext: false);
+                    current += bytesRead;
+                    totalIncrementTransferred += bytesRead;
+
+                    if (totalIncrementTransferred >= AWSSDKUtils.DefaultProgressUpdateInterval ||
+                        current == this.ContentLength)
+                    {
+                        this.OnRaiseProgressEvent(filePath, totalIncrementTransferred, current, this.ContentLength);
+                        totalIncrementTransferred = 0;
+                    }
+                }
+
+                ValidateWrittenStreamSize(current);
+            }
+            finally
+            {
+                downloadStream.Dispose();
+            }
+        }
+#endif
 #endif
     }
 
@@ -591,6 +648,6 @@ namespace Amazon.S3.Model
         /// </summary>
         public string FilePath { get; private set; }
     }
-#endif
+#endif    
 }
     

@@ -34,11 +34,13 @@ namespace Amazon.CodeDeploy.Model
     public partial class CreateDeploymentRequest : AmazonCodeDeployRequest
     {
         private string _applicationName;
+        private AutoRollbackConfiguration _autoRollbackConfiguration;
         private string _deploymentConfigName;
         private string _deploymentGroupName;
         private string _description;
         private bool? _ignoreApplicationStopFailures;
         private RevisionLocation _revision;
+        private bool? _updateOutdatedInstancesOnly;
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -57,6 +59,25 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetApplicationName()
         {
             return this._applicationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoRollbackConfiguration. 
+        /// <para>
+        /// Configuration information for an automatic rollback that is added when a deployment
+        /// is created.
+        /// </para>
+        /// </summary>
+        public AutoRollbackConfiguration AutoRollbackConfiguration
+        {
+            get { return this._autoRollbackConfiguration; }
+            set { this._autoRollbackConfiguration = value; }
+        }
+
+        // Check to see if AutoRollbackConfiguration property is set
+        internal bool IsSetAutoRollbackConfiguration()
+        {
+            return this._autoRollbackConfiguration != null;
         }
 
         /// <summary>
@@ -163,6 +184,25 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetRevision()
         {
             return this._revision != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateOutdatedInstancesOnly. 
+        /// <para>
+        /// Indicates whether to deploy to all instances or only to instances that are not running
+        /// the latest application revision.
+        /// </para>
+        /// </summary>
+        public bool UpdateOutdatedInstancesOnly
+        {
+            get { return this._updateOutdatedInstancesOnly.GetValueOrDefault(); }
+            set { this._updateOutdatedInstancesOnly = value; }
+        }
+
+        // Check to see if UpdateOutdatedInstancesOnly property is set
+        internal bool IsSetUpdateOutdatedInstancesOnly()
+        {
+            return this._updateOutdatedInstancesOnly.HasValue; 
         }
 
     }

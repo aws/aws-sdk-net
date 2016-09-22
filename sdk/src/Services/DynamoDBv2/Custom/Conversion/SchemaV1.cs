@@ -177,7 +177,7 @@ namespace Amazon.DynamoDBv2
     {
         protected override bool TryTo(char value, out Primitive p)
         {
-            p = new Primitive(value.ToString(CultureInfo.InvariantCulture), DynamoDBEntryType.String);
+            p = new Primitive(value.ToString(), DynamoDBEntryType.String);
             return true;
         }
         protected override bool TryFrom(Primitive p, Type targetType, out char result)
@@ -219,7 +219,7 @@ namespace Amazon.DynamoDBv2
     {
         protected override bool TryTo(Guid value, out Primitive p)
         {
-            p = new Primitive(value.ToString("D", CultureInfo.InvariantCulture), DynamoDBEntryType.String);
+            p = new Primitive(value.ToString("D"), DynamoDBEntryType.String);
             return true;
         }
         protected override bool TryFrom(Primitive p, Type targetType, out Guid result)

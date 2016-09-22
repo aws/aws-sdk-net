@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ElasticTranscoder.Model;
 
 namespace Amazon.ElasticTranscoder
@@ -35,7 +36,7 @@ namespace Amazon.ElasticTranscoder
     /// The AWS Elastic Transcoder Service.
     /// </para>
     /// </summary>
-    public partial interface IAmazonElasticTranscoder : IDisposable
+    public partial interface IAmazonElasticTranscoder : IAmazonService, IDisposable
     {
 
         

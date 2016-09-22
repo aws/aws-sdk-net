@@ -87,7 +87,8 @@ namespace ServiceClientGenerator
                 XmlAttribute attribute = child.Attributes["Include"];
                 if (attribute != null &&
                     attribute.Value.Contains("AWSSDK.") &&
-                    !attribute.Value.Contains("AWSSDK.Core"))
+                    !attribute.Value.Contains("AWSSDK.Core") &&
+                    !attribute.Value.Contains("AWSSDK.CommonTest"))
                 {
                     itemGroupNode.RemoveChild(child);
                 }

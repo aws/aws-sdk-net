@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Configuration of a bootstrap action.
+    /// 
     /// </summary>
     public partial class BootstrapActionConfig
     {
@@ -43,8 +43,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Instantiates BootstrapActionConfig with the parameterized properties
         /// </summary>
-        /// <param name="name">The name of the bootstrap action.</param>
-        /// <param name="scriptBootstrapAction">The script run by the bootstrap action.</param>
+        /// <param name="name">Sets the BootstrapActionConfig Name property</param>
+        /// <param name="scriptBootstrapAction">Sets the BootstrapActionConfig ScriptBootstrapAction property</param>
         public BootstrapActionConfig(string name, ScriptBootstrapActionConfig scriptBootstrapAction)
         {
             _name = name;
@@ -52,10 +52,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the bootstrap action.
-        /// </para>
+        /// Gets and sets the property Name.
         /// </summary>
         public string Name
         {
@@ -70,10 +67,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScriptBootstrapAction. 
-        /// <para>
-        /// The script run by the bootstrap action.
-        /// </para>
+        /// Gets and sets the property ScriptBootstrapAction.
         /// </summary>
         public ScriptBootstrapActionConfig ScriptBootstrapAction
         {

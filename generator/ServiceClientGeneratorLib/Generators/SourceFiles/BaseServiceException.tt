@@ -18,7 +18,7 @@ namespace <#=this.Config.Namespace#>
     ///<summary>
     /// Common exception for the <#=this.Config.BaseName#> service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class Amazon<#=this.Config.BaseName#>Exception : AmazonServiceException
@@ -78,7 +78,7 @@ namespace <#=this.Config.Namespace#>
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the Amazon<#=this.Config.BaseName#>Exception class with serialized data.
         /// </summary>

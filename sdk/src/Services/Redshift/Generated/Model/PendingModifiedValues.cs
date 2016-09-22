@@ -37,6 +37,7 @@ namespace Amazon.Redshift.Model
         private string _clusterIdentifier;
         private string _clusterType;
         private string _clusterVersion;
+        private bool? _enhancedVpcRouting;
         private string _masterUserPassword;
         private string _nodeType;
         private int? _numberOfNodes;
@@ -45,7 +46,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AutomatedSnapshotRetentionPeriod. 
         /// <para>
-        ///  The pending or in-progress change of the automated snapshot retention period. 
+        /// The pending or in-progress change of the automated snapshot retention period.
         /// </para>
         /// </summary>
         public int AutomatedSnapshotRetentionPeriod
@@ -81,7 +82,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterType. 
         /// <para>
-        ///  The pending or in-progress change of the cluster type. 
+        /// The pending or in-progress change of the cluster type.
         /// </para>
         /// </summary>
         public string ClusterType
@@ -99,7 +100,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterVersion. 
         /// <para>
-        ///  The pending or in-progress change of the service version. 
+        /// The pending or in-progress change of the service version.
         /// </para>
         /// </summary>
         public string ClusterVersion
@@ -115,9 +116,38 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnhancedVpcRouting. 
+        /// <para>
+        /// An option that specifies whether to create the cluster with enhanced VPC routing enabled.
+        /// To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC.
+        /// For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
+        /// VPC Routing</a> in the Amazon Redshift Cluster Management Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this option is <code>true</code>, enhanced VPC routing is enabled. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: false
+        /// </para>
+        /// </summary>
+        public bool EnhancedVpcRouting
+        {
+            get { return this._enhancedVpcRouting.GetValueOrDefault(); }
+            set { this._enhancedVpcRouting = value; }
+        }
+
+        // Check to see if EnhancedVpcRouting property is set
+        internal bool IsSetEnhancedVpcRouting()
+        {
+            return this._enhancedVpcRouting.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        ///  The pending or in-progress change of the master user password for the cluster. 
+        /// The pending or in-progress change of the master user password for the cluster.
         /// </para>
         /// </summary>
         public string MasterUserPassword
@@ -135,7 +165,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
-        ///  The pending or in-progress change of the cluster's node type. 
+        /// The pending or in-progress change of the cluster's node type.
         /// </para>
         /// </summary>
         public string NodeType
@@ -153,7 +183,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
-        ///  The pending or in-progress change of the number of nodes in the cluster. 
+        /// The pending or in-progress change of the number of nodes in the cluster.
         /// </para>
         /// </summary>
         public int NumberOfNodes
@@ -171,7 +201,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        ///  The pending or in-progress change of the ability to connect to the cluster from the
+        /// The pending or in-progress change of the ability to connect to the cluster from the
         /// public network.
         /// </para>
         /// </summary>

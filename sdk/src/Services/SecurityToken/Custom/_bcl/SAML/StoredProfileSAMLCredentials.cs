@@ -296,7 +296,7 @@ namespace Amazon.SecurityToken.SAML
     /// instance has not been set.
     /// </summary>
     [Obsolete("This class is obsolete and will be removed in a future release. Please update your code to use the Amazon.Runtime.CredentialRequestCallbackRequiredException class instead.")]
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class CredentialCallbackRequiredException : Exception
@@ -329,7 +329,7 @@ namespace Amazon.SecurityToken.SAML
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AdfsAuthenticationControllerException class with serialized data.
         /// </summary>
@@ -350,7 +350,7 @@ namespace Amazon.SecurityToken.SAML
     /// obtained.
     /// </summary>
     [Obsolete("This class is obsolete and will be removed in a future release. Please update your code to use the Amazon.Runtime.FederatedAuthenticationFailureException class instead.")]
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AuthenticationFailedException : Exception
@@ -374,7 +374,7 @@ namespace Amazon.SecurityToken.SAML
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AuthenticationFailedException class with serialized data.
         /// </summary>

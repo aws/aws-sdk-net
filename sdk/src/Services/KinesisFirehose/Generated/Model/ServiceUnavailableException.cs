@@ -25,7 +25,7 @@ namespace Amazon.KinesisFirehose.Model
     ///<summary>
     /// KinesisFirehose exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class ServiceUnavailableException : AmazonKinesisFirehoseException 
@@ -79,7 +79,7 @@ namespace Amazon.KinesisFirehose.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the ServiceUnavailableException class with serialized data.
         /// </summary>

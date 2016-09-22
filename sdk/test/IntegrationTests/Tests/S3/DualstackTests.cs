@@ -1,22 +1,10 @@
- using System;
-using System.Collections.Generic;
-using System.IO;
-using System.IO.Compression;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 using Amazon;
+using Amazon.Internal;
+using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
-using Amazon.S3.Util;
-using Amazon.Runtime;
-using Amazon.Runtime.Internal.Util;
-using AWSSDK_DotNet.IntegrationTests.Utils;
-using System.Diagnostics;
-using Amazon.Util;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -31,7 +19,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         RegionEndpoint[] testRegions = new RegionEndpoint[]
         {
             RegionEndpoint.USWest2,
-            RegionEndpoint.USEast1         // explicit test that the sdk switches to use s3.dualstack.us-east-1.amazonaws.com
+            RegionEndpoint.USEast1,         // explicit test that the sdk switches to use s3.dualstack.us-east-1.amazonaws.com
+            RegionEndpoint.APNortheast2,    // region that doesn't have an explicit "hostname" entry specified
         };
 
         /// <summary>
@@ -94,15 +83,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 // a bucket name is present.
                 string bucketName = null;
                 foreach (var bucket in listBucketsResponse.Buckets)
-                {       
-                    var bucketLocationResponse = s3Client.GetBucketLocation(bucket.BucketName);
-                    if (string.IsNullOrEmpty(bucketLocationResponse.Location) && s3Config.RegionEndpoint == RegionEndpoint.USEast1)
-                        bucketName = bucket.BucketName;
-                    else if (string.Equals(s3Config.RegionEndpoint.SystemName, bucketLocationResponse.Location, StringComparison.OrdinalIgnoreCase))
-                        bucketName = bucket.BucketName;
+                {
+                    try
+                    {
+                        var bucketLocationResponse = s3Client.GetBucketLocation(bucket.BucketName);
+                        if (string.IsNullOrEmpty(bucketLocationResponse.Location) && s3Config.RegionEndpoint == RegionEndpoint.USEast1)
+                            bucketName = bucket.BucketName;
+                        else if (string.Equals(s3Config.RegionEndpoint.SystemName, bucketLocationResponse.Location, StringComparison.OrdinalIgnoreCase))
+                            bucketName = bucket.BucketName;
 
-                    if (!string.IsNullOrEmpty(bucketName))
-                        break;
+                        if (!string.IsNullOrEmpty(bucketName))
+                            break;
+                    }
+                    catch(AmazonS3Exception e)
+                    {
+                        if (e.StatusCode != System.Net.HttpStatusCode.NotFound)
+                            throw;
+                    }
                 }
 
                 if (!string.IsNullOrEmpty(bucketName))
@@ -174,6 +171,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Assert.IsNotNull(listBucketsResponse);
                 Assert.IsFalse(string.IsNullOrEmpty(listBucketsResponse.ResponseMetadata.RequestId));
             }
+        }
+
+        [TestMethod]
+        [TestCategory("Core")]
+        public void TestExplicitlyDefinedEndpoint()
+        {
+            string hostname = RegionEndpoint.APNortheast2.GetEndpointForService("sts", true).Hostname;
+            Assert.AreEqual<string>("sts.dualstack.ap-northeast-2.amazonaws.com", hostname);
+
+            hostname = RegionEndpoint.CNNorth1.GetEndpointForService("iam", true).Hostname;
+            Assert.AreEqual<string>("iam.dualstack.cn-north-1.amazonaws.com.cn", hostname);
         }
     }
 }

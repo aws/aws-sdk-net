@@ -28,7 +28,7 @@ namespace Amazon.AWSMarketplaceMetering
     ///<summary>
     /// Common exception for the AWSMarketplaceMetering service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonAWSMarketplaceMeteringException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.AWSMarketplaceMetering
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonAWSMarketplaceMeteringException class with serialized data.
         /// </summary>

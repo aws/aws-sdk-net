@@ -1,12 +1,11 @@
 ﻿# Script parameters
-Param(
-    [string]
-    $PublicKeyTokenToCheck,
+Param
+(
+    [string]$PublicKeyTokenToCheck,
 
     # The build type. If not specified defaults to 'release'.
     [Parameter()]
-    [string]
-    $BuildType = "release"
+    [string]$BuildType = "release"
 )
 
 # Functions
@@ -14,12 +13,13 @@ Param(
 Function Get-PublicKeyToken
 {
     [CmdletBinding()]
-    Param(
+	Param
+	(
         # The assembly in question
-        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true, Position=0)]
-        [string]
-        $AssemblyPath
-    )
+        [Parameter(Mandatory=$true, ValueFromPipelineByPropertyName=$true, ValueFromPipeline=$true, Position=0)]
+        [string]$AssemblyPath
+	)
+	
     $token = $null
     $token = [System.Reflection.Assembly]::LoadFrom($AssemblyPath).GetName().GetPublicKeyToken()
     if ( $token )
@@ -33,11 +33,11 @@ Function Get-PublicKeyToken
     }
     else
     {
-        Write-Error "NO TOKEN!!"
+        Write-Error "NO TOKEN!! - $AssemblyPath"
     }
 }
 
-Function Copy-SDKAssemblies
+Function Copy-SdkAssemblies
 {
     [CmdletBinding()]
     Param
@@ -60,7 +60,7 @@ Function Copy-SDKAssemblies
         # The platforms to copy. Defaults to all if not specified.
         [Parameter()]
         [string[]]
-        $Platforms = @("net35","net45","pcl"),
+        $Platforms = @("net35","net45", "pcl", "monoandroid", "Xamarin.iOS10", "windows8", "wpa81"),
         
         # The public key token that all assemblies should have. Optional.
         [Parameter()]
@@ -87,6 +87,13 @@ Function Copy-SDKAssemblies
 
         foreach ($p in $Platforms)
         {
+            $relativeSourcePath = "bin\$BuildType\$p"
+
+            if (!(Join-Path $dir.FullName $relativeSourcePath | Test-Path))
+            {
+                continue
+            }
+
             $platformDestination = Join-Path $Destination $p
             if (!(Test-Path $platformDestination))
             {
@@ -101,10 +108,10 @@ Function Copy-SDKAssemblies
 			Write-Debug "Checking if $sourceDirectory exists"
 			if(!(Test-Path $sourceDirectory))
 			{
-				return
+				continue
 			}
 			
-			$files = gci -Path $dir.FullName -Filter $filter -ErrorAction Stop
+            $files = gci -Path $dir.FullName -Filter $filter -ErrorAction Stop
 			
             foreach ($a in $files)
             {
@@ -128,20 +135,88 @@ Function Copy-SDKAssemblies
     }
 }
 
-#Script code
-#$ErrorActionPreference = "Stop"
+Function Copy-CoreClrSdkAssemblies
+{
+	[CmdletBinding()]
+	Param
+	(
+		# The root folder containing the core runtime or a service
+		[Parameter(Mandatory = $true, ValueFromPipelineByPropertyName = $true, Position = 0)]
+		[string]$SourceRoot,
+		# The location to copy the built dll and pdb to
+		[Parameter(Mandatory = $true, Position = 1)]
+		[string]$Destination,
+		# The build type. If not specified defaults to 'release'.
+		[Parameter()]
+		[string]$BuildType = "release",
+		# The platforms to copy. Defaults to all if not specified.
+		[Parameter()]
+		[string[]]$Platforms = @("netstandard1.5"),
+		# The public key token that all assemblies should have. Optional.
+		[Parameter()]
+		[string]$PublicKeyToken = ""
+	)
+	
+	Process
+	{
+		Write-Verbose "Copying built CoreCLR SDK assemblies beneath $SourceRoot to $Destination"
+		
+		if (!(Test-Path $Destination))
+		{
+			New-Item $Destination -ItemType Directory
+		}
+		
+		$assemblyFoldersPattern = Join-Path $SourceRoot "*.Dnx"
+		$assemblyFolderRoots = gci $assemblyFoldersPattern
+		foreach ($afr in $assemblyFolderRoots)
+		{
+			foreach ($p in $Platforms)
+			{
+				$sourceFolder = Join-Path $afr (Join-Path $BuildType $p)
+				$targetFolder = Join-Path $Destination $p
+
+                if (!(Test-Path $targetFolder))
+                {
+                    New-Item $targetFolder -ItemType Directory
+                }
+
+				Write-Verbose "Copying from $sourceFolder to $targetFolder..."
+				
+				$files = gci $sourceFolder
+				
+				foreach ($f in $files)
+				{
+					Copy-Item -Path $f.FullName -Destination $targetFolder
+				}
+			}
+		}
+	}
+}
+
+Write-Verbose "Copying $BuildType SDK assemblies to deployment folders for BCL/PCL platforms"
+$args = @{
+	"Destination" = "..\Deployment\assemblies"
+	"PublicKeyToken" = $PublicKeyTokenToCheck
+	"BuildType" = $BuildType
+}
 
 Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck -Platforms @("net35","net45","pcl","monoandroid","Xamarin.iOS10","windows8","wpa81") -BuildType $BuildType
 
 #for unity the assemblies are not signed, so we copy them seperately and override the check
-Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -Platforms @("unity") -BuildType $BuildType -ValidatePublicKeyToken $false
+Copy-SDKAssemblies -SourceRoot ..\sdk\src\Core -Destination ..\Deployment\assemblies -Platforms @("unity", "netstandard1.3") -BuildType $BuildType -ValidatePublicKeyToken $false
 
 $services = gci ..\sdk\src\services
 foreach ($s in $services)
 {
     Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -PublicKeyToken $PublicKeyTokenToCheck  -BuildType $BuildType
-	Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -Platforms @("unity") -ValidatePublicKeyToken $false  -BuildType $BuildType
+	Copy-SDKAssemblies -SourceRoot $s.FullName -Destination ..\Deployment\assemblies -Platforms @("unity", "netstandard1.3") -ValidatePublicKeyToken $false  -BuildType $BuildType
 }
 
-#Write-Verbose "Copying assembly versions manifest..."
-#Copy-Item ..\generator\ServiceModels\_sdk-versions.json ..\Deployment\assemblies\_sdk-versions.json
+Write-Verbose "Copying $BuildType SDK assemblies to deployment folders for CoreCLR platforms"
+$args = @{
+	"Destination" = "..\Deployment\assemblies"
+	"PublicKeyToken" = $PublicKeyTokenToCheck
+	"BuildType" = $BuildType
+}
+#Copy-CoreClrSdkAssemblies -SourceRoot ..\sdk\artifacts\bin @args -Verbose
+

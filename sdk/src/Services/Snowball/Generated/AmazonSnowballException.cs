@@ -28,7 +28,7 @@ namespace Amazon.Snowball
     ///<summary>
     /// Common exception for the Snowball service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonSnowballException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.Snowball
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonSnowballException class with serialized data.
         /// </summary>

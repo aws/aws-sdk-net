@@ -31,11 +31,10 @@ namespace Amazon.Redshift.Model
     /// Container for the parameters to the AuthorizeSnapshotAccess operation.
     /// Authorizes the specified AWS customer account to restore the specified snapshot.
     /// 
-    /// 
     ///  
     /// <para>
     ///  For more information about working with snapshots, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
-    /// Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>. 
+    /// Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// </para>
     /// </summary>
     public partial class AuthorizeSnapshotAccessRequest : AmazonRedshiftRequest
@@ -47,8 +46,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AccountWithRestoreAccess. 
         /// <para>
-        ///  The identifier of the AWS customer account authorized to restore the specified snapshot.
-        /// 
+        /// The identifier of the AWS customer account authorized to restore the specified snapshot.
         /// </para>
         /// </summary>
         public string AccountWithRestoreAccess
@@ -66,9 +64,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SnapshotClusterIdentifier. 
         /// <para>
-        ///  The identifier of the cluster the snapshot was created from. This parameter is required
+        /// The identifier of the cluster the snapshot was created from. This parameter is required
         /// if your IAM user has a policy containing a snapshot resource element that specifies
-        /// anything other than * for the cluster name. 
+        /// anything other than * for the cluster name.
         /// </para>
         /// </summary>
         public string SnapshotClusterIdentifier
@@ -86,7 +84,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SnapshotIdentifier. 
         /// <para>
-        ///  The identifier of the snapshot the account is authorized to restore. 
+        /// The identifier of the snapshot the account is authorized to restore.
         /// </para>
         /// </summary>
         public string SnapshotIdentifier

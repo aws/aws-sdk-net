@@ -39,6 +39,7 @@ namespace Amazon.RDS.Model
         private string _engineVersion;
         private List<Filter> _filters = new List<Filter>();
         private bool? _listSupportedCharacterSets;
+        private bool? _listSupportedTimezones;
         private string _marker;
         private int? _maxRecords;
 
@@ -162,9 +163,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ListSupportedCharacterSets. 
         /// <para>
-        /// If this parameter is specified, and if the requested engine supports the CharacterSetName
-        /// parameter for CreateDBInstance, the response includes a list of supported character
-        /// sets for each engine version.
+        /// If this parameter is specified and the requested engine supports the <code>CharacterSetName</code>
+        /// parameter for <code>CreateDBInstance</code>, the response includes a list of supported
+        /// character sets for each engine version. 
         /// </para>
         /// </summary>
         public bool ListSupportedCharacterSets
@@ -177,6 +178,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetListSupportedCharacterSets()
         {
             return this._listSupportedCharacterSets.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListSupportedTimezones. 
+        /// <para>
+        /// If this parameter is specified and the requested engine supports the <code>TimeZone</code>
+        /// parameter for <code>CreateDBInstance</code>, the response includes a list of supported
+        /// time zones for each engine version. 
+        /// </para>
+        /// </summary>
+        public bool ListSupportedTimezones
+        {
+            get { return this._listSupportedTimezones.GetValueOrDefault(); }
+            set { this._listSupportedTimezones = value; }
+        }
+
+        // Check to see if ListSupportedTimezones property is set
+        internal bool IsSetListSupportedTimezones()
+        {
+            return this._listSupportedTimezones.HasValue; 
         }
 
         /// <summary>

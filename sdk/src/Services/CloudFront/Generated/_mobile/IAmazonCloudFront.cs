@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CloudFront.Model;
 
 namespace Amazon.CloudFront
@@ -38,7 +39,7 @@ namespace Amazon.CloudFront
     /// way to accelerate content to end users with no minimum usage commitments.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCloudFront : IDisposable
+    public partial interface IAmazonCloudFront : IAmazonService, IDisposable
     {
                 
         #region  CreateCloudFrontOriginAccessIdentity

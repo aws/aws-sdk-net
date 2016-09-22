@@ -28,7 +28,7 @@ namespace Amazon.ImportExport
     ///<summary>
     /// Common exception for the ImportExport service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonImportExportException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ImportExport
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonImportExportException class with serialized data.
         /// </summary>

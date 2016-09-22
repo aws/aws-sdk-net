@@ -423,6 +423,120 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  CreateSecurityConfiguration
+
+        /// <summary>
+        /// Creates a security configuration using EMR Security Configurations, which are stored
+        /// in the service. Security Configurations enable you to more easily create a configuration,
+        /// reuse it, and apply it whenever a cluster is created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecurityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateSecurityConfiguration service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        public CreateSecurityConfigurationResponse CreateSecurityConfiguration(CreateSecurityConfigurationRequest request)
+        {
+            var marshaller = new CreateSecurityConfigurationRequestMarshaller();
+            var unmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSecurityConfigurationRequest,CreateSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecurityConfiguration operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSecurityConfiguration
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateSecurityConfiguration(CreateSecurityConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateSecurityConfigurationRequestMarshaller();
+            var unmarshaller = CreateSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateSecurityConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSecurityConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateSecurityConfigurationResult from ElasticMapReduce.</returns>
+        public  CreateSecurityConfigurationResponse EndCreateSecurityConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateSecurityConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteSecurityConfiguration
+
+        /// <summary>
+        /// Deletes a security configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSecurityConfiguration service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        public DeleteSecurityConfigurationResponse DeleteSecurityConfiguration(DeleteSecurityConfigurationRequest request)
+        {
+            var marshaller = new DeleteSecurityConfigurationRequestMarshaller();
+            var unmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSecurityConfigurationRequest,DeleteSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityConfiguration operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSecurityConfiguration
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteSecurityConfiguration(DeleteSecurityConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteSecurityConfigurationRequestMarshaller();
+            var unmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteSecurityConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSecurityConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteSecurityConfigurationResult from ElasticMapReduce.</returns>
+        public  DeleteSecurityConfigurationResponse EndDeleteSecurityConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSecurityConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeCluster
 
         /// <summary>
@@ -631,6 +745,62 @@ namespace Amazon.ElasticMapReduce
         public  DescribeJobFlowsResponse EndDescribeJobFlows(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeJobFlowsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeSecurityConfiguration
+
+        /// <summary>
+        /// Provides the details of a security configuration by returning the configuration JSON.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSecurityConfiguration service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        public DescribeSecurityConfigurationResponse DescribeSecurityConfiguration(DescribeSecurityConfigurationRequest request)
+        {
+            var marshaller = new DescribeSecurityConfigurationRequestMarshaller();
+            var unmarshaller = DescribeSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSecurityConfigurationRequest,DescribeSecurityConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityConfiguration operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSecurityConfiguration
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeSecurityConfiguration(DescribeSecurityConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeSecurityConfigurationRequestMarshaller();
+            var unmarshaller = DescribeSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeSecurityConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSecurityConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSecurityConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DescribeSecurityConfigurationResult from ElasticMapReduce.</returns>
+        public  DescribeSecurityConfigurationResponse EndDescribeSecurityConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeSecurityConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -1005,6 +1175,65 @@ namespace Amazon.ElasticMapReduce
         public  ListInstancesResponse EndListInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<ListInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSecurityConfigurations
+
+        /// <summary>
+        /// Lists all the security configurations visible to this account, providing their creation
+        /// dates and times, and their names. This call returns a maximum of 50 clusters per call,
+        /// but returns a marker to track the paging of the cluster list across multiple ListSecurityConfigurations
+        /// calls.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListSecurityConfigurations service method, as returned by ElasticMapReduce.</returns>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the EMR service.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticMapReduce.Model.InvalidRequestException">
+        /// This exception occurs when there is something wrong with user input.
+        /// </exception>
+        public ListSecurityConfigurationsResponse ListSecurityConfigurations(ListSecurityConfigurationsRequest request)
+        {
+            var marshaller = new ListSecurityConfigurationsRequestMarshaller();
+            var unmarshaller = ListSecurityConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSecurityConfigurationsRequest,ListSecurityConfigurationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSecurityConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityConfigurations operation on AmazonElasticMapReduceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSecurityConfigurations
+        ///         operation.</returns>
+        public IAsyncResult BeginListSecurityConfigurations(ListSecurityConfigurationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListSecurityConfigurationsRequestMarshaller();
+            var unmarshaller = ListSecurityConfigurationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListSecurityConfigurationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSecurityConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSecurityConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListSecurityConfigurationsResult from ElasticMapReduce.</returns>
+        public  ListSecurityConfigurationsResponse EndListSecurityConfigurations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSecurityConfigurationsResponse>(asyncResult);
         }
 
         #endregion

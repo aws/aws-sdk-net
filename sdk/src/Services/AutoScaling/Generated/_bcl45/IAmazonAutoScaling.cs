@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.AutoScaling.Model;
 
 namespace Amazon.AutoScaling
@@ -37,7 +38,7 @@ namespace Amazon.AutoScaling
     /// with the Amazon CloudWatch and Elastic Load Balancing services.
     /// </para>
     /// </summary>
-    public partial interface IAmazonAutoScaling : IDisposable
+    public partial interface IAmazonAutoScaling : IAmazonService, IDisposable
     {
 
         

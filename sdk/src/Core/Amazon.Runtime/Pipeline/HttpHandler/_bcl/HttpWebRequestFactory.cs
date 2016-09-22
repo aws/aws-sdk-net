@@ -356,7 +356,7 @@ namespace Amazon.Runtime.Internal
             }
 
             // Set proxy related properties
-            WebProxy proxy = requestContext.ClientConfig.GetWebProxy();
+            IWebProxy proxy = requestContext.ClientConfig.GetWebProxy();
             if (proxy != null)
             {
                 requestContext.Metrics.AddProperty(Metric.ProxyHost, requestContext.ClientConfig.ProxyHost);

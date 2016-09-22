@@ -28,7 +28,7 @@ namespace Amazon.DynamoDBv2
     ///<summary>
     /// Common exception for the DynamoDB service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonDynamoDBException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.DynamoDBv2
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonDynamoDBException class with serialized data.
         /// </summary>

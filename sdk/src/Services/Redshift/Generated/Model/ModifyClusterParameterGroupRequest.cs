@@ -29,13 +29,12 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyClusterParameterGroup operation.
-    /// Modifies the parameters of a parameter group. 
+    /// Modifies the parameters of a parameter group.
     /// 
     ///  
     /// <para>
     ///  For more information about parameters and parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
     /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// 
     /// </para>
     /// </summary>
     public partial class ModifyClusterParameterGroupRequest : AmazonRedshiftRequest
@@ -46,7 +45,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ParameterGroupName. 
         /// <para>
-        ///  The name of the parameter group to be modified. 
+        /// The name of the parameter group to be modified.
         /// </para>
         /// </summary>
         public string ParameterGroupName
@@ -64,18 +63,18 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        ///  An array of parameters to be modified. A maximum of 20 parameters can be modified
-        /// in a single request. 
+        /// An array of parameters to be modified. A maximum of 20 parameters can be modified
+        /// in a single request.
         /// </para>
         ///  
         /// <para>
-        ///  For each parameter to be modified, you must supply at least the parameter name and
-        /// parameter value; other name-value pairs of the parameter are optional. 
+        /// For each parameter to be modified, you must supply at least the parameter name and
+        /// parameter value; other name-value pairs of the parameter are optional.
         /// </para>
         ///  
         /// <para>
-        ///  For the workload management (WLM) configuration, you must supply all the name-value
-        /// pairs in the wlm_json_configuration parameter. 
+        /// For the workload management (WLM) configuration, you must supply all the name-value
+        /// pairs in the wlm_json_configuration parameter.
         /// </para>
         /// </summary>
         public List<Parameter> Parameters

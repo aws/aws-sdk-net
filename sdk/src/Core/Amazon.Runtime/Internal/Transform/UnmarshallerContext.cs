@@ -503,7 +503,7 @@ namespace Amazon.Runtime.Internal.Transform
                     }
                     if (_xmlReader != null)
                     {
-#if PCL
+#if PCL || CORECLR
                         _xmlReader.Dispose();
 #else
                         _xmlReader.Close();

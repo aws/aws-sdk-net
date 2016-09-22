@@ -25,7 +25,7 @@ namespace Amazon.CloudTrail.Model
     ///<summary>
     /// CloudTrail exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InvalidKmsKeyIdException : AmazonCloudTrailException 
@@ -79,7 +79,7 @@ namespace Amazon.CloudTrail.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InvalidKmsKeyIdException class with serialized data.
         /// </summary>

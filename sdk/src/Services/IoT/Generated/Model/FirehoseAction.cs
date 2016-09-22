@@ -75,7 +75,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Separator. 
         /// <para>
-        /// A character separator that will be used to separate records written to the firehose
+        /// A character separator that will be used to separate records written to the Firehose
         /// stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows newline), ','
         /// (comma).
         /// </para>

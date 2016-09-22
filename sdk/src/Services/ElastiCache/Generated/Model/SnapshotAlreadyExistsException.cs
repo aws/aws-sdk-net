@@ -25,7 +25,7 @@ namespace Amazon.ElastiCache.Model
     ///<summary>
     /// ElastiCache exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class SnapshotAlreadyExistsException : AmazonElastiCacheException 
@@ -79,7 +79,7 @@ namespace Amazon.ElastiCache.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the SnapshotAlreadyExistsException class with serialized data.
         /// </summary>

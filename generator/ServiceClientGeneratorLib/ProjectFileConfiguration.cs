@@ -98,21 +98,6 @@ namespace ServiceClientGenerator
         /// </summary>
         /// <param name="sourceFolder"></param>
         /// <returns></returns>
-        public bool IsValidPlatformCodeFolderForProject(string sourceFolder)
-        {
-            var platFormFolder = GetPlatformFolderName(sourceFolder);
-
-            if (PlatformCodeFolders.Any())
-            {
-                foreach (var pcf in PlatformCodeFolders)
-                {
-                    if (platFormFolder.Equals(pcf, StringComparison.OrdinalIgnoreCase))
-                        return true;
-                }
-            }
-
-            return false;
-        }
 
         private string GetPlatformFolderName(string folder)
         {
@@ -128,6 +113,44 @@ namespace ServiceClientGenerator
             }
 
             return platformFolder;
+        }
+
+        /// <summary>
+        /// Returns true if the specified path folder names conforms with the 
+        /// platform folder names declared for this configuration.
+        /// </summary>
+        /// <param name="sourceFolder"></param>
+        /// <returns></returns>
+        public bool IsValidPlatformPathForProject(string sourceFolder)
+        {
+            var tokens = sourceFolder.Split(new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar });
+
+            if (PlatformCodeFolders.Any())
+            {
+                foreach(var folder in tokens)
+                {
+                    if (folder.StartsWith("_"))
+                    {
+                        bool isValid = false;
+                        foreach (var pcf in PlatformCodeFolders)
+                        {
+                            if (folder.Equals(pcf, StringComparison.OrdinalIgnoreCase))
+                            {
+                                isValid = true;
+                                break;
+                            }
+                        }
+                        if (!isValid)
+                        {
+                            return false;
+                        }
+                    }
+                    
+                }
+                
+            }
+
+            return true;
         }
     }
 }

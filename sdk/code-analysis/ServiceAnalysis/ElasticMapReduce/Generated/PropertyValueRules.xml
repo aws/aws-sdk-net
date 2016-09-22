@@ -16,6 +16,31 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.CreateSecurityConfigurationRequest.Name</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.CreateSecurityConfigurationResponse.Name</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.DeleteSecurityConfigurationRequest.Name</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.DescribeSecurityConfigurationRequest.Name</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.DescribeSecurityConfigurationResponse.Name</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.RunJobFlowRequest.AdditionalInfo</property>
     <min>0</min>
     <max>10280</max>
@@ -46,6 +71,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.RunJobFlowRequest.SecurityConfiguration</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.RunJobFlowRequest.ServiceRole</property>
     <min>0</min>
     <max>10280</max>
@@ -59,6 +89,11 @@
     <property>Amazon.ElasticMapReduce.Model.BootstrapActionConfig.Name</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.Cluster.SecurityConfiguration</property>
+    <min>0</min>
+    <max>10280</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.HadoopJarStepConfig.Jar</property>
@@ -252,6 +287,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.ScriptBootstrapActionConfig.Path</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.SecurityConfigurationSummary.Name</property>
     <min>0</min>
     <max>10280</max>
   </property-value-rule>

@@ -38,12 +38,11 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///  The unique identifier of the cluster that you want to rotate the encryption keys
-        /// for. 
+        /// The unique identifier of the cluster that you want to rotate the encryption keys for.
         /// </para>
         ///  
         /// <para>
-        ///  Constraints: Must be the name of valid cluster that has encryption enabled. 
+        /// Constraints: Must be the name of valid cluster that has encryption enabled.
         /// </para>
         /// </summary>
         public string ClusterIdentifier

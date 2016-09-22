@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ApplicationDiscoveryService.Model;
 
 namespace Amazon.ApplicationDiscoveryService
@@ -371,7 +372,7 @@ namespace Amazon.ApplicationDiscoveryService
     /// </para>
     ///  </li> </ul>
     /// </summary>
-    public partial interface IAmazonApplicationDiscoveryService : IDisposable
+    public partial interface IAmazonApplicationDiscoveryService : IAmazonService, IDisposable
     {
 
         

@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.DatabaseMigrationService.Model;
 
 namespace Amazon.DatabaseMigrationService
@@ -37,7 +38,7 @@ namespace Amazon.DatabaseMigrationService
     /// between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.
     /// </para>
     /// </summary>
-    public partial interface IAmazonDatabaseMigrationService : IDisposable
+    public partial interface IAmazonDatabaseMigrationService : IAmazonService, IDisposable
     {
 
         

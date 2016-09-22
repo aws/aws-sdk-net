@@ -64,6 +64,7 @@ namespace Amazon.Util.Internal
 
         bool IsInterface { get; }
         bool IsAbstract { get; }
+        bool IsSealed { get; }
 
         object EnumToObject(object value);
 
@@ -148,6 +149,7 @@ namespace Amazon.Util.Internal
             public abstract bool IsClass { get; }
             public abstract bool IsInterface { get; }
             public abstract bool IsAbstract { get; }
+            public abstract bool IsSealed { get; }
             public abstract bool IsEnum { get; }
             public abstract bool IsValueType { get; }
             public abstract ConstructorInfo GetConstructor(ITypeInfo[] paramTypes);

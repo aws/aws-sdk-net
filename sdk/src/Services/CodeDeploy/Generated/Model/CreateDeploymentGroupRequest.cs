@@ -33,7 +33,9 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class CreateDeploymentGroupRequest : AmazonCodeDeployRequest
     {
+        private AlarmConfiguration _alarmConfiguration;
         private string _applicationName;
+        private AutoRollbackConfiguration _autoRollbackConfiguration;
         private List<string> _autoScalingGroups = new List<string>();
         private string _deploymentConfigName;
         private string _deploymentGroupName;
@@ -41,6 +43,25 @@ namespace Amazon.CodeDeploy.Model
         private List<TagFilter> _onPremisesInstanceTagFilters = new List<TagFilter>();
         private string _serviceRoleArn;
         private List<TriggerConfig> _triggerConfigurations = new List<TriggerConfig>();
+
+        /// <summary>
+        /// Gets and sets the property AlarmConfiguration. 
+        /// <para>
+        /// Information to add about Amazon CloudWatch alarms when the deployment group is created.
+        /// 
+        /// </para>
+        /// </summary>
+        public AlarmConfiguration AlarmConfiguration
+        {
+            get { return this._alarmConfiguration; }
+            set { this._alarmConfiguration = value; }
+        }
+
+        // Check to see if AlarmConfiguration property is set
+        internal bool IsSetAlarmConfiguration()
+        {
+            return this._alarmConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -59,6 +80,25 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetApplicationName()
         {
             return this._applicationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoRollbackConfiguration. 
+        /// <para>
+        /// Configuration information for an automatic rollback that is added when a deployment
+        /// group is created.
+        /// </para>
+        /// </summary>
+        public AutoRollbackConfiguration AutoRollbackConfiguration
+        {
+            get { return this._autoRollbackConfiguration; }
+            set { this._autoRollbackConfiguration = value; }
+        }
+
+        // Check to see if AutoRollbackConfiguration property is set
+        internal bool IsSetAutoRollbackConfiguration()
+        {
+            return this._autoRollbackConfiguration != null;
         }
 
         /// <summary>
@@ -97,29 +137,30 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an application revision to as
-        /// many instance as possible at once. The status of the overall deployment will be displayed
-        /// as <b>Succeeded</b> if the application revision is deployed to one or more of the
-        /// instances. The status of the overall deployment will be displayed as <b>Failed</b>
+        ///  <b>CodeDeployDefault.AllAtOnce</b> attempts to deploy an application revision to
+        /// as many instances as possible at once. The status of the overall deployment will be
+        /// displayed as <b>Succeeded</b> if the application revision is deployed to one or more
+        /// of the instances. The status of the overall deployment will be displayed as <b>Failed</b>
         /// if the application revision is not deployed to any of the instances. Using an example
-        /// of nine instance, CodeDeployDefault.AllAtOnce will attempt to deploy to all nine instance
-        /// at once. The overall deployment will succeed if deployment to even a single instance
-        /// is successful; it will fail only if deployments to all nine instance fail. 
+        /// of nine instances, CodeDeployDefault.AllAtOnce will attempt to deploy to all nine
+        /// instances at once. The overall deployment will succeed if deployment to even a single
+        /// instance is successful; it will fail only if deployments to all nine instances fail.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <b>CodeDeployDefault.HalfAtATime</b> deploys to up to half of the instances at a time
-        /// (with fractions rounded down). The overall deployment succeeds if the application
+        ///  <b>CodeDeployDefault.HalfAtATime</b> deploys to up to half of the instances at a
+        /// time (with fractions rounded down). The overall deployment succeeds if the application
         /// revision is deployed to at least half of the instances (with fractions rounded up);
         /// otherwise, the deployment fails. In the example of nine instances, it will deploy
-        /// to up to four instance at a time. The overall deployment succeeds if deployment to
+        /// to up to four instances at a time. The overall deployment succeeds if deployment to
         /// five or more instances succeed; otherwise, the deployment fails. The deployment may
         /// be successfully deployed to some instances even if the overall deployment fails.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <b>CodeDeployDefault.OneAtATime</b> deploys the application revision to only one instance
-        /// at a time.
+        ///  <b>CodeDeployDefault.OneAtATime</b> deploys the application revision to only one
+        /// instance at a time.
         /// </para>
         ///  
         /// <para>
@@ -140,9 +181,9 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In an example using nine instance, it will deploy to one instance at a time. The overall
-        /// deployment succeeds if deployment to the first eight instance is successful; the overall
-        /// deployment fails if deployment to any of the first eight instance fails.
+        /// In an example using nine instances, it will deploy to one instance at a time. The
+        /// overall deployment succeeds if deployment to the first eight instances is successful;
+        /// the overall deployment fails if deployment to any of the first eight instances fails.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -239,7 +280,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TriggerConfigurations. 
         /// <para>
-        /// Information about triggers to create when the deployment group is created.
+        /// Information about triggers to create when the deployment group is created. For examples,
+        /// see <a href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
+        /// a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.
         /// </para>
         /// </summary>
         public List<TriggerConfig> TriggerConfigurations

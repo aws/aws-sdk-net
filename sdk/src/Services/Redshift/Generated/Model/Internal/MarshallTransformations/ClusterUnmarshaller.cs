@@ -165,6 +165,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("EnhancedVpcRouting", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.EnhancedVpcRouting = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("HsmStatus", targetDepth))
                     {
                         var unmarshaller = HsmStatusUnmarshaller.Instance;

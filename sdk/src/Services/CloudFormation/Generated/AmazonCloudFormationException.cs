@@ -28,7 +28,7 @@ namespace Amazon.CloudFormation
     ///<summary>
     /// Common exception for the CloudFormation service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonCloudFormationException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CloudFormation
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonCloudFormationException class with serialized data.
         /// </summary>

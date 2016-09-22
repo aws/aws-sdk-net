@@ -28,7 +28,7 @@ namespace Amazon.GameLift
     ///<summary>
     /// Common exception for the GameLift service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonGameLiftException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.GameLift
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonGameLiftException class with serialized data.
         /// </summary>

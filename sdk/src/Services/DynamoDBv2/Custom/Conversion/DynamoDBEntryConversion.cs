@@ -14,6 +14,7 @@
  */
 
 using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
@@ -21,7 +22,7 @@ using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Util.Internal;
 
-#if PCL
+#if PCL || CORECLR
 using Amazon.MissingTypes;
 using Amazon.Runtime.Internal.Util;
 #endif
@@ -350,7 +351,14 @@ namespace Amazon.DynamoDBv2
         {
             var typedConverterTypeInfo = TypeFactory.GetTypeInfo(typeof(Converter));
             var assembly = TypeFactory.GetTypeInfo(typeof(DynamoDBEntryConversion)).Assembly;
+#if CORECLR
+            var allTypeInfos = assembly.DefinedTypes;
+            var allTypes = new List<Type>();
+            foreach (var typeInfo in allTypeInfos)
+                allTypes.Add(typeInfo.AsType());
+#else
             var allTypes = assembly.GetTypes();
+#endif
 
             foreach (var type in allTypes)
             {
@@ -417,7 +425,7 @@ namespace Amazon.DynamoDBv2
             }
         }
 
-        #endregion
+#endregion
     }
 
     internal abstract class Converter

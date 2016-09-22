@@ -21,7 +21,7 @@ namespace Amazon.Runtime
     /// <summary>
     /// This exception is thrown when there is a parse error on the response back from AWS.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonDateTimeUnmarshallingException : AmazonUnmarshallingException
@@ -57,7 +57,7 @@ namespace Amazon.Runtime
 
         #endregion
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonDateTimeUnmarshallingException class with serialized data.
         /// </summary>

@@ -28,7 +28,7 @@ namespace Amazon.ElasticTranscoder
     ///<summary>
     /// Common exception for the ElasticTranscoder service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonElasticTranscoderException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ElasticTranscoder
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonElasticTranscoderException class with serialized data.
         /// </summary>

@@ -28,7 +28,7 @@ namespace Amazon.CodeCommit
     ///<summary>
     /// Common exception for the CodeCommit service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonCodeCommitException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CodeCommit
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonCodeCommitException class with serialized data.
         /// </summary>

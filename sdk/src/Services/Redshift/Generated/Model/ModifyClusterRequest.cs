@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model
     /// with a cluster do not need a reboot. However, modifying a parameter group requires
     /// a reboot for parameters to take effect. For more information about managing clusters,
     /// go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
-    /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i> . 
+    /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
     /// 
     ///  
     /// <para>
@@ -54,6 +54,7 @@ namespace Amazon.Redshift.Model
         private string _clusterType;
         private string _clusterVersion;
         private string _elasticIp;
+        private bool? _enhancedVpcRouting;
         private string _hsmClientCertificateIdentifier;
         private string _hsmConfigurationIdentifier;
         private string _masterUserPassword;
@@ -67,12 +68,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AllowVersionUpgrade. 
         /// <para>
-        ///  If <code>true</code>, major version upgrades will be applied automatically to the
+        /// If <code>true</code>, major version upgrades will be applied automatically to the
         /// cluster during the maintenance window. 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code>
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
         public bool AllowVersionUpgrade
@@ -90,13 +91,13 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AutomatedSnapshotRetentionPeriod. 
         /// <para>
-        ///  The number of days that automated snapshots are retained. If the value is 0, automated
+        /// The number of days that automated snapshots are retained. If the value is 0, automated
         /// snapshots are disabled. Even if automated snapshots are disabled, you can still create
         /// manual snapshots when you want with <a>CreateClusterSnapshot</a>. 
         /// </para>
         ///  
         /// <para>
-        ///  If you decrease the automated snapshot retention period from its current value, existing
+        /// If you decrease the automated snapshot retention period from its current value, existing
         /// automated snapshots that fall outside of the new retention period will be immediately
         /// deleted.
         /// </para>
@@ -124,11 +125,11 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///  The unique identifier of the cluster to be modified. 
+        /// The unique identifier of the cluster to be modified.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>examplecluster</code>
+        /// Example: <code>examplecluster</code> 
         /// </para>
         /// </summary>
         public string ClusterIdentifier
@@ -146,8 +147,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterParameterGroupName. 
         /// <para>
-        ///  The name of the cluster parameter group to apply to this cluster. This change is
-        /// applied only after the cluster is rebooted. To reboot a cluster use <a>RebootCluster</a>.
+        /// The name of the cluster parameter group to apply to this cluster. This change is applied
+        /// only after the cluster is rebooted. To reboot a cluster use <a>RebootCluster</a>.
         /// 
         /// </para>
         ///  
@@ -175,8 +176,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterSecurityGroups. 
         /// <para>
-        ///  A list of cluster security groups to be authorized on this cluster. This change is
-        /// asynchronously applied as soon as possible. 
+        /// A list of cluster security groups to be authorized on this cluster. This change is
+        /// asynchronously applied as soon as possible.
         /// </para>
         ///  
         /// <para>
@@ -187,9 +188,19 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be 1 to 255 alphanumeric characters or hyphens</li> <li>First character
-        /// must be a letter</li> <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be 1 to 255 alphanumeric characters or hyphens
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<string> ClusterSecurityGroups
         {
@@ -206,11 +217,11 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterType. 
         /// <para>
-        ///  The new cluster type. 
+        /// The new cluster type.
         /// </para>
         ///  
         /// <para>
-        ///  When you submit your cluster resize request, your existing cluster goes into a read-only
+        /// When you submit your cluster resize request, your existing cluster goes into a read-only
         /// mode. After Amazon Redshift provisions a new cluster based on your resize requirements,
         /// there will be outage for a period while the old cluster is deleted and your connection
         /// is switched to the new cluster. You can use <a>DescribeResize</a> to track the progress
@@ -218,7 +229,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code> multi-node | single-node </code>
+        /// Valid Values: <code> multi-node | single-node </code> 
         /// </para>
         /// </summary>
         public string ClusterType
@@ -236,21 +247,20 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterVersion. 
         /// <para>
-        ///  The new version number of the Amazon Redshift engine to upgrade to. 
+        /// The new version number of the Amazon Redshift engine to upgrade to.
         /// </para>
         ///  
         /// <para>
-        ///  For major version upgrades, if a non-default cluster parameter group is currently
+        /// For major version upgrades, if a non-default cluster parameter group is currently
         /// in use, a new cluster parameter group in the cluster parameter group family for the
         /// new version must be specified. The new cluster parameter group can be the default
         /// for that cluster parameter group family. For more information about parameters and
         /// parameter groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
         /// Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
-        /// 
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>1.0</code>
+        /// Example: <code>1.0</code> 
         /// </para>
         /// </summary>
         public string ClusterVersion
@@ -288,6 +298,35 @@ namespace Amazon.Redshift.Model
         internal bool IsSetElasticIp()
         {
             return this._elasticIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnhancedVpcRouting. 
+        /// <para>
+        /// An option that specifies whether to create the cluster with enhanced VPC routing enabled.
+        /// To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC.
+        /// For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
+        /// VPC Routing</a> in the Amazon Redshift Cluster Management Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this option is <code>true</code>, enhanced VPC routing is enabled. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: false
+        /// </para>
+        /// </summary>
+        public bool EnhancedVpcRouting
+        {
+            get { return this._enhancedVpcRouting.GetValueOrDefault(); }
+            set { this._enhancedVpcRouting = value; }
+        }
+
+        // Check to see if EnhancedVpcRouting property is set
+        internal bool IsSetEnhancedVpcRouting()
+        {
+            return this._enhancedVpcRouting.HasValue; 
         }
 
         /// <summary>
@@ -331,26 +370,46 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        ///  The new password for the cluster master user. This change is asynchronously applied
+        /// The new password for the cluster master user. This change is asynchronously applied
         /// as soon as possible. Between the time of the request and the completion of the request,
         /// the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code>
-        /// element of the operation response. <note> Operations never return the password, so
-        /// this operation provides a way to regain access to the master user account for a cluster
-        /// if the password is lost. </note> 
+        /// element of the operation response. 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Operations never return the password, so this operation provides a way to regain access
+        /// to the master user account for a cluster if the password is lost.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Default: Uses existing setting.
         /// </para>
         ///  
         /// <para>
-        ///  Constraints: 
+        /// Constraints:
         /// </para>
-        ///  <ul> <li>Must be between 8 and 64 characters in length.</li> <li>Must contain at
-        /// least one uppercase letter.</li> <li>Must contain at least one lowercase letter.</li>
-        /// <li>Must contain one number.</li> <li>Can be any printable ASCII character (ASCII
-        /// code 33 to 126) except ' (single quote), " (double quote), \, /, @, or space.</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be between 8 and 64 characters in length.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain at least one uppercase letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain at least one lowercase letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must contain one number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can be any printable ASCII character (ASCII code 33 to 126) except ' (single quote),
+        /// " (double quote), \, /, @, or space.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string MasterUserPassword
         {
@@ -373,12 +432,29 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain from 1 to 63 alphanumeric characters or hyphens.</li> <li>Alphabetic
-        /// characters must be lowercase.</li> <li>First character must be a letter.</li> <li>Cannot
-        /// end with a hyphen or contain two consecutive hyphens.</li> <li>Must be unique for
-        /// all clusters within an AWS account.</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>examplecluster</code>
+        /// Must contain from 1 to 63 alphanumeric characters or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Alphabetic characters must be lowercase.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// First character must be a letter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be unique for all clusters within an AWS account.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>examplecluster</code> 
         /// </para>
         /// </summary>
         public string NewClusterIdentifier
@@ -396,12 +472,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
-        ///  The new node type of the cluster. If you specify a new node type, you must also specify
-        /// the number of nodes parameter. 
+        /// The new node type of the cluster. If you specify a new node type, you must also specify
+        /// the number of nodes parameter.
         /// </para>
         ///  
         /// <para>
-        ///  When you submit your request to resize a cluster, Amazon Redshift sets access permissions
+        /// When you submit your request to resize a cluster, Amazon Redshift sets access permissions
         /// for the cluster to read-only. After Amazon Redshift provisions a new cluster according
         /// to your resize requirements, there will be a temporary outage while the old cluster
         /// is deleted and your connection is switched to the new cluster. When the new connection
@@ -429,12 +505,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
-        ///  The new number of nodes of the cluster. If you specify a new number of nodes, you
-        /// must also specify the node type parameter. 
+        /// The new number of nodes of the cluster. If you specify a new number of nodes, you
+        /// must also specify the node type parameter.
         /// </para>
         ///  
         /// <para>
-        ///  When you submit your request to resize a cluster, Amazon Redshift sets access permissions
+        /// When you submit your request to resize a cluster, Amazon Redshift sets access permissions
         /// for the cluster to read-only. After Amazon Redshift provisions a new cluster according
         /// to your resize requirements, there will be a temporary outage while the old cluster
         /// is deleted and your connection is switched to the new cluster. When the new connection
@@ -461,15 +537,14 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        ///  The weekly time range (in UTC) during which system maintenance can occur, if necessary.
+        /// The weekly time range (in UTC) during which system maintenance can occur, if necessary.
         /// If system maintenance is necessary during the window, it may result in an outage.
-        /// 
         /// </para>
         ///  
         /// <para>
-        ///  This maintenance window change is made immediately. If the new maintenance window
+        /// This maintenance window change is made immediately. If the new maintenance window
         /// indicates the current time, there must be at least 120 minutes between the current
-        /// time and end of the window in order to ensure that pending changes are applied. 
+        /// time and end of the window in order to ensure that pending changes are applied.
         /// </para>
         ///  
         /// <para>
@@ -522,8 +597,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        ///  A list of virtual private cloud (VPC) security groups to be associated with the cluster.
-        /// 
+        /// A list of virtual private cloud (VPC) security groups to be associated with the cluster.
         /// </para>
         /// </summary>
         public List<string> VpcSecurityGroupIds

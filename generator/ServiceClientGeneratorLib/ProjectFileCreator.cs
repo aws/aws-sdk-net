@@ -62,7 +62,6 @@ namespace ServiceClientGenerator
                 templateSession["IndividualFileIncludes"] = new List<string>
                 {
                     "endpoints.json",
-                    "endpoints.customizations.json"
                 };
                 templateSession["KeyFilePath"] = @"..\..\awssdk.dll.snk";
                 templateSession["SupressWarnings"] = "419,1570,1591";
@@ -95,6 +94,7 @@ namespace ServiceClientGenerator
         public void Execute(string serviceFilesRoot, ServiceConfiguration serviceConfiguration, IEnumerable<ProjectFileConfiguration> projectFileConfigurations)
         {
             CreatedProjectFiles = new Dictionary<string, ProjectConfigurationData>();
+            var assemblyName = "AWSSDK." + serviceConfiguration.Namespace.Split('.')[1];
 
             foreach (var projectFileConfiguration in projectFileConfigurations)
             {
@@ -113,7 +113,6 @@ namespace ServiceClientGenerator
                 }
 
 
-                var assemblyName = "AWSSDK." + serviceConfiguration.Namespace.Split('.')[1];
                 var projectFilename = string.Concat(assemblyName, ".", projectType, ".csproj");
                 bool newProject = false;
                 string projectGuid;
@@ -202,6 +201,11 @@ namespace ServiceClientGenerator
 
                 GenerateProjectFile(projectFileConfiguration, projectConfigurationData, templateSession, serviceFilesRoot, projectFilename);
             }
+
+            if (serviceConfiguration.CoreCLRSupport)
+                GenerateCoreCLRProjectFiles(serviceFilesRoot, serviceConfiguration, assemblyName);
+            else
+                Console.WriteLine("Skipping CoreCLR support for {0}", serviceConfiguration.BaseName);
         }
 
         /// <summary>
@@ -236,6 +240,62 @@ namespace ServiceClientGenerator
 
             GeneratorDriver.WriteFile(serviceFilesRoot, string.Empty, projectFilename, generatedContent);
             projectConfiguration.ConfigurationPlatforms = projectFileConfiguration.Configurations;
+        }
+
+
+        private void GenerateCoreCLRProjectFiles(string serviceFilesRoot, ServiceConfiguration serviceConfiguration, string assemblyName)
+        {
+            var projectFilename = string.Concat(assemblyName, ".CoreCLR.xproj");
+            string projectGuid;
+            if (File.Exists(Path.Combine(serviceFilesRoot, projectFilename)))
+            {
+                Console.WriteLine("...updating existing project file {0}", projectFilename);
+                var projectPath = Path.Combine(serviceFilesRoot, projectFilename);
+                projectGuid = Utils.GetProjectGuid(projectPath);
+            }
+            else
+            {
+                projectGuid = Utils.NewProjectGuid;
+                Console.WriteLine("...creating project file {0}", projectFilename);
+            }
+
+
+            {
+                var templateSession = new Dictionary<string, object>();
+                templateSession["RootNamespace"] = serviceConfiguration.Namespace;
+                templateSession["AssemblyName"] = assemblyName;
+                templateSession["ProjectGuid"] = projectGuid;
+
+                CoreCLRProjectFile projectFileTemplate = new CoreCLRProjectFile();
+                projectFileTemplate.Session = templateSession;
+                var content = projectFileTemplate.TransformText();
+
+                GeneratorDriver.WriteFile(serviceFilesRoot, string.Empty, projectFilename, content);
+            }
+
+            {
+                var templateSession = new Dictionary<string, object>();
+
+                var dependencies = new List<string>();
+                foreach (var dependency in serviceConfiguration.ServiceDependencies.Keys)
+                {
+                    if (string.Equals(dependency, "Core", StringComparison.InvariantCultureIgnoreCase))
+                        continue;
+
+                    dependencies.Add(dependency);
+                }
+
+                templateSession["ServiceDependencies"] = dependencies;
+                templateSession["AssemblyName"] = assemblyName;
+
+                var projectJsonTemplate = new CoreCLRProjectJson();
+                projectJsonTemplate.Session = templateSession;
+
+                var content = projectJsonTemplate.TransformText();
+
+                GeneratorDriver.WriteFile(serviceFilesRoot, string.Empty, "project.json", content);
+            }
+
         }
 
         /// <summary>
@@ -276,7 +336,7 @@ namespace ServiceClientGenerator
 
                 if (projectFileConfiguration.IsPlatformCodeFolder(folder))
                 {
-                    if (projectFileConfiguration.IsValidPlatformCodeFolderForProject(folder))
+                    if (projectFileConfiguration.IsValidPlatformPathForProject(folder))
                         sourceCodeFolders.Add(folder);
                 }
                 else
@@ -370,9 +430,11 @@ namespace ServiceClientGenerator
                         if (!serviceRelativeFolder.StartsWith(@"\Custom", StringComparison.OrdinalIgnoreCase))
                             continue;
 
+                        
+
                         if (projectFileConfiguration.IsPlatformCodeFolder(serviceRelativeFolder))
                         {
-                            if (projectFileConfiguration.IsValidPlatformCodeFolderForProject(serviceRelativeFolder))
+                            if (projectFileConfiguration.IsValidPlatformPathForProject(serviceRelativeFolder))
                                 sourceCodeFolders.Add(serviceRelativeFolder.TrimStart('\\'));
                         }
                         else

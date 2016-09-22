@@ -28,7 +28,7 @@ namespace Amazon.ElasticFileSystem
     ///<summary>
     /// Common exception for the ElasticFileSystem service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonElasticFileSystemException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ElasticFileSystem
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonElasticFileSystemException class with serialized data.
         /// </summary>

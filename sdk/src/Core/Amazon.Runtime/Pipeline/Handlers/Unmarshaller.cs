@@ -71,7 +71,7 @@ namespace Amazon.Runtime.Internal
             return (T)executionContext.ResponseContext.Response;
         }
 
-#elif PCL
+#elif PCL || CORECLR
 
         /// <summary>
         /// Unmarshalls the response returned by the HttpHandler.
@@ -157,7 +157,7 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-#if PCL
+#if PCL || CORECLR
 
         /// <summary>
         /// Unmarshalls the HTTP response.
@@ -201,31 +201,36 @@ namespace Amazon.Runtime.Internal
         private AmazonWebServiceResponse UnmarshallResponse(UnmarshallerContext context,
             IRequestContext requestContext)
         {
-            var unmarshaller = requestContext.Unmarshaller;
-            AmazonWebServiceResponse response = null;
-            using (requestContext.Metrics.StartEvent(Metric.ResponseUnmarshallTime))
+            try
             {
-                response = unmarshaller.UnmarshallResponse(context);
-            }
+                var unmarshaller = requestContext.Unmarshaller;
+                AmazonWebServiceResponse response = null;
+                using (requestContext.Metrics.StartEvent(Metric.ResponseUnmarshallTime))
+                {
+                    response = unmarshaller.UnmarshallResponse(context);
+                }
 
-            requestContext.Metrics.AddProperty(Metric.StatusCode, response.HttpStatusCode);
-            requestContext.Metrics.AddProperty(Metric.BytesProcessed, response.ContentLength);
-            if (response.ResponseMetadata != null)
+                requestContext.Metrics.AddProperty(Metric.StatusCode, response.HttpStatusCode);
+                requestContext.Metrics.AddProperty(Metric.BytesProcessed, response.ContentLength);
+                if (response.ResponseMetadata != null)
+                {
+                    requestContext.Metrics.AddProperty(Metric.AWSRequestID, response.ResponseMetadata.RequestId);
+                }
+
+                context.ValidateCRC32IfAvailable();
+                return response;
+            }
+            finally
             {
-                requestContext.Metrics.AddProperty(Metric.AWSRequestID, response.ResponseMetadata.RequestId);
+                var logResponseBody = ShouldLogResponseBody(_supportsResponseLogging, requestContext);
+
+                if (logResponseBody)
+                {
+                    this.Logger.DebugFormat("Received response (truncated to {0} bytes): [{1}]",
+                        AWSConfigs.LoggingConfig.LogResponsesSizeLimit,
+                        context.ResponseBody);
+                }
             }
-
-            var logResponseBody = ShouldLogResponseBody(_supportsResponseLogging, requestContext);
-
-            if (logResponseBody)
-            {
-                this.Logger.DebugFormat("Received response (truncated to {0} bytes): [{1}]",
-                    AWSConfigs.LoggingConfig.LogResponsesSizeLimit,
-                    context.ResponseBody);
-            }
-
-            context.ValidateCRC32IfAvailable();
-            return response;
         }
 
         private static bool ShouldLogResponseBody(bool supportsResponseLogging, IRequestContext requestContext)

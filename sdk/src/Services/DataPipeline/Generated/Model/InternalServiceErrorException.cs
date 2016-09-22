@@ -25,7 +25,7 @@ namespace Amazon.DataPipeline.Model
     ///<summary>
     /// DataPipeline exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InternalServiceErrorException : AmazonDataPipelineException 
@@ -79,7 +79,7 @@ namespace Amazon.DataPipeline.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InternalServiceErrorException class with serialized data.
         /// </summary>

@@ -28,7 +28,7 @@ namespace Amazon.ElasticLoadBalancingV2
     ///<summary>
     /// Common exception for the ElasticLoadBalancingV2 service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonElasticLoadBalancingV2Exception : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.ElasticLoadBalancingV2
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonElasticLoadBalancingV2Exception class with serialized data.
         /// </summary>

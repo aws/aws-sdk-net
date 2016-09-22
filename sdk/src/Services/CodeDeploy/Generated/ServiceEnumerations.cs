@@ -79,6 +79,60 @@ namespace Amazon.CodeDeploy
 
 
     /// <summary>
+    /// Constants used for properties of type AutoRollbackEvent.
+    /// </summary>
+    public class AutoRollbackEvent : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEPLOYMENT_FAILURE for AutoRollbackEvent
+        /// </summary>
+        public static readonly AutoRollbackEvent DEPLOYMENT_FAILURE = new AutoRollbackEvent("DEPLOYMENT_FAILURE");
+        /// <summary>
+        /// Constant DEPLOYMENT_STOP_ON_ALARM for AutoRollbackEvent
+        /// </summary>
+        public static readonly AutoRollbackEvent DEPLOYMENT_STOP_ON_ALARM = new AutoRollbackEvent("DEPLOYMENT_STOP_ON_ALARM");
+        /// <summary>
+        /// Constant DEPLOYMENT_STOP_ON_REQUEST for AutoRollbackEvent
+        /// </summary>
+        public static readonly AutoRollbackEvent DEPLOYMENT_STOP_ON_REQUEST = new AutoRollbackEvent("DEPLOYMENT_STOP_ON_REQUEST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoRollbackEvent(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoRollbackEvent FindValue(string value)
+        {
+            return FindValue<AutoRollbackEvent>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoRollbackEvent(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BundleType.
     /// </summary>
     public class BundleType : ConstantClass
@@ -142,6 +196,10 @@ namespace Amazon.CodeDeploy
         /// Constant Autoscaling for DeploymentCreator
         /// </summary>
         public static readonly DeploymentCreator Autoscaling = new DeploymentCreator("autoscaling");
+        /// <summary>
+        /// Constant CodeDeployRollback for DeploymentCreator
+        /// </summary>
+        public static readonly DeploymentCreator CodeDeployRollback = new DeploymentCreator("codeDeployRollback");
         /// <summary>
         /// Constant User for DeploymentCreator
         /// </summary>
@@ -309,9 +367,25 @@ namespace Amazon.CodeDeploy
     {
 
         /// <summary>
+        /// Constant AGENT_ISSUE for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode AGENT_ISSUE = new ErrorCode("AGENT_ISSUE");
+        /// <summary>
+        /// Constant ALARM_ACTIVE for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode ALARM_ACTIVE = new ErrorCode("ALARM_ACTIVE");
+        /// <summary>
         /// Constant APPLICATION_MISSING for ErrorCode
         /// </summary>
         public static readonly ErrorCode APPLICATION_MISSING = new ErrorCode("APPLICATION_MISSING");
+        /// <summary>
+        /// Constant AUTO_SCALING_CONFIGURATION for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode AUTO_SCALING_CONFIGURATION = new ErrorCode("AUTO_SCALING_CONFIGURATION");
+        /// <summary>
+        /// Constant AUTO_SCALING_IAM_ROLE_PERMISSIONS for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode AUTO_SCALING_IAM_ROLE_PERMISSIONS = new ErrorCode("AUTO_SCALING_IAM_ROLE_PERMISSIONS");
         /// <summary>
         /// Constant DEPLOYMENT_GROUP_MISSING for ErrorCode
         /// </summary>
@@ -336,6 +410,10 @@ namespace Amazon.CodeDeploy
         /// Constant INTERNAL_ERROR for ErrorCode
         /// </summary>
         public static readonly ErrorCode INTERNAL_ERROR = new ErrorCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant MANUAL_STOP for ErrorCode
+        /// </summary>
+        public static readonly ErrorCode MANUAL_STOP = new ErrorCode("MANUAL_STOP");
         /// <summary>
         /// Constant NO_EC2_SUBSCRIPTION for ErrorCode
         /// </summary>
@@ -962,6 +1040,10 @@ namespace Amazon.CodeDeploy
         /// Constant DeploymentFailure for TriggerEventType
         /// </summary>
         public static readonly TriggerEventType DeploymentFailure = new TriggerEventType("DeploymentFailure");
+        /// <summary>
+        /// Constant DeploymentRollback for TriggerEventType
+        /// </summary>
+        public static readonly TriggerEventType DeploymentRollback = new TriggerEventType("DeploymentRollback");
         /// <summary>
         /// Constant DeploymentStart for TriggerEventType
         /// </summary>

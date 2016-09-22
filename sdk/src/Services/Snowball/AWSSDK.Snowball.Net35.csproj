@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F0DBF63F-511A-4780-B23D-A0555938D941}</ProjectGuid>
+    <ProjectGuid>{173EAD1F-0EC9-46BF-AF6F-F8B5DBEA0545}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Amazon.Snowball</RootNamespace>

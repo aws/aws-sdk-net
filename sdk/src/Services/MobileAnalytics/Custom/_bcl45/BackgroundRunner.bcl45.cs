@@ -41,7 +41,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             // Start background task if it is not started yet.
             if (0 == Interlocked.CompareExchange(ref _startFlag, 1, 0))
             {
-                DoWorkAsync(BackgroundSubmissionWaitTime * 1000);
+                var task = DoWorkAsync(BackgroundSubmissionWaitTime * 1000);
             }
         }
 
@@ -49,7 +49,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         {
             while (true)
             {
-                await Task.Delay(millisecondsDelay);
+                await Task.Delay(millisecondsDelay).ConfigureAwait(false);
 
                 try
                 {
@@ -62,7 +62,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                         try
                         {
                             manager = MobileAnalyticsManager.GetInstance(appId);
-                            await manager.BackgroundDeliveryClient.AttemptDeliveryAsync();
+                            await manager.BackgroundDeliveryClient.AttemptDeliveryAsync().ConfigureAwait(false);
                         }
                         catch (System.Exception e)
                         {

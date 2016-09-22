@@ -53,7 +53,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="clientConfig">The configuration that specifies which hashing algorithm to use</param>
         /// <param name="request">The request to have the signature compute for</param>
         /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request</exception>
-        public override void Sign(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey) 
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey) 
         {
             var signer = SelectSigner(request, clientConfig);
             var useV4 = signer is AWS4Signer;
@@ -73,7 +73,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
         }
 
-        private static void SignHttps(IRequest request, ClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
+        private static void SignHttps(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
             string nonce = Guid.NewGuid().ToString();
             string date = AWSSDKUtils.FormattedCurrentTimestampRFC822;

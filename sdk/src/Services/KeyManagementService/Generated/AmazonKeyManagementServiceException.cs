@@ -28,7 +28,7 @@ namespace Amazon.KeyManagementService
     ///<summary>
     /// Common exception for the KeyManagementService service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonKeyManagementServiceException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.KeyManagementService
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonKeyManagementServiceException class with serialized data.
         /// </summary>

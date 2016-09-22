@@ -39,6 +39,7 @@ namespace Amazon.RDS.Model
         private string _engine;
         private string _engineVersion;
         private List<CharacterSet> _supportedCharacterSets = new List<CharacterSet>();
+        private List<Timezone> _supportedTimezones = new List<Timezone>();
         private List<UpgradeTarget> _validUpgradeTarget = new List<UpgradeTarget>();
 
         /// <summary>
@@ -159,7 +160,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SupportedCharacterSets. 
         /// <para>
         ///  A list of the character sets supported by this engine for the <code>CharacterSetName</code>
-        /// parameter of the CreateDBInstance API. 
+        /// parameter of the <code>CreateDBInstance</code> action. 
         /// </para>
         /// </summary>
         public List<CharacterSet> SupportedCharacterSets
@@ -172,6 +173,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportedCharacterSets()
         {
             return this._supportedCharacterSets != null && this._supportedCharacterSets.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedTimezones. 
+        /// <para>
+        /// A list of the time zones supported by this engine for the <code>Timezone</code> parameter
+        /// of the <code>CreateDBInstance</code> action. 
+        /// </para>
+        /// </summary>
+        public List<Timezone> SupportedTimezones
+        {
+            get { return this._supportedTimezones; }
+            set { this._supportedTimezones = value; }
+        }
+
+        // Check to see if SupportedTimezones property is set
+        internal bool IsSetSupportedTimezones()
+        {
+            return this._supportedTimezones != null && this._supportedTimezones.Count > 0; 
         }
 
         /// <summary>

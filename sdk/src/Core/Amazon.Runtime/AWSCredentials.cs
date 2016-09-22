@@ -1,12 +1,12 @@
 ﻿/*
- * Copyright 2011-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *
+ * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- *
+ * 
  *  http://aws.amazon.com/apache2.0
- *
+ * 
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.SharedInterfaces;
 using System.Text;
 using System.Security;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.Runtime
 {
@@ -402,7 +403,7 @@ namespace Amazon.Runtime
 
     }
 
-#if BCL
+#if BCL || CORECLR
     /// <summary>
     /// Helper routiners for AWS and Federated credential profiles. Probes the
     /// profile type for the supplied profile name and returns the appropriate profile 
@@ -412,12 +413,16 @@ namespace Amazon.Runtime
     {
         public const string DEFAULT_PROFILE_NAME = "default";
         public const string SHARED_CREDENTIALS_FILE_ENVVAR = "AWS_SHARED_CREDENTIALS_FILE";
-        public const string HOME_ENVVAR = "HOME";
+
+        private static string[] PotentialEnvironmentPathsToCredentialsFile = new string[]{
+            "HOME",
+            "USERPROFILE",
+        };
 
         public const string DefaultSharedCredentialFilename = "credentials";
         public const string DefaultSharedCredentialLocation = ".aws/" + DefaultSharedCredentialFilename;
 
-        /// <summary>
+    /// <summary>
         /// Determines the type of the requested profile and returns the
         /// appropriate profile instance.
         /// </summary>
@@ -443,9 +448,10 @@ namespace Amazon.Runtime
             if (StoredProfileAWSCredentials.CanCreateFrom(profileName, profileLocation))
                 return new StoredProfileAWSCredentials(profileName, profileLocation);
 
+#if !CORECLR
             if (StoredProfileFederatedCredentials.CanCreateFrom(profileName, profileLocation))
                 return new StoredProfileFederatedCredentials(profileName, profileLocation);
-
+#endif
             var sb = new StringBuilder();
             sb.AppendFormat(CultureInfo.InvariantCulture, "Profile {0} was not found in the SDK credential store", profileName);
             if (!string.IsNullOrEmpty(profileLocation))
@@ -494,18 +500,20 @@ namespace Amazon.Runtime
                 return credentialFile;
             }
 
-            var homePath = Environment.GetEnvironmentVariable(HOME_ENVVAR);
-            if (!string.IsNullOrEmpty(homePath))
+            foreach (string environmentVariable in PotentialEnvironmentPathsToCredentialsFile)
             {
-                credentialFile = TestSharedCredentialFileExists(Path.Combine(homePath, DefaultSharedCredentialLocation));
-                if (!string.IsNullOrEmpty(credentialFile))
+                string envPath = Environment.GetEnvironmentVariable(environmentVariable);
+                if (!string.IsNullOrEmpty(envPath))
                 {
-                    logger.InfoFormat("Credentials file found using environment variable '{0}': {1}", HOME_ENVVAR, credentialFile);
-                    return credentialFile;
+                    credentialFile = TestSharedCredentialFileExists(Path.Combine(envPath, DefaultSharedCredentialLocation));
+                    if (!string.IsNullOrEmpty(credentialFile))
+                    {
+                        logger.InfoFormat("Credentials file found using environment variable '{0}': {1}", environmentVariable, credentialFile);
+                        return credentialFile;
+                    }
                 }
             }
-
-#if !BCL35
+#if BCL45
             var profileFolder = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             if (!string.IsNullOrEmpty(profileFolder))
             {
@@ -516,7 +524,7 @@ namespace Amazon.Runtime
                     return credentialFile;
                 }
             }
-#else
+#elif BCL35
 
             var profileFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             if (!string.IsNullOrEmpty(profileFolder))
@@ -573,13 +581,13 @@ namespace Amazon.Runtime
     /// </summary>
     public class StoredProfileAWSCredentials : AWSCredentials
     {
-        #region Private members
+            #region Private members
 
         private ImmutableCredentials _wrappedCredentials;
 
-        #endregion
+            #endregion
 
-        #region Public constructors
+            #region Public constructors
 
         /// <summary>
         /// Constructs an instance for credentials stored in a profile. This constructor searches for credentials 
@@ -625,8 +633,6 @@ namespace Amazon.Runtime
         /// </remarks>
         public StoredProfileAWSCredentials(string profileName, string profilesLocation)
         {
-            NameValueCollection appConfig = ConfigurationManager.AppSettings;
-
             var lookupName = string.IsNullOrEmpty(profileName) 
                     ? StoredProfileCredentials.DEFAULT_PROFILE_NAME 
                     : profileName;
@@ -634,9 +640,10 @@ namespace Amazon.Runtime
             ProfileName = lookupName;
             ProfilesLocation = null;
 
-            // If not overriding the credentials lookup location check the SDK Store for credentials. If
-            // an override location is specified, assume we should only use the shared credential file.
-            if (string.IsNullOrEmpty(profilesLocation))
+            // If not overriding the credentials lookup location check the SDK Store for credentials. If an override is being used then
+            // assume the intent is to use the credentials file.
+#if BCL || CORECLR
+            if (string.IsNullOrEmpty(profilesLocation) && ProfileManager.IsProfileKnown(lookupName) && ProfileManager.IsAvailable)
             {
                 if (ProfileManager.IsProfileKnown(lookupName) && AWSCredentialsProfile.CanCreateFrom(lookupName))
                 {
@@ -646,19 +653,18 @@ namespace Amazon.Runtime
                     logger.InfoFormat("Credentials found using account name {0} and looking in SDK account store.", lookupName);
                 }
             }
-
+#endif
             // If credentials weren't found in the SDK store then search the shared credentials file.
             if (this._wrappedCredentials == null)
             {
                 var credentialsFilePath = StoredProfileCredentials.ResolveSharedCredentialFileLocation(profilesLocation);
                 if (!string.IsNullOrEmpty(credentialsFilePath))
                 {
-                    var parser = new CredentialsFileParser(credentialsFilePath);
-                    var section = parser.FindSection(lookupName);
-                    if (section != null)
+                    var file = new SharedCredentialsFile(credentialsFilePath);
+                    ImmutableCredentials credentials;
+                    if (file.TryGetCredentials(lookupName, out credentials))
                     {
-                        section.Validate();
-                        this._wrappedCredentials = section.Credentials;
+                        this._wrappedCredentials = credentials;
                         var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
                         logger.InfoFormat("Credentials found using account name {0} and looking in {1}.", lookupName, credentialsFilePath);
                     }
@@ -674,9 +680,9 @@ namespace Amazon.Runtime
             }
         }
 
-        #endregion
+            #endregion
 
-        #region Public properties
+            #region Public properties
 
         /// <summary>
         /// Name of the profile being used.
@@ -688,7 +694,7 @@ namespace Amazon.Runtime
         /// </summary>
         public string ProfilesLocation { get; private set; }
 
-        #endregion
+            #endregion
 
         /// <summary>
         /// Tests if a profile has been registered in either the SDK store or the specified credential 
@@ -706,17 +712,13 @@ namespace Amazon.Runtime
         public static bool IsProfileKnown(string profileName, string profilesLocation)
         {
             if (string.IsNullOrEmpty(profilesLocation) && ProfileManager.IsProfileKnown(profileName))
-                return true;
-
-            string sharedCredentialsFile = StoredProfileCredentials.ResolveSharedCredentialFileLocation(profilesLocation);
-            if (!string.IsNullOrEmpty(sharedCredentialsFile))
             {
-                var parser = new CredentialsFileParser(sharedCredentialsFile);
-                var section = parser.FindSection(profileName);
-                return section != null;
+                return true;
             }
-
-            return false;
+            else
+            {
+                return ValidCredentialsExistInSharedFile(profilesLocation, profileName);
+            }
         }
 
         /// <summary>
@@ -734,28 +736,42 @@ namespace Amazon.Runtime
         public static bool CanCreateFrom(string profileName, string profilesLocation)
         {
             if (string.IsNullOrEmpty(profilesLocation) && ProfileManager.IsProfileKnown(profileName))
+            {
                 return AWSCredentialsProfile.CanCreateFrom(profileName);
+            }
+            else
+            {
+                return ValidCredentialsExistInSharedFile(profilesLocation, profileName);
+            }
+        }
 
+        private static bool ValidCredentialsExistInSharedFile(string profilesLocation, string profileName)
+        {
             var credentialsFilePath = StoredProfileCredentials.ResolveSharedCredentialFileLocation(profilesLocation);
             if (!string.IsNullOrEmpty(credentialsFilePath))
             {
-                var parser = new CredentialsFileParser(credentialsFilePath);
-                var section = parser.FindSection(profileName);
-                if (section != null)
+                var doLog = false;
+                try
                 {
-                    try
+                    var file = new SharedCredentialsFile(credentialsFilePath);
+                    if (file.GetCredentials(profileName) != null)
                     {
-                        section.Validate();
                         return true;
                     }
-                    catch (InvalidDataException)
+                    else
                     {
+                        doLog = true;
                     }
                 }
-                else
+                catch (InvalidDataException)
+                {
+                    doLog = true;
+                }
+
+                if (doLog)
                 {
                     var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
-                    logger.InfoFormat("Credentials file {0} does not contain profile {1}.", credentialsFilePath, profileName);
+                    logger.InfoFormat("Credentials file {0} does not contain a valid profile named {1}.", credentialsFilePath, profileName);
                 }
             }
             else
@@ -763,137 +779,10 @@ namespace Amazon.Runtime
                 var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
                 logger.InfoFormat("Credentials file not found {0}.", credentialsFilePath);
             }
-
             return false;
         }
 
-        private class CredentialsFileParser
-        {
-            private const string profileNamePrefix = "[";
-            private const string profileNameSuffix = "]";
-            private const string dataPrefix = "aws_";
-            private const string keyValueSeparator = "=";
-            private const string accessKeyName = "aws_access_key_id";
-            private const string secretKeyName = "aws_secret_access_key";
-            private const string tokenName = "aws_session_token";
-            private List<CredentialsSection> Sections { get; set; }
-
-            public CredentialsFileParser(string filePath)
-            {
-                var lines = File.ReadAllLines(filePath);
-                Parse(lines);
-            }
-
-            private void Parse(string[] lines)
-            {
-                Sections = new List<CredentialsSection>();
-                CredentialsSection currentSection = null;
-                foreach (var l in lines)
-                {
-                    var line = l ?? string.Empty;
-                    line = line.Trim();
-                    if (string.IsNullOrEmpty(line))
-                        continue;
-
-                    if (line.StartsWith(profileNamePrefix, StringComparison.OrdinalIgnoreCase) &&
-                        line.EndsWith(profileNameSuffix, StringComparison.OrdinalIgnoreCase))
-                    {
-                        if (currentSection != null)
-                            Sections.Add(currentSection);
-
-                        var profileName = GetProfileName(line);
-                        currentSection = new CredentialsSection(profileName);
-                    }
-                    else if (line.StartsWith(dataPrefix, StringComparison.OrdinalIgnoreCase) && currentSection != null)
-                    {
-                        // split data into key-value pairs, store appropriately
-                        var split = SplitData(line);
-                        if (split.Count > 0)
-                        {
-                            var name = split[0];
-                            var value = split.Count > 1 ? split[1] : null;
-
-                            SetSectionValue(currentSection, name, value);
-                        }
-                    }
-                }
-
-                if (currentSection != null)
-                    Sections.Add(currentSection);
-            }
-            private static List<string> SplitData(string line)
-            {
-                var split = line
-                    .Split(new string[] { keyValueSeparator }, 2, StringSplitOptions.None)
-                    .Select(s => s.Trim())
-                    .Where(s => !string.IsNullOrEmpty(s))
-                    .ToList();
-                return split;
-            }
-            private static string GetProfileName(string line)
-            {
-                // get profile name by trimming off the [ and ] characters
-                var profileName = line;
-                profileName = profileName.Substring(profileNamePrefix.Length);
-                profileName = profileName.Substring(0, profileName.Length - profileNameSuffix.Length);
-                return profileName;
-            }
-            private static void SetSectionValue(CredentialsSection section, string name, string value)
-            {
-                if (string.Equals(accessKeyName, name, StringComparison.OrdinalIgnoreCase))
-                    section.AccessKey = value;
-                else if (string.Equals(secretKeyName, name, StringComparison.OrdinalIgnoreCase))
-                    section.SecretKey = value;
-                else if (string.Equals(tokenName, name, StringComparison.OrdinalIgnoreCase))
-                    section.Token = value;
-            }
-
-            public CredentialsSection FindSection(string profileName)
-            {
-                foreach (var section in Sections)
-                    if (string.Equals(section.ProfileName, profileName, StringComparison.Ordinal))
-                        return section;
-                return null;
-            }
-
-            public class CredentialsSection
-            {
-                public CredentialsSection(string profileName)
-                {
-                    ProfileName = profileName;
-                }
-
-                public string ProfileName { get; set; }
-                public string AccessKey { get; set; }
-                public string SecretKey { get; set; }
-                public string Token { get; set; }
-
-                public void Validate()
-                {
-                    if (!HasValidCredentials)
-                        throw new InvalidDataException("Credential profile does not contain valid access and/or secret key materials.");
-                }
-
-                public bool HasValidCredentials
-                {
-                    get
-                    {
-                        return
-                            !string.IsNullOrEmpty(AccessKey) &&
-                            !string.IsNullOrEmpty(SecretKey);
-                    }
-                }
-                public ImmutableCredentials Credentials
-                {
-                    get
-                    {
-                        return new ImmutableCredentials(AccessKey, SecretKey, Token);
-                    }
-                }
-            }
-        }
-
-        #region Abstract class overrides
+            #region Abstract class overrides
 
         /// <summary>
         /// Returns an instance of ImmutableCredentials for this instance
@@ -904,7 +793,7 @@ namespace Amazon.Runtime
             return this._wrappedCredentials.Copy();
         }
 
-        #endregion
+            #endregion
     }
 
     /// <summary>
@@ -932,7 +821,7 @@ namespace Amazon.Runtime
 
         private ImmutableCredentials _wrappedCredentials;
 
-    #region Public constructors
+            #region Public constructors
 
         /// <summary>
         /// Constructs an instance of EnvironmentVariablesAWSCredentials. If no credentials are found in 
@@ -965,7 +854,7 @@ namespace Amazon.Runtime
             logger.InfoFormat("Credentials found using environment variables.");
         }
 
-    #endregion
+            #endregion
 
         /// <summary>
         /// Returns an instance of ImmutableCredentials for this instance
@@ -976,7 +865,9 @@ namespace Amazon.Runtime
             return this._wrappedCredentials.Copy();
         }
     }
+#endif
 
+#if BCL
     /// <summary>
     /// Credentials that are retrieved from ConfigurationManager.AppSettings
     /// </summary>
@@ -988,7 +879,7 @@ namespace Amazon.Runtime
 
         private ImmutableCredentials _wrappedCredentials;
 
-    #region Public constructors
+            #region Public constructors
 
         /// <summary>
         /// Constructs an instance of EnvironmentAWSCredentials and attempts
@@ -1014,9 +905,9 @@ namespace Amazon.Runtime
             }
         }
 
-    #endregion
+            #endregion
 
-    #region Abstract class overrides
+            #region Abstract class overrides
 
         /// <summary>
         /// Returns an instance of ImmutableCredentials for this instance
@@ -1027,7 +918,7 @@ namespace Amazon.Runtime
             return this._wrappedCredentials.Copy();
         }
 
-    #endregion
+            #endregion
     }
 
     /// <summary>
@@ -1041,7 +932,7 @@ namespace Amazon.Runtime
 
         private ImmutableCredentials _wrappedCredentials;
 
-        #region Public constructors 
+            #region Public constructors 
 
         public AppConfigAWSCredentials()
         {
@@ -1075,9 +966,9 @@ namespace Amazon.Runtime
                                                     "The app.config/web.config files for the application did not contain credential information"));
         }
 
-        #endregion
+            #endregion
 
-        #region Abstract class overrides
+            #region Abstract class overrides
 
         /// <summary>
         /// Returns an instance of ImmutableCredentials for this instance
@@ -1088,7 +979,7 @@ namespace Amazon.Runtime
             return this._wrappedCredentials.Copy();
         }
 
-        #endregion
+            #endregion
     }
 
 #endif
@@ -1119,7 +1010,7 @@ namespace Amazon.Runtime
         }
 
 
-        protected CredentialsRefreshState _currentState = null;
+        protected CredentialsRefreshState currentState = null;
         private object _refreshLock = new object();
 
         #endregion
@@ -1133,7 +1024,7 @@ namespace Amazon.Runtime
         #region Properties
 
         /// <summary>
-        /// The time before actual expiration to expire the credentials.
+        /// The time before actual expiration to expire the credentials.        
         /// Property cannot be set to a negative TimeSpan.
         /// </summary>
         public TimeSpan PreemptExpiryTime
@@ -1161,11 +1052,11 @@ namespace Amazon.Runtime
                 // If credentials are expired, update
                 if (ShouldUpdate)
                 {
-                    _currentState = GenerateNewCredentials();
-                    UpdateToGeneratedCredentials(_currentState);
+                    currentState = GenerateNewCredentials();
+                    UpdateToGeneratedCredentials(currentState);
                 }
 
-                return _currentState.Credentials.Copy();
+                return currentState.Credentials.Copy();
             }
         }
 
@@ -1178,12 +1069,12 @@ namespace Amazon.Runtime
                 var state = await GenerateNewCredentialsAsync().ConfigureAwait(false);
                 lock (this._refreshLock)
                 {
-                    _currentState = state;
-                    UpdateToGeneratedCredentials(_currentState);
+                    currentState = state;
+                    UpdateToGeneratedCredentials(currentState);
                 }
             }
 
-            return _currentState.Credentials.Copy();
+            return currentState.Credentials.Copy();
         }
 #endif
 
@@ -1218,7 +1109,7 @@ namespace Amazon.Runtime
                 logger.InfoFormat(
                     "The preempt expiry time is set too high: Current time = {0}, Credentials expiry time = {1}, Preempt expiry time = {2}.",
                     DateTime.Now,
-                    _currentState.Expiration,
+                    currentState.Expiration,
                     PreemptExpiryTime);
             }
         }
@@ -1231,19 +1122,19 @@ namespace Amazon.Runtime
                 // should update if:
 
                 //  credentials have not been loaded yet
-                if (_currentState == null)
+                if (currentState == null)
                     return true;
 
                 //  it's past the expiration time
                 var now = DateTime.UtcNow;
-                var exp = _currentState.Expiration.ToUniversalTime();
+                var exp = currentState.Expiration.ToUniversalTime();
                 return (now > exp);
             }
         }
 
         /// <summary>
         /// When overridden in a derived class, generates new credentials and new expiration date.
-        ///
+        /// 
         /// Called on first credentials request and when expiration date is in the past.
         /// </summary>
         /// <returns></returns>
@@ -1255,7 +1146,7 @@ namespace Amazon.Runtime
 #if AWS_ASYNC_API
         /// <summary>
         /// When overridden in a derived class, generates new credentials and new expiration date.
-        ///
+        /// 
         /// Called on first credentials request and when expiration date is in the past.
         /// </summary>
         /// <returns></returns>
@@ -1270,7 +1161,7 @@ namespace Amazon.Runtime
         /// </summary>
         public virtual void ClearCredentials()
         {
-            _currentState = null;
+            currentState = null;
         }
 
         #endregion
@@ -1284,17 +1175,7 @@ namespace Amazon.Runtime
         {
             try
             {
-                HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
-#if PCL
-                IAsyncResult result = request.BeginGetResponse(null, null);
-                HttpWebResponse response = request.EndGetResponse(result) as HttpWebResponse;
-#else
-                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
-#endif
-                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-                {
-                    return reader.ReadToEnd();
-                }
+                return AWSSDKUtils.DownloadStringContent(uri);
             }
             catch (WebException)
             {
@@ -1497,7 +1378,7 @@ namespace Amazon.Runtime
             SecurityInfo info = GetServiceInfo();
             if (!string.IsNullOrEmpty(info.Message))
             {
-                throw new AmazonServiceException(string.Format(CultureInfo.InvariantCulture,
+                throw new AmazonServiceException(string.Format(CultureInfo.InvariantCulture, 
                     "Unable to retrieve credentials. Message = \"{0}\".",
                     info.Message));
             }
@@ -1533,7 +1414,6 @@ namespace Amazon.Runtime
             // no roles found
             throw new InvalidOperationException("No roles found");
         }
-
         #endregion
     }
 
@@ -1551,7 +1431,7 @@ namespace Amazon.Runtime
         /// </summary>
         public const string ContainerCredentialsURIEnvVariable = "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI";
         public const string EndpointAddress = "http://169.254.170.2";
-
+        
         private string Uri = null;
         private string Server = null;
         private static int MaxRetries = 5;
@@ -1613,7 +1493,7 @@ namespace Amazon.Runtime
     /// </remarks>
     public class StoredProfileFederatedCredentials : RefreshingAWSCredentials
     {
-        #region Private data
+    #region Private data
 
         private object _synclock = new object();
 
@@ -1629,9 +1509,9 @@ namespace Amazon.Runtime
 
         private WebProxy _proxySettings = null;
 
-        #endregion
+    #endregion
 
-        #region Public properties
+    #region Public properties
 
         /// <summary>
         /// Custom state to return to the registered callback to handle credential requests.
@@ -1688,9 +1568,9 @@ namespace Amazon.Runtime
         /// </returns>
         public delegate NetworkCredential RequestUserCredential(CredentialRequestCallbackArgs args);
 
-        #endregion
+    #endregion
 
-        #region Public constructors
+    #region Public constructors
 
         /// <summary>
         /// Constructs an instance of StoredProfileFederatedCredentials using the profile name specified
@@ -1798,7 +1678,7 @@ namespace Amazon.Runtime
             }
         }
 
-        #endregion
+    #endregion
 
         /// <summary>
         /// <para>
@@ -2029,7 +1909,7 @@ namespace Amazon.Runtime
     /// is configured to use a non-default user identity and the QueryUserCredentialCallback on the
     /// instance has not been set.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class CredentialRequestCallbackRequiredException : Exception
@@ -2062,7 +1942,7 @@ namespace Amazon.Runtime
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the CredentialRequestCallbackRequiredException class with serialized data.
         /// </summary>
@@ -2081,7 +1961,7 @@ namespace Amazon.Runtime
     /// Custom exception type thrown when authentication for a user fails due to
     /// invalid credentials.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class FederatedAuthenticationFailureException : Exception
@@ -2105,7 +1985,7 @@ namespace Amazon.Runtime
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the FederatedAuthenticationFailureException class with serialized data.
         /// </summary>
@@ -2125,7 +2005,7 @@ namespace Amazon.Runtime
     /// in conjunction with a credential request callback. This exception is thrown
     /// if the callback returns null, indicating the user declined to supply credentials.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class FederatedAuthenticationCancelledException : Exception
@@ -2149,7 +2029,7 @@ namespace Amazon.Runtime
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the FederatedAuthenticationCancelledException class with serialized data.
         /// </summary>
@@ -2172,7 +2052,7 @@ namespace Amazon.Runtime
     /// </summary>
     public class AnonymousAWSCredentials : AWSCredentials
     {
-        #region Abstract class overrides
+#region Abstract class overrides
 
         /// <summary>
         /// Returns an instance of ImmutableCredentials for this instance
@@ -2183,7 +2063,7 @@ namespace Amazon.Runtime
             throw new NotSupportedException("AnonymousAWSCredentials do not support this operation");
         }
 
-        #endregion
+#endregion
     }
 
     // Credentials fallback mechanism
@@ -2204,8 +2084,12 @@ namespace Amazon.Runtime
 #if BCL
                 () => new AppConfigAWSCredentials(),            // test explicit keys/profile name first
                 () => new StoredProfileAWSCredentials(),        // then attempt to load default profile        
+
                 () => new StoredProfileFederatedCredentials(),  // if default/named profile didn't contain AWS credentials,
+                () => new EnvironmentVariablesAWSCredentials(), // credentials set in environment vars?
                                                                 // was it a named or default federated role profile?
+#elif CORECLR           
+                () => new StoredProfileAWSCredentials(),        // then attempt to load default profile        
                 () => new EnvironmentVariablesAWSCredentials(), // credentials set in environment vars?
 #endif
                 ECSEC2CredentialsWrapper,                       // either get ECS credentials or instance profile credentials

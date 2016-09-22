@@ -25,6 +25,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Linq;
+using System.Net;
 
 namespace Amazon.Util
 {
@@ -143,7 +144,7 @@ namespace Amazon.Util
 
         #endregion
 
-        
+
 
         #region Internal Methods
 
@@ -331,7 +332,7 @@ namespace Amazon.Util
             if (delimIndex >= 0)
                 url = url.Substring(delimIndex + 2);
 
-            if(url.EndsWith("/", StringComparison.Ordinal))
+            if (url.EndsWith("/", StringComparison.Ordinal))
                 url = url.Substring(0, url.Length - 1);
 
             int awsIndex = url.IndexOf(".amazonaws.com", StringComparison.Ordinal);
@@ -387,7 +388,7 @@ namespace Amazon.Util
             if (delimIndex >= 0)
                 url = url.Substring(delimIndex + 2);
 
-            string[] urlParts = url.Split(new char[] {'.'}, StringSplitOptions.RemoveEmptyEntries);
+            string[] urlParts = url.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
             if (urlParts == null || urlParts.Length == 0)
                 return string.Empty;
 
@@ -596,8 +597,8 @@ namespace Amazon.Util
             {
                 destination.Write(array, 0, count);
             }
-        }        
-	#endregion
+        }
+        #endregion
 
         #region Public Methods and Properties
 
@@ -825,7 +826,7 @@ namespace Amazon.Util
             if (string.IsNullOrEmpty(input))
                 return false;
 
-            foreach(var c in input)
+            foreach (var c in input)
             {
                 if (IsBidiControlChar(c))
                     return true;
@@ -848,6 +849,53 @@ namespace Amazon.Util
                 c == '\u202D' || // LRO
                 c == '\u202E'    // RLO
             );
+        }
+
+        public static string DownloadStringContent(Uri uri)
+        {
+            return DownloadStringContent(uri, TimeSpan.Zero);
+        }
+
+        public static string DownloadStringContent(Uri uri, TimeSpan timeout)
+        {
+#if PCL || CORECLR
+            using (var client = new System.Net.Http.HttpClient())
+            {
+                if (timeout > TimeSpan.Zero)
+                    client.Timeout = timeout;
+                var content = AsyncHelpers.RunSync<string>(() =>
+                {
+                    return client.GetStringAsync(uri);
+                });
+                return content;
+            }
+#else
+            HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
+            if (timeout > TimeSpan.Zero)
+                request.Timeout = (int)timeout.TotalMilliseconds;
+            var asyncResult = request.BeginGetResponse(null, null);
+            using (HttpWebResponse response = request.EndGetResponse(asyncResult) as HttpWebResponse)
+            using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+            {
+                return reader.ReadToEnd();
+            }
+#endif
+        }
+
+        public static Stream OpenStream(Uri uri)
+        {
+#if CORECLR
+            using (var client = new System.Net.Http.HttpClient())
+            {
+                var task = client.GetStreamAsync(uri);
+                return task.Result;
+            }
+#else
+            HttpWebRequest request = WebRequest.Create(uri) as HttpWebRequest;
+            var asynResult = request.BeginGetResponse(null, null);
+            HttpWebResponse response = request.EndGetResponse(asynResult) as HttpWebResponse;
+            return response.GetResponseStream();
+#endif
         }
 
         #endregion

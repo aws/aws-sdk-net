@@ -28,7 +28,7 @@ namespace Amazon.CloudTrail
     ///<summary>
     /// Common exception for the CloudTrail service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonCloudTrailException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.CloudTrail
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonCloudTrailException class with serialized data.
         /// </summary>

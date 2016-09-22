@@ -50,6 +50,7 @@ namespace Amazon.Redshift.Model
         private ElasticIpStatus _elasticIpStatus;
         private bool? _encrypted;
         private Endpoint _endpoint;
+        private bool? _enhancedVpcRouting;
         private HsmStatus _hsmStatus;
         private List<ClusterIamRole> _iamRoles = new List<ClusterIamRole>();
         private string _kmsKeyId;
@@ -68,8 +69,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AllowVersionUpgrade. 
         /// <para>
-        ///  If <code>true</code>, major version upgrades will be applied automatically to the
-        /// cluster during the maintenance window. 
+        /// A Boolean value that, if <code>true</code>, indicates that major version upgrades
+        /// will be applied automatically to the cluster during the maintenance window. 
         /// </para>
         /// </summary>
         public bool AllowVersionUpgrade
@@ -87,7 +88,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AutomatedSnapshotRetentionPeriod. 
         /// <para>
-        ///  The number of days that automatic cluster snapshots are retained. 
+        /// The number of days that automatic cluster snapshots are retained.
         /// </para>
         /// </summary>
         public int AutomatedSnapshotRetentionPeriod
@@ -105,7 +106,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        ///  The name of the Availability Zone in which the cluster is located. 
+        /// The name of the Availability Zone in which the cluster is located.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -123,7 +124,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterCreateTime. 
         /// <para>
-        ///  The date and time that the cluster was created. 
+        /// The date and time that the cluster was created.
         /// </para>
         /// </summary>
         public DateTime ClusterCreateTime
@@ -141,7 +142,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        ///  The unique identifier of the cluster. 
+        /// The unique identifier of the cluster.
         /// </para>
         /// </summary>
         public string ClusterIdentifier
@@ -159,7 +160,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterNodes. 
         /// <para>
-        /// The nodes in a cluster.
+        /// The nodes in the cluster.
         /// </para>
         /// </summary>
         public List<ClusterNode> ClusterNodes
@@ -232,15 +233,15 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterSecurityGroups. 
         /// <para>
-        ///  A list of cluster security group that are associated with the cluster. Each security
+        /// A list of cluster security group that are associated with the cluster. Each security
         /// group is represented by an element that contains <code>ClusterSecurityGroup.Name</code>
         /// and <code>ClusterSecurityGroup.Status</code> subelements. 
         /// </para>
         ///  
         /// <para>
-        /// Cluster security groups are used when the cluster is not created in a VPC. Clusters
-        /// that are created in a VPC use VPC security groups, which are listed by the <b>VpcSecurityGroups</b>
-        /// parameter. 
+        /// Cluster security groups are used when the cluster is not created in an Amazon Virtual
+        /// Private Cloud (VPC). Clusters that are created in a VPC use VPC security groups, which
+        /// are listed by the <b>VpcSecurityGroups</b> parameter. 
         /// </para>
         /// </summary>
         public List<ClusterSecurityGroupMembership> ClusterSecurityGroups
@@ -258,8 +259,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterSnapshotCopyStatus. 
         /// <para>
-        ///  Returns the destination region and retention period that are configured for cross-region
-        /// snapshot copy. 
+        /// A value that returns the destination region and retention period that are configured
+        /// for cross-region snapshot copy.
         /// </para>
         /// </summary>
         public ClusterSnapshotCopyStatus ClusterSnapshotCopyStatus
@@ -277,14 +278,73 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterStatus. 
         /// <para>
-        ///  The current state of the cluster. Possible values are: <ul> <li><code>available</code></li>
-        /// <li><code>creating</code></li> <li><code>deleting</code></li> <li><code>final-snapshot</code></li>
-        /// <li><code>hardware-failure</code></li> <li><code>incompatible-hsm</code></li> <li><code>incompatible-network</code></li>
-        /// <li><code>incompatible-parameters</code></li> <li><code>incompatible-restore</code></li>
-        /// <li><code>modifying</code></li> <li><code>rebooting</code></li> <li><code>renaming</code></li>
-        /// <li><code>resizing</code></li> <li><code>rotating-keys</code></li> <li><code>storage-full</code></li>
-        /// <li><code>updating-hsm</code></li> </ul> 
+        ///  The current state of the cluster. Possible values are the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>available</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>creating</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>deleting</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>final-snapshot</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>hardware-failure</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>incompatible-hsm</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>incompatible-network</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>incompatible-parameters</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>incompatible-restore</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>modifying</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>rebooting</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>renaming</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>resizing</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>rotating-keys</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>storage-full</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>updating-hsm</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ClusterStatus
         {
@@ -301,8 +361,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterSubnetGroupName. 
         /// <para>
-        ///  The name of the subnet group that is associated with the cluster. This parameter
-        /// is valid only when the cluster is in a VPC. 
+        /// The name of the subnet group that is associated with the cluster. This parameter is
+        /// valid only when the cluster is in a VPC.
         /// </para>
         /// </summary>
         public string ClusterSubnetGroupName
@@ -320,7 +380,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterVersion. 
         /// <para>
-        ///  The version ID of the Amazon Redshift engine that is running on the cluster. 
+        /// The version ID of the Amazon Redshift engine that is running on the cluster.
         /// </para>
         /// </summary>
         public string ClusterVersion
@@ -338,9 +398,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DBName. 
         /// <para>
-        ///  The name of the initial database that was created when the cluster was created. This
+        /// The name of the initial database that was created when the cluster was created. This
         /// same name is returned for the life of the cluster. If an initial database was not
-        /// specified, a database named "dev" was created by default. 
+        /// specified, a database named <code>dev</code>dev was created by default. 
         /// </para>
         /// </summary>
         public string DBName
@@ -376,7 +436,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// If <code>true</code>, data in the cluster is encrypted at rest.
+        /// A Boolean value that, if <code>true</code>, indicates that data in the cluster is
+        /// encrypted at rest.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -394,7 +455,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        ///  The connection endpoint. 
+        /// The connection endpoint.
         /// </para>
         /// </summary>
         public Endpoint Endpoint
@@ -410,10 +471,39 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnhancedVpcRouting. 
+        /// <para>
+        /// An option that specifies whether to create the cluster with enhanced VPC routing enabled.
+        /// To create a cluster that uses enhanced VPC routing, the cluster must be in a VPC.
+        /// For more information, see <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html">Enhanced
+        /// VPC Routing</a> in the Amazon Redshift Cluster Management Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this option is <code>true</code>, enhanced VPC routing is enabled. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: false
+        /// </para>
+        /// </summary>
+        public bool EnhancedVpcRouting
+        {
+            get { return this._enhancedVpcRouting.GetValueOrDefault(); }
+            set { this._enhancedVpcRouting = value; }
+        }
+
+        // Check to see if EnhancedVpcRouting property is set
+        internal bool IsSetEnhancedVpcRouting()
+        {
+            return this._enhancedVpcRouting.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property HsmStatus. 
         /// <para>
-        /// Reports whether the Amazon Redshift cluster has finished applying any HSM settings
-        /// changes specified in a modify cluster command.
+        /// A value that reports whether the Amazon Redshift cluster has finished applying any
+        /// hardware security module (HSM) settings changes specified in a modify cluster command.
         /// </para>
         ///  
         /// <para>
@@ -454,7 +544,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service (KMS) key ID of the encryption key used to encrypt
+        /// The AWS Key Management Service (AWS KMS) key ID of the encryption key used to encrypt
         /// data in the cluster.
         /// </para>
         /// </summary>
@@ -473,8 +563,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        ///  The master user name for the cluster. This name is used to connect to the database
-        /// that is specified in <b>DBName</b>. 
+        /// The master user name for the cluster. This name is used to connect to the database
+        /// that is specified in the <b>DBName</b> parameter. 
         /// </para>
         /// </summary>
         public string MasterUsername
@@ -510,7 +600,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NodeType. 
         /// <para>
-        ///  The node type for the nodes in the cluster. 
+        /// The node type for the nodes in the cluster.
         /// </para>
         /// </summary>
         public string NodeType
@@ -528,7 +618,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
-        ///  The number of compute nodes in the cluster. 
+        /// The number of compute nodes in the cluster.
         /// </para>
         /// </summary>
         public int NumberOfNodes
@@ -546,8 +636,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property PendingModifiedValues. 
         /// <para>
-        ///  If present, changes to the cluster are pending. Specific pending changes are identified
-        /// by subelements. 
+        /// A value that, if present, indicates that changes to the cluster are pending. Specific
+        /// pending changes are identified by subelements.
         /// </para>
         /// </summary>
         public PendingModifiedValues PendingModifiedValues
@@ -565,7 +655,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        ///  The weekly time range (in UTC) during which system maintenance can occur. 
+        /// The weekly time range, in Universal Coordinated Time (UTC), during which system maintenance
+        /// can occur.
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -583,7 +674,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// If <code>true</code>, the cluster can be accessed from a public network.
+        /// A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed
+        /// from a public network.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
@@ -601,8 +693,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property RestoreStatus. 
         /// <para>
-        ///  Describes the status of a cluster restore action. Returns null if the cluster was
-        /// not created by restoring a snapshot. 
+        /// A value that describes the status of a cluster restore action. This parameter returns
+        /// null if the cluster was not created by restoring a snapshot.
         /// </para>
         /// </summary>
         public RestoreStatus RestoreStatus
@@ -638,7 +730,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The identifier of the VPC the cluster is in, if the cluster is in a VPC. 
+        /// The identifier of the VPC the cluster is in, if the cluster is in a VPC.
         /// </para>
         /// </summary>
         public string VpcId
@@ -656,8 +748,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroups. 
         /// <para>
-        ///  A list of Virtual Private Cloud (VPC) security groups that are associated with the
-        /// cluster. This parameter is returned only if the cluster is in a VPC. 
+        /// A list of Amazon Virtual Private Cloud (Amazon VPC) security groups that are associated
+        /// with the cluster. This parameter is returned only if the cluster is in a VPC.
         /// </para>
         /// </summary>
         public List<VpcSecurityGroupMembership> VpcSecurityGroups

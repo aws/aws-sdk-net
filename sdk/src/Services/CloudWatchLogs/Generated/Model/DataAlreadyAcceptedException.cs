@@ -25,7 +25,7 @@ namespace Amazon.CloudWatchLogs.Model
     ///<summary>
     /// CloudWatchLogs exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class DataAlreadyAcceptedException : AmazonCloudWatchLogsException 
@@ -79,7 +79,7 @@ namespace Amazon.CloudWatchLogs.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the DataAlreadyAcceptedException class with serialized data.
         /// </summary>

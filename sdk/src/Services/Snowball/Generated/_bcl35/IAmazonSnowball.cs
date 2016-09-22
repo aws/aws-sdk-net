@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.Snowball.Model;
 
 namespace Amazon.Snowball
@@ -30,7 +31,7 @@ namespace Amazon.Snowball
     ///
     /// This is a test of the welcome page front matter.
     /// </summary>
-    public partial interface IAmazonSnowball : IDisposable
+    public partial interface IAmazonSnowball : IAmazonService, IDisposable
     {
 
         

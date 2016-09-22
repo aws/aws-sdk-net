@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.SimpleDB.Model;
 
 namespace Amazon.SimpleDB
@@ -49,7 +50,7 @@ namespace Amazon.SimpleDB
     /// for more information. 
     /// </para>
     /// </summary>
-    public partial interface IAmazonSimpleDB : IDisposable
+    public partial interface IAmazonSimpleDB : IAmazonService, IDisposable
     {
 
         

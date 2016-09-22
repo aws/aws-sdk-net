@@ -25,7 +25,7 @@ namespace Amazon.CognitoSync.Model
     ///<summary>
     /// CognitoSync exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class LambdaThrottledException : AmazonCognitoSyncException 
@@ -79,7 +79,7 @@ namespace Amazon.CognitoSync.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the LambdaThrottledException class with serialized data.
         /// </summary>

@@ -25,7 +25,7 @@ namespace Amazon.Kinesis.Model
     ///<summary>
     /// Kinesis exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class ProvisionedThroughputExceededException : AmazonKinesisException 
@@ -79,7 +79,7 @@ namespace Amazon.Kinesis.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the ProvisionedThroughputExceededException class with serialized data.
         /// </summary>

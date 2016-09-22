@@ -25,7 +25,7 @@ namespace Amazon.DeviceFarm.Model
     ///<summary>
     /// DeviceFarm exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class IdempotencyException : AmazonDeviceFarmException 
@@ -79,7 +79,7 @@ namespace Amazon.DeviceFarm.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the IdempotencyException class with serialized data.
         /// </summary>

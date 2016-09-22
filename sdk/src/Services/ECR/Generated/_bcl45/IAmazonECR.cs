@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.ECR.Model;
 
 namespace Amazon.ECR
@@ -37,7 +38,7 @@ namespace Amazon.ECR
     /// users or Amazon EC2 instances can access repositories and images. Developers can use
     /// the Docker CLI to author and manage images.
     /// </summary>
-    public partial interface IAmazonECR : IDisposable
+    public partial interface IAmazonECR : IAmazonService, IDisposable
     {
 
         

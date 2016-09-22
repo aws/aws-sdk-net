@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CognitoIdentityProvider.Model;
 
 namespace Amazon.CognitoIdentityProvider
@@ -40,7 +41,7 @@ namespace Amazon.CognitoIdentityProvider
     /// For more information, see <a href="https://aws.amazon.com/cognito/">Amazon Cognito</a>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonCognitoIdentityProvider : IDisposable
+    public partial interface IAmazonCognitoIdentityProvider : IAmazonService, IDisposable
     {
 
         

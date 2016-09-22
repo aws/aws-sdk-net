@@ -21,7 +21,7 @@ namespace Amazon.Runtime.Internal.Auth
     /// <summary>
     /// This exception is thrown if there are problems signing the request.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class SignatureException : Exception
@@ -36,7 +36,7 @@ namespace Amazon.Runtime.Internal.Auth
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the SignatureException class with serialized data.
         /// </summary>

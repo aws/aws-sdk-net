@@ -34,7 +34,7 @@ namespace Amazon.Runtime.Internal.Transform
         {
             if (response == null)
             {
-                throw new WebException("The Web Response for a successful request is null!");
+                throw new AmazonServiceException("The Web Response for a successful request is null!");
             }
 
             UnmarshallerContext context = ConstructUnmarshallerContext(stream,
@@ -49,14 +49,14 @@ namespace Amazon.Runtime.Internal.Transform
             get { return false; }
         }
 
-        #region IResponseUnmarshaller<AmazonWebServiceResponse,UnmarshallerContext> Members
+#region IResponseUnmarshaller<AmazonWebServiceResponse,UnmarshallerContext> Members
 
         public virtual AmazonServiceException UnmarshallException(UnmarshallerContext input, Exception innerException, HttpStatusCode statusCode)
         {
             throw new NotImplementedException();
         }
 
-        #endregion
+#endregion
 
         public AmazonWebServiceResponse UnmarshallResponse(UnmarshallerContext context)
         {
@@ -66,11 +66,11 @@ namespace Amazon.Runtime.Internal.Transform
             return response;
         }
 
-        #region IUnmarshaller<AmazonWebServiceResponse,UnmarshallerContext> Members
+#region IUnmarshaller<AmazonWebServiceResponse,UnmarshallerContext> Members
 
         public abstract AmazonWebServiceResponse Unmarshall(UnmarshallerContext input);
 
-        #endregion
+#endregion
 
         public static string GetDefaultErrorMessage<T>() where T : Exception
         {

@@ -25,7 +25,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     ///<summary>
     /// ElasticLoadBalancingV2 exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class TooManyTagsException : AmazonElasticLoadBalancingV2Exception 
@@ -79,7 +79,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the TooManyTagsException class with serialized data.
         /// </summary>

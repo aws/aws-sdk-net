@@ -60,7 +60,7 @@ namespace Amazon.Runtime.Internal
             throw new InvalidOperationException("Cannot invoke InnerHandler. InnerHandler is not set.");
         }
 
-#if AWS_APM_API 
+#if AWS_APM_API
 
         /// <summary>
         /// Contains the processing logic for an asynchronous request invocation.
@@ -154,7 +154,9 @@ namespace Amazon.Runtime.Internal
         /// <param name="executionContext">The execution context, it contains the
         /// request and response context.</param>
         /// <returns>A task that represents the asynchronous operation.</returns>
+#if !CORECLR
         [System.Diagnostics.DebuggerHidden]
+#endif
         public virtual System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
             where T : AmazonWebServiceResponse, new()
         {

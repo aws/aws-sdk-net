@@ -25,7 +25,7 @@ namespace Amazon.SimpleEmail.Model
     ///<summary>
     /// SimpleEmailService exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InvalidS3ConfigurationException : AmazonSimpleEmailServiceException 
@@ -79,7 +79,7 @@ namespace Amazon.SimpleEmail.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InvalidS3ConfigurationException class with serialized data.
         /// </summary>

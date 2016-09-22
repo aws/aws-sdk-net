@@ -31,13 +31,12 @@ namespace Amazon.Redshift.Model
     /// Container for the parameters to the CreateClusterSubnetGroup operation.
     /// Creates a new Amazon Redshift subnet group. You must provide a list of one or more
     /// subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon
-    /// Redshift subnet group. 
+    /// Redshift subnet group.
     /// 
     ///  
     /// <para>
     ///  For information about subnet groups, go to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon
     /// Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
-    /// 
     /// </para>
     /// </summary>
     public partial class CreateClusterSubnetGroupRequest : AmazonRedshiftRequest
@@ -50,18 +49,27 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterSubnetGroupName. 
         /// <para>
-        ///  The name for the subnet group. Amazon Redshift stores the value as a lowercase string.
-        /// 
+        /// The name for the subnet group. Amazon Redshift stores the value as a lowercase string.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: 
+        /// Constraints:
         /// </para>
-        ///  <ul> <li>Must contain no more than 255 alphanumeric characters or hyphens.</li> <li>Must
-        /// not be "Default".</li> <li>Must be unique for all subnet groups that are created by
-        /// your AWS account.</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// Example: <code>examplesubnetgroup</code>
+        /// Must contain no more than 255 alphanumeric characters or hyphens.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must not be "Default".
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be unique for all subnet groups that are created by your AWS account.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Example: <code>examplesubnetgroup</code> 
         /// </para>
         /// </summary>
         public string ClusterSubnetGroupName
@@ -97,8 +105,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        ///  An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.
-        /// 
+        /// An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.
         /// </para>
         /// </summary>
         public List<string> SubnetIds

@@ -25,7 +25,7 @@ namespace Amazon.SimpleNotificationService.Model
     ///<summary>
     /// SimpleNotificationService exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class NotFoundException : AmazonSimpleNotificationServiceException 
@@ -79,7 +79,7 @@ namespace Amazon.SimpleNotificationService.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the NotFoundException class with serialized data.
         /// </summary>

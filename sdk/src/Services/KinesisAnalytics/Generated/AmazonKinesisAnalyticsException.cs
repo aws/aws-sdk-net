@@ -28,7 +28,7 @@ namespace Amazon.KinesisAnalytics
     ///<summary>
     /// Common exception for the KinesisAnalytics service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonKinesisAnalyticsException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.KinesisAnalytics
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonKinesisAnalyticsException class with serialized data.
         /// </summary>

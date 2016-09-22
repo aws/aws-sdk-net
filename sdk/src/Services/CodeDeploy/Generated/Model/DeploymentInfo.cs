@@ -33,6 +33,7 @@ namespace Amazon.CodeDeploy.Model
     public partial class DeploymentInfo
     {
         private string _applicationName;
+        private AutoRollbackConfiguration _autoRollbackConfiguration;
         private DateTime? _completeTime;
         private DateTime? _createTime;
         private DeploymentCreator _creator;
@@ -44,8 +45,10 @@ namespace Amazon.CodeDeploy.Model
         private ErrorInformation _errorInformation;
         private bool? _ignoreApplicationStopFailures;
         private RevisionLocation _revision;
+        private RollbackInfo _rollbackInfo;
         private DateTime? _startTime;
         private DeploymentStatus _status;
+        private bool? _updateOutdatedInstancesOnly;
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -63,6 +66,24 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetApplicationName()
         {
             return this._applicationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoRollbackConfiguration. 
+        /// <para>
+        /// Information about the automatic rollback configuration associated with the deployment.
+        /// </para>
+        /// </summary>
+        public AutoRollbackConfiguration AutoRollbackConfiguration
+        {
+            get { return this._autoRollbackConfiguration; }
+            set { this._autoRollbackConfiguration = value; }
+        }
+
+        // Check to see if AutoRollbackConfiguration property is set
+        internal bool IsSetAutoRollbackConfiguration()
+        {
+            return this._autoRollbackConfiguration != null;
         }
 
         /// <summary>
@@ -106,8 +127,19 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The means by which the deployment was created:
         /// </para>
-        ///  <ul> <li>user: A user created the deployment.</li> <li>autoscaling: Auto Scaling
-        /// created the deployment.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// user: A user created the deployment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// autoscaling: Auto Scaling created the deployment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// codeDeployRollback: A rollback process created the deployment.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public DeploymentCreator Creator
         {
@@ -276,6 +308,24 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RollbackInfo. 
+        /// <para>
+        /// Information about a deployment rollback.
+        /// </para>
+        /// </summary>
+        public RollbackInfo RollbackInfo
+        {
+            get { return this._rollbackInfo; }
+            set { this._rollbackInfo = value; }
+        }
+
+        // Check to see if RollbackInfo property is set
+        internal bool IsSetRollbackInfo()
+        {
+            return this._rollbackInfo != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
         /// A timestamp indicating when the deployment was deployed to the deployment group.
@@ -315,6 +365,25 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateOutdatedInstancesOnly. 
+        /// <para>
+        /// Indicates whether only instances that are not running the latest application revision
+        /// are to be deployed to.
+        /// </para>
+        /// </summary>
+        public bool UpdateOutdatedInstancesOnly
+        {
+            get { return this._updateOutdatedInstancesOnly.GetValueOrDefault(); }
+            set { this._updateOutdatedInstancesOnly = value; }
+        }
+
+        // Check to see if UpdateOutdatedInstancesOnly property is set
+        internal bool IsSetUpdateOutdatedInstancesOnly()
+        {
+            return this._updateOutdatedInstancesOnly.HasValue; 
         }
 
     }

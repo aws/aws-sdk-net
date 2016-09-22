@@ -21,6 +21,7 @@
 using System;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.SimpleWorkflow.Model;
 
 namespace Amazon.SimpleWorkflow
@@ -49,7 +50,7 @@ namespace Amazon.SimpleWorkflow
     /// SWF Developer Guide</a>.
     /// </para>
     /// </summary>
-    public partial interface IAmazonSimpleWorkflow : IDisposable
+    public partial interface IAmazonSimpleWorkflow : IAmazonService, IDisposable
     {
 
         

@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
 
 using Amazon.Runtime.Internal.Util;
 using System;
-using System.Diagnostics;
 using System.Net;
 
 namespace Amazon.Runtime.Internal
@@ -69,7 +68,7 @@ namespace Amazon.Runtime.Internal
             var responseContext = executionContext.ResponseContext;
             bool shouldRetry = false;
             do
-            {                
+            {
                 try
                 {
                     base.InvokeSync(executionContext);
@@ -87,7 +86,7 @@ namespace Amazon.Runtime.Internal
                     {
                         requestContext.Retries++;
                         requestContext.Metrics.SetCounter(Metric.AttemptCount, requestContext.Retries);
-                        LogForRetry(requestContext, exception);                        
+                        LogForRetry(requestContext, exception);
                     }
                 }
 
@@ -116,30 +115,36 @@ namespace Amazon.Runtime.Internal
             bool shouldRetry = false;
             do
             {
+                System.Runtime.ExceptionServices.ExceptionDispatchInfo capturedException = null;
                 try
                 {
                     return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
                 }
-                catch (Exception exception)
+                catch (Exception e)
                 {
-                    shouldRetry = this.RetryPolicy.Retry(executionContext, exception);
+                    capturedException = System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(e);
+                }
+
+                if (capturedException != null)
+                {
+                    shouldRetry = await this.RetryPolicy.RetryAsync(executionContext, capturedException.SourceException).ConfigureAwait(false);
                     if (!shouldRetry)
                     {
-                        LogForError(requestContext, exception);
-                        throw;
+                        LogForError(requestContext, capturedException.SourceException);
+                        capturedException.Throw();
                     }
                     else
                     {
                         requestContext.Retries++;
                         requestContext.Metrics.SetCounter(Metric.AttemptCount, requestContext.Retries);
-                        LogForRetry(requestContext, exception);
+                        LogForRetry(requestContext, capturedException.SourceException);
                     }
                 }
 
                 PrepareForRetry(requestContext);
 
                 using (requestContext.Metrics.StartEvent(Metric.RetryPauseTime))
-                    this.RetryPolicy.WaitBeforeRetry(executionContext);
+                    await RetryPolicy.WaitBeforeRetryAsync(executionContext).ConfigureAwait(false);
 
             } while (shouldRetry);
             throw new AmazonClientException("Neither a response was returned nor an exception was thrown in the Runtime RetryHandler.");
@@ -160,7 +165,7 @@ namespace Amazon.Runtime.Internal
             var requestContext = executionContext.RequestContext;
             var responseContext = executionContext.ResponseContext;
             var exception = responseContext.AsyncResult.Exception;
-            
+
             if (exception != null)
             {
                 var syncExecutionContext = ExecutionContext.CreateFromAsyncContext(executionContext);
@@ -169,7 +174,7 @@ namespace Amazon.Runtime.Internal
                 {
                     requestContext.Retries++;
                     requestContext.Metrics.SetCounter(Metric.AttemptCount, requestContext.Retries);
-                    LogForRetry(requestContext, exception);   
+                    LogForRetry(requestContext, exception);
 
                     PrepareForRetry(requestContext);
 
@@ -218,6 +223,7 @@ namespace Amazon.Runtime.Internal
         
         private void LogForRetry(IRequestContext requestContext, Exception exception)
         {
+#if !CORECLR
             var webException = exception as WebException;
             if (webException != null)
             {
@@ -230,13 +236,16 @@ namespace Amazon.Runtime.Internal
             }
             else
             {
-                Logger.InfoFormat("{0} making request {1} to {2}. Attempting retry {3} of {4}.",
+#endif
+            Logger.InfoFormat("{0} making request {1} to {2}. Attempting retry {3} of {4}.",
                           exception.GetType().Name,
                           requestContext.RequestName,
                           requestContext.Request.Endpoint.ToString(),
                           requestContext.Retries,
                           this.RetryPolicy.MaxRetries);
+#if !CORECLR
             }
+#endif
         }
 
         private void LogForError(IRequestContext requestContext, Exception exception)

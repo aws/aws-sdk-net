@@ -49,7 +49,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
         /// <para>
-        /// Optional language code. Supported language codes are as follows:
+        /// The language code to use for this operation. Supported language codes are as follows:
         /// </para>
         ///  
         /// <para>
@@ -83,9 +83,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// (Optional) The list of filters with which to limit search results. If no search filters
-        /// are specified, the output is all the products to which the calling user has access.
-        /// 
+        /// The list of filters with which to limit search results. If no search filters are specified,
+        /// the output is all the products to which the calling user has access. 
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Filters
@@ -123,7 +122,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PageToken. 
         /// <para>
-        /// The page token of the first page retrieve. If null, this retrieves the first page
+        /// The page token of the first page retrieved. If null, this retrieves the first page
         /// of size <code>PageSize</code>.
         /// </para>
         /// </summary>
@@ -142,7 +141,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// (Optional) The sort field specifier. If no value is specified, results are not sorted.
+        /// The sort field specifier. If no value is specified, results are not sorted.
         /// </para>
         /// </summary>
         public ProductViewSortBy SortBy
@@ -160,7 +159,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// (Optional) The sort order specifier. If no value is specified, results are not sorted.
+        /// The sort order specifier. If no value is specified, results are not sorted.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

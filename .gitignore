@@ -13,6 +13,10 @@
 **/TestResults/
 **/Temp/
 **/buildlogs/
+**/.vs/
+
+**/project.lock.json
+**/*.nuspec
 
 sdk/packages/**
 sdk/test/PCLTests/AndroidTests/packages/**

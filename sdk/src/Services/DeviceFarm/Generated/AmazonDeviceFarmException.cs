@@ -28,7 +28,7 @@ namespace Amazon.DeviceFarm
     ///<summary>
     /// Common exception for the DeviceFarm service.
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class AmazonDeviceFarmException : AmazonServiceException
@@ -88,7 +88,7 @@ namespace Amazon.DeviceFarm
         {
         }
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the AmazonDeviceFarmException class with serialized data.
         /// </summary>

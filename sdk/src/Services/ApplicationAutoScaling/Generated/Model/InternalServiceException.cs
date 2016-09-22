@@ -25,7 +25,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     ///<summary>
     /// ApplicationAutoScaling exception
     /// </summary>
-#if !PCL
+#if !PCL && !CORECLR
     [Serializable]
 #endif
     public class InternalServiceException : AmazonApplicationAutoScalingException 
@@ -79,7 +79,7 @@ namespace Amazon.ApplicationAutoScaling.Model
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
-#if !PCL
+#if !PCL && !CORECLR
         /// <summary>
         /// Constructs a new instance of the InternalServiceException class with serialized data.
         /// </summary>

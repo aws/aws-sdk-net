@@ -95,6 +95,18 @@ namespace ServiceClientGenerator
             set { this._namespace = value; } 
         }
 
+        public string ServiceFolderName
+        {
+            get
+            {
+                var serviceNameRoot = this.Namespace.StartsWith("Amazon.", StringComparison.Ordinal)
+                    ? this.Namespace.Substring(7)
+                    : this.Namespace;
+
+                return serviceNameRoot;
+            }
+        }
+
         public string AssemblyTitle
         {
             get
@@ -161,6 +173,7 @@ namespace ServiceClientGenerator
         public Dictionary<string, List<Dependency>> NugetDependencies { get; set; }
         public List<string> PclVariants { get; set; }
         public List<string> Tags { get; set; }
+        public bool CoreCLRSupport { get; set; }
 
         public bool EnableXamarinComponent { get; set; }
 

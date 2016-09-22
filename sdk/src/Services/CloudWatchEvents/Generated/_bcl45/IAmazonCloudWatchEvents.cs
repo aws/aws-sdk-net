@@ -23,6 +23,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
+using Amazon.Runtime;
 using Amazon.CloudWatchEvents.Model;
 
 namespace Amazon.CloudWatchEvents
@@ -46,7 +47,7 @@ namespace Amazon.CloudWatchEvents
     /// CloudWatch Developer Guide</a>. 
     /// </para>
     /// </summary>
-    public partial interface IAmazonCloudWatchEvents : IDisposable
+    public partial interface IAmazonCloudWatchEvents : IAmazonService, IDisposable
     {
 
         
