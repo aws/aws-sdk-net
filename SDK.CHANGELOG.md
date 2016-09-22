@@ -1,6 +1,8 @@
 ### 3.3.2.0 (2016-09-22 20:34 UTC)
 * APIGateway (3.3.1.0)
 	* Simple Proxy support includes three new features: new greedy path formats (no API change), new pseudo-HTTP method (ANY), and two new integration types (AWS_PROXY, HTTP_PROXY).
+* AWSSDK.Extensions.NETCore.Setup (3.3.0.1)
+	* Pull request 456, fix issue with setting RegionEndpoint property overriding a previous set ServiceURL
 
 ### 3.3.1.0 (2016-09-21 21:17 UTC)
 * CodeDeploy (3.3.1.0)
