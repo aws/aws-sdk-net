@@ -85,7 +85,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// The encryption context. If this was specified in the <a>Encrypt</a> function, it must
         /// be specified here or the decryption operation will fail. For more information, see
-        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+        /// <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
         /// Context</a>.
         /// </para>
         /// </summary>

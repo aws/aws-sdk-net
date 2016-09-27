@@ -38,8 +38,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property NumberOfBytes. 
         /// <para>
-        /// Integer that contains the number of bytes to generate. Common values are 128, 256,
-        /// 512, 1024 and so on. The current limit is 1024 bytes.
+        /// The length of the byte string.
         /// </para>
         /// </summary>
         public int NumberOfBytes

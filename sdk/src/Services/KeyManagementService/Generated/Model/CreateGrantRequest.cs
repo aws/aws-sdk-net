@@ -56,7 +56,7 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// You can use this value to allow the operations permitted by the grant only when a
-        /// specified encryption context is present. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
+        /// specified encryption context is present. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
         /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>

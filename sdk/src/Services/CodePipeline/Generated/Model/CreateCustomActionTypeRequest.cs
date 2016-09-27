@@ -45,12 +45,12 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        /// The category of the custom action, such as a source action or a build action.
+        /// The category of the custom action, such as a build action or a test action.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Although Source is listed as a valid value, it is not currently functional. This value
-        /// is reserved for future use.
+        /// Although Source and Approval are listed as valid values, they are not currently functional.
+        /// These values are reserved for future use.
         /// </para>
         ///  </note>
         /// </summary>
@@ -158,7 +158,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version number of the custom action.
+        /// The version identifier of the custom action.
         /// </para>
         /// </summary>
         public string Version
