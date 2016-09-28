@@ -596,6 +596,12 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
         /// it returns the description for all the stacks created.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the stack does not exist, an <code>AmazonCloudFormationException</code> is returned.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeStacks service method, as returned by CloudFormation.</returns>
@@ -604,6 +610,12 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
         /// it returns the description for all the stacks created.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the stack does not exist, an <code>AmazonCloudFormationException</code> is returned.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStacks service method.</param>
         /// 
@@ -1143,14 +1155,18 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Validates a specified template.
+        /// Validates a specified template. AWS CloudFormation first checks if the template is
+        /// valid JSON. If it isn't, AWS CloudFormation checks if the template is valid YAML.
+        /// If both these checks fail, AWS CloudFormation returns a template validation error.
         /// </summary>
         /// 
         /// <returns>The response from the ValidateTemplate service method, as returned by CloudFormation.</returns>
         ValidateTemplateResponse ValidateTemplate();
 
         /// <summary>
-        /// Validates a specified template.
+        /// Validates a specified template. AWS CloudFormation first checks if the template is
+        /// valid JSON. If it isn't, AWS CloudFormation checks if the template is valid YAML.
+        /// If both these checks fail, AWS CloudFormation returns a template validation error.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ValidateTemplate service method.</param>
         /// 

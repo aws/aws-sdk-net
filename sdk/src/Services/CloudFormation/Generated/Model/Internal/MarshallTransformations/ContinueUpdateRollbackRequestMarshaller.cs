@@ -58,6 +58,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetRoleARN())
+                {
+                    request.Parameters.Add("RoleARN", StringUtils.FromString(publicRequest.RoleARN));
+                }
                 if(publicRequest.IsSetStackName())
                 {
                     request.Parameters.Add("StackName", StringUtils.FromString(publicRequest.StackName));

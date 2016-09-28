@@ -56,6 +56,7 @@ namespace Amazon.CloudFormation.Model
         private List<string> _notificationARNs = new List<string>();
         private List<Parameter> _parameters = new List<Parameter>();
         private List<string> _resourceTypes = new List<string>();
+        private string _roleARN;
         private string _stackName;
         private List<Tag> _tags = new List<Tag>();
         private string _templateBody;
@@ -240,6 +241,35 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetResourceTypes()
         {
             return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
+        /// that AWS CloudFormation assumes when executing the change set. AWS CloudFormation
+        /// uses the role's credentials to make calls on your behalf. AWS CloudFormation always
+        /// uses this role for all future operations on the stack. As long as users have permission
+        /// to operate on the stack, AWS CloudFormation uses this role even if the users don't
+        /// have permission to pass it. Ensure that the role grants least privilege.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value, AWS CloudFormation uses the role that was previously
+        /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
+        /// session that is generated from your user credentials.
+        /// </para>
+        /// </summary>
+        public string RoleARN
+        {
+            get { return this._roleARN; }
+            set { this._roleARN = value; }
+        }
+
+        // Check to see if RoleARN property is set
+        internal bool IsSetRoleARN()
+        {
+            return this._roleARN != null;
         }
 
         /// <summary>

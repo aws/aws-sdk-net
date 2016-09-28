@@ -40,6 +40,7 @@ namespace Amazon.CloudFormation.Model
         private List<string> _notificationARNs = new List<string>();
         private List<Output> _outputs = new List<Output>();
         private List<Parameter> _parameters = new List<Parameter>();
+        private string _roleARN;
         private string _stackId;
         private string _stackName;
         private StackStatus _stackStatus;
@@ -199,6 +200,26 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleARN. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
+        /// that is associated with the stack. During a stack operation, AWS CloudFormation uses
+        /// this role's credentials to make calls on your behalf.
+        /// </para>
+        /// </summary>
+        public string RoleARN
+        {
+            get { return this._roleARN; }
+            set { this._roleARN = value; }
+        }
+
+        // Check to see if RoleARN property is set
+        internal bool IsSetRoleARN()
+        {
+            return this._roleARN != null;
         }
 
         /// <summary>

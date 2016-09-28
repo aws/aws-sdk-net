@@ -31,6 +31,12 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the DescribeStacks operation.
     /// Returns the description for the specified stack; if no stack name was specified, then
     /// it returns the description for all the stacks created.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If the stack does not exist, an <code>AmazonCloudFormationException</code> is returned.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeStacksRequest : AmazonCloudFormationRequest
     {

@@ -100,8 +100,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The JSON format content of the <code>Metadata</code> attribute declared for the resource.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
+        /// The content of the <code>Metadata</code> attribute declared for the resource. For
+        /// more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
         /// Attribute</a> in the AWS CloudFormation User Guide.
         /// </para>
         /// </summary>
