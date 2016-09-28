@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.2.0",
-    "CoreVersion"    : "3.3.0.0",
+    "ProductVersion" : "3.3.3.0",
+    "CoreVersion"    : "3.3.0.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -26,7 +26,7 @@
             "InPreview"    : false
         },
         "CloudFormation" : {
-            "Version" : "3.3.0.0",
+            "Version" : "3.3.1.0",
             "Dependencies" : {
                 "Core" : "3.3.0.0"
             },
@@ -219,7 +219,7 @@
             "InPreview"    : false
         },
         "KeyManagementService" : {
-            "Version" : "3.3.0.0",
+            "Version" : "3.3.0.1",
             "Dependencies" : {
                 "Core" : "3.3.0.0"
             },
@@ -352,7 +352,7 @@
             "InPreview"    : false
         },
         "ElasticFileSystem"         : {
-            "Version" : "3.3.0.0",
+            "Version" : "3.3.0.1",
             "Dependencies" : {
                 "Core" : "3.3.0.0"
             },
@@ -366,7 +366,7 @@
             "InPreview"    : false
         },
         "CodePipeline"              : {
-            "Version" : "3.3.0.0",
+            "Version" : "3.3.0.1",
             "Dependencies" : {
                 "Core" : "3.3.0.0"
             },
