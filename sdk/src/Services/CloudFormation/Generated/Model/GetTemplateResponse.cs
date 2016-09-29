@@ -40,6 +40,10 @@ namespace Amazon.CloudFormation.Model
         /// Structure containing the template body. (For more information, go to <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
         /// Anatomy</a> in the AWS CloudFormation User Guide.)
         /// </para>
+        ///  
+        /// <para>
+        /// AWS CloudFormation returns the same template that was used when the stack was created.
+        /// </para>
         /// </summary>
         public string TemplateBody
         {

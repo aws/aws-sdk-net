@@ -106,6 +106,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         unmarshalledObject.Parameters.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("RoleARN", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("StackId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -180,10 +180,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -220,10 +219,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -264,10 +262,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -332,10 +329,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
@@ -388,10 +384,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
@@ -449,10 +444,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
@@ -498,14 +492,13 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// The request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// The request was rejected because a grant token provided as part of the request is
-        /// invalid.
+        /// The request was rejected because the specified grant token is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -517,10 +510,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
@@ -652,18 +644,18 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// The request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidCiphertextException">
         /// The request was rejected because the specified ciphertext has been corrupted or is
         /// otherwise invalid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// The request was rejected because a grant token provided as part of the request is
-        /// invalid.
+        /// The request was rejected because the specified grant token is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KeyUnavailableException">
-        /// The request was rejected because the key was not available. The request can be retried.
+        /// The request was rejected because the specified CMK was not available. The request
+        /// can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -675,10 +667,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -722,10 +713,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -752,10 +742,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -786,10 +775,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -849,10 +837,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -990,10 +977,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1027,10 +1013,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1068,10 +1053,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1105,7 +1089,7 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// The request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
@@ -1120,10 +1104,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1145,7 +1128,7 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// The request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
@@ -1160,10 +1143,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1189,7 +1171,7 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// The request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
@@ -1204,10 +1186,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1257,10 +1238,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
@@ -1295,10 +1275,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
@@ -1337,10 +1316,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
@@ -1379,7 +1357,7 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// The request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
@@ -1394,10 +1372,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1419,7 +1396,7 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// The request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
@@ -1434,10 +1411,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1463,7 +1439,7 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// The request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidArnException">
         /// The request was rejected because a specified ARN was not valid.
@@ -1478,10 +1454,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1546,18 +1521,17 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// The request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// The request was rejected because a grant token provided as part of the request is
-        /// invalid.
+        /// The request was rejected because the specified grant token is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidKeyUsageException">
-        /// The request was rejected because the specified KeySpec parameter is not valid. The
-        /// currently supported value is ENCRYPT/DECRYPT.
+        /// The request was rejected because the specified <code>KeySpec</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KeyUnavailableException">
-        /// The request was rejected because the key was not available. The request can be retried.
+        /// The request was rejected because the specified CMK was not available. The request
+        /// can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -1569,10 +1543,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1598,45 +1571,69 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Generates a data key that you can use in your application to locally encrypt data.
-        /// This call returns a plaintext version of the key in the <code>Plaintext</code> field
-        /// of the response object and an encrypted copy of the key in the <code>CiphertextBlob</code>
-        /// field. The key is encrypted by using the master key specified by the <code>KeyId</code>
-        /// field. To decrypt the encrypted key, pass it to the <code>Decrypt</code> API.
+        /// Returns a data encryption key that you can use in your application to encrypt data
+        /// locally.
         /// 
         ///  
         /// <para>
-        /// We recommend that you use the following pattern to locally encrypt data: call the
-        /// <code>GenerateDataKey</code> API, use the key returned in the <code>Plaintext</code>
-        /// response field to locally encrypt data, and then erase the plaintext data key from
-        /// memory. Store the encrypted data key (contained in the <code>CiphertextBlob</code>
-        /// field) alongside of the locally encrypted data.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// You should not call the <code>Encrypt</code> function to re-encrypt your data keys
-        /// within a region. <code>GenerateDataKey</code> always returns the data key encrypted
-        /// and tied to the customer master key that will be used to decrypt it. There is no need
-        /// to decrypt it twice.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// If you decide to use the optional <code>EncryptionContext</code> parameter, you must
-        /// also store the context in full or at least store enough information along with the
-        /// encrypted data to be able to reconstruct the context when submitting the ciphertext
-        /// to the <code>Decrypt</code> API. It is a good practice to choose a context that you
-        /// can reconstruct on the fly to better secure the ciphertext. For more information about
-        /// how this parameter is used, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encrypt-context.html">Encryption
-        /// Context</a>.
+        /// You must specify the customer master key (CMK) under which to generate the data key.
+        /// You must also specify the length of the data key using either the <code>KeySpec</code>
+        /// or <code>NumberOfBytes</code> field. You must specify one field or the other, but
+        /// not both. For common key lengths (128-bit and 256-bit symmetric keys), we recommend
+        /// that you use <code>KeySpec</code>.
         /// </para>
         ///  
         /// <para>
-        /// To decrypt data, pass the encrypted data key to the <code>Decrypt</code> API. <code>Decrypt</code>
-        /// uses the associated master key to decrypt the encrypted data key and returns it as
-        /// plaintext. Use the plaintext data key to locally decrypt your data and then erase
-        /// the key from memory. You must specify the encryption context, if any, that you specified
-        /// when you generated the key. The encryption context is logged by CloudTrail, and you
-        /// can use this log to help track the use of particular data.
+        /// This operation returns a plaintext copy of the data key in the <code>Plaintext</code>
+        /// field of the response, and an encrypted copy of the data key in the <code>CiphertextBlob</code>
+        /// field. The data key is encrypted under the CMK specified in the <code>KeyId</code>
+        /// field of the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// We recommend that you use the following pattern to encrypt data locally in your application:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use this operation (<code>GenerateDataKey</code>) to retrieve a data encryption key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the plaintext data encryption key (returned in the <code>Plaintext</code> field
+        /// of the response) to encrypt data locally, then erase the plaintext data key from memory.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Store the encrypted data key (returned in the <code>CiphertextBlob</code> field of
+        /// the response) alongside the locally encrypted data.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// To decrypt data locally:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use the <a>Decrypt</a> operation to decrypt the encrypted data key into a plaintext
+        /// copy of the data key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the plaintext data key to decrypt data locally, then erase the plaintext data
+        /// key from memory.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// To return only an encrypted copy of the data key, use <a>GenerateDataKeyWithoutPlaintext</a>.
+        /// To return an arbitrary unpredictable byte string, use <a>GenerateRandom</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use the optional <code>EncryptionContext</code> field, you must store at least
+        /// enough information to be able to reconstruct the full encryption context when you
+        /// later send the ciphertext to the <a>Decrypt</a> operation. It is a good practice to
+        /// choose an encryption context that you can reconstruct on the fly to better secure
+        /// the ciphertext. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
+        /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKey service method.</param>
@@ -1646,18 +1643,17 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// The request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// The request was rejected because a grant token provided as part of the request is
-        /// invalid.
+        /// The request was rejected because the specified grant token is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidKeyUsageException">
-        /// The request was rejected because the specified KeySpec parameter is not valid. The
-        /// currently supported value is ENCRYPT/DECRYPT.
+        /// The request was rejected because the specified <code>KeySpec</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KeyUnavailableException">
-        /// The request was rejected because the key was not available. The request can be retried.
+        /// The request was rejected because the specified CMK was not available. The request
+        /// can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -1669,10 +1665,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1698,10 +1693,24 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Returns a data key encrypted by a customer master key without the plaintext copy of
-        /// that key. Otherwise, this API functions exactly like <a>GenerateDataKey</a>. You can
-        /// use this API to, for example, satisfy an audit requirement that an encrypted key be
-        /// made available without exposing the plaintext copy of that key.
+        /// Returns a data encryption key encrypted under a customer master key (CMK). This operation
+        /// is identical to <a>GenerateDataKey</a> but returns only the encrypted copy of the
+        /// data key.
+        /// 
+        ///  
+        /// <para>
+        /// This operation is useful in a system that has multiple components with different degrees
+        /// of trust. For example, consider a system that stores encrypted data in containers.
+        /// Each container stores the encrypted data and an encrypted copy of the data key. One
+        /// component of the system, called the <i>control plane</i>, creates new containers.
+        /// When it creates a new container, it uses this operation (<code>GenerateDataKeyWithoutPlaintext</code>)
+        /// to get an encrypted data key and then stores it in the container. Later, a different
+        /// component of the system, called the <i>data plane</i>, puts encrypted data into the
+        /// containers. To do this, it passes the encrypted data key to the <a>Decrypt</a> operation,
+        /// then uses the returned plaintext data key to encrypt data, and finally stores the
+        /// encrypted data in the container. In this system, the control plane never sees the
+        /// plaintext data key.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GenerateDataKeyWithoutPlaintext service method.</param>
         /// 
@@ -1710,18 +1719,17 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// The request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// The request was rejected because a grant token provided as part of the request is
-        /// invalid.
+        /// The request was rejected because the specified grant token is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidKeyUsageException">
-        /// The request was rejected because the specified KeySpec parameter is not valid. The
-        /// currently supported value is ENCRYPT/DECRYPT.
+        /// The request was rejected because the specified <code>KeySpec</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KeyUnavailableException">
-        /// The request was rejected because the key was not available. The request can be retried.
+        /// The request was rejected because the specified CMK was not available. The request
+        /// can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -1733,10 +1741,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1764,7 +1771,7 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Generates an unpredictable byte string.
         /// </summary>
-        /// <param name="numberOfBytes">Integer that contains the number of bytes to generate. Common values are 128, 256, 512, 1024 and so on. The current limit is 1024 bytes.</param>
+        /// <param name="numberOfBytes">The length of the byte string.</param>
         /// 
         /// <returns>The response from the GenerateRandom service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -1795,7 +1802,7 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Generates an unpredictable byte string.
         /// </summary>
-        /// <param name="numberOfBytes">Integer that contains the number of bytes to generate. Common values are 128, 256, 512, 1024 and so on. The current limit is 1024 bytes.</param>
+        /// <param name="numberOfBytes">The length of the byte string.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1849,10 +1856,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1882,10 +1888,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1920,10 +1925,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -1970,10 +1974,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -2008,10 +2011,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -2050,10 +2052,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -2123,10 +2124,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -2220,10 +2220,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -2314,10 +2313,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -2364,10 +2362,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -2635,10 +2632,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
@@ -2687,10 +2683,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
@@ -2745,10 +2740,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.LimitExceededException">
@@ -2807,22 +2801,21 @@ namespace Amazon.KeyManagementService
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DisabledException">
-        /// The request was rejected because the specified key was marked as disabled.
+        /// The request was rejected because the specified CMK is not enabled.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidCiphertextException">
         /// The request was rejected because the specified ciphertext has been corrupted or is
         /// otherwise invalid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// The request was rejected because a grant token provided as part of the request is
-        /// invalid.
+        /// The request was rejected because the specified grant token is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidKeyUsageException">
-        /// The request was rejected because the specified KeySpec parameter is not valid. The
-        /// currently supported value is ENCRYPT/DECRYPT.
+        /// The request was rejected because the specified <code>KeySpec</code> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KeyUnavailableException">
-        /// The request was rejected because the key was not available. The request can be retried.
+        /// The request was rejected because the specified CMK was not available. The request
+        /// can be retried.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2834,10 +2827,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -2897,8 +2889,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified <code>GrantId</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// The request was rejected because a grant token provided as part of the request is
-        /// invalid.
+        /// The request was rejected because the specified grant token is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2910,10 +2901,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -2956,8 +2946,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified <code>GrantId</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// The request was rejected because a grant token provided as part of the request is
-        /// invalid.
+        /// The request was rejected because the specified grant token is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -2969,10 +2958,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -3019,8 +3007,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because the specified <code>GrantId</code> is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.InvalidGrantTokenException">
-        /// The request was rejected because a grant token provided as part of the request is
-        /// invalid.
+        /// The request was rejected because the specified grant token is not valid.
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
@@ -3032,10 +3019,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -3086,10 +3072,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -3123,10 +3108,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -3165,10 +3149,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -3232,10 +3215,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -3284,10 +3266,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -3335,10 +3316,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -3390,10 +3370,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -3445,10 +3424,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -3510,10 +3488,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -3558,10 +3535,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -3611,10 +3587,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -3661,10 +3636,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -3694,10 +3668,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
@@ -3732,10 +3705,9 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// For more information about how key state affects the use of a customer master key
-        /// (CMK), see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
-        /// Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key Management
-        /// Service Developer Guide</i>.
+        /// For more information about how key state affects the use of a CMK, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service
+        /// Developer Guide</i>.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">

@@ -37,7 +37,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Plaintext. 
         /// <para>
-        /// Plaintext that contains the unpredictable byte string.
+        /// The unpredictable byte string.
         /// </para>
         /// </summary>
         public MemoryStream Plaintext

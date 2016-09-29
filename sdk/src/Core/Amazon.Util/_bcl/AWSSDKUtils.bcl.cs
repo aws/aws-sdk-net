@@ -46,7 +46,7 @@ namespace Amazon.Util
 
         static readonly object _preserveStackTraceLookupLock = new object();
         static bool _preserveStackTraceLookup = false;
-        static MethodInfo _preserveStackTrace;
+        static MethodInfo _preserveStackTrace = null;
         /// <summary>
         /// This method is used preserve the stacktrace used from clients that support async calls.  This 
         /// make sure that exceptions thrown during EndXXX methods has the orignal stacktrace that happen 

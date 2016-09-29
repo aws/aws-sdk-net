@@ -29,7 +29,9 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the ValidateTemplate operation.
-    /// Validates a specified template.
+    /// Validates a specified template. AWS CloudFormation first checks if the template is
+    /// valid JSON. If it isn't, AWS CloudFormation checks if the template is valid YAML.
+    /// If both these checks fail, AWS CloudFormation returns a template validation error.
     /// </summary>
     public partial class ValidateTemplateRequest : AmazonCloudFormationRequest
     {

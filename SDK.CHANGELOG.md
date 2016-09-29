@@ -1,3 +1,15 @@
+### 3.3.3.0 (2016-09-28 02:53 UTC)
+* CloudFormation (3.3.1.0)
+	* Added RoleARN parameter to mutating APIs
+* CodePipeline (3.3.0.1)
+	* Service documentation update.
+* ElasticFileSystem (3.3.0.1)
+	* Service documentation update.
+* KeyManagementService (3.3.0.1)
+	* Update documentation to clarify the inputs to KMS Generate APIs
+* Core 3.3.0.1
+	* Added missing RoleArn property to URIBasedRefreshingCredentialHelper's SecurityCredentials class.
+
 ### 3.3.2.0 (2016-09-22 20:34 UTC)
 * APIGateway (3.3.1.0)
 	* Simple Proxy support includes three new features: new greedy path formats (no API change), new pseudo-HTTP method (ANY), and two new integration types (AWS_PROXY, HTTP_PROXY).

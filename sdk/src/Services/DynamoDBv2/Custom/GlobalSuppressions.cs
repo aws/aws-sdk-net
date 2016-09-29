@@ -105,7 +105,6 @@ using System.Diagnostics.CodeAnalysis;
 // Overflow operations
 [module: SuppressMessage("Microsoft.Usage", "CA2233:OperationsShouldNotOverflow", Scope = "member", Target = "Amazon.DynamoDBv2.AmazonDynamoDBClient.#pauseExponentially(System.Int32)", MessageId = "retries-1")]
 // Atrribute arguments, breaking change
-[module: SuppressMessage("Microsoft.Design", "CA1019:DefineAccessorsForAttributeArguments", Scope = "type", Target = "Amazon.DynamoDBv2.DataModel.DynamoDBRenamableAttribute")]
 [module: SuppressMessage("Microsoft.Design", "CA1019:DefineAccessorsForAttributeArguments", Scope = "type", Target = "Amazon.DynamoDBv2.DataModel.DynamoDBLocalSecondaryIndexRangeKeyAttribute")]
 [module: SuppressMessage("Microsoft.Design", "CA1019:DefineAccessorsForAttributeArguments", Scope = "type", Target = "Amazon.DynamoDBv2.DataModel.DynamoDBPropertyAttribute")]
 [module: SuppressMessage("Microsoft.Design", "CA1019:DefineAccessorsForAttributeArguments", Scope = "type", Target = "Amazon.DynamoDBv2.DataModel.DynamoDBTableAttribute")]
