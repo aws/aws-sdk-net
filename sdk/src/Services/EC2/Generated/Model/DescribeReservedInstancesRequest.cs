@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -40,6 +40,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeReservedInstancesRequest : AmazonEC2Request
     {
         private List<Filter> _filters = new List<Filter>();
+        private OfferingClassType _offeringClass;
         private OfferingTypeValues _offeringType;
         private List<string> _reservedInstancesIds = new List<string>();
 
@@ -70,6 +71,11 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>instance-type</code> - The instance type that is covered by the reservation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>scope</code> - The scope of the Reserved Instance (<code>Region</code> or <code>Availability
+        /// Zone</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -137,11 +143,29 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OfferingClass. 
+        /// <para>
+        /// Describes whether the Reserved Instance is Standard or Convertible.
+        /// </para>
+        /// </summary>
+        public OfferingClassType OfferingClass
+        {
+            get { return this._offeringClass; }
+            set { this._offeringClass = value; }
+        }
+
+        // Check to see if OfferingClass property is set
+        internal bool IsSetOfferingClass()
+        {
+            return this._offeringClass != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OfferingType. 
         /// <para>
         /// The Reserved Instance offering type. If you are using tools that predate the 2011-11-01
         /// API version, you only have access to the <code>Medium Utilization</code> Reserved
-        /// Instance offering type. 
+        /// Instance offering type.
         /// </para>
         /// </summary>
         public OfferingTypeValues OfferingType

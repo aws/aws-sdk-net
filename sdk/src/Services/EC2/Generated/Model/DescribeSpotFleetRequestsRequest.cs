@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -30,6 +30,12 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeSpotFleetRequests operation.
     /// Describes your Spot fleet requests.
+    /// 
+    ///  
+    /// <para>
+    /// Spot fleet requests are deleted 48 hours after they are canceled and their instances
+    /// are terminated.
+    /// </para>
     /// </summary>
     public partial class DescribeSpotFleetRequestsRequest : AmazonEC2Request
     {

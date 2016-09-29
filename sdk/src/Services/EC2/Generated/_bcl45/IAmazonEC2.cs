@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
  */
 
 
@@ -41,6 +41,32 @@ namespace Amazon.EC2
     public partial interface IAmazonEC2 : IAmazonService, IDisposable
     {
 
+        
+        #region  AcceptReservedInstancesExchangeQuote
+
+
+        /// <summary>
+        /// Purchases Convertible Reserved Instance offerings described in the <a>GetReservedInstancesExchangeQuote</a>
+        /// call.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptReservedInstancesExchangeQuote service method.</param>
+        /// 
+        /// <returns>The response from the AcceptReservedInstancesExchangeQuote service method, as returned by EC2.</returns>
+        AcceptReservedInstancesExchangeQuoteResponse AcceptReservedInstancesExchangeQuote(AcceptReservedInstancesExchangeQuoteRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptReservedInstancesExchangeQuote operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptReservedInstancesExchangeQuote operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AcceptReservedInstancesExchangeQuoteResponse> AcceptReservedInstancesExchangeQuoteAsync(AcceptReservedInstancesExchangeQuoteRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
         
         #region  AcceptVpcPeeringConnection
 
@@ -1508,25 +1534,27 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a listing for Amazon EC2 Reserved Instances to be sold in the Reserved Instance
-        /// Marketplace. You can submit one Reserved Instance listing at a time. To get a list
-        /// of your Reserved Instances, you can use the <a>DescribeReservedInstances</a> operation.
+        /// Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in the Reserved
+        /// Instance Marketplace. You can submit one Standard Reserved Instance listing at a time.
+        /// To get a list of your Standard Reserved Instances, you can use the <a>DescribeReservedInstances</a>
+        /// operation.
         /// 
         ///  
         /// <para>
-        /// The Reserved Instance Marketplace matches sellers who want to resell Reserved Instance
-        /// capacity that they no longer need with buyers who want to purchase additional capacity.
-        /// Reserved Instances bought and sold through the Reserved Instance Marketplace work
-        /// like any other Reserved Instances.
+        /// The Reserved Instance Marketplace matches sellers who want to resell Standard Reserved
+        /// Instance capacity that they no longer need with buyers who want to purchase additional
+        /// capacity. Reserved Instances bought and sold through the Reserved Instance Marketplace
+        /// work like any other Reserved Instances.
         /// </para>
         ///  
         /// <para>
-        /// To sell your Reserved Instances, you must first register as a seller in the Reserved
-        /// Instance Marketplace. After completing the registration process, you can create a
-        /// Reserved Instance Marketplace listing of some or all of your Reserved Instances, and
-        /// specify the upfront price to receive for them. Your Reserved Instance listings then
-        /// become available for purchase. To view the details of your Reserved Instance listing,
-        /// you can use the <a>DescribeReservedInstancesListings</a> operation.
+        /// To sell your Standard Reserved Instances, you must first register as a seller in the
+        /// Reserved Instance Marketplace. After completing the registration process, you can
+        /// create a Reserved Instance Marketplace listing of some or all of your Standard Reserved
+        /// Instances, and specify the upfront price to receive for them. Your Standard Reserved
+        /// Instance listings then become available for purchase. To view the details of your
+        /// Standard Reserved Instance listing, you can use the <a>DescribeReservedInstancesListings</a>
+        /// operation.
         /// </para>
         ///  
         /// <para>
@@ -5529,6 +5557,12 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes your Spot fleet requests.
+        /// 
+        ///  
+        /// <para>
+        /// Spot fleet requests are deleted 48 hours after they are canceled and their instances
+        /// are terminated.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequests service method.</param>
         /// 
@@ -5568,6 +5602,11 @@ namespace Amazon.EC2
         /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
         /// where the instance lifecycle is <code>spot</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// Spot instance requests are deleted 4 hours after they are canceled and their instances
+        /// are terminated.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSpotInstanceRequests service method, as returned by EC2.</returns>
@@ -5589,6 +5628,11 @@ namespace Amazon.EC2
         /// the instance ID appears in the response and contains the identifier of the instance.
         /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
         /// where the instance lifecycle is <code>spot</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Spot instance requests are deleted 4 hours after they are canceled and their instances
+        /// are terminated.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotInstanceRequests service method.</param>
@@ -5612,6 +5656,11 @@ namespace Amazon.EC2
         /// the instance ID appears in the response and contains the identifier of the instance.
         /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
         /// where the instance lifecycle is <code>spot</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Spot instance requests are deleted 4 hours after they are canceled and their instances
+        /// are terminated.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -7088,6 +7137,33 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetReservedInstancesExchangeQuote
+
+
+        /// <summary>
+        /// Returns details about the values and term of your specified Convertible Reserved Instances.
+        /// When an offering ID is specified it returns information about whether the exchange
+        /// is valid and can be performed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReservedInstancesExchangeQuote service method.</param>
+        /// 
+        /// <returns>The response from the GetReservedInstancesExchangeQuote service method, as returned by EC2.</returns>
+        GetReservedInstancesExchangeQuoteResponse GetReservedInstancesExchangeQuote(GetReservedInstancesExchangeQuoteRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReservedInstancesExchangeQuote operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReservedInstancesExchangeQuote operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetReservedInstancesExchangeQuoteResponse> GetReservedInstancesExchangeQuoteAsync(GetReservedInstancesExchangeQuoteRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ImportImage
 
 
@@ -7516,9 +7592,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the Availability Zone, instance count, instance type, or network platform
-        /// (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved Instances to be
-        /// modified must be identical, except for Availability Zone, network platform, and instance
-        /// type.
+        /// (EC2-Classic or EC2-VPC) of your Standard Reserved Instances. The Reserved Instances
+        /// to be modified must be identical, except for Availability Zone, network platform,
+        /// and instance type.
         /// 
         ///  
         /// <para>
@@ -7892,8 +7968,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Purchases a Reserved Instance for use with your account. With Reserved Instances,
-        /// you obtain a capacity reservation for a certain instance configuration over a specified
-        /// period of time and pay a lower hourly rate compared to On-Demand instance pricing.
+        /// you pay a lower hourly rate compared to On-Demand instance pricing.
         /// 
         ///  
         /// <para>
@@ -8901,8 +8976,13 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Shuts down one or more instances. This operation is idempotent; if you terminate an
-        /// instance more than once, each call succeeds.
+        /// instance more than once, each call succeeds. 
         /// 
+        ///  
+        /// <para>
+        /// If you specify multiple instances and the request fails (for example, because of a
+        /// single incorrect instance ID), none of the instances are terminated.
+        /// </para>
         ///  
         /// <para>
         /// Terminated instances remain visible after termination (for approximately one hour).

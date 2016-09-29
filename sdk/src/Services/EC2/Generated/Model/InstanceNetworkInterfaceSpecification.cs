@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -165,7 +165,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
         /// The private IP address of the network interface. Applies only if creating a network
-        /// interface when launching an instance.
+        /// interface when launching an instance. You cannot specify this option if you're launching
+        /// more than one instance in a <a>RunInstances</a> request.
         /// </para>
         /// </summary>
         public string PrivateIpAddress
@@ -184,7 +185,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PrivateIpAddresses. 
         /// <para>
         /// One or more private IP addresses to assign to the network interface. Only one private
-        /// IP address can be designated as primary.
+        /// IP address can be designated as primary. You cannot specify this option if you're
+        /// launching more than one instance in a <a>RunInstances</a> request.
         /// </para>
         /// </summary>
         public List<PrivateIpAddressSpecification> PrivateIpAddresses
@@ -203,7 +205,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SecondaryPrivateIpAddressCount. 
         /// <para>
         /// The number of secondary private IP addresses. You can't specify this option and specify
-        /// more than one private IP address using the private IP addresses option.
+        /// more than one private IP address using the private IP addresses option. You cannot
+        /// specify this option if you're launching more than one instance in a <a>RunInstances</a>
+        /// request.
         /// </para>
         /// </summary>
         public int SecondaryPrivateIpAddressCount

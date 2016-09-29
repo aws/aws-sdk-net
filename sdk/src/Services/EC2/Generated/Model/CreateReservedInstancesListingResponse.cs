@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesListings. 
         /// <para>
-        /// Information about the Reserved Instance listing.
+        /// Information about the Standard Reserved Instance listing.
         /// </para>
         /// </summary>
         public List<ReservedInstancesListing> ReservedInstancesListings

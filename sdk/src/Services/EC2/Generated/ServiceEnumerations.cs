@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
  */
 
 using System;
@@ -2227,6 +2227,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M410xlarge = new InstanceType("m4.10xlarge");
         /// <summary>
+        /// Constant M416xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M416xlarge = new InstanceType("m4.16xlarge");
+        /// <summary>
         /// Constant M42xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M42xlarge = new InstanceType("m4.2xlarge");
@@ -2242,6 +2246,18 @@ namespace Amazon.EC2
         /// Constant M4Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M4Xlarge = new InstanceType("m4.xlarge");
+        /// <summary>
+        /// Constant P216xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType P216xlarge = new InstanceType("p2.16xlarge");
+        /// <summary>
+        /// Constant P28xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType P28xlarge = new InstanceType("p2.8xlarge");
+        /// <summary>
+        /// Constant P2Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType P2Xlarge = new InstanceType("p2.xlarge");
         /// <summary>
         /// Constant R32xlarge for InstanceType
         /// </summary>
@@ -2294,14 +2310,6 @@ namespace Amazon.EC2
         /// Constant X132xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType X132xlarge = new InstanceType("x1.32xlarge");
-        /// <summary>
-        /// Constant X14xlarge for InstanceType
-        /// </summary>
-        public static readonly InstanceType X14xlarge = new InstanceType("x1.4xlarge");
-        /// <summary>
-        /// Constant X18xlarge for InstanceType
-        /// </summary>
-        public static readonly InstanceType X18xlarge = new InstanceType("x1.8xlarge");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2784,6 +2792,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NetworkInterfaceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OfferingClassType.
+    /// </summary>
+    public class OfferingClassType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Convertible for OfferingClassType
+        /// </summary>
+        public static readonly OfferingClassType Convertible = new OfferingClassType("convertible");
+        /// <summary>
+        /// Constant Standard for OfferingClassType
+        /// </summary>
+        public static readonly OfferingClassType Standard = new OfferingClassType("standard");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OfferingClassType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OfferingClassType FindValue(string value)
+        {
+            return FindValue<OfferingClassType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OfferingClassType(string value)
         {
             return FindValue(value);
         }
@@ -3858,6 +3916,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RuleAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Scope.
+    /// </summary>
+    public class Scope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AvailabilityZone for Scope
+        /// </summary>
+        public static readonly Scope AvailabilityZone = new Scope("Availability Zone");
+        /// <summary>
+        /// Constant Region for Scope
+        /// </summary>
+        public static readonly Scope Region = new Scope("Region");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Scope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Scope FindValue(string value)
+        {
+            return FindValue<Scope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Scope(string value)
         {
             return FindValue(value);
         }

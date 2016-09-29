@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -43,6 +43,11 @@ namespace Amazon.EC2.Model
     /// the instance ID appears in the response and contains the identifier of the instance.
     /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
     /// where the instance lifecycle is <code>spot</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Spot instance requests are deleted 4 hours after they are canceled and their instances
+    /// are terminated.
     /// </para>
     /// </summary>
     public partial class DescribeSpotInstanceRequestsRequest : AmazonEC2Request

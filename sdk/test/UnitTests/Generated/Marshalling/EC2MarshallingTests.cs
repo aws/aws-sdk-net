@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
  */
 
 
@@ -38,7 +38,31 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class EC2MarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("ec2-2016-04-01.normal.json", "ec2.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("ec2-2016-09-15.normal.json", "ec2.customizations.json");
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void AcceptReservedInstancesExchangeQuoteMarshallTest()
+        {
+            var operation = service_model.FindOperation("AcceptReservedInstancesExchangeQuote");
+
+            var request = InstantiateClassGenerator.Execute<AcceptReservedInstancesExchangeQuoteRequest>();
+            var marshaller = new AcceptReservedInstancesExchangeQuoteRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = AcceptReservedInstancesExchangeQuoteResponseUnmarshaller.Instance.Unmarshall(context)
+                as AcceptReservedInstancesExchangeQuoteResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
         
 
         [TestMethod]
@@ -3652,6 +3676,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = GetPasswordDataResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetPasswordDataResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetReservedInstancesExchangeQuoteMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetReservedInstancesExchangeQuote");
+
+            var request = InstantiateClassGenerator.Execute<GetReservedInstancesExchangeQuoteRequest>();
+            var marshaller = new GetReservedInstancesExchangeQuoteRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetReservedInstancesExchangeQuoteResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetReservedInstancesExchangeQuoteResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
