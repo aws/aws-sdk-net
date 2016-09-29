@@ -27,8 +27,23 @@ namespace Amazon.Runtime.Internal
     /// </summary>
     public partial class DefaultRetryPolicy : RetryPolicy
     {
+        // This parameter sets the cost of making a retry call on a request.The default value is set at 5.
+        private const int THROTTLE_RETRY_REQUEST_COST = 5;
+        //maximum capacity in a bucket set to 100.
+        private const int THROTTLED_RETRIES = 100;
+        // For every successful request, lesser value capacity would be released. This
+        // is done to ensure that the bucket has a strategy for filling up if an explosion of bad retry requests 
+        // were to deplete the entire capacity.The default value is set at 1.
+        private const int THROTTLE_REQUEST_COST = 1;
+        //Holds on to the singleton instance.
+        private static readonly CapacityManager _capacityManagerInstance = new CapacityManager(THROTTLED_RETRIES, THROTTLE_RETRY_REQUEST_COST, THROTTLE_REQUEST_COST);
         private int _maxBackoffInMilliseconds = (int)TimeSpan.FromSeconds(30).TotalMilliseconds;
-
+        //This parameter serves as the key to the CapacityManager.CapacityContainer datastructure.
+        private string _serviceURL;
+        //This parameter serves as the value to the CapacityManager.Container datastructure.
+        //Its properties include the available capacity left for making a retry request and the maximum
+        //capacity size.
+        private RetryCapacity _retryCapacity;
         // Set of HTTP status codes to retry on.
         private ICollection<HttpStatusCode> _httpStatusCodesToRetryOn = new HashSet<HttpStatusCode>
         {
@@ -110,11 +125,18 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// Constructor for DefaultRetryPolicy.
         /// </summary>
-        /// <param name="maxRetries">The maximum number of retries before throwing
-        /// back a exception. This does not count the initial request.</param>
-        public DefaultRetryPolicy(int maxRetries)
+        /// <param name="config">The Client config object. This is used to 
+        /// retrieve the maximum number of retries  before throwing
+        /// back a exception(This does not count the initial request) and
+        /// the service URL for the request.</param>
+        public DefaultRetryPolicy(IClientConfig config)
         {
-            this.MaxRetries = maxRetries;
+            this.MaxRetries = config.MaxErrorRetry;
+            if (config.ThrottleRetries)
+            {
+                _serviceURL = config.DetermineServiceURL();
+                _retryCapacity = _capacityManagerInstance.GetRetryCapacity(_serviceURL);
+            } 
         }
 
         /// <summary>
@@ -138,6 +160,39 @@ namespace Amazon.Runtime.Internal
             return RetryForExceptionSync(exception);
         }
 
+
+        /// <summary>
+        /// Virtual method that gets called when a retry request is initiated. If retry throttling is
+        /// enabled, the value returned is true if the required capacity is retured, false otherwise. 
+        /// If retry throttling is disabled, true is returned.
+        /// </summary>
+        /// <param name="executionContext">The execution context which contains both the
+        /// requests and response context.</param>
+        public override bool OnRetry(IExecutionContext executionContext)
+        {
+            if (executionContext.RequestContext.ClientConfig.ThrottleRetries)
+            {
+                return (_capacityManagerInstance.TryAcquireCapacity(_retryCapacity));
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// Virtual method that gets called on a success Response. If its a retry success response, the entire 
+        /// retry acquired capacity is released(default is 5). If its just a success response a lesser value capacity 
+        /// is released(default is 1).
+        /// </summary>
+        /// <param name="executionContext">Request context containing the state of the request.</param>
+        public override void NotifySuccess(IExecutionContext executionContext)
+        {
+            if(executionContext.RequestContext.ClientConfig.ThrottleRetries)
+            {
+                _capacityManagerInstance.TryReleaseCapacity(executionContext.RequestContext.Retries>0 ? true:false, _retryCapacity);
+            }
+        }
         /// <summary>
         /// Perform the processor-bound portion of the RetryForException logic.
         /// This is shared by the sync, async, and APM versions of the RetryForException method.
@@ -245,6 +300,8 @@ namespace Amazon.Runtime.Internal
         {
             AWSSDKUtils.Sleep(CalculateRetryDelay(retries, maxBackoffInMilliseconds));
         }
+
+        
 
         private static int CalculateRetryDelay(int retries, int maxBackoffInMilliseconds)
         {

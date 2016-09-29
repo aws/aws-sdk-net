@@ -1,4 +1,4 @@
-﻿ /*
+ /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -38,6 +38,8 @@ namespace Amazon.Runtime
 
         private RegionEndpoint regionEndpoint = null;
         private bool probeForRegionEndpoint = true;
+
+        private bool throttleRetries = true;
 
         private bool useHttp = false;
         private string serviceURL = null;
@@ -391,6 +393,22 @@ namespace Amazon.Runtime
         {
             get { return useDualstackEndpoint; }
             set { useDualstackEndpoint = value; }
+        }
+
+        /// <summary>
+        /// Enable or disable the Retry Throttling feature by setting the ThrottleRetries flag to True/False resepctively.
+        /// Retry Throttling is a feature that intelligently throttles retry attempts when a large precentage of requests 
+        /// are failing and retries are unsuccessful as well. In such situations the allotted retry capacity for the service URL
+        /// will be drained until requests start to succeed again. Once the requisite capacity is available, retries would 
+        /// be permitted again. When retries are throttled, the service enters a fail-fast behaviour as the traditional retry attempt
+        /// for the request would be circumvented. Hence, errors will resurface quickly. This will result in a greated number of exceptions
+        /// but prevents requests being tied up in unsuccessful retry attempts.
+        /// Note: Retry Throttling is enabled by default. Set the ThrottleRetries flag to false to switch off this feature.
+        /// </summary>
+        public bool ThrottleRetries
+        {
+            get { return throttleRetries; }
+            set { throttleRetries = value; }
         }
 
         /// <summary>

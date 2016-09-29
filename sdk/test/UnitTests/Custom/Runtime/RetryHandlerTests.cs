@@ -26,7 +26,12 @@ namespace AWSSDK.UnitTests
         [ClassInitialize]
         public static void Initialize(TestContext t)
         {
-            Handler = new RetryHandler(new DefaultRetryPolicy(MAX_RETRIES));
+            ClientConfig config = new AmazonS3Config
+            {
+                    ServiceURL = @"https://s3.amazonaws.com",
+                    MaxErrorRetry = MAX_RETRIES
+            };
+            Handler = new RetryHandler(new DefaultRetryPolicy(config));
             RuntimePipeline.AddHandler(Handler);
         }
 

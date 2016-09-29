@@ -41,10 +41,9 @@ namespace Amazon.S3.Internal
         /// <summary>
         /// Constructor for AmazonS3RetryPolicy.
         /// </summary>
-        /// <param name="maxRetries">The maximum number of retries before throwing
-        /// back a exception. This does not count the initial request.</param>
-        public AmazonS3RetryPolicy(int maxRetries) :
-            base(maxRetries)
+        /// <param name="config">The IClientConfig object</param>
+        public AmazonS3RetryPolicy(IClientConfig config) :
+            base(config)
         {
         }
 

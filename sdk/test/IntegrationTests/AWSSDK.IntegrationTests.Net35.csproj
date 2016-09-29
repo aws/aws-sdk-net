@@ -359,6 +359,11 @@
   <ItemGroup>
     <Folder Include="Tests\35\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tests\ListObjectsResponse.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

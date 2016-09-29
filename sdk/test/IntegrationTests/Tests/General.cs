@@ -25,6 +25,7 @@ using Amazon.S3.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.S3.Util;
 using Amazon.SecurityToken.SAML;
+using Amazon.DynamoDBv2;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
@@ -335,12 +336,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             var maxRetries = 1000;
             var maxMilliseconds = 1;
-
-            var coreRetryPolicy = new DefaultRetryPolicy(100)
+            ClientConfig config = new AmazonDynamoDBConfig();
+            config.MaxErrorRetry = 100;
+            var coreRetryPolicy = new DefaultRetryPolicy(config)
             {
                 MaxBackoffInMilliseconds = maxMilliseconds
             };
-            var ddbRetryPolicy = new DynamoDBRetryPolicy(100)
+            var ddbRetryPolicy = new DynamoDBRetryPolicy(config)
             {
                 MaxBackoffInMilliseconds = maxMilliseconds
             };

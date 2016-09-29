@@ -175,6 +175,11 @@ namespace Amazon.Runtime
         /// </remarks>
         bool UseDualstackEndpoint { get; }
 
+        /// <summary>
+        /// Configures a flag enabling to either opt in or opt out of the retry throttling service.
+        /// Note: set value to true to enable retry throttling feature. The Default value for this flag is false.
+        /// </summary>
+        bool ThrottleRetries { get; }
 
         /// <summary>
         /// Using either the RegionEndpoint or the ServiceURL determine what the URL to the service is.

@@ -39,15 +39,17 @@ namespace Amazon.Runtime
         /// <returns>Returns true if the request should be retried, else false.</returns>
         public async Task<bool> RetryAsync(IExecutionContext executionContext, Exception exception)
         {
+            bool retryFlag;
             var helperResult = RetrySync(executionContext, exception);
             if (helperResult.HasValue)
             {
-                return helperResult.Value;
+                retryFlag = helperResult.Value;
             }
             else
             {
-                return await RetryForExceptionAsync(executionContext, exception).ConfigureAwait(false);
+                retryFlag = await RetryForExceptionAsync(executionContext, exception).ConfigureAwait(false);
             }
+            return (retryFlag && OnRetry(executionContext));
         }
 
         /// <summary>

@@ -49,15 +49,17 @@ namespace Amazon.Runtime
         /// <returns>Returns true if the request should be retried, else false.</returns>
         public bool Retry(IExecutionContext executionContext, Exception exception)
         {
+            bool retryFlag;
             var syncResult = RetrySync(executionContext, exception);
             if (syncResult.HasValue)
             {
-                return syncResult.Value;
+                retryFlag = syncResult.Value;
             }
             else
             {
-                return RetryForException(executionContext, exception);
+                retryFlag = RetryForException(executionContext, exception);
             }
+            return (retryFlag && OnRetry(executionContext));
         }
 
         #region Clock skew correction
@@ -112,6 +114,26 @@ namespace Amazon.Runtime
         /// requests and response context.</param>
         public abstract void WaitBeforeRetry(IExecutionContext executionContext);
 
+        /// <summary>
+        /// Virtual method that gets called on a successful request response.
+        /// </summary>
+        /// <param name="executionContext">The execution context which contains both the
+        /// requests and response context.</param>
+        public virtual void NotifySuccess(IExecutionContext executionContext)
+        {
+            
+        }
+
+        /// <summary>
+        /// Virtual method that gets called before a retry request is initiated. The value 
+        /// returned is True by default(retry throttling feature is disabled).
+        /// </summary>
+        /// <param name="executionContext">The execution context which contains both the
+        /// requests and response context.</param>
+        public virtual bool OnRetry(IExecutionContext executionContext)
+        {
+            return true;
+        }
         /// <summary>
         /// Perform the processor-bound portion of the Retry logic.
         /// This is shared by the sync, async, and APM versions of the Retry method.

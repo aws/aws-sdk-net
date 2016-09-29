@@ -31,11 +31,11 @@ namespace Amazon.DynamoDBv2.Internal
     public class DynamoDBRetryPolicy : DefaultRetryPolicy
     {
         /// <summary>
-        /// Construct instance of DynamoDBRetryPolicy.
+        /// Constructor for DynamoDBRRetryPolicy.
         /// </summary>
-        /// <param name="maxRetries"></param>
-        public DynamoDBRetryPolicy(int maxRetries)
-            : base(maxRetries)
+        /// <param name="config">The IClientConfig object</param>
+        public DynamoDBRetryPolicy(IClientConfig config) :
+            base(config)
         { }
 
         /// <summary>

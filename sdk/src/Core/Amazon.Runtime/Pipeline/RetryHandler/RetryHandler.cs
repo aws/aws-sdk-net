@@ -72,6 +72,7 @@ namespace Amazon.Runtime.Internal
                 try
                 {
                     base.InvokeSync(executionContext);
+                    this.RetryPolicy.NotifySuccess(executionContext);
                     return;
                 }
                 catch (Exception exception)
@@ -118,7 +119,9 @@ namespace Amazon.Runtime.Internal
                 System.Runtime.ExceptionServices.ExceptionDispatchInfo capturedException = null;
                 try
                 {
-                    return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
+                    T result = await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
+                    this.RetryPolicy.NotifySuccess(executionContext);
+                    return result;
                 }
                 catch (Exception e)
                 {
@@ -165,10 +168,10 @@ namespace Amazon.Runtime.Internal
             var requestContext = executionContext.RequestContext;
             var responseContext = executionContext.ResponseContext;
             var exception = responseContext.AsyncResult.Exception;
+            var syncExecutionContext = ExecutionContext.CreateFromAsyncContext(executionContext);
 
             if (exception != null)
-            {
-                var syncExecutionContext = ExecutionContext.CreateFromAsyncContext(executionContext);
+            {   
                 var shouldRetry = this.RetryPolicy.Retry(syncExecutionContext, exception);
                 if (shouldRetry)
                 {
@@ -192,6 +195,10 @@ namespace Amazon.Runtime.Internal
                 {
                     LogForError(requestContext, exception);
                 }
+            }
+            else
+            {
+                this.RetryPolicy.NotifySuccess(syncExecutionContext);
             }
 
             // Call outer handler

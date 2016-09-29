@@ -38,7 +38,8 @@ namespace UnitTests
             "UseDualstackEndpoint",
             "ProxyHost",
             "ProxyPort",
-            "CacheHttpClient"
+            "CacheHttpClient",
+            "ThrottleRetries"
         };
 
         [Fact]
