@@ -1,3 +1,9 @@
+### 3.3.4.0 (2016-09-29 23:30 UTC)
+* EC2 (3.3.1.0)
+	* Support for new EC2 instance type: m4.16xlarge Support for new EC2 P2 and X1 instances. Adding support for EC2 Convertible RIs and the EC2 RI regional benefit.
+* Core 3.3.0.2
+	* Add back the ap-south1 region constant
+
 ### 3.3.3.0 (2016-09-28 02:53 UTC)
 * CloudFormation (3.3.1.0)
 	* Added RoleARN parameter to mutating APIs
