@@ -181,9 +181,13 @@ namespace Amazon.S3
         /// </summary>
         public static readonly S3Region US = new S3Region("");
         /// <summary>
-        /// Specifies that the S3 Bucket should use EU locality.
+        /// Specifies that the S3 Bucket should use EU locality which defaults to EU-WEST-1
         /// </summary>
         public static readonly S3Region EU = new S3Region("EU");
+        /// <summary>
+        /// Specifies that the S3 Bucket should use the EU-WEST-1 locality.
+        /// </summary>
+        public static readonly S3Region EUW1 = new S3Region("eu-west-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use the EU-CENTRAL-1 locality.
         /// </summary>
