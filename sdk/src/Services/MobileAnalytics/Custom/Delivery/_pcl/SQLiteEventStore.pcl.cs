@@ -27,7 +27,10 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal;
 using System.Globalization;
 
-using SQLitePCL;
+using Sqlite3DatabaseHandle = SQLitePCL.sqlite3;
+using Sqlite3Statement = SQLitePCL.sqlite3_stmt;
+using Sqlite3 = SQLitePCL.raw;
+
 using PCLStorage;
 
 namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
@@ -39,6 +42,9 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     public partial class SQLiteEventStore : IEventStore
     {
 
+        internal Sqlite3DatabaseHandle Handle;
+        internal static readonly Sqlite3DatabaseHandle NullHandle = default(Sqlite3DatabaseHandle);
+
         /// <summary>
         /// Implements the Dispose pattern
         /// </summary>
@@ -46,7 +52,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         /// or garbage collected.</param>
         protected virtual void Dispose(bool disposing)
         {
-
+            if (disposing)
+            {
+                Sqlite3.sqlite3_close(Handle);
+            }
         }
 
         /// <summary>
@@ -61,20 +70,8 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
             lock (_lock)
             {
-#if __IOS__
-                SQLitePCL.CurrentPlatform.Init();
-#endif
-                using (var connection = new SQLiteConnection(this.DBfileFullPath))
-                {
-                    using (var statement = connection.Prepare(vacuumCommand))
-                    {
-                        statement.Step();
-                    }
-                    using (var createTableStmt = connection.Prepare(sqlCommand))
-                    {
-                        createTableStmt.Step();
-                    }
-                }
+                Execute(vacuumCommand);
+                Execute(sqlCommand);
             }
         }
 
@@ -103,16 +100,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 string sqlCommand = string.Format(CultureInfo.InvariantCulture, "INSERT INTO {0}  ({1},{2},{3}) values(?,?,?)", TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME);
                 lock (_lock)
                 {
-                    using (var connection = new SQLiteConnection(this.DBfileFullPath))
-                    {
-                        using (var statement = connection.Prepare(sqlCommand))
-                        {
-                            statement.Bind(1, eventString);
-                            statement.Bind(2, Guid.NewGuid().ToString());
-                            statement.Bind(3, appID);
-                            statement.Step();
-                        }
-                    }
+                    Execute(sqlCommand, eventString, Guid.NewGuid().ToString(), appID);
                 }
             }
         }
@@ -129,13 +117,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
             lock (_lock)
             {
-                using (var connection = new SQLiteConnection(this.DBfileFullPath))
-                {
-                    using (var statement = connection.Prepare(sqlCommand))
-                    {
-                        statement.Step();
-                    }
-                }
+                Execute(sqlCommand);
             }
         }
 
@@ -153,21 +135,16 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             string sqlCommand = string.Format(CultureInfo.InvariantCulture, "SELECT * FROM {0} WHERE {1}  = ? ORDER BY {2},   ROWID LIMIT {3} ", TABLE_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME, maxAllowed);
             lock (_lock)
             {
-                using (var connection = new SQLiteConnection(this.DBfileFullPath))
+                var stmt = ExecuteQuery(sqlCommand, appID);
+                while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
                 {
-                    using (var statement = connection.Prepare(sqlCommand))
-                    {
-                        statement.Bind(1, appID);
-                        while (statement.Step() == SQLiteResult.ROW)
-                        {
-                            JsonData data = new JsonData();
-                            data["id"] = statement.GetText(EVENT_ID_COLUMN_NAME);
-                            data["event"] = statement.GetText(EVENT_COLUMN_NAME.ToLower());
-                            data["appID"] = statement.GetText(MA_APP_ID_COLUMN_NAME);
-                            eventList.Add(data);
-                        }
-                    }
+                    JsonData data = new JsonData();
+                    data["id"] = (string)GetColumnValue(stmt, typeof(string), EVENT_ID_COLUMN_NAME);
+                    data["event"] = (string)GetColumnValue(stmt, typeof(string), EVENT_COLUMN_NAME);
+                    data["appID"] = (string)GetColumnValue(stmt, typeof(string), MA_APP_ID_COLUMN_NAME);
+                    eventList.Add(data);
                 }
+                Sqlite3.sqlite3_finalize(stmt); 
             }
             return eventList;
         }
@@ -183,17 +160,15 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             long count = 0;
 
             string sqlCommand = string.Format(CultureInfo.InvariantCulture, "SELECT COUNT(*) C FROM {0} where {1} = ?", TABLE_NAME, MA_APP_ID_COLUMN_NAME);
-            using (var connection = new SQLiteConnection(this.DBfileFullPath))
+            var stmt = ExecuteQuery(sqlCommand, appID);
+
+            while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
             {
-                using (var statement = connection.Prepare(sqlCommand))
-                {
-                    statement.Bind(1, appID);
-                    while (statement.Step() == SQLiteResult.ROW)
-                    {
-                        count = statement.GetInteger("C");
-                    }
-                }
+                count = Sqlite3.sqlite3_column_int(stmt, 0);
             }
+
+        Sqlite3.sqlite3_finalize(stmt);
+             
             return count;
         }
 
@@ -211,28 +186,257 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
                 lock (_lock)
                 {
-                    using (var connection = new SQLiteConnection(this.DBfileFullPath))
+                    var stmt = ExecuteQuery(pageCountCommand);
+                    while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
                     {
-                        using (var statement = connection.Prepare(pageCountCommand))
-                        {
-                            while (statement.Step() == SQLiteResult.ROW)
-                            {
-                                pageCount = statement.GetInteger(0);
-                            }
-                        }
-
-                        using (var statement = connection.Prepare(pageSizeCommand))
-                        {
-                            while (statement.Step() == SQLiteResult.ROW)
-                            {
-                                pageSize = statement.GetInteger(0);
-                            }
-                        }
+                        pageCount = Sqlite3.sqlite3_column_int(stmt, 0);
                     }
+                    Sqlite3.sqlite3_finalize(stmt);
+
+                    stmt = ExecuteQuery(pageSizeCommand);
+                    while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+                    {
+                        pageSize = Sqlite3.sqlite3_column_int(stmt, 0);
+                    }
+                    Sqlite3.sqlite3_finalize(stmt);
                 }
                 return pageCount * pageSize;
             }
         }
+
+    #region private methods
+
+
+    private Sqlite3Statement ExecuteQuery(string query, params object[] parameters)
+    {
+        Sqlite3Statement statement;
+        Result r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_prepare_v2(Handle, query, out statement).ToString());
+        if (r != Result.OK)
+        {
+            throw Sqlite3Exception.New(r, string.Format("Error executing stateme {0}", r));
+        }
+        BindData(statement, parameters);
+        return statement;
     }
+
+
+    private void Execute(string query, params object[] parameters)
+        {
+            Sqlite3Statement statement;
+            Result r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_prepare_v2(Handle, query, out statement).ToString());
+            if (r != Result.OK)
+            {
+                throw Sqlite3Exception.New(r, string.Format("Error executing stateme {0}", r));
+            }
+            BindData(statement, parameters);
+            r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_step(statement).ToString());
+            if (r != Result.OK)
+            {
+                throw Sqlite3Exception.New(r, string.Format("Error executing stateme {0}", r));
+            }
+            Sqlite3.sqlite3_finalize(statement);
+        }
+
+
+        private void BindData(Sqlite3Statement statement, params object[] parameters)
+        {
+            if (parameters != null)
+            {
+                for (int i = 1; i <= parameters.Length; i++)
+                {
+                    object o = parameters[i - 1];
+                    var type = o.GetType();
+                    var dt = o as DateTime?;
+                    if (o == null)
+                    {
+                        Sqlite3.sqlite3_bind_null(statement, i);
+                        continue;
+                    }
+
+                    if (dt.HasValue)
+                    {
+                        string ticks = dt.Value.Ticks.ToString();
+                        Sqlite3.sqlite3_bind_text(statement, i, ticks);
+                    }
+                    else if (type == typeof(string))
+                    {
+                        Sqlite3.sqlite3_bind_text(statement, i, (String)o);
+                    }
+                    else if ((typeof(Int32) == type)
+                            || (typeof(Boolean) == type)
+                            || (typeof(Byte) == type)
+                            || (typeof(UInt16) == type)
+                            || (typeof(Int16) == type)
+                            || (typeof(sbyte) == type)
+                            || (typeof(Int64) == type)
+                            || (typeof(long) == type)
+                            || (typeof(UInt32) == type))
+                    {
+                        Sqlite3.sqlite3_bind_int64(statement, i, (int)Convert.ChangeType(o, typeof(int)));
+                    }
+                    else if ((typeof(double) == type)
+                            || (typeof(float) == type)
+                            || (typeof(decimal) == type))
+                    {
+                        Sqlite3.sqlite3_bind_double(statement, i, (double)o);
+                    }
+                    else if (type == typeof(byte[]))
+                    {
+                        Sqlite3.sqlite3_bind_blob(statement, i, (byte[])o);
+                    }
+                }
+            }
+        }
+
+        private object GetColumnValue(Sqlite3Statement stmt, Type t, String columnName)
+        {
+            int columnCount = Sqlite3.sqlite3_column_count(stmt);
+            int columnIndex = -1;
+            int columnType = -1;
+            for (int i = 0; i < columnCount; i++)
+            {
+                String colName = Sqlite3.sqlite3_column_name(stmt, i);
+                if (colName.Equals(columnName, StringComparison.OrdinalIgnoreCase))
+                {
+                    columnIndex = i;
+                    columnType = Sqlite3.sqlite3_column_type(stmt, i);
+                    break;
+                }
+            }
+
+            if (t == typeof(string))
+            {
+                return Sqlite3.sqlite3_column_text(stmt, columnIndex);
+            }
+            else if ((typeof(Int32) == t)
+                   || (typeof(Boolean) == t)
+                   || (typeof(Byte) == t)
+                   || (typeof(UInt16) == t)
+                   || (typeof(Int16) == t)
+                   || (typeof(sbyte) == t))
+            {
+                return Convert.ChangeType(Sqlite3.sqlite3_column_int(stmt, columnIndex), t);
+            }
+            else if ((typeof(double) == t)
+                   || (typeof(float) == t))
+            {
+                return Convert.ChangeType(Sqlite3.sqlite3_column_double(stmt, columnIndex), t);
+            }
+            else if (typeof(DateTime) == t)
+            {
+                string time = Sqlite3.sqlite3_column_text(stmt, columnIndex);
+                return DateTime.FromBinary(long.Parse(time));
+            }
+            else if (
+                       (typeof(Int64) == t)
+                    || (typeof(UInt32) == t)
+                    )
+            {
+                return Convert.ChangeType(Sqlite3.sqlite3_column_int64(stmt, columnIndex), t, null);
+            }
+            else if (typeof(System.Nullable<long>) == t)
+            {
+                if (columnType == Sqlite3.SQLITE_NULL)
+                {
+                    return null;
+                }
+                else
+                {
+                    long? x = Sqlite3.sqlite3_column_int64(stmt, columnIndex);
+                    return x;
+                }
+            }
+            else if (typeof(System.Nullable<double>) == t)
+            {
+                if (columnType == Sqlite3.SQLITE_NULL)
+                {
+                    return null;
+                }
+                else
+                {
+                    double? x = Sqlite3.sqlite3_column_double(stmt, columnIndex);
+                    return x;
+                }
+            }
+            else if (typeof(System.Nullable<int>) == t)
+            {
+                if (columnType == Sqlite3.SQLITE_NULL)
+                {
+                    return null;
+                }
+                else
+                {
+                    int? x = Sqlite3.sqlite3_column_int(stmt, columnIndex);
+                    return x;
+                }
+            }
+            else if (typeof(decimal) == t)
+            {
+                return (decimal)Convert.ChangeType(Sqlite3.sqlite3_column_double(stmt, columnIndex), t);
+            }
+            else if (typeof(byte[]) == t)
+            {
+                return Sqlite3.sqlite3_column_blob(stmt, columnIndex);
+            }
+            else
+            {
+                throw new NotSupportedException("Invalid type conversion" + t);
+            }
+        }
+
+
+        #endregion
+    }
+
+    public enum Result : int
+    {
+        OK = 0,
+        Error = 1,
+        Internal = 2,
+        Perm = 3,
+        Abort = 4,
+        Busy = 5,
+        Locked = 6,
+        NoMem = 7,
+        ReadOnly = 8,
+        Interrupt = 9,
+        IOError = 10,
+        Corrupt = 11,
+        NotFound = 12,
+        Full = 13,
+        CannotOpen = 14,
+        LockErr = 15,
+        Empty = 16,
+        SchemaChngd = 17,
+        TooBig = 18,
+        Constraint = 19,
+        Mismatch = 20,
+        Misuse = 21,
+        NotImplementedLFS = 22,
+        AccessDenied = 23,
+        Format = 24,
+        Range = 25,
+        NonDBFile = 26,
+        Notice = 27,
+        Warning = 28,
+        Row = 100,
+        Done = 101
+    }
+
+    public class Sqlite3Exception : Exception
+    {
+        public Result Result { get; private set; }
+
+        protected Sqlite3Exception(Result r, string message) : base(message)
+        {
+            Result = r;
+        }
+
+        public static Sqlite3Exception New(Result r, string message)
+        {
+            return new Sqlite3Exception(r, message);
+        }
+    }
+
 }
 

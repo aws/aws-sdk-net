@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
+    #line 1 "C:\d\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "14.0.0.0")]
     public partial class PackagesConfig : PackagesConfigBase
     {
@@ -38,7 +38,7 @@ namespace ServiceClientGenerator.Generators.NuGet
   <package id=""Validation"" version=""2.0.6.15003"" targetFramework=""portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
 ");
             
-            #line 14 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
+            #line 14 "C:\d\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
   
     if(((string)this.Session["AssemblyName"]).Equals("AWSSDK.MobileAnalytics",StringComparison.CurrentCultureIgnoreCase)
         || ((string)this.Session["AssemblyName"]).Equals("AWSSDK.CognitoSync",StringComparison.CurrentCultureIgnoreCase))
@@ -47,18 +47,15 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line default
             #line hidden
-            this.Write(@"  <package id=""SQLitePCL"" version=""3.8.7.2"" targetFramework=""portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10"" />
+            this.Write(@"  <package id=""SQLitePCLRaw.bundle_green"" version=""1.0.1"" targetFramework=""portable45-net45+win8+wp8+wpa81"" />
+  <package id=""SQLitePCLRaw.core"" version=""1.0.1"" targetFramework=""portable45-net45+win8+wp8+wpa81"" />
   <package id=""System.Data.SQLite"" version=""1.0.97.0"" targetFramework=""net35"" />
   <package id=""System.Data.SQLite.Core"" version=""1.0.97.0"" targetFramework=""net35"" />
   <package id=""System.Data.SQLite.Linq"" version=""1.0.97.0"" targetFramework=""net35"" />
   <package id=""System.Data.SQLite.EF6"" version=""1.0.97.0"" targetFramework=""net35"" />
-  <package id=""System.Data.SQLite"" version=""1.0.97.0"" targetFramework=""net45"" />
-  <package id=""System.Data.SQLite.Core"" version=""1.0.97.0"" targetFramework=""net45"" />
-  <package id=""System.Data.SQLite.Linq"" version=""1.0.97.0"" targetFramework=""net45"" />
-  <package id=""System.Data.SQLite.EF6"" version=""1.0.97.0"" targetFramework=""net45"" />
 ");
             
-            #line 28 "C:\codebase\v3-master\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
+            #line 25 "C:\d\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\PackagesConfig.tt"
 
     }
 

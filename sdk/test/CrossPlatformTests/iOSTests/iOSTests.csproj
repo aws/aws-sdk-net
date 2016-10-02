@@ -157,12 +157,6 @@
       <Project>{1c5f7691-6dd8-400b-8ec1-788317af0bfe}</Project>
       <Name>AWSSDK.CognitoIdentity.PCL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\src\Services\MobileAnalytics\AWSSDK.MobileAnalytics.iOS.csproj">
-      <Project>{9a15c363-dc59-45a6-8eac-1fe1b9b5bf4c}</Project>
-      <Name>AWSSDK.MobileAnalytics.iOS</Name>
-      <IsAppExtension>false</IsAppExtension>
-      <IsWatchApp>false</IsWatchApp>
-    </ProjectReference>
     <ProjectReference Include="..\CommonTests\CommonTests.csproj">
       <Project>{569d0c97-4009-47a9-bab9-8a2b9fb6d913}</Project>
       <Name>CommonTests</Name>
