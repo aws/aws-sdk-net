@@ -60,7 +60,8 @@
     <Compile Include="IntegrationTests\CloudWatch.cs" />
     <Compile Include="IntegrationTests\CloudWatchLogs.cs" />
     <Compile Include="IntegrationTests\CodeDeploy.cs" />
-    <Compile Include="IntegrationTests\MobileAnalyticsManager.cs" />
+	<Compile Include="IntegrationTests\MobileAnalyticsManager.cs" />
+	<Compile Include="IntegrationTests\S3\WebProxyTest.cs" />
     <Compile Include="IntegrationTests\SyncManager.cs" />
     <Compile Include="IntegrationTests\CredentialsTests.cs" />
     <Compile Include="IntegrationTests\DataPipeline.cs" />

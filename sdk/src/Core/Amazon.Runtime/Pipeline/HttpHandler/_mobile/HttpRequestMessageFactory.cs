@@ -181,13 +181,11 @@ namespace Amazon.Runtime
             // redirects are returned as responses.
             httpMessageHandler.AllowAutoRedirect = clientConfig.AllowAutoRedirect;
 
-#if CORECLR
             var proxy = clientConfig.GetWebProxy();
             if (proxy != null)
             {
                 httpMessageHandler.Proxy = proxy;
             }
-#endif
 
             if (httpMessageHandler.Proxy != null && clientConfig.ProxyCredentials != null)
             {

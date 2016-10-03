@@ -24,10 +24,9 @@ namespace WindowsConsoleApp
 
                 runner.TestsToRun = new string[]
                 {
-                };
-                runner.CategoriesToRun = new string[]
+                };                runner.CategoriesToRun = new string[]
                 {
-                    "SyncManager"
+					"SyncManager"
                 };
 
                 allPassed = runner.ExecuteAllTests();
