@@ -248,7 +248,11 @@ namespace Amazon.Runtime.Internal
 
         private static int CalculateRetryDelay(int retries, int maxBackoffInMilliseconds)
         {
-            int delay = (int)(Math.Pow(4, retries) * 100);
+            int delay;
+            
+            if (retries < 12 )  delay = Convert.ToInt32(Math.Pow(4, retries) * 100.0);
+            else                delay = Int32.MaxValue;
+
             if (retries > 0 && (delay > maxBackoffInMilliseconds || delay <= 0))
                 delay = maxBackoffInMilliseconds;
             return delay;

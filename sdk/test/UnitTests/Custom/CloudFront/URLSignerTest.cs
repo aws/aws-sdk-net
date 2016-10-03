@@ -35,8 +35,8 @@ namespace AWSSDK_DotNet35.UnitTests
         [TestCategory("CloudFront")]
         public void SignURLCannedValidation()
         {
-            string expectedSignedURL = @"http://awesome.dot.com/amazing/uri/?Expires=-2147483648"
-                                    + @"&Signature=D613LzV~14C6sXGxXuG6fKFWwZC1wYOKEJg-YRZYtTwYDeTubr1qqHq9yakw42EUVbYK~l4-lq-5foS4LfAvFMx2uL51NS99W4aRSC0u8G9drcveRyJghFflh18hdC5Q-YXEFt-gtbxio3hndUYM2GYCbtBGXad7dDKx7bXvc5k_"
+            string expectedSignedURL = @"http://awesome.dot.com/amazing/uri/?Expires=-6106035600"
+                                    + @"&Signature=RezrUdl1C4O4LiHnK2orurG-KjuAoPb3wcJr7R0wrvaERJ7H4FVv4OtNxT2QcY~m7KmAXOJEL6aR6Xs3CujxAb2rMOeIev6yy6C~YVkMQQucBDof6HiFdfCZD-aZr7IQxiap6Kd9uqwR9tTp9rKBENzvI3hHyKtCY8Rn~SzwpGU_"
                                     + @"&Key-Pair-Id=amazingKeyPairId";
             string signedURL = AmazonCloudFrontUrlSigner.SignUrlCanned("http://awesome.dot.com/amazing/uri/", "amazingKeyPairId", privateRSAKeyStreamReader, new DateTime(1776, 7, 4));
 

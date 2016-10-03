@@ -423,7 +423,14 @@ namespace Amazon.Util
 
         public static int ConvertToUnixEpochSeconds(DateTime dateTime)
         {
-            return (int)ConvertToUnixEpochMilliSeconds(dateTime);
+            TimeSpan ts = new TimeSpan(dateTime.ToUniversalTime().Ticks - EPOCH_START.Ticks);
+            return Convert.ToInt32(ts.TotalSeconds);
+        }
+
+        public static string ConvertToUnixEpochSecondsString(DateTime dateTime)
+        {
+            TimeSpan ts = new TimeSpan(dateTime.ToUniversalTime().Ticks - EPOCH_START.Ticks);
+            return Convert.ToInt64(ts.TotalSeconds).ToString(CultureInfo.InvariantCulture);
         }
 
         public static double ConvertToUnixEpochMilliSeconds(DateTime dateTime)

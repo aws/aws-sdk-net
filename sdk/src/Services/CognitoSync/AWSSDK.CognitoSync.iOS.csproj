@@ -42,6 +42,7 @@
     <DocumentationFile>bin\Release\Xamarin.iOS10\AWSSDK.CognitoSync.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <Choose>
