@@ -31,6 +31,12 @@
         <dependency id="PCLStorage" version="1.0.2" />
         <dependency id="PCLCrypto" version="1.0.2.15130" />
       </group>
+
+      <group targetFramework="uap">
+        <dependency id="Microsoft.NETCore.UniversalWindowsPlatform" version="5.2.2" />
+        <dependency id="PCLStorage" version="1.0.2" />
+        <dependency id="PCLCrypto" version="1.0.2.15130" />
+      </group>
 <#
 	}
 #>
@@ -79,6 +85,10 @@
     <file src=".\bin\Release\pcl\AWSSDK.Core.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
     <file src=".\bin\Release\pcl\AWSSDK.Core.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
     
+    <file src=".\bin\Release\pcl\AWSSDK.Core.dll" target="lib\uap" />
+    <file src=".\bin\Release\pcl\AWSSDK.Core.xml" target="lib\uap" />
+    <file src=".\bin\Release\pcl\AWSSDK.Core.pdb" target="lib\uap" />
+
     <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.dll" target="lib\Xamarin.iOS10" />
     <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.xml" target="lib\Xamarin.iOS10" />
 
