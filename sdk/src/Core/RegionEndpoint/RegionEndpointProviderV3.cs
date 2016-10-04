@@ -325,8 +325,12 @@ namespace Amazon.Internal
                             JsonData regions = partition["regions"];
                             foreach (string regionName in regions.PropertyNames)
                             {
-                                IRegionEndpoint endpoint = new RegionEndpointV3(regionName, (string)regions[regionName]["description"], partition, partition["services"]);
-                                _regionEndpointMap.Add(regionName, endpoint);
+                                IRegionEndpoint endpoint;
+                                if (!_regionEndpointMap.TryGetValue(regionName, out endpoint))
+                                {
+                                    endpoint = new RegionEndpointV3(regionName, (string)regions[regionName]["description"], partition, partition["services"]);
+                                    _regionEndpointMap.Add(regionName, endpoint);
+                                }
                                 endpoints.Add(endpoint);
                             }
                         }
