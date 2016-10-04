@@ -68,6 +68,13 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             string sqlCommand = string.Format(CultureInfo.InvariantCulture, "CREATE TABLE IF NOT EXISTS {0} ({1} TEXT NOT NULL,{2} TEXT NOT NULL UNIQUE,{3} TEXT NOT NULL, {4}  INTEGER NOT NULL DEFAULT 0 )",
                 TABLE_NAME, EVENT_COLUMN_NAME, EVENT_ID_COLUMN_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME);
 
+            var r = Sqlite3.sqlite3_open(this.DBfileFullPath, out Handle);
+
+            if (r != Sqlite3.SQLITE_OK)
+            {
+                throw Sqlite3Exception.New((Result)Enum.Parse(typeof(Result), r.ToString()), String.Format("Could not open database file: {0} ({1})", this.DBfileFullPath, r));
+            }
+
             lock (_lock)
             {
                 Execute(vacuumCommand);
@@ -167,7 +174,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 count = Sqlite3.sqlite3_column_int(stmt, 0);
             }
 
-        Sqlite3.sqlite3_finalize(stmt);
+            Sqlite3.sqlite3_finalize(stmt);
              
             return count;
         }
@@ -211,7 +218,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
     {
         Sqlite3Statement statement;
         Result r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_prepare_v2(Handle, query, out statement).ToString());
-        if (r != Result.OK)
+        if (r != Result.OK && r != Result.Done && r != Result.Row)
         {
             throw Sqlite3Exception.New(r, string.Format("Error executing stateme {0}", r));
         }
@@ -224,13 +231,13 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         {
             Sqlite3Statement statement;
             Result r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_prepare_v2(Handle, query, out statement).ToString());
-            if (r != Result.OK)
+            if (r != Result.OK && r != Result.Done && r != Result.Row)
             {
                 throw Sqlite3Exception.New(r, string.Format("Error executing stateme {0}", r));
             }
             BindData(statement, parameters);
             r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_step(statement).ToString());
-            if (r != Result.OK)
+            if (r != Result.OK && r != Result.Done && r != Result.Row)
             {
                 throw Sqlite3Exception.New(r, string.Format("Error executing stateme {0}", r));
             }
@@ -245,14 +252,14 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                 for (int i = 1; i <= parameters.Length; i++)
                 {
                     object o = parameters[i - 1];
-                    var type = o.GetType();
-                    var dt = o as DateTime?;
                     if (o == null)
                     {
                         Sqlite3.sqlite3_bind_null(statement, i);
                         continue;
                     }
 
+                    var type = o.GetType();
+                    var dt = o as DateTime?;
                     if (dt.HasValue)
                     {
                         string ticks = dt.Value.Ticks.ToString();
@@ -325,7 +332,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             else if (typeof(DateTime) == t)
             {
                 string time = Sqlite3.sqlite3_column_text(stmt, columnIndex);
-                return DateTime.FromBinary(long.Parse(time));
+                return new DateTime(long.Parse(time, CultureInfo.InvariantCulture.NumberFormat), DateTimeKind.Utc);
             }
             else if (
                        (typeof(Int64) == t)

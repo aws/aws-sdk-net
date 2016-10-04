@@ -323,7 +323,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         {
             Sqlite3Statement statement;
             Result r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_prepare_v2(Handle, query, out statement).ToString());
-            if (r != Result.OK)
+            if (r != Result.OK && r!= Result.Done && r!= Result.Row)
             {
                 throw Sqlite3Exception.New(r, string.Format("Error executing stateme {0}", r));
             }
@@ -335,13 +335,13 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         {
             Sqlite3Statement statement;
             Result r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_prepare_v2(Handle, query,out statement).ToString());
-            if(r != Result.OK)
+            if (r != Result.OK && r != Result.Done && r != Result.Row)
             {
                 throw Sqlite3Exception.New(r, string.Format("Error executing stateme {0}", r));
             }
             BindData(statement, parameters);
             r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_step(statement).ToString());
-            if(r != Result.OK)
+            if (r != Result.OK && r != Result.Done && r != Result.Row)
             {
                 throw Sqlite3Exception.New(r, string.Format("Error executing stateme {0}", r));
             }
@@ -355,14 +355,14 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                 for (int i = 1; i <= parameters.Length; i++)
                 {
                     object o = parameters[i - 1];
-                    var type = o.GetType();
-                    var dt = o as DateTime?;
                     if(o == null)
                     {
                         Sqlite3.sqlite3_bind_null(statement, i);
                         continue;
                     }
 
+                    var type = o.GetType();
+                    var dt = o as DateTime?;
                     if (dt.HasValue)
                     {
                         string ticks = dt.Value.Ticks.ToString();
@@ -433,7 +433,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             else if (typeof(DateTime) == t)
             {
                 string time = Sqlite3.sqlite3_column_text(stmt, columnIndex);
-                return DateTime.FromBinary(long.Parse(time));
+                return new DateTime(long.Parse(time, CultureInfo.InvariantCulture.NumberFormat), DateTimeKind.Utc);
             }
             else if (
                        (typeof(Int64) == t)
