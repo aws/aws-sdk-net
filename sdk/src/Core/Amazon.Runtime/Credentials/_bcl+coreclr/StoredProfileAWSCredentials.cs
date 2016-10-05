@@ -12,8 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using Amazon.Runtime.Internal.Auth;
-using Amazon.Runtime.Internal.Auth.CredentialProfile;
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
@@ -214,7 +213,7 @@ namespace Amazon.Runtime
                 try
                 {
                     var file = new SharedCredentialsFile(credentialsFilePath);
-                    Profile profile = null;
+                    CredentialProfile profile = null;
                     if (file.TryGetProfile(profileName, out profile) && profile.IsValid)
                     {
                         return true;

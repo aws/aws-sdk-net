@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime;
-using Amazon.Runtime.Internal.Auth.CredentialProfile;
+using Amazon.Runtime.Internal;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
@@ -29,52 +29,52 @@ namespace AWSSDK.UnitTests
         private const string SourceErrorFormat = "Error reading source profile [{0}] for profile [{1}].";
         private const string SourceNotBasicFormat = "Source profile [{0}] is not a basic profile.";
 
-        private static readonly Profile InvalidProfile =
-            new Profile("invalid_profile", new ProfileOptions
+        private static readonly CredentialProfile InvalidProfile =
+            new CredentialProfile("invalid_profile", new CredentialProfileOptions
             {
                 AccessKey = "aws_access_key_id"
             });
 
-        private static readonly Profile BasicProfile =
-            new Profile("basic_profile", new ProfileOptions
+        private static readonly CredentialProfile BasicProfile =
+            new CredentialProfile("basic_profile", new CredentialProfileOptions
             {
                 AccessKey = "aws_access_key_id",
                 SecretKey = "aws_secret_access_key"
             });
 
-        private static readonly Profile SessionProfile =
-            new Profile("session_profile", new ProfileOptions
+        private static readonly CredentialProfile SessionProfile =
+            new CredentialProfile("session_profile", new CredentialProfileOptions
             {
                 AccessKey = "aws_access_key_id",
                 SecretKey = "aws_secret_access_key",
                 Token = "token"
             });
 
-        private static readonly Profile AssumeRoleProfile =
-            new Profile("assume_role_profile", new ProfileOptions
+        private static readonly CredentialProfile AssumeRoleProfile =
+            new CredentialProfile("assume_role_profile", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "basic_profile"
             });
 
-        private static readonly Profile AssumeRoleExternalProfile =
-            new Profile("assume_role_external_profile", new ProfileOptions
+        private static readonly CredentialProfile AssumeRoleExternalProfile =
+            new CredentialProfile("assume_role_external_profile", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "basic_profile",
                 ExternalID = "external_id"
             });
 
-        private static readonly Profile AssumeRoleMfaProfile =
-            new Profile("assume_role_mfa_profile", new ProfileOptions
+        private static readonly CredentialProfile AssumeRoleMfaProfile =
+            new CredentialProfile("assume_role_mfa_profile", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "basic_profile",
                 MfaSerial = "mfa_serial"
             });
 
-        private static readonly Profile AssumeRoleExternalMfaProfile =
-            new Profile("assume_role_external_mfa_profile", new ProfileOptions
+        private static readonly CredentialProfile AssumeRoleExternalMfaProfile =
+            new CredentialProfile("assume_role_external_mfa_profile", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "basic_profile",
@@ -82,16 +82,16 @@ namespace AWSSDK.UnitTests
                 MfaSerial = "mfa_serial"
             });
 
-        private static readonly Profile FullAssumeRoleProfile =
-            new Profile("full_assume_role_profile", new ProfileOptions
+        private static readonly CredentialProfile FullAssumeRoleProfile =
+            new CredentialProfile("full_assume_role_profile", new CredentialProfileOptions
             {
                 AccessKey = "aws_access_key_id",
                 SecretKey = "aws_secret_access_key",
                 RoleArn = "role_arn",
             });
 
-        private static readonly Profile FullAssumeRoleExternalProfile =
-            new Profile("full_assume_role_external_profile", new ProfileOptions
+        private static readonly CredentialProfile FullAssumeRoleExternalProfile =
+            new CredentialProfile("full_assume_role_external_profile", new CredentialProfileOptions
             {
                 AccessKey = "aws_access_key_id",
                 SecretKey = "aws_secret_access_key",
@@ -99,8 +99,8 @@ namespace AWSSDK.UnitTests
                 ExternalID = "external_id"
             });
 
-        private static readonly Profile FullAssumeRoleMfaProfile =
-            new Profile("full_assume_role_mfa_profile", new ProfileOptions
+        private static readonly CredentialProfile FullAssumeRoleMfaProfile =
+            new CredentialProfile("full_assume_role_mfa_profile", new CredentialProfileOptions
             {
                 AccessKey = "aws_access_key_id",
                 SecretKey = "aws_secret_access_key",
@@ -108,8 +108,8 @@ namespace AWSSDK.UnitTests
                 MfaSerial = "mfa_serial"
             });
 
-        private static readonly Profile FullAssumeRoleExternalMfaProfile =
-            new Profile("full_assume_role_external_mfa_profile", new ProfileOptions
+        private static readonly CredentialProfile FullAssumeRoleExternalMfaProfile =
+            new CredentialProfile("full_assume_role_external_mfa_profile", new CredentialProfileOptions
             {
                 AccessKey = "aws_access_key_id",
                 SecretKey = "aws_secret_access_key",
@@ -118,29 +118,29 @@ namespace AWSSDK.UnitTests
                 MfaSerial = "mfa_serial"
             });
 
-        private static readonly Profile AssumeRoleProfileSourceNotBasic =
-            new Profile("assume_role_profile_source_not_basic", new ProfileOptions
+        private static readonly CredentialProfile AssumeRoleProfileSourceNotBasic =
+            new CredentialProfile("assume_role_profile_source_not_basic", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "session_profile"
             });
 
-        private static readonly Profile AssumeRoleProfileRecursion =
-            new Profile("assume_role_profile_source_recursion", new ProfileOptions
+        private static readonly CredentialProfile AssumeRoleProfileRecursion =
+            new CredentialProfile("assume_role_profile_source_recursion", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "assume_role_profile_source_recursion"
             });
 
-        private static readonly Profile AssumeRoleProfileInvalidSource =
-            new Profile("assume_role_profile_invalid_source", new ProfileOptions
+        private static readonly CredentialProfile AssumeRoleProfileInvalidSource =
+            new CredentialProfile("assume_role_profile_invalid_source", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "invalid_profile"
             });
 
-        private static readonly MemoryProfileStore ProfileStore =
-            new MemoryProfileStore(new Dictionary<string, Profile>()
+        private static readonly MemoryCredentialProfileStore ProfileStore =
+            new MemoryCredentialProfileStore(new Dictionary<string, CredentialProfile>()
             {
                 { InvalidProfile.Name, InvalidProfile },
                 { BasicProfile.Name, BasicProfile },

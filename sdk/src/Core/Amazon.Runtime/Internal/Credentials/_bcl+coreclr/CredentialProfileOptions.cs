@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Amazon.Runtime.Internal.Auth.CredentialProfile
+namespace Amazon.Runtime.Internal
 {
-    abstract public class ImmutableProfileOptions
+    abstract public class ImmutableCredentialProfileOptions
     {
         public string AccessKey { get; protected set; }
         public string ExternalID { get; protected set; }
@@ -34,7 +34,7 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
             if (object.ReferenceEquals(this, obj))
                 return true;
 
-            var ipo = obj as ImmutableProfileOptions;
+            var ipo = obj as ImmutableCredentialProfileOptions;
             if (ipo == null)
                 return false;
 
@@ -49,7 +49,7 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
         }
     }
 
-    public class ProfileOptions : ImmutableProfileOptions
+    public class CredentialProfileOptions : ImmutableCredentialProfileOptions
     {
         new public string AccessKey { get { return base.AccessKey; } set { base.AccessKey = value; } }
         new public string ExternalID { get { return base.ExternalID; } set { base.ExternalID = value; } }

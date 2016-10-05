@@ -48,9 +48,10 @@
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Custom\Runtime\Credentials\AWSCredentialsFactoryTest.cs" />
+    <Compile Include="Custom\Runtime\Credentials\SharedCredentialsFileTest.cs" />
     <Compile Include="Generated\Customizations\*\*.cs" />
     <Compile Include="Generated\Marshalling\*.cs" />
-    <Compile Include="Custom\*\*\*.cs" />
     <Compile Include="Custom\*\*.cs" />
     <Compile Include="Custom\*.cs" />
     <Compile Include="Custom\*\_bcl45\*.cs" />

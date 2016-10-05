@@ -19,7 +19,7 @@ using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace Amazon.Runtime.Internal.Auth.CredentialProfile
+namespace Amazon.Runtime.Internal
 {
     /// <summary>
     /// Provides access to read and write to the shared credentials INI file.
@@ -29,7 +29,7 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
     ///
     /// This class is not threadsafe.
     /// </summary>
-    public class SharedCredentialsFile : IProfileStore
+    public class SharedCredentialsFile : ICredentialProfileStore
     {
         private const string ProfileMarker = "profile";
         private const string ConfigFileName = "config";
@@ -38,19 +38,19 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
         /// To maintain compatibility with the CLI,
         /// SharedCredentialsFile doesn't support the Full* profileTypes.
         /// </summary>
-        private HashSet<ProfileType> ProfileTypeWhitelist =
-            new HashSet<ProfileType>()
+        private HashSet<CredentialProfileType> ProfileTypeWhitelist =
+            new HashSet<CredentialProfileType>()
             {
-                ProfileType.AssumeRole,
-                ProfileType.AssumeRoleExternal,
-                ProfileType.AssumeRoleExternalMFA,
-                ProfileType.AssumeRoleMFA,
-                ProfileType.Basic,
-                ProfileType.Session
+                CredentialProfileType.AssumeRole,
+                CredentialProfileType.AssumeRoleExternal,
+                CredentialProfileType.AssumeRoleExternalMFA,
+                CredentialProfileType.AssumeRoleMFA,
+                CredentialProfileType.Basic,
+                CredentialProfileType.Session
             };
 
-        private static readonly ProfilePropertyMapping propertyMapping =
-            new ProfilePropertyMapping(
+        private static readonly CredentialProfilePropertyMapping propertyMapping =
+            new CredentialProfilePropertyMapping(
                 new Dictionary<string, string>()
                 {
                     { "AccessKey", "aws_access_key_id" },
@@ -83,13 +83,13 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
             }
         }
 
-        public bool TryGetProfile(string profileName, out Profile profile)
+        public bool TryGetProfile(string profileName, out CredentialProfile profile)
         {
             Dictionary<string, string> properties = null;
             if (TryGetSection(profileName, out properties))
             {
                 var profileOptions = propertyMapping.Convert(properties);
-                profile = new Profile(profileName, profileOptions);
+                profile = new CredentialProfile(profileName, profileOptions);
                 if (!IsSupportedProfileType(profile.ProfileType))
                 {
                     throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture,
@@ -109,7 +109,7 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
         /// Add the profile given. If the profile already exists, update it.
         /// </summary>
         /// <param name="profile">The profile to be written.</param>
-        public void AddOrUpdateProfile(Profile profile)
+        public void AddOrUpdateProfile(CredentialProfile profile)
         {
             if (profile.IsValid)
             {
@@ -181,7 +181,7 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
             }
         }
 
-        private bool IsSupportedProfileType(ProfileType? profileType)
+        private bool IsSupportedProfileType(CredentialProfileType? profileType)
         {
             return !profileType.HasValue || ProfileTypeWhitelist.Contains(profileType.Value);
         }

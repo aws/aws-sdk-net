@@ -18,9 +18,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace Amazon.Runtime.Internal.Auth.CredentialProfile
+namespace Amazon.Runtime.Internal
 {
-    public enum ProfileType
+    public enum CredentialProfileType
     {
         AssumeRole,
         AssumeRoleExternal,
@@ -34,7 +34,7 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
         Session,
     }
 
-    public static class ProfileTypeDetector
+    public static class CredentialProfileTypeDetector
     {
         private const string AccessKey = "AccessKey";
         private const string ExternalID = "ExternalID";
@@ -44,18 +44,18 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
         private const string SourceProfile = "SourceProfile";
         private const string Token = "Token";
 
-        private static Dictionary<ProfileType, HashSet<string>> TypePropertyDictionary =
-            new Dictionary<ProfileType, HashSet<string>>()
+        private static Dictionary<CredentialProfileType, HashSet<string>> TypePropertyDictionary =
+            new Dictionary<CredentialProfileType, HashSet<string>>()
             {
                 {
-                    ProfileType.AssumeRole, new HashSet<string>()
+                    CredentialProfileType.AssumeRole, new HashSet<string>()
                     {
                         RoleArn,
                         SourceProfile,
                     }
                 },
                 {
-                    ProfileType.AssumeRoleExternal, new HashSet<string>()
+                    CredentialProfileType.AssumeRoleExternal, new HashSet<string>()
                     {
                         ExternalID,
                         RoleArn,
@@ -63,7 +63,7 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
                     }
                 },
                 {
-                    ProfileType.AssumeRoleExternalMFA, new HashSet<string>()
+                    CredentialProfileType.AssumeRoleExternalMFA, new HashSet<string>()
                     {
                         ExternalID,
                         MfaSerial,
@@ -72,7 +72,7 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
                     }
                 },
                 {
-                    ProfileType.AssumeRoleMFA, new HashSet<string>()
+                    CredentialProfileType.AssumeRoleMFA, new HashSet<string>()
                     {
                         MfaSerial,
                         RoleArn,
@@ -80,14 +80,14 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
                     }
                 },
                 {
-                    ProfileType.Basic, new HashSet<string>()
+                    CredentialProfileType.Basic, new HashSet<string>()
                     {
                         AccessKey,
                         SecretKey,
                     }
                 },
                 {
-                    ProfileType.FullAssumeRole, new HashSet<string>()
+                    CredentialProfileType.FullAssumeRole, new HashSet<string>()
                     {
                         AccessKey,
                         RoleArn,
@@ -95,7 +95,7 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
                     }
                 },
                 {
-                    ProfileType.FullAssumeRoleExternal, new HashSet<string>()
+                    CredentialProfileType.FullAssumeRoleExternal, new HashSet<string>()
                     {
                         AccessKey,
                         ExternalID,
@@ -104,7 +104,7 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
                     }
                 },
                 {
-                    ProfileType.FullAssumeRoleExternalMFA, new HashSet<string>()
+                    CredentialProfileType.FullAssumeRoleExternalMFA, new HashSet<string>()
                     {
                         AccessKey,
                         ExternalID,
@@ -114,7 +114,7 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
                     }
                 },
                 {
-                    ProfileType.FullAssumeRoleMFA, new HashSet<string>()
+                    CredentialProfileType.FullAssumeRoleMFA, new HashSet<string>()
                     {
                         AccessKey,
                         MfaSerial,
@@ -123,7 +123,7 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
                     }
                 },
                 {
-                    ProfileType.Session, new HashSet<string>()
+                    CredentialProfileType.Session, new HashSet<string>()
                     {
                         AccessKey,
                         SecretKey,
@@ -132,10 +132,10 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
                 },
             };
 
-        public static void DetectProfileTypes(ProfileOptions profileOptions, out ProfileType? profileType, out HashSet<ProfileType> possibleMatches)
+        public static void DetectProfileTypes(CredentialProfileOptions profileOptions, out CredentialProfileType? profileType, out HashSet<CredentialProfileType> possibleMatches)
         {
             profileType = null;
-            possibleMatches = new HashSet<ProfileType>();
+            possibleMatches = new HashSet<CredentialProfileType>();
 
             HashSet<string> propertyNames = GetPropertyNames(profileOptions);
 
@@ -155,15 +155,15 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
             }
         }
 
-        public static HashSet<string> GetPropertiesForProfileType(ProfileType profileType)
+        public static HashSet<string> GetPropertiesForProfileType(CredentialProfileType profileType)
         {
             return new HashSet<string>(TypePropertyDictionary[profileType]);
         }
 
-        private static HashSet<string> GetPropertyNames(ProfileOptions profileOptions)
+        private static HashSet<string> GetPropertyNames(CredentialProfileOptions profileOptions)
         {
             HashSet<string> propertyNames = new HashSet<string>();
-            foreach (var property in typeof(ProfileOptions).GetProperties())
+            foreach (var property in typeof(CredentialProfileOptions).GetProperties())
             {
                 var value = (string)property.GetValue(profileOptions, null);
                 if (!string.IsNullOrEmpty(value))

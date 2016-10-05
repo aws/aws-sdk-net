@@ -17,26 +17,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Amazon.Runtime.Internal.Auth.CredentialProfile
+namespace Amazon.Runtime.Internal
 {
     /// <summary>
     /// An IProfileStore that holds Profiles in memory.
     /// </summary>
-    public class MemoryProfileStore : IProfileStore
+    public class MemoryCredentialProfileStore : ICredentialProfileStore
     {
-        public Dictionary<string, Profile> Profiles { get; private set; }
+        public Dictionary<string, CredentialProfile> Profiles { get; private set; }
 
-        public MemoryProfileStore()
-            : this(new Dictionary<string, Profile>())
+        public MemoryCredentialProfileStore()
+            : this(new Dictionary<string, CredentialProfile>())
         {
         }
 
-        public MemoryProfileStore(Dictionary<string, Profile> initialProfileMap)
+        public MemoryCredentialProfileStore(Dictionary<string, CredentialProfile> initialProfileMap)
         {
             Profiles = initialProfileMap;
         }
 
-        public void AddOrUpdateProfile(Profile profile)
+        public void AddOrUpdateProfile(CredentialProfile profile)
         {
             Profiles[profile.Name] = profile;
         }
@@ -49,14 +49,14 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
             }
         }
 
-        public Profile GetProfile(string profileName)
+        public CredentialProfile GetProfile(string profileName)
         {
-            Profile profile = null;
+            CredentialProfile profile = null;
             Profiles.TryGetValue(profileName, out profile);
             return profile;
         }
 
-        public bool TryGetProfile(string profileName, out Profile profile)
+        public bool TryGetProfile(string profileName, out CredentialProfile profile)
         {
             return Profiles.TryGetValue(profileName, out profile);
         }

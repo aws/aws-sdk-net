@@ -17,10 +17,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Amazon.Runtime.Internal.Auth.CredentialProfile
+namespace Amazon.Runtime.Internal
 {
-    public interface IProfileSource
+    public interface ICredentialProfileSource
     {
-        bool TryGetProfile(string profileName, out Profile profile);
+        bool TryGetProfile(string profileName, out CredentialProfile profile);
     }
 }

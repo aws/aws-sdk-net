@@ -12,8 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using Amazon.Runtime.Internal.Auth;
-using Amazon.Runtime.Internal.Auth.CredentialProfile;
+using Amazon.Runtime.Internal;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -33,7 +32,7 @@ namespace AWSSDK.UnitTests
             .Append("aws_session_token=session_aws_session_token")
             .ToString();
 
-        private static readonly ProfileOptions SessionProfileOptions = new ProfileOptions()
+        private static readonly CredentialProfileOptions SessionProfileOptions = new CredentialProfileOptions()
             {
                 AccessKey = "session_aws_access_key_id",
                 SecretKey = "session_aws_secret_access_key",
@@ -47,7 +46,7 @@ namespace AWSSDK.UnitTests
             .Append("aws_session_token=session_aws_session_token_UPDATED")
             .ToString();
 
-        private static readonly ProfileOptions SessionProfileOptionsUpdated = new ProfileOptions()
+        private static readonly CredentialProfileOptions SessionProfileOptionsUpdated = new CredentialProfileOptions()
             {
                 AccessKey = "session_aws_access_key_id",
                 SecretKey = "session_aws_secret_access_key",
@@ -61,7 +60,7 @@ namespace AWSSDK.UnitTests
             .Append("source_profile=basic_profile")
             .ToString();
 
-        private static readonly ProfileOptions AssumeRoleMfaProfileOptions = new ProfileOptions()
+        private static readonly CredentialProfileOptions AssumeRoleMfaProfileOptions = new CredentialProfileOptions()
             {
                 SourceProfile = "basic_profile",
                 RoleArn = "assume_role_arn",
@@ -87,7 +86,7 @@ namespace AWSSDK.UnitTests
             .Append("aws_access_key_id=basic_aws_access_key_id")
             .ToString();
 
-        private static readonly ProfileOptions BasicProfileOptions = new ProfileOptions()
+        private static readonly CredentialProfileOptions BasicProfileOptions = new CredentialProfileOptions()
         {
             AccessKey = "basic_aws_access_key_id",
             SecretKey = "basic_aws_secret_access_key"
@@ -104,7 +103,7 @@ namespace AWSSDK.UnitTests
             .Append("aws_secret_access_key=basic_aws_secret_access_key")
             .ToString();
 
-        private static readonly ProfileOptions BasicProfilePrecedenceOptions = new ProfileOptions()
+        private static readonly CredentialProfileOptions BasicProfilePrecedenceOptions = new CredentialProfileOptions()
             {
                 AccessKey = "basic_aws_access_key_id_CREDENTIALS_FILE",
                 SecretKey = "basic_aws_secret_access_key"
@@ -115,7 +114,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("invalid_key=invalid_value")
             .ToString();
 
-        private static readonly ProfileOptions InvalidProfileOptions = new ProfileOptions();
+        private static readonly CredentialProfileOptions InvalidProfileOptions = new CredentialProfileOptions();
 
         private static readonly string FullAssumeRoleProfileText = new StringBuilder()
             .AppendLine("[full_assume_role_profile]")
@@ -124,7 +123,7 @@ namespace AWSSDK.UnitTests
             .Append("role_arn=assume_role_arn")
             .ToString();
 
-        private static readonly ProfileOptions FullAssumeRoleProfileOptions = new ProfileOptions()
+        private static readonly CredentialProfileOptions FullAssumeRoleProfileOptions = new CredentialProfileOptions()
         {
             AccessKey = "basic_aws_access_key_id",
             SecretKey = "basic_aws_secret_access_key",
@@ -259,7 +258,7 @@ namespace AWSSDK.UnitTests
         {
             using (var tester = new SharedCredentialsFileTester(null, BasicProfileCredentialsText))
             {
-                Profile profile = null;
+                CredentialProfile profile = null;
                 Assert.IsFalse(tester.CredentialsFile.TryGetProfile("basic_profile", out profile));
                 Assert.IsNull(profile);
             }
@@ -350,24 +349,24 @@ namespace AWSSDK.UnitTests
             {
             }
 
-            public void ReadAndAssertProfile(string profileName, ProfileOptions expectedProfileOptions)
+            public void ReadAndAssertProfile(string profileName, CredentialProfileOptions expectedProfileOptions)
             {
-                var expectedProfile = new Profile(profileName, expectedProfileOptions);
+                var expectedProfile = new CredentialProfile(profileName, expectedProfileOptions);
                 Assert.AreEqual(expectedProfile, TestTryGetProfile(profileName, true, expectedProfile.IsValid));
             }
 
-            public Profile TestTryGetProfile(string profileName, bool expectProfile, bool expectValidProfile)
+            public CredentialProfile TestTryGetProfile(string profileName, bool expectProfile, bool expectValidProfile)
             {
-                Profile profile = null;
+                CredentialProfile profile = null;
                 Assert.IsTrue(expectProfile == CredentialsFile.TryGetProfile(profileName, out profile));
                 Assert.IsTrue(expectProfile == (profile != null));
                 Assert.IsTrue(!expectProfile || (expectValidProfile == profile.IsValid));
                 return profile;
             }
 
-            public void AssertWriteProfile(string profileName, ProfileOptions profileOptions, string expectedFileContents)
+            public void AssertWriteProfile(string profileName, CredentialProfileOptions profileOptions, string expectedFileContents)
             {
-                CredentialsFile.AddOrUpdateProfile(new Profile(profileName, profileOptions));
+                CredentialsFile.AddOrUpdateProfile(new CredentialProfile(profileName, profileOptions));
                 AssertCredentialsFileContents(expectedFileContents);
             }
 

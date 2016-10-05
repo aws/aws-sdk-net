@@ -18,19 +18,19 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace Amazon.Runtime.Internal.Auth.CredentialProfile
+namespace Amazon.Runtime.Internal
 {
     /// <summary>
     /// Class to easily convert from Dictionary&lt;string, string&gt; to ProfileOptions and back.
     /// </summary>
-    public class ProfilePropertyMapping
+    public class CredentialProfilePropertyMapping
     {
         private static readonly HashSet<string> TypePropertySet =
-            new HashSet<string>(typeof(ProfileOptions).GetProperties().Select((p) => p.Name));
+            new HashSet<string>(typeof(CredentialProfileOptions).GetProperties().Select((p) => p.Name));
 
         private Dictionary<string, string> nameMapping;
 
-        public ProfilePropertyMapping(Dictionary<string, string> nameMapping)
+        public CredentialProfilePropertyMapping(Dictionary<string, string> nameMapping)
         {
             if (!TypePropertySet.SetEquals(new HashSet<string>(nameMapping.Keys)))
             {
@@ -40,10 +40,10 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
             this.nameMapping = nameMapping;
         }
 
-        public List<KeyValuePair<string, string>> Convert(ImmutableProfileOptions profileOptions)
+        public List<KeyValuePair<string, string>> Convert(ImmutableCredentialProfileOptions profileOptions)
         {
             var list = new List<KeyValuePair<string, string>>();
-            var properties = typeof(ImmutableProfileOptions).GetProperties();
+            var properties = typeof(ImmutableCredentialProfileOptions).GetProperties();
 
             // ensure repeatable order
             Array.Sort(properties.Select((p)=>p.Name).ToArray(), properties);
@@ -59,11 +59,11 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
             return list;
         }
 
-        public ProfileOptions Convert(Dictionary<string, string> properties)
+        public CredentialProfileOptions Convert(Dictionary<string, string> properties)
         {
-            var profileOptions = new ProfileOptions();
+            var profileOptions = new CredentialProfileOptions();
 
-            foreach (var property in typeof(ProfileOptions).GetProperties())
+            foreach (var property in typeof(CredentialProfileOptions).GetProperties())
             {
                 string value = null;
                 if (properties.TryGetValue(nameMapping[property.Name], out value))

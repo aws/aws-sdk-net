@@ -12,7 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using Amazon.Runtime.Internal.Auth.CredentialProfile;
+using Amazon.Runtime.Internal;
 using Amazon.SecurityToken.Model;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -39,7 +39,7 @@ namespace AWSSDK.UnitTests
         public void LookForProfileTypeChanges()
         {
             AssertExtensions.AssertEnumUnchanged(
-                typeof(ProfileType),
+                typeof(CredentialProfileType),
                 "1BC4C17D6922B3934F38783246E026E11BA85BEF6EFBB39CDACE0221E6135D31",
                 "The SharedCredentialsFile.GetAWSCredentials method implementation may need to be updated.");
         }
@@ -47,16 +47,16 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void EnsureCredentialProfileDetectorSetup()
         {
-            var profileTypes = new HashSet<ProfileType>((ProfileType[])(Enum.GetValues(typeof(ProfileType))));
-            var profileOptionsProperties = new HashSet<string>(typeof(ProfileOptions).GetProperties().Select((p) => p.Name));
+            var profileTypes = new HashSet<CredentialProfileType>((CredentialProfileType[])(Enum.GetValues(typeof(CredentialProfileType))));
+            var profileOptionsProperties = new HashSet<string>(typeof(CredentialProfileOptions).GetProperties().Select((p) => p.Name));
 
-            var referencedProfileTypes = new HashSet<ProfileType>();
+            var referencedProfileTypes = new HashSet<CredentialProfileType>();
             var referencedProfileOptionsProperties = new HashSet<string>();
 
             // avoid making TypePropertyDictionary public just for unit testing
-            var field = typeof(ProfileTypeDetector).GetFields(BindingFlags.Static | BindingFlags.NonPublic).
+            var field = typeof(CredentialProfileTypeDetector).GetFields(BindingFlags.Static | BindingFlags.NonPublic).
                 Where((fi) => fi.Name == "TypePropertyDictionary").First();
-            var typePropertyDictionary = (Dictionary<ProfileType, HashSet<string>>)field.GetValue(null);
+            var typePropertyDictionary = (Dictionary<CredentialProfileType, HashSet<string>>)field.GetValue(null);
 
             foreach (var pair in typePropertyDictionary)
             {
@@ -80,8 +80,8 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void EnsureProfileOptionsClassesMatch()
         {
-            var mutableProperties = new HashSet<string>(typeof(ProfileOptions).GetProperties().Select((p) => p.Name));
-            var immutableProperties = new HashSet<string>(typeof(ImmutableProfileOptions).GetProperties().Select((p) => p.Name));
+            var mutableProperties = new HashSet<string>(typeof(CredentialProfileOptions).GetProperties().Select((p) => p.Name));
+            var immutableProperties = new HashSet<string>(typeof(ImmutableCredentialProfileOptions).GetProperties().Select((p) => p.Name));
             Assert.IsTrue(immutableProperties.SetEquals(mutableProperties));
         }
     }

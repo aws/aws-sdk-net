@@ -17,7 +17,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 
-namespace Amazon.Runtime.Internal.Auth.CredentialProfile
+namespace Amazon.Runtime.Internal
 {
     /// <summary>
     /// Class to construct different types of AWSCredentials based on a profile.
@@ -26,13 +26,13 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
     {
         private const string RoleSessionNamePrefix = "aws-dotnet-sdk-session-";
 
-        public IProfileSource ProfileSource { get; private set; }
+        public ICredentialProfileSource ProfileSource { get; private set; }
 
         /// <summary>
         /// Construct an AWSCredentialsFactory.
         /// </summary>
         /// <param name="profileSource">The profile source to search for credentials.</param>
-        public AWSCredentialsFactory(IProfileSource profileSource)
+        public AWSCredentialsFactory(ICredentialProfileSource profileSource)
         {
             ProfileSource = profileSource;
         }
@@ -61,14 +61,14 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
 
         private AWSCredentials GetAWSCredentials(string profileName, bool throwIfInvalid, bool isSourceProfile)
         {
-            Profile profile = null;
+            CredentialProfile profile = null;
             if (ProfileSource.TryGetProfile(profileName, out profile))
             {
                 var options = profile.Options;
                 if (profile.IsValid)
                 {
                     // The isSourceProfile parameter is important to prevent possible stack overflow in recursive call.
-                    if (isSourceProfile && profile.ProfileType != ProfileType.Basic)
+                    if (isSourceProfile && profile.ProfileType != CredentialProfileType.Basic)
                     {
                         return ThrowOrReturnNull(string.Format(CultureInfo.InvariantCulture,
                             "Source profile [{0}] is not a basic profile.", profileName), null, throwIfInvalid);
@@ -76,18 +76,18 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
 
                     switch (profile.ProfileType)
                     {
-                        case ProfileType.Basic:
+                        case CredentialProfileType.Basic:
                             return new BasicAWSCredentials(options.AccessKey, options.SecretKey);
-                        case ProfileType.Session:
+                        case CredentialProfileType.Session:
                             return new SessionAWSCredentials(options.AccessKey, options.SecretKey, options.Token);
-                        case ProfileType.AssumeRole:
-                        case ProfileType.AssumeRoleExternal:
-                        case ProfileType.AssumeRoleMFA:
-                        case ProfileType.AssumeRoleExternalMFA:
-                        case ProfileType.FullAssumeRole:
-                        case ProfileType.FullAssumeRoleExternal:
-                        case ProfileType.FullAssumeRoleExternalMFA:
-                        case ProfileType.FullAssumeRoleMFA:
+                        case CredentialProfileType.AssumeRole:
+                        case CredentialProfileType.AssumeRoleExternal:
+                        case CredentialProfileType.AssumeRoleMFA:
+                        case CredentialProfileType.AssumeRoleExternalMFA:
+                        case CredentialProfileType.FullAssumeRole:
+                        case CredentialProfileType.FullAssumeRoleExternal:
+                        case CredentialProfileType.FullAssumeRoleExternalMFA:
+                        case CredentialProfileType.FullAssumeRoleMFA:
                             BasicAWSCredentials sourceCredentials = null;
                             if (options.SourceProfile == null)
                             {

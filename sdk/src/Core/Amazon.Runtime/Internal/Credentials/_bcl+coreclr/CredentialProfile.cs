@@ -5,17 +5,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Amazon.Runtime.Internal.Auth.CredentialProfile
+namespace Amazon.Runtime.Internal
 {
-    public class Profile
+    public class CredentialProfile
     {
-        private HashSet<ProfileType> possibleMatches;
-        private ProfileType? profileType;
+        private HashSet<CredentialProfileType> possibleMatches;
+        private CredentialProfileType? profileType;
 
         public string Name { get; private set; }
-        public ImmutableProfileOptions Options { get; private set; }
+        public ImmutableCredentialProfileOptions Options { get; private set; }
 
-        public ProfileType? ProfileType
+        public CredentialProfileType? ProfileType
         {
             get
             {
@@ -23,7 +23,7 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
             }
         }
 
-        public HashSet<ProfileType> PossibleMatches
+        public HashSet<CredentialProfileType> PossibleMatches
         {
             get
             {
@@ -39,7 +39,7 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
             }
         }
 
-        public Profile(string name, ProfileOptions profileOptions)
+        public CredentialProfile(string name, CredentialProfileOptions profileOptions)
         {
             if (profileOptions == null)
             {
@@ -47,7 +47,7 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
             }
             Name = name;
             Options = profileOptions;
-            ProfileTypeDetector.DetectProfileTypes(profileOptions, out profileType, out possibleMatches);
+            CredentialProfileTypeDetector.DetectProfileTypes(profileOptions, out profileType, out possibleMatches);
         }
 
         public override string ToString()
@@ -64,7 +64,7 @@ namespace Amazon.Runtime.Internal.Auth.CredentialProfile
             if (object.ReferenceEquals(this, obj))
                 return true;
 
-            var p = obj as Profile;
+            var p = obj as CredentialProfile;
             if (p == null)
                 return false;
 
