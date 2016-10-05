@@ -132,7 +132,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
 
             if(r != Sqlite3.SQLITE_OK)
             {
-                throw Sqlite3Exception.New((Result)Enum.Parse(typeof(Result),r.ToString()), String.Format("Could not open database file: {0} ({1})", dbPath, r));
+                throw Sqlite3Exception.New((Result)Enum.Parse(typeof(Result),r.ToString()), string.Format("Could not open database file: {0} ({1})", dbPath, r));
             }
 
             Execute(createDatasetTable);
@@ -169,14 +169,19 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             DatasetMetadata metadata = null;
 
             var stmt = ExecuteQuery(query, identityId, datasetName);
-           
-            while(Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+            try
             {
-                metadata = SqliteStmtToDatasetMetadata(stmt);
+                while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+                {
+                    metadata = SqliteStmtToDatasetMetadata(stmt);
+                }
             }
-
-            Sqlite3.sqlite3_finalize(stmt);
-
+            finally
+            {
+                if (stmt != null)
+                    Sqlite3.sqlite3_finalize(stmt);
+            }
+            
             return metadata;
         }
 
@@ -184,13 +189,21 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         {
             List<DatasetMetadata> datasetMetadataList = new List<DatasetMetadata>();
 
-            var stmt = ExecuteQuery(query, parameters);
-
-            while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+            Sqlite3Statement stmt = null;
+            
+            try
             {
-                datasetMetadataList.Add(SqliteStmtToDatasetMetadata(stmt));
+                stmt = ExecuteQuery(query, parameters);
+                while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+                {
+                    datasetMetadataList.Add(SqliteStmtToDatasetMetadata(stmt));
+                }
             }
-            Sqlite3.sqlite3_finalize(stmt);
+            finally
+            {
+                if(stmt != null)
+                    Sqlite3.sqlite3_finalize(stmt);
+            }
 
             return datasetMetadataList;
         }
@@ -198,13 +211,22 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         internal Record GetRecordHelper(string query, params string[] parameters)
         {
             Record record = null;
-            var stmt = ExecuteQuery(query, parameters);
+            Sqlite3Statement stmt = null;
 
-            while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+            try
             {
-                record = SqliteStmtToRecord(stmt);
+                stmt = ExecuteQuery(query, parameters);
+
+                while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+                {
+                    record = SqliteStmtToRecord(stmt);
+                }
             }
-            Sqlite3.sqlite3_finalize(stmt);
+            finally
+            {
+                if (stmt != null)
+                    Sqlite3.sqlite3_finalize(stmt);
+            }
 
             return record;
         }
@@ -212,40 +234,62 @@ namespace Amazon.CognitoSync.SyncManager.Internal
         internal List<Record> GetRecordsHelper(string query, params string[] parameters)
         {
             List<Record> records = new List<Record>();
-            var stmt = ExecuteQuery(query, parameters);
 
-            while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+            Sqlite3Statement stmt = null;
+            try
             {
-                records.Add(SqliteStmtToRecord(stmt));
+                stmt = ExecuteQuery(query, parameters);
+
+                while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+                {
+                    records.Add(SqliteStmtToRecord(stmt));
+                }
             }
-            Sqlite3.sqlite3_finalize(stmt);
+            finally
+            {
+                if (stmt != null)
+                    Sqlite3.sqlite3_finalize(stmt);
+            }
             return records;
         }
 
         internal long GetLastSyncCountHelper(string query, params string[] parameters)
         {
             long lastSyncCount = 0;
-            var stmt = ExecuteQuery(query, parameters);
-            while(Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+            Sqlite3Statement stmt = null;
+            try
             {
-                lastSyncCount = (int)GetColumnValue(stmt, typeof(int), DatasetColumns.LAST_SYNC_COUNT);
+                stmt = ExecuteQuery(query, parameters);
+                while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+                {
+                    lastSyncCount = (int)GetColumnValue(stmt, typeof(int), DatasetColumns.LAST_SYNC_COUNT);
+                }
             }
-
-            Sqlite3.sqlite3_finalize(stmt);
+            finally
+            {
+                if (stmt != null)
+                    Sqlite3.sqlite3_finalize(stmt);
+            }
             return lastSyncCount;
         }
 
         internal List<Record> GetModifiedRecordsHelper(string query, params object[] parameters)
         {
             List<Record> records = new List<Record>();
-            var stmt = ExecuteQuery(query, parameters);
-            
-            while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+            Sqlite3Statement stmt = null;
+            try
             {
-                records.Add(SqliteStmtToRecord(stmt));
+                stmt = ExecuteQuery(query, parameters);
+                while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+                {
+                    records.Add(SqliteStmtToRecord(stmt));
+                }
             }
-
-            Sqlite3.sqlite3_finalize(stmt);
+            finally
+            {
+                if (stmt != null)
+                    Sqlite3.sqlite3_finalize(stmt);
+            }
 
             return records;
         }
@@ -281,12 +325,20 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                     RecordColumns.KEY + " = @whereKey ";
 
                 bool recordsFound = false;
-                var stmt = ExecuteQuery(checkRecordExistsQuery, identityId, datasetName, record.Key);
-                while(Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+                Sqlite3Statement stmt = null;
+                try
                 {
-                    recordsFound = Sqlite3.sqlite3_column_int(stmt, 0) > 0;
+                    stmt = ExecuteQuery(checkRecordExistsQuery, identityId, datasetName, record.Key);
+                    while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+                    {
+                        recordsFound = Sqlite3.sqlite3_column_int(stmt, 0) > 0;
+                    }
                 }
-                Sqlite3.sqlite3_finalize(stmt);
+                finally
+                {
+                    if (stmt != null)
+                        Sqlite3.sqlite3_finalize(stmt);
+                }
 
                 if (recordsFound)
                 {
@@ -325,7 +377,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             Result r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_prepare_v2(Handle, query, out statement).ToString());
             if (r != Result.OK && r!= Result.Done && r!= Result.Row)
             {
-                throw Sqlite3Exception.New(r, string.Format("Error executing stateme {0}", r));
+                throw Sqlite3Exception.New(r, string.Format("Error executing statement {0}", r));
             }
             BindData(statement, parameters);
             return statement;
@@ -333,19 +385,26 @@ namespace Amazon.CognitoSync.SyncManager.Internal
 
         private void Execute(string query, params object[] parameters)
         {
-            Sqlite3Statement statement;
-            Result r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_prepare_v2(Handle, query,out statement).ToString());
-            if (r != Result.OK && r != Result.Done && r != Result.Row)
+            Sqlite3Statement statement = null;
+            try
             {
-                throw Sqlite3Exception.New(r, string.Format("Error executing stateme {0}", r));
+                Result r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_prepare_v2(Handle, query, out statement).ToString());
+                if (r != Result.OK && r != Result.Done && r != Result.Row)
+                {
+                    throw Sqlite3Exception.New(r, string.Format("Error executing statement {0}", r));
+                }
+                BindData(statement, parameters);
+                r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_step(statement).ToString());
+                if (r != Result.OK && r != Result.Done && r != Result.Row)
+                {
+                    throw Sqlite3Exception.New(r, string.Format("Error executing statement {0}", r));
+                }
             }
-            BindData(statement, parameters);
-            r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_step(statement).ToString());
-            if (r != Result.OK && r != Result.Done && r != Result.Row)
+            finally
             {
-                throw Sqlite3Exception.New(r, string.Format("Error executing stateme {0}", r));
+                if (statement != null)
+                    Sqlite3.sqlite3_finalize(statement);
             }
-            Sqlite3.sqlite3_finalize(statement);
         }
 
         private void BindData(Sqlite3Statement statement, params object[] parameters)
@@ -370,7 +429,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                     }
                     else if (type == typeof(string))
                     {
-                        Sqlite3.sqlite3_bind_text(statement, i, (String)o);
+                        Sqlite3.sqlite3_bind_text(statement, i, (string)o);
                     }
                     else if ((typeof(Int32) == type)
                             || (typeof(Boolean) == type)
@@ -382,7 +441,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                             || (typeof(long) == type)
                             || (typeof(UInt32) == type))
                     {
-                        Sqlite3.sqlite3_bind_int64(statement, i,(int) Convert.ChangeType(o, typeof(int)));
+                        Sqlite3.sqlite3_bind_int64(statement, i,(int) Convert.ChangeType(o, typeof(Int64)));
                     }
                     else if ((typeof(double) == type)
                             || (typeof(float) == type)
@@ -398,14 +457,14 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
         }
         
-        private object GetColumnValue(Sqlite3Statement stmt, Type t, String columnName)
+        private object GetColumnValue(Sqlite3Statement stmt, Type t, string columnName)
         {
             int columnCount = Sqlite3.sqlite3_column_count(stmt);
             int columnIndex = -1;
             int columnType = -1;
             for(int i = 0;i <columnCount; i++)
             {
-                String colName = Sqlite3.sqlite3_column_name(stmt, i);
+                string colName = Sqlite3.sqlite3_column_name(stmt, i);
                 if (colName.Equals(columnName, StringComparison.OrdinalIgnoreCase))
                 {
                     columnIndex = i;
@@ -488,16 +547,16 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
             else
             {
-                throw new NotSupportedException("Invalid type conversion" + t);
+                throw new NotSupportedException("Invalid type conversion " + t.FullName);
             }
         }
         
         private DatasetMetadata SqliteStmtToDatasetMetadata(Sqlite3Statement stmt)
         {
-            String datasetName = (String)GetColumnValue(stmt, typeof(string), RecordColumns.DATASET_NAME);
+            string datasetName = (string)GetColumnValue(stmt, typeof(string), RecordColumns.DATASET_NAME);
             DateTime creationTime = (DateTime)GetColumnValue(stmt, typeof(DateTime), DatasetColumns.CREATION_TIMESTAMP);
             DateTime lastModified = (DateTime)GetColumnValue(stmt, typeof(DateTime), DatasetColumns.LAST_MODIFIED_TIMESTAMP);
-            String lastModifiedBy = (String)GetColumnValue(stmt, typeof(string), DatasetColumns.LAST_MODIFIED_BY);
+            string lastModifiedBy = (string)GetColumnValue(stmt, typeof(string), DatasetColumns.LAST_MODIFIED_BY);
             int storageSize = (int)GetColumnValue(stmt, typeof(int), DatasetColumns.STORAGE_SIZE_BYTES);
             int recordCount = (int)GetColumnValue(stmt, typeof(int), DatasetColumns.RECORD_COUNT);
 
@@ -506,8 +565,8 @@ namespace Amazon.CognitoSync.SyncManager.Internal
 
         private Record SqliteStmtToRecord(Sqlite3Statement stmt)
         {
-            string key = (String)GetColumnValue(stmt, typeof(string), RecordColumns.KEY);
-            string value = (String)GetColumnValue(stmt, typeof(string), RecordColumns.VALUE);
+            string key = (string)GetColumnValue(stmt, typeof(string), RecordColumns.KEY);
+            string value = (string)GetColumnValue(stmt, typeof(string), RecordColumns.VALUE);
             int syncCount = (int)GetColumnValue(stmt, typeof(int), RecordColumns.SYNC_COUNT);
             DateTime lastModified = (DateTime)GetColumnValue(stmt, typeof(DateTime), RecordColumns.LAST_MODIFIED_TIMESTAMP);
             string lastModifiedBy = (string)GetColumnValue(stmt, typeof(string), RecordColumns.LAST_MODIFIED_BY);

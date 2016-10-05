@@ -72,7 +72,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
             if (r != Sqlite3.SQLITE_OK)
             {
-                throw Sqlite3Exception.New((Result)Enum.Parse(typeof(Result), r.ToString()), String.Format("Could not open database file: {0} ({1})", this.DBfileFullPath, r));
+                throw Sqlite3Exception.New((Result)Enum.Parse(typeof(Result), r.ToString()), string.Format("Could not open database file: {0} ({1})", this.DBfileFullPath, r));
             }
 
             lock (_lock)
@@ -142,16 +142,25 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             string sqlCommand = string.Format(CultureInfo.InvariantCulture, "SELECT * FROM {0} WHERE {1}  = ? ORDER BY {2},   ROWID LIMIT {3} ", TABLE_NAME, MA_APP_ID_COLUMN_NAME, EVENT_DELIVERY_ATTEMPT_COUNT_COLUMN_NAME, maxAllowed);
             lock (_lock)
             {
-                var stmt = ExecuteQuery(sqlCommand, appID);
-                while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+                Sqlite3Statement stmt = null;
+                try
                 {
-                    JsonData data = new JsonData();
-                    data["id"] = (string)GetColumnValue(stmt, typeof(string), EVENT_ID_COLUMN_NAME);
-                    data["event"] = (string)GetColumnValue(stmt, typeof(string), EVENT_COLUMN_NAME);
-                    data["appID"] = (string)GetColumnValue(stmt, typeof(string), MA_APP_ID_COLUMN_NAME);
-                    eventList.Add(data);
+                    stmt = ExecuteQuery(sqlCommand, appID);
+                    while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+                    {
+                        JsonData data = new JsonData();
+                        data["id"] = (string)GetColumnValue(stmt, typeof(string), EVENT_ID_COLUMN_NAME);
+                        data["event"] = (string)GetColumnValue(stmt, typeof(string), EVENT_COLUMN_NAME);
+                        data["appID"] = (string)GetColumnValue(stmt, typeof(string), MA_APP_ID_COLUMN_NAME);
+                        eventList.Add(data);
+                    }
                 }
-                Sqlite3.sqlite3_finalize(stmt); 
+                finally
+                {
+                    if (stmt != null)
+                        Sqlite3.sqlite3_finalize(stmt);
+                }
+                
             }
             return eventList;
         }
@@ -167,15 +176,22 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             long count = 0;
 
             string sqlCommand = string.Format(CultureInfo.InvariantCulture, "SELECT COUNT(*) C FROM {0} where {1} = ?", TABLE_NAME, MA_APP_ID_COLUMN_NAME);
-            var stmt = ExecuteQuery(sqlCommand, appID);
 
-            while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+            Sqlite3Statement stmt = null;
+            try
             {
-                count = Sqlite3.sqlite3_column_int(stmt, 0);
-            }
+                stmt = ExecuteQuery(sqlCommand, appID);
 
-            Sqlite3.sqlite3_finalize(stmt);
-             
+                while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+                {
+                    count = Sqlite3.sqlite3_column_int(stmt, 0);
+                }
+            }
+            finally
+            {
+                if(stmt != null)
+                    Sqlite3.sqlite3_finalize(stmt);
+            }
             return count;
         }
 
@@ -193,19 +209,28 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
                 lock (_lock)
                 {
-                    var stmt = ExecuteQuery(pageCountCommand);
-                    while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+                    Sqlite3Statement stmt = null;
+                    try
                     {
-                        pageCount = Sqlite3.sqlite3_column_int(stmt, 0);
-                    }
-                    Sqlite3.sqlite3_finalize(stmt);
+                        stmt = ExecuteQuery(pageCountCommand);
+                        while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+                        {
+                            pageCount = Sqlite3.sqlite3_column_int(stmt, 0);
+                        }
+                        Sqlite3.sqlite3_finalize(stmt);
 
-                    stmt = ExecuteQuery(pageSizeCommand);
-                    while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
-                    {
-                        pageSize = Sqlite3.sqlite3_column_int(stmt, 0);
+                        stmt = ExecuteQuery(pageSizeCommand);
+                        while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
+                        {
+                            pageSize = Sqlite3.sqlite3_column_int(stmt, 0);
+                        }
                     }
-                    Sqlite3.sqlite3_finalize(stmt);
+                    finally
+                    {
+                        if (stmt != null)
+                            Sqlite3.sqlite3_finalize(stmt);
+                    }
+                   
                 }
                 return pageCount * pageSize;
             }
@@ -220,7 +245,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
         Result r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_prepare_v2(Handle, query, out statement).ToString());
         if (r != Result.OK && r != Result.Done && r != Result.Row)
         {
-            throw Sqlite3Exception.New(r, string.Format("Error executing stateme {0}", r));
+            throw Sqlite3Exception.New(r, string.Format("Error executing statement {0}", r));
         }
         BindData(statement, parameters);
         return statement;
@@ -229,19 +254,28 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
 
     private void Execute(string query, params object[] parameters)
         {
-            Sqlite3Statement statement;
-            Result r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_prepare_v2(Handle, query, out statement).ToString());
-            if (r != Result.OK && r != Result.Done && r != Result.Row)
+            Sqlite3Statement statement = null;
+            try
             {
-                throw Sqlite3Exception.New(r, string.Format("Error executing stateme {0}", r));
+
+
+                Result r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_prepare_v2(Handle, query, out statement).ToString());
+                if (r != Result.OK && r != Result.Done && r != Result.Row)
+                {
+                    throw Sqlite3Exception.New(r, string.Format("Error executing statement {0}", r));
+                }
+                BindData(statement, parameters);
+                r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_step(statement).ToString());
+                if (r != Result.OK && r != Result.Done && r != Result.Row)
+                {
+                    throw Sqlite3Exception.New(r, string.Format("Error executing statement {0}", r));
+                }
             }
-            BindData(statement, parameters);
-            r = (Result)Enum.Parse(typeof(Result), Sqlite3.sqlite3_step(statement).ToString());
-            if (r != Result.OK && r != Result.Done && r != Result.Row)
+            finally
             {
-                throw Sqlite3Exception.New(r, string.Format("Error executing stateme {0}", r));
+                if (statement != null)
+                    Sqlite3.sqlite3_finalize(statement);
             }
-            Sqlite3.sqlite3_finalize(statement);
         }
 
 
@@ -267,7 +301,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                     }
                     else if (type == typeof(string))
                     {
-                        Sqlite3.sqlite3_bind_text(statement, i, (String)o);
+                        Sqlite3.sqlite3_bind_text(statement, i, (string)o);
                     }
                     else if ((typeof(Int32) == type)
                             || (typeof(Boolean) == type)
@@ -279,7 +313,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                             || (typeof(long) == type)
                             || (typeof(UInt32) == type))
                     {
-                        Sqlite3.sqlite3_bind_int64(statement, i, (int)Convert.ChangeType(o, typeof(int)));
+                        Sqlite3.sqlite3_bind_int64(statement, i, (int)Convert.ChangeType(o, typeof(Int64)));
                     }
                     else if ((typeof(double) == type)
                             || (typeof(float) == type)
@@ -295,14 +329,14 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             }
         }
 
-        private object GetColumnValue(Sqlite3Statement stmt, Type t, String columnName)
+        private object GetColumnValue(Sqlite3Statement stmt, Type t, string columnName)
         {
             int columnCount = Sqlite3.sqlite3_column_count(stmt);
             int columnIndex = -1;
             int columnType = -1;
             for (int i = 0; i < columnCount; i++)
             {
-                String colName = Sqlite3.sqlite3_column_name(stmt, i);
+                string colName = Sqlite3.sqlite3_column_name(stmt, i);
                 if (colName.Equals(columnName, StringComparison.OrdinalIgnoreCase))
                 {
                     columnIndex = i;
@@ -387,7 +421,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             }
             else
             {
-                throw new NotSupportedException("Invalid type conversion" + t);
+                throw new NotSupportedException("Invalid type conversion " + t.FullName);
             }
         }
 
