@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
+
 namespace Amazon.Runtime
 {
     /// <summary>
@@ -62,5 +65,23 @@ namespace Amazon.Runtime
 
         #endregion
 
+        public override bool Equals(object obj)
+        {
+            if (object.ReferenceEquals(this, obj))
+                return true;
+
+            var bac = obj as BasicAWSCredentials;
+            if (bac == null)
+                return false;
+
+            return AWSSDKUtils.AreEqual(
+                new object[] { _credentials },
+                new object[] { bac._credentials });
+        }
+
+        public override int GetHashCode()
+        {
+            return Hashing.Hash(_credentials);
+        }
     }
 }

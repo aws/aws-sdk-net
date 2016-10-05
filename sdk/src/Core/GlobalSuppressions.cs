@@ -169,6 +169,7 @@ using System.Diagnostics.CodeAnalysis;
 // Types names matching namespaces
 [module: SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Scope = "type", Target = "Amazon.Auth.AccessControlPolicy.Policy")]
 [module: SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Scope = "type", Target = "Amazon.Auth.AccessControlPolicy.Principal")]
+[module: SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Scope = "type", Target = "Amazon.Runtime.Internal.Auth.CredentialProfile.Profile")]
 
 // Uri should not be string
 [module: SuppressMessage("Microsoft.Design", "CA1054:UriParametersShouldNotBeStrings", Scope = "member", Target = "Amazon.Util.AWSSDKUtils.#DetermineRegion(System.String)", MessageId = "0#")]
@@ -299,6 +300,8 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", Scope = "member", Target = "Amazon.Runtime.Internal.DefaultRetryPolicy.#IsInnerException`1(System.Exception,!!0&)", MessageId = "1#")]
 [module: SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", Scope = "member", Target = "Amazon.Runtime.Internal.Util.ICache`2.#GetValue(!0,System.Func`2<!0,!1>,System.Boolean&)", MessageId = "2#")]
 [module: SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", Scope = "member", Target = "Amazon.Runtime.Internal.Util.IniFile.#TryGetSection(System.Text.RegularExpressions.Regex,System.String&,System.Collections.Generic.Dictionary`2<System.String,System.String>&)", MessageId = "1#")]
+[module: SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.CredentialProfile.ProfileTypeDetector.#DetectProfileTypes(Amazon.Runtime.Internal.Auth.CredentialProfile.ProfileOptions,System.Nullable`1<Amazon.Runtime.Internal.Auth.CredentialProfile.ProfileType>&,System.Collections.Generic.HashSet`1<Amazon.Runtime.Internal.Auth.CredentialProfile.ProfileType>&)", MessageId = "1#")]
+[module: SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.CredentialProfile.ProfileTypeDetector.#DetectProfileTypes(Amazon.Runtime.Internal.Auth.CredentialProfile.ProfileOptions,System.Nullable`1<Amazon.Runtime.Internal.Auth.CredentialProfile.ProfileType>&,System.Collections.Generic.HashSet`1<Amazon.Runtime.Internal.Auth.CredentialProfile.ProfileType>&)", MessageId = "2#")]
 
 // Suppression for methods on IHttpRequest
 [module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.IHttpRequest`1.#GetRequestContent()")]
@@ -338,6 +341,7 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.AWS4Signer.#SortHeaders(System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.String,System.String>>)")]
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.AWS4Signer.#CanonicalizeHeaderNames(System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.String,System.String>>)")]
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.AWS4Signer.#CanonicalizeHeaders(System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.String,System.String>>)")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.CredentialProfile.ProfilePropertyMapping.#Convert(Amazon.Runtime.Internal.Auth.CredentialProfile.ImmutableProfileOptions)")]
 
 // ignore as we are not converting back string to upper case.
 [module: SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase", Scope = "member", Target = "Amazon.Runtime.Internal.Auth.AWS4Signer.#CanonicalizeHeaders(System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.String,System.String>>)")]

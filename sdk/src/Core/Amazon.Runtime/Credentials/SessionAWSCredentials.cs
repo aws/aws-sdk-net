@@ -12,6 +12,8 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 using System;
 
 namespace Amazon.Runtime
@@ -61,6 +63,23 @@ namespace Amazon.Runtime
 
         #endregion
 
-    }
+        public override bool Equals(object obj)
+        {
+            if (object.ReferenceEquals(this, obj))
+                return true;
 
+            var sac = obj as SessionAWSCredentials;
+            if (sac == null)
+                return false;
+
+            return AWSSDKUtils.AreEqual(
+                new object[] { _lastCredentials },
+                new object[] { sac._lastCredentials });
+        }
+
+        public override int GetHashCode()
+        {
+            return Hashing.Hash(_lastCredentials);
+        }
+    }
 }

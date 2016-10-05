@@ -103,6 +103,9 @@
     <Compile Include="Amazon.Runtime\Internal\Auth\_bcl+coreclr\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Amazon.Runtime\Internal\Auth\_bcl+coreclr\CredentialProfile\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Amazon.Runtime\Internal\Settings\*.cs">
       <SubType>Code</SubType>
     </Compile>

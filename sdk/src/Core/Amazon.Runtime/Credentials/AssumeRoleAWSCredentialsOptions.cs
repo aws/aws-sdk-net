@@ -38,11 +38,13 @@ namespace Amazon.Runtime
         /// </summary>
         public int? DurationSeconds { get; set; }
 
-#if !PCL
         /// <summary>
         /// The proxy settings to use when calling AssumeRole.
         /// </summary>
+#if BCL || UNITY
         public WebProxy ProxySettings { get; set; }
+#elif CORECLR
+        public IWebProxy ProxySettings { get; set; }
 #endif
 
         /// <summary>

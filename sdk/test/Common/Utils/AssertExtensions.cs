@@ -76,7 +76,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 
                 if (exceptionType != null)
                 {
-                    Assert.AreEqual(exceptionType, e.GetType());
+                    Assert.AreEqual(exceptionType, e.GetType(), e.ToString());
                 }
 
                 if (validateMessage != null)
@@ -104,16 +104,32 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         /// <param name="notes"></param>
         public static void AssertPropertiesUnchanged(Type type, string expectedHash, string notes)
         {
-            SHA256CryptoServiceProvider provider = new SHA256CryptoServiceProvider();
+            AssertStringListUnchanged(type.GetProperties().Select((p) => p.Name).ToList(), expectedHash,
+                "The " + type.Name + " class has added, removed, or changed properties.", notes);
+        }
 
-            var properties = type.GetProperties().Select((p) => p.Name).ToList();
+        /// <summary>
+        /// Checks if enumeration values have been added, removed, or changed on an enum since the previous run.
+        /// The check works by comparing a hard-coded hash to the current hash of the enum's values' names.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="expectedHash"></param>
+        /// <param name="notes"></param>
+        public static void AssertEnumUnchanged(Type type, string expectedHash, string notes)
+        {
+            AssertStringListUnchanged(Enum.GetNames(type).ToList(), expectedHash,
+                "The enumeration " + type.Name + " has added, removed, or changed values.", notes);
+        }
+
+        private static void AssertStringListUnchanged(List<string> list, string expectedHash, string whatChanged, string notes)
+        {
+            SHA256CryptoServiceProvider provider = new SHA256CryptoServiceProvider();
             // make sure string to hash is repeatable
-            properties.Sort();
-            var stringToHash = string.Join("::", properties.ToArray());
+            list.Sort();
+            var stringToHash = string.Join("::", list.ToArray());
             var actualHash = BitConverter.ToString(provider.ComputeHash(Encoding.Default.GetBytes(stringToHash))).Replace("-", "");
 
-            Assert.AreEqual(expectedHash, actualHash,
-                "The " + type.Name + " class has added, removed, or changed properties.  Please read the following notes and " +
+            Assert.AreEqual(expectedHash, actualHash, whatChanged + "  Please read the following notes and " +
                 "make any necessary changes.  Once the changes have been made use the value " + actualHash + " as the new expectedHash.\n" +
                 "NOTES:\n" + notes);
         }

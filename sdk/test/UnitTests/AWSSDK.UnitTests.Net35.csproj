@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Generated\Customizations\*\*.cs" />
     <Compile Include="Generated\Marshalling\*.cs" />
+    <Compile Include="Custom\*\*\*.cs" />
     <Compile Include="Custom\*\*.cs" />
     <Compile Include="Custom\*.cs" />
   </ItemGroup>

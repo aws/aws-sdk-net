@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Auth.CredentialProfile;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
@@ -121,8 +122,8 @@ namespace Amazon.Runtime
                 var credentialsFilePath = StoredProfileCredentials.ResolveSharedCredentialFileLocation(profilesLocation);
                 if (!string.IsNullOrEmpty(credentialsFilePath))
                 {
-                    var file = new SharedCredentialsFile(credentialsFilePath);
-                    if (file.TryGetAWSCredentials(lookupName, out _wrappedCredentials))
+                    var factory = new AWSCredentialsFactory(new SharedCredentialsFile(credentialsFilePath));
+                    if (factory.TryGetAWSCredentials(lookupName, out _wrappedCredentials))
                     {
                         var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
                         logger.InfoFormat("Credentials found using account name {0} and looking in {1}.", lookupName, credentialsFilePath);
@@ -213,7 +214,8 @@ namespace Amazon.Runtime
                 try
                 {
                     var file = new SharedCredentialsFile(credentialsFilePath);
-                    if (file.GetAWSCredentials(profileName) != null)
+                    Profile profile = null;
+                    if (file.TryGetProfile(profileName, out profile) && profile.IsValid)
                     {
                         return true;
                     }
