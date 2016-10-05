@@ -262,7 +262,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                 stmt = ExecuteQuery(query, parameters);
                 while (Sqlite3.sqlite3_step(stmt) == Sqlite3.SQLITE_ROW)
                 {
-                    lastSyncCount = (int)GetColumnValue(stmt, typeof(int), DatasetColumns.LAST_SYNC_COUNT);
+                    lastSyncCount = (Int64)GetColumnValue(stmt, typeof(Int64), DatasetColumns.LAST_SYNC_COUNT);
                 }
             }
             finally
@@ -441,7 +441,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                             || (typeof(long) == type)
                             || (typeof(UInt32) == type))
                     {
-                        Sqlite3.sqlite3_bind_int64(statement, i,(int) Convert.ChangeType(o, typeof(Int64)));
+                        Sqlite3.sqlite3_bind_int64(statement, i,(Int64) Convert.ChangeType(o, typeof(Int64)));
                     }
                     else if ((typeof(double) == type)
                             || (typeof(float) == type)
@@ -484,8 +484,9 @@ namespace Amazon.CognitoSync.SyncManager.Internal
                     || (typeof(sbyte) == t))
             {
                 return Convert.ChangeType(Sqlite3.sqlite3_column_int(stmt, columnIndex), t);
-            }else if((typeof(double) == t)
-                    || (typeof(float) == t))
+            }
+            else if ((typeof(double) == t)
+                   || (typeof(float) == t))
             {
                 return Convert.ChangeType(Sqlite3.sqlite3_column_double(stmt, columnIndex), t);
             }

@@ -313,7 +313,7 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
                             || (typeof(long) == type)
                             || (typeof(UInt32) == type))
                     {
-                        Sqlite3.sqlite3_bind_int64(statement, i, (int)Convert.ChangeType(o, typeof(Int64)));
+                        Sqlite3.sqlite3_bind_int64(statement, i, (Int64)Convert.ChangeType(o, typeof(Int64)));
                     }
                     else if ((typeof(double) == type)
                             || (typeof(float) == type)
