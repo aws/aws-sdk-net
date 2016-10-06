@@ -183,51 +183,87 @@ namespace Amazon
     /// </summary>
     internal class ProxySection : WritableConfigurationElement
     {
-        private const string hostSection = "host";
-        private const string portSection = "port";
-        private const string usernameSection = "username";
-        private const string passwordSection = "password";
+        private const string hostSectionKey = "host";
+        private const string portSectionKey = "port";
+        private const string usernameSectionKey = "username";
+        private const string passwordSectionKey = "password";
+        private const string bypasslistSectionKey = "bypassList";
+        private const string bypassOnLocalSectionKey = "bypassOnLocal";
+        private const char bypasslistSectionSeparator = ';';
 
         /// <summary>
         /// Gets and sets the host name or IP address of the proxy server.
         /// </summary>
-        [ConfigurationProperty(hostSection)]
+        [ConfigurationProperty(hostSectionKey)]
         public string Host
         {
-            get { return (string)this[hostSection]; }
-            set { this[hostSection] = value; }
+            get { return (string)this[hostSectionKey]; }
+            set { this[hostSectionKey] = value; }
         }
 
         /// <summary>
         /// Gets and sets the port number of the proxy.
         /// </summary>
-        [ConfigurationProperty(portSection)]
+        [ConfigurationProperty(portSectionKey)]
         public int? Port
         {
-            get { return (int?)this[portSection]; }
-            set { this[portSection] = value; }
+            get { return (int?)this[portSectionKey]; }
+            set { this[portSectionKey] = value; }
         }
 
         /// <summary>
         /// Gets and sets the username to authenticate with the proxy server.
         /// </summary>
-        [ConfigurationProperty(usernameSection)]
+        [ConfigurationProperty(usernameSectionKey)]
         public string Username
         {
-            get { return (string)this[usernameSection]; }
-            set { this[usernameSection] = value; }
+            get { return (string)this[usernameSectionKey]; }
+            set { this[usernameSectionKey] = value; }
         }
 
         /// <summary>
         /// Gets and sets the password to authenticate with the proxy server.
         /// </summary>
-        [ConfigurationProperty(passwordSection)]
+        [ConfigurationProperty(passwordSectionKey)]
         public string Password
         {
-            get { return (string)this[passwordSection]; }
-            set { this[passwordSection] = value; }
+            get { return (string)this[passwordSectionKey]; }
+            set { this[passwordSectionKey] = value; }
         }
 
+        /// <summary>
+        /// Gets and set the proxy bypass list. A set of semi-colon
+        /// delimited regular expressions denoting the addresses that
+        /// should bypass the proxy.
+        /// </summary>
+        [ConfigurationProperty(bypasslistSectionKey)]
+        public string[] BypassList
+        {
+            get 
+            {
+                var bypassList = (string)this[bypasslistSectionKey];
+                if (string.IsNullOrEmpty(bypassList))
+                    return new string[0];
+
+                return bypassList.Split(new char[] { bypasslistSectionSeparator },
+                                        StringSplitOptions.RemoveEmptyEntries);
+            }
+            set 
+            {
+                this[bypasslistSectionKey] = value == null ? null 
+                                                        : string.Join(bypasslistSectionSeparator.ToString(), value);
+            }
+        }
+
+        /// <summary>
+        /// Gets and sets the proxy option to bypass local addresses.
+        /// </summary>
+        [ConfigurationProperty(bypassOnLocalSectionKey)]
+        public bool? BypassOnLocal
+        {
+            get { return (bool?)this[bypassOnLocalSectionKey]; }
+            set { this[bypassOnLocalSectionKey] = value; }
+        }
     }
 
     /// <summary>
