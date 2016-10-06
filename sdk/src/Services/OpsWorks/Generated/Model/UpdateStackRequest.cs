@@ -179,7 +179,7 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// A string that contains user-defined, custom JSON. It can be used to override the corresponding
         /// default stack configuration JSON values or to pass data to recipes. The string should
-        /// be in the following format and escape characters such as '"':
+        /// be in the following format:
         /// </para>
         ///  
         /// <para>
