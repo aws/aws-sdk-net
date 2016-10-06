@@ -18,6 +18,7 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
 using System.Globalization;
+using System.Net;
 using System.Reflection;
 using System.Text;
 
@@ -60,7 +61,7 @@ namespace Amazon.Runtime.Internal
             try
             {
                 SetMetrics(executionContext.RequestContext);
-                IRequest wrappedRequest = executionContext.RequestContext.Request; 
+                IRequest wrappedRequest = executionContext.RequestContext.Request;
                 httpRequest = CreateWebRequest(executionContext.RequestContext);
                 httpRequest.SetRequestHeaders(wrappedRequest.Headers);
 
@@ -103,7 +104,15 @@ namespace Amazon.Runtime.Internal
                 {
                     response = httpRequest.GetResponse();
                 }
-                catch { }
+                catch (WebException webException)
+                {
+                    if (webException.Response != null) webException.Response.Close();
+                }
+                catch (HttpErrorResponseException httpErrorResponse)
+                {
+                    if (httpErrorResponse.Response != null && httpErrorResponse.Response.ResponseBody != null)
+                        httpErrorResponse.Response.ResponseBody.Dispose();
+                }
                 finally
                 {
                     if (response != null && response.ResponseBody != null)
@@ -112,8 +121,8 @@ namespace Amazon.Runtime.Internal
             }
             catch { }
         }
-		
-#if AWS_ASYNC_API 
+
+#if AWS_ASYNC_API
 
         /// <summary>
         /// Issues an HTTP request for the current request context.
@@ -210,8 +219,8 @@ namespace Amazon.Runtime.Internal
                 {
                     // First call, initialize an async result.
                     executionContext.ResponseContext.AsyncResult =
-                        new RuntimeAsyncResult(executionContext.RequestContext.Callback, 
-                            executionContext.RequestContext.State);                    
+                        new RuntimeAsyncResult(executionContext.RequestContext.Callback,
+                            executionContext.RequestContext.State);
                 }
 
                 // Set request headers
@@ -225,7 +234,7 @@ namespace Amazon.Runtime.Internal
                 }
                 else
                 {
-                    
+
                     // Get response if there is no response body to send.
                     httpRequest.BeginGetResponse(new AsyncCallback(GetResponseCallback), executionContext);
                 }
@@ -242,7 +251,7 @@ namespace Amazon.Runtime.Internal
                 }
 
                 if (httpRequest != null)
-                {                    
+                {
                     httpRequest.Dispose();
                 }
 
@@ -266,8 +275,8 @@ namespace Amazon.Runtime.Internal
                 //var requestStream = httpRequest.EndSetRequestBody(result);                
                 httpRequest.BeginGetResponse(new AsyncCallback(GetResponseCallback), executionContext);
             }
-            catch(Exception exception)
-            {   
+            catch (Exception exception)
+            {
                 httpRequest.Dispose();
 
                 // Capture the exception and invoke outer handlers to 
@@ -290,7 +299,7 @@ namespace Amazon.Runtime.Internal
                 executionContext.ResponseContext.HttpResponse = httpResponse;
             }
             catch (Exception exception)
-            {   
+            {
                 // Capture the exception and invoke outer handlers to 
                 // process the exception.
                 executionContext.ResponseContext.AsyncResult.Exception = exception;
@@ -301,7 +310,7 @@ namespace Amazon.Runtime.Internal
                 httpRequest.Dispose();
                 base.InvokeAsyncCallback(executionContext);
             }
-        }       
+        }
 
 #endif
 
@@ -350,7 +359,7 @@ namespace Amazon.Runtime.Internal
                                                      wrappedRequest.AWS4SignerResult)
                     : originalStream;
 
-                httpRequest.WriteToRequestBody(requestContent, inputStream, 
+                httpRequest.WriteToRequestBody(requestContent, inputStream,
                     requestContext.Request.Headers, requestContext);
 
             }
