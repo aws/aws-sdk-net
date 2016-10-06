@@ -32,6 +32,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class UserPoolType
     {
+        private AdminCreateUserConfigType _adminCreateUserConfig;
         private List<string> _aliasAttributes = new List<string>();
         private List<string> _autoVerifiedAttributes = new List<string>();
         private DateTime? _creationDate;
@@ -53,6 +54,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _smsConfigurationFailure;
         private string _smsVerificationMessage;
         private StatusType _status;
+
+        /// <summary>
+        /// Gets and sets the property AdminCreateUserConfig. 
+        /// <para>
+        /// The configuration for AdminCreateUser requests.
+        /// </para>
+        /// </summary>
+        public AdminCreateUserConfigType AdminCreateUserConfig
+        {
+            get { return this._adminCreateUserConfig; }
+            set { this._adminCreateUserConfig = value; }
+        }
+
+        // Check to see if AdminCreateUserConfig property is set
+        internal bool IsSetAdminCreateUserConfig()
+        {
+            return this._adminCreateUserConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AliasAttributes. 
@@ -275,11 +294,21 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// Can be one of the following values:
         /// </para>
-        ///  <ul> <li><code>OFF</code> - MFA tokens are not required and cannot be specified during
-        /// user registration.</li> <li><code>ON</code> - MFA tokens are required for all user
-        /// registrations. You can only specify required when you are initially creating a user
-        /// pool.</li> <li><code>OPTIONAL</code> - Users have the option when registering to create
-        /// an MFA token.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>OFF</code> - MFA tokens are not required and cannot be specified during user
+        /// registration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ON</code> - MFA tokens are required for all user registrations. You can only
+        /// specify required when you are initially creating a user pool.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public UserPoolMfaType MfaConfiguration
         {

@@ -251,15 +251,41 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The status of the user import job. One of the following:
         /// </para>
-        ///  <ul> <li>Created - The job was created but not started.</li> <li>Pending - A transition
-        /// state. You have started the job, but it has not begun importing users yet.</li> <li>InProgress
-        /// - The job has started, and users are being imported.</li> <li>Stopping - You have
-        /// stopped the job, but the job has not stopped importing users yet.</li> <li>Stopped
-        /// - You have stopped the job, and the job has stopped importing users.</li> <li>Succeeded
-        /// - The job has completed successfully.</li> <li>Failed - The job has stopped due to
-        /// an error.</li> <li>Expired - You created a job, but did not start the job within 24-48
-        /// hours. All data associated with the job was deleted, and the job cannot be started.</li>
-        /// </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Created - The job was created but not started.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Pending - A transition state. You have started the job, but it has not begun importing
+        /// users yet.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// InProgress - The job has started, and users are being imported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Stopping - You have stopped the job, but the job has not stopped importing users yet.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Stopped - You have stopped the job, and the job has stopped importing users.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Succeeded - The job has completed successfully.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Failed - The job has stopped due to an error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Expired - You created a job, but did not start the job within 24-48 hours. All data
+        /// associated with the job was deleted, and the job cannot be started.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public UserImportJobStatusType Status
         {

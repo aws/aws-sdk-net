@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UserType Object
+    /// Response Unmarshaller for MessageTemplateType Object
     /// </summary>  
-    public class UserTypeUnmarshaller : IUnmarshaller<UserType, XmlUnmarshallerContext>, IUnmarshaller<UserType, JsonUnmarshallerContext>
+    public class MessageTemplateTypeUnmarshaller : IUnmarshaller<MessageTemplateType, XmlUnmarshallerContext>, IUnmarshaller<MessageTemplateType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        UserType IUnmarshaller<UserType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MessageTemplateType IUnmarshaller<MessageTemplateType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,33 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public UserType Unmarshall(JsonUnmarshallerContext context)
+        public MessageTemplateType Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            UserType unmarshalledObject = new UserType();
+            MessageTemplateType unmarshalledObject = new MessageTemplateType();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Attributes", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AttributeType, AttributeTypeUnmarshaller>(AttributeTypeUnmarshaller.Instance);
-                    unmarshalledObject.Attributes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Enabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MFAOptions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MFAOptionType, MFAOptionTypeUnmarshaller>(MFAOptionTypeUnmarshaller.Instance);
-                    unmarshalledObject.MFAOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UserCreateDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.UserCreateDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UserLastModifiedDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.UserLastModifiedDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Username", targetDepth))
+                if (context.TestExpression("EmailMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Username = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EmailMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("UserStatus", targetDepth))
+                if (context.TestExpression("EmailSubject", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EmailSubject = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SMSMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SMSMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +88,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         }
 
 
-        private static UserTypeUnmarshaller _instance = new UserTypeUnmarshaller();        
+        private static MessageTemplateTypeUnmarshaller _instance = new MessageTemplateTypeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UserTypeUnmarshaller Instance
+        public static MessageTemplateTypeUnmarshaller Instance
         {
             get
             {

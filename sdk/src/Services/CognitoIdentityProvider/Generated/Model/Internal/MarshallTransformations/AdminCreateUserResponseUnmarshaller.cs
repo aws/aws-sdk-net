@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RespondToAuthChallenge operation
+    /// Response Unmarshaller for AdminCreateUser operation
     /// </summary>  
-    public class RespondToAuthChallengeResponseUnmarshaller : JsonResponseUnmarshaller
+    public class AdminCreateUserResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,34 +45,16 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            RespondToAuthChallengeResponse response = new RespondToAuthChallengeResponse();
+            AdminCreateUserResponse response = new AdminCreateUserResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AuthenticationResult", targetDepth))
+                if (context.TestExpression("User", targetDepth))
                 {
-                    var unmarshaller = AuthenticationResultTypeUnmarshaller.Instance;
-                    response.AuthenticationResult = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ChallengeName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ChallengeName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ChallengeParameters", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.ChallengeParameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Session", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Session = unmarshaller.Unmarshall(context);
+                    var unmarshaller = UserTypeUnmarshaller.Instance;
+                    response.User = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -90,17 +72,9 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("AliasExistsException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("CodeDeliveryFailureException"))
             {
-                return new AliasExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("CodeMismatchException"))
-            {
-                return new CodeMismatchException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ExpiredCodeException"))
-            {
-                return new ExpiredCodeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new CodeDeliveryFailureException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalErrorException"))
             {
@@ -126,21 +100,13 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             {
                 return new InvalidSmsRoleTrustRelationshipException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidUserPoolConfigurationException"))
-            {
-                return new InvalidUserPoolConfigurationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MFAMethodNotFoundException"))
-            {
-                return new MFAMethodNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("NotAuthorizedException"))
             {
                 return new NotAuthorizedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("PasswordResetRequiredException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("PreconditionNotMetException"))
             {
-                return new PasswordResetRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new PreconditionNotMetException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
@@ -154,13 +120,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             {
                 return new UnexpectedLambdaException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedUserStateException"))
+            {
+                return new UnsupportedUserStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("UserLambdaValidationException"))
             {
                 return new UserLambdaValidationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("UserNotConfirmedException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("UsernameExistsException"))
             {
-                return new UserNotConfirmedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new UsernameExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("UserNotFoundException"))
             {
@@ -169,9 +139,9 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             return new AmazonCognitoIdentityProviderException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static RespondToAuthChallengeResponseUnmarshaller _instance = new RespondToAuthChallengeResponseUnmarshaller();        
+        private static AdminCreateUserResponseUnmarshaller _instance = new AdminCreateUserResponseUnmarshaller();        
 
-        internal static RespondToAuthChallengeResponseUnmarshaller GetInstance()
+        internal static AdminCreateUserResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -179,7 +149,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RespondToAuthChallengeResponseUnmarshaller Instance
+        public static AdminCreateUserResponseUnmarshaller Instance
         {
             get
             {
