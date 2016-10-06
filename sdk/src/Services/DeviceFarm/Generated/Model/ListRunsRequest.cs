@@ -29,7 +29,7 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRuns operation.
-    /// Gets information about runs.
+    /// Gets information about runs, given an AWS Device Farm project ARN.
     /// </summary>
     public partial class ListRunsRequest : AmazonDeviceFarmRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The runs' ARNs.
+        /// The Amazon Resource Name (ARN) of the project for which you want to list runs.
         /// </para>
         /// </summary>
         public string Arn

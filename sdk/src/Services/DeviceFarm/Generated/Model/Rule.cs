@@ -45,23 +45,23 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Allowed values include:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// ARN: The ARN.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// FORM_FACTOR: The form factor (for example, phone or tablet).
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// MANUFACTURER: The manufacturer.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// PLATFORM: The platform (for example, Android or iOS).
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public DeviceAttribute Attribute
         {
@@ -80,27 +80,27 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// The rule's operator.
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// EQUALS: The equals operator.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// GREATER_THAN: The greater-than operator.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// IN: The in operator.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// LESS_THAN: The less-than operator.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// NOT_IN: The not-in operator.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public RuleOperator Operator
         {

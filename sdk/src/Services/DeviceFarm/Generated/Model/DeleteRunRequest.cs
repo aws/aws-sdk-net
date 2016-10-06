@@ -33,7 +33,7 @@ namespace Amazon.DeviceFarm.Model
     /// 
     ///  
     /// <para>
-    /// <b>Note</b> Deleting this resource does not stop an in-progress run.
+    ///  <b>Note</b> Deleting this resource does not stop an in-progress run.
     /// </para>
     /// </summary>
     public partial class DeleteRunRequest : AmazonDeviceFarmRequest

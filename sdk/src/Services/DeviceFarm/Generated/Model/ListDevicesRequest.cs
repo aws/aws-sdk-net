@@ -39,7 +39,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The device types' ARNs.
+        /// The Amazon Resource Name (ARN) of the project.
         /// </para>
         /// </summary>
         public string Arn

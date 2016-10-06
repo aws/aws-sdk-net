@@ -161,23 +161,23 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Must be one of the following values:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// FAILED: A failed status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// INITIALIZED: An initialized status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// PROCESSING: A processing status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// SUCCEEDED: A succeeded status.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public UploadStatus Status
         {
@@ -200,71 +200,71 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Must be one of the following values:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// ANDROID_APP: An Android upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// IOS_APP: An iOS upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// WEB_APP: A web appliction upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// EXTERNAL_DATA: An external data upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// CALABASH_TEST_PACKAGE: A Calabash test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// INSTRUMENTATION_TEST_PACKAGE: An instrumentation upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// UIAUTOMATION_TEST_PACKAGE: A uiautomation test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// XCTEST_TEST_PACKAGE: An XCode test package upload.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public UploadType Type
         {
