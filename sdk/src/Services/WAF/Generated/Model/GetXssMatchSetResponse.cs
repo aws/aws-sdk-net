@@ -40,10 +40,21 @@ namespace Amazon.WAF.Model
         /// Information about the <a>XssMatchSet</a> that you specified in the <code>GetXssMatchSet</code>
         /// request. For more information, see the following topics:
         /// </para>
-        ///  <ul> <li><a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>,
-        /// and an array of <code>XssMatchTuple</code> objects</li> <li><a>XssMatchTuple</a>:
-        /// Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code></li>
-        /// <li><a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code></li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an
+        /// array of <code>XssMatchTuple</code> objects
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code>
+        /// and <code>TextTransformation</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public XssMatchSet XssMatchSet
         {

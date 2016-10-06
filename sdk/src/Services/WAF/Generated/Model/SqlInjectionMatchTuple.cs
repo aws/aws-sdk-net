@@ -62,7 +62,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>CMD_LINE</b>
+        ///  <b>CMD_LINE</b> 
         /// </para>
         ///  
         /// <para>
@@ -70,42 +70,101 @@ namespace Amazon.WAF.Model
         /// command and using unusual formatting to disguise some or all of the command, use this
         /// option to perform the following transformations:
         /// </para>
-        ///  <ul> <li>Delete the following characters: \ " ' ^</li> <li>Delete spaces before the
-        /// following characters: / (</li> <li>Replace the following characters with a space:
-        /// , ;</li> <li>Replace multiple spaces with one space</li> <li>Convert uppercase letters
-        /// (A-Z) to lowercase (a-z)</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// <b>COMPRESS_WHITE_SPACE</b>
+        /// Delete the following characters: \ " ' ^
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Delete spaces before the following characters: / (
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Replace the following characters with a space: , ;
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Replace multiple spaces with one space
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Convert uppercase letters (A-Z) to lowercase (a-z)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>COMPRESS_WHITE_SPACE</b> 
         /// </para>
         ///  
         /// <para>
         /// Use this option to replace the following characters with a space character (decimal
         /// 32):
         /// </para>
-        ///  <ul> <li>\f, formfeed, decimal 12</li> <li>\t, tab, decimal 9</li> <li>\n, newline,
-        /// decimal 10</li> <li>\r, carriage return, decimal 13</li> <li>\v, vertical tab, decimal
-        /// 11</li> <li>non-breaking space, decimal 160</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
+        /// \f, formfeed, decimal 12
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// \t, tab, decimal 9
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// \n, newline, decimal 10
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// \r, carriage return, decimal 13
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// \v, vertical tab, decimal 11
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// non-breaking space, decimal 160
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
         /// </para>
         ///  
         /// <para>
-        /// <b>HTML_ENTITY_DECODE</b>
+        ///  <b>HTML_ENTITY_DECODE</b> 
         /// </para>
         ///  
         /// <para>
         /// Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code>
         /// performs the following operations:
         /// </para>
-        ///  <ul> <li>Replaces <code>(ampersand)quot;</code> with <code>"</code></li> <li>Replaces
-        /// <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160</li> <li>Replaces
-        /// <code>(ampersand)lt;</code> with a "less than" symbol</li> <li>Replaces <code>(ampersand)gt;</code>
-        /// with <code>></code></li> <li>Replaces characters that are represented in hexadecimal
-        /// format, <code>(ampersand)#xhhhh;</code>, with the corresponding characters</li> <li>Replaces
-        /// characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>,
-        /// with the corresponding characters</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// <b>LOWERCASE</b>
+        /// Replaces <code>(ampersand)quot;</code> with <code>"</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>,
+        /// with the corresponding characters
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>,
+        /// with the corresponding characters
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>LOWERCASE</b> 
         /// </para>
         ///  
         /// <para>
@@ -113,7 +172,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>URL_DECODE</b>
+        ///  <b>URL_DECODE</b> 
         /// </para>
         ///  
         /// <para>
@@ -121,7 +180,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// <b>NONE</b>
+        ///  <b>NONE</b> 
         /// </para>
         ///  
         /// <para>

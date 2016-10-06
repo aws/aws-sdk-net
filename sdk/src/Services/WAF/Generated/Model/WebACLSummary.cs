@@ -63,7 +63,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.
+        ///  <code>WebACLId</code> is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.
         /// </para>
         /// </summary>
         public string WebACLId

@@ -65,7 +65,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>SizeConstraintSetId</code> is returned by <a>CreateSizeConstraintSet</a> and
+        ///  <code>SizeConstraintSetId</code> is returned by <a>CreateSizeConstraintSet</a> and
         /// by <a>ListSizeConstraintSets</a>.
         /// </para>
         /// </summary>
