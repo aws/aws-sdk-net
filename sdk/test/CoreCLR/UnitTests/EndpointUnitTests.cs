@@ -119,7 +119,14 @@ namespace AWSSDK_CoreCLR.UnitTests
         {
             Assert.Equal("someservice.cn-north-1.amazonaws.com.cn",         RegionEndpoint.CNNorth1.GetEndpointForService("someservice").Hostname);
             Assert.Equal("amazingservice.ap-southeast-2.amazonaws.com",     RegionEndpoint.APSoutheast2.GetEndpointForService("amazingservice").Hostname);
-            Assert.Equal("mediocreservice.us-gov-west-1.amazonaws.com",     RegionEndpoint.USGovCloudWest1.GetEndpointForService("mediocreservice").Hostname);
+            Assert.Equal("coolservice.us-gov-west-1.amazonaws.com",         RegionEndpoint.USGovCloudWest1.GetEndpointForService("coolservice").Hostname);
+
+            Assert.Equal("s3.us-east-12.amazonaws.com",                     RegionEndpoint.GetBySystemName("us-east-12").GetEndpointForService("s3").Hostname);
+            Assert.Equal("newservice.us-gov-10.amazonaws.com",              RegionEndpoint.GetBySystemName("us-gov-10").GetEndpointForService("newservice").Hostname);
+            Assert.Equal("specialservice.cn-east-3.amazonaws.com.cn",       RegionEndpoint.GetBySystemName("cn-east-3").GetEndpointForService("specialservice").Hostname);
+
+            Assert.Equal("Unknown",                                         RegionEndpoint.GetBySystemName("us-gov-10").DisplayName);
+            Assert.Equal("China (Unknown)",                                 RegionEndpoint.GetBySystemName("cn-east-10").DisplayName);
         }
 
         [Fact]
@@ -132,5 +139,5 @@ namespace AWSSDK_CoreCLR.UnitTests
             Assert.Equal("2", RegionEndpoint.USEast1.GetEndpointForService("s3").SignatureVersionOverride);
             Assert.Equal("2", RegionEndpoint.EUWest1.GetEndpointForService("s3").SignatureVersionOverride);
         }
-    }
+}
 }
