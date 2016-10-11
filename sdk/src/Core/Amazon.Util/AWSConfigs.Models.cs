@@ -53,6 +53,21 @@ namespace Amazon.Util
         /// </summary>
         public string Password { get; set; }
 
+        /// <summary>
+        /// Collection of one or more regular expressions denoting addresses
+        /// for which the proxy will not be used.
+        /// </summary>
+        /// <remarks>
+        ///  For more information on bypass lists 
+        ///  see https://msdn.microsoft.com/en-us/library/system.net.webproxy.bypasslist%28v=vs.110%29.aspx.
+        /// </remarks>
+        public List<string> BypassList { get; set; }
+
+        /// <summary>
+        /// If true requests to local addresses bypass the configured
+        /// proxy.
+        /// </summary>
+        public bool BypassOnLocal { get; set; }
 
         internal ProxyConfig()
         {

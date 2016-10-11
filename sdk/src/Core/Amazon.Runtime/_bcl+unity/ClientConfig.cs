@@ -16,6 +16,7 @@ using System;
 using System.Net;
 using Amazon.Util;
 using System.Globalization;
+using System.Collections.Generic;
 
 namespace Amazon.Runtime
 {
@@ -27,6 +28,7 @@ namespace Amazon.Runtime
     {
         private string proxyHost;
         private int proxyPort = -1;
+        private List<string> proxyBypassList;
         private int? connectionLimit;
         private int? maxIdleTime;
         private bool useNagleAlgorithm = false;
@@ -54,7 +56,7 @@ namespace Amazon.Runtime
 
 
         /// <summary>
-        /// Gets and sets of the ProxyPort property.
+        /// Gets and sets the ProxyPort property.
         /// </summary>
         public int ProxyPort
         {
@@ -69,19 +71,64 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
+        /// Gets and sets the ProxyBypassList property; a collection
+        /// of regular expressions denoting the set of endpoints for
+        /// which the configured proxy host will be bypassed.
+        /// </summary>
+        /// <remarks>
+        ///  For more information on bypass lists 
+        ///  see https://msdn.microsoft.com/en-us/library/system.net.webproxy.bypasslist%28v=vs.110%29.aspx.
+        /// </remarks>
+        public List<string> ProxyBypassList
+        {
+            get
+            {
+                if (this.proxyBypassList == null)
+                    return AWSConfigs.ProxyConfig.BypassList;
+
+                return this.proxyBypassList;
+            }
+            set 
+            {
+                this.proxyBypassList = value != null ? new List<string>(value) : null;
+            }
+        }
+
+        /// <summary>
+        /// Gets and sets the ProxyBypassOnLocal property.
+        /// If set true requests to local addresses bypass the configured
+        /// proxy.
+        /// </summary>
+        public bool ProxyBypassOnLocal { get; set; }
+
+        /// <summary>
         /// Returns a WebProxy instance configured to match the proxy settings
         /// in the client configuration.
         /// </summary>
         public WebProxy GetWebProxy()
         {
+            const string httpPrefix = "http://";
+
             WebProxy proxy = null;
             if (!string.IsNullOrEmpty(ProxyHost) && ProxyPort > 0)
             {
-                proxy = new WebProxy(ProxyHost, ProxyPort);
-            }
-            if (proxy != null && ProxyCredentials != null)
-            {
-                proxy.Credentials = ProxyCredentials;
+                // WebProxy constructor adds the http:// prefix, but doesn't
+                // account for cases where it's already present which leads to
+                // malformed addresses
+                var host = ProxyHost.StartsWith(httpPrefix, StringComparison.OrdinalIgnoreCase)
+                               ? ProxyHost.Substring(httpPrefix.Length)
+                               : ProxyHost;
+                proxy = new WebProxy(host, ProxyPort);
+
+                if (ProxyCredentials != null)
+                {
+                    proxy.Credentials = ProxyCredentials;
+                }
+                if (ProxyBypassList != null)
+                {
+                    proxy.BypassList =  ProxyBypassList.ToArray();
+                }
+                proxy.BypassProxyOnLocal = ProxyBypassOnLocal;
             }
 
             return proxy;
@@ -98,8 +145,10 @@ namespace Amazon.Runtime
                 throw new ArgumentNullException("proxy");
 
             var address = proxy.Address;
-            ProxyHost = string.Format(CultureInfo.InvariantCulture, "{0}://{1}", address.Scheme, address.Host);
+            ProxyHost = address.Host;
             ProxyPort = address.Port;
+            ProxyBypassList = new List<string>(proxy.BypassList);
+            ProxyBypassOnLocal = proxy.BypassProxyOnLocal;
             ProxyCredentials = proxy.Credentials;
         }
 
