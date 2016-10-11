@@ -137,17 +137,14 @@ namespace Amazon
             if (_hashBySystemName.TryGetValue(systemName, out region))
                 return region;
 
-            IRegionEndpoint regionEndpoint = RegionEndpointProvider.GetRegionEndpoint(systemName);
-            if (regionEndpoint == null)
-            {
-                var logger = Amazon.Runtime.Internal.Util.Logger.GetLogger(typeof(RegionEndpoint));
-                logger.InfoFormat("Region system name {0} was not found in region data bundled with SDK; assuming new region.", systemName);
+            IRegionEndpoint regionEndpointFromProvider = RegionEndpointProvider.GetRegionEndpoint(systemName);
 
-                if (systemName.StartsWith("cn-", StringComparison.Ordinal))
-                    return NewEndpoint(systemName, "China (Unknown)");
-            }
-
-            return NewEndpoint(systemName, "Unknown");
+            // We received an instance of IRegionEndpoint from a provider,
+            // now we should wrap it in RegionEndpoint before returning the data back to the client code.
+            // GetRegionEndpoint will always return a non-null value. If the the region(systemName) is unknown,
+            // the providers will create a fallback instance that will generate an endpoint to the best
+            // of its knowledge.
+            return NewEndpoint(systemName, regionEndpointFromProvider.DisplayName);
         }
 
         private static RegionEndpoint NewEndpoint(string systemName, string displayName)
