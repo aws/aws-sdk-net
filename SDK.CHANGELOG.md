@@ -1,3 +1,9 @@
+### 3.3.8.0 (2016-10-12 17:43 UTC)
+* ECR (3.3.1.0)
+	* DescribeImages is a new api used to expose image metadata which today includes image size and image creation timestamp
+* ElastiCache (3.3.1.0)
+	* Elasticache is launching a new major engine release of Redis, 3.2 (providing stability updates and new command sets over 2.8), as well as ElasticSupport for enabling Redis Cluster in 3.2, which provides support for multiple node groups to horizontally scale data, as well as superior engine failover capabilities.
+
 ### 3.3.7.0 (2016-10-12 08:32 UTC)
 * CognitoSync (3.3.1.0)
 	* Update SQLite dependencies for support of Android N
