@@ -42,11 +42,21 @@ namespace Amazon.WAF.Model
     /// <para>
     /// To permanently delete a <code>ByteMatchSet</code>, perform the following steps:
     /// </para>
-    ///  <ol> <li>Update the <code>ByteMatchSet</code> to remove filters, if any. For more
-    /// information, see <a>UpdateByteMatchSet</a>.</li> <li>Use <a>GetChangeToken</a> to
-    /// get the change token that you provide in the <code>ChangeToken</code> parameter of
-    /// a <code>DeleteByteMatchSet</code> request.</li> <li>Submit a <code>DeleteByteMatchSet</code>
-    /// request.</li> </ol>
+    ///  <ol> <li> 
+    /// <para>
+    /// Update the <code>ByteMatchSet</code> to remove filters, if any. For more information,
+    /// see <a>UpdateByteMatchSet</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+    /// parameter of a <code>DeleteByteMatchSet</code> request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Submit a <code>DeleteByteMatchSet</code> request.
+    /// </para>
+    ///  </li> </ol>
     /// </summary>
     public partial class DeleteByteMatchSetRequest : AmazonWAFRequest
     {

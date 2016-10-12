@@ -33,6 +33,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class CreateUserPoolRequest : AmazonCognitoIdentityProviderRequest
     {
+        private AdminCreateUserConfigType _adminCreateUserConfig;
         private List<string> _aliasAttributes = new List<string>();
         private List<string> _autoVerifiedAttributes = new List<string>();
         private DeviceConfigurationType _deviceConfiguration;
@@ -46,6 +47,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _smsAuthenticationMessage;
         private SmsConfigurationType _smsConfiguration;
         private string _smsVerificationMessage;
+
+        /// <summary>
+        /// Gets and sets the property AdminCreateUserConfig. 
+        /// <para>
+        /// The configuration for AdminCreateUser requests.
+        /// </para>
+        /// </summary>
+        public AdminCreateUserConfigType AdminCreateUserConfig
+        {
+            get { return this._adminCreateUserConfig; }
+            set { this._adminCreateUserConfig = value; }
+        }
+
+        // Check to see if AdminCreateUserConfig property is set
+        internal bool IsSetAdminCreateUserConfig()
+        {
+            return this._adminCreateUserConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AliasAttributes. 

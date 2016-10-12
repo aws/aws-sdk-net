@@ -70,7 +70,7 @@ namespace Amazon.DeviceFarm.Model
         /// Gets and sets the property BillingMethod. 
         /// <para>
         /// Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>.
-        /// If the parameter is not specified, the default value is <code>unmetered</code>.
+        /// If the parameter is not specified, the default value is <code>metered</code>.
         /// </para>
         /// </summary>
         public BillingMethod BillingMethod
@@ -202,15 +202,15 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Allowed values include:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// ANDROID: The Android platform.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// IOS: The iOS platform.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public DevicePlatform Platform
         {
@@ -233,35 +233,35 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Allowed values include:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// PENDING: A pending condition.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// PASSED: A passing condition.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// WARNED: A warning condition.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// FAILED: A failed condition.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// SKIPPED: A skipped condition.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// ERRORED: An error condition.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// STOPPED: A stopped condition.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public ExecutionResult Result
         {
@@ -302,43 +302,43 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Allowed values include:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// PENDING: A pending status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// PENDING_CONCURRENCY: A pending concurrency status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// PENDING_DEVICE: A pending device status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// PROCESSING: A processing status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// SCHEDULING: A scheduling status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// PREPARING: A preparing status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// RUNNING: A running status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// COMPLETED: A completed status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// STOPPING: A stopping status.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public ExecutionStatus Status
         {
@@ -397,64 +397,64 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Must be one of the following values:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// BUILTIN_FUZZ: The built-in fuzz type.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// BUILTIN_EXPLORER: For Android, an app explorer that will traverse an Android app,
         /// interacting with it and capturing screenshots at the same time.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_JAVA_JUNIT: The Appium Java JUnit type.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_JAVA_TESTNG: The Appium Java TestNG type.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_PYTHON: The Appium Python type.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// CALABASH: The Calabash type.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// INSTRUMENTATION: The Instrumentation type.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// UIAUTOMATION: The uiautomation type.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// UIAUTOMATOR: The uiautomator type.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// XCTEST: The XCode test type.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// XCTEST_UI: The XCode UI test type.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public TestType Type
         {

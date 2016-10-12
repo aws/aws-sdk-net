@@ -69,7 +69,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property IamUserArn. 
         /// <para>
-        /// The user IAM ARN.
+        /// The user IAM ARN. This can also be a federated user's ARN.
         /// </para>
         /// </summary>
         public string IamUserArn

@@ -190,35 +190,35 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// The result of the remote access session. Can be any of the following:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// PENDING: A pending condition.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// PASSED: A passing condition.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// WARNED: A warning condition.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// FAILED: A failed condition.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// SKIPPED: A skipped condition.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// ERRORED: An error condition.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// STOPPED: A stopped condition.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public ExecutionResult Result
         {
@@ -255,43 +255,43 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// The status of the remote access session. Can be any of the following:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// PENDING: A pending status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// PENDING_CONCURRENCY: A pending concurrency status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// PENDING_DEVICE: A pending device status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// PROCESSING: A processing status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// SCHEDULING: A scheduling status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// PREPARING: A preparing status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// RUNNING: A running status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// COMPLETED: A completed status.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// STOPPING: A stopping status.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public ExecutionStatus Status
         {

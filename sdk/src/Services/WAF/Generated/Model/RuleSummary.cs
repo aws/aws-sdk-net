@@ -65,7 +65,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
+        ///  <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
         /// </para>
         /// </summary>
         public string RuleId

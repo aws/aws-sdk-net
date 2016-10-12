@@ -18,6 +18,7 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
 using System.Globalization;
+using System.Net;
 using System.Reflection;
 using System.Text;
 
@@ -103,7 +104,22 @@ namespace Amazon.Runtime.Internal
                 {
                     response = httpRequest.GetResponse();
                 }
-                catch { }
+                catch (WebException webException)
+                {
+                    if (webException.Response != null)
+                    {
+#if BCL35 || UNITY
+                        webException.Response.Close();
+#else
+                        webException.Response.Dispose();
+#endif
+                    }
+                }
+                catch (HttpErrorResponseException httpErrorResponse)
+                {
+                    if (httpErrorResponse.Response != null && httpErrorResponse.Response.ResponseBody != null)
+                        httpErrorResponse.Response.ResponseBody.Dispose();
+                }
                 finally
                 {
                     if (response != null && response.ResponseBody != null)

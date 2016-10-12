@@ -409,7 +409,7 @@ namespace Amazon
         ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
         /// &lt;/configSections&gt;
         /// &lt;aws&gt;
-        ///   &lt;proxy host="localhost" port="8888" username="1" password="1" /&gt;
+        ///   &lt;proxy host="localhost" port="8888" username="1" password="1" bypassList="addressexpr1;addressexpr2;..." bypassOnLocal="true" /&gt;
         /// &lt;/aws&gt;
         /// </code>
         /// </summary>

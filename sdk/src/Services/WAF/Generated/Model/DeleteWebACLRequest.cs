@@ -36,10 +36,21 @@ namespace Amazon.WAF.Model
     /// <para>
     /// To delete a <code>WebACL</code>, perform the following steps:
     /// </para>
-    ///  <ol> <li>Update the <code>WebACL</code> to remove <code>Rules</code>, if any. For
-    /// more information, see <a>UpdateWebACL</a>.</li> <li>Use <a>GetChangeToken</a> to get
-    /// the change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteWebACL</code>
-    /// request.</li> <li>Submit a <code>DeleteWebACL</code> request.</li> </ol>
+    ///  <ol> <li> 
+    /// <para>
+    /// Update the <code>WebACL</code> to remove <code>Rules</code>, if any. For more information,
+    /// see <a>UpdateWebACL</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+    /// parameter of a <code>DeleteWebACL</code> request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Submit a <code>DeleteWebACL</code> request.
+    /// </para>
+    ///  </li> </ol>
     /// </summary>
     public partial class DeleteWebACLRequest : AmazonWAFRequest
     {

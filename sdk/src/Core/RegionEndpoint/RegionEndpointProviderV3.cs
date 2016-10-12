@@ -375,7 +375,40 @@ namespace Amazon.Internal
                 throw new AmazonClientException("Invalid endpoint.json format.");
             }
 
-            throw new AmazonClientException("Invalid region name.");
+            return GetUnknownRegionEndpoint(regionName);
         }
+       
+        private IRegionEndpoint GetUnknownRegionEndpoint(string regionName)
+        {
+            // determine the partition using basic heuristics
+            string partitionId = "aws";
+            string regionDescription = "Unknown";
+
+            if (regionName.StartsWith("us-gov", StringComparison.OrdinalIgnoreCase))
+            {
+                partitionId = "aws-us-gov";
+            }
+            else if (regionName.StartsWith("cn-", StringComparison.OrdinalIgnoreCase))
+            {
+                partitionId = "aws-cn";
+                regionDescription = "China (Unknown)";
+            }
+
+            // grab the partition data from the parsed endpoints.json object
+            JsonData partitionData = null;
+            foreach (JsonData partition in _root["partitions"])
+            {
+                partitionData = partition;
+
+                string id = (string)partition["partition"];
+                if (string.Equals(partitionId, id, StringComparison.OrdinalIgnoreCase))
+                {
+                    break;
+                }
+            }
+
+            return new RegionEndpointV3(regionName, regionDescription, partitionData, _emptyDictionaryJsonData);
+        }
+        private static JsonData _emptyDictionaryJsonData = JsonMapper.ToObject("{}");
     }
 }

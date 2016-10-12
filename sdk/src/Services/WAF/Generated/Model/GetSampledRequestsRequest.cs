@@ -36,7 +36,7 @@ namespace Amazon.WAF.Model
     /// 
     ///  
     /// <para>
-    /// <code>GetSampledRequests</code> returns a time range, which is usually the time range
+    ///  <code>GetSampledRequests</code> returns a time range, which is usually the time range
     /// that you specified. However, if your resource (such as a CloudFront distribution)
     /// received 5,000 requests before the specified time range elapsed, <code>GetSampledRequests</code>
     /// returns an updated time range. This new time range indicates the actual period during
@@ -74,12 +74,19 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property RuleId. 
         /// <para>
-        /// <code>RuleId</code> is one of two values:
+        ///  <code>RuleId</code> is one of two values:
         /// </para>
-        ///  <ul> <li>The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code>
-        /// to return a sample of requests.</li> <li><code>Default_Action</code>, which causes
-        /// <code>GetSampledRequests</code> to return a sample of the requests that didn't match
-        /// any of the rules in the specified <code>WebACL</code>.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <code>RuleId</code> of the <code>Rule</code> for which you want <code>GetSampledRequests</code>
+        /// to return a sample of requests.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return
+        /// a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string RuleId
         {

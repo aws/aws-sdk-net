@@ -1,3 +1,31 @@
+### 3.3.6.0 (2016-10-11 19:26 UTC)
+* Core 3.3.1.0
+	* * Close HttpWebRequest's response stream on WebExceptions (https://github.com/aws/aws-sdk-net/pull/449).
+
+* Updated generation of .nuspec files to enable Nuget packages to support the "uap" targetFramework.
+
+* Added support for configuring bypass lists and bypass-on-local mode for web proxies in the BCL and Unity platforms.
+
+* Fixed issue in RegionEndpointProviderV3 preventing use of regions unknown at the time of compilation.
+
+* Fixed LitJson not serializig signed types correctly.
+
+	* all services packages updated to require new core
+
+### 3.3.5.0 (2016-10-07 03:45 UTC)
+* CognitoIdentityProvider (3.3.1.0)
+	* Added new operation "AdminCreateUser" that creates a new user in the specified user pool and sends a welcome message via email or phone (SMS).
+* DeviceFarm (3.3.0.1)
+	* general doc update
+* KeyManagementService (3.3.1.0)
+	* support for InvalidMarkerException in ListKeys API
+* OpsWorks (3.3.0.1)
+	* general doc update
+* WAF (3.3.1.0)
+	*  In WAF model, the enum for IPSetDescriptorType, we add IPV6 in addition to IPV4. This change will add a new option when customers call some APIs, and also the API will no longer assume the IPSetDescriptorType is in IPV4
+* Core 3.3.0.3
+	* endpoints.json file update
+
 ### 3.3.4.0 (2016-09-29 23:30 UTC)
 * EC2 (3.3.1.0)
 	* Support for new EC2 instance type: m4.16xlarge Support for new EC2 P2 and X1 instances. Adding support for EC2 Convertible RIs and the EC2 RI regional benefit.

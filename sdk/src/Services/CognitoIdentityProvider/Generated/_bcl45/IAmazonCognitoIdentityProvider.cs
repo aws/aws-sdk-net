@@ -31,16 +31,18 @@ namespace Amazon.CognitoIdentityProvider
     /// <summary>
     /// Interface for accessing CognitoIdentityProvider
     ///
-    /// You can create a user pool in Amazon Cognito Identity to manage directories and users.
-    /// You can authenticate a user to obtain tokens related to user identity and access policies.
+    /// Using the Amazon Cognito Your User Pools API, you can create a user pool to manage
+    /// directories and users. You can authenticate a user to obtain tokens related to user
+    /// identity and access policies.
     /// 
     ///  
     /// <para>
-    /// This API reference provides information about user pools in Amazon Cognito Identity.
+    /// This API reference provides information about user pools in Amazon Cognito Your User
+    /// Pools.
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://aws.amazon.com/cognito/">Amazon Cognito</a>.
+    /// For more information, see the Amazon Cognito Documentation.
     /// </para>
     /// </summary>
     public partial interface IAmazonCognitoIdentityProvider : IAmazonService, IDisposable
@@ -153,6 +155,96 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<AdminConfirmSignUpResponse> AdminConfirmSignUpAsync(AdminConfirmSignUpRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AdminCreateUser
+
+
+        /// <summary>
+        /// Creates a new user in the specified user pool and sends a welcome message via email
+        /// or phone (SMS). This message is based on a template that you configured in your call
+        /// to CreateUserPool or UpdateUserPool. This template includes your custom sign-up instructions
+        /// and placeholders for user name and temporary password.
+        /// 
+        ///  
+        /// <para>
+        /// Requires developer credentials.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminCreateUser service method.</param>
+        /// 
+        /// <returns>The response from the AdminCreateUser service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.CodeDeliveryFailureException">
+        /// This exception is thrown when a verification code fails to deliver successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidLambdaResponseException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid AWS
+        /// Lambda response.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidPasswordException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid password.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleAccessPolicyException">
+        /// This exception is returned when the role provided for SMS configuration does not have
+        /// permission to publish using Amazon SNS.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
+        /// This exception is thrown when the trust relationship is invalid for the role provided
+        /// for SMS configuration. This can happen if you do not trust <b>cognito-idp.amazonaws.com</b>
+        /// or the external ID provided in the role does not match what is provided in the SMS
+        /// configuration for the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception gets thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PreconditionNotMetException">
+        /// This exception is thrown when a precondition is not met.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnexpectedLambdaException">
+        /// This exception gets thrown when the Amazon Cognito service encounters an unexpected
+        /// exception with the AWS Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UnsupportedUserStateException">
+        /// The request failed because the user is in an unsupported state.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserLambdaValidationException">
+        /// This exception gets thrown when the Amazon Cognito service encounters a user validation
+        /// exception with the AWS Lambda service.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UsernameExistsException">
+        /// This exception is thrown when Amazon Cognito encounters a user name that already exists
+        /// in the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user is not found.
+        /// </exception>
+        AdminCreateUserResponse AdminCreateUser(AdminCreateUserRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminCreateUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminCreateUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AdminCreateUserResponse> AdminCreateUserAsync(AdminCreateUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -691,6 +783,9 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidPasswordException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid password.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleAccessPolicyException">
         /// This exception is returned when the role provided for SMS configuration does not have
@@ -2048,12 +2143,18 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception gets thrown when a user is not authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service cannot find the requested
         /// resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception gets thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user is not confirmed successfully.
         /// </exception>
         GlobalSignOutResponse GlobalSignOut(GlobalSignOutRequest request);
 
@@ -2455,6 +2556,9 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
         /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidPasswordException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid password.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleAccessPolicyException">
         /// This exception is returned when the role provided for SMS configuration does not have

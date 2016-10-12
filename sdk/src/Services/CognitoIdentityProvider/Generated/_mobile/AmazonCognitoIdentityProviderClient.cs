@@ -36,16 +36,18 @@ namespace Amazon.CognitoIdentityProvider
     /// <summary>
     /// Implementation for accessing CognitoIdentityProvider
     ///
-    /// You can create a user pool in Amazon Cognito Identity to manage directories and users.
-    /// You can authenticate a user to obtain tokens related to user identity and access policies.
+    /// Using the Amazon Cognito Your User Pools API, you can create a user pool to manage
+    /// directories and users. You can authenticate a user to obtain tokens related to user
+    /// identity and access policies.
     /// 
     ///  
     /// <para>
-    /// This API reference provides information about user pools in Amazon Cognito Identity.
+    /// This API reference provides information about user pools in Amazon Cognito Your User
+    /// Pools.
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://aws.amazon.com/cognito/">Amazon Cognito</a>.
+    /// For more information, see the Amazon Cognito Documentation.
     /// </para>
     /// </summary>
     public partial class AmazonCognitoIdentityProviderClient : AmazonServiceClient, IAmazonCognitoIdentityProvider
@@ -297,6 +299,37 @@ namespace Amazon.CognitoIdentityProvider
             var unmarshaller = AdminConfirmSignUpResponseUnmarshaller.Instance;
 
             return InvokeAsync<AdminConfirmSignUpRequest,AdminConfirmSignUpResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AdminCreateUser
+
+        internal AdminCreateUserResponse AdminCreateUser(AdminCreateUserRequest request)
+        {
+            var marshaller = new AdminCreateUserRequestMarshaller();
+            var unmarshaller = AdminCreateUserResponseUnmarshaller.Instance;
+
+            return Invoke<AdminCreateUserRequest,AdminCreateUserResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AdminCreateUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AdminCreateUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AdminCreateUserResponse> AdminCreateUserAsync(AdminCreateUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AdminCreateUserRequestMarshaller();
+            var unmarshaller = AdminCreateUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AdminCreateUserRequest,AdminCreateUserResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

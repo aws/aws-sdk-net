@@ -43,19 +43,39 @@ namespace Amazon.WAF.Model
     /// <para>
     /// To create and configure a <code>WebACL</code>, perform the following steps:
     /// </para>
-    ///  <ol> <li>Create and update the <code>ByteMatchSet</code> objects and other predicates
-    /// that you want to include in <code>Rules</code>. For more information, see <a>CreateByteMatchSet</a>,
+    ///  <ol> <li> 
+    /// <para>
+    /// Create and update the <code>ByteMatchSet</code> objects and other predicates that
+    /// you want to include in <code>Rules</code>. For more information, see <a>CreateByteMatchSet</a>,
     /// <a>UpdateByteMatchSet</a>, <a>CreateIPSet</a>, <a>UpdateIPSet</a>, <a>CreateSqlInjectionMatchSet</a>,
-    /// and <a>UpdateSqlInjectionMatchSet</a>.</li> <li>Create and update the <code>Rules</code>
-    /// that you want to include in the <code>WebACL</code>. For more information, see <a>CreateRule</a>
-    /// and <a>UpdateRule</a>.</li> <li>Use <a>GetChangeToken</a> to get the change token
-    /// that you provide in the <code>ChangeToken</code> parameter of a <code>CreateWebACL</code>
-    /// request.</li> <li>Submit a <code>CreateWebACL</code> request.</li> <li>Use <code>GetChangeToken</code>
-    /// to get the change token that you provide in the <code>ChangeToken</code> parameter
-    /// of an <a>UpdateWebACL</a> request.</li> <li>Submit an <a>UpdateWebACL</a> request
-    /// to specify the <code>Rules</code> that you want to include in the <code>WebACL</code>,
-    /// to specify the default action, and to associate the <code>WebACL</code> with a CloudFront
-    /// distribution.</li> </ol> 
+    /// and <a>UpdateSqlInjectionMatchSet</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Create and update the <code>Rules</code> that you want to include in the <code>WebACL</code>.
+    /// For more information, see <a>CreateRule</a> and <a>UpdateRule</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+    /// parameter of a <code>CreateWebACL</code> request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Submit a <code>CreateWebACL</code> request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+    /// parameter of an <a>UpdateWebACL</a> request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Submit an <a>UpdateWebACL</a> request to specify the <code>Rules</code> that you want
+    /// to include in the <code>WebACL</code>, to specify the default action, and to associate
+    /// the <code>WebACL</code> with a CloudFront distribution.
+    /// </para>
+    ///  </li> </ol> 
     /// <para>
     /// For more information about how to use the AWS WAF API, see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS
     /// WAF Developer Guide</a>.

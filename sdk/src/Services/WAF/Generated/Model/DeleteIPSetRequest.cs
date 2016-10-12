@@ -40,10 +40,21 @@ namespace Amazon.WAF.Model
     /// <para>
     /// To permanently delete an <code>IPSet</code> from AWS WAF, perform the following steps:
     /// </para>
-    ///  <ol> <li>Update the <code>IPSet</code> to remove IP address ranges, if any. For more
-    /// information, see <a>UpdateIPSet</a>.</li> <li>Use <a>GetChangeToken</a> to get the
-    /// change token that you provide in the <code>ChangeToken</code> parameter of a <code>DeleteIPSet</code>
-    /// request.</li> <li>Submit a <code>DeleteIPSet</code> request.</li> </ol>
+    ///  <ol> <li> 
+    /// <para>
+    /// Update the <code>IPSet</code> to remove IP address ranges, if any. For more information,
+    /// see <a>UpdateIPSet</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+    /// parameter of a <code>DeleteIPSet</code> request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Submit a <code>DeleteIPSet</code> request.
+    /// </para>
+    ///  </li> </ol>
     /// </summary>
     public partial class DeleteIPSetRequest : AmazonWAFRequest
     {

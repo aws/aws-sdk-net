@@ -92,15 +92,11 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AmiId. 
         /// <para>
-        /// A custom AMI ID to be used to create the instance. The AMI must be based on one of
-        /// the supported operating systems. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
-        /// 
+        /// The ID of the AMI that was used to create the instance. The value of this parameter
+        /// must be the same AMI ID that the instance is already using. You cannot apply a new
+        /// AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances
+        /// that are using custom AMIs. 
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.
-        /// </para>
-        ///  </note>
         /// </summary>
         public string AmiId
         {
@@ -281,7 +277,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Os. 
         /// <para>
-        /// The instance's operating system, which must be set to one of the following.
+        /// The instance's operating system, which must be set to one of the following. You cannot
+        /// update an instance that is using a custom AMI.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -307,10 +304,6 @@ namespace Amazon.OpsWorks.Model
         /// R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
         /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft
         /// Windows Server 2012 R2 with SQL Server Web</code>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A custom AMI: <code>Custom</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

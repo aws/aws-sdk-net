@@ -221,6 +221,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </summary>
         public static readonly ChallengeNameType DEVICE_SRP_AUTH = new ChallengeNameType("DEVICE_SRP_AUTH");
         /// <summary>
+        /// Constant NEW_PASSWORD_REQUIRED for ChallengeNameType
+        /// </summary>
+        public static readonly ChallengeNameType NEW_PASSWORD_REQUIRED = new ChallengeNameType("NEW_PASSWORD_REQUIRED");
+        /// <summary>
         /// Constant PASSWORD_VERIFIER for ChallengeNameType
         /// </summary>
         public static readonly ChallengeNameType PASSWORD_VERIFIER = new ChallengeNameType("PASSWORD_VERIFIER");
@@ -408,6 +412,56 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExplicitAuthFlowsType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MessageActionType.
+    /// </summary>
+    public class MessageActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESEND for MessageActionType
+        /// </summary>
+        public static readonly MessageActionType RESEND = new MessageActionType("RESEND");
+        /// <summary>
+        /// Constant SUPPRESS for MessageActionType
+        /// </summary>
+        public static readonly MessageActionType SUPPRESS = new MessageActionType("SUPPRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MessageActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageActionType FindValue(string value)
+        {
+            return FindValue<MessageActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MessageActionType(string value)
         {
             return FindValue(value);
         }
@@ -610,6 +664,10 @@ namespace Amazon.CognitoIdentityProvider
         /// Constant CONFIRMED for UserStatusType
         /// </summary>
         public static readonly UserStatusType CONFIRMED = new UserStatusType("CONFIRMED");
+        /// <summary>
+        /// Constant FORCE_CHANGE_PASSWORD for UserStatusType
+        /// </summary>
+        public static readonly UserStatusType FORCE_CHANGE_PASSWORD = new UserStatusType("FORCE_CHANGE_PASSWORD");
         /// <summary>
         /// Constant RESET_REQUIRED for UserStatusType
         /// </summary>

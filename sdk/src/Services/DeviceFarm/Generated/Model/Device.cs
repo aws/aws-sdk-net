@@ -150,15 +150,15 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Allowed values include:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// PHONE: The phone form factor.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// TABLET: The tablet form factor.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public DeviceFormFactor FormFactor
         {
@@ -307,15 +307,15 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Allowed values include:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// ANDROID: The Android platform.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// IOS: The iOS platform.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public DevicePlatform Platform
         {
