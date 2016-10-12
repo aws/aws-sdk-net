@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Repository Object
+    /// Response Unmarshaller for ImageDetail Object
     /// </summary>  
-    public class RepositoryUnmarshaller : IUnmarshaller<Repository, XmlUnmarshallerContext>, IUnmarshaller<Repository, JsonUnmarshallerContext>
+    public class ImageDetailUnmarshaller : IUnmarshaller<ImageDetail, XmlUnmarshallerContext>, IUnmarshaller<ImageDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Repository IUnmarshaller<Repository, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ImageDetail IUnmarshaller<ImageDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,21 +53,39 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Repository Unmarshall(JsonUnmarshallerContext context)
+        public ImageDetail Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Repository unmarshalledObject = new Repository();
+            ImageDetail unmarshalledObject = new ImageDetail();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("createdAt", targetDepth))
+                if (context.TestExpression("imageDigest", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageDigest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("imagePushedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImagePushedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("imageSizeInBytes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ImageSizeInBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("imageTags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ImageTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("registryId", targetDepth))
@@ -76,22 +94,10 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     unmarshalledObject.RegistryId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("repositoryArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RepositoryArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("repositoryName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("repositoryUri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RepositoryUri = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +106,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         }
 
 
-        private static RepositoryUnmarshaller _instance = new RepositoryUnmarshaller();        
+        private static ImageDetailUnmarshaller _instance = new ImageDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RepositoryUnmarshaller Instance
+        public static ImageDetailUnmarshaller Instance
         {
             get
             {

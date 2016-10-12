@@ -28,28 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteRepository operation.
+    /// An object representing a filter on a <a>DescribeImages</a> operation.
     /// </summary>
-    public partial class DeleteRepositoryResponse : AmazonWebServiceResponse
+    public partial class DescribeImagesFilter
     {
-        private Repository _repository;
+        private TagStatus _tagStatus;
 
         /// <summary>
-        /// Gets and sets the property Repository. 
+        /// Gets and sets the property TagStatus. 
         /// <para>
-        /// The repository that was deleted.
+        /// The tag status with which to filter your <a>DescribeImages</a> results. You can filter
+        /// results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.
         /// </para>
         /// </summary>
-        public Repository Repository
+        public TagStatus TagStatus
         {
-            get { return this._repository; }
-            set { this._repository = value; }
+            get { return this._tagStatus; }
+            set { this._tagStatus = value; }
         }
 
-        // Check to see if Repository property is set
-        internal bool IsSetRepository()
+        // Check to see if TagStatus property is set
+        internal bool IsSetTagStatus()
         {
-            return this._repository != null;
+            return this._tagStatus != null;
         }
 
     }
