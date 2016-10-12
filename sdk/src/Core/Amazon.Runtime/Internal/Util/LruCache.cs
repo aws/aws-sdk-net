@@ -160,6 +160,7 @@ namespace Amazon.Runtime.Internal.Util
                 }
                 else
                 {
+                    Head.Previous = item;
                     item.Next = Head;
                     item.Previous = null;
                     Head = item;
