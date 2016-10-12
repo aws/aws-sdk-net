@@ -29,10 +29,9 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
-    /// The <i>DescribeEvents</i> action returns events related to cache clusters, cache security
-    /// groups, and cache parameter groups. You can obtain events specific to a particular
-    /// cache cluster, cache security group, or cache parameter group by providing the name
-    /// as a parameter.
+    /// Returns events related to cache clusters, cache security groups, and cache parameter
+    /// groups. You can obtain events specific to a particular cache cluster, cache security
+    /// group, or cache parameter group by providing the name as a parameter.
     /// 
     ///  
     /// <para>
@@ -95,8 +94,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional marker returned from a prior request. Use this marker for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// results from this operation. If this parameter is specified, the response includes
+        /// only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker
@@ -142,8 +141,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SourceIdentifier. 
         /// <para>
-        /// The identifier of the event source for which events will be returned. If not specified,
-        /// then all sources are included in the response.
+        /// The identifier of the event source for which events are returned. If not specified,
+        /// all sources are included in the response.
         /// </para>
         /// </summary>
         public string SourceIdentifier
@@ -163,11 +162,6 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The event source to retrieve events for. If no value is specified, all events are
         /// returned.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid values are: <code>cache-cluster</code> | <code>cache-parameter-group</code>
-        /// | <code>cache-security-group</code> | <code>cache-subnet-group</code> 
         /// </para>
         /// </summary>
         public SourceType SourceType

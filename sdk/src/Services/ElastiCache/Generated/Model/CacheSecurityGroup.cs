@@ -28,19 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the output of one of the following actions:
+    /// Represents the output of one of the following operations:
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <i>AuthorizeCacheSecurityGroupIngress</i> 
+    ///  <code>AuthorizeCacheSecurityGroupIngress</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <i>CreateCacheSecurityGroup</i> 
+    ///  <code>CreateCacheSecurityGroup</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <i>RevokeCacheSecurityGroupIngress</i> 
+    ///  <code>RevokeCacheSecurityGroupIngress</code> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

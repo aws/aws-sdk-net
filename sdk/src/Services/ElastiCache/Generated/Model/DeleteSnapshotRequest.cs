@@ -29,9 +29,15 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSnapshot operation.
-    /// The <i>DeleteSnapshot</i> action deletes an existing snapshot. When you receive a
-    /// successful response from this action, ElastiCache immediately begins deleting the
-    /// snapshot; you cannot cancel or revert this action.
+    /// Deletes an existing snapshot. When you receive a successful response from this operation,
+    /// ElastiCache immediately begins deleting the snapshot; you cannot cancel or revert
+    /// this operation.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation is valid for Redis only.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteSnapshotRequest : AmazonElastiCacheRequest
     {

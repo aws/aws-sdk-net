@@ -29,9 +29,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCacheParameterGroups operation.
-    /// The <i>DescribeCacheParameterGroups</i> action returns a list of cache parameter group
-    /// descriptions. If a cache parameter group name is specified, the list will contain
-    /// only the descriptions for that group.
+    /// Returns a list of cache parameter group descriptions. If a cache parameter group name
+    /// is specified, the list contains only the descriptions for that group.
     /// </summary>
     public partial class DescribeCacheParameterGroupsRequest : AmazonElastiCacheRequest
     {
@@ -75,8 +74,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional marker returned from a prior request. Use this marker for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// results from this operation. If this parameter is specified, the response includes
+        /// only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker

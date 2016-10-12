@@ -95,6 +95,35 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EngineVersion", StringUtils.FromString(publicRequest.EngineVersion));
                 }
+                if(publicRequest.IsSetNodeGroupConfiguration())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.NodeGroupConfiguration)
+                    {
+                        if(publicRequestlistValue.IsSetPrimaryAvailabilityZone())
+                        {
+                            request.Parameters.Add("NodeGroupConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PrimaryAvailabilityZone", StringUtils.FromString(publicRequestlistValue.PrimaryAvailabilityZone));
+                        }
+                        if(publicRequestlistValue.IsSetReplicaAvailabilityZones())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ReplicaAvailabilityZones)
+                            {
+                                request.Parameters.Add("NodeGroupConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReplicaAvailabilityZones" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
+                        if(publicRequestlistValue.IsSetReplicaCount())
+                        {
+                            request.Parameters.Add("NodeGroupConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReplicaCount", StringUtils.FromInt(publicRequestlistValue.ReplicaCount));
+                        }
+                        if(publicRequestlistValue.IsSetSlots())
+                        {
+                            request.Parameters.Add("NodeGroupConfiguration" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Slots", StringUtils.FromString(publicRequestlistValue.Slots));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetNotificationTopicArn())
                 {
                     request.Parameters.Add("NotificationTopicArn", StringUtils.FromString(publicRequest.NotificationTopicArn));
@@ -102,6 +131,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetNumCacheClusters())
                 {
                     request.Parameters.Add("NumCacheClusters", StringUtils.FromInt(publicRequest.NumCacheClusters));
+                }
+                if(publicRequest.IsSetNumNodeGroups())
+                {
+                    request.Parameters.Add("NumNodeGroups", StringUtils.FromInt(publicRequest.NumNodeGroups));
                 }
                 if(publicRequest.IsSetPort())
                 {
@@ -123,6 +156,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPrimaryClusterId())
                 {
                     request.Parameters.Add("PrimaryClusterId", StringUtils.FromString(publicRequest.PrimaryClusterId));
+                }
+                if(publicRequest.IsSetReplicasPerNodeGroup())
+                {
+                    request.Parameters.Add("ReplicasPerNodeGroup", StringUtils.FromInt(publicRequest.ReplicasPerNodeGroup));
                 }
                 if(publicRequest.IsSetReplicationGroupDescription())
                 {

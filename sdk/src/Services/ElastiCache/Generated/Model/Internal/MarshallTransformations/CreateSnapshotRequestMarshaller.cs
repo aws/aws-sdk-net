@@ -62,6 +62,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CacheClusterId", StringUtils.FromString(publicRequest.CacheClusterId));
                 }
+                if(publicRequest.IsSetReplicationGroupId())
+                {
+                    request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(publicRequest.ReplicationGroupId));
+                }
                 if(publicRequest.IsSetSnapshotName())
                 {
                     request.Parameters.Add("SnapshotName", StringUtils.FromString(publicRequest.SnapshotName));

@@ -60,6 +60,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.AutomaticFailover = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ConfigurationEndpoint", targetDepth))
+                    {
+                        var unmarshaller = EndpointUnmarshaller.Instance;
+                        unmarshalledObject.ConfigurationEndpoint = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Description", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -92,10 +98,22 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.ReplicationGroupId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SnapshotRetentionLimit", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotRetentionLimit = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SnapshottingClusterId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.SnapshottingClusterId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SnapshotWindow", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SnapshotWindow = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))

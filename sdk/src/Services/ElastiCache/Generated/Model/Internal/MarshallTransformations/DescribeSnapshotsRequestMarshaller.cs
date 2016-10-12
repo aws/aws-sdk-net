@@ -70,6 +70,14 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
+                if(publicRequest.IsSetReplicationGroupId())
+                {
+                    request.Parameters.Add("ReplicationGroupId", StringUtils.FromString(publicRequest.ReplicationGroupId));
+                }
+                if(publicRequest.IsSetShowNodeGroupConfig())
+                {
+                    request.Parameters.Add("ShowNodeGroupConfig", StringUtils.FromBool(publicRequest.ShowNodeGroupConfig));
+                }
                 if(publicRequest.IsSetSnapshotName())
                 {
                     request.Parameters.Add("SnapshotName", StringUtils.FromString(publicRequest.SnapshotName));

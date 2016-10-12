@@ -29,8 +29,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEngineDefaultParameters operation.
-    /// The <i>DescribeEngineDefaultParameters</i> action returns the default engine and system
-    /// parameter information for the specified cache engine.
+    /// Returns the default engine and system parameter information for the specified cache
+    /// engine.
     /// </summary>
     public partial class DescribeEngineDefaultParametersRequest : AmazonElastiCacheRequest
     {
@@ -46,7 +46,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Instantiates DescribeEngineDefaultParametersRequest with the parameterized properties
         /// </summary>
-        /// <param name="cacheParameterGroupFamily">The name of the cache parameter group family. Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> </param>
+        /// <param name="cacheParameterGroupFamily">The name of the cache parameter group family. Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> </param>
         public DescribeEngineDefaultParametersRequest(string cacheParameterGroupFamily)
         {
             _cacheParameterGroupFamily = cacheParameterGroupFamily;
@@ -55,8 +55,12 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheParameterGroupFamily. 
         /// <para>
-        /// The name of the cache parameter group family. Valid values are: <code>memcached1.4</code>
-        /// | <code>redis2.6</code> | <code>redis2.8</code> 
+        /// The name of the cache parameter group family.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code>
+        /// | <code>redis3.2</code> 
         /// </para>
         /// </summary>
         public string CacheParameterGroupFamily
@@ -75,8 +79,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional marker returned from a prior request. Use this marker for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// results from this operation. If this parameter is specified, the response includes
+        /// only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker

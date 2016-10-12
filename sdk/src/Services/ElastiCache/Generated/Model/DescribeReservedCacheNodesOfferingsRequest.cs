@@ -29,8 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReservedCacheNodesOfferings operation.
-    /// The <i>DescribeReservedCacheNodesOfferings</i> action lists available reserved cache
-    /// node offerings.
+    /// Lists available reserved cache node offerings.
     /// </summary>
     public partial class DescribeReservedCacheNodesOfferingsRequest : AmazonElastiCacheRequest
     {
@@ -60,7 +59,9 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
         /// <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-        /// <code>cache.m3.2xlarge</code> 
+        /// <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+        /// <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -91,21 +92,22 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+        /// All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis backup/restore is not supported for t2 instances.
+        /// Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2
+        /// instances. Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+        /// Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For a complete listing of cache node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-        /// ElastiCache Product Features and Details</a> and <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
-        /// Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+        /// For a complete listing of node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+        /// ElastiCache Product Features and Details</a> and either <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+        /// Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
         /// Node Type-Specific Parameters for Redis</a>.
         /// </para>
         /// </summary>
@@ -148,8 +150,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional marker returned from a prior request. Use this marker for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// results from this operation. If this parameter is specified, the response includes
+        /// only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker

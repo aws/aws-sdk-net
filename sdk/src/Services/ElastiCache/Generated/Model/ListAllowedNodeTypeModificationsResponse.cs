@@ -28,25 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the allowed node types you can use to modify your cache cluster or replication
-    /// group.
+    /// This is the response object from the ListAllowedNodeTypeModifications operation.
     /// </summary>
     public partial class ListAllowedNodeTypeModificationsResponse : AmazonWebServiceResponse
     {
         private List<string> _scaleUpModifications = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property ScaleUpModifications. 
-        /// <para>
-        /// A string list, each element of which specifies a cache node type which you can use
-        /// to scale your cache cluster or replication group.
-        /// </para>
-        ///  
-        /// <para>
-        /// When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code>
-        /// or <code>ModifyReplicationGroup</code>, use a value from this list for the <i>CacheNodeType</i>
-        /// parameter.
-        /// </para>
+        /// Gets and sets the property ScaleUpModifications.
         /// </summary>
         public List<string> ScaleUpModifications
         {

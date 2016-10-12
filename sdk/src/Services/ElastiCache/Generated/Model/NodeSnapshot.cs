@@ -32,10 +32,31 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class NodeSnapshot
     {
+        private string _cacheClusterId;
         private DateTime? _cacheNodeCreateTime;
         private string _cacheNodeId;
         private string _cacheSize;
+        private NodeGroupConfiguration _nodeGroupConfiguration;
+        private string _nodeGroupId;
         private DateTime? _snapshotCreateTime;
+
+        /// <summary>
+        /// Gets and sets the property CacheClusterId. 
+        /// <para>
+        /// A unique identifier for the source cache cluster.
+        /// </para>
+        /// </summary>
+        public string CacheClusterId
+        {
+            get { return this._cacheClusterId; }
+            set { this._cacheClusterId = value; }
+        }
+
+        // Check to see if CacheClusterId property is set
+        internal bool IsSetCacheClusterId()
+        {
+            return this._cacheClusterId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CacheNodeCreateTime. 
@@ -89,6 +110,42 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetCacheSize()
         {
             return this._cacheSize != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeGroupConfiguration. 
+        /// <para>
+        /// The configuration for the source node group (shard).
+        /// </para>
+        /// </summary>
+        public NodeGroupConfiguration NodeGroupConfiguration
+        {
+            get { return this._nodeGroupConfiguration; }
+            set { this._nodeGroupConfiguration = value; }
+        }
+
+        // Check to see if NodeGroupConfiguration property is set
+        internal bool IsSetNodeGroupConfiguration()
+        {
+            return this._nodeGroupConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeGroupId. 
+        /// <para>
+        /// A unique identifier for the source node group (shard).
+        /// </para>
+        /// </summary>
+        public string NodeGroupId
+        {
+            get { return this._nodeGroupId; }
+            set { this._nodeGroupId = value; }
+        }
+
+        // Check to see if NodeGroupId property is set
+        internal bool IsSetNodeGroupId()
+        {
+            return this._nodeGroupId != null;
         }
 
         /// <summary>

@@ -254,6 +254,10 @@ namespace Amazon.ElastiCache
         /// Constant CacheSubnetGroup for SourceType
         /// </summary>
         public static readonly SourceType CacheSubnetGroup = new SourceType("cache-subnet-group");
+        /// <summary>
+        /// Constant ReplicationGroup for SourceType
+        /// </summary>
+        public static readonly SourceType ReplicationGroup = new SourceType("replication-group");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -29,9 +29,9 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeCacheSecurityGroupIngress operation.
-    /// The <i>AuthorizeCacheSecurityGroupIngress</i> action allows network ingress to a cache
-    /// security group. Applications using ElastiCache must be running on Amazon EC2, and
-    /// Amazon EC2 security groups are used as the authorization mechanism.
+    /// Allows network ingress to a cache security group. Applications using ElastiCache must
+    /// be running on Amazon EC2, and Amazon EC2 security groups are used as the authorization
+    /// mechanism.
     /// 
     ///  <note> 
     /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheSecurityGroupName. 
         /// <para>
-        /// The cache security group which will allow network ingress.
+        /// The cache security group that allows network ingress.
         /// </para>
         /// </summary>
         public string CacheSecurityGroupName

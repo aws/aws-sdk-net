@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the output of a <i>DescribeSnapshots</i> action.
+    /// Represents the output of a <code>DescribeSnapshots</code> operation.
     /// </summary>
     public partial class DescribeSnapshotsResponse : AmazonWebServiceResponse
     {
@@ -39,8 +39,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional marker returned from a prior request. Use this marker for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// results from this operation. If this parameter is specified, the response includes
+        /// only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker

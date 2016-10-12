@@ -28,17 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Contains all of the attributes of a specific replication group.
+    /// Contains all of the attributes of a specific Redis replication group.
     /// </summary>
     public partial class ReplicationGroup
     {
         private AutomaticFailoverStatus _automaticFailover;
+        private Endpoint _configurationEndpoint;
         private string _description;
         private List<string> _memberClusters = new List<string>();
         private List<NodeGroup> _nodeGroups = new List<NodeGroup>();
         private ReplicationGroupPendingModifiedValues _pendingModifiedValues;
         private string _replicationGroupId;
+        private int? _snapshotRetentionLimit;
         private string _snapshottingClusterId;
+        private string _snapshotWindow;
         private string _status;
 
         /// <summary>
@@ -56,7 +59,11 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// T1 and T2 cache node types.
+        /// Redis (cluster mode disabled):T1 and T2 cache node types.
+        /// </para>
+        ///  
+        /// <para>
+        /// Redis (cluster mode enabled): T1 node types.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -70,6 +77,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetAutomaticFailover()
         {
             return this._automaticFailover != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationEndpoint. 
+        /// <para>
+        /// The configuration endpoint for this replicaiton group. Use the configuration endpoint
+        /// to connect to this replication group.
+        /// </para>
+        /// </summary>
+        public Endpoint ConfigurationEndpoint
+        {
+            get { return this._configurationEndpoint; }
+            set { this._configurationEndpoint = value; }
+        }
+
+        // Check to see if ConfigurationEndpoint property is set
+        internal bool IsSetConfigurationEndpoint()
+        {
+            return this._configurationEndpoint != null;
         }
 
         /// <summary>
@@ -164,6 +190,32 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SnapshotRetentionLimit. 
+        /// <para>
+        /// The number of days for which ElastiCache retains automatic cache cluster snapshots
+        /// before deleting them. For example, if you set <code>SnapshotRetentionLimit</code>
+        /// to 5, a snapshot that was taken today is retained for 5 days before being deleted.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        ///  If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are
+        /// turned off.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public int SnapshotRetentionLimit
+        {
+            get { return this._snapshotRetentionLimit.GetValueOrDefault(); }
+            set { this._snapshotRetentionLimit = value; }
+        }
+
+        // Check to see if SnapshotRetentionLimit property is set
+        internal bool IsSetSnapshotRetentionLimit()
+        {
+            return this._snapshotRetentionLimit.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SnapshottingClusterId. 
         /// <para>
         /// The cache cluster ID that is used as the daily snapshot source for the replication
@@ -183,9 +235,43 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SnapshotWindow. 
+        /// <para>
+        /// The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot
+        /// of your node group (shard).
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <code>05:00-09:00</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify this parameter, ElastiCache automatically chooses an appropriate
+        /// time range.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> This parameter is only valid if the <code>Engine</code> parameter is
+        /// <code>redis</code>.
+        /// </para>
+        /// </summary>
+        public string SnapshotWindow
+        {
+            get { return this._snapshotWindow; }
+            set { this._snapshotWindow = value; }
+        }
+
+        // Check to see if SnapshotWindow property is set
+        internal bool IsSetSnapshotWindow()
+        {
+            return this._snapshotWindow != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current state of this replication group - <i>creating</i>, <i>available</i>, etc.
+        /// The current state of this replication group - <code>creating</code>, <code>available</code>,
+        /// etc.
         /// </para>
         /// </summary>
         public string Status

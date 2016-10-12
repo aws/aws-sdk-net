@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NodeGroup Object
+    /// Response Unmarshaller for NodeGroupConfiguration Object
     /// </summary>  
-    public class NodeGroupUnmarshaller : IUnmarshaller<NodeGroup, XmlUnmarshallerContext>, IUnmarshaller<NodeGroup, JsonUnmarshallerContext>
+    public class NodeGroupConfigurationUnmarshaller : IUnmarshaller<NodeGroupConfiguration, XmlUnmarshallerContext>, IUnmarshaller<NodeGroupConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NodeGroup Unmarshall(XmlUnmarshallerContext context)
+        public NodeGroupConfiguration Unmarshall(XmlUnmarshallerContext context)
         {
-            NodeGroup unmarshalledObject = new NodeGroup();
+            NodeGroupConfiguration unmarshalledObject = new NodeGroupConfiguration();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -54,35 +54,29 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("NodeGroupId", targetDepth))
+                    if (context.TestExpression("PrimaryAvailabilityZone", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.NodeGroupId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PrimaryAvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("NodeGroupMembers/NodeGroupMember", targetDepth))
+                    if (context.TestExpression("ReplicaAvailabilityZones/AvailabilityZone", targetDepth))
                     {
-                        var unmarshaller = NodeGroupMemberUnmarshaller.Instance;
+                        var unmarshaller = StringUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.NodeGroupMembers.Add(item);
+                        unmarshalledObject.ReplicaAvailabilityZones.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("PrimaryEndpoint", targetDepth))
+                    if (context.TestExpression("ReplicaCount", targetDepth))
                     {
-                        var unmarshaller = EndpointUnmarshaller.Instance;
-                        unmarshalledObject.PrimaryEndpoint = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.ReplicaCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Slots", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Slots = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Status", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -100,18 +94,18 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NodeGroup Unmarshall(JsonUnmarshallerContext context)
+        public NodeGroupConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static NodeGroupUnmarshaller _instance = new NodeGroupUnmarshaller();        
+        private static NodeGroupConfigurationUnmarshaller _instance = new NodeGroupConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NodeGroupUnmarshaller Instance
+        public static NodeGroupConfigurationUnmarshaller Instance
         {
             get
             {

@@ -29,8 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the PurchaseReservedCacheNodesOffering operation.
-    /// The <i>PurchaseReservedCacheNodesOffering</i> action allows you to purchase a reserved
-    /// cache node offering.
+    /// Allows you to purchase a reserved cache node offering.
     /// </summary>
     public partial class PurchaseReservedCacheNodesOfferingRequest : AmazonElastiCacheRequest
     {

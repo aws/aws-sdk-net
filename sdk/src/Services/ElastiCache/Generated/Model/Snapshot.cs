@@ -28,11 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents a copy of an entire cache cluster as of the time when the snapshot was
-    /// taken.
+    /// Represents a copy of an entire Redis cache cluster as of the time when the snapshot
+    /// was taken.
     /// </summary>
     public partial class Snapshot
     {
+        private AutomaticFailoverStatus _automaticFailover;
         private bool? _autoMinorVersionUpgrade;
         private DateTime? _cacheClusterCreateTime;
         private string _cacheClusterId;
@@ -43,9 +44,12 @@ namespace Amazon.ElastiCache.Model
         private string _engineVersion;
         private List<NodeSnapshot> _nodeSnapshots = new List<NodeSnapshot>();
         private int? _numCacheNodes;
+        private int? _numNodeGroups;
         private int? _port;
         private string _preferredAvailabilityZone;
         private string _preferredMaintenanceWindow;
+        private string _replicationGroupDescription;
+        private string _replicationGroupId;
         private string _snapshotName;
         private int? _snapshotRetentionLimit;
         private string _snapshotSource;
@@ -53,6 +57,41 @@ namespace Amazon.ElastiCache.Model
         private string _snapshotWindow;
         private string _topicArn;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property AutomaticFailover. 
+        /// <para>
+        /// Indicates the status of Multi-AZ for the source replication group.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// ElastiCache Multi-AZ replication groups are not supported on:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Redis versions earlier than 2.8.6.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Redis (cluster mode disabled):T1 and T2 cache node types.
+        /// </para>
+        ///  
+        /// <para>
+        /// Redis (cluster mode enabled): T1 node types.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        public AutomaticFailoverStatus AutomaticFailover
+        {
+            get { return this._automaticFailover; }
+            set { this._automaticFailover = value; }
+        }
+
+        // Check to see if AutomaticFailover property is set
+        internal bool IsSetAutomaticFailover()
+        {
+            return this._automaticFailover != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
@@ -125,7 +164,9 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Current generation: <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>,
         /// <code>cache.m3.medium</code>, <code>cache.m3.large</code>, <code>cache.m3.xlarge</code>,
-        /// <code>cache.m3.2xlarge</code> 
+        /// <code>cache.m3.2xlarge</code>, <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+        /// <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -156,21 +197,22 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// All t2 instances are created in an Amazon Virtual Private Cloud (VPC).
+        /// All T2 instances are created in an Amazon Virtual Private Cloud (Amazon VPC).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis backup/restore is not supported for t2 instances.
+        /// Redis backup/restore is not supported for Redis (cluster mode disabled) T1 and T2
+        /// instances. Backup/restore is supported on Redis (cluster mode enabled) T2 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis Append-only files (AOF) functionality is not supported for t1 or t2 instances.
+        /// Redis Append-only files (AOF) functionality is not supported for T1 or T2 instances.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For a complete listing of cache node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-        /// ElastiCache Product Features and Details</a> and <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#CacheParameterGroups.Memcached.NodeSpecific">Cache
-        /// Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#CacheParameterGroups.Redis.NodeSpecific">Cache
+        /// For a complete listing of node types and specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
+        /// ElastiCache Product Features and Details</a> and either <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+        /// Node Type-Specific Parameters for Memcached</a> or <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
         /// Node Type-Specific Parameters for Redis</a>.
         /// </para>
         /// </summary>
@@ -225,8 +267,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The name of the cache engine (<i>memcached</i> or <i>redis</i>) used by the source
-        /// cache cluster.
+        /// The name of the cache engine (<code>memcached</code> or <code>redis</code>) used by
+        /// the source cache cluster.
         /// </para>
         /// </summary>
         public string Engine
@@ -301,6 +343,26 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NumNodeGroups. 
+        /// <para>
+        /// The number of node groups (shards) in this snapshot. When restoring from a snapshot,
+        /// the number of node groups (shards) in the snapshot and in the restored replication
+        /// group must be the same.
+        /// </para>
+        /// </summary>
+        public int NumNodeGroups
+        {
+            get { return this._numNodeGroups.GetValueOrDefault(); }
+            set { this._numNodeGroups = value; }
+        }
+
+        // Check to see if NumNodeGroups property is set
+        internal bool IsSetNumNodeGroups()
+        {
+            return this._numNodeGroups.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
         /// The port number used by each cache nodes in the source cache cluster.
@@ -339,10 +401,13 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
-        /// Specifies the weekly time range during which maintenance on the cache cluster is performed.
+        /// Specifies the weekly time range during which maintenance on the cluster is performed.
         /// It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC).
-        /// The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code>
-        /// are:
+        /// The minimum maintenance window is a 60 minute period.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values for <code>ddd</code> are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -374,7 +439,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>sun:05:00-sun:09:00</code> 
+        /// Example: <code>sun:23:00-mon:01:30</code> 
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -390,9 +455,45 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReplicationGroupDescription. 
+        /// <para>
+        /// A description of the source replication group.
+        /// </para>
+        /// </summary>
+        public string ReplicationGroupDescription
+        {
+            get { return this._replicationGroupDescription; }
+            set { this._replicationGroupDescription = value; }
+        }
+
+        // Check to see if ReplicationGroupDescription property is set
+        internal bool IsSetReplicationGroupDescription()
+        {
+            return this._replicationGroupDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationGroupId. 
+        /// <para>
+        /// The unique identifier of the source replication group.
+        /// </para>
+        /// </summary>
+        public string ReplicationGroupId
+        {
+            get { return this._replicationGroupId; }
+            set { this._replicationGroupId = value; }
+        }
+
+        // Check to see if ReplicationGroupId property is set
+        internal bool IsSetReplicationGroupId()
+        {
+            return this._replicationGroupId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SnapshotName. 
         /// <para>
-        /// The name of a snapshot. For an automatic snapshot, the name is system-generated; for
+        /// The name of a snapshot. For an automatic snapshot, the name is system-generated. For
         /// a manual snapshot, this is the user-provided name.
         /// </para>
         /// </summary>
@@ -411,15 +512,15 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SnapshotRetentionLimit. 
         /// <para>
-        /// For an automatic snapshot, the number of days for which ElastiCache will retain the
-        /// snapshot before deleting it.
+        /// For an automatic snapshot, the number of days for which ElastiCache retains the snapshot
+        /// before deleting it.
         /// </para>
         ///  
         /// <para>
-        /// For manual snapshots, this field reflects the <i>SnapshotRetentionLimit</i> for the
-        /// source cache cluster when the snapshot was created. This field is otherwise ignored:
-        /// Manual snapshots do not expire, and can only be deleted using the <i>DeleteSnapshot</i>
-        /// action. 
+        /// For manual snapshots, this field reflects the <code>SnapshotRetentionLimit</code>
+        /// for the source cache cluster when the snapshot was created. This field is otherwise
+        /// ignored: Manual snapshots do not expire, and can only be deleted using the <code>DeleteSnapshot</code>
+        /// operation. 
         /// </para>
         ///  
         /// <para>
