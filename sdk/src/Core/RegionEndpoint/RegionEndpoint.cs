@@ -46,6 +46,11 @@ namespace Amazon
         public static readonly RegionEndpoint USEast1 = NewEndpoint("us-east-1", "US East (Virginia)");
 
         /// <summary>
+        /// The US East (Ohio) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint USEast2 = NewEndpoint("us-east-2", "US East (Ohio)");
+
+        /// <summary>
         /// The US West (N. California) endpoint.
         /// </summary>
         public static readonly RegionEndpoint USWest1 = NewEndpoint("us-west-1", "US West (N. California)");
