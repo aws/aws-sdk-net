@@ -1,3 +1,9 @@
+### 3.3.7.0 (2016-10-12 08:32 UTC)
+* CognitoSync (3.3.1.0)
+	* Update SQLite dependencies for support of Android N
+* MobileAnalytics (3.3.1.0)
+	* Update SQLite dependencies for support of Android N
+
 ### 3.3.6.0 (2016-10-11 19:26 UTC)
 * Core 3.3.1.0
 	* * Close HttpWebRequest's response stream on WebExceptions (https://github.com/aws/aws-sdk-net/pull/449).
