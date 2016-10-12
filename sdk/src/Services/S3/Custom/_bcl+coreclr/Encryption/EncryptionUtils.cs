@@ -1,5 +1,5 @@
-﻿/*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+/*
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ namespace Amazon.S3.Encryption
     /// It can be used to prepare requests for encryption before they are stored in S3
     /// and to decrypt objects that are retrieved from S3.
     /// </summary>
-    public static class EncryptionUtils
+    internal static class EncryptionUtils
     {
         /// <summary>
         /// Encrypts a Envelope key using the provided encryption materials
