@@ -52,16 +52,27 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ChangeSeverity. 
         /// <para>
-        ///  An indication of which action is required if the value for this configuration option
-        /// changes: 
+        /// An indication of which action is required if the value for this configuration option
+        /// changes:
         /// </para>
-        ///  <ul> <li> <code>NoInterruption</code> : There is no interruption to the environment
-        /// or application availability. </li> <li> <code>RestartEnvironment</code> : The environment
-        /// is entirely restarted, all AWS resources are deleted and recreated, and the environment
-        /// is unavailable during the process. </li> <li> <code>RestartApplicationServer</code>
-        /// : The environment is available the entire time. However, a short application outage
-        /// occurs when the application servers on the running Amazon EC2 instances are restarted.
-        /// </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>NoInterruption</code> : There is no interruption to the environment or application
+        /// availability.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS
+        /// resources are deleted and recreated, and the environment is unavailable during the
+        /// process.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RestartApplicationServer</code> : The environment is available the entire time.
+        /// However, a short application outage occurs when the application servers on the running
+        /// Amazon EC2 instances are restarted.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ChangeSeverity
         {
@@ -78,7 +89,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property DefaultValue. 
         /// <para>
-        ///  The default value for this configuration option. 
+        /// The default value for this configuration option.
         /// </para>
         /// </summary>
         public string DefaultValue
@@ -96,8 +107,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property MaxLength. 
         /// <para>
-        ///  If specified, the configuration option must be a string value no longer than this
-        /// value. 
+        /// If specified, the configuration option must be a string value no longer than this
+        /// value.
         /// </para>
         /// </summary>
         public int MaxLength
@@ -115,8 +126,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property MaxValue. 
         /// <para>
-        ///  If specified, the configuration option must be a numeric value less than this value.
-        /// 
+        /// If specified, the configuration option must be a numeric value less than this value.
         /// </para>
         /// </summary>
         public int MaxValue
@@ -134,8 +144,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property MinValue. 
         /// <para>
-        ///  If specified, the configuration option must be a numeric value greater than this
-        /// value. 
+        /// If specified, the configuration option must be a numeric value greater than this value.
         /// </para>
         /// </summary>
         public int MinValue
@@ -153,7 +162,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the configuration option. 
+        /// The name of the configuration option.
         /// </para>
         /// </summary>
         public string Name
@@ -171,7 +180,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  A unique namespace identifying the option's associated AWS resource. 
+        /// A unique namespace identifying the option's associated AWS resource.
         /// </para>
         /// </summary>
         public string Namespace
@@ -189,8 +198,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Regex. 
         /// <para>
-        ///  If specified, the configuration option must be a string value that satisfies this
-        /// regular expression. 
+        /// If specified, the configuration option must be a string value that satisfies this
+        /// regular expression.
         /// </para>
         /// </summary>
         public OptionRestrictionRegex Regex
@@ -208,7 +217,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property UserDefined. 
         /// <para>
-        ///  An indication of whether the user defined this configuration option: 
+        /// An indication of whether the user defined this configuration option:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -216,15 +225,18 @@ namespace Amazon.ElasticBeanstalk.Model
         /// choice for specifying if this as an <code>Option to Remove</code> when updating configuration
         /// settings. 
         /// </para>
-        ///  </li> <li> <code>false</code> : This configuration was not defined by the user. </li>
-        /// </ul> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>false</code> : This configuration was not defined by the user.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         ///  Constraint: You can remove only <code>UserDefined</code> options from a configuration.
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>true</code> | <code>false</code>
+        ///  Valid Values: <code>true</code> | <code>false</code> 
         /// </para>
         /// </summary>
         public bool UserDefined
@@ -242,7 +254,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ValueOptions. 
         /// <para>
-        ///  If specified, values for the configuration option are selected from this list. 
+        /// If specified, values for the configuration option are selected from this list.
         /// </para>
         /// </summary>
         public List<string> ValueOptions
@@ -260,16 +272,30 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ValueType. 
         /// <para>
-        ///  An indication of which type of values this option has and whether it is allowable
-        /// to select one or more than one of the possible values: 
+        /// An indication of which type of values this option has and whether it is allowable
+        /// to select one or more than one of the possible values:
         /// </para>
-        ///  <ul> <li> <code>Scalar</code> : Values for this option are a single selection from
-        /// the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code>
-        /// constraints. </li> <li> <code>List</code> : Values for this option are multiple selections
-        /// from the possible values. </li> <li> <code>Boolean</code> : Values for this option
-        /// are either <code>true</code> or <code>false</code> . </li> <li> <code>Json</code>
-        /// : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
-        /// </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Scalar</code> : Values for this option are a single selection from the possible
+        /// values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code>
+        /// constraints.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>List</code> : Values for this option are multiple selections from the possible
+        /// values.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code>
+        /// .
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ConfigurationOptionValueType ValueType
         {

@@ -35,6 +35,8 @@ namespace Amazon.ElasticBeanstalk.Model
     public partial class DescribeApplicationVersionsRequest : AmazonElasticBeanstalkRequest
     {
         private string _applicationName;
+        private int? _maxRecords;
+        private string _nextToken;
         private List<string> _versionLabels = new List<string>();
 
         /// <summary>
@@ -59,6 +61,42 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetApplicationName()
         {
             return this._applicationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxRecords. 
+        /// <para>
+        /// Specify a maximum number of application versions to paginate in the request.
+        /// </para>
+        /// </summary>
+        public int MaxRecords
+        {
+            get { return this._maxRecords.GetValueOrDefault(); }
+            set { this._maxRecords = value; }
+        }
+
+        // Check to see if MaxRecords property is set
+        internal bool IsSetMaxRecords()
+        {
+            return this._maxRecords.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Specify a next token to retrieve the next page in a paginated request.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>

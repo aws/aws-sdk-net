@@ -47,9 +47,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates ConfigurationOptionSetting with the parameterized properties
         /// </summary>
-        /// <param name="awsNamespace"> A unique namespace identifying the option's associated AWS resource. </param>
-        /// <param name="optionName"> The name of the configuration option. </param>
-        /// <param name="value"> The current value for the configuration option. </param>
+        /// <param name="awsNamespace">A unique namespace identifying the option's associated AWS resource.</param>
+        /// <param name="optionName">The name of the configuration option.</param>
+        /// <param name="value">The current value for the configuration option.</param>
         public ConfigurationOptionSetting(string awsNamespace, string optionName, string value)
         {
             _awsNamespace = awsNamespace;
@@ -60,7 +60,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  A unique namespace identifying the option's associated AWS resource. 
+        /// A unique namespace identifying the option's associated AWS resource.
         /// </para>
         /// </summary>
         public string Namespace
@@ -78,7 +78,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property OptionName. 
         /// <para>
-        ///  The name of the configuration option. 
+        /// The name of the configuration option.
         /// </para>
         /// </summary>
         public string OptionName
@@ -96,7 +96,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        ///  A unique resource name for a time-based scaling configuration option. 
+        /// A unique resource name for a time-based scaling configuration option.
         /// </para>
         /// </summary>
         public string ResourceName
@@ -114,7 +114,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  The current value for the configuration option. 
+        /// The current value for the configuration option.
         /// </para>
         /// </summary>
         public string Value

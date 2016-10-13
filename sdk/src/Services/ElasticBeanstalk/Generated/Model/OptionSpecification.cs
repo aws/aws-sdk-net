@@ -44,7 +44,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        ///  A unique namespace identifying the option's associated AWS resource. 
+        /// A unique namespace identifying the option's associated AWS resource.
         /// </para>
         /// </summary>
         public string Namespace
@@ -62,7 +62,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property OptionName. 
         /// <para>
-        ///  The name of the configuration option. 
+        /// The name of the configuration option.
         /// </para>
         /// </summary>
         public string OptionName
@@ -80,7 +80,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        ///  A unique resource name for a time-based scaling configuration option. 
+        /// A unique resource name for a time-based scaling configuration option.
         /// </para>
         /// </summary>
         public string ResourceName

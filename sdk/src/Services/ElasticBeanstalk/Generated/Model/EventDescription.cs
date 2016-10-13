@@ -139,7 +139,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The severity level of this event. 
+        /// The severity level of this event.
         /// </para>
         /// </summary>
         public EventSeverity Severity

@@ -46,7 +46,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Degraded. 
         /// <para>
-        /// <b>Red.</b> The health agent is reporting a high number of request failures or other
+        ///  <b>Red.</b> The health agent is reporting a high number of request failures or other
         /// issues for an instance or environment.
         /// </para>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Info. 
         /// <para>
-        /// <b>Green.</b> An operation is in progress on an instance.
+        ///  <b>Green.</b> An operation is in progress on an instance.
         /// </para>
         /// </summary>
         public int Info
@@ -83,8 +83,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property NoData. 
         /// <para>
-        /// <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an
-        /// instance.
+        ///  <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on
+        /// an instance.
         /// </para>
         /// </summary>
         public int NoData
@@ -102,7 +102,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Ok. 
         /// <para>
-        /// <b>Green.</b> An instance is passing health checks and the health agent is not reporting
+        ///  <b>Green.</b> An instance is passing health checks and the health agent is not reporting
         /// any problems.
         /// </para>
         /// </summary>
@@ -121,7 +121,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Pending. 
         /// <para>
-        /// <b>Grey.</b> An operation is in progress on an instance within the command timeout.
+        ///  <b>Grey.</b> An operation is in progress on an instance within the command timeout.
         /// </para>
         /// </summary>
         public int Pending
@@ -139,8 +139,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Severe. 
         /// <para>
-        /// <b>Red.</b> The health agent is reporting a very high number of request failures or
-        /// other issues for an instance or environment.
+        ///  <b>Red.</b> The health agent is reporting a very high number of request failures
+        /// or other issues for an instance or environment.
         /// </para>
         /// </summary>
         public int Severe
@@ -158,7 +158,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Unknown. 
         /// <para>
-        /// <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient
+        ///  <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient
         /// amount of data on an instance.
         /// </para>
         /// </summary>
@@ -177,7 +177,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Warning. 
         /// <para>
-        /// <b>Yellow.</b> The health agent is reporting a moderate number of request failures
+        ///  <b>Yellow.</b> The health agent is reporting a moderate number of request failures
         /// or other issues for an instance or environment.
         /// </para>
         /// </summary>

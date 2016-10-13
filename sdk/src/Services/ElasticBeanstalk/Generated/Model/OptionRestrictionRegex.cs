@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// A regular expression representing a restriction on a string configuration option
-    /// value.
+    /// A regular expression representing a restriction on a string configuration option value.
     /// </summary>
     public partial class OptionRestrictionRegex
     {
@@ -44,7 +43,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Label. 
         /// <para>
-        ///  A unique name representing this regular expression. 
+        /// A unique name representing this regular expression.
         /// </para>
         /// </summary>
         public string Label
@@ -62,8 +61,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Pattern. 
         /// <para>
-        ///  The regular expression pattern that a string configuration option value with this
-        /// restriction must match. 
+        /// The regular expression pattern that a string configuration option value with this
+        /// restriction must match.
         /// </para>
         /// </summary>
         public string Pattern

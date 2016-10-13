@@ -43,7 +43,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates CheckDNSAvailabilityRequest with the parameterized properties
         /// </summary>
-        /// <param name="cnamePrefix"> The prefix used when this CNAME is reserved. </param>
+        /// <param name="cnamePrefix">The prefix used when this CNAME is reserved.</param>
         public CheckDNSAvailabilityRequest(string cnamePrefix)
         {
             _cnamePrefix = cnamePrefix;
@@ -52,7 +52,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property CNAMEPrefix. 
         /// <para>
-        ///  The prefix used when this CNAME is reserved. 
+        /// The prefix used when this CNAME is reserved.
         /// </para>
         /// </summary>
         public string CNAMEPrefix

@@ -29,8 +29,7 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the RequestEnvironmentInfo operation.
-    /// Initiates a request to compile the specified type of information of the deployed
-    /// environment. 
+    /// Initiates a request to compile the specified type of information of the deployed environment.
     /// 
     ///  
     /// <para>
@@ -52,7 +51,11 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <para>
     /// Related Topics
     /// </para>
-    ///  <ul> <li> <a>RetrieveEnvironmentInfo</a> </li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>RetrieveEnvironmentInfo</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class RequestEnvironmentInfoRequest : AmazonElasticBeanstalkRequest
     {

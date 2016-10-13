@@ -74,6 +74,21 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Process", StringUtils.FromBool(publicRequest.Process));
                 }
+                if(publicRequest.IsSetSourceBuildInformation())
+                {
+                    if(publicRequest.SourceBuildInformation.IsSetSourceLocation())
+                    {
+                        request.Parameters.Add("SourceBuildInformation" + "." + "SourceLocation", StringUtils.FromString(publicRequest.SourceBuildInformation.SourceLocation));
+                    }
+                    if(publicRequest.SourceBuildInformation.IsSetSourceRepository())
+                    {
+                        request.Parameters.Add("SourceBuildInformation" + "." + "SourceRepository", StringUtils.FromString(publicRequest.SourceBuildInformation.SourceRepository));
+                    }
+                    if(publicRequest.SourceBuildInformation.IsSetSourceType())
+                    {
+                        request.Parameters.Add("SourceBuildInformation" + "." + "SourceType", StringUtils.FromString(publicRequest.SourceBuildInformation.SourceType));
+                    }
+                }
                 if(publicRequest.IsSetSourceBundle())
                 {
                     if(publicRequest.SourceBundle.IsSetS3Bucket())

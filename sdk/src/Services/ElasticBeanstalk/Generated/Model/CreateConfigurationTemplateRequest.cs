@@ -37,8 +37,19 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <para>
     /// Related Topics
     /// </para>
-    ///  <ul> <li> <a>DescribeConfigurationOptions</a> </li> <li> <a>DescribeConfigurationSettings</a>
-    /// </li> <li> <a>ListAvailableSolutionStacks</a> </li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeConfigurationOptions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeConfigurationSettings</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListAvailableSolutionStacks</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateConfigurationTemplateRequest : AmazonElasticBeanstalkRequest
     {
@@ -59,7 +70,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Instantiates CreateConfigurationTemplateRequest with the parameterized properties
         /// </summary>
         /// <param name="applicationName">The name of the application to associate with this configuration template. If no application is found with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </param>
-        /// <param name="templateName">The name of the configuration template. Constraint: This name must be unique per application.  Default: If a configuration template already exists with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </param>
+        /// <param name="templateName">The name of the configuration template. Constraint: This name must be unique per application. Default: If a configuration template already exists with this name, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </param>
         public CreateConfigurationTemplateRequest(string applicationName, string templateName)
         {
             _applicationName = applicationName;
@@ -125,9 +136,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property OptionSettings. 
         /// <para>
-        ///  If specified, AWS Elastic Beanstalk sets the specified configuration option to the
+        /// If specified, AWS Elastic Beanstalk sets the specified configuration option to the
         /// requested value. The new value overrides the value obtained from the solution stack
-        /// or the source configuration template. 
+        /// or the source configuration template.
         /// </para>
         /// </summary>
         public List<ConfigurationOptionSetting> OptionSettings
@@ -148,7 +159,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The name of the solution stack used by this configuration. The solution stack specifies
         /// the operating system, architecture, and application server for a configuration template.
         /// It determines the set of configuration options as well as the possible and default
-        /// values. 
+        /// values.
         /// </para>
         ///  
         /// <para>
@@ -162,9 +173,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  If a solution stack name is not specified and the source configuration parameter
-        /// is specified, AWS Elastic Beanstalk uses the same solution stack as the source configuration
-        /// template. 
+        /// If a solution stack name is not specified and the source configuration parameter is
+        /// specified, AWS Elastic Beanstalk uses the same solution stack as the source configuration
+        /// template.
         /// </para>
         /// </summary>
         public string SolutionStackName
@@ -182,8 +193,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SourceConfiguration. 
         /// <para>
-        ///  If specified, AWS Elastic Beanstalk uses the configuration values from the specified
-        /// configuration template to create a new configuration. 
+        /// If specified, AWS Elastic Beanstalk uses the configuration values from the specified
+        /// configuration template to create a new configuration.
         /// </para>
         ///  
         /// <para>
@@ -222,7 +233,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraint: This name must be unique per application. 
+        /// Constraint: This name must be unique per application.
         /// </para>
         ///  
         /// <para>

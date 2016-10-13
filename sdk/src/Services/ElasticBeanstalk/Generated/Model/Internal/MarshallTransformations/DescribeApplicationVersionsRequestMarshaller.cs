@@ -62,6 +62,14 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
                 }
+                if(publicRequest.IsSetMaxRecords())
+                {
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
+                }
+                if(publicRequest.IsSetNextToken())
+                {
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                }
                 if(publicRequest.IsSetVersionLabels())
                 {
                     int publicRequestlistValueIndex = 1;

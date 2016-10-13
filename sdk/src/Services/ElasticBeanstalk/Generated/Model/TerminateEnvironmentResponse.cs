@@ -99,7 +99,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property CNAME. 
         /// <para>
-        ///  The URL to the CNAME for this environment. 
+        /// The URL to the CNAME for this environment.
         /// </para>
         /// </summary>
         public string CNAME
@@ -190,7 +190,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        ///  The ID of this environment. 
+        /// The ID of this environment.
         /// </para>
         /// </summary>
         public string EnvironmentId
@@ -244,17 +244,30 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Health. 
         /// <para>
-        ///  Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-        /// failure levels for a running environment: 
+        /// Describes the health status of the environment. AWS Elastic Beanstalk indicates the
+        /// failure levels for a running environment:
         /// </para>
-        ///  <ul> <li> <code>Red</code>: Indicates the environment is not responsive. Occurs when
-        /// three or more consecutive failures occur for an environment. </li> <li> <code>Yellow</code>:
-        /// Indicates that something is wrong. Occurs when two consecutive failures occur for
-        /// an environment. </li> <li> <code>Green</code>: Indicates the environment is healthy
-        /// and fully functional. </li> <li> <code>Grey</code>: Default health for a new environment.
-        /// The environment is not fully launched and health checks have not started or health
-        /// checks are suspended during an <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
-        /// request. </li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Red</code>: Indicates the environment is not responsive. Occurs when three
+        /// or more consecutive failures occur for an environment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
+        /// failures occur for an environment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Green</code>: Indicates the environment is healthy and fully functional.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Grey</code>: Default health for a new environment. The environment is not fully
+        /// launched and health checks have not started or health checks are suspended during
+        /// an <code>UpdateEnvironment</code> or <code>RestartEnvironement</code> request.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         ///  Default: <code>Grey</code> 
         /// </para>
@@ -330,14 +343,31 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The current operational status of the environment: 
+        /// The current operational status of the environment:
         /// </para>
-        ///  <ul> <li> <code>Launching</code>: Environment is in the process of initial deployment.
-        /// </li> <li> <code>Updating</code>: Environment is in the process of updating its configuration
-        /// settings or application version. </li> <li> <code>Ready</code>: Environment is available
-        /// to have an action performed on it, such as update or terminate. </li> <li> <code>Terminating</code>:
-        /// Environment is in the shut-down process. </li> <li> <code>Terminated</code>: Environment
-        /// is not running. </li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Launching</code>: Environment is in the process of initial deployment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Updating</code>: Environment is in the process of updating its configuration
+        /// settings or application version.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Ready</code>: Environment is available to have an action performed on it, such
+        /// as update or terminate.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Terminating</code>: Environment is in the shut-down process.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Terminated</code>: Environment is not running.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public EnvironmentStatus Status
         {
@@ -354,8 +384,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        ///  The name of the configuration template used to originally launch this environment.
-        /// 
+        /// The name of the configuration template used to originally launch this environment.
         /// </para>
         /// </summary>
         public string TemplateName

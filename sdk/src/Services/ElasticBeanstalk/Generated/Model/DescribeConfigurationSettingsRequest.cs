@@ -31,20 +31,24 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Container for the parameters to the DescribeConfigurationSettings operation.
     /// Returns a description of the settings for the specified configuration set, that is,
     /// either a configuration template or the configuration set associated with a running
-    /// environment. 
+    /// environment.
     /// 
     ///  
     /// <para>
-    ///  When describing the settings for the configuration set associated with a running
-    /// environment, it is possible to receive two sets of setting descriptions. One is the
-    /// deployed configuration set, and the other is a draft configuration of an environment
-    /// that is either in the process of deployment or that failed to deploy. 
+    /// When describing the settings for the configuration set associated with a running environment,
+    /// it is possible to receive two sets of setting descriptions. One is the deployed configuration
+    /// set, and the other is a draft configuration of an environment that is either in the
+    /// process of deployment or that failed to deploy.
     /// </para>
     ///  
     /// <para>
     /// Related Topics
     /// </para>
-    ///  <ul> <li> <a>DeleteEnvironmentConfiguration</a> </li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DeleteEnvironmentConfiguration</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DescribeConfigurationSettingsRequest : AmazonElasticBeanstalkRequest
     {
@@ -60,7 +64,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates DescribeConfigurationSettingsRequest with the parameterized properties
         /// </summary>
-        /// <param name="applicationName"> The application for the environment or configuration template. </param>
+        /// <param name="applicationName">The application for the environment or configuration template.</param>
         public DescribeConfigurationSettingsRequest(string applicationName)
         {
             _applicationName = applicationName;
@@ -69,7 +73,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///  The application for the environment or configuration template. 
+        /// The application for the environment or configuration template.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -87,7 +91,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///  The name of the environment to describe. 
+        /// The name of the environment to describe.
         /// </para>
         ///  
         /// <para>
@@ -112,7 +116,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        ///  The name of the configuration template to describe. 
+        /// The name of the configuration template to describe.
         /// </para>
         ///  
         /// <para>

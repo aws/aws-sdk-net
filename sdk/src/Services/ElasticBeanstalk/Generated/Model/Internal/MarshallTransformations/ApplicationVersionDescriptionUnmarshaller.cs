@@ -78,6 +78,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SourceBuildInformation", targetDepth))
+                    {
+                        var unmarshaller = SourceBuildInformationUnmarshaller.Instance;
+                        unmarshalledObject.SourceBuildInformation = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SourceBundle", targetDepth))
                     {
                         var unmarshaller = S3LocationUnmarshaller.Instance;
