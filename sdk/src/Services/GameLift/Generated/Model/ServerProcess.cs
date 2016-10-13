@@ -31,7 +31,8 @@ namespace Amazon.GameLift.Model
     /// A set of instructions for launching server processes on each instance in a fleet.
     /// Each instruction set identifies the location of the server executable, optional launch
     /// parameters, and the number of server processes with this configuration to maintain
-    /// concurrently on the instance. Server process configurations make up a fleet's <code><a>RuntimeConfiguration</a></code>.
+    /// concurrently on the instance. Server process configurations make up a fleet's <code>
+    /// <a>RuntimeConfiguration</a> </code>.
     /// </summary>
     public partial class ServerProcess
     {
@@ -43,7 +44,6 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ConcurrentExecutions. 
         /// <para>
         /// Number of server processes using this configuration to run concurrently on an instance.
-        /// 
         /// </para>
         /// </summary>
         public int ConcurrentExecutions

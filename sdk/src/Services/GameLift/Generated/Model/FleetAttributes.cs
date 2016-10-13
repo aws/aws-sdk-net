@@ -40,6 +40,7 @@ namespace Amazon.GameLift.Model
         private string _name;
         private ProtectionPolicy _newGameSessionProtectionPolicy;
         private OperatingSystem _operatingSystem;
+        private ResourceCreationLimitPolicy _resourceCreationLimitPolicy;
         private string _serverLaunchParameters;
         private string _serverLaunchPath;
         private FleetStatus _status;
@@ -164,9 +165,16 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Type of game session protection to set for all new instances started in the fleet.
         /// </para>
-        ///  <ul><li><b>NoProtection</b> – The game session can be terminated during a scale-down
-        /// event.</li> <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code>
-        /// status, it cannot be terminated during a scale-down event.</li></ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status,
+        /// it cannot be terminated during a scale-down event.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ProtectionPolicy NewGameSessionProtectionPolicy
         {
@@ -200,11 +208,30 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceCreationLimitPolicy. 
+        /// <para>
+        /// Fleet policy to limit the number of game sessions an individual player can create
+        /// over a span of time.
+        /// </para>
+        /// </summary>
+        public ResourceCreationLimitPolicy ResourceCreationLimitPolicy
+        {
+            get { return this._resourceCreationLimitPolicy; }
+            set { this._resourceCreationLimitPolicy = value; }
+        }
+
+        // Check to see if ResourceCreationLimitPolicy property is set
+        internal bool IsSetResourceCreationLimitPolicy()
+        {
+            return this._resourceCreationLimitPolicy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServerLaunchParameters. 
         /// <para>
         /// Game server launch parameters specified for fleets created prior to 2016-08-04 (or
         /// AWS SDK v. 0.12.16). Server launch parameters for fleets created after this date are
-        /// specified in the fleet's <code><a>RuntimeConfiguration</a></code>.
+        /// specified in the fleet's <code> <a>RuntimeConfiguration</a> </code>.
         /// </para>
         /// </summary>
         public string ServerLaunchParameters
@@ -224,7 +251,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Path to a game server executable in the fleet's build, specified for fleets created
         /// prior to 2016-08-04 (or AWS SDK v. 0.12.16). Server launch paths for fleets created
-        /// after this date are specified in the fleet's <code><a>RuntimeConfiguration</a></code>.
+        /// after this date are specified in the fleet's <code> <a>RuntimeConfiguration</a> </code>.
         /// </para>
         /// </summary>
         public string ServerLaunchPath
@@ -248,13 +275,33 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Possible fleet statuses include the following:
         /// </para>
-        ///  <ul><li><b>NEW</b> – A new fleet has been defined and desired instances is set to
-        /// 1. </li><li><b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting
-        /// up the new fleet, creating new instances with the game build and starting server processes.</li><li><b>ACTIVE</b>
-        /// – Hosts can now accept game sessions.</li><li><b>ERROR</b> – An error occurred when
-        /// downloading, validating, building, or activating the fleet.</li><li><b>DELETING</b>
-        /// – Hosts are responding to a delete fleet request.</li><li><b>TERMINATED</b> – The
-        /// fleet no longer exists.</li></ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>NEW</b> – A new fleet has been defined and desired instances is set to 1. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> – GameLift is setting up the new
+        /// fleet, creating new instances with the game build and starting server processes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ACTIVE</b> – Hosts can now accept game sessions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ERROR</b> – An error occurred when downloading, validating, building, or activating
+        /// the fleet.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>DELETING</b> – Hosts are responding to a delete fleet request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>TERMINATED</b> – The fleet no longer exists.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public FleetStatus Status
         {

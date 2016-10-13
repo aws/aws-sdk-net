@@ -33,6 +33,7 @@ namespace Amazon.GameLift.Model
     public partial class GameSession
     {
         private DateTime? _creationTime;
+        private string _creatorId;
         private int? _currentPlayerSessionCount;
         private string _fleetId;
         private List<GameProperty> _gameProperties = new List<GameProperty>();
@@ -62,6 +63,26 @@ namespace Amazon.GameLift.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatorId. 
+        /// <para>
+        /// Player ID of the person or entity that created the game session. This ID is used to
+        /// enforce a resource protection policy (if one exists) that limits the number of concurrent
+        /// active game sessions one player can have.
+        /// </para>
+        /// </summary>
+        public string CreatorId
+        {
+            get { return this._creatorId; }
+            set { this._creatorId = value; }
+        }
+
+        // Check to see if CreatorId property is set
+        internal bool IsSetCreatorId()
+        {
+            return this._creatorId != null;
         }
 
         /// <summary>
@@ -121,7 +142,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionId. 
         /// <para>
-        /// Unique identifier for a game session.
+        /// Unique identifier for a game session. Game session ID format is as follows: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet
+        /// ID&gt;/&lt;ID string&gt;". The value of &lt;ID string&gt; is either a custom ID string
+        /// (if one was specified when the game session was created) an auto-generated string.
+        /// 
         /// </para>
         /// </summary>
         public string GameSessionId

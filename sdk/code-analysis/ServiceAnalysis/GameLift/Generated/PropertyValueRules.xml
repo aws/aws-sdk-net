@@ -9,6 +9,7 @@
     <property>Amazon.GameLift.Model.CreateAliasRequest.Name</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateBuildRequest.Name</property>
@@ -49,8 +50,19 @@
     <pattern>^alias-\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateGameSessionRequest.CreatorId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.CreateGameSessionRequest.FleetId</property>
     <pattern>^fleet-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.CreateGameSessionRequest.GameSessionId</property>
+    <min>1</min>
+    <max>48</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreateGameSessionRequest.MaximumPlayerSessionCount</property>
@@ -63,7 +75,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreatePlayerSessionRequest.GameSessionId</property>
-    <pattern>^(gamei-|gsess-)\S+</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreatePlayerSessionRequest.PlayerId</property>
@@ -72,7 +86,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.CreatePlayerSessionsRequest.GameSessionId</property>
-    <pattern>^(gamei-|gsess-)\S+</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DeleteAliasRequest.AliasId</property>
@@ -177,7 +193,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeGameSessionDetailsRequest.GameSessionId</property>
-    <pattern>^(gamei-|gsess-)\S+</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeGameSessionDetailsRequest.Limit</property>
@@ -208,7 +226,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeGameSessionsRequest.GameSessionId</property>
-    <pattern>^(gamei-|gsess-)\S+</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribeGameSessionsRequest.Limit</property>
@@ -230,8 +250,32 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeInstancesRequest.FleetId</property>
+    <pattern>^fleet-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeInstancesRequest.InstanceId</property>
+    <pattern>[a-zA-Z0-9\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeInstancesRequest.Limit</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeInstancesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.DescribeInstancesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.DescribePlayerSessionsRequest.GameSessionId</property>
-    <pattern>^(gamei-|gsess-)\S+</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.DescribePlayerSessionsRequest.Limit</property>
@@ -285,7 +329,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GetGameSessionLogUrlRequest.GameSessionId</property>
-    <pattern>^(gamei-|gsess-)\S+</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GetGameSessionLogUrlResponse.PreSignedUrl</property>
@@ -413,6 +459,7 @@
     <property>Amazon.GameLift.Model.UpdateAliasRequest.Name</property>
     <min>1</min>
     <max>1024</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateBuildRequest.BuildId</property>
@@ -476,7 +523,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateGameSessionRequest.GameSessionId</property>
-    <pattern>^(gamei-|gsess-)\S+</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.UpdateGameSessionRequest.MaximumPlayerSessionCount</property>
@@ -494,6 +543,12 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.Alias.AliasId</property>
     <pattern>^alias-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.Alias.Name</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.Build.BuildId</property>
@@ -634,6 +689,11 @@
     <max>96</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.GameSession.CreatorId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.GameSession.CurrentPlayerSessionCount</property>
     <min>0</min>
   </property-value-rule>
@@ -643,7 +703,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GameSession.GameSessionId</property>
-    <pattern>^(gamei-|gsess-)\S+</pattern>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GameSession.MaximumPlayerSessionCount</property>
@@ -656,12 +717,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GameSession.Port</property>
-    <min>1025</min>
+    <min>1</min>
     <max>60000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.GameSessionFullException.Message</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.IdempotentParameterMismatchException.Message</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.Instance.FleetId</property>
+    <pattern>^fleet-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.Instance.InstanceId</property>
+    <pattern>[a-zA-Z0-9\.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.InternalServiceException.Message</property>
@@ -681,7 +754,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.IpPermission.FromPort</property>
-    <min>1025</min>
+    <min>1</min>
     <max>60000</max>
   </property-value-rule>
   <property-value-rule>
@@ -690,7 +763,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.IpPermission.ToPort</property>
-    <min>1025</min>
+    <min>1</min>
     <max>60000</max>
   </property-value-rule>
   <property-value-rule>
@@ -707,7 +780,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.PlayerSession.GameSessionId</property>
-    <pattern>^(gamei-|gsess-)\S+</pattern>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.PlayerSession.PlayerId</property>
@@ -720,8 +794,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.PlayerSession.Port</property>
-    <min>1025</min>
+    <min>1</min>
     <max>60000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.ResourceCreationLimitPolicy.NewGameSessionsPerCreator</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.ResourceCreationLimitPolicy.PolicyPeriodInMinutes</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.RoutingStrategy.FleetId</property>

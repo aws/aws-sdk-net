@@ -70,6 +70,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CreatorId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CreatorId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CurrentPlayerSessionCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

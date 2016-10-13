@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FleetAttributes Object
+    /// Response Unmarshaller for Instance Object
     /// </summary>  
-    public class FleetAttributesUnmarshaller : IUnmarshaller<FleetAttributes, XmlUnmarshallerContext>, IUnmarshaller<FleetAttributes, JsonUnmarshallerContext>
+    public class InstanceUnmarshaller : IUnmarshaller<Instance, XmlUnmarshallerContext>, IUnmarshaller<Instance, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FleetAttributes IUnmarshaller<FleetAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Instance IUnmarshaller<Instance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public FleetAttributes Unmarshall(JsonUnmarshallerContext context)
+        public Instance Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            FleetAttributes unmarshalledObject = new FleetAttributes();
+            Instance unmarshalledObject = new Instance();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BuildId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BuildId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FleetId", targetDepth))
@@ -88,22 +76,16 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.FleetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LogPaths", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.LogPaths = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("InstanceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NewGameSessionProtectionPolicy", targetDepth))
+                if (context.TestExpression("IpAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NewGameSessionProtectionPolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OperatingSystem", targetDepth))
@@ -112,34 +94,16 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.OperatingSystem = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResourceCreationLimitPolicy", targetDepth))
-                {
-                    var unmarshaller = ResourceCreationLimitPolicyUnmarshaller.Instance;
-                    unmarshalledObject.ResourceCreationLimitPolicy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ServerLaunchParameters", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServerLaunchParameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ServerLaunchPath", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServerLaunchPath = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TerminationTime", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.TerminationTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -148,12 +112,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         }
 
 
-        private static FleetAttributesUnmarshaller _instance = new FleetAttributesUnmarshaller();        
+        private static InstanceUnmarshaller _instance = new InstanceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FleetAttributesUnmarshaller Instance
+        public static InstanceUnmarshaller Instance
         {
             get
             {

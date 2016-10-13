@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateGameSession operation
+    /// Response Unmarshaller for DescribeInstances operation
     /// </summary>  
-    public class CreateGameSessionResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeInstancesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateGameSessionResponse response = new CreateGameSessionResponse();
+            DescribeInstancesResponse response = new DescribeInstancesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("GameSession", targetDepth))
+                if (context.TestExpression("Instances", targetDepth))
                 {
-                    var unmarshaller = GameSessionUnmarshaller.Instance;
-                    response.GameSession = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Instance, InstanceUnmarshaller>(InstanceUnmarshaller.Instance);
+                    response.Instances = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -72,41 +78,17 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-            {
-                return new ConflictException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("FleetCapacityExceededException"))
-            {
-                return new FleetCapacityExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("IdempotentParameterMismatchException"))
-            {
-                return new IdempotentParameterMismatchException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
             {
                 return new InternalServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidFleetStatusException"))
-            {
-                return new InvalidFleetStatusException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
             {
                 return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-            {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
             {
                 return new NotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TerminalRoutingStrategyException"))
-            {
-                return new TerminalRoutingStrategyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedException"))
             {
@@ -115,9 +97,9 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             return new AmazonGameLiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateGameSessionResponseUnmarshaller _instance = new CreateGameSessionResponseUnmarshaller();        
+        private static DescribeInstancesResponseUnmarshaller _instance = new DescribeInstancesResponseUnmarshaller();        
 
-        internal static CreateGameSessionResponseUnmarshaller GetInstance()
+        internal static DescribeInstancesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -125,7 +107,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateGameSessionResponseUnmarshaller Instance
+        public static DescribeInstancesResponseUnmarshaller Instance
         {
             get
             {

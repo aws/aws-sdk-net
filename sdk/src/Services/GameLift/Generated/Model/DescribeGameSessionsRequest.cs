@@ -29,10 +29,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGameSessions operation.
-    /// Retrieves properties for one or more game sessions. This action can be used in several
-    /// ways: (1) provide a <code>GameSessionId</code> to request properties for a specific
-    /// game session; (2) provide a <code>FleetId</code> or an <code>AliasId</code> to request
-    /// properties for all game sessions running on a fleet. 
+    /// Retrieves a set of one or more game sessions and properties. This action can be used
+    /// in several ways: (1) provide a <code>GameSessionId</code> to request properties for
+    /// a specific game session; (2) provide a <code>FleetId</code> or an <code>AliasId</code>
+    /// to request properties for all game sessions running on a fleet. You can also use <a>SearchGameSessions</a>,
+    /// which allows you to retrieve all game sessions or filter on certain criteria, but
+    /// only returns game sessions with a status of ACTIVE. If you need to retrieve the protection
+    /// policy for each game session, use <a>DescribeGameSessionDetails</a>.
     /// 
     ///  
     /// <para>
@@ -92,8 +95,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionId. 
         /// <para>
-        /// Unique identifier for a game session. Specify the game session to retrieve information
-        /// on.
+        /// Unique identifier for the game session to retrieve information on. Game session ID
+        /// format is as follows: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet
+        /// ID&gt;/&lt;ID string&gt;". The value of &lt;ID string&gt; is either a custom ID string
+        /// (if one was specified when the game session was created) an auto-generated string.
+        /// 
         /// </para>
         /// </summary>
         public string GameSessionId

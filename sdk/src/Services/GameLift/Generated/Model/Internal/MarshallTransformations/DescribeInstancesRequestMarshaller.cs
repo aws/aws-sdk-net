@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateGameSession Request Marshaller
+    /// DescribeInstances Request Marshaller
     /// </summary>       
-    public class CreateGameSessionRequestMarshaller : IMarshaller<IRequest, CreateGameSessionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeInstancesRequestMarshaller : IMarshaller<IRequest, DescribeInstancesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateGameSessionRequest)input);
+            return this.Marshall((DescribeInstancesRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateGameSessionRequest publicRequest)
+        public IRequest Marshall(DescribeInstancesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.GameLift");
-            string target = "GameLift.CreateGameSession";
+            string target = "GameLift.DescribeInstances";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,56 +67,28 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAliasId())
-                {
-                    context.Writer.WritePropertyName("AliasId");
-                    context.Writer.Write(publicRequest.AliasId);
-                }
-
-                if(publicRequest.IsSetCreatorId())
-                {
-                    context.Writer.WritePropertyName("CreatorId");
-                    context.Writer.Write(publicRequest.CreatorId);
-                }
-
                 if(publicRequest.IsSetFleetId())
                 {
                     context.Writer.WritePropertyName("FleetId");
                     context.Writer.Write(publicRequest.FleetId);
                 }
 
-                if(publicRequest.IsSetGameProperties())
+                if(publicRequest.IsSetInstanceId())
                 {
-                    context.Writer.WritePropertyName("GameProperties");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestGamePropertiesListValue in publicRequest.GameProperties)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = GamePropertyMarshaller.Instance;
-                        marshaller.Marshall(publicRequestGamePropertiesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("InstanceId");
+                    context.Writer.Write(publicRequest.InstanceId);
                 }
 
-                if(publicRequest.IsSetGameSessionId())
+                if(publicRequest.IsSetLimit())
                 {
-                    context.Writer.WritePropertyName("GameSessionId");
-                    context.Writer.Write(publicRequest.GameSessionId);
+                    context.Writer.WritePropertyName("Limit");
+                    context.Writer.Write(publicRequest.Limit);
                 }
 
-                if(publicRequest.IsSetMaximumPlayerSessionCount())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("MaximumPlayerSessionCount");
-                    context.Writer.Write(publicRequest.MaximumPlayerSessionCount);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
         

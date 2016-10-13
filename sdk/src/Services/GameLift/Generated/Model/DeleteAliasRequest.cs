@@ -40,7 +40,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AliasId. 
         /// <para>
-        /// Unique identifier for a fleet alias. Specify the alias you want to delete. 
+        /// Unique identifier for a fleet alias. Specify the alias you want to delete.
         /// </para>
         /// </summary>
         public string AliasId

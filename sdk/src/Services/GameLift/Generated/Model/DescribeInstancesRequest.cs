@@ -28,44 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeFleetEvents operation.
-    /// Retrieves entries from the specified fleet's event log. You can specify a time range
-    /// to limit the result set. Use the pagination parameters to retrieve results as a set
-    /// of sequential pages. If successful, a collection of event log entries matching the
-    /// request are returned.
+    /// Container for the parameters to the DescribeInstances operation.
+    /// Retrieves information about instances in a fleet.
+    /// 
+    ///  
+    /// <para>
+    /// To get information on a specific instance, specify both a fleet ID and instance ID.
+    /// To get information for all instances in a fleet, specify a fleet ID only. Use the
+    /// pagination parameters to retrieve results as a set of sequential pages. If successful,
+    /// an <a>Instance</a> object is returned for each result.
+    /// </para>
     /// </summary>
-    public partial class DescribeFleetEventsRequest : AmazonGameLiftRequest
+    public partial class DescribeInstancesRequest : AmazonGameLiftRequest
     {
-        private DateTime? _endTime;
         private string _fleetId;
+        private string _instanceId;
         private int? _limit;
         private string _nextToken;
-        private DateTime? _startTime;
-
-        /// <summary>
-        /// Gets and sets the property EndTime. 
-        /// <para>
-        /// Most recent date to retrieve event logs for. If no end time is specified, this call
-        /// returns entries from the specified start time up to the present. Format is a number
-        /// expressed in Unix time as milliseconds (ex: "1469498468.057".
-        /// </para>
-        /// </summary>
-        public DateTime EndTime
-        {
-            get { return this._endTime.GetValueOrDefault(); }
-            set { this._endTime = value; }
-        }
-
-        // Check to see if EndTime property is set
-        internal bool IsSetEndTime()
-        {
-            return this._endTime.HasValue; 
-        }
 
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for the fleet to get event logs for.
+        /// Unique identifier for a fleet. Specify the fleet to retrieve instance information
+        /// for.
         /// </para>
         /// </summary>
         public string FleetId
@@ -78,6 +63,25 @@ namespace Amazon.GameLift.Model
         internal bool IsSetFleetId()
         {
             return this._fleetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// Unique identifier for an instance. Specify an instance to retrieve information for
+        /// or leave blank to get information on all instances in the fleet.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
         }
 
         /// <summary>
@@ -117,26 +121,6 @@ namespace Amazon.GameLift.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property StartTime. 
-        /// <para>
-        /// Earliest date to retrieve event logs for. If no start time is specified, this call
-        /// returns entries starting from when the fleet was created to the specified end time.
-        /// Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057".
-        /// </para>
-        /// </summary>
-        public DateTime StartTime
-        {
-            get { return this._startTime.GetValueOrDefault(); }
-            set { this._startTime = value; }
-        }
-
-        // Check to see if StartTime property is set
-        internal bool IsSetStartTime()
-        {
-            return this._startTime.HasValue; 
         }
 
     }

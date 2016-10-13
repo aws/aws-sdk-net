@@ -39,7 +39,10 @@ namespace Amazon.GameLift.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Key.
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// TBD
+        /// </para>
         /// </summary>
         public string Key
         {
@@ -54,7 +57,10 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// TBD
+        /// </para>
         /// </summary>
         public string Value
         {

@@ -30,10 +30,28 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Represents the returned data in response to a request action.
     /// </summary>
-    public partial class DescribePlayerSessionsResponse : AmazonWebServiceResponse
+    public partial class DescribeInstancesResponse : AmazonWebServiceResponse
     {
+        private List<Instance> _instances = new List<Instance>();
         private string _nextToken;
-        private List<PlayerSession> _playerSessions = new List<PlayerSession>();
+
+        /// <summary>
+        /// Gets and sets the property Instances. 
+        /// <para>
+        /// Collection of objects containing properties for each instance returned.
+        /// </para>
+        /// </summary>
+        public List<Instance> Instances
+        {
+            get { return this._instances; }
+            set { this._instances = value; }
+        }
+
+        // Check to see if Instances property is set
+        internal bool IsSetInstances()
+        {
+            return this._instances != null && this._instances.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -52,25 +70,6 @@ namespace Amazon.GameLift.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property PlayerSessions. 
-        /// <para>
-        /// Collection of objects containing properties for each player session that matches the
-        /// request.
-        /// </para>
-        /// </summary>
-        public List<PlayerSession> PlayerSessions
-        {
-            get { return this._playerSessions; }
-            set { this._playerSessions = value; }
-        }
-
-        // Check to see if PlayerSessions property is set
-        internal bool IsSetPlayerSessions()
-        {
-            return this._playerSessions != null && this._playerSessions.Count > 0; 
         }
 
     }

@@ -39,6 +39,7 @@ namespace Amazon.GameLift.Model
         private string _fleetId;
         private string _name;
         private ProtectionPolicy _newGameSessionProtectionPolicy;
+        private ResourceCreationLimitPolicy _resourceCreationLimitPolicy;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -61,7 +62,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for the fleet you want to update attribute metadata for. 
+        /// Unique identifier for the fleet you want to update attribute metadata for.
         /// </para>
         /// </summary>
         public string FleetId
@@ -101,9 +102,16 @@ namespace Amazon.GameLift.Model
         /// Instances that already exist are not affected. You can set protection for individual
         /// instances using <a>UpdateGameSession</a>.
         /// </para>
-        ///  <ul><li><b>NoProtection</b> – The game session can be terminated during a scale-down
-        /// event.</li> <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code>
-        /// status, it cannot be terminated during a scale-down event.</li></ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status,
+        /// it cannot be terminated during a scale-down event.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ProtectionPolicy NewGameSessionProtectionPolicy
         {
@@ -115,6 +123,25 @@ namespace Amazon.GameLift.Model
         internal bool IsSetNewGameSessionProtectionPolicy()
         {
             return this._newGameSessionProtectionPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceCreationLimitPolicy. 
+        /// <para>
+        /// Policy that limits the number of game sessions an individual player can create over
+        /// a span of time. 
+        /// </para>
+        /// </summary>
+        public ResourceCreationLimitPolicy ResourceCreationLimitPolicy
+        {
+            get { return this._resourceCreationLimitPolicy; }
+            set { this._resourceCreationLimitPolicy = value; }
+        }
+
+        // Check to see if ResourceCreationLimitPolicy property is set
+        internal bool IsSetResourceCreationLimitPolicy()
+        {
+            return this._resourceCreationLimitPolicy != null;
         }
 
     }

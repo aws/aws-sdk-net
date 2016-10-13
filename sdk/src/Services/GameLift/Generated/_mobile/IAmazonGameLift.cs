@@ -41,62 +41,246 @@ namespace Amazon.GameLift
     ///  
     /// <para>
     /// This reference describes the low-level service API for GameLift. You can call this
-    /// API directly or use the <a href="https://aws.amazon.com/tools/#sdk">AWS SDK</a> for
+    /// API directly or use the <a href="http://aws.amazon.com/tools/#sdk">AWS SDK</a> for
     /// your preferred language. The AWS SDK includes a set of high-level GameLift actions
-    /// multiplayer game sessions. Alternatively, you can use the <a href="https://aws.amazon.com/cli/">AWS
+    /// multiplayer game sessions. Alternatively, you can use the <a href="http://aws.amazon.com/cli/">AWS
     /// command-line interface</a> (CLI) tool, which includes commands for GameLift. For administrative
     /// actions, you can also use the Amazon GameLift console. 
     /// </para>
     ///  
     /// <para>
-    /// <b>More Resources</b>
+    ///  <b>More Resources</b> 
     /// </para>
-    ///  <ul> <li> <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon
-    /// GameLift Developer Guide</a>: Learn more about GameLift features and how to use them
-    /// </li> <li> <a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and GameLift
-    /// Tutorials</a>: Get started fast with walkthroughs and sample projects</li> <li> <a
-    /// href="https://aws.amazon.com/blogs/gamedev/">GameDev Blog</a>: Stay up to date with
-    /// new features and techniques</li> <li> <a href="https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html">GameDev
-    /// Forums</a>: Connect with the GameDev community</li> </ul> 
+    ///  <ul> <li> 
     /// <para>
-    /// <b>Manage Games and Players Through GameLift</b>
+    ///  <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift
+    /// Developer Guide</a>: Learn more about GameLift features and how to use them 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and GameLift Tutorials</a>:
+    /// Get started fast with walkthroughs and sample projects
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a>: Stay up to date
+    /// with new features and techniques
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html">GameDev
+    /// Forums</a>: Connect with the GameDev community
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Manage Games and Players Through GameLift</b> 
     /// </para>
     ///  
     /// <para>
     /// Call these actions from your game clients and/or services to create and manage multiplayer
     /// game sessions and player sessions.
     /// </para>
-    ///  <ul> <li> <b>Game sessions</b> <ul> <li><a>CreateGameSession</a></li> <li><a>DescribeGameSessions</a></li>
-    /// <li><a>DescribeGameSessionDetails</a></li> <li><a>UpdateGameSession</a></li> <li><a>SearchGameSessions</a></li>
-    /// </ul> </li> <li> <b>Player sessions</b> <ul> <li><a>CreatePlayerSession</a></li> <li><a>CreatePlayerSessions</a></li>
-    /// <li><a>DescribePlayerSessions</a></li> </ul> </li> <li> <b>Other actions:</b> <ul>
-    /// <li><a>GetGameSessionLogUrl</a></li> </ul> </li> </ul> 
+    ///  <ul> <li> 
     /// <para>
-    /// <b>Set Up and Manage Game Servers</b>
+    ///  <b>Game sessions:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreateGameSession</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameSessions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeGameSessionDetails</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateGameSession</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>SearchGameSessions</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Player sessions:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>CreatePlayerSession</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreatePlayerSessions</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribePlayerSessions</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Other actions:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>GetGameSessionLogUrl</a> 
+    /// </para>
+    ///  </li> </ul> </li> </ul> 
+    /// <para>
+    ///  <b>Set Up and Manage Game Servers</b> 
     /// </para>
     ///  
     /// <para>
     /// Use these administrative actions to configure GameLift to host your game servers.
-    /// When setting up GameLift, you'll need to (1) configure a build for your game and upload
-    /// build files, and (2) set up one or more fleets to host game sessions. Once you've
-    /// created and activated a fleet, you can assign aliases to it, scale capacity, track
-    /// performance and utilization, etc.
+    /// When setting up GameLift, you will need to (1) configure a build for your game and
+    /// upload build files, and (2) set up one or more fleets to host game sessions. Once
+    /// you've created and activated a fleet, you can assign aliases to it, scale capacity,
+    /// track performance and utilization, etc.
     /// </para>
-    ///  <ul> <li> <b>Manage your builds:</b> <ul> <li><a>ListBuilds</a></li> <li><a>CreateBuild</a></li>
-    /// <li><a>DescribeBuild</a></li> <li><a>UpdateBuild</a></li> <li><a>DeleteBuild</a></li>
-    /// <li><a>RequestUploadCredentials</a></li> </ul> </li> <li> <b>Manage your fleets:</b>
-    /// <ul> <li><a>ListFleets</a></li> <li><a>CreateFleet</a></li> <li>Describe fleets: <ul>
-    /// <li><a>DescribeFleetAttributes</a></li> <li><a>DescribeFleetCapacity</a></li> <li><a>DescribeFleetPortSettings</a></li>
-    /// <li><a>DescribeFleetUtilization</a></li> <li><a>DescribeEC2InstanceLimits</a></li>
-    /// <li><a>DescribeFleetEvents</a></li> <li><a>DescribeRuntimeConfiguration</a></li> </ul>
-    /// </li> <li>Update fleets: <ul> <li><a>UpdateFleetAttributes</a></li> <li><a>UpdateFleetCapacity</a></li>
-    /// <li><a>UpdateFleetPortSettings</a></li> <li><a>UpdateRuntimeConfiguration</a></li>
-    /// </ul> </li> <li><a>DeleteFleet</a></li> </ul> </li> <li> <b>Manage fleet aliases:</b>
-    /// <ul> <li><a>ListAliases</a></li> <li><a>CreateAlias</a></li> <li><a>DescribeAlias</a></li>
-    /// <li><a>UpdateAlias</a></li> <li><a>DeleteAlias</a></li> <li><a>ResolveAlias</a></li>
-    /// </ul> </li> <li> <b>Manage autoscaling:</b> <ul> <li><a>PutScalingPolicy</a></li>
-    /// <li><a>DescribeScalingPolicies</a></li> <li><a>DeleteScalingPolicy</a></li> </ul>
-    /// </li> </ul> 
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>Game builds:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>ListBuilds</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateBuild</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeBuild</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateBuild</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteBuild</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RequestUploadCredentials</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Fleets:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>ListFleets</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateFleet</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Describe fleets:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeFleetAttributes</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetCapacity</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetPortSettings</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetUtilization</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeEC2InstanceLimits</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeFleetEvents</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeRuntimeConfiguration</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// Update fleets:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>UpdateFleetAttributes</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetCapacity</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetPortSettings</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateRuntimeConfiguration</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <a>DeleteFleet</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Manage fleet aliases:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>ListAliases</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateAlias</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeAlias</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateAlias</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteAlias</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ResolveAlias</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <b>Manage autoscaling:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>PutScalingPolicy</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeScalingPolicies</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteScalingPolicy</a> 
+    /// </para>
+    ///  </li> </ul> </li> </ul> 
     /// <para>
     /// To view changes to the API, see the GameLift <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Document
     /// History</a> page.
@@ -184,7 +368,7 @@ namespace Amazon.GameLift
         /// 
         /// </para>
         /// </summary>
-        /// <param name="gameSessionId">Unique identifier for a game session. Specify the game session you want to add a player to.</param>
+        /// <param name="gameSessionId">Unique identifier for the game session to add a player to. Game session ID format is as follows: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one was specified when the game session was created) an auto-generated string. </param>
         /// <param name="playerId">Unique identifier for the player to be added.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -193,24 +377,24 @@ namespace Amazon.GameLift
         /// <returns>The response from the CreatePlayerSession service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.GameSessionFullException">
         /// The game instance is currently full and cannot allow the requested player(s) to join.
-        /// This exception occurs in response to a <a>CreatePlayerSession</a> request.
+        /// Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
         /// The service encountered an unrecoverable internal failure while processing the request.
-        /// Clients can retry such requests, either immediately or after a back-off period.
+        /// Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.InvalidGameSessionStatusException">
         /// The requested operation would cause a conflict with the current state of a resource
-        /// associated with the request and/or the game instance. Clients should not retry such
-        /// requests without resolving the conflict.
+        /// associated with the request and/or the game instance. Resolve the conflict before
+        /// retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
-        /// One or more parameters specified as part of the request are invalid. Correct the invalid
-        /// parameters before retrying.
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
-        /// not retry such requests
+        /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -219,7 +403,7 @@ namespace Amazon.GameLift
         /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
-        /// The client failed authentication. Clients should not retry such requests
+        /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         Task<CreatePlayerSessionResponse> CreatePlayerSessionAsync(string gameSessionId, string playerId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -253,7 +437,7 @@ namespace Amazon.GameLift
         /// objects is returned. 
         /// </para>
         /// </summary>
-        /// <param name="gameSessionId">Unique identifier for a game session. </param>
+        /// <param name="gameSessionId">Unique identifier for the game session to add players to. Game session ID format is as follows: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one was specified when the game session was created) an auto-generated string. </param>
         /// <param name="playerIds">List of unique identifiers for the players to be added.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -262,24 +446,24 @@ namespace Amazon.GameLift
         /// <returns>The response from the CreatePlayerSessions service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.GameSessionFullException">
         /// The game instance is currently full and cannot allow the requested player(s) to join.
-        /// This exception occurs in response to a <a>CreatePlayerSession</a> request.
+        /// Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
         /// The service encountered an unrecoverable internal failure while processing the request.
-        /// Clients can retry such requests, either immediately or after a back-off period.
+        /// Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.InvalidGameSessionStatusException">
         /// The requested operation would cause a conflict with the current state of a resource
-        /// associated with the request and/or the game instance. Clients should not retry such
-        /// requests without resolving the conflict.
+        /// associated with the request and/or the game instance. Resolve the conflict before
+        /// retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
-        /// One or more parameters specified as part of the request are invalid. Correct the invalid
-        /// parameters before retrying.
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
-        /// not retry such requests
+        /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -288,7 +472,7 @@ namespace Amazon.GameLift
         /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
-        /// The client failed authentication. Clients should not retry such requests
+        /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         Task<CreatePlayerSessionsResponse> CreatePlayerSessionsAsync(string gameSessionId, List<string> playerIds, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -313,7 +497,7 @@ namespace Amazon.GameLift
         /// to access a server process using the deleted alias receive an error. To delete an
         /// alias, specify the alias ID to be deleted.
         /// </summary>
-        /// <param name="aliasId">Unique identifier for a fleet alias. Specify the alias you want to delete. </param>
+        /// <param name="aliasId">Unique identifier for a fleet alias. Specify the alias you want to delete.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -321,18 +505,18 @@ namespace Amazon.GameLift
         /// <returns>The response from the DeleteAlias service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
         /// The service encountered an unrecoverable internal failure while processing the request.
-        /// Clients can retry such requests, either immediately or after a back-off period.
+        /// Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
-        /// One or more parameters specified as part of the request are invalid. Correct the invalid
-        /// parameters before retrying.
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
-        /// not retry such requests
+        /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
-        /// The client failed authentication. Clients should not retry such requests
+        /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         Task<DeleteAliasResponse> DeleteAliasAsync(string aliasId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -363,7 +547,7 @@ namespace Amazon.GameLift
         /// deleted build.
         /// </para>
         /// </summary>
-        /// <param name="buildId">Unique identifier for the build you want to delete. </param>
+        /// <param name="buildId">Unique identifier for the build you want to delete.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -371,18 +555,18 @@ namespace Amazon.GameLift
         /// <returns>The response from the DeleteBuild service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
         /// The service encountered an unrecoverable internal failure while processing the request.
-        /// Clients can retry such requests, either immediately or after a back-off period.
+        /// Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
-        /// One or more parameters specified as part of the request are invalid. Correct the invalid
-        /// parameters before retrying.
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
-        /// not retry such requests
+        /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
-        /// The client failed authentication. Clients should not retry such requests
+        /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         Task<DeleteBuildResponse> DeleteBuildAsync(string buildId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -420,22 +604,22 @@ namespace Amazon.GameLift
         /// <returns>The response from the DeleteFleet service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
         /// The service encountered an unrecoverable internal failure while processing the request.
-        /// Clients can retry such requests, either immediately or after a back-off period.
+        /// Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.InvalidFleetStatusException">
         /// The requested operation would cause a conflict with the current state of a resource
         /// associated with the request and/or the fleet. Resolve the conflict before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
-        /// One or more parameters specified as part of the request are invalid. Correct the invalid
-        /// parameters before retrying.
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
-        /// not retry such requests
+        /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
-        /// The client failed authentication. Clients should not retry such requests
+        /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         Task<DeleteFleetResponse> DeleteFleetAsync(string fleetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -475,7 +659,7 @@ namespace Amazon.GameLift
         /// Retrieves properties for a specified alias. To get the alias, specify an alias ID.
         /// If successful, an <a>Alias</a> object is returned.
         /// </summary>
-        /// <param name="aliasId">Unique identifier for a fleet alias. Specify the alias you want to retrieve. </param>
+        /// <param name="aliasId">Unique identifier for a fleet alias. Specify the alias you want to retrieve.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -483,18 +667,18 @@ namespace Amazon.GameLift
         /// <returns>The response from the DescribeAlias service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
         /// The service encountered an unrecoverable internal failure while processing the request.
-        /// Clients can retry such requests, either immediately or after a back-off period.
+        /// Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
-        /// One or more parameters specified as part of the request are invalid. Correct the invalid
-        /// parameters before retrying.
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
-        /// not retry such requests
+        /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
-        /// The client failed authentication. Clients should not retry such requests
+        /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         Task<DescribeAliasResponse> DescribeAliasAsync(string aliasId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -518,7 +702,7 @@ namespace Amazon.GameLift
         /// Retrieves properties for a build. To get a build record, specify a build ID. If successful,
         /// an object containing the build properties is returned.
         /// </summary>
-        /// <param name="buildId">Unique identifier of the build that you want to retrieve properties for. </param>
+        /// <param name="buildId">Unique identifier of the build that you want to retrieve properties for.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -526,18 +710,18 @@ namespace Amazon.GameLift
         /// <returns>The response from the DescribeBuild service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
         /// The service encountered an unrecoverable internal failure while processing the request.
-        /// Clients can retry such requests, either immediately or after a back-off period.
+        /// Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
-        /// One or more parameters specified as part of the request are invalid. Correct the invalid
-        /// parameters before retrying.
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
-        /// not retry such requests
+        /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
-        /// The client failed authentication. Clients should not retry such requests
+        /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         Task<DescribeBuildResponse> DescribeBuildAsync(string buildId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -560,15 +744,22 @@ namespace Amazon.GameLift
         /// <summary>
         /// Retrieves the following information for the specified EC2 instance type:
         /// 
-        ///  <ul> <li>maximum number of instances allowed per AWS account (service limit)</li>
-        /// <li>current usage level for the AWS account </li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// maximum number of instances allowed per AWS account (service limit)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// current usage level for the AWS account
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// Service limits vary depending on region. Available regions for GameLift can be found
         /// in the AWS Management Console for GameLift (see the drop-down list in the upper right
         /// corner).
         /// </para>
         /// </summary>
-        /// <param name="ec2InstanceType">Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift supports the following EC2 instance types. See <a href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions. Leave this parameter blank to retrieve limits for all types.</param>
+        /// <param name="ec2InstanceType">Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. GameLift supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions. Leave this parameter blank to retrieve limits for all types.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -576,14 +767,14 @@ namespace Amazon.GameLift
         /// <returns>The response from the DescribeEC2InstanceLimits service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
         /// The service encountered an unrecoverable internal failure while processing the request.
-        /// Clients can retry such requests, either immediately or after a back-off period.
+        /// Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
-        /// One or more parameters specified as part of the request are invalid. Correct the invalid
-        /// parameters before retrying.
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
-        /// The client failed authentication. Clients should not retry such requests
+        /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         Task<DescribeEC2InstanceLimitsResponse> DescribeEC2InstanceLimitsAsync(EC2InstanceType ec2InstanceType, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -659,7 +850,7 @@ namespace Amazon.GameLift
         /// for the requested fleet ID. If the requested fleet has been deleted, the result set
         /// is empty.
         /// </summary>
-        /// <param name="fleetId">Unique identifier for the fleet you want to retrieve port settings for. </param>
+        /// <param name="fleetId">Unique identifier for the fleet you want to retrieve port settings for.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -667,18 +858,18 @@ namespace Amazon.GameLift
         /// <returns>The response from the DescribeFleetPortSettings service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
         /// The service encountered an unrecoverable internal failure while processing the request.
-        /// Clients can retry such requests, either immediately or after a back-off period.
+        /// Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
-        /// One or more parameters specified as part of the request are invalid. Correct the invalid
-        /// parameters before retrying.
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
-        /// not retry such requests
+        /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
-        /// The client failed authentication. Clients should not retry such requests
+        /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         Task<DescribeFleetPortSettingsResponse> DescribeFleetPortSettingsAsync(string fleetId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -740,6 +931,22 @@ namespace Amazon.GameLift
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeGameSessionsResponse> DescribeGameSessionsAsync(DescribeGameSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeInstances
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeInstancesResponse> DescribeInstancesAsync(DescribeInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -807,7 +1014,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </note>
         /// </summary>
-        /// <param name="gameSessionId">Unique identifier for a game session. Specify the game session you want to get logs for.</param>
+        /// <param name="gameSessionId">Unique identifier for the game session to get logs for. Game session ID format is as follows: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one was specified when the game session was created) an auto-generated string. </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -815,18 +1022,18 @@ namespace Amazon.GameLift
         /// <returns>The response from the GetGameSessionLogUrl service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
         /// The service encountered an unrecoverable internal failure while processing the request.
-        /// Clients can retry such requests, either immediately or after a back-off period.
+        /// Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
-        /// One or more parameters specified as part of the request are invalid. Correct the invalid
-        /// parameters before retrying.
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
-        /// not retry such requests
+        /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
-        /// The client failed authentication. Clients should not retry such requests
+        /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         Task<GetGameSessionLogUrlResponse> GetGameSessionLogUrlAsync(string gameSessionId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -917,10 +1124,10 @@ namespace Amazon.GameLift
         /// 
         ///  <important> 
         /// <para>
-        /// Call this action only if you need credentials for a build created with <code><a>CreateBuild</a></code>.
-        /// This is a rare situation; in most cases, builds are created using the CLI command
-        /// <code>upload-build</code>, which creates a build record and also uploads build files.
-        /// 
+        /// Call this action only if you need credentials for a build created with <code> <a>CreateBuild</a>
+        /// </code>. This is a rare situation; in most cases, builds are created using the CLI
+        /// command <code>upload-build</code>, which creates a build record and also uploads build
+        /// files. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -930,7 +1137,7 @@ namespace Amazon.GameLift
         /// create a brand new build.
         /// </para>
         /// </summary>
-        /// <param name="buildId">Unique identifier for the build you want to get credentials for. </param>
+        /// <param name="buildId">Unique identifier for the build you want to get credentials for.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -938,18 +1145,18 @@ namespace Amazon.GameLift
         /// <returns>The response from the RequestUploadCredentials service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
         /// The service encountered an unrecoverable internal failure while processing the request.
-        /// Clients can retry such requests, either immediately or after a back-off period.
+        /// Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
-        /// One or more parameters specified as part of the request are invalid. Correct the invalid
-        /// parameters before retrying.
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
-        /// not retry such requests
+        /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
-        /// The client failed authentication. Clients should not retry such requests
+        /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         Task<RequestUploadCredentialsResponse> RequestUploadCredentialsAsync(string buildId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -972,7 +1179,7 @@ namespace Amazon.GameLift
         /// <summary>
         /// Retrieves the fleet ID that a specified alias is currently pointing to.
         /// </summary>
-        /// <param name="aliasId">Unique identifier for the alias you want to resolve. </param>
+        /// <param name="aliasId">Unique identifier for the alias you want to resolve.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -980,15 +1187,15 @@ namespace Amazon.GameLift
         /// <returns>The response from the ResolveAlias service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
         /// The service encountered an unrecoverable internal failure while processing the request.
-        /// Clients can retry such requests, either immediately or after a back-off period.
+        /// Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
-        /// One or more parameters specified as part of the request are invalid. Correct the invalid
-        /// parameters before retrying.
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
         /// A service resource associated with the request could not be found. Clients should
-        /// not retry such requests
+        /// not retry such requests.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -997,7 +1204,7 @@ namespace Amazon.GameLift
         /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
-        /// The client failed authentication. Clients should not retry such requests
+        /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
         Task<ResolveAliasResponse> ResolveAliasAsync(string aliasId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
