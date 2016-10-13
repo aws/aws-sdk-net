@@ -104,6 +104,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 TestControlPlaneOperations(sigV4Client);
                 TestDataPlaneOperations(sigV4Client);
             }
+
+            using (var dualstackAccelerateEndpointClient = new AmazonS3Client(new AmazonS3Config
+                {
+                    UseAccelerateEndpoint = true,
+                    UseDualstackEndpoint = true
+                }))
+            {
+                TestAccelerateUnsupportedOperations(dualstackAccelerateEndpointClient);
+                TestControlPlaneOperations(dualstackAccelerateEndpointClient);
+                TestDataPlaneOperations(dualstackAccelerateEndpointClient);
+            }
         }
 
         [TestMethod]
@@ -120,16 +131,34 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 TestControlPlaneOperations(explicitAccelerateEndpointClient);
                 TestDataPlaneOperations(explicitAccelerateEndpointClient);
             }
+
+            using (var explicitAccelerateEndpointClient = new AmazonS3Client(new AmazonS3Config
+            {
+                ServiceURL = TestServiceUrl,
+                UseAccelerateEndpoint = true,
+                UseDualstackEndpoint = true
+            }))
+            {
+                TestAccelerateUnsupportedOperations(explicitAccelerateEndpointClient);
+                TestControlPlaneOperations(explicitAccelerateEndpointClient);
+                TestDataPlaneOperations(explicitAccelerateEndpointClient);
+            }
         }
 
         [TestMethod]
         [TestCategory("S3")]
         public void TestClientWithExplicitAccelerateEndpoint()
         {
-            var exception = AssertExtensions.ExpectException<AmazonClientException>(
+            AssertExtensions.ExpectException<AmazonClientException>(
                 () => new AmazonS3Client(new AmazonS3Config
                 {
                     ServiceURL = "https://s3-accelerate.amazonaws.com"
+                }));
+
+            AssertExtensions.ExpectException<AmazonClientException>(
+                () => new AmazonS3Client(new AmazonS3Config
+                {
+                    ServiceURL = "https://s3-accelerate.dualstack.amazonaws.com"
                 }));
 
             using (var explicitAccelerateEndpointAndAuthRegionClient = new AmazonS3Client(new AmazonS3Config
@@ -142,7 +171,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 TestAccelerateUnsupportedOperations(explicitAccelerateEndpointAndAuthRegionClient);
                 TestControlPlaneOperations(explicitAccelerateEndpointAndAuthRegionClient);
                 TestDataPlaneOperations(explicitAccelerateEndpointAndAuthRegionClient);
+            }
 
+            using (var explicitAccelerateEndpointAndAuthRegionClient = new AmazonS3Client(new AmazonS3Config
+            {
+                ServiceURL = "https://s3-accelerate.dualstack.amazonaws.com",
+                AuthenticationRegion = AuthRegion
+            }))
+            {
+
+                TestAccelerateUnsupportedOperations(explicitAccelerateEndpointAndAuthRegionClient);
+                TestControlPlaneOperations(explicitAccelerateEndpointAndAuthRegionClient);
+                TestDataPlaneOperations(explicitAccelerateEndpointAndAuthRegionClient);
             }
 
             using (var explicitAccelerateEndpointAndRegionEndpoint = new AmazonS3Client(new AmazonS3Config
@@ -158,7 +198,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
 
         }
-
         void TestDataPlaneOperations(IAmazonS3 client)
         {
             var key = "contentBodyPut" + random.Next();

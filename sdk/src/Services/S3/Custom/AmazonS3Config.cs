@@ -25,7 +25,8 @@ namespace Amazon.S3
     /// </summary>
     public partial class AmazonS3Config : ClientConfig
     {
-        internal const string AccelerateEndpoint ="s3-accelerate.amazonaws.com";
+        private const string _accelerateEndpoint = "s3-accelerate.amazonaws.com";
+        private const string _accelerateDualstackEndpoint = "s3-accelerate.dualstack.amazonaws.com";
 
         private bool forcePathStyle = false;
         private bool useAccelerateEndpoint = false;
@@ -72,13 +73,9 @@ namespace Amazon.S3
                          " using AmazonS3Config.ForcePathStyle property to use S3 accelerate.");
             }
 
-            if (this.UseAccelerateEndpoint && this.UseDualstackEndpoint)
-            {
-                throw new AmazonClientException("The dualstack mode of Amazon S3 cannot be used with accelerate mode.");
-            }
-
             var isExplicitAccelerateEndpoint = !string.IsNullOrEmpty(this.ServiceURL) &&
-                this.ServiceURL.IndexOf(AccelerateEndpoint,StringComparison.OrdinalIgnoreCase) >= 0;
+                                               (this.ServiceURL.IndexOf(_accelerateEndpoint, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                                                this.ServiceURL.IndexOf(_accelerateDualstackEndpoint, StringComparison.OrdinalIgnoreCase) >= 0);
 
             if (isExplicitAccelerateEndpoint)
             {
@@ -98,6 +95,14 @@ namespace Amazon.S3
 
                     this.UseAccelerateEndpoint = true;
                 }
+            }
+        }
+
+        internal string AccelerateEndpoint
+        {
+            get
+            {
+                return this.UseDualstackEndpoint ? _accelerateDualstackEndpoint : _accelerateEndpoint;
             }
         }
 
