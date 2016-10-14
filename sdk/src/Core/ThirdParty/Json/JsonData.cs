@@ -352,6 +352,12 @@ namespace ThirdParty.Json.LitJson
             inst_number = (ulong)number;
         }
 
+        public JsonData(uint number)
+        {
+            type = JsonType.UInt;
+            inst_number = (ulong)number;
+        }
+
         public JsonData (long number)
         {
             type = JsonType.Long;
@@ -384,9 +390,16 @@ namespace ThirdParty.Json.LitJson
                 return;
             }
 
+            if (obj is UInt32)
+            {
+                type = JsonType.Int;
+                inst_number = (ulong)obj;
+                return;
+            }
+
             if (obj is Int64) {
                 type = JsonType.Long;
-                inst_number = (ulong) obj;
+                inst_number = (ulong)obj;
                 return;
             }
 
@@ -470,7 +483,7 @@ namespace ThirdParty.Json.LitJson
                     "Instance of JsonData doesn't hold an int");
             }
             
-            return (int)data.inst_number;
+            return unchecked((int)data.inst_number);
         }
 
         public static explicit operator UInt32(JsonData data)
@@ -481,7 +494,7 @@ namespace ThirdParty.Json.LitJson
                     "Instance of JsonData doesn't hold an int");
             }
 
-            return (uint)data.inst_number;
+            return unchecked((uint)data.inst_number);
         }
 
         public static explicit operator Int64 (JsonData data)
@@ -492,7 +505,7 @@ namespace ThirdParty.Json.LitJson
                     "Instance of JsonData doesn't hold an long");
             }
 
-            return (long)data.inst_number;
+            return unchecked((long)data.inst_number);
         }
 
         [CLSCompliant(false)]
@@ -606,7 +619,7 @@ namespace ThirdParty.Json.LitJson
                 throw new InvalidOperationException (
                     "JsonData instance doesn't hold an int");
 
-            return (int)inst_number;
+            return unchecked((int)inst_number);
         }
 
         uint IJsonWrapper.GetUInt()
@@ -615,7 +628,7 @@ namespace ThirdParty.Json.LitJson
                 throw new InvalidOperationException(
                     "JsonData instance doesn't hold an int");
 
-            return (uint)inst_number;
+            return unchecked((uint)inst_number);
         }
 
         long IJsonWrapper.GetLong ()
@@ -624,7 +637,7 @@ namespace ThirdParty.Json.LitJson
                 throw new InvalidOperationException (
                     "JsonData instance doesn't hold a long");
 
-            return (long)inst_number;
+            return unchecked((long)inst_number);
         }
 
         ulong IJsonWrapper.GetULong()
@@ -662,27 +675,21 @@ namespace ThirdParty.Json.LitJson
         void IJsonWrapper.SetInt (int val)
         {
             type = JsonType.Int;
-            unchecked
-            {
-                inst_number = (ulong)val;
-            }
+            inst_number = unchecked((ulong)val);
             json = null;
         }
 
         void IJsonWrapper.SetUInt(uint val)
         {
             type = JsonType.UInt;
-            inst_number = (ulong)val;
+            inst_number = unchecked((ulong)val);
             json = null;
         }
 
         void IJsonWrapper.SetLong (long val)
         {
             type = JsonType.Long;
-            unchecked
-            {
-                inst_number = (ulong)val;
-            }
+            inst_number = unchecked((ulong)val);
             json = null;
         }
 
@@ -868,8 +875,20 @@ namespace ThirdParty.Json.LitJson
                 return;
             }
 
+            if (obj.IsUInt)
+            {
+                writer.Write(obj.GetUInt());
+                return;
+            }
+
             if (obj.IsLong) {
                 writer.Write (obj.GetLong ());
+                return;
+            }
+
+            if (obj.IsULong)
+            {
+                writer.Write(obj.GetULong());
                 return;
             }
 
@@ -926,11 +945,19 @@ namespace ThirdParty.Json.LitJson
 
             if (x.type != this.type)
             {
-               //check between int and long
-               if ((x.type != JsonType.Int && x.type != JsonType.Long)||(this.type != JsonType.Int && this.type != JsonType.Long)) 
-               {
+                bool thisIsSigned = (this.type == JsonType.Int || this.type == JsonType.Long);
+                bool thisIsUnsigned = (this.type == JsonType.UInt || this.type == JsonType.ULong);
+                bool xIsSigned = (x.type == JsonType.Int || x.type == JsonType.Long);
+                bool xIsUnsigned = (x.type == JsonType.UInt || x.type == JsonType.ULong); 
+               
+                if (thisIsSigned == xIsSigned || thisIsUnsigned == xIsUnsigned)
+                {
+                    // only allow types between signed numbers and between unsigned numbers to be actually compared
+                }
+                else
+                {
                     return false;
-               }
+                }
             }
 
             switch (this.type) {
@@ -1056,8 +1083,11 @@ namespace ThirdParty.Json.LitJson
                 return inst_double.ToString ();
 
             case JsonType.Int:
+                return unchecked((int)inst_number).ToString();
             case JsonType.UInt:
+                return unchecked((uint)inst_number).ToString();
             case JsonType.Long:
+                return unchecked((long)inst_number).ToString();
             case JsonType.ULong:
                 return inst_number.ToString ();
 

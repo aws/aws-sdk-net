@@ -2,6 +2,8 @@
 using System.Linq;
 using AWSSDK_DotNet35.UnitTests;
 using ThirdParty.Json.LitJson;
+using System;
+using System.Text;
 
 namespace AWSSDK.UnitTests
 {
@@ -53,7 +55,7 @@ namespace AWSSDK.UnitTests
 
         [TestMethod]
         [TestCategory("UnitTest")]
-    public void IsNumberTypeTest()
+        public void IsNumberTypeTest()
         {
             string numberJson =
 @"{
@@ -84,6 +86,63 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(data["Double"].IsDouble);
             Assert.IsTrue(data["PDouble"].IsDouble);
             Assert.IsTrue(data["NDouble"].IsDouble);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        public void MapAndCompareTest()
+    
+        {
+            var sb = new StringBuilder();
+            var writer = new JsonWriter(sb) { PrettyPrint = true };
+            string jsonDocument =
+@"{
+    ""Zero""   : 0,
+    ""PInt""   : 2147483647,
+    ""NInt""   : -2147483648,
+    ""UInt""   : 4294967295,
+    ""Long""   : 4294967296,
+    ""PLong""  : 9223372036854775807,
+    ""NLong""  : -9223372036854775808, 
+    ""ULong""  : 18446744073709551615,
+    ""Double"" : 0.0,
+    ""PDouble"": 1.7976931348623157E+308,
+    ""NDouble"": -1.7976931348623157E+308
+}";
+            JsonData jsonOriginal = JsonMapper.ToObject(jsonDocument);
+            JsonMapper.ToJson(jsonOriginal, writer);
+            string jsonDcoumentGenerated  = sb.ToString();
+
+            JsonData jsonNew = JsonMapper.ToObject(jsonDcoumentGenerated);
+
+            foreach (string property in jsonOriginal.PropertyNames)
+            {
+                jsonOriginal[property].Equals(jsonNew[property]);
+                Assert.AreEqual(jsonOriginal[property].ToString(), jsonNew[property].ToString());
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        public void ConstructorAndEqualTest()
+        {
+            int signedInteger = 47472;
+            long signedLong = 47472;
+            Assert.IsTrue(new JsonData(signedInteger).Equals(new JsonData(signedInteger)));
+            Assert.IsTrue(new JsonData(signedInteger).Equals(new JsonData(signedLong)));
+            Assert.IsTrue(new JsonData(signedLong).Equals(new JsonData(signedLong)));
+
+            uint unsignedInteger = 474722;
+            ulong unsignedLong = 474722;
+            Assert.IsTrue(new JsonData(unsignedInteger).Equals(new JsonData(unsignedInteger)));
+            Assert.IsTrue(new JsonData(unsignedInteger).Equals(new JsonData(unsignedLong)));
+            Assert.IsTrue(new JsonData(unsignedLong).Equals(new JsonData(unsignedLong)));
+
+            long signedLongBig = 829496729622;
+            Assert.IsTrue(new JsonData(signedLongBig).Equals(new JsonData(signedLongBig)));
+
+            ulong unsignedLongBig = 829496729622;
+            Assert.IsTrue(new JsonData(unsignedLongBig).Equals(new JsonData(unsignedLongBig)));
         }
     }
 }

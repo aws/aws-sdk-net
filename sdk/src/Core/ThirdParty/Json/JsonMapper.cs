@@ -771,6 +771,12 @@ namespace ThirdParty.Json.LitJson
                 return;
             }
 
+            if (obj is UInt32)
+            {
+                writer.Write((uint)obj);
+                return;
+            }
+
             if (obj is Boolean) {
                 writer.Write ((bool) obj);
                 return;
@@ -779,6 +785,11 @@ namespace ThirdParty.Json.LitJson
             if (obj is Int64) {
                 writer.Write ((long) obj);
                 return;
+            }
+
+            if (obj is UInt64)
+            {
+                writer.Write((ulong)obj);
             }
 
             if (obj is Array) {
