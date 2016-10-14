@@ -1,3 +1,19 @@
+### 3.3.9.0 (2016-10-13 19:57 UTC)
+* CertificateManager (3.3.1.0)
+	*  This change allows users to import third-party SSL/TLS certificates into ACM
+* ElasticBeanstalk (3.3.1.0)
+	* Support Pagination for DescribeApplicationVersions API
+* GameLift (3.3.1.0)
+	* New APIs to protect game developer resource (builds, alias, fleets, instances, game sessions and player sessions) against abuse.
+* S3 (3.3.0.3)
+	* Updated to use new Core, version 3.3.1.1
+	* Requires latest Core to pick up LruCache bug fix.
+* ServiceCatalog (3.3.1.0)
+	* Updated to use new Core, version 3.3.1.1
+	* New regions
+* Core 3.3.1.1
+	* Several bug fixes to LruCache including https://github.com/aws/aws-sdk-net/pull/467; Doc updates; and endpoints.json update to support new Service Catalog regions.
+
 ### 3.3.8.0 (2016-10-12 17:43 UTC)
 * ECR (3.3.1.0)
 	* DescribeImages is a new api used to expose image metadata which today includes image size and image creation timestamp
