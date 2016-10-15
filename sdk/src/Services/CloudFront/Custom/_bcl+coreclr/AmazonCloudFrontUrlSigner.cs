@@ -328,7 +328,7 @@ namespace Amazon.CloudFront
                                            TextReader privateKey,
                                            DateTime expiresOn)
         {
-            int epochSeconds = AWSSDKUtils.ConvertToUnixEpochSeconds(expiresOn.ToUniversalTime());
+            string epochSeconds = AWSSDKUtils.ConvertToUnixEpochSecondsString(expiresOn.ToUniversalTime());
             RSAParameters rsaParameters = ConvertPEMToRSAParameters(privateKey);
             string cannedPolicy = "{\"Statement\":[{\"Resource\":\"" + resourceUrlOrPath
                     + "\",\"Condition\":{\"DateLessThan\":{\"AWS:EpochTime\":" + epochSeconds
@@ -410,14 +410,14 @@ namespace Amazon.CloudFront
                     + "\""
                     + ",\"Condition\":{"
                     + "\"DateLessThan\":{\"AWS:EpochTime\":"
-                    + AWSSDKUtils.ConvertToUnixEpochSeconds(expiresOn.ToUniversalTime())
+                    + AWSSDKUtils.ConvertToUnixEpochSecondsString(expiresOn.ToUniversalTime())
                     + "}"
                     + ",\"IpAddress\":{\"AWS:SourceIp\":\""
                     + ipAddress
                     + "\"}"
                 // Ignore epochDateGreaterThan if its value is DateTime.MinValue, the default value of DateTime.
                     + (activeFrom > DateTime.MinValue ? ",\"DateGreaterThan\":{\"AWS:EpochTime\":"
-                    + AWSSDKUtils.ConvertToUnixEpochSeconds(activeFrom.ToUniversalTime()) + "}"
+                    + AWSSDKUtils.ConvertToUnixEpochSecondsString(activeFrom.ToUniversalTime()) + "}"
                             : string.Empty)
                     + "}}]}";
             return policy;

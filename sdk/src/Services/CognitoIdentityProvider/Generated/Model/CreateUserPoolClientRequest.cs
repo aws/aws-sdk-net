@@ -80,7 +80,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property GenerateSecret. 
         /// <para>
-        ///  Boolean to specify whether you want to generate a secret for the user pool client
+        /// Boolean to specify whether you want to generate a secret for the user pool client
         /// being created.
         /// </para>
         /// </summary>

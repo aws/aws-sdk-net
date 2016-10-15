@@ -95,7 +95,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID>
+        /// The user pool ID&gt;
         /// </para>
         /// </summary>
         public string UserPoolId

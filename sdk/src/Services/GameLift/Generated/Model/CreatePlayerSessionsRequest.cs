@@ -50,7 +50,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameSessionId. 
         /// <para>
-        /// Unique identifier for a game session. 
+        /// Unique identifier for the game session to add players to. Game session ID format is
+        /// as follows: "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;ID
+        /// string&gt;". The value of &lt;ID string&gt; is either a custom ID string (if one was
+        /// specified when the game session was created) an auto-generated string. 
         /// </para>
         /// </summary>
         public string GameSessionId

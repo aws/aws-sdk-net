@@ -31,7 +31,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Container for the parameters to the UpdateEnvironment operation.
     /// Updates the environment description, deploys a new application version, updates the
     /// configuration settings to an entirely new configuration template, or updates select
-    /// configuration option values in the running environment. 
+    /// configuration option values in the running environment.
     /// 
     ///  
     /// <para>
@@ -87,7 +87,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Gets and sets the property Description. 
         /// <para>
         /// If this parameter is specified, AWS Elastic Beanstalk updates the description of this
-        /// environment. 
+        /// environment.
         /// </para>
         /// </summary>
         public string Description
@@ -182,7 +182,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// If specified, AWS Elastic Beanstalk updates the configuration set associated with
         /// the running environment and sets the specified configuration options to the requested
-        /// value. 
+        /// value.
         /// </para>
         /// </summary>
         public List<ConfigurationOptionSetting> OptionSettings
@@ -201,7 +201,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Gets and sets the property OptionsToRemove. 
         /// <para>
         /// A list of custom user-defined configuration options to remove from the configuration
-        /// set for this environment. 
+        /// set for this environment.
         /// </para>
         /// </summary>
         public List<OptionSpecification> OptionsToRemove
@@ -220,7 +220,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Gets and sets the property SolutionStackName. 
         /// <para>
         /// This specifies the platform version that the environment will run after the environment
-        /// is updated. 
+        /// is updated.
         /// </para>
         /// </summary>
         public string SolutionStackName
@@ -258,7 +258,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Tier. 
         /// <para>
-        /// This specifies the tier to use to update the environment. 
+        /// This specifies the tier to use to update the environment.
         /// </para>
         ///  
         /// <para>

@@ -29,8 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTagsFromResource operation.
-    /// The <i>RemoveTagsFromResource</i> action removes the tags identified by the <code>TagKeys</code>
-    /// list from the named resource.
+    /// Removes the tags identified by the <code>TagKeys</code> list from the named resource.
     /// </summary>
     public partial class RemoveTagsFromResourceRequest : AmazonElastiCacheRequest
     {
@@ -46,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on ARNs, go to <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
@@ -66,9 +65,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property TagKeys. 
         /// <para>
         /// A list of <code>TagKeys</code> identifying the tags you want removed from the named
-        /// resource. For example, <code>TagKeys.member.1=Region</code> removes the cost allocation
-        /// tag with the key name <code>Region</code> from the resource named by the <i>ResourceName</i>
-        /// parameter.
+        /// resource.
         /// </para>
         /// </summary>
         public List<string> TagKeys

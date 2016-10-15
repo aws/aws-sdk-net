@@ -204,6 +204,10 @@ namespace Amazon.WAF
         /// Constant IPV4 for IPSetDescriptorType
         /// </summary>
         public static readonly IPSetDescriptorType IPV4 = new IPSetDescriptorType("IPV4");
+        /// <summary>
+        /// Constant IPV6 for IPSetDescriptorType
+        /// </summary>
+        public static readonly IPSetDescriptorType IPV6 = new IPSetDescriptorType("IPV6");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

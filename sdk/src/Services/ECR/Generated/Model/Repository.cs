@@ -32,10 +32,29 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class Repository
     {
+        private DateTime? _createdAt;
         private string _registryId;
         private string _repositoryArn;
         private string _repositoryName;
         private string _repositoryUri;
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The date and time, in JavaScript date/time format, when the repository was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreatedAt
+        {
+            get { return this._createdAt.GetValueOrDefault(); }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property RegistryId. 

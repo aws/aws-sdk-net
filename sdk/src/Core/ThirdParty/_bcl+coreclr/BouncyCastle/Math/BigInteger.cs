@@ -560,6 +560,8 @@ namespace ThirdParty.BouncyCastle.Math
         private byte[] ToByteArray(
             bool unsigned)
         {
+            unchecked { 
+
             if (sign == 0)
                 return unsigned ? ZeroEncoding : new byte[1];
 
@@ -635,6 +637,7 @@ namespace ThirdParty.BouncyCastle.Math
             }
 
             return bytes;
+            }
         }
 
         private static BigInteger createUValueOf(

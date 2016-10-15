@@ -452,6 +452,37 @@ namespace Amazon.ECR
 
         #endregion
         
+        #region  DescribeImages
+
+        internal DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
+        {
+            var marshaller = new DescribeImagesRequestMarshaller();
+            var unmarshaller = DescribeImagesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeImagesRequest,DescribeImagesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeImages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeImages operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeImagesResponse> DescribeImagesAsync(DescribeImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeImagesRequestMarshaller();
+            var unmarshaller = DescribeImagesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeImagesRequest,DescribeImagesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeRepositories
 
         internal DescribeRepositoriesResponse DescribeRepositories(DescribeRepositoriesRequest request)

@@ -154,10 +154,27 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The user status. Can be one of the following:
         /// </para>
-        ///  <ul> <li>UNCONFIRMED - User has been created but not confirmed.</li> <li>CONFIRMED
-        /// - User has been confirmed.</li> <li>ARCHIVED - User is no longer active.</li> <li>COMPROMISED
-        /// - User is disabled due to a potential security threat.</li> <li>UNKNOWN - User status
-        /// is not known.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// UNCONFIRMED - User has been created but not confirmed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CONFIRMED - User has been confirmed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ARCHIVED - User is no longer active.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// COMPROMISED - User is disabled due to a potential security threat.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNKNOWN - User status is not known.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public UserStatusType UserStatus
         {

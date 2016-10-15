@@ -289,9 +289,14 @@ namespace Amazon.Runtime.Internal.Transform
         /// <returns>The next (non-whitespace) character in the jsonStream, or -1 if at the end.</returns>
         public int Peek()
         {
-            while (Char.IsWhiteSpace((char)StreamPeek()))
+            // Per MSDN documentation on StreamReader.Peek(), it's perfectly acceptable to cast
+            // int returned by Peek() to char.
+            unchecked
             {
-                streamReader.Read();
+                while (Char.IsWhiteSpace((char) StreamPeek()))
+                {
+                    streamReader.Read();
+                }
             }
             return StreamPeek();
 

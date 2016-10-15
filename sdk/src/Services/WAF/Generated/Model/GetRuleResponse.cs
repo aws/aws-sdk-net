@@ -40,10 +40,17 @@ namespace Amazon.WAF.Model
         /// Information about the <a>Rule</a> that you specified in the <code>GetRule</code> request.
         /// For more information, see the following topics:
         /// </para>
-        ///  <ul> <li><a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array
-        /// of <code>Predicate</code> objects, and <code>RuleId</code></li> <li><a>Predicate</a>:
-        /// Each <code>Predicate</code> object contains <code>DataId</code>, <code>Negated</code>,
-        /// and <code>Type</code></li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>Rule</a>: Contains <code>MetricName</code>, <code>Name</code>, an array of <code>Predicate</code>
+        /// objects, and <code>RuleId</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>Predicate</a>: Each <code>Predicate</code> object contains <code>DataId</code>,
+        /// <code>Negated</code>, and <code>Type</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Rule Rule
         {

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -30,8 +30,13 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the TerminateInstances operation.
     /// Shuts down one or more instances. This operation is idempotent; if you terminate an
-    /// instance more than once, each call succeeds.
+    /// instance more than once, each call succeeds. 
     /// 
+    ///  
+    /// <para>
+    /// If you specify multiple instances and the request fails (for example, because of a
+    /// single incorrect instance ID), none of the instances are terminated.
+    /// </para>
     ///  
     /// <para>
     /// Terminated instances remain visible after termination (for approximately one hour).
@@ -70,7 +75,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates TerminateInstancesRequest with the parameterized properties
         /// </summary>
-        /// <param name="instanceIds">One or more instance IDs.</param>
+        /// <param name="instanceIds">One or more instance IDs. Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller batches.</param>
         public TerminateInstancesRequest(List<string> instanceIds)
         {
             _instanceIds = instanceIds;
@@ -80,6 +85,11 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InstanceIds. 
         /// <para>
         /// One or more instance IDs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Up to 1000 instance IDs. We recommend breaking up this request into smaller
+        /// batches.
         /// </para>
         /// </summary>
         public List<string> InstanceIds

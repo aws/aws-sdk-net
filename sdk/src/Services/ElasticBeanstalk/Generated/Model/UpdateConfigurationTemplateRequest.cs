@@ -29,16 +29,23 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateConfigurationTemplate operation.
-    /// Updates the specified configuration template to have the specified properties or
-    /// configuration option values. 
+    /// Updates the specified configuration template to have the specified properties or configuration
+    /// option values.
     /// 
-    ///  <note> If a property (for example, <code>ApplicationName</code>) is not provided,
-    /// its value remains unchanged. To clear such properties, specify an empty string. </note>
-    /// 
+    ///  <note> 
+    /// <para>
+    /// If a property (for example, <code>ApplicationName</code>) is not provided, its value
+    /// remains unchanged. To clear such properties, specify an empty string.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Related Topics
     /// </para>
-    ///  <ul> <li> <a>DescribeConfigurationOptions</a> </li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeConfigurationOptions</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateConfigurationTemplateRequest : AmazonElasticBeanstalkRequest
     {
@@ -108,8 +115,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property OptionSettings. 
         /// <para>
-        ///  A list of configuration option settings to update with the new specified option value.
-        /// 
+        /// A list of configuration option settings to update with the new specified option value.
         /// </para>
         /// </summary>
         public List<ConfigurationOptionSetting> OptionSettings
@@ -127,7 +133,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property OptionsToRemove. 
         /// <para>
-        ///  A list of configuration options to remove from the configuration set. 
+        /// A list of configuration options to remove from the configuration set.
         /// </para>
         ///  
         /// <para>

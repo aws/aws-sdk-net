@@ -43,11 +43,11 @@ namespace Amazon.ElasticBeanstalk
     /// WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
     /// To install the Software Development Kits (SDKs), Integrated Development Environment
     /// (IDE) Toolkits, and command line tools that enable you to access the API, go to <a
-    /// href="https://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
+    /// href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
     /// </para>
     ///  
     /// <para>
-    /// <b>Endpoints</b>
+    ///  <b>Endpoints</b> 
     /// </para>
     ///  
     /// <para>
@@ -191,11 +191,11 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Creates the Amazon S3 storage location for the account. 
+        /// Creates the Amazon S3 storage location for the account.
         /// 
         ///  
         /// <para>
-        ///  This location is used to store user log files. 
+        /// This location is used to store user log files.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -493,7 +493,11 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
         /// 
-        ///  <note>This action returns the most recent 1,000 events from the specified <code>NextToken</code>.</note>
+        ///  <note> 
+        /// <para>
+        /// This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

@@ -56,7 +56,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SolutionStacks. 
         /// <para>
-        ///  A list of available solution stacks. 
+        /// A list of available solution stacks.
         /// </para>
         /// </summary>
         public List<string> SolutionStacks

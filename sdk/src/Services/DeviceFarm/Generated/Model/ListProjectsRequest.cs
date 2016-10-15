@@ -39,7 +39,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The projects' ARNs.
+        /// Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm returns
+        /// a list of all projects for the AWS account. You can also specify a project ARN.
         /// </para>
         /// </summary>
         public string Arn

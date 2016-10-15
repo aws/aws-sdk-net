@@ -2398,6 +2398,10 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.InvalidMarkerException">
+        /// The request was rejected because the marker that specifies where pagination should
+        /// next begin is not valid.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.KMSInternalException">
         /// The request was rejected because an internal exception occurred. The request can be
         /// retried.

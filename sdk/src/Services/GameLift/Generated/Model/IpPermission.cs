@@ -43,7 +43,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FromPort. 
         /// <para>
-        /// Starting value for a range of allowed port numbers. 
+        /// Starting value for a range of allowed port numbers.
         /// </para>
         /// </summary>
         public int FromPort

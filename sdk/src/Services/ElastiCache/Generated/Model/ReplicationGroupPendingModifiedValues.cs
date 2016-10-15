@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The settings to be applied to the replication group, either immediately or during
+    /// The settings to be applied to the Redis replication group, either immediately or during
     /// the next maintenance window.
     /// </summary>
     public partial class ReplicationGroupPendingModifiedValues
@@ -39,7 +39,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutomaticFailoverStatus. 
         /// <para>
-        /// Indicates the status of Multi-AZ for this replication group.
+        /// Indicates the status of Multi-AZ for this Redis replication group.
         /// </para>
         ///  <note> 
         /// <para>
@@ -51,7 +51,11 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// T1 and T2 cache node types.
+        /// Redis (cluster mode disabled):T1 and T2 cache node types.
+        /// </para>
+        ///  
+        /// <para>
+        /// Redis (cluster mode enabled): T1 node types.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -70,7 +74,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PrimaryClusterId. 
         /// <para>
-        /// The primary cluster ID which will be applied immediately (if <code>--apply-immediately</code>
+        /// The primary cluster ID that is applied immediately (if <code>--apply-immediately</code>
         /// was specified), or during the next maintenance window.
         /// </para>
         /// </summary>

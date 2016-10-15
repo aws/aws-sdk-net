@@ -38,10 +38,10 @@ namespace Amazon.ElastiCache
     /// </para>
     ///  
     /// <para>
-    /// With ElastiCache, customers gain all of the benefits of a high-performance, in-memory
-    /// cache with far less of the administrative burden of launching and managing a distributed
-    /// cache. The service makes setup, scaling, and cluster failure handling much simpler
-    /// than in a self-managed cache deployment.
+    /// With ElastiCache, customers get all of the benefits of a high-performance, in-memory
+    /// cache with less of the administrative burden involved in launching and managing a
+    /// distributed cache. The service makes setup, scaling, and cluster failure handling
+    /// much simpler than in a self-managed cache deployment.
     /// </para>
     ///  
     /// <para>
@@ -297,32 +297,31 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeCacheClusters</i> action returns information about all provisioned
-        /// cache clusters if no cache cluster identifier is specified, or about a specific cache
-        /// cluster if a cache cluster identifier is supplied.
+        /// Returns information about all provisioned cache clusters if no cache cluster identifier
+        /// is specified, or about a specific cache cluster if a cache cluster identifier is supplied.
         /// 
         ///  
         /// <para>
-        /// By default, abbreviated information about the cache clusters(s) will be returned.
-        /// You can use the optional <i>ShowDetails</i> flag to retrieve detailed information
-        /// about the cache nodes associated with the cache clusters. These details include the
-        /// DNS address and port for the cache node endpoint.
+        /// By default, abbreviated information about the cache clusters are returned. You can
+        /// use the optional <code>ShowDetails</code> flag to retrieve detailed information about
+        /// the cache nodes associated with the cache clusters. These details include the DNS
+        /// address and port for the cache node endpoint.
         /// </para>
         ///  
         /// <para>
-        /// If the cluster is in the CREATING state, only cluster level information will be displayed
+        /// If the cluster is in the CREATING state, only cluster-level information is displayed
         /// until all of the nodes are successfully provisioned.
         /// </para>
         ///  
         /// <para>
-        /// If the cluster is in the DELETING state, only cluster level information will be displayed.
+        /// If the cluster is in the DELETING state, only cluster-level information is displayed.
         /// </para>
         ///  
         /// <para>
         /// If cache nodes are currently being added to the cache cluster, node endpoint information
-        /// and creation time for the additional nodes will not be displayed until they are completely
-        /// provisioned. When the cache cluster state is <i>available</i>, the cluster is ready
-        /// for use.
+        /// and creation time for the additional nodes are not displayed until they are completely
+        /// provisioned. When the cache cluster state is <code>available</code>, the cluster is
+        /// ready for use.
         /// </para>
         ///  
         /// <para>
@@ -364,8 +363,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeCacheEngineVersions</i> action returns a list of the available cache
-        /// engines and their versions.
+        /// Returns a list of the available cache engines and their versions.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -392,9 +390,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeCacheParameterGroups</i> action returns a list of cache parameter group
-        /// descriptions. If a cache parameter group name is specified, the list will contain
-        /// only the descriptions for that group.
+        /// Returns a list of cache parameter group descriptions. If a cache parameter group name
+        /// is specified, the list contains only the descriptions for that group.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -447,9 +444,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeCacheSecurityGroups</i> action returns a list of cache security group
-        /// descriptions. If a cache security group name is specified, the list will contain only
-        /// the description of that group.
+        /// Returns a list of cache security group descriptions. If a cache security group name
+        /// is specified, the list contains only the description of that group.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -486,9 +482,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeCacheSubnetGroups</i> action returns a list of cache subnet group descriptions.
-        /// If a subnet group name is specified, the list will contain only the description of
-        /// that group.
+        /// Returns a list of cache subnet group descriptions. If a subnet group name is specified,
+        /// the list contains only the description of that group.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -534,10 +529,9 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeEvents</i> action returns events related to cache clusters, cache security
-        /// groups, and cache parameter groups. You can obtain events specific to a particular
-        /// cache cluster, cache security group, or cache parameter group by providing the name
-        /// as a parameter.
+        /// Returns events related to cache clusters, cache security groups, and cache parameter
+        /// groups. You can obtain events specific to a particular cache cluster, cache security
+        /// group, or cache parameter group by providing the name as a parameter.
         /// 
         ///  
         /// <para>
@@ -576,9 +570,14 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeReplicationGroups</i> action returns information about a particular
-        /// replication group. If no identifier is specified, <i>DescribeReplicationGroups</i>
-        /// returns information about all replication groups.
+        /// Returns information about a particular replication group. If no identifier is specified,
+        /// <code>DescribeReplicationGroups</code> returns information about all replication groups.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is valid for Redis only.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -614,8 +613,8 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeReservedCacheNodes</i> action returns information about reserved cache
-        /// nodes for this account, or about a specified reserved cache node.
+        /// Returns information about reserved cache nodes for this account, or about a specified
+        /// reserved cache node.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -651,8 +650,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeReservedCacheNodesOfferings</i> action lists available reserved cache
-        /// node offerings.
+        /// Lists available reserved cache node offerings.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -688,10 +686,15 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// The <i>DescribeSnapshots</i> action returns information about cache cluster snapshots.
-        /// By default, <i>DescribeSnapshots</i> lists all of your snapshots; it can optionally
-        /// describe a single snapshot, or just the snapshots associated with a particular cache
-        /// cluster.
+        /// Returns information about cache cluster or replication group snapshots. By default,
+        /// <code>DescribeSnapshots</code> lists all of your snapshots; it can optionally describe
+        /// a single snapshot, or just the snapshots associated with a particular cache cluster.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is valid for Redis only.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

@@ -54,8 +54,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates CreateEnvironmentRequest with the parameterized properties
         /// </summary>
-        /// <param name="applicationName"> The name of the application that contains the version to be deployed.   If no application is found with this name, <code>CreateEnvironment</code> returns an <code>InvalidParameterValue</code> error. </param>
-        /// <param name="environmentName"> A unique name for the deployment environment. Used in the application URL.  Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It cannot start or end with a hyphen. This name must be unique in your account. If the specified name already exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.  Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</param>
+        /// <param name="applicationName">The name of the application that contains the version to be deployed.  If no application is found with this name, <code>CreateEnvironment</code> returns an <code>InvalidParameterValue</code> error. </param>
+        /// <param name="environmentName">A unique name for the deployment environment. Used in the application URL. Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It cannot start or end with a hyphen. This name must be unique in your account. If the specified name already exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.  Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</param>
         public CreateEnvironmentRequest(string applicationName, string environmentName)
         {
             _applicationName = applicationName;
@@ -65,7 +65,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///  The name of the application that contains the version to be deployed. 
+        /// The name of the application that contains the version to be deployed.
         /// </para>
         ///  
         /// <para>
@@ -88,9 +88,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property CNAMEPrefix. 
         /// <para>
-        ///  If specified, the environment attempts to use this value as the prefix for the CNAME.
+        /// If specified, the environment attempts to use this value as the prefix for the CNAME.
         /// If not specified, the CNAME is generated automatically by appending a random alphanumeric
-        /// string to the environment name. 
+        /// string to the environment name.
         /// </para>
         /// </summary>
         public string CNAMEPrefix
@@ -126,7 +126,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///  A unique name for the deployment environment. Used in the application URL. 
+        /// A unique name for the deployment environment. Used in the application URL.
         /// </para>
         ///  
         /// <para>
@@ -177,9 +177,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property OptionSettings. 
         /// <para>
-        ///  If specified, AWS Elastic Beanstalk sets the specified configuration options to the
+        /// If specified, AWS Elastic Beanstalk sets the specified configuration options to the
         /// requested value in the configuration set for the new environment. These override the
-        /// values obtained from the solution stack or the configuration template. 
+        /// values obtained from the solution stack or the configuration template.
         /// </para>
         /// </summary>
         public List<ConfigurationOptionSetting> OptionSettings
@@ -197,8 +197,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property OptionsToRemove. 
         /// <para>
-        ///  A list of custom user-defined configuration options to remove from the configuration
-        /// set for this new environment. 
+        /// A list of custom user-defined configuration options to remove from the configuration
+        /// set for this new environment.
         /// </para>
         /// </summary>
         public List<OptionSpecification> OptionsToRemove
@@ -216,9 +216,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SolutionStackName. 
         /// <para>
-        ///  This is an alternative to specifying a template name. If specified, AWS Elastic Beanstalk
+        /// This is an alternative to specifying a template name. If specified, AWS Elastic Beanstalk
         /// sets the configuration values to the default values associated with the specified
-        /// solution stack. 
+        /// solution stack.
         /// </para>
         ///  
         /// <para>
@@ -243,7 +243,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  This specifies the tags applied to resources in the environment. 
+        /// This specifies the tags applied to resources in the environment.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -288,7 +288,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Tier. 
         /// <para>
-        ///  This specifies the tier to use for creating this environment. 
+        /// This specifies the tier to use for creating this environment.
         /// </para>
         /// </summary>
         public EnvironmentTier Tier
@@ -316,8 +316,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: If not specified, AWS Elastic Beanstalk attempts to launch the sample application
-        /// in the container. 
+        /// Default: If not specified, AWS Elastic Beanstalk attempts to launch the sample application
+        /// in the container.
         /// </para>
         /// </summary>
         public string VersionLabel

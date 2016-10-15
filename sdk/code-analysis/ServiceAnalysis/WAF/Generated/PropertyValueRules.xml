@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.WAF.Model.CreateByteMatchSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.CreateByteMatchSetRequest.Name</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateByteMatchSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateIPSetRequest.ChangeToken</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.CreateIPSetRequest.Name</property>
@@ -11,9 +23,25 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.CreateIPSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateRuleRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.CreateRuleRequest.Name</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateRuleResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateSizeConstraintSetRequest.ChangeToken</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.CreateSizeConstraintSetRequest.Name</property>
@@ -21,9 +49,25 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.CreateSizeConstraintSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateSqlInjectionMatchSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.CreateSqlInjectionMatchSetRequest.Name</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateSqlInjectionMatchSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateWebACLRequest.ChangeToken</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.CreateWebACLRequest.Name</property>
@@ -31,9 +75,21 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.CreateWebACLResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateXssMatchSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.CreateXssMatchSetRequest.Name</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.CreateXssMatchSetResponse.ChangeToken</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.DeleteByteMatchSetRequest.ByteMatchSetId</property>
@@ -41,9 +97,29 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteByteMatchSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteByteMatchSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteIPSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.DeleteIPSetRequest.IPSetId</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteIPSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteRuleRequest.ChangeToken</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.DeleteRuleRequest.RuleId</property>
@@ -51,9 +127,25 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteRuleResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteSizeConstraintSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.DeleteSizeConstraintSetRequest.SizeConstraintSetId</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteSizeConstraintSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteSqlInjectionMatchSetRequest.ChangeToken</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.DeleteSqlInjectionMatchSetRequest.SqlInjectionMatchSetId</property>
@@ -61,9 +153,25 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteSqlInjectionMatchSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteWebACLRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.DeleteWebACLRequest.WebACLId</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteWebACLResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteXssMatchSetRequest.ChangeToken</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.DeleteXssMatchSetRequest.XssMatchSetId</property>
@@ -71,9 +179,21 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.DeleteXssMatchSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.GetByteMatchSetRequest.ByteMatchSetId</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.GetChangeTokenResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.GetChangeTokenStatusRequest.ChangeToken</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.GetIPSetRequest.IPSetId</property>
@@ -122,7 +242,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.ListByteMatchSetsRequest.Limit</property>
-    <min>1</min>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -135,7 +255,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.ListIPSetsRequest.Limit</property>
-    <min>1</min>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -148,7 +268,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.ListRulesRequest.Limit</property>
-    <min>1</min>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -161,7 +281,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.ListSizeConstraintSetsRequest.Limit</property>
-    <min>1</min>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -174,7 +294,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.ListSqlInjectionMatchSetsRequest.Limit</property>
-    <min>1</min>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -187,7 +307,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.ListWebACLsRequest.Limit</property>
-    <min>1</min>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -200,7 +320,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.ListXssMatchSetsRequest.Limit</property>
-    <min>1</min>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -217,9 +337,29 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateByteMatchSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateByteMatchSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateIPSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.UpdateIPSetRequest.IPSetId</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateIPSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateRuleRequest.ChangeToken</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.UpdateRuleRequest.RuleId</property>
@@ -227,9 +367,25 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateRuleResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateSizeConstraintSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.UpdateSizeConstraintSetRequest.SizeConstraintSetId</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateSizeConstraintSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateSqlInjectionMatchSetRequest.ChangeToken</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.UpdateSqlInjectionMatchSetRequest.SqlInjectionMatchSetId</property>
@@ -237,14 +393,34 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateSqlInjectionMatchSetResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateWebACLRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.UpdateWebACLRequest.WebACLId</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateWebACLResponse.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateXssMatchSetRequest.ChangeToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.UpdateXssMatchSetRequest.XssMatchSetId</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.UpdateXssMatchSetResponse.ChangeToken</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.ActivatedRule.RuleId</property>

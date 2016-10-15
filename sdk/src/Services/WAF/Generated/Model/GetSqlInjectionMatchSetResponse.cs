@@ -40,11 +40,21 @@ namespace Amazon.WAF.Model
         /// Information about the <a>SqlInjectionMatchSet</a> that you specified in the <code>GetSqlInjectionMatchSet</code>
         /// request. For more information, see the following topics:
         /// </para>
-        ///  <ul> <li><a>SqlInjectionMatchSet</a>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>,
-        /// and an array of <code>SqlInjectionMatchTuple</code> objects</li> <li><a>SqlInjectionMatchTuple</a>:
-        /// Each <code>SqlInjectionMatchTuple</code> object contains <code>FieldToMatch</code>
-        /// and <code>TextTransformation</code></li> <li><a>FieldToMatch</a>: Contains <code>Data</code>
-        /// and <code>Type</code></li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>SqlInjectionMatchSet</a>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>,
+        /// and an array of <code>SqlInjectionMatchTuple</code> objects
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>SqlInjectionMatchTuple</a>: Each <code>SqlInjectionMatchTuple</code> object contains
+        /// <code>FieldToMatch</code> and <code>TextTransformation</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public SqlInjectionMatchSet SqlInjectionMatchSet
         {

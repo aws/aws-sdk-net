@@ -29,9 +29,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the RevokeCacheSecurityGroupIngress operation.
-    /// The <i>RevokeCacheSecurityGroupIngress</i> action revokes ingress from a cache security
-    /// group. Use this action to disallow access from an Amazon EC2 security group that had
-    /// been previously authorized.
+    /// Revokes ingress from a cache security group. Use this operation to disallow access
+    /// from an Amazon EC2 security group that had been previously authorized.
     /// </summary>
     public partial class RevokeCacheSecurityGroupIngressRequest : AmazonElastiCacheRequest
     {

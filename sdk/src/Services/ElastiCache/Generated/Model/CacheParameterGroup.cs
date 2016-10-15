@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the output of a <i>CreateCacheParameterGroup</i> action.
+    /// Represents the output of a <code>CreateCacheParameterGroup</code> operation.
     /// </summary>
     public partial class CacheParameterGroup
     {
@@ -41,6 +41,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The name of the cache parameter group family that this cache parameter group is compatible
         /// with.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code>
+        /// | <code>redis3.2</code> 
         /// </para>
         /// </summary>
         public string CacheParameterGroupFamily

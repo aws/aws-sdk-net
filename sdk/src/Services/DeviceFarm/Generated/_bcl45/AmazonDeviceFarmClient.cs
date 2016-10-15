@@ -535,7 +535,7 @@ namespace Amazon.DeviceFarm
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Deleting this resource does not stop an in-progress run.
+        ///  <b>Note</b> Deleting this resource does not stop an in-progress run.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProject service method.</param>
@@ -638,7 +638,7 @@ namespace Amazon.DeviceFarm
         /// 
         ///  
         /// <para>
-        /// <b>Note</b> Deleting this resource does not stop an in-progress run.
+        ///  <b>Note</b> Deleting this resource does not stop an in-progress run.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRun service method.</param>
@@ -2279,7 +2279,7 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Gets information about runs.
+        /// Gets information about runs, given an AWS Device Farm project ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRuns service method.</param>
         /// 
@@ -2328,7 +2328,7 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Gets information about samples.
+        /// Gets information about samples, given an AWS Device Farm project ARN
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSamples service method.</param>
         /// 
@@ -2524,7 +2524,7 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Gets information about uploads.
+        /// Gets information about uploads, given an AWS Device Farm project ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUploads service method.</param>
         /// 

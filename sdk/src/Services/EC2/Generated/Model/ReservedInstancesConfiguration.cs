@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private int? _instanceCount;
         private InstanceType _instanceType;
         private string _platform;
+        private Scope _scope;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -108,6 +109,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPlatform()
         {
             return this._platform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// Whether the Reserved Instance is <code>standard</code> or <code>convertible</code>.
+        /// </para>
+        /// </summary>
+        public Scope Scope
+        {
+            get { return this._scope; }
+            set { this._scope = value; }
+        }
+
+        // Check to see if Scope property is set
+        internal bool IsSetScope()
+        {
+            return this._scope != null;
         }
 
     }

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the output of a <i>DescribeCacheParameters</i> action.
+    /// Represents the output of a <code>DescribeCacheParameters</code> operation.
     /// </summary>
     public partial class DescribeCacheParametersResponse : AmazonWebServiceResponse
     {

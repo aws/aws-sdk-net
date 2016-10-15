@@ -15,6 +15,7 @@
 **/buildlogs/
 **/.vs/
 
+**/*project.lock.json
 **/project.lock.json
 **/*.nuspec
 

@@ -1,5 +1,5 @@
-﻿/*******************************************************************************
- *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+/*******************************************************************************
+ *  Copyright 2008-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -170,7 +170,7 @@ namespace Amazon
         #region Generate Config Template
 
         /// <summary>
-        /// Generates a sample XML representation of the SDK condiguration section.
+        /// Generates a sample XML representation of the SDK configuration section.
         /// </summary>
         /// <remarks>
         /// The XML returned has an example of every tag in the SDK configuration

@@ -54,6 +54,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AutomaticFailover", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AutomaticFailover = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AutoMinorVersionUpgrade", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
@@ -115,6 +121,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.NumCacheNodes = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("NumNodeGroups", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.NumNodeGroups = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Port", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
@@ -131,6 +143,18 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.PreferredMaintenanceWindow = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ReplicationGroupDescription", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReplicationGroupDescription = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ReplicationGroupId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ReplicationGroupId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("SnapshotName", targetDepth))

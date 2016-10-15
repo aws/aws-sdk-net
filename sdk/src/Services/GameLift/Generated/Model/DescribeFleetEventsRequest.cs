@@ -65,7 +65,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for the fleet to get event logs for. 
+        /// Unique identifier for the fleet to get event logs for.
         /// </para>
         /// </summary>
         public string FleetId

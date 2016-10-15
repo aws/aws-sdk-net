@@ -35,7 +35,10 @@ namespace Amazon.ECR.Model
         private Repository _repository;
 
         /// <summary>
-        /// Gets and sets the property Repository.
+        /// Gets and sets the property Repository. 
+        /// <para>
+        /// The repository that was created.
+        /// </para>
         /// </summary>
         public Repository Repository
         {

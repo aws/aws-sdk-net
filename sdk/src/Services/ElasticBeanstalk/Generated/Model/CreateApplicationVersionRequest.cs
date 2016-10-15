@@ -31,10 +31,14 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Container for the parameters to the CreateApplicationVersion operation.
     /// Creates an application version for the specified application.
     /// 
-    ///  <note>Once you create an application version with a specified Amazon S3 bucket and
-    /// key location, you cannot change that Amazon S3 location. If you change the Amazon
-    /// S3 location, you receive an exception when you attempt to launch an environment from
-    /// the application version. </note>
+    ///  <note> 
+    /// <para>
+    /// Once you create an application version with a specified Amazon S3 bucket and key location,
+    /// you cannot change that Amazon S3 location. If you change the Amazon S3 location, you
+    /// receive an exception when you attempt to launch an environment from the application
+    /// version.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateApplicationVersionRequest : AmazonElasticBeanstalkRequest
     {
@@ -42,6 +46,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private bool? _autoCreateApplication;
         private string _description;
         private bool? _process;
+        private SourceBuildInformation _sourceBuildInformation;
         private S3Location _sourceBundle;
         private string _versionLabel;
 
@@ -83,13 +88,20 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property AutoCreateApplication. 
         /// <para>
-        ///  Determines how the system behaves if the specified application for this version does
-        /// not already exist: 
+        /// Determines how the system behaves if the specified application for this version does
+        /// not already exist:
         /// </para>
-        ///  <ul> <li> <code>true</code> : Automatically creates the specified application for
-        /// this release if it does not already exist. </li> <li> <code>false</code> : Throws
-        /// an <code>InvalidParameterValue</code> if the specified application for this release
-        /// does not already exist. </li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>true</code> : Automatically creates the specified application for this release
+        /// if it does not already exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified
+        /// application for this release does not already exist.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         ///  Default: <code>false</code> 
         /// </para>
@@ -149,10 +161,25 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceBuildInformation.
+        /// </summary>
+        public SourceBuildInformation SourceBuildInformation
+        {
+            get { return this._sourceBuildInformation; }
+            set { this._sourceBuildInformation = value; }
+        }
+
+        // Check to see if SourceBuildInformation property is set
+        internal bool IsSetSourceBuildInformation()
+        {
+            return this._sourceBuildInformation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceBundle. 
         /// <para>
-        ///  The Amazon S3 bucket and key that identify the location of the source bundle for
-        /// this version. 
+        /// The Amazon S3 bucket and key that identify the location of the source bundle for this
+        /// version.
         /// </para>
         ///  
         /// <para>

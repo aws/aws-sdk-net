@@ -32,10 +32,17 @@ namespace Amazon.WAF.Model
     /// objects that identify the web requests that you want to allow, block, or count. For
     /// example, you might create a <code>Rule</code> that includes the following predicates:
     /// 
-    ///  <ul> <li>An <code>IPSet</code> that causes AWS WAF to search for web requests that
-    /// originate from the IP address <code>192.0.2.44</code></li> <li>A <code>ByteMatchSet</code>
-    /// that causes AWS WAF to search for web requests for which the value of the <code>User-Agent</code>
-    /// header is <code>BadBot</code>.</li> </ul> 
+    ///  <ul> <li> 
+    /// <para>
+    /// An <code>IPSet</code> that causes AWS WAF to search for web requests that originate
+    /// from the IP address <code>192.0.2.44</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A <code>ByteMatchSet</code> that causes AWS WAF to search for web requests for which
+    /// the value of the <code>User-Agent</code> header is <code>BadBot</code>.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// To match the settings in this <code>Rule</code>, a request must originate from <code>192.0.2.44</code>
     /// AND include a <code>User-Agent</code> header for which the value is <code>BadBot</code>.
@@ -113,7 +120,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
+        ///  <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
         /// </para>
         /// </summary>
         public string RuleId

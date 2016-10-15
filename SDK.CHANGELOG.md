@@ -1,3 +1,65 @@
+### 3.3.9.0 (2016-10-13 19:57 UTC)
+* CertificateManager (3.3.1.0)
+	*  This change allows users to import third-party SSL/TLS certificates into ACM
+* ElasticBeanstalk (3.3.1.0)
+	* Support Pagination for DescribeApplicationVersions API
+* GameLift (3.3.1.0)
+	* New APIs to protect game developer resource (builds, alias, fleets, instances, game sessions and player sessions) against abuse.
+* S3 (3.3.0.3)
+	* Updated to use new Core, version 3.3.1.1
+	* Requires latest Core to pick up LruCache bug fix.
+* ServiceCatalog (3.3.1.0)
+	* Updated to use new Core, version 3.3.1.1
+	* New regions
+* Core 3.3.1.1
+	* Several bug fixes to LruCache including https://github.com/aws/aws-sdk-net/pull/467; Doc updates; and endpoints.json update to support new Service Catalog regions.
+
+### 3.3.8.0 (2016-10-12 17:43 UTC)
+* ECR (3.3.1.0)
+	* DescribeImages is a new api used to expose image metadata which today includes image size and image creation timestamp
+* ElastiCache (3.3.1.0)
+	* Elasticache is launching a new major engine release of Redis, 3.2 (providing stability updates and new command sets over 2.8), as well as ElasticSupport for enabling Redis Cluster in 3.2, which provides support for multiple node groups to horizontally scale data, as well as superior engine failover capabilities.
+
+### 3.3.7.0 (2016-10-12 08:32 UTC)
+* CognitoSync (3.3.1.0)
+	* Update SQLite dependencies for support of Android N
+* MobileAnalytics (3.3.1.0)
+	* Update SQLite dependencies for support of Android N
+
+### 3.3.6.0 (2016-10-11 19:26 UTC)
+* Core 3.3.1.0
+	* * Close HttpWebRequest's response stream on WebExceptions (https://github.com/aws/aws-sdk-net/pull/449).
+
+* Updated generation of .nuspec files to enable Nuget packages to support the "uap" targetFramework.
+
+* Added support for configuring bypass lists and bypass-on-local mode for web proxies in the BCL and Unity platforms.
+
+* Fixed issue in RegionEndpointProviderV3 preventing use of regions unknown at the time of compilation.
+
+* Fixed LitJson not serializig signed types correctly.
+
+	* all services packages updated to require new core
+
+### 3.3.5.0 (2016-10-07 03:45 UTC)
+* CognitoIdentityProvider (3.3.1.0)
+	* Added new operation "AdminCreateUser" that creates a new user in the specified user pool and sends a welcome message via email or phone (SMS).
+* DeviceFarm (3.3.0.1)
+	* general doc update
+* KeyManagementService (3.3.1.0)
+	* support for InvalidMarkerException in ListKeys API
+* OpsWorks (3.3.0.1)
+	* general doc update
+* WAF (3.3.1.0)
+	*  In WAF model, the enum for IPSetDescriptorType, we add IPV6 in addition to IPV4. This change will add a new option when customers call some APIs, and also the API will no longer assume the IPSetDescriptorType is in IPV4
+* Core 3.3.0.3
+	* endpoints.json file update
+
+### 3.3.4.0 (2016-09-29 23:30 UTC)
+* EC2 (3.3.1.0)
+	* Support for new EC2 instance type: m4.16xlarge Support for new EC2 P2 and X1 instances. Adding support for EC2 Convertible RIs and the EC2 RI regional benefit.
+* Core 3.3.0.2
+	* Add back the ap-south1 region constant
+
 ### 3.3.3.0 (2016-09-28 02:53 UTC)
 * CloudFormation (3.3.1.0)
 	* Added RoleARN parameter to mutating APIs

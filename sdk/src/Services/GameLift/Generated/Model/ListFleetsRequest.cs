@@ -32,7 +32,6 @@ namespace Amazon.GameLift.Model
     /// Retrieves a collection of fleet records for this AWS account. You can filter the result
     /// set by build ID. Use the pagination parameters to retrieve results in sequential pages.
     /// 
-    /// 
     ///  <note> 
     /// <para>
     /// Fleet records are not listed in any particular order.

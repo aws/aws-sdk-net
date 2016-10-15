@@ -29,7 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCacheSecurityGroup operation.
-    /// The <i>DeleteCacheSecurityGroup</i> action deletes a cache security group.
+    /// Deletes a cache security group.
     /// 
     ///  <note> 
     /// <para>

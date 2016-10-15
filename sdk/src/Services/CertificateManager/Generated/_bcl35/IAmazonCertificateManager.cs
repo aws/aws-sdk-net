@@ -31,14 +31,13 @@ namespace Amazon.CertificateManager
     ///
     /// AWS Certificate Manager 
     /// <para>
-    /// Welcome to the AWS Certificate Manager (ACM) Command Reference. This guide provides
-    /// descriptions, syntax, and usage examples for each ACM command. You can use AWS Certificate
-    /// Manager to request ACM Certificates for your AWS-based websites and applications.
-    /// For general information about using ACM and for more information about using the console,
-    /// see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-    /// Certificate Manager User Guide</a>. For more information about using the ACM API,
-    /// see the <a href="http://docs.aws.amazon.com/acm/latest/APIReference/Welcome.html">AWS
-    /// Certificate Manager API Reference</a>.
+    /// Welcome to the AWS Certificate Manager (ACM) API documentation.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use ACM to manage SSL/TLS certificates for your AWS-based websites and applications.
+    /// For general information about using ACM, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">
+    /// <i>AWS Certificate Manager User Guide</i> </a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCertificateManager : IAmazonService, IDisposable
@@ -360,6 +359,89 @@ namespace Amazon.CertificateManager
 
         #endregion
         
+        #region  ImportCertificate
+
+
+        /// <summary>
+        /// Imports an SSL/TLS certificate into AWS Certificate Manager (ACM) to use with <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">ACM's
+        /// integrated AWS services</a>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// ACM does not provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+        /// renewal</a> for certificates that you import.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information about importing certificates into ACM, including the differences
+        /// between certificates that you import and those that ACM provides, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+        /// Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To import a certificate, you must provide the certificate and the matching private
+        /// key. When the certificate is not self-signed, you must also provide a certificate
+        /// chain. You can omit the certificate chain when importing a self-signed certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// The certificate, private key, and certificate chain must be PEM-encoded. For more
+        /// information about converting these items to PEM format, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html#import-certificate-troubleshooting">Importing
+        /// Certificates Troubleshooting</a> in the <i>AWS Certificate Manager User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To import a new certificate, omit the <code>CertificateArn</code> field. Include this
+        /// field only when you want to replace a previously imported certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation returns the <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> of the imported certificate.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportCertificate service method.</param>
+        /// 
+        /// <returns>The response from the ImportCertificate service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.LimitExceededException">
+        /// An ACM limit has been exceeded. For example, you may have input more domains than
+        /// are allowed or you've requested too many certificates for your account. See the exception
+        /// message returned by ACM to determine which limit you have violated. For more information
+        /// about ACM limits, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>
+        /// topic.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account, or the caller's
+        /// account cannot be found.
+        /// </exception>
+        ImportCertificateResponse ImportCertificate(ImportCertificateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportCertificate operation on AmazonCertificateManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportCertificate
+        ///         operation.</returns>
+        IAsyncResult BeginImportCertificate(ImportCertificateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportCertificate.</param>
+        /// 
+        /// <returns>Returns a  ImportCertificateResult from CertificateManager.</returns>
+        ImportCertificateResponse EndImportCertificate(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListCertificates
 
 
@@ -519,8 +601,8 @@ namespace Amazon.CertificateManager
         /// specify additional FQDNs if users can reach your site by using other names. For each
         /// domain name you specify, email is sent to the domain owner to request approval to
         /// issue the certificate. After receiving approval from the domain owner, the ACM Certificate
-        /// is issued. For more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html">AWS
-        /// Certificate Manager User Guide </a>.
+        /// is issued. For more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS
+        /// Certificate Manager User Guide</a>.
         /// </summary>
         /// <param name="domainName">Fully qualified domain name (FQDN), such as www.example.com, of the site you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.</param>
         /// 
@@ -543,8 +625,8 @@ namespace Amazon.CertificateManager
         /// specify additional FQDNs if users can reach your site by using other names. For each
         /// domain name you specify, email is sent to the domain owner to request approval to
         /// issue the certificate. After receiving approval from the domain owner, the ACM Certificate
-        /// is issued. For more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/overview.html">AWS
-        /// Certificate Manager User Guide </a>.
+        /// is issued. For more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS
+        /// Certificate Manager User Guide</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestCertificate service method.</param>
         /// 

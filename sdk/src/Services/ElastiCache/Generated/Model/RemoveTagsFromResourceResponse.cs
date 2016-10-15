@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the output from the <i>AddTagsToResource</i>, <i>ListTagsOnResource</i>,
-    /// and <i>RemoveTagsFromResource</i> actions.
+    /// Represents the output from the <code>AddTagsToResource</code>, <code>ListTagsOnResource</code>,
+    /// and <code>RemoveTagsFromResource</code> operations.
     /// </summary>
     public partial class RemoveTagsFromResourceResponse : AmazonWebServiceResponse
     {

@@ -36,6 +36,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private DateTime? _dateCreated;
         private DateTime? _dateUpdated;
         private string _description;
+        private SourceBuildInformation _sourceBuildInformation;
         private S3Location _sourceBundle;
         private ApplicationVersionStatus _status;
         private string _versionLabel;
@@ -118,9 +119,24 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceBuildInformation.
+        /// </summary>
+        public SourceBuildInformation SourceBuildInformation
+        {
+            get { return this._sourceBuildInformation; }
+            set { this._sourceBuildInformation = value; }
+        }
+
+        // Check to see if SourceBuildInformation property is set
+        internal bool IsSetSourceBuildInformation()
+        {
+            return this._sourceBuildInformation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceBundle. 
         /// <para>
-        ///  The location where the source bundle is located for this version. 
+        /// The location where the source bundle is located for this version.
         /// </para>
         /// </summary>
         public S3Location SourceBundle
@@ -156,7 +172,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property VersionLabel. 
         /// <para>
-        ///  A label uniquely identifying the version for the associated application. 
+        /// A label uniquely identifying the version for the associated application.
         /// </para>
         /// </summary>
         public string VersionLabel

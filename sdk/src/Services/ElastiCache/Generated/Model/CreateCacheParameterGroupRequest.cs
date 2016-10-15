@@ -29,9 +29,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCacheParameterGroup operation.
-    /// The <i>CreateCacheParameterGroup</i> action creates a new cache parameter group. A
-    /// cache parameter group is a collection of parameters that you apply to all of the nodes
-    /// in a cache cluster.
+    /// Creates a new cache parameter group. A cache parameter group is a collection of parameters
+    /// that you apply to all of the nodes in a cache cluster.
     /// </summary>
     public partial class CreateCacheParameterGroupRequest : AmazonElastiCacheRequest
     {
@@ -48,7 +47,7 @@ namespace Amazon.ElastiCache.Model
         /// Instantiates CreateCacheParameterGroupRequest with the parameterized properties
         /// </summary>
         /// <param name="cacheParameterGroupName">A user-specified name for the cache parameter group.</param>
-        /// <param name="cacheParameterGroupFamily">The name of the cache parameter group family the cache parameter group can be used with. Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> </param>
+        /// <param name="cacheParameterGroupFamily">The name of the cache parameter group family that the cache parameter group can be used with. Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> </param>
         /// <param name="description">A user-specified description for the cache parameter group.</param>
         public CreateCacheParameterGroupRequest(string cacheParameterGroupName, string cacheParameterGroupFamily, string description)
         {
@@ -60,13 +59,13 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CacheParameterGroupFamily. 
         /// <para>
-        /// The name of the cache parameter group family the cache parameter group can be used
-        /// with.
+        /// The name of the cache parameter group family that the cache parameter group can be
+        /// used with.
         /// </para>
         ///  
         /// <para>
         /// Valid values are: <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code>
-        /// 
+        /// | <code>redis3.2</code> 
         /// </para>
         /// </summary>
         public string CacheParameterGroupFamily

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
  */
 
 
@@ -244,6 +244,37 @@ namespace Amazon.EC2
 
         #endregion
 
+        
+        #region  AcceptReservedInstancesExchangeQuote
+
+        internal AcceptReservedInstancesExchangeQuoteResponse AcceptReservedInstancesExchangeQuote(AcceptReservedInstancesExchangeQuoteRequest request)
+        {
+            var marshaller = new AcceptReservedInstancesExchangeQuoteRequestMarshaller();
+            var unmarshaller = AcceptReservedInstancesExchangeQuoteResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptReservedInstancesExchangeQuoteRequest,AcceptReservedInstancesExchangeQuoteResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptReservedInstancesExchangeQuote operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptReservedInstancesExchangeQuote operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AcceptReservedInstancesExchangeQuoteResponse> AcceptReservedInstancesExchangeQuoteAsync(AcceptReservedInstancesExchangeQuoteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AcceptReservedInstancesExchangeQuoteRequestMarshaller();
+            var unmarshaller = AcceptReservedInstancesExchangeQuoteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AcceptReservedInstancesExchangeQuoteRequest,AcceptReservedInstancesExchangeQuoteResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
         
         #region  AcceptVpcPeeringConnection
 
@@ -4937,6 +4968,11 @@ namespace Amazon.EC2
         /// Alternatively, you can use <a>DescribeInstances</a> with a filter to look for instances
         /// where the instance lifecycle is <code>spot</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// Spot instance requests are deleted 4 hours after they are canceled and their instances
+        /// are terminated.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -6277,6 +6313,37 @@ namespace Amazon.EC2
             var unmarshaller = GetPasswordDataResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetPasswordDataRequest,GetPasswordDataResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetReservedInstancesExchangeQuote
+
+        internal GetReservedInstancesExchangeQuoteResponse GetReservedInstancesExchangeQuote(GetReservedInstancesExchangeQuoteRequest request)
+        {
+            var marshaller = new GetReservedInstancesExchangeQuoteRequestMarshaller();
+            var unmarshaller = GetReservedInstancesExchangeQuoteResponseUnmarshaller.Instance;
+
+            return Invoke<GetReservedInstancesExchangeQuoteRequest,GetReservedInstancesExchangeQuoteResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetReservedInstancesExchangeQuote operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetReservedInstancesExchangeQuote operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetReservedInstancesExchangeQuoteResponse> GetReservedInstancesExchangeQuoteAsync(GetReservedInstancesExchangeQuoteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetReservedInstancesExchangeQuoteRequestMarshaller();
+            var unmarshaller = GetReservedInstancesExchangeQuoteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetReservedInstancesExchangeQuoteRequest,GetReservedInstancesExchangeQuoteResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

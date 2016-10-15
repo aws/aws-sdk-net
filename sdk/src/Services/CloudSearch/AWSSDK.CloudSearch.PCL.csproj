@@ -39,6 +39,7 @@
     <DocumentationFile>bin\Release\pcl\AWSSDK.CloudSearch.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <Choose>

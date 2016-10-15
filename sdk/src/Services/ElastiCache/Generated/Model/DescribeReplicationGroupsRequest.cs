@@ -29,9 +29,14 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReplicationGroups operation.
-    /// The <i>DescribeReplicationGroups</i> action returns information about a particular
-    /// replication group. If no identifier is specified, <i>DescribeReplicationGroups</i>
-    /// returns information about all replication groups.
+    /// Returns information about a particular replication group. If no identifier is specified,
+    /// <code>DescribeReplicationGroups</code> returns information about all replication groups.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation is valid for Redis only.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeReplicationGroupsRequest : AmazonElastiCacheRequest
     {
@@ -43,8 +48,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional marker returned from a prior request. Use this marker for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// results from this operation. If this parameter is specified, the response includes
+        /// only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker

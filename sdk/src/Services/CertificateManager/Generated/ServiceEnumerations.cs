@@ -95,6 +95,56 @@ namespace Amazon.CertificateManager
 
 
     /// <summary>
+    /// Constants used for properties of type CertificateType.
+    /// </summary>
+    public class CertificateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMAZON_ISSUED for CertificateType
+        /// </summary>
+        public static readonly CertificateType AMAZON_ISSUED = new CertificateType("AMAZON_ISSUED");
+        /// <summary>
+        /// Constant IMPORTED for CertificateType
+        /// </summary>
+        public static readonly CertificateType IMPORTED = new CertificateType("IMPORTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateType FindValue(string value)
+        {
+            return FindValue<CertificateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FailureReason.
     /// </summary>
     public class FailureReason : ConstantClass
@@ -166,6 +216,10 @@ namespace Amazon.CertificateManager
         /// Constant EC_prime256v1 for KeyAlgorithm
         /// </summary>
         public static readonly KeyAlgorithm EC_prime256v1 = new KeyAlgorithm("EC_prime256v1");
+        /// <summary>
+        /// Constant RSA_1024 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm RSA_1024 = new KeyAlgorithm("RSA_1024");
         /// <summary>
         /// Constant RSA_2048 for KeyAlgorithm
         /// </summary>

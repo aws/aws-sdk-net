@@ -76,6 +76,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MFAOptions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MFAOptionType, MFAOptionTypeUnmarshaller>(MFAOptionTypeUnmarshaller.Instance);
+                    unmarshalledObject.MFAOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UserCreateDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

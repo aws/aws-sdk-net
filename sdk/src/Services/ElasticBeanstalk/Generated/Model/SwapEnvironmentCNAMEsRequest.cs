@@ -41,7 +41,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property DestinationEnvironmentId. 
         /// <para>
-        ///  The ID of the destination environment. 
+        /// The ID of the destination environment.
         /// </para>
         ///  
         /// <para>
@@ -66,7 +66,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property DestinationEnvironmentName. 
         /// <para>
-        ///  The name of the destination environment. 
+        /// The name of the destination environment.
         /// </para>
         ///  
         /// <para>
@@ -91,7 +91,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SourceEnvironmentId. 
         /// <para>
-        ///  The ID of the source environment. 
+        /// The ID of the source environment.
         /// </para>
         ///  
         /// <para>
@@ -116,7 +116,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SourceEnvironmentName. 
         /// <para>
-        ///  The name of the source environment. 
+        /// The name of the source environment.
         /// </para>
         ///  
         /// <para>

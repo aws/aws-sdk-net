@@ -29,7 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCacheSubnetGroup operation.
-    /// The <i>DeleteCacheSubnetGroup</i> action deletes a cache subnet group.
+    /// Deletes a cache subnet group.
     /// 
     ///  <note> 
     /// <para>

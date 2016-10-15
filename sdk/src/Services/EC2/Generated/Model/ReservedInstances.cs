@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -40,10 +40,12 @@ namespace Amazon.EC2.Model
         private int? _instanceCount;
         private Tenancy _instanceTenancy;
         private InstanceType _instanceType;
+        private OfferingClassType _offeringClass;
         private OfferingTypeValues _offeringType;
         private RIProductDescription _productDescription;
         private List<RecurringCharge> _recurringCharges = new List<RecurringCharge>();
         private string _reservedInstancesId;
+        private Scope _scope;
         private DateTime? _start;
         private ReservedInstanceState _state;
         private List<Tag> _tags = new List<Tag>();
@@ -195,6 +197,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OfferingClass. 
+        /// <para>
+        /// The offering class of the Reserved Instance.
+        /// </para>
+        /// </summary>
+        public OfferingClassType OfferingClass
+        {
+            get { return this._offeringClass; }
+            set { this._offeringClass = value; }
+        }
+
+        // Check to see if OfferingClass property is set
+        internal bool IsSetOfferingClass()
+        {
+            return this._offeringClass != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OfferingType. 
         /// <para>
         /// The Reserved Instance offering type.
@@ -264,6 +284,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetReservedInstancesId()
         {
             return this._reservedInstancesId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// The scope of the Reserved Instance.
+        /// </para>
+        /// </summary>
+        public Scope Scope
+        {
+            get { return this._scope; }
+            set { this._scope = value; }
+        }
+
+        // Check to see if Scope property is set
+        internal bool IsSetScope()
+        {
+            return this._scope != null;
         }
 
         /// <summary>

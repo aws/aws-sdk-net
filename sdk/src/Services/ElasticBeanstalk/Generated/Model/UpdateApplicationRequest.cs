@@ -29,10 +29,14 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateApplication operation.
-    /// Updates the specified application to have the specified properties. 
+    /// Updates the specified application to have the specified properties.
     /// 
-    ///  <note> If a property (for example, <code>description</code>) is not provided, the
-    /// value remains unchanged. To clear these properties, specify an empty string. </note>
+    ///  <note> 
+    /// <para>
+    /// If a property (for example, <code>description</code>) is not provided, the value remains
+    /// unchanged. To clear these properties, specify an empty string.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateApplicationRequest : AmazonElasticBeanstalkRequest
     {
@@ -75,12 +79,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  A new description for the application. 
+        /// A new description for the application.
         /// </para>
         ///  
         /// <para>
         /// Default: If not specified, AWS Elastic Beanstalk does not update the description.
-        /// 
         /// </para>
         /// </summary>
         public string Description

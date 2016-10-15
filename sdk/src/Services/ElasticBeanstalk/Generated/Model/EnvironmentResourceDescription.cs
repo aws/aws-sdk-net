@@ -138,7 +138,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Queues. 
         /// <para>
-        /// The queues used by this environment. 
+        /// The queues used by this environment.
         /// </para>
         /// </summary>
         public List<Queue> Queues

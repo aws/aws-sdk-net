@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -96,6 +96,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Marketplace = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("offeringClass", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OfferingClass = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("offeringType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -126,6 +132,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ReservedInstancesOfferingId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("scope", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Scope = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("usagePrice", targetDepth))

@@ -112,6 +112,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.OperatingSystem = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResourceCreationLimitPolicy", targetDepth))
+                {
+                    var unmarshaller = ResourceCreationLimitPolicyUnmarshaller.Instance;
+                    unmarshalledObject.ResourceCreationLimitPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ServerLaunchParameters", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

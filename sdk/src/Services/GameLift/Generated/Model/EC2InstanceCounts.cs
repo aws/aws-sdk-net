@@ -155,7 +155,6 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TERMINATING. 
         /// <para>
         /// Number of instances in the fleet that are no longer active but haven't yet been terminated.
-        /// 
         /// </para>
         /// </summary>
         public int TERMINATING

@@ -30,8 +30,8 @@ namespace Amazon.Runtime.Internal.Util
         where TValue : class
     {
         private readonly object cacheLock = new object();
-        private Dictionary<TKey, LruListItem> cache;
-        private LruList lruList;
+        private Dictionary<TKey, LruListItem<TKey, TValue>> cache;
+        private LruList<TKey, TValue> lruList;
 
         /// <summary>
         /// the maximum number of entries this LruCache will hold
@@ -65,8 +65,8 @@ namespace Amazon.Runtime.Internal.Util
             }
 
             MaxEntries = maxEntries;
-            cache = new Dictionary<TKey, LruListItem>();
-            lruList = new LruList();
+            cache = new Dictionary<TKey, LruListItem<TKey, TValue>>();
+            lruList = new LruList<TKey, TValue>();
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Amazon.Runtime.Internal.Util
         {
             lock (cacheLock)
             {
-                LruListItem existingLruListItem;
+                LruListItem<TKey, TValue> existingLruListItem;
                 if (cache.TryGetValue(key, out existingLruListItem))
                 {
                     // update
@@ -91,7 +91,7 @@ namespace Amazon.Runtime.Internal.Util
                 else
                 {
                     // add
-                    var newLruListItem = new LruListItem(key, value);
+                    var newLruListItem = new LruListItem<TKey, TValue>(key, value);
                     while (cache.Count >= MaxEntries)
                     {
                         cache.Remove(lruList.EvictOldest());
@@ -110,7 +110,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <returns>true if there is a value associated with the key, or false if no value is associated with the key</returns>
         public bool TryGetValue(TKey key, out TValue value)
         {
-            LruListItem existingListItem;
+            LruListItem<TKey, TValue> existingListItem;
             lock (cacheLock)
             {
                 if (cache.TryGetValue(key, out existingListItem))
@@ -138,95 +138,107 @@ namespace Amazon.Runtime.Internal.Util
                 lruList.Clear();
             }
         }
+    }
 
-        /// <summary>
-        /// Helper class to support LruCache.
-        /// Does not implement the error checking that
-        /// would be necessary for it to be a stand-alone class.
-        /// </summary>
-        private class LruList
+    /// <summary>
+    /// Helper class to support LruCache.
+    /// Does not implement the error checking and synchronization that
+    /// would be necessary for it to stand alone.
+    /// </summary>
+    public class LruList<TKey, TValue>
+    {
+        public LruListItem<TKey, TValue> Head { get; private set; }
+        public LruListItem<TKey, TValue> Tail { get; private set; }
+
+        public void Add(LruListItem<TKey, TValue> item)
         {
-            public LruListItem Head { get; private set; }
-            public LruListItem Tail { get; private set; }
-
-            public void Add(LruListItem item)
+            if (Head == null)
             {
-                if (Head == null)
-                {
-                    Head = item;
-                    Tail = item;
-                    item.Previous = null;
-                    item.Next = null;
-                }
-                else
-                {
-                    item.Next = Head;
-                    item.Previous = null;
-                    Head = item;
-                }
+                Head = item;
+                Tail = item;
+                item.Previous = null;
+                item.Next = null;
             }
+            else
+            {
+                Head.Previous = item;
+                item.Next = Head;
+                item.Previous = null;
+                Head = item;
+            }
+        }
 
-            public void Remove(LruListItem item)
+        public void Remove(LruListItem<TKey, TValue> item)
+        {
+            if (Head == item || Tail == item)
             {
                 if (Head == item)
                 {
                     Head = item.Next;
-                    item.Next = null;
+                    if (Head != null)
+                    {
+                        Head.Previous = null;
+                    }
                 }
-                else if (Tail == item)
+
+                if (Tail == item)
                 {
                     Tail = item.Previous;
-                    item.Previous = null;
-                }
-                else
-                {
-                    item.Previous.Next = item.Next;
-                    item.Next.Previous = item.Previous;
-                    item.Previous = null;
-                    item.Next = null;
+                    if (Tail != null)
+                    {
+                        Tail.Next = null;
+                    }
                 }
             }
-
-            public void Touch(LruListItem item)
+            else
             {
-                Remove(item);
-                Add(item);
+                item.Previous.Next = item.Next;
+                item.Next.Previous = item.Previous;
             }
 
-            public TKey EvictOldest()
-            {
-                TKey key = null;
-                if (Tail != null)
-                {
-                    key = Tail.Key;
-                    Remove(Tail);
-                }
-                return key;
-            }
-
-            internal void Clear()
-            {
-                Head = null;
-                Tail = null;
-            }
+            item.Previous = null;
+            item.Next = null;
         }
 
-        /// <summary>
-        /// Item to be stored in the LruList
-        /// linked list structure.
-        /// </summary>
-        private class LruListItem
+        public void Touch(LruListItem<TKey, TValue> item)
         {
-            public TValue Value { get; set; }
-            public TKey Key { get; private set; }
-            public LruListItem Next { get; set; }
-            public LruListItem Previous { get; set; }
+            Remove(item);
+            Add(item);
+        }
 
-            public LruListItem(TKey key, TValue value)
+        public TKey EvictOldest()
+        {
+            TKey key = default(TKey);
+            if (Tail != null)
             {
-                Key = key;
-                Value = value;
+                key = Tail.Key;
+                Remove(Tail);
             }
+            return key;
+        }
+
+        internal void Clear()
+        {
+            Head = null;
+            Tail = null;
+        }
+    }
+
+    /// <summary>
+    /// Item to be stored in the LruList
+    /// linked list structure.
+    /// </summary>
+    public class LruListItem<TKey, TValue>
+    {
+        public TValue Value { get; set; }
+        public TKey Key { get; private set; }
+        public LruListItem<TKey, TValue> Next { get; set; }
+        public LruListItem<TKey, TValue> Previous { get; set; }
+
+        public LruListItem(TKey key, TValue value)
+        {
+            Key = key;
+            Value = value;
         }
     }
 }

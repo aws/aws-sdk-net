@@ -40,10 +40,18 @@ namespace Amazon.WAF.Model
         /// Information about the <a>IPSet</a> that you specified in the <code>GetIPSet</code>
         /// request. For more information, see the following topics:
         /// </para>
-        ///  <ul> <li><a>IPSet</a>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>,
-        /// and <code>Name</code></li> <li><code>IPSetDescriptors</code>: Contains an array of
-        /// <a>IPSetDescriptor</a> objects. Each <code>IPSetDescriptor</code> object contains
-        /// <code>Type</code> and <code>Value</code></li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>IPSet</a>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>IPSetDescriptors</code>: Contains an array of <a>IPSetDescriptor</a> objects.
+        /// Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public IPSet IPSet
         {

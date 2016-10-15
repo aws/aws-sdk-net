@@ -497,6 +497,10 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly GameSessionStatus ACTIVE = new GameSessionStatus("ACTIVE");
         /// <summary>
+        /// Constant ERROR for GameSessionStatus
+        /// </summary>
+        public static readonly GameSessionStatus ERROR = new GameSessionStatus("ERROR");
+        /// <summary>
         /// Constant TERMINATED for GameSessionStatus
         /// </summary>
         public static readonly GameSessionStatus TERMINATED = new GameSessionStatus("TERMINATED");
@@ -534,6 +538,60 @@ namespace Amazon.GameLift
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GameSessionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceStatus.
+    /// </summary>
+    public class InstanceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for InstanceStatus
+        /// </summary>
+        public static readonly InstanceStatus ACTIVE = new InstanceStatus("ACTIVE");
+        /// <summary>
+        /// Constant PENDING for InstanceStatus
+        /// </summary>
+        public static readonly InstanceStatus PENDING = new InstanceStatus("PENDING");
+        /// <summary>
+        /// Constant TERMINATING for InstanceStatus
+        /// </summary>
+        public static readonly InstanceStatus TERMINATING = new InstanceStatus("TERMINATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceStatus FindValue(string value)
+        {
+            return FindValue<InstanceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceStatus(string value)
         {
             return FindValue(value);
         }

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -30,8 +30,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the PurchaseReservedInstancesOffering operation.
     /// Purchases a Reserved Instance for use with your account. With Reserved Instances,
-    /// you obtain a capacity reservation for a certain instance configuration over a specified
-    /// period of time and pay a lower hourly rate compared to On-Demand instance pricing.
+    /// you pay a lower hourly rate compared to On-Demand instance pricing.
     /// 
     ///  
     /// <para>

@@ -156,9 +156,9 @@ namespace Amazon.CloudFront
         {
             var cookies = new CookiesForCannedPolicy();
 
-            int epochSeconds = AWSSDKUtils.ConvertToUnixEpochSeconds(expiresOn.ToUniversalTime());
+            string epochSeconds = AWSSDKUtils.ConvertToUnixEpochSecondsString(expiresOn.ToUniversalTime());
             cookies.Expires = new KeyValuePair<string, string>(
-                ExpiresKey, epochSeconds.ToString(CultureInfo.InvariantCulture));
+                ExpiresKey, epochSeconds);
 
             RSAParameters rsaParameters = AmazonCloudFrontUrlSigner.ConvertPEMToRSAParameters(privateKey);
             string cannedPolicy = "{\"Statement\":[{\"Resource\":\"" + resourceUrlOrPath

@@ -32,7 +32,7 @@ namespace Amazon.GameLift.Model
     /// Creates a new fleet to run your game servers. A fleet is a set of Amazon Elastic Compute
     /// Cloud (Amazon EC2) instances, each of which can run multiple server processes to host
     /// game sessions. You configure a fleet to create instances with certain hardware specifications
-    /// (see <a href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+    /// (see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
     /// for more information), and deploy a specified game build to each instance. A newly
     /// created fleet passes through several statuses; once it reaches the <code>ACTIVE</code>
     /// status, it can begin hosting game sessions.
@@ -51,25 +51,57 @@ namespace Amazon.GameLift.Model
     /// If the <code>CreateFleet</code> call is successful, Amazon GameLift performs the following
     /// tasks:
     /// </para>
-    ///  <ul> <li>Creates a fleet record and sets the status to <code>NEW</code> (followed
-    /// by other statuses as the fleet is activated).</li> <li>Sets the fleet's capacity to
-    /// 1 "desired", which causes GameLift to start one new EC2 instance.</li> <li>Starts
-    /// launching server processes on the instance. If the fleet is configured to run multiple
-    /// server processes per instance, GameLift staggers each launch by a few seconds.</li>
-    /// <li>Begins writing events to the fleet event log, which can be accessed in the GameLift
-    /// console.</li> <li>Sets the fleet's status to <code>ACTIVE</code> once one server process
-    /// in the fleet is ready to host a game session.</li> </ul> 
+    ///  <ul> <li> 
+    /// <para>
+    /// Creates a fleet record and sets the status to <code>NEW</code> (followed by other
+    /// statuses as the fleet is activated).
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Sets the fleet's capacity to 1 "desired", which causes GameLift to start one new EC2
+    /// instance.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Starts launching server processes on the instance. If the fleet is configured to run
+    /// multiple server processes per instance, GameLift staggers each launch by a few seconds.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Begins writing events to the fleet event log, which can be accessed in the GameLift
+    /// console.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Sets the fleet's status to <code>ACTIVE</code> once one server process in the fleet
+    /// is ready to host a game session.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// After a fleet is created, use the following actions to change fleet properties and
     /// configuration:
     /// </para>
-    ///  <ul> <li> <a>UpdateFleetAttributes</a> -- Update fleet metadata, including name and
-    /// description.</li> <li> <a>UpdateFleetCapacity</a> -- Increase or decrease the number
-    /// of instances you want the fleet to maintain.</li> <li> <a>UpdateFleetPortSettings</a>
-    /// -- Change the IP address and port ranges that allow access to incoming traffic.</li>
-    /// <li> <a>UpdateRuntimeConfiguration</a> -- Change how server processes are launched
-    /// in the fleet, including launch path, launch parameters, and the number of concurrent
-    /// processes.</li> </ul>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>UpdateFleetAttributes</a> -- Update fleet metadata, including name and description.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetCapacity</a> -- Increase or decrease the number of instances you want
+    /// the fleet to maintain.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateFleetPortSettings</a> -- Change the IP address and port ranges that allow
+    /// access to incoming traffic.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateRuntimeConfiguration</a> -- Change how server processes are launched in
+    /// the fleet, including launch path, launch parameters, and the number of concurrent
+    /// processes.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateFleetRequest : AmazonGameLiftRequest
     {
@@ -80,6 +112,7 @@ namespace Amazon.GameLift.Model
         private List<string> _logPaths = new List<string>();
         private string _name;
         private ProtectionPolicy _newGameSessionProtectionPolicy;
+        private ResourceCreationLimitPolicy _resourceCreationLimitPolicy;
         private RuntimeConfiguration _runtimeConfiguration;
         private string _serverLaunchParameters;
         private string _serverLaunchPath;
@@ -149,7 +182,7 @@ namespace Amazon.GameLift.Model
         /// Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance
         /// type determines the computing resources of each instance in the fleet, including CPU,
         /// memory, storage, and networking capacity. GameLift supports the following EC2 instance
-        /// types. See <a href="https://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+        /// types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
         /// Types</a> for detailed descriptions.
         /// </para>
         /// </summary>
@@ -215,9 +248,16 @@ namespace Amazon.GameLift.Model
         /// created after the policy change. You can also set protection for individual instances
         /// using <a>UpdateGameSession</a>.
         /// </para>
-        ///  <ul><li><b>NoProtection</b> – The game session can be terminated during a scale-down
-        /// event.</li> <li><b>FullProtection</b> – If the game session is in an <code>ACTIVE</code>
-        /// status, it cannot be terminated during a scale-down event.</li></ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>NoProtection</b> – The game session can be terminated during a scale-down event.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FullProtection</b> – If the game session is in an <code>ACTIVE</code> status,
+        /// it cannot be terminated during a scale-down event.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ProtectionPolicy NewGameSessionProtectionPolicy
         {
@@ -229,6 +269,25 @@ namespace Amazon.GameLift.Model
         internal bool IsSetNewGameSessionProtectionPolicy()
         {
             return this._newGameSessionProtectionPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceCreationLimitPolicy. 
+        /// <para>
+        /// Policy that limits the number of game sessions an individual player can create over
+        /// a span of time for this fleet.
+        /// </para>
+        /// </summary>
+        public ResourceCreationLimitPolicy ResourceCreationLimitPolicy
+        {
+            get { return this._resourceCreationLimitPolicy; }
+            set { this._resourceCreationLimitPolicy = value; }
+        }
+
+        // Check to see if ResourceCreationLimitPolicy property is set
+        internal bool IsSetResourceCreationLimitPolicy()
+        {
+            return this._resourceCreationLimitPolicy != null;
         }
 
         /// <summary>

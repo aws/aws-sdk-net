@@ -67,6 +67,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdminCreateUserConfig())
+                {
+                    context.Writer.WritePropertyName("AdminCreateUserConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AdminCreateUserConfigTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AdminCreateUserConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetAutoVerifiedAttributes())
                 {
                     context.Writer.WritePropertyName("AutoVerifiedAttributes");

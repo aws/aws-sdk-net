@@ -29,7 +29,7 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the ListUploads operation.
-    /// Gets information about uploads.
+    /// Gets information about uploads, given an AWS Device Farm project ARN.
     /// </summary>
     public partial class ListUploadsRequest : AmazonDeviceFarmRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The uploads' ARNs.
+        /// The Amazon Resource Name (ARN) of the project for which you want to list uploads.
         /// </para>
         /// </summary>
         public string Arn

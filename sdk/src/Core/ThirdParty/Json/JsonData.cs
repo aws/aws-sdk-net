@@ -662,7 +662,10 @@ namespace ThirdParty.Json.LitJson
         void IJsonWrapper.SetInt (int val)
         {
             type = JsonType.Int;
-            inst_number = (ulong) val;
+            unchecked
+            {
+                inst_number = (ulong)val;
+            }
             json = null;
         }
 
@@ -676,7 +679,10 @@ namespace ThirdParty.Json.LitJson
         void IJsonWrapper.SetLong (long val)
         {
             type = JsonType.Long;
-            inst_number = (ulong)val;
+            unchecked
+            {
+                inst_number = (ulong)val;
+            }
             json = null;
         }
 

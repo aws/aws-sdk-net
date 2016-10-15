@@ -62,23 +62,23 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Allowed values include:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// ARN: The ARN.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// FORM_FACTOR: The form factor (for example, phone or tablet).
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// MANUFACTURER: The manufacturer.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// PLATFORM: The platform (for example, Android or iOS).
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public DeviceAttribute Type
         {

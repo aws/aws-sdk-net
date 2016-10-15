@@ -29,15 +29,14 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAllowedNodeTypeModifications operation.
-    /// The <code>ListAllowedNodeTypeModifications</code> action lists all available node
-    /// types that you can scale your Redis cluster's or replication group's current node
-    /// type up to.
+    /// Lists all available node types that you can scale your Redis cluster's or replication
+    /// group's current node type up to.
     /// 
     ///  
     /// <para>
     /// When you use the <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>
-    /// APIs to scale up your cluster or replication group, the value of the <i>CacheNodeType</i>
-    /// parameter must be one of the node types returned by this action.
+    /// operations to scale up your cluster or replication group, the value of the <code>CacheNodeType</code>
+    /// parameter must be one of the node types returned by this operation.
     /// </para>
     /// </summary>
     public partial class ListAllowedNodeTypeModificationsRequest : AmazonElastiCacheRequest
@@ -50,11 +49,11 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The name of the cache cluster you want to scale up to a larger node instanced type.
         /// ElastiCache uses the cluster id to identify the current node type of this cluster
-        /// and from that to to create a list of node types you can scale up to.
+        /// and from that to create a list of node types you can scale up to.
         /// </para>
         ///  <important> 
         /// <para>
-        /// You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
+        /// You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -79,7 +78,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// You must provide a value for either the <i>CacheClusterId</i> or the <i>ReplicationGroupId</i>.
+        /// You must provide a value for either the <code>CacheClusterId</code> or the <code>ReplicationGroupId</code>.
         /// </para>
         ///  </important>
         /// </summary>

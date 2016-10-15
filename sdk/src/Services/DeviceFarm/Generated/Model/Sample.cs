@@ -63,80 +63,80 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// Must be one of the following values:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
         /// CPU: A CPU sample type. This is expressed as the app processing CPU time (including
         /// child processes) as reported by process, as a percentage.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// MEMORY: A memory usage sample type. This is expressed as the total proportional set
         /// size of an app process, in kilobytes.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// NATIVE_AVG_DRAWTIME
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// NATIVE_FPS
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// NATIVE_FRAMES
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// NATIVE_MAX_DRAWTIME
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// NATIVE_MIN_DRAWTIME
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// OPENGL_AVG_DRAWTIME
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// OPENGL_FPS
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// OPENGL_FRAMES
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// OPENGL_MAX_DRAWTIME
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// OPENGL_MIN_DRAWTIME
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// RX
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// RX_RATE: The total number of bytes per second (TCP and UDP) that are sent, by app
         /// process.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// THREADS: A threads sample type. This is expressed as the total number of threads per
         /// app process.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// TX
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// TX_RATE: The total number of bytes per second (TCP and UDP) that are received, by
         /// app process.
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public SampleType Type
         {

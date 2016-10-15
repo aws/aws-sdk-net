@@ -54,9 +54,15 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             SetupDatabase();
         }
 #endif
-        #endregion
+#if PCL
+        static SQLiteLocalStorage()
+        {
+            SQLitePCL.Batteries.Init();
+        }
+#endif
+#endregion
 
-        #region dispose methods
+#region dispose methods
         /// <summary>
         /// Releases the resources consumed by this object
         /// </summary>
@@ -65,9 +71,9 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-        #endregion
+#endregion
 
-        #region table datastructure
+#region table datastructure
 
         internal const string TABLE_DATASETS = "datasets";
         internal const string TABLE_RECORDS = "records";
@@ -250,18 +256,18 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
         }
 
-        #endregion
+#endregion
 
-        #region helper class
+#region helper class
         internal class Statement
         {
             public string Query { get; set; }
             public object[] Parameters { get; set; }
         }
 
-        #endregion
+#endregion
 
-        #region helper methods
+#region helper methods
 
         internal static byte[] ToUtf8(string sText)
         {
@@ -273,9 +279,9 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             return byteArray;
         }
 
-        #endregion
+#endregion
 
-        #region public api's
+#region public api's
         /// <summary>
         /// Create a dataset 
         /// </summary>
@@ -954,9 +960,9 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
         }
 
-        #endregion
+#endregion
 
-        #region private methods
+#region private methods
 
 #if BCL
         [System.Security.SecuritySafeCritical]
@@ -1065,7 +1071,7 @@ namespace Amazon.CognitoSync.SyncManager.Internal
             }
             return oldNameSet;
         }
-        #endregion
+#endregion
     }
 }
 

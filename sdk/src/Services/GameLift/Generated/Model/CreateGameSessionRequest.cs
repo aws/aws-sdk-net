@@ -47,8 +47,10 @@ namespace Amazon.GameLift.Model
     public partial class CreateGameSessionRequest : AmazonGameLiftRequest
     {
         private string _aliasId;
+        private string _creatorId;
         private string _fleetId;
         private List<GameProperty> _gameProperties = new List<GameProperty>();
+        private string _gameSessionId;
         private int? _maximumPlayerSessionCount;
         private string _name;
 
@@ -69,6 +71,26 @@ namespace Amazon.GameLift.Model
         internal bool IsSetAliasId()
         {
             return this._aliasId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatorId. 
+        /// <para>
+        /// Player ID identifying the person or entity creating the game session. This ID is used
+        /// to enforce a resource protection policy (if one exists) that limits the number of
+        /// concurrent active game sessions one player can have.
+        /// </para>
+        /// </summary>
+        public string CreatorId
+        {
+            get { return this._creatorId; }
+            set { this._creatorId = value; }
+        }
+
+        // Check to see if CreatorId property is set
+        internal bool IsSetCreatorId()
+        {
+            return this._creatorId != null;
         }
 
         /// <summary>
@@ -94,7 +116,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameProperties. 
         /// <para>
         /// Set of properties used to administer a game session. These properties are passed to
-        /// the server process hosting it. 
+        /// the server process hosting it.
         /// </para>
         /// </summary>
         public List<GameProperty> GameProperties
@@ -110,10 +132,32 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GameSessionId. 
+        /// <para>
+        /// Custom string to include in the game session ID, with a maximum length of 48 characters.
+        /// If this parameter is set, GameLift creates a game session ID in the following format:
+        /// "arn:aws:gamelift:&lt;region&gt;::gamesession/fleet-&lt;fleet ID&gt;/&lt;custom ID
+        /// string&gt;". For example, this full game session ID: "arn:aws:gamelift:us-west-2::gamesession/fleet-2ec2aae5-c2c7-43ca-b19d-8249fe5fddf2/my-game-session"
+        /// includes the custom ID string "my-game-session". If this parameter is not set, GameLift
+        /// creates a game session ID in the same format with an auto-generated ID string. 
+        /// </para>
+        /// </summary>
+        public string GameSessionId
+        {
+            get { return this._gameSessionId; }
+            set { this._gameSessionId = value; }
+        }
+
+        // Check to see if GameSessionId property is set
+        internal bool IsSetGameSessionId()
+        {
+            return this._gameSessionId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaximumPlayerSessionCount. 
         /// <para>
         /// Maximum number of players that can be connected simultaneously to the game session.
-        /// 
         /// </para>
         /// </summary>
         public int MaximumPlayerSessionCount

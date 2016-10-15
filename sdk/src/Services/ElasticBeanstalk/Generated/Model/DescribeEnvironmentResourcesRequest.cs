@@ -44,7 +44,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        ///  The ID of the environment to retrieve AWS resource usage data. 
+        /// The ID of the environment to retrieve AWS resource usage data.
         /// </para>
         ///  
         /// <para>
@@ -68,7 +68,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        ///  The name of the environment to retrieve AWS resource usage data. 
+        /// The name of the environment to retrieve AWS resource usage data.
         /// </para>
         ///  
         /// <para>

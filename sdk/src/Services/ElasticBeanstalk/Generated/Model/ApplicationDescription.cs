@@ -65,7 +65,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ConfigurationTemplates. 
         /// <para>
-        ///  The names of the configuration templates associated with this application. 
+        /// The names of the configuration templates associated with this application.
         /// </para>
         /// </summary>
         public List<string> ConfigurationTemplates

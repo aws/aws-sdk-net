@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property AliasId. 
         /// <para>
-        /// Unique identifier for the alias you want to resolve. 
+        /// Unique identifier for the alias you want to resolve.
         /// </para>
         /// </summary>
         public string AliasId

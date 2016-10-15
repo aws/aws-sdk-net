@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -39,11 +39,13 @@ namespace Amazon.EC2.Model
         private Tenancy _instanceTenancy;
         private InstanceType _instanceType;
         private bool? _marketplace;
+        private OfferingClassType _offeringClass;
         private OfferingTypeValues _offeringType;
         private List<PricingDetail> _pricingDetails = new List<PricingDetail>();
         private RIProductDescription _productDescription;
         private List<RecurringCharge> _recurringCharges = new List<RecurringCharge>();
         private string _reservedInstancesOfferingId;
+        private Scope _scope;
         private float? _usagePrice;
 
         /// <summary>
@@ -176,6 +178,26 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OfferingClass. 
+        /// <para>
+        /// If <code>convertible</code> it can be exchanged for Reserved Instances of the same
+        /// or higher monetary value, with different configurations. If <code>standard</code>,
+        /// it is not possible to perform an exchange.
+        /// </para>
+        /// </summary>
+        public OfferingClassType OfferingClass
+        {
+            get { return this._offeringClass; }
+            set { this._offeringClass = value; }
+        }
+
+        // Check to see if OfferingClass property is set
+        internal bool IsSetOfferingClass()
+        {
+            return this._offeringClass != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OfferingType. 
         /// <para>
         /// The Reserved Instance offering type.
@@ -250,7 +272,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstancesOfferingId. 
         /// <para>
-        /// The ID of the Reserved Instance offering.
+        /// The ID of the Reserved Instance offering. This is the offering ID used in <a>GetReservedInstancesExchangeQuote</a>
+        /// to confirm that an exchange can be made.
         /// </para>
         /// </summary>
         public string ReservedInstancesOfferingId
@@ -263,6 +286,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetReservedInstancesOfferingId()
         {
             return this._reservedInstancesOfferingId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// Whether the Reserved Instance is applied to instances in a region or an Availability
+        /// Zone.
+        /// </para>
+        /// </summary>
+        public Scope Scope
+        {
+            get { return this._scope; }
+            set { this._scope = value; }
+        }
+
+        // Check to see if Scope property is set
+        internal bool IsSetScope()
+        {
+            return this._scope != null;
         }
 
         /// <summary>

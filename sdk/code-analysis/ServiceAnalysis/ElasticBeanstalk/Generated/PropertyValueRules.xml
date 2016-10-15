@@ -205,6 +205,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.DescribeApplicationVersionsRequest.MaxRecords</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.DescribeConfigurationOptionsRequest.ApplicationName</property>
     <min>1</min>
     <max>100</max>
@@ -595,6 +600,12 @@
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.SolutionStackDescription.SolutionStackName</property>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.SourceBuildInformation.SourceLocation</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>.+/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.SourceConfiguration.ApplicationName</property>

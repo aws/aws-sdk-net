@@ -54,6 +54,13 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager.Internal
             SetupSQLiteEventStore();
         }
 
+#if PCL
+        static SQLiteEventStore()
+        {
+            SQLitePCL.Batteries.Init();
+        }
+#endif
+
         /// <summary>
         /// Get the SQLite Event Store's database file full path.
         /// </summary>

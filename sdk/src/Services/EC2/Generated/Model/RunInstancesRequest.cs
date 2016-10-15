@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-04-01.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -513,6 +513,10 @@ namespace Amazon.EC2.Model
         /// Only one private IP address can be designated as primary. Therefore, you can't specify
         /// this parameter if <code>PrivateIpAddresses.n.Primary</code> is set to <code>true</code>
         /// and <code>PrivateIpAddresses.n.PrivateIpAddress</code> is set to an IP address. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot specify this option if you're launching more than one instance in the request.
         /// </para>
         ///  
         /// <para>

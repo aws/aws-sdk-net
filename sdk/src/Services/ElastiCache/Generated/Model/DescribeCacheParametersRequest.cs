@@ -29,8 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCacheParameters operation.
-    /// The <i>DescribeCacheParameters</i> action returns the detailed parameter list for
-    /// a particular cache parameter group.
+    /// Returns the detailed parameter list for a particular cache parameter group.
     /// </summary>
     public partial class DescribeCacheParametersRequest : AmazonElastiCacheRequest
     {
@@ -75,8 +74,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional marker returned from a prior request. Use this marker for pagination of
-        /// results from this action. If this parameter is specified, the response includes only
-        /// records beyond the marker, up to the value specified by <i>MaxRecords</i>.
+        /// results from this operation. If this parameter is specified, the response includes
+        /// only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
         /// </para>
         /// </summary>
         public string Marker
@@ -94,7 +93,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// The maximum number of brecords to include in the response. If more records exist than
+        /// The maximum number of records to include in the response. If more records exist than
         /// the specified <code>MaxRecords</code> value, a marker is included in the response
         /// so that the remaining results can be retrieved.
         /// </para>
