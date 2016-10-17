@@ -1,3 +1,13 @@
+### 3.3.10.0 (2016-10-17 20:12 UTC)
+* Route53 (3.3.1.0)
+	* Updated to use new Core, version 3.3.2.0
+	* New enum to support new regions and doc updates.
+* S3 (3.3.0.4)
+	* Updated to use new Core, version 3.3.2.0
+	* Enum changes to support new region
+* Core 3.3.2.0
+	* Core changes to support new us-east-2 region; fixed a bug where LitJson raises overflow/underflow exception on valid input.
+
 ### 3.3.9.0 (2016-10-13 19:57 UTC)
 * CertificateManager (3.3.1.0)
 	*  This change allows users to import third-party SSL/TLS certificates into ACM
