@@ -48,7 +48,10 @@ namespace Amazon.Route53.Model
         private string _healthCheckId;
 
         /// <summary>
-        /// Gets and sets the property HealthCheckId.
+        /// Gets and sets the property HealthCheckId. 
+        /// <para>
+        /// The ID of the health check that you want to delete.
+        /// </para>
         /// </summary>
         public string HealthCheckId
         {

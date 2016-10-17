@@ -43,7 +43,7 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>MaxItems</code>is the value specified for the <code>maxitems</code> parameter
+    ///  <code>MaxItems</code> is the value specified for the <code>maxitems</code> parameter
     /// in the request that produced the current response.
     /// </para>
     ///  </li> <li> 
@@ -53,7 +53,7 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>NextMarker</code>is the hosted zone ID of the next hosted zone that is associated
+    ///  <code>NextMarker</code> is the hosted zone ID of the next hosted zone that is associated
     /// with the current AWS account. If you want to list more hosted zones, make another
     /// call to <code>ListHostedZones</code>, and specify the value of the <code>NextMarker</code>
     /// element in the marker parameter. 
@@ -131,7 +131,12 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DelegationSetId.
+        /// Gets and sets the property DelegationSetId. 
+        /// <para>
+        /// If you're using reusable delegation sets and you want to list all of the hosted zones
+        /// that are associated with a reusable delegation set, specify the ID of that reusable
+        /// delegation set. 
+        /// </para>
         /// </summary>
         public string DelegationSetId
         {

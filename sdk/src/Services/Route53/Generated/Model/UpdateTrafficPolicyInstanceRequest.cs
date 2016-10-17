@@ -34,7 +34,7 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance/<i>traffic
+    /// Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicyinstance/<i>traffic
     /// policy ID</i> </code> resource. The request body must include a document with an <code>UpdateTrafficPolicyInstanceRequest</code>
     /// element.
     /// </para>

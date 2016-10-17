@@ -680,7 +680,8 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more informaiton, see the following topics in the Amazon Route 53 Developer Guide:
+        /// For more information, see the following topics in the <i>Amazon Route 53 Developer
+        /// Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -707,7 +708,21 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrafficPolicyInstanceId.
+        /// Gets and sets the property TrafficPolicyInstanceId. 
+        /// <para>
+        /// When you create a traffic policy instance, Amazon Route 53 automatically creates a
+        /// resource record set. <code>TrafficPolicyInstanceId</code> is the ID of the traffic
+        /// policy instance that Amazon Route 53 created this resource record set for.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// To delete the resource record set that is associated with a traffic policy instance,
+        /// use <code>DeleteTrafficPolicyInstance</code>. Amazon Route 53 will delete the resource
+        /// record set automatically. If you delete the resource record set by using <code>ChangeResourceRecordSets</code>,
+        /// Amazon Route 53 doesn't automatically delete the traffic policy instance, and you'll
+        /// continue to be charged for it even though it's no longer in use. 
+        /// </para>
+        ///  </important>
         /// </summary>
         public string TrafficPolicyInstanceId
         {

@@ -93,7 +93,11 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VPC.
+        /// Gets and sets the property VPC. 
+        /// <para>
+        /// A complex type that contains information about an Amazon VPC that you associated with
+        /// this hosted zone.
+        /// </para>
         /// </summary>
         public VPC VPC
         {

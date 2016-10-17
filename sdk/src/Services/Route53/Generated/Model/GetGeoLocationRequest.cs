@@ -42,7 +42,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property ContinentCode. 
         /// <para>
-        /// Amazon Route 53 supports the following contintent codes:
+        /// Amazon Route 53 supports the following continent codes:
         /// </para>
         ///  <ul> <li> 
         /// <para>

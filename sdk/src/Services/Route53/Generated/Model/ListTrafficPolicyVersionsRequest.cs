@@ -44,7 +44,7 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    /// The response includes three values that help you navigate from one group of <code>maxitems</code>maxitems
+    /// The response includes three values that help you navigate from one group of <code>maxitems</code>
     /// traffic policies to the next:
     /// </para>
     ///  <ul> <li> 

@@ -56,7 +56,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The unique URL representing the new reusbale delegation set.
+        /// The unique URL representing the new reusable delegation set.
         /// </para>
         /// </summary>
         public string Location

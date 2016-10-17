@@ -33,10 +33,9 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/healthcheck/<i>health
-    /// check ID</i> </code> resource. The request body must include an XML document with
-    /// an <code>UpdateHealthCheckRequest</code> element. For more information about updating
-    /// health checks, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
+    /// Send a <code>POST</code> request to the <code>/2013-04-01/healthcheck/<i>health check
+    /// ID</i> </code> resource. The request body must include an XML document with an <code>UpdateHealthCheckRequest</code>
+    /// element. For more information about updating health checks, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
     /// Updating, and Deleting Health Checks</a> in the Amazon Route 53 Developer Guide.
     /// </para>
     /// </summary>
@@ -492,7 +491,27 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InsufficientDataHealthStatus.
+        /// Gets and sets the property InsufficientDataHealthStatus. 
+        /// <para>
+        /// When CloudWatch has insufficient data about the metric to determine the alarm state,
+        /// the status that you want Amazon Route 53 to assign to the health check:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Healthy</code>: Amazon Route 53 considers the health check to be healthy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Unhealthy</code>: Amazon Route 53 considers the health check to be unhealthy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastKnownStatus</code>: Amazon Route 53 uses the status of the health check
+        /// from the last time CloudWatch had sufficient data to determine the alarm state. For
+        /// new health checks that have no last known status, the default status for the health
+        /// check is healthy.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public InsufficientDataHealthStatus InsufficientDataHealthStatus
         {

@@ -51,7 +51,10 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The ID that Amazon Route 53 assigns to a reusable delegation set.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -66,7 +69,14 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CallerReference.
+        /// Gets and sets the property CallerReference. 
+        /// <para>
+        /// A unique string that identifies the request, and that allows you to retry failed <code>CreateReusableDelegationSet</code>
+        /// requests without the risk of executing the operation twice. You must use a unique
+        /// <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code>
+        /// request. <code>CallerReference</code> can be any unique string, for example, a date/time
+        /// stamp.
+        /// </para>
         /// </summary>
         public string CallerReference
         {

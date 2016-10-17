@@ -29,7 +29,9 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the TestDNSAnswer operation.
-    /// 
+    /// Gets the value that Amazon Route 53 returns in response to a DNS request for a specified
+    /// record name and type. You can optionally specify the IP address of a DNS resolver,
+    /// an EDNS0 client subnet IP address, and a subnet mask.
     /// </summary>
     public partial class TestDNSAnswerRequest : AmazonRoute53Request
     {
@@ -41,7 +43,10 @@ namespace Amazon.Route53.Model
         private string _edns0ClientSubnetMask;
 
         /// <summary>
-        /// Gets and sets the property HostedZoneId.
+        /// Gets and sets the property HostedZoneId. 
+        /// <para>
+        /// The ID of the hosted zone that you want Amazon Route 53 to simulate a query for.
+        /// </para>
         /// </summary>
         public string HostedZoneId
         {
@@ -56,7 +61,11 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecordName.
+        /// Gets and sets the property RecordName. 
+        /// <para>
+        /// The name of the resource record set that you want Amazon Route 53 to simulate a query
+        /// for.
+        /// </para>
         /// </summary>
         public string RecordName
         {
@@ -71,7 +80,10 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecordType.
+        /// Gets and sets the property RecordType. 
+        /// <para>
+        /// The type of the resource record set.
+        /// </para>
         /// </summary>
         public RRType RecordType
         {
@@ -86,7 +98,12 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResolverIP.
+        /// Gets and sets the property ResolverIP. 
+        /// <para>
+        /// If you want to simulate a request from a specific DNS resolver, specify the IP address
+        /// for that resolver. If you omit this value, <code>TestDnsAnswer</code> uses the IP
+        /// address of a DNS resolver in the AWS US East region.
+        /// </para>
         /// </summary>
         public string ResolverIP
         {
@@ -101,7 +118,11 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EDNS0ClientSubnetIP.
+        /// Gets and sets the property EDNS0ClientSubnetIP. 
+        /// <para>
+        /// If the resolver that you specified for resolverip supports EDNS0, specify the IP address
+        /// of a client in the applicable location.
+        /// </para>
         /// </summary>
         public string EDNS0ClientSubnetIP
         {
@@ -116,7 +137,14 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EDNS0ClientSubnetMask.
+        /// Gets and sets the property EDNS0ClientSubnetMask. 
+        /// <para>
+        /// If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally
+        /// specify the number of bits of the IP address that you want the checking tool to include
+        /// in the DNS query. For example, if you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code>
+        /// and <code>24</code> for <code>edns0clientsubnetmask</code>, the checking tool will
+        /// simulate a request from 192.0.2.0/24. The default value is 24 bits.
+        /// </para>
         /// </summary>
         public string EDNS0ClientSubnetMask
         {

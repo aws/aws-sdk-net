@@ -29,14 +29,14 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateReusableDelegationSet operation.
-    /// Creates a delegation set (a group of four anem servers) that can be reused by multiple
+    /// Creates a delegation set (a group of four name servers) that can be reused by multiple
     /// hosted zones. If a hosted zoned ID is specified, <code>CreateReusableDelegationSet</code>
     /// marks the delegation set associated with that zone as reusable
     /// 
     ///  
     /// <para>
-    /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/delegationset</code>
-    /// resource. The request body must include an XML document with a <code>CreateReusableDelegationSetRequest</code>
+    /// Send a <code>POST</code> request to the <code>/2013-04-01/delegationset</code> resource.
+    /// The request body must include an XML document with a <code>CreateReusableDelegationSetRequest</code>
     /// element.
     /// </para>
     ///  <note> 

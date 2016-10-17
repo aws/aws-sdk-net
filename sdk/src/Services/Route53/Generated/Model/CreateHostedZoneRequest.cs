@@ -40,14 +40,14 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/hostedzone</code>
-    /// resource. The request body must include an XML document with a <code>CreateHostedZoneRequest</code>
+    /// Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone</code> resource.
+    /// The request body must include an XML document with a <code>CreateHostedZoneRequest</code>
     /// element. The response returns the <code>CreateHostedZoneResponse</code> element containing
     /// metadata about the hosted zone.
     /// </para>
     ///  
     /// <para>
-    /// Fore more information about charges for hosted zones, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/pricing/">AmazonAmazon
+    /// Fore more information about charges for hosted zones, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
     /// Route 53 Pricing</a>.
     /// </para>
     ///  
@@ -82,7 +82,7 @@ namespace Amazon.Route53.Model
     /// <para>
     /// When trying to create a hosted zone using a reusable delegation set, specify an optional
     /// DelegationSetId, and Amazon Route 53 would assign those 4 NS records for the zone,
-    /// instead of alloting a new one.
+    /// instead of allotting a new one.
     /// </para>
     /// </summary>
     public partial class CreateHostedZoneRequest : AmazonRoute53Request

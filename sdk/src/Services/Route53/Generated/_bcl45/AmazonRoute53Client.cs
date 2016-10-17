@@ -247,8 +247,8 @@ namespace Amazon.Route53
         /// </para>
         ///  </important> 
         /// <para>
-        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/hostedzone/<i>hosted
-        /// zone ID</i>/associatevpc</code> resource. The request body must include an XML document
+        /// Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
+        /// ID</i>/associatevpc</code> resource. The request body must include an XML document
         /// with a <code>AssociateVPCWithHostedZoneRequest</code> element. The response returns
         /// the <code>AssociateVPCWithHostedZoneResponse</code> element.
         /// </para>
@@ -266,7 +266,10 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the AssociateVPCWithHostedZone service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.ConflictingDomainExistsException">
-        /// 
+        /// You specified an Amazon VPC that you're already using for another hosted zone, and
+        /// the domain that you specified for one of the hosted zones is a subdomain of the domain
+        /// that you specified for the other hosted zone. For example, you cannot use the same
+        /// Amazon VPC for the hosted zones for example.com and test.example.com.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
@@ -336,7 +339,7 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        /// For example, a change batch request that deletes the <code>CNAME</code>record for
+        /// For example, a change batch request that deletes the <code>CNAME</code> record for
         /// www.example.com and creates an alias resource record set for www.example.com. Amazon
         /// Route 53 deletes the first resource record set and creates the second resource record
         /// set in a single operation. If either the <code>DELETE</code> or the <code>CREATE</code>
@@ -358,8 +361,7 @@ namespace Amazon.Route53
         /// or subdomain names (such as www.example.com), in the same hosted zone or in multiple
         /// hosted zones. You can roll back the updates if the new configuration isn't performing
         /// as expected. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-flow.html">Using
-        /// Traffic Flow to Route DNS Traffic</a> in the Amazon Route 53 API Reference or <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/actions-on-polices">Actions
-        /// on Traffic Policies and Traffic Policy Instances</a> in this guide.
+        /// Traffic Flow to Route DNS Traffic</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -367,7 +369,7 @@ namespace Amazon.Route53
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATE</code>:Creates a resource record set that has the specified values.
+        ///  <code>CREATE</code>: Creates a resource record set that has the specified values.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -403,48 +405,9 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        /// Note the following limitations on a <code>ChangeResourceRecordSets</code> request:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  A request cannot contain more than 100 Change elements.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  A request cannot contain more than 1000 ResourceRecord elements.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The sum of the number of characters (including spaces) in all <code>Value</code> elements
-        /// in a request cannot exceed 32,000 characters.
-        /// </para>
-        ///  </li> <li> <note> 
-        /// <para>
-        /// If the value of the Action element in a ChangeResourceRecordSets request is <code>UPSERT</code>
-        /// and the resource record set already exists, Amazon Route 53 automatically performs
-        /// a <code>DELETE</code> request and a <code>CREATE</code> request. When Amazon Route
-        /// 53 calculates the number of characters in the Value elements of a change batch request,
-        /// it adds the number of characters in the Value element of the resource record set being
-        /// deleted and the number of characters in the Value element of the resource record set
-        /// being created.
-        /// </para>
-        ///  </note> </li> <li> 
-        /// <para>
-        /// The same resource cannot be deleted more than once in a single batch.
-        /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// If the value of the Action element in a ChangeResourceRecordSets request is <code>UPSERT</code>
-        /// and the resource record set already exists, Amazon Route 53 automatically performs
-        /// a <code>DELETE</code> request and a <code>CREATE</code> request. When Amazon Route
-        /// 53 calculates the number of characters in the Value elements of a change batch request,
-        /// it adds the number of characters in the Value element of the resource record set being
-        /// deleted and the number of characters in the Value element of the resource record set
-        /// being created.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// For more information on transactional changes, see <a>ChangeResourceRecordSets</a>.
+        /// For information about the limits on a <code>ChangeResourceRecordSets</code> request,
+        /// see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ChangeResourceRecordSets service method.</param>
@@ -503,7 +466,13 @@ namespace Amazon.Route53
 
 
         /// <summary>
+        /// Adds, edits, or deletes tags for a health check or a hosted zone.
         /// 
+        ///  
+        /// <para>
+        /// For information about using tags for cost allocation, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ChangeTagsForResource service method.</param>
         /// 
@@ -623,7 +592,9 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TooManyHealthChecksException">
-        /// 
+        /// You have reached the maximum number of active health checks for an AWS account. The
+        /// default limit is 100. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
+        /// a case</a> with the AWS Support Center.
         /// </exception>
         public CreateHealthCheckResponse CreateHealthCheck(CreateHealthCheckRequest request)
         {
@@ -668,14 +639,14 @@ namespace Amazon.Route53
         /// </para>
         ///  </important> 
         /// <para>
-        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/hostedzone</code>
-        /// resource. The request body must include an XML document with a <code>CreateHostedZoneRequest</code>
+        /// Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone</code> resource.
+        /// The request body must include an XML document with a <code>CreateHostedZoneRequest</code>
         /// element. The response returns the <code>CreateHostedZoneResponse</code> element containing
         /// metadata about the hosted zone.
         /// </para>
         ///  
         /// <para>
-        /// Fore more information about charges for hosted zones, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/pricing/">AmazonAmazon
+        /// Fore more information about charges for hosted zones, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
         /// Route 53 Pricing</a>.
         /// </para>
         ///  
@@ -710,14 +681,17 @@ namespace Amazon.Route53
         /// <para>
         /// When trying to create a hosted zone using a reusable delegation set, specify an optional
         /// DelegationSetId, and Amazon Route 53 would assign those 4 NS records for the zone,
-        /// instead of alloting a new one.
+        /// instead of allotting a new one.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateHostedZone service method.</param>
         /// 
         /// <returns>The response from the CreateHostedZone service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.ConflictingDomainExistsException">
-        /// 
+        /// You specified an Amazon VPC that you're already using for another hosted zone, and
+        /// the domain that you specified for one of the hosted zones is a subdomain of the domain
+        /// that you specified for the other hosted zone. For example, you cannot use the same
+        /// Amazon VPC for the hosted zones for example.com and test.example.com.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.DelegationSetNotAvailableException">
         /// You can create a hosted zone that has the same name as an existing hosted zone (example.com
@@ -783,14 +757,14 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Creates a delegation set (a group of four anem servers) that can be reused by multiple
+        /// Creates a delegation set (a group of four name servers) that can be reused by multiple
         /// hosted zones. If a hosted zoned ID is specified, <code>CreateReusableDelegationSet</code>
         /// marks the delegation set associated with that zone as reusable
         /// 
         ///  
         /// <para>
-        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/delegationset</code>
-        /// resource. The request body must include an XML document with a <code>CreateReusableDelegationSetRequest</code>
+        /// Send a <code>POST</code> request to the <code>/2013-04-01/delegationset</code> resource.
+        /// The request body must include an XML document with a <code>CreateReusableDelegationSetRequest</code>
         /// element.
         /// </para>
         ///  <note> 
@@ -869,8 +843,8 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy</code>
-        /// resource. The request body must include a document with a <code>CreateTrafficPolicyRequest</code>
+        /// Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicy</code> resource.
+        /// The request body must include a document with a <code>CreateTrafficPolicyRequest</code>
         /// element. The response includes the <code>CreateTrafficPolicyResponse</code> element,
         /// which contains information about the new traffic policy.
         /// </para>
@@ -934,7 +908,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance</code>
+        /// Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicyinstance</code>
         /// resource. The request body must include a document with a <code>CreateTrafficPolicyRequest</code>
         /// element. The response returns the <code>CreateTrafficPolicyInstanceResponse</code>
         /// element, which contains information about the traffic policy instance.
@@ -1002,8 +976,8 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 version</i>/trafficpolicy/</code>
-        /// resource. The request body includes a document with a <code>CreateTrafficPolicyVersionRequest</code>
+        /// Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicy/</code> resource.
+        /// The request body includes a document with a <code>CreateTrafficPolicyVersionRequest</code>
         /// element. The response returns the <code>CreateTrafficPolicyVersionResponse</code>
         /// element, which contains information about the new version of the traffic policy.
         /// </para>
@@ -1370,10 +1344,10 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/hostedzone/<i>hosted
-        /// zone ID</i>/disassociatevpc</code> resource. The request body must include an XML
-        /// document with a <code>DisassociateVPCFromHostedZoneRequest</code> element. The response
-        /// returns the <code>DisassociateVPCFromHostedZoneResponse</code> element.
+        /// Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
+        /// ID</i>/disassociatevpc</code> resource. The request body must include an XML document
+        /// with a <code>DisassociateVPCFromHostedZoneRequest</code> element. The response returns
+        /// the <code>DisassociateVPCFromHostedZoneResponse</code> element.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1460,7 +1434,7 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchChangeException">
-        /// 
+        /// A change with the specified change ID does not exist.
         /// </exception>
         public GetChangeResponse GetChange(GetChangeRequest request)
         {
@@ -1503,7 +1477,7 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchChangeException">
-        /// 
+        /// A change with the specified change ID does not exist.
         /// </exception>
         [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
         public GetChangeDetailsResponse GetChangeDetails(GetChangeDetailsRequest request)
@@ -2452,7 +2426,7 @@ namespace Amazon.Route53
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MaxItems</code>is the value specified for the <code>maxitems</code> parameter
+        ///  <code>MaxItems</code> is the value specified for the <code>maxitems</code> parameter
         /// in the request that produced the current response.
         /// </para>
         ///  </li> <li> 
@@ -2462,7 +2436,7 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NextMarker</code>is the hosted zone ID of the next hosted zone that is associated
+        ///  <code>NextMarker</code> is the hosted zone ID of the next hosted zone that is associated
         /// with the current AWS account. If you want to list more hosted zones, make another
         /// call to <code>ListHostedZones</code>, and specify the value of the <code>NextMarker</code>
         /// element in the marker parameter. 
@@ -2512,7 +2486,7 @@ namespace Amazon.Route53
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MaxItems</code>is the value specified for the <code>maxitems</code> parameter
+        ///  <code>MaxItems</code> is the value specified for the <code>maxitems</code> parameter
         /// in the request that produced the current response.
         /// </para>
         ///  </li> <li> 
@@ -2522,7 +2496,7 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NextMarker</code>is the hosted zone ID of the next hosted zone that is associated
+        ///  <code>NextMarker</code> is the hosted zone ID of the next hosted zone that is associated
         /// with the current AWS account. If you want to list more hosted zones, make another
         /// call to <code>ListHostedZones</code>, and specify the value of the <code>NextMarker</code>
         /// element in the marker parameter. 
@@ -2576,7 +2550,7 @@ namespace Amazon.Route53
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MaxItems</code>is the value specified for the <code>maxitems</code> parameter
+        ///  <code>MaxItems</code> is the value specified for the <code>maxitems</code> parameter
         /// in the request that produced the current response.
         /// </para>
         ///  </li> <li> 
@@ -2586,7 +2560,7 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NextMarker</code>is the hosted zone ID of the next hosted zone that is associated
+        ///  <code>NextMarker</code> is the hosted zone ID of the next hosted zone that is associated
         /// with the current AWS account. If you want to list more hosted zones, make another
         /// call to <code>ListHostedZones</code>, and specify the value of the <code>NextMarker</code>
         /// element in the marker parameter. 
@@ -2765,7 +2739,65 @@ namespace Amazon.Route53
 
 
         /// <summary>
+        /// Lists the resource record sets in a specified hosted zone.
         /// 
+        ///  
+        /// <para>
+        ///  <code>ListResourceRecordSets</code> returns up to 100 resource record sets at a time
+        /// in ASCII order, beginning at a position specified by the <code>name</code> and <code>type</code>
+        /// elements. The action sorts results first by DNS name with the labels reversed, for
+        /// example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>com.example.www.</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Note the trailing dot, which can change the sort order in some circumstances.
+        /// </para>
+        ///  
+        /// <para>
+        /// When multiple records have the same DNS name, the action sorts results by the record
+        /// type.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the name and type elements to adjust the beginning position of the list
+        /// of resource record sets returned:
+        /// </para>
+        ///  <dl> <dt>If you do not specify Name or Type</dt> <dd> 
+        /// <para>
+        /// The results begin with the first resource record set that the hosted zone contains.
+        /// </para>
+        ///  </dd> <dt>If you specify Name but not Type</dt> <dd> 
+        /// <para>
+        /// The results begin with the first resource record set in the list whose name is greater
+        /// than or equal to <code>Name</code>.
+        /// </para>
+        ///  </dd> <dt>If you specify Type but not Name</dt> <dd> 
+        /// <para>
+        /// Amazon Route 53 returns the <code>InvalidInput</code> error.
+        /// </para>
+        ///  </dd> <dt>If you specify both Name and Type</dt> <dd> 
+        /// <para>
+        /// The results begin with the first resource record set in the list whose name is greater
+        /// than or equal to <code>Name</code>, and whose type is greater than or equal to <code>Type</code>.
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// This action returns the most current version of the records. This includes records
+        /// that are <code>PENDING</code>, and that are not yet available on all Amazon Route
+        /// 53 DNS servers.
+        /// </para>
+        ///  
+        /// <para>
+        /// To ensure that you get an accurate listing of the resource record sets for a hosted
+        /// zone at a point in time, do not submit a <code>ChangeResourceRecordSets</code> request
+        /// while you're paging through the results of a <code>ListResourceRecordSets</code> request.
+        /// If you do, some pages may display results without the latest changes while other pages
+        /// display results with the latest changes.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourceRecordSets service method.</param>
         /// 
@@ -2917,7 +2949,13 @@ namespace Amazon.Route53
 
 
         /// <summary>
+        /// Lists tags for one health check or hosted zone. 
         /// 
+        ///  
+        /// <para>
+        /// For information about using tags for cost allocation, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -2974,7 +3012,13 @@ namespace Amazon.Route53
 
 
         /// <summary>
+        /// Lists tags for up to 10 health checks or hosted zones.
         /// 
+        ///  
+        /// <para>
+        /// For information about using tags for cost allocation, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+        /// Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResources service method.</param>
         /// 
@@ -3476,7 +3520,7 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        /// The response includes three values that help you navigate from one group of <code>maxitems</code>maxitems
+        /// The response includes three values that help you navigate from one group of <code>maxitems</code>
         /// traffic policies to the next:
         /// </para>
         ///  <ul> <li> 
@@ -3561,7 +3605,9 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// 
+        /// Gets the value that Amazon Route 53 returns in response to a DNS request for a specified
+        /// record name and type. You can optionally specify the IP address of a DNS resolver,
+        /// an EDNS0 client subnet IP address, and a subnet mask.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestDNSAnswer service method.</param>
         /// 
@@ -3608,10 +3654,9 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/healthcheck/<i>health
-        /// check ID</i> </code> resource. The request body must include an XML document with
-        /// an <code>UpdateHealthCheckRequest</code> element. For more information about updating
-        /// health checks, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
+        /// Send a <code>POST</code> request to the <code>/2013-04-01/healthcheck/<i>health check
+        /// ID</i> </code> resource. The request body must include an XML document with an <code>UpdateHealthCheckRequest</code>
+        /// element. For more information about updating health checks, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
         /// Updating, and Deleting Health Checks</a> in the Amazon Route 53 Developer Guide.
         /// </para>
         /// </summary>
@@ -3619,7 +3664,8 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the UpdateHealthCheck service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.HealthCheckVersionMismatchException">
-        /// 
+        /// The value of <code>HealthCheckVersion</code> in the request doesn't match the value
+        /// of <code>HealthCheckVersion</code> in the health check.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
@@ -3708,8 +3754,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicy/</code>
-        /// resource.
+        /// Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicy/</code> resource.
         /// </para>
         ///  
         /// <para>
@@ -3767,7 +3812,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// Send a <code>POST</code> request to the <code>/<i>Amazon Route 53 API version</i>/trafficpolicyinstance/<i>traffic
+        /// Send a <code>POST</code> request to the <code>/2013-04-01/trafficpolicyinstance/<i>traffic
         /// policy ID</i> </code> resource. The request body must include a document with an <code>UpdateTrafficPolicyInstanceRequest</code>
         /// element.
         /// </para>

@@ -55,7 +55,10 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Location.
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// A unique URL that represents a new traffic policy version.
+        /// </para>
         /// </summary>
         public string Location
         {

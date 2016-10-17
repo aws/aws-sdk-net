@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// 
+    /// A complex type that contains information about the latest version of one traffic policy
+    /// that is associated with the current AWS account.
     /// </summary>
     public partial class TrafficPolicySummary
     {
@@ -39,7 +40,10 @@ namespace Amazon.Route53.Model
         private int? _trafficPolicyCount;
 
         /// <summary>
-        /// Gets and sets the property Id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The ID that Amazon Route 53 assigned to the traffic policy when you created it.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -54,7 +58,10 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name that you specified for the traffic policy when you created it.
+        /// </para>
         /// </summary>
         public string Name
         {
@@ -69,7 +76,11 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The DNS type of the resource record sets that Amazon Route 53 creates when you use
+        /// a traffic policy to create a traffic policy instance.
+        /// </para>
         /// </summary>
         public RRType Type
         {
@@ -84,7 +95,10 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LatestVersion.
+        /// Gets and sets the property LatestVersion. 
+        /// <para>
+        /// The version number of the latest version of the traffic policy.
+        /// </para>
         /// </summary>
         public int LatestVersion
         {
@@ -99,7 +113,10 @@ namespace Amazon.Route53.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrafficPolicyCount.
+        /// Gets and sets the property TrafficPolicyCount. 
+        /// <para>
+        /// The number of traffic policies that are associated with the current AWS account.
+        /// </para>
         /// </summary>
         public int TrafficPolicyCount
         {
