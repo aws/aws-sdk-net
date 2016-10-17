@@ -41,6 +41,15 @@ namespace Amazon.EC2.Util
     {
         #region ImageKeys
 
+        public const string WINDOWS_2016_BASE_KEY = "WINDOWS_2016_BASE";
+        public const string WINDOWS_2016_NANO_KEY = "WINDOWS_2016_NANO";
+        public const string WINDOWS_2016_CONTAINER_KEY = "WINDOWS_2016_CONTAINER";
+
+        public const string WINDOWS_2016_SQL_SERVER_ENTERPRISE_2016_KEY = "WINDOWS_2016_SQL_SERVER_ENTERPRISE_2016";
+        public const string WINDOWS_2016_SQL_SERVER_STANDARD_2016_KEY = "WINDOWS_2016_SQL_SERVER_STANDARD_2016";
+        public const string WINDOWS_2016_SQL_SERVER_WEB_2016_KEY = "WINDOWS_2016_SQL_SERVER_WEB_2016";
+        public const string WINDOWS_2016_SQL_SERVER_EXPRESS_2016_KEY = "WINDOWS_2016_SQL_SERVER_EXPRESS_2016";
+
         public const string WINDOWS_2012R2_BASE_KEY = "WINDOWS_2012R2_BASE";
 
         public const string WINDOWS_2012R2_SQL_SERVER_EXPRESS_2014_KEY = "WINDOWS_2012R2_SQL_SERVER_EXPRESS_2014";
@@ -86,6 +95,13 @@ namespace Amazon.EC2.Util
         /// </summary>
         public static readonly IEnumerable<string> ImageKeys = new string[]
         {
+            WINDOWS_2016_BASE_KEY,
+            WINDOWS_2016_NANO_KEY,
+            WINDOWS_2016_CONTAINER_KEY,
+            WINDOWS_2016_SQL_SERVER_ENTERPRISE_2016_KEY,
+            WINDOWS_2016_SQL_SERVER_STANDARD_2016_KEY,
+            WINDOWS_2016_SQL_SERVER_WEB_2016_KEY,
+            WINDOWS_2016_SQL_SERVER_EXPRESS_2016_KEY,
             WINDOWS_2012R2_BASE_KEY,
             WINDOWS_2012R2_SQL_SERVER_EXPRESS_2014_KEY,
             WINDOWS_2012R2_SQL_SERVER_STANDARD_2014_KEY,
@@ -115,6 +131,19 @@ namespace Amazon.EC2.Util
             VPC_NAT_KEY 
         };
 
+        #endregion
+
+        #region Windows 2016 Images
+
+        public static readonly ImageDescriptor WINDOWS_2016_BASE = new ImageDescriptor(WINDOWS_2016_BASE_KEY);
+        public static readonly ImageDescriptor WINDOWS_2016_NANO = new ImageDescriptor(WINDOWS_2016_NANO_KEY);
+        public static readonly ImageDescriptor WINDOWS_2016_CONTAINER = new ImageDescriptor(WINDOWS_2016_CONTAINER_KEY);
+
+        public static readonly ImageDescriptor WINDOWS_2016_SQL_SERVER_ENTERPRISE_2016 = new ImageDescriptor(WINDOWS_2016_SQL_SERVER_ENTERPRISE_2016_KEY);
+        public static readonly ImageDescriptor WINDOWS_2016_SQL_SERVER_STANDARD_2016 = new ImageDescriptor(WINDOWS_2016_SQL_SERVER_STANDARD_2016_KEY);
+        public static readonly ImageDescriptor WINDOWS_2016_SQL_SERVER_WEB_2016 = new ImageDescriptor(WINDOWS_2016_SQL_SERVER_WEB_2016_KEY);
+        public static readonly ImageDescriptor WINDOWS_2016_SQL_SERVER_EXPRESS_2016 = new ImageDescriptor(WINDOWS_2016_SQL_SERVER_EXPRESS_2016_KEY);
+        
         #endregion
 
         #region Windows 2012 R2 Images
