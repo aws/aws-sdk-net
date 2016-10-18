@@ -678,6 +678,10 @@ namespace Amazon.ConfigService
         /// Constant AWSRDSEventSubscription for ResourceType
         /// </summary>
         public static readonly ResourceType AWSRDSEventSubscription = new ResourceType("AWS::RDS::EventSubscription");
+        /// <summary>
+        /// Constant AWSS3Bucket for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSS3Bucket = new ResourceType("AWS::S3::Bucket");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

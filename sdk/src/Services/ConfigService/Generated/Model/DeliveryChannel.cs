@@ -57,7 +57,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the delivery channel. By default, AWS Config assigns the name &quot;default&quot;
+        /// The name of the delivery channel. By default, AWS Config assigns the name "default"
         /// when creating the delivery channel. To change the delivery channel name, you must
         /// use the DeleteDeliveryChannel action to delete your current delivery channel, and
         /// then you must use the PutDeliveryChannel command to create a delivery channel that

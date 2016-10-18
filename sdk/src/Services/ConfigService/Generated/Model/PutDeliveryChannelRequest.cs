@@ -46,7 +46,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// You can have only one delivery channel per AWS account.
+    /// You can have only one delivery channel per region in your account.
     /// </para>
     ///  </note>
     /// </summary>

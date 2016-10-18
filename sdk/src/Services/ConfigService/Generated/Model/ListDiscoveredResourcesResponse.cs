@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// This is the response object from the ListDiscoveredResources operation.
+    /// 
     /// </summary>
     public partial class ListDiscoveredResourcesResponse : AmazonWebServiceResponse
     {

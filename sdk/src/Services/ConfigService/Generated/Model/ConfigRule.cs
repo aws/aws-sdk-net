@@ -191,7 +191,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property MaximumExecutionFrequency. 
         /// <para>
         /// The maximum frequency with which AWS Config runs evaluations for a rule. You can specify
-        /// a value for <code>MaximumExecutionFrequency</code> when: 
+        /// a value for <code>MaximumExecutionFrequency</code> when:
         /// </para>
         ///  <ul> <li> 
         /// <para>

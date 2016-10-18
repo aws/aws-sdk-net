@@ -529,9 +529,19 @@ namespace Amazon.ConfigService
         /// delivery channel. After the delivery has started, AWS Config sends following notifications
         /// using an Amazon SNS topic that you have specified.
         /// 
-        ///  <ul> <li>Notification of starting the delivery.</li> <li>Notification of delivery
-        /// completed, if the delivery was successfully completed.</li> <li>Notification of delivery
-        /// failure, if the delivery failed to complete.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Notification of starting the delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Notification of delivery completed, if the delivery was successfully completed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Notification of delivery failure, if the delivery failed to complete.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="deliveryChannelName">The name of the delivery channel through which the snapshot is delivered.</param>
         /// 
@@ -559,9 +569,19 @@ namespace Amazon.ConfigService
         /// delivery channel. After the delivery has started, AWS Config sends following notifications
         /// using an Amazon SNS topic that you have specified.
         /// 
-        ///  <ul> <li>Notification of starting the delivery.</li> <li>Notification of delivery
-        /// completed, if the delivery was successfully completed.</li> <li>Notification of delivery
-        /// failure, if the delivery failed to complete.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Notification of starting the delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Notification of delivery completed, if the delivery was successfully completed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Notification of delivery failure, if the delivery failed to complete.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeliverConfigSnapshot service method.</param>
         /// 
@@ -590,9 +610,19 @@ namespace Amazon.ConfigService
         /// delivery channel. After the delivery has started, AWS Config sends following notifications
         /// using an Amazon SNS topic that you have specified.
         /// 
-        ///  <ul> <li>Notification of starting the delivery.</li> <li>Notification of delivery
-        /// completed, if the delivery was successfully completed.</li> <li>Notification of delivery
-        /// failure, if the delivery failed to complete.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Notification of starting the delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Notification of delivery completed, if the delivery was successfully completed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Notification of delivery failure, if the delivery failed to complete.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="deliveryChannelName">The name of the delivery channel through which the snapshot is delivered.</param>
         /// <param name="cancellationToken">
@@ -647,23 +677,33 @@ namespace Amazon.ConfigService
         ///  
         /// <para>
         /// A rule is compliant if all of the evaluated resources comply with it, and it is noncompliant
-        /// if any of these resources do not comply. 
+        /// if any of these resources do not comply.
         /// </para>
         ///  
         /// <para>
         /// If AWS Config has no current evaluation results for the rule, it returns <code>INSUFFICIENT_DATA</code>.
         /// This result might indicate one of the following conditions:
         /// </para>
-        ///  <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether
-        /// it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the
-        /// <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li>
-        /// <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
+        ///  <ul> <li> 
+        /// <para>
+        /// AWS Config has never invoked an evaluation for the rule. To check whether it has,
+        /// use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code>
+        /// and <code>LastFailedInvocationTime</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
         /// Verify that the role that you assigned to your configuration recorder includes the
         /// <code>config:PutEvaluations</code> permission. If the rule is a custom rule, verify
         /// that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
-        /// permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code>
-        /// for all evaluation results. This can occur if the resources were deleted or removed
-        /// from the rule's scope.</li> </ul>
+        /// permission.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
+        /// results. This can occur if the resources were deleted or removed from the rule's scope.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByConfigRule service method.</param>
         /// 
@@ -710,7 +750,7 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Indicates whether the specified AWS resources are compliant. If a resource is noncompliant,
         /// this action returns the number of AWS Config rules that the resource does not comply
-        /// with. 
+        /// with.
         /// 
         ///  
         /// <para>
@@ -723,16 +763,26 @@ namespace Amazon.ConfigService
         /// This result might indicate one of the following conditions about the rules that evaluate
         /// the resource:
         /// </para>
-        ///  <ul> <li>AWS Config has never invoked an evaluation for the rule. To check whether
-        /// it has, use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the
-        /// <code>LastSuccessfulInvocationTime</code> and <code>LastFailedInvocationTime</code>.</li>
-        /// <li>The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
+        ///  <ul> <li> 
+        /// <para>
+        /// AWS Config has never invoked an evaluation for the rule. To check whether it has,
+        /// use the <code>DescribeConfigRuleEvaluationStatus</code> action to get the <code>LastSuccessfulInvocationTime</code>
+        /// and <code>LastFailedInvocationTime</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The rule's AWS Lambda function is failing to send evaluation results to AWS Config.
         /// Verify that the role that you assigned to your configuration recorder includes the
         /// <code>config:PutEvaluations</code> permission. If the rule is a custom rule, verify
         /// that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
-        /// permission.</li> <li>The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code>
-        /// for all evaluation results. This can occur if the resources were deleted or removed
-        /// from the rule's scope.</li> </ul>
+        /// permission.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The rule's AWS Lambda function has returned <code>NOT_APPLICABLE</code> for all evaluation
+        /// results. This can occur if the resources were deleted or removed from the rule's scope.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByResource service method.</param>
         /// 
@@ -861,13 +911,13 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the name of one or more specified configuration recorders. If the recorder
-        /// name is not specified, this action returns the names of all the configuration recorders
-        /// associated with the account. 
+        /// Returns the details for the specified configuration recorders. If the configuration
+        /// recorder is not specified, this action returns the details for all configuration recorders
+        /// associated with the account.
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per account.
+        /// Currently, you can specify only one configuration recorder per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -883,13 +933,13 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the name of one or more specified configuration recorders. If the recorder
-        /// name is not specified, this action returns the names of all the configuration recorders
-        /// associated with the account. 
+        /// Returns the details for the specified configuration recorders. If the configuration
+        /// recorder is not specified, this action returns the details for all configuration recorders
+        /// associated with the account.
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per account.
+        /// Currently, you can specify only one configuration recorder per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -909,13 +959,13 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the name of one or more specified configuration recorders. If the recorder
-        /// name is not specified, this action returns the names of all the configuration recorders
-        /// associated with the account. 
+        /// Returns the details for the specified configuration recorders. If the configuration
+        /// recorder is not specified, this action returns the details for all configuration recorders
+        /// associated with the account.
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per account.
+        /// Currently, you can specify only one configuration recorder per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -961,7 +1011,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per account.
+        /// Currently, you can specify only one configuration recorder per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -983,7 +1033,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per account.
+        /// Currently, you can specify only one configuration recorder per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1009,7 +1059,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per account.
+        /// Currently, you can specify only one configuration recorder per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1051,11 +1101,11 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns details about the specified delivery channel. If a delivery channel is not
         /// specified, this action returns the details of all delivery channels associated with
-        /// the account. 
+        /// the account.
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one delivery channel per account.
+        /// Currently, you can specify only one delivery channel per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1073,11 +1123,11 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns details about the specified delivery channel. If a delivery channel is not
         /// specified, this action returns the details of all delivery channels associated with
-        /// the account. 
+        /// the account.
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one delivery channel per account.
+        /// Currently, you can specify only one delivery channel per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1099,11 +1149,11 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns details about the specified delivery channel. If a delivery channel is not
         /// specified, this action returns the details of all delivery channels associated with
-        /// the account. 
+        /// the account.
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one delivery channel per account.
+        /// Currently, you can specify only one delivery channel per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1145,11 +1195,11 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns the current status of the specified delivery channel. If a delivery channel
         /// is not specified, this action returns the current status of all delivery channels
-        /// associated with the account. 
+        /// associated with the account.
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one delivery channel per account.
+        /// Currently, you can specify only one delivery channel per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1167,11 +1217,11 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns the current status of the specified delivery channel. If a delivery channel
         /// is not specified, this action returns the current status of all delivery channels
-        /// associated with the account. 
+        /// associated with the account.
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one delivery channel per account.
+        /// Currently, you can specify only one delivery channel per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1193,11 +1243,11 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns the current status of the specified delivery channel. If a delivery channel
         /// is not specified, this action returns the current status of all delivery channels
-        /// associated with the account. 
+        /// associated with the account.
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one delivery channel per account.
+        /// Currently, you can specify only one delivery channel per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1556,7 +1606,7 @@ namespace Amazon.ConfigService
 
         /// <summary>
         /// Adds or updates an AWS Config rule for evaluating whether your AWS resources comply
-        /// with your desired configurations. 
+        /// with your desired configurations.
         /// 
         ///  
         /// <para>
@@ -1588,9 +1638,9 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// If you are updating a rule that you have added previously, specify the rule's <code>ConfigRuleName</code>,
-        /// <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code> in the <code>ConfigRule</code>
-        /// data type that you use in this request.
+        /// If you are updating a rule that you added previously, you can specify the rule by
+        /// <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code>
+        /// in the <code>ConfigRule</code> data type that you use in this request.
         /// </para>
         ///  
         /// <para>
@@ -1608,9 +1658,17 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.InsufficientPermissionsException">
         /// Indicates one of the following errors:
         /// 
-        ///  <ul> <li>The rule cannot be created because the IAM role assigned to AWS Config lacks
-        /// permissions to perform the config:Put* action.</li> <li>The AWS Lambda function cannot
-        /// be invoked. Check the function ARN, and check the function's permissions.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// The rule cannot be created because the IAM role assigned to AWS Config lacks permissions
+        /// to perform the config:Put* action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's
+        /// permissions.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
         /// One or more of the specified parameters are invalid. Verify that your parameters are
@@ -1670,7 +1728,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per account.
+        /// Currently, you can specify only one configuration recorder per region in your account.
         /// </para>
         ///  
         /// <para>
@@ -1744,7 +1802,7 @@ namespace Amazon.ConfigService
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can have only one delivery channel per AWS account.
+        /// You can have only one delivery channel per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1875,28 +1933,28 @@ namespace Amazon.ConfigService
         /// The <code>StartConfigRulesEvaluation</code> API is useful if you want to run on-demand
         /// evaluations, such as the following example:
         /// </para>
-        ///  <ol> <li>
+        ///  <ol> <li> 
         /// <para>
         /// You have a custom rule that evaluates your IAM resources every 24 hours.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// You update your Lambda function to add additional conditions to your rule.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// Instead of waiting for the next periodic evaluation, you call the <code>StartConfigRulesEvaluation</code>
         /// API.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// AWS Config invokes your Lambda function and evaluates your IAM resources.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
         /// Your custom rule will still run periodic evaluations every 24 hours.
         /// </para>
-        /// </li> </ol>
+        ///  </li> </ol>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartConfigRulesEvaluation service method.</param>
         /// 

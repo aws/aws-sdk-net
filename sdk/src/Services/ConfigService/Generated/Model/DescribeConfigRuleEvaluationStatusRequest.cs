@@ -42,7 +42,7 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// The name of the AWS managed Config rules for which you want status information. If
         /// you do not specify any names, AWS Config returns status information for all AWS managed
-        /// Config rules that you use. 
+        /// Config rules that you use.
         /// </para>
         /// </summary>
         public List<string> ConfigRuleNames
