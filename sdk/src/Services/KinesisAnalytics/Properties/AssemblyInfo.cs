@@ -8,15 +8,15 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.KinesisAnalytics")]
 #if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - AWS Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
 #elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - AWS Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  AWS Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
 #elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - AWS Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
 #elif CORECLR
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- AWS Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- Amazon Kinesis Analytics. Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
