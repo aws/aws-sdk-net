@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,7 +35,11 @@ namespace Amazon.CloudFront.Model
         private Invalidation _invalidation;
 
         /// <summary>
-        /// Gets and sets the property Invalidation. The invalidation's information.
+        /// Gets and sets the property Invalidation. 
+        /// <para>
+        /// The invalidation's information. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation
+        /// Complex Type</a>. 
+        /// </para>
         /// </summary>
         public Invalidation Invalidation
         {

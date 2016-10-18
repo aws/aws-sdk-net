@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that contains Tag key and Tag value.
+    /// A complex type that contains <code>Tag</code> key and <code>Tag</code> value.
     /// </summary>
     public partial class Tag
     {
@@ -36,9 +36,16 @@ namespace Amazon.CloudFront.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Key. A string that contains Tag key. The string length
-        /// should be between 1 and 128 characters. Valid characters include a-z, A-Z, 0-9, space,
-        /// and the special characters _ - . : / = + @.
+        /// Gets and sets the property Key. 
+        /// <para>
+        ///  A string that contains <code>Tag</code> key.
+        /// </para>
+        ///  
+        /// <para>
+        /// The string length should be between 1 and 128 characters. Valid characters include
+        /// <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters
+        /// <code>_ - . : / = + @</code>.
+        /// </para>
         /// </summary>
         public string Key
         {
@@ -53,9 +60,16 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value. A string that contains an optional Tag value. The
-        /// string length should be between 0 and 256 characters. Valid characters include a-z,
-        /// A-Z, 0-9, space, and the special characters _ - . : / = + @.
+        /// Gets and sets the property Value. 
+        /// <para>
+        ///  A string that contains an optional <code>Tag</code> value.
+        /// </para>
+        ///  
+        /// <para>
+        /// The string length should be between 0 and 256 characters. Valid characters include
+        /// <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters
+        /// <code>_ - . : / = + @</code>.
+        /// </para>
         /// </summary>
         public string Value
         {

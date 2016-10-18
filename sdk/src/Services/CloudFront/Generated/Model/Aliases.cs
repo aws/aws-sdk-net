@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -37,8 +37,11 @@ namespace Amazon.CloudFront.Model
         private int? _quantity;
 
         /// <summary>
-        /// Gets and sets the property Items. Optional: A complex type that contains CNAME elements,
-        /// if any, for this distribution. If Quantity is 0, you can omit Items.
+        /// Gets and sets the property Items. 
+        /// <para>
+        /// A complex type that contains the CNAME aliases, if any, that you want to associate
+        /// with this distribution.
+        /// </para>
         /// </summary>
         public List<string> Items
         {
@@ -53,7 +56,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Quantity. The number of CNAMEs, if any, for this distribution.
+        /// Gets and sets the property Quantity. 
+        /// <para>
+        /// The number of CNAME aliases, if any, that you want to associate with this distribution.
+        /// </para>
         /// </summary>
         public int Quantity
         {

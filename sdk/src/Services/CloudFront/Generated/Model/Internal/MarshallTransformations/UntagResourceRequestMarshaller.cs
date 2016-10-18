@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "POST";
-            string uriResourcePath = "/2016-09-07/tagging";
+            string uriResourcePath = "/2016-09-29/tagging";
             request.AddSubResource("Operation", "Untag");
             
             if (publicRequest.IsSetResource())
@@ -66,14 +66,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true }))
             {   
-                xmlWriter.WriteStartElement("TagKeys", "http://cloudfront.amazonaws.com/doc/2016-09-07/");                                
+                xmlWriter.WriteStartElement("TagKeys", "http://cloudfront.amazonaws.com/doc/2016-09-29/");                                
                 var publicRequestTagKeysItems = publicRequest.TagKeys.Items;
                 if (publicRequestTagKeysItems != null && publicRequestTagKeysItems.Count > 0) 
                 {                        
-                    xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2016-09-07/");
+                    xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2016-09-29/");
                     foreach (var publicRequestTagKeysItemsValue in publicRequestTagKeysItems) 
                     {
-                        xmlWriter.WriteStartElement("Key", "http://cloudfront.amazonaws.com/doc/2016-09-07/");
+                        xmlWriter.WriteStartElement("Key", "http://cloudfront.amazonaws.com/doc/2016-09-29/");
                         xmlWriter.WriteValue(publicRequestTagKeysItemsValue);
                         xmlWriter.WriteEndElement();
                     }            

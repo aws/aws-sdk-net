@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The configuration for the streaming distribution.
+    /// The RTMP distribution's configuration information.
     /// </summary>
     public partial class StreamingDistributionConfig
     {
@@ -42,8 +42,11 @@ namespace Amazon.CloudFront.Model
         private TrustedSigners _trustedSigners;
 
         /// <summary>
-        /// Gets and sets the property Aliases. A complex type that contains information about
-        /// CNAMEs (alternate domain names), if any, for this streaming distribution.
+        /// Gets and sets the property Aliases. 
+        /// <para>
+        /// A complex type that contains information about CNAMEs (alternate domain names), if
+        /// any, for this streaming distribution. 
+        /// </para>
         /// </summary>
         public Aliases Aliases
         {
@@ -58,16 +61,19 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CallerReference. A unique number that ensures the request
-        /// can't be replayed. If the CallerReference is new (no matter the content of the StreamingDistributionConfig
-        /// object), a new streaming distribution is created. If the CallerReference is a value
-        /// you already sent in a previous request to create a streaming distribution, and the
-        /// content of the StreamingDistributionConfig is identical to the original request (ignoring
-        /// white space), the response includes the same information returned to the original
-        /// request. If the CallerReference is a value you already sent in a previous request
-        /// to create a streaming distribution but the content of the StreamingDistributionConfig
-        /// is different from the original request, CloudFront returns a DistributionAlreadyExists
-        /// error.
+        /// Gets and sets the property CallerReference. 
+        /// <para>
+        /// A unique number that ensures that the request can't be replayed. If the <code>CallerReference</code>
+        /// is new (no matter the content of the <code>StreamingDistributionConfig</code> object),
+        /// a new streaming distribution is created. If the <code>CallerReference</code> is a
+        /// value that you already sent in a previous request to create a streaming distribution,
+        /// and the content of the <code>StreamingDistributionConfig</code> is identical to the
+        /// original request (ignoring white space), the response includes the same information
+        /// returned to the original request. If the <code>CallerReference</code> is a value that
+        /// you already sent in a previous request to create a streaming distribution but the
+        /// content of the <code>StreamingDistributionConfig</code> is different from the original
+        /// request, CloudFront returns a <code>DistributionAlreadyExists</code> error. 
+        /// </para>
         /// </summary>
         public string CallerReference
         {
@@ -82,8 +88,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Comment. Any comments you want to include about the streaming
-        /// distribution.
+        /// Gets and sets the property Comment. 
+        /// <para>
+        /// Any comments you want to include about the streaming distribution. 
+        /// </para>
         /// </summary>
         public string Comment
         {
@@ -98,8 +106,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Enabled. Whether the streaming distribution is enabled
-        /// to accept end user requests for content.
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Whether the streaming distribution is enabled to accept user requests for content.
+        /// </para>
         /// </summary>
         public bool Enabled
         {
@@ -114,8 +124,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Logging. A complex type that controls whether access logs
-        /// are written for the streaming distribution.
+        /// Gets and sets the property Logging. 
+        /// <para>
+        /// A complex type that controls whether access logs are written for the streaming distribution.
+        /// 
+        /// </para>
         /// </summary>
         public StreamingLoggingConfig Logging
         {
@@ -130,8 +143,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PriceClass. A complex type that contains information about
-        /// price class for this streaming distribution.
+        /// Gets and sets the property PriceClass. 
+        /// <para>
+        /// A complex type that contains information about price class for this streaming distribution.
+        /// 
+        /// </para>
         /// </summary>
         public PriceClass PriceClass
         {
@@ -146,8 +162,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3Origin. A complex type that contains information about
-        /// the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
+        /// Gets and sets the property S3Origin. 
+        /// <para>
+        /// A complex type that contains information about the Amazon S3 bucket from which you
+        /// want CloudFront to get your media files for distribution. 
+        /// </para>
         /// </summary>
         public S3Origin S3Origin
         {
@@ -162,16 +181,15 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrustedSigners. A complex type that specifies the AWS accounts,
-        /// if any, that you want to allow to create signed URLs for private content. If you want
-        /// to require signed URLs in requests for objects in the target origin that match the
-        /// PathPattern for this cache behavior, specify true for Enabled, and specify the applicable
-        /// values for Quantity and Items. For more information, go to Using a Signed URL to Serve
-        /// Private Content in the Amazon CloudFront Developer Guide. If you don't want to require
-        /// signed URLs in requests for objects that match PathPattern, specify false for Enabled
-        /// and 0 for Quantity. Omit Items. To add, change, or remove one or more trusted signers,
-        /// change Enabled to true (if it's currently false), change Quantity as applicable, and
-        /// specify all of the trusted signers that you want to include in the updated distribution.
+        /// Gets and sets the property TrustedSigners. 
+        /// <para>
+        /// A complex type that specifies any AWS accounts that you want to permit to create signed
+        /// URLs for private content. If you want the distribution to use signed URLs, include
+        /// this element; if you want the distribution to use public URLs, remove this element.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// 
+        /// </para>
         /// </summary>
         public TrustedSigners TrustedSigners
         {

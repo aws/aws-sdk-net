@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInvalidations operation.
-    /// List invalidation batches.
+    /// Lists invalidation batches.
     /// </summary>
     public partial class ListInvalidationsRequest : AmazonCloudFrontRequest
     {
@@ -45,14 +45,17 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates ListInvalidationsRequest with the parameterized properties
         /// </summary>
-        /// <param name="distributionId">The distribution's id.</param>
+        /// <param name="distributionId">The distribution's ID.</param>
         public ListInvalidationsRequest(string distributionId)
         {
             _distributionId = distributionId;
         }
 
         /// <summary>
-        /// Gets and sets the property DistributionId. The distribution's id.
+        /// Gets and sets the property DistributionId. 
+        /// <para>
+        /// The distribution's ID.
+        /// </para>
         /// </summary>
         public string DistributionId
         {
@@ -67,13 +70,15 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Marker. Use this parameter when paginating results to indicate
-        /// where to begin in your list of invalidation batches. Because the results are returned
-        /// in decreasing order from most recent to oldest, the most recent results are on the
-        /// first page, the second page will contain earlier results, and so on. To get the next
-        /// page of results, set the Marker to the value of the NextMarker from the current page's
-        /// response. This value is the same as the ID of the last invalidation batch on that
-        /// page.
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// Use this parameter when paginating results to indicate where to begin in your list
+        /// of invalidation batches. Because the results are returned in decreasing order from
+        /// most recent to oldest, the most recent results are on the first page, the second page
+        /// will contain earlier results, and so on. To get the next page of results, set <code>Marker</code>
+        /// to the value of the <code>NextMarker</code> from the current page's response. This
+        /// value is the same as the ID of the last invalidation batch on that page. 
+        /// </para>
         /// </summary>
         public string Marker
         {
@@ -88,8 +93,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxItems. The maximum number of invalidation batches you
-        /// want in the response body.
+        /// Gets and sets the property MaxItems. 
+        /// <para>
+        /// The maximum number of invalidation batches that you want in the response body.
+        /// </para>
         /// </summary>
         public string MaxItems
         {

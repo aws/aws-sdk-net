@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -42,11 +42,14 @@ namespace Amazon.CloudFront.Model
         public ListDistributionsRequest() { }
 
         /// <summary>
-        /// Gets and sets the property Marker. Use Marker and MaxItems to control pagination of
-        /// results. If you have more than MaxItems distributions that satisfy the request, the
-        /// response includes a NextMarker element. To get the next page of results, submit another
-        /// request. For the value of Marker, specify the value of NextMarker from the last response.
-        /// (For the first request, omit Marker.)
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// Use this when paginating results to indicate where to begin in your list of distributions.
+        /// The results include distributions in the list that occur after the marker. To get
+        /// the next page of results, set the <code>Marker</code> to the value of the <code>NextMarker</code>
+        /// from the current page's response (which is also the ID of the last distribution on
+        /// that page).
+        /// </para>
         /// </summary>
         public string Marker
         {
@@ -61,9 +64,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxItems. The maximum number of distributions that you
-        /// want CloudFront to return in the response body. The maximum and default values are
-        /// both 100.
+        /// Gets and sets the property MaxItems. 
+        /// <para>
+        /// The maximum number of distributions you want in the response body.
+        /// </para>
         /// </summary>
         public string MaxItems
         {

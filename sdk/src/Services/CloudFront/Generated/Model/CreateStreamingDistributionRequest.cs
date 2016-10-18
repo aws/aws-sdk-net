@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,42 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStreamingDistribution operation.
-    /// Create a new streaming distribution.
+    /// Creates a new RMTP distribution. An RTMP distribution is similar to a web distribution,
+    /// but an RTMP distribution streams media files using the Adobe Real-Time Messaging Protocol
+    /// (RTMP) instead of serving files using HTTP. 
+    /// 
+    ///  
+    /// <para>
+    /// To create a new web distribution, submit a <code>POST</code> request to the <i>CloudFront
+    /// API version</i>/distribution resource. The request body must include a document with
+    /// a <i>StreamingDistributionConfig</i> element. The response echoes the <code>StreamingDistributionConfig</code>
+    /// element and returns other information about the RTMP distribution.
+    /// </para>
+    ///  
+    /// <para>
+    /// To get the status of your request, use the <i>GET StreamingDistribution</i> API action.
+    /// When the value of <code>Enabled</code> is <code>true</code> and the value of <code>Status</code>
+    /// is <code>Deployed</code>, your distribution is ready. A distribution usually deploys
+    /// in less than 15 minutes.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about web distributions, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-rtmp.html">Working
+    /// with RTMP Distributions</a> in the <i>Amazon CloudFront Developer Guide</i>.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// Beginning with the 2012-05-05 version of the CloudFront API, we made substantial changes
+    /// to the format of the XML document that you include in the request body when you create
+    /// or update a web distribution or an RTMP distribution, and when you invalidate objects.
+    /// With previous versions of the API, we discovered that it was too easy to accidentally
+    /// delete one or more values for an element that accepts multiple values, for example,
+    /// CNAMEs and trusted signers. Our changes for the 2012-05-05 release are intended to
+    /// prevent these accidental deletions and to notify you when there's a mismatch between
+    /// the number of values you say you're specifying in the <code>Quantity</code> element
+    /// and the number of values specified.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateStreamingDistributionRequest : AmazonCloudFrontRequest
     {
@@ -50,8 +85,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreamingDistributionConfig. The streaming distribution's
-        /// configuration information.
+        /// Gets and sets the property StreamingDistributionConfig. 
+        /// <para>
+        /// The streaming distribution's configuration information.
+        /// </para>
         /// </summary>
         public StreamingDistributionConfig StreamingDistributionConfig
         {

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,8 +36,10 @@ namespace Amazon.CloudFront.Model
         private string _eTag;
 
         /// <summary>
-        /// Gets and sets the property CloudFrontOriginAccessIdentity. The origin access identity's
-        /// information.
+        /// Gets and sets the property CloudFrontOriginAccessIdentity. 
+        /// <para>
+        /// The origin access identity's information.
+        /// </para>
         /// </summary>
         public CloudFrontOriginAccessIdentity CloudFrontOriginAccessIdentity
         {
@@ -52,8 +54,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ETag. The current version of the origin access identity's
-        /// information. For example: E2QWRUHAPOMQZL.
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// The current version of the origin access identity's information. For example: <code>E2QWRUHAPOMQZL</code>.
+        /// </para>
         /// </summary>
         public string ETag
         {

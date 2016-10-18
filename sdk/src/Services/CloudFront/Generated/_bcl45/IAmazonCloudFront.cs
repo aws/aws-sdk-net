@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 
 
@@ -33,10 +33,10 @@ namespace Amazon.CloudFront
     ///
     /// Amazon CloudFront 
     /// <para>
-    /// Amazon CloudFront is a global content delivery network (CDN) service that accelerates
-    /// delivery of your websites, APIs, video content or other web assets. It integrates
-    /// with other Amazon Web Services products to give developers and businesses an easy
-    /// way to accelerate content to end users with no minimum usage commitments.
+    /// This is the <i>Amazon CloudFront API Reference</i>. This guide is for developers who
+    /// need detailed information about the CloudFront API actions, data types, and errors.
+    /// For detailed information about CloudFront features and their associated API calls,
+    /// see the <i>Amazon CloudFront Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCloudFront : IAmazonService, IDisposable
@@ -47,19 +47,23 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Create a new origin access identity.
+        /// Creates a new origin access identity. If you're using Amazon S3 for your origin, you
+        /// can use an origin access identity to require users to access your content using a
+        /// CloudFront URL instead of the Amazon S3 URL. For more information about how to use
+        /// origin access identities, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+        /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCloudFrontOriginAccessIdentity service method.</param>
         /// 
         /// <returns>The response from the CreateCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityAlreadyExistsException">
-        /// If the CallerReference is a value you already sent in a previous request to create
-        /// an identity but the content of the CloudFrontOriginAccessIdentityConfig is different
-        /// from the original request, CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists
+        /// If the <code>CallerReference</code> is a value you already sent in a previous request
+        /// to create an identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code>
+        /// is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code>
         /// error.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of Quantity and the size of Items do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
@@ -92,7 +96,8 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Create a new distribution.
+        /// Creates a new web distribution. Send a <code>GET</code> request to the <code>/<i>CloudFront
+        /// API version</i>/distribution</code>/<code>distribution ID</code> resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDistribution service method.</param>
         /// 
@@ -108,7 +113,7 @@ namespace Amazon.CloudFront
         /// another distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of Quantity and the size of Items do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
@@ -121,8 +126,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
-        /// for the whitelisted list of cookie names. Either list of cookie names has been specified
-        /// when not allowed or list of cookie names is missing when expected.
+        /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
+        /// has been specified when not allowed or list of cookie names is missing when expected.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
         /// 
@@ -144,7 +149,7 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidProtocolSettingsException">
         /// You cannot specify SSLv3 as the minimum protocol version if you only want to support
-        /// only clients that Support Server Name Indication (SNI).
+        /// only clients that support Server Name Indication (SNI).
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
         /// 
@@ -154,7 +159,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
-        /// in your request, or omit the RequiredProtocols element from your distribution configuration.
+        /// in your request, or omit the <code>RequiredProtocols</code> element from your distribution
+        /// configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
         /// 
@@ -173,13 +179,13 @@ namespace Amazon.CloudFront
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
-        /// No origin exists with the specified Origin Id.
+        /// No origin exists with the specified <code>Origin Id</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
-        /// You cannot create anymore cache behaviors for the distribution.
+        /// You cannot create more cache behaviors for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
-        /// You cannot create anymore custom ssl certificates.
+        /// You cannot create anymore custom SSL/TLS certificates.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
         /// Your request contains more cookie names in the whitelist than are allowed per cache
@@ -199,7 +205,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
-        /// You cannot create anymore origins for the distribution.
+        /// You cannot create more origins for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
         /// 
@@ -246,7 +252,7 @@ namespace Amazon.CloudFront
         /// another distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of Quantity and the size of Items do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
@@ -259,8 +265,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
-        /// for the whitelisted list of cookie names. Either list of cookie names has been specified
-        /// when not allowed or list of cookie names is missing when expected.
+        /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
+        /// has been specified when not allowed or list of cookie names is missing when expected.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
         /// 
@@ -282,7 +288,7 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidProtocolSettingsException">
         /// You cannot specify SSLv3 as the minimum protocol version if you only want to support
-        /// only clients that Support Server Name Indication (SNI).
+        /// only clients that support Server Name Indication (SNI).
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidQueryStringParametersException">
         /// 
@@ -292,14 +298,14 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
-        /// in your request, or omit the RequiredProtocols element from your distribution configuration.
+        /// in your request, or omit the <code>RequiredProtocols</code> element from your distribution
+        /// configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
-        /// The specified tagging for a CloudFront resource is invalid. For more information,
-        /// see the error text.
+        /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTTLOrderException">
         /// 
@@ -315,13 +321,13 @@ namespace Amazon.CloudFront
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
-        /// No origin exists with the specified Origin Id.
+        /// No origin exists with the specified <code>Origin Id</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
-        /// You cannot create anymore cache behaviors for the distribution.
+        /// You cannot create more cache behaviors for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
-        /// You cannot create anymore custom ssl certificates.
+        /// You cannot create anymore custom SSL/TLS certificates.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
         /// Your request contains more cookie names in the whitelist than are allowed per cache
@@ -341,7 +347,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
-        /// You cannot create anymore origins for the distribution.
+        /// You cannot create more origins for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
         /// 
@@ -384,7 +390,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of Quantity and the size of Items do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
@@ -420,7 +426,42 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Create a new streaming distribution.
+        /// Creates a new RMTP distribution. An RTMP distribution is similar to a web distribution,
+        /// but an RTMP distribution streams media files using the Adobe Real-Time Messaging Protocol
+        /// (RTMP) instead of serving files using HTTP. 
+        /// 
+        ///  
+        /// <para>
+        /// To create a new web distribution, submit a <code>POST</code> request to the <i>CloudFront
+        /// API version</i>/distribution resource. The request body must include a document with
+        /// a <i>StreamingDistributionConfig</i> element. The response echoes the <code>StreamingDistributionConfig</code>
+        /// element and returns other information about the RTMP distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// To get the status of your request, use the <i>GET StreamingDistribution</i> API action.
+        /// When the value of <code>Enabled</code> is <code>true</code> and the value of <code>Status</code>
+        /// is <code>Deployed</code>, your distribution is ready. A distribution usually deploys
+        /// in less than 15 minutes.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about web distributions, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-rtmp.html">Working
+        /// with RTMP Distributions</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Beginning with the 2012-05-05 version of the CloudFront API, we made substantial changes
+        /// to the format of the XML document that you include in the request body when you create
+        /// or update a web distribution or an RTMP distribution, and when you invalidate objects.
+        /// With previous versions of the API, we discovered that it was too easy to accidentally
+        /// delete one or more values for an element that accepts multiple values, for example,
+        /// CNAMEs and trusted signers. Our changes for the 2012-05-05 release are intended to
+        /// prevent these accidental deletions and to notify you when there's a mismatch between
+        /// the number of values you say you're specifying in the <code>Quantity</code> element
+        /// and the number of values specified.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamingDistribution service method.</param>
         /// 
@@ -432,7 +473,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of Quantity and the size of Items do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
@@ -495,7 +536,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of Quantity and the size of Items do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
@@ -507,8 +548,7 @@ namespace Amazon.CloudFront
         /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
-        /// The specified tagging for a CloudFront resource is invalid. For more information,
-        /// see the error text.
+        /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the Content-Type
@@ -561,13 +601,13 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The If-Match version is missing or not valid for the distribution.
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity();
 
@@ -585,13 +625,13 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The If-Match version is missing or not valid for the distribution.
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request);
 
@@ -611,13 +651,13 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The If-Match version is missing or not valid for the distribution.
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -650,13 +690,13 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The If-Match version is missing or not valid for the distribution.
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         DeleteDistributionResponse DeleteDistribution();
 
@@ -674,13 +714,13 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The If-Match version is missing or not valid for the distribution.
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request);
 
@@ -700,13 +740,13 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The If-Match version is missing or not valid for the distribution.
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         Task<DeleteDistributionResponse> DeleteDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -728,7 +768,65 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Delete a streaming distribution.
+        /// Delete a streaming distribution. To delete an RTMP distribution using the CloudFront
+        /// API, perform the following steps.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>To delete an RTMP distribution using the CloudFront API</b>:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Disable the RTMP distribution.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>GET Streaming Distribution Config</code> request to get the current
+        /// configuration and the <code>Etag</code> header for the distribution. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update the XML document that was returned in the response to your <code>GET Streaming
+        /// Distribution Config</code> request to change the value of <code>Enabled</code> to
+        /// <code>false</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>PUT Streaming Distribution Config</code> request to update the configuration
+        /// for your distribution. In the request body, include the XML document that you updated
+        /// in Step 3. Then set the value of the HTTP <code>If-Match</code> header to the value
+        /// of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET
+        /// Streaming Distribution Config</code> request in Step 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Review the response to the <code>PUT Streaming Distribution Config</code> request
+        /// to confirm that the distribution was successfully disabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>GET Streaming Distribution Config</code> request to confirm that your
+        /// changes have propagated. When propagation is complete, the value of <code>Status</code>
+        /// is <code>Deployed</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DELETE Streaming Distribution</code> request. Set the value of the
+        /// HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that
+        /// CloudFront returned when you submitted the <code>GET Streaming Distribution Config</code>
+        /// request in Step 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Review the response to your <code>DELETE Streaming Distribution</code> request to
+        /// confirm that the distribution was successfully deleted.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// For information about deleting a distribution using the CloudFront console, see <a
+        /// href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting
+        /// a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DeleteStreamingDistribution service method, as returned by CloudFront.</returns>
@@ -736,13 +834,13 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The If-Match version is missing or not valid for the distribution.
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// 
@@ -751,7 +849,65 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Delete a streaming distribution.
+        /// Delete a streaming distribution. To delete an RTMP distribution using the CloudFront
+        /// API, perform the following steps.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>To delete an RTMP distribution using the CloudFront API</b>:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Disable the RTMP distribution.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>GET Streaming Distribution Config</code> request to get the current
+        /// configuration and the <code>Etag</code> header for the distribution. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update the XML document that was returned in the response to your <code>GET Streaming
+        /// Distribution Config</code> request to change the value of <code>Enabled</code> to
+        /// <code>false</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>PUT Streaming Distribution Config</code> request to update the configuration
+        /// for your distribution. In the request body, include the XML document that you updated
+        /// in Step 3. Then set the value of the HTTP <code>If-Match</code> header to the value
+        /// of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET
+        /// Streaming Distribution Config</code> request in Step 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Review the response to the <code>PUT Streaming Distribution Config</code> request
+        /// to confirm that the distribution was successfully disabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>GET Streaming Distribution Config</code> request to confirm that your
+        /// changes have propagated. When propagation is complete, the value of <code>Status</code>
+        /// is <code>Deployed</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DELETE Streaming Distribution</code> request. Set the value of the
+        /// HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that
+        /// CloudFront returned when you submitted the <code>GET Streaming Distribution Config</code>
+        /// request in Step 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Review the response to your <code>DELETE Streaming Distribution</code> request to
+        /// confirm that the distribution was successfully deleted.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// For information about deleting a distribution using the CloudFront console, see <a
+        /// href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting
+        /// a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStreamingDistribution service method.</param>
         /// 
@@ -760,13 +916,13 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The If-Match version is missing or not valid for the distribution.
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// 
@@ -775,7 +931,65 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Delete a streaming distribution.
+        /// Delete a streaming distribution. To delete an RTMP distribution using the CloudFront
+        /// API, perform the following steps.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>To delete an RTMP distribution using the CloudFront API</b>:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Disable the RTMP distribution.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>GET Streaming Distribution Config</code> request to get the current
+        /// configuration and the <code>Etag</code> header for the distribution. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update the XML document that was returned in the response to your <code>GET Streaming
+        /// Distribution Config</code> request to change the value of <code>Enabled</code> to
+        /// <code>false</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>PUT Streaming Distribution Config</code> request to update the configuration
+        /// for your distribution. In the request body, include the XML document that you updated
+        /// in Step 3. Then set the value of the HTTP <code>If-Match</code> header to the value
+        /// of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET
+        /// Streaming Distribution Config</code> request in Step 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Review the response to the <code>PUT Streaming Distribution Config</code> request
+        /// to confirm that the distribution was successfully disabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>GET Streaming Distribution Config</code> request to confirm that your
+        /// changes have propagated. When propagation is complete, the value of <code>Status</code>
+        /// is <code>Deployed</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DELETE Streaming Distribution</code> request. Set the value of the
+        /// HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that
+        /// CloudFront returned when you submitted the <code>GET Streaming Distribution Config</code>
+        /// request in Step 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Review the response to your <code>DELETE Streaming Distribution</code> request to
+        /// confirm that the distribution was successfully deleted.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// For information about deleting a distribution using the CloudFront console, see <a
+        /// href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting
+        /// a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -786,13 +1000,13 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The If-Match version is missing or not valid for the distribution.
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// 
@@ -1099,7 +1313,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Get the information about a streaming distribution.
+        /// Gets information about a specified RTMP distribution, including the distribution configuration.
         /// </summary>
         /// 
         /// <returns>The response from the GetStreamingDistribution service method, as returned by CloudFront.</returns>
@@ -1113,7 +1327,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Get the information about a streaming distribution.
+        /// Gets information about a specified RTMP distribution, including the distribution configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStreamingDistribution service method.</param>
         /// 
@@ -1128,7 +1342,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Get the information about a streaming distribution.
+        /// Gets information about a specified RTMP distribution, including the distribution configuration.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1223,7 +1437,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// List origin access identities.
+        /// Lists origin access identities.
         /// </summary>
         /// 
         /// <returns>The response from the ListCloudFrontOriginAccessIdentities service method, as returned by CloudFront.</returns>
@@ -1234,7 +1448,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// List origin access identities.
+        /// Lists origin access identities.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCloudFrontOriginAccessIdentities service method.</param>
         /// 
@@ -1246,7 +1460,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// List origin access identities.
+        /// Lists origin access identities.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1360,7 +1574,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// List invalidation batches.
+        /// Lists invalidation batches.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInvalidations service method.</param>
         /// 
@@ -1459,11 +1673,10 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
-        /// The specified tagging for a CloudFront resource is invalid. For more information,
-        /// see the error text.
+        /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
-        /// The specified CloudFront resource does not exist.
+        /// 
         /// </exception>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
@@ -1497,11 +1710,10 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
-        /// The specified tagging for a CloudFront resource is invalid. For more information,
-        /// see the error text.
+        /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
-        /// The specified CloudFront resource does not exist.
+        /// 
         /// </exception>
         TagResourceResponse TagResource(TagResourceRequest request);
 
@@ -1535,11 +1747,10 @@ namespace Amazon.CloudFront
         /// The argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
-        /// The specified tagging for a CloudFront resource is invalid. For more information,
-        /// see the error text.
+        /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
-        /// The specified CloudFront resource does not exist.
+        /// 
         /// </exception>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
 
@@ -1570,16 +1781,16 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
-        /// Origin and CallerReference cannot be updated.
+        /// Origin and <code>CallerReference</code> cannot be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of Quantity and the size of Items do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The If-Match version is missing or not valid for the distribution.
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
         /// This operation requires a body. Ensure that the body is present and the Content-Type
@@ -1589,7 +1800,7 @@ namespace Amazon.CloudFront
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request);
 
@@ -1623,10 +1834,10 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
-        /// Origin and CallerReference cannot be updated.
+        /// Origin and <code>CallerReference</code> cannot be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of Quantity and the size of Items do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
@@ -1639,8 +1850,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
-        /// for the whitelisted list of cookie names. Either list of cookie names has been specified
-        /// when not allowed or list of cookie names is missing when expected.
+        /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
+        /// has been specified when not allowed or list of cookie names is missing when expected.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidGeoRestrictionParameterException">
         /// 
@@ -1649,7 +1860,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The If-Match version is missing or not valid for the distribution.
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
         /// 
@@ -1668,7 +1879,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
-        /// in your request, or omit the RequiredProtocols element from your distribution configuration.
+        /// in your request, or omit the <code>RequiredProtocols</code> element from your distribution
+        /// configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
         /// 
@@ -1690,16 +1902,16 @@ namespace Amazon.CloudFront
         /// The specified distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
-        /// No origin exists with the specified Origin Id.
+        /// No origin exists with the specified <code>Origin Id</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCacheBehaviorsException">
-        /// You cannot create anymore cache behaviors for the distribution.
+        /// You cannot create more cache behaviors for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCertificatesException">
-        /// You cannot create anymore custom ssl certificates.
+        /// You cannot create anymore custom SSL/TLS certificates.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCookieNamesInWhiteListException">
         /// Your request contains more cookie names in the whitelist than are allowed per cache
@@ -1715,7 +1927,7 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginsException">
-        /// You cannot create anymore origins for the distribution.
+        /// You cannot create more origins for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyQueryStringParametersException">
         /// 
@@ -1758,16 +1970,16 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
-        /// Origin and CallerReference cannot be updated.
+        /// Origin and <code>CallerReference</code> cannot be updated.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of Quantity and the size of Items do not match.
+        /// The value of <code>Quantity</code> and the size of <code>Items</code> do not match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// The argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The If-Match version is missing or not valid for the distribution.
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessIdentityException">
         /// The origin access identity is not valid or doesn't exist.
@@ -1780,7 +1992,7 @@ namespace Amazon.CloudFront
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException">
         /// 

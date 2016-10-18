@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -37,7 +37,10 @@ namespace Amazon.CloudFront.Model
         private string _location;
 
         /// <summary>
-        /// Gets and sets the property Distribution. The distribution's information.
+        /// Gets and sets the property Distribution. 
+        /// <para>
+        /// The distribution's information.
+        /// </para>
         /// </summary>
         public Distribution Distribution
         {
@@ -52,7 +55,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ETag. The current version of the distribution created.
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// The current version of the distribution created.
+        /// </para>
         /// </summary>
         public string ETag
         {
@@ -67,8 +73,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Location. The fully qualified URI of the new distribution
-        /// resource just created. For example: https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The fully qualified URI of the new distribution resource just created. For example:
+        /// <code>https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5</code>.
+        /// </para>
         /// </summary>
         public string Location
         {

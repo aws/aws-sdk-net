@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Summary of an invalidation request.
+    /// A summary of an invalidation request.
     /// </summary>
     public partial class InvalidationSummary
     {
@@ -57,7 +57,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The unique ID for an invalidation request.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The unique ID for an invalidation request.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -72,7 +75,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. The status of an invalidation request.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of an invalidation request.
+        /// </para>
         /// </summary>
         public string Status
         {

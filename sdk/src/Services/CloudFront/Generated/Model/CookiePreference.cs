@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that specifies the cookie preferences associated with this cache behavior.
+    /// A complex type that specifies whether you want CloudFront to forward cookies to the
+    /// origin and, if so, which ones. For more information about forwarding cookies to the
+    /// origin, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How
+    /// CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer
+    /// Guide</i>.
     /// </summary>
     public partial class CookiePreference
     {
@@ -36,10 +40,16 @@ namespace Amazon.CloudFront.Model
         private CookieNames _whitelistedNames;
 
         /// <summary>
-        /// Gets and sets the property Forward. Use this element to specify whether you want CloudFront
-        /// to forward cookies to the origin that is associated with this cache behavior. You
-        /// can specify all, none or whitelist. If you choose All, CloudFront forwards all cookies
-        /// regardless of how many your application uses.
+        /// Gets and sets the property Forward. 
+        /// <para>
+        /// Specifies which cookies to forward to the origin for this cache behavior: all, none,
+        /// or the list of cookies specified in the <code>WhitelistedNames</code> complex type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests
+        /// to an Amazon S3 origin, specify none for the <code>Forward</code> element. 
+        /// </para>
         /// </summary>
         public ItemSelection Forward
         {
@@ -54,9 +64,26 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WhitelistedNames. A complex type that specifies the whitelisted
-        /// cookies, if any, that you want CloudFront to forward to your origin that is associated
-        /// with this cache behavior.
+        /// Gets and sets the property WhitelistedNames. 
+        /// <para>
+        /// Required if you specify <code>whitelist</code> for the value of <code>Forward:</code>.
+        /// A complex type that specifies how many different cookies you want CloudFront to forward
+        /// to the origin for this cache behavior and, if you want to forward selected cookies,
+        /// the names of those cookies.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify <code>all</code> or none for the value of <code>Forward</code>, omit
+        /// <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from
+        /// <code>whitelist</code> to all or none and you don't delete the <code>WhitelistedNames</code>
+        /// element and its child elements, CloudFront deletes them automatically.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the current limit on the number of cookie names that you can whitelist for each
+        /// cache behavior, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
+        /// CloudFront Limits</a> in the <i>AWS General Reference</i>.
+        /// </para>
         /// </summary>
         public CookieNames WhitelistedNames
         {

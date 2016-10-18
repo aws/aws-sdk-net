@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -44,8 +44,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates DeleteCloudFrontOriginAccessIdentityRequest with the parameterized properties
         /// </summary>
-        /// <param name="id">The origin access identity's id.</param>
-        /// <param name="ifMatch">The value of the ETag header you received from a previous GET or PUT request. For example: E2QWRUHAPOMQZL.</param>
+        /// <param name="id">The origin access identity's ID.</param>
+        /// <param name="ifMatch">The value of the <code>ETag</code> header you received from a previous <code>GET</code> or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</param>
         public DeleteCloudFrontOriginAccessIdentityRequest(string id, string ifMatch)
         {
             _id = id;
@@ -53,7 +53,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The origin access identity's id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The origin access identity's ID.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -68,8 +71,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IfMatch. The value of the ETag header you received from
-        /// a previous GET or PUT request. For example: E2QWRUHAPOMQZL.
+        /// Gets and sets the property IfMatch. 
+        /// <para>
+        /// The value of the <code>ETag</code> header you received from a previous <code>GET</code>
+        /// or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.
+        /// </para>
         /// </summary>
         public string IfMatch
         {

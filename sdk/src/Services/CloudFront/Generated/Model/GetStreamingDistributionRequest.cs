@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the GetStreamingDistribution operation.
-    /// Get the information about a streaming distribution.
+    /// Gets information about a specified RTMP distribution, including the distribution configuration.
     /// </summary>
     public partial class GetStreamingDistributionRequest : AmazonCloudFrontRequest
     {
@@ -43,14 +43,17 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates GetStreamingDistributionRequest with the parameterized properties
         /// </summary>
-        /// <param name="id">The streaming distribution's id.</param>
+        /// <param name="id">The streaming distribution's ID.</param>
         public GetStreamingDistributionRequest(string id)
         {
             _id = id;
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The streaming distribution's id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The streaming distribution's ID.
+        /// </para>
         /// </summary>
         public string Id
         {

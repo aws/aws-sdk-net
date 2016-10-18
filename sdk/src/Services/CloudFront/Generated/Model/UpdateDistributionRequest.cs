@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -46,7 +46,7 @@ namespace Amazon.CloudFront.Model
         /// Instantiates UpdateDistributionRequest with the parameterized properties
         /// </summary>
         /// <param name="id">The distribution's id.</param>
-        /// <param name="ifMatch">The value of the ETag header you received when retrieving the distribution's configuration. For example: E2QWRUHAPOMQZL.</param>
+        /// <param name="ifMatch">The value of the <code>ETag</code> header that you received when retrieving the distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</param>
         /// <param name="distributionConfig">The distribution's configuration information.</param>
         public UpdateDistributionRequest(string id, string ifMatch, DistributionConfig distributionConfig)
         {
@@ -56,7 +56,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DistributionConfig. The distribution's configuration information.
+        /// Gets and sets the property DistributionConfig. 
+        /// <para>
+        /// The distribution's configuration information.
+        /// </para>
         /// </summary>
         public DistributionConfig DistributionConfig
         {
@@ -71,7 +74,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The distribution's id.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The distribution's id.
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -86,8 +92,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IfMatch. The value of the ETag header you received when
-        /// retrieving the distribution's configuration. For example: E2QWRUHAPOMQZL.
+        /// Gets and sets the property IfMatch. 
+        /// <para>
+        /// The value of the <code>ETag</code> header that you received when retrieving the distribution's
+        /// configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+        /// </para>
         /// </summary>
         public string IfMatch
         {

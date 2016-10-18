@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -38,11 +38,15 @@ namespace Amazon.CloudFront.Model
         private string _webACLId;
 
         /// <summary>
-        /// Gets and sets the property Marker. Use Marker and MaxItems to control pagination of
-        /// results. If you have more than MaxItems distributions that satisfy the request, the
-        /// response includes a NextMarker element. To get the next page of results, submit another
-        /// request. For the value of Marker, specify the value of NextMarker from the last response.
-        /// (For the first request, omit Marker.)
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results.
+        /// If you have more than <code>MaxItems</code> distributions that satisfy the request,
+        /// the response includes a <code>NextMarker</code> element. To get the next page of results,
+        /// submit another request. For the value of <code>Marker</code>, specify the value of
+        /// <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)
+        /// 
+        /// </para>
         /// </summary>
         public string Marker
         {
@@ -57,9 +61,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxItems. The maximum number of distributions that you
-        /// want CloudFront to return in the response body. The maximum and default values are
-        /// both 100.
+        /// Gets and sets the property MaxItems. 
+        /// <para>
+        /// The maximum number of distributions that you want CloudFront to return in the response
+        /// body. The maximum and default values are both 100.
+        /// </para>
         /// </summary>
         public string MaxItems
         {
@@ -74,9 +80,12 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WebACLId. The Id of the AWS WAF web ACL for which you want
-        /// to list the associated distributions. If you specify "null" for the Id, the request
-        /// returns a list of the distributions that aren't associated with a web ACL.
+        /// Gets and sets the property WebACLId. 
+        /// <para>
+        /// The ID of the AWS WAF web ACL that you want to list the associated distributions.
+        /// If you specify "null" for the ID, the request returns a list of the distributions
+        /// that aren't associated with a web ACL. 
+        /// </para>
         /// </summary>
         public string WebACLId
         {

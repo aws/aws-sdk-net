@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,7 +36,10 @@ namespace Amazon.CloudFront.Model
         private string _resource;
 
         /// <summary>
-        /// Gets and sets the property Resource. An ARN of a CloudFront resource.
+        /// Gets and sets the property Resource. 
+        /// <para>
+        ///  An ARN of a CloudFront resource.
+        /// </para>
         /// </summary>
         public string Resource
         {

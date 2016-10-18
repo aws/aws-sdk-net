@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -37,7 +37,10 @@ namespace Amazon.CloudFront.Model
         private TagKeys _tagKeys;
 
         /// <summary>
-        /// Gets and sets the property Resource. An ARN of a CloudFront resource.
+        /// Gets and sets the property Resource. 
+        /// <para>
+        ///  An ARN of a CloudFront resource.
+        /// </para>
         /// </summary>
         public string Resource
         {
@@ -52,8 +55,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys. A complex type that contains zero or more Tag
-        /// key elements.
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        ///  A complex type that contains zero or more <code>Tag</code> key elements.
+        /// </para>
         /// </summary>
         public TagKeys TagKeys
         {

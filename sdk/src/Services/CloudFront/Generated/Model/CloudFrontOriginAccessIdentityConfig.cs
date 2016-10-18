@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Origin access identity configuration.
+    /// Origin access identity configuration. Send a <code>GET</code> request to the <code>/<i>CloudFront
+    /// API version</i>/CloudFront/identity ID/config</code> resource.
     /// </summary>
     public partial class CloudFrontOriginAccessIdentityConfig
     {
@@ -43,23 +44,36 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates CloudFrontOriginAccessIdentityConfig with the parameterized properties
         /// </summary>
-        /// <param name="callerReference">A unique number that ensures the request can't be replayed. If the CallerReference is new (no matter the content of the CloudFrontOriginAccessIdentityConfig object), a new origin access identity is created. If the CallerReference is a value you already sent in a previous request to create an identity, and the content of the CloudFrontOriginAccessIdentityConfig is identical to the original request (ignoring white space), the response includes the same information returned to the original request. If the CallerReference is a value you already sent in a previous request to create an identity but the content of the CloudFrontOriginAccessIdentityConfig is different from the original request, CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists error.</param>
+        /// <param name="callerReference">A unique number that ensures the request can't be replayed. If the <code>CallerReference</code> is new (no matter the content of the <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is created. If the <code>CallerReference</code> is a value already sent in a previous identity request, and the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original request (ignoring white space), the response includes the same information returned to the original request.  If the <code>CallerReference</code> is a value you already sent in a previous request to create an identity, but the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </param>
         public CloudFrontOriginAccessIdentityConfig(string callerReference)
         {
             _callerReference = callerReference;
         }
 
         /// <summary>
-        /// Gets and sets the property CallerReference. A unique number that ensures the request
-        /// can't be replayed. If the CallerReference is new (no matter the content of the CloudFrontOriginAccessIdentityConfig
-        /// object), a new origin access identity is created. If the CallerReference is a value
-        /// you already sent in a previous request to create an identity, and the content of the
-        /// CloudFrontOriginAccessIdentityConfig is identical to the original request (ignoring
-        /// white space), the response includes the same information returned to the original
-        /// request. If the CallerReference is a value you already sent in a previous request
-        /// to create an identity but the content of the CloudFrontOriginAccessIdentityConfig
-        /// is different from the original request, CloudFront returns a CloudFrontOriginAccessIdentityAlreadyExists
-        /// error.
+        /// Gets and sets the property CallerReference. 
+        /// <para>
+        /// A unique number that ensures the request can't be replayed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>CallerReference</code> is new (no matter the content of the <code>CloudFrontOriginAccessIdentityConfig</code>
+        /// object), a new origin access identity is created.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>CallerReference</code> is a value already sent in a previous identity
+        /// request, and the content of the <code>CloudFrontOriginAccessIdentityConfig</code>
+        /// is identical to the original request (ignoring white space), the response includes
+        /// the same information returned to the original request. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>CallerReference</code> is a value you already sent in a previous request
+        /// to create an identity, but the content of the <code>CloudFrontOriginAccessIdentityConfig</code>
+        /// is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code>
+        /// error. 
+        /// </para>
         /// </summary>
         public string CallerReference
         {
@@ -74,8 +88,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Comment. Any comments you want to include about the origin
-        /// access identity.
+        /// Gets and sets the property Comment. 
+        /// <para>
+        /// Any comments you want to include about the origin access identity. 
+        /// </para>
         /// </summary>
         public string Comment
         {
