@@ -392,7 +392,7 @@ namespace ThirdParty.Json.LitJson
 
             if (obj is UInt32)
             {
-                type = JsonType.Int;
+                type = JsonType.UInt;
                 inst_number = (ulong)obj;
                 return;
             }
@@ -405,7 +405,7 @@ namespace ThirdParty.Json.LitJson
 
             if (obj is UInt64)
             {
-                type = JsonType.Long;
+                type = JsonType.ULong;
                 inst_number = (ulong)obj;
                 return;
             }
