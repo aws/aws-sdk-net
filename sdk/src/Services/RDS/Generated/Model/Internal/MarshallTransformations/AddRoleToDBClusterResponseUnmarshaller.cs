@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CopyDBClusterSnapshot operation
+    /// Response Unmarshaller for AddRoleToDBCluster operation
     /// </summary>  
-    public class CopyDBClusterSnapshotResponseUnmarshaller : XmlResponseUnmarshaller
+    public class AddRoleToDBClusterResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            CopyDBClusterSnapshotResponse response = new CopyDBClusterSnapshotResponse();
+            AddRoleToDBClusterResponse response = new AddRoleToDBClusterResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("CopyDBClusterSnapshotResult", 2))
+                    if(context.TestExpression("AddRoleToDBClusterResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, CopyDBClusterSnapshotResponse response)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
+        private static void UnmarshallResult(XmlUnmarshallerContext context, AddRoleToDBClusterResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,12 +82,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("DBClusterSnapshot", targetDepth))
-                    {
-                        var unmarshaller = DBClusterSnapshotUnmarshaller.Instance;
-                        response.DBClusterSnapshot = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                 } 
            }
 
@@ -104,35 +99,27 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterSnapshotAlreadyExistsFault"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterNotFoundFault"))
             {
-                return new DBClusterSnapshotAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new DBClusterNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterSnapshotNotFoundFault"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterRoleAlreadyExists"))
             {
-                return new DBClusterSnapshotNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new DBClusterRoleAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBClusterSnapshotStateFault"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DBClusterRoleQuotaExceeded"))
             {
-                return new InvalidDBClusterSnapshotStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new DBClusterRoleQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBClusterStateFault"))
             {
                 return new InvalidDBClusterStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("KMSKeyNotAccessibleFault"))
-            {
-                return new KMSKeyNotAccessibleException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("SnapshotQuotaExceeded"))
-            {
-                return new SnapshotQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static CopyDBClusterSnapshotResponseUnmarshaller _instance = new CopyDBClusterSnapshotResponseUnmarshaller();        
+        private static AddRoleToDBClusterResponseUnmarshaller _instance = new AddRoleToDBClusterResponseUnmarshaller();        
 
-        internal static CopyDBClusterSnapshotResponseUnmarshaller GetInstance()
+        internal static AddRoleToDBClusterResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -140,7 +127,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CopyDBClusterSnapshotResponseUnmarshaller Instance
+        public static AddRoleToDBClusterResponseUnmarshaller Instance
         {
             get
             {

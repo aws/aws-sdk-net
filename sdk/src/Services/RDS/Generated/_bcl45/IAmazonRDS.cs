@@ -108,6 +108,47 @@ namespace Amazon.RDS
     {
 
         
+        #region  AddRoleToDBCluster
+
+
+        /// <summary>
+        /// Associates an Identity and Access Management (IAM) role from an Aurora DB cluster.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
+        /// Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddRoleToDBCluster service method.</param>
+        /// 
+        /// <returns>The response from the AddRoleToDBCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterRoleAlreadyExistsException">
+        /// The specified IAM role Amazon Resource Name (ARN) is already associated with the specified
+        /// DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterRoleQuotaExceededException">
+        /// You have exceeded the maximum number of IAM roles that can be associated with the
+        /// specified DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        AddRoleToDBClusterResponse AddRoleToDBCluster(AddRoleToDBClusterRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddRoleToDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddRoleToDBCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AddRoleToDBClusterResponse> AddRoleToDBClusterAsync(AddRoleToDBClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AddSourceIdentifierToSubscription
 
 
@@ -317,6 +358,12 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// Error accessing KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB snapshots.
         /// </exception>
         CopyDBClusterSnapshotResponse CopyDBClusterSnapshot(CopyDBClusterSnapshotRequest request);
 
@@ -3506,6 +3553,43 @@ namespace Amazon.RDS
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<RebootDBInstanceResponse> RebootDBInstanceAsync(RebootDBInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RemoveRoleFromDBCluster
+
+
+        /// <summary>
+        /// Disassociates an Identity and Access Management (IAM) role from an Aurora DB cluster.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
+        /// Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBCluster service method.</param>
+        /// 
+        /// <returns>The response from the RemoveRoleFromDBCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterRoleNotFoundException">
+        /// The specified IAM role Amazon Resource Name (ARN) is not associated with the specified
+        /// DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        RemoveRoleFromDBClusterResponse RemoveRoleFromDBCluster(RemoveRoleFromDBClusterRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveRoleFromDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RemoveRoleFromDBClusterResponse> RemoveRoleFromDBClusterAsync(RemoveRoleFromDBClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

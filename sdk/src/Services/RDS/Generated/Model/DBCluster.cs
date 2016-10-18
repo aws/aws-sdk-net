@@ -62,6 +62,7 @@ namespace Amazon.RDS.Model
     public partial class DBCluster
     {
         private int? _allocatedStorage;
+        private List<DBClusterRole> _associatedRoles = new List<DBClusterRole>();
         private List<string> _availabilityZones = new List<string>();
         private int? _backupRetentionPeriod;
         private string _characterSetName;
@@ -108,6 +109,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetAllocatedStorage()
         {
             return this._allocatedStorage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociatedRoles. 
+        /// <para>
+        /// Provides a list of the AWS Identity and Access Management (IAM) roles that are associated
+        /// with the DB cluster. IAM roles that are associated with a DB cluster grant permission
+        /// for the DB cluster to access other AWS services on your behalf.
+        /// </para>
+        /// </summary>
+        public List<DBClusterRole> AssociatedRoles
+        {
+            get { return this._associatedRoles; }
+            set { this._associatedRoles = value; }
+        }
+
+        // Check to see if AssociatedRoles property is set
+        internal bool IsSetAssociatedRoles()
+        {
+            return this._associatedRoles != null && this._associatedRoles.Count > 0; 
         }
 
         /// <summary>

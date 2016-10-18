@@ -60,6 +60,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.AllocatedStorage = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AssociatedRoles/DBClusterRole", targetDepth))
+                    {
+                        var unmarshaller = DBClusterRoleUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AssociatedRoles.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("AvailabilityZones/AvailabilityZone", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
