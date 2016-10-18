@@ -170,7 +170,7 @@ namespace Amazon.Runtime.Internal.Settings
                 {
                     try
                     {
-                        using (var stream = File.OpenWrite(filePath))
+                        using (var stream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None))
                         using (var writer = new StreamWriter(stream))
                         {
                             settings.Persist(writer);
