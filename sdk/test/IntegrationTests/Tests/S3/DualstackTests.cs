@@ -135,25 +135,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         /// <summary>
-        /// Tests that if the user sets both UseAccelerateEndpoint and UseDualstackEndpoint, an
-        /// exception is thrown as both options cannot currently be used at the same time.
-        /// </summary>
-        [TestMethod]
-        [TestCategory("S3")]
-        [ExpectedException(typeof(AmazonClientException), "The dualstack mode of Amazon S3 cannot be used with accelerate mode.")]
-        public void TestConflictingOptionsCausesException()
-        {
-            var config = new AmazonS3Config
-            {
-                RegionEndpoint = RegionEndpoint.USEast1,
-                UseDualstackEndpoint = true,
-                UseAccelerateEndpoint = true
-            };
-
-            var s3Client = new AmazonS3Client(config);
-        }
-
-        /// <summary>
         /// Tests we can invoke a dualstack endpoint using a service endpoint override.
         /// </summary>
         [TestMethod]
