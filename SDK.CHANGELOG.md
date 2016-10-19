@@ -1,3 +1,19 @@
+### 3.3.11.0 (2016-10-18 22:51 UTC)
+* CloudFront (3.3.1.0)
+	* Added ability to use Amazon CloudFront to deliver your content both via IPv6 and IPv4 using HTTP/HTTPS
+* ConfigService (3.3.1.0)
+	* enum updates to support S3 bucket resource type
+* IoT (3.3.1.0)
+	* added DynamoActionV2 action to IoT Rules Engine
+* KinesisAnalytics (3.3.0.2)
+	* Model update to add rawInputRecords member in UnableToDetectSchemaException
+* RDS (3.3.2.0)
+	* Amazon Aurora integrates with other AWS services to allow you to extend your Aurora DB cluster to utilize other capabilities in the AWS cloud. Permission to access other AWS services is granted by creating an IAM role with the necessary permissions, and then associating the role with your DB cluster.
+* S3 (3.3.1.0)
+	* Support for simultaneous use of dualstack and accelerate feaftures.
+* Core 3.3.2.1
+	* Fix bug with persistence manager not correctly overwriting the file on persistence; Fixed incorrect types being used when constructing JsonData
+
 ### 3.3.10.0 (2016-10-17 20:12 UTC)
 * Route53 (3.3.1.0)
 	* Updated to use new Core, version 3.3.2.0
