@@ -12,11 +12,15 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -33,11 +37,11 @@ namespace AWSSDK.UnitTests
             .ToString();
 
         private static readonly CredentialProfileOptions SessionProfileOptions = new CredentialProfileOptions()
-            {
-                AccessKey = "session_aws_access_key_id",
-                SecretKey = "session_aws_secret_access_key",
-                Token = "session_aws_session_token"
-            };
+        {
+            AccessKey = "session_aws_access_key_id",
+            SecretKey = "session_aws_secret_access_key",
+            Token = "session_aws_session_token"
+        };
 
         private static readonly string SessionProfileTextUpdated = new StringBuilder()
             .AppendLine("[session_profile]")
@@ -47,10 +51,10 @@ namespace AWSSDK.UnitTests
             .ToString();
 
         private static readonly CredentialProfileOptions SessionProfileOptionsUpdated = new CredentialProfileOptions()
-            {
-                AccessKey = "session_aws_access_key_id",
-                SecretKey = "session_aws_secret_access_key",
-                Token = "session_aws_session_token_UPDATED"
+        {
+            AccessKey = "session_aws_access_key_id",
+            SecretKey = "session_aws_secret_access_key",
+            Token = "session_aws_session_token_UPDATED"
         };
 
         private static readonly string AssumeRoleMfaProfileText = new StringBuilder()
@@ -61,11 +65,11 @@ namespace AWSSDK.UnitTests
             .ToString();
 
         private static readonly CredentialProfileOptions AssumeRoleMfaProfileOptions = new CredentialProfileOptions()
-            {
-                SourceProfile = "basic_profile",
-                RoleArn = "assume_role_arn",
-                MfaSerial = "mfa_serial_number"
-            };
+        {
+            SourceProfile = "basic_profile",
+            RoleArn = "assume_role_arn",
+            MfaSerial = "mfa_serial_number"
+        };
 
         private static readonly string BasicProfileConfigText = new StringBuilder()
             .AppendLine("[profile basic_profile]")
@@ -104,36 +108,29 @@ namespace AWSSDK.UnitTests
             .ToString();
 
         private static readonly CredentialProfileOptions BasicProfilePrecedenceOptions = new CredentialProfileOptions()
-            {
-                AccessKey = "basic_aws_access_key_id_CREDENTIALS_FILE",
-                SecretKey = "basic_aws_secret_access_key"
-            };
+        {
+            AccessKey = "basic_aws_access_key_id_CREDENTIALS_FILE",
+            SecretKey = "basic_aws_secret_access_key"
+        };
 
         private static readonly string InvalidProfileText = new StringBuilder()
             .AppendLine("[invalid_profile]")
             .AppendLine("invalid_key=invalid_value")
             .ToString();
 
-        private static readonly CredentialProfileOptions InvalidProfileOptions = new CredentialProfileOptions();
-
-        private static readonly string FullAssumeRoleProfileText = new StringBuilder()
-            .AppendLine("[full_assume_role_profile]")
-            .AppendLine("aws_access_key_id=basic_aws_access_key_id")
-            .AppendLine("aws_secret_access_key=basic_aws_secret_access_key")
-            .Append("role_arn=assume_role_arn")
-            .ToString();
-
-        private static readonly CredentialProfileOptions FullAssumeRoleProfileOptions = new CredentialProfileOptions()
+        private static readonly CredentialProfileOptions SAMLRoleProfileOptions = new CredentialProfileOptions()
         {
-            AccessKey = "basic_aws_access_key_id",
-            SecretKey = "basic_aws_secret_access_key",
-            RoleArn = "assume_role_arn"
+            EndpointName = "endpoint_name",
+            RoleArn = "saml_arn",
+            UserIdentity = "user_identity"
         };
+
+        private static readonly CredentialProfileOptions InvalidProfileOptions = new CredentialProfileOptions();
 
         [TestMethod]
         public void ReadBasicProfile()
         {
-            using (var tester = new SharedCredentialsFileTester(BasicProfileCredentialsText))
+            using (var tester = new SharedCredentialsFileTestFixture(BasicProfileCredentialsText))
             {
                 tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions);
             }
@@ -142,7 +139,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void WriteBasicProfile()
         {
-            using (var tester = new SharedCredentialsFileTester())
+            using (var tester = new SharedCredentialsFileTestFixture())
             {
                 tester.AssertWriteProfile("basic_profile", BasicProfileOptions, BasicProfileCredentialsText);
             }
@@ -151,7 +148,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ReadSessionProfile()
         {
-            using (var tester = new SharedCredentialsFileTester(SessionProfileText))
+            using (var tester = new SharedCredentialsFileTestFixture(SessionProfileText))
             {
                 tester.ReadAndAssertProfile("session_profile", SessionProfileOptions);
             }
@@ -160,7 +157,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void WriteSessionProfile()
         {
-            using (var tester = new SharedCredentialsFileTester())
+            using (var tester = new SharedCredentialsFileTestFixture())
             {
                 tester.AssertWriteProfile("session_profile", SessionProfileOptions, SessionProfileText);
             }
@@ -169,7 +166,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ReadAssumeRoleMfaProfile()
         {
-            using (var tester = new SharedCredentialsFileTester(AssumeRoleMfaProfileText))
+            using (var tester = new SharedCredentialsFileTestFixture(AssumeRoleMfaProfileText))
             {
                 tester.ReadAndAssertProfile("assume_role_mfa_profile", AssumeRoleMfaProfileOptions);
             }
@@ -178,7 +175,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void WriteAssumeRoleMfaProfile()
         {
-            using (var tester = new SharedCredentialsFileTester())
+            using (var tester = new SharedCredentialsFileTestFixture())
             {
                 tester.AssertWriteProfile("assume_role_mfa_profile", AssumeRoleMfaProfileOptions, AssumeRoleMfaProfileText);
             }
@@ -187,7 +184,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ReadInvalidProfile()
         {
-            using (var tester = new SharedCredentialsFileTester(InvalidProfileText))
+            using (var tester = new SharedCredentialsFileTestFixture(InvalidProfileText))
             {
                 tester.TestTryGetProfile("invalid_profile", true, false);
             }
@@ -196,19 +193,19 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void WriteInvalidProfile()
         {
-            using (var tester = new SharedCredentialsFileTester(InvalidProfileText))
+            using (var tester = new SharedCredentialsFileTestFixture(InvalidProfileText))
             {
                 AssertExtensions.ExpectException(() =>
                 {
                     tester.AssertWriteProfile("invalid_profile", InvalidProfileOptions, InvalidProfileText);
-                }, typeof(ArgumentException), new Regex("The ProfileOptions object provided does not represent a valid profile."));
+                }, typeof(ArgumentException), new Regex("The CredentialProfile provided is not a valid profile."));
             }
         }
 
         [TestMethod]
         public void ReadProfileDoesNotExist()
         {
-            using (var tester = new SharedCredentialsFileTester())
+            using (var tester = new SharedCredentialsFileTestFixture())
             {
                 tester.TestTryGetProfile("profile_does_not_exist", false, false);
             }
@@ -217,7 +214,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void UpdateProfile()
         {
-            using (var tester = new SharedCredentialsFileTester(SessionProfileText))
+            using (var tester = new SharedCredentialsFileTestFixture(SessionProfileText))
             {
                 tester.ReadAndAssertProfile("session_profile", SessionProfileOptions);
                 tester.AssertWriteProfile("session_profile", SessionProfileOptionsUpdated, SessionProfileTextUpdated);
@@ -227,9 +224,9 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void DeleteProfile()
         {
-            using (var tester = new SharedCredentialsFileTester(SessionProfileText + Environment.NewLine + BasicProfileCredentialsText))
+            using (var tester = new SharedCredentialsFileTestFixture(SessionProfileText + Environment.NewLine + BasicProfileCredentialsText))
             {
-                tester.CredentialsFile.DeleteProfile("session_profile");
+                tester.CredentialsFile.UnregisterProfile("session_profile");
                 tester.AssertCredentialsFileContents(BasicProfileCredentialsText);
             }
         }
@@ -237,7 +234,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ReadBasicProfileConfig()
         {
-            using (var tester = new SharedCredentialsFileTester(null, BasicProfileConfigText))
+            using (var tester = new SharedCredentialsFileTestFixture(null, BasicProfileConfigText))
             {
                 tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions);
             }
@@ -247,7 +244,7 @@ namespace AWSSDK.UnitTests
         public void ReadBasicProfileAllConfigExtraSpacesAndTabInName()
         {
             var basicProfileInConfigWithWhitespace = BasicProfileConfigText.Replace("profile basic_profile", "profile \t basic_profile");
-            using (var tester = new SharedCredentialsFileTester(null, basicProfileInConfigWithWhitespace))
+            using (var tester = new SharedCredentialsFileTestFixture(null, basicProfileInConfigWithWhitespace))
             {
                 tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions);
             }
@@ -256,7 +253,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ReadBasicProfileAllConfigForgotProfileKeyword()
         {
-            using (var tester = new SharedCredentialsFileTester(null, BasicProfileCredentialsText))
+            using (var tester = new SharedCredentialsFileTestFixture(null, BasicProfileCredentialsText))
             {
                 CredentialProfile profile = null;
                 Assert.IsFalse(tester.CredentialsFile.TryGetProfile("basic_profile", out profile));
@@ -267,7 +264,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ReadBasicProfileSplit()
         {
-            using (var tester = new SharedCredentialsFileTester(
+            using (var tester = new SharedCredentialsFileTestFixture(
                 BasicProfileTextCredentialsPartial, BasicProfileTextConfigPartial))
             {
                 tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions);
@@ -277,7 +274,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ReadBasicProfileCredentialsTakesPrecedence()
         {
-            using (var tester = new SharedCredentialsFileTester(
+            using (var tester = new SharedCredentialsFileTestFixture(
                 BasicProfileTextCredentialsPrecedence, BasicProfileTextConfigPrecedence))
             {
                 tester.ReadAndAssertProfile("basic_profile", BasicProfilePrecedenceOptions);
@@ -287,108 +284,130 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ReadUnsupportedProfileType()
         {
-            using (var tester = new SharedCredentialsFileTester(FullAssumeRoleProfileText))
+            HashSet<CredentialProfileType> originalWhitelist = null;
+            var field = typeof(SharedCredentialsFile).GetField("ProfileTypeWhitelist", BindingFlags.NonPublic | BindingFlags.Static);
+            try
             {
-                AssertExtensions.ExpectException(() =>
+                // Instead of trying to read an unsupported profile type we remove the list of supported types and read one of those.
+                // We do this because the check in the TryGetProfile method is there for future safety, and won't fail otherwise.
+
+                //mock ProfileTypeWhitelist
+                originalWhitelist = (HashSet<CredentialProfileType>)field.GetValue(null);
+                field.SetValue(null, new HashSet<CredentialProfileType>());
+
+                using (var tester = new SharedCredentialsFileTestFixture(SessionProfileText))
                 {
-                    tester.TestTryGetProfile("full_assume_role_profile", false, false);
-                }, typeof(InvalidDataException), new Regex("does not support the (.*) profile type."));
+                    AssertExtensions.ExpectException(() =>
+                    {
+                        tester.TestTryGetProfile("session_profile", true, true);
+                    }, typeof(InvalidDataException), new Regex("SharedCredentialsFile does not support the Session profile type."));
+                }
+            }
+            finally
+            {
+                // unmock ProfileTypeWhitelist
+                field.SetValue(null, originalWhitelist);
             }
         }
 
         [TestMethod]
         public void WriteUnsupportedProfileType()
         {
-            using (var tester = new SharedCredentialsFileTester(FullAssumeRoleProfileText))
+            using (var tester = new SharedCredentialsFileTestFixture())
             {
                 AssertExtensions.ExpectException(() =>
                 {
-                    tester.AssertWriteProfile("full_assume_role_profile", FullAssumeRoleProfileOptions, FullAssumeRoleProfileText);
-                }, typeof(ArgumentException), new Regex("The ProfileOptions object provided represents"));
+                    tester.AssertWriteProfile("saml_role_profile", SAMLRoleProfileOptions, null);
+                }, typeof(ArgumentException), new Regex("SharedCredentialsFile does not support the SAMLRoleUserIdentity profile type."));
             }
         }
 
-        private class SharedCredentialsFileTester : IDisposable
+        [TestMethod]
+        public void ListProfileNamesEmpty()
         {
-            private const string CredentialsFileName = "credentials";
-            private const string ConfigFileName = "config";
-
-            private string CredentialsFilePath { get; set; }
-            private string ConfigFilePath { get; set; }
-            private string DirectoryPath { get; set; }
-
-            public SharedCredentialsFile CredentialsFile { get; private set; }
-
-            public SharedCredentialsFileTester(string credentialsFileContents, string configFileContents = null,
-                bool createEmptyFile = false)
+            using (var tester = new SharedCredentialsFileTestFixture())
             {
-                PrepareTempFilePaths();
-
-                if (credentialsFileContents == null)
-                {
-                    if (createEmptyFile)
-                    {
-                        File.WriteAllText(CredentialsFilePath, "");
-                    }
-                }
-                else
-                {
-                    File.WriteAllText(CredentialsFilePath, credentialsFileContents);
-                }
-
-                if (configFileContents != null)
-                {
-                    File.WriteAllText(ConfigFilePath, configFileContents);
-                }
-
-                CredentialsFile = new SharedCredentialsFile(CredentialsFilePath);
+                var profileNames = tester.CredentialsFile.ListProfileNames();
+                Assert.AreEqual(0, profileNames.Count);
             }
+        }
 
-            public SharedCredentialsFileTester(bool createEmptyFile = false)
-                : this(null, null, createEmptyFile)
+        [TestMethod]
+        public void ListProfileNames()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(SessionProfileText))
             {
+                var profileNames = tester.CredentialsFile.ListProfileNames();
+                Assert.AreEqual(1, profileNames.Count);
+                Assert.IsTrue(profileNames.Contains("session_profile"));
             }
+        }
 
-            public void ReadAndAssertProfile(string profileName, CredentialProfileOptions expectedProfileOptions)
+        [TestMethod]
+        public void ListProfileNamesIncludeConfig()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(SessionProfileText, BasicProfileConfigText))
             {
-                var expectedProfile = new CredentialProfile(profileName, expectedProfileOptions);
-                Assert.AreEqual(expectedProfile, TestTryGetProfile(profileName, true, expectedProfile.IsValid));
+                var profileNames = tester.CredentialsFile.ListProfileNames();
+                Assert.AreEqual(2, profileNames.Count);
+                Assert.IsTrue(profileNames.Contains("session_profile"));
+                Assert.IsTrue(profileNames.Contains("basic_profile"));
             }
+        }
 
-            public CredentialProfile TestTryGetProfile(string profileName, bool expectProfile, bool expectValidProfile)
+        [TestMethod]
+        public void ListProfileNamesExcludeInvalid()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(SessionProfileText + Environment.NewLine + InvalidProfileText))
             {
-                CredentialProfile profile = null;
-                Assert.IsTrue(expectProfile == CredentialsFile.TryGetProfile(profileName, out profile));
-                Assert.IsTrue(expectProfile == (profile != null));
-                Assert.IsTrue(!expectProfile || (expectValidProfile == profile.IsValid));
-                return profile;
+                var profileNames = tester.CredentialsFile.ListProfileNames();
+                Assert.AreEqual(1, profileNames.Count);
+                Assert.IsTrue(profileNames.Contains("session_profile"));
             }
+        }
 
-            public void AssertWriteProfile(string profileName, CredentialProfileOptions profileOptions, string expectedFileContents)
+        [TestMethod]
+        public void ListProfilesEmpty()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture())
             {
-                CredentialsFile.AddOrUpdateProfile(new CredentialProfile(profileName, profileOptions));
-                AssertCredentialsFileContents(expectedFileContents);
+                var profiles = tester.CredentialsFile.ListProfiles();
+                Assert.AreEqual(0, profiles.Count);
             }
+        }
 
-            public void AssertCredentialsFileContents(string expectedContents)
+        [TestMethod]
+        public void ListProfiles()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(SessionProfileText))
             {
-                Assert.AreEqual(expectedContents, File.ReadAllText(CredentialsFilePath));
+                var profiles = tester.CredentialsFile.ListProfiles();
+                Assert.AreEqual(1, profiles.Count);
+                Assert.AreEqual("session_profile", profiles[0].Name);
             }
+        }
 
-            public void Dispose()
+        [TestMethod]
+        public void ListProfilesIncludeConfig()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(SessionProfileText, BasicProfileConfigText))
             {
-                File.Delete(CredentialsFilePath);
-                File.Delete(ConfigFilePath);
-                Directory.Delete(DirectoryPath);
+                var profiles = tester.CredentialsFile.ListProfiles();
+                Assert.AreEqual(2, profiles.Count);
+                var profileNames = profiles.Select(p => p.Name).ToList();
+                Assert.IsTrue(profileNames.Contains("session_profile"));
+                Assert.IsTrue(profileNames.Contains("basic_profile"));
             }
+        }
 
-            private void PrepareTempFilePaths()
+        [TestMethod]
+        public void ListProfilesExcludeInvalid()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(SessionProfileText + Environment.NewLine + InvalidProfileText))
             {
-                DirectoryPath = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
-                Directory.CreateDirectory(DirectoryPath);
-
-                CredentialsFilePath = Path.Combine(DirectoryPath, CredentialsFileName);
-                ConfigFilePath = Path.Combine(DirectoryPath, ConfigFileName);
+                var profiles = tester.CredentialsFile.ListProfiles();
+                Assert.AreEqual(1, profiles.Count);
+                Assert.AreEqual("session_profile", profiles[0].Name);
             }
         }
     }

@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.SecurityToken.Model;
 using AWSSDK_DotNet.IntegrationTests.Utils;
@@ -40,8 +41,8 @@ namespace AWSSDK.UnitTests
         {
             AssertExtensions.AssertEnumUnchanged(
                 typeof(CredentialProfileType),
-                "1BC4C17D6922B3934F38783246E026E11BA85BEF6EFBB39CDACE0221E6135D31",
-                "The SharedCredentialsFile.GetAWSCredentials method implementation may need to be updated.");
+                "CFA3F83EBAF0ED2BEFAE66BCC1A49DAA3108BDB5B28DEEE722659B7C71437DAF",
+                "The AWSCredentialsFactory.GetAWSCredentials method implementation may need to be updated.");
         }
 
         [TestMethod]
@@ -75,14 +76,6 @@ namespace AWSSDK.UnitTests
             // Make sure the all the strings are valid ProfileOptions property names, and that all
             // the properties are used at least once.
             Assert.IsTrue(profileOptionsProperties.SetEquals(referencedProfileOptionsProperties));
-        }
-
-        [TestMethod]
-        public void EnsureProfileOptionsClassesMatch()
-        {
-            var mutableProperties = new HashSet<string>(typeof(CredentialProfileOptions).GetProperties().Select((p) => p.Name));
-            var immutableProperties = new HashSet<string>(typeof(ImmutableCredentialProfileOptions).GetProperties().Select((p) => p.Name));
-            Assert.IsTrue(immutableProperties.SetEquals(mutableProperties));
         }
     }
 }

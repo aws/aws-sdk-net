@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2014-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -17,16 +17,14 @@
  *
  *  AWS SDK for .NET
  */
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.IO;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
 
 namespace Amazon.Util
 {
@@ -702,7 +700,7 @@ namespace Amazon.Util
             Validate(os);
 
             var endpoint = os.GetValueOrDefault(SettingsConstants.EndpointField, null);
-            string authenticationType = os.GetValueOrDefault(SettingsConstants.AuthenticationType, null);
+            string authenticationType = os.GetValueOrDefault(SettingsConstants.AuthenticationTypeField, null);
 
             return new SAMLEndpointSettings(os[SettingsConstants.DisplayNameField], new Uri(endpoint, UriKind.RelativeOrAbsolute), authenticationType);
         }
@@ -773,7 +771,7 @@ namespace Amazon.Util
             os[SettingsConstants.DisplayNameField] = settingsName;
 
             if (!string.IsNullOrEmpty(authenticationType) && !authenticationType.Equals(DefaultAuthenticationType, StringComparison.OrdinalIgnoreCase))
-                os[SettingsConstants.AuthenticationType] = authenticationType;
+                os[SettingsConstants.AuthenticationTypeField] = authenticationType;
 
             PersistenceManager.Instance.SaveSettings(SettingsConstants.RegisteredSAMLEndpoints, settings);
 

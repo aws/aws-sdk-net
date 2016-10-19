@@ -12,11 +12,12 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.Internal.Settings;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace Amazon.Runtime.Internal
 {
@@ -40,10 +41,10 @@ namespace Amazon.Runtime.Internal
             this.nameMapping = nameMapping;
         }
 
-        public List<KeyValuePair<string, string>> Convert(ImmutableCredentialProfileOptions profileOptions)
+        public List<KeyValuePair<string, string>> Convert(CredentialProfileOptions profileOptions)
         {
             var list = new List<KeyValuePair<string, string>>();
-            var properties = typeof(ImmutableCredentialProfileOptions).GetProperties();
+            var properties = typeof(CredentialProfileOptions).GetProperties();
 
             // ensure repeatable order
             Array.Sort(properties.Select((p)=>p.Name).ToArray(), properties);
@@ -53,7 +54,16 @@ namespace Amazon.Runtime.Internal
                 var value = (string)property.GetValue(profileOptions, null);
                 if (!string.IsNullOrEmpty(value))
                 {
-                    list.Add(new KeyValuePair<string, string>(nameMapping[property.Name], value));
+                    if (nameMapping[property.Name] == null)
+                    {
+                        throw new ArgumentException(string.Format(CultureInfo.InvariantCulture,
+                              "The CredentialProfileOptions.{0} property is not populated in this CredentialProfilePropertyMapping.",
+                              property.Name));
+                    }
+                    else
+                    {
+                        list.Add(new KeyValuePair<string, string>(nameMapping[property.Name], value));
+                    }
                 }
             }
             return list;
@@ -66,12 +76,23 @@ namespace Amazon.Runtime.Internal
             foreach (var property in typeof(CredentialProfileOptions).GetProperties())
             {
                 string value = null;
-                if (properties.TryGetValue(nameMapping[property.Name], out value))
+                if (nameMapping[property.Name] != null &&
+                    properties.TryGetValue(nameMapping[property.Name], out value))
                 {
                     property.SetValue(profileOptions, value, null);
                 }
             }
             return profileOptions;
+        }
+
+        public CredentialProfileOptions Convert(SettingsCollection.ObjectSettings objectSettings)
+        {
+            var properties = new Dictionary<string, string>();
+            foreach (var key in objectSettings.Keys)
+            {
+                properties.Add(key, objectSettings[key]);
+            }
+            return Convert(properties);
         }
     }
 }

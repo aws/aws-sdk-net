@@ -12,17 +12,51 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Amazon.Runtime.Internal
 {
-    public interface ICredentialProfileStore : ICredentialProfileSource
+    /// <summary>
+    /// Interface to define the necessary operations for a CredentialProfile storage mechanism.
+    /// </summary>
+    public interface ICredentialProfileStore
     {
-        void AddOrUpdateProfile(CredentialProfile profile);
+        /// <summary>
+        /// Add the given profile to the store, or update it if one with the same name already exists.
+        /// </summary>
+        /// <param name="profile"></param>
+        void RegisterProfile(CredentialProfile profile);
 
-        void DeleteProfile(string profielName);
+        /// <summary>
+        /// Delete the profile with profileName if it exists.
+        /// </summary>
+        /// <param name="profileName">The name of the profile to delete.</param>
+        void UnregisterProfile(string profileName);
+
+        /// <summary>
+        /// Get the profile with the given name, if one exists.
+        /// </summary>
+        /// <param name="profileName">The name of the profile to get.</param>
+        /// <param name="profile">The profile, if it was found, null otherwise.</param>
+        /// <returns>True if the profile was found, false otherwise.</returns>
+        bool TryGetProfile(string profileName, out CredentialProfile profile);
+
+        /// <summary>
+        /// Get a list of valid profile names from this store.
+        /// Invalid profiles are ignored.
+        /// See <see cref="CredentialProfileOptions"/> for more information
+        /// about valid profiles.
+        /// </summary>
+        /// <returns></returns>
+        List<string> ListProfileNames();
+
+        /// <summary>
+        /// Get a list of valid profiles from this store.
+        /// Invalid profiles are ignored.
+        /// See <see cref="CredentialProfileOptions"/> for more information
+        /// about valid profiles.
+        /// </summary>
+        /// <returns></returns>
+        List<CredentialProfile> ListProfiles();
     }
 }

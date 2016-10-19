@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2014-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -17,9 +17,6 @@
  *
  *  AWS SDK for .NET
  */
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Amazon.Runtime.Internal.Settings
 {
@@ -41,15 +38,19 @@ namespace Amazon.Runtime.Internal.Settings
         public const string Restrictions = "Restrictions";
 
         // present in profiles for AWS credentials
+        // some keys are used for multiple types of profiles
         public const string AccessKeyField = "AWSAccessKey";
         public const string SecretKeyField = "AWSSecretKey";
-
-        // present in profiles used with SAML role authentication
+        public const string SessionTokenField = "SessionToken";
+        public const string ExternalIDField = "ExternalId";
+        public const string MfaSerialField = "MfaSerial";
         public const string EndpointNameField = "EndpointName";
         public const string RoleArnField = "RoleArn";
         public const string UserIdentityField = "UserIdentity";
         public const string AuthenticationType = "AuthenticationType";
         public const string Region = "Region";
+        public const string AuthenticationTypeField = "AuthenticationType";
+        public const string SourceProfileField = "SourceProfile";
 
         // present in endpoint definitions in SAMLEndpoints.json file
         public const string EndpointField = "Endpoint";

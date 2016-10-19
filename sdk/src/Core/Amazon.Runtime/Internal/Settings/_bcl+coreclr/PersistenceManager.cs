@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2014-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -17,15 +17,13 @@
  *
  *  AWS SDK for .NET
  */
-using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
-
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
+using System.Threading;
+using ThirdParty.Json.LitJson;
 
 
 namespace Amazon.Runtime.Internal.Settings
@@ -38,10 +36,27 @@ namespace Amazon.Runtime.Internal.Settings
         readonly HashSet<string> _encryptedKeys;
         readonly Dictionary<string, SettingsWatcher> _watchers = new Dictionary<string, SettingsWatcher>();
 
+        // static but not readonly - allows for unit testing
+        static string SettingsStoreFolder = null;
+
         #endregion
 
 
         #region Constructor
+        static PersistenceManager()
+        {
+#if BCL
+            SettingsStoreFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData) + "/AWSToolkit";
+#else
+            SettingsStoreFolder = System.Environment.GetEnvironmentVariable("HOME");
+            if (string.IsNullOrEmpty(SettingsStoreFolder))
+                SettingsStoreFolder = System.Environment.GetEnvironmentVariable("USERPROFILE");
+
+            SettingsStoreFolder = Path.Combine(SettingsStoreFolder, "AppData/Local/AWSToolkit");
+#endif
+            if (!Directory.Exists(SettingsStoreFolder))
+                Directory.CreateDirectory(SettingsStoreFolder);
+        }
 
         private PersistenceManager()
         {
@@ -49,7 +64,9 @@ namespace Amazon.Runtime.Internal.Settings
             {
                 SettingsConstants.AccessKeyField,
                 SettingsConstants.SecretKeyField,
-                SettingsConstants.SecretKeyRepository,
+                SettingsConstants.SessionTokenField,
+                SettingsConstants.ExternalIDField,
+                SettingsConstants.MfaSerialField,
                 SettingsConstants.SecretKeyRepository,
                 SettingsConstants.EC2InstanceUserName,
                 SettingsConstants.EC2InstancePassword,
@@ -98,18 +115,7 @@ namespace Amazon.Runtime.Internal.Settings
 
         public static string GetSettingsStoreFolder()
         {
-#if BCL
-            string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData) + "/AWSToolkit";
-#else
-            string folder = System.Environment.GetEnvironmentVariable("HOME");
-            if (string.IsNullOrEmpty(folder))
-                folder = System.Environment.GetEnvironmentVariable("USERPROFILE");
-
-            folder = Path.Combine(folder, "AppData/Local/AWSToolkit");
-#endif
-            if (!Directory.Exists(folder))
-                Directory.CreateDirectory(folder);
-            return folder;
+            return SettingsStoreFolder;
         }
 
         public SettingsWatcher Watch(string type)

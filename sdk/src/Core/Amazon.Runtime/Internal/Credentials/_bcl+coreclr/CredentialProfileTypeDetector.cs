@@ -12,11 +12,8 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace Amazon.Runtime.Internal
 {
@@ -27,22 +24,27 @@ namespace Amazon.Runtime.Internal
         AssumeRoleExternalMFA,
         AssumeRoleMFA,
         Basic,
-        FullAssumeRole,
-        FullAssumeRoleExternal,
-        FullAssumeRoleExternalMFA,
-        FullAssumeRoleMFA,
+        SAMLRole,
+        SAMLRoleUserIdentity,
         Session,
     }
 
     public static class CredentialProfileTypeDetector
     {
+        private const string BasicCredentials = "Basic";
+        private const string SessionCredentials = "Session";
+        private const string AssumeRoleCredentials = "Assume Role";
+        private const string SAMLCredentials = "SAML";
+
         private const string AccessKey = "AccessKey";
+        private const string EndpointName = "EndpointName";
         private const string ExternalID = "ExternalID";
         private const string MfaSerial = "MfaSerial";
         private const string RoleArn = "RoleArn";
         private const string SecretKey = "SecretKey";
         private const string SourceProfile = "SourceProfile";
         private const string Token = "Token";
+        private const string UserIdentity = "UserIdentity";
 
         private static Dictionary<CredentialProfileType, HashSet<string>> TypePropertyDictionary =
             new Dictionary<CredentialProfileType, HashSet<string>>()
@@ -87,39 +89,18 @@ namespace Amazon.Runtime.Internal
                     }
                 },
                 {
-                    CredentialProfileType.FullAssumeRole, new HashSet<string>()
+                    CredentialProfileType.SAMLRole, new HashSet<string>()
                     {
-                        AccessKey,
+                        EndpointName,
                         RoleArn,
-                        SecretKey,
                     }
                 },
                 {
-                    CredentialProfileType.FullAssumeRoleExternal, new HashSet<string>()
+                    CredentialProfileType.SAMLRoleUserIdentity, new HashSet<string>()
                     {
-                        AccessKey,
-                        ExternalID,
+                        EndpointName,
                         RoleArn,
-                        SecretKey,
-                    }
-                },
-                {
-                    CredentialProfileType.FullAssumeRoleExternalMFA, new HashSet<string>()
-                    {
-                        AccessKey,
-                        ExternalID,
-                        MfaSerial,
-                        RoleArn,
-                        SecretKey,
-                    }
-                },
-                {
-                    CredentialProfileType.FullAssumeRoleMFA, new HashSet<string>()
-                    {
-                        AccessKey,
-                        MfaSerial,
-                        RoleArn,
-                        SecretKey,
+                        UserIdentity,
                     }
                 },
                 {
@@ -132,10 +113,34 @@ namespace Amazon.Runtime.Internal
                 },
             };
 
-        public static void DetectProfileTypes(CredentialProfileOptions profileOptions, out CredentialProfileType? profileType, out HashSet<CredentialProfileType> possibleMatches)
+        private static Dictionary<CredentialProfileType, string> CredentialTypeDictionary =
+            new Dictionary<CredentialProfileType, string>()
+            {
+                { CredentialProfileType.AssumeRole, AssumeRoleCredentials },
+                { CredentialProfileType.AssumeRoleExternal, AssumeRoleCredentials },
+                { CredentialProfileType.AssumeRoleExternalMFA, AssumeRoleCredentials },
+                { CredentialProfileType.AssumeRoleMFA, AssumeRoleCredentials },
+                { CredentialProfileType.Basic, BasicCredentials },
+                { CredentialProfileType.SAMLRole, SAMLCredentials },
+                { CredentialProfileType.SAMLRoleUserIdentity, SAMLCredentials },
+                { CredentialProfileType.Session, SessionCredentials },
+            };
+
+        public static string GetUserFriendlyCredentialType(CredentialProfileType? profileType)
         {
-            profileType = null;
-            possibleMatches = new HashSet<CredentialProfileType>();
+            if (profileType.HasValue)
+            {
+                return CredentialTypeDictionary[profileType.Value];
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static CredentialProfileType? DetectProfileType(CredentialProfileOptions profileOptions)
+        {
+            CredentialProfileType? profileType = null;
 
             HashSet<string> propertyNames = GetPropertyNames(profileOptions);
 
@@ -147,12 +152,9 @@ namespace Amazon.Runtime.Internal
                     // exact match
                     profileType = pair.Key;
                 }
-                else if (propertyNames.IsSubsetOf(pair.Value))
-                {
-                    // may be missing some properties for another profile type
-                    possibleMatches.Add(pair.Key);
-                }
             }
+
+            return profileType;
         }
 
         public static HashSet<string> GetPropertiesForProfileType(CredentialProfileType profileType)

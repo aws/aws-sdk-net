@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Amazon.Runtime.Internal
@@ -24,8 +25,8 @@ namespace Amazon.Runtime.Internal
     /// <summary>
     /// Provides access to read and write to the shared credentials INI file.
     /// The file is read, parsed, and validated at construction time.
-    /// Changes can be made using the AddOrUpdateProfile() and
-    /// DeleteProfile() methods.
+    /// Changes can be made using the RegisterProfile() and
+    /// UnregisterProfile() methods.
     ///
     /// This class is not threadsafe.
     /// </summary>
@@ -36,9 +37,9 @@ namespace Amazon.Runtime.Internal
 
         /// <summary>
         /// To maintain compatibility with the CLI,
-        /// SharedCredentialsFile doesn't support the Full* profileTypes.
+        /// SharedCredentialsFile doesn't support the SAML profileTypes.
         /// </summary>
-        private HashSet<CredentialProfileType> ProfileTypeWhitelist =
+        private static readonly HashSet<CredentialProfileType> ProfileTypeWhitelist =
             new HashSet<CredentialProfileType>()
             {
                 CredentialProfileType.AssumeRole,
@@ -49,22 +50,26 @@ namespace Amazon.Runtime.Internal
                 CredentialProfileType.Session
             };
 
-        private static readonly CredentialProfilePropertyMapping propertyMapping =
+        private static readonly CredentialProfilePropertyMapping PropertyMapping =
             new CredentialProfilePropertyMapping(
                 new Dictionary<string, string>()
                 {
                     { "AccessKey", "aws_access_key_id" },
+                    { "EndpointName", null },
                     { "ExternalID", "external_id" },
                     { "MfaSerial", "mfa_serial" },
                     { "RoleArn", "role_arn" },
                     { "SecretKey", "aws_secret_access_key" },
                     { "SourceProfile", "source_profile" },
                     { "Token", "aws_session_token" },
+                    { "UserIdentity", null },
                 }
             );
 
         private IniFile credentialsFile;
         private IniFile configFile;
+
+        public string FilePath { get; private set; }
 
         /// <summary>
         /// Construct a new SharedCredentialsFile.
@@ -72,24 +77,119 @@ namespace Amazon.Runtime.Internal
         /// <param name="filePath">The path of the shared credentials file.</param>
         public SharedCredentialsFile(string filePath)
         {
-            credentialsFile = new IniFile(filePath);
+            FilePath = filePath;
+            Refresh();
+        }
+
+        public List<string> ListProfileNames()
+        {
+            Refresh();
+            return ListProfiles().Select(p => p.Name).ToList();
+        }
+
+        public List<CredentialProfile> ListProfiles()
+        {
+            Refresh();
+            var profiles = new List<CredentialProfile>();
+            foreach (var profileName in ListAllProfileNames())
+            {
+                CredentialProfile profile = null;
+                if (TryGetProfile(profileName, false, out profile) && profile.CanCreateAWSCredentials)
+                {
+                    profiles.Add(profile);
+                }
+            }
+            return profiles;
+        }
+
+        public bool TryGetProfile(string profileName, out CredentialProfile profile)
+        {
+            return TryGetProfile(profileName, true, out profile);
+        }
+
+        /// <summary>
+        /// Add the profile given. If the profile already exists, update it.
+        /// </summary>
+        /// <param name="profile">The profile to be written.</param>
+        public void RegisterProfile(CredentialProfile profile)
+        {
+            Refresh();
+            if (profile.CanCreateAWSCredentials)
+            {
+                if (!IsSupportedProfileType(profile.ProfileType))
+                {
+                    throw new ArgumentException(string.Format(CultureInfo.InvariantCulture,
+                        "Unable to update profile {0}. The CredentialProfile object provided represents a " +
+                        "{1} profile but {2} does not support the {1} profile type.",
+                        profile.Name, profile.ProfileType, GetType().Name));
+                }
+                credentialsFile.EditSection(profile.Name, PropertyMapping.Convert(profile.Options));
+                credentialsFile.Persist();
+            }
+            else
+            {
+                throw new ArgumentException(String.Format(CultureInfo.InvariantCulture,
+                    "Unable to update profile {0}.  The CredentialProfile provided is not a valid profile.", profile.Name));
+            }
+        }
+
+        /// <summary>
+        /// Deletes the section with the given ProfileName from the SharedCredentialsFile, if one exists.
+        /// </summary>
+        /// <param name="profileName">The ProfileName of the section to delete.</param>
+        public void UnregisterProfile(string profileName)
+        {
+            Refresh();
+            credentialsFile.DeleteSection(profileName);
+            credentialsFile.Persist();
+        }
+
+        private void Refresh()
+        {
+            credentialsFile = new IniFile(FilePath);
 
             // If a config file exists in the same location as the credentials file
             // load it for use as a read-only source of profile properties.
-            var configPath = Path.Combine(Path.GetDirectoryName(filePath), ConfigFileName);
+            var configPath = Path.Combine(Path.GetDirectoryName(FilePath), ConfigFileName);
             if (File.Exists(configPath))
             {
                 configFile = new IniFile(configPath);
             }
         }
 
-        public bool TryGetProfile(string profileName, out CredentialProfile profile)
+        private HashSet<string> ListAllProfileNames()
         {
+            var profileNames = credentialsFile.ListSectionNames();
+
+            if (configFile != null)
+            {
+                foreach (var sectionName in configFile.ListSectionNames())
+                {
+                    if (sectionName.StartsWith(ProfileMarker, StringComparison.Ordinal))
+                    {
+                        var profileName = Regex.Replace(sectionName, ProfileMarker + "[ \t]+", "");
+                        if (!profileNames.Contains(profileName))
+                        {
+                            profileNames.Add(profileName);
+                        }
+                    }
+                }
+            }
+            return profileNames;
+        }
+
+        private bool TryGetProfile(string profileName, bool doRefresh, out CredentialProfile profile)
+        {
+            if (doRefresh)
+            {
+                Refresh();
+            }
+
             Dictionary<string, string> properties = null;
             if (TryGetSection(profileName, out properties))
             {
-                var profileOptions = propertyMapping.Convert(properties);
-                profile = new CredentialProfile(profileName, profileOptions);
+                var profileOptions = PropertyMapping.Convert(properties);
+                profile = new CredentialProfile(profileName, profileOptions, this);
                 if (!IsSupportedProfileType(profile.ProfileType))
                 {
                     throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture,
@@ -103,41 +203,6 @@ namespace Amazon.Runtime.Internal
                 profile = null;
                 return false;
             }
-        }
-
-        /// <summary>
-        /// Add the profile given. If the profile already exists, update it.
-        /// </summary>
-        /// <param name="profile">The profile to be written.</param>
-        public void AddOrUpdateProfile(CredentialProfile profile)
-        {
-            if (profile.IsValid)
-            {
-                if (!IsSupportedProfileType(profile.ProfileType))
-                {
-                    throw new ArgumentException(string.Format(CultureInfo.InvariantCulture,
-                        "Unable to update profile {0}. The ProfileOptions object provided represents a " +
-                        "{1} profile but {2} does not support that profile type.",
-                        profile.Name, profile.ProfileType, GetType().Name ));
-                }
-                credentialsFile.EditSection(profile.Name, propertyMapping.Convert(profile.Options));
-                credentialsFile.Persist();
-            }
-            else
-            {
-                throw new ArgumentException(String.Format(CultureInfo.InvariantCulture, 
-                    "Unable to update profile {0}.  The ProfileOptions object provided does not represent a valid profile.", profile.Name));
-            }
-        }
-
-        /// <summary>
-        /// Deletes the section with the given ProfileName from the SharedCredentialsFile, if one exists.
-        /// </summary>
-        /// <param name="profileName">The ProfileName of the section to delete.</param>
-        public void DeleteProfile(string profileName)
-        {
-            credentialsFile.DeleteSection(profileName);
-            credentialsFile.Persist();
         }
 
         /// <summary>
@@ -181,7 +246,7 @@ namespace Amazon.Runtime.Internal
             }
         }
 
-        private bool IsSupportedProfileType(CredentialProfileType? profileType)
+        private static bool IsSupportedProfileType(CredentialProfileType? profileType)
         {
             return !profileType.HasValue || ProfileTypeWhitelist.Contains(profileType.Value);
         }

@@ -1,5 +1,5 @@
 ﻿/*******************************************************************************
- *  Copyright 2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2014-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -18,10 +18,8 @@
  *  AWS SDK for .NET
  */
 using System;
-using System.IO;
 using System.Collections.Generic;
-using System.Text;
-
+using System.IO;
 using ThirdParty.Json.LitJson;
 
 namespace Amazon.Runtime.Internal.Settings
@@ -157,6 +155,11 @@ namespace Amazon.Runtime.Internal.Settings
             public void Remove(string key)
             {
                 this._values.Remove(key);
+            }
+
+            public void Clear()
+            {
+                this._values.Clear();
             }
 
             public bool IsEmpty

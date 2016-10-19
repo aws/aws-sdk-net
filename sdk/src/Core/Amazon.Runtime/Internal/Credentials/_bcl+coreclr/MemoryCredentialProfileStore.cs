@@ -12,10 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Amazon.Runtime.Internal
 {
@@ -36,12 +33,13 @@ namespace Amazon.Runtime.Internal
             Profiles = initialProfileMap;
         }
 
-        public void AddOrUpdateProfile(CredentialProfile profile)
+        public void RegisterProfile(CredentialProfile profile)
         {
+            profile.ProfileStore = this;
             Profiles[profile.Name] = profile;
         }
 
-        public void DeleteProfile(string profileName)
+        public void UnregisterProfile(string profileName)
         {
             if (Profiles.ContainsKey(profileName))
             {
@@ -59,6 +57,16 @@ namespace Amazon.Runtime.Internal
         public bool TryGetProfile(string profileName, out CredentialProfile profile)
         {
             return Profiles.TryGetValue(profileName, out profile);
+        }
+
+        public List<string> ListProfileNames()
+        {
+            return new List<string>(Profiles.Keys);
+        }
+
+        public List<CredentialProfile> ListProfiles()
+        {
+            return new List<CredentialProfile>(Profiles.Values);
         }
     }
 }

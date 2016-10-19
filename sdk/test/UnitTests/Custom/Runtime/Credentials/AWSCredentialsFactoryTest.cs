@@ -16,7 +16,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
+using System;
 using System.IO;
 
 namespace AWSSDK.UnitTests
@@ -29,137 +29,112 @@ namespace AWSSDK.UnitTests
         private const string SourceErrorFormat = "Error reading source profile [{0}] for profile [{1}].";
         private const string SourceNotBasicFormat = "Source profile [{0}] is not a basic profile.";
 
+        private static readonly MemoryCredentialProfileStore ProfileStore = new MemoryCredentialProfileStore();
+
         private static readonly CredentialProfile InvalidProfile =
-            new CredentialProfile("invalid_profile", new CredentialProfileOptions
+            CredentialProfileTestHelper.GetCredentialProfile("invalid_profile", new CredentialProfileOptions
             {
                 AccessKey = "aws_access_key_id"
-            });
+            }, ProfileStore);
 
         private static readonly CredentialProfile BasicProfile =
-            new CredentialProfile("basic_profile", new CredentialProfileOptions
+            CredentialProfileTestHelper.GetCredentialProfile("basic_profile", new CredentialProfileOptions
             {
                 AccessKey = "aws_access_key_id",
                 SecretKey = "aws_secret_access_key"
-            });
+            }, ProfileStore);
 
         private static readonly CredentialProfile SessionProfile =
-            new CredentialProfile("session_profile", new CredentialProfileOptions
+            CredentialProfileTestHelper.GetCredentialProfile("session_profile", new CredentialProfileOptions
             {
                 AccessKey = "aws_access_key_id",
                 SecretKey = "aws_secret_access_key",
                 Token = "token"
-            });
+            }, ProfileStore);
 
         private static readonly CredentialProfile AssumeRoleProfile =
-            new CredentialProfile("assume_role_profile", new CredentialProfileOptions
+            CredentialProfileTestHelper.GetCredentialProfile("assume_role_profile", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "basic_profile"
-            });
+            }, ProfileStore);
 
         private static readonly CredentialProfile AssumeRoleExternalProfile =
-            new CredentialProfile("assume_role_external_profile", new CredentialProfileOptions
+            CredentialProfileTestHelper.GetCredentialProfile("assume_role_external_profile", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "basic_profile",
                 ExternalID = "external_id"
-            });
+            }, ProfileStore);
 
         private static readonly CredentialProfile AssumeRoleMfaProfile =
-            new CredentialProfile("assume_role_mfa_profile", new CredentialProfileOptions
+            CredentialProfileTestHelper.GetCredentialProfile("assume_role_mfa_profile", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "basic_profile",
                 MfaSerial = "mfa_serial"
-            });
+            }, ProfileStore);
 
         private static readonly CredentialProfile AssumeRoleExternalMfaProfile =
-            new CredentialProfile("assume_role_external_mfa_profile", new CredentialProfileOptions
+            CredentialProfileTestHelper.GetCredentialProfile("assume_role_external_mfa_profile", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "basic_profile",
                 ExternalID = "external_id",
                 MfaSerial = "mfa_serial"
-            });
+            }, ProfileStore);
 
-        private static readonly CredentialProfile FullAssumeRoleProfile =
-            new CredentialProfile("full_assume_role_profile", new CredentialProfileOptions
+        private static readonly CredentialProfile SAMLRoleProfile =
+            CredentialProfileTestHelper.GetCredentialProfile("saml_role_profile", new CredentialProfileOptions
             {
-                AccessKey = "aws_access_key_id",
-                SecretKey = "aws_secret_access_key",
                 RoleArn = "role_arn",
-            });
+                EndpointName = "endpoint_name"
+            }, ProfileStore);
 
-        private static readonly CredentialProfile FullAssumeRoleExternalProfile =
-            new CredentialProfile("full_assume_role_external_profile", new CredentialProfileOptions
+        private static readonly CredentialProfile SAMLRoleUserIdentityProfile =
+            CredentialProfileTestHelper.GetCredentialProfile("saml_role_user_identity_profile", new CredentialProfileOptions
             {
-                AccessKey = "aws_access_key_id",
-                SecretKey = "aws_secret_access_key",
                 RoleArn = "role_arn",
-                ExternalID = "external_id"
-            });
-
-        private static readonly CredentialProfile FullAssumeRoleMfaProfile =
-            new CredentialProfile("full_assume_role_mfa_profile", new CredentialProfileOptions
-            {
-                AccessKey = "aws_access_key_id",
-                SecretKey = "aws_secret_access_key",
-                RoleArn = "role_arn",
-                MfaSerial = "mfa_serial"
-            });
-
-        private static readonly CredentialProfile FullAssumeRoleExternalMfaProfile =
-            new CredentialProfile("full_assume_role_external_mfa_profile", new CredentialProfileOptions
-            {
-                AccessKey = "aws_access_key_id",
-                SecretKey = "aws_secret_access_key",
-                RoleArn = "role_arn",
-                ExternalID = "external_id",
-                MfaSerial = "mfa_serial"
-            });
+                EndpointName = "endpoint_name",
+                UserIdentity = "user_identity"
+            }, ProfileStore);
 
         private static readonly CredentialProfile AssumeRoleProfileSourceNotBasic =
-            new CredentialProfile("assume_role_profile_source_not_basic", new CredentialProfileOptions
+            CredentialProfileTestHelper.GetCredentialProfile("assume_role_profile_source_not_basic", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "session_profile"
-            });
+            }, ProfileStore);
 
         private static readonly CredentialProfile AssumeRoleProfileRecursion =
-            new CredentialProfile("assume_role_profile_source_recursion", new CredentialProfileOptions
+            CredentialProfileTestHelper.GetCredentialProfile("assume_role_profile_source_recursion", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "assume_role_profile_source_recursion"
-            });
+            }, ProfileStore);
 
         private static readonly CredentialProfile AssumeRoleProfileInvalidSource =
-            new CredentialProfile("assume_role_profile_invalid_source", new CredentialProfileOptions
+            CredentialProfileTestHelper.GetCredentialProfile("assume_role_profile_invalid_source", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "invalid_profile"
-            });
+            }, ProfileStore);
 
-        private static readonly MemoryCredentialProfileStore ProfileStore =
-            new MemoryCredentialProfileStore(new Dictionary<string, CredentialProfile>()
-            {
-                { InvalidProfile.Name, InvalidProfile },
-                { BasicProfile.Name, BasicProfile },
-                { SessionProfile.Name, SessionProfile },
-                { AssumeRoleProfile.Name, AssumeRoleProfile },
-                { AssumeRoleExternalProfile.Name, AssumeRoleExternalProfile },
-                { AssumeRoleMfaProfile.Name, AssumeRoleMfaProfile },
-                { AssumeRoleExternalMfaProfile.Name, FullAssumeRoleExternalMfaProfile },
-                { FullAssumeRoleProfile.Name, FullAssumeRoleProfile },
-                { FullAssumeRoleExternalProfile.Name, FullAssumeRoleExternalProfile },
-                { FullAssumeRoleMfaProfile.Name, FullAssumeRoleMfaProfile },
-                { FullAssumeRoleExternalMfaProfile.Name, FullAssumeRoleExternalMfaProfile },
-                { AssumeRoleProfileSourceNotBasic.Name, AssumeRoleProfileSourceNotBasic },
-                { AssumeRoleProfileRecursion.Name, AssumeRoleProfileRecursion },
-                { AssumeRoleProfileInvalidSource.Name, AssumeRoleProfileInvalidSource },
-            });
-
-        private static readonly AWSCredentialsFactory Factory =
-            new AWSCredentialsFactory(ProfileStore);
+        static AWSCredentialsFactoryTest()
+        {
+            ProfileStore.Profiles.Add(InvalidProfile.Name, InvalidProfile);
+            ProfileStore.Profiles.Add(BasicProfile.Name, BasicProfile);
+            ProfileStore.Profiles.Add(SessionProfile.Name, SessionProfile);
+            ProfileStore.Profiles.Add(AssumeRoleProfile.Name, AssumeRoleProfile);
+            ProfileStore.Profiles.Add(AssumeRoleExternalProfile.Name, AssumeRoleExternalProfile);
+            ProfileStore.Profiles.Add(AssumeRoleExternalMfaProfile.Name, AssumeRoleExternalMfaProfile);
+            ProfileStore.Profiles.Add(AssumeRoleMfaProfile.Name, AssumeRoleMfaProfile);
+            ProfileStore.Profiles.Add(AssumeRoleProfileSourceNotBasic.Name, AssumeRoleProfileSourceNotBasic);
+            ProfileStore.Profiles.Add(AssumeRoleProfileRecursion.Name, AssumeRoleProfileRecursion);
+            ProfileStore.Profiles.Add(AssumeRoleProfileInvalidSource.Name, AssumeRoleProfileInvalidSource);
+            ProfileStore.Profiles.Add(SAMLRoleProfile.Name, SAMLRoleProfile);
+            ProfileStore.Profiles.Add(SAMLRoleUserIdentityProfile.Name, SAMLRoleUserIdentityProfile);
+        }
 
         private static readonly BasicAWSCredentials BasicCredentials =
             new BasicAWSCredentials("aws_access_key_id", "aws_secret_access_key");
@@ -190,37 +165,20 @@ namespace AWSSDK.UnitTests
             });
 
         [TestMethod]
-        public void TryGetCredentials_NotFound()
-        {
-            AWSCredentials credentials = null;
-            Assert.IsFalse(Factory.TryGetAWSCredentials("does_not_exist_profile", out credentials));
-            Assert.IsNull(credentials);
-        }
-
-        [TestMethod]
         public void TryGetInvalidCredentials()
         {
-            AWSCredentials credentials = null;
-            Assert.IsFalse(Factory.TryGetAWSCredentials("invalid_profile", out credentials));
+            AWSCredentials credentials;
+            Assert.IsFalse(AWSCredentialsFactory.TryGetAWSCredentials(InvalidProfile, out credentials));
             Assert.IsNull(credentials);
         }
 
         [TestMethod]
         public void TryGetBasicCredentials()
         {
-            AWSCredentials credentials = null;
-            Assert.IsTrue(Factory.TryGetAWSCredentials("basic_profile", out credentials));
+            AWSCredentials credentials;
+            Assert.IsTrue(AWSCredentialsFactory.TryGetAWSCredentials(BasicProfile, out credentials));
             Assert.IsNotNull(credentials);
             Assert.AreEqual(BasicCredentials, credentials);
-        }
-
-        [TestMethod]
-        public void GetCredentials_NotFound()
-        {
-            AssertExtensions.ExpectException(() =>
-            {
-                Factory.GetAWSCredentials("does_not_exist_profile");
-            }, typeof(InvalidDataException), string.Format(NotFoundErrorFormat, "does_not_exist_profile"));
         }
 
         [TestMethod]
@@ -228,68 +186,62 @@ namespace AWSSDK.UnitTests
         {
             AssertExtensions.ExpectException(() =>
             {
-                Factory.GetAWSCredentials("invalid_profile");
+                AWSCredentialsFactory.GetAWSCredentials(InvalidProfile);
             }, typeof(InvalidDataException), string.Format(InvalidErrorFormat, "invalid_profile"));
         }
 
         [TestMethod]
         public void GetBasicCredentials()
         {
-            Assert.AreEqual(BasicCredentials, Factory.GetAWSCredentials("basic_profile"));
+            Assert.AreEqual(BasicCredentials, AWSCredentialsFactory.GetAWSCredentials(BasicProfile));
         }
 
         [TestMethod]
         public void GetSessionCredentials()
         {
-            Assert.AreEqual(SessionCredentials, Factory.GetAWSCredentials("session_profile"));
+            Assert.AreEqual(SessionCredentials, AWSCredentialsFactory.GetAWSCredentials(SessionProfile));
         }
 
         [TestMethod]
         public void GetAssumeRoleCredentials()
         {
-            AssertAssumeRoleCredentialsAreEqual(AssumeRoleCredentials, Factory.GetAWSCredentials("assume_role_profile"));
+            AssertAssumeRoleCredentialsAreEqual(AssumeRoleCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfile));
         }
 
         [TestMethod]
         public void GetAssumeRoleExternalCredentials()
         {
-            AssertAssumeRoleCredentialsAreEqual(AssumeRoleExternalCredentials, Factory.GetAWSCredentials("assume_role_external_profile"));
+            AssertAssumeRoleCredentialsAreEqual(AssumeRoleExternalCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleExternalProfile));
         }
 
         [TestMethod]
         public void GetAssumeRoleMfaCredentials()
         {
-            AssertAssumeRoleCredentialsAreEqual(AssumeRoleMfaCredentials, Factory.GetAWSCredentials("assume_role_mfa_profile"));
+            AssertAssumeRoleCredentialsAreEqual(AssumeRoleMfaCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleMfaProfile));
         }
 
         [TestMethod]
         public void GetAssumeRoleExternalMfaCredentials()
         {
-            AssertAssumeRoleCredentialsAreEqual(AssumeRoleExternalMfaCredentials, Factory.GetAWSCredentials("assume_role_external_mfa_profile"));
+            AssertAssumeRoleCredentialsAreEqual(AssumeRoleExternalMfaCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleExternalMfaProfile));
         }
 
         [TestMethod]
-        public void GetFullAssumeRoleCredentials()
+        public void GetSAMLRoleCredentials()
         {
-            AssertAssumeRoleCredentialsAreEqual(AssumeRoleCredentials, Factory.GetAWSCredentials("full_assume_role_profile"));
+            AssertExtensions.ExpectException(() =>
+            {
+                AWSCredentialsFactory.GetAWSCredentials(SAMLRoleProfile);
+            }, typeof(NotImplementedException), "SAML CREDENTIALS NOT YET IMPLEMENTED");
         }
 
         [TestMethod]
-        public void GetFullAssumeRoleExternalCredentials()
+        public void GetSAMLRoleUserIdentityCredentials()
         {
-            AssertAssumeRoleCredentialsAreEqual(AssumeRoleExternalCredentials, Factory.GetAWSCredentials("full_assume_role_external_profile"));
-        }
-
-        [TestMethod]
-        public void GetFullAssumeRoleMfaCredentials()
-        {
-            AssertAssumeRoleCredentialsAreEqual(AssumeRoleMfaCredentials, Factory.GetAWSCredentials("full_assume_role_mfa_profile"));
-        }
-
-        [TestMethod]
-        public void GetFullAssumeRoleExternalMfaCredentials()
-        {
-            AssertAssumeRoleCredentialsAreEqual(AssumeRoleExternalMfaCredentials, Factory.GetAWSCredentials("full_assume_role_external_mfa_profile"));
+            AssertExtensions.ExpectException(() =>
+            {
+                AWSCredentialsFactory.GetAWSCredentials(SAMLRoleUserIdentityProfile);
+            }, typeof(NotImplementedException), "SAML CREDENTIALS NOT YET IMPLEMENTED");
         }
 
         [TestMethod]
@@ -299,7 +251,7 @@ namespace AWSSDK.UnitTests
             {
                 throw AssertExtensions.ExpectException(() =>
                 {
-                    Factory.GetAWSCredentials("assume_role_profile_source_not_basic");
+                    AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfileSourceNotBasic);
                 }, typeof(InvalidDataException), string.Format(SourceErrorFormat, "session_profile",
                 "assume_role_profile_source_not_basic")).InnerException;
             }, typeof(InvalidDataException), string.Format(SourceNotBasicFormat, "session_profile"));
@@ -312,7 +264,7 @@ namespace AWSSDK.UnitTests
             {
                 throw AssertExtensions.ExpectException(() =>
                 {
-                    Factory.GetAWSCredentials("assume_role_profile_source_recursion");
+                    AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfileRecursion);
                 }, typeof(InvalidDataException), string.Format(SourceErrorFormat, "assume_role_profile_source_recursion",
                 "assume_role_profile_source_recursion")).InnerException;
             }, typeof(InvalidDataException), string.Format(SourceNotBasicFormat, "assume_role_profile_source_recursion"));
@@ -325,7 +277,7 @@ namespace AWSSDK.UnitTests
             {
                 throw AssertExtensions.ExpectException(() =>
                 {
-                    Factory.GetAWSCredentials("assume_role_profile_invalid_source");
+                    AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfileInvalidSource);
                 }, typeof(InvalidDataException), string.Format(SourceErrorFormat, "invalid_profile",
                 "assume_role_profile_invalid_source")).InnerException;
             }

@@ -121,8 +121,10 @@ namespace Amazon.Runtime
                 var credentialsFilePath = StoredProfileCredentials.ResolveSharedCredentialFileLocation(profilesLocation);
                 if (!string.IsNullOrEmpty(credentialsFilePath))
                 {
-                    var factory = new AWSCredentialsFactory(new SharedCredentialsFile(credentialsFilePath));
-                    if (factory.TryGetAWSCredentials(lookupName, out _wrappedCredentials))
+                    var sharedCredentialsFile = new SharedCredentialsFile(credentialsFilePath);
+                    CredentialProfile profile;
+                    if (sharedCredentialsFile.TryGetProfile(lookupName, out profile)
+                        && AWSCredentialsFactory.TryGetAWSCredentials(profile, out _wrappedCredentials))
                     {
                         var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
                         logger.InfoFormat("Credentials found using account name {0} and looking in {1}.", lookupName, credentialsFilePath);
@@ -214,7 +216,7 @@ namespace Amazon.Runtime
                 {
                     var file = new SharedCredentialsFile(credentialsFilePath);
                     CredentialProfile profile = null;
-                    if (file.TryGetProfile(profileName, out profile) && profile.IsValid)
+                    if (file.TryGetProfile(profileName, out profile) && profile.CanCreateAWSCredentials)
                     {
                         return true;
                     }
