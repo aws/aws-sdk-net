@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 
 
@@ -33,10 +33,10 @@ namespace Amazon.CloudFront
     ///
     /// Amazon CloudFront 
     /// <para>
-    /// Amazon CloudFront is a global content delivery network (CDN) service that accelerates
-    /// delivery of your websites, APIs, video content or other web assets. It integrates
-    /// with other Amazon Web Services products to give developers and businesses an easy
-    /// way to accelerate content to end users with no minimum usage commitments.
+    /// This is the <i>Amazon CloudFront API Reference</i>. This guide is for developers who
+    /// need detailed information about the CloudFront API actions, data types, and errors.
+    /// For detailed information about CloudFront features and their associated API calls,
+    /// see the <i>Amazon CloudFront Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCloudFront : IAmazonService, IDisposable
@@ -156,13 +156,13 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The If-Match version is missing or not valid for the distribution.
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -198,13 +198,13 @@ namespace Amazon.CloudFront
         /// 
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The If-Match version is missing or not valid for the distribution.
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         Task<DeleteDistributionResponse> DeleteDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -226,7 +226,65 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Delete a streaming distribution.
+        /// Delete a streaming distribution. To delete an RTMP distribution using the CloudFront
+        /// API, perform the following steps.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>To delete an RTMP distribution using the CloudFront API</b>:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Disable the RTMP distribution.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>GET Streaming Distribution Config</code> request to get the current
+        /// configuration and the <code>Etag</code> header for the distribution. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Update the XML document that was returned in the response to your <code>GET Streaming
+        /// Distribution Config</code> request to change the value of <code>Enabled</code> to
+        /// <code>false</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>PUT Streaming Distribution Config</code> request to update the configuration
+        /// for your distribution. In the request body, include the XML document that you updated
+        /// in Step 3. Then set the value of the HTTP <code>If-Match</code> header to the value
+        /// of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET
+        /// Streaming Distribution Config</code> request in Step 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Review the response to the <code>PUT Streaming Distribution Config</code> request
+        /// to confirm that the distribution was successfully disabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>GET Streaming Distribution Config</code> request to confirm that your
+        /// changes have propagated. When propagation is complete, the value of <code>Status</code>
+        /// is <code>Deployed</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit a <code>DELETE Streaming Distribution</code> request. Set the value of the
+        /// HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that
+        /// CloudFront returned when you submitted the <code>GET Streaming Distribution Config</code>
+        /// request in Step 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Review the response to your <code>DELETE Streaming Distribution</code> request to
+        /// confirm that the distribution was successfully deleted.
+        /// </para>
+        ///  </li> </ol> 
+        /// <para>
+        /// For information about deleting a distribution using the CloudFront console, see <a
+        /// href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting
+        /// a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -237,13 +295,13 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The If-Match version is missing or not valid for the distribution.
+        /// The <code>If-Match</code> version is missing or not valid for the distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition given in one or more of the request-header fields evaluated to false.
+        /// The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// 
@@ -416,7 +474,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Get the information about a streaming distribution.
+        /// Gets information about a specified RTMP distribution, including the distribution configuration.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -482,7 +540,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// List origin access identities.
+        /// Lists origin access identities.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.

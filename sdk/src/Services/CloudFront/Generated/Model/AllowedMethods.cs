@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,13 +29,29 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// A complex type that controls which HTTP methods CloudFront processes and forwards
-    /// to your Amazon S3 bucket or your custom origin. There are three choices: - CloudFront
-    /// forwards only GET and HEAD requests. - CloudFront forwards only GET, HEAD and OPTIONS
-    /// requests. - CloudFront forwards GET, HEAD, OPTIONS, PUT, PATCH, POST, and DELETE requests.
+    /// to your Amazon S3 bucket or your custom origin. There are three choices:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// CloudFront forwards only <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code>
+    /// requests.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code>
+    /// requests.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     /// If you pick the third choice, you may need to restrict access to your Amazon S3 bucket
     /// or to your custom origin so users can't perform operations that you don't want them
-    /// to. For example, you may not want users to have permission to delete objects from
+    /// to. For example, you might not want users to have permissions to delete objects from
     /// your origin.
+    /// </para>
     /// </summary>
     public partial class AllowedMethods
     {
@@ -59,8 +75,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Items. A complex type that contains the HTTP methods that
-        /// you want CloudFront to process and forward to your origin.
+        /// Gets and sets the property Items. 
+        /// <para>
+        /// A complex type that contains the HTTP methods that you want CloudFront to process
+        /// and forward to your origin.
+        /// </para>
         /// </summary>
         public List<string> Items
         {
@@ -75,10 +94,13 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Quantity. The number of HTTP methods that you want CloudFront
-        /// to forward to your origin. Valid values are 2 (for GET and HEAD requests), 3 (for
-        /// GET, HEAD and OPTIONS requests) and 7 (for GET, HEAD, OPTIONS, PUT, PATCH, POST, and
-        /// DELETE requests).
+        /// Gets and sets the property Quantity. 
+        /// <para>
+        /// The number of HTTP methods that you want CloudFront to forward to your origin. Valid
+        /// values are 2 (for <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>,
+        /// <code>HEAD</code>, and <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD,
+        /// OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests).
+        /// </para>
         /// </summary>
         public int Quantity
         {

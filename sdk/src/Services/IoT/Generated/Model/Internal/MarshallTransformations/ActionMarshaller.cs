@@ -78,6 +78,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDynamoDBv2())
+            {
+                context.Writer.WritePropertyName("dynamoDBv2");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DynamoDBv2ActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.DynamoDBv2, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetElasticsearch())
             {
                 context.Writer.WritePropertyName("elasticsearch");

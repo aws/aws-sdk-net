@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,12 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// A complex type that lists the active CloudFront key pairs, if any, that are associated
-    /// with AwsAccountNumber.
+    /// with <code>AwsAccountNumber</code>. 
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a>ActiveTrustedSigners</a>.
+    /// </para>
     /// </summary>
     public partial class KeyPairIds
     {
@@ -37,8 +42,15 @@ namespace Amazon.CloudFront.Model
         private int? _quantity;
 
         /// <summary>
-        /// Gets and sets the property Items. A complex type that lists the active CloudFront
-        /// key pairs, if any, that are associated with AwsAccountNumber.
+        /// Gets and sets the property Items. 
+        /// <para>
+        /// A complex type that lists the active CloudFront key pairs, if any, that are associated
+        /// with <code>AwsAccountNumber</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a>ActiveTrustedSigners</a>.
+        /// </para>
         /// </summary>
         public List<string> Items
         {
@@ -53,8 +65,14 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Quantity. The number of active CloudFront key pairs for
-        /// AwsAccountNumber.
+        /// Gets and sets the property Quantity. 
+        /// <para>
+        /// The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a>ActiveTrustedSigners</a>.
+        /// </para>
         /// </summary>
         public int Quantity
         {

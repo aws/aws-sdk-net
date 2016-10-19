@@ -82,6 +82,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.DynamoDB = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dynamoDBv2", targetDepth))
+                {
+                    var unmarshaller = DynamoDBv2ActionUnmarshaller.Instance;
+                    unmarshalledObject.DynamoDBv2 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("elasticsearch", targetDepth))
                 {
                     var unmarshaller = ElasticsearchActionUnmarshaller.Instance;

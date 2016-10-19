@@ -301,6 +301,37 @@ namespace Amazon.RDS
         #endregion
 
         
+        #region  AddRoleToDBCluster
+
+        internal AddRoleToDBClusterResponse AddRoleToDBCluster(AddRoleToDBClusterRequest request)
+        {
+            var marshaller = new AddRoleToDBClusterRequestMarshaller();
+            var unmarshaller = AddRoleToDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<AddRoleToDBClusterRequest,AddRoleToDBClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddRoleToDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddRoleToDBCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AddRoleToDBClusterResponse> AddRoleToDBClusterAsync(AddRoleToDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AddRoleToDBClusterRequestMarshaller();
+            var unmarshaller = AddRoleToDBClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddRoleToDBClusterRequest,AddRoleToDBClusterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AddSourceIdentifierToSubscription
 
         internal AddSourceIdentifierToSubscriptionResponse AddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request)
@@ -2884,6 +2915,37 @@ namespace Amazon.RDS
             var unmarshaller = RebootDBInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<RebootDBInstanceRequest,RebootDBInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveRoleFromDBCluster
+
+        internal RemoveRoleFromDBClusterResponse RemoveRoleFromDBCluster(RemoveRoleFromDBClusterRequest request)
+        {
+            var marshaller = new RemoveRoleFromDBClusterRequestMarshaller();
+            var unmarshaller = RemoveRoleFromDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveRoleFromDBClusterRequest,RemoveRoleFromDBClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveRoleFromDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RemoveRoleFromDBClusterResponse> RemoveRoleFromDBClusterAsync(RemoveRoleFromDBClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveRoleFromDBClusterRequestMarshaller();
+            var unmarshaller = RemoveRoleFromDBClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveRoleFromDBClusterRequest,RemoveRoleFromDBClusterResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

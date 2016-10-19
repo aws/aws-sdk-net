@@ -42,10 +42,6 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property EventSource. 
         /// <para>
-        ///  
-        /// </para>
-        ///  
-        /// <para>
         /// The source of the event, such as an AWS service, that triggers AWS Config to evaluate
         /// your AWS resources.
         /// </para>
@@ -90,17 +86,17 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when AWS
+        ///  <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when AWS
         /// Config delivers a configuration item change notification.
         /// </para>
         ///  
         /// <para>
-        /// <code>ScheduledNotification</code> - Triggers a periodic evaluation at the frequency
+        ///  <code>ScheduledNotification</code> - Triggers a periodic evaluation at the frequency
         /// specified for <code>MaximumExecutionFrequency</code>.
         /// </para>
         ///  
         /// <para>
-        /// <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic evaluation
+        ///  <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic evaluation
         /// when AWS Config delivers a configuration snapshot.
         /// </para>
         /// </summary>

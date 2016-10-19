@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,7 +36,10 @@ namespace Amazon.CloudFront.Model
         private string _location;
 
         /// <summary>
-        /// Gets and sets the property Invalidation. The invalidation's information.
+        /// Gets and sets the property Invalidation. 
+        /// <para>
+        /// The invalidation's information.
+        /// </para>
         /// </summary>
         public Invalidation Invalidation
         {
@@ -51,8 +54,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Location. The fully qualified URI of the distribution and
-        /// invalidation batch request, including the Invalidation ID.
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The fully qualified URI of the distribution and invalidation batch request, including
+        /// the <code>Invalidation ID</code>.
+        /// </para>
         /// </summary>
         public string Location
         {

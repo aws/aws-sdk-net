@@ -35,7 +35,7 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Currently, you can specify only one configuration recorder per account.
+    /// Currently, you can specify only one configuration recorder per region in your account.
     /// </para>
     ///  </note>
     /// </summary>
@@ -48,7 +48,7 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// The name(s) of the configuration recorder. If the name is not specified, the action
         /// returns the current status of all the configuration recorders associated with the
-        /// account. 
+        /// account.
         /// </para>
         /// </summary>
         public List<string> ConfigurationRecorderNames

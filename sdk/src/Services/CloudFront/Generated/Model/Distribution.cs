@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A distribution.
+    /// The distribution's information.
     /// </summary>
     public partial class Distribution
     {
@@ -49,9 +49,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates Distribution with the parameterized properties
         /// </summary>
-        /// <param name="id">The identifier for the distribution. For example: EDFDVBD632BHDS5.</param>
-        /// <param name="status">This response element indicates the current status of the distribution. When the status is Deployed, the distribution's information is fully propagated throughout the Amazon CloudFront system.</param>
-        /// <param name="domainName">The domain name corresponding to the distribution. For example: d604721fxaaqy9.cloudfront.net.</param>
+        /// <param name="id">The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>. </param>
+        /// <param name="status">This response element indicates the current status of the distribution. When the status is <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge locations. </param>
+        /// <param name="domainName">The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>. </param>
         public Distribution(string id, string status, string domainName)
         {
             _id = id;
@@ -60,14 +60,17 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ActiveTrustedSigners. CloudFront automatically adds this
-        /// element to the response only if you've set up the distribution to serve private content
-        /// with signed URLs. The element lists the key pair IDs that CloudFront is aware of for
-        /// each trusted signer. The Signer child element lists the AWS account number of the
-        /// trusted signer (or an empty Self element if the signer is you). The Signer element
-        /// also includes the IDs of any active key pairs associated with the trusted signer's
-        /// AWS account. If no KeyPairId element appears for a Signer, that signer can't create
-        /// working signed URLs.
+        /// Gets and sets the property ActiveTrustedSigners. 
+        /// <para>
+        /// CloudFront automatically adds this element to the response only if you've set up the
+        /// distribution to serve private content with signed URLs. The element lists the key
+        /// pair IDs that CloudFront is aware of for each trusted signer. The <code>Signer</code>
+        /// child element lists the AWS account number of the trusted signer (or an empty <code>Self</code>
+        /// element if the signer is you). The <code>Signer</code> element also includes the IDs
+        /// of any active key pairs associated with the trusted signer's AWS account. If no <code>KeyPairId</code>
+        /// element appears for a <code>Signer</code>, that signer can't create working signed
+        /// URLs.
+        /// </para>
         /// </summary>
         public ActiveTrustedSigners ActiveTrustedSigners
         {
@@ -82,9 +85,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ARN. The ARN (Amazon Resource Name) for the distribution.
-        /// For example: arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5, where
-        /// 123456789012 is your AWS account Id.
+        /// Gets and sets the property ARN. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+        /// where <code>123456789012</code> is your AWS account ID.
+        /// </para>
         /// </summary>
         public string ARN
         {
@@ -99,8 +104,12 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DistributionConfig. The current configuration information
-        /// for the distribution.
+        /// Gets and sets the property DistributionConfig. 
+        /// <para>
+        /// The current configuration information for the distribution. Send a <code>GET</code>
+        /// request to the <code>/<i>CloudFront API version</i>/distribution ID/config</code>
+        /// resource.
+        /// </para>
         /// </summary>
         public DistributionConfig DistributionConfig
         {
@@ -115,8 +124,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainName. The domain name corresponding to the distribution.
-        /// For example: d604721fxaaqy9.cloudfront.net.
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The domain name corresponding to the distribution. For example: <code>d604721fxaaqy9.cloudfront.net</code>.
+        /// 
+        /// </para>
         /// </summary>
         public string DomainName
         {
@@ -131,7 +143,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Id. The identifier for the distribution. For example: EDFDVBD632BHDS5.
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>. 
+        /// </para>
         /// </summary>
         public string Id
         {
@@ -146,8 +161,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InProgressInvalidationBatches. The number of invalidation
-        /// batches currently in progress.
+        /// Gets and sets the property InProgressInvalidationBatches. 
+        /// <para>
+        /// The number of invalidation batches currently in progress. 
+        /// </para>
         /// </summary>
         public int InProgressInvalidationBatches
         {
@@ -162,8 +179,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastModifiedTime. The date and time the distribution was
-        /// last modified.
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The date and time the distribution was last modified. 
+        /// </para>
         /// </summary>
         public DateTime LastModifiedTime
         {
@@ -178,9 +197,12 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status. This response element indicates the current status
-        /// of the distribution. When the status is Deployed, the distribution's information is
-        /// fully propagated throughout the Amazon CloudFront system.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// This response element indicates the current status of the distribution. When the status
+        /// is <code>Deployed</code>, the distribution's information is fully propagated to all
+        /// CloudFront edge locations. 
+        /// </para>
         /// </summary>
         public string Status
         {

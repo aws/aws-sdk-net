@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,6 +29,8 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// A complex type that contains information about the objects that you want to invalidate.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
+    /// the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </summary>
     public partial class Paths
     {
@@ -36,8 +38,10 @@ namespace Amazon.CloudFront.Model
         private int? _quantity;
 
         /// <summary>
-        /// Gets and sets the property Items. A complex type that contains a list of the objects
-        /// that you want to invalidate.
+        /// Gets and sets the property Items. 
+        /// <para>
+        /// A complex type that contains a list of the paths that you want to invalidate.
+        /// </para>
         /// </summary>
         public List<string> Items
         {
@@ -52,7 +56,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Quantity. The number of objects that you want to invalidate.
+        /// Gets and sets the property Quantity. 
+        /// <para>
+        /// The number of objects that you want to invalidate.
+        /// </para>
         /// </summary>
         public int Quantity
         {

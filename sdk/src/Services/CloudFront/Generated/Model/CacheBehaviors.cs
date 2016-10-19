@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that contains zero or more CacheBehavior elements.
+    /// A complex type that contains zero or more <code>CacheBehavior</code> elements.
     /// </summary>
     public partial class CacheBehaviors
     {
@@ -36,8 +36,11 @@ namespace Amazon.CloudFront.Model
         private int? _quantity;
 
         /// <summary>
-        /// Gets and sets the property Items. Optional: A complex type that contains cache behaviors
-        /// for this distribution. If Quantity is 0, you can omit Items.
+        /// Gets and sets the property Items. 
+        /// <para>
+        /// Optional: A complex type that contains cache behaviors for this distribution. If <code>Quantity</code>
+        /// is <code>0</code>, you can omit <code>Items</code>.
+        /// </para>
         /// </summary>
         public List<CacheBehavior> Items
         {
@@ -52,7 +55,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Quantity. The number of cache behaviors for this distribution.
+        /// Gets and sets the property Quantity. 
+        /// <para>
+        /// The number of cache behaviors for this distribution. 
+        /// </para>
         /// </summary>
         public int Quantity
         {

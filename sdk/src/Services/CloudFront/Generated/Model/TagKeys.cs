@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,14 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that contains zero or more Tag elements.
+    /// A complex type that contains zero or more <code>Tag</code> elements.
     /// </summary>
     public partial class TagKeys
     {
         private List<string> _items = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Items. A complex type that contains Tag key elements
+        /// Gets and sets the property Items. 
+        /// <para>
+        ///  A complex type that contains <code>Tag</code> key elements.
+        /// </para>
         /// </summary>
         public List<string> Items
         {

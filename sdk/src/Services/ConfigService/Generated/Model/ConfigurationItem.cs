@@ -169,7 +169,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationItemMD5Hash. 
         /// <para>
-        /// Unique MD5 hash that represents the configuration item&apos;s state.
+        /// Unique MD5 hash that represents the configuration item's state.
         /// </para>
         ///  
         /// <para>
@@ -274,7 +274,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceCreationTime. 
         /// <para>
-        /// The time stamp when the resource was created. 
+        /// The time stamp when the resource was created.
         /// </para>
         /// </summary>
         public DateTime ResourceCreationTime

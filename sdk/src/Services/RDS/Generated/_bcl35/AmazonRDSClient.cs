@@ -294,6 +294,72 @@ namespace Amazon.RDS
         #endregion
 
         
+        #region  AddRoleToDBCluster
+
+        /// <summary>
+        /// Associates an Identity and Access Management (IAM) role from an Aurora DB cluster.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
+        /// Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddRoleToDBCluster service method.</param>
+        /// 
+        /// <returns>The response from the AddRoleToDBCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterRoleAlreadyExistsException">
+        /// The specified IAM role Amazon Resource Name (ARN) is already associated with the specified
+        /// DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterRoleQuotaExceededException">
+        /// You have exceeded the maximum number of IAM roles that can be associated with the
+        /// specified DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        public AddRoleToDBClusterResponse AddRoleToDBCluster(AddRoleToDBClusterRequest request)
+        {
+            var marshaller = new AddRoleToDBClusterRequestMarshaller();
+            var unmarshaller = AddRoleToDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<AddRoleToDBClusterRequest,AddRoleToDBClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddRoleToDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddRoleToDBCluster operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddRoleToDBCluster
+        ///         operation.</returns>
+        public IAsyncResult BeginAddRoleToDBCluster(AddRoleToDBClusterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new AddRoleToDBClusterRequestMarshaller();
+            var unmarshaller = AddRoleToDBClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddRoleToDBClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddRoleToDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddRoleToDBCluster.</param>
+        /// 
+        /// <returns>Returns a  AddRoleToDBClusterResult from RDS.</returns>
+        public  AddRoleToDBClusterResponse EndAddRoleToDBCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AddRoleToDBClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AddSourceIdentifierToSubscription
 
         /// <summary>
@@ -627,6 +693,12 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.KMSKeyNotAccessibleException">
+        /// Error accessing KMS key.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.SnapshotQuotaExceededException">
+        /// Request would result in user exceeding the allowed number of DB snapshots.
         /// </exception>
         public CopyDBClusterSnapshotResponse CopyDBClusterSnapshot(CopyDBClusterSnapshotRequest request)
         {
@@ -5364,6 +5436,68 @@ namespace Amazon.RDS
         public  RebootDBInstanceResponse EndRebootDBInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<RebootDBInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RemoveRoleFromDBCluster
+
+        /// <summary>
+        /// Disassociates an Identity and Access Management (IAM) role from an Aurora DB cluster.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Authorizing.AWSServices.html">Authorizing
+        /// Amazon Aurora to Access Other AWS Services On Your Behalf</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBCluster service method.</param>
+        /// 
+        /// <returns>The response from the RemoveRoleFromDBCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBClusterRoleNotFoundException">
+        /// The specified IAM role Amazon Resource Name (ARN) is not associated with the specified
+        /// DB cluster.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        public RemoveRoleFromDBClusterResponse RemoveRoleFromDBCluster(RemoveRoleFromDBClusterRequest request)
+        {
+            var marshaller = new RemoveRoleFromDBClusterRequestMarshaller();
+            var unmarshaller = RemoveRoleFromDBClusterResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveRoleFromDBClusterRequest,RemoveRoleFromDBClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveRoleFromDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveRoleFromDBCluster operation on AmazonRDSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveRoleFromDBCluster
+        ///         operation.</returns>
+        public IAsyncResult BeginRemoveRoleFromDBCluster(RemoveRoleFromDBClusterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new RemoveRoleFromDBClusterRequestMarshaller();
+            var unmarshaller = RemoveRoleFromDBClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RemoveRoleFromDBClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveRoleFromDBCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveRoleFromDBCluster.</param>
+        /// 
+        /// <returns>Returns a  RemoveRoleFromDBClusterResult from RDS.</returns>
+        public  RemoveRoleFromDBClusterResponse EndRemoveRoleFromDBCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RemoveRoleFromDBClusterResponse>(asyncResult);
         }
 
         #endregion

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -38,7 +38,10 @@ namespace Amazon.CloudFront.Model
         private OriginSslProtocols _originSslProtocols;
 
         /// <summary>
-        /// Gets and sets the property HTTPPort. The HTTP port the custom origin listens on.
+        /// Gets and sets the property HTTPPort. 
+        /// <para>
+        /// The HTTP port the custom origin listens on.
+        /// </para>
         /// </summary>
         public int HTTPPort
         {
@@ -53,7 +56,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HTTPSPort. The HTTPS port the custom origin listens on.
+        /// Gets and sets the property HTTPSPort. 
+        /// <para>
+        /// The HTTPS port the custom origin listens on.
+        /// </para>
         /// </summary>
         public int HTTPSPort
         {
@@ -68,8 +74,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OriginProtocolPolicy. The origin protocol policy to apply
-        /// to your origin.
+        /// Gets and sets the property OriginProtocolPolicy. 
+        /// <para>
+        /// The origin protocol policy to apply to your origin.
+        /// </para>
         /// </summary>
         public OriginProtocolPolicy OriginProtocolPolicy
         {
@@ -84,8 +92,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OriginSslProtocols. The SSL/TLS protocols that you want
-        /// CloudFront to use when communicating with your origin over HTTPS.
+        /// Gets and sets the property OriginSslProtocols. 
+        /// <para>
+        /// The SSL/TLS protocols that you want CloudFront to use when communicating with your
+        /// origin over HTTPS.
+        /// </para>
         /// </summary>
         public OriginSslProtocols OriginSslProtocols
         {

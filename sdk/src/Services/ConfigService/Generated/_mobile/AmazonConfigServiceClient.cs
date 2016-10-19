@@ -432,9 +432,19 @@ namespace Amazon.ConfigService
         /// delivery channel. After the delivery has started, AWS Config sends following notifications
         /// using an Amazon SNS topic that you have specified.
         /// 
-        ///  <ul> <li>Notification of starting the delivery.</li> <li>Notification of delivery
-        /// completed, if the delivery was successfully completed.</li> <li>Notification of delivery
-        /// failure, if the delivery failed to complete.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        /// Notification of starting the delivery.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Notification of delivery completed, if the delivery was successfully completed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Notification of delivery failure, if the delivery failed to complete.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="deliveryChannelName">The name of the delivery channel through which the snapshot is delivered.</param>
         /// <param name="cancellationToken">
@@ -620,13 +630,13 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Returns the name of one or more specified configuration recorders. If the recorder
-        /// name is not specified, this action returns the names of all the configuration recorders
-        /// associated with the account. 
+        /// Returns the details for the specified configuration recorders. If the configuration
+        /// recorder is not specified, this action returns the details for all configuration recorders
+        /// associated with the account.
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per account.
+        /// Currently, you can specify only one configuration recorder per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -686,7 +696,7 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per account.
+        /// Currently, you can specify only one configuration recorder per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -742,11 +752,11 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns details about the specified delivery channel. If a delivery channel is not
         /// specified, this action returns the details of all delivery channels associated with
-        /// the account. 
+        /// the account.
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one delivery channel per account.
+        /// Currently, you can specify only one delivery channel per region in your account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -802,11 +812,11 @@ namespace Amazon.ConfigService
         /// <summary>
         /// Returns the current status of the specified delivery channel. If a delivery channel
         /// is not specified, this action returns the current status of all delivery channels
-        /// associated with the account. 
+        /// associated with the account.
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one delivery channel per account.
+        /// Currently, you can specify only one delivery channel per region in your account.
         /// </para>
         ///  </note>
         /// </summary>

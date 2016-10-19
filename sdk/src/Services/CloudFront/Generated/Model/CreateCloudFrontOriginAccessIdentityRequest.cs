@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,11 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCloudFrontOriginAccessIdentity operation.
-    /// Create a new origin access identity.
+    /// Creates a new origin access identity. If you're using Amazon S3 for your origin, you
+    /// can use an origin access identity to require users to access your content using a
+    /// CloudFront URL instead of the Amazon S3 URL. For more information about how to use
+    /// origin access identities, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
+    /// Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </summary>
     public partial class CreateCloudFrontOriginAccessIdentityRequest : AmazonCloudFrontRequest
     {
@@ -43,15 +47,17 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates CreateCloudFrontOriginAccessIdentityRequest with the parameterized properties
         /// </summary>
-        /// <param name="cloudFrontOriginAccessIdentityConfig">The origin access identity's configuration information.</param>
+        /// <param name="cloudFrontOriginAccessIdentityConfig">The current configuration information for the identity.</param>
         public CreateCloudFrontOriginAccessIdentityRequest(CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig)
         {
             _cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;
         }
 
         /// <summary>
-        /// Gets and sets the property CloudFrontOriginAccessIdentityConfig. The origin access
-        /// identity's configuration information.
+        /// Gets and sets the property CloudFrontOriginAccessIdentityConfig. 
+        /// <para>
+        /// The current configuration information for the identity.
+        /// </para>
         /// </summary>
         public CloudFrontOriginAccessIdentityConfig CloudFrontOriginAccessIdentityConfig
         {

@@ -44,6 +44,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void AddRoleToDBClusterMarshallTest()
+        {
+            var operation = service_model.FindOperation("AddRoleToDBCluster");
+
+            var request = InstantiateClassGenerator.Execute<AddRoleToDBClusterRequest>();
+            var marshaller = new AddRoleToDBClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void AddSourceIdentifierToSubscriptionMarshallTest()
         {
             var operation = service_model.FindOperation("AddSourceIdentifierToSubscription");
@@ -1782,6 +1801,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = RebootDBInstanceResponseUnmarshaller.Instance.Unmarshall(context)
                 as RebootDBInstanceResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void RemoveRoleFromDBClusterMarshallTest()
+        {
+            var operation = service_model.FindOperation("RemoveRoleFromDBCluster");
+
+            var request = InstantiateClassGenerator.Execute<RemoveRoleFromDBClusterRequest>();
+            var marshaller = new RemoveRoleFromDBClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
         }
 
         

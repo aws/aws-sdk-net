@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,7 +35,10 @@ namespace Amazon.CloudFront.Model
         private DistributionList _distributionList;
 
         /// <summary>
-        /// Gets and sets the property DistributionList. The DistributionList type.
+        /// Gets and sets the property DistributionList. 
+        /// <para>
+        /// The <code>DistributionList</code> type. 
+        /// </para>
         /// </summary>
         public DistributionList DistributionList
         {

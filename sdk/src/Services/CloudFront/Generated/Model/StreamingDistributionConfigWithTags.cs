@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -37,7 +37,10 @@ namespace Amazon.CloudFront.Model
         private Tags _tags;
 
         /// <summary>
-        /// Gets and sets the property StreamingDistributionConfig. A streaming distribution Configuration.
+        /// Gets and sets the property StreamingDistributionConfig. 
+        /// <para>
+        /// A streaming distribution Configuration.
+        /// </para>
         /// </summary>
         public StreamingDistributionConfig StreamingDistributionConfig
         {
@@ -52,7 +55,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. A complex type that contains zero or more Tag elements.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A complex type that contains zero or more <code>Tag</code> elements.
+        /// </para>
         /// </summary>
         public Tags Tags
         {

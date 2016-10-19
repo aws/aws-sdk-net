@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,8 +35,10 @@ namespace Amazon.CloudFront.Model
         private CloudFrontOriginAccessIdentityList _cloudFrontOriginAccessIdentityList;
 
         /// <summary>
-        /// Gets and sets the property CloudFrontOriginAccessIdentityList. The CloudFrontOriginAccessIdentityList
-        /// type.
+        /// Gets and sets the property CloudFrontOriginAccessIdentityList. 
+        /// <para>
+        /// The <code>CloudFrontOriginAccessIdentityList</code> type. 
+        /// </para>
         /// </summary>
         public CloudFrontOriginAccessIdentityList CloudFrontOriginAccessIdentityList
         {

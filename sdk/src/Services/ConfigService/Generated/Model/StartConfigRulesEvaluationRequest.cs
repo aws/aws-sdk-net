@@ -50,28 +50,28 @@ namespace Amazon.ConfigService.Model
     /// The <code>StartConfigRulesEvaluation</code> API is useful if you want to run on-demand
     /// evaluations, such as the following example:
     /// </para>
-    ///  <ol> <li>
+    ///  <ol> <li> 
     /// <para>
     /// You have a custom rule that evaluates your IAM resources every 24 hours.
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
     /// You update your Lambda function to add additional conditions to your rule.
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
     /// Instead of waiting for the next periodic evaluation, you call the <code>StartConfigRulesEvaluation</code>
     /// API.
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
     /// AWS Config invokes your Lambda function and evaluates your IAM resources.
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
     /// Your custom rule will still run periodic evaluations every 24 hours.
     /// </para>
-    /// </li> </ol>
+    ///  </li> </ol>
     /// </summary>
     public partial class StartConfigRulesEvaluationRequest : AmazonConfigServiceRequest
     {

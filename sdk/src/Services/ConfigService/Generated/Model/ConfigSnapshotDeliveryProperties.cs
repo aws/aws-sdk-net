@@ -63,7 +63,7 @@ namespace Amazon.ConfigService.Model
     ///  <ol> <li> 
     /// <para>
     /// For example, you want your rule to run evaluations when AWS Config delivers the configuration
-    /// snapshot. 
+    /// snapshot.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -73,7 +73,6 @@ namespace Amazon.ConfigService.Model
     ///  </li> <li> 
     /// <para>
     /// You then specify the delivery channel <code>deliveryFrequency</code> value for <code>TwentyFour_Hours</code>.
-    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>

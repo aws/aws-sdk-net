@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,7 +36,10 @@ namespace Amazon.CloudFront.Model
         private string _eTag;
 
         /// <summary>
-        /// Gets and sets the property Distribution. The distribution's information.
+        /// Gets and sets the property Distribution. 
+        /// <para>
+        /// The distribution's information.
+        /// </para>
         /// </summary>
         public Distribution Distribution
         {
@@ -51,8 +54,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ETag. The current version of the configuration. For example:
-        /// E2QWRUHAPOMQZL.
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+        /// </para>
         /// </summary>
         public string ETag
         {

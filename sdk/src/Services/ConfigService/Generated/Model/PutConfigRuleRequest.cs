@@ -30,7 +30,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the PutConfigRule operation.
     /// Adds or updates an AWS Config rule for evaluating whether your AWS resources comply
-    /// with your desired configurations. 
+    /// with your desired configurations.
     /// 
     ///  
     /// <para>
@@ -62,9 +62,9 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// If you are updating a rule that you have added previously, specify the rule's <code>ConfigRuleName</code>,
-    /// <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code> in the <code>ConfigRule</code>
-    /// data type that you use in this request.
+    /// If you are updating a rule that you added previously, you can specify the rule by
+    /// <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or <code>ConfigRuleArn</code>
+    /// in the <code>ConfigRule</code> data type that you use in this request.
     /// </para>
     ///  
     /// <para>

@@ -35,6 +35,7 @@ namespace Amazon.IoT.Model
         private CloudwatchAlarmAction _cloudwatchAlarm;
         private CloudwatchMetricAction _cloudwatchMetric;
         private DynamoDBAction _dynamodb;
+        private DynamoDBv2Action _dynamodBv2;
         private ElasticsearchAction _elasticsearch;
         private FirehoseAction _firehose;
         private KinesisAction _kinesis;
@@ -96,6 +97,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetDynamoDB()
         {
             return this._dynamodb != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DynamoDBv2. 
+        /// <para>
+        /// Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows
+        /// you to write each attribute in an MQTT message payload into a separate DynamoDB column.
+        /// </para>
+        /// </summary>
+        public DynamoDBv2Action DynamoDBv2
+        {
+            get { return this._dynamodBv2; }
+            set { this._dynamodBv2 = value; }
+        }
+
+        // Check to see if DynamoDBv2 property is set
+        internal bool IsSetDynamoDBv2()
+        {
+            return this._dynamodBv2 != null;
         }
 
         /// <summary>

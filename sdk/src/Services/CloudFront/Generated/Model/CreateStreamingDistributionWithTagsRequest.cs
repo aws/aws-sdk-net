@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,8 +36,10 @@ namespace Amazon.CloudFront.Model
         private StreamingDistributionConfigWithTags _streamingDistributionConfigWithTags;
 
         /// <summary>
-        /// Gets and sets the property StreamingDistributionConfigWithTags. The streaming distribution's
-        /// configuration information.
+        /// Gets and sets the property StreamingDistributionConfigWithTags. 
+        /// <para>
+        ///  The streaming distribution's configuration information. 
+        /// </para>
         /// </summary>
         public StreamingDistributionConfigWithTags StreamingDistributionConfigWithTags
         {

@@ -632,9 +632,9 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBSubnetGroupName. 
         /// <para>
         /// The new DB subnet group for the DB instance. You can use this parameter to move your
-        /// DB instance to a different VPC, or to a different subnet group in the same VPC. If
-        /// your DB instance is not in a VPC, you can also use this parameter to move your DB
-        /// instance into a VPC. For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
+        /// DB instance to a different VPC. If your DB instance is not in a VPC, you can also
+        /// use this parameter to move your DB instance into a VPC. For more information, see
+        /// <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Non-VPC2VPC">Updating
         /// the VPC for a DB Instance</a>. 
         /// </para>
         ///  

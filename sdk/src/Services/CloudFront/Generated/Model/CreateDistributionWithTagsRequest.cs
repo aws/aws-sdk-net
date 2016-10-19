@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,8 +36,10 @@ namespace Amazon.CloudFront.Model
         private DistributionConfigWithTags _distributionConfigWithTags;
 
         /// <summary>
-        /// Gets and sets the property DistributionConfigWithTags. The distribution's configuration
-        /// information.
+        /// Gets and sets the property DistributionConfigWithTags. 
+        /// <para>
+        /// The distribution's configuration information. 
+        /// </para>
         /// </summary>
         public DistributionConfigWithTags DistributionConfigWithTags
         {

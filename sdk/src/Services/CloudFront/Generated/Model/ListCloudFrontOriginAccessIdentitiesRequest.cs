@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,7 +29,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCloudFrontOriginAccessIdentities operation.
-    /// List origin access identities.
+    /// Lists origin access identities.
     /// </summary>
     public partial class ListCloudFrontOriginAccessIdentitiesRequest : AmazonCloudFrontRequest
     {
@@ -42,11 +42,14 @@ namespace Amazon.CloudFront.Model
         public ListCloudFrontOriginAccessIdentitiesRequest() { }
 
         /// <summary>
-        /// Gets and sets the property Marker. Use this when paginating results to indicate where
-        /// to begin in your list of origin access identities. The results include identities
-        /// in the list that occur after the marker. To get the next page of results, set the
-        /// Marker to the value of the NextMarker from the current page's response (which is also
-        /// the ID of the last identity on that page).
+        /// Gets and sets the property Marker. 
+        /// <para>
+        /// Use this when paginating results to indicate where to begin in your list of origin
+        /// access identities. The results include identities in the list that occur after the
+        /// marker. To get the next page of results, set the <code>Marker</code> to the value
+        /// of the <code>NextMarker</code> from the current page's response (which is also the
+        /// ID of the last identity on that page).
+        /// </para>
         /// </summary>
         public string Marker
         {
@@ -61,8 +64,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxItems. The maximum number of origin access identities
-        /// you want in the response body.
+        /// Gets and sets the property MaxItems. 
+        /// <para>
+        /// The maximum number of origin access identities you want in the response body. 
+        /// </para>
         /// </summary>
         public string MaxItems
         {

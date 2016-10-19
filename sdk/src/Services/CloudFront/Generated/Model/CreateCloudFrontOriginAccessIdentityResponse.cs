@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -37,8 +37,10 @@ namespace Amazon.CloudFront.Model
         private string _location;
 
         /// <summary>
-        /// Gets and sets the property CloudFrontOriginAccessIdentity. The origin access identity's
-        /// information.
+        /// Gets and sets the property CloudFrontOriginAccessIdentity. 
+        /// <para>
+        /// The origin access identity's information.
+        /// </para>
         /// </summary>
         public CloudFrontOriginAccessIdentity CloudFrontOriginAccessIdentity
         {
@@ -53,8 +55,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ETag. The current version of the origin access identity
-        /// created.
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// The current version of the origin access identity created.
+        /// </para>
         /// </summary>
         public string ETag
         {
@@ -69,8 +73,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Location. The fully qualified URI of the new origin access
-        /// identity just created. For example: https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// The fully qualified URI of the new origin access identity just created. For example:
+        /// <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.
+        /// </para>
         /// </summary>
         public string Location
         {

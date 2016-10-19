@@ -32,7 +32,7 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  
     /// <para>
-    /// Valid values: <code>Success</code> | <code>Failure</code>
+    /// Valid values: <code>Success</code> | <code>Failure</code> 
     /// </para>
     /// </summary>
     public partial class DeliveryChannelStatus

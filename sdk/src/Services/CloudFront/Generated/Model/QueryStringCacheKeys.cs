@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-07.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -36,9 +36,12 @@ namespace Amazon.CloudFront.Model
         private int? _quantity;
 
         /// <summary>
-        /// Gets and sets the property Items. Optional: A list that contains the query string
-        /// parameters that you want CloudFront to use as a basis for caching for this cache behavior.
-        /// If Quantity is 0, you can omit Items.
+        /// Gets and sets the property Items. 
+        /// <para>
+        /// (Optional) A list that contains the query string parameters that you want CloudFront
+        /// to use as a basis for caching for this cache behavior. If <code>Quantity</code> is
+        /// 0, you can omit <code>Items</code>. 
+        /// </para>
         /// </summary>
         public List<string> Items
         {
@@ -53,8 +56,10 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Quantity. The number of whitelisted query string parameters
-        /// for this cache behavior.
+        /// Gets and sets the property Quantity. 
+        /// <para>
+        /// The number of <code>whitelisted</code> query string parameters for this cache behavior.
+        /// </para>
         /// </summary>
         public int Quantity
         {
