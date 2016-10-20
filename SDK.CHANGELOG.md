@@ -1,3 +1,7 @@
+### 3.3.12.0 (2016-10-20 00:47 UTC)
+* EC2 (3.3.2.0)
+	* Added support for retrieving the new Windows Server 2016 images in ImageUtilities helper class.
+
 ### 3.3.11.0 (2016-10-18 22:51 UTC)
 * CloudFront (3.3.1.0)
 	* Added ability to use Amazon CloudFront to deliver your content both via IPv6 and IPv4 using HTTP/HTTPS
