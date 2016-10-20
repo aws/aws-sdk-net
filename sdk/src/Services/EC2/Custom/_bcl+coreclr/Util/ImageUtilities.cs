@@ -284,14 +284,14 @@ namespace Amazon.EC2.Util
 
         private static readonly ImageDescriptor[] WindowsDescriptors =
         {
-            WINDOWS_2016_BASE_KEY,
-            WINDOWS_2016_NANO_KEY,
-            WINDOWS_2016_CONTAINER_KEY,
+            WINDOWS_2016_BASE,
+            WINDOWS_2016_NANO,
+            WINDOWS_2016_CONTAINER,
 
-            WINDOWS_2016_SQL_SERVER_ENTERPRISE_2016_KEY,
-            WINDOWS_2016_SQL_SERVER_STANDARD_2016_KEY,
-            WINDOWS_2016_SQL_SERVER_WEB_2016_KEY,
-            WINDOWS_2016_SQL_SERVER_EXPRESS_2016_KEY,
+            WINDOWS_2016_SQL_SERVER_ENTERPRISE_2016,
+            WINDOWS_2016_SQL_SERVER_STANDARD_2016,
+            WINDOWS_2016_SQL_SERVER_WEB_2016,
+            WINDOWS_2016_SQL_SERVER_EXPRESS_2016,
 
             WINDOWS_2012R2_BASE,
 
