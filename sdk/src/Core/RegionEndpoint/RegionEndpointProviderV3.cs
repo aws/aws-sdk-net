@@ -24,6 +24,7 @@ using Amazon.Runtime.Internal.Auth;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 using ThirdParty.Json.LitJson;
 
 #if UNITY
@@ -342,6 +343,54 @@ namespace Amazon.Internal
             }
         }
 
+        private static string GetUnknownRegionDescription(string regionName)
+        {
+            if (regionName.StartsWith("cn-", StringComparison.OrdinalIgnoreCase) ||
+                regionName.EndsWith("cn-global", StringComparison.OrdinalIgnoreCase))
+            {
+                return "China (Unknown)";
+            }
+            else
+            {
+                return "Unknown";
+            }
+        }
+
+        private static bool IsRegionInPartition(string regionName, JsonData partition, out string description)
+        {
+            JsonData regionsData = partition["regions"];
+            string regionPattern = (string)partition["regionRegex"];
+
+            // see if the region name is a real region 
+            if (regionsData[regionName] != null)
+            {
+                description = (string) regionsData[regionName]["description"];
+                return true;
+            }
+            
+            // see if the region is global region by concatenating the partition and "-global" to construct the global name 
+            // for the partition
+            else if (regionName.Equals(string.Concat((string)partition["partition"], "-global"), StringComparison.OrdinalIgnoreCase))
+            {
+                description = "Global";
+                return true;
+            }
+
+            // no region key in the entry, but it matches the pattern in this partition.
+            // we can try to construct an endpoint based on the heuristics described in endpoints.json
+            else if (new Regex(regionPattern).Match(regionName).Success)
+            {
+                description = GetUnknownRegionDescription(regionName);
+                return true;
+            }
+
+            else
+            {
+                description = GetUnknownRegionDescription(regionName);
+                return false;
+            }
+        }
+
         public IRegionEndpoint GetRegionEndpoint(string regionName)
         {
             try
@@ -355,14 +404,13 @@ namespace Amazon.Internal
                     }
                     else
                     {
-
                         JsonData partitions = _root["partitions"];
                         foreach (JsonData partition in partitions)
                         {
-                            JsonData region = partition["regions"][regionName];
-                            if (region != null)
+                            string description;
+                            if (IsRegionInPartition(regionName, partition, out description))
                             {
-                                endpoint = new RegionEndpointV3(regionName, (string)region["description"], partition, partition["services"]);
+                                endpoint = new RegionEndpointV3(regionName, description, partition, partition["services"]);
                                 _regionEndpointMap.Add(regionName, endpoint);
                                 return endpoint;
                             }
@@ -375,39 +423,36 @@ namespace Amazon.Internal
                 throw new AmazonClientException("Invalid endpoint.json format.");
             }
 
-            return GetUnknownRegionEndpoint(regionName);
+            return GetNonstandardRegionEndpoint(regionName);
         }
-       
-        private IRegionEndpoint GetUnknownRegionEndpoint(string regionName)
+
+        /// <summary>
+        /// This region name is non-standard.  Search the whole endpoints.json file to
+        /// determine the partition this region is in.
+        /// </summary>
+        private IRegionEndpoint GetNonstandardRegionEndpoint(string regionName)
         {
-            // determine the partition using basic heuristics
-            string partitionId = "aws";
-            string regionDescription = "Unknown";
-
-            if (regionName.StartsWith("us-gov", StringComparison.OrdinalIgnoreCase))
-            {
-                partitionId = "aws-us-gov";
-            }
-            else if (regionName.StartsWith("cn-", StringComparison.OrdinalIgnoreCase))
-            {
-                partitionId = "aws-cn";
-                regionDescription = "China (Unknown)";
-            }
-
-            // grab the partition data from the parsed endpoints.json object
-            JsonData partitionData = null;
+            // default to "aws" partition
+            JsonData partitionData = _root["partitions"][0];
+            string regionDescription = GetUnknownRegionDescription(regionName);
+            JsonData servicesData = _emptyDictionaryJsonData;
+            
             foreach (JsonData partition in _root["partitions"])
             {
-                partitionData = partition;
-
-                string id = (string)partition["partition"];
-                if (string.Equals(partitionId, id, StringComparison.OrdinalIgnoreCase))
+                JsonData partitionServices = partition["services"];
+                foreach (string service in partitionServices.PropertyNames)
                 {
-                    break;
+                    JsonData serviceData = partitionServices[service];
+                    if (serviceData != null && serviceData["endpoints"][regionName] != null)
+                    {
+                        partitionData = partition;
+                        servicesData = partitionServices;
+                        break;
+                    }
                 }
             }
 
-            return new RegionEndpointV3(regionName, regionDescription, partitionData, _emptyDictionaryJsonData);
+            return new RegionEndpointV3(regionName, regionDescription, partitionData, servicesData);
         }
         private static JsonData _emptyDictionaryJsonData = JsonMapper.ToObject("{}");
     }
