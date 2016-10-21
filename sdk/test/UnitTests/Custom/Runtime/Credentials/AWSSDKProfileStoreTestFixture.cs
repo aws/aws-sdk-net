@@ -12,7 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
- using Amazon.Runtime;
+using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Settings;
 using Json.LitJson;
@@ -25,15 +25,10 @@ using System.Reflection;
 
 namespace AWSSDK.UnitTests
 {
-    public class AWSSDKProfileStoreTestFixture : IDisposable
+    public class AWSSDKProfileStoreTestFixture : EncryptedStoreTestFixture
     {
-        private const string DisplayNameField = "DisplayName";
-        private const string ProfilesFilename = "RegisteredAccounts.json";
+        private const string ProfilesFilename = SettingsConstants.RegisteredProfiles + ".json";
 
-        private string OriginalSettingsStoreFolder { get; set; }
-        private HashSet<string> OriginalEncryptedKeys { get; set; }
-
-        public string DirectoryPath { get; private set; }
         public AWSSDKProfileStore ProfileStore { get; private set; }
 
         public AWSSDKProfileStoreTestFixture()
@@ -42,28 +37,9 @@ namespace AWSSDK.UnitTests
         }
 
         public AWSSDKProfileStoreTestFixture(string fileContents)
+            : base(ProfilesFilename, fileContents)
         {
-            PrepareTempFilePaths();
-            MockSettingsStoreFolder();
-            MockEncryptedKeys();
-
-            if (fileContents != null)
-            {
-                File.WriteAllText(Path.Combine(DirectoryPath, ProfilesFilename), fileContents);
-            }
-
             ProfileStore = new AWSSDKProfileStore();
-        }
-
-        public void Dispose()
-        {
-            // Don't clean up files if the test is being debugged.
-            if (!Debugger.IsAttached)
-            {
-                Directory.Delete(DirectoryPath, true);
-            }
-            UnMockSettingsStoreFolder();
-            UnMockEncryptedKeys();
         }
 
         public CredentialProfile TestTryGetProfile(string profileName, bool expectProfile, bool expectValidProfile)
@@ -73,75 +49,6 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(expectProfile == (profile != null));
             Assert.IsTrue(!expectProfile || (expectValidProfile == profile.CanCreateAWSCredentials));
             return profile;
-        }
-
-        public void AssertJsonProperty(string profileName, string propertyName, string propertyValue)
-        {
-            var rootJsonData = JsonMapper.ToObject(new JsonReader(File.ReadAllText(Path.Combine(DirectoryPath, ProfilesFilename))));
-            var profileJsonData = GetProfileJsonData(profileName, rootJsonData);
-
-            Assert.IsTrue(profileJsonData.IsObject);
-            foreach (string profilePropertyName in profileJsonData.PropertyNames)
-            {
-                if (string.Equals(propertyName, profilePropertyName, StringComparison.OrdinalIgnoreCase))
-                {
-                    Assert.AreEqual(propertyValue, profileJsonData[profilePropertyName].ToString());
-                    break;
-                }
-            }
-        }
-
-        private JsonData GetProfileJsonData(string displayName, JsonData rootJsonData)
-        {
-            foreach (string propertyName in rootJsonData.PropertyNames)
-            {
-                JsonData profileJsonData = rootJsonData[propertyName];
-                Assert.IsTrue(profileJsonData.IsObject);
-                if (string.Equals(profileJsonData[DisplayNameField].ToString(), displayName, StringComparison.OrdinalIgnoreCase))
-                {
-                    return profileJsonData;
-                }
-            }
-            throw new Exception("Profile " + displayName + " not found.");
-        }
-
-        private void MockSettingsStoreFolder()
-        {
-            OriginalSettingsStoreFolder = (string)GetSettingsStoreFolderField().GetValue(null);
-            GetSettingsStoreFolderField().SetValue(null, DirectoryPath);
-        }
-
-        private void UnMockSettingsStoreFolder()
-        {
-            GetSettingsStoreFolderField().SetValue(null, OriginalSettingsStoreFolder);
-        }
-
-        private FieldInfo GetSettingsStoreFolderField()
-        {
-            return typeof(PersistenceManager).GetField("SettingsStoreFolder", BindingFlags.NonPublic | BindingFlags.Static);
-        }
-
-        private void MockEncryptedKeys()
-        {
-            // mock _encryptedKeys to be empty so that we can easily look at the file for unit testing
-            OriginalEncryptedKeys = (HashSet<string>)GetEncryptedKeysField().GetValue(PersistenceManager.Instance);
-            GetEncryptedKeysField().SetValue(PersistenceManager.Instance, new HashSet<string>());
-        }
-
-        private void UnMockEncryptedKeys()
-        {
-            GetEncryptedKeysField().SetValue(PersistenceManager.Instance, OriginalEncryptedKeys);
-        }
-
-        private FieldInfo GetEncryptedKeysField()
-        {
-            return typeof(PersistenceManager).GetField("_encryptedKeys", BindingFlags.NonPublic | BindingFlags.Instance);
-        }
-
-        private void PrepareTempFilePaths()
-        {
-            DirectoryPath = Path.Combine(Path.GetTempPath(), GetType().Name, Path.GetRandomFileName());
-            Directory.CreateDirectory(DirectoryPath);
         }
     }
 }

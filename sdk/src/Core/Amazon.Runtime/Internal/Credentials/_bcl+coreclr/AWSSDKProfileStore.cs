@@ -13,11 +13,11 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime.Internal.Settings;
+using Amazon.Util;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using static Amazon.Runtime.Internal.Settings.SettingsCollection;
 
 namespace Amazon.Runtime.Internal
 {
@@ -50,6 +50,13 @@ namespace Amazon.Runtime.Internal
                 }
             );
 
+        private EncryptedStoreObjectManager objectManager;
+
+        public AWSSDKProfileStore()
+        {
+            objectManager = new EncryptedStoreObjectManager(SettingsConstants.RegisteredProfiles);
+        }
+
         public List<string> ListProfileNames()
         {
             return ListProfiles().Select(p => p.Name).ToList();
@@ -58,7 +65,7 @@ namespace Amazon.Runtime.Internal
         public List<CredentialProfile> ListProfiles()
         {
             var profiles = new List<CredentialProfile>();
-            foreach (var profileName in ListAllProfileNames())
+            foreach (var profileName in objectManager.ListObjectNames())
             {
                 CredentialProfile profile = null;
                 if (TryGetProfile(profileName, out profile) && profile.CanCreateAWSCredentials)
@@ -77,13 +84,12 @@ namespace Amazon.Runtime.Internal
         /// <returns>True if the profile was found, false otherwise.</returns>
         public bool TryGetProfile(string profileName, out CredentialProfile profile)
         {
-            var settingsCollection = GetSettingsCollection();
-            ObjectSettings objectSettings = null;
-            if (TryGetObjectSettings(profileName, settingsCollection, out objectSettings))
+            Dictionary<string, string> properties;
+            if (objectManager.TryGetObject(profileName, out properties))
             {
                 try
                 {
-                    profile = new CredentialProfile(profileName, PropertyMapping.Convert(objectSettings), this);
+                    profile = new CredentialProfile(profileName, PropertyMapping.Convert(properties), this);
                     return true;
                 }
                 catch (ArgumentException)
@@ -107,27 +113,13 @@ namespace Amazon.Runtime.Internal
         {
             if (profile.CanCreateAWSCredentials)
             {
-                var settingsCollection = GetSettingsCollection();
-                ObjectSettings objectSettings = null;
-                if (TryGetObjectSettings(profile.Name, settingsCollection, out objectSettings))
-                {
-                    // clear it out - we'll be overwriting the whole thing with the new profile
-                    objectSettings.Clear();
-                }
-                else
-                {
-                    objectSettings = settingsCollection.NewObjectSettings(Guid.NewGuid().ToString());
-                }
-
-                objectSettings[SettingsConstants.DisplayNameField] = profile.Name;
-                SetProfileTypeField(objectSettings, profile.ProfileType.Value);
-
+                var properties = new Dictionary<string, string>();
+                SetProfileTypeField(properties, profile.ProfileType.Value);
                 foreach (var pair in PropertyMapping.Convert(profile.Options))
                 {
-                    objectSettings[pair.Key] = pair.Value;
+                    properties[pair.Key] = pair.Value;
                 }
-
-                PersistenceManager.Instance.SaveSettings(SettingsConstants.RegisteredProfiles, settingsCollection);
+                objectManager.RegisterObject(profile.Name, properties);
             }
             else
             {
@@ -142,58 +134,30 @@ namespace Amazon.Runtime.Internal
         /// <param name="profileName">The name of the profile to delete.</param>
         public void UnregisterProfile(string profileName)
         {
-            var settingsCollection = GetSettingsCollection();
-            ObjectSettings objectSettings = null;
-            if (TryGetObjectSettings(profileName, settingsCollection, out objectSettings))
-            {
-                settingsCollection.Remove(objectSettings.UniqueKey);
-                PersistenceManager.Instance.SaveSettings(SettingsConstants.RegisteredProfiles, settingsCollection);
-            }
-        }
-
-        /// <summary>
-        /// Get a list of all profiles regardless of whether they're valid or not.
-        /// </summary>
-        /// <returns></returns>
-        private static List<string> ListAllProfileNames()
-        {
-            var settings = PersistenceManager.Instance.GetSettings(SettingsConstants.RegisteredProfiles);
-            return settings.Select(os => os.GetValueOrDefault(SettingsConstants.DisplayNameField, null)).ToList();
+            objectManager.UnregisterObject(profileName);
         }
 
         /// <summary>
         /// Set the ProfileType field to maintain backward compatibility with ProfileManager.
         /// The value is ignored when CredentialProfileManager reads it back in.
         /// </summary>
-        /// <param name="objectSettings"></param>
+        /// <param name="properties"></param>
         /// <param name="profileType"></param>
-        private static void SetProfileTypeField(ObjectSettings objectSettings, CredentialProfileType profileType)
+        private static void SetProfileTypeField(Dictionary<string, string> properties, CredentialProfileType profileType)
         {
             if (profileType == CredentialProfileType.Basic)
             {
-                objectSettings[SettingsConstants.ProfileTypeField] = AWSCredentialsProfileType;
+                properties[SettingsConstants.ProfileTypeField] = AWSCredentialsProfileType;
             }
             else if (profileType == CredentialProfileType.SAMLRole ||
                 profileType == CredentialProfileType.SAMLRoleUserIdentity)
             {
-                objectSettings[SettingsConstants.ProfileTypeField] = SAMLRoleProfileType;
+                properties[SettingsConstants.ProfileTypeField] = SAMLRoleProfileType;
             }
             else
             {
-                objectSettings[SettingsConstants.ProfileTypeField] = profileType.ToString();
+                properties[SettingsConstants.ProfileTypeField] = profileType.ToString();
             }
-        }
-
-        private static SettingsCollection GetSettingsCollection()
-        {
-            return PersistenceManager.Instance.GetSettings(SettingsConstants.RegisteredProfiles);
-        }
-
-        private static bool TryGetObjectSettings(string profileName, SettingsCollection settingsCollection, out ObjectSettings objectSettings)
-        {
-            objectSettings = settingsCollection.FirstOrDefault(
-                x => string.Equals(x[SettingsConstants.DisplayNameField], profileName, StringComparison.OrdinalIgnoreCase));
-            return objectSettings != null;
         }
     }
 }
