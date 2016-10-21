@@ -193,7 +193,13 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                     {
                         childObj = Unmarshall(reader, propInfo.PropertyType);
                         if (propInfo.PropertyType == typeof(DateTime))
+                        {
                             childObj = ConvertToDateTime(childObj);
+                        }
+                        else if(propInfo.PropertyType == typeof(Decimal))
+                        {
+                            childObj = ConvertToDecimal(childObj);
+                        }
                     }
                     propInfo.SetValue(instance, childObj);
                 }
@@ -366,6 +372,15 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
             throw new InvalidOperationException(string.Format("Could not convert {0} of type {1} to DateTime",
                 value, value.GetType()));
-        } 
+        }
+
+        private static object ConvertToDecimal(object value)
+        {
+            if (value.GetType() == typeof(string))
+                return Convert.ToDecimal(value);
+
+            throw new InvalidOperationException(string.Format("Could not convert {0} of type {1} to Decimal",
+                value, value.GetType()));
+        }
     }
 }

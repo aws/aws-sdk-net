@@ -457,7 +457,8 @@ namespace ServiceClientGenerator
                     long min;
                     if (!long.TryParse(value.ToString(), out min))
                     {
-                        throw new Exception(string.Format("Failed to parse min value {0} for shape {1}", value, this.Name));
+                        Console.WriteLine("Generator does not support non-integer values for Min.");
+                        return null;
                     }
                     return min;
                 }
@@ -476,7 +477,8 @@ namespace ServiceClientGenerator
                     long max;
                     if (!long.TryParse(value.ToString(), out max))
                     {
-                        throw new Exception(string.Format("Failed to parse max value {0} for shape {1}", value, this.Name));
+                        Console.WriteLine("Generator does not support non-integer values for Max.");
+                        return null;
                     }
                     return max;
                 }

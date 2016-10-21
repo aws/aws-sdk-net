@@ -1,0 +1,11 @@
+{
+    "dataTypeSwap" : {
+        "Spend" : {
+            "Amount" : {
+                "Type" : "Decimal",
+                "Marshaller" : "Amazon.Runtime.Internal.Util.StringUtils.FromDecimal",
+                "Unmarshaller" : "Amazon.Runtime.Internal.Transform.DecimalUnmarshaller"
+            }
+        }
+    }
+}

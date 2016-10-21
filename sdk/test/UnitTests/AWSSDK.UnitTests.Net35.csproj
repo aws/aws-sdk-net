@@ -88,6 +88,10 @@
       <Project>{663AA578-CBBF-4E69-9753-577480DEED1D}</Project>
       <Name>AWSSDK.AWSSupport.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Budgets\AWSSDK.Budgets.Net35.csproj">
+      <Project>{439F1B7E-8E59-49A3-9758-0525C097DF61}</Project>
+      <Name>AWSSDK.Budgets.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CertificateManager\AWSSDK.CertificateManager.Net35.csproj">
       <Project>{16A1EEDF-CD98-4844-B608-F3F120D7A542}</Project>
       <Name>AWSSDK.CertificateManager.Net35</Name>

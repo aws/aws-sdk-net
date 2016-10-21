@@ -77,6 +77,11 @@ namespace Amazon.Runtime.Internal.Util
             return value.ToString(CultureInfo.InvariantCulture);
         }
 
+        public static string FromDecimal(decimal value)
+        {
+            return value.ToString(CultureInfo.InvariantCulture);
+        }
+
         public static long Utf8ByteLength(string value)
         {
             if (value == null)
