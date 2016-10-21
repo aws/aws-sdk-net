@@ -1,3 +1,12 @@
+### 3.3.13.0 (2016-10-21 04:40 UTC)
+* Budgets (3.3.0.0)
+	* Updated to use new Core, version 3.3.3.0
+	* Release of AWS Budgets
+* WAF (3.3.1.2)
+	* doc update
+* Core 3.3.3.0
+	* decimal type support for aws budgets
+
 ### 3.3.12.0 (2016-10-20 00:47 UTC)
 * EC2 (3.3.2.0)
 	* Added support for retrieving the new Windows Server 2016 images in ImageUtilities helper class.
