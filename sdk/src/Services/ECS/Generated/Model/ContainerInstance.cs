@@ -165,7 +165,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RegisteredResources. 
         /// <para>
-        /// The registered resources on the container instance that are in use by current tasks.
+        /// For most resource types, this parameter describes the registered resources on the
+        /// container instance that are in use by current tasks. For port resource types, this
+        /// parameter describes the ports that were reserved by the Amazon ECS container agent
+        /// when it registered the container instance with Amazon ECS.
         /// </para>
         /// </summary>
         public List<Resource> RegisteredResources
@@ -183,7 +186,11 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RemainingResources. 
         /// <para>
-        /// The remaining resources of the container instance that are available for new tasks.
+        /// For most resource types, this parameter describes the remaining resources of the container
+        /// instance that are available for new tasks. For port resource types, this parameter
+        /// describes the ports that are reserved by the Amazon ECS container agent and any containers
+        /// that have reserved port mappings; any port that is not specified here is available
+        /// for new tasks.
         /// </para>
         /// </summary>
         public List<Resource> RemainingResources

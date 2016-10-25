@@ -40,9 +40,10 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property MaximumPercent. 
         /// <para>
         /// The upper limit (as a percentage of the service's <code>desiredCount</code>) of the
-        /// number of running tasks that can be running in a service during a deployment. The
-        /// maximum number of tasks during a deployment is the <code>desiredCount</code> multiplied
-        /// by the <code>maximumPercent</code>/100, rounded down to the nearest integer value.
+        /// number of tasks that are allowed in the <code>RUNNING</code> or <code>PENDING</code>
+        /// state in a service during a deployment. The maximum number of tasks during a deployment
+        /// is the <code>desiredCount</code> multiplied by the <code>maximumPercent</code>/100,
+        /// rounded down to the nearest integer value.
         /// </para>
         /// </summary>
         public int MaximumPercent
@@ -61,8 +62,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property MinimumHealthyPercent. 
         /// <para>
         /// The lower limit (as a percentage of the service's <code>desiredCount</code>) of the
-        /// number of running tasks that must remain running and healthy in a service during a
-        /// deployment. The minimum healthy tasks during a deployment is the <code>desiredCount</code>
+        /// number of running tasks that must remain in the <code>RUNNING</code> state in a service
+        /// during a deployment. The minimum healthy tasks during a deployment is the <code>desiredCount</code>
         /// multiplied by the <code>minimumHealthyPercent</code>/100, rounded up to the nearest
         /// integer value.
         /// </para>

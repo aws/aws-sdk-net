@@ -84,12 +84,13 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the
-        /// Amazon ECS container agent port 51678. Any host port that was previously specified
-        /// in a running task is also reserved while the task is running (after a task stops,
-        /// the host port is released).The current reserved ports are displayed in the <code>remainingResources</code>
-        /// of <a>DescribeContainerInstances</a> output, and a container instance may have up
-        /// to 100 reserved ports at a time, including the default reserved ports (automatically
-        /// assigned ports do not count toward the 100 reserved ports limit).
+        /// Amazon ECS container agent ports 51678 and 51679. Any host port that was previously
+        /// specified in a running task is also reserved while the task is running (after a task
+        /// stops, the host port is released).The current reserved ports are displayed in the
+        /// <code>remainingResources</code> of <a>DescribeContainerInstances</a> output, and a
+        /// container instance may have up to 100 reserved ports at a time, including the default
+        /// reserved ports (automatically assigned ports do not count toward the 100 reserved
+        /// ports limit).
         /// </para>
         /// </summary>
         public int HostPort

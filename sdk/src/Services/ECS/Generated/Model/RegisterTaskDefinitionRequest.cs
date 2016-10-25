@@ -138,9 +138,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume.
-        /// All containers in this task are granted the permissions that are specified in this
-        /// role.
+        /// The short name or full Amazon Resource Name (ARN) of the IAM role that containers
+        /// in this task can assume. All containers in this task are granted the permissions that
+        /// are specified in this role. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+        /// Roles for Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public string TaskRoleArn
