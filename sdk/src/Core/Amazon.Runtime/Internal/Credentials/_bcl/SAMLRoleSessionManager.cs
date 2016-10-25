@@ -24,6 +24,14 @@ namespace Amazon.Runtime.Internal
     {
         private EncryptedStoreObjectManager objectManager;
 
+        public static bool IsAvailable
+        {
+            get
+            {
+                return EncryptedStoreObjectManager.IsAvailable;
+            }
+        }
+
         public SAMLRoleSessionManager()
         {
             objectManager = new EncryptedStoreObjectManager(SettingsConstants.RegisteredRoleSessions, true);
@@ -39,7 +47,7 @@ namespace Amazon.Runtime.Internal
 
         /// <summary>
         /// Attempt to read a role session with the given name.
-        /// If the session is invlid or expired it will not be returned.
+        /// If the session is invalid or expired it will not be returned.
         /// </summary>
         /// <param name="roleSessionName">The name of the role session to get.</param>
         /// <param name="credentials">The credentials for the session, if found.</param>
@@ -56,7 +64,7 @@ namespace Amazon.Runtime.Internal
                 }
                 catch (Exception e)
                 {
-                    Logger.GetLogger(typeof(SAMLEndpointManager)).Error(e, "Unable to load SAML role session '{0}'.", roleSessionName);
+                    Logger.GetLogger(typeof(SAMLRoleSessionManager)).Error(e, "Unable to load SAML role session '{0}'.", roleSessionName);
                 }
             }
             return credentials != null;

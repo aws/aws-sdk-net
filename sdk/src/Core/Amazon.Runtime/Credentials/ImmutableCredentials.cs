@@ -80,7 +80,7 @@ namespace Amazon.Runtime
         /// Returns a copy of the current credentials.
         /// </summary>
         /// <returns></returns>
-        public ImmutableCredentials Copy()
+        public virtual ImmutableCredentials Copy()
         {
             ImmutableCredentials credentials = new ImmutableCredentials
             {

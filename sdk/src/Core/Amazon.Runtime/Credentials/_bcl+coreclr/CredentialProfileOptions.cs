@@ -27,7 +27,9 @@ namespace Amazon.Runtime
     /// BasicAWSCredentials         AccessKey SecretKey
     /// SessionAWSCredentials       AccessKey SecretKey Token
     /// AssmeRoleAWSCredentials     SourceProfile RoleArn [ExternalID] [MfaSerial]
+#if BCL
     /// FederatedAWSCredentials     EndpointName RoleArn [UserIdentity]
+#endif
     /// </summary>
     public class CredentialProfileOptions
     {
@@ -35,10 +37,12 @@ namespace Amazon.Runtime
         /// The access key to be used in the AWSCredentials.
         /// </summary>
         public string AccessKey { get; set; }
+#if BCL
         /// <summary>
         /// The endpoint name to be used for SAML AWSCredentials.
         /// </summary>
         public string EndpointName { get; set; }
+#endif
         /// <summary>
         /// The external id to use in assume role AWSCredentials.
         /// </summary>
@@ -48,7 +52,11 @@ namespace Amazon.Runtime
         /// </summary>
         public string MfaSerial { get; set; }
         /// <summary>
+#if BCL
         /// The role ARN to use when creating assume role or SAML AWSCredentials.
+#else
+        /// The role ARN to use when creating assume role AWSCredentials.
+#endif
         /// </summary>
         public string RoleArn { get; set; }
         /// <summary>
@@ -64,23 +72,30 @@ namespace Amazon.Runtime
         /// The session token to be used to create AWSCredentials.
         /// </summary>
         public string Token { get; set; }
+#if BCL
         /// <summary>
         /// The user identity to use when creating SAML AWSCredentials.
         /// </summary>
         public string UserIdentity { get; set; }
+#endif
 
         public override string ToString()
         {
             return
                 "[AccessKey=" + AccessKey + ", " +
+#if BCL
                 "EndpointName=" + EndpointName + ", " +
+#endif
                 "ExternalID=" + ExternalID + ", " +
                 "MfaSerial=" + MfaSerial + ", " +
                 "RoleArn=" + RoleArn + ", " +
                 "SecretKey=XXXXX, " +
                 "SourceProfile=" + SourceProfile + ", " +
-                "Token=" + Token + ", " +
-                "UserIdentity=" + UserIdentity + "]";
+                "Token=" + Token +
+#if BCL
+                ", " + "UserIdentity=" + UserIdentity +
+#endif
+                "]";
         }
 
         public override bool Equals(object obj)
@@ -92,14 +107,24 @@ namespace Amazon.Runtime
             if (po == null)
                 return false;
 
+#if BCL
             return AWSSDKUtils.AreEqual(
                 new object[] { AccessKey,  EndpointName, ExternalID, MfaSerial, RoleArn, SecretKey, SourceProfile, Token, UserIdentity},
                 new object[] { po.AccessKey, po.EndpointName, po.ExternalID, po.MfaSerial, po.RoleArn, po.SecretKey, po.SourceProfile, po.Token, po.UserIdentity });
+#else
+            return AWSSDKUtils.AreEqual(
+                new object[] { AccessKey, ExternalID, MfaSerial, RoleArn, SecretKey, SourceProfile, Token},
+                new object[] { po.AccessKey, po.ExternalID, po.MfaSerial, po.RoleArn, po.SecretKey, po.SourceProfile, po.Token });
+#endif
         }
 
         public override int GetHashCode()
         {
+#if BCL
             return Hashing.Hash(AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, SecretKey, SourceProfile, Token, UserIdentity);
+#else
+            return Hashing.Hash(AccessKey, ExternalID, MfaSerial, RoleArn, SecretKey, SourceProfile, Token);
+#endif
         }
     }
 }

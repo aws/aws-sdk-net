@@ -22,11 +22,12 @@ namespace Amazon.Runtime
     public class CredentialRequestCallbackArgs
     {
         /// <summary>
-        /// Contains the name of the credential profile we are authenticating
-        /// for. Use in display prompts to give the user some context as to
-        /// why their credentials are being requested.
+        /// If the current authentication callback is associated with
+        /// a credential profile, this can be used to give the user
+        /// some context on the request for his/her authentication.
         /// </summary>
         public string ProfileName { get; internal set; }
+
         /// <summary>
         /// Contains the user identity that the user should supply a password
         /// for. The user can ignore if they choose and return credentials for

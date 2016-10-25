@@ -30,7 +30,6 @@ namespace Amazon.Runtime
 
     /// <summary>
     /// Representation of a SAML Endpoint.
-    /// Used in conjunction with <see cref="CredentialProfileManager"/> when creating SAML role profiles.
     /// </summary>
     public class SAMLEndpoint
     {
@@ -38,7 +37,6 @@ namespace Amazon.Runtime
 
         /// <summary>
         /// The name given to this SAMLEndpoint.
-        /// Used in conjunction with <see cref="CredentialProfileOptions"/> when creating SAML role profiles.
         /// </summary>
         public string Name { get; private set; }
 

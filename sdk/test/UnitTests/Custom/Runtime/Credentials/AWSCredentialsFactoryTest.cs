@@ -14,6 +14,8 @@
  */
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Settings;
+using Amazon.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -164,6 +166,17 @@ namespace AWSSDK.UnitTests
                 MfaSerialNumber = "mfa_serial"
             });
 
+        private static readonly SAMLEndpoint SomeSAMLEndpoint = new SAMLEndpoint("endpoint_name", new Uri("https://samlendpoint.com"));
+
+        private static readonly FederatedAWSCredentials FederatedCredentials =
+            new FederatedAWSCredentials(SomeSAMLEndpoint, "role_arn");
+
+        private static readonly FederatedAWSCredentials FederatedUserIdentityCredentials =
+            new FederatedAWSCredentials(SomeSAMLEndpoint, "role_arn", new FederatedAWSCredentialsOptions()
+            {
+                UserIdentity = "user_identity"
+            });
+
         [TestMethod]
         public void TryGetInvalidCredentials()
         {
@@ -229,19 +242,21 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void GetSAMLRoleCredentials()
         {
-            AssertExtensions.ExpectException(() =>
+            using (var fixture = new EncryptedStoreTestFixture(SettingsConstants.RegisteredSAMLEndpoints))
             {
-                AWSCredentialsFactory.GetAWSCredentials(SAMLRoleProfile);
-            }, typeof(NotImplementedException), "SAML CREDENTIALS NOT YET IMPLEMENTED");
+                (new SAMLEndpointManager()).RegisterEndpoint(SomeSAMLEndpoint);
+                AssertFederatedCredentialsAreEqual(FederatedCredentials, AWSCredentialsFactory.GetAWSCredentials(SAMLRoleProfile));
+            }
         }
 
         [TestMethod]
         public void GetSAMLRoleUserIdentityCredentials()
         {
-            AssertExtensions.ExpectException(() =>
+            using (var fixture = new EncryptedStoreTestFixture(SettingsConstants.RegisteredSAMLEndpoints))
             {
-                AWSCredentialsFactory.GetAWSCredentials(SAMLRoleUserIdentityProfile);
-            }, typeof(NotImplementedException), "SAML CREDENTIALS NOT YET IMPLEMENTED");
+                (new SAMLEndpointManager()).RegisterEndpoint(SomeSAMLEndpoint);
+                AssertFederatedCredentialsAreEqual(FederatedUserIdentityCredentials, AWSCredentialsFactory.GetAWSCredentials(SAMLRoleUserIdentityProfile));
+            }
         }
 
         [TestMethod]
@@ -286,7 +301,7 @@ namespace AWSSDK.UnitTests
 
         private void AssertAssumeRoleCredentialsAreEqual(AssumeRoleAWSCredentials expected, AWSCredentials actualAWSCredentials)
         {
-            AssumeRoleAWSCredentials actual = actualAWSCredentials as AssumeRoleAWSCredentials;
+            var actual = actualAWSCredentials as AssumeRoleAWSCredentials;
             Assert.IsNotNull(actual);
             // can't do AreEqual because this contains DateTime.UtcNow.Ticks
             Assert.IsTrue(actual.RoleSessionName.StartsWith("aws-dotnet-sdk-session-"));
@@ -299,6 +314,15 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(expected.Options?.MfaTokenCodeCallback, actual.Options?.MfaTokenCodeCallback);
             Assert.AreEqual(expected.Options?.Policy, actual.Options?.Policy);
             Assert.AreEqual(expected.Options?.ProxySettings, actual.Options?.ProxySettings);
+        }
+
+        private void AssertFederatedCredentialsAreEqual(FederatedAWSCredentials expected, AWSCredentials actualAWSCredentials)
+        {
+            var actual = actualAWSCredentials as FederatedAWSCredentials;
+            Assert.IsNotNull(actual);
+            Assert.AreEqual(expected.SAMLEndpoint.Name, actual.SAMLEndpoint.Name);
+            Assert.AreEqual(expected.RoleArn, actual.RoleArn);
+            Assert.AreEqual(expected.Options.UserIdentity, actual.Options.UserIdentity);
         }
     }
 }

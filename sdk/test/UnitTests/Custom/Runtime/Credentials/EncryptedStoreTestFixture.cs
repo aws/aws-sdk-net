@@ -14,14 +14,13 @@
  */
 using Amazon.Runtime.Internal.Settings;
 using AWSSDK_DotNet.CommonTest.Utils;
-using Json.LitJson;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Reflection;
+using ThirdParty.Json.LitJson;
 
 namespace AWSSDK.UnitTests
 {
@@ -33,14 +32,7 @@ namespace AWSSDK.UnitTests
         private HashSet<string> OriginalEncryptedKeys { get; set; }
 
         public string DirectoryPath { get; private set; }
-        public string Filename { get; private set; }
-        public string FullPath
-        {
-            get
-            {
-                return Path.Combine(DirectoryPath, Filename);
-            }
-        }
+        public string MainFilename { get; private set; }
 
         public EncryptedStoreTestFixture(string filename)
             : this(filename, null)
@@ -49,7 +41,7 @@ namespace AWSSDK.UnitTests
 
         public EncryptedStoreTestFixture(string filename, string fileContents)
         {
-            Filename = filename;
+            MainFilename = filename;
             PrepareTempFilePaths();
             MockSettingsStoreFolder();
             MockEncryptedKeys();
@@ -59,9 +51,14 @@ namespace AWSSDK.UnitTests
 
         public void SetFileContents(string fileContents)
         {
+            SetFileContents(MainFilename, fileContents);
+        }
+
+        public void SetFileContents(string filename, string fileContents)
+        {
             if (fileContents != null)
             {
-                File.WriteAllText(Path.Combine(DirectoryPath, Filename), fileContents);
+                File.WriteAllText(Path.Combine(DirectoryPath, filename), fileContents);
             }
         }
 
@@ -78,12 +75,42 @@ namespace AWSSDK.UnitTests
 
         public void AssertFileExists(bool fileExists)
         {
-            Assert.AreEqual(fileExists, File.Exists(FullPath));
+            AssertFileExists(MainFilename, fileExists);
+        }
+
+        public void AssertFileExists(string filename, bool fileExists)
+        {
+            Assert.AreEqual(fileExists, File.Exists(Path.Combine(DirectoryPath, filename)));
+        }
+
+        public void AssertObjectCount(int expectedCount)
+        {
+            AssertObjectCount(MainFilename, expectedCount);
+        }
+        public void AssertObjectCount(string filename, int expectedCount)
+        {
+            Assert.AreEqual(expectedCount, GetObjectCount(filename));
+        }
+
+        public int GetObjectCount()
+        {
+            return GetObjectCount(MainFilename);
+        }
+
+        public int GetObjectCount(string filename)
+        {
+            var rootJsonData = JsonMapper.ToObject(new JsonReader(File.ReadAllText(Path.Combine(DirectoryPath, filename))));
+            return rootJsonData.PropertyNames.Count();
         }
 
         public void AssertJsonProperty(string displayName, string propertyName, string propertyValue)
         {
-            var rootJsonData = JsonMapper.ToObject(new JsonReader(File.ReadAllText(FullPath)));
+            AssertJsonProperty(MainFilename, displayName, propertyName, propertyValue);
+        }
+
+        public void AssertJsonProperty(string filename, string displayName, string propertyName, string propertyValue)
+        {
+            var rootJsonData = JsonMapper.ToObject(new JsonReader(File.ReadAllText(Path.Combine(DirectoryPath, filename))));
             var profileJsonData = GetObjectJsonData(displayName, rootJsonData);
 
             Assert.IsTrue(profileJsonData.IsObject);
@@ -95,18 +122,6 @@ namespace AWSSDK.UnitTests
                     break;
                 }
             }
-        }
-
-
-        public void AssertObjectCount(int expectedCount)
-        {
-            Assert.AreEqual(expectedCount, GetObjectCount());
-        }
-
-        public int GetObjectCount()
-        {
-            var rootJsonData = JsonMapper.ToObject(new JsonReader(File.ReadAllText(Path.Combine(DirectoryPath, Filename))));
-            return rootJsonData.PropertyNames.Count();
         }
 
         public JsonData GetObjectJsonData(string displayName, JsonData rootJsonData)
@@ -149,7 +164,7 @@ namespace AWSSDK.UnitTests
 
         private void PrepareTempFilePaths()
         {
-            DirectoryPath = Path.Combine(Path.GetTempPath(), GetType().Name, Path.GetRandomFileName());
+            DirectoryPath = Path.Combine(Path.Combine(Path.GetTempPath(), GetType().Name), Path.GetRandomFileName());
             Directory.CreateDirectory(DirectoryPath);
         }
     }

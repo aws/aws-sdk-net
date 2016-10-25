@@ -19,7 +19,6 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using static Amazon.Runtime.Internal.Settings.SettingsCollection;
 
 namespace Amazon.Util
 {
@@ -75,7 +74,7 @@ namespace Amazon.Util
         public void RegisterObject(string displayName, Dictionary<string, string> properties)
         {
             var settings = GetSettings();
-            ObjectSettings objectSettings;
+            SettingsCollection.ObjectSettings objectSettings;
             if (TryGetObjectSettings(displayName, settings, out objectSettings))
             {
                 // clear it out - this is an update
@@ -108,7 +107,7 @@ namespace Amazon.Util
         public bool TryGetObject(string displayName, out Dictionary<string, string> properties)
         {
             var settings = GetSettings();
-            ObjectSettings objectSettings;
+            SettingsCollection.ObjectSettings objectSettings;
             properties = null;
             if (TryGetObjectSettings(displayName, settings, out objectSettings))
             {
@@ -128,7 +127,7 @@ namespace Amazon.Util
         public void UnregisterObject(string displayName)
         {
             var settings = GetSettings();
-            ObjectSettings objectSettings = null;
+            SettingsCollection.ObjectSettings objectSettings = null;
             if (TryGetObjectSettings(displayName, settings, out objectSettings))
             {
                 settings.Remove(objectSettings.UniqueKey);
@@ -152,7 +151,7 @@ namespace Amazon.Util
             }
         }
 
-        private bool TryGetObjectSettings(string displayName, SettingsCollection settings, out ObjectSettings objectSettings)
+        private bool TryGetObjectSettings(string displayName, SettingsCollection settings, out SettingsCollection.ObjectSettings objectSettings)
         {
             if (UseDisplayNameAsUniqueKey)
             {

@@ -25,6 +25,9 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class AWSSDKProfileStoreTest
     {
+        private const string AWSCredentialsProfileType = "AWS";
+        private const string SAMLRoleProfileType = "SAML";
+
         private static readonly string InvalidProfileText = new StringBuilder()
             .AppendLine("{")
             .AppendLine("    \"deefa421-989c-4dd6-9dbc-baecfb5e63f6\" : {")
@@ -52,11 +55,11 @@ namespace AWSSDK.UnitTests
                     var expectedType = type.ToString();
                     if (type == CredentialProfileType.Basic)
                     {
-                        expectedType = AWSSDKProfileStore.AWSCredentialsProfileType;
+                        expectedType = AWSCredentialsProfileType;
                     } else if (type == CredentialProfileType.SAMLRole ||
                         type == CredentialProfileType.SAMLRoleUserIdentity)
                     {
-                        expectedType = AWSSDKProfileStore.SAMLRoleProfileType;
+                        expectedType = SAMLRoleProfileType;
                     }
                     tester.AssertJsonProperty(profileName, SettingsConstants.ProfileTypeField, expectedType);
                 }

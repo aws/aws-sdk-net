@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Util;
 using System;
 using System.Globalization;
 using System.IO;
@@ -24,6 +25,10 @@ namespace Amazon.Runtime.Internal
     public static class AWSCredentialsFactory
     {
         private const string RoleSessionNamePrefix = "aws-dotnet-sdk-session-";
+
+#if BCL
+        private static readonly SAMLEndpointManager EndpointManager = new SAMLEndpointManager();
+#endif
 
         /// <summary>
         /// Get credentials for the given profile, or throws InvalidDataException.
@@ -99,10 +104,17 @@ namespace Amazon.Runtime.Internal
                             MfaSerialNumber = options.MfaSerial
                         };
                         return new AssumeRoleAWSCredentials(sourceCredentials, options.RoleArn, roleSessionName, assumeRoleOptions);
+#if BCL
                     case CredentialProfileType.SAMLRole:
                     case CredentialProfileType.SAMLRoleUserIdentity:
-                        // placeholder - this will not be released to customers
-                        throw new NotImplementedException("SAML CREDENTIALS NOT YET IMPLEMENTED");
+                        var federatedOptions = new FederatedAWSCredentialsOptions()
+                        {
+                            UserIdentity = profile.Options.UserIdentity,
+                            ProfileName = profile.Name
+                        };
+                        return new FederatedAWSCredentials(EndpointManager.GetEndpoint(profile.Options.EndpointName),
+                            profile.Options.RoleArn, federatedOptions);
+#endif
                     default:
                         return ThrowOrReturnNull(string.Format(CultureInfo.InvariantCulture,
                             "Invalid ProfileType {0} for credential profile [{1}].", profile.ProfileType, profile.Name),

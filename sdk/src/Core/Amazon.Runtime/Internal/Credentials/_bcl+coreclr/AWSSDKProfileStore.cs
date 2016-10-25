@@ -31,22 +31,26 @@ namespace Amazon.Runtime.Internal
     public class AWSSDKProfileStore : ICredentialProfileStore
     {
         // Values kept from ProfileManager to support backward compatibility.
-        public const string AWSCredentialsProfileType = "AWS";
-        public const string SAMLRoleProfileType = "SAML";
+        private const string AWSCredentialsProfileType = "AWS";
+        private const string SAMLRoleProfileType = "SAML";
 
         private static readonly CredentialProfilePropertyMapping PropertyMapping =
             new CredentialProfilePropertyMapping(
                 new Dictionary<string, string>()
                 {
                     { "AccessKey", SettingsConstants.AccessKeyField },
+#if BCL
                     { "EndpointName", SettingsConstants.EndpointNameField },
+#endif
                     { "ExternalID", SettingsConstants.ExternalIDField},
                     { "MfaSerial", SettingsConstants.MfaSerialField},
                     { "RoleArn", SettingsConstants.RoleArnField },
                     { "SecretKey", SettingsConstants.SecretKeyField },
                     { "SourceProfile", SettingsConstants.SourceProfileField },
                     { "Token", SettingsConstants.SessionTokenField },
+#if BCL
                     { "UserIdentity", SettingsConstants.UserIdentityField },
+#endif
                 }
             );
 
@@ -149,11 +153,13 @@ namespace Amazon.Runtime.Internal
             {
                 properties[SettingsConstants.ProfileTypeField] = AWSCredentialsProfileType;
             }
+#if BCL
             else if (profileType == CredentialProfileType.SAMLRole ||
                 profileType == CredentialProfileType.SAMLRoleUserIdentity)
             {
                 properties[SettingsConstants.ProfileTypeField] = SAMLRoleProfileType;
             }
+#endif
             else
             {
                 properties[SettingsConstants.ProfileTypeField] = profileType.ToString();

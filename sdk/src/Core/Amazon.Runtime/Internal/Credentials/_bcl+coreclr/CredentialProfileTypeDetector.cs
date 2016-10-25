@@ -24,8 +24,10 @@ namespace Amazon.Runtime.Internal
         AssumeRoleExternalMFA,
         AssumeRoleMFA,
         Basic,
+#if BCL
         SAMLRole,
         SAMLRoleUserIdentity,
+#endif
         Session,
     }
 
@@ -88,6 +90,7 @@ namespace Amazon.Runtime.Internal
                         SecretKey,
                     }
                 },
+#if BCL
                 {
                     CredentialProfileType.SAMLRole, new HashSet<string>()
                     {
@@ -103,6 +106,7 @@ namespace Amazon.Runtime.Internal
                         UserIdentity,
                     }
                 },
+#endif
                 {
                     CredentialProfileType.Session, new HashSet<string>()
                     {
@@ -121,8 +125,10 @@ namespace Amazon.Runtime.Internal
                 { CredentialProfileType.AssumeRoleExternalMFA, AssumeRoleCredentials },
                 { CredentialProfileType.AssumeRoleMFA, AssumeRoleCredentials },
                 { CredentialProfileType.Basic, BasicCredentials },
+#if BCL
                 { CredentialProfileType.SAMLRole, SAMLCredentials },
                 { CredentialProfileType.SAMLRoleUserIdentity, SAMLCredentials },
+#endif
                 { CredentialProfileType.Session, SessionCredentials },
             };
 

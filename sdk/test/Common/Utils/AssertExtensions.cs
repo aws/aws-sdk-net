@@ -96,6 +96,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         }
 
         /// <summary>
+        /// Assert that the actual DateTime provided is equal to the expected DateTime provided, down to the second.
+        /// </summary>
+        /// <param name="expected"></param>
+        /// <param name="actual"></param>
+        public static void AssertDateTimesAreEqualToTheSecond(DateTime expected, DateTime actual)
+        {
+            Assert.AreEqual(expected.Kind, actual.Kind);
+            Assert.AreEqual(expected.Year, actual.Year);
+            Assert.AreEqual(expected.Month, actual.Month);
+            Assert.AreEqual(expected.Day, actual.Day);
+            Assert.AreEqual(expected.Hour, actual.Hour);
+            Assert.AreEqual(expected.Minute, actual.Minute);
+            Assert.AreEqual(expected.Second, actual.Second);
+        }
+
+        /// <summary>
         /// Checks if properties have been added, removed, or changed on a type since the previous run.
         /// The check works by comparing a hard-coded hash to the current hash of the type's property names.
         /// </summary>

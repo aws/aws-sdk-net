@@ -102,6 +102,14 @@ namespace Amazon.Runtime
             return false;
         }
 
+        /// <summary>
+        /// Returns a copy of the current credentials.
+        /// </summary>
+        /// <returns></returns>
+        override public ImmutableCredentials Copy()
+        {
+            return new SAMLImmutableCredentials(AccessKey, SecretKey, Token, Expires, Subject);
+        }
         #endregion
 
         #region Serialization
