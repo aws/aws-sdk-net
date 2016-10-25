@@ -1,3 +1,9 @@
+### 3.3.14.0 (2016-10-25 03:31 UTC)
+* ECS (3.3.0.2)
+	* Doc only update
+* ServerMigrationService (3.3.0.0)
+	*  AWS Server Migration Service (SMS) is an agentless service which makes it easier and faster for you to migrate thousands of on-premises workloads to AWS.
+
 ### 3.3.13.0 (2016-10-21 04:40 UTC)
 * Budgets (3.3.0.0)
 	* Updated to use new Core, version 3.3.3.0
