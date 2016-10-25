@@ -39,7 +39,7 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/LaunchConfiguration.html">Launch
+    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/LaunchConfiguration.html">Launch
     /// Configurations</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
@@ -69,7 +69,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Used for groups that launch instances into a virtual private cloud (VPC). Specifies
         /// whether to assign a public IP address to each instance. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+        /// <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching
         /// Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         ///  
@@ -193,7 +193,7 @@ namespace Amazon.AutoScaling.Model
         /// EC2 instances launched with an IAM role will automatically have AWS security credentials
         /// available. You can use IAM roles with Auto Scaling to automatically enable applications
         /// running on your EC2 instances to securely access other AWS resources. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launch
+        /// see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/us-iam-role.html">Launch
         /// Auto Scaling Instances with an IAM Role</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -246,7 +246,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/create-lc-with-instanceID.html">Create
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/create-lc-with-instanceID.html">Create
         /// a Launch Configuration Using an EC2 Instance</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -377,7 +377,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching
         /// Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         ///  
@@ -451,7 +451,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The maximum hourly price to be paid for any Spot Instance launched to fulfill the
         /// request. Spot Instances are launched when the price you specify exceeds the current
-        /// Spot market price. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">Launching
+        /// Spot market price. For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/US-SpotInstances.html">Launching
         /// Spot Instances in Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>

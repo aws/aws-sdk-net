@@ -43,7 +43,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>access_logs.s3.enabled</code> - Indicates whether access logs stored in Amazon
-        /// S3 are enabled.
+        /// S3 are enabled. The value is <code>true</code> or <code>false</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -60,7 +60,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>deletion_protection.enabled</code> - Indicates whether deletion protection
-        /// is enabled.
+        /// is enabled. The value is <code>true</code> or <code>false</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

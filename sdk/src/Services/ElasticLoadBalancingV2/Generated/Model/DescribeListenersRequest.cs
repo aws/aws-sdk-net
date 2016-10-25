@@ -29,8 +29,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeListeners operation.
-    /// Describes the specified listeners or the listeners for the specified load balancer.
-    /// You must specify either a load balancer or one or more listeners.
+    /// Describes the specified listeners or the listeners for the specified Application Load
+    /// Balancer. You must specify either a load balancer or one or more listeners.
     /// </summary>
     public partial class DescribeListenersRequest : AmazonElasticLoadBalancingV2Request
     {

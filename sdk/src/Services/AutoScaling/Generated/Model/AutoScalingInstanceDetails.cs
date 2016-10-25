@@ -135,7 +135,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleState. 
         /// <para>
-        /// The lifecycle state for the instance. For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+        /// The lifecycle state for the instance. For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
         /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>

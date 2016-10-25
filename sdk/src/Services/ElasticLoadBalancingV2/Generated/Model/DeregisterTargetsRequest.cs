@@ -58,7 +58,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets.
+        /// The targets. If you specified a port override when you registered a target, you must
+        /// specify both the target ID and the port when you deregister it.
         /// </para>
         /// </summary>
         public List<TargetDescription> Targets

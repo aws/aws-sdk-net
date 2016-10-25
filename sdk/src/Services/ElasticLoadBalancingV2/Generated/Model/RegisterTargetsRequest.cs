@@ -33,8 +33,15 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// 
     ///  
     /// <para>
+    /// By default, the load balancer routes requests to registered targets using the protocol
+    /// and port number for the target group. Alternatively, you can override the port for
+    /// a target when you register it.
+    /// </para>
+    ///  
+    /// <para>
     /// The target must be in the virtual private cloud (VPC) that you specified for the target
-    /// group.
+    /// group. If the target is an EC2 instance, it can't be in the <code>stopped</code> or
+    /// <code>running</code> state when you register it.
     /// </para>
     ///  
     /// <para>
@@ -67,7 +74,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets.
+        /// The targets. The default port for a target is the port for the target group. You can
+        /// specify a port override. If a target is already registered, you can register it again
+        /// using a different port.
         /// </para>
         /// </summary>
         public List<TargetDescription> Targets

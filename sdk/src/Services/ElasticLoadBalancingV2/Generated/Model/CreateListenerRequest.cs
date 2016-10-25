@@ -29,8 +29,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateListener operation.
-    /// Creates a listener for the specified Application load balancer.
+    /// Creates a listener for the specified Application Load Balancer.
     /// 
+    ///  
+    /// <para>
+    /// You can create up to 10 listeners per load balancer.
+    /// </para>
     ///  
     /// <para>
     /// To update a listener, use <a>ModifyListener</a>. When you are finished with a listener,
@@ -74,7 +78,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property DefaultActions. 
         /// <para>
-        /// The default actions for the listener.
+        /// The default action for the listener.
         /// </para>
         /// </summary>
         public List<Action> DefaultActions

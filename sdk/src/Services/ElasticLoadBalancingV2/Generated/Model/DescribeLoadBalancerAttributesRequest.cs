@@ -29,7 +29,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancerAttributes operation.
-    /// Describes the attributes for the specified load balancer.
+    /// Describes the attributes for the specified Application Load Balancer.
     /// </summary>
     public partial class DescribeLoadBalancerAttributesRequest : AmazonElasticLoadBalancingV2Request
     {

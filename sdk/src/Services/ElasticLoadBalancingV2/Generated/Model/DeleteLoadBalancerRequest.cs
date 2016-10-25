@@ -29,7 +29,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLoadBalancer operation.
-    /// Deletes the specified load balancer and its attached listeners.
+    /// Deletes the specified Application Load Balancer and its attached listeners.
     /// 
     ///  
     /// <para>

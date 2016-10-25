@@ -251,7 +251,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-instance-asg.html">Attach
         /// EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -307,7 +307,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-load-balancer-asg.html">Attach
         /// a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -359,7 +359,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-load-balancer-asg.html">Attach
         /// a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -438,7 +438,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
         /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -491,7 +491,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroup.html">Auto
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroup.html">Auto
         /// Scaling Groups</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -551,7 +551,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/LaunchConfiguration.html">Launch
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/LaunchConfiguration.html">Launch
         /// Configurations</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -610,7 +610,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASTagging.html">Tagging
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/autoscaling-tagging.html">Tagging
         /// Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -2358,7 +2358,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/detach-instance-asg.html">Detach
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/detach-instance-asg.html">Detach
         /// EC2 Instances from Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -2538,7 +2538,7 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Enables group metrics for the specified Auto Scaling group. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AutoScaling/latest/userguide/as-instance-monitoring.html">Monitoring
+        /// see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html">Monitoring
         /// Your Auto Scaling Groups and Instances</a> in the <i>Auto Scaling User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableMetricsCollection service method.</param>
@@ -2584,7 +2584,7 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
         /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -2675,7 +2675,7 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
         /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -2758,8 +2758,8 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
-        /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/lifecycle-hooks.html">Auto
+        /// Scaling Lifecycle Hooks</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -2821,7 +2821,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/ASGettingNotifications.html">Getting
+        /// For more information see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/ASGettingNotifications.html">Getting
         /// SNS Notifications When Your Auto Scaling Group Scales</a> in the <i>Auto Scaling User
         /// Guide</i>.
         /// </para>
@@ -2926,11 +2926,11 @@ namespace Amazon.AutoScaling
         /// <summary>
         /// Creates or updates a scheduled scaling action for an Auto Scaling group. When updating
         /// a scheduled scaling action, if you leave a parameter unspecified, the corresponding
-        /// value remains unchanged in the affected Auto Scaling group.
+        /// value remains unchanged.
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/schedule_time.html">Scheduled
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/schedule_time.html">Scheduled
         /// Scaling</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -3015,7 +3015,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
         /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -3063,7 +3063,7 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspending
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-suspend-resume-processes.html">Suspending
         /// and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -3113,7 +3113,7 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information about desired capacity, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/WhatIsAutoScaling.html">What
+        /// For more information about desired capacity, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/WhatIsAutoScaling.html">What
         /// Is Auto Scaling?</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -3163,7 +3163,7 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health
         /// Checks</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -3210,7 +3210,7 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html#instance-protection">Instance
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-termination.html#instance-protection">Instance
         /// Protection</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -3271,7 +3271,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/US_SuspendResume.html">Suspending
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-suspend-resume-processes.html">Suspending
         /// and Resuming Auto Scaling Processes</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>

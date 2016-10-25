@@ -33,7 +33,7 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// For more information about desired capacity, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/WhatIsAutoScaling.html">What
+    /// For more information about desired capacity, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/WhatIsAutoScaling.html">What
     /// Is Auto Scaling?</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>

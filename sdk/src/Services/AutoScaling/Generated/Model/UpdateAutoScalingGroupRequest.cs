@@ -128,7 +128,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
         /// Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -172,7 +172,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/healthcheck.html">Health
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/healthcheck.html">Health
         /// Checks</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -308,7 +308,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingBehavior.InstanceTermination.html">Controlling
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-termination.html">Controlling
         /// Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling
         /// User Guide</i>.
         /// </para>
@@ -338,7 +338,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/asg-in-vpc.html">Launching
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/asg-in-vpc.html">Launching
         /// Auto Scaling Instances in a VPC</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>

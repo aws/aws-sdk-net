@@ -42,7 +42,7 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/AutoScalingGroupLifecycle.html">Auto
+    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroupLifecycle.html">Auto
     /// Scaling Lifecycle</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
@@ -100,7 +100,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property GlobalTimeout. 
         /// <para>
         /// The maximum time, in seconds, that an instance can remain in a <code>Pending:Wait</code>
-        /// or <code>Terminating:Wait</code> state. The default is 172800 seconds (48 hours).
+        /// or <code>Terminating:Wait</code> state. The maximum is 172800 seconds (48 hours) or
+        /// 100 times <code>HeartbeatTimeout</code>, whichever is smaller.
         /// </para>
         /// </summary>
         public int GlobalTimeout

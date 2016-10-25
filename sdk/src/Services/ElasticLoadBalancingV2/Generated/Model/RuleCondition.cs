@@ -38,7 +38,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Field. 
         /// <para>
-        /// The name of the field. The possible value is <code>path-pattern</code>.
+        /// The only possible value is <code>path-pattern</code>.
         /// </para>
         /// </summary>
         public string Field
@@ -56,7 +56,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The values for the field.
+        /// The path pattern. You can specify a single path pattern.
         /// </para>
         ///  
         /// <para>
@@ -73,7 +73,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// &amp;amp; (using &amp;amp;amp;)
+        /// &amp; (using &amp;amp;)
         /// </para>
         ///  </li> <li> 
         /// <para>

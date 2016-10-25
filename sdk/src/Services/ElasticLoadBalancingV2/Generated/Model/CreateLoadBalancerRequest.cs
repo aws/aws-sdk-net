@@ -29,7 +29,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLoadBalancer operation.
-    /// Creates an Application load balancer.
+    /// Creates an Application Load Balancer.
     /// 
     ///  
     /// <para>
@@ -48,6 +48,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// increase for the number of load balancers for your account. For more information,
     /// see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
     /// for Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
+    /// Load Balancers</a> in the <i>Application Load Balancers Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateLoadBalancerRequest : AmazonElasticLoadBalancingV2Request

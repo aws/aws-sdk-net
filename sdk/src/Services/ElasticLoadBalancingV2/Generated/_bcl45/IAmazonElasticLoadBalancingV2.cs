@@ -44,28 +44,27 @@ namespace Amazon.ElasticLoadBalancingV2
     /// </para>
     ///  
     /// <para>
-    /// Elastic Load Balancing supports two types of load balancers: Classic load balancers
-    /// and Application load balancers (new). A Classic load balancer makes routing and load
-    /// balancing decisions either at the transport layer (TCP/SSL) or the application layer
-    /// (HTTP/HTTPS), and supports either EC2-Classic or a VPC. An Application load balancer
-    /// makes routing and load balancing decisions at the application layer (HTTP/HTTPS),
-    /// supports path-based routing, and can route requests to one or more ports on each EC2
-    /// instance or container instance in your virtual private cloud (VPC). For more information,
-    /// see the <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic
+    /// Elastic Load Balancing supports two types of load balancers: Classic Load Balancers
+    /// and Application Load Balancers. A Classic Load Balancer makes routing and load balancing
+    /// decisions either at the transport layer (TCP/SSL) or the application layer (HTTP/HTTPS),
+    /// and supports either EC2-Classic or a VPC. An Application Load Balancer makes routing
+    /// and load balancing decisions at the application layer (HTTP/HTTPS), supports path-based
+    /// routing, and can route requests to one or more ports on each EC2 instance or container
+    /// instance in your virtual private cloud (VPC). For more information, see the <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic
     /// Load Balancing User Guide</a>.
     /// </para>
     ///  
     /// <para>
-    /// This reference covers the 2015-12-01 API, which supports Application load balancers.
-    /// The 2012-06-01 API supports Classic load balancers.
+    /// This reference covers the 2015-12-01 API, which supports Application Load Balancers.
+    /// The 2012-06-01 API supports Classic Load Balancers.
     /// </para>
     ///  
     /// <para>
-    /// To get started with an Application load balancer, complete the following tasks:
+    /// To get started, complete the following tasks:
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Create a load balancer using <a>CreateLoadBalancer</a>.
+    /// Create an Application Load Balancer using <a>CreateLoadBalancer</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -85,7 +84,7 @@ namespace Amazon.ElasticLoadBalancingV2
     /// </para>
     ///  </li> </ol> 
     /// <para>
-    /// To delete an Application load balancer and its related resources, complete the following
+    /// To delete an Application Load Balancer and its related resources, complete the following
     /// tasks:
     /// </para>
     ///  <ol> <li> 
@@ -110,8 +109,8 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Adds the specified tags to the specified resource. You can tag your Application load
-        /// balancers and your target groups.
+        /// Adds the specified tags to the specified resource. You can tag your Application Load
+        /// Balancers and your target groups.
         /// 
         ///  
         /// <para>
@@ -159,8 +158,12 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Creates a listener for the specified Application load balancer.
+        /// Creates a listener for the specified Application Load Balancer.
         /// 
+        ///  
+        /// <para>
+        /// You can create up to 10 listeners per load balancer.
+        /// </para>
         ///  
         /// <para>
         /// To update a listener, use <a>ModifyListener</a>. When you are finished with a listener,
@@ -233,7 +236,7 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Creates an Application load balancer.
+        /// Creates an Application Load Balancer.
         /// 
         ///  
         /// <para>
@@ -252,6 +255,11 @@ namespace Amazon.ElasticLoadBalancingV2
         /// increase for the number of load balancers for your account. For more information,
         /// see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
         /// for Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
+        /// Load Balancers</a> in the <i>Application Load Balancers Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLoadBalancer service method.</param>
@@ -308,10 +316,11 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// A rule consists conditions and actions. Rules are evaluated in priority order, from
-        /// the lowest value to the highest value. When the conditions for a rule are met, the
-        /// specified actions are taken. If no rule's conditions are met, the default actions
-        /// for the listener are taken.
+        /// Each rule can have one action and one condition. Rules are evaluated in priority order,
+        /// from the lowest value to the highest value. When the condition for a rule is met,
+        /// the specified action is taken. If no conditions are met, the default action for the
+        /// default rule is taken. For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
+        /// Rules</a> in the <i>Application Load Balancers Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -455,7 +464,7 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Deletes the specified load balancer and its attached listeners.
+        /// Deletes the specified Application Load Balancer and its attached listeners.
         /// 
         ///  
         /// <para>
@@ -595,8 +604,8 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Describes the specified listeners or the listeners for the specified load balancer.
-        /// You must specify either a load balancer or one or more listeners.
+        /// Describes the specified listeners or the listeners for the specified Application Load
+        /// Balancer. You must specify either a load balancer or one or more listeners.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeListeners service method.</param>
         /// 
@@ -627,7 +636,7 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Describes the attributes for the specified load balancer.
+        /// Describes the attributes for the specified Application Load Balancer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerAttributes service method.</param>
         /// 
@@ -655,8 +664,8 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Describes the specified Application load balancers or all of your Application load
-        /// balancers.
+        /// Describes the specified Application Load Balancers or all of your Application Load
+        /// Balancers.
         /// 
         ///  
         /// <para>
@@ -963,7 +972,7 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
         /// <summary>
-        /// Modifies the specified attributes of the specified load balancer.
+        /// Modifies the specified attributes of the specified Application Load Balancer.
         /// 
         ///  
         /// <para>
@@ -1113,8 +1122,15 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
+        /// By default, the load balancer routes requests to registered targets using the protocol
+        /// and port number for the target group. Alternatively, you can override the port for
+        /// a target when you register it.
+        /// </para>
+        ///  
+        /// <para>
         /// The target must be in the virtual private cloud (VPC) that you specified for the target
-        /// group.
+        /// group. If the target is an EC2 instance, it can't be in the <code>stopped</code> or
+        /// <code>running</code> state when you register it.
         /// </para>
         ///  
         /// <para>

@@ -49,6 +49,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+        /// The value is <code>true</code> or <code>false</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -38,7 +38,7 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-load-balancer-asg.html">Attach
+    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-load-balancer-asg.html">Attach
     /// a Load Balancer to Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>

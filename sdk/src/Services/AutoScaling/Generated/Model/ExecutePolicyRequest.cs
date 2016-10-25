@@ -93,7 +93,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/Cooldown.html">Auto
+        /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/Cooldown.html">Auto
         /// Scaling Cooldowns</a> in the <i>Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>

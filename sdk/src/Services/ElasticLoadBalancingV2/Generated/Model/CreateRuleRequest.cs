@@ -33,10 +33,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// 
     ///  
     /// <para>
-    /// A rule consists conditions and actions. Rules are evaluated in priority order, from
-    /// the lowest value to the highest value. When the conditions for a rule are met, the
-    /// specified actions are taken. If no rule's conditions are met, the default actions
-    /// for the listener are taken.
+    /// Each rule can have one action and one condition. Rules are evaluated in priority order,
+    /// from the lowest value to the highest value. When the condition for a rule is met,
+    /// the specified action is taken. If no conditions are met, the default action for the
+    /// default rule is taken. For more information, see <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
+    /// Rules</a> in the <i>Application Load Balancers Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -55,7 +56,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// The actions for the rule.
+        /// An action. Each action has the type <code>forward</code> and specifies a target group.
         /// </para>
         /// </summary>
         public List<Action> Actions
@@ -73,8 +74,31 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Conditions. 
         /// <para>
-        /// The conditions.
+        /// A condition. Each condition has the field <code>path-pattern</code> and specifies
+        /// one path pattern. A path pattern is case sensitive, can be up to 255 characters in
+        /// length, and can contain any of the following characters:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A-Z, a-z, 0-9
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// _ - . $ / ~ " ' @ : +
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// &amp; (using &amp;amp;)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// * (matches 0 or more characters)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ? (matches exactly 1 character)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<RuleCondition> Conditions
         {

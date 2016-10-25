@@ -46,7 +46,7 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/attach-instance-asg.html">Attach
+    /// For more information, see <a href="http://docs.aws.amazon.com/autoscaling/latest/userguide/attach-instance-asg.html">Attach
     /// EC2 Instances to Your Auto Scaling Group</a> in the <i>Auto Scaling User Guide</i>.
     /// </para>
     /// </summary>
