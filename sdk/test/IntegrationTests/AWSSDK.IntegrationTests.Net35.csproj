@@ -300,6 +300,10 @@
       <Project>{BEE8DED7-9D01-419B-896F-0C5C7D98126A}</Project>
       <Name>AWSSDK.SecurityToken.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ServerMigrationService\AWSSDK.ServerMigrationService.Net35.csproj">
+      <Project>{35571cdb-4af0-401a-a329-c8f3534eec01}</Project>
+      <Name>AWSSDK.ServerMigrationService.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\SimpleDB\AWSSDK.SimpleDB.Net35.csproj">
       <Project>{18355D7A-4D71-4CBF-AC85-EB9CA5E3533E}</Project>
       <Name>AWSSDK.SimpleDB.Net35</Name>

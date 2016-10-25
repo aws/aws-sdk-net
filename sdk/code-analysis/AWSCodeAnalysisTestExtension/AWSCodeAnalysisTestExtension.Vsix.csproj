@@ -308,6 +308,10 @@
       <Project>{89D04592-47DB-4292-8BEA-78BA2F33954F}</Project>
       <Name>AWSSDK.SecurityToken.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ServerMigrationService/AWSSDK.ServerMigrationService.CodeAnalysis.csproj">
+      <Project>{15ED5FE8-DBEF-4494-A378-786840CF198B}</Project>
+      <Name>AWSSDK.ServerMigrationService.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ServiceCatalog/AWSSDK.ServiceCatalog.CodeAnalysis.csproj">
       <Project>{89E9593C-1969-4C92-8722-989E3AE1E3B4}</Project>
       <Name>AWSSDK.ServiceCatalog.CodeAnalysis</Name>

@@ -312,6 +312,10 @@
       <Project>{BEE8DED7-9D01-419B-896F-0C5C7D98126A}</Project>
       <Name>AWSSDK.SecurityToken.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\ServerMigrationService\AWSSDK.ServerMigrationService.Net35.csproj">
+      <Project>{35571CDB-4AF0-401A-A329-C8F3534EEC01}</Project>
+      <Name>AWSSDK.ServerMigrationService.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\ServiceCatalog\AWSSDK.ServiceCatalog.Net35.csproj">
       <Project>{F263FC0C-4701-4B32-A021-9B7C328BA85E}</Project>
       <Name>AWSSDK.ServiceCatalog.Net35</Name>

@@ -89,7 +89,8 @@
         "ElasticLoadBalancingV2"          : "1.0.0-*",
         "KinesisAnalytics"                : "1.0.0-*",
         "Snowball"                        : "1.0.0-*",
-        "Budgets"                         : "1.0.0-*"
+        "Budgets"                         : "1.0.0-*",
+        "ServerMigrationService"          : "1.0.0-*"
     },
     "testRunner"   : "xunit",
     "frameworks"   : {
