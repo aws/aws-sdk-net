@@ -25,6 +25,7 @@ namespace Amazon.Runtime
     /// profile type for the supplied profile name and returns the appropriate profile 
     /// instance.
     /// </summary>
+    [Obsolete("This class is obsolete and will be removed in a future release. Visit https://aws-blogs-prod.amazon.com/developer/aws-sdk-dot-net-credentialprofilemanager/ for further details.")]
     public abstract class StoredProfileCredentials
     {
         public const string DEFAULT_PROFILE_NAME = "default";

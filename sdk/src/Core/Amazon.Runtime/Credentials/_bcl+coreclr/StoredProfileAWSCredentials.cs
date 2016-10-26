@@ -37,6 +37,7 @@ namespace Amazon.Runtime
     /// The profile name can be specified in the App.config using the AWSProfileName setting.
     /// </para>
     /// </summary>
+    [Obsolete("This class is obsolete and will be removed in a future release. Visit https://aws-blogs-prod.amazon.com/developer/aws-sdk-dot-net-credentialprofilemanager/ for further details.")]
     public class StoredProfileAWSCredentials : AWSCredentials
     {
         private AWSCredentials _wrappedCredentials;

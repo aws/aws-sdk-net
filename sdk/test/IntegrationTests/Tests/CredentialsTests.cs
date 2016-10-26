@@ -114,6 +114,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         private static void TestCredentialsFile(ImmutableCredentials ic)
         {
+// StoredProfileAWSCredentials is obsolete
+#pragma warning disable 618
             var profileName = "testProfile";
             var profilesLocation = WriteCreds(profileName, ic);
             var creds = new StoredProfileAWSCredentials(profileName, profilesLocation);

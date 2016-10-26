@@ -22,7 +22,7 @@ namespace Amazon.Runtime
     /// <summary>
     /// Credentials that are retrieved from ConfigurationManager.AppSettings
     /// </summary>
-    [Obsolete("This class is obsolete and will be removed in a future release. Please update your code to use ApplicationConfigAWSCredentials instead.")]
+    [Obsolete("This class is obsolete and will be removed in a future release. Please update your code to use AppConfigAWSCredentials instead.")]
     public class EnvironmentAWSCredentials : AWSCredentials
     {
         private const string ACCESSKEY = "AWSAccessKey";
