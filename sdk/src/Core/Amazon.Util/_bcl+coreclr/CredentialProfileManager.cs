@@ -43,12 +43,11 @@ namespace Amazon.Util
     /// </summary>
     public class CredentialProfileManager
     {
+        public const string DefaultProfileName = "default";
+
         private static readonly string DefaultSharedCredentialsFileDirectory;
-
         private static readonly string DefaultSharedCredentialsFilePath;
-
         private ICredentialProfileStore primaryStore;
-
         private List<ICredentialProfileStore> profileStoreChain;
 
         static CredentialProfileManager()
@@ -77,8 +76,8 @@ namespace Amazon.Util
         /// will give preference to the encrypted store when creating and retrieving CredentialProfiles.
         /// </summary>
         public CredentialProfileManager()
-                    : this(DefaultSharedCredentialsFilePath, false)
         {
+            Setup(DefaultSharedCredentialsFilePath, false);
         }
 
         /// <summary>
@@ -86,12 +85,24 @@ namespace Amazon.Util
         /// The CredentialProfileManager will give preference to the credentials file when
         /// creating and retrieving CredentialProfiles, even if the encrypted store is available.
         /// </summary>
+        /// <remarks>
+        /// Note: If sharedCredentialsFilePath is null or empty, the default path will be used
+        /// and preference will be given to the encrypted store.
+        /// </remarks>
+        /// <param name="sharedCredentialsFilePath">The path to the shared credential file.</param>
         public CredentialProfileManager(string sharedCredentialsFilePath)
-            : this(sharedCredentialsFilePath, true)
         {
+            if (string.IsNullOrEmpty(sharedCredentialsFilePath))
+            {
+                Setup(DefaultSharedCredentialsFilePath, false);
+            }
+            else
+            {
+                Setup(sharedCredentialsFilePath, true);
+            }
         }
 
-        private CredentialProfileManager(string sharedCredentialsFilePath, bool defaultToSharedCredentialsFile)
+        private void Setup(string sharedCredentialsFilePath, bool defaultToSharedCredentialsFile)
         {
             var credentialsFileDirectory = Path.GetDirectoryName(sharedCredentialsFilePath);
             if (!Directory.Exists(credentialsFileDirectory))
@@ -150,6 +161,16 @@ namespace Amazon.Util
         }
 
         /// <summary>
+        /// Get the default profile, if one exists.
+        /// </summary>
+        /// <param name="profile">The default profile.</param>
+        /// <returns>True if the default profile was found, false otherwise.</returns>
+        public bool TryGetDefaultProfile(out CredentialProfile profile)
+        {
+            return TryGetProfile(DefaultProfileName, out profile);
+        }
+
+        /// <summary>
         /// Find a CredentialProfile with the given name.
         /// Searches the credentials file and the encrypted store, if available.
         /// If the CredentialProfile exists in both places, this method will give precedence
@@ -172,6 +193,18 @@ namespace Amazon.Util
         }
 
         /// <summary>
+        /// Register a default CredentialProfile, or update the existing one.
+        /// The CredentialProfile will either be persisted to the credentials file or the encrypted store.
+        /// The destination of the new CredentialProfile depends on the availability of the encrypted store,
+        /// and how this CredentialProfileManager was constructed.
+        /// </summary>
+        /// <param name="profileOptions">The options to save as the default profile.</param>
+        public void RegisterDefaultProfile(CredentialProfileOptions profileOptions)
+        {
+            RegisterProfile(DefaultProfileName, profileOptions);
+        }
+
+        /// <summary>
         /// Register a new CredentialProfile, or update an existing one with the same name.
         /// The CredentialProfile will either be persisted to the credentials file or the encrypted store.
         /// The destination of the new CredentialProfile depends on the availability of the encrypted store,
@@ -183,6 +216,16 @@ namespace Amazon.Util
         {
             var profile = new CredentialProfile(profileName, profileOptions, primaryStore);
             profile.Persist();
+        }
+
+        /// <summary>
+        /// Delete the default profile.
+        /// Deletes default profiles from both the credentials file and the encrypted store regardless of
+        /// how this CredentialProfileManager was constructed.
+        /// </summary>
+        public void UnregisterDefaultProfile()
+        {
+            UnregisterProfile(DefaultProfileName);
         }
 
         /// <summary>

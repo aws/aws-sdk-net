@@ -16,6 +16,8 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
+using System.Collections.Generic;
+using System.Globalization;
 
 namespace Amazon.Runtime
 {
@@ -24,6 +26,15 @@ namespace Amazon.Runtime
     /// </summary>
     public class CredentialProfile
     {
+        private static HashSet<CredentialProfileType> CallbackProfileTypes = new HashSet<CredentialProfileType>()
+            {
+#if BCL
+                CredentialProfileType.SAMLRoleUserIdentity,
+#endif
+                CredentialProfileType.AssumeRoleExternalMFA,
+                CredentialProfileType.AssumeRoleMFA
+            };
+
         /// <summary>
         /// The name of the CredentialProfile
         /// </summary>
@@ -118,6 +129,38 @@ namespace Amazon.Runtime
         /// <returns>AWSCredentials for this profile.</returns>
         public AWSCredentials GetAWSCredentials()
         {
+            return GetAWSCredentials(false);
+        }
+
+        /// <summary>
+        /// Gets the AWSCredentials for this profile if CanCreateAWSCredentials is true
+        /// and AWSCredentials can be created.  Throws an exception otherwise.
+        ///
+        /// See <see cref="CredentialProfileOptions"/> for a list of AWSCredentials returned by this method.
+        /// </summary>
+        /// <param name="nonCallbackOnly">If true, throw a descriptive exception for any credentials that would not operate as-is.
+        /// In other words, any credentials that require programmatic callbacks at runtime.</param>
+        /// <returns>AWSCredentials for this profile.</returns>
+        internal AWSCredentials GetAWSCredentials(bool nonCallbackOnly)
+        {
+            if (nonCallbackOnly && CanCreateAWSCredentials && CallbackProfileTypes.Contains(ProfileType.Value))
+            {
+                if (ProfileType == CredentialProfileType.AssumeRoleExternalMFA ||
+                    ProfileType == CredentialProfileType.AssumeRoleMFA)
+                {
+                    throw new InvalidOperationException(String.Format(CultureInfo.InvariantCulture,
+                        "The profile [{0}] is an assume role profile that requires an MFA.  This type of profile is not allowed here.  " +
+                        "Please use an assume role profile that doesn't require an MFA, or a different type of profile.", Name));
+                }
+#if BCL
+                else if (ProfileType == CredentialProfileType.SAMLRoleUserIdentity)
+                {
+                    throw new InvalidOperationException(String.Format(CultureInfo.InvariantCulture,
+                        "The profile [{0}] is a SAML role profile that specifies a user identity.  This type of profile is not allowed here.  " +
+                        "Please use a SAML role profile without an explicit user identity, or a different type of profile.", Name));
+                }
+#endif
+            }
             return AWSCredentialsFactory.GetAWSCredentials(this);
         }
 

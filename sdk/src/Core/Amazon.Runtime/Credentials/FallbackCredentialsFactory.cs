@@ -12,7 +12,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -24,6 +26,10 @@ namespace Amazon.Runtime
     // Credentials fallback mechanism
     public static class FallbackCredentialsFactory
     {
+#if BCL || CORECLR
+        private static CredentialProfileManager ProfileManager = new CredentialProfileManager();
+#endif
+
         static FallbackCredentialsFactory()
         {
             Reset();
@@ -37,19 +43,30 @@ namespace Amazon.Runtime
             CredentialsGenerators = new List<CredentialsGenerator>
             {
 #if BCL
-                () => new AppConfigAWSCredentials(),            // test explicit keys/profile name first
-                () => new StoredProfileAWSCredentials(),        // then attempt to load default profile        
-
-                () => new StoredProfileFederatedCredentials(),  // if default/named profile didn't contain AWS credentials,
-                () => new EnvironmentVariablesAWSCredentials(), // credentials set in environment vars?
-                                                                // was it a named or default federated role profile?
-#elif CORECLR           
-                () => new StoredProfileAWSCredentials(),        // then attempt to load default profile        
-                () => new EnvironmentVariablesAWSCredentials(), // credentials set in environment vars?
+                () => new AppConfigAWSCredentials(),            // Test explicit keys/profile name first.
+#endif
+#if BCL || CORECLR
+                GetDefaultAWSCredentials,                       // Attempt to load the default profile.  It could be Basic, Session, AssumeRole, or SAML.
+                () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.
 #endif
                 ECSEC2CredentialsWrapper,                       // either get ECS credentials or instance profile credentials
             };
         }
+
+#if BCL || CORECLR
+        private static AWSCredentials GetDefaultAWSCredentials()
+        {
+            CredentialProfile defaultProfile;
+            if (ProfileManager.TryGetDefaultProfile(out defaultProfile))
+            {
+                return defaultProfile.GetAWSCredentials(true);
+            }
+            else
+            {
+                return null;
+            }
+        }
+#endif
 
         /// If AWS_CONTAINER_CREDENTIALS_RELATIVE_URI environment variable is set, we want to attempt to retrieve credentials
         /// using ECS endpoint instead of referring to instance profile credentials.

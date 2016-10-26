@@ -15,6 +15,7 @@
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Util;
+using AWSSDK_DotNet.CommonTest.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Reflection;
@@ -35,15 +36,10 @@ namespace AWSSDK.UnitTests
             {
                 MockSdkStoreAvailable(false);
             }
-            ProfileManager = ConstructCredentialProfileManager(SharedCredentialsFixture.CredentialsFile.FilePath, defaultToCredentialsFile);
-        }
-
-        private CredentialProfileManager ConstructCredentialProfileManager(string credentialsFilePath, bool defaultToCredentialsFile)
-        {
-            // tests must use the private constructor in order to test non-default credential file location
-            var constructor = (typeof(CredentialProfileManager)).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance,
-                null, new Type[] { typeof(string), typeof(bool) }, null);
-            return (CredentialProfileManager)constructor.Invoke(new object[] { credentialsFilePath, defaultToCredentialsFile });
+            ProfileManager = new CredentialProfileManager();
+            // Using a non-default shared credentials file location and defaulting to the encrypted store
+            // isn't a normal operating mode.  So use reflection.
+            ReflectionHelpers.Invoke(ProfileManager, "Setup", SharedCredentialsFixture.CredentialsFile.FilePath, defaultToCredentialsFile);
         }
 
         public void AssertProfileDoesNotExistCredentials(string profileName)

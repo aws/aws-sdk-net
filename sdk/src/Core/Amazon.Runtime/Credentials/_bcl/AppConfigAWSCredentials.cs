@@ -12,7 +12,9 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 using System;
 using System.Collections.Specialized;
 using System.Configuration;
@@ -29,7 +31,7 @@ namespace Amazon.Runtime
         private const string ACCESSKEY = "AWSAccessKey";
         private const string SECRETKEY = "AWSSecretKey";
 
-        private ImmutableCredentials _wrappedCredentials;
+        private AWSCredentials _wrappedCredentials;
 
         #region Public constructors 
 
@@ -46,25 +48,28 @@ namespace Amazon.Runtime
             {
                 var accessKey = appConfig[ACCESSKEY];
                 var secretKey = appConfig[SECRETKEY];
-                this._wrappedCredentials = new ImmutableCredentials(accessKey, secretKey, null);
+                this._wrappedCredentials = new BasicAWSCredentials(accessKey, secretKey);
                 logger.InfoFormat("Credentials found with {0} and {1} app settings", ACCESSKEY, SECRETKEY);
             }
-            else
+            else if (!string.IsNullOrEmpty(AWSConfigs.AWSProfileName))
             {
                 var profileName = AWSConfigs.AWSProfileName;
                 var profilesLocation = AWSConfigs.AWSProfilesLocation;
-                if (!string.IsNullOrEmpty(profileName) && StoredProfileAWSCredentials.CanCreateFrom(profileName, profilesLocation))
+                var profileManager = new CredentialProfileManager(profilesLocation);
+                CredentialProfile profile;
+                if (profileManager.TryGetProfile(profileName, out profile))
                 {
-                    this._wrappedCredentials = new StoredProfileAWSCredentials(profileName, profilesLocation).GetCredentials();
-                    logger.InfoFormat("Credentials found with {0} app setting", AWSConfigs.AWSProfileNameKey);
+                    // Will throw a descriptive exception if profile.CanCreateAWSCredentials is false.
+                    _wrappedCredentials = profile.GetAWSCredentials(true);
                 }
             }
 
             if (this._wrappedCredentials == null)
+            {
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
-                                                    "The app.config/web.config files for the application did not contain credential information"));
+                    "The app.config/web.config files for the application did not contain credential information"));
+            }
         }
-
         #endregion
 
         #region Abstract class overrides
@@ -75,7 +80,7 @@ namespace Amazon.Runtime
         /// <returns></returns>
         public override ImmutableCredentials GetCredentials()
         {
-            return this._wrappedCredentials.Copy();
+            return this._wrappedCredentials.GetCredentials();
         }
 
         #endregion
