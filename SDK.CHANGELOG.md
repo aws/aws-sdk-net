@@ -1,3 +1,9 @@
+### 3.3.14.1 (2016-10-25 23:25 UTC)
+* AutoScaling (3.3.0.2)
+	* Doc Update for Autoscaling and ELB
+* ElasticLoadBalancingV2 (3.3.0.2)
+	* Doc Update for  ELB
+
 ### 3.3.14.0 (2016-10-25 03:31 UTC)
 * ECS (3.3.0.2)
 	* Doc only update

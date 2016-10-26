@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.14.0",
+    "ProductVersion" : "3.3.14.1",
     "CoreVersion"    : "3.3.3.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -12,7 +12,7 @@
             "InPreview"    : false
         },
         "AutoScaling" : {
-            "Version" : "3.3.0.1",
+            "Version" : "3.3.0.2",
             "Dependencies" : {
                 "Core" : "3.3.1.0"
             },
@@ -499,7 +499,7 @@
             "InPreview"    : false
         },
         "ElasticLoadBalancingV2"          : {
-            "Version" : "3.3.0.1",
+            "Version" : "3.3.0.2",
             "Dependencies" : {
                 "Core" : "3.3.1.0"
             },
