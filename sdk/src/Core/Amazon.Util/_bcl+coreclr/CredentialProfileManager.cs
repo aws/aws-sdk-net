@@ -41,7 +41,7 @@ namespace Amazon.Util
     /// under the current user's AppData folder.
     /// </para>
     /// </summary>
-    public class CredentialProfileManager
+    public class CredentialProfileManager : ICredentialProfileSource
     {
         public const string DefaultProfileName = "default";
 

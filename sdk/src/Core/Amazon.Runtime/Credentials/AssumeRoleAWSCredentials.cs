@@ -56,7 +56,7 @@ namespace Amazon.Runtime
         /// <param name="roleArn">The Amazon Resource Name (ARN) of the role to assume.</param>
         /// <param name="roleSessionName">An identifier for the assumed role session.</param>
         public AssumeRoleAWSCredentials(AWSCredentials sourceCredentials, string roleArn, string roleSessionName)
-            : this(sourceCredentials, roleArn, roleSessionName, null)
+            : this(sourceCredentials, roleArn, roleSessionName, new AssumeRoleAWSCredentialsOptions())
         {
         }
 
@@ -69,6 +69,11 @@ namespace Amazon.Runtime
         /// <param name="options">Options to be used in the call to AssumeRole.</param>
         public AssumeRoleAWSCredentials(AWSCredentials sourceCredentials, string roleArn, string roleSessionName, AssumeRoleAWSCredentialsOptions options)
         {
+            if (options == null)
+            {
+                throw new ArgumentNullException("options");
+            }
+
             SourceCredentials = sourceCredentials;
             RoleArn = roleArn;
             RoleSessionName = roleSessionName;

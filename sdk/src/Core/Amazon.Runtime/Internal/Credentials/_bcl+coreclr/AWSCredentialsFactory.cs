@@ -14,6 +14,7 @@
  */
 using Amazon.Util;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 
@@ -24,6 +25,15 @@ namespace Amazon.Runtime.Internal
     /// </summary>
     public static class AWSCredentialsFactory
     {
+        private static HashSet<CredentialProfileType> CallbackProfileTypes = new HashSet<CredentialProfileType>()
+            {
+#if BCL
+                CredentialProfileType.SAMLRoleUserIdentity,
+#endif
+                CredentialProfileType.AssumeRoleExternalMFA,
+                CredentialProfileType.AssumeRoleMFA
+            };
+
         private const string RoleSessionNamePrefix = "aws-dotnet-sdk-session-";
 
 #if BCL
@@ -31,13 +41,63 @@ namespace Amazon.Runtime.Internal
 #endif
 
         /// <summary>
-        /// Get credentials for the given profile, or throws InvalidDataException.
+        /// Gets the AWSCredentials for this profile if CanCreateAWSCredentials is true
+        /// and AWSCredentials can be created.  Throws an exception otherwise.
+        ///
+        /// See <see cref="CredentialProfileOptions"/> for a list of AWSCredentials returned by this method.
         /// </summary>
-        /// <param name="profile">The profile to create credentials with.</param>
-        /// <returns>Valid credentials if they can be created.</returns>
+        /// <param name="profile">The profile to get AWSCredentials for.</param>
+        /// <returns>AWSCredentials for this profile.</returns>
         public static AWSCredentials GetAWSCredentials(CredentialProfile profile)
         {
-            return GetAWSCredentials(profile, true, false);
+            return GetAWSCredentials(profile.Name, profile.ProfileStore, profile.Options, false);
+        }
+
+        /// <summary>
+        /// Gets the AWSCredentials for this profile if CanCreateAWSCredentials is true
+        /// and AWSCredentials can be created.  Throws an exception otherwise.
+        ///
+        /// See <see cref="CredentialProfileOptions"/> for a list of AWSCredentials returned by this method.
+        /// </summary>
+        /// <param name="options">The options to get AWSCredentials for.</param>
+        /// <param name="profileSource">The profile source, for options that reference other profiles.</param>
+        /// <returns>AWSCredentials for the options given.</returns>
+        public static AWSCredentials GetAWSCredentials(CredentialProfileOptions options, ICredentialProfileSource profileSource)
+        {
+            var profileType = CredentialProfileTypeDetector.DetectProfileType(options);
+            return GetAWSCredentials(null, profileSource, options, false);
+        }
+
+        /// <summary>
+        /// Gets the AWSCredentials for this profile if CanCreateAWSCredentials is true
+        /// and AWSCredentials can be created.  Throws an exception otherwise.
+        ///
+        /// See <see cref="CredentialProfileOptions"/> for a list of AWSCredentials returned by this method.
+        /// </summary>
+        /// <param name="profile">The profile to get AWSCredentials for.</param>
+        /// <param name="nonCallbackOnly">If true, throw a descriptive exception for any credentials that would not operate as-is.
+        /// In other words, any credentials that require programmatic callbacks at runtime.</param>
+        /// <returns>AWSCredentials for this profile.</returns>
+        public static AWSCredentials GetAWSCredentials(CredentialProfile profile, bool nonCallbackOnly)
+        {
+            return GetAWSCredentials(profile.Name, profile.ProfileStore, profile.Options, nonCallbackOnly);
+        }
+
+        /// <summary>
+        /// Gets the AWSCredentials for this profile if CanCreateAWSCredentials is true
+        /// and AWSCredentials can be created.  Throws an exception otherwise.
+        ///
+        /// See <see cref="CredentialProfileOptions"/> for a list of AWSCredentials returned by this method.
+        /// </summary>
+        /// <param name="options">The options to get AWSCredentials for.</param>
+        /// <param name="profileSource">The profile source, for options that reference other profiles.</param>
+        /// <param name="nonCallbackOnly">If true, throw a descriptive exception for any credentials that would not operate as-is.
+        /// In other words, any credentials that require programmatic callbacks at runtime.</param>
+        /// <returns>AWSCredentials for the options given.</returns>
+        public static AWSCredentials GetAWSCredentials(CredentialProfileOptions options, ICredentialProfileSource profileSource, bool nonCallbackOnly)
+        {
+            var profileType = CredentialProfileTypeDetector.DetectProfileType(options);
+            return GetAWSCredentials(null, profileSource, options, nonCallbackOnly);
         }
 
         /// <summary>
@@ -48,23 +108,56 @@ namespace Amazon.Runtime.Internal
         /// <returns>True if credentials can be created from the profile, false otherwise.</returns>
         public static bool TryGetAWSCredentials(CredentialProfile profile, out AWSCredentials credentials)
         {
-            credentials = GetAWSCredentials(profile, false, false);
+            credentials = GetAWSCredentialsInternal(profile.Name, profile.ProfileType, profile.Options, profile.ProfileStore, false);
             return credentials != null;
         }
 
-        private static AWSCredentials GetAWSCredentials(CredentialProfile profile, bool throwIfInvalid, bool isSourceProfile)
+        public static bool TryGetAWSCredentials(CredentialProfileOptions options, ICredentialProfileSource profileSource, out AWSCredentials credentials)
         {
-            var options = profile.Options;
-            if (profile.CanCreateAWSCredentials)
-            {
-                // The isSourceProfile parameter is important to prevent possible stack overflow in recursive call.
-                if (isSourceProfile && profile.ProfileType != CredentialProfileType.Basic)
-                {
-                    return ThrowOrReturnNull(string.Format(CultureInfo.InvariantCulture,
-                        "Source profile [{0}] is not a basic profile.", profile.Name), null, throwIfInvalid);
-                }
+            var profileType = CredentialProfileTypeDetector.DetectProfileType(options);
+            credentials = GetAWSCredentialsInternal(null, profileType, options, profileSource, false);
+            return credentials != null;
+        }
 
-                switch (profile.ProfileType)
+        private static AWSCredentials GetAWSCredentials(string profileName, ICredentialProfileSource profileSource,
+            CredentialProfileOptions options, bool nonCallbackOnly)
+        {
+            var profileType = CredentialProfileTypeDetector.DetectProfileType(options);
+            if (nonCallbackOnly && profileType.HasValue && CallbackProfileTypes.Contains(profileType.Value))
+            {
+                if (profileType == CredentialProfileType.AssumeRoleExternalMFA ||
+                    profileType == CredentialProfileType.AssumeRoleMFA)
+                {
+                    var mfaMessage = profileName == null
+                        ? "The credential options represent AssumeRoleAWSCredentials that require an MFA.  This is not allowed here.  " +
+                            "Please use credential options for AssumeRoleAWSCredentials that don't require an MFA, or a different type of credentials."
+                        : String.Format(CultureInfo.InvariantCulture,
+                            "The profile [{0}] is an assume role profile that requires an MFA.  This type of profile is not allowed here.  " +
+                            "Please use an assume role profile that doesn't require an MFA, or a different type of profile.", profileName);
+                    throw new InvalidOperationException(mfaMessage);
+                }
+#if BCL
+                else if (profileType == CredentialProfileType.SAMLRoleUserIdentity)
+                {
+                    var samlMessage = profileName == null
+                        ? "The credential options represent FederatedAWSCredentials that specify a user identity.  This is not allowed here.  " +
+                            "Please use credential options for FederatedAWSCredentials without an explicit user identity, or a different type of credentials."
+                        : String.Format(CultureInfo.InvariantCulture,
+                            "The profile [{0}] is a SAML role profile that specifies a user identity.  This type of profile is not allowed here.  " +
+                            "Please use a SAML role profile without an explicit user identity, or a different type of profile.", profileName);
+                    throw new InvalidOperationException(samlMessage);
+                }
+#endif
+            }
+            return GetAWSCredentialsInternal(profileName, profileType, options, profileSource, true);
+        }
+
+        private static AWSCredentials GetAWSCredentialsInternal(string profileName, CredentialProfileType? profileType,
+            CredentialProfileOptions options, ICredentialProfileSource profileSource, bool throwIfInvalid)
+        {
+            if (profileType.HasValue)
+            {
+                switch (profileType)
                 {
                     case CredentialProfileType.Basic:
                         return new BasicAWSCredentials(options.AccessKey, options.SecretKey);
@@ -75,26 +168,20 @@ namespace Amazon.Runtime.Internal
                     case CredentialProfileType.AssumeRoleMFA:
                     case CredentialProfileType.AssumeRoleExternalMFA:
                         BasicAWSCredentials sourceCredentials;
-                        // get basic credentials from another profile in the same store
+                        // get basic credentials from profileSource
                         try
                         {
-                            CredentialProfile sourceProfile = null;
-                            if (profile.ProfileStore.TryGetProfile(options.SourceProfile, out sourceProfile))
-                            {
-                                // Sending true for the isSourceProfile prevents possible stack overflow on recursive call.
-                                sourceCredentials = (BasicAWSCredentials)GetAWSCredentials(sourceProfile, throwIfInvalid, true);
-                            }
-                            else
-                            {
-                                return ThrowOrReturnNull(string.Format(CultureInfo.InvariantCulture,
-                                    "Source profile [{0}] was not found.", options.SourceProfile), null, throwIfInvalid);
-                            }
+                            sourceCredentials = GetSourceAWSCredentials(options.SourceProfile, profileSource, throwIfInvalid);
                         }
                         catch (InvalidDataException e)
                         {
-                            return ThrowOrReturnNull(string.Format(CultureInfo.InvariantCulture,
-                                "Error reading source profile [{0}] for profile [{1}].", options.SourceProfile, profile.Name),
-                                e, throwIfInvalid);
+                            var sourceMessage = profileName == null
+                               ? string.Format(CultureInfo.InvariantCulture,
+                                   "Error reading source profile [{0}] for the credential options provided.", options.SourceProfile)
+                               : string.Format(CultureInfo.InvariantCulture,
+                                   "Error reading source profile [{0}] for profile [{1}].", options.SourceProfile, profileName);
+                            return ThrowOrReturnNull(sourceMessage, e, throwIfInvalid);
+
                         }
 
                         var roleSessionName = RoleSessionNamePrefix + DateTime.UtcNow.Ticks;
@@ -109,33 +196,69 @@ namespace Amazon.Runtime.Internal
                     case CredentialProfileType.SAMLRoleUserIdentity:
                         var federatedOptions = new FederatedAWSCredentialsOptions()
                         {
-                            UserIdentity = profile.Options.UserIdentity,
-                            ProfileName = profile.Name
+                            UserIdentity = options.UserIdentity,
+                            ProfileName = profileName
                         };
-                        return new FederatedAWSCredentials(EndpointManager.GetEndpoint(profile.Options.EndpointName),
-                            profile.Options.RoleArn, federatedOptions);
+                        return new FederatedAWSCredentials(EndpointManager.GetEndpoint(options.EndpointName),
+                            options.RoleArn, federatedOptions);
 #endif
                     default:
+                        var defaultMessage = profileName == null
+                            ? string.Format(CultureInfo.InvariantCulture,
+                                "Invalid ProfileType {0} for the credential options provided.", profileType)
+                            : string.Format(CultureInfo.InvariantCulture,
+                                "Invalid ProfileType {0} for credential profile [{1}].", profileType, profileName);
+
+                        return ThrowOrReturnNull(defaultMessage, null, throwIfInvalid);
+                }
+            }
+            else
+            {
+                return ThrowInvalidOrReturnNull(profileName, throwIfInvalid);
+            }
+        }
+
+        private static BasicAWSCredentials GetSourceAWSCredentials(string sourceProfileName,
+            ICredentialProfileSource profileSource, bool throwIfInvalid)
+        {
+            CredentialProfile sourceProfile = null;
+            if (profileSource.TryGetProfile(sourceProfileName, out sourceProfile))
+            {
+                if (sourceProfile.CanCreateAWSCredentials)
+                {
+                    // The isSourceProfile parameter is important to prevent possible stack overflow in recursive call.
+                    if (sourceProfile.ProfileType == CredentialProfileType.Basic)
+                    {
+                        return new BasicAWSCredentials(sourceProfile.Options.AccessKey, sourceProfile.Options.SecretKey);
+                    }
+                    else
+                    {
                         return ThrowOrReturnNull(string.Format(CultureInfo.InvariantCulture,
-                            "Invalid ProfileType {0} for credential profile [{1}].", profile.ProfileType, profile.Name),
-                            null, throwIfInvalid);
+                            "Source profile [{0}] is not a basic profile.", sourceProfileName), null, throwIfInvalid);
+                    }
+                }
+                else
+                {
+                    return ThrowInvalidOrReturnNull(sourceProfileName, throwIfInvalid);
                 }
             }
             else
             {
                 return ThrowOrReturnNull(string.Format(CultureInfo.InvariantCulture,
-                    "Credential profile [{0}] is not valid.  Please ensure the profile contains a valid combination of properties.", profile.Name),
-                    null, throwIfInvalid);
+                    "Source profile [{0}] was not found.", sourceProfileName), null, throwIfInvalid);
             }
+
         }
 
-        /// <summary>
-        /// Helper to reduce clutter
-        /// </summary>
-        /// <param name="message"></param>
-        /// <param name="innerException"></param>
-        /// <param name="doThrow"></param>
-        /// <returns></returns>
+        private static BasicAWSCredentials ThrowInvalidOrReturnNull(string profileName, bool doThrow)
+        {
+            var message = profileName == null
+                ? "The credential options provided are not valid.  Please ensure the options contain a valid combination of properties."
+                : string.Format(CultureInfo.InvariantCulture,
+                    "Credential profile [{0}] is not valid.  Please ensure the profile contains a valid combination of properties.", profileName);
+            return ThrowOrReturnNull(message, null, doThrow);
+        }
+
         private static BasicAWSCredentials ThrowOrReturnNull(string message, Exception innerException, bool doThrow)
         {
             if (doThrow)

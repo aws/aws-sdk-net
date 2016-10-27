@@ -26,10 +26,23 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class AWSCredentialsFactoryTest
     {
-        private const string InvalidErrorFormat = "Credential profile [{0}] is not valid.  Please ensure the profile contains a valid combination of properties.";
-        private const string NotFoundErrorFormat = "Credential profile [{0}] was not found.";
-        private const string SourceErrorFormat = "Error reading source profile [{0}] for profile [{1}].";
+
         private const string SourceNotBasicFormat = "Source profile [{0}] is not a basic profile.";
+        private const string SourceNotFoundFormat = "Source profile [{0}] was not found.";
+
+        private const string InvalidErrorFormat = "Credential profile [{0}] is not valid.  Please ensure the profile contains a valid combination of properties.";
+        private const string SourceErrorFormat = "Error reading source profile [{0}] for profile [{1}].";
+        private const string MfaCallbackErrorFormat = "The profile [{0}] is an assume role profile that requires an MFA.  This type of profile is not allowed here.  " +
+            "Please use an assume role profile that doesn't require an MFA, or a different type of profile.";
+        private const string UserIdentityCallbackErrorFormat = "The profile [{0}] is a SAML role profile that specifies a user identity.  This type of profile is not allowed here.  " +
+            "Please use a SAML role profile without an explicit user identity, or a different type of profile.";
+
+        private const string InvalidErrorAnonymous = "The credential options provided are not valid.  Please ensure the options contain a valid combination of properties.";
+        private const string SourceErrorFormatAnonymous = "Error reading source profile [{0}] for the credential options provided.";
+        private const string MfaCallbackErrorAnonymous = "The credential options represent AssumeRoleAWSCredentials that require an MFA.  This is not allowed here.  " +
+            "Please use credential options for AssumeRoleAWSCredentials that don't require an MFA, or a different type of credentials.";
+        private const string UserIdentityCallbackErrorAnonymous = "The credential options represent FederatedAWSCredentials that specify a user identity.  This is not allowed here.  " +
+            "Please use credential options for FederatedAWSCredentials without an explicit user identity, or a different type of credentials.";
 
         private static readonly MemoryCredentialProfileStore ProfileStore = new MemoryCredentialProfileStore();
 
@@ -108,13 +121,6 @@ namespace AWSSDK.UnitTests
                 SourceProfile = "session_profile"
             }, ProfileStore);
 
-        private static readonly CredentialProfile AssumeRoleProfileRecursion =
-            CredentialProfileTestHelper.GetCredentialProfile("assume_role_profile_source_recursion", new CredentialProfileOptions
-            {
-                RoleArn = "role_arn",
-                SourceProfile = "assume_role_profile_source_recursion"
-            }, ProfileStore);
-
         private static readonly CredentialProfile AssumeRoleProfileInvalidSource =
             CredentialProfileTestHelper.GetCredentialProfile("assume_role_profile_invalid_source", new CredentialProfileOptions
             {
@@ -132,7 +138,6 @@ namespace AWSSDK.UnitTests
             ProfileStore.Profiles.Add(AssumeRoleExternalMfaProfile.Name, AssumeRoleExternalMfaProfile);
             ProfileStore.Profiles.Add(AssumeRoleMfaProfile.Name, AssumeRoleMfaProfile);
             ProfileStore.Profiles.Add(AssumeRoleProfileSourceNotBasic.Name, AssumeRoleProfileSourceNotBasic);
-            ProfileStore.Profiles.Add(AssumeRoleProfileRecursion.Name, AssumeRoleProfileRecursion);
             ProfileStore.Profiles.Add(AssumeRoleProfileInvalidSource.Name, AssumeRoleProfileInvalidSource);
             ProfileStore.Profiles.Add(SAMLRoleProfile.Name, SAMLRoleProfile);
             ProfileStore.Profiles.Add(SAMLRoleUserIdentityProfile.Name, SAMLRoleUserIdentityProfile);
@@ -200,7 +205,7 @@ namespace AWSSDK.UnitTests
             AssertExtensions.ExpectException(() =>
             {
                 AWSCredentialsFactory.GetAWSCredentials(InvalidProfile);
-            }, typeof(InvalidDataException), string.Format(InvalidErrorFormat, "invalid_profile"));
+            }, typeof(InvalidDataException), string.Format(InvalidErrorFormat, InvalidProfile.Name));
         }
 
         [TestMethod]
@@ -267,22 +272,9 @@ namespace AWSSDK.UnitTests
                 throw AssertExtensions.ExpectException(() =>
                 {
                     AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfileSourceNotBasic);
-                }, typeof(InvalidDataException), string.Format(SourceErrorFormat, "session_profile",
+                }, typeof(InvalidDataException), string.Format(SourceErrorFormat, SessionProfile.Name,
                 "assume_role_profile_source_not_basic")).InnerException;
-            }, typeof(InvalidDataException), string.Format(SourceNotBasicFormat, "session_profile"));
-        }
-
-        [TestMethod]
-        public void GetAssumeRoleProfileRecursion()
-        {
-            AssertExtensions.ExpectException(() =>
-            {
-                throw AssertExtensions.ExpectException(() =>
-                {
-                    AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfileRecursion);
-                }, typeof(InvalidDataException), string.Format(SourceErrorFormat, "assume_role_profile_source_recursion",
-                "assume_role_profile_source_recursion")).InnerException;
-            }, typeof(InvalidDataException), string.Format(SourceNotBasicFormat, "assume_role_profile_source_recursion"));
+            }, typeof(InvalidDataException), string.Format(SourceNotBasicFormat, SessionProfile.Name));
         }
 
         [TestMethod]
@@ -293,10 +285,153 @@ namespace AWSSDK.UnitTests
                 throw AssertExtensions.ExpectException(() =>
                 {
                     AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfileInvalidSource);
-                }, typeof(InvalidDataException), string.Format(SourceErrorFormat, "invalid_profile",
+                }, typeof(InvalidDataException), string.Format(SourceErrorFormat, InvalidProfile.Name,
                 "assume_role_profile_invalid_source")).InnerException;
             }
-            , typeof(InvalidDataException), string.Format(InvalidErrorFormat, "invalid_profile"));
+            , typeof(InvalidDataException), string.Format(InvalidErrorFormat, InvalidProfile.Name));
+        }
+
+        [TestMethod]
+        public void GetAssumeRoleMfaCredentialsNoCallback()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                AWSCredentialsFactory.GetAWSCredentials(AssumeRoleMfaProfile, true);
+            }, typeof(InvalidOperationException), string.Format(MfaCallbackErrorFormat, AssumeRoleMfaProfile.Name));
+        }
+
+        [TestMethod]
+        public void GetSAMLAssumeRoleUserIdentityCredentialsNoCallback()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                AWSCredentialsFactory.GetAWSCredentials(SAMLRoleUserIdentityProfile, true);
+            }, typeof(InvalidOperationException), string.Format(UserIdentityCallbackErrorFormat, SAMLRoleUserIdentityProfile.Name));
+        }
+
+        [TestMethod]
+        public void TryGetInvalidCredentialsAnonymous()
+        {
+            AWSCredentials credentials;
+            Assert.IsFalse(AWSCredentialsFactory.TryGetAWSCredentials(InvalidProfile.Options, ProfileStore, out credentials));
+            Assert.IsNull(credentials);
+        }
+
+        [TestMethod]
+        public void TryGetBasicCredentialsAnonymous()
+        {
+            AWSCredentials credentials;
+            Assert.IsTrue(AWSCredentialsFactory.TryGetAWSCredentials(BasicProfile.Options, ProfileStore, out credentials));
+            Assert.IsNotNull(credentials);
+            Assert.AreEqual(BasicCredentials, credentials);
+        }
+
+        [TestMethod]
+        public void GetInvalidCredentialsAnonymous()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                AWSCredentialsFactory.GetAWSCredentials(InvalidProfile.Options, ProfileStore);
+            }, typeof(InvalidDataException), InvalidErrorAnonymous);
+        }
+
+        [TestMethod]
+        public void GetBasicCredentialsAnonymous()
+        {
+            Assert.AreEqual(BasicCredentials, AWSCredentialsFactory.GetAWSCredentials(BasicProfile.Options, ProfileStore));
+        }
+
+        [TestMethod]
+        public void GetSessionCredentialsAnonymous()
+        {
+            Assert.AreEqual(SessionCredentials, AWSCredentialsFactory.GetAWSCredentials(SessionProfile.Options, ProfileStore));
+        }
+
+        [TestMethod]
+        public void GetAssumeRoleCredentialsAnonymous()
+        {
+            AssertAssumeRoleCredentialsAreEqual(AssumeRoleCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfile.Options, ProfileStore));
+        }
+
+        [TestMethod]
+        public void GetAssumeRoleExternalCredentialsAnonymous()
+        {
+            AssertAssumeRoleCredentialsAreEqual(AssumeRoleExternalCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleExternalProfile.Options, ProfileStore));
+        }
+
+        [TestMethod]
+        public void GetAssumeRoleMfaCredentialsAnonymous()
+        {
+            AssertAssumeRoleCredentialsAreEqual(AssumeRoleMfaCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleMfaProfile.Options, ProfileStore));
+        }
+
+        [TestMethod]
+        public void GetAssumeRoleExternalMfaCredentialsAnonymous()
+        {
+            AssertAssumeRoleCredentialsAreEqual(AssumeRoleExternalMfaCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleExternalMfaProfile.Options, ProfileStore));
+        }
+
+        [TestMethod]
+        public void GetSAMLRoleCredentialsAnonymous()
+        {
+            using (var fixture = new EncryptedStoreTestFixture(SettingsConstants.RegisteredSAMLEndpoints))
+            {
+                (new SAMLEndpointManager()).RegisterEndpoint(SomeSAMLEndpoint);
+                AssertFederatedCredentialsAreEqual(FederatedCredentials, AWSCredentialsFactory.GetAWSCredentials(SAMLRoleProfile.Options, ProfileStore));
+            }
+        }
+
+        [TestMethod]
+        public void GetSAMLRoleUserIdentityCredentialsAnonymous()
+        {
+            using (var fixture = new EncryptedStoreTestFixture(SettingsConstants.RegisteredSAMLEndpoints))
+            {
+                (new SAMLEndpointManager()).RegisterEndpoint(SomeSAMLEndpoint);
+                AssertFederatedCredentialsAreEqual(FederatedUserIdentityCredentials, AWSCredentialsFactory.GetAWSCredentials(SAMLRoleUserIdentityProfile.Options, ProfileStore));
+            }
+        }
+
+        [TestMethod]
+        public void GetAssumeRoleProfileSourceNotBasicAnonymous()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                throw AssertExtensions.ExpectException(() =>
+                {
+                    AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfileSourceNotBasic.Options, ProfileStore);
+                }, typeof(InvalidDataException), string.Format(SourceErrorFormatAnonymous, SessionProfile.Name)).InnerException;
+            }, typeof(InvalidDataException), string.Format(SourceNotBasicFormat, SessionProfile.Name));
+        }
+
+        [TestMethod]
+        public void GetAssumeRoleProfileInvalidSourceAnonymous()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                throw AssertExtensions.ExpectException(() =>
+                {
+                    AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfileInvalidSource.Options, ProfileStore);
+                }, typeof(InvalidDataException), string.Format(SourceErrorFormatAnonymous, InvalidProfile.Name)).InnerException;
+            }
+            , typeof(InvalidDataException), string.Format(InvalidErrorFormat, InvalidProfile.Name));
+        }
+
+        [TestMethod]
+        public void GetAssumeRoleMfaCredentialsNoCallbackAnonymous()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                AWSCredentialsFactory.GetAWSCredentials(AssumeRoleMfaProfile.Options, ProfileStore, true);
+            }, typeof(InvalidOperationException), MfaCallbackErrorAnonymous);
+        }
+
+        [TestMethod]
+        public void GetSAMLAssumeRoleUserIdentityCredentialsNoCallbackAnonymous()
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                AWSCredentialsFactory.GetAWSCredentials(SAMLRoleUserIdentityProfile.Options, ProfileStore, true);
+            }, typeof(InvalidOperationException), UserIdentityCallbackErrorAnonymous);
         }
 
         private void AssertAssumeRoleCredentialsAreEqual(AssumeRoleAWSCredentials expected, AWSCredentials actualAWSCredentials)
@@ -308,12 +443,12 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(expected.RoleArn, actual.RoleArn);
             Assert.AreEqual(expected.PreemptExpiryTime, actual.PreemptExpiryTime);
             Assert.AreEqual(expected.SourceCredentials, actual.SourceCredentials);
-            Assert.AreEqual(expected.Options?.DurationSeconds, actual.Options?.DurationSeconds);
-            Assert.AreEqual(expected.Options?.ExternalId, actual.Options?.ExternalId);
-            Assert.AreEqual(expected.Options?.MfaSerialNumber, actual.Options?.MfaSerialNumber);
-            Assert.AreEqual(expected.Options?.MfaTokenCodeCallback, actual.Options?.MfaTokenCodeCallback);
-            Assert.AreEqual(expected.Options?.Policy, actual.Options?.Policy);
-            Assert.AreEqual(expected.Options?.ProxySettings, actual.Options?.ProxySettings);
+            Assert.AreEqual(expected.Options.DurationSeconds, actual.Options.DurationSeconds);
+            Assert.AreEqual(expected.Options.ExternalId, actual.Options.ExternalId);
+            Assert.AreEqual(expected.Options.MfaSerialNumber, actual.Options.MfaSerialNumber);
+            Assert.AreEqual(expected.Options.MfaTokenCodeCallback, actual.Options.MfaTokenCodeCallback);
+            Assert.AreEqual(expected.Options.Policy, actual.Options.Policy);
+            Assert.AreEqual(expected.Options.ProxySettings, actual.Options.ProxySettings);
         }
 
         private void AssertFederatedCredentialsAreEqual(FederatedAWSCredentials expected, AWSCredentials actualAWSCredentials)

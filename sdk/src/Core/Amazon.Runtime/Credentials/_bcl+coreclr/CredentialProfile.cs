@@ -26,15 +26,6 @@ namespace Amazon.Runtime
     /// </summary>
     public class CredentialProfile
     {
-        private static HashSet<CredentialProfileType> CallbackProfileTypes = new HashSet<CredentialProfileType>()
-            {
-#if BCL
-                CredentialProfileType.SAMLRoleUserIdentity,
-#endif
-                CredentialProfileType.AssumeRoleExternalMFA,
-                CredentialProfileType.AssumeRoleMFA
-            };
-
         /// <summary>
         /// The name of the CredentialProfile
         /// </summary>
@@ -143,25 +134,7 @@ namespace Amazon.Runtime
         /// <returns>AWSCredentials for this profile.</returns>
         internal AWSCredentials GetAWSCredentials(bool nonCallbackOnly)
         {
-            if (nonCallbackOnly && CanCreateAWSCredentials && CallbackProfileTypes.Contains(ProfileType.Value))
-            {
-                if (ProfileType == CredentialProfileType.AssumeRoleExternalMFA ||
-                    ProfileType == CredentialProfileType.AssumeRoleMFA)
-                {
-                    throw new InvalidOperationException(String.Format(CultureInfo.InvariantCulture,
-                        "The profile [{0}] is an assume role profile that requires an MFA.  This type of profile is not allowed here.  " +
-                        "Please use an assume role profile that doesn't require an MFA, or a different type of profile.", Name));
-                }
-#if BCL
-                else if (ProfileType == CredentialProfileType.SAMLRoleUserIdentity)
-                {
-                    throw new InvalidOperationException(String.Format(CultureInfo.InvariantCulture,
-                        "The profile [{0}] is a SAML role profile that specifies a user identity.  This type of profile is not allowed here.  " +
-                        "Please use a SAML role profile without an explicit user identity, or a different type of profile.", Name));
-                }
-#endif
-            }
-            return AWSCredentialsFactory.GetAWSCredentials(this);
+            return AWSCredentialsFactory.GetAWSCredentials(this, nonCallbackOnly);
         }
 
         public override string ToString()

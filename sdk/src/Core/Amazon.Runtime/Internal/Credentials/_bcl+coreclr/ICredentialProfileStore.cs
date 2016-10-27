@@ -17,9 +17,23 @@ using System.Collections.Generic;
 namespace Amazon.Runtime.Internal
 {
     /// <summary>
+    /// Interface to define the necessary operations for a CredentialProfile lookup mechanism.
+    /// </summary>
+    public interface ICredentialProfileSource
+    {
+        /// <summary>
+        /// Get the profile with the given name, if one exists.
+        /// </summary>
+        /// <param name="profileName">The name of the profile to get.</param>
+        /// <param name="profile">The profile, if it was found, null otherwise.</param>
+        /// <returns>True if the profile was found, false otherwise.</returns>
+        bool TryGetProfile(string profileName, out CredentialProfile profile);
+    }
+
+    /// <summary>
     /// Interface to define the necessary operations for a CredentialProfile storage mechanism.
     /// </summary>
-    public interface ICredentialProfileStore
+    public interface ICredentialProfileStore : ICredentialProfileSource
     {
         /// <summary>
         /// Add the given profile to the store, or update it if one with the same name already exists.
@@ -32,14 +46,6 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         /// <param name="profileName">The name of the profile to delete.</param>
         void UnregisterProfile(string profileName);
-
-        /// <summary>
-        /// Get the profile with the given name, if one exists.
-        /// </summary>
-        /// <param name="profileName">The name of the profile to get.</param>
-        /// <param name="profile">The profile, if it was found, null otherwise.</param>
-        /// <returns>True if the profile was found, false otherwise.</returns>
-        bool TryGetProfile(string profileName, out CredentialProfile profile);
 
         /// <summary>
         /// Get a list of valid profile names from this store.
