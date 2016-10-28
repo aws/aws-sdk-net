@@ -73,7 +73,7 @@ namespace Amazon.Runtime
                 this.proxyHost = value;
                 if (this.ProxyPort>0)
                 {
-                    this.proxy = new WebProxy(ProxyHost, ProxyPort);
+                    this.proxy = new Amazon.Runtime.Internal.Util.WebProxy(ProxyHost, ProxyPort);
                 }
             }
         }
@@ -94,7 +94,7 @@ namespace Amazon.Runtime
                 this.proxyPort = value;
                 if (this.ProxyHost!=null)
                 {
-                    this.proxy = new WebProxy(ProxyHost, ProxyPort);
+                    this.proxy = new Amazon.Runtime.Internal.Util.WebProxy(ProxyHost, ProxyPort);
                 }
             }
         }
