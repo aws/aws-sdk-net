@@ -79,16 +79,11 @@
 
 ### 3.3.6.0 (2016-10-11 19:26 UTC)
 * Core 3.3.1.0
-	* * Close HttpWebRequest's response stream on WebExceptions (https://github.com/aws/aws-sdk-net/pull/449).
-
-* Updated generation of .nuspec files to enable Nuget packages to support the "uap" targetFramework.
-
-* Added support for configuring bypass lists and bypass-on-local mode for web proxies in the BCL and Unity platforms.
-
-* Fixed issue in RegionEndpointProviderV3 preventing use of regions unknown at the time of compilation.
-
-* Fixed LitJson not serializig signed types correctly.
-
+	* Close HttpWebRequest's response stream on WebExceptions (https://github.com/aws/aws-sdk-net/pull/449).
+	* Updated generation of .nuspec files to enable Nuget packages to support the "uap" targetFramework.
+	* Added support for configuring bypass lists and bypass-on-local mode for web proxies in the BCL and Unity platforms.
+	* Fixed issue in RegionEndpointProviderV3 preventing use of regions unknown at the time of compilation.
+	* Fixed LitJson not serializig signed types correctly.
 	* all services packages updated to require new core
 
 ### 3.3.5.0 (2016-10-07 03:45 UTC)
