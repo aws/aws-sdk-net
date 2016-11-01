@@ -28,47 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The output for the <a>CreateChangeSet</a> action.
+    /// This is the response object from the ListExports operation.
     /// </summary>
-    public partial class CreateChangeSetResponse : AmazonWebServiceResponse
+    public partial class ListExportsResponse : AmazonWebServiceResponse
     {
-        private string _id;
-        private string _stackId;
+        private List<Export> _exports = new List<Export>();
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property Exports. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the change set.
+        /// The output for the <a>ListExports</a> action.
         /// </para>
         /// </summary>
-        public string Id
+        public List<Export> Exports
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._exports; }
+            set { this._exports = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if Exports property is set
+        internal bool IsSetExports()
         {
-            return this._id != null;
+            return this._exports != null && this._exports.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property StackId. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The unique ID of the stack.
+        /// If the output exceeds 100 exported output values, a string that identifies the next
+        /// page of exports. If there is no additional page, this value is null.
         /// </para>
         /// </summary>
-        public string StackId
+        public string NextToken
         {
-            get { return this._stackId; }
-            set { this._stackId = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if StackId property is set
-        internal bool IsSetStackId()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._stackId != null;
+            return this._nextToken != null;
         }
 
     }

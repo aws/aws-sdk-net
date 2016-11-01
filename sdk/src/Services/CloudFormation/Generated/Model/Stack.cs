@@ -33,6 +33,7 @@ namespace Amazon.CloudFormation.Model
     public partial class Stack
     {
         private List<string> _capabilities = new List<string>();
+        private string _changeSetId;
         private DateTime? _creationTime;
         private string _description;
         private bool? _disableRollback;
@@ -64,6 +65,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetCapabilities()
         {
             return this._capabilities != null && this._capabilities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChangeSetId. 
+        /// <para>
+        /// The unique ID of the change set.
+        /// </para>
+        /// </summary>
+        public string ChangeSetId
+        {
+            get { return this._changeSetId; }
+            set { this._changeSetId = value; }
+        }
+
+        // Check to see if ChangeSetId property is set
+        internal bool IsSetChangeSetId()
+        {
+            return this._changeSetId != null;
         }
 
         /// <summary>

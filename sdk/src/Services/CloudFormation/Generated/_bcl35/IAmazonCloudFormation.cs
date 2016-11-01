@@ -31,11 +31,12 @@ namespace Amazon.CloudFormation
     ///
     /// AWS CloudFormation 
     /// <para>
-    /// AWS CloudFormation enables you to create and manage AWS infrastructure deployments
-    /// predictably and repeatedly. AWS CloudFormation helps you leverage AWS products such
-    /// as Amazon EC2, EBS, Amazon SNS, ELB, and Auto Scaling to build highly-reliable, highly
-    /// scalable, cost effective applications without worrying about creating and configuring
-    /// the underlying AWS infrastructure.
+    /// AWS CloudFormation allows you to create and manage AWS infrastructure deployments
+    /// predictably and repeatedly. You can use AWS CloudFormation to leverage AWS products,
+    /// such as Amazon Elastic Compute Cloud, Amazon Elastic Block Store, Amazon Simple Notification
+    /// Service, Elastic Load Balancing, and Auto Scaling to build highly-reliable, highly
+    /// scalable, cost-effective applications without creating or configuring the underlying
+    /// AWS infrastructure.
     /// </para>
     ///  
     /// <para>
@@ -46,8 +47,8 @@ namespace Amazon.CloudFormation
     /// </para>
     ///  
     /// <para>
-    /// For more information about this product, go to the <a href="http://aws.amazon.com/cloudformation/">CloudFormation
-    /// Product Page</a>.
+    /// For more information about AWS CloudFormation, see the <a href="http://aws.amazon.com/cloudformation/">AWS
+    /// CloudFormation Product Page</a>.
     /// </para>
     ///  
     /// <para>
@@ -161,10 +162,10 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Creates a list of changes for a stack. AWS CloudFormation generates the change set
-        /// by comparing the stack's information with the information that you submit. A change
-        /// set can help you understand which resources AWS CloudFormation will change and how
-        /// it will change them before you update your stack. Change sets allow you to check before
-        /// you make a change so that you don't delete or replace critical resources.
+        /// by comparing the template's information with the information that you submit. A change
+        /// set can help you understand which resources AWS CloudFormation will change, and how
+        /// it will change them, before you update your stack. Change sets allow you to check
+        /// before making a change to avoid deleting or replacing critical resources.
         /// 
         ///  
         /// <para>
@@ -921,6 +922,52 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  ListChangeSetsResult from CloudFormation.</returns>
         ListChangeSetsResponse EndListChangeSets(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListExports
+
+
+        /// <summary>
+        /// Lists all exported output values in the account and region in which you call this
+        /// action. Use this action to see the exported output values that you can import into
+        /// other stacks. To import values, use the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+        /// <code>Fn::ImportValue</code> </a> function. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+        /// AWS CloudFormation Export Stack Output Values</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExports service method.</param>
+        /// 
+        /// <returns>The response from the ListExports service method, as returned by CloudFormation.</returns>
+        ListExportsResponse ListExports(ListExportsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExports operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExports
+        ///         operation.</returns>
+        IAsyncResult BeginListExports(ListExportsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListExports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExports.</param>
+        /// 
+        /// <returns>Returns a  ListExportsResult from CloudFormation.</returns>
+        ListExportsResponse EndListExports(IAsyncResult asyncResult);
 
         #endregion
         

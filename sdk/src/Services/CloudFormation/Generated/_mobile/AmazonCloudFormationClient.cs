@@ -38,11 +38,12 @@ namespace Amazon.CloudFormation
     ///
     /// AWS CloudFormation 
     /// <para>
-    /// AWS CloudFormation enables you to create and manage AWS infrastructure deployments
-    /// predictably and repeatedly. AWS CloudFormation helps you leverage AWS products such
-    /// as Amazon EC2, EBS, Amazon SNS, ELB, and Auto Scaling to build highly-reliable, highly
-    /// scalable, cost effective applications without worrying about creating and configuring
-    /// the underlying AWS infrastructure.
+    /// AWS CloudFormation allows you to create and manage AWS infrastructure deployments
+    /// predictably and repeatedly. You can use AWS CloudFormation to leverage AWS products,
+    /// such as Amazon Elastic Compute Cloud, Amazon Elastic Block Store, Amazon Simple Notification
+    /// Service, Elastic Load Balancing, and Auto Scaling to build highly-reliable, highly
+    /// scalable, cost-effective applications without creating or configuring the underlying
+    /// AWS infrastructure.
     /// </para>
     ///  
     /// <para>
@@ -53,8 +54,8 @@ namespace Amazon.CloudFormation
     /// </para>
     ///  
     /// <para>
-    /// For more information about this product, go to the <a href="http://aws.amazon.com/cloudformation/">CloudFormation
-    /// Product Page</a>.
+    /// For more information about AWS CloudFormation, see the <a href="http://aws.amazon.com/cloudformation/">AWS
+    /// CloudFormation Product Page</a>.
     /// </para>
     ///  
     /// <para>
@@ -841,6 +842,37 @@ namespace Amazon.CloudFormation
             var unmarshaller = ListChangeSetsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListChangeSetsRequest,ListChangeSetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListExports
+
+        internal ListExportsResponse ListExports(ListExportsRequest request)
+        {
+            var marshaller = new ListExportsRequestMarshaller();
+            var unmarshaller = ListExportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExportsRequest,ListExportsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExports operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListExportsResponse> ListExportsAsync(ListExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListExportsRequestMarshaller();
+            var unmarshaller = ListExportsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListExportsRequest,ListExportsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

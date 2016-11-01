@@ -191,6 +191,56 @@ namespace Amazon.CloudFormation
 
 
     /// <summary>
+    /// Constants used for properties of type ChangeSetType.
+    /// </summary>
+    public class ChangeSetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE for ChangeSetType
+        /// </summary>
+        public static readonly ChangeSetType CREATE = new ChangeSetType("CREATE");
+        /// <summary>
+        /// Constant UPDATE for ChangeSetType
+        /// </summary>
+        public static readonly ChangeSetType UPDATE = new ChangeSetType("UPDATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChangeSetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChangeSetType FindValue(string value)
+        {
+            return FindValue<ChangeSetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChangeSetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChangeSource.
     /// </summary>
     public class ChangeSource : ConstantClass
@@ -805,6 +855,10 @@ namespace Amazon.CloudFormation
         /// </summary>
         public static readonly StackStatus DELETE_IN_PROGRESS = new StackStatus("DELETE_IN_PROGRESS");
         /// <summary>
+        /// Constant REVIEW_IN_PROGRESS for StackStatus
+        /// </summary>
+        public static readonly StackStatus REVIEW_IN_PROGRESS = new StackStatus("REVIEW_IN_PROGRESS");
+        /// <summary>
         /// Constant ROLLBACK_COMPLETE for StackStatus
         /// </summary>
         public static readonly StackStatus ROLLBACK_COMPLETE = new StackStatus("ROLLBACK_COMPLETE");
@@ -874,6 +928,56 @@ namespace Amazon.CloudFormation
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StackStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TemplateStage.
+    /// </summary>
+    public class TemplateStage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Original for TemplateStage
+        /// </summary>
+        public static readonly TemplateStage Original = new TemplateStage("Original");
+        /// <summary>
+        /// Constant Processed for TemplateStage
+        /// </summary>
+        public static readonly TemplateStage Processed = new TemplateStage("Processed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TemplateStage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TemplateStage FindValue(string value)
+        {
+            return FindValue<TemplateStage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TemplateStage(string value)
         {
             return FindValue(value);
         }

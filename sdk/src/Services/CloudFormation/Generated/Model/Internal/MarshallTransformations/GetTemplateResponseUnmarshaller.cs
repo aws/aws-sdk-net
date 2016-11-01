@@ -81,6 +81,13 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("StagesAvailable/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.StagesAvailable.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("TemplateBody", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

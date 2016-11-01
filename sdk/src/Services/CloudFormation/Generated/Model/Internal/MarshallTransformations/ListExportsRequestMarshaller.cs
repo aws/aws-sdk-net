@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ContinueUpdateRollback Request Marshaller
+    /// ListExports Request Marshaller
     /// </summary>       
-    public class ContinueUpdateRollbackRequestMarshaller : IMarshaller<IRequest, ContinueUpdateRollbackRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListExportsRequestMarshaller : IMarshaller<IRequest, ListExportsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ContinueUpdateRollbackRequest)input);
+            return this.Marshall((ListExportsRequest)input);
         }
     
         /// <summary>
@@ -50,30 +50,17 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ContinueUpdateRollbackRequest publicRequest)
+        public IRequest Marshall(ListExportsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudFormation");
-            request.Parameters.Add("Action", "ContinueUpdateRollback");
+            request.Parameters.Add("Action", "ListExports");
             request.Parameters.Add("Version", "2010-05-15");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetResourcesToSkip())
+                if(publicRequest.IsSetNextToken())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ResourcesToSkip)
-                    {
-                        request.Parameters.Add("ResourcesToSkip" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
-                    }
-                }
-                if(publicRequest.IsSetRoleARN())
-                {
-                    request.Parameters.Add("RoleARN", StringUtils.FromString(publicRequest.RoleARN));
-                }
-                if(publicRequest.IsSetStackName())
-                {
-                    request.Parameters.Add("StackName", StringUtils.FromString(publicRequest.StackName));
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
             }
             return request;

@@ -187,6 +187,12 @@
     <max>16384</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.GetTemplateRequest.ChangeSetName</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>[a-zA-Z][-a-zA-Z0-9]*|arn:[-a-zA-Z0-9:/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.GetTemplateResponse.TemplateBody</property>
     <min>1</min>
   </property-value-rule>
@@ -221,6 +227,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.ListChangeSetsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListExportsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListExportsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
@@ -342,6 +358,11 @@
     <property>Amazon.CloudFormation.Model.ResourceChange.ResourceType</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.Stack.ChangeSetId</property>
+    <min>1</min>
+    <pattern>arn:[-a-zA-Z0-9:/]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.Stack.Description</property>

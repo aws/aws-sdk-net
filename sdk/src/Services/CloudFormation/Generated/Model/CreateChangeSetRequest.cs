@@ -30,10 +30,10 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the CreateChangeSet operation.
     /// Creates a list of changes for a stack. AWS CloudFormation generates the change set
-    /// by comparing the stack's information with the information that you submit. A change
-    /// set can help you understand which resources AWS CloudFormation will change and how
-    /// it will change them before you update your stack. Change sets allow you to check before
-    /// you make a change so that you don't delete or replace critical resources.
+    /// by comparing the template's information with the information that you submit. A change
+    /// set can help you understand which resources AWS CloudFormation will change, and how
+    /// it will change them, before you update your stack. Change sets allow you to check
+    /// before making a change to avoid deleting or replacing critical resources.
     /// 
     ///  
     /// <para>
@@ -51,6 +51,7 @@ namespace Amazon.CloudFormation.Model
     {
         private List<string> _capabilities = new List<string>();
         private string _changeSetName;
+        private ChangeSetType _changeSetType;
         private string _clientToken;
         private string _description;
         private List<string> _notificationARNs = new List<string>();
@@ -133,6 +134,35 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetChangeSetName()
         {
             return this._changeSetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChangeSetType. 
+        /// <para>
+        /// The type of change set operation. Valid values are <code>CREATE</code> and <code>UPDATE</code>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CREATE</code> - Specify for a change set for a stack that does not yet exist.
+        /// The stack has an expected unique ID, but no template or resources. It can include
+        /// multiple change sets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UPDATE</code> - Specify for a change set for an existing stack.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ChangeSetType ChangeSetType
+        {
+            get { return this._changeSetType; }
+            set { this._changeSetType = value; }
+        }
+
+        // Check to see if ChangeSetType property is set
+        internal bool IsSetChangeSetType()
+        {
+            return this._changeSetType != null;
         }
 
         /// <summary>

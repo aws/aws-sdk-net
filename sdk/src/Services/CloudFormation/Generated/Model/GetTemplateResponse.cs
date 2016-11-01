@@ -32,7 +32,29 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class GetTemplateResponse : AmazonWebServiceResponse
     {
+        private List<string> _stagesAvailable = new List<string>();
         private string _templateBody;
+
+        /// <summary>
+        /// Gets and sets the property StagesAvailable. 
+        /// <para>
+        /// The available template type. For stacks, both the <code>Original</code> and <code>Processed</code>
+        /// template types are always available. For change sets, the <code>Original</code> template
+        /// is always available. After the transforms are processed, the <code>Processed</code>
+        /// template becomes available.
+        /// </para>
+        /// </summary>
+        public List<string> StagesAvailable
+        {
+            get { return this._stagesAvailable; }
+            set { this._stagesAvailable = value; }
+        }
+
+        // Check to see if StagesAvailable property is set
+        internal bool IsSetStagesAvailable()
+        {
+            return this._stagesAvailable != null && this._stagesAvailable.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property TemplateBody. 

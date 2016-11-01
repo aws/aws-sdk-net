@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateChangeSet operation
+    /// Response Unmarshaller for ListExports operation
     /// </summary>  
-    public class CreateChangeSetResponseUnmarshaller : XmlResponseUnmarshaller
+    public class ListExportsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            CreateChangeSetResponse response = new CreateChangeSetResponse();
+            ListExportsResponse response = new ListExportsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("CreateChangeSetResult", 2))
+                    if(context.TestExpression("ListExportsResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, CreateChangeSetResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, ListExportsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,16 +81,17 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("Id", targetDepth))
+                    if (context.TestExpression("Exports/member", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.Id = unmarshaller.Unmarshall(context);
+                        var unmarshaller = ExportUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Exports.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("StackId", targetDepth))
+                    if (context.TestExpression("NextToken", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.StackId = unmarshaller.Unmarshall(context);
+                        response.NextToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -110,23 +111,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("AlreadyExistsException"))
-            {
-                return new AlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientCapabilitiesException"))
-            {
-                return new InsufficientCapabilitiesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-            {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonCloudFormationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static CreateChangeSetResponseUnmarshaller _instance = new CreateChangeSetResponseUnmarshaller();        
+        private static ListExportsResponseUnmarshaller _instance = new ListExportsResponseUnmarshaller();        
 
-        internal static CreateChangeSetResponseUnmarshaller GetInstance()
+        internal static ListExportsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -134,7 +123,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateChangeSetResponseUnmarshaller Instance
+        public static ListExportsResponseUnmarshaller Instance
         {
             get
             {
