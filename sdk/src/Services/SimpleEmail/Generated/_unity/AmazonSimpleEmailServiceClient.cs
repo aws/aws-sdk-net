@@ -203,6 +203,60 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  CreateConfigurationSet
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConfigurationSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationSet operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void CreateConfigurationSetAsync(CreateConfigurationSetRequest request, AmazonServiceCallback<CreateConfigurationSetRequest, CreateConfigurationSetResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new CreateConfigurationSetRequestMarshaller();
+            var unmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<CreateConfigurationSetRequest,CreateConfigurationSetResponse> responseObject 
+                            = new AmazonServiceResult<CreateConfigurationSetRequest,CreateConfigurationSetResponse>((CreateConfigurationSetRequest)req, (CreateConfigurationSetResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<CreateConfigurationSetRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  CreateConfigurationSetEventDestination
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConfigurationSetEventDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationSetEventDestination operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void CreateConfigurationSetEventDestinationAsync(CreateConfigurationSetEventDestinationRequest request, AmazonServiceCallback<CreateConfigurationSetEventDestinationRequest, CreateConfigurationSetEventDestinationResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
+            var unmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<CreateConfigurationSetEventDestinationRequest,CreateConfigurationSetEventDestinationResponse> responseObject 
+                            = new AmazonServiceResult<CreateConfigurationSetEventDestinationRequest,CreateConfigurationSetEventDestinationResponse>((CreateConfigurationSetEventDestinationRequest)req, (CreateConfigurationSetEventDestinationResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<CreateConfigurationSetEventDestinationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  CreateReceiptFilter
 
         /// <summary>
@@ -280,6 +334,60 @@ namespace Amazon.SimpleEmail
                         callback(responseObject); 
                 };
             BeginInvoke<CreateReceiptRuleSetRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  DeleteConfigurationSet
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConfigurationSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationSet operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void DeleteConfigurationSetAsync(DeleteConfigurationSetRequest request, AmazonServiceCallback<DeleteConfigurationSetRequest, DeleteConfigurationSetResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new DeleteConfigurationSetRequestMarshaller();
+            var unmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DeleteConfigurationSetRequest,DeleteConfigurationSetResponse> responseObject 
+                            = new AmazonServiceResult<DeleteConfigurationSetRequest,DeleteConfigurationSetResponse>((DeleteConfigurationSetRequest)req, (DeleteConfigurationSetResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DeleteConfigurationSetRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  DeleteConfigurationSetEventDestination
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConfigurationSetEventDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationSetEventDestination operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void DeleteConfigurationSetEventDestinationAsync(DeleteConfigurationSetEventDestinationRequest request, AmazonServiceCallback<DeleteConfigurationSetEventDestinationRequest, DeleteConfigurationSetEventDestinationResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new DeleteConfigurationSetEventDestinationRequestMarshaller();
+            var unmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DeleteConfigurationSetEventDestinationRequest,DeleteConfigurationSetEventDestinationResponse> responseObject 
+                            = new AmazonServiceResult<DeleteConfigurationSetEventDestinationRequest,DeleteConfigurationSetEventDestinationResponse>((DeleteConfigurationSetEventDestinationRequest)req, (DeleteConfigurationSetEventDestinationResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DeleteConfigurationSetEventDestinationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -469,6 +577,33 @@ namespace Amazon.SimpleEmail
                         callback(responseObject); 
                 };
             BeginInvoke<DescribeActiveReceiptRuleSetRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  DescribeConfigurationSet
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConfigurationSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationSet operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void DescribeConfigurationSetAsync(DescribeConfigurationSetRequest request, AmazonServiceCallback<DescribeConfigurationSetRequest, DescribeConfigurationSetResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new DescribeConfigurationSetRequestMarshaller();
+            var unmarshaller = DescribeConfigurationSetResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DescribeConfigurationSetRequest,DescribeConfigurationSetResponse> responseObject 
+                            = new AmazonServiceResult<DescribeConfigurationSetRequest,DescribeConfigurationSetResponse>((DescribeConfigurationSetRequest)req, (DescribeConfigurationSetResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DescribeConfigurationSetRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -761,6 +896,33 @@ namespace Amazon.SimpleEmail
                         callback(responseObject); 
                 };
             BeginInvoke<GetSendStatisticsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  ListConfigurationSets
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConfigurationSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationSets operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void ListConfigurationSetsAsync(ListConfigurationSetsRequest request, AmazonServiceCallback<ListConfigurationSetsRequest, ListConfigurationSetsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new ListConfigurationSetsRequestMarshaller();
+            var unmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<ListConfigurationSetsRequest,ListConfigurationSetsResponse> responseObject 
+                            = new AmazonServiceResult<ListConfigurationSetsRequest,ListConfigurationSetsResponse>((ListConfigurationSetsRequest)req, (ListConfigurationSetsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<ListConfigurationSetsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -1270,6 +1432,33 @@ namespace Amazon.SimpleEmail
                         callback(responseObject); 
                 };
             BeginInvoke<SetReceiptRulePositionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  UpdateConfigurationSetEventDestination
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConfigurationSetEventDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationSetEventDestination operation on AmazonSimpleEmailServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void UpdateConfigurationSetEventDestinationAsync(UpdateConfigurationSetEventDestinationRequest request, AmazonServiceCallback<UpdateConfigurationSetEventDestinationRequest, UpdateConfigurationSetEventDestinationResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
+            var unmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UpdateConfigurationSetEventDestinationRequest,UpdateConfigurationSetEventDestinationResponse> responseObject 
+                            = new AmazonServiceResult<UpdateConfigurationSetEventDestinationRequest,UpdateConfigurationSetEventDestinationResponse>((UpdateConfigurationSetEventDestinationRequest)req, (UpdateConfigurationSetEventDestinationResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<UpdateConfigurationSetEventDestinationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion

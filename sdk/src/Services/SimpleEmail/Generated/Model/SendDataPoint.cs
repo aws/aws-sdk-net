@@ -78,7 +78,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property DeliveryAttempts. 
         /// <para>
-        /// Number of emails that have been enqueued for sending.
+        /// Number of emails that have been sent.
         /// </para>
         /// </summary>
         public long DeliveryAttempts

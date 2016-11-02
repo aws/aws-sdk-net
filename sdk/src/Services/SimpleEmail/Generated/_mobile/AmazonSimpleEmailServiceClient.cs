@@ -272,6 +272,68 @@ namespace Amazon.SimpleEmail
 
         #endregion
         
+        #region  CreateConfigurationSet
+
+        internal CreateConfigurationSetResponse CreateConfigurationSet(CreateConfigurationSetRequest request)
+        {
+            var marshaller = new CreateConfigurationSetRequestMarshaller();
+            var unmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConfigurationSetRequest,CreateConfigurationSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConfigurationSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateConfigurationSetResponse> CreateConfigurationSetAsync(CreateConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateConfigurationSetRequestMarshaller();
+            var unmarshaller = CreateConfigurationSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateConfigurationSetRequest,CreateConfigurationSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateConfigurationSetEventDestination
+
+        internal CreateConfigurationSetEventDestinationResponse CreateConfigurationSetEventDestination(CreateConfigurationSetEventDestinationRequest request)
+        {
+            var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
+            var unmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConfigurationSetEventDestinationRequest,CreateConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConfigurationSetEventDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfigurationSetEventDestination operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateConfigurationSetEventDestinationResponse> CreateConfigurationSetEventDestinationAsync(CreateConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateConfigurationSetEventDestinationRequestMarshaller();
+            var unmarshaller = CreateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateConfigurationSetEventDestinationRequest,CreateConfigurationSetEventDestinationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateReceiptFilter
 
         internal CreateReceiptFilterResponse CreateReceiptFilter(CreateReceiptFilterRequest request)
@@ -360,6 +422,68 @@ namespace Amazon.SimpleEmail
             var unmarshaller = CreateReceiptRuleSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateReceiptRuleSetRequest,CreateReceiptRuleSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteConfigurationSet
+
+        internal DeleteConfigurationSetResponse DeleteConfigurationSet(DeleteConfigurationSetRequest request)
+        {
+            var marshaller = new DeleteConfigurationSetRequestMarshaller();
+            var unmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConfigurationSetRequest,DeleteConfigurationSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConfigurationSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteConfigurationSetResponse> DeleteConfigurationSetAsync(DeleteConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteConfigurationSetRequestMarshaller();
+            var unmarshaller = DeleteConfigurationSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConfigurationSetRequest,DeleteConfigurationSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteConfigurationSetEventDestination
+
+        internal DeleteConfigurationSetEventDestinationResponse DeleteConfigurationSetEventDestination(DeleteConfigurationSetEventDestinationRequest request)
+        {
+            var marshaller = new DeleteConfigurationSetEventDestinationRequestMarshaller();
+            var unmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConfigurationSetEventDestinationRequest,DeleteConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConfigurationSetEventDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationSetEventDestination operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteConfigurationSetEventDestinationResponse> DeleteConfigurationSetEventDestinationAsync(DeleteConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteConfigurationSetEventDestinationRequestMarshaller();
+            var unmarshaller = DeleteConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConfigurationSetEventDestinationRequest,DeleteConfigurationSetEventDestinationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -577,6 +701,37 @@ namespace Amazon.SimpleEmail
             var unmarshaller = DescribeActiveReceiptRuleSetResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeActiveReceiptRuleSetRequest,DescribeActiveReceiptRuleSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeConfigurationSet
+
+        internal DescribeConfigurationSetResponse DescribeConfigurationSet(DescribeConfigurationSetRequest request)
+        {
+            var marshaller = new DescribeConfigurationSetRequestMarshaller();
+            var unmarshaller = DescribeConfigurationSetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeConfigurationSetRequest,DescribeConfigurationSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeConfigurationSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeConfigurationSetResponse> DescribeConfigurationSetAsync(DescribeConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeConfigurationSetRequestMarshaller();
+            var unmarshaller = DescribeConfigurationSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeConfigurationSetRequest,DescribeConfigurationSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -907,6 +1062,37 @@ namespace Amazon.SimpleEmail
             var unmarshaller = GetSendStatisticsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSendStatisticsRequest,GetSendStatisticsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListConfigurationSets
+
+        internal ListConfigurationSetsResponse ListConfigurationSets(ListConfigurationSetsRequest request)
+        {
+            var marshaller = new ListConfigurationSetsRequestMarshaller();
+            var unmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConfigurationSetsRequest,ListConfigurationSetsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConfigurationSets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurationSets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListConfigurationSetsResponse> ListConfigurationSetsAsync(ListConfigurationSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListConfigurationSetsRequestMarshaller();
+            var unmarshaller = ListConfigurationSetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListConfigurationSetsRequest,ListConfigurationSetsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1486,6 +1672,37 @@ namespace Amazon.SimpleEmail
             var unmarshaller = SetReceiptRulePositionResponseUnmarshaller.Instance;
 
             return InvokeAsync<SetReceiptRulePositionRequest,SetReceiptRulePositionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateConfigurationSetEventDestination
+
+        internal UpdateConfigurationSetEventDestinationResponse UpdateConfigurationSetEventDestination(UpdateConfigurationSetEventDestinationRequest request)
+        {
+            var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
+            var unmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConfigurationSetEventDestinationRequest,UpdateConfigurationSetEventDestinationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConfigurationSetEventDestination operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationSetEventDestination operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateConfigurationSetEventDestinationResponse> UpdateConfigurationSetEventDestinationAsync(UpdateConfigurationSetEventDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateConfigurationSetEventDestinationRequestMarshaller();
+            var unmarshaller = UpdateConfigurationSetEventDestinationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateConfigurationSetEventDestinationRequest,UpdateConfigurationSetEventDestinationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

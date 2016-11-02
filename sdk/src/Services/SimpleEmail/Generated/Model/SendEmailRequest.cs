@@ -67,6 +67,7 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class SendEmailRequest : AmazonSimpleEmailServiceRequest
     {
+        private string _configurationSetName;
         private Destination _destination;
         private Message _message;
         private List<string> _replyToAddresses = new List<string>();
@@ -74,6 +75,7 @@ namespace Amazon.SimpleEmail.Model
         private string _returnPathArn;
         private string _source;
         private string _sourceArn;
+        private List<MessageTag> _tags = new List<MessageTag>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -91,6 +93,24 @@ namespace Amazon.SimpleEmail.Model
             _source = source;
             _destination = destination;
             _message = message;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationSetName. 
+        /// <para>
+        /// The name of the configuration set to use when you send an email using <code>SendEmail</code>.
+        /// </para>
+        /// </summary>
+        public string ConfigurationSetName
+        {
+            get { return this._configurationSetName; }
+            set { this._configurationSetName = value; }
+        }
+
+        // Check to see if ConfigurationSetName property is set
+        internal bool IsSetConfigurationSetName()
+        {
+            return this._configurationSetName != null;
         }
 
         /// <summary>
@@ -270,6 +290,26 @@ namespace Amazon.SimpleEmail.Model
         internal bool IsSetSourceArn()
         {
             return this._sourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags, in the form of name/value pairs, to apply to an email that you send
+        /// using <code>SendEmail</code>. Tags correspond to characteristics of the email that
+        /// you define, so that you can publish email sending events.
+        /// </para>
+        /// </summary>
+        public List<MessageTag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

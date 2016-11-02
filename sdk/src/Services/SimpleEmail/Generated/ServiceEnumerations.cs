@@ -141,6 +141,52 @@ namespace Amazon.SimpleEmail
 
 
     /// <summary>
+    /// Constants used for properties of type ConfigurationSetAttribute.
+    /// </summary>
+    public class ConfigurationSetAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EventDestinations for ConfigurationSetAttribute
+        /// </summary>
+        public static readonly ConfigurationSetAttribute EventDestinations = new ConfigurationSetAttribute("eventDestinations");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigurationSetAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationSetAttribute FindValue(string value)
+        {
+            return FindValue<ConfigurationSetAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationSetAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CustomMailFromStatus.
     /// </summary>
     public class CustomMailFromStatus : ConstantClass
@@ -192,6 +238,56 @@ namespace Amazon.SimpleEmail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CustomMailFromStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DimensionValueSource.
+    /// </summary>
+    public class DimensionValueSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EmailHeader for DimensionValueSource
+        /// </summary>
+        public static readonly DimensionValueSource EmailHeader = new DimensionValueSource("emailHeader");
+        /// <summary>
+        /// Constant MessageTag for DimensionValueSource
+        /// </summary>
+        public static readonly DimensionValueSource MessageTag = new DimensionValueSource("messageTag");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DimensionValueSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DimensionValueSource FindValue(string value)
+        {
+            return FindValue<DimensionValueSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DimensionValueSource(string value)
         {
             return FindValue(value);
         }
@@ -254,6 +350,68 @@ namespace Amazon.SimpleEmail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DsnAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EventType.
+    /// </summary>
+    public class EventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Bounce for EventType
+        /// </summary>
+        public static readonly EventType Bounce = new EventType("bounce");
+        /// <summary>
+        /// Constant Complaint for EventType
+        /// </summary>
+        public static readonly EventType Complaint = new EventType("complaint");
+        /// <summary>
+        /// Constant Delivery for EventType
+        /// </summary>
+        public static readonly EventType Delivery = new EventType("delivery");
+        /// <summary>
+        /// Constant Reject for EventType
+        /// </summary>
+        public static readonly EventType Reject = new EventType("reject");
+        /// <summary>
+        /// Constant Send for EventType
+        /// </summary>
+        public static readonly EventType Send = new EventType("send");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventType FindValue(string value)
+        {
+            return FindValue<EventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventType(string value)
         {
             return FindValue(value);
         }

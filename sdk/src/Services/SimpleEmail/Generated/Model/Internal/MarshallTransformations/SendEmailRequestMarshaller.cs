@@ -58,6 +58,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetConfigurationSetName())
+                {
+                    request.Parameters.Add("ConfigurationSetName", StringUtils.FromString(publicRequest.ConfigurationSetName));
+                }
                 if(publicRequest.IsSetDestination())
                 {
                     if(publicRequest.Destination.IsSetBccAddresses())
@@ -151,6 +155,22 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetSourceArn())
                 {
                     request.Parameters.Add("SourceArn", StringUtils.FromString(publicRequest.SourceArn));
+                }
+                if(publicRequest.IsSetTags())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Tags)
+                    {
+                        if(publicRequestlistValue.IsSetName())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
+                        }
+                        if(publicRequestlistValue.IsSetValue())
+                        {
+                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
                 }
             }
             return request;

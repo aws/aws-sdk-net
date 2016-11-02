@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SendEmail operation
+    /// Response Unmarshaller for DescribeConfigurationSet operation
     /// </summary>  
-    public class SendEmailResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DescribeConfigurationSetResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            SendEmailResponse response = new SendEmailResponse();
+            DescribeConfigurationSetResponse response = new DescribeConfigurationSetResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("SendEmailResult", 2))
+                    if(context.TestExpression("DescribeConfigurationSetResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, SendEmailResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeConfigurationSetResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,10 +81,17 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("MessageId", targetDepth))
+                    if (context.TestExpression("ConfigurationSet", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.MessageId = unmarshaller.Unmarshall(context);
+                        var unmarshaller = ConfigurationSetUnmarshaller.Instance;
+                        response.ConfigurationSet = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EventDestinations/member", targetDepth))
+                    {
+                        var unmarshaller = EventDestinationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.EventDestinations.Add(item);
                         continue;
                     }
                 } 
@@ -108,19 +115,11 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             {
                 return new ConfigurationSetDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MailFromDomainNotVerifiedException"))
-            {
-                return new MailFromDomainNotVerifiedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MessageRejected"))
-            {
-                return new MessageRejectedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonSimpleEmailServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static SendEmailResponseUnmarshaller _instance = new SendEmailResponseUnmarshaller();        
+        private static DescribeConfigurationSetResponseUnmarshaller _instance = new DescribeConfigurationSetResponseUnmarshaller();        
 
-        internal static SendEmailResponseUnmarshaller GetInstance()
+        internal static DescribeConfigurationSetResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -128,7 +127,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SendEmailResponseUnmarshaller Instance
+        public static DescribeConfigurationSetResponseUnmarshaller Instance
         {
             get
             {

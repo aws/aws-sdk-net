@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SendEmail operation
+    /// Response Unmarshaller for DeleteConfigurationSet operation
     /// </summary>  
-    public class SendEmailResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DeleteConfigurationSetResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            SendEmailResponse response = new SendEmailResponse();
+            DeleteConfigurationSetResponse response = new DeleteConfigurationSetResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("SendEmailResult", 2))
+                    if(context.TestExpression("DeleteConfigurationSetResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, SendEmailResponse response)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DeleteConfigurationSetResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,12 +82,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("MessageId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.MessageId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                 } 
            }
 
@@ -108,19 +103,11 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             {
                 return new ConfigurationSetDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MailFromDomainNotVerifiedException"))
-            {
-                return new MailFromDomainNotVerifiedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("MessageRejected"))
-            {
-                return new MessageRejectedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonSimpleEmailServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static SendEmailResponseUnmarshaller _instance = new SendEmailResponseUnmarshaller();        
+        private static DeleteConfigurationSetResponseUnmarshaller _instance = new DeleteConfigurationSetResponseUnmarshaller();        
 
-        internal static SendEmailResponseUnmarshaller GetInstance()
+        internal static DeleteConfigurationSetResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -128,7 +115,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SendEmailResponseUnmarshaller Instance
+        public static DeleteConfigurationSetResponseUnmarshaller Instance
         {
             get
             {
