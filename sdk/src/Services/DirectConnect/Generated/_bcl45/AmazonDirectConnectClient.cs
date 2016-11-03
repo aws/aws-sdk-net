@@ -1377,6 +1377,51 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  DescribeTags
+
+
+        /// <summary>
+        /// Describes the tags associated with the specified Direct Connect resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTags service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
+        {
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeVirtualGateways
 
 
@@ -1614,6 +1659,110 @@ namespace Amazon.DirectConnect
             var unmarshaller = DescribeVirtualInterfacesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeVirtualInterfacesRequest,DescribeVirtualInterfacesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds the specified tags to the specified Direct Connect resource. Each Direct Connect
+        /// resource can have a maximum of 50 tags.
+        /// 
+        ///  
+        /// <para>
+        /// Each tag consists of a key and an optional value. If a tag with the same key is already
+        /// associated with the Direct Connect resource, this action updates its value.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
+        /// You have reached the limit on the number of tags that can be assigned to a Direct
+        /// Connect resource.
+        /// </exception>
+        public TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var marshaller = new TagResourceRequestMarshaller();
+            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new TagResourceRequestMarshaller();
+            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceRequest,TagResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes one or more tags from the specified Direct Connect resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        public UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var marshaller = new UntagResourceRequestMarshaller();
+            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UntagResourceRequestMarshaller();
+            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

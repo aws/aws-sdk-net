@@ -1545,6 +1545,64 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  DescribeTags
+
+        /// <summary>
+        /// Describes the tags associated with the specified Direct Connect resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTags service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
+        {
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation on AmazonDirectConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTags
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeTagsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTags operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTags.</param>
+        /// 
+        /// <returns>Returns a  DescribeTagsResult from DirectConnect.</returns>
+        public  DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTagsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeVirtualGateways
 
         /// <summary>
@@ -1741,6 +1799,136 @@ namespace Amazon.DirectConnect
         public  DescribeVirtualInterfacesResponse EndDescribeVirtualInterfaces(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVirtualInterfacesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        /// <summary>
+        /// Adds the specified tags to the specified Direct Connect resource. Each Direct Connect
+        /// resource can have a maximum of 50 tags.
+        /// 
+        ///  
+        /// <para>
+        /// Each tag consists of a key and an optional value. If a tag with the same key is already
+        /// associated with the Direct Connect resource, this action updates its value.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
+        /// You have reached the limit on the number of tags that can be assigned to a Direct
+        /// Connect resource.
+        /// </exception>
+        public TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var marshaller = new TagResourceRequestMarshaller();
+            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonDirectConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        public IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new TagResourceRequestMarshaller();
+            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<TagResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from DirectConnect.</returns>
+        public  TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// Removes one or more tags from the specified Direct Connect resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        public UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var marshaller = new UntagResourceRequestMarshaller();
+            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonDirectConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        public IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UntagResourceRequestMarshaller();
+            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UntagResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from DirectConnect.</returns>
+        public  UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
         }
 
         #endregion

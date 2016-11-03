@@ -918,6 +918,37 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  DescribeTags
+
+        internal DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
+        {
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeTagsRequestMarshaller();
+            var unmarshaller = DescribeTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTagsRequest,DescribeTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeVirtualGateways
 
         internal DescribeVirtualGatewaysResponse DescribeVirtualGateways()
@@ -1051,6 +1082,68 @@ namespace Amazon.DirectConnect
             var unmarshaller = DescribeVirtualInterfacesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeVirtualInterfacesRequest,DescribeVirtualInterfacesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        internal TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var marshaller = new TagResourceRequestMarshaller();
+            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new TagResourceRequestMarshaller();
+            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceRequest,TagResourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var marshaller = new UntagResourceRequestMarshaller();
+            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UntagResourceRequestMarshaller();
+            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceRequest,UntagResourceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

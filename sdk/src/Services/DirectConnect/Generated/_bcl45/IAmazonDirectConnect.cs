@@ -946,6 +946,39 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  DescribeTags
+
+
+        /// <summary>
+        /// Describes the tags associated with the specified Direct Connect resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTags service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        DescribeTagsResponse DescribeTags(DescribeTagsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeVirtualGateways
 
 
@@ -1151,6 +1184,86 @@ namespace Amazon.DirectConnect
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeVirtualInterfacesResponse> DescribeVirtualInterfacesAsync(DescribeVirtualInterfacesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds the specified tags to the specified Direct Connect resource. Each Direct Connect
+        /// resource can have a maximum of 50 tags.
+        /// 
+        ///  
+        /// <para>
+        /// Each tag consists of a key and an optional value. If a tag with the same key is already
+        /// associated with the Direct Connect resource, this action updates its value.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
+        /// You have reached the limit on the number of tags that can be assigned to a Direct
+        /// Connect resource.
+        /// </exception>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Removes one or more tags from the specified Direct Connect resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
