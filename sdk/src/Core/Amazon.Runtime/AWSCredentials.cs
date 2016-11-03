@@ -831,29 +831,37 @@ namespace Amazon.Runtime
         public EnvironmentVariablesAWSCredentials()
         {
             logger = Logger.GetLogger(typeof(EnvironmentVariablesAWSCredentials));
-            logger.InfoFormat("Credentials found using environment variables.");
+
+            // We need to do an initial fetch to validate that we can use environment variables to get the credentials.
+            FetchAWSCredentials();
         }
 
         private ImmutableCredentials FetchAWSCredentials()
         {
             string accessKeyId = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_ACCESSKEY);
             string secretKey = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_SECRETKEY);
+
             if (string.IsNullOrEmpty(secretKey))
             {
-            secretKey = Environment.GetEnvironmentVariable(LEGACY_ENVIRONMENT_VARIABLE_SECRETKEY);
-            if (!string.IsNullOrEmpty(secretKey))
-            logger.InfoFormat("AWS secret key found using legacy and non-standard environment variable '{0}', consider updating to the cross-SDK standard variable '{1}'.",
-                            LEGACY_ENVIRONMENT_VARIABLE_SECRETKEY, ENVIRONMENT_VARIABLE_SECRETKEY);
+                secretKey = Environment.GetEnvironmentVariable(LEGACY_ENVIRONMENT_VARIABLE_SECRETKEY);
+                if (!string.IsNullOrEmpty(secretKey))
+                    logger.InfoFormat(
+                        "AWS secret key found using legacy and non-standard environment variable '{0}', consider updating to the cross-SDK standard variable '{1}'.",
+                        LEGACY_ENVIRONMENT_VARIABLE_SECRETKEY,
+                        ENVIRONMENT_VARIABLE_SECRETKEY);
             }
  
             if (string.IsNullOrEmpty(accessKeyId) || string.IsNullOrEmpty(secretKey))
             {
-            throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
-            "The environment variables {0}/{1}/{2} were not set with AWS credentials.", 
-            ENVIRONMENT_VARIABLE_ACCESSKEY, ENVIRONMENT_VARIABLE_SECRETKEY, ENVIRONMENT_VARIABLE_SESSION_TOKEN));
-
+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                    "The environment variables {0}/{1}/{2} were not set with AWS credentials.", 
+                    ENVIRONMENT_VARIABLE_ACCESSKEY,
+                    ENVIRONMENT_VARIABLE_SECRETKEY,
+                    ENVIRONMENT_VARIABLE_SESSION_TOKEN));
             }
- 
+
+            logger.InfoFormat("Credentials found using environment variables.");
+
             string sessionToken = Environment.GetEnvironmentVariable(ENVIRONMENT_VARIABLE_SESSION_TOKEN);
             return new ImmutableCredentials(accessKeyId, secretKey, sessionToken);
         }
