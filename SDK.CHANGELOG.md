@@ -1,3 +1,7 @@
+### 3.3.15.0 (2016-11-03 04:41 UTC)
+* CloudFormation (3.3.2.0)
+	*  Adding ResourcesToSkip parameter to ContinueUpdateRollback API, adding support for ListExports, new ChangeSet types and Transforms
+
 ### 3.3.14.1 (2016-10-25 23:25 UTC)
 * AutoScaling (3.3.0.2)
 	* Doc Update for Autoscaling and ELB

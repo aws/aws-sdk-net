@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.14.1",
+    "ProductVersion" : "3.3.15.0",
     "CoreVersion"    : "3.3.3.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -26,7 +26,7 @@
             "InPreview"    : false
         },
         "CloudFormation" : {
-            "Version" : "3.3.1.1",
+            "Version" : "3.3.2.0",
             "Dependencies" : {
                 "Core" : "3.3.1.0"
             },
