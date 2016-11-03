@@ -38,8 +38,6 @@ namespace Amazon.Runtime.Internal
         //Holds on to the singleton instance.
         private static readonly CapacityManager _capacityManagerInstance = new CapacityManager(THROTTLED_RETRIES, THROTTLE_RETRY_REQUEST_COST, THROTTLE_REQUEST_COST);
         private int _maxBackoffInMilliseconds = (int)TimeSpan.FromSeconds(30).TotalMilliseconds;
-        //This parameter serves as the key to the CapacityManager.CapacityContainer datastructure.
-        private string _serviceURL;
         //This parameter serves as the value to the CapacityManager.Container datastructure.
         //Its properties include the available capacity left for making a retry request and the maximum
         //capacity size.
@@ -125,6 +123,16 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// Constructor for DefaultRetryPolicy.
         /// </summary>
+        /// <param name="maxRetries">The maximum number of retries before throwing
+        /// back a exception. This does not count the initial request.</param>
+        public DefaultRetryPolicy(int maxRetries)
+        {
+            this.MaxRetries = maxRetries;
+        }
+
+        /// <summary>
+        /// Constructor for DefaultRetryPolicy.
+        /// </summary>
         /// <param name="config">The Client config object. This is used to 
         /// retrieve the maximum number of retries  before throwing
         /// back a exception(This does not count the initial request) and
@@ -134,8 +142,8 @@ namespace Amazon.Runtime.Internal
             this.MaxRetries = config.MaxErrorRetry;
             if (config.ThrottleRetries)
             {
-                _serviceURL = config.DetermineServiceURL();
-                _retryCapacity = _capacityManagerInstance.GetRetryCapacity(_serviceURL);
+                string serviceURL = config.DetermineServiceURL();
+                _retryCapacity = _capacityManagerInstance.GetRetryCapacity(serviceURL);
             } 
         }
 
@@ -170,7 +178,7 @@ namespace Amazon.Runtime.Internal
         /// requests and response context.</param>
         public override bool OnRetry(IExecutionContext executionContext)
         {
-            if (executionContext.RequestContext.ClientConfig.ThrottleRetries)
+            if (executionContext.RequestContext.ClientConfig.ThrottleRetries && _retryCapacity != null)
             {
                 return (_capacityManagerInstance.TryAcquireCapacity(_retryCapacity));
             }
@@ -188,7 +196,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="executionContext">Request context containing the state of the request.</param>
         public override void NotifySuccess(IExecutionContext executionContext)
         {
-            if(executionContext.RequestContext.ClientConfig.ThrottleRetries)
+            if(executionContext.RequestContext.ClientConfig.ThrottleRetries && _retryCapacity!=null)
             {
                 _capacityManagerInstance.TryReleaseCapacity(executionContext.RequestContext.Retries>0 ? true:false, _retryCapacity);
             }
