@@ -26,6 +26,8 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using System.IO;
 
+using AWSSDK_DotNet.IntegrationTests.Utils;
+
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
     /// <summary>
@@ -74,8 +76,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     }
                     else
                     {
+                        var xmlDoc = UtilityMethods.GetResourceText("ListObjectsResponse.xml");
                         XmlDocument myxml = new XmlDocument();
-                        myxml.Load("Tests/ListObjectsResponse.xml");
+                        myxml.LoadXml(xmlDoc);
                         string contents = myxml.InnerXml;
                         return new MultipleResponseServlet.Response
                         {
