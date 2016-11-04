@@ -1,3 +1,16 @@
+### 3.3.16.0 (2016-11-04 01:26 UTC)
+* DirectConnect (3.3.1.0)
+	* Updated to use new Core, version 3.3.4.0
+	*  AWS Direct Connect provides three new APIs to support basic tagging on Direct Connect resources.
+* SimpleEmail (3.3.1.0)
+	* Updated to use new Core, version 3.3.4.0
+	* API Update for SES: Amazon Simple Email Service (Amazon SES) now enables you to track your bounce, complaint, delivery, sent, and rejected email metrics with fine-grained granularity.
+* Core 3.3.4.0
+	* RetryThrottling feature.
+Added WebProxy support for PCL.
+Added Support for environmental credentials.
+	* all services packages updated to require new core
+
 ### 3.3.15.0 (2016-11-03 04:41 UTC)
 * CloudFormation (3.3.2.0)
 	*  Adding ResourcesToSkip parameter to ContinueUpdateRollback API, adding support for ListExports, new ChangeSet types and Transforms
