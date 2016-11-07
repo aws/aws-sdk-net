@@ -40,7 +40,7 @@ namespace ServiceClientGenerator
         public const string ErrorsKey = "errors";
         public const string WrapperKey = "wrapper";
         public const string DeprecatedKey = "deprecated";
-
+        public const string IdempotencyTokenKey = "idempotencyToken";
         /// <summary>
         /// This model contains information about customizations needed during the generation process
         /// </summary>

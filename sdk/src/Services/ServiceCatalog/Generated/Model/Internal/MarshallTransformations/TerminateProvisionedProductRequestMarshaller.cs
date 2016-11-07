@@ -97,6 +97,11 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.TerminateToken);
                 }
 
+                else if(!(publicRequest.IsSetTerminateToken()))
+                {
+                    context.Writer.WritePropertyName("TerminateToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                }
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

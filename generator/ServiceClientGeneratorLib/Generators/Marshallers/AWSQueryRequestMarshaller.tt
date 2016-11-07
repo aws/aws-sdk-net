@@ -158,6 +158,15 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#=new string(' ', level * 4)#>                    request.Parameters.Add(<#=context#>, <#=member.CustomMarshallerTransformation + "(" + variableName + "." + member.PropertyName + ")"#>);
 <#+					
 				}
+				if(member.IsIdempotent)
+				{
+#>
+<#=new string(' ', level * 4)#> 			   }
+<#=new string(' ', level * 4)#> 			   else if(!(<#=variableName#>.IsSet<#=member.PropertyName#>()))
+<#=new string(' ', level * 4)#> 			   {
+<#=new string(' ', level * 4)#>                    request.Parameters.Add(<#=context#>, StringUtils.FromString(Guid.NewGuid().ToString()));
+<#+
+				}
             }
 #>
 <#=new string(' ', level * 4)#>                }

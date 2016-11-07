@@ -130,6 +130,11 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ProvisionToken);
                 }
 
+                else if(!(publicRequest.IsSetProvisionToken()))
+                {
+                    context.Writer.WritePropertyName("ProvisionToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                }
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

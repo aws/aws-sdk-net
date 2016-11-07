@@ -125,6 +125,11 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.UpdateToken);
                 }
 
+                else if(!(publicRequest.IsSetUpdateToken()))
+                {
+                    context.Writer.WritePropertyName("UpdateToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());                                                
+                }
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

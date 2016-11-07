@@ -670,10 +670,23 @@ namespace ServiceClientGenerator
                         emittingShapeType = shape.Type;
                     }
                 }
-
                 return emittingShapeType != null
-                    ? _nullableTypes.Contains(emittingShapeType, StringComparer.Ordinal) 
-                    : this.Shape.IsNullable;
+                ? _nullableTypes.Contains(emittingShapeType, StringComparer.Ordinal) 
+                : this.Shape.IsNullable;
+            }
+        }
+
+        /// <summary>
+        /// Determines if the operation is Idempotent.
+        /// </summary>
+        public bool IsIdempotent
+        {
+            get
+            {
+                var source = data[ServiceModel.IdempotencyTokenKey];
+                if (source != null && source.IsBoolean)
+                    return (bool)source;
+                return false;
             }
         }
 
