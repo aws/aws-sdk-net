@@ -29,21 +29,22 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateExportTask operation.
-    /// Creates an <code>ExportTask</code> which allows you to efficiently export data from
-    /// a Log Group to your Amazon S3 bucket.
+    /// Creates an export task, which allows you to efficiently export data from a log group
+    /// to an Amazon S3 bucket.
     /// 
     ///  
     /// <para>
-    /// This is an asynchronous call. If all the required information is provided, this API
-    /// will initiate an export task and respond with the task Id. Once started, <code>DescribeExportTasks</code>
-    /// can be used to get the status of an export task. You can only have one active (<code>RUNNING</code>
-    /// or <code>PENDING</code>) export task at a time, per account.
+    /// This is an asynchronous call. If all the required information is provided, this operation
+    /// initiates an export task and responds with the ID of the task. After the task has
+    /// started, you can use <a>DescribeExportTasks</a> to get the status of the export task.
+    /// Each account can only have one active (<code>RUNNING</code> or <code>PENDING</code>)
+    /// export task at a time. To cancel an export task, use <a>CancelExportTask</a>.
     /// </para>
     ///  
     /// <para>
-    /// You can export logs from multiple log groups or multiple time ranges to the same Amazon
-    /// S3 bucket. To separate out log data for each export task, you can specify a prefix
-    /// that will be used as the Amazon S3 key prefix for all exported objects.
+    /// You can export logs from multiple log groups or multiple time ranges to the same S3
+    /// bucket. To separate out log data for each export task, you can specify a prefix that
+    /// will be used as the Amazon S3 key prefix for all exported objects.
     /// </para>
     /// </summary>
     public partial class CreateExportTaskRequest : AmazonCloudWatchLogsRequest
@@ -59,11 +60,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// Name of Amazon S3 bucket to which the log data will be exported.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Note:</b> Only buckets in the same AWS region are supported.
+        /// The name of S3 bucket for the exported log data. The bucket must be in the same AWS
+        /// region.
         /// </para>
         /// </summary>
         public string Destination
@@ -81,8 +79,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property DestinationPrefix. 
         /// <para>
-        /// Prefix that will be used as the start of Amazon S3 key for every object exported.
-        /// If not specified, this defaults to 'exportedlogs'.
+        /// The prefix used as the start of the key for every object exported. If you don't specify
+        /// a value, the default is <code>exportedlogs</code>.
         /// </para>
         /// </summary>
         public string DestinationPrefix
@@ -100,9 +98,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property From. 
         /// <para>
-        /// A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00
-        /// UTC. It indicates the start time of the range for the request. Events with a timestamp
-        /// prior to this time will not be exported.
+        /// The start time of the range for the request, expressed as the number of milliseconds
+        /// since Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are
+        /// not exported.
         /// </para>
         /// </summary>
         public long From
@@ -120,7 +118,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The name of the log group to export.
+        /// The name of the log group.
         /// </para>
         /// </summary>
         public string LogGroupName
@@ -138,8 +136,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogStreamNamePrefix. 
         /// <para>
-        /// Will only export log streams that match the provided logStreamNamePrefix. If you don't
-        /// specify a value, no prefix filter is applied.
+        /// Export only log streams that match the provided prefix. If you don't specify a value,
+        /// no prefix filter is applied.
         /// </para>
         /// </summary>
         public string LogStreamNamePrefix
@@ -175,9 +173,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property To. 
         /// <para>
-        /// A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00
-        /// UTC. It indicates the end time of the range for the request. Events with a timestamp
-        /// later than this time will not be exported.
+        /// The end time of the range for the request, expressed as the number of milliseconds
+        /// since Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
+        /// exported.
         /// </para>
         /// </summary>
         public long To

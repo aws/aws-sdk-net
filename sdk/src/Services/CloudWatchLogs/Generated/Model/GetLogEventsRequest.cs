@@ -29,17 +29,15 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLogEvents operation.
-    /// Retrieves log events from the specified log stream. You can provide an optional time
-    /// range to filter the results on the event <code>timestamp</code>.
+    /// Lists log events from the specified log stream. You can list all the log events or
+    /// filter using a time range.
     /// 
     ///  
     /// <para>
-    /// By default, this operation returns as much log events as can fit in a response size
-    /// of 1MB, up to 10,000 log events. The response will always include a <code>nextForwardToken</code>
-    /// and a <code>nextBackwardToken</code> in the response body. You can use any of these
-    /// tokens in subsequent <code>GetLogEvents</code> requests to paginate through events
-    /// in either forward or backward direction. You can also limit the number of log events
-    /// returned in the response by specifying the <code>limit</code> parameter in the request.
+    /// By default, this operation returns as many log events as can fit in a response size
+    /// of 1MB (up to 10,000 log events). If the results include tokens, there are more log
+    /// events available. You can get additional log events by specifying one of the tokens
+    /// in a subsequent call.
     /// </para>
     /// </summary>
     public partial class GetLogEventsRequest : AmazonCloudWatchLogsRequest
@@ -60,8 +58,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates GetLogEventsRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">The name of the log group to query.</param>
-        /// <param name="logStreamName">The name of the log stream to query.</param>
+        /// <param name="logGroupName">The name of the log group.</param>
+        /// <param name="logStreamName">The name of the log stream.</param>
         public GetLogEventsRequest(string logGroupName, string logStreamName)
         {
             _logGroupName = logGroupName;
@@ -69,7 +67,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndTime.
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        /// The end of the time range. Events with a timestamp later than this time are not included.
+        /// </para>
         /// </summary>
         public DateTime EndTime
         {
@@ -86,9 +87,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of log events returned in the response. If you don't specify a
-        /// value, the request would return as many log events as can fit in a response size of
-        /// 1MB, up to 10,000 log events.
+        /// The maximum number of log events returned. If you don't specify a value, the maximum
+        /// is as many log events as can fit in a response size of 1MB, up to 10,000 log events.
         /// </para>
         /// </summary>
         public int Limit
@@ -106,7 +106,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The name of the log group to query.
+        /// The name of the log group.
         /// </para>
         /// </summary>
         public string LogGroupName
@@ -124,7 +124,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogStreamName. 
         /// <para>
-        /// The name of the log stream to query.
+        /// The name of the log stream.
         /// </para>
         /// </summary>
         public string LogStreamName
@@ -142,9 +142,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A string token used for pagination that points to the next page of results. It must
-        /// be a value obtained from the <code>nextForwardToken</code> or <code>nextBackwardToken</code>
-        /// fields in the response of the previous <code>GetLogEvents</code> request.
+        /// The token for the next set of items to return. (You received this token from a previous
+        /// call.)
         /// </para>
         /// </summary>
         public string NextToken
@@ -162,8 +161,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property StartFromHead. 
         /// <para>
-        /// If set to true, the earliest log events would be returned first. The default is false
-        /// (the latest log events are returned first).
+        /// If the value is true, the earliest log events are returned first. If the value is
+        /// false, the latest log events are returned first. The default value is false.
         /// </para>
         /// </summary>
         public bool StartFromHead
@@ -179,7 +178,11 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTime.
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The start of the time range. Events with a timestamp earlier than this time are not
+        /// included.
+        /// </para>
         /// </summary>
         public DateTime StartTime
         {

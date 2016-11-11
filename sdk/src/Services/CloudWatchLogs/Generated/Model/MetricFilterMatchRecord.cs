@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// 
+    /// Represents a matched event.
     /// </summary>
     public partial class MetricFilterMatchRecord
     {
@@ -37,7 +37,10 @@ namespace Amazon.CloudWatchLogs.Model
         private Dictionary<string, string> _extractedValues = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property EventMessage.
+        /// Gets and sets the property EventMessage. 
+        /// <para>
+        /// The raw event data.
+        /// </para>
         /// </summary>
         public string EventMessage
         {
@@ -52,7 +55,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EventNumber.
+        /// Gets and sets the property EventNumber. 
+        /// <para>
+        /// The event number.
+        /// </para>
         /// </summary>
         public long EventNumber
         {
@@ -67,7 +73,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExtractedValues.
+        /// Gets and sets the property ExtractedValues. 
+        /// <para>
+        /// The values extracted from the event data by the filter.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> ExtractedValues
         {

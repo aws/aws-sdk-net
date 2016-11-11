@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Represents a matched event from a <code>FilterLogEvents</code> request.
+    /// Represents a matched event.
     /// </summary>
     public partial class FilteredLogEvent
     {
@@ -41,7 +41,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property EventId. 
         /// <para>
-        /// A unique identifier for this event.
+        /// The ID of the event.
         /// </para>
         /// </summary>
         public string EventId
@@ -57,7 +57,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IngestionTime.
+        /// Gets and sets the property IngestionTime. 
+        /// <para>
+        /// The time the event was ingested.
+        /// </para>
         /// </summary>
         public long IngestionTime
         {
@@ -108,7 +111,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Timestamp.
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        /// The time the event occurred.
+        /// </para>
         /// </summary>
         public long Timestamp
         {

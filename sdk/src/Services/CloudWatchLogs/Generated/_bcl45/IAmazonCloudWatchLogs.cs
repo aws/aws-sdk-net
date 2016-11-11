@@ -32,10 +32,9 @@ namespace Amazon.CloudWatchLogs
     /// Interface for accessing CloudWatchLogs
     ///
     /// You can use Amazon CloudWatch Logs to monitor, store, and access your log files from
-    /// Amazon Elastic Compute Cloud (Amazon EC2) instances, Amazon CloudTrail, or other sources.
-    /// You can then retrieve the associated log data from CloudWatch Logs using the Amazon
-    /// CloudWatch console, the CloudWatch Logs commands in the AWS CLI, the CloudWatch Logs
-    /// API, or the CloudWatch Logs SDK.
+    /// EC2 instances, Amazon CloudTrail, or other sources. You can then retrieve the associated
+    /// log data from CloudWatch Logs using the Amazon CloudWatch console, the CloudWatch
+    /// Logs commands in the AWS CLI, the CloudWatch Logs API, or the CloudWatch Logs SDK.
     /// 
     ///  
     /// <para>
@@ -78,22 +77,27 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Cancels an export task if it is in <code>PENDING</code> or <code>RUNNING</code> state.
+        /// Cancels the specified export task.
+        /// 
+        ///  
+        /// <para>
+        /// The task must be in the <code>PENDING</code> or <code>RUNNING</code> state.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelExportTask service method.</param>
         /// 
         /// <returns>The response from the CancelExportTask service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
-        /// Returned if the operation is not valid on the specified resource
+        /// The operation is not valid on the specified resource.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request);
 
@@ -115,43 +119,44 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Creates an <code>ExportTask</code> which allows you to efficiently export data from
-        /// a Log Group to your Amazon S3 bucket.
+        /// Creates an export task, which allows you to efficiently export data from a log group
+        /// to an Amazon S3 bucket.
         /// 
         ///  
         /// <para>
-        /// This is an asynchronous call. If all the required information is provided, this API
-        /// will initiate an export task and respond with the task Id. Once started, <code>DescribeExportTasks</code>
-        /// can be used to get the status of an export task. You can only have one active (<code>RUNNING</code>
-        /// or <code>PENDING</code>) export task at a time, per account.
+        /// This is an asynchronous call. If all the required information is provided, this operation
+        /// initiates an export task and responds with the ID of the task. After the task has
+        /// started, you can use <a>DescribeExportTasks</a> to get the status of the export task.
+        /// Each account can only have one active (<code>RUNNING</code> or <code>PENDING</code>)
+        /// export task at a time. To cancel an export task, use <a>CancelExportTask</a>.
         /// </para>
         ///  
         /// <para>
-        /// You can export logs from multiple log groups or multiple time ranges to the same Amazon
-        /// S3 bucket. To separate out log data for each export task, you can specify a prefix
-        /// that will be used as the Amazon S3 key prefix for all exported objects.
+        /// You can export logs from multiple log groups or multiple time ranges to the same S3
+        /// bucket. To separate out log data for each export task, you can specify a prefix that
+        /// will be used as the Amazon S3 key prefix for all exported objects.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExportTask service method.</param>
         /// 
         /// <returns>The response from the CreateExportTask service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
-        /// Returned if you have reached the maximum number of resources that can be created.
+        /// You have reached the maximum number of resources that can be created.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Returned if multiple requests to update the same resource were in conflict.
+        /// Multiple requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceAlreadyExistsException">
-        /// Returned if the specified resource already exists.
+        /// The specified resource already exists.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         CreateExportTaskResponse CreateExportTask(CreateExportTaskRequest request);
 
@@ -173,22 +178,28 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Creates a new log group with the specified name. The name of the log group must be
-        /// unique within a region for an AWS account. You can create up to 500 log groups per
-        /// account.
+        /// Creates a log group with the specified name.
         /// 
+        ///  
+        /// <para>
+        /// You can create up to 5000 log groups per account.
+        /// </para>
         ///  
         /// <para>
         /// You must use the following guidelines when naming a log group:
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// Log group names must be unique within a region for an AWS account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Log group names can be between 1 and 512 characters long.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward
-        /// slash), and '.' (period).
+        /// Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore),
+        /// '-' (hyphen), '/' (forward slash), and '.' (period).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -196,19 +207,19 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>The response from the CreateLogGroup service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
-        /// Returned if you have reached the maximum number of resources that can be created.
+        /// You have reached the maximum number of resources that can be created.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Returned if multiple requests to update the same resource were in conflict.
+        /// Multiple requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceAlreadyExistsException">
-        /// Returned if the specified resource already exists.
+        /// The specified resource already exists.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         CreateLogGroupResponse CreateLogGroup(CreateLogGroupRequest request);
 
@@ -230,21 +241,27 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Creates a new log stream in the specified log group. The name of the log stream must
-        /// be unique within the log group. There is no limit on the number of log streams that
-        /// can exist in a log group.
+        /// Creates a log stream for the specified log group.
         /// 
+        ///  
+        /// <para>
+        /// There is no limit on the number of log streams that you can create for a log group.
+        /// </para>
         ///  
         /// <para>
         /// You must use the following guidelines when naming a log stream:
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// Log stream names must be unique within the log group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Log stream names can be between 1 and 512 characters long.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The ':' colon character is not allowed.
+        /// The ':' (colon) and '*' (asterisk) characters are not allowed.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -252,16 +269,16 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>The response from the CreateLogStream service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceAlreadyExistsException">
-        /// Returned if the specified resource already exists.
+        /// The specified resource already exists.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         CreateLogStreamResponse CreateLogStream(CreateLogStreamRequest request);
 
@@ -283,24 +300,24 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Deletes the destination with the specified name and eventually disables all the subscription
-        /// filters that publish to it. This will not delete the physical resource encapsulated
+        /// Deletes the specified destination, and eventually disables all the subscription filters
+        /// that publish to it. This operation does not delete the physical resource encapsulated
         /// by the destination.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDestination service method.</param>
         /// 
         /// <returns>The response from the DeleteDestination service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Returned if multiple requests to update the same resource were in conflict.
+        /// Multiple requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         DeleteDestinationResponse DeleteDestination(DeleteDestinationRequest request);
 
@@ -322,23 +339,23 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Deletes the log group with the specified name and permanently deletes all the archived
-        /// log events associated with it.
+        /// Deletes the specified log group and permanently deletes all the archived log events
+        /// associated with the log group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLogGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteLogGroup service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Returned if multiple requests to update the same resource were in conflict.
+        /// Multiple requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         DeleteLogGroupResponse DeleteLogGroup(DeleteLogGroupRequest request);
 
@@ -360,23 +377,23 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Deletes a log stream and permanently deletes all the archived log events associated
-        /// with it.
+        /// Deletes the specified log stream and permanently deletes all the archived log events
+        /// associated with the log stream.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLogStream service method.</param>
         /// 
         /// <returns>The response from the DeleteLogStream service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Returned if multiple requests to update the same resource were in conflict.
+        /// Multiple requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         DeleteLogStreamResponse DeleteLogStream(DeleteLogStreamRequest request);
 
@@ -398,22 +415,22 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Deletes a metric filter associated with the specified log group.
+        /// Deletes the specified metric filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMetricFilter service method.</param>
         /// 
         /// <returns>The response from the DeleteMetricFilter service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Returned if multiple requests to update the same resource were in conflict.
+        /// Multiple requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         DeleteMetricFilterResponse DeleteMetricFilter(DeleteMetricFilterRequest request);
 
@@ -435,23 +452,27 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Deletes the retention policy of the specified log group. Log events would not expire
-        /// if they belong to log groups without a retention policy.
+        /// Deletes the specified retention policy.
+        /// 
+        ///  
+        /// <para>
+        /// Log events do not expire if they belong to log groups without a retention policy.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRetentionPolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteRetentionPolicy service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Returned if multiple requests to update the same resource were in conflict.
+        /// Multiple requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         DeleteRetentionPolicyResponse DeleteRetentionPolicy(DeleteRetentionPolicyRequest request);
 
@@ -473,22 +494,22 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Deletes a subscription filter associated with the specified log group.
+        /// Deletes the specified subscription filter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSubscriptionFilter service method.</param>
         /// 
         /// <returns>The response from the DeleteSubscriptionFilter service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Returned if multiple requests to update the same resource were in conflict.
+        /// Multiple requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         DeleteSubscriptionFilterResponse DeleteSubscriptionFilter(DeleteSubscriptionFilterRequest request);
 
@@ -510,25 +531,16 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns all the destinations that are associated with the AWS account making the request.
-        /// The list returned in the response is ASCII-sorted by destination name.
-        /// 
-        ///  
-        /// <para>
-        /// By default, this operation returns up to 50 destinations. If there are more destinations
-        /// to list, the response would contain a <code>nextToken</code> value in the response
-        /// body. You can also limit the number of destinations returned in the response by specifying
-        /// the <code>limit</code> parameter in the request.
-        /// </para>
+        /// Lists all your destinations. The results are ASCII-sorted by destination name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDestinations service method.</param>
         /// 
         /// <returns>The response from the DescribeDestinations service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         DescribeDestinationsResponse DescribeDestinations(DescribeDestinationsRequest request);
 
@@ -550,25 +562,17 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns all the export tasks that are associated with the AWS account making the request.
-        /// The export tasks can be filtered based on <code>TaskId</code> or <code>TaskStatus</code>.
-        /// 
-        ///  
-        /// <para>
-        /// By default, this operation returns up to 50 export tasks that satisfy the specified
-        /// filters. If there are more export tasks to list, the response would contain a <code>nextToken</code>
-        /// value in the response body. You can also limit the number of export tasks returned
-        /// in the response by specifying the <code>limit</code> parameter in the request.
-        /// </para>
+        /// Lists the specified export tasks. You can list all your export tasks or filter the
+        /// results based on task ID or task status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks service method.</param>
         /// 
         /// <returns>The response from the DescribeExportTasks service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request);
 
@@ -590,63 +594,39 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns all the log groups that are associated with the AWS account making the request.
-        /// The list returned in the response is ASCII-sorted by log group name.
-        /// 
-        ///  
-        /// <para>
-        /// By default, this operation returns up to 50 log groups. If there are more log groups
-        /// to list, the response would contain a <code>nextToken</code> value in the response
-        /// body. You can also limit the number of log groups returned in the response by specifying
-        /// the <code>limit</code> parameter in the request.
-        /// </para>
+        /// Lists the specified log groups. You can list all your log groups or filter the results
+        /// by prefix. The results are ASCII-sorted by log group name.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeLogGroups service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         DescribeLogGroupsResponse DescribeLogGroups();
 
 
         /// <summary>
-        /// Returns all the log groups that are associated with the AWS account making the request.
-        /// The list returned in the response is ASCII-sorted by log group name.
-        /// 
-        ///  
-        /// <para>
-        /// By default, this operation returns up to 50 log groups. If there are more log groups
-        /// to list, the response would contain a <code>nextToken</code> value in the response
-        /// body. You can also limit the number of log groups returned in the response by specifying
-        /// the <code>limit</code> parameter in the request.
-        /// </para>
+        /// Lists the specified log groups. You can list all your log groups or filter the results
+        /// by prefix. The results are ASCII-sorted by log group name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLogGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeLogGroups service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         DescribeLogGroupsResponse DescribeLogGroups(DescribeLogGroupsRequest request);
 
 
         /// <summary>
-        /// Returns all the log groups that are associated with the AWS account making the request.
-        /// The list returned in the response is ASCII-sorted by log group name.
-        /// 
-        ///  
-        /// <para>
-        /// By default, this operation returns up to 50 log groups. If there are more log groups
-        /// to list, the response would contain a <code>nextToken</code> value in the response
-        /// body. You can also limit the number of log groups returned in the response by specifying
-        /// the <code>limit</code> parameter in the request.
-        /// </para>
+        /// Lists the specified log groups. You can list all your log groups or filter the results
+        /// by prefix. The results are ASCII-sorted by log group name.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -654,10 +634,10 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>The response from the DescribeLogGroups service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         Task<DescribeLogGroupsResponse> DescribeLogGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -679,29 +659,26 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns all the log streams that are associated with the specified log group. The
-        /// list returned in the response is ASCII-sorted by log stream name.
+        /// Lists the log streams for the specified log group. You can list all the log streams
+        /// or filter the results by prefix. You can also control how the results are ordered.
         /// 
         ///  
         /// <para>
-        /// By default, this operation returns up to 50 log streams. If there are more log streams
-        /// to list, the response would contain a <code>nextToken</code> value in the response
-        /// body. You can also limit the number of log streams returned in the response by specifying
-        /// the <code>limit</code> parameter in the request. This operation has a limit of five
-        /// transactions per second, after which transactions are throttled.
+        /// This operation has a limit of five transactions per second, after which transactions
+        /// are throttled.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLogStreams service method.</param>
         /// 
         /// <returns>The response from the DescribeLogStreams service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         DescribeLogStreamsResponse DescribeLogStreams(DescribeLogStreamsRequest request);
 
@@ -723,28 +700,21 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns all the metrics filters associated with the specified log group. The list
-        /// returned in the response is ASCII-sorted by filter name.
-        /// 
-        ///  
-        /// <para>
-        /// By default, this operation returns up to 50 metric filters. If there are more metric
-        /// filters to list, the response would contain a <code>nextToken</code> value in the
-        /// response body. You can also limit the number of metric filters returned in the response
-        /// by specifying the <code>limit</code> parameter in the request.
-        /// </para>
+        /// Lists the specified metric filters. You can list all the metric filters or filter
+        /// the results by log name, prefix, metric name, or metric namespace. The results are
+        /// ASCII-sorted by filter name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMetricFilters service method.</param>
         /// 
         /// <returns>The response from the DescribeMetricFilters service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         DescribeMetricFiltersResponse DescribeMetricFilters(DescribeMetricFiltersRequest request);
 
@@ -766,28 +736,20 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns all the subscription filters associated with the specified log group. The
-        /// list returned in the response is ASCII-sorted by filter name.
-        /// 
-        ///  
-        /// <para>
-        /// By default, this operation returns up to 50 subscription filters. If there are more
-        /// subscription filters to list, the response would contain a <code>nextToken</code>
-        /// value in the response body. You can also limit the number of subscription filters
-        /// returned in the response by specifying the <code>limit</code> parameter in the request.
-        /// </para>
+        /// Lists the subscription filters for the specified log group. You can list all the subscription
+        /// filters or filter the results by prefix. The results are ASCII-sorted by filter name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSubscriptionFilters service method.</param>
         /// 
         /// <returns>The response from the DescribeSubscriptionFilters service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         DescribeSubscriptionFiltersResponse DescribeSubscriptionFilters(DescribeSubscriptionFiltersRequest request);
 
@@ -809,34 +771,28 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Retrieves log events, optionally filtered by a filter pattern from the specified log
-        /// group. You can provide an optional time range to filter the results on the event <code>timestamp</code>.
-        /// You can limit the streams searched to an explicit list of <code>logStreamNames</code>.
+        /// Lists log events from the specified log group. You can list all the log events or
+        /// filter the results using a filter pattern, a time range, and the name of the log stream.
         /// 
         ///  
         /// <para>
-        /// By default, this operation returns as much matching log events as can fit in a response
-        /// size of 1MB, up to 10,000 log events, or all the events found within a time-bounded
-        /// scan window. If the response includes a <code>nextToken</code>, then there is more
-        /// data to search, and the search can be resumed with a new request providing the nextToken.
-        /// The response will contain a list of <code>searchedLogStreams</code> that contains
-        /// information about which streams were searched in the request and whether they have
-        /// been searched completely or require further pagination. The <code>limit</code> parameter
-        /// in the request can be used to specify the maximum number of events to return in a
-        /// page.
+        /// By default, this operation returns as many log events as can fit in 1MB (up to 10,000
+        /// log events), or all the events found within the time range that you specify. If the
+        /// results include a token, then there are more log events available, and you can get
+        /// additional results by specifying the token in a subsequent call.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FilterLogEvents service method.</param>
         /// 
         /// <returns>The response from the FilterLogEvents service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         FilterLogEventsResponse FilterLogEvents(FilterLogEventsRequest request);
 
@@ -858,30 +814,28 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Retrieves log events from the specified log stream. You can provide an optional time
-        /// range to filter the results on the event <code>timestamp</code>.
+        /// Lists log events from the specified log stream. You can list all the log events or
+        /// filter using a time range.
         /// 
         ///  
         /// <para>
-        /// By default, this operation returns as much log events as can fit in a response size
-        /// of 1MB, up to 10,000 log events. The response will always include a <code>nextForwardToken</code>
-        /// and a <code>nextBackwardToken</code> in the response body. You can use any of these
-        /// tokens in subsequent <code>GetLogEvents</code> requests to paginate through events
-        /// in either forward or backward direction. You can also limit the number of log events
-        /// returned in the response by specifying the <code>limit</code> parameter in the request.
+        /// By default, this operation returns as many log events as can fit in a response size
+        /// of 1MB (up to 10,000 log events). If the results include tokens, there are more log
+        /// events available. You can get additional log events by specifying one of the tokens
+        /// in a subsequent call.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLogEvents service method.</param>
         /// 
         /// <returns>The response from the GetLogEvents service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         GetLogEventsResponse GetLogEvents(GetLogEventsRequest request);
 
@@ -903,32 +857,32 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Creates or updates a <code>Destination</code>. A destination encapsulates a physical
-        /// resource (such as a Kinesis stream) and allows you to subscribe to a real-time stream
-        /// of log events of a different account, ingested through <code>PutLogEvents</code> requests.
-        /// Currently, the only supported physical resource is a Amazon Kinesis stream belonging
-        /// to the same account as the destination.
+        /// Creates or updates a destination. A destination encapsulates a physical resource (such
+        /// as a Kinesis stream) and enables you to subscribe to a real-time stream of log events
+        /// of a different account, ingested using <a>PutLogEvents</a>. Currently, the only supported
+        /// physical resource is a Amazon Kinesis stream belonging to the same account as the
+        /// destination.
         /// 
         ///  
         /// <para>
         /// A destination controls what is written to its Amazon Kinesis stream through an access
-        /// policy. By default, PutDestination does not set any access policy with the destination,
-        /// which means a cross-account user will not be able to call <code>PutSubscriptionFilter</code>
-        /// against this destination. To enable that, the destination owner must call <code>PutDestinationPolicy</code>
-        /// after PutDestination.
+        /// policy. By default, <code>PutDestination</code> does not set any access policy with
+        /// the destination, which means a cross-account user cannot call <a>PutSubscriptionFilter</a>
+        /// against this destination. To enable this, the destination owner must call <a>PutDestinationPolicy</a>
+        /// after <code>PutDestination</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDestination service method.</param>
         /// 
         /// <returns>The response from the PutDestination service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Returned if multiple requests to update the same resource were in conflict.
+        /// Multiple requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         PutDestinationResponse PutDestination(PutDestinationRequest request);
 
@@ -950,8 +904,8 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Creates or updates an access policy associated with an existing <code>Destination</code>.
-        /// An access policy is an <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM
+        /// Creates or updates an access policy associated with an existing destination. An access
+        /// policy is an <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM
         /// policy document</a> that is used to authorize claims to register a subscription filter
         /// against a given destination.
         /// </summary>
@@ -959,13 +913,13 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>The response from the PutDestinationPolicy service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Returned if multiple requests to update the same resource were in conflict.
+        /// Multiple requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         PutDestinationPolicyResponse PutDestinationPolicy(PutDestinationPolicyRequest request);
 
@@ -991,10 +945,9 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// Every PutLogEvents request must include the <code>sequenceToken</code> obtained from
-        /// the response of the previous request. An upload in a newly created log stream does
-        /// not require a <code>sequenceToken</code>. You can also get the <code>sequenceToken</code>
-        /// using <a>DescribeLogStreams</a>.
+        /// You must include the sequence token obtained from the response of the previous call.
+        /// An upload in a newly created log stream does not require a sequence token. You can
+        /// also get the sequence token using <a>DescribeLogStreams</a>.
         /// </para>
         ///  
         /// <para>
@@ -1016,7 +969,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The log events in the batch must be in chronological ordered by their <code>timestamp</code>.
+        /// The log events in the batch must be in chronological ordered by their timestamp.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1033,19 +986,19 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>The response from the PutLogEvents service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.DataAlreadyAcceptedException">
-        /// 
+        /// The event was already logged.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidSequenceTokenException">
-        /// 
+        /// The sequence token is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         PutLogEventsResponse PutLogEvents(PutLogEventsRequest request);
 
@@ -1069,7 +1022,7 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Creates or updates a metric filter and associates it with the specified log group.
         /// Metric filters allow you to configure rules to extract metric data from log events
-        /// ingested through <code>PutLogEvents</code> requests.
+        /// ingested through <a>PutLogEvents</a>.
         /// 
         ///  
         /// <para>
@@ -1080,19 +1033,19 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>The response from the PutMetricFilter service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
-        /// Returned if you have reached the maximum number of resources that can be created.
+        /// You have reached the maximum number of resources that can be created.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Returned if multiple requests to update the same resource were in conflict.
+        /// Multiple requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         PutMetricFilterResponse PutMetricFilter(PutMetricFilterRequest request);
 
@@ -1121,16 +1074,16 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>The response from the PutRetentionPolicy service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Returned if multiple requests to update the same resource were in conflict.
+        /// Multiple requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         PutRetentionPolicyResponse PutRetentionPolicy(PutRetentionPolicyRequest request);
 
@@ -1154,8 +1107,8 @@ namespace Amazon.CloudWatchLogs
         /// <summary>
         /// Creates or updates a subscription filter and associates it with the specified log
         /// group. Subscription filters allow you to subscribe to a real-time stream of log events
-        /// ingested through <code>PutLogEvents</code> requests and have them delivered to a specific
-        /// destination. Currently, the supported destinations are:
+        /// ingested through <a>PutLogEvents</a> and have them delivered to a specific destination.
+        /// Currently, the supported destinations are:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -1164,41 +1117,40 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  A logical destination (used via an ARN of <code>Destination</code>) belonging to
-        /// a different account, for cross-account delivery.
+        /// A logical destination that belongs to a different account, for cross-account delivery.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An Amazon Kinesis Firehose stream belonging to the same account as the subscription
+        /// An Amazon Kinesis Firehose stream that belongs to the same account as the subscription
         /// filter, for same-account delivery.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An AWS Lambda function belonging to the same account as the subscription filter, for
-        /// same-account delivery.
+        /// An AWS Lambda function that belongs to the same account as the subscription filter,
+        /// for same-account delivery.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Currently there can only be one subscription filter associated with a log group.
+        /// There can only be one subscription filter associated with a log group.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSubscriptionFilter service method.</param>
         /// 
         /// <returns>The response from the PutSubscriptionFilter service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
-        /// Returned if you have reached the maximum number of resources that can be created.
+        /// You have reached the maximum number of resources that can be created.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
-        /// Returned if multiple requests to update the same resource were in conflict.
+        /// Multiple requests to update the same resource were in conflict.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
-        /// Returned if the specified resource does not exist.
+        /// The specified resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         PutSubscriptionFilterResponse PutSubscriptionFilter(PutSubscriptionFilterRequest request);
 
@@ -1227,10 +1179,10 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>The response from the TestMetricFilter service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         TestMetricFilterResponse TestMetricFilter(TestMetricFilterRequest request);
 

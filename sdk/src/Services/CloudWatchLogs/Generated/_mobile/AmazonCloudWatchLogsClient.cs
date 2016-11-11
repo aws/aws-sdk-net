@@ -37,10 +37,9 @@ namespace Amazon.CloudWatchLogs
     /// Implementation for accessing CloudWatchLogs
     ///
     /// You can use Amazon CloudWatch Logs to monitor, store, and access your log files from
-    /// Amazon Elastic Compute Cloud (Amazon EC2) instances, Amazon CloudTrail, or other sources.
-    /// You can then retrieve the associated log data from CloudWatch Logs using the Amazon
-    /// CloudWatch console, the CloudWatch Logs commands in the AWS CLI, the CloudWatch Logs
-    /// API, or the CloudWatch Logs SDK.
+    /// EC2 instances, Amazon CloudTrail, or other sources. You can then retrieve the associated
+    /// log data from CloudWatch Logs using the Amazon CloudWatch console, the CloudWatch
+    /// Logs commands in the AWS CLI, the CloudWatch Logs API, or the CloudWatch Logs SDK.
     /// 
     ///  
     /// <para>
@@ -655,16 +654,8 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns all the log groups that are associated with the AWS account making the request.
-        /// The list returned in the response is ASCII-sorted by log group name.
-        /// 
-        ///  
-        /// <para>
-        /// By default, this operation returns up to 50 log groups. If there are more log groups
-        /// to list, the response would contain a <code>nextToken</code> value in the response
-        /// body. You can also limit the number of log groups returned in the response by specifying
-        /// the <code>limit</code> parameter in the request.
-        /// </para>
+        /// Lists the specified log groups. You can list all your log groups or filter the results
+        /// by prefix. The results are ASCII-sorted by log group name.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -672,10 +663,10 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>The response from the DescribeLogGroups service method, as returned by CloudWatchLogs.</returns>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
-        /// Returned if a parameter of the request is incorrectly specified.
+        /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
-        /// Returned if the service cannot complete the request.
+        /// The service cannot complete the request.
         /// </exception>
         public Task<DescribeLogGroupsResponse> DescribeLogGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

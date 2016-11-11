@@ -29,8 +29,8 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLogGroup operation.
-    /// Deletes the log group with the specified name and permanently deletes all the archived
-    /// log events associated with it.
+    /// Deletes the specified log group and permanently deletes all the archived log events
+    /// associated with the log group.
     /// </summary>
     public partial class DeleteLogGroupRequest : AmazonCloudWatchLogsRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates DeleteLogGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">The name of the log group to delete.</param>
+        /// <param name="logGroupName">The name of the log group.</param>
         public DeleteLogGroupRequest(string logGroupName)
         {
             _logGroupName = logGroupName;
@@ -53,7 +53,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The name of the log group to delete.
+        /// The name of the log group.
         /// </para>
         /// </summary>
         public string LogGroupName

@@ -29,8 +29,12 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRetentionPolicy operation.
-    /// Deletes the retention policy of the specified log group. Log events would not expire
-    /// if they belong to log groups without a retention policy.
+    /// Deletes the specified retention policy.
+    /// 
+    ///  
+    /// <para>
+    /// Log events do not expire if they belong to log groups without a retention policy.
+    /// </para>
     /// </summary>
     public partial class DeleteRetentionPolicyRequest : AmazonCloudWatchLogsRequest
     {
@@ -44,7 +48,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates DeleteRetentionPolicyRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">The name of the log group that is associated with the retention policy to delete.</param>
+        /// <param name="logGroupName">The name of the log group.</param>
         public DeleteRetentionPolicyRequest(string logGroupName)
         {
             _logGroupName = logGroupName;
@@ -53,7 +57,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The name of the log group that is associated with the retention policy to delete.
+        /// The name of the log group.
         /// </para>
         /// </summary>
         public string LogGroupName

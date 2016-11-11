@@ -31,7 +31,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// Container for the parameters to the PutMetricFilter operation.
     /// Creates or updates a metric filter and associates it with the specified log group.
     /// Metric filters allow you to configure rules to extract metric data from log events
-    /// ingested through <code>PutLogEvents</code> requests.
+    /// ingested through <a>PutLogEvents</a>.
     /// 
     ///  
     /// <para>
@@ -53,9 +53,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates PutMetricFilterRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">The name of the log group to associate the metric filter with.</param>
+        /// <param name="logGroupName">The name of the log group.</param>
         /// <param name="filterName">A name for the metric filter.</param>
-        /// <param name="filterPattern">A valid CloudWatch Logs filter pattern for extracting metric data out of ingested log events.</param>
+        /// <param name="filterPattern">A filter pattern for extracting metric data out of ingested log events.</param>
         /// <param name="metricTransformations">A collection of information needed to define how metric data gets emitted.</param>
         public PutMetricFilterRequest(string logGroupName, string filterName, string filterPattern, List<MetricTransformation> metricTransformations)
         {
@@ -86,8 +86,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property FilterPattern. 
         /// <para>
-        /// A valid CloudWatch Logs filter pattern for extracting metric data out of ingested
-        /// log events.
+        /// A filter pattern for extracting metric data out of ingested log events.
         /// </para>
         /// </summary>
         public string FilterPattern
@@ -105,7 +104,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The name of the log group to associate the metric filter with.
+        /// The name of the log group.
         /// </para>
         /// </summary>
         public string LogGroupName

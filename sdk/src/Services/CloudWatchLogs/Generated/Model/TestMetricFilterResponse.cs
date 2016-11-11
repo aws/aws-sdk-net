@@ -35,7 +35,10 @@ namespace Amazon.CloudWatchLogs.Model
         private List<MetricFilterMatchRecord> _matches = new List<MetricFilterMatchRecord>();
 
         /// <summary>
-        /// Gets and sets the property Matches.
+        /// Gets and sets the property Matches. 
+        /// <para>
+        /// The matched events.
+        /// </para>
         /// </summary>
         public List<MetricFilterMatchRecord> Matches
         {

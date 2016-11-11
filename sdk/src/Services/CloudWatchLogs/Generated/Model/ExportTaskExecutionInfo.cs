@@ -38,7 +38,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property CompletionTime. 
         /// <para>
-        /// A point in time when the export task got completed.
+        /// The completion time of the export task.
         /// </para>
         /// </summary>
         public long CompletionTime
@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// A point in time when the export task got created.
+        /// The creation time of the export task.
         /// </para>
         /// </summary>
         public long CreationTime

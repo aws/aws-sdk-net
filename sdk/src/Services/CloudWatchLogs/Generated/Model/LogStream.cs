@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// A log stream is sequence of log events from a single emitter of logs.
+    /// Represents a log stream, which is a sequence of log events from a single emitter of
+    /// logs.
     /// </summary>
     public partial class LogStream
     {
@@ -42,7 +43,10 @@ namespace Amazon.CloudWatchLogs.Model
         private string _uploadSequenceToken;
 
         /// <summary>
-        /// Gets and sets the property Arn.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the log stream.
+        /// </para>
         /// </summary>
         public string Arn
         {
@@ -57,7 +61,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreationTime.
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        /// The creation time of the stream.
+        /// </para>
         /// </summary>
         public DateTime CreationTime
         {
@@ -72,7 +79,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FirstEventTimestamp.
+        /// Gets and sets the property FirstEventTimestamp. 
+        /// <para>
+        /// The time of the first event.
+        /// </para>
         /// </summary>
         public DateTime FirstEventTimestamp
         {
@@ -87,7 +97,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastEventTimestamp.
+        /// Gets and sets the property LastEventTimestamp. 
+        /// <para>
+        /// The time of the last event.
+        /// </para>
         /// </summary>
         public DateTime LastEventTimestamp
         {
@@ -102,7 +115,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastIngestionTime.
+        /// Gets and sets the property LastIngestionTime. 
+        /// <para>
+        /// The ingestion time.
+        /// </para>
         /// </summary>
         public DateTime LastIngestionTime
         {
@@ -117,7 +133,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogStreamName.
+        /// Gets and sets the property LogStreamName. 
+        /// <para>
+        /// The name of the log stream.
+        /// </para>
         /// </summary>
         public string LogStreamName
         {
@@ -132,7 +151,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StoredBytes.
+        /// Gets and sets the property StoredBytes. 
+        /// <para>
+        /// The number of bytes stored.
+        /// </para>
         /// </summary>
         public long StoredBytes
         {
@@ -147,7 +169,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UploadSequenceToken.
+        /// Gets and sets the property UploadSequenceToken. 
+        /// <para>
+        /// The sequence token.
+        /// </para>
         /// </summary>
         public string UploadSequenceToken
         {

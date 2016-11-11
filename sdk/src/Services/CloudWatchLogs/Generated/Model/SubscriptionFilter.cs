@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// 
+    /// Represents a subscription filter.
     /// </summary>
     public partial class SubscriptionFilter
     {
@@ -40,7 +40,10 @@ namespace Amazon.CloudWatchLogs.Model
         private string _roleArn;
 
         /// <summary>
-        /// Gets and sets the property CreationTime.
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        /// The creation time of the subscription filter.
+        /// </para>
         /// </summary>
         public long CreationTime
         {
@@ -55,7 +58,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DestinationArn.
+        /// Gets and sets the property DestinationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the destination.
+        /// </para>
         /// </summary>
         public string DestinationArn
         {
@@ -70,7 +76,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FilterName.
+        /// Gets and sets the property FilterName. 
+        /// <para>
+        /// The name of the subscription filter.
+        /// </para>
         /// </summary>
         public string FilterName
         {
@@ -100,7 +109,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogGroupName.
+        /// Gets and sets the property LogGroupName. 
+        /// <para>
+        /// The name of the log group.
+        /// </para>
         /// </summary>
         public string LogGroupName
         {

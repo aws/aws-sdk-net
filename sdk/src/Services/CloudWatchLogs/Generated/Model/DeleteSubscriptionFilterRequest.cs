@@ -29,7 +29,7 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSubscriptionFilter operation.
-    /// Deletes a subscription filter associated with the specified log group.
+    /// Deletes the specified subscription filter.
     /// </summary>
     public partial class DeleteSubscriptionFilterRequest : AmazonCloudWatchLogsRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property FilterName. 
         /// <para>
-        /// The name of the subscription filter to delete.
+        /// The name of the subscription filter.
         /// </para>
         /// </summary>
         public string FilterName
@@ -57,7 +57,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The name of the log group that is associated with the subscription filter to delete.
+        /// The name of the log group.
         /// </para>
         /// </summary>
         public string LogGroupName

@@ -28,18 +28,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Metric filters can be used to express how CloudWatch Logs would extract metric observations
-    /// from ingested log events and transform them to metric data in a CloudWatch metric.
+    /// Metric filters express how CloudWatch Logs would extract metric observations from
+    /// ingested log events and transform them into metric data in a CloudWatch metric.
     /// </summary>
     public partial class MetricFilter
     {
         private DateTime? _creationTime;
         private string _filterName;
         private string _filterPattern;
+        private string _logGroupName;
         private List<MetricTransformation> _metricTransformations = new List<MetricTransformation>();
 
         /// <summary>
-        /// Gets and sets the property CreationTime.
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        /// The creation time of the metric filter.
+        /// </para>
         /// </summary>
         public DateTime CreationTime
         {
@@ -54,7 +58,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FilterName.
+        /// Gets and sets the property FilterName. 
+        /// <para>
+        /// The name of the metric filter.
+        /// </para>
         /// </summary>
         public string FilterName
         {
@@ -84,7 +91,28 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MetricTransformations.
+        /// Gets and sets the property LogGroupName. 
+        /// <para>
+        /// The name of the log group.
+        /// </para>
+        /// </summary>
+        public string LogGroupName
+        {
+            get { return this._logGroupName; }
+            set { this._logGroupName = value; }
+        }
+
+        // Check to see if LogGroupName property is set
+        internal bool IsSetLogGroupName()
+        {
+            return this._logGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricTransformations. 
+        /// <para>
+        /// The metric transformations.
+        /// </para>
         /// </summary>
         public List<MetricTransformation> MetricTransformations
         {

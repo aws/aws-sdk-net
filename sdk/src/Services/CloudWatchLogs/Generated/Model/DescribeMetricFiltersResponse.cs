@@ -36,7 +36,10 @@ namespace Amazon.CloudWatchLogs.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MetricFilters.
+        /// Gets and sets the property MetricFilters. 
+        /// <para>
+        /// The metric filters.
+        /// </para>
         /// </summary>
         public List<MetricFilter> MetricFilters
         {

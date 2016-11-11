@@ -33,10 +33,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// Every PutLogEvents request must include the <code>sequenceToken</code> obtained from
-    /// the response of the previous request. An upload in a newly created log stream does
-    /// not require a <code>sequenceToken</code>. You can also get the <code>sequenceToken</code>
-    /// using <a>DescribeLogStreams</a>.
+    /// You must include the sequence token obtained from the response of the previous call.
+    /// An upload in a newly created log stream does not require a sequence token. You can
+    /// also get the sequence token using <a>DescribeLogStreams</a>.
     /// </para>
     ///  
     /// <para>
@@ -58,7 +57,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The log events in the batch must be in chronological ordered by their <code>timestamp</code>.
+    /// The log events in the batch must be in chronological ordered by their timestamp.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -86,9 +85,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates PutLogEventsRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">The name of the log group to put log events to.</param>
-        /// <param name="logStreamName">The name of the log stream to put log events to.</param>
-        /// <param name="logEvents">Sets the PutLogEventsRequest LogEvents property</param>
+        /// <param name="logGroupName">The name of the log group.</param>
+        /// <param name="logStreamName">The name of the log stream.</param>
+        /// <param name="logEvents">The log events.</param>
         public PutLogEventsRequest(string logGroupName, string logStreamName, List<InputLogEvent> logEvents)
         {
             _logGroupName = logGroupName;
@@ -97,7 +96,10 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LogEvents.
+        /// Gets and sets the property LogEvents. 
+        /// <para>
+        /// The log events.
+        /// </para>
         /// </summary>
         public List<InputLogEvent> LogEvents
         {
@@ -114,7 +116,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The name of the log group to put log events to.
+        /// The name of the log group.
         /// </para>
         /// </summary>
         public string LogGroupName
@@ -132,7 +134,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogStreamName. 
         /// <para>
-        /// The name of the log stream to put log events to.
+        /// The name of the log stream.
         /// </para>
         /// </summary>
         public string LogStreamName
@@ -150,8 +152,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property SequenceToken. 
         /// <para>
-        /// A string token that must be obtained from the response of the previous <code>PutLogEvents</code>
-        /// request.
+        /// The sequence token.
         /// </para>
         /// </summary>
         public string SequenceToken

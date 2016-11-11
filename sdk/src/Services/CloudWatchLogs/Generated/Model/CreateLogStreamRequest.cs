@@ -29,21 +29,27 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLogStream operation.
-    /// Creates a new log stream in the specified log group. The name of the log stream must
-    /// be unique within the log group. There is no limit on the number of log streams that
-    /// can exist in a log group.
+    /// Creates a log stream for the specified log group.
     /// 
+    ///  
+    /// <para>
+    /// There is no limit on the number of log streams that you can create for a log group.
+    /// </para>
     ///  
     /// <para>
     /// You must use the following guidelines when naming a log stream:
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    /// Log stream names must be unique within the log group.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Log stream names can be between 1 and 512 characters long.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The ':' colon character is not allowed.
+    /// The ':' (colon) and '*' (asterisk) characters are not allowed.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -60,8 +66,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Instantiates CreateLogStreamRequest with the parameterized properties
         /// </summary>
-        /// <param name="logGroupName">The name of the log group under which the log stream is to be created.</param>
-        /// <param name="logStreamName">The name of the log stream to create.</param>
+        /// <param name="logGroupName">The name of the log group.</param>
+        /// <param name="logStreamName">The name of the log stream.</param>
         public CreateLogStreamRequest(string logGroupName, string logStreamName)
         {
             _logGroupName = logGroupName;
@@ -71,7 +77,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The name of the log group under which the log stream is to be created.
+        /// The name of the log group.
         /// </para>
         /// </summary>
         public string LogGroupName
@@ -89,7 +95,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogStreamName. 
         /// <para>
-        /// The name of the log stream to create.
+        /// The name of the log stream.
         /// </para>
         /// </summary>
         public string LogStreamName

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// 
+    /// Indicates how to transform ingested log events into metric data in a CloudWatch metric.
     /// </summary>
     public partial class MetricTransformation
     {
@@ -40,8 +40,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property DefaultValue. 
         /// <para>
-        /// (Optional) A default value to emit when a filter pattern does not match a log event.
-        /// Can be null.
+        /// (Optional) The value to emit when a filter pattern does not match a log event. This
+        /// value can be null.
         /// </para>
         /// </summary>
         public double DefaultValue
@@ -59,7 +59,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// Name of the metric.
+        /// The name of the CloudWatch metric.
         /// </para>
         /// </summary>
         public string MetricName
@@ -77,7 +77,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property MetricNamespace. 
         /// <para>
-        /// Namespace to which the metric belongs.
+        /// The namespace of the CloudWatch metric.
         /// </para>
         /// </summary>
         public string MetricNamespace
@@ -95,8 +95,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property MetricValue. 
         /// <para>
-        ///  A string representing a value to publish to this metric when a filter pattern matches
-        /// a log event. 
+        /// The value to publish to the CloudWatch metric when a filter pattern matches a log
+        /// event.
         /// </para>
         /// </summary>
         public string MetricValue

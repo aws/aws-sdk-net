@@ -37,7 +37,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property TaskId. 
         /// <para>
-        /// Id of the export task that got created.
+        /// The ID of the export task.
         /// </para>
         /// </summary>
         public string TaskId

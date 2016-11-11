@@ -35,7 +35,10 @@ namespace Amazon.CloudWatchLogs.Model
         private Destination _destination;
 
         /// <summary>
-        /// Gets and sets the property Destination.
+        /// Gets and sets the property Destination. 
+        /// <para>
+        /// The destination.
+        /// </para>
         /// </summary>
         public Destination Destination
         {

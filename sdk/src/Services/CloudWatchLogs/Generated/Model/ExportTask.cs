@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// Name of Amazon S3 bucket to which the log data was exported.
+        /// The name of Amazon S3 bucket to which the log data was exported.
         /// </para>
         /// </summary>
         public string Destination
@@ -63,7 +63,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property DestinationPrefix. 
         /// <para>
-        /// Prefix that was used as the start of Amazon S3 key for every object exported.
+        /// The prefix that was used as the start of Amazon S3 key for every object exported.
         /// </para>
         /// </summary>
         public string DestinationPrefix
@@ -99,8 +99,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property From. 
         /// <para>
-        /// A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00
-        /// UTC. Events with a timestamp prior to this time are not exported.
+        /// The start time. Events with a timestamp prior to this time are not exported.
         /// </para>
         /// </summary>
         public long From
@@ -136,7 +135,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Status of the export task.
+        /// The status of the export task.
         /// </para>
         /// </summary>
         public ExportTaskStatus Status
@@ -154,7 +153,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property TaskId. 
         /// <para>
-        /// Id of the export task.
+        /// The ID of the export task.
         /// </para>
         /// </summary>
         public string TaskId
@@ -190,8 +189,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property To. 
         /// <para>
-        /// A point in time expressed as the number of milliseconds since Jan 1, 1970 00:00:00
-        /// UTC. Events with a timestamp later than this time are not exported.
+        /// The end time. Events with a timestamp later than this time are not exported.
         /// </para>
         /// </summary>
         public long To

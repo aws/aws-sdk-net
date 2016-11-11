@@ -29,8 +29,8 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the PutDestinationPolicy operation.
-    /// Creates or updates an access policy associated with an existing <code>Destination</code>.
-    /// An access policy is an <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM
+    /// Creates or updates an access policy associated with an existing destination. An access
+    /// policy is an <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM
     /// policy document</a> that is used to authorize claims to register a subscription filter
     /// against a given destination.
     /// </summary>
@@ -43,7 +43,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property AccessPolicy. 
         /// <para>
         /// An IAM policy document that authorizes cross-account users to deliver their log events
-        /// to associated destination.
+        /// to the associated destination.
         /// </para>
         /// </summary>
         public string AccessPolicy

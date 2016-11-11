@@ -37,7 +37,10 @@ namespace Amazon.CloudWatchLogs.Model
         private string _nextForwardToken;
 
         /// <summary>
-        /// Gets and sets the property Events.
+        /// Gets and sets the property Events. 
+        /// <para>
+        /// The events.
+        /// </para>
         /// </summary>
         public List<OutputLogEvent> Events
         {
@@ -52,7 +55,11 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextBackwardToken.
+        /// Gets and sets the property NextBackwardToken. 
+        /// <para>
+        /// The token for the next set of items in the backward direction. The token expires after
+        /// 24 hours.
+        /// </para>
         /// </summary>
         public string NextBackwardToken
         {
@@ -67,7 +74,11 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextForwardToken.
+        /// Gets and sets the property NextForwardToken. 
+        /// <para>
+        /// The token for the next set of items in the forward direction. The token expires after
+        /// 24 hours.
+        /// </para>
         /// </summary>
         public string NextForwardToken
         {
