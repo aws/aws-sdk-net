@@ -1,3 +1,17 @@
+### 3.3.17.0 (2016-11-11 00:13 UTC)
+* CloudFormation (3.3.2.2)
+	* Doc update.
+* CloudWatchLogs (3.3.1.0)
+	* Amazon CloudWatch Metrics to Logs is a capability that helps pivot from your logs-extracted metrics directly to the corresponding logs.
+* EC2 (3.3.2.2)
+	* Updated to use new Core, version 3.3.4.1
+	* generated changes from idempotency trait support
+* ServiceCatalog (3.3.1.2)
+	* Updated to use new Core, version 3.3.4.1
+	* generated changes from idempotency trait support
+* Core 3.3.4.1
+	* updated generator to handle idempotency trait
+
 ### 3.3.16.0 (2016-11-04 01:26 UTC)
 * DirectConnect (3.3.1.0)
 	* Updated to use new Core, version 3.3.4.0
