@@ -139,17 +139,24 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ChangeSetType. 
         /// <para>
-        /// The type of change set operation. Valid values are <code>CREATE</code> and <code>UPDATE</code>:
+        /// The type of change set operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are <code>CREATE</code> and <code>UPDATE</code>. The default value is
+        /// <code>UPDATE</code>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATE</code> - Specify for a change set for a stack that does not yet exist.
-        /// The stack has an expected unique ID, but no template or resources. It can include
-        /// multiple change sets.
+        ///  <code>CREATE</code> - Specify to use the change set to create a new stack. While
+        /// AWS CloudFormation creates the stack, the stack has the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
+        /// <code>REVIEW_IN_PROGRESS</code> </a> status and an expected <code>StackId</code>,
+        /// but no template or resources. Except for its <code>StackId</code>, the stack is completely
+        /// empty until you execute the change set. You can apply multiple change sets to a stack.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE</code> - Specify for a change set for an existing stack.
+        ///  <code>UPDATE</code> - Specify to create a change set for an existing stack.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -278,8 +285,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
         /// that AWS CloudFormation assumes when executing the change set. AWS CloudFormation
-        /// uses the role's credentials to make calls on your behalf. AWS CloudFormation always
-        /// uses this role for all future operations on the stack. As long as users have permission
+        /// uses the role's credentials to make calls on your behalf. AWS CloudFormation uses
+        /// this role for all future operations on the stack. As long as users have permission
         /// to operate on the stack, AWS CloudFormation uses this role even if the users don't
         /// have permission to pass it. Ensure that the role grants least privilege.
         /// </para>

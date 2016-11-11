@@ -86,7 +86,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property DeclaredTransforms. 
         /// <para>
-        /// A list of the transforms that have been declared in the template.
+        /// A list of the transforms that are declared in the template.
         /// </para>
         /// </summary>
         public List<string> DeclaredTransforms

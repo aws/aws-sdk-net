@@ -102,17 +102,21 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TemplateStage. 
         /// <para>
-        /// The stage of the template that is returned. Valid values are <code>Original</code>
-        /// and <code>Processed</code>:
+        /// The stage of the template that is returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values are <code>Original</code> and <code>Processed</code>. The default value
+        /// is <code>Original</code>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Original</code> - Use to return the specified pre-transform template.
+        ///  <code>Original</code> - Use this value to return the user-submitted template.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Processed</code> - Use to return the template after all transforms have been
-        /// processed.
+        ///  <code>Processed</code> - Use this value to return the template after all transforms
+        /// have been processed.
         /// </para>
         ///  </li> </ul>
         /// </summary>
