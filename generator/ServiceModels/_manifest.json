@@ -28,7 +28,7 @@
             "binSubFolder": "pcl",
             "template": "PCLProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_pclReference", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl"  ],
-            "nugetTargetPlatform": "portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10",
+            "nugetTargetPlatform": "portable-net45+win8+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10",
 
             "extraTestProjects": [
                 "test\\CrossPlatformTests\\CommonTests\\CommonTests.csproj",
@@ -76,7 +76,7 @@
             "template": "Win8ProjectFile",
             "platformCodeFolders": [ "_pcl", "_async", "_mobile", "_win8", "_pcl-sl", "_bcl+pcl", "_bcl45+pcl", "_bcl+coreclr+pcl"  ],
             "parentProfile": "PCL",
-            "nugetTargetPlatform": "netcore45"
+            "nugetTargetPlatform": "win8"
         },
         {
             "name": "WinPhone81",

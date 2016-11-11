@@ -29,37 +29,40 @@
 <#
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
-#>
-      <group targetFramework="portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10">
-<#
-		foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
+		List<string> pclTargetFrameworks = new List<string>{"portable-net45+win8+wpa81+wp8", "MonoAndroid10", "Xamarin.iOS10", "MonoTouch10"};
+		foreach(var targetFramework in pclTargetFrameworks)
 		{
 #>
-      <dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
+      <group targetFramework="<#=targetFramework#>">
 <#
-		}
-#>
-<#
-		if(this.Session.ContainsKey("NugetDependencies"))
-		{
-			var dependencies = (Dictionary<string,List<Dependency>>)this.Session["NugetDependencies"];
-			if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
+			foreach(var awsDependencyKVP in ((IDictionary<string, string>)this.Session["AWSDependencies"]))
 			{
-				if(dependencies.ContainsKey("PCL"))
+#>
+		<dependency id="<#=awsDependencyKVP.Key#>" version="<#=awsDependencyKVP.Value#>" />
+<#
+			}
+#>
+<#
+			if(this.Session.ContainsKey("NugetDependencies"))
+			{
+				var dependencies = (Dictionary<string,List<Dependency>>)this.Session["NugetDependencies"];
+				if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 				{
-					foreach(var dependency in dependencies["PCL"])
+					if(dependencies.ContainsKey("PCL"))
 					{
+						foreach(var dependency in dependencies["PCL"])
+						{
 #>
 		<dependency id="<#=dependency.Name#>" version="<#=dependency.Version#>" />
 <#		
+						}
 					}
 				}
-			}
-		}	
+			}	
 #>
       </group>
-
 <#
+		}
 	}
 #>
 <#
@@ -136,13 +139,19 @@
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
 #>
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\portable-net45+win8+wpa81+wp8" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\portable-net45+win8+wpa81+wp8" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\portable-net45+win8+wpa81+wp8" />
 
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\uap" />
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\uap" />
-    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\uap" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\MonoAndroid10" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\MonoAndroid10" />
+
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\Xamarin.iOS10" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\Xamarin.iOS10" />
+
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.dll" target="lib\MonoTouch10" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.xml" target="lib\MonoTouch10" />
+    <file src=".\bin\Release\pcl\\<#=this.Session["AssemblyName"]#>.pdb" target="lib\MonoTouch10" />
 
 <#
 	}

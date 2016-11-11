@@ -61,24 +61,63 @@ namespace ServiceClientGenerator.Generators.NuGet
 	
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
+		List<string> windowsPCLTargets = new List<string>{"portable-net45+win8+wpa81+wp8"};
+		List<string> xamarinPCLTargets = new List<string>{"MonoAndroid10", "Xamarin.iOS10", "MonoTouch10"};
+		List<string> pclTargets = new List<string>();
+
+		pclTargets.AddRange(windowsPCLTargets);
+		pclTargets.AddRange(xamarinPCLTargets);
+
+		foreach(var target in pclTargets)
+		{
 
             
             #line default
             #line hidden
-            this.Write(@"      <group targetFramework=""portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10"">
-        <dependency id=""Microsoft.Net.Http"" version=""2.2.29"" />
-        <dependency id=""PCLStorage"" version=""1.0.2"" />
-        <dependency id=""PCLCrypto"" version=""1.0.2.15130"" />
-      </group>
+            this.Write("\r\n      <group targetFramework=\"");
+            
+            #line 39 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(target));
+            
+            #line default
+            #line hidden
+            this.Write("\">\r\n");
+            
+            #line 40 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+	
+			if(windowsPCLTargets.Contains(target))
+			{
 
-      <group targetFramework=""uap"">
+            
+            #line default
+            #line hidden
+            this.Write("        <dependency id=\"Microsoft.Net.Http\" version=\"2.2.29\" />\r\n");
+            
+            #line 45 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+
+			}
+
+            
+            #line default
+            #line hidden
+            this.Write("        <dependency id=\"PCLStorage\" version=\"1.0.2\" />\r\n        <dependency id=\"P" +
+                    "CLCrypto\" version=\"1.0.2.15130\" />\r\n      </group>\r\n");
+            
+            #line 51 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+
+		}
+
+            
+            #line default
+            #line hidden
+            this.Write(@"      <group targetFramework=""uap"">
         <dependency id=""Microsoft.NETCore.UniversalWindowsPlatform"" version=""5.2.2"" />
         <dependency id=""PCLStorage"" version=""1.0.2"" />
         <dependency id=""PCLCrypto"" version=""1.0.2.15130"" />
       </group>
 ");
             
-            #line 40 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 59 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 
 	}
 
@@ -113,7 +152,7 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "ore.xml\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.p" +
                     "db\" target=\"lib\\net45\" />\r\n\r\n");
             
-            #line 80 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 99 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
 	if(!Convert.ToBoolean(this.Session["DisablePCLSupport"]))
 	{
@@ -121,33 +160,34 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line default
             #line hidden
-            this.Write("    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Core.dll\" target=\"lib\\portable-net45+netc" +
-                    "ore45+wpa81+wp8+MonoAndroid10+xamarinios10+MonoTouch10\" />\r\n    <file src=\".\\bin" +
-                    "\\Release\\pcl\\AWSSDK.Core.xml\" target=\"lib\\portable-net45+netcore45+wpa81+wp8+Mon" +
-                    "oAndroid10+xamarinios10+MonoTouch10\" />\r\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK" +
-                    ".Core.pdb\" target=\"lib\\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+xamarini" +
-                    "os10+MonoTouch10\" />\r\n    \r\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Core.dll\" ta" +
-                    "rget=\"lib\\uap\" />\r\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Core.xml\" target=\"lib" +
-                    "\\uap\" />\r\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Core.pdb\" target=\"lib\\uap\" />\r" +
-                    "\n\r\n    <file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.dll\" target=\"lib\\Xamar" +
-                    "in.iOS10\" />\r\n    <file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.xml\" target" +
-                    "=\"lib\\Xamarin.iOS10\" />\r\n\r\n    <file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Cor" +
-                    "e.dll\" target=\"lib\\Xamarin.Mac20\" />\r\n    <file src=\".\\bin\\Release\\Xamarin.iOS10" +
-                    "\\AWSSDK.Core.xml\" target=\"lib\\Xamarin.Mac20\" />\r\n\r\n    <file src=\".\\bin\\Release\\" +
-                    "monoandroid\\AWSSDK.Core.dll\" target=\"lib\\monoandroid\" />\r\n    <file src=\".\\bin\\R" +
-                    "elease\\monoandroid\\AWSSDK.Core.xml\" target=\"lib\\monoandroid\" />\r\n    <file src=\"" +
-                    ".\\bin\\Release\\monoandroid\\AWSSDK.Core.pdb\" target=\"lib\\monoandroid\" />\r\n\r\n    <f" +
-                    "ile src=\".\\bin\\Release\\windows8\\AWSSDK.Core.dll\" target=\"lib\\windows8\" />\r\n    <" +
-                    "file src=\".\\bin\\Release\\windows8\\AWSSDK.Core.xml\" target=\"lib\\windows8\" />\r\n    " +
-                    "<file src=\".\\bin\\Release\\windows8\\AWSSDK.Core.pdb\" target=\"lib\\windows8\" />\r\n\r\n " +
-                    "   <file src=\".\\bin\\Release\\wpa81\\AWSSDK.Core.dll\" target=\"lib\\wpa81\" />\r\n    <f" +
-                    "ile src=\".\\bin\\Release\\wpa81\\AWSSDK.Core.xml\" target=\"lib\\wpa81\" />\r\n    <file s" +
-                    "rc=\".\\bin\\Release\\wpa81\\AWSSDK.Core.pdb\" target=\"lib\\wpa81\" />\r\n\r\n    <file src=" +
-                    "\".\\bin\\Release\\wp8\\AWSSDK.Core.dll\" target=\"lib\\wp8\" />\r\n    <file src=\".\\bin\\Re" +
-                    "lease\\wp8\\AWSSDK.Core.xml\" target=\"lib\\wp8\" />\r\n    <file src=\".\\bin\\Release\\wp8" +
-                    "\\AWSSDK.Core.pdb\" target=\"lib\\wp8\" />\r\n\r\n");
+            this.Write("    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Core.dll\" target=\"lib\\portable-net45+win8" +
+                    "+wpa81+wp8\" />\r\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Core.xml\" target=\"lib\\po" +
+                    "rtable-net45+win8+wpa81+wp8\" />\r\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Core.pd" +
+                    "b\" target=\"lib\\portable-net45+win8+wpa81+wp8\" />\r\n    \r\n    <file src=\".\\bin\\Rel" +
+                    "ease\\pcl\\AWSSDK.Core.dll\" target=\"lib\\uap\" />\r\n    <file src=\".\\bin\\Release\\pcl\\" +
+                    "AWSSDK.Core.xml\" target=\"lib\\uap\" />\r\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Co" +
+                    "re.pdb\" target=\"lib\\uap\" />\r\n\r\n    <file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK" +
+                    ".Core.dll\" target=\"lib\\Xamarin.iOS10\" />\r\n    <file src=\".\\bin\\Release\\Xamarin.i" +
+                    "OS10\\AWSSDK.Core.xml\" target=\"lib\\Xamarin.iOS10\" />\r\n\r\n    <file src=\".\\bin\\Rele" +
+                    "ase\\Xamarin.iOS10\\AWSSDK.Core.dll\" target=\"lib\\Xamarin.Mac20\" />\r\n    <file src=" +
+                    "\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.xml\" target=\"lib\\Xamarin.Mac20\" />\r\n\r\n " +
+                    "   <file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.dll\" target=\"lib\\MonoTouch" +
+                    "10\" />\r\n    <file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.xml\" target=\"lib\\" +
+                    "MonoTouch10\" />\r\n\r\n    <file src=\".\\bin\\Release\\monoandroid\\AWSSDK.Core.dll\" tar" +
+                    "get=\"lib\\MonoAndroid10\" />\r\n    <file src=\".\\bin\\Release\\monoandroid\\AWSSDK.Core" +
+                    ".xml\" target=\"lib\\MonoAndroid10\" />\r\n    <file src=\".\\bin\\Release\\monoandroid\\AW" +
+                    "SSDK.Core.pdb\" target=\"lib\\MonoAndroid10\" />\r\n\r\n    <file src=\".\\bin\\Release\\win" +
+                    "dows8\\AWSSDK.Core.dll\" target=\"lib\\win8\" />\r\n    <file src=\".\\bin\\Release\\window" +
+                    "s8\\AWSSDK.Core.xml\" target=\"lib\\win8\" />\r\n    <file src=\".\\bin\\Release\\windows8\\" +
+                    "AWSSDK.Core.pdb\" target=\"lib\\win8\" />\r\n\r\n    <file src=\".\\bin\\Release\\wpa81\\AWSS" +
+                    "DK.Core.dll\" target=\"lib\\wpa81\" />\r\n    <file src=\".\\bin\\Release\\wpa81\\AWSSDK.Co" +
+                    "re.xml\" target=\"lib\\wpa81\" />\r\n    <file src=\".\\bin\\Release\\wpa81\\AWSSDK.Core.pd" +
+                    "b\" target=\"lib\\wpa81\" />\r\n\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.dll\" ta" +
+                    "rget=\"lib\\wp8\" />\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.xml\" target=\"lib" +
+                    "\\wp8\" />\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.pdb\" target=\"lib\\wp8\" />\r" +
+                    "\n\r\n");
             
-            #line 114 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 136 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	
 	}
 
