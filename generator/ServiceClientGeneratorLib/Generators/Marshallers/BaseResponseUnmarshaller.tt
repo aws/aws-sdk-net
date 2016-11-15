@@ -121,8 +121,23 @@ using Amazon.Runtime.Internal.Util;
 			{
 #>
 			if (context.ResponseData.IsHeaderPresent("<#=member.MarshallLocationName#>"))
+<#+
+				if (member.Shape.IsString)
+				{
+#>
 				response.<#=member.PropertyName#> = context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>");
-<#+			
+<#+
+				}
+				else if (member.Shape.IsInt)
+				{
+#>
+				response.<#=member.PropertyName#> = int.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"), CultureInfo.InvariantCulture);
+<#+
+				}
+				else
+				{
+					throw new Exception("Member " + member.Shape.Name + " cannot be handled because it's type, " + member.Shape.Type + ", is not handled.  Please Update BaseResponseUnmarshaller.tt.");
+				}
 			}
 		}
 	}
