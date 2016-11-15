@@ -26,7 +26,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private const string TestContent = "some stuff";
         private const int TemporaryRedirectMaxExpirationHours = 5;
 
-        private string BucketPrefix = UtilityMethods.SDK_TEST_PREFIX + "-testbucketregionmismatch-";
+        private string BucketPrefix = "s3-region-bucket-tests-";
         private bool originalUseSignatureVersion4;
         private bool originalUseSigV4SetExplicitly;
 
@@ -87,6 +87,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             TestBucket = USWest1Client.ListBuckets().Buckets.Find(bucket => bucket.BucketName.StartsWith(BucketPrefix));
             if (TestBucket == null)
             {
+                // add ticks to bucket name because the bucket namespace is shared globally
                 var bucketName = BucketPrefix + DateTime.Now.Ticks;
                 // Create the bucket but don't run the test.
                 // If the bucket is ready the next time this test runs we'll test then.

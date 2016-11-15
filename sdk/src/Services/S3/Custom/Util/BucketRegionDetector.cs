@@ -99,7 +99,7 @@ namespace Amazon.S3.Util
 
         private static string CheckRegionAndUpdateCache(AmazonS3Uri requestedBucketUri, string actualRegion)
         {
-            var requestedRegion = requestedBucketUri.Region == null ? null : requestedBucketUri.Region.DisplayName;
+            var requestedRegion = requestedBucketUri.Region == null ? null : requestedBucketUri.Region.SystemName;
 
             if (actualRegion != null && !string.Equals(requestedRegion, actualRegion, StringComparison.Ordinal))
             {
