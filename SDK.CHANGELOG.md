@@ -1,3 +1,10 @@
+### 3.3.18.0 (2016-11-15 03:37 UTC)
+* CognitoIdentityProvider (3.3.2.0)
+	* CognitoIdentityProvider: Adds schema attributes to CreateUserPool. 
+* Core 3.3.5.0
+	* Fixed nuspec files to correctly load binaries on Xamarin platforms; EndpointProvider now handles non-standard regions.
+	* all services packages updated to require new core
+
 ### 3.3.17.0 (2016-11-11 00:13 UTC)
 * CloudFormation (3.3.2.2)
 	* Doc update.
