@@ -38,7 +38,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _session;
 
         /// <summary>
-        /// Gets and sets the property AuthenticationResult.
+        /// Gets and sets the property AuthenticationResult. 
+        /// <para>
+        /// The result of the authentication response.
+        /// </para>
         /// </summary>
         public AuthenticationResultType AuthenticationResult
         {

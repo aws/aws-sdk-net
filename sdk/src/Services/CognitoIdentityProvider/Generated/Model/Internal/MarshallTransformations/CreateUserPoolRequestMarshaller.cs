@@ -168,6 +168,22 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PoolName);
                 }
 
+                if(publicRequest.IsSetSchema())
+                {
+                    context.Writer.WritePropertyName("Schema");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSchemaListValue in publicRequest.Schema)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SchemaAttributeTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSchemaListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetSmsAuthenticationMessage())
                 {
                     context.Writer.WritePropertyName("SmsAuthenticationMessage");

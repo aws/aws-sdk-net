@@ -44,6 +44,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private UserPoolMfaType _mfaConfiguration;
         private UserPoolPolicyType _policies;
         private string _poolName;
+        private List<SchemaAttributeType> _schema = new List<SchemaAttributeType>();
         private string _smsAuthenticationMessage;
         private SmsConfigurationType _smsConfiguration;
         private string _smsVerificationMessage;
@@ -245,6 +246,25 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetPoolName()
         {
             return this._poolName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Schema. 
+        /// <para>
+        /// An array of schema attributes for the new user pool. These attributes can be standard
+        /// or custom attributes.
+        /// </para>
+        /// </summary>
+        public List<SchemaAttributeType> Schema
+        {
+            get { return this._schema; }
+            set { this._schema = value; }
+        }
+
+        // Check to see if Schema property is set
+        internal bool IsSetSchema()
+        {
+            return this._schema != null && this._schema.Count > 0; 
         }
 
         /// <summary>
