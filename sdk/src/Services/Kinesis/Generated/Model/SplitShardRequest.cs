@@ -59,7 +59,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// <code>SplitShard</code> is an asynchronous operation. Upon receiving a <code>SplitShard</code>
+    ///  <code>SplitShard</code> is an asynchronous operation. Upon receiving a <code>SplitShard</code>
     /// request, Amazon Kinesis immediately returns a response and sets the stream status
     /// to <code>UPDATING</code>. After the operation is completed, Amazon Kinesis sets the
     /// stream status to <code>ACTIVE</code>. Read and write operations continue to work while
@@ -94,7 +94,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// <code>SplitShard</code> has limit of 5 transactions per second per account.
+    ///  <code>SplitShard</code> has limit of 5 transactions per second per account.
     /// </para>
     /// </summary>
     public partial class SplitShardRequest : AmazonKinesisRequest

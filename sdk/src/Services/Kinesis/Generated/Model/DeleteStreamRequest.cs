@@ -42,7 +42,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// <b>Note:</b> Amazon Kinesis might continue to accept data read and write operations,
+    ///  <b>Note:</b> Amazon Kinesis might continue to accept data read and write operations,
     /// such as <a>PutRecord</a>, <a>PutRecords</a>, and <a>GetRecords</a>, on a stream in
     /// the <code>DELETING</code> state until the stream deletion is complete.
     /// </para>
@@ -58,7 +58,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// <a>DeleteStream</a> has a limit of 5 transactions per second per account.
+    ///  <a>DeleteStream</a> has a limit of 5 transactions per second per account.
     /// </para>
     /// </summary>
     public partial class DeleteStreamRequest : AmazonKinesisRequest

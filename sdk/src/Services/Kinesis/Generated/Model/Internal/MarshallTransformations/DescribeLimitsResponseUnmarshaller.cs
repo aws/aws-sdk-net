@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DecreaseStreamRetentionPeriod operation
+    /// Response Unmarshaller for DescribeLimits operation
     /// </summary>  
-    public class DecreaseStreamRetentionPeriodResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeLimitsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,25 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DecreaseStreamRetentionPeriodResponse response = new DecreaseStreamRetentionPeriodResponse();
+            DescribeLimitsResponse response = new DescribeLimitsResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("OpenShardCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.OpenShardCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ShardLimit", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.ShardLimit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -61,24 +78,16 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgumentException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
             {
-                return new InvalidArgumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
-            {
-                return new ResourceInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-            {
-                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonKinesisException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DecreaseStreamRetentionPeriodResponseUnmarshaller _instance = new DecreaseStreamRetentionPeriodResponseUnmarshaller();        
+        private static DescribeLimitsResponseUnmarshaller _instance = new DescribeLimitsResponseUnmarshaller();        
 
-        internal static DecreaseStreamRetentionPeriodResponseUnmarshaller GetInstance()
+        internal static DescribeLimitsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -86,7 +95,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DecreaseStreamRetentionPeriodResponseUnmarshaller Instance
+        public static DescribeLimitsResponseUnmarshaller Instance
         {
             get
             {

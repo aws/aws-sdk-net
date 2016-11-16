@@ -49,7 +49,7 @@ namespace Amazon.Kinesis.Model
     /// The partition key is used by Amazon Kinesis to distribute data across shards. Amazon
     /// Kinesis segregates the data records that belong to a stream into multiple shards,
     /// using the partition key associated with each data record to determine which shard
-    /// a given data record belongs to. 
+    /// a given data record belongs to.
     /// </para>
     ///  
     /// <para>
@@ -63,7 +63,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// <code>PutRecord</code> returns the shard ID of where the data record was placed and
+    ///  <code>PutRecord</code> returns the shard ID of where the data record was placed and
     /// the sequence number that was assigned to the data record.
     /// </para>
     ///  
@@ -99,7 +99,7 @@ namespace Amazon.Kinesis.Model
         /// <para>
         /// The data blob to put into the record, which is base64-encoded when the blob is serialized.
         /// When the data blob (the payload before base64-encoding) is added to the partition
-        /// key size, the total size must not exceed the maximum record size (1 MB). 
+        /// key size, the total size must not exceed the maximum record size (1 MB).
         /// </para>
         /// </summary>
         public MemoryStream Data

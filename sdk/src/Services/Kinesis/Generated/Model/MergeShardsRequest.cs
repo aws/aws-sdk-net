@@ -40,7 +40,7 @@ namespace Amazon.Kinesis.Model
     /// 
     ///  
     /// <para>
-    /// <code>MergeShards</code> is called when there is a need to reduce the overall capacity
+    ///  <code>MergeShards</code> is called when there is a need to reduce the overall capacity
     /// of a stream because of excess capacity that is not being used. You must specify the
     /// shard to be merged and the adjacent shard for a stream. For more information about
     /// merging shards, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-merge.html">Merge
@@ -61,7 +61,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// <code>MergeShards</code> is an asynchronous operation. Upon receiving a <code>MergeShards</code>
+    ///  <code>MergeShards</code> is an asynchronous operation. Upon receiving a <code>MergeShards</code>
     /// request, Amazon Kinesis immediately returns a response and sets the <code>StreamStatus</code>
     /// to <code>UPDATING</code>. After the operation is completed, Amazon Kinesis sets the
     /// <code>StreamStatus</code> to <code>ACTIVE</code>. Read and write operations continue
@@ -80,7 +80,7 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// <code>MergeShards</code> has limit of 5 transactions per second per account.
+    ///  <code>MergeShards</code> has limit of 5 transactions per second per account.
     /// </para>
     /// </summary>
     public partial class MergeShardsRequest : AmazonKinesisRequest

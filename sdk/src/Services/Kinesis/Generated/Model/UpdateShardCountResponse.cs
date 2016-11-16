@@ -28,20 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Container for the parameters to the AddTagsToStream operation.
-    /// Adds or updates tags for the specified Amazon Kinesis stream. Each stream can have
-    /// up to 10 tags.
-    /// 
-    ///  
-    /// <para>
-    /// If tags have already been assigned to the stream, <code>AddTagsToStream</code> overwrites
-    /// any existing tags that correspond to the specified tag keys.
-    /// </para>
+    /// This is the response object from the UpdateShardCount operation.
     /// </summary>
-    public partial class AddTagsToStreamRequest : AmazonKinesisRequest
+    public partial class UpdateShardCountResponse : AmazonWebServiceResponse
     {
+        private int? _currentShardCount;
         private string _streamName;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private int? _targetShardCount;
+
+        /// <summary>
+        /// Gets and sets the property CurrentShardCount. 
+        /// <para>
+        /// The current number of shards.
+        /// </para>
+        /// </summary>
+        public int CurrentShardCount
+        {
+            get { return this._currentShardCount.GetValueOrDefault(); }
+            set { this._currentShardCount = value; }
+        }
+
+        // Check to see if CurrentShardCount property is set
+        internal bool IsSetCurrentShardCount()
+        {
+            return this._currentShardCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property StreamName. 
@@ -62,21 +73,21 @@ namespace Amazon.Kinesis.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. 
+        /// Gets and sets the property TargetShardCount. 
         /// <para>
-        /// The set of key-value pairs to use to create the tags.
+        /// The updated number of shards.
         /// </para>
         /// </summary>
-        public Dictionary<string, string> Tags
+        public int TargetShardCount
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._targetShardCount.GetValueOrDefault(); }
+            set { this._targetShardCount = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if TargetShardCount property is set
+        internal bool IsSetTargetShardCount()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._targetShardCount.HasValue; 
         }
 
     }

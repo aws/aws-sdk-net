@@ -28,30 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Represents the output for <code>DescribeStream</code>.
+    /// Container for the parameters to the DescribeLimits operation.
+    /// Describes the shard limits and usage for the account.
+    /// 
+    ///  
+    /// <para>
+    /// If you update your account limits, the old limits might be returned for a few minutes.
+    /// </para>
+    ///  
+    /// <para>
+    /// This operation has a limit of 1 transaction per second per account.
+    /// </para>
     /// </summary>
-    public partial class DescribeStreamResponse : AmazonWebServiceResponse
+    public partial class DescribeLimitsRequest : AmazonKinesisRequest
     {
-        private StreamDescription _streamDescription;
-
-        /// <summary>
-        /// Gets and sets the property StreamDescription. 
-        /// <para>
-        /// The current status of the stream, the stream ARN, an array of shard objects that comprise
-        /// the stream, and whether there are more shards available.
-        /// </para>
-        /// </summary>
-        public StreamDescription StreamDescription
-        {
-            get { return this._streamDescription; }
-            set { this._streamDescription = value; }
-        }
-
-        // Check to see if StreamDescription property is set
-        internal bool IsSetStreamDescription()
-        {
-            return this._streamDescription != null;
-        }
 
     }
 }

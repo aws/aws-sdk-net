@@ -19,8 +19,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest.RetentionPeriodHours</property>
-    <min>24</min>
-    <max>168</max>
+    <min>1</min>
+    <max>100000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.DecreaseStreamRetentionPeriodRequest.StreamName</property>
@@ -33,6 +33,16 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.DescribeLimitsResponse.OpenShardCount</property>
+    <min>0</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.DescribeLimitsResponse.ShardLimit</property>
+    <min>0</min>
+    <max>1000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.DescribeStreamRequest.ExclusiveStartShardId</property>
@@ -117,8 +127,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest.RetentionPeriodHours</property>
-    <min>24</min>
-    <max>168</max>
+    <min>1</min>
+    <max>100000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.IncreaseStreamRetentionPeriodRequest.StreamName</property>
@@ -239,6 +249,33 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateShardCountRequest.StreamName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateShardCountRequest.TargetShardCount</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateShardCountResponse.CurrentShardCount</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateShardCountResponse.StreamName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kinesis.Model.UpdateShardCountResponse.TargetShardCount</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kinesis.Model.HashKeyRange.EndingHashKey</property>
     <pattern>0|([1-9]\d{0,38})</pattern>
   </property-value-rule>
@@ -312,8 +349,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.StreamDescription.RetentionPeriodHours</property>
-    <min>24</min>
-    <max>168</max>
+    <min>1</min>
+    <max>100000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kinesis.Model.StreamDescription.StreamName</property>

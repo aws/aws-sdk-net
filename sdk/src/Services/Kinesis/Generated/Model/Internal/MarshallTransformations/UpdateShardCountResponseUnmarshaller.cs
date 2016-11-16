@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DecreaseStreamRetentionPeriod operation
+    /// Response Unmarshaller for UpdateShardCount operation
     /// </summary>  
-    public class DecreaseStreamRetentionPeriodResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateShardCountResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,31 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DecreaseStreamRetentionPeriodResponse response = new DecreaseStreamRetentionPeriodResponse();
+            UpdateShardCountResponse response = new UpdateShardCountResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("CurrentShardCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.CurrentShardCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StreamName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StreamName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TargetShardCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.TargetShardCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -65,6 +88,10 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             {
                 return new InvalidArgumentException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+            {
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
             {
                 return new ResourceInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -76,9 +103,9 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             return new AmazonKinesisException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DecreaseStreamRetentionPeriodResponseUnmarshaller _instance = new DecreaseStreamRetentionPeriodResponseUnmarshaller();        
+        private static UpdateShardCountResponseUnmarshaller _instance = new UpdateShardCountResponseUnmarshaller();        
 
-        internal static DecreaseStreamRetentionPeriodResponseUnmarshaller GetInstance()
+        internal static UpdateShardCountResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -86,7 +113,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DecreaseStreamRetentionPeriodResponseUnmarshaller Instance
+        public static UpdateShardCountResponseUnmarshaller Instance
         {
             get
             {
