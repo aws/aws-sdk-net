@@ -47,7 +47,15 @@ namespace Amazon.DirectoryService
         /// you must add a CIDR address block to correctly route traffic to and from your Microsoft
         /// AD on Amazon Web Services. <i>AddIpRoutes</i> adds this address block. You can also
         /// use <i>AddIpRoutes</i> to facilitate routing traffic that uses public IP ranges from
-        /// your Microsoft AD on AWS to a peer VPC.
+        /// your Microsoft AD on AWS to a peer VPC. 
+        /// 
+        ///  
+        /// <para>
+        /// Before you call <i>AddIpRoutes</i>, ensure that all of the required permissions have
+        /// been explicitly granted through a policy. For details about what permissions are required
+        /// to run the <i>AddIpRoutes</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
+        /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddIpRoutes service method.</param>
         /// 
@@ -107,7 +115,7 @@ namespace Amazon.DirectoryService
 
         /// <summary>
         /// Adds or overwrites one or more tags for the specified Amazon Directory Services directory.
-        /// Each directory can have a maximum of 10 tags. Each tag consists of a key and optional
+        /// Each directory can have a maximum of 50 tags. Each tag consists of a key and optional
         /// value. Tag keys must be unique to each resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
@@ -156,11 +164,68 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  CancelSchemaExtension
+
+
+        /// <summary>
+        /// Cancels an in-progress schema extension to a Microsoft AD directory. Once a schema
+        /// extension has started replicating to all domain controllers, the task can no longer
+        /// be canceled. A schema extension can be canceled during any of the following states;
+        /// <code>Initializing</code>, <code>CreatingSnapshot</code>, and <code>UpdatingSchema</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelSchemaExtension service method.</param>
+        /// 
+        /// <returns>The response from the CancelSchemaExtension service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        CancelSchemaExtensionResponse CancelSchemaExtension(CancelSchemaExtensionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelSchemaExtension operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelSchemaExtension operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelSchemaExtension
+        ///         operation.</returns>
+        IAsyncResult BeginCancelSchemaExtension(CancelSchemaExtensionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelSchemaExtension operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelSchemaExtension.</param>
+        /// 
+        /// <returns>Returns a  CancelSchemaExtensionResult from DirectoryService.</returns>
+        CancelSchemaExtensionResponse EndCancelSchemaExtension(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ConnectDirectory
 
 
         /// <summary>
         /// Creates an AD Connector to connect to an on-premises directory.
+        /// 
+        ///  
+        /// <para>
+        /// Before you call <i>ConnectDirectory</i>, ensure that all of the required permissions
+        /// have been explicitly granted through a policy. For details about what permissions
+        /// are required to run the <i>ConnectDirectory</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
+        /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConnectDirectory service method.</param>
         /// 
@@ -393,6 +458,14 @@ namespace Amazon.DirectoryService
 
         /// <summary>
         /// Creates a Simple AD directory.
+        /// 
+        ///  
+        /// <para>
+        /// Before you call <i>CreateDirectory</i>, ensure that all of the required permissions
+        /// have been explicitly granted through a policy. For details about what permissions
+        /// are required to run the <i>CreateDirectory</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
+        /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDirectory service method.</param>
         /// 
@@ -443,6 +516,14 @@ namespace Amazon.DirectoryService
 
         /// <summary>
         /// Creates a Microsoft AD in the AWS cloud.
+        /// 
+        ///  
+        /// <para>
+        /// Before you call <i>CreateMicrosoftAD</i>, ensure that all of the required permissions
+        /// have been explicitly granted through a policy. For details about what permissions
+        /// are required to run the <i>CreateMicrosoftAD</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
+        /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMicrosoftAD service method.</param>
         /// 
@@ -676,6 +757,14 @@ namespace Amazon.DirectoryService
 
         /// <summary>
         /// Deletes an AWS Directory Service directory.
+        /// 
+        ///  
+        /// <para>
+        /// Before you call <i>DeleteDirectory</i>, ensure that all of the required permissions
+        /// have been explicitly granted through a policy. For details about what permissions
+        /// are required to run the <i>DeleteDirectory</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
+        /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDirectory service method.</param>
         /// 
@@ -1584,6 +1673,55 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  ListSchemaExtensions
+
+
+        /// <summary>
+        /// Lists all schema extensions applied to a Microsoft AD Directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSchemaExtensions service method.</param>
+        /// 
+        /// <returns>The response from the ListSchemaExtensions service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
+        /// The <i>NextToken</i> value is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        ListSchemaExtensionsResponse ListSchemaExtensions(ListSchemaExtensionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSchemaExtensions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSchemaExtensions operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSchemaExtensions
+        ///         operation.</returns>
+        IAsyncResult BeginListSchemaExtensions(ListSchemaExtensionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSchemaExtensions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSchemaExtensions.</param>
+        /// 
+        /// <returns>Returns a  ListSchemaExtensionsResult from DirectoryService.</returns>
+        ListSchemaExtensionsResponse EndListSchemaExtensions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -1849,6 +1987,63 @@ namespace Amazon.DirectoryService
         /// 
         /// <returns>Returns a  RestoreFromSnapshotResult from DirectoryService.</returns>
         RestoreFromSnapshotResponse EndRestoreFromSnapshot(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartSchemaExtension
+
+
+        /// <summary>
+        /// Applies a schema extension to a Microsoft AD directory.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSchemaExtension service method.</param>
+        /// 
+        /// <returns>The response from the StartSchemaExtension service method, as returned by DirectoryService.</returns>
+        /// <exception cref="Amazon.DirectoryService.Model.ClientException">
+        /// A client exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.DirectoryUnavailableException">
+        /// The specified directory is unavailable or could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.EntityDoesNotExistException">
+        /// The specified entity could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
+        /// An exception has occurred in AWS Directory Service.
+        /// </exception>
+        /// <exception cref="Amazon.DirectoryService.Model.SnapshotLimitExceededException">
+        /// The maximum number of manual snapshots for the directory has been reached. You can
+        /// use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a
+        /// directory.
+        /// </exception>
+        StartSchemaExtensionResponse StartSchemaExtension(StartSchemaExtensionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSchemaExtension operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSchemaExtension operation on AmazonDirectoryServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSchemaExtension
+        ///         operation.</returns>
+        IAsyncResult BeginStartSchemaExtension(StartSchemaExtensionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSchemaExtension operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSchemaExtension.</param>
+        /// 
+        /// <returns>Returns a  StartSchemaExtensionResult from DirectoryService.</returns>
+        StartSchemaExtensionResponse EndStartSchemaExtension(IAsyncResult asyncResult);
 
         #endregion
         

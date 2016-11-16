@@ -439,6 +439,84 @@ namespace Amazon.DirectoryService
 
 
     /// <summary>
+    /// Constants used for properties of type SchemaExtensionStatus.
+    /// </summary>
+    public class SchemaExtensionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CancelInProgress for SchemaExtensionStatus
+        /// </summary>
+        public static readonly SchemaExtensionStatus CancelInProgress = new SchemaExtensionStatus("CancelInProgress");
+        /// <summary>
+        /// Constant Cancelled for SchemaExtensionStatus
+        /// </summary>
+        public static readonly SchemaExtensionStatus Cancelled = new SchemaExtensionStatus("Cancelled");
+        /// <summary>
+        /// Constant Completed for SchemaExtensionStatus
+        /// </summary>
+        public static readonly SchemaExtensionStatus Completed = new SchemaExtensionStatus("Completed");
+        /// <summary>
+        /// Constant CreatingSnapshot for SchemaExtensionStatus
+        /// </summary>
+        public static readonly SchemaExtensionStatus CreatingSnapshot = new SchemaExtensionStatus("CreatingSnapshot");
+        /// <summary>
+        /// Constant Failed for SchemaExtensionStatus
+        /// </summary>
+        public static readonly SchemaExtensionStatus Failed = new SchemaExtensionStatus("Failed");
+        /// <summary>
+        /// Constant Initializing for SchemaExtensionStatus
+        /// </summary>
+        public static readonly SchemaExtensionStatus Initializing = new SchemaExtensionStatus("Initializing");
+        /// <summary>
+        /// Constant Replicating for SchemaExtensionStatus
+        /// </summary>
+        public static readonly SchemaExtensionStatus Replicating = new SchemaExtensionStatus("Replicating");
+        /// <summary>
+        /// Constant RollbackInProgress for SchemaExtensionStatus
+        /// </summary>
+        public static readonly SchemaExtensionStatus RollbackInProgress = new SchemaExtensionStatus("RollbackInProgress");
+        /// <summary>
+        /// Constant UpdatingSchema for SchemaExtensionStatus
+        /// </summary>
+        public static readonly SchemaExtensionStatus UpdatingSchema = new SchemaExtensionStatus("UpdatingSchema");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SchemaExtensionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SchemaExtensionStatus FindValue(string value)
+        {
+            return FindValue<SchemaExtensionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SchemaExtensionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SnapshotStatus.
     /// </summary>
     public class SnapshotStatus : ConstantClass

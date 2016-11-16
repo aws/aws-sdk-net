@@ -296,6 +296,37 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  CancelSchemaExtension
+
+        internal CancelSchemaExtensionResponse CancelSchemaExtension(CancelSchemaExtensionRequest request)
+        {
+            var marshaller = new CancelSchemaExtensionRequestMarshaller();
+            var unmarshaller = CancelSchemaExtensionResponseUnmarshaller.Instance;
+
+            return Invoke<CancelSchemaExtensionRequest,CancelSchemaExtensionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelSchemaExtension operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelSchemaExtension operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CancelSchemaExtensionResponse> CancelSchemaExtensionAsync(CancelSchemaExtensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CancelSchemaExtensionRequestMarshaller();
+            var unmarshaller = CancelSchemaExtensionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelSchemaExtensionRequest,CancelSchemaExtensionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ConnectDirectory
 
         internal ConnectDirectoryResponse ConnectDirectory(ConnectDirectoryRequest request)
@@ -1149,6 +1180,37 @@ namespace Amazon.DirectoryService
 
         #endregion
         
+        #region  ListSchemaExtensions
+
+        internal ListSchemaExtensionsResponse ListSchemaExtensions(ListSchemaExtensionsRequest request)
+        {
+            var marshaller = new ListSchemaExtensionsRequestMarshaller();
+            var unmarshaller = ListSchemaExtensionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSchemaExtensionsRequest,ListSchemaExtensionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSchemaExtensions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSchemaExtensions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListSchemaExtensionsResponse> ListSchemaExtensionsAsync(ListSchemaExtensionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListSchemaExtensionsRequestMarshaller();
+            var unmarshaller = ListSchemaExtensionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSchemaExtensionsRequest,ListSchemaExtensionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -1299,6 +1361,37 @@ namespace Amazon.DirectoryService
             var unmarshaller = RestoreFromSnapshotResponseUnmarshaller.Instance;
 
             return InvokeAsync<RestoreFromSnapshotRequest,RestoreFromSnapshotResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartSchemaExtension
+
+        internal StartSchemaExtensionResponse StartSchemaExtension(StartSchemaExtensionRequest request)
+        {
+            var marshaller = new StartSchemaExtensionRequestMarshaller();
+            var unmarshaller = StartSchemaExtensionResponseUnmarshaller.Instance;
+
+            return Invoke<StartSchemaExtensionRequest,StartSchemaExtensionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSchemaExtension operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSchemaExtension operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<StartSchemaExtensionResponse> StartSchemaExtensionAsync(StartSchemaExtensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartSchemaExtensionRequestMarshaller();
+            var unmarshaller = StartSchemaExtensionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartSchemaExtensionRequest,StartSchemaExtensionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

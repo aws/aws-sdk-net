@@ -9,6 +9,14 @@
     <pattern>^[d]-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CancelSchemaExtensionRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.CancelSchemaExtensionRequest.SchemaExtensionId</property>
+    <pattern>^e-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.ConnectDirectoryRequest.Description</property>
     <min>0</min>
     <max>128</max>
@@ -273,6 +281,14 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectoryService.Model.ListSchemaExtensionsRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.ListSchemaExtensionsRequest.Limit</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectoryService.Model.ListTagsForResourceRequest.Limit</property>
     <min>0</min>
   </property-value-rule>
@@ -301,6 +317,25 @@
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.RestoreFromSnapshotRequest.SnapshotId</property>
     <pattern>^s-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.StartSchemaExtensionRequest.Description</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.StartSchemaExtensionRequest.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.StartSchemaExtensionRequest.LdifContent</property>
+    <min>1</min>
+    <max>500000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.StartSchemaExtensionResponse.SchemaExtensionId</property>
+    <pattern>^e-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.UpdateConditionalForwarderRequest.DirectoryId</property>
@@ -526,6 +561,20 @@
     <property>Amazon.DirectoryService.Model.RadiusSettings.SharedSecret</property>
     <min>8</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.SchemaExtensionInfo.Description</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^([a-zA-Z0-9_])[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.SchemaExtensionInfo.DirectoryId</property>
+    <pattern>^d-[0-9a-f]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectoryService.Model.SchemaExtensionInfo.SchemaExtensionId</property>
+    <pattern>^e-[0-9a-f]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectoryService.Model.ServiceException.RequestId</property>

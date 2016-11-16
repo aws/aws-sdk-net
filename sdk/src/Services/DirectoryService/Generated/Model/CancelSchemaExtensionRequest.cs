@@ -28,25 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDirectory operation.
-    /// Deletes an AWS Directory Service directory.
-    /// 
-    ///  
-    /// <para>
-    /// Before you call <i>DeleteDirectory</i>, ensure that all of the required permissions
-    /// have been explicitly granted through a policy. For details about what permissions
-    /// are required to run the <i>DeleteDirectory</i> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS
-    /// Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.
-    /// </para>
+    /// Container for the parameters to the CancelSchemaExtension operation.
+    /// Cancels an in-progress schema extension to a Microsoft AD directory. Once a schema
+    /// extension has started replicating to all domain controllers, the task can no longer
+    /// be canceled. A schema extension can be canceled during any of the following states;
+    /// <code>Initializing</code>, <code>CreatingSnapshot</code>, and <code>UpdatingSchema</code>.
     /// </summary>
-    public partial class DeleteDirectoryRequest : AmazonDirectoryServiceRequest
+    public partial class CancelSchemaExtensionRequest : AmazonDirectoryServiceRequest
     {
         private string _directoryId;
+        private string _schemaExtensionId;
 
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the directory to delete.
+        /// The identifier of the directory whose schema extension will be canceled.
         /// </para>
         /// </summary>
         public string DirectoryId
@@ -59,6 +55,24 @@ namespace Amazon.DirectoryService.Model
         internal bool IsSetDirectoryId()
         {
             return this._directoryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaExtensionId. 
+        /// <para>
+        /// The identifier of the schema extension that will be canceled.
+        /// </para>
+        /// </summary>
+        public string SchemaExtensionId
+        {
+            get { return this._schemaExtensionId; }
+            set { this._schemaExtensionId = value; }
+        }
+
+        // Check to see if SchemaExtensionId property is set
+        internal bool IsSetSchemaExtensionId()
+        {
+            return this._schemaExtensionId != null;
         }
 
     }
