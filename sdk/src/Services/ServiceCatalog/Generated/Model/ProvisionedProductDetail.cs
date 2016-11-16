@@ -63,7 +63,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The time the ProvisionedProduct was created.
+        /// The UTC timestamp of the creation time.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -99,7 +99,9 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
-        /// An idempotency token that uniquely identifies this ProvisionedProduct.
+        /// A token to disambiguate duplicate requests. You can create multiple resources using
+        /// the same input in multiple requests, provided that you also specify a different idempotency
+        /// token for each request.
         /// </para>
         /// </summary>
         public string IdempotencyToken

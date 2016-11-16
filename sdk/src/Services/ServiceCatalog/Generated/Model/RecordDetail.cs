@@ -49,7 +49,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The time when the record for the ProvisionedProduct object was created.
+        /// The UTC timestamp of the creation time.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -85,7 +85,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductId. 
         /// <para>
-        /// The identifier of the product.
+        /// The product identifier.
         /// </para>
         /// </summary>
         public string ProductId

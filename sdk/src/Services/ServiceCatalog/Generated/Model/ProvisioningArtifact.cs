@@ -40,7 +40,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The time that the artifact was created by the Administrator.
+        /// The UTC timestamp of the creation time.
         /// </para>
         /// </summary>
         public DateTime CreatedTime

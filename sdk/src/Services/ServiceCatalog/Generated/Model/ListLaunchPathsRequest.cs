@@ -116,7 +116,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductId. 
         /// <para>
-        /// Identifies the product for which to retrieve <code>LaunchPathSummaries</code> information.
+        /// The product identifier.. Identifies the product for which to retrieve <code>LaunchPathSummaries</code>
+        /// information.
         /// </para>
         /// </summary>
         public string ProductId

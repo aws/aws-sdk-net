@@ -42,7 +42,7 @@ namespace Amazon.ServiceCatalog.Model
         private string _supportDescription;
         private string _supportEmail;
         private string _supportUrl;
-        private string _type;
+        private ProductType _type;
 
         /// <summary>
         /// Gets and sets the property Distributor. 
@@ -235,7 +235,7 @@ namespace Amazon.ServiceCatalog.Model
         /// The product type. Contact the product administrator for the significance of this value.
         /// </para>
         /// </summary>
-        public string Type
+        public ProductType Type
         {
             get { return this._type; }
             set { this._type = value; }
