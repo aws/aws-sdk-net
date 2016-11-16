@@ -1,3 +1,11 @@
+### 3.3.19.0 (2016-11-16 00:25 UTC)
+* DirectoryService (3.3.1.0)
+	* API Update for DirectoryService :  Adding SchemaExtensions  
+* ElastiCache (3.3.2.0)
+	* API Update for ElastiCache : Additional parameter to 2 create apis to provide an auth Token for Redis
+* Kinesis (3.3.1.0)
+	* API Update for Kinesis: Describe shard limit, open shard count and stream creation timestamp
+
 ### 3.3.18.0 (2016-11-15 03:37 UTC)
 * CognitoIdentityProvider (3.3.2.0)
 	* CognitoIdentityProvider: Adds schema attributes to CreateUserPool. 
