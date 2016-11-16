@@ -58,6 +58,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAuthToken())
+                {
+                    request.Parameters.Add("AuthToken", StringUtils.FromString(publicRequest.AuthToken));
+                }
                 if(publicRequest.IsSetAutomaticFailoverEnabled())
                 {
                     request.Parameters.Add("AutomaticFailoverEnabled", StringUtils.FromBool(publicRequest.AutomaticFailoverEnabled));

@@ -41,6 +41,7 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class CreateCacheClusterRequest : AmazonElastiCacheRequest
     {
+        private string _authToken;
         private bool? _autoMinorVersionUpgrade;
         private AZMode _azMode;
         private string _cacheClusterId;
@@ -84,6 +85,45 @@ namespace Amazon.ElastiCache.Model
             _cacheNodeType = cacheNodeType;
             _engine = engine;
             _cacheSecurityGroupNames = cacheSecurityGroupNames;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthToken. 
+        /// <para>
+        /// The password used to access a password protected server.
+        /// </para>
+        ///  
+        /// <para>
+        /// Password constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be only printable ASCII characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be at least 16 characters and no more than 128 characters in length.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot contain any of the following characters: '/', '"', or "@". 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a>
+        /// at Redis.
+        /// </para>
+        /// </summary>
+        public string AuthToken
+        {
+            get { return this._authToken; }
+            set { this._authToken = value; }
+        }
+
+        // Check to see if AuthToken property is set
+        internal bool IsSetAuthToken()
+        {
+            return this._authToken != null;
         }
 
         /// <summary>

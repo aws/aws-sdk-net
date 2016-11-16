@@ -138,7 +138,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ShowNodeGroupConfig. 
         /// <para>
-        /// A boolean value which if true, the node group (shard) configuration is included in
+        /// A Boolean value which if true, the node group (shard) configuration is included in
         /// the snapshot description.
         /// </para>
         /// </summary>

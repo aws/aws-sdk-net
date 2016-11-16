@@ -50,7 +50,7 @@ namespace Amazon.ElastiCache.Model
     /// <para>
     /// When a Redis (cluster mode disabled) replication group has been successfully created,
     /// you can add one or more read replicas to it, up to a total of 5 read replicas. You
-    /// cannot alter a Redis (cluster mode enabled) replication group once it has been created.
+    /// cannot alter a Redis (cluster mode enabled) replication group after it has been created.
     /// </para>
     ///  <note> 
     /// <para>
@@ -60,6 +60,7 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class CreateReplicationGroupRequest : AmazonElastiCacheRequest
     {
+        private string _authToken;
         private bool? _automaticFailoverEnabled;
         private bool? _autoMinorVersionUpgrade;
         private string _cacheNodeType;
@@ -85,6 +86,45 @@ namespace Amazon.ElastiCache.Model
         private int? _snapshotRetentionLimit;
         private string _snapshotWindow;
         private List<Tag> _tags = new List<Tag>();
+
+        /// <summary>
+        /// Gets and sets the property AuthToken. 
+        /// <para>
+        /// The password used to access a password protected server.
+        /// </para>
+        ///  
+        /// <para>
+        /// Password constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be only printable ASCII characters.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be at least 16 characters and no more than 128 characters in length.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot contain any of the following characters: '/', '"', or "@". 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a>
+        /// at Redis.
+        /// </para>
+        /// </summary>
+        public string AuthToken
+        {
+            get { return this._authToken; }
+            set { this._authToken = value; }
+        }
+
+        // Check to see if AuthToken property is set
+        internal bool IsSetAuthToken()
+        {
+            return this._authToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AutomaticFailoverEnabled. 
@@ -427,8 +467,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// The maximum permitted value for <code>NumCacheClusters</code> is 6 (primary plus 5
-        /// replicas). If you need to exceed this limit, fill out the ElastiCache Limit Increase
-        /// Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.
+        /// replicas).
         /// </para>
         /// </summary>
         public int NumCacheClusters

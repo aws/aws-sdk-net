@@ -29,7 +29,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Represents a collection of cache nodes in a replication group. One node in the node
-    /// group is the read/write Primary node. All the other nodes are read-only Replica nodes.
+    /// group is the read/write primary node. All the other nodes are read-only Replica nodes.
     /// </summary>
     public partial class NodeGroup
     {
