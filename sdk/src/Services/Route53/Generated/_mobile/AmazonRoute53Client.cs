@@ -518,6 +518,37 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  CreateVPCAssociationAuthorization
+
+        internal CreateVPCAssociationAuthorizationResponse CreateVPCAssociationAuthorization(CreateVPCAssociationAuthorizationRequest request)
+        {
+            var marshaller = new CreateVPCAssociationAuthorizationRequestMarshaller();
+            var unmarshaller = CreateVPCAssociationAuthorizationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVPCAssociationAuthorizationRequest,CreateVPCAssociationAuthorizationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVPCAssociationAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVPCAssociationAuthorization operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateVPCAssociationAuthorizationResponse> CreateVPCAssociationAuthorizationAsync(CreateVPCAssociationAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateVPCAssociationAuthorizationRequestMarshaller();
+            var unmarshaller = CreateVPCAssociationAuthorizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVPCAssociationAuthorizationRequest,CreateVPCAssociationAuthorizationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteHealthCheck
 
         internal DeleteHealthCheckResponse DeleteHealthCheck(DeleteHealthCheckRequest request)
@@ -673,6 +704,37 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  DeleteVPCAssociationAuthorization
+
+        internal DeleteVPCAssociationAuthorizationResponse DeleteVPCAssociationAuthorization(DeleteVPCAssociationAuthorizationRequest request)
+        {
+            var marshaller = new DeleteVPCAssociationAuthorizationRequestMarshaller();
+            var unmarshaller = DeleteVPCAssociationAuthorizationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVPCAssociationAuthorizationRequest,DeleteVPCAssociationAuthorizationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVPCAssociationAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVPCAssociationAuthorization operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteVPCAssociationAuthorizationResponse> DeleteVPCAssociationAuthorizationAsync(DeleteVPCAssociationAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteVPCAssociationAuthorizationRequestMarshaller();
+            var unmarshaller = DeleteVPCAssociationAuthorizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVPCAssociationAuthorizationRequest,DeleteVPCAssociationAuthorizationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateVPCFromHostedZone
 
         internal DisassociateVPCFromHostedZoneResponse DisassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request)
@@ -730,39 +792,6 @@ namespace Amazon.Route53
             var unmarshaller = GetChangeResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetChangeRequest,GetChangeResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  GetChangeDetails
-
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        internal GetChangeDetailsResponse GetChangeDetails(GetChangeDetailsRequest request)
-        {
-            var marshaller = new GetChangeDetailsRequestMarshaller();
-            var unmarshaller = GetChangeDetailsResponseUnmarshaller.Instance;
-
-            return Invoke<GetChangeDetailsRequest,GetChangeDetailsResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetChangeDetails operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetChangeDetails operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        public Task<GetChangeDetailsResponse> GetChangeDetailsAsync(GetChangeDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new GetChangeDetailsRequestMarshaller();
-            var unmarshaller = GetChangeDetailsResponseUnmarshaller.Instance;
-
-            return InvokeAsync<GetChangeDetailsRequest,GetChangeDetailsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1157,72 +1186,6 @@ namespace Amazon.Route53
             var unmarshaller = GetTrafficPolicyInstanceCountResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetTrafficPolicyInstanceCountRequest,GetTrafficPolicyInstanceCountResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  ListChangeBatchesByHostedZone
-
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        internal ListChangeBatchesByHostedZoneResponse ListChangeBatchesByHostedZone(ListChangeBatchesByHostedZoneRequest request)
-        {
-            var marshaller = new ListChangeBatchesByHostedZoneRequestMarshaller();
-            var unmarshaller = ListChangeBatchesByHostedZoneResponseUnmarshaller.Instance;
-
-            return Invoke<ListChangeBatchesByHostedZoneRequest,ListChangeBatchesByHostedZoneResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ListChangeBatchesByHostedZone operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByHostedZone operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        public Task<ListChangeBatchesByHostedZoneResponse> ListChangeBatchesByHostedZoneAsync(ListChangeBatchesByHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new ListChangeBatchesByHostedZoneRequestMarshaller();
-            var unmarshaller = ListChangeBatchesByHostedZoneResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListChangeBatchesByHostedZoneRequest,ListChangeBatchesByHostedZoneResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  ListChangeBatchesByRRSet
-
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        internal ListChangeBatchesByRRSetResponse ListChangeBatchesByRRSet(ListChangeBatchesByRRSetRequest request)
-        {
-            var marshaller = new ListChangeBatchesByRRSetRequestMarshaller();
-            var unmarshaller = ListChangeBatchesByRRSetResponseUnmarshaller.Instance;
-
-            return Invoke<ListChangeBatchesByRRSetRequest,ListChangeBatchesByRRSetResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ListChangeBatchesByRRSet operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByRRSet operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        public Task<ListChangeBatchesByRRSetResponse> ListChangeBatchesByRRSetAsync(ListChangeBatchesByRRSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = new ListChangeBatchesByRRSetRequestMarshaller();
-            var unmarshaller = ListChangeBatchesByRRSetResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ListChangeBatchesByRRSetRequest,ListChangeBatchesByRRSetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1796,6 +1759,37 @@ namespace Amazon.Route53
             var unmarshaller = ListTrafficPolicyVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTrafficPolicyVersionsRequest,ListTrafficPolicyVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListVPCAssociationAuthorizations
+
+        internal ListVPCAssociationAuthorizationsResponse ListVPCAssociationAuthorizations(ListVPCAssociationAuthorizationsRequest request)
+        {
+            var marshaller = new ListVPCAssociationAuthorizationsRequestMarshaller();
+            var unmarshaller = ListVPCAssociationAuthorizationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListVPCAssociationAuthorizationsRequest,ListVPCAssociationAuthorizationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVPCAssociationAuthorizations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVPCAssociationAuthorizations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListVPCAssociationAuthorizationsResponse> ListVPCAssociationAuthorizationsAsync(ListVPCAssociationAuthorizationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListVPCAssociationAuthorizationsRequestMarshaller();
+            var unmarshaller = ListVPCAssociationAuthorizationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListVPCAssociationAuthorizationsRequest,ListVPCAssociationAuthorizationsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

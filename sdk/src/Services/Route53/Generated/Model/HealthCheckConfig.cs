@@ -60,10 +60,9 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// If the endpoint is an Amazon EC2 instance, we recommend that you create an Elastic
-        /// IP address, associate it with your Amazon EC2 instance, and specify the Elastic IP
-        /// address for <code>IPAddress</code>. This ensures that the IP address of your instance
-        /// will never change.
+        /// If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address,
+        /// associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>.
+        /// This ensures that the IP address of your instance will never change.
         /// </para>
         ///  
         /// <para>
@@ -71,9 +70,9 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// Contraints: Amazon Route 53 cannot check the health of endpoints for which the IP
-        /// address is in local, private, non-routable, or multicast ranges. For more information
-        /// about IP addresses for which you cannot create health checks, see <a href="https://tools.ietf.org/html/rfc5735">RFC
+        /// Constraints: Amazon Route 53 can't check the health of endpoints for which the IP
+        /// address is in local, private, non-routable, or \ multicast ranges. For more information
+        /// about IP addresses for which you can't create health checks, see <a href="https://tools.ietf.org/html/rfc5735">RFC
         /// 5735, Special Use IPv4 Addresses</a> and <a href="https://tools.ietf.org/html/rfc6598">RFC
         /// 6598, IANA-Reserved IPv4 Prefix for Shared Address Space</a>.
         /// </para>

@@ -28,30 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the <code>ChangeBatchRecord</code> element.
+    /// Empty response for the request.
     /// </summary>
-    public partial class GetChangeDetailsResponse : AmazonWebServiceResponse
+    public partial class DeleteVPCAssociationAuthorizationResponse : AmazonWebServiceResponse
     {
-        private ChangeBatchRecord _changeBatchRecord;
-
-        /// <summary>
-        /// Gets and sets the property ChangeBatchRecord. 
-        /// <para>
-        /// A complex type that contains information about the specified change batch, including
-        /// the change batch ID, the status of the change, and the contained changes.
-        /// </para>
-        /// </summary>
-        public ChangeBatchRecord ChangeBatchRecord
-        {
-            get { return this._changeBatchRecord; }
-            set { this._changeBatchRecord = value; }
-        }
-
-        // Check to see if ChangeBatchRecord property is set
-        internal bool IsSetChangeBatchRecord()
-        {
-            return this._changeBatchRecord != null;
-        }
 
     }
 }

@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains information about the Amazon VPC that you're associating
-    /// with the specified hosted zone.
+    /// A complex type that contains information about an Amazon VPC that is associated with
+    /// a private hosted zone.
     /// </summary>
     public partial class VPC
     {

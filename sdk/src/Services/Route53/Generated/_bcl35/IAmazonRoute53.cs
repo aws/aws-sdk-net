@@ -43,23 +43,24 @@ namespace Amazon.Route53
         /// 
         ///  <important> 
         /// <para>
-        /// The VPC and the hosted zone must already exist, and you must have created a private
-        /// hosted zone. You cannot convert a public hosted zone into a private hosted zone.
+        /// To perform the association, the VPC and the private hosted zone must already exist.
+        /// You can't convert a public hosted zone into a private hosted zone.
         /// </para>
         ///  </important> 
         /// <para>
         /// Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
-        /// ID</i>/associatevpc</code> resource. The request body must include an XML document
-        /// with a <code>AssociateVPCWithHostedZoneRequest</code> element. The response returns
-        /// the <code>AssociateVPCWithHostedZoneResponse</code> element.
+        /// ID</i>/associatevpc</code> resource. The request body must include a document with
+        /// an <code>AssociateVPCWithHostedZoneRequest</code> element. The response contains a
+        /// <code>ChangeInfo</code> data type that you can use to track the progress of the request.
+        /// 
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you used different accounts to create the hosted zone and to create the Amazon
-        /// VPCs that you want to associate with the hosted zone, we need to update account permissions
-        /// for you. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zone-private-associate-vpcs-different-accounts.html">Associating
-        /// Amazon VPCs and Private Hosted Zones That You Create with Different AWS Accounts</a>
-        /// in the Amazon Route 53 Developer Guide.
+        /// If you want to associate a VPC that was created by using one AWS account with a private
+        /// hosted zone that was created by using a different account, the AWS account that created
+        /// the private hosted zone must first submit a <code>CreateVPCAssociationAuthorization</code>
+        /// request. Then the account that created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
+        /// request.
         /// </para>
         ///  </note>
         /// </summary>
@@ -69,7 +70,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.ConflictingDomainExistsException">
         /// You specified an Amazon VPC that you're already using for another hosted zone, and
         /// the domain that you specified for one of the hosted zones is a subdomain of the domain
-        /// that you specified for the other hosted zone. For example, you cannot use the same
+        /// that you specified for the other hosted zone. For example, you can't use the same
         /// Amazon VPC for the hosted zones for example.com and test.example.com.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
@@ -86,8 +87,12 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
         /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NotAuthorizedException">
+        /// Associating the specified VPC with the specified hosted zone has not been authorized.
+        /// </exception>
         /// <exception cref="Amazon.Route53.Model.PublicZoneVPCAssociationException">
-        /// The hosted zone specified in <code>HostedZoneId</code> is a public hosted zone.
+        /// You're trying to associate a VPC with a public hosted zone. Amazon Route 53 doesn't
+        /// support associating a VPC with a public hosted zone.
         /// </exception>
         AssociateVPCWithHostedZoneResponse AssociateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest request);
 
@@ -149,7 +154,7 @@ namespace Amazon.Route53
         /// </para>
         ///  <important> 
         /// <para>
-        /// Due to the nature of transactional changes, you cannot delete the same resource record
+        /// Due to the nature of transactional changes, you can't delete the same resource record
         /// set more than once in a single change batch. If you attempt to delete the same change
         /// batch more than once, Amazon Route 53 returns an <code>InvalidChangeBatch</code> error.
         /// </para>
@@ -174,13 +179,34 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE</code>: Deletes an existing resource record set that has the specified
-        /// values for <code>Name</code>, <code>Type</code>, <code>Set Identifier</code> (for
-        /// code latency, weighted, geolocation, and failover resource record sets), and <code>TTL</code>
-        /// (except alias resource record sets, for which the TTL is determined by the AWS resource
-        /// you're routing queries to).
+        ///  <code>DELETE</code>: Deletes an existing resource record set that has the applicable
+        /// values for the following elements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Name</code>: required to delete any resource record set
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        ///  <code>Type</code>: required to delete any resource record set
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AliasTarget</code>, <code>DNSName</code>, <code>EvaluateTargetHealth</code>,
+        /// and <code>HostedZoneId</code>: required to delete an alias resource record set
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SetIdentifier</code>: required to delete a failover, geolocation, latency,
+        /// or weighted resource record set 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TTL</code>: required to delete any resource record set except an alias resource
+        /// record set (For alias resource record sets, the TTL is determined by the AWS resource
+        /// tat you're routing traffic to.)
+        /// </para>
+        ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <code>UPSERT</code>: If a resource record set does not already exist, AWS creates
         /// it. If a resource set does exist, Amazon Route 53 updates it with the values in the
@@ -335,7 +361,7 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// To create a new health check, send a <code>POST</code> request to the <code>/2013-04-01/healthcheck</code>
-        /// resource. The request body must include an XML document with a <code>CreateHealthCheckRequest</code>
+        /// resource. The request body must include a document with a <code>CreateHealthCheckRequest</code>
         /// element. The response returns the <code>CreateHealthCheckResponse</code> element,
         /// containing the health check ID specified when adding health check to a resource record
         /// set. For information about adding health checks to resource record sets, see <a>ResourceRecordSet$HealthCheckId</a>
@@ -343,11 +369,10 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        /// If you are registering Amazon EC2 instances with an Elastic Load Balancing (ELB) load
-        /// balancer, do not create Amazon Route 53 health checks for the Amazon EC2 instances.
-        /// When you register an Amazon EC2 instance with a load balancer, you configure settings
-        /// for an ELB health check, which performs a similar function to an Amazon Route 53 health
-        /// check.
+        /// If you are registering EC2 instances with an Elastic Load Balancing (ELB) load balancer,
+        /// do not create Amazon Route 53 health checks for the EC2 instances. When you register
+        /// an EC2 instance with a load balancer, you configure settings for an ELB health check,
+        /// which performs a similar function to an Amazon Route 53 health check.
         /// </para>
         ///  
         /// <para>
@@ -373,7 +398,7 @@ namespace Amazon.Route53
         /// metric, add an alarm to the metric, and then create a health check that is based on
         /// the state of the alarm. For information about creating CloudWatch metrics and alarms
         /// by using the CloudWatch console, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
-        /// CloudWatch Developer Guide</a>.
+        /// CloudWatch User Guide</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -435,13 +460,13 @@ namespace Amazon.Route53
         /// 
         ///  <important> 
         /// <para>
-        /// Public hosted zones cannot be converted to a private hosted zone or vice versa. Instead,
+        /// Public hosted zones can't be converted to a private hosted zone or vice versa. Instead,
         /// create a new hosted zone with the same name and create new resource record sets.
         /// </para>
         ///  </important> 
         /// <para>
         /// Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone</code> resource.
-        /// The request body must include an XML document with a <code>CreateHostedZoneRequest</code>
+        /// The request body must include a document with a <code>CreateHostedZoneRequest</code>
         /// element. The response returns the <code>CreateHostedZoneResponse</code> element containing
         /// metadata about the hosted zone.
         /// </para>
@@ -456,7 +481,7 @@ namespace Amazon.Route53
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You cannot create a hosted zone for a top-level domain (TLD).
+        /// You can't create a hosted zone for a top-level domain (TLD).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -491,7 +516,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.ConflictingDomainExistsException">
         /// You specified an Amazon VPC that you're already using for another hosted zone, and
         /// the domain that you specified for one of the hosted zones is a subdomain of the domain
-        /// that you specified for the other hosted zone. For example, you cannot use the same
+        /// that you specified for the other hosted zone. For example, you can't use the same
         /// Amazon VPC for the hosted zones for example.com and test.example.com.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.DelegationSetNotAvailableException">
@@ -522,7 +547,7 @@ namespace Amazon.Route53
         /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TooManyHostedZonesException">
-        /// This hosted zone cannot be created because the hosted zone limit is exceeded. To request
+        /// This hosted zone can't be created because the hosted zone limit is exceeded. To request
         /// a limit increase, go to the Amazon Route 53 <a href="http://aws.amazon.com/route53-request/">Contact
         /// Us</a> page.
         /// </exception>
@@ -565,12 +590,12 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// Send a <code>POST</code> request to the <code>/2013-04-01/delegationset</code> resource.
-        /// The request body must include an XML document with a <code>CreateReusableDelegationSetRequest</code>
+        /// The request body must include a document with a <code>CreateReusableDelegationSetRequest</code>
         /// element.
         /// </para>
         ///  <note> 
         /// <para>
-        /// A reusable delegation set cannot be associated with a private hosted zone/
+        /// A reusable delegation set can't be associated with a private hosted zone/
         /// </para>
         ///  </note> 
         /// <para>
@@ -596,7 +621,7 @@ namespace Amazon.Route53
         /// domain name and Amazon Route 53 generates this error, contact Customer Support.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.HostedZoneNotFoundException">
-        /// The specified HostedZone cannot be found.
+        /// The specified HostedZone can't be found.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidArgumentException">
         /// Parameter name and problem.
@@ -828,6 +853,80 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  CreateVPCAssociationAuthorization
+
+
+        /// <summary>
+        /// Authorizes the AWS account that created a specified VPC to submit an <code>AssociateVPCWithHostedZone</code>
+        /// request to associate the VPC with a specified hosted zone that was created by a different
+        /// account. To submit a <code>CreateVPCAssociationAuthorization</code> request, you must
+        /// use the account that created the hosted zone. After you authorize the association,
+        /// use the account that created the VPC to submit an <code>AssociateVPCWithHostedZone</code>
+        /// request.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you want to associate multiple VPCs that you created by using one account with
+        /// a hosted zone that you created by using a different account, you must submit one authorization
+        /// request for each VPC.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
+        /// ID</i>/authorizevpcassociation</code> resource. The request body must include a document
+        /// with a <code>CreateVPCAssociationAuthorizationRequest</code> element. The response
+        /// contains information about the authorization.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVPCAssociationAuthorization service method.</param>
+        /// 
+        /// <returns>The response from the CreateVPCAssociationAuthorization service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
+        /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Amazon
+        /// Route 53 returns this error when the VPC specified by <code>VPCId</code> does not
+        /// belong to you.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.TooManyVPCAssociationAuthorizationsException">
+        /// You've created the maximum number of authorizations that can be created for the specified
+        /// hosted zone. To authorize another VPC to be associated with the hosted zone, submit
+        /// a <code>DeleteVPCAssociationAuthorization</code> request to remove an existing authorization.
+        /// To get a list of existing authorizations, submit a <code>ListVPCAssociationAuthorizations</code>
+        /// request.
+        /// </exception>
+        CreateVPCAssociationAuthorizationResponse CreateVPCAssociationAuthorization(CreateVPCAssociationAuthorizationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVPCAssociationAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVPCAssociationAuthorization operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVPCAssociationAuthorization
+        ///         operation.</returns>
+        IAsyncResult BeginCreateVPCAssociationAuthorization(CreateVPCAssociationAuthorizationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVPCAssociationAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVPCAssociationAuthorization.</param>
+        /// 
+        /// <returns>Returns a  CreateVPCAssociationAuthorizationResult from Route53.</returns>
+        CreateVPCAssociationAuthorizationResponse EndCreateVPCAssociationAuthorization(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteHealthCheck
 
 
@@ -840,7 +939,7 @@ namespace Amazon.Route53
         /// Amazon Route 53 does not prevent you from deleting a health check even if the health
         /// check is associated with one or more resource record sets. If you delete a health
         /// check and you don't update the associated resource record sets, the future status
-        /// of the health check cannot be predicted and may change. This will affect the routing
+        /// of the health check can't be predicted and may change. This will affect the routing
         /// of DNS queries for your DNS failover configuration. For more information, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html#health-checks-deleting.html">Replacing
         /// and Deleting Health Checks</a> in the Amazon Route 53 Developer Guide.
         /// </para>
@@ -1137,24 +1236,97 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  DeleteVPCAssociationAuthorization
+
+
+        /// <summary>
+        /// Removes authorization to submit an <code>AssociateVPCWithHostedZone</code> request
+        /// to associate a specified VPC with a hosted zone that was created by a different account.
+        /// You must use the account that created the hosted zone to submit a <code>DeleteVPCAssociationAuthorization</code>
+        /// request.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Sending this request only prevents the AWS account that created the VPC from associating
+        /// the VPC with the Amazon Route 53 hosted zone in the future. If the VPC is already
+        /// associated with the hosted zone, <code>DeleteVPCAssociationAuthorization</code> won't
+        /// disassociate the VPC from the hosted zone. If you want to delete an existing association,
+        /// use <code>DisassociateVPCFromHostedZone</code>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Send a <code>DELETE</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
+        /// ID</i>/deauthorizevpcassociation</code> resource. The request body must include a
+        /// document with a <code>DeleteVPCAssociationAuthorizationRequest</code> element.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVPCAssociationAuthorization service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVPCAssociationAuthorization service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
+        /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Amazon
+        /// Route 53 returns this error when the VPC specified by <code>VPCId</code> does not
+        /// belong to you.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.VPCAssociationAuthorizationNotFoundException">
+        /// The VPC that you specified is not authorized to be associated with the hosted zone.
+        /// </exception>
+        DeleteVPCAssociationAuthorizationResponse DeleteVPCAssociationAuthorization(DeleteVPCAssociationAuthorizationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVPCAssociationAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVPCAssociationAuthorization operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVPCAssociationAuthorization
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteVPCAssociationAuthorization(DeleteVPCAssociationAuthorizationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVPCAssociationAuthorization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVPCAssociationAuthorization.</param>
+        /// 
+        /// <returns>Returns a  DeleteVPCAssociationAuthorizationResult from Route53.</returns>
+        DeleteVPCAssociationAuthorizationResponse EndDeleteVPCAssociationAuthorization(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociateVPCFromHostedZone
 
 
         /// <summary>
         /// Disassociates a VPC from a Amazon Route 53 private hosted zone. 
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// You can't disassociate the last VPC from a private hosted zone.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
-        /// ID</i>/disassociatevpc</code> resource. The request body must include an XML document
-        /// with a <code>DisassociateVPCFromHostedZoneRequest</code> element. The response returns
-        /// the <code>DisassociateVPCFromHostedZoneResponse</code> element.
+        /// ID</i>/disassociatevpc</code> resource. The request body must include a document with
+        /// a <code>DisassociateVPCFromHostedZoneRequest</code> element. The response includes
+        /// a <code>DisassociateVPCFromHostedZoneResponse</code> element.
         /// </para>
         ///  <important> 
         /// <para>
-        /// You can only disassociate a VPC from a private hosted zone when two or more VPCs are
-        /// associated with that hosted zone. You cannot convert a private hosted zone into a
-        /// public hosted zone.
+        /// You can't disassociate a VPC from a private hosted zone when only one VPC is associated
+        /// with the hosted zone. You also can't convert a private hosted zone into a public hosted
+        /// zone.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1170,9 +1342,9 @@ namespace Amazon.Route53
         /// belong to you.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.LastVPCAssociationException">
-        /// Only one VPC is currently associated with the hosted zone. You cannot convert a private
-        /// hosted zone into a public hosted zone by disassociating the last VPC from a hosted
-        /// zone.
+        /// The VPC that you're trying to disassociate from the private hosted zone is the last
+        /// VPC that is associated with the hosted zone. Amazon Route 53 doesn't support disassociating
+        /// the last VPC from a hosted zone.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -1262,52 +1434,6 @@ namespace Amazon.Route53
         /// 
         /// <returns>Returns a  GetChangeResult from Route53.</returns>
         GetChangeResponse EndGetChange(IAsyncResult asyncResult);
-
-        #endregion
-        
-        #region  GetChangeDetails
-
-
-        /// <summary>
-        /// Returns the status and changes of a change batch request.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetChangeDetails service method.</param>
-        /// 
-        /// <returns>The response from the GetChangeDetails service method, as returned by Route53.</returns>
-        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// The input is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Route53.Model.NoSuchChangeException">
-        /// A change with the specified change ID does not exist.
-        /// </exception>
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        GetChangeDetailsResponse GetChangeDetails(GetChangeDetailsRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetChangeDetails operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetChangeDetails operation on AmazonRoute53Client.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetChangeDetails
-        ///         operation.</returns>
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        IAsyncResult BeginGetChangeDetails(GetChangeDetailsRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  GetChangeDetails operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetChangeDetails.</param>
-        /// 
-        /// <returns>Returns a  GetChangeDetailsResult from Route53.</returns>
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        GetChangeDetailsResponse EndGetChangeDetails(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1874,99 +2000,6 @@ namespace Amazon.Route53
         /// 
         /// <returns>Returns a  GetTrafficPolicyInstanceCountResult from Route53.</returns>
         GetTrafficPolicyInstanceCountResponse EndGetTrafficPolicyInstanceCount(IAsyncResult asyncResult);
-
-        #endregion
-        
-        #region  ListChangeBatchesByHostedZone
-
-
-        /// <summary>
-        /// Gets the list of ChangeBatches in a given time period for a given hosted zone.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByHostedZone service method.</param>
-        /// 
-        /// <returns>The response from the ListChangeBatchesByHostedZone service method, as returned by Route53.</returns>
-        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// The input is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
-        /// No hosted zone exists with the ID that you specified.
-        /// </exception>
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        ListChangeBatchesByHostedZoneResponse ListChangeBatchesByHostedZone(ListChangeBatchesByHostedZoneRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ListChangeBatchesByHostedZone operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByHostedZone operation on AmazonRoute53Client.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChangeBatchesByHostedZone
-        ///         operation.</returns>
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        IAsyncResult BeginListChangeBatchesByHostedZone(ListChangeBatchesByHostedZoneRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  ListChangeBatchesByHostedZone operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChangeBatchesByHostedZone.</param>
-        /// 
-        /// <returns>Returns a  ListChangeBatchesByHostedZoneResult from Route53.</returns>
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        ListChangeBatchesByHostedZoneResponse EndListChangeBatchesByHostedZone(IAsyncResult asyncResult);
-
-        #endregion
-        
-        #region  ListChangeBatchesByRRSet
-
-
-        /// <summary>
-        /// Gets the list of ChangeBatches in a given time period for a given hosted zone and
-        /// RRSet.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByRRSet service method.</param>
-        /// 
-        /// <returns>The response from the ListChangeBatchesByRRSet service method, as returned by Route53.</returns>
-        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
-        /// The input is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
-        /// No hosted zone exists with the ID that you specified.
-        /// </exception>
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        ListChangeBatchesByRRSetResponse ListChangeBatchesByRRSet(ListChangeBatchesByRRSetRequest request);
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ListChangeBatchesByRRSet operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListChangeBatchesByRRSet operation on AmazonRoute53Client.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListChangeBatchesByRRSet
-        ///         operation.</returns>
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        IAsyncResult BeginListChangeBatchesByRRSet(ListChangeBatchesByRRSetRequest request, AsyncCallback callback, object state);
-
-
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  ListChangeBatchesByRRSet operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListChangeBatchesByRRSet.</param>
-        /// 
-        /// <returns>Returns a  ListChangeBatchesByRRSetResult from Route53.</returns>
-        [Obsolete("This operation is deprecated because it is an experimental feature not intended for use.")]
-        ListChangeBatchesByRRSetResponse EndListChangeBatchesByRRSet(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3218,6 +3251,84 @@ namespace Amazon.Route53
 
         #endregion
         
+        #region  ListVPCAssociationAuthorizations
+
+
+        /// <summary>
+        /// Gets a list of the VPCs that were created by other accounts and that can be associated
+        /// with a specified hosted zone because you've submitted one or more <code>CreateVPCAssociationAuthorization</code>
+        /// requests. 
+        /// 
+        ///  
+        /// <para>
+        /// Send a <code>GET</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
+        /// ID</i>/authorizevpcassociation</code> resource. The response to this request includes
+        /// a <code>VPCs</code> element with a <code>VPC</code> child element for each VPC that
+        /// can be associated with the hosted zone.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Route 53 returns up to 50 VPCs per page. To return fewer VPCs per page, include
+        /// the <code>MaxResults</code> parameter: 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation?MaxItems=<i>VPCs
+        /// per page</i> </code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the response includes a <code>NextToken</code> element, there are more VPCs to
+        /// list. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code>
+        /// request, and include the value of the <code>NextToken</code> element from the response
+        /// in the <code>NextToken</code> request parameter:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>/2013-04-01/hostedzone/<i>hosted zone ID</i>/authorizevpcassociation?MaxItems=<i>VPCs
+        /// per page</i>&amp;NextToken=<i/> </code> 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVPCAssociationAuthorizations service method.</param>
+        /// 
+        /// <returns>The response from the ListVPCAssociationAuthorizations service method, as returned by Route53.</returns>
+        /// <exception cref="Amazon.Route53.Model.InvalidInputException">
+        /// The input is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.InvalidPaginationTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
+        /// No hosted zone exists with the ID that you specified.
+        /// </exception>
+        ListVPCAssociationAuthorizationsResponse ListVPCAssociationAuthorizations(ListVPCAssociationAuthorizationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVPCAssociationAuthorizations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVPCAssociationAuthorizations operation on AmazonRoute53Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVPCAssociationAuthorizations
+        ///         operation.</returns>
+        IAsyncResult BeginListVPCAssociationAuthorizations(ListVPCAssociationAuthorizationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVPCAssociationAuthorizations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVPCAssociationAuthorizations.</param>
+        /// 
+        /// <returns>Returns a  ListVPCAssociationAuthorizationsResult from Route53.</returns>
+        ListVPCAssociationAuthorizationsResponse EndListVPCAssociationAuthorizations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  TestDNSAnswer
 
 
@@ -3272,7 +3383,7 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// Send a <code>POST</code> request to the <code>/2013-04-01/healthcheck/<i>health check
-        /// ID</i> </code> resource. The request body must include an XML document with an <code>UpdateHealthCheckRequest</code>
+        /// ID</i> </code> resource. The request body must include a document with an <code>UpdateHealthCheckRequest</code>
         /// element. For more information about updating health checks, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
         /// Updating, and Deleting Health Checks</a> in the Amazon Route 53 Developer Guide.
         /// </para>

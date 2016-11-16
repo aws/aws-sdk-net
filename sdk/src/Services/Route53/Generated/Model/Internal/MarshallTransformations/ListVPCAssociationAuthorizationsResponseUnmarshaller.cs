@@ -33,9 +33,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListChangeBatchesByRRSet operation
+    /// Response Unmarshaller for ListVPCAssociationAuthorizations operation
     /// </summary>  
-    public class ListChangeBatchesByRRSetResponseUnmarshaller : XmlResponseUnmarshaller
+    public class ListVPCAssociationAuthorizationsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,13 +44,13 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            ListChangeBatchesByRRSetResponse response = new ListChangeBatchesByRRSetResponse();
+            ListVPCAssociationAuthorizationsResponse response = new ListVPCAssociationAuthorizationsResponse();
             UnmarshallResult(context,response);
             
             return response;
         }        
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, ListChangeBatchesByRRSetResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, ListVPCAssociationAuthorizationsResponse response)
         {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
@@ -61,34 +61,22 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("MaxItems", targetDepth))
+                    if (context.TestExpression("HostedZoneId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.MaxItems = unmarshaller.Unmarshall(context);
+                        response.HostedZoneId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("Marker", targetDepth))
+                    if (context.TestExpression("NextToken", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.Marker = unmarshaller.Unmarshall(context);
+                        response.NextToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("IsTruncated", targetDepth))
+                    if (context.TestExpression("VPCs/VPC", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        response.IsTruncated = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ChangeBatchRecords/ChangeBatchRecord", targetDepth))
-                    {
-                        var unmarshaller = ChangeBatchRecordUnmarshaller.Instance;
-                        response.ChangeBatchRecords.Add(unmarshaller.Unmarshall(context));
-                        continue;
-                    }
-                    if (context.TestExpression("NextMarker", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.NextMarker = unmarshaller.Unmarshall(context);
+                        var unmarshaller = VPCUnmarshaller.Instance;
+                        response.VPCs.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                 }
@@ -116,6 +104,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPaginationToken"))
+            {
+                return new InvalidPaginationTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchHostedZone"))
             {
                 return new NoSuchHostedZoneException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -123,9 +115,9 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static ListChangeBatchesByRRSetResponseUnmarshaller _instance = new ListChangeBatchesByRRSetResponseUnmarshaller();        
+        private static ListVPCAssociationAuthorizationsResponseUnmarshaller _instance = new ListVPCAssociationAuthorizationsResponseUnmarshaller();        
 
-        internal static ListChangeBatchesByRRSetResponseUnmarshaller GetInstance()
+        internal static ListVPCAssociationAuthorizationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -133,7 +125,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListChangeBatchesByRRSetResponseUnmarshaller Instance
+        public static ListVPCAssociationAuthorizationsResponseUnmarshaller Instance
         {
             get
             {

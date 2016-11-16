@@ -34,7 +34,7 @@ namespace Amazon.Route53.Model
     ///  
     /// <para>
     /// To create a new health check, send a <code>POST</code> request to the <code>/2013-04-01/healthcheck</code>
-    /// resource. The request body must include an XML document with a <code>CreateHealthCheckRequest</code>
+    /// resource. The request body must include a document with a <code>CreateHealthCheckRequest</code>
     /// element. The response returns the <code>CreateHealthCheckResponse</code> element,
     /// containing the health check ID specified when adding health check to a resource record
     /// set. For information about adding health checks to resource record sets, see <a>ResourceRecordSet$HealthCheckId</a>
@@ -42,11 +42,10 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    /// If you are registering Amazon EC2 instances with an Elastic Load Balancing (ELB) load
-    /// balancer, do not create Amazon Route 53 health checks for the Amazon EC2 instances.
-    /// When you register an Amazon EC2 instance with a load balancer, you configure settings
-    /// for an ELB health check, which performs a similar function to an Amazon Route 53 health
-    /// check.
+    /// If you are registering EC2 instances with an Elastic Load Balancing (ELB) load balancer,
+    /// do not create Amazon Route 53 health checks for the EC2 instances. When you register
+    /// an EC2 instance with a load balancer, you configure settings for an ELB health check,
+    /// which performs a similar function to an Amazon Route 53 health check.
     /// </para>
     ///  
     /// <para>
@@ -72,7 +71,7 @@ namespace Amazon.Route53.Model
     /// metric, add an alarm to the metric, and then create a health check that is based on
     /// the state of the alarm. For information about creating CloudWatch metrics and alarms
     /// by using the CloudWatch console, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
-    /// CloudWatch Developer Guide</a>.
+    /// CloudWatch User Guide</a>.
     /// </para>
     ///  </li> </ul>
     /// </summary>

@@ -172,7 +172,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>CloudFront distribution</b>: A
+        ///  <b>CloudFront distribution</b>: A or AAAA
         /// </para>
         ///  </li> <li> 
         /// <para>

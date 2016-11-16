@@ -35,13 +35,13 @@ namespace Amazon.Route53.Model
     /// 
     ///  <important> 
     /// <para>
-    /// Public hosted zones cannot be converted to a private hosted zone or vice versa. Instead,
+    /// Public hosted zones can't be converted to a private hosted zone or vice versa. Instead,
     /// create a new hosted zone with the same name and create new resource record sets.
     /// </para>
     ///  </important> 
     /// <para>
     /// Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone</code> resource.
-    /// The request body must include an XML document with a <code>CreateHostedZoneRequest</code>
+    /// The request body must include a document with a <code>CreateHostedZoneRequest</code>
     /// element. The response returns the <code>CreateHostedZoneResponse</code> element containing
     /// metadata about the hosted zone.
     /// </para>
@@ -56,7 +56,7 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You cannot create a hosted zone for a top-level domain (TLD).
+    /// You can't create a hosted zone for a top-level domain (TLD).
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -142,7 +142,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property VPC. 
         /// <para>
         /// The VPC that you want your hosted zone to be associated with. By providing this parameter,
-        /// your newly created hosted cannot be resolved anywhere other than the given VPC.
+        /// your newly created hosted can't be resolved anywhere other than the given VPC.
         /// </para>
         /// </summary>
         public VPC VPC

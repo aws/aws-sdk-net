@@ -28,38 +28,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisassociateVPCFromHostedZone operation.
-    /// Disassociates a VPC from a Amazon Route 53 private hosted zone. 
+    /// Container for the parameters to the DeleteVPCAssociationAuthorization operation.
+    /// Removes authorization to submit an <code>AssociateVPCWithHostedZone</code> request
+    /// to associate a specified VPC with a hosted zone that was created by a different account.
+    /// You must use the account that created the hosted zone to submit a <code>DeleteVPCAssociationAuthorization</code>
+    /// request.
     /// 
-    ///  <note> 
-    /// <para>
-    /// You can't disassociate the last VPC from a private hosted zone.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// Send a <code>POST</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
-    /// ID</i>/disassociatevpc</code> resource. The request body must include a document with
-    /// a <code>DisassociateVPCFromHostedZoneRequest</code> element. The response includes
-    /// a <code>DisassociateVPCFromHostedZoneResponse</code> element.
-    /// </para>
     ///  <important> 
     /// <para>
-    /// You can't disassociate a VPC from a private hosted zone when only one VPC is associated
-    /// with the hosted zone. You also can't convert a private hosted zone into a public hosted
-    /// zone.
+    /// Sending this request only prevents the AWS account that created the VPC from associating
+    /// the VPC with the Amazon Route 53 hosted zone in the future. If the VPC is already
+    /// associated with the hosted zone, <code>DeleteVPCAssociationAuthorization</code> won't
+    /// disassociate the VPC from the hosted zone. If you want to delete an existing association,
+    /// use <code>DisassociateVPCFromHostedZone</code>.
     /// </para>
-    ///  </important>
+    ///  </important> 
+    /// <para>
+    /// Send a <code>DELETE</code> request to the <code>/2013-04-01/hostedzone/<i>hosted zone
+    /// ID</i>/deauthorizevpcassociation</code> resource. The request body must include a
+    /// document with a <code>DeleteVPCAssociationAuthorizationRequest</code> element.
+    /// </para>
     /// </summary>
-    public partial class DisassociateVPCFromHostedZoneRequest : AmazonRoute53Request
+    public partial class DeleteVPCAssociationAuthorizationRequest : AmazonRoute53Request
     {
         private string _hostedZoneId;
         private VPC _vpc;
-        private string _comment;
 
         /// <summary>
         /// Gets and sets the property HostedZoneId. 
         /// <para>
-        /// The ID of the private hosted zone that you want to disassociate a VPC from.
+        /// When removing authorization to associate a VPC that was created by one AWS account
+        /// with a hosted zone that was created with a different AWS account, the ID of the hosted
+        /// zone.
         /// </para>
         /// </summary>
         public string HostedZoneId
@@ -77,8 +77,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property VPC. 
         /// <para>
-        /// A complex type that contains information about the VPC that you're disassociating
-        /// from the specified hosted zone.
+        /// When removing authorization to associate a VPC that was created by one AWS account
+        /// with a hosted zone that was created with a different AWS account, a complex type that
+        /// includes the ID and region of the VPC.
         /// </para>
         /// </summary>
         public VPC VPC
@@ -91,24 +92,6 @@ namespace Amazon.Route53.Model
         internal bool IsSetVPC()
         {
             return this._vpc != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Comment. 
-        /// <para>
-        ///  <i>Optional:</i> A comment about the disassociation request.
-        /// </para>
-        /// </summary>
-        public string Comment
-        {
-            get { return this._comment; }
-            set { this._comment = value; }
-        }
-
-        // Check to see if Comment property is set
-        internal bool IsSetComment()
-        {
-            return this._comment != null;
         }
 
     }

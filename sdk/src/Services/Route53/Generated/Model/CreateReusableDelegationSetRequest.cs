@@ -36,12 +36,12 @@ namespace Amazon.Route53.Model
     ///  
     /// <para>
     /// Send a <code>POST</code> request to the <code>/2013-04-01/delegationset</code> resource.
-    /// The request body must include an XML document with a <code>CreateReusableDelegationSetRequest</code>
+    /// The request body must include a document with a <code>CreateReusableDelegationSetRequest</code>
     /// element.
     /// </para>
     ///  <note> 
     /// <para>
-    /// A reusable delegation set cannot be associated with a private hosted zone/
+    /// A reusable delegation set can't be associated with a private hosted zone/
     /// </para>
     ///  </note> 
     /// <para>

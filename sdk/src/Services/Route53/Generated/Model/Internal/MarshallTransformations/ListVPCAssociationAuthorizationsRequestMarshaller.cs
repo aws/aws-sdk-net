@@ -33,9 +33,9 @@ using System.Xml;
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListChangeBatchesByRRSet Request Marshaller
+    /// ListVPCAssociationAuthorizations Request Marshaller
     /// </summary>       
-    public class ListChangeBatchesByRRSetRequestMarshaller : IMarshaller<IRequest, ListChangeBatchesByRRSetRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListVPCAssociationAuthorizationsRequestMarshaller : IMarshaller<IRequest, ListVPCAssociationAuthorizationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListChangeBatchesByRRSetRequest)input);
+            return this.Marshall((ListVPCAssociationAuthorizationsRequest)input);
         }
 
         /// <summary>
@@ -52,35 +52,20 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListChangeBatchesByRRSetRequest publicRequest)
+        public IRequest Marshall(ListVPCAssociationAuthorizationsRequest publicRequest)
         {
             var request = new DefaultRequest(publicRequest, "Amazon.Route53");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2013-04-01/hostedzone/{Id}/rrsChanges";
+            string uriResourcePath = "/2013-04-01/hostedzone/{Id}/authorizevpcassociation";
             if (!publicRequest.IsSetHostedZoneId())
                 throw new AmazonRoute53Exception("Request object does not have required field HostedZoneId set");
             uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(publicRequest.HostedZoneId));
             
-            if (publicRequest.IsSetName())
-                request.Parameters.Add("rrSet_name", StringUtils.FromString(publicRequest.Name));
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("nexttoken", StringUtils.FromString(publicRequest.NextToken));
             
-            if (publicRequest.IsSetType())
-                request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));
-            
-            if (publicRequest.IsSetSetIdentifier())
-                request.Parameters.Add("identifier", StringUtils.FromString(publicRequest.SetIdentifier));
-            
-            if (publicRequest.IsSetStartDate())
-                request.Parameters.Add("startDate", StringUtils.FromString(publicRequest.StartDate));
-            
-            if (publicRequest.IsSetEndDate())
-                request.Parameters.Add("endDate", StringUtils.FromString(publicRequest.EndDate));
-            
-            if (publicRequest.IsSetMaxItems())
-                request.Parameters.Add("maxItems", StringUtils.FromString(publicRequest.MaxItems));
-            
-            if (publicRequest.IsSetMarker())
-                request.Parameters.Add("marker", StringUtils.FromString(publicRequest.Marker));
+            if (publicRequest.IsSetMaxResults())
+                request.Parameters.Add("maxresults", StringUtils.FromString(publicRequest.MaxResults));
             request.ResourcePath = uriResourcePath;
 
 

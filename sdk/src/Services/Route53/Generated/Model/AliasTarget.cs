@@ -30,8 +30,8 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// <i>Alias resource record sets only:</i> Information about the CloudFront distribution,
     /// Elastic Beanstalk environment, ELB load balancer, Amazon S3 bucket, or Amazon Route
-    /// 53 resource record set to which you are redirecting queries. The Elastic Beanstalk
-    /// environment must have a regionalized subdomain.
+    /// 53 resource record set that you're redirecting queries to. The Elastic Beanstalk environment
+    /// must have a regionalized subdomain.
     /// 
     ///  
     /// <para>
@@ -39,7 +39,7 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Resource record sets cannot be created for CloudFront distributions in a private hosted
+    /// Resource record sets can't be created for CloudFront distributions in a private hosted
     /// zone.
     /// </para>
     ///  </li> <li> 
@@ -69,8 +69,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Instantiates AliasTarget with the parameterized properties
         /// </summary>
-        /// <param name="hostedZoneId"> <i>Alias resource records sets only</i>: The value used depends on where the queries are routed: <dl> <dt>A CloudFront distribution</dt> <dd> Specify <code>Z2FDTNDATAQYW2</code>. <note> Alias resource record sets for CloudFront cannot be created in a private zone. </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd> Specify the hosted zone ID for the region in which you created the environment. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a> in the Regions and Endpoints chapter of the <i>AWS General Reference</i>. </dd> <dt>ELB load balancer</dt> <dd> Specify the value of the hosted zone ID for the load balancer. Use the following methods to get the hosted zone ID: <ul> <li> AWS Management Console: Go to the Amazon EC2; page, click Load Balancers in the navigation pane, select the load balancer, and get the value of the Hosted Zone ID field on the Description tab. Use the same process to get the DNS Name. See <a>HostedZone$Name</a>. </li> <li> Elastic Load Balancing API: Use <code>DescribeLoadBalancers</code> to get the value of <code>CanonicalHostedZoneNameID</code>. Use the same process to get the <code>CanonicalHostedZoneName</code>. See <a>HostedZone$Name</a>. </li> <li> AWS CLI: Use <code> <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </code> to get the value of <code>CanonicalHostedZoneNameID</code>. Use the same process to get the <code>CanonicalHostedZoneName</code>. See <a>HostedZone$Name</a>. </li> </ul> </dd> <dt>An Amazon S3 bucket configured as a static website</dt> <dd> Specify the hosted zone ID for the Amazon S3 website endpoint in which you created the bucket. For more information about valid values, see the table <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region"> Amazon S3 (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. </dd> <dt>Another Amazon Route 53 resource record set in your hosted zone</dt> <dd> Specify the hosted zone ID of your hosted zone. (An alias resource record set cannot reference a resource record set in a different hosted zone.) </dd> </dl></param>
-        /// <param name="dnsName"> <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries: <ul> <li>  <b>A CloudFront distribution:</b> Specify the domain name that CloudFront assigned when you created your distribution. Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>. </li> <li>  <b>Elastic Beanstalk environment</b>: Specify the <code>CNAME</code> attribute for the environment. (The environment must have a regionalized domain name.) You can use the following methods to get the value of the CNAME attribute: <ul> <li>  <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>. </li> <li>  <i>Elastic Load Balancing API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>. </li> <li>  <i>AWS CLI</i>: Use the describe-environments command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>AWS Command Line Interface Reference</i>. </li> </ul> </li> <li>  <b>An ELB load balancer:</b> Specify the DNS name associated with the load balancer. Get the DNS name by using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the other value from the API or the CLI, creating the resource record set will fail. <ul> <li>  <i>AWS Management Console</i>: Go to the Amazon EC2 page, click Load Balancers in the navigation pane, choose the load balancer, choose the Description tab, and get the value of the DNS Name field that begins with dualstack. Use the same process to get the Hosted Zone ID. See <a>HostedZone$Id</a>. </li> <li>  <i>Elastic Load Balancing API</i>: Use <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </code> to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the <code>CanonicalHostedZoneNameId</code>. See <a>HostedZone$Id</a>. </li> <li>  <i>AWS CLI</i>: Use <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">describe-load-balancers</a> </code> to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the <code>CanonicalHostedZoneNameId</code>. See HostedZoneId. </li> </ul> </li> <li>  <b>An Amazon S3 bucket that is configured as a static website:</b> Specify the domain name of the Amazon S3 website endpoint in which you created the bucket; for example, <code>s3-website-us-east-1.amazonaws.com</code>. For more information about valid values, see the table <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using Amazon S3 buckets for websites, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>  </li> <li>  <b>Another Amazon Route 53 resource record set</b>: Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone. </li> </ul></param>
+        /// <param name="hostedZoneId"> <i>Alias resource records sets only</i>: The value used depends on where the queries are routed: <dl> <dt>A CloudFront distribution</dt> <dd> Specify <code>Z2FDTNDATAQYW2</code>. <note> Alias resource record sets for CloudFront can't be created in a private zone. </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd> Specify the hosted zone ID for the region in which you created the environment. The environment must have a regionalized subdomain. For a list of regions and the corresponding hosted zone IDs, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS Elastic Beanstalk</a> in the Regions and Endpoints chapter of the <i>Amazon Web Services General Reference</i>. </dd> <dt>ELB load balancer</dt> <dd> Specify the value of the hosted zone ID for the load balancer. Use the following methods to get the hosted zone ID: <ul> <li> AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the <b>Hosted Zone ID</b> field on the <b>Description</b> tab. Use the same process to get the value of <b>DNS Name</b>. See <a>HostedZone$Name</a>. </li> <li> Elastic Load Balancing API: Use <code>DescribeLoadBalancers</code> to get the value of <code>CanonicalHostedZoneNameID</code>. Use the same process to get the <code>CanonicalHostedZoneName</code>. See <a>HostedZone$Name</a>. </li> <li> AWS CLI: Use <code> <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a> </code> to get the value of <code>CanonicalHostedZoneNameID</code>. Use the same process to get the <code>CanonicalHostedZoneName</code>. See <a>HostedZone$Name</a>. </li> </ul> </dd> <dt>An Amazon S3 bucket configured as a static website</dt> <dd> Specify the hosted zone ID for the Amazon S3 website endpoint in which you created the bucket. For more information about valid values, see the table <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region"> Amazon S3 (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. </dd> <dt>Another Amazon Route 53 resource record set in your hosted zone</dt> <dd> Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource record set in a different hosted zone.) </dd> </dl></param>
+        /// <param name="dnsName"> <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries: <ul> <li>  <b>A CloudFront distribution:</b> Specify the domain name that CloudFront assigned when you created your distribution. Your CloudFront distribution must include an alternate domain name that matches the name of the resource record set. For example, if the name of the resource record set is <i>acme.example.com</i>, your CloudFront distribution must include <i>acme.example.com</i> as one of the alternate domain names. For more information, see <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html">Using Alternate Domain Names (CNAMEs)</a> in the <i>Amazon CloudFront Developer Guide</i>. </li> <li>  <b>Elastic Beanstalk environment</b>: Specify the <code>CNAME</code> attribute for the environment. (The environment must have a regionalized domain name.) You can use the following methods to get the value of the CNAME attribute: <ul> <li>  <i>AWS Managment Console</i>: For information about how to get the value by using the console, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>. </li> <li>  <i>Elastic Load Balancing API</i>: Use the <code>DescribeEnvironments</code> action to get the value of the <code>CNAME</code> attribute. For more information, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/API_DescribeEnvironments.html">DescribeEnvironments</a> in the <i>AWS Elastic Beanstalk API Reference</i>. </li> <li>  <i>AWS CLI</i>: Use the describe-environments command to get the value of the <code>CNAME</code> attribute. For more information, see <a href="http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a> in the <i>AWS Command Line Interface Reference</i>. </li> </ul> </li> <li>  <b>An ELB load balancer:</b> Specify the DNS name associated with the load balancer. Get the DNS name by using the AWS Management Console, the ELB API, or the AWS CLI. Use the same method to get values for <code>HostedZoneId</code> and <code>DNSName</code>. If you get one value from the console and the other value from the API or the CLI, creating the resource record set will fail. <ul> <li>  <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS Name</b> field that begins with dualstack. Use the same process to get the <b>Hosted Zone ID</b>. See <a>HostedZone$Id</a>. </li> <li>  <i>Elastic Load Balancing API</i>: Use <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> </code> to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the <code>CanonicalHostedZoneNameId</code>. See <a>HostedZone$Id</a>. </li> <li>  <i>AWS CLI</i>: Use <code> <a href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/APIReference/API_DescribeLoadBalancers.html">describe-load-balancers</a> </code> to get the value of <code>CanonicalHostedZoneName</code>. Use the same process to get the <code>CanonicalHostedZoneNameId</code>. See HostedZoneId. </li> </ul> </li> <li>  <b>An Amazon S3 bucket that is configured as a static website:</b> Specify the domain name of the Amazon S3 website endpoint in which you created the bucket; for example, <code>s3-website-us-east-1.amazonaws.com</code>. For more information about valid values, see the table <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon Simple Storage Service (S3) Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For more information about using S3 buckets for websites, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting a Static Website on Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i>  </li> <li>  <b>Another Amazon Route 53 resource record set</b>: Specify the value of the <code>Name</code> element for a resource record set in the current hosted zone. </li> </ul></param>
         public AliasTarget(string hostedZoneId, string dnsName)
         {
             _hostedZoneId = hostedZoneId;
@@ -89,14 +89,15 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Alias resource record sets for CloudFront cannot be created in a private zone.
+        /// Alias resource record sets for CloudFront can't be created in a private zone.
         /// </para>
         ///  </note> </dd> <dt>Elastic Beanstalk environment</dt> <dd> 
         /// <para>
         /// Specify the hosted zone ID for the region in which you created the environment. The
         /// environment must have a regionalized subdomain. For a list of regions and the corresponding
         /// hosted zone IDs, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">AWS
-        /// Elastic Beanstalk</a> in the Regions and Endpoints chapter of the <i>AWS General Reference</i>.
+        /// Elastic Beanstalk</a> in the Regions and Endpoints chapter of the <i>Amazon Web Services
+        /// General Reference</i>.
         /// </para>
         ///  </dd> <dt>ELB load balancer</dt> <dd> 
         /// <para>
@@ -105,9 +106,10 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AWS Management Console: Go to the Amazon EC2; page, click Load Balancers in the navigation
-        /// pane, select the load balancer, and get the value of the Hosted Zone ID field on the
-        /// Description tab. Use the same process to get the DNS Name. See <a>HostedZone$Name</a>.
+        /// AWS Management Console: Go to the Amazon EC2 page, click <b>Load Balancers</b> in
+        /// the navigation pane, select the load balancer, and get the value of the <b>Hosted
+        /// Zone ID</b> field on the <b>Description</b> tab. Use the same process to get the value
+        /// of <b>DNS Name</b>. See <a>HostedZone$Name</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -131,7 +133,7 @@ namespace Amazon.Route53.Model
         ///  </dd> <dt>Another Amazon Route 53 resource record set in your hosted zone</dt> <dd>
         /// 
         /// <para>
-        /// Specify the hosted zone ID of your hosted zone. (An alias resource record set cannot
+        /// Specify the hosted zone ID of your hosted zone. (An alias resource record set can't
         /// reference a resource record set in a different hosted zone.)
         /// </para>
         ///  </dd> </dl>
@@ -177,7 +179,7 @@ namespace Amazon.Route53.Model
         /// <para>
         ///  <i>AWS Managment Console</i>: For information about how to get the value by using
         /// the console, see <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using
-        /// Custom Domains with Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer
+        /// Custom Domains with AWS Elastic Beanstalk</a> in the <i>AWS Elastic Beanstalk Developer
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -203,10 +205,10 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>AWS Management Console</i>: Go to the Amazon EC2 page, click Load Balancers in
-        /// the navigation pane, choose the load balancer, choose the Description tab, and get
-        /// the value of the DNS Name field that begins with dualstack. Use the same process to
-        /// get the Hosted Zone ID. See <a>HostedZone$Id</a>.
+        ///  <i>AWS Management Console</i>: Go to the EC2 page, click <b>Load Balancers</b> in
+        /// the navigation pane, choose the load balancer, choose the <b>Description</b> tab,
+        /// and get the value of the <b>DNS Name</b> field that begins with dualstack. Use the
+        /// same process to get the <b>Hosted Zone ID</b>. See <a>HostedZone$Id</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -227,10 +229,8 @@ namespace Amazon.Route53.Model
         /// <code>s3-website-us-east-1.amazonaws.com</code>. For more information about valid
         /// values, see the table <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
         /// Simple Storage Service (S3) Website Endpoints</a> in the <i>Amazon Web Services General
-        /// Reference</i>. For more information about using Amazon S3 buckets for websites, see
-        /// <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
-        /// a Static Website on Amazon S3</a> in the <i>Amazon Simple Storage Service Developer
-        /// Guide.</i> 
+        /// Reference</i>. For more information about using S3 buckets for websites, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
+        /// a Static Website on Amazon S3</a> in the <i>Amazon S3 Developer Guide.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -299,7 +299,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You cannot set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias
+        /// You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias
         /// target is a CloudFront distribution.
         /// </para>
         ///  </li> <li> 
@@ -317,26 +317,25 @@ namespace Amazon.Route53.Model
         /// and if the environment contains an ELB load balancer, Elastic Load Balancing routes
         /// queries only to the healthy Amazon EC2 instances that are registered with the load
         /// balancer. (An environment automatically contains an ELB load balancer if it includes
-        /// more than one Amazon EC2 instance.) If you set <code>EvaluateTargetHealth</code> to
-        /// <code>true</code> and either no Amazon EC2 instances are healthy or the load balancer
-        /// itself is unhealthy, Amazon Route 53 routes queries to other available resources that
-        /// are healthy, if any.
+        /// more than one EC2 instance.) If you set <code>EvaluateTargetHealth</code> to <code>true</code>
+        /// and either no EC2 instances are healthy or the load balancer itself is unhealthy,
+        /// Amazon Route 53 routes queries to other available resources that are healthy, if any.
         /// </para>
         ///  
         /// <para>
-        /// If the environment contains a single Amazon EC2 instance, there are no special requirements.
+        /// If the environment contains a single EC2 instance, there are no special requirements.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you specify an ELB load balancer in <code> <a>AliasTarget</a> </code>, Elastic
-        /// Load Balancing routes queries only to the healthy Amazon EC2 instances that are registered
-        /// with the load balancer. If no Amazon EC2 instances are healthy or if the load balancer
-        /// itself is unhealthy, and if <code>EvaluateTargetHealth</code> is true for the corresponding
+        /// Load Balancing routes queries only to the healthy EC2 instances that are registered
+        /// with the load balancer. If no EC2 instances are healthy or if the load balancer itself
+        /// is unhealthy, and if <code>EvaluateTargetHealth</code> is true for the corresponding
         /// alias resource record set, Amazon Route 53 routes queries to other resources. When
         /// you create a load balancer, you configure settings for Elastic Load Balancing health
         /// checks; they're not Amazon Route 53 health checks, but they perform a similar function.
-        /// Do not create Amazon Route 53 health checks for the Amazon EC2 instances that you
-        /// register with an ELB load balancer.
+        /// Do not create Amazon Route 53 health checks for the EC2 instances that you register
+        /// with an ELB load balancer.
         /// </para>
         ///  
         /// <para>

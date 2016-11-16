@@ -34,7 +34,7 @@ namespace Amazon.Route53.Model
     ///  
     /// <para>
     /// Send a <code>POST</code> request to the <code>/2013-04-01/healthcheck/<i>health check
-    /// ID</i> </code> resource. The request body must include an XML document with an <code>UpdateHealthCheckRequest</code>
+    /// ID</i> </code> resource. The request body must include a document with an <code>UpdateHealthCheckRequest</code>
     /// element. For more information about updating health checks, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating-deleting.html">Creating,
     /// Updating, and Deleting Health Checks</a> in the Amazon Route 53 Developer Guide.
     /// </para>
@@ -128,10 +128,10 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// f the endpoint is an Amazon EC2 instance, we recommend that you create an Elastic
-        /// IP address, associate it with your Amazon EC2 instance, and specify the Elastic IP
-        /// address for <code>IPAddress</code>. This ensures that the IP address of your instance
-        /// never changes. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+        /// f the endpoint is an EC2 instance, we recommend that you create an Elastic IP address,
+        /// associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>.
+        /// This ensures that the IP address of your instance never changes. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
         /// IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         ///  <note> 

@@ -57,7 +57,7 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// Due to the nature of transactional changes, you cannot delete the same resource record
+    /// Due to the nature of transactional changes, you can't delete the same resource record
     /// set more than once in a single change batch. If you attempt to delete the same change
     /// batch more than once, Amazon Route 53 returns an <code>InvalidChangeBatch</code> error.
     /// </para>
@@ -82,13 +82,34 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DELETE</code>: Deletes an existing resource record set that has the specified
-    /// values for <code>Name</code>, <code>Type</code>, <code>Set Identifier</code> (for
-    /// code latency, weighted, geolocation, and failover resource record sets), and <code>TTL</code>
-    /// (except alias resource record sets, for which the TTL is determined by the AWS resource
-    /// you're routing queries to).
+    ///  <code>DELETE</code>: Deletes an existing resource record set that has the applicable
+    /// values for the following elements:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>Name</code>: required to delete any resource record set
     /// </para>
     ///  </li> <li> 
+    /// <para>
+    ///  <code>Type</code>: required to delete any resource record set
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>AliasTarget</code>, <code>DNSName</code>, <code>EvaluateTargetHealth</code>,
+    /// and <code>HostedZoneId</code>: required to delete an alias resource record set
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>SetIdentifier</code>: required to delete a failover, geolocation, latency,
+    /// or weighted resource record set 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>TTL</code>: required to delete any resource record set except an alias resource
+    /// record set (For alias resource record sets, the TTL is determined by the AWS resource
+    /// tat you're routing traffic to.)
+    /// </para>
+    ///  </li> </ul> </li> <li> 
     /// <para>
     ///  <code>UPSERT</code>: If a resource record set does not already exist, AWS creates
     /// it. If a resource set does exist, Amazon Route 53 updates it with the values in the

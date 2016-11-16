@@ -110,6 +110,14 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.CreateVPCAssociationAuthorizationRequest.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.CreateVPCAssociationAuthorizationResponse.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.DeleteHealthCheckRequest.HealthCheckId</property>
     <max>64</max>
   </property-value-rule>
@@ -135,15 +143,15 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.DeleteVPCAssociationAuthorizationRequest.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.DisassociateVPCFromHostedZoneRequest.HostedZoneId</property>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.GetChangeRequest.Id</property>
-    <max>32</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.GetChangeDetailsRequest.Id</property>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
@@ -193,63 +201,6 @@
   <property-value-rule>
     <property>Amazon.Route53.Model.GetTrafficPolicyInstanceRequest.Id</property>
     <max>36</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ListChangeBatchesByHostedZoneRequest.HostedZoneId</property>
-    <max>32</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ListChangeBatchesByHostedZoneRequest.StartDate</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ListChangeBatchesByHostedZoneRequest.EndDate</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ListChangeBatchesByHostedZoneRequest.Marker</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ListChangeBatchesByHostedZoneResponse.Marker</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ListChangeBatchesByHostedZoneResponse.NextMarker</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ListChangeBatchesByRRSetRequest.HostedZoneId</property>
-    <max>32</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ListChangeBatchesByRRSetRequest.Name</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ListChangeBatchesByRRSetRequest.SetIdentifier</property>
-    <min>1</min>
-    <max>128</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ListChangeBatchesByRRSetRequest.StartDate</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ListChangeBatchesByRRSetRequest.EndDate</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ListChangeBatchesByRRSetRequest.Marker</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ListChangeBatchesByRRSetResponse.Marker</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ListChangeBatchesByRRSetResponse.NextMarker</property>
-    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListGeoLocationsRequest.StartContinentCode</property>
@@ -445,6 +396,22 @@
     <max>4</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53.Model.ListVPCAssociationAuthorizationsRequest.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListVPCAssociationAuthorizationsRequest.NextToken</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListVPCAssociationAuthorizationsResponse.HostedZoneId</property>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53.Model.ListVPCAssociationAuthorizationsResponse.NextToken</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53.Model.TestDNSAnswerRequest.HostedZoneId</property>
     <max>32</max>
   </property-value-rule>
@@ -575,14 +542,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ChangeBatch.Comment</property>
-    <max>256</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ChangeBatchRecord.Id</property>
-    <max>32</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Route53.Model.ChangeBatchRecord.Comment</property>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>

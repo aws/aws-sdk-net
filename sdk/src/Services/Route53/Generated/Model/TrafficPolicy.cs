@@ -118,7 +118,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// The definition of a traffic policy in JSON format. You specify the JSON document to
         /// use for a new traffic policy in the <code>CreateTrafficPolicy</code> request. For
-        /// more information about the JSON format, see <a href="http://docs.aws.amazon.com/Route53/latest/api-reference/api-policies-traffic-policy-document-format.html">Traffic
+        /// more information about the JSON format, see <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
         /// Policy Document Format</a>.
         /// </para>
         /// </summary>

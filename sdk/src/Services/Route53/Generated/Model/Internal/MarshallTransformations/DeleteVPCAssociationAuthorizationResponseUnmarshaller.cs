@@ -33,9 +33,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetChangeDetails operation
+    /// Response Unmarshaller for DeleteVPCAssociationAuthorization operation
     /// </summary>  
-    public class GetChangeDetailsResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DeleteVPCAssociationAuthorizationResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,38 +44,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            GetChangeDetailsResponse response = new GetChangeDetailsResponse();
-            UnmarshallResult(context,response);
+            DeleteVPCAssociationAuthorizationResponse response = new DeleteVPCAssociationAuthorizationResponse();
             
             return response;
         }        
-
-        private static void UnmarshallResult(XmlUnmarshallerContext context, GetChangeDetailsResponse response)
-        {
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            if (context.IsStartOfDocument) 
-                   targetDepth += 1;
-
-            while (context.Read())
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("ChangeBatchRecord", targetDepth))
-                    {
-                        var unmarshaller = ChangeBatchRecordUnmarshaller.Instance;
-                        response.ChangeBatchRecord = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return;
-                }
-            }
-          
-            return;
-        }
   
 
         /// <summary>
@@ -92,16 +64,24 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             {
                 return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchChange"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidVPCId"))
             {
-                return new NoSuchChangeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidVPCIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchHostedZone"))
+            {
+                return new NoSuchHostedZoneException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("VPCAssociationAuthorizationNotFound"))
+            {
+                return new VPCAssociationAuthorizationNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonRoute53Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetChangeDetailsResponseUnmarshaller _instance = new GetChangeDetailsResponseUnmarshaller();        
+        private static DeleteVPCAssociationAuthorizationResponseUnmarshaller _instance = new DeleteVPCAssociationAuthorizationResponseUnmarshaller();        
 
-        internal static GetChangeDetailsResponseUnmarshaller GetInstance()
+        internal static DeleteVPCAssociationAuthorizationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -109,7 +89,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetChangeDetailsResponseUnmarshaller Instance
+        public static DeleteVPCAssociationAuthorizationResponseUnmarshaller Instance
         {
             get
             {
