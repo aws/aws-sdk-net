@@ -45,6 +45,7 @@ namespace Amazon.APIGateway.Model
         private string _description;
         private string _id;
         private string _name;
+        private string _productCode;
         private QuotaSettings _quota;
         private ThrottleSettings _throttle;
 
@@ -118,6 +119,21 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProductCode.
+        /// </summary>
+        public string ProductCode
+        {
+            get { return this._productCode; }
+            set { this._productCode = value; }
+        }
+
+        // Check to see if ProductCode property is set
+        internal bool IsSetProductCode()
+        {
+            return this._productCode != null;
         }
 
         /// <summary>

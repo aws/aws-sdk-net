@@ -852,6 +852,9 @@ namespace Amazon.APIGateway
         /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
         /// 
         /// </exception>
@@ -4102,6 +4105,9 @@ namespace Amazon.APIGateway
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">

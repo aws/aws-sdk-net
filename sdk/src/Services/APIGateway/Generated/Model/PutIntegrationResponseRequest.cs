@@ -33,6 +33,7 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class PutIntegrationResponseRequest : AmazonAPIGatewayRequest
     {
+        private ContentHandlingType _contentHandling;
         private string _httpMethod;
         private string _resourceId;
         private Dictionary<string, string> _responseParameters = new Dictionary<string, string>();
@@ -40,6 +41,41 @@ namespace Amazon.APIGateway.Model
         private string _restApiId;
         private string _selectionPattern;
         private string _statusCode;
+
+        /// <summary>
+        /// Gets and sets the property ContentHandling. 
+        /// <para>
+        /// Specifies how to handle response payload content type conversions. Supported values
+        /// are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following
+        /// behaviors:
+        /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// <code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded
+        /// string to the corresponding binary blob.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a
+        /// Base64-encoded string.
+        /// </para>
+        /// </li> </ul> 
+        /// <para>
+        /// If this property is not defined, the response payload will be passed through from
+        /// the integration response to the method response without modification.
+        /// </para>
+        /// </summary>
+        public ContentHandlingType ContentHandling
+        {
+            get { return this._contentHandling; }
+            set { this._contentHandling = value; }
+        }
+
+        // Check to see if ContentHandling property is set
+        internal bool IsSetContentHandling()
+        {
+            return this._contentHandling != null;
+        }
 
         /// <summary>
         /// Gets and sets the property HttpMethod. 

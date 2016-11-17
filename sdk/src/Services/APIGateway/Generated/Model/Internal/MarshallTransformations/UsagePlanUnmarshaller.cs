@@ -88,6 +88,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("productCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProductCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("quota", targetDepth))
                 {
                     var unmarshaller = QuotaSettingsUnmarshaller.Instance;

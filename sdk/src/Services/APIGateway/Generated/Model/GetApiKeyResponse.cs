@@ -38,6 +38,7 @@ namespace Amazon.APIGateway.Model
     public partial class GetApiKeyResponse : AmazonWebServiceResponse
     {
         private DateTime? _createdDate;
+        private string _customerId;
         private string _description;
         private bool? _enabled;
         private string _id;
@@ -63,6 +64,21 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetCreatedDate()
         {
             return this._createdDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerId.
+        /// </summary>
+        public string CustomerId
+        {
+            get { return this._customerId; }
+            set { this._customerId = value; }
+        }
+
+        // Check to see if CustomerId property is set
+        internal bool IsSetCustomerId()
+        {
+            return this._customerId != null;
         }
 
         /// <summary>

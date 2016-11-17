@@ -36,12 +36,28 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class CreateApiKeyRequest : AmazonAPIGatewayRequest
     {
+        private string _customerId;
         private string _description;
         private bool? _enabled;
         private bool? _generateDistinctId;
         private string _name;
         private List<StageKey> _stageKeys = new List<StageKey>();
         private string _value;
+
+        /// <summary>
+        /// Gets and sets the property CustomerId.
+        /// </summary>
+        public string CustomerId
+        {
+            get { return this._customerId; }
+            set { this._customerId = value; }
+        }
+
+        // Check to see if CustomerId property is set
+        internal bool IsSetCustomerId()
+        {
+            return this._customerId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

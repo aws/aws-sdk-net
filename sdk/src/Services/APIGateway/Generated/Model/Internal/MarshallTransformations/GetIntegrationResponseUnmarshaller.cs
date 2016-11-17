@@ -63,6 +63,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.CacheNamespace = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("contentHandling", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ContentHandling = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("credentials", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

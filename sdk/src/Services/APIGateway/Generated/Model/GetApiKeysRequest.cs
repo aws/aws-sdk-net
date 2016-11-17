@@ -33,10 +33,26 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class GetApiKeysRequest : AmazonAPIGatewayRequest
     {
+        private string _customerId;
         private bool? _includeValues;
         private int? _limit;
         private string _nameQuery;
         private string _position;
+
+        /// <summary>
+        /// Gets and sets the property CustomerId.
+        /// </summary>
+        public string CustomerId
+        {
+            get { return this._customerId; }
+            set { this._customerId = value; }
+        }
+
+        // Check to see if CustomerId property is set
+        internal bool IsSetCustomerId()
+        {
+            return this._customerId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IncludeValues. 

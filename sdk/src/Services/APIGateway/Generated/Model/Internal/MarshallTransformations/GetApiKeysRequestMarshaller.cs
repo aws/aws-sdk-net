@@ -59,6 +59,9 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/apikeys";
             
+            if (publicRequest.IsSetCustomerId())
+                request.Parameters.Add("customerId", StringUtils.FromString(publicRequest.CustomerId));
+            
             if (publicRequest.IsSetIncludeValues())
                 request.Parameters.Add("includeValues", StringUtils.FromBool(publicRequest.IncludeValues));
             

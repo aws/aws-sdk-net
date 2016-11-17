@@ -75,6 +75,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("productCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ProductCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("quota", targetDepth))
                 {
                     var unmarshaller = QuotaSettingsUnmarshaller.Instance;
@@ -113,6 +119,10 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
             {
                 return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
+            {
+                return new NotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
             {

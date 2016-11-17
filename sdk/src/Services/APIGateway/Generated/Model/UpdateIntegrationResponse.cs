@@ -28,16 +28,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents an HTTP, AWS, or Mock integration.
+    /// Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock integration.
     /// 
     ///  <div class="remarks">In the API Gateway console, the built-in Lambda integration
     /// is an AWS integration.</div> <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
-    /// an API</a> </div>
+    /// an API</a>, <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/.html"/>
+    /// </div>
     /// </summary>
     public partial class UpdateIntegrationResponse : AmazonWebServiceResponse
     {
         private List<string> _cacheKeyParameters = new List<string>();
         private string _cacheNamespace;
+        private ContentHandlingType _contentHandling;
         private string _credentials;
         private string _httpMethod;
         private Dictionary<string, IntegrationResponse> _integrationResponses = new Dictionary<string, IntegrationResponse>();
@@ -81,6 +83,42 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetCacheNamespace()
         {
             return this._cacheNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentHandling. 
+        /// <para>
+        /// Specifies how to handle request payload content type conversions. Supported values
+        /// are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following
+        /// behaviors:
+        /// </para>
+        ///  <ul> <li>
+        /// <para>
+        /// <code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string
+        /// to the corresponding binary blob.
+        /// </para>
+        /// </li> <li>
+        /// <para>
+        /// <code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded
+        /// string.
+        /// </para>
+        /// </li> </ul> 
+        /// <para>
+        /// If this property is not defined, the request payload will be passed through from the
+        /// method request to integration request without modification, provided that the <code>passthroughBehaviors</code>
+        /// is configured to support payload pass-through.
+        /// </para>
+        /// </summary>
+        public ContentHandlingType ContentHandling
+        {
+            get { return this._contentHandling; }
+            set { this._contentHandling = value; }
+        }
+
+        // Check to see if ContentHandling property is set
+        internal bool IsSetContentHandling()
+        {
+            return this._contentHandling != null;
         }
 
         /// <summary>

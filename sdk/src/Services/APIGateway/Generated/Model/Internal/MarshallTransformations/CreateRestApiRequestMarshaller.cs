@@ -65,6 +65,17 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBinaryMediaTypes())
+                {
+                    context.Writer.WritePropertyName("binaryMediaTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestBinaryMediaTypesListValue in publicRequest.BinaryMediaTypes)
+                    {
+                            context.Writer.Write(publicRequestBinaryMediaTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetCloneFrom())
                 {
                     context.Writer.WritePropertyName("cloneFrom");
@@ -81,6 +92,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetVersion())
+                {
+                    context.Writer.WritePropertyName("version");
+                    context.Writer.Write(publicRequest.Version);
                 }
 
         

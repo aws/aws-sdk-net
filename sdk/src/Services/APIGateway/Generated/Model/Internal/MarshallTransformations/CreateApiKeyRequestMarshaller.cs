@@ -65,6 +65,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCustomerId())
+                {
+                    context.Writer.WritePropertyName("customerId");
+                    context.Writer.Write(publicRequest.CustomerId);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");
