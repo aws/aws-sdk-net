@@ -36,7 +36,7 @@ namespace Amazon.AWSMarketplaceMetering
     /// AWS Marketplace Metering Service 
     /// <para>
     /// This reference provides descriptions of the low-level AWS Marketplace Metering Service
-    /// API. 
+    /// API.
     /// </para>
     ///  
     /// <para>
@@ -44,11 +44,11 @@ namespace Amazon.AWSMarketplaceMetering
     /// </para>
     ///  
     /// <para>
-    /// <b>Submitting Metering Records</b>
+    ///  <b>Submitting Metering Records</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// <i>MeterUsage</i>- Submits the metering record for a Marketplace product.
+    ///  <i>MeterUsage</i>- Submits the metering record for a Marketplace product. 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -240,6 +240,75 @@ namespace Amazon.AWSMarketplaceMetering
         #endregion
 
         
+        #region  BatchMeterUsage
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchMeterUsage service method.</param>
+        /// 
+        /// <returns>The response from the BatchMeterUsage service method, as returned by AWSMarketplaceMetering.</returns>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
+        /// An internal error has occurred. Retry your request. If the problem persists, post
+        /// a message with details on the AWS forums.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidCustomerIdentifierException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidProductCodeException">
+        /// The product code passed does not match the product code used for publishing the product.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageDimensionException">
+        /// The usage dimension does not match one of the UsageDimensions associated with products.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.ThrottlingException">
+        /// The calls to the MeterUsage API are throttled.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.TimestampOutOfBoundsException">
+        /// The timestamp value passed in the meterUsage() is out of allowed range.
+        /// </exception>
+        public BatchMeterUsageResponse BatchMeterUsage(BatchMeterUsageRequest request)
+        {
+            var marshaller = new BatchMeterUsageRequestMarshaller();
+            var unmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
+
+            return Invoke<BatchMeterUsageRequest,BatchMeterUsageResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchMeterUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchMeterUsage operation on AmazonAWSMarketplaceMeteringClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchMeterUsage
+        ///         operation.</returns>
+        public IAsyncResult BeginBatchMeterUsage(BatchMeterUsageRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new BatchMeterUsageRequestMarshaller();
+            var unmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
+
+            return BeginInvoke<BatchMeterUsageRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchMeterUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchMeterUsage.</param>
+        /// 
+        /// <returns>Returns a  BatchMeterUsageResult from AWSMarketplaceMetering.</returns>
+        public  BatchMeterUsageResponse EndBatchMeterUsage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchMeterUsageResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  MeterUsage
 
         /// <summary>
@@ -311,6 +380,69 @@ namespace Amazon.AWSMarketplaceMetering
         public  MeterUsageResponse EndMeterUsage(IAsyncResult asyncResult)
         {
             return EndInvoke<MeterUsageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ResolveCustomer
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResolveCustomer service method.</param>
+        /// 
+        /// <returns>The response from the ResolveCustomer service method, as returned by AWSMarketplaceMetering.</returns>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.ExpiredTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
+        /// An internal error has occurred. Retry your request. If the problem persists, post
+        /// a message with details on the AWS forums.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.ThrottlingException">
+        /// The calls to the MeterUsage API are throttled.
+        /// </exception>
+        public ResolveCustomerResponse ResolveCustomer(ResolveCustomerRequest request)
+        {
+            var marshaller = new ResolveCustomerRequestMarshaller();
+            var unmarshaller = ResolveCustomerResponseUnmarshaller.Instance;
+
+            return Invoke<ResolveCustomerRequest,ResolveCustomerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResolveCustomer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResolveCustomer operation on AmazonAWSMarketplaceMeteringClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResolveCustomer
+        ///         operation.</returns>
+        public IAsyncResult BeginResolveCustomer(ResolveCustomerRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ResolveCustomerRequestMarshaller();
+            var unmarshaller = ResolveCustomerResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ResolveCustomerRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResolveCustomer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResolveCustomer.</param>
+        /// 
+        /// <returns>Returns a  ResolveCustomerResult from AWSMarketplaceMetering.</returns>
+        public  ResolveCustomerResponse EndResolveCustomer(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ResolveCustomerResponse>(asyncResult);
         }
 
         #endregion

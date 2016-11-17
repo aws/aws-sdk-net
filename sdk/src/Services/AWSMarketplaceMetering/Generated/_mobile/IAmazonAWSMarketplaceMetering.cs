@@ -34,7 +34,7 @@ namespace Amazon.AWSMarketplaceMetering
     /// AWS Marketplace Metering Service 
     /// <para>
     /// This reference provides descriptions of the low-level AWS Marketplace Metering Service
-    /// API. 
+    /// API.
     /// </para>
     ///  
     /// <para>
@@ -42,16 +42,32 @@ namespace Amazon.AWSMarketplaceMetering
     /// </para>
     ///  
     /// <para>
-    /// <b>Submitting Metering Records</b>
+    ///  <b>Submitting Metering Records</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// <i>MeterUsage</i>- Submits the metering record for a Marketplace product.
+    ///  <i>MeterUsage</i>- Submits the metering record for a Marketplace product. 
     /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonAWSMarketplaceMetering : IAmazonService, IDisposable
     {
+                
+        #region  BatchMeterUsage
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchMeterUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchMeterUsage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<BatchMeterUsageResponse> BatchMeterUsageAsync(BatchMeterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
                 
         #region  MeterUsage
 
@@ -66,6 +82,22 @@ namespace Amazon.AWSMarketplaceMetering
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<MeterUsageResponse> MeterUsageAsync(MeterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ResolveCustomer
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResolveCustomer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResolveCustomer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ResolveCustomerResponse> ResolveCustomerAsync(ResolveCustomerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

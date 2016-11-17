@@ -34,7 +34,7 @@ namespace Amazon.AWSMarketplaceMetering
     /// AWS Marketplace Metering Service 
     /// <para>
     /// This reference provides descriptions of the low-level AWS Marketplace Metering Service
-    /// API. 
+    /// API.
     /// </para>
     ///  
     /// <para>
@@ -42,17 +42,61 @@ namespace Amazon.AWSMarketplaceMetering
     /// </para>
     ///  
     /// <para>
-    /// <b>Submitting Metering Records</b>
+    ///  <b>Submitting Metering Records</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// <i>MeterUsage</i>- Submits the metering record for a Marketplace product.
+    ///  <i>MeterUsage</i>- Submits the metering record for a Marketplace product. 
     /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonAWSMarketplaceMetering : IAmazonService, IDisposable
     {
 
+        
+        #region  BatchMeterUsage
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchMeterUsage service method.</param>
+        /// 
+        /// <returns>The response from the BatchMeterUsage service method, as returned by AWSMarketplaceMetering.</returns>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
+        /// An internal error has occurred. Retry your request. If the problem persists, post
+        /// a message with details on the AWS forums.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidCustomerIdentifierException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidProductCodeException">
+        /// The product code passed does not match the product code used for publishing the product.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidUsageDimensionException">
+        /// The usage dimension does not match one of the UsageDimensions associated with products.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.ThrottlingException">
+        /// The calls to the MeterUsage API are throttled.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.TimestampOutOfBoundsException">
+        /// The timestamp value passed in the meterUsage() is out of allowed range.
+        /// </exception>
+        BatchMeterUsageResponse BatchMeterUsage(BatchMeterUsageRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchMeterUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchMeterUsage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<BatchMeterUsageResponse> BatchMeterUsageAsync(BatchMeterUsageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
         
         #region  MeterUsage
 
@@ -101,6 +145,44 @@ namespace Amazon.AWSMarketplaceMetering
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<MeterUsageResponse> MeterUsageAsync(MeterUsageRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ResolveCustomer
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResolveCustomer service method.</param>
+        /// 
+        /// <returns>The response from the ResolveCustomer service method, as returned by AWSMarketplaceMetering.</returns>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.ExpiredTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InternalServiceErrorException">
+        /// An internal error has occurred. Retry your request. If the problem persists, post
+        /// a message with details on the AWS forums.
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.InvalidTokenException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.AWSMarketplaceMetering.Model.ThrottlingException">
+        /// The calls to the MeterUsage API are throttled.
+        /// </exception>
+        ResolveCustomerResponse ResolveCustomer(ResolveCustomerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResolveCustomer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResolveCustomer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ResolveCustomerResponse> ResolveCustomerAsync(ResolveCustomerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -45,7 +45,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <para>
         /// Checks whether you have the permissions required for the action, but does not make
         /// the request. If you have the permissions, the request returns DryRunOperation; otherwise,
-        /// it returns UnauthorizedException. 
+        /// it returns UnauthorizedException.
         /// </para>
         /// </summary>
         public bool DryRun
@@ -83,7 +83,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Gets and sets the property Timestamp. 
         /// <para>
         /// Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions of the
-        /// timestamp will be ignored. 
+        /// timestamp will be ignored.
         /// </para>
         /// </summary>
         public DateTime Timestamp

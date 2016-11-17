@@ -39,7 +39,7 @@ namespace Amazon.AWSMarketplaceMetering
     /// AWS Marketplace Metering Service 
     /// <para>
     /// This reference provides descriptions of the low-level AWS Marketplace Metering Service
-    /// API. 
+    /// API.
     /// </para>
     ///  
     /// <para>
@@ -47,11 +47,11 @@ namespace Amazon.AWSMarketplaceMetering
     /// </para>
     ///  
     /// <para>
-    /// <b>Submitting Metering Records</b>
+    ///  <b>Submitting Metering Records</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// <i>MeterUsage</i>- Submits the metering record for a Marketplace product.
+    ///  <i>MeterUsage</i>- Submits the metering record for a Marketplace product. 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -247,6 +247,37 @@ namespace Amazon.AWSMarketplaceMetering
         #endregion
 
         
+        #region  BatchMeterUsage
+
+        internal BatchMeterUsageResponse BatchMeterUsage(BatchMeterUsageRequest request)
+        {
+            var marshaller = new BatchMeterUsageRequestMarshaller();
+            var unmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
+
+            return Invoke<BatchMeterUsageRequest,BatchMeterUsageResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchMeterUsage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchMeterUsage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<BatchMeterUsageResponse> BatchMeterUsageAsync(BatchMeterUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new BatchMeterUsageRequestMarshaller();
+            var unmarshaller = BatchMeterUsageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchMeterUsageRequest,BatchMeterUsageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  MeterUsage
 
         internal MeterUsageResponse MeterUsage(MeterUsageRequest request)
@@ -273,6 +304,37 @@ namespace Amazon.AWSMarketplaceMetering
             var unmarshaller = MeterUsageResponseUnmarshaller.Instance;
 
             return InvokeAsync<MeterUsageRequest,MeterUsageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ResolveCustomer
+
+        internal ResolveCustomerResponse ResolveCustomer(ResolveCustomerRequest request)
+        {
+            var marshaller = new ResolveCustomerRequestMarshaller();
+            var unmarshaller = ResolveCustomerResponseUnmarshaller.Instance;
+
+            return Invoke<ResolveCustomerRequest,ResolveCustomerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResolveCustomer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResolveCustomer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ResolveCustomerResponse> ResolveCustomerAsync(ResolveCustomerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ResolveCustomerRequestMarshaller();
+            var unmarshaller = ResolveCustomerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResolveCustomerRequest,ResolveCustomerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
