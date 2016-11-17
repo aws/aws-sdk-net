@@ -1,3 +1,9 @@
+### 3.3.20.0 (2016-11-17 00:29 UTC)
+* Route53 (3.3.2.0)
+	* Adds support for cross account VPC association.
+* ServiceCatalog (3.3.2.0)
+	* This release enables Service Catalog users to perform administrator operations via API.
+
 ### 3.3.19.0 (2016-11-16 00:25 UTC)
 * DirectoryService (3.3.1.0)
 	* API Update for DirectoryService :  Adding SchemaExtensions  
