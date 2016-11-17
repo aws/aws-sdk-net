@@ -247,7 +247,7 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Deletes all specified alarms. In the event of an error, no alarms are deleted.
+        /// Deletes the specified alarms. In the event of an error, no alarms are deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAlarms service method.</param>
         /// 
@@ -287,16 +287,15 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Retrieves history for the specified alarm. Filter alarms by date range or item type.
-        /// If an alarm name is not specified, Amazon CloudWatch returns histories for all of
-        /// the owner's alarms.
+        /// Retrieves the history for the specified alarm. You can filter the results by date
+        /// range or item type. If an alarm name is not specified, the histories for all alarms
+        /// are returned.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// Amazon CloudWatch retains the history of an alarm for two weeks, whether or not you
-        /// delete the alarm.
+        /// Note that Amazon CloudWatch retains the history of an alarm even if you delete the
+        /// alarm.
         /// </para>
-        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAlarmHistory service method, as returned by CloudWatch.</returns>
@@ -310,16 +309,15 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Retrieves history for the specified alarm. Filter alarms by date range or item type.
-        /// If an alarm name is not specified, Amazon CloudWatch returns histories for all of
-        /// the owner's alarms.
+        /// Retrieves the history for the specified alarm. You can filter the results by date
+        /// range or item type. If an alarm name is not specified, the histories for all alarms
+        /// are returned.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// Amazon CloudWatch retains the history of an alarm for two weeks, whether or not you
-        /// delete the alarm.
+        /// Note that Amazon CloudWatch retains the history of an alarm even if you delete the
+        /// alarm.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmHistory service method.</param>
         /// 
@@ -337,16 +335,15 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Retrieves history for the specified alarm. Filter alarms by date range or item type.
-        /// If an alarm name is not specified, Amazon CloudWatch returns histories for all of
-        /// the owner's alarms.
+        /// Retrieves the history for the specified alarm. You can filter the results by date
+        /// range or item type. If an alarm name is not specified, the histories for all alarms
+        /// are returned.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        /// Amazon CloudWatch retains the history of an alarm for two weeks, whether or not you
-        /// delete the alarm.
+        /// Note that Amazon CloudWatch retains the history of an alarm even if you delete the
+        /// alarm.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -384,9 +381,9 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Retrieves alarms with the specified names. If no name is specified, all alarms for
-        /// the user are returned. Alarms can be retrieved by using only a prefix for the alarm
-        /// name, the alarm state, or a prefix for any action.
+        /// Retrieves the specified alarms. If no alarms are specified, all alarms are returned.
+        /// Alarms can be retrieved by using only a prefix for the alarm name, the alarm state,
+        /// or a prefix for any action.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAlarms service method, as returned by CloudWatch.</returns>
@@ -400,9 +397,9 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Retrieves alarms with the specified names. If no name is specified, all alarms for
-        /// the user are returned. Alarms can be retrieved by using only a prefix for the alarm
-        /// name, the alarm state, or a prefix for any action.
+        /// Retrieves the specified alarms. If no alarms are specified, all alarms are returned.
+        /// Alarms can be retrieved by using only a prefix for the alarm name, the alarm state,
+        /// or a prefix for any action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarms service method.</param>
         /// 
@@ -420,9 +417,9 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Retrieves alarms with the specified names. If no name is specified, all alarms for
-        /// the user are returned. Alarms can be retrieved by using only a prefix for the alarm
-        /// name, the alarm state, or a prefix for any action.
+        /// Retrieves the specified alarms. If no alarms are specified, all alarms are returned.
+        /// Alarms can be retrieved by using only a prefix for the alarm name, the alarm state,
+        /// or a prefix for any action.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -460,8 +457,8 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Retrieves all alarms for a single metric. Specify a statistic, period, or unit to
-        /// filter the set of alarms further.
+        /// Retrieves the alarms for the specified metric. Specify a statistic, period, or unit
+        /// to filter the results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmsForMetric service method.</param>
         /// 
@@ -498,8 +495,8 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Disables actions for the specified alarms. When an alarm's actions are disabled the
-        /// alarm's state may change, but none of the alarm's actions will execute.
+        /// Disables the actions for the specified alarms. When an alarm's actions are disabled,
+        /// the alarm actions do not execute when the alarm state changes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableAlarmActions service method.</param>
         /// 
@@ -536,7 +533,7 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Enables actions for the specified alarms.
+        /// Enables the actions for the specified alarms.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableAlarmActions service method.</param>
         /// 
@@ -577,64 +574,63 @@ namespace Amazon.CloudWatch
         /// 
         ///  
         /// <para>
-        ///  The maximum number of data points that can be queried is 50,850, whereas the maximum
-        /// number of data points returned from a single <code>GetMetricStatistics</code> request
-        /// is 1,440. If you make a request that generates more than 1,440 data points, Amazon
-        /// CloudWatch returns an error. In such a case, you can alter the request by narrowing
-        /// the specified time range or increasing the specified period. A period can be as short
-        /// as one minute (60 seconds) or as long as one day (86,400 seconds). Alternatively,
-        /// you can make multiple requests across adjacent time ranges. <code>GetMetricStatistics</code>
-        /// does not return the data in chronological order. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Amazon CloudWatch aggregates data points based on the length of the <code>period</code>
-        /// that you specify. For example, if you request statistics with a one-minute granularity,
-        /// Amazon CloudWatch aggregates data points with time stamps that fall within the same
-        /// one-minute period. In such a case, the data points queried can greatly outnumber the
-        /// data points returned. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  The following examples show various statistics allowed by the data point query maximum
-        /// of 50,850 when you call <code>GetMetricStatistics</code> on Amazon EC2 instances with
-        /// detailed (one-minute) monitoring enabled: 
+        /// Amazon CloudWatch retains metric data as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Statistics for up to 400 instances for a span of one hour
+        /// Data points with a period of 60 seconds (1 minute) are available for 15 days
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Statistics for up to 35 instances over a span of 24 hours
+        /// Data points with a period of 300 seconds (5 minute) are available for 63 days
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Statistics for up to 2 instances over a span of 2 weeks
+        /// Data points with a period of 3600 seconds (1 hour) are available for 455 days (15
+        /// months)
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  For information about the namespace, metric names, and dimensions that other Amazon
-        /// Web Services products use to send metrics to CloudWatch, go to <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/CW_Support_For_AWS.html">Amazon
-        /// CloudWatch Metrics, Namespaces, and Dimensions Reference</a> in the <i>Amazon CloudWatch
-        /// Developer Guide</i>. 
+        /// Note that CloudWatch started retaining 5-minute and 1-hour metric data as of 9 July
+        /// 2016.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of data points returned from a single call is 1,440. If you request
+        /// more than 1,440 data points, Amazon CloudWatch returns an error. To reduce the number
+        /// of data points, you can narrow the specified time range and make multiple requests
+        /// across adjacent time ranges, or you can increase the specified period. A period can
+        /// be as short as one minute (60 seconds). Note that data points are not returned in
+        /// chronological order.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon CloudWatch aggregates data points based on the length of the period that you
+        /// specify. For example, if you request statistics with a one-hour period, Amazon CloudWatch
+        /// aggregates all data points with time stamps that fall within each one-hour period.
+        /// Therefore, the number of values aggregated by CloudWatch is larger than the number
+        /// of data points returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a list of metrics and dimensions supported by AWS services, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
+        /// CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricStatistics service method.</param>
         /// 
         /// <returns>The response from the GetMetricStatistics service method, as returned by CloudWatch.</returns>
         /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
-        /// Indicates that the request processing has failed due to some unknown error, exception,
-        /// or failure.
+        /// Request processing has failed due to some unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterCombinationException">
-        /// Parameters that must not be used together were used together.
+        /// Parameters that cannot be used together were used together.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
-        /// Bad or out-of-range value was supplied for the input parameter.
+        /// The value of an input parameter is bad or out-of-range.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
-        /// An input parameter that is mandatory for processing the request is not supplied.
+        /// An input parameter that is required is missing.
         /// </exception>
         public GetMetricStatisticsResponse GetMetricStatistics(GetMetricStatisticsRequest request)
         {
@@ -668,31 +664,27 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Returns a list of valid metrics stored for the AWS account owner. Returned metrics
-        /// can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given
-        /// metric. 
+        /// List the specified metrics. You can use the returned metrics with <a>GetMetricStatistics</a>
+        /// to obtain statistical data.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        ///  Up to 500 results are returned for any one call. To retrieve further results, use
-        /// returned <code>NextToken</code> values with subsequent <code>ListMetrics</code> operations.
+        /// Up to 500 results are returned for any one call. To retrieve additional results, use
+        /// the returned token with subsequent calls.
         /// </para>
-        ///  </note> <note> 
+        ///  
         /// <para>
-        ///  If you create a metric with <a>PutMetricData</a>, allow up to fifteen minutes for
-        /// the metric to appear in calls to <code>ListMetrics</code>. Statistics about the metric,
-        /// however, are available sooner using <a>GetMetricStatistics</a>.
+        /// After you create a metric, allow up to fifteen minutes before the metric appears.
+        /// Statistics about the metric, however, are available sooner using <a>GetMetricStatistics</a>.
         /// </para>
-        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the ListMetrics service method, as returned by CloudWatch.</returns>
         /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
-        /// Indicates that the request processing has failed due to some unknown error, exception,
-        /// or failure.
+        /// Request processing has failed due to some unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
-        /// Bad or out-of-range value was supplied for the input parameter.
+        /// The value of an input parameter is bad or out-of-range.
         /// </exception>
         public ListMetricsResponse ListMetrics()
         {
@@ -701,32 +693,28 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Returns a list of valid metrics stored for the AWS account owner. Returned metrics
-        /// can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given
-        /// metric. 
+        /// List the specified metrics. You can use the returned metrics with <a>GetMetricStatistics</a>
+        /// to obtain statistical data.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        ///  Up to 500 results are returned for any one call. To retrieve further results, use
-        /// returned <code>NextToken</code> values with subsequent <code>ListMetrics</code> operations.
+        /// Up to 500 results are returned for any one call. To retrieve additional results, use
+        /// the returned token with subsequent calls.
         /// </para>
-        ///  </note> <note> 
+        ///  
         /// <para>
-        ///  If you create a metric with <a>PutMetricData</a>, allow up to fifteen minutes for
-        /// the metric to appear in calls to <code>ListMetrics</code>. Statistics about the metric,
-        /// however, are available sooner using <a>GetMetricStatistics</a>.
+        /// After you create a metric, allow up to fifteen minutes before the metric appears.
+        /// Statistics about the metric, however, are available sooner using <a>GetMetricStatistics</a>.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMetrics service method.</param>
         /// 
         /// <returns>The response from the ListMetrics service method, as returned by CloudWatch.</returns>
         /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
-        /// Indicates that the request processing has failed due to some unknown error, exception,
-        /// or failure.
+        /// Request processing has failed due to some unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
-        /// Bad or out-of-range value was supplied for the input parameter.
+        /// The value of an input parameter is bad or out-of-range.
         /// </exception>
         public ListMetricsResponse ListMetrics(ListMetricsRequest request)
         {
@@ -738,22 +726,19 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Returns a list of valid metrics stored for the AWS account owner. Returned metrics
-        /// can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given
-        /// metric. 
+        /// List the specified metrics. You can use the returned metrics with <a>GetMetricStatistics</a>
+        /// to obtain statistical data.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
-        ///  Up to 500 results are returned for any one call. To retrieve further results, use
-        /// returned <code>NextToken</code> values with subsequent <code>ListMetrics</code> operations.
+        /// Up to 500 results are returned for any one call. To retrieve additional results, use
+        /// the returned token with subsequent calls.
         /// </para>
-        ///  </note> <note> 
+        ///  
         /// <para>
-        ///  If you create a metric with <a>PutMetricData</a>, allow up to fifteen minutes for
-        /// the metric to appear in calls to <code>ListMetrics</code>. Statistics about the metric,
-        /// however, are available sooner using <a>GetMetricStatistics</a>.
+        /// After you create a metric, allow up to fifteen minutes before the metric appears.
+        /// Statistics about the metric, however, are available sooner using <a>GetMetricStatistics</a>.
         /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -761,11 +746,10 @@ namespace Amazon.CloudWatch
         /// 
         /// <returns>The response from the ListMetrics service method, as returned by CloudWatch.</returns>
         /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
-        /// Indicates that the request processing has failed due to some unknown error, exception,
-        /// or failure.
+        /// Request processing has failed due to some unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
-        /// Bad or out-of-range value was supplied for the input parameter.
+        /// The value of an input parameter is bad or out-of-range.
         /// </exception>
         public Task<ListMetricsResponse> ListMetricsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -795,59 +779,56 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Creates or updates an alarm and associates it with the specified Amazon CloudWatch
-        /// metric. Optionally, this operation can associate one or more Amazon SNS resources
-        /// with the alarm.
+        /// Creates or updates an alarm and associates it with the specified metric. Optionally,
+        /// this operation can associate one or more Amazon SNS resources with the alarm.
         /// 
         ///  
         /// <para>
-        ///  When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>.
-        /// The alarm is evaluated and its <code>StateValue</code> is set appropriately. Any actions
-        /// associated with the <code>StateValue</code> are then executed. 
+        /// When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>.
+        /// The alarm is evaluated and its state is set appropriately. Any actions associated
+        /// with the state are then executed.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// When updating an existing alarm, its <code>StateValue</code> is left unchanged, but
-        /// it completely overwrites the alarm's previous configuration.
+        /// When you update an existing alarm, its state is left unchanged, but the update completely
+        /// overwrites the previous configuration of the alarm.
         /// </para>
-        ///  </note> <note> 
+        ///  
         /// <para>
-        /// If you are using an AWS Identity and Access Management (IAM) account to create or
-        /// modify an alarm, you must have the following Amazon EC2 permissions:
+        /// If you are an AWS Identity and Access Management (IAM) user, you must have Amazon
+        /// EC2 permissions for some operations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code> for
-        /// all alarms on Amazon EC2 instance status metrics.
+        /// all alarms on EC2 instance status metrics
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ec2:StopInstances</code> for alarms with stop actions.
+        ///  <code>ec2:StopInstances</code> for alarms with stop actions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ec2:TerminateInstances</code> for alarms with terminate actions.
+        ///  <code>ec2:TerminateInstances</code> for alarms with terminate actions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ec2:DescribeInstanceRecoveryAttribute</code>, and <code>ec2:RecoverInstances</code>
-        /// for alarms with recover actions.
+        ///  <code>ec2:DescribeInstanceRecoveryAttribute</code> and <code>ec2:RecoverInstances</code>
+        /// for alarms with recover actions
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you have read/write permissions for Amazon CloudWatch but not for Amazon EC2, you
-        /// can still create an alarm but the stop or terminate actions won't be performed on
-        /// the Amazon EC2 instance. However, if you are later granted permission to use the associated
-        /// Amazon EC2 APIs, the alarm actions you created earlier will be performed. For more
-        /// information about IAM permissions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html">Permissions
-        /// and Policies</a> in <i>Using IAM</i>.
+        /// can still create an alarm, but the stop or terminate actions won't be performed. However,
+        /// if you are later granted the required permissions, the alarm actions that you created
+        /// earlier will be performed.
         /// </para>
         ///  
         /// <para>
-        /// If you are using an IAM role (e.g., an Amazon EC2 instance profile), you cannot stop
-        /// or terminate the instance using alarm actions. However, you can still see the alarm
-        /// state and perform any other actions such as Amazon SNS notifications or Auto Scaling
-        /// policies.
+        /// If you are using an IAM role (for example, an Amazon EC2 instance profile), you cannot
+        /// stop or terminate the instance using alarm actions. However, you can still see the
+        /// alarm state and perform any other actions such as Amazon SNS notifications or Auto
+        /// Scaling policies.
         /// </para>
         ///  
         /// <para>
@@ -855,7 +836,13 @@ namespace Amazon.CloudWatch
         /// Service (AWS STS), you cannot stop or terminate an Amazon EC2 instance using alarm
         /// actions.
         /// </para>
-        ///  </note>
+        ///  
+        /// <para>
+        /// Note that you must create at least one stop, terminate, or reboot alarm using the
+        /// Amazon EC2 or CloudWatch console to create the <b>EC2ActionsAccess</b> IAM role. After
+        /// this IAM role is created, you can create stop, terminate, or reboot alarms using a
+        /// command-line interface or an API.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMetricAlarm service method.</param>
         /// 
@@ -898,41 +885,40 @@ namespace Amazon.CloudWatch
         /// Publishes metric data points to Amazon CloudWatch. Amazon CloudWatch associates the
         /// data points with the specified metric. If the specified metric does not exist, Amazon
         /// CloudWatch creates the metric. When Amazon CloudWatch creates a metric, it can take
-        /// up to fifteen minutes for the metric to appear in calls to <a>ListMetrics</a>. 
+        /// up to fifteen minutes for the metric to appear in calls to <a>ListMetrics</a>.
         /// 
         ///  
         /// <para>
-        ///  Each <code>PutMetricData</code> request is limited to 8 KB in size for HTTP GET requests
-        /// and is limited to 40 KB in size for HTTP POST requests. 
+        /// Each <code>PutMetricData</code> request is limited to 8 KB in size for HTTP GET requests
+        /// and is limited to 40 KB in size for HTTP POST requests.
         /// </para>
-        ///  <important> 
+        ///  
         /// <para>
         /// Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>,
         /// Amazon CloudWatch rejects values that are either too small or too large. Values must
         /// be in the range of 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
         /// 2). In addition, special values (e.g., NaN, +Infinity, -Infinity) are not supported.
         /// </para>
-        ///  </important> 
+        ///  
         /// <para>
-        /// Data that is timestamped 24 hours or more in the past may take in excess of 48 hours
-        /// to become available from submission time using <code>GetMetricStatistics</code>.
+        /// Data points with time stamps from 24 hours ago or longer can take at least 48 hours
+        /// to become available for <a>GetMetricStatistics</a> from the time they are submitted.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutMetricData service method.</param>
         /// 
         /// <returns>The response from the PutMetricData service method, as returned by CloudWatch.</returns>
         /// <exception cref="Amazon.CloudWatch.Model.InternalServiceException">
-        /// Indicates that the request processing has failed due to some unknown error, exception,
-        /// or failure.
+        /// Request processing has failed due to some unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterCombinationException">
-        /// Parameters that must not be used together were used together.
+        /// Parameters that cannot be used together were used together.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.InvalidParameterValueException">
-        /// Bad or out-of-range value was supplied for the input parameter.
+        /// The value of an input parameter is bad or out-of-range.
         /// </exception>
         /// <exception cref="Amazon.CloudWatch.Model.MissingRequiredParameterException">
-        /// An input parameter that is mandatory for processing the request is not supplied.
+        /// An input parameter that is required is missing.
         /// </exception>
         public PutMetricDataResponse PutMetricData(PutMetricDataRequest request)
         {
@@ -966,13 +952,13 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Temporarily sets the state of an alarm for testing purposes. When the updated <code>StateValue</code>
+        /// Temporarily sets the state of an alarm for testing purposes. When the updated state
         /// differs from the previous value, the action configured for the appropriate state is
         /// invoked. For example, if your alarm is configured to send an Amazon SNS message when
-        /// an alarm is triggered, temporarily changing the alarm's state to <b>ALARM</b> sends
-        /// an Amazon SNS message. The alarm returns to its actual state (often within seconds).
+        /// an alarm is triggered, temporarily changing the alarm state to <code>ALARM</code>
+        /// sends an Amazon SNS message. The alarm returns to its actual state (often within seconds).
         /// Because the alarm state change happens very quickly, it is typically only visible
-        /// in the alarm's <b>History</b> tab in the Amazon CloudWatch console or through <code>DescribeAlarmHistory</code>.
+        /// in the alarm's <b>History</b> tab in the Amazon CloudWatch console or through <a>DescribeAlarmHistory</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetAlarmState service method.</param>
         /// 

@@ -29,22 +29,19 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMetrics operation.
-    /// Returns a list of valid metrics stored for the AWS account owner. Returned metrics
-    /// can be used with <a>GetMetricStatistics</a> to obtain statistical data for a given
-    /// metric. 
+    /// List the specified metrics. You can use the returned metrics with <a>GetMetricStatistics</a>
+    /// to obtain statistical data.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    ///  Up to 500 results are returned for any one call. To retrieve further results, use
-    /// returned <code>NextToken</code> values with subsequent <code>ListMetrics</code> operations.
+    /// Up to 500 results are returned for any one call. To retrieve additional results, use
+    /// the returned token with subsequent calls.
     /// </para>
-    ///  </note> <note> 
+    ///  
     /// <para>
-    ///  If you create a metric with <a>PutMetricData</a>, allow up to fifteen minutes for
-    /// the metric to appear in calls to <code>ListMetrics</code>. Statistics about the metric,
-    /// however, are available sooner using <a>GetMetricStatistics</a>.
+    /// After you create a metric, allow up to fifteen minutes before the metric appears.
+    /// Statistics about the metric, however, are available sooner using <a>GetMetricStatistics</a>.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class ListMetricsRequest : AmazonCloudWatchRequest
     {
@@ -56,7 +53,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// A list of dimensions to filter against.
+        /// The dimensions to filter against.
         /// </para>
         /// </summary>
         public List<DimensionFilter> Dimensions

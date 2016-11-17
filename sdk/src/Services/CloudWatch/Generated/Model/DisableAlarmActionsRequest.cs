@@ -29,8 +29,8 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableAlarmActions operation.
-    /// Disables actions for the specified alarms. When an alarm's actions are disabled the
-    /// alarm's state may change, but none of the alarm's actions will execute.
+    /// Disables the actions for the specified alarms. When an alarm's actions are disabled,
+    /// the alarm actions do not execute when the alarm state changes.
     /// </summary>
     public partial class DisableAlarmActionsRequest : AmazonCloudWatchRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmNames. 
         /// <para>
-        /// The names of the alarms to disable actions for.
+        /// The names of the alarms.
         /// </para>
         /// </summary>
         public List<string> AlarmNames

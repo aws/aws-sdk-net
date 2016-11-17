@@ -28,16 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// The <code>Metric</code> data type contains information about a specific metric. If
-    /// you call <a>ListMetrics</a>, Amazon CloudWatch returns information contained by this
-    /// data type. 
-    /// 
-    ///  
-    /// <para>
-    /// The example in the Examples section publishes two metrics named buffers and latency.
-    /// Both metrics are in the examples namespace. Both metrics have two dimensions, InstanceID
-    /// and InstanceType.
-    /// </para>
+    /// Represents a specific metric.
     /// </summary>
     public partial class Metric
     {
@@ -48,7 +39,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// A list of dimensions associated with the metric.
+        /// The dimensions for the metric.
         /// </para>
         /// </summary>
         public List<Dimension> Dimensions

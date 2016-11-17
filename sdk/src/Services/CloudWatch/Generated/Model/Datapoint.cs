@@ -28,12 +28,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// The <code>Datapoint</code> data type encapsulates the statistical data that Amazon
-    /// CloudWatch computes from metric data.
+    /// Encapsulates the statistical data that Amazon CloudWatch computes from metric data.
     /// </summary>
     public partial class Datapoint
     {
         private double? _average;
+        private Dictionary<string, double> _extendedStatistics = new Dictionary<string, double>();
         private double? _maximum;
         private double? _minimum;
         private double? _sampleCount;
@@ -44,7 +44,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Average. 
         /// <para>
-        /// The average of metric values that correspond to the datapoint.
+        /// The average of the metric values that correspond to the data point.
         /// </para>
         /// </summary>
         public double Average
@@ -60,9 +60,27 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExtendedStatistics. 
+        /// <para>
+        /// The percentile statistic for the data point.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, double> ExtendedStatistics
+        {
+            get { return this._extendedStatistics; }
+            set { this._extendedStatistics = value; }
+        }
+
+        // Check to see if ExtendedStatistics property is set
+        internal bool IsSetExtendedStatistics()
+        {
+            return this._extendedStatistics != null && this._extendedStatistics.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Maximum. 
         /// <para>
-        /// The maximum of the metric value used for the datapoint.
+        /// The maximum metric value for the data point.
         /// </para>
         /// </summary>
         public double Maximum
@@ -80,7 +98,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Minimum. 
         /// <para>
-        /// The minimum metric value used for the datapoint.
+        /// The minimum metric value for the data point.
         /// </para>
         /// </summary>
         public double Minimum
@@ -98,7 +116,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property SampleCount. 
         /// <para>
-        /// The number of metric values that contributed to the aggregate value of this datapoint.
+        /// The number of metric values that contributed to the aggregate value of this data point.
         /// </para>
         /// </summary>
         public double SampleCount
@@ -116,7 +134,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Sum. 
         /// <para>
-        /// The sum of metric values used for the datapoint.
+        /// The sum of the metric values for the data point.
         /// </para>
         /// </summary>
         public double Sum
@@ -134,7 +152,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The time stamp used for the datapoint.
+        /// The time stamp used for the data point.
         /// </para>
         /// </summary>
         public DateTime Timestamp
@@ -152,7 +170,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The standard unit used for the datapoint.
+        /// The standard unit for the data point.
         /// </para>
         /// </summary>
         public StandardUnit Unit

@@ -29,12 +29,13 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAlarmsForMetric operation.
-    /// Retrieves all alarms for a single metric. Specify a statistic, period, or unit to
-    /// filter the set of alarms further.
+    /// Retrieves the alarms for the specified metric. Specify a statistic, period, or unit
+    /// to filter the results.
     /// </summary>
     public partial class DescribeAlarmsForMetricRequest : AmazonCloudWatchRequest
     {
         private List<Dimension> _dimensions = new List<Dimension>();
+        private string _extendedStatistic;
         private string _metricName;
         private string _awsNamespace;
         private int? _period;
@@ -44,8 +45,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// The list of dimensions associated with the metric. If the metric has any associated
-        /// dimensions, you must specify them in order for the DescribeAlarmsForMetric to succeed.
+        /// The dimensions associated with the metric. If the metric has any associated dimensions,
+        /// you must specify them in order for the call to succeed.
         /// </para>
         /// </summary>
         public List<Dimension> Dimensions
@@ -58,6 +59,24 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetDimensions()
         {
             return this._dimensions != null && this._dimensions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExtendedStatistic. 
+        /// <para>
+        /// The percentile statistic for the metric. Specify a value between p0.0 and p100.
+        /// </para>
+        /// </summary>
+        public string ExtendedStatistic
+        {
+            get { return this._extendedStatistic; }
+            set { this._extendedStatistic = value; }
+        }
+
+        // Check to see if ExtendedStatistic property is set
+        internal bool IsSetExtendedStatistic()
+        {
+            return this._extendedStatistic != null;
         }
 
         /// <summary>
@@ -99,7 +118,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        /// The period in seconds over which the statistic is applied.
+        /// The period, in seconds, over which the statistic is applied.
         /// </para>
         /// </summary>
         public int Period
@@ -117,7 +136,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Statistic. 
         /// <para>
-        /// The statistic for the metric.
+        /// The statistic for the metric, other than percentiles. For percentile statistics, use
+        /// <code>ExtendedStatistics</code>.
         /// </para>
         /// </summary>
         public Statistic Statistic

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// The <code>DimensionFilter</code> data type is used to filter <a>ListMetrics</a> results.
+    /// Represents filters for a dimension.
     /// </summary>
     public partial class DimensionFilter
     {
@@ -58,12 +58,6 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// The value of the dimension to be matched.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Specifying a <code>Name</code> without specifying a <code>Value</code> returns all
-        /// values associated with that <code>Name</code>.
-        /// </para>
-        ///  </note>
         /// </summary>
         public string Value
         {

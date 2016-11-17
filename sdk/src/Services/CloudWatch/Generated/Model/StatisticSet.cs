@@ -28,9 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// The <code>StatisticSet</code> data type describes the <code>StatisticValues</code>
-    /// component of <a>MetricDatum</a>, and represents a set of statistics that describes
-    /// a specific metric.
+    /// Represents a set of statistics that describes a specific metric.
     /// </summary>
     public partial class StatisticSet
     {

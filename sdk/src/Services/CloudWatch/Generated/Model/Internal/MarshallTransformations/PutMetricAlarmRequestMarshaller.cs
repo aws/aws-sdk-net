@@ -103,6 +103,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EvaluationPeriods", StringUtils.FromInt(publicRequest.EvaluationPeriods));
                 }
+                if(publicRequest.IsSetExtendedStatistic())
+                {
+                    request.Parameters.Add("ExtendedStatistic", StringUtils.FromString(publicRequest.ExtendedStatistic));
+                }
                 if(publicRequest.IsSetInsufficientDataActions())
                 {
                     int publicRequestlistValueIndex = 1;

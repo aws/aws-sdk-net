@@ -28,9 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// The <code>AlarmHistoryItem</code> data type contains descriptive information about
-    /// the history of a specific alarm. If you call <a>DescribeAlarmHistory</a>, Amazon CloudWatch
-    /// returns this data type as part of the DescribeAlarmHistoryResult data type.
+    /// Represents the history of a specific alarm.
     /// </summary>
     public partial class AlarmHistoryItem
     {
@@ -61,7 +59,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property HistoryData. 
         /// <para>
-        /// Machine-readable data about the alarm in JSON format.
+        /// Data about the alarm, in JSON format.
         /// </para>
         /// </summary>
         public string HistoryData
@@ -97,7 +95,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property HistorySummary. 
         /// <para>
-        /// A human-readable summary of the alarm history.
+        /// A summary of the alarm history, in text format.
         /// </para>
         /// </summary>
         public string HistorySummary

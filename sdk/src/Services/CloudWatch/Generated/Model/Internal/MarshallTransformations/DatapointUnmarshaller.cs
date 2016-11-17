@@ -60,6 +60,13 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         unmarshalledObject.Average = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ExtendedStatistics/entry", targetDepth))
+                    {
+                        var unmarshaller = new KeyValueUnmarshaller<string, double, StringUnmarshaller, DoubleUnmarshaller>(StringUnmarshaller.Instance, DoubleUnmarshaller.Instance);
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ExtendedStatistics.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("Maximum", targetDepth))
                     {
                         var unmarshaller = DoubleUnmarshaller.Instance;
