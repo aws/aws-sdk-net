@@ -239,6 +239,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (data.IsInt)
                 return new UnconvertedDynamoDBEntry((int)data).Convert(conversion);
 
+            if (data.IsUInt)
+                return new UnconvertedDynamoDBEntry((long)data).Convert(conversion);
+
             if (data.IsLong)
                 return new UnconvertedDynamoDBEntry((long)data).Convert(conversion);
 
