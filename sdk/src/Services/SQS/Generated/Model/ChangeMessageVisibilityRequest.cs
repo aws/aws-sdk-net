@@ -45,22 +45,22 @@ namespace Amazon.SQS.Model
     /// to extend the visibility timeout to a maximum of 12 hours. If you try to extend beyond
     /// 12 hours, the request will be rejected.
     /// </para>
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// There is a 120,000 limit for the number of inflight messages per queue. Messages are
     /// inflight after they have been received from the queue by a consuming component, but
     /// have not yet been deleted from the queue. If you reach the 120,000 limit, you will
     /// receive an OverLimit error message from Amazon SQS. To help avoid reaching the limit,
     /// you should delete the messages from the queue after they have been processed. You
-    /// can also increase the number of queues you use to process the messages. 
+    /// can also increase the number of queues you use to process the messages.
     /// </para>
-    /// </note> <important>
+    ///  </note> <important> 
     /// <para>
     /// If you attempt to set the <code>VisibilityTimeout</code> to an amount more than the
     /// maximum time left, Amazon SQS returns an error. It will not automatically recalculate
     /// and increase the timeout to the maximum time remaining.
     /// </para>
-    /// </important> <important>
+    ///  </important> <important> 
     /// <para>
     /// Unlike with a queue, when you change the visibility timeout for a specific message,
     /// that timeout value is applied immediately but is not saved in memory for that message.
@@ -68,7 +68,7 @@ namespace Amazon.SQS.Model
     /// message the next time it is received reverts to the original timeout value, not the
     /// value you set with the <code>ChangeMessageVisibility</code> action.
     /// </para>
-    /// </important>
+    ///  </important>
     /// </summary>
     public partial class ChangeMessageVisibilityRequest : AmazonSQSRequest
     {

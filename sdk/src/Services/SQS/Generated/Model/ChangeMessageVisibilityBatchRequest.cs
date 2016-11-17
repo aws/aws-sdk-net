@@ -34,13 +34,13 @@ namespace Amazon.SQS.Model
     /// You can send up to 10 <a>ChangeMessageVisibility</a> requests with each <code>ChangeMessageVisibilityBatch</code>
     /// action.
     /// 
-    ///  <important>
+    ///  <important> 
     /// <para>
     /// Because the batch request can result in a combination of successful and unsuccessful
     /// actions, you should check for batch errors even when the call returns an HTTP status
     /// code of 200.
     /// </para>
-    /// </important> <note>
+    ///  </important> <note> 
     /// <para>
     /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
     /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -48,11 +48,11 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+    ///  <code>&amp;amp;Attribute.1=this</code> 
     /// </para>
     ///  
     /// <para>
-    /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+    ///  <code>&amp;amp;Attribute.2=that</code> 
     /// </para>
     /// </summary>
     public partial class ChangeMessageVisibilityBatchRequest : AmazonSQSRequest

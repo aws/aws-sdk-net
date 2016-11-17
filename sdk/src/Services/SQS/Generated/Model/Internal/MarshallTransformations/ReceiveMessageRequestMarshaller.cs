@@ -84,6 +84,10 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
                 }
+                if(publicRequest.IsSetReceiveRequestAttemptId())
+                {
+                    request.Parameters.Add("ReceiveRequestAttemptId", StringUtils.FromString(publicRequest.ReceiveRequestAttemptId));
+                }
                 if(publicRequest.IsSetVisibilityTimeout())
                 {
                     request.Parameters.Add("VisibilityTimeout", StringUtils.FromInt(publicRequest.VisibilityTimeout));

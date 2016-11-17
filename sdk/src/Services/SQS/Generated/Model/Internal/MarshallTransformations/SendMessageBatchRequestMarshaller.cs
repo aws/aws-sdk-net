@@ -119,6 +119,14 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageBody", StringUtils.FromString(publicRequestlistValue.MessageBody));
                         }
+                        if(publicRequestlistValue.IsSetMessageDeduplicationId())
+                        {
+                            request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageDeduplicationId", StringUtils.FromString(publicRequestlistValue.MessageDeduplicationId));
+                        }
+                        if(publicRequestlistValue.IsSetMessageGroupId())
+                        {
+                            request.Parameters.Add("SendMessageBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "MessageGroupId", StringUtils.FromString(publicRequestlistValue.MessageGroupId));
+                        }
                         publicRequestlistValueIndex++;
                     }
                 }

@@ -39,15 +39,18 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// <code><![CDATA[&amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2]]></code>
+    ///  <code>&amp;amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code>
+    /// 
     /// </para>
     ///  
     /// <para>
-    /// <code><![CDATA[&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=<replaceable>Your_Receipt_Handle</replaceable>]]></code>
+    ///  <code>&amp;amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=&lt;replaceable&gt;Your_Receipt_Handle&lt;/replaceable&gt;</code>
+    /// 
     /// </para>
     ///  
     /// <para>
-    /// <code><![CDATA[&amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45]]></code>
+    ///  <code>&amp;amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code>
+    /// 
     /// </para>
     /// </summary>
     public partial class ChangeMessageVisibilityBatchRequestEntry

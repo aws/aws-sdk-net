@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// For each message in the batch, the response contains a <a>DeleteMessageBatchResultEntry</a>
     /// tag if the message is deleted or a <a>BatchResultErrorEntry</a> tag if the message
-    /// cannot be deleted.
+    /// can't be deleted.
     /// </summary>
     public partial class DeleteMessageBatchResponse : AmazonWebServiceResponse
     {

@@ -35,7 +35,7 @@ namespace Amazon.SQS.Model
     ///  
     /// <para>
     /// For more information about using dead letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
-    /// Amazon SQS Dead Letter Queues</a>.
+    /// Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class ListDeadLetterSourceQueuesRequest : AmazonSQSRequest

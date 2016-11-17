@@ -49,58 +49,73 @@ namespace Amazon.SQS
     /// </para>
     ///  
     /// <para>
-    /// Helpful Links:
+    ///  <b>Topics</b> 
     /// </para>
-    ///  <ul> <li>
+    ///  <ul> <li> 
     /// <para>
-    /// <a href="http://queue.amazonaws.com/doc/2012-11-05/QueueService.wsdl">Current WSDL
-    /// (2012-11-05)</a>
+    ///  
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
-    /// <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html">Making
-    /// API Requests</a>
+    ///  
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
-    /// <a href="http://aws.amazon.com/sqs/">Amazon SQS product page</a>
+    ///  <a>CommonParameters</a> 
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
-    /// <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html">Using
-    /// Amazon SQS Message Attributes</a>
+    ///  <a>CommonErrors</a> 
     /// </para>
-    /// </li> <li>
+    ///  </li> </ul> 
     /// <para>
-    /// <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
-    /// Amazon SQS Dead Letter Queues</a>
+    ///  <b>Helpful Links</b> 
     /// </para>
-    /// </li> <li>
+    ///  <ul> <li> 
     /// <para>
-    /// <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region">Regions
-    /// and Endpoints</a>
+    ///  <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/MakingRequestsArticle.html">Making
+    /// API Requests</a> 
     /// </para>
-    /// </li> </ul> 
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://aws.amazon.com/sqs/">Amazon SQS product page</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html">Using
+    /// Amazon SQS Message Attributes</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+    /// Amazon SQS Dead Letter Queues</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region">Regions
+    /// and Endpoints</a> 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// We also provide SDKs that enable you to access Amazon SQS from your preferred programming
     /// language. The SDKs contain functionality that automatically takes care of tasks such
     /// as:
     /// </para>
-    ///  <ul> <li>
+    ///  <ul> <li> 
     /// <para>
     /// Cryptographically signing your service requests
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
     /// Retrying requests
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
     /// Handling error responses
     /// </para>
-    /// </li> </ul> 
+    ///  </li> </ul> 
     /// <para>
-    /// For a list of available SDKs, go to <a href="http://aws.amazon.com/tools/">Tools for
+    /// For a list of available SDKs, see <a href="http://aws.amazon.com/tools/">Tools for
     /// Amazon Web Services</a>.
     /// </para>
     /// </summary>
@@ -316,12 +331,12 @@ namespace Amazon.SQS
         /// </para>
         ///  <note> 
         /// <para>
-        /// <code>AddPermission</code> writes an Amazon SQS-generated policy. If you want to write
-        /// your own policy, use <a>SetQueueAttributes</a> to upload your policy. For more information
-        /// about writing your own policy, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html">Using
+        ///  <code>AddPermission</code> writes an Amazon SQS-generated policy. If you want to
+        /// write your own policy, use <a>SetQueueAttributes</a> to upload your policy. For more
+        /// information about writing your own policy, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html">Using
         /// The Access Policy Language</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
-        ///  </note> <note>
+        ///  </note> <note> 
         /// <para>
         /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -329,11 +344,11 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> 
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
@@ -372,12 +387,12 @@ namespace Amazon.SQS
         /// </para>
         ///  <note> 
         /// <para>
-        /// <code>AddPermission</code> writes an Amazon SQS-generated policy. If you want to write
-        /// your own policy, use <a>SetQueueAttributes</a> to upload your policy. For more information
-        /// about writing your own policy, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html">Using
+        ///  <code>AddPermission</code> writes an Amazon SQS-generated policy. If you want to
+        /// write your own policy, use <a>SetQueueAttributes</a> to upload your policy. For more
+        /// information about writing your own policy, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html">Using
         /// The Access Policy Language</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
-        ///  </note> <note>
+        ///  </note> <note> 
         /// <para>
         /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -385,11 +400,11 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> 
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddPermission service method.</param>
@@ -423,12 +438,12 @@ namespace Amazon.SQS
         /// </para>
         ///  <note> 
         /// <para>
-        /// <code>AddPermission</code> writes an Amazon SQS-generated policy. If you want to write
-        /// your own policy, use <a>SetQueueAttributes</a> to upload your policy. For more information
-        /// about writing your own policy, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html">Using
+        ///  <code>AddPermission</code> writes an Amazon SQS-generated policy. If you want to
+        /// write your own policy, use <a>SetQueueAttributes</a> to upload your policy. For more
+        /// information about writing your own policy, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html">Using
         /// The Access Policy Language</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
-        ///  </note> <note>
+        ///  </note> <note> 
         /// <para>
         /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -436,11 +451,11 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> 
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
@@ -508,22 +523,22 @@ namespace Amazon.SQS
         /// to extend the visibility timeout to a maximum of 12 hours. If you try to extend beyond
         /// 12 hours, the request will be rejected.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// There is a 120,000 limit for the number of inflight messages per queue. Messages are
         /// inflight after they have been received from the queue by a consuming component, but
         /// have not yet been deleted from the queue. If you reach the 120,000 limit, you will
         /// receive an OverLimit error message from Amazon SQS. To help avoid reaching the limit,
         /// you should delete the messages from the queue after they have been processed. You
-        /// can also increase the number of queues you use to process the messages. 
+        /// can also increase the number of queues you use to process the messages.
         /// </para>
-        /// </note> <important>
+        ///  </note> <important> 
         /// <para>
         /// If you attempt to set the <code>VisibilityTimeout</code> to an amount more than the
         /// maximum time left, Amazon SQS returns an error. It will not automatically recalculate
         /// and increase the timeout to the maximum time remaining.
         /// </para>
-        /// </important> <important>
+        ///  </important> <important> 
         /// <para>
         /// Unlike with a queue, when you change the visibility timeout for a specific message,
         /// that timeout value is applied immediately but is not saved in memory for that message.
@@ -531,7 +546,7 @@ namespace Amazon.SQS
         /// message the next time it is received reverts to the original timeout value, not the
         /// value you set with the <code>ChangeMessageVisibility</code> action.
         /// </para>
-        /// </important>
+        ///  </important>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
         /// <param name="receiptHandle">The receipt handle associated with the message whose visibility timeout should be changed. This parameter is returned by the <a>ReceiveMessage</a> action.</param>
@@ -571,22 +586,22 @@ namespace Amazon.SQS
         /// to extend the visibility timeout to a maximum of 12 hours. If you try to extend beyond
         /// 12 hours, the request will be rejected.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// There is a 120,000 limit for the number of inflight messages per queue. Messages are
         /// inflight after they have been received from the queue by a consuming component, but
         /// have not yet been deleted from the queue. If you reach the 120,000 limit, you will
         /// receive an OverLimit error message from Amazon SQS. To help avoid reaching the limit,
         /// you should delete the messages from the queue after they have been processed. You
-        /// can also increase the number of queues you use to process the messages. 
+        /// can also increase the number of queues you use to process the messages.
         /// </para>
-        /// </note> <important>
+        ///  </note> <important> 
         /// <para>
         /// If you attempt to set the <code>VisibilityTimeout</code> to an amount more than the
         /// maximum time left, Amazon SQS returns an error. It will not automatically recalculate
         /// and increase the timeout to the maximum time remaining.
         /// </para>
-        /// </important> <important>
+        ///  </important> <important> 
         /// <para>
         /// Unlike with a queue, when you change the visibility timeout for a specific message,
         /// that timeout value is applied immediately but is not saved in memory for that message.
@@ -594,7 +609,7 @@ namespace Amazon.SQS
         /// message the next time it is received reverts to the original timeout value, not the
         /// value you set with the <code>ChangeMessageVisibility</code> action.
         /// </para>
-        /// </important>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ChangeMessageVisibility service method.</param>
         /// 
@@ -631,22 +646,22 @@ namespace Amazon.SQS
         /// to extend the visibility timeout to a maximum of 12 hours. If you try to extend beyond
         /// 12 hours, the request will be rejected.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// There is a 120,000 limit for the number of inflight messages per queue. Messages are
         /// inflight after they have been received from the queue by a consuming component, but
         /// have not yet been deleted from the queue. If you reach the 120,000 limit, you will
         /// receive an OverLimit error message from Amazon SQS. To help avoid reaching the limit,
         /// you should delete the messages from the queue after they have been processed. You
-        /// can also increase the number of queues you use to process the messages. 
+        /// can also increase the number of queues you use to process the messages.
         /// </para>
-        /// </note> <important>
+        ///  </note> <important> 
         /// <para>
         /// If you attempt to set the <code>VisibilityTimeout</code> to an amount more than the
         /// maximum time left, Amazon SQS returns an error. It will not automatically recalculate
         /// and increase the timeout to the maximum time remaining.
         /// </para>
-        /// </important> <important>
+        ///  </important> <important> 
         /// <para>
         /// Unlike with a queue, when you change the visibility timeout for a specific message,
         /// that timeout value is applied immediately but is not saved in memory for that message.
@@ -654,7 +669,7 @@ namespace Amazon.SQS
         /// message the next time it is received reverts to the original timeout value, not the
         /// value you set with the <code>ChangeMessageVisibility</code> action.
         /// </para>
-        /// </important>
+        ///  </important>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
         /// <param name="receiptHandle">The receipt handle associated with the message whose visibility timeout should be changed. This parameter is returned by the <a>ReceiveMessage</a> action.</param>
@@ -708,13 +723,13 @@ namespace Amazon.SQS
         /// You can send up to 10 <a>ChangeMessageVisibility</a> requests with each <code>ChangeMessageVisibilityBatch</code>
         /// action.
         /// 
-        ///  <important>
+        ///  <important> 
         /// <para>
         /// Because the batch request can result in a combination of successful and unsuccessful
         /// actions, you should check for batch errors even when the call returns an HTTP status
         /// code of 200.
         /// </para>
-        /// </important> <note>
+        ///  </important> <note> 
         /// <para>
         /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -722,11 +737,11 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> 
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
@@ -737,10 +752,10 @@ namespace Amazon.SQS
         /// Two or more batch entries have the same <code>Id</code> in the request.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
-        /// Batch request does not contain an entry.
+        /// Batch request doesn't contain an entry.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
-        /// The <code>Id</code> of a batch entry in a batch request does not abide by the specification.
+        /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// Batch request contains more number of entries than permissible.
@@ -760,13 +775,13 @@ namespace Amazon.SQS
         /// You can send up to 10 <a>ChangeMessageVisibility</a> requests with each <code>ChangeMessageVisibilityBatch</code>
         /// action.
         /// 
-        ///  <important>
+        ///  <important> 
         /// <para>
         /// Because the batch request can result in a combination of successful and unsuccessful
         /// actions, you should check for batch errors even when the call returns an HTTP status
         /// code of 200.
         /// </para>
-        /// </important> <note>
+        ///  </important> <note> 
         /// <para>
         /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -774,11 +789,11 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> 
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ChangeMessageVisibilityBatch service method.</param>
@@ -788,10 +803,10 @@ namespace Amazon.SQS
         /// Two or more batch entries have the same <code>Id</code> in the request.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
-        /// Batch request does not contain an entry.
+        /// Batch request doesn't contain an entry.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
-        /// The <code>Id</code> of a batch entry in a batch request does not abide by the specification.
+        /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// Batch request contains more number of entries than permissible.
@@ -811,13 +826,13 @@ namespace Amazon.SQS
         /// You can send up to 10 <a>ChangeMessageVisibility</a> requests with each <code>ChangeMessageVisibilityBatch</code>
         /// action.
         /// 
-        ///  <important>
+        ///  <important> 
         /// <para>
         /// Because the batch request can result in a combination of successful and unsuccessful
         /// actions, you should check for batch errors even when the call returns an HTTP status
         /// code of 200.
         /// </para>
-        /// </important> <note>
+        ///  </important> <note> 
         /// <para>
         /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -825,11 +840,11 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> 
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
@@ -843,10 +858,10 @@ namespace Amazon.SQS
         /// Two or more batch entries have the same <code>Id</code> in the request.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
-        /// Batch request does not contain an entry.
+        /// Batch request doesn't contain an entry.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
-        /// The <code>Id</code> of a batch entry in a batch request does not abide by the specification.
+        /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// Batch request contains more number of entries than permissible.
@@ -883,48 +898,71 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Creates a new queue, or returns the URL of an existing one. When you request <code>CreateQueue</code>,
-        /// you provide a name for the queue. To successfully create a new queue, you must provide
-        /// a name that is unique within the scope of your own queues.
+        /// Creates a new standard or FIFO queue or returns the URL of an existing queue. You
+        /// can pass one or more attributes in the request.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If you don't specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard
+        /// queue.
+        /// </para>
         ///  <note> 
+        /// <para>
+        ///  You can't change the queue type after you create it and you can't convert an existing
+        /// standard queue into a FIFO queue. You must either create a new FIFO queue for your
+        /// application or delete your existing standard queue and recreate it as a FIFO queue.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-moving.html">
+        /// Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer Guide</i>.
+        /// 
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// If you don't provide a value for an attribute, the queue is created with the default
+        /// value for the attribute.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// If you delete a queue, you must wait at least 60 seconds before creating a queue with
         /// the same name.
         /// </para>
-        ///  </note> 
+        ///  </li> </ul> 
         /// <para>
-        /// You may pass one or more attributes in the request. If you do not provide a value
-        /// for any attribute, the queue will have the default value for that attribute.
-        /// </para>
-        ///  <note>
-        /// <para>
-        /// Use <a>GetQueueUrl</a> to get a queue's URL. <a>GetQueueUrl</a> requires only the
-        /// <code>QueueName</code> parameter.
-        /// </para>
-        /// </note> 
-        /// <para>
-        /// If you provide the name of an existing queue, along with the exact names and values
-        /// of all the queue's attributes, <code>CreateQueue</code> returns the queue URL for
-        /// the existing queue. If the queue name, attribute names, or attribute values do not
-        /// match an existing queue, <code>CreateQueue</code> returns an error.
-        /// </para>
-        ///  <note>
-        /// <para>
-        /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
-        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
-        /// list with two elements looks like this:
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        /// To successfully create a new queue, you must provide a queue name that adheres to
+        /// the <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">limits
+        /// related to queues</a> and is unique within the scope of your queues.
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        /// To get the queue URL, use the <a>GetQueueUrl</a> action. <a>GetQueueUrl</a> requires
+        /// only the <code>QueueName</code> parameter.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you provide the name of an existing queue along with the exact names and values
+        /// of all the queue's attributes, <code>CreateQueue</code> returns the queue URL for
+        /// the existing queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the queue name, attribute names, or attribute values don't match an existing queue,
+        /// <code>CreateQueue</code> returns an error.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Some API actions take lists of parameters. Specify these lists using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. The following is
+        /// an example of a parameter list with two elements:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
-        /// <param name="queueName">The name for the queue to be created. Queue names are case-sensitive.</param>
+        /// <param name="queueName">The name of the new queue. The following limits apply to this name: <ul> <li> A queue name can have up to 80 characters. </li> <li> The following are accepted: alphanumeric chatacters, hyphens (<code>-</code>), and underscores (<code>_</code>). </li> <li> A FIFO queue name must end with the <code>.fifo</code> suffix. </li> </ul> Queue names are case-sensitive.</param>
         /// 
         /// <returns>The response from the CreateQueue service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.QueueDeletedRecentlyException">
@@ -944,45 +982,68 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Creates a new queue, or returns the URL of an existing one. When you request <code>CreateQueue</code>,
-        /// you provide a name for the queue. To successfully create a new queue, you must provide
-        /// a name that is unique within the scope of your own queues.
+        /// Creates a new standard or FIFO queue or returns the URL of an existing queue. You
+        /// can pass one or more attributes in the request.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If you don't specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard
+        /// queue.
+        /// </para>
         ///  <note> 
+        /// <para>
+        ///  You can't change the queue type after you create it and you can't convert an existing
+        /// standard queue into a FIFO queue. You must either create a new FIFO queue for your
+        /// application or delete your existing standard queue and recreate it as a FIFO queue.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-moving.html">
+        /// Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer Guide</i>.
+        /// 
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// If you don't provide a value for an attribute, the queue is created with the default
+        /// value for the attribute.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// If you delete a queue, you must wait at least 60 seconds before creating a queue with
         /// the same name.
         /// </para>
-        ///  </note> 
+        ///  </li> </ul> 
         /// <para>
-        /// You may pass one or more attributes in the request. If you do not provide a value
-        /// for any attribute, the queue will have the default value for that attribute.
-        /// </para>
-        ///  <note>
-        /// <para>
-        /// Use <a>GetQueueUrl</a> to get a queue's URL. <a>GetQueueUrl</a> requires only the
-        /// <code>QueueName</code> parameter.
-        /// </para>
-        /// </note> 
-        /// <para>
-        /// If you provide the name of an existing queue, along with the exact names and values
-        /// of all the queue's attributes, <code>CreateQueue</code> returns the queue URL for
-        /// the existing queue. If the queue name, attribute names, or attribute values do not
-        /// match an existing queue, <code>CreateQueue</code> returns an error.
-        /// </para>
-        ///  <note>
-        /// <para>
-        /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
-        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
-        /// list with two elements looks like this:
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        /// To successfully create a new queue, you must provide a queue name that adheres to
+        /// the <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">limits
+        /// related to queues</a> and is unique within the scope of your queues.
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        /// To get the queue URL, use the <a>GetQueueUrl</a> action. <a>GetQueueUrl</a> requires
+        /// only the <code>QueueName</code> parameter.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you provide the name of an existing queue along with the exact names and values
+        /// of all the queue's attributes, <code>CreateQueue</code> returns the queue URL for
+        /// the existing queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the queue name, attribute names, or attribute values don't match an existing queue,
+        /// <code>CreateQueue</code> returns an error.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Some API actions take lists of parameters. Specify these lists using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. The following is
+        /// an example of a parameter list with two elements:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQueue service method.</param>
@@ -1006,48 +1067,71 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Creates a new queue, or returns the URL of an existing one. When you request <code>CreateQueue</code>,
-        /// you provide a name for the queue. To successfully create a new queue, you must provide
-        /// a name that is unique within the scope of your own queues.
+        /// Creates a new standard or FIFO queue or returns the URL of an existing queue. You
+        /// can pass one or more attributes in the request.
         /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If you don't specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard
+        /// queue.
+        /// </para>
         ///  <note> 
+        /// <para>
+        ///  You can't change the queue type after you create it and you can't convert an existing
+        /// standard queue into a FIFO queue. You must either create a new FIFO queue for your
+        /// application or delete your existing standard queue and recreate it as a FIFO queue.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-moving.html">
+        /// Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer Guide</i>.
+        /// 
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        /// If you don't provide a value for an attribute, the queue is created with the default
+        /// value for the attribute.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// If you delete a queue, you must wait at least 60 seconds before creating a queue with
         /// the same name.
         /// </para>
-        ///  </note> 
+        ///  </li> </ul> 
         /// <para>
-        /// You may pass one or more attributes in the request. If you do not provide a value
-        /// for any attribute, the queue will have the default value for that attribute.
-        /// </para>
-        ///  <note>
-        /// <para>
-        /// Use <a>GetQueueUrl</a> to get a queue's URL. <a>GetQueueUrl</a> requires only the
-        /// <code>QueueName</code> parameter.
-        /// </para>
-        /// </note> 
-        /// <para>
-        /// If you provide the name of an existing queue, along with the exact names and values
-        /// of all the queue's attributes, <code>CreateQueue</code> returns the queue URL for
-        /// the existing queue. If the queue name, attribute names, or attribute values do not
-        /// match an existing queue, <code>CreateQueue</code> returns an error.
-        /// </para>
-        ///  <note>
-        /// <para>
-        /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
-        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
-        /// list with two elements looks like this:
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        /// To successfully create a new queue, you must provide a queue name that adheres to
+        /// the <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">limits
+        /// related to queues</a> and is unique within the scope of your queues.
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        /// To get the queue URL, use the <a>GetQueueUrl</a> action. <a>GetQueueUrl</a> requires
+        /// only the <code>QueueName</code> parameter.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you provide the name of an existing queue along with the exact names and values
+        /// of all the queue's attributes, <code>CreateQueue</code> returns the queue URL for
+        /// the existing queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the queue name, attribute names, or attribute values don't match an existing queue,
+        /// <code>CreateQueue</code> returns an error.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Some API actions take lists of parameters. Specify these lists using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. The following is
+        /// an example of a parameter list with two elements:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
-        /// <param name="queueName">The name for the queue to be created. Queue names are case-sensitive.</param>
+        /// <param name="queueName">The name of the new queue. The following limits apply to this name: <ul> <li> A queue name can have up to 80 characters. </li> <li> The following are accepted: alphanumeric chatacters, hyphens (<code>-</code>), and underscores (<code>_</code>). </li> <li> A FIFO queue name must end with the <code>.fifo</code> suffix. </li> </ul> Queue names are case-sensitive.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1109,12 +1193,11 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> <important> 
         /// <para>
-        ///  It is possible you will receive a message even after you have deleted it. This might
+        /// It is possible you will receive a message even after you have deleted it. This might
         /// happen on rare occasions if one of the servers storing a copy of the message is unavailable
         /// when you request to delete the message. The copy remains on the server and might be
         /// returned to you again on a subsequent receive request. You should create your system
         /// to be idempotent so that receiving a particular message more than once is not a problem.
-        /// 
         /// </para>
         ///  </important>
         /// </summary>
@@ -1155,12 +1238,11 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> <important> 
         /// <para>
-        ///  It is possible you will receive a message even after you have deleted it. This might
+        /// It is possible you will receive a message even after you have deleted it. This might
         /// happen on rare occasions if one of the servers storing a copy of the message is unavailable
         /// when you request to delete the message. The copy remains on the server and might be
         /// returned to you again on a subsequent receive request. You should create your system
         /// to be idempotent so that receiving a particular message more than once is not a problem.
-        /// 
         /// </para>
         ///  </important>
         /// </summary>
@@ -1200,12 +1282,11 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> <important> 
         /// <para>
-        ///  It is possible you will receive a message even after you have deleted it. This might
+        /// It is possible you will receive a message even after you have deleted it. This might
         /// happen on rare occasions if one of the servers storing a copy of the message is unavailable
         /// when you request to delete the message. The copy remains on the server and might be
         /// returned to you again on a subsequent receive request. You should create your system
         /// to be idempotent so that receiving a particular message more than once is not a problem.
-        /// 
         /// </para>
         ///  </important>
         /// </summary>
@@ -1259,11 +1340,11 @@ namespace Amazon.SQS
         /// 
         ///  <important> 
         /// <para>
-        ///  Because the batch request can result in a combination of successful and unsuccessful
+        /// Because the batch request can result in a combination of successful and unsuccessful
         /// actions, you should check for batch errors even when the call returns an HTTP status
-        /// code of 200. 
+        /// code of 200.
         /// </para>
-        ///  </important> <note>
+        ///  </important> <note> 
         /// <para>
         /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -1271,11 +1352,11 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> 
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
@@ -1286,10 +1367,10 @@ namespace Amazon.SQS
         /// Two or more batch entries have the same <code>Id</code> in the request.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
-        /// Batch request does not contain an entry.
+        /// Batch request doesn't contain an entry.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
-        /// The <code>Id</code> of a batch entry in a batch request does not abide by the specification.
+        /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// Batch request contains more number of entries than permissible.
@@ -1309,11 +1390,11 @@ namespace Amazon.SQS
         /// 
         ///  <important> 
         /// <para>
-        ///  Because the batch request can result in a combination of successful and unsuccessful
+        /// Because the batch request can result in a combination of successful and unsuccessful
         /// actions, you should check for batch errors even when the call returns an HTTP status
-        /// code of 200. 
+        /// code of 200.
         /// </para>
-        ///  </important> <note>
+        ///  </important> <note> 
         /// <para>
         /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -1321,11 +1402,11 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> 
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMessageBatch service method.</param>
@@ -1335,10 +1416,10 @@ namespace Amazon.SQS
         /// Two or more batch entries have the same <code>Id</code> in the request.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
-        /// Batch request does not contain an entry.
+        /// Batch request doesn't contain an entry.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
-        /// The <code>Id</code> of a batch entry in a batch request does not abide by the specification.
+        /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// Batch request contains more number of entries than permissible.
@@ -1358,11 +1439,11 @@ namespace Amazon.SQS
         /// 
         ///  <important> 
         /// <para>
-        ///  Because the batch request can result in a combination of successful and unsuccessful
+        /// Because the batch request can result in a combination of successful and unsuccessful
         /// actions, you should check for batch errors even when the call returns an HTTP status
-        /// code of 200. 
+        /// code of 200.
         /// </para>
-        ///  </important> <note>
+        ///  </important> <note> 
         /// <para>
         /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -1370,11 +1451,11 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> 
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
@@ -1388,10 +1469,10 @@ namespace Amazon.SQS
         /// Two or more batch entries have the same <code>Id</code> in the request.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
-        /// Batch request does not contain an entry.
+        /// Batch request doesn't contain an entry.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
-        /// The <code>Id</code> of a batch entry in a batch request does not abide by the specification.
+        /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// Batch request contains more number of entries than permissible.
@@ -1429,7 +1510,7 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Deletes the queue specified by the <b>queue URL</b>, regardless of whether the queue
-        /// is empty. If the specified queue does not exist, Amazon SQS returns a successful response.
+        /// is empty. If the specified queue doesn't exist, Amazon SQS returns a successful response.
         /// 
         /// 
         ///  <important> 
@@ -1447,8 +1528,8 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        ///  We reserve the right to delete queues that have had no activity for more than 30
-        /// days. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html">How
+        /// We reserve the right to delete queues that have had no activity for more than 30 days.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html">How
         /// Amazon SQS Queues Work</a> in the <i>Amazon SQS Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -1465,7 +1546,7 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Deletes the queue specified by the <b>queue URL</b>, regardless of whether the queue
-        /// is empty. If the specified queue does not exist, Amazon SQS returns a successful response.
+        /// is empty. If the specified queue doesn't exist, Amazon SQS returns a successful response.
         /// 
         /// 
         ///  <important> 
@@ -1483,8 +1564,8 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        ///  We reserve the right to delete queues that have had no activity for more than 30
-        /// days. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html">How
+        /// We reserve the right to delete queues that have had no activity for more than 30 days.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html">How
         /// Amazon SQS Queues Work</a> in the <i>Amazon SQS Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -1502,7 +1583,7 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Deletes the queue specified by the <b>queue URL</b>, regardless of whether the queue
-        /// is empty. If the specified queue does not exist, Amazon SQS returns a successful response.
+        /// is empty. If the specified queue doesn't exist, Amazon SQS returns a successful response.
         /// 
         /// 
         ///  <important> 
@@ -1520,8 +1601,8 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        ///  We reserve the right to delete queues that have had no activity for more than 30
-        /// days. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html">How
+        /// We reserve the right to delete queues that have had no activity for more than 30 days.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html">How
         /// Amazon SQS Queues Work</a> in the <i>Amazon SQS Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -1564,7 +1645,7 @@ namespace Amazon.SQS
         /// <summary>
         /// Gets attributes for the specified queue.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -1572,19 +1653,19 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> 
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
-        /// <param name="attributeNames">A list of attributes to retrieve information for. The following attributes are supported: <ul> <li><code>All</code> - returns all values.</li> <li><code>ApproximateNumberOfMessages</code> - returns the approximate number of visible messages in a queue. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.</li> <li><code>ApproximateNumberOfMessagesNotVisible</code> - returns the approximate number of messages that are not timed-out and not deleted. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.</li> <li><code>VisibilityTimeout</code> - returns the visibility timeout for the queue. For more information about visibility timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</li> <li><code>CreatedTimestamp</code> - returns the time when the queue was created (epoch time in seconds).</li> <li><code>LastModifiedTimestamp</code> - returns the time when the queue was last changed (epoch time in seconds).</li> <li><code>Policy</code> - returns the queue's policy.</li> <li><code>MaximumMessageSize</code> - returns the limit of how many bytes a message can contain before Amazon SQS rejects it.</li> <li><code>MessageRetentionPeriod</code> - returns the number of seconds Amazon SQS retains a message.</li> <li><code>QueueArn</code> - returns the queue's Amazon resource name (ARN).</li> <li><code>ApproximateNumberOfMessagesDelayed</code> - returns the approximate number of messages that are pending to be added to the queue.</li> <li><code>DelaySeconds</code> - returns the default delay on the queue in seconds.</li> <li><code>ReceiveMessageWaitTimeSeconds</code> - returns the time for which a ReceiveMessage call will wait for a message to arrive.</li> <li><code>RedrivePolicy</code> - returns the parameters for dead letter queue functionality of the source queue. For more information about RedrivePolicy and dead letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</li> </ul> <note>Going forward, new attributes might be added. If you are writing code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully.</note></param>
+        /// <param name="attributeNames">A list of attributes for which to retrieve information. <note> Going forward, new attributes might be added. If you are writing code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully. </note> The following attributes are supported: <ul> <li>  <code>All</code> - Returns all values.  </li> <li>  <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.  </li> <li>  <code>ApproximateNumberOfMessagesDelayed</code> - Returns the approximate number of messages that are waiting to be added to the queue.  </li> <li>  <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not timed-out and are not deleted. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.  </li> <li>  <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (epoch time). </li> <li>  <code>DelaySeconds</code> - Returns the default delay on the queue in seconds. </li> <li>  <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (epoch time). </li> <li>  <code>MaximumMessageSize</code> - Returns the limit of how many bytes a message can contain before Amazon SQS rejects it. </li> <li>  <code>MessageRetentionPeriod</code> - Returns the number of seconds for which Amazon SQS retains a message. </li> <li>  <code>Policy</code> - Returns the policy of the queue. </li> <li>  <code>QueueArn</code> - Returns the Amazon resource name (ARN) of the queue. </li> <li>  <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which ReceiveMessage call will wait for a message to arrive.  </li> <li>  <code>RedrivePolicy</code> - Returns the parameters for dead letter queue functionality of the source queue. For more information about the redrive policy and dead letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.  </li> <li>  <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.  </li> </ul> The following attributes apply only to <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <code>FifoQueue</code> - Returns whether the queue is FIFO. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>. </li> <li>  <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.  </li> </ul></param>
         /// 
         /// <returns>The response from the GetQueueAttributes service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
-        /// The attribute referred to does not exist.
+        /// The attribute referred to doesn't exist.
         /// </exception>
         public GetQueueAttributesResponse GetQueueAttributes(string queueUrl, List<string> attributeNames)
         {
@@ -1598,7 +1679,7 @@ namespace Amazon.SQS
         /// <summary>
         /// Gets attributes for the specified queue.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -1606,18 +1687,18 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> 
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueueAttributes service method.</param>
         /// 
         /// <returns>The response from the GetQueueAttributes service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
-        /// The attribute referred to does not exist.
+        /// The attribute referred to doesn't exist.
         /// </exception>
         public GetQueueAttributesResponse GetQueueAttributes(GetQueueAttributesRequest request)
         {
@@ -1631,7 +1712,7 @@ namespace Amazon.SQS
         /// <summary>
         /// Gets attributes for the specified queue.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -1639,22 +1720,22 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> 
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
-        /// <param name="attributeNames">A list of attributes to retrieve information for. The following attributes are supported: <ul> <li><code>All</code> - returns all values.</li> <li><code>ApproximateNumberOfMessages</code> - returns the approximate number of visible messages in a queue. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.</li> <li><code>ApproximateNumberOfMessagesNotVisible</code> - returns the approximate number of messages that are not timed-out and not deleted. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.</li> <li><code>VisibilityTimeout</code> - returns the visibility timeout for the queue. For more information about visibility timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</li> <li><code>CreatedTimestamp</code> - returns the time when the queue was created (epoch time in seconds).</li> <li><code>LastModifiedTimestamp</code> - returns the time when the queue was last changed (epoch time in seconds).</li> <li><code>Policy</code> - returns the queue's policy.</li> <li><code>MaximumMessageSize</code> - returns the limit of how many bytes a message can contain before Amazon SQS rejects it.</li> <li><code>MessageRetentionPeriod</code> - returns the number of seconds Amazon SQS retains a message.</li> <li><code>QueueArn</code> - returns the queue's Amazon resource name (ARN).</li> <li><code>ApproximateNumberOfMessagesDelayed</code> - returns the approximate number of messages that are pending to be added to the queue.</li> <li><code>DelaySeconds</code> - returns the default delay on the queue in seconds.</li> <li><code>ReceiveMessageWaitTimeSeconds</code> - returns the time for which a ReceiveMessage call will wait for a message to arrive.</li> <li><code>RedrivePolicy</code> - returns the parameters for dead letter queue functionality of the source queue. For more information about RedrivePolicy and dead letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</li> </ul> <note>Going forward, new attributes might be added. If you are writing code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully.</note></param>
+        /// <param name="attributeNames">A list of attributes for which to retrieve information. <note> Going forward, new attributes might be added. If you are writing code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully. </note> The following attributes are supported: <ul> <li>  <code>All</code> - Returns all values.  </li> <li>  <code>ApproximateNumberOfMessages</code> - Returns the approximate number of visible messages in a queue. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.  </li> <li>  <code>ApproximateNumberOfMessagesDelayed</code> - Returns the approximate number of messages that are waiting to be added to the queue.  </li> <li>  <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate number of messages that have not timed-out and are not deleted. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ApproximateNumber.html">Resources Required to Process Messages</a> in the <i>Amazon SQS Developer Guide</i>.  </li> <li>  <code>CreatedTimestamp</code> - Returns the time when the queue was created in seconds (epoch time). </li> <li>  <code>DelaySeconds</code> - Returns the default delay on the queue in seconds. </li> <li>  <code>LastModifiedTimestamp</code> - Returns the time when the queue was last changed in seconds (epoch time). </li> <li>  <code>MaximumMessageSize</code> - Returns the limit of how many bytes a message can contain before Amazon SQS rejects it. </li> <li>  <code>MessageRetentionPeriod</code> - Returns the number of seconds for which Amazon SQS retains a message. </li> <li>  <code>Policy</code> - Returns the policy of the queue. </li> <li>  <code>QueueArn</code> - Returns the Amazon resource name (ARN) of the queue. </li> <li>  <code>ReceiveMessageWaitTimeSeconds</code> - Returns the number of seconds for which ReceiveMessage call will wait for a message to arrive.  </li> <li>  <code>RedrivePolicy</code> - Returns the parameters for dead letter queue functionality of the source queue. For more information about the redrive policy and dead letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.  </li> <li>  <code>VisibilityTimeout</code> - Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.  </li> </ul> The following attributes apply only to <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <code>FifoQueue</code> - Returns whether the queue is FIFO. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-understanding-logic">FIFO Queue Logic</a> in the <i>Amazon SQS Developer Guide</i>. </li> <li>  <code>ContentBasedDeduplication</code> - Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.  </li> </ul></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the GetQueueAttributes service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
-        /// The attribute referred to does not exist.
+        /// The attribute referred to doesn't exist.
         /// </exception>
         public Task<GetQueueAttributesResponse> GetQueueAttributesAsync(string queueUrl, List<string> attributeNames, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1689,14 +1770,14 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Returns the URL of an existing queue. This action provides a simple way to retrieve
-        /// the URL of an Amazon SQS queue. 
+        /// the URL of an Amazon SQS queue.
         /// 
         ///  
         /// <para>
         ///  To access a queue that belongs to another AWS account, use the <code>QueueOwnerAWSAccountId</code>
         /// parameter to specify the account ID of the queue's owner. The queue's owner must grant
         /// you permission to access the queue. For more information about shared queue access,
-        /// see <a>AddPermission</a> or go to <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
+        /// see <a>AddPermission</a> or see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
         /// Queues</a> in the <i>Amazon SQS Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -1704,7 +1785,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the GetQueueUrl service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The queue referred to does not exist.
+        /// The queue referred to doesn't exist.
         /// </exception>
         public GetQueueUrlResponse GetQueueUrl(string queueName)
         {
@@ -1716,14 +1797,14 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Returns the URL of an existing queue. This action provides a simple way to retrieve
-        /// the URL of an Amazon SQS queue. 
+        /// the URL of an Amazon SQS queue.
         /// 
         ///  
         /// <para>
         ///  To access a queue that belongs to another AWS account, use the <code>QueueOwnerAWSAccountId</code>
         /// parameter to specify the account ID of the queue's owner. The queue's owner must grant
         /// you permission to access the queue. For more information about shared queue access,
-        /// see <a>AddPermission</a> or go to <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
+        /// see <a>AddPermission</a> or see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
         /// Queues</a> in the <i>Amazon SQS Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -1731,7 +1812,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the GetQueueUrl service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The queue referred to does not exist.
+        /// The queue referred to doesn't exist.
         /// </exception>
         public GetQueueUrlResponse GetQueueUrl(GetQueueUrlRequest request)
         {
@@ -1744,14 +1825,14 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Returns the URL of an existing queue. This action provides a simple way to retrieve
-        /// the URL of an Amazon SQS queue. 
+        /// the URL of an Amazon SQS queue.
         /// 
         ///  
         /// <para>
         ///  To access a queue that belongs to another AWS account, use the <code>QueueOwnerAWSAccountId</code>
         /// parameter to specify the account ID of the queue's owner. The queue's owner must grant
         /// you permission to access the queue. For more information about shared queue access,
-        /// see <a>AddPermission</a> or go to <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
+        /// see <a>AddPermission</a> or see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/acp-overview.html">Shared
         /// Queues</a> in the <i>Amazon SQS Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -1762,7 +1843,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the GetQueueUrl service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The queue referred to does not exist.
+        /// The queue referred to doesn't exist.
         /// </exception>
         public Task<GetQueueUrlResponse> GetQueueUrlAsync(string queueName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1801,14 +1882,14 @@ namespace Amazon.SQS
         ///  
         /// <para>
         /// For more information about using dead letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
-        /// Amazon SQS Dead Letter Queues</a>.
+        /// Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeadLetterSourceQueues service method.</param>
         /// 
         /// <returns>The response from the ListDeadLetterSourceQueues service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The queue referred to does not exist.
+        /// The queue referred to doesn't exist.
         /// </exception>
         public ListDeadLetterSourceQueuesResponse ListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request)
         {
@@ -1918,18 +1999,18 @@ namespace Amazon.SQS
         /// <summary>
         /// Deletes the messages in a queue specified by the <b>queue URL</b>.
         /// 
-        ///  <important>
+        ///  <important> 
         /// <para>
-        /// When you use the <code>PurgeQueue</code> API, the deleted messages in the queue cannot
+        /// When you use the <code>PurgeQueue</code> API, the deleted messages in the queue can't
         /// be retrieved.
         /// </para>
-        /// </important> 
+        ///  </important> 
         /// <para>
         /// When you purge a queue, the message deletion process takes up to 60 seconds. All messages
         /// sent to the queue before calling <code>PurgeQueue</code> will be deleted; messages
-        /// sent to the queue while it is being purged may be deleted. While the queue is being
-        /// purged, messages sent to the queue before <code>PurgeQueue</code> was called may be
-        /// received, but will be deleted within the next minute.
+        /// sent to the queue while it is being purged might be deleted. While the queue is being
+        /// purged, messages sent to the queue before <code>PurgeQueue</code> was called might
+        /// be received, but will be deleted within the next minute.
         /// </para>
         /// </summary>
         /// <param name="queueUrl">The queue URL of the queue to delete the messages from when using the <code>PurgeQueue</code> API. Queue URLs are case-sensitive.</param>
@@ -1940,7 +2021,7 @@ namespace Amazon.SQS
         /// within the last 60 seconds, the time it can take to delete the messages in the queue.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The queue referred to does not exist.
+        /// The queue referred to doesn't exist.
         /// </exception>
         public PurgeQueueResponse PurgeQueue(string queueUrl)
         {
@@ -1953,18 +2034,18 @@ namespace Amazon.SQS
         /// <summary>
         /// Deletes the messages in a queue specified by the <b>queue URL</b>.
         /// 
-        ///  <important>
+        ///  <important> 
         /// <para>
-        /// When you use the <code>PurgeQueue</code> API, the deleted messages in the queue cannot
+        /// When you use the <code>PurgeQueue</code> API, the deleted messages in the queue can't
         /// be retrieved.
         /// </para>
-        /// </important> 
+        ///  </important> 
         /// <para>
         /// When you purge a queue, the message deletion process takes up to 60 seconds. All messages
         /// sent to the queue before calling <code>PurgeQueue</code> will be deleted; messages
-        /// sent to the queue while it is being purged may be deleted. While the queue is being
-        /// purged, messages sent to the queue before <code>PurgeQueue</code> was called may be
-        /// received, but will be deleted within the next minute.
+        /// sent to the queue while it is being purged might be deleted. While the queue is being
+        /// purged, messages sent to the queue before <code>PurgeQueue</code> was called might
+        /// be received, but will be deleted within the next minute.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurgeQueue service method.</param>
@@ -1975,7 +2056,7 @@ namespace Amazon.SQS
         /// within the last 60 seconds, the time it can take to delete the messages in the queue.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The queue referred to does not exist.
+        /// The queue referred to doesn't exist.
         /// </exception>
         public PurgeQueueResponse PurgeQueue(PurgeQueueRequest request)
         {
@@ -1989,18 +2070,18 @@ namespace Amazon.SQS
         /// <summary>
         /// Deletes the messages in a queue specified by the <b>queue URL</b>.
         /// 
-        ///  <important>
+        ///  <important> 
         /// <para>
-        /// When you use the <code>PurgeQueue</code> API, the deleted messages in the queue cannot
+        /// When you use the <code>PurgeQueue</code> API, the deleted messages in the queue can't
         /// be retrieved.
         /// </para>
-        /// </important> 
+        ///  </important> 
         /// <para>
         /// When you purge a queue, the message deletion process takes up to 60 seconds. All messages
         /// sent to the queue before calling <code>PurgeQueue</code> will be deleted; messages
-        /// sent to the queue while it is being purged may be deleted. While the queue is being
-        /// purged, messages sent to the queue before <code>PurgeQueue</code> was called may be
-        /// received, but will be deleted within the next minute.
+        /// sent to the queue while it is being purged might be deleted. While the queue is being
+        /// purged, messages sent to the queue before <code>PurgeQueue</code> was called might
+        /// be received, but will be deleted within the next minute.
         /// </para>
         /// </summary>
         /// <param name="queueUrl">The queue URL of the queue to delete the messages from when using the <code>PurgeQueue</code> API. Queue URLs are case-sensitive.</param>
@@ -2014,7 +2095,7 @@ namespace Amazon.SQS
         /// within the last 60 seconds, the time it can take to delete the messages in the queue.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The queue referred to does not exist.
+        /// The queue referred to doesn't exist.
         /// </exception>
         public Task<PurgeQueueResponse> PurgeQueueAsync(string queueUrl, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -2064,32 +2145,32 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        ///  For each message returned, the response includes the following: 
+        /// For each message returned, the response includes the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Message body 
+        /// Message body
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  MD5 digest of the message body. For information about MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+        ///  MD5 digest of the message body. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Message ID you received when you sent the message to the queue. 
+        /// Message ID you received when you sent the message to the queue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Receipt handle. 
+        /// Receipt handle.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Message attributes. 
+        /// Message attributes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  MD5 digest of the message attributes. 
+        /// MD5 digest of the message attributes.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2100,16 +2181,22 @@ namespace Amazon.SQS
         ///  
         /// <para>
         ///  You can provide the <code>VisibilityTimeout</code> parameter in your request, which
-        /// will be applied to the messages that Amazon SQS returns in the response. If you do
-        /// not include the parameter, the overall visibility timeout for the queue is used for
-        /// the returned messages. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+        /// will be applied to the messages that Amazon SQS returns in the response. If you don't
+        /// include the parameter, the overall visibility timeout for the queue is used for the
+        /// returned messages. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
         /// Timeout</a> in the <i>Amazon SQS Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  A message that is not deleted or a message whose visibility is not extended before
+        /// the visibility timeout expires counts as a failed receive. Depending on the configuration
+        /// of the queue, the message might be sent to the dead letter queue. 
         /// </para>
         ///  <note> 
         /// <para>
-        ///  Going forward, new attributes might be added. If you are writing code that calls
-        /// this action, we recommend that you structure your code so that it can handle new attributes
-        /// gracefully. 
+        /// Going forward, new attributes might be added. If you are writing code that calls this
+        /// action, we recommend that you structure your code so that it can handle new attributes
+        /// gracefully.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2148,32 +2235,32 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        ///  For each message returned, the response includes the following: 
+        /// For each message returned, the response includes the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Message body 
+        /// Message body
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  MD5 digest of the message body. For information about MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+        ///  MD5 digest of the message body. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Message ID you received when you sent the message to the queue. 
+        /// Message ID you received when you sent the message to the queue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Receipt handle. 
+        /// Receipt handle.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Message attributes. 
+        /// Message attributes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  MD5 digest of the message attributes. 
+        /// MD5 digest of the message attributes.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2184,16 +2271,22 @@ namespace Amazon.SQS
         ///  
         /// <para>
         ///  You can provide the <code>VisibilityTimeout</code> parameter in your request, which
-        /// will be applied to the messages that Amazon SQS returns in the response. If you do
-        /// not include the parameter, the overall visibility timeout for the queue is used for
-        /// the returned messages. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+        /// will be applied to the messages that Amazon SQS returns in the response. If you don't
+        /// include the parameter, the overall visibility timeout for the queue is used for the
+        /// returned messages. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
         /// Timeout</a> in the <i>Amazon SQS Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  A message that is not deleted or a message whose visibility is not extended before
+        /// the visibility timeout expires counts as a failed receive. Depending on the configuration
+        /// of the queue, the message might be sent to the dead letter queue. 
         /// </para>
         ///  <note> 
         /// <para>
-        ///  Going forward, new attributes might be added. If you are writing code that calls
-        /// this action, we recommend that you structure your code so that it can handle new attributes
-        /// gracefully. 
+        /// Going forward, new attributes might be added. If you are writing code that calls this
+        /// action, we recommend that you structure your code so that it can handle new attributes
+        /// gracefully.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2233,32 +2326,32 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        ///  For each message returned, the response includes the following: 
+        /// For each message returned, the response includes the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Message body 
+        /// Message body
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  MD5 digest of the message body. For information about MD5, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
+        ///  MD5 digest of the message body. For information about MD5, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Message ID you received when you sent the message to the queue. 
+        /// Message ID you received when you sent the message to the queue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Receipt handle. 
+        /// Receipt handle.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Message attributes. 
+        /// Message attributes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  MD5 digest of the message attributes. 
+        /// MD5 digest of the message attributes.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2269,16 +2362,22 @@ namespace Amazon.SQS
         ///  
         /// <para>
         ///  You can provide the <code>VisibilityTimeout</code> parameter in your request, which
-        /// will be applied to the messages that Amazon SQS returns in the response. If you do
-        /// not include the parameter, the overall visibility timeout for the queue is used for
-        /// the returned messages. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+        /// will be applied to the messages that Amazon SQS returns in the response. If you don't
+        /// include the parameter, the overall visibility timeout for the queue is used for the
+        /// returned messages. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
         /// Timeout</a> in the <i>Amazon SQS Developer Guide</i>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  A message that is not deleted or a message whose visibility is not extended before
+        /// the visibility timeout expires counts as a failed receive. Depending on the configuration
+        /// of the queue, the message might be sent to the dead letter queue. 
         /// </para>
         ///  <note> 
         /// <para>
-        ///  Going forward, new attributes might be added. If you are writing code that calls
-        /// this action, we recommend that you structure your code so that it can handle new attributes
-        /// gracefully. 
+        /// Going forward, new attributes might be added. If you are writing code that calls this
+        /// action, we recommend that you structure your code so that it can handle new attributes
+        /// gracefully.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2400,26 +2499,28 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Delivers a message to the specified queue. With Amazon SQS, you now have the ability
-        /// to send large payload messages that are up to 256KB (262,144 bytes) in size. To send
-        /// large payloads, you must use an AWS SDK that supports SigV4 signing. To verify whether
-        /// SigV4 is supported for an AWS SDK, check the SDK release notes. 
+        /// Delivers a message to the specified queue.
         /// 
         ///  <important> 
         /// <para>
-        ///  The following list shows the characters (in Unicode) allowed in your message, according
-        /// to the W3C XML specification. For more information, go to <a href="http://www.w3.org/TR/REC-xml/#charsets">http://www.w3.org/TR/REC-xml/#charsets</a>
-        /// If you send any characters not included in the list, your request will be rejected.
-        /// 
+        /// The following list shows the characters (in Unicode) that are allowed in your message,
+        /// according to the W3C XML specification:
         /// </para>
         ///  
         /// <para>
-        ///  #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF] 
+        ///  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | [<code>#x20</code> to <code>#xD7FF</code>]
+        /// | [<code>#xE000</code> to <code>#xFFFD</code>] | [<code>#x10000</code> to <code>#x10FFFF</code>]
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
+        /// If you send any characters that aren't included in this list, your request will be
+        /// rejected.
         /// </para>
         ///  </important>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
-        /// <param name="messageBody">The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding important note.</param>
+        /// <param name="messageBody">The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding note.</param>
         /// 
         /// <returns>The response from the SendMessage service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidMessageContentsException">
@@ -2438,21 +2539,23 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Delivers a message to the specified queue. With Amazon SQS, you now have the ability
-        /// to send large payload messages that are up to 256KB (262,144 bytes) in size. To send
-        /// large payloads, you must use an AWS SDK that supports SigV4 signing. To verify whether
-        /// SigV4 is supported for an AWS SDK, check the SDK release notes. 
+        /// Delivers a message to the specified queue.
         /// 
         ///  <important> 
         /// <para>
-        ///  The following list shows the characters (in Unicode) allowed in your message, according
-        /// to the W3C XML specification. For more information, go to <a href="http://www.w3.org/TR/REC-xml/#charsets">http://www.w3.org/TR/REC-xml/#charsets</a>
-        /// If you send any characters not included in the list, your request will be rejected.
-        /// 
+        /// The following list shows the characters (in Unicode) that are allowed in your message,
+        /// according to the W3C XML specification:
         /// </para>
         ///  
         /// <para>
-        ///  #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF] 
+        ///  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | [<code>#x20</code> to <code>#xD7FF</code>]
+        /// | [<code>#xE000</code> to <code>#xFFFD</code>] | [<code>#x10000</code> to <code>#x10FFFF</code>]
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
+        /// If you send any characters that aren't included in this list, your request will be
+        /// rejected.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2475,26 +2578,28 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Delivers a message to the specified queue. With Amazon SQS, you now have the ability
-        /// to send large payload messages that are up to 256KB (262,144 bytes) in size. To send
-        /// large payloads, you must use an AWS SDK that supports SigV4 signing. To verify whether
-        /// SigV4 is supported for an AWS SDK, check the SDK release notes. 
+        /// Delivers a message to the specified queue.
         /// 
         ///  <important> 
         /// <para>
-        ///  The following list shows the characters (in Unicode) allowed in your message, according
-        /// to the W3C XML specification. For more information, go to <a href="http://www.w3.org/TR/REC-xml/#charsets">http://www.w3.org/TR/REC-xml/#charsets</a>
-        /// If you send any characters not included in the list, your request will be rejected.
-        /// 
+        /// The following list shows the characters (in Unicode) that are allowed in your message,
+        /// according to the W3C XML specification:
         /// </para>
         ///  
         /// <para>
-        ///  #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF] 
+        ///  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | [<code>#x20</code> to <code>#xD7FF</code>]
+        /// | [<code>#xE000</code> to <code>#xFFFD</code>] | [<code>#x10000</code> to <code>#x10FFFF</code>]
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
+        /// If you send any characters that aren't included in this list, your request will be
+        /// rejected.
         /// </para>
         ///  </important>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
-        /// <param name="messageBody">The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding important note.</param>
+        /// <param name="messageBody">The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding note.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2538,38 +2643,45 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Delivers up to ten messages to the specified queue. This is a batch version of <a>SendMessage</a>.
-        /// The result of the send action on each message is reported individually in the response.
-        /// The maximum allowed individual message size is 256 KB (262,144 bytes).
+        /// Delivers up to ten messages to the specified queue. This is a batch version of <code>
+        /// <a>SendMessage</a> </code>. For a FIFO queue, multiple messages within a single batch
+        /// are enqueued in the order they are sent.
         /// 
         ///  
         /// <para>
-        /// The maximum total payload size (i.e., the sum of all a batch's individual message
-        /// lengths) is also 256 KB (262,144 bytes).
+        /// The result of sending each message is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>DelaySeconds</code> parameter is not specified for an entry, the default
-        /// for the queue is used.
+        /// The maximum allowed individual message size and the maximum total payload size (the
+        /// sum of the individual lengths of all of the batched messages) are both 256 KB (262,144
+        /// bytes).
         /// </para>
-        ///  <important>
+        ///  <important> 
         /// <para>
         /// The following list shows the characters (in Unicode) that are allowed in your message,
-        /// according to the W3C XML specification. For more information, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
-        /// If you send any characters that are not included in the list, your request will be
-        /// rejected.
+        /// according to the W3C XML specification:
         /// </para>
         ///  
         /// <para>
-        /// #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF]
+        ///  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | [<code>#x20</code> to <code>#xD7FF</code>]
+        /// | [<code>#xE000</code> to <code>#xFFFD</code>] | [<code>#x10000</code> to <code>#x10FFFF</code>]
         /// </para>
-        ///  </important> <important> 
+        ///  
         /// <para>
-        /// Because the batch request can result in a combination of successful and unsuccessful
-        /// actions, you should check for batch errors even when the call returns an HTTP status
-        /// code of 200.
+        /// For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
+        /// If you send any characters that aren't included in this list, your request will be
+        /// rejected.
         /// </para>
-        ///  </important> <note>
+        ///  </important> 
+        /// <para>
+        /// If you don't specify the <code>DelaySeconds</code> parameter for an entry, Amazon
+        /// SQS uses the default for the queue.
+        /// </para>
+        ///  <note> 
         /// <para>
         /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -2577,11 +2689,11 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> 
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
@@ -2595,10 +2707,10 @@ namespace Amazon.SQS
         /// The length of all the messages put together is more than the limit.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
-        /// Batch request does not contain an entry.
+        /// Batch request doesn't contain an entry.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
-        /// The <code>Id</code> of a batch entry in a batch request does not abide by the specification.
+        /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// Batch request contains more number of entries than permissible.
@@ -2616,38 +2728,45 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Delivers up to ten messages to the specified queue. This is a batch version of <a>SendMessage</a>.
-        /// The result of the send action on each message is reported individually in the response.
-        /// The maximum allowed individual message size is 256 KB (262,144 bytes).
+        /// Delivers up to ten messages to the specified queue. This is a batch version of <code>
+        /// <a>SendMessage</a> </code>. For a FIFO queue, multiple messages within a single batch
+        /// are enqueued in the order they are sent.
         /// 
         ///  
         /// <para>
-        /// The maximum total payload size (i.e., the sum of all a batch's individual message
-        /// lengths) is also 256 KB (262,144 bytes).
+        /// The result of sending each message is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>DelaySeconds</code> parameter is not specified for an entry, the default
-        /// for the queue is used.
+        /// The maximum allowed individual message size and the maximum total payload size (the
+        /// sum of the individual lengths of all of the batched messages) are both 256 KB (262,144
+        /// bytes).
         /// </para>
-        ///  <important>
+        ///  <important> 
         /// <para>
         /// The following list shows the characters (in Unicode) that are allowed in your message,
-        /// according to the W3C XML specification. For more information, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
-        /// If you send any characters that are not included in the list, your request will be
-        /// rejected.
+        /// according to the W3C XML specification:
         /// </para>
         ///  
         /// <para>
-        /// #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF]
+        ///  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | [<code>#x20</code> to <code>#xD7FF</code>]
+        /// | [<code>#xE000</code> to <code>#xFFFD</code>] | [<code>#x10000</code> to <code>#x10FFFF</code>]
         /// </para>
-        ///  </important> <important> 
+        ///  
         /// <para>
-        /// Because the batch request can result in a combination of successful and unsuccessful
-        /// actions, you should check for batch errors even when the call returns an HTTP status
-        /// code of 200.
+        /// For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
+        /// If you send any characters that aren't included in this list, your request will be
+        /// rejected.
         /// </para>
-        ///  </important> <note>
+        ///  </important> 
+        /// <para>
+        /// If you don't specify the <code>DelaySeconds</code> parameter for an entry, Amazon
+        /// SQS uses the default for the queue.
+        /// </para>
+        ///  <note> 
         /// <para>
         /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -2655,11 +2774,11 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> 
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendMessageBatch service method.</param>
@@ -2672,10 +2791,10 @@ namespace Amazon.SQS
         /// The length of all the messages put together is more than the limit.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
-        /// Batch request does not contain an entry.
+        /// Batch request doesn't contain an entry.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
-        /// The <code>Id</code> of a batch entry in a batch request does not abide by the specification.
+        /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// Batch request contains more number of entries than permissible.
@@ -2693,38 +2812,45 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Delivers up to ten messages to the specified queue. This is a batch version of <a>SendMessage</a>.
-        /// The result of the send action on each message is reported individually in the response.
-        /// The maximum allowed individual message size is 256 KB (262,144 bytes).
+        /// Delivers up to ten messages to the specified queue. This is a batch version of <code>
+        /// <a>SendMessage</a> </code>. For a FIFO queue, multiple messages within a single batch
+        /// are enqueued in the order they are sent.
         /// 
         ///  
         /// <para>
-        /// The maximum total payload size (i.e., the sum of all a batch's individual message
-        /// lengths) is also 256 KB (262,144 bytes).
+        /// The result of sending each message is reported individually in the response. Because
+        /// the batch request can result in a combination of successful and unsuccessful actions,
+        /// you should check for batch errors even when the call returns an HTTP status code of
+        /// 200.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>DelaySeconds</code> parameter is not specified for an entry, the default
-        /// for the queue is used.
+        /// The maximum allowed individual message size and the maximum total payload size (the
+        /// sum of the individual lengths of all of the batched messages) are both 256 KB (262,144
+        /// bytes).
         /// </para>
-        ///  <important>
+        ///  <important> 
         /// <para>
         /// The following list shows the characters (in Unicode) that are allowed in your message,
-        /// according to the W3C XML specification. For more information, go to <a href="http://www.faqs.org/rfcs/rfc1321.html">http://www.faqs.org/rfcs/rfc1321.html</a>.
-        /// If you send any characters that are not included in the list, your request will be
-        /// rejected.
+        /// according to the W3C XML specification:
         /// </para>
         ///  
         /// <para>
-        /// #x9 | #xA | #xD | [#x20 to #xD7FF] | [#xE000 to #xFFFD] | [#x10000 to #x10FFFF]
+        ///  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | [<code>#x20</code> to <code>#xD7FF</code>]
+        /// | [<code>#xE000</code> to <code>#xFFFD</code>] | [<code>#x10000</code> to <code>#x10FFFF</code>]
         /// </para>
-        ///  </important> <important> 
+        ///  
         /// <para>
-        /// Because the batch request can result in a combination of successful and unsuccessful
-        /// actions, you should check for batch errors even when the call returns an HTTP status
-        /// code of 200.
+        /// For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
+        /// If you send any characters that aren't included in this list, your request will be
+        /// rejected.
         /// </para>
-        ///  </important> <note>
+        ///  </important> 
+        /// <para>
+        /// If you don't specify the <code>DelaySeconds</code> parameter for an entry, Amazon
+        /// SQS uses the default for the queue.
+        /// </para>
+        ///  <note> 
         /// <para>
         /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
         /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
@@ -2732,11 +2858,11 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> 
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.1=this]]></code>
+        ///  <code>&amp;amp;Attribute.1=this</code> 
         /// </para>
         ///  
         /// <para>
-        /// <code><![CDATA[&amp;Attribute.2=that]]></code>
+        ///  <code>&amp;amp;Attribute.2=that</code> 
         /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
@@ -2753,10 +2879,10 @@ namespace Amazon.SQS
         /// The length of all the messages put together is more than the limit.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
-        /// Batch request does not contain an entry.
+        /// Batch request doesn't contain an entry.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
-        /// The <code>Id</code> of a batch entry in a batch request does not abide by the specification.
+        /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// Batch request contains more number of entries than permissible.
@@ -2801,20 +2927,19 @@ namespace Amazon.SQS
         /// the SQS system. Changes made to the <code>MessageRetentionPeriod</code> attribute
         /// can take up to 15 minutes.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
-        /// Going forward, new attributes might be added. If you are writing code that calls this
-        /// action, we recommend that you structure your code so that it can handle new attributes
-        /// gracefully.
+        /// In the future, new attributes might be added. When you write code that calls this
+        /// action, we recommend structuring your code so that it can handle new attributes gracefully.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
-        /// <param name="attributes">A map of attributes to set. The following lists the names, descriptions, and values of the special request parameters the <code>SetQueueAttributes</code> action uses: <ul> <li><code>DelaySeconds</code> - The time in seconds that the delivery of all messages in the queue will be delayed. An integer from 0 to 900 (15 minutes). The default for this attribute is 0 (zero).</li> <li><code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it. An integer from 1024 bytes (1 KiB) up to 262144 bytes (256 KiB). The default for this attribute is 262144 (256 KiB).</li> <li><code>MessageRetentionPeriod</code> - The number of seconds Amazon SQS retains a message. Integer representing seconds, from 60 (1 minute) to 1209600 (14 days). The default for this attribute is 345600 (4 days).</li> <li><code>Policy</code> - The queue's policy. A valid AWS policy. For more information about policy structure, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>.</li> <li><code>ReceiveMessageWaitTimeSeconds</code> - The time for which a ReceiveMessage call will wait for a message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0.</li> <li><code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The default for this attribute is 30. For more information about visibility timeout, see Visibility Timeout in the <i>Amazon SQS Developer Guide</i>.</li> <li><code>RedrivePolicy</code> - The parameters for dead letter queue functionality of the source queue. For more information about RedrivePolicy and dead letter queues, see Using Amazon SQS Dead Letter Queues in the <i>Amazon SQS Developer Guide</i>.</li> </ul> Any other valid special request parameters that are specified (such as <code>ApproximateNumberOfMessages</code>, <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>, <code>CreatedTimestamp</code>, <code>LastModifiedTimestamp</code>, and <code>QueueArn</code>) will be ignored.</param>
+        /// <param name="attributes">A map of attributes to set. The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses: <ul> <li>  <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages in the queue is delayed. An integer from 0 to 900 (15 minutes). The default is 0 (zero).  </li> <li>  <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it. An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB).  </li> <li>  <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. An integer representing seconds, from 60 (1 minute) to 120,9600 (14 days). The default is 345,600 (4 days).  </li> <li>  <code>Policy</code> - The queue's policy. A valid AWS policy. For more information about policy structure, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>.  </li> <li>  <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a> action will wait for a message to arrive. An integer from 0 to 20 (seconds). The default is 0.  </li> <li>  <code>RedrivePolicy</code> - The parameters for the dead letter queue functionality of the source queue. For more information about the redrive policy and dead letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.  <note> The dead letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead letter queue of a standard queue must also be a standard queue. </note> </li> <li>  <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The default is 30. For more information about the visibility timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </li> </ul> The following attribute applies only to <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.  <ul> <li> Every message must have a unique <code>MessageDeduplicationId</code>, <ul> <li> You may provide a <code>MessageDeduplicationId</code> explicitly. </li> <li> If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).  </li> <li> If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error. </li> <li> If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one. </li> </ul> </li> <li> When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered. </li> <li> You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated as duplicates. </li> <li> If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.  </li> </ul> </li> </ul> Any other valid special request parameters that are specified (such as <code>ApproximateNumberOfMessages</code>, <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>, <code>CreatedTimestamp</code>, <code>LastModifiedTimestamp</code>, and <code>QueueArn</code>) will be ignored.</param>
         /// 
         /// <returns>The response from the SetQueueAttributes service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
-        /// The attribute referred to does not exist.
+        /// The attribute referred to doesn't exist.
         /// </exception>
         public SetQueueAttributesResponse SetQueueAttributes(string queueUrl, Dictionary<string, string> attributes)
         {
@@ -2831,19 +2956,18 @@ namespace Amazon.SQS
         /// the SQS system. Changes made to the <code>MessageRetentionPeriod</code> attribute
         /// can take up to 15 minutes.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
-        /// Going forward, new attributes might be added. If you are writing code that calls this
-        /// action, we recommend that you structure your code so that it can handle new attributes
-        /// gracefully.
+        /// In the future, new attributes might be added. When you write code that calls this
+        /// action, we recommend structuring your code so that it can handle new attributes gracefully.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetQueueAttributes service method.</param>
         /// 
         /// <returns>The response from the SetQueueAttributes service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
-        /// The attribute referred to does not exist.
+        /// The attribute referred to doesn't exist.
         /// </exception>
         public SetQueueAttributesResponse SetQueueAttributes(SetQueueAttributesRequest request)
         {
@@ -2860,23 +2984,22 @@ namespace Amazon.SQS
         /// the SQS system. Changes made to the <code>MessageRetentionPeriod</code> attribute
         /// can take up to 15 minutes.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
-        /// Going forward, new attributes might be added. If you are writing code that calls this
-        /// action, we recommend that you structure your code so that it can handle new attributes
-        /// gracefully.
+        /// In the future, new attributes might be added. When you write code that calls this
+        /// action, we recommend structuring your code so that it can handle new attributes gracefully.
         /// </para>
-        /// </note>
+        ///  </note>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
-        /// <param name="attributes">A map of attributes to set. The following lists the names, descriptions, and values of the special request parameters the <code>SetQueueAttributes</code> action uses: <ul> <li><code>DelaySeconds</code> - The time in seconds that the delivery of all messages in the queue will be delayed. An integer from 0 to 900 (15 minutes). The default for this attribute is 0 (zero).</li> <li><code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it. An integer from 1024 bytes (1 KiB) up to 262144 bytes (256 KiB). The default for this attribute is 262144 (256 KiB).</li> <li><code>MessageRetentionPeriod</code> - The number of seconds Amazon SQS retains a message. Integer representing seconds, from 60 (1 minute) to 1209600 (14 days). The default for this attribute is 345600 (4 days).</li> <li><code>Policy</code> - The queue's policy. A valid AWS policy. For more information about policy structure, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>.</li> <li><code>ReceiveMessageWaitTimeSeconds</code> - The time for which a ReceiveMessage call will wait for a message to arrive. An integer from 0 to 20 (seconds). The default for this attribute is 0.</li> <li><code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The default for this attribute is 30. For more information about visibility timeout, see Visibility Timeout in the <i>Amazon SQS Developer Guide</i>.</li> <li><code>RedrivePolicy</code> - The parameters for dead letter queue functionality of the source queue. For more information about RedrivePolicy and dead letter queues, see Using Amazon SQS Dead Letter Queues in the <i>Amazon SQS Developer Guide</i>.</li> </ul> Any other valid special request parameters that are specified (such as <code>ApproximateNumberOfMessages</code>, <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>, <code>CreatedTimestamp</code>, <code>LastModifiedTimestamp</code>, and <code>QueueArn</code>) will be ignored.</param>
+        /// <param name="attributes">A map of attributes to set. The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses: <ul> <li>  <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages in the queue is delayed. An integer from 0 to 900 (15 minutes). The default is 0 (zero).  </li> <li>  <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain before Amazon SQS rejects it. An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB).  </li> <li>  <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS retains a message. An integer representing seconds, from 60 (1 minute) to 120,9600 (14 days). The default is 345,600 (4 days).  </li> <li>  <code>Policy</code> - The queue's policy. A valid AWS policy. For more information about policy structure, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>.  </li> <li>  <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a> action will wait for a message to arrive. An integer from 0 to 20 (seconds). The default is 0.  </li> <li>  <code>RedrivePolicy</code> - The parameters for the dead letter queue functionality of the source queue. For more information about the redrive policy and dead letter queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.  <note> The dead letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead letter queue of a standard queue must also be a standard queue. </note> </li> <li>  <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer from 0 to 43200 (12 hours). The default is 30. For more information about the visibility timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </li> </ul> The following attribute applies only to <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <code>ContentBasedDeduplication</code> - Enables content-based deduplication. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">Exactly-Once Processing</a> in the <i>Amazon SQS Developer Guide</i>.  <ul> <li> Every message must have a unique <code>MessageDeduplicationId</code>, <ul> <li> You may provide a <code>MessageDeduplicationId</code> explicitly. </li> <li> If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).  </li> <li> If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error. </li> <li> If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one. </li> </ul> </li> <li> When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered. </li> <li> You can also use <code>ContentBasedDeduplication</code> for messages with identical content to be treated as duplicates. </li> <li> If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.  </li> </ul> </li> </ul> Any other valid special request parameters that are specified (such as <code>ApproximateNumberOfMessages</code>, <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>, <code>CreatedTimestamp</code>, <code>LastModifiedTimestamp</code>, and <code>QueueArn</code>) will be ignored.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the SetQueueAttributes service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
-        /// The attribute referred to does not exist.
+        /// The attribute referred to doesn't exist.
         /// </exception>
         public Task<SetQueueAttributesResponse> SetQueueAttributesAsync(string queueUrl, Dictionary<string, string> attributes, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// The user-specified message attribute value. For string data types, the value attribute
     /// has the same restrictions on the content as the message body. For more information,
-    /// see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html">SendMessage</a>.
+    /// see <a>SendMessage</a>.
     /// 
     ///  
     /// <para>
@@ -94,7 +94,7 @@ namespace Amazon.SQS.Model
         ///  
         /// <para>
         /// You can also append custom labels. For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributes.DataTypes">Message
-        /// Attribute Data Types</a>.
+        /// Attribute Data Types</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         /// </summary>
         public string DataType
@@ -130,7 +130,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property StringValue. 
         /// <para>
-        /// Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+        /// Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
+        /// Printable Characters</a>.
         /// </para>
         /// </summary>
         public string StringValue

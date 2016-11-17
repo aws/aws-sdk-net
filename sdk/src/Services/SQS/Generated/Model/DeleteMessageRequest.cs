@@ -46,12 +46,11 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  </note> <important> 
     /// <para>
-    ///  It is possible you will receive a message even after you have deleted it. This might
+    /// It is possible you will receive a message even after you have deleted it. This might
     /// happen on rare occasions if one of the servers storing a copy of the message is unavailable
     /// when you request to delete the message. The copy remains on the server and might be
     /// returned to you again on a subsequent receive request. You should create your system
     /// to be idempotent so that receiving a particular message more than once is not a problem.
-    /// 
     /// </para>
     ///  </important>
     /// </summary>
