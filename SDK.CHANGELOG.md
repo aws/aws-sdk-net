@@ -1,3 +1,13 @@
+### 3.3.21.0 (2016-11-17 23:34 UTC)
+* APIGateway (3.3.2.0)
+	* API Update for APIGateway : adding custom encoding feature.
+* AWSMarketplaceMetering (3.3.1.0)
+	* API Update for AWSMarketplaceMetering : allow third parties to send metering records.
+* CloudWatch (3.3.1.0)
+	* API Update for Cloudwatch: add support for percentile statistic (pN) to metrics and alarms
+* SQS (3.3.1.0)
+	* API Update for SQS : new FIFO message queue.
+
 ### 3.3.20.0 (2016-11-17 00:29 UTC)
 * Route53 (3.3.2.0)
 	* Adds support for cross account VPC association.
