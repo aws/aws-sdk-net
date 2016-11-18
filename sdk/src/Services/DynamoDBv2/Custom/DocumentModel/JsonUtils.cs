@@ -240,7 +240,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 return new UnconvertedDynamoDBEntry((int)data).Convert(conversion);
 
             if (data.IsUInt)
-                return new UnconvertedDynamoDBEntry((long)data).Convert(conversion);
+                return new UnconvertedDynamoDBEntry((uint)data).Convert(conversion);
 
             if (data.IsLong)
                 return new UnconvertedDynamoDBEntry((long)data).Convert(conversion);
