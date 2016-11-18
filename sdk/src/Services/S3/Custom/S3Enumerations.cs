@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright 2008-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -985,6 +985,56 @@ namespace Amazon.S3
 
     }
 
+    /// <summary>
+    /// All enumerations type for retrieval tier for Glacier restore.
+    /// </summary>
+    public sealed class GlacierJobTier : ConstantClass
+    {
+        /// <summary>
+        /// Standard Tier for Glacier restore.
+        /// </summary>
+        public static readonly GlacierJobTier Standard = new GlacierJobTier("Standard");
+
+        /// <summary>
+        /// Bulk Tier for Glacier restore.
+        /// </summary>
+        public static readonly GlacierJobTier Bulk = new GlacierJobTier("Bulk");
+
+        /// <summary>
+        /// Expedited Tier for Glacier restore.
+        /// </summary>
+        public static readonly GlacierJobTier Expedited = new GlacierJobTier("Expedited");
+
+        /// <summary>
+        /// Construct instance of RestoreObjectRequestGlacierJobTier
+        /// </summary>
+        /// <param name="value"></param>
+        private GlacierJobTier(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The string representation of the RestoreObjectRequestGlacierJobTier.</param>
+        /// <returns>The RestoreObjectRequestGlacierJobTier object for that string.</returns>
+        public static GlacierJobTier FindValue(string value)
+        {
+            return FindValue<GlacierJobTier>(value);
+        }
+
+        /// <summary>
+        /// Convert string to RestoreObjectRequestGlacierJobTier.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static implicit operator GlacierJobTier(string value)
+        {
+            return FindValue<GlacierJobTier>(value);
+        }
+
+    }
 
     internal enum S3QueryParameter
     {

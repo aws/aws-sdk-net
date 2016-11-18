@@ -59,6 +59,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                     xmlWriter.WriteStartElement("RestoreRequest", "");
                     xmlWriter.WriteElementString("Days", "", S3Transforms.ToXmlStringValue(restoreObjectRequest.Days));
+                    xmlWriter.WriteStartElement("GlacierJobParameters", "");
+                    xmlWriter.WriteElementString("Tier", "", S3Transforms.ToXmlStringValue(restoreObjectRequest.Tier));
+                    xmlWriter.WriteEndElement();
                     xmlWriter.WriteEndElement();
             }
 
