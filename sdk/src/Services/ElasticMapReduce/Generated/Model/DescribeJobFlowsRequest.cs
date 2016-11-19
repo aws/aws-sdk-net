@@ -61,7 +61,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions.
+    /// Amazon EMR can return a maximum of 512 job flow descriptions.
     /// </para>
     /// </summary>
     public partial class DescribeJobFlowsRequest : AmazonElasticMapReduceRequest

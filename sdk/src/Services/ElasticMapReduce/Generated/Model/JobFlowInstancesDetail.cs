@@ -234,10 +234,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property NormalizedInstanceHours. 
         /// <para>
         /// An approximation of the cost of the job flow, represented in m1.small/hours. This
-        /// value is incremented once for every hour an m1.small runs. Larger instances are weighted
-        /// more, so an Amazon EC2 instance that is roughly four times more expensive would result
-        /// in the normalized instance hours being incremented by four. This result is only an
-        /// approximation and does not reflect the actual billing rate.
+        /// value is incremented one time for every hour that an m1.small runs. Larger instances
+        /// are weighted more, so an Amazon EC2 instance that is roughly four times more expensive
+        /// would result in the normalized instance hours being incremented by four. This result
+        /// is only an approximation and does not reflect the actual billing rate.
         /// </para>
         /// </summary>
         public int NormalizedInstanceHours

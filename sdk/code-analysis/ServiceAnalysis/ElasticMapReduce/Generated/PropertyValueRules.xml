@@ -16,6 +16,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.CancelStepsRequest.ClusterId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.CreateSecurityConfigurationRequest.Name</property>
     <min>0</min>
     <max>10280</max>
@@ -49,6 +54,11 @@
     <property>Amazon.ElasticMapReduce.Model.RunJobFlowRequest.AmiVersion</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.RunJobFlowRequest.AutoScalingRole</property>
+    <min>0</min>
+    <max>10280</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.RunJobFlowRequest.JobFlowRole</property>
@@ -89,6 +99,15 @@
     <property>Amazon.ElasticMapReduce.Model.BootstrapActionConfig.Name</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.CloudWatchAlarmDefinition.Threshold</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.Cluster.AutoScalingRole</property>
+    <min>0</min>
+    <max>10280</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.Cluster.SecurityConfiguration</property>
@@ -164,6 +183,11 @@
     <property>Amazon.ElasticMapReduce.Model.JobFlowDetail.AmiVersion</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.JobFlowDetail.AutoScalingRole</property>
+    <min>0</min>
+    <max>10280</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.JobFlowDetail.JobFlowId</property>

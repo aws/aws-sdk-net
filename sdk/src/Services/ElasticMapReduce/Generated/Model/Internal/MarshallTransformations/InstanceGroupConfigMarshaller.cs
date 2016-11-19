@@ -45,6 +45,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InstanceGroupConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAutoScalingPolicy())
+            {
+                context.Writer.WritePropertyName("AutoScalingPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AutoScalingPolicyMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutoScalingPolicy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetBidPrice())
             {
                 context.Writer.WritePropertyName("BidPrice");

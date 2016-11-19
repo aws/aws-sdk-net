@@ -39,7 +39,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ClusterId. 
         /// <para>
-        /// The cluster identifier for the bootstrap actions to list .
+        /// The cluster identifier for the bootstrap actions to list.
         /// </para>
         /// </summary>
         public string ClusterId

@@ -33,6 +33,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class InstanceGroup
     {
+        private AutoScalingPolicyDescription _autoScalingPolicy;
         private string _bidPrice;
         private List<Configuration> _configurations = new List<Configuration>();
         private List<EbsBlockDevice> _ebsBlockDevices = new List<EbsBlockDevice>();
@@ -46,6 +47,27 @@ namespace Amazon.ElasticMapReduce.Model
         private int? _runningInstanceCount;
         private ShrinkPolicy _shrinkPolicy;
         private InstanceGroupStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property AutoScalingPolicy. 
+        /// <para>
+        /// An automatic scaling policy for a core instance group or task instance group in an
+        /// Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically
+        /// adds and terminates EC2 instances in response to the value of a CloudWatch metric.
+        /// See PutAutoScalingPolicy.
+        /// </para>
+        /// </summary>
+        public AutoScalingPolicyDescription AutoScalingPolicy
+        {
+            get { return this._autoScalingPolicy; }
+            set { this._autoScalingPolicy = value; }
+        }
+
+        // Check to see if AutoScalingPolicy property is set
+        internal bool IsSetAutoScalingPolicy()
+        {
+            return this._autoScalingPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BidPrice. 

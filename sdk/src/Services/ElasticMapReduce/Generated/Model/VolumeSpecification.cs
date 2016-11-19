@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// EBS volume specifications such as volume type, IOPS, and size(GiB) that will be requested
+    /// EBS volume specifications such as volume type, IOPS, and size (GiB) that will be requested
     /// for the EBS volume attached to an EC2 instance in the cluster.
     /// </summary>
     public partial class VolumeSpecification

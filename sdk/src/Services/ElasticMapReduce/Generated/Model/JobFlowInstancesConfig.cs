@@ -95,8 +95,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Ec2KeyName. 
         /// <para>
-        /// The name of the Amazon EC2 key pair that can be used to ssh to the master node as
-        /// the user called "hadoop."
+        /// The name of the EC2 key pair that can be used to ssh to the master node as the user
+        /// called "hadoop."
         /// </para>
         /// </summary>
         public string Ec2KeyName
@@ -199,7 +199,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
-        /// The number of Amazon EC2 instances used to execute the job flow.
+        /// The number of EC2 instances used to execute the job flow.
         /// </para>
         /// </summary>
         public int InstanceCount

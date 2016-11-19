@@ -29,9 +29,8 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSecurityConfiguration operation.
-    /// Creates a security configuration using EMR Security Configurations, which are stored
-    /// in the service. Security Configurations enable you to more easily create a configuration,
-    /// reuse it, and apply it whenever a cluster is created.
+    /// Creates a security configuration, which is stored in the service and can be specified
+    /// when a cluster is created.
     /// </summary>
     public partial class CreateSecurityConfigurationRequest : AmazonElasticMapReduceRequest
     {

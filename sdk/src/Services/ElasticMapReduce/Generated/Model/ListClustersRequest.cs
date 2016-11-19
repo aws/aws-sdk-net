@@ -63,7 +63,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property CreatedAfter. 
         /// <para>
-        /// The creation date and time beginning value filter for listing clusters .
+        /// The creation date and time beginning value filter for listing clusters.
         /// </para>
         /// </summary>
         public DateTime CreatedAfter
@@ -81,7 +81,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property CreatedBefore. 
         /// <para>
-        /// The creation date and time end value filter for listing clusters .
+        /// The creation date and time end value filter for listing clusters.
         /// </para>
         /// </summary>
         public DateTime CreatedBefore

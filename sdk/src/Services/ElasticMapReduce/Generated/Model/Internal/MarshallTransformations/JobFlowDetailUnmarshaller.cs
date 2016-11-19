@@ -70,6 +70,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.AmiVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AutoScalingRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AutoScalingRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BootstrapActions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<BootstrapActionDetail, BootstrapActionDetailUnmarshaller>(BootstrapActionDetailUnmarshaller.Instance);
@@ -110,6 +116,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ScaleDownBehavior", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScaleDownBehavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ServiceRole", targetDepth))

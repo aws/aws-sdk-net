@@ -31,10 +31,10 @@ namespace Amazon.ElasticMapReduce
     /// <summary>
     /// Interface for accessing ElasticMapReduce
     ///
-    /// Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process
-    /// large amounts of data efficiently. Amazon EMR uses Hadoop processing combined with
-    /// several AWS products to do tasks such as web indexing, data mining, log file analysis,
-    /// machine learning, scientific simulation, and data warehousing.
+    /// Amazon EMR is a web service that makes it easy to process large amounts of data efficiently.
+    /// Amazon EMR uses Hadoop processing combined with several AWS products to do tasks such
+    /// as web indexing, data mining, log file analysis, machine learning, scientific simulation,
+    /// and data warehousing.
     /// </summary>
     public partial interface IAmazonElasticMapReduce : IAmazonService, IDisposable
     {
@@ -84,6 +84,22 @@ namespace Amazon.ElasticMapReduce
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<AddTagsResponse> AddTagsAsync(AddTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CancelSteps
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelSteps operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelSteps operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CancelStepsResponse> CancelStepsAsync(CancelStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -189,7 +205,7 @@ namespace Amazon.ElasticMapReduce
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions.
+        /// Amazon EMR can return a maximum of 512 job flow descriptions.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -427,7 +443,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Provides a list of steps for the cluster.
+        /// Provides a list of steps for the cluster in reverse order unless you specify stepIds
+        /// with the request.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -469,6 +486,38 @@ namespace Amazon.ElasticMapReduce
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ModifyInstanceGroupsResponse> ModifyInstanceGroupsAsync(ModifyInstanceGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutAutoScalingPolicy
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAutoScalingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAutoScalingPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutAutoScalingPolicyResponse> PutAutoScalingPolicyAsync(PutAutoScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RemoveAutoScalingPolicy
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveAutoScalingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAutoScalingPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RemoveAutoScalingPolicyResponse> RemoveAutoScalingPolicyAsync(RemoveAutoScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

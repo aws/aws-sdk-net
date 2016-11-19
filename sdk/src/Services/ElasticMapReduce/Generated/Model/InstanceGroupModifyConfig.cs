@@ -56,8 +56,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EC2InstanceIdsToTerminate. 
         /// <para>
-        /// The EC2 InstanceIds to terminate. Once you terminate the instances, the instance group
-        /// will not return to its original requested size.
+        /// The EC2 InstanceIds to terminate. After you terminate the instances, the instance
+        /// group will not return to its original requested size.
         /// </para>
         /// </summary>
         public List<string> EC2InstanceIdsToTerminate

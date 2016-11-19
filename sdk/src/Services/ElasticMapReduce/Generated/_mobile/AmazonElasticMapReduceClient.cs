@@ -36,10 +36,10 @@ namespace Amazon.ElasticMapReduce
     /// <summary>
     /// Implementation for accessing ElasticMapReduce
     ///
-    /// Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to process
-    /// large amounts of data efficiently. Amazon EMR uses Hadoop processing combined with
-    /// several AWS products to do tasks such as web indexing, data mining, log file analysis,
-    /// machine learning, scientific simulation, and data warehousing.
+    /// Amazon EMR is a web service that makes it easy to process large amounts of data efficiently.
+    /// Amazon EMR uses Hadoop processing combined with several AWS products to do tasks such
+    /// as web indexing, data mining, log file analysis, machine learning, scientific simulation,
+    /// and data warehousing.
     /// </summary>
     public partial class AmazonElasticMapReduceClient : AmazonServiceClient, IAmazonElasticMapReduce
     {
@@ -326,6 +326,37 @@ namespace Amazon.ElasticMapReduce
 
         #endregion
         
+        #region  CancelSteps
+
+        internal CancelStepsResponse CancelSteps(CancelStepsRequest request)
+        {
+            var marshaller = new CancelStepsRequestMarshaller();
+            var unmarshaller = CancelStepsResponseUnmarshaller.Instance;
+
+            return Invoke<CancelStepsRequest,CancelStepsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelSteps operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelSteps operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CancelStepsResponse> CancelStepsAsync(CancelStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CancelStepsRequestMarshaller();
+            var unmarshaller = CancelStepsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelStepsRequest,CancelStepsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSecurityConfiguration
 
         internal CreateSecurityConfigurationResponse CreateSecurityConfiguration(CreateSecurityConfigurationRequest request)
@@ -494,7 +525,7 @@ namespace Amazon.ElasticMapReduce
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Amazon Elastic MapReduce can return a maximum of 512 job flow descriptions.
+        /// Amazon EMR can return a maximum of 512 job flow descriptions.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -894,7 +925,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Provides a list of steps for the cluster.
+        /// Provides a list of steps for the cluster in reverse order unless you specify stepIds
+        /// with the request.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -959,6 +991,68 @@ namespace Amazon.ElasticMapReduce
             var unmarshaller = ModifyInstanceGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyInstanceGroupsRequest,ModifyInstanceGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutAutoScalingPolicy
+
+        internal PutAutoScalingPolicyResponse PutAutoScalingPolicy(PutAutoScalingPolicyRequest request)
+        {
+            var marshaller = new PutAutoScalingPolicyRequestMarshaller();
+            var unmarshaller = PutAutoScalingPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutAutoScalingPolicyRequest,PutAutoScalingPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAutoScalingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAutoScalingPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutAutoScalingPolicyResponse> PutAutoScalingPolicyAsync(PutAutoScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutAutoScalingPolicyRequestMarshaller();
+            var unmarshaller = PutAutoScalingPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutAutoScalingPolicyRequest,PutAutoScalingPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveAutoScalingPolicy
+
+        internal RemoveAutoScalingPolicyResponse RemoveAutoScalingPolicy(RemoveAutoScalingPolicyRequest request)
+        {
+            var marshaller = new RemoveAutoScalingPolicyRequestMarshaller();
+            var unmarshaller = RemoveAutoScalingPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveAutoScalingPolicyRequest,RemoveAutoScalingPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveAutoScalingPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveAutoScalingPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RemoveAutoScalingPolicyResponse> RemoveAutoScalingPolicyAsync(RemoveAutoScalingPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RemoveAutoScalingPolicyRequestMarshaller();
+            var unmarshaller = RemoveAutoScalingPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveAutoScalingPolicyRequest,RemoveAutoScalingPolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

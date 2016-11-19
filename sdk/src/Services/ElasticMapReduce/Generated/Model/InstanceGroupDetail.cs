@@ -56,7 +56,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Instantiates InstanceGroupDetail with the parameterized properties
         /// </summary>
         /// <param name="instanceRole">Instance group role in the cluster</param>
-        /// <param name="instanceType">Amazon EC2 Instance type.</param>
+        /// <param name="instanceType">EC2 instance type.</param>
         /// <param name="instanceRequestCount">Target number of instances to run in the instance group.</param>
         /// <param name="instanceRunningCount">Actual count of running instances.</param>
         /// <param name="state">State of instance group. The following values are deprecated: STARTING, TERMINATED, and FAILED.</param>
@@ -200,7 +200,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// Amazon EC2 Instance type.
+        /// EC2 instance type.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -236,7 +236,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Market. 
         /// <para>
-        /// Market type of the Amazon EC2 instances used to create a cluster node.
+        /// Market type of the EC2 instances used to create a cluster node.
         /// </para>
         /// </summary>
         public MarketType Market

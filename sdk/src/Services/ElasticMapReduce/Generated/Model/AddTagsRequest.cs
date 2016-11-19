@@ -57,7 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Instantiates AddTagsRequest with the parameterized properties
         /// </summary>
         /// <param name="resourceId">The Amazon EMR resource identifier to which tags will be added. This value must be a cluster identifier.</param>
-        /// <param name="tags">A list of tags to associate with a cluster and propagate to Amazon EC2 instances. Tags are user-defined key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</param>
+        /// <param name="tags">A list of tags to associate with a cluster and propagate to EC2 instances. Tags are user-defined key/value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</param>
         public AddTagsRequest(string resourceId, List<Tag> tags)
         {
             _resourceId = resourceId;
@@ -86,9 +86,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags to associate with a cluster and propagate to Amazon EC2 instances.
-        /// Tags are user-defined key/value pairs that consist of a required key string with a
-        /// maximum of 128 characters, and an optional value string with a maximum of 256 characters.
+        /// A list of tags to associate with a cluster and propagate to EC2 instances. Tags are
+        /// user-defined key/value pairs that consist of a required key string with a maximum
+        /// of 128 characters, and an optional value string with a maximum of 256 characters.
         /// </para>
         /// </summary>
         public List<Tag> Tags

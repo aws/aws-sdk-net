@@ -83,6 +83,230 @@ namespace Amazon.ElasticMapReduce
 
 
     /// <summary>
+    /// Constants used for properties of type AdjustmentType.
+    /// </summary>
+    public class AdjustmentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CHANGE_IN_CAPACITY for AdjustmentType
+        /// </summary>
+        public static readonly AdjustmentType CHANGE_IN_CAPACITY = new AdjustmentType("CHANGE_IN_CAPACITY");
+        /// <summary>
+        /// Constant EXACT_CAPACITY for AdjustmentType
+        /// </summary>
+        public static readonly AdjustmentType EXACT_CAPACITY = new AdjustmentType("EXACT_CAPACITY");
+        /// <summary>
+        /// Constant PERCENT_CHANGE_IN_CAPACITY for AdjustmentType
+        /// </summary>
+        public static readonly AdjustmentType PERCENT_CHANGE_IN_CAPACITY = new AdjustmentType("PERCENT_CHANGE_IN_CAPACITY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AdjustmentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdjustmentType FindValue(string value)
+        {
+            return FindValue<AdjustmentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdjustmentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutoScalingPolicyState.
+    /// </summary>
+    public class AutoScalingPolicyState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATTACHED for AutoScalingPolicyState
+        /// </summary>
+        public static readonly AutoScalingPolicyState ATTACHED = new AutoScalingPolicyState("ATTACHED");
+        /// <summary>
+        /// Constant ATTACHING for AutoScalingPolicyState
+        /// </summary>
+        public static readonly AutoScalingPolicyState ATTACHING = new AutoScalingPolicyState("ATTACHING");
+        /// <summary>
+        /// Constant DETACHED for AutoScalingPolicyState
+        /// </summary>
+        public static readonly AutoScalingPolicyState DETACHED = new AutoScalingPolicyState("DETACHED");
+        /// <summary>
+        /// Constant DETACHING for AutoScalingPolicyState
+        /// </summary>
+        public static readonly AutoScalingPolicyState DETACHING = new AutoScalingPolicyState("DETACHING");
+        /// <summary>
+        /// Constant FAILED for AutoScalingPolicyState
+        /// </summary>
+        public static readonly AutoScalingPolicyState FAILED = new AutoScalingPolicyState("FAILED");
+        /// <summary>
+        /// Constant PENDING for AutoScalingPolicyState
+        /// </summary>
+        public static readonly AutoScalingPolicyState PENDING = new AutoScalingPolicyState("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoScalingPolicyState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoScalingPolicyState FindValue(string value)
+        {
+            return FindValue<AutoScalingPolicyState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoScalingPolicyState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutoScalingPolicyStateChangeReasonCode.
+    /// </summary>
+    public class AutoScalingPolicyStateChangeReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLEANUP_FAILURE for AutoScalingPolicyStateChangeReasonCode
+        /// </summary>
+        public static readonly AutoScalingPolicyStateChangeReasonCode CLEANUP_FAILURE = new AutoScalingPolicyStateChangeReasonCode("CLEANUP_FAILURE");
+        /// <summary>
+        /// Constant PROVISION_FAILURE for AutoScalingPolicyStateChangeReasonCode
+        /// </summary>
+        public static readonly AutoScalingPolicyStateChangeReasonCode PROVISION_FAILURE = new AutoScalingPolicyStateChangeReasonCode("PROVISION_FAILURE");
+        /// <summary>
+        /// Constant USER_REQUEST for AutoScalingPolicyStateChangeReasonCode
+        /// </summary>
+        public static readonly AutoScalingPolicyStateChangeReasonCode USER_REQUEST = new AutoScalingPolicyStateChangeReasonCode("USER_REQUEST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoScalingPolicyStateChangeReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoScalingPolicyStateChangeReasonCode FindValue(string value)
+        {
+            return FindValue<AutoScalingPolicyStateChangeReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoScalingPolicyStateChangeReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CancelStepsRequestStatus.
+    /// </summary>
+    public class CancelStepsRequestStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for CancelStepsRequestStatus
+        /// </summary>
+        public static readonly CancelStepsRequestStatus FAILED = new CancelStepsRequestStatus("FAILED");
+        /// <summary>
+        /// Constant SUBMITTED for CancelStepsRequestStatus
+        /// </summary>
+        public static readonly CancelStepsRequestStatus SUBMITTED = new CancelStepsRequestStatus("SUBMITTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CancelStepsRequestStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CancelStepsRequestStatus FindValue(string value)
+        {
+            return FindValue<CancelStepsRequestStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CancelStepsRequestStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClusterState.
     /// </summary>
     public class ClusterState : ConstantClass
@@ -216,6 +440,64 @@ namespace Amazon.ElasticMapReduce
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ClusterStateChangeReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComparisonOperator.
+    /// </summary>
+    public class ComparisonOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GREATER_THAN for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator GREATER_THAN = new ComparisonOperator("GREATER_THAN");
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUAL for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator GREATER_THAN_OR_EQUAL = new ComparisonOperator("GREATER_THAN_OR_EQUAL");
+        /// <summary>
+        /// Constant LESS_THAN for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator LESS_THAN = new ComparisonOperator("LESS_THAN");
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUAL for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator LESS_THAN_OR_EQUAL = new ComparisonOperator("LESS_THAN_OR_EQUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComparisonOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComparisonOperator FindValue(string value)
+        {
+            return FindValue<ComparisonOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComparisonOperator(string value)
         {
             return FindValue(value);
         }
@@ -719,6 +1001,118 @@ namespace Amazon.ElasticMapReduce
 
 
     /// <summary>
+    /// Constants used for properties of type ScaleDownBehavior.
+    /// </summary>
+    public class ScaleDownBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TERMINATE_AT_INSTANCE_HOUR for ScaleDownBehavior
+        /// </summary>
+        public static readonly ScaleDownBehavior TERMINATE_AT_INSTANCE_HOUR = new ScaleDownBehavior("TERMINATE_AT_INSTANCE_HOUR");
+        /// <summary>
+        /// Constant TERMINATE_AT_TASK_COMPLETION for ScaleDownBehavior
+        /// </summary>
+        public static readonly ScaleDownBehavior TERMINATE_AT_TASK_COMPLETION = new ScaleDownBehavior("TERMINATE_AT_TASK_COMPLETION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScaleDownBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScaleDownBehavior FindValue(string value)
+        {
+            return FindValue<ScaleDownBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScaleDownBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Statistic.
+    /// </summary>
+    public class Statistic : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVERAGE for Statistic
+        /// </summary>
+        public static readonly Statistic AVERAGE = new Statistic("AVERAGE");
+        /// <summary>
+        /// Constant MAXIMUM for Statistic
+        /// </summary>
+        public static readonly Statistic MAXIMUM = new Statistic("MAXIMUM");
+        /// <summary>
+        /// Constant MINIMUM for Statistic
+        /// </summary>
+        public static readonly Statistic MINIMUM = new Statistic("MINIMUM");
+        /// <summary>
+        /// Constant SAMPLE_COUNT for Statistic
+        /// </summary>
+        public static readonly Statistic SAMPLE_COUNT = new Statistic("SAMPLE_COUNT");
+        /// <summary>
+        /// Constant SUM for Statistic
+        /// </summary>
+        public static readonly Statistic SUM = new Statistic("SUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Statistic(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Statistic FindValue(string value)
+        {
+            return FindValue<Statistic>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Statistic(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type StepExecutionState.
     /// </summary>
     public class StepExecutionState : ConstantClass
@@ -794,6 +1188,10 @@ namespace Amazon.ElasticMapReduce
     public class StepState : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CANCEL_PENDING for StepState
+        /// </summary>
+        public static readonly StepState CANCEL_PENDING = new StepState("CANCEL_PENDING");
         /// <summary>
         /// Constant CANCELLED for StepState
         /// </summary>
@@ -894,6 +1292,156 @@ namespace Amazon.ElasticMapReduce
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StepStateChangeReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Unit.
+    /// </summary>
+    public class Unit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BITS for Unit
+        /// </summary>
+        public static readonly Unit BITS = new Unit("BITS");
+        /// <summary>
+        /// Constant BITS_PER_SECOND for Unit
+        /// </summary>
+        public static readonly Unit BITS_PER_SECOND = new Unit("BITS_PER_SECOND");
+        /// <summary>
+        /// Constant BYTES for Unit
+        /// </summary>
+        public static readonly Unit BYTES = new Unit("BYTES");
+        /// <summary>
+        /// Constant BYTES_PER_SECOND for Unit
+        /// </summary>
+        public static readonly Unit BYTES_PER_SECOND = new Unit("BYTES_PER_SECOND");
+        /// <summary>
+        /// Constant COUNT for Unit
+        /// </summary>
+        public static readonly Unit COUNT = new Unit("COUNT");
+        /// <summary>
+        /// Constant COUNT_PER_SECOND for Unit
+        /// </summary>
+        public static readonly Unit COUNT_PER_SECOND = new Unit("COUNT_PER_SECOND");
+        /// <summary>
+        /// Constant GIGA_BITS for Unit
+        /// </summary>
+        public static readonly Unit GIGA_BITS = new Unit("GIGA_BITS");
+        /// <summary>
+        /// Constant GIGA_BITS_PER_SECOND for Unit
+        /// </summary>
+        public static readonly Unit GIGA_BITS_PER_SECOND = new Unit("GIGA_BITS_PER_SECOND");
+        /// <summary>
+        /// Constant GIGA_BYTES for Unit
+        /// </summary>
+        public static readonly Unit GIGA_BYTES = new Unit("GIGA_BYTES");
+        /// <summary>
+        /// Constant GIGA_BYTES_PER_SECOND for Unit
+        /// </summary>
+        public static readonly Unit GIGA_BYTES_PER_SECOND = new Unit("GIGA_BYTES_PER_SECOND");
+        /// <summary>
+        /// Constant KILO_BITS for Unit
+        /// </summary>
+        public static readonly Unit KILO_BITS = new Unit("KILO_BITS");
+        /// <summary>
+        /// Constant KILO_BITS_PER_SECOND for Unit
+        /// </summary>
+        public static readonly Unit KILO_BITS_PER_SECOND = new Unit("KILO_BITS_PER_SECOND");
+        /// <summary>
+        /// Constant KILO_BYTES for Unit
+        /// </summary>
+        public static readonly Unit KILO_BYTES = new Unit("KILO_BYTES");
+        /// <summary>
+        /// Constant KILO_BYTES_PER_SECOND for Unit
+        /// </summary>
+        public static readonly Unit KILO_BYTES_PER_SECOND = new Unit("KILO_BYTES_PER_SECOND");
+        /// <summary>
+        /// Constant MEGA_BITS for Unit
+        /// </summary>
+        public static readonly Unit MEGA_BITS = new Unit("MEGA_BITS");
+        /// <summary>
+        /// Constant MEGA_BITS_PER_SECOND for Unit
+        /// </summary>
+        public static readonly Unit MEGA_BITS_PER_SECOND = new Unit("MEGA_BITS_PER_SECOND");
+        /// <summary>
+        /// Constant MEGA_BYTES for Unit
+        /// </summary>
+        public static readonly Unit MEGA_BYTES = new Unit("MEGA_BYTES");
+        /// <summary>
+        /// Constant MEGA_BYTES_PER_SECOND for Unit
+        /// </summary>
+        public static readonly Unit MEGA_BYTES_PER_SECOND = new Unit("MEGA_BYTES_PER_SECOND");
+        /// <summary>
+        /// Constant MICRO_SECONDS for Unit
+        /// </summary>
+        public static readonly Unit MICRO_SECONDS = new Unit("MICRO_SECONDS");
+        /// <summary>
+        /// Constant MILLI_SECONDS for Unit
+        /// </summary>
+        public static readonly Unit MILLI_SECONDS = new Unit("MILLI_SECONDS");
+        /// <summary>
+        /// Constant NONE for Unit
+        /// </summary>
+        public static readonly Unit NONE = new Unit("NONE");
+        /// <summary>
+        /// Constant PERCENT for Unit
+        /// </summary>
+        public static readonly Unit PERCENT = new Unit("PERCENT");
+        /// <summary>
+        /// Constant SECONDS for Unit
+        /// </summary>
+        public static readonly Unit SECONDS = new Unit("SECONDS");
+        /// <summary>
+        /// Constant TERA_BITS for Unit
+        /// </summary>
+        public static readonly Unit TERA_BITS = new Unit("TERA_BITS");
+        /// <summary>
+        /// Constant TERA_BITS_PER_SECOND for Unit
+        /// </summary>
+        public static readonly Unit TERA_BITS_PER_SECOND = new Unit("TERA_BITS_PER_SECOND");
+        /// <summary>
+        /// Constant TERA_BYTES for Unit
+        /// </summary>
+        public static readonly Unit TERA_BYTES = new Unit("TERA_BYTES");
+        /// <summary>
+        /// Constant TERA_BYTES_PER_SECOND for Unit
+        /// </summary>
+        public static readonly Unit TERA_BYTES_PER_SECOND = new Unit("TERA_BYTES_PER_SECOND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Unit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Unit FindValue(string value)
+        {
+            return FindValue<Unit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Unit(string value)
         {
             return FindValue(value);
         }
