@@ -192,6 +192,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant EcsServiceDesiredCount for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension EcsServiceDesiredCount = new ScalableDimension("ecs:service:DesiredCount");
+        /// <summary>
+        /// Constant ElasticmapreduceInstancegroupInstanceCount for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension ElasticmapreduceInstancegroupInstanceCount = new ScalableDimension("elasticmapreduce:instancegroup:InstanceCount");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -308,6 +312,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant Ecs for ServiceNamespace
         /// </summary>
         public static readonly ServiceNamespace Ecs = new ServiceNamespace("ecs");
+        /// <summary>
+        /// Constant Elasticmapreduce for ServiceNamespace
+        /// </summary>
+        public static readonly ServiceNamespace Elasticmapreduce = new ServiceNamespace("elasticmapreduce");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
