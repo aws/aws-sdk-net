@@ -74,10 +74,27 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetEnvironment())
+                {
+                    context.Writer.WritePropertyName("Environment");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EnvironmentMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Environment, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetHandler())
                 {
                     context.Writer.WritePropertyName("Handler");
                     context.Writer.Write(publicRequest.Handler);
+                }
+
+                if(publicRequest.IsSetKMSKeyArn())
+                {
+                    context.Writer.WritePropertyName("KMSKeyArn");
+                    context.Writer.Write(publicRequest.KMSKeyArn);
                 }
 
                 if(publicRequest.IsSetMemorySize())

@@ -977,7 +977,8 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Invokes a specific Lambda function.
+        /// Invokes a specific Lambda function. For an example, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually">Create
+        /// the Lambda Function and Test It Manually</a>. 
         /// 
         ///  
         /// <para>
@@ -1030,6 +1031,22 @@ namespace Amazon.Lambda
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.InvalidZipFileException">
         /// AWS Lambda could not unzip the function zip file.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
+        /// Lambda was unable to decrypt the environment variables becauses KMS access was denied.
+        /// Please check the Lambda function's KMS permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
+        /// Lambda was unable to decrypt the environment variables because the KMS key used is
+        /// disabled. Please check the Lambda function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
+        /// Lambda was unable to decrypt the environment variables because the KMS key used is
+        /// in an invalid state for Decrypt. Please check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
+        /// Lambda was unable to decrypt the environment variables because the KMS key was not
+        /// found. Please check the function's KMS key settings.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
         /// The request payload exceeded the <code>Invoke</code> request body JSON input limit.

@@ -29,7 +29,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the Invoke operation.
-    /// Invokes a specific Lambda function.
+    /// Invokes a specific Lambda function. For an example, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually">Create
+    /// the Lambda Function and Test It Manually</a>. 
     /// 
     ///  
     /// <para>

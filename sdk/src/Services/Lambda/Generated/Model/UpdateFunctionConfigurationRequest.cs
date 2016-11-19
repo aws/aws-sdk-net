@@ -50,8 +50,10 @@ namespace Amazon.Lambda.Model
     public partial class UpdateFunctionConfigurationRequest : AmazonLambdaRequest
     {
         private string _description;
+        private Environment _environment;
         private string _functionName;
         private string _handler;
+        private string _kmsKeyArn;
         private int? _memorySize;
         private string _role;
         private Runtime _runtime;
@@ -75,6 +77,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Environment. 
+        /// <para>
+        /// The parent object that contains your environment's configuration settings.
+        /// </para>
+        /// </summary>
+        public Environment Environment
+        {
+            get { return this._environment; }
+            set { this._environment = value; }
+        }
+
+        // Check to see if Environment property is set
+        internal bool IsSetEnvironment()
+        {
+            return this._environment != null;
         }
 
         /// <summary>
@@ -120,6 +140,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetHandler()
         {
             return this._handler != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment
+        /// variables. If you elect to use the AWS Lambda default service key, pass in an empty
+        /// string ("") for this parameter.
+        /// </para>
+        /// </summary>
+        public string KMSKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KMSKeyArn property is set
+        internal bool IsSetKMSKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

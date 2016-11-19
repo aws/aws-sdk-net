@@ -50,8 +50,10 @@ namespace Amazon.Lambda.Model
     {
         private FunctionCode _code;
         private string _description;
+        private Environment _environment;
         private string _functionName;
         private string _handler;
+        private string _kmsKeyArn;
         private int? _memorySize;
         private bool? _publish;
         private string _role;
@@ -97,6 +99,21 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Environment.
+        /// </summary>
+        public Environment Environment
+        {
+            get { return this._environment; }
+            set { this._environment = value; }
+        }
+
+        // Check to see if Environment property is set
+        internal bool IsSetEnvironment()
+        {
+            return this._environment != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
         /// The name you want to assign to the function you are uploading. The function names
@@ -136,6 +153,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetHandler()
         {
             return this._handler != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment
+        /// variables. If not provided, AWS Lambda will use a default service key.
+        /// </para>
+        /// </summary>
+        public string KMSKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KMSKeyArn property is set
+        internal bool IsSetKMSKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

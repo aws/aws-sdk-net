@@ -199,13 +199,13 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SourceAccount. 
         /// <para>
-        /// This parameter is used for S3 and SES only. The AWS account ID (without a hyphen)
-        /// of the source owner. For example, if the <code>SourceArn</code> identifies a bucket,
-        /// then this is the bucket owner's account ID. You can use this additional condition
-        /// to ensure the bucket you specify is owned by a specific account (it is possible the
-        /// bucket owner deleted the bucket and some other AWS account created the bucket). You
-        /// can also use this condition to specify all sources (that is, you don't specify the
-        /// <code>SourceArn</code>) owned by a specific account. 
+        /// This parameter is used for S3, SES, CloudWatch Logs and CloudWatch Rules only. The
+        /// AWS account ID (without a hyphen) of the source owner. For example, if the <code>SourceArn</code>
+        /// identifies a bucket, then this is the bucket owner's account ID. You can use this
+        /// additional condition to ensure the bucket you specify is owned by a specific account
+        /// (it is possible the bucket owner deleted the bucket and some other AWS account created
+        /// the bucket). You can also use this condition to specify all sources (that is, you
+        /// don't specify the <code>SourceArn</code>) owned by a specific account. 
         /// </para>
         /// </summary>
         public string SourceAccount

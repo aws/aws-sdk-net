@@ -28,41 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// This response contains the object for the Lambda function location (see <a>FunctionCodeLocation</a>.
+    /// The parent object that contains your environment's configuration settings.
     /// </summary>
-    public partial class GetFunctionResponse : AmazonWebServiceResponse
+    public partial class Environment
     {
-        private FunctionCodeLocation _code;
-        private FunctionConfiguration _configuration;
+        private Dictionary<string, string> _variables = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property Code.
+        /// Gets and sets the property Variables. 
+        /// <para>
+        /// The key-value pairs that represent your environment's configuration settings. The
+        /// value you specify cannot contain a ",".
+        /// </para>
         /// </summary>
-        public FunctionCodeLocation Code
+        public Dictionary<string, string> Variables
         {
-            get { return this._code; }
-            set { this._code = value; }
+            get { return this._variables; }
+            set { this._variables = value; }
         }
 
-        // Check to see if Code property is set
-        internal bool IsSetCode()
+        // Check to see if Variables property is set
+        internal bool IsSetVariables()
         {
-            return this._code != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Configuration.
-        /// </summary>
-        public FunctionConfiguration Configuration
-        {
-            get { return this._configuration; }
-            set { this._configuration = value; }
-        }
-
-        // Check to see if Configuration property is set
-        internal bool IsSetConfiguration()
-        {
-            return this._configuration != null;
+            return this._variables != null && this._variables.Count > 0; 
         }
 
     }

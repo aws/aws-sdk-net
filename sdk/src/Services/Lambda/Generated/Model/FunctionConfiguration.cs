@@ -35,9 +35,11 @@ namespace Amazon.Lambda.Model
         private string _codeSha256;
         private long? _codeSize;
         private string _description;
+        private EnvironmentResponse _environment;
         private string _functionArn;
         private string _functionName;
         private string _handler;
+        private string _kmsKeyArn;
         private string _lastModified;
         private int? _memorySize;
         private string _role;
@@ -101,6 +103,24 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Environment. 
+        /// <para>
+        /// The parent object that contains your environment's configuration settings.
+        /// </para>
+        /// </summary>
+        public EnvironmentResponse Environment
+        {
+            get { return this._environment; }
+            set { this._environment = value; }
+        }
+
+        // Check to see if Environment property is set
+        internal bool IsSetEnvironment()
+        {
+            return this._environment != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FunctionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) assigned to the function.
@@ -152,6 +172,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetHandler()
         {
             return this._handler != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KMSKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment
+        /// variables. If empty, it means you are using the AWS Lambda default service key.
+        /// </para>
+        /// </summary>
+        public string KMSKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KMSKeyArn property is set
+        internal bool IsSetKMSKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

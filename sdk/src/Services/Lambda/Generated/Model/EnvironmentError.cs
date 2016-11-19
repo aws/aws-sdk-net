@@ -28,41 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// This response contains the object for the Lambda function location (see <a>FunctionCodeLocation</a>.
+    /// The parent object that contains error information associated with your configuration
+    /// settings.
     /// </summary>
-    public partial class GetFunctionResponse : AmazonWebServiceResponse
+    public partial class EnvironmentError
     {
-        private FunctionCodeLocation _code;
-        private FunctionConfiguration _configuration;
+        private string _errorCode;
+        private string _message;
 
         /// <summary>
-        /// Gets and sets the property Code.
+        /// Gets and sets the property ErrorCode. 
+        /// <para>
+        /// The error code returned by the environment error object.
+        /// </para>
         /// </summary>
-        public FunctionCodeLocation Code
+        public string ErrorCode
         {
-            get { return this._code; }
-            set { this._code = value; }
+            get { return this._errorCode; }
+            set { this._errorCode = value; }
         }
 
-        // Check to see if Code property is set
-        internal bool IsSetCode()
+        // Check to see if ErrorCode property is set
+        internal bool IsSetErrorCode()
         {
-            return this._code != null;
+            return this._errorCode != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Configuration.
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The message returned by the environment error object.
+        /// </para>
         /// </summary>
-        public FunctionConfiguration Configuration
+        public string Message
         {
-            get { return this._configuration; }
-            set { this._configuration = value; }
+            get { return this._message; }
+            set { this._message = value; }
         }
 
-        // Check to see if Configuration property is set
-        internal bool IsSetConfiguration()
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
         {
-            return this._configuration != null;
+            return this._message != null;
         }
 
     }
