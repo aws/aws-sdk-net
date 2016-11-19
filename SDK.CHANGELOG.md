@@ -1,3 +1,17 @@
+### 3.3.22.0 (2016-11-19 00:10 UTC)
+* ApplicationAutoScaling (3.3.1.0)
+	* API Update for ApplicationAutoScaling : support for a new target resource (EMR Instance Groups) as a scalable target
+* DynamoDBv2 (3.3.1.0)
+	* DynamoDB Util's Document.FromJson() should supported unsigned types.
+* ElasticMapReduce (3.3.2.0)
+	* API Update for ElasticMapReduce : automatic Scaling of EMR clusters based on metrics
+* ElasticTranscoder (3.3.1.0)
+	* API Update for ElasticTranscoder : support for multiple media input files that can be stitched together.
+* GameLift (3.3.2.0)
+	* API Update for GameLift : provide the ability to remote access into GameLift managed servers.
+* Lambda (3.3.1.0)
+	* API Update for Lambda : adds support for Environment variables.
+
 ### 3.3.21.0 (2016-11-17 23:34 UTC)
 * APIGateway (3.3.2.0)
 	* API Update for APIGateway : adding custom encoding feature.
