@@ -46,7 +46,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// Time stamp indicating when this data object was created. Format is a number expressed
-        /// in Unix time as milliseconds (ex: "1469498468.057".
+        /// in Unix time as milliseconds (ex: "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -216,7 +216,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TerminationTime. 
         /// <para>
         /// Time stamp indicating when this data object was terminated. Format is a number expressed
-        /// in Unix time as milliseconds (ex: "1469498468.057".
+        /// in Unix time as milliseconds (ex: "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime TerminationTime

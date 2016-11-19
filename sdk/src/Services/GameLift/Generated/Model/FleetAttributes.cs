@@ -68,7 +68,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// Time stamp indicating when this data object was created. Format is a number expressed
-        /// in Unix time as milliseconds (ex: "1469498468.057".
+        /// in Unix time as milliseconds (ex: "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -126,8 +126,9 @@ namespace Amazon.GameLift.Model
         /// captures and stores any log files in this location. These logs are in addition to
         /// game session logs; see more on game session logs in the <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
         /// GameLift Developer Guide</a>. If no default log path for a fleet is specified, GameLift
-        /// will automatically upload logs stored on each instance at <code>C:\game\logs</code>.
-        /// Use the GameLift console to access stored logs. 
+        /// will automatically upload logs that are stored on each instance at <code>C:\game\logs</code>
+        /// (for Windows) or <code>/local/game/logs</code> (for Linux). Use the GameLift console
+        /// to access stored logs. 
         /// </para>
         /// </summary>
         public List<string> LogPaths
@@ -319,7 +320,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TerminationTime. 
         /// <para>
         /// Time stamp indicating when this data object was terminated. Format is a number expressed
-        /// in Unix time as milliseconds (ex: "1469498468.057".
+        /// in Unix time as milliseconds (ex: "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime TerminationTime

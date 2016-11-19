@@ -368,6 +368,34 @@ namespace Amazon.GameLift
         /// Constant GENERIC_EVENT for EventCode
         /// </summary>
         public static readonly EventCode GENERIC_EVENT = new EventCode("GENERIC_EVENT");
+        /// <summary>
+        /// Constant SERVER_PROCESS_CRASHED for EventCode
+        /// </summary>
+        public static readonly EventCode SERVER_PROCESS_CRASHED = new EventCode("SERVER_PROCESS_CRASHED");
+        /// <summary>
+        /// Constant SERVER_PROCESS_FORCE_TERMINATED for EventCode
+        /// </summary>
+        public static readonly EventCode SERVER_PROCESS_FORCE_TERMINATED = new EventCode("SERVER_PROCESS_FORCE_TERMINATED");
+        /// <summary>
+        /// Constant SERVER_PROCESS_INVALID_PATH for EventCode
+        /// </summary>
+        public static readonly EventCode SERVER_PROCESS_INVALID_PATH = new EventCode("SERVER_PROCESS_INVALID_PATH");
+        /// <summary>
+        /// Constant SERVER_PROCESS_PROCESS_EXIT_TIMEOUT for EventCode
+        /// </summary>
+        public static readonly EventCode SERVER_PROCESS_PROCESS_EXIT_TIMEOUT = new EventCode("SERVER_PROCESS_PROCESS_EXIT_TIMEOUT");
+        /// <summary>
+        /// Constant SERVER_PROCESS_PROCESS_READY_TIMEOUT for EventCode
+        /// </summary>
+        public static readonly EventCode SERVER_PROCESS_PROCESS_READY_TIMEOUT = new EventCode("SERVER_PROCESS_PROCESS_READY_TIMEOUT");
+        /// <summary>
+        /// Constant SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT for EventCode
+        /// </summary>
+        public static readonly EventCode SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT = new EventCode("SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT");
+        /// <summary>
+        /// Constant SERVER_PROCESS_TERMINATED_UNHEALTHY for EventCode
+        /// </summary>
+        public static readonly EventCode SERVER_PROCESS_TERMINATED_UNHEALTHY = new EventCode("SERVER_PROCESS_TERMINATED_UNHEALTHY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

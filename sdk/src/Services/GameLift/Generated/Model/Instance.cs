@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Properties describing an instance of a virtual computing resource that is hosting
-    /// game servers. Fleets contain zero or more instances.
+    /// Properties that describe an instance of a virtual computing resource that hosts one
+    /// or more game servers. A fleet contains zero or more instances.
     /// </summary>
     public partial class Instance
     {
@@ -117,7 +117,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property OperatingSystem. 
         /// <para>
-        /// Operating system being used on this instance. 
+        /// Operating system that is running on this instance. 
         /// </para>
         /// </summary>
         public OperatingSystem OperatingSystem

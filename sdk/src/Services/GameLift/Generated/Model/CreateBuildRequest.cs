@@ -63,7 +63,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// Descriptive label associated with a build. Build names do not need to be unique. A
-        /// build name can be changed later using <code> <a>UpdateBuild</a> </code>.
+        /// build name can be changed later using<code> <a>UpdateBuild</a> </code>.
         /// </para>
         /// </summary>
         public string Name
@@ -116,7 +116,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Version. 
         /// <para>
         /// Version associated with this build. Version strings do not need to be unique to a
-        /// build. A build version can be changed later using <code> <a>UpdateBuild</a> </code>.
+        /// build. A build version can be changed later using<code> <a>UpdateBuild</a> </code>.
         /// </para>
         /// </summary>
         public string Version

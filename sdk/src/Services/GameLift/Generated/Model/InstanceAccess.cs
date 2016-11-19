@@ -28,31 +28,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeInstances operation.
-    /// Retrieves information about a fleet's instances, including instance IDs. Use this
-    /// action to get details on all instances in the fleet or get details on one specific
-    /// instance.
-    /// 
-    ///  
-    /// <para>
-    /// To get a specific instance, specify fleet ID and instance ID. To get all instances
-    /// in a fleet, specify a fleet ID only. Use the pagination parameters to retrieve results
-    /// as a set of sequential pages. If successful, an <a>Instance</a> object is returned
-    /// for each result.
-    /// </para>
+    /// Information required to remotely connect to a fleet instance. Access is requested
+    /// by calling <a>GetInstanceAccess</a>.
     /// </summary>
-    public partial class DescribeInstancesRequest : AmazonGameLiftRequest
+    public partial class InstanceAccess
     {
+        private InstanceCredentials _credentials;
         private string _fleetId;
         private string _instanceId;
-        private int? _limit;
-        private string _nextToken;
+        private string _ipAddress;
+        private OperatingSystem _operatingSystem;
+
+        /// <summary>
+        /// Gets and sets the property Credentials. 
+        /// <para>
+        /// Credentials required to access the instance.
+        /// </para>
+        /// </summary>
+        public InstanceCredentials Credentials
+        {
+            get { return this._credentials; }
+            set { this._credentials = value; }
+        }
+
+        // Check to see if Credentials property is set
+        internal bool IsSetCredentials()
+        {
+            return this._credentials != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FleetId. 
         /// <para>
-        /// Unique identifier for a fleet. Specify the fleet to retrieve instance information
-        /// for.
+        /// Unique identifier for the fleet containing the instance being accessed.
         /// </para>
         /// </summary>
         public string FleetId
@@ -70,8 +78,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// Unique identifier for an instance. Specify an instance to retrieve information for
-        /// or leave blank to get information on all instances in the fleet.
+        /// Unique identifier for the instance being accessed.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -87,42 +94,39 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Limit. 
+        /// Gets and sets the property IpAddress. 
         /// <para>
-        /// Maximum number of results to return. Use this parameter with <code>NextToken</code>
-        /// to get results as a set of sequential pages.
+        /// IP address assigned to the instance.
         /// </para>
         /// </summary>
-        public int Limit
+        public string IpAddress
         {
-            get { return this._limit.GetValueOrDefault(); }
-            set { this._limit = value; }
+            get { return this._ipAddress; }
+            set { this._ipAddress = value; }
         }
 
-        // Check to see if Limit property is set
-        internal bool IsSetLimit()
+        // Check to see if IpAddress property is set
+        internal bool IsSetIpAddress()
         {
-            return this._limit.HasValue; 
+            return this._ipAddress != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property OperatingSystem. 
         /// <para>
-        /// Token indicating the start of the next sequential page of results. Use the token that
-        /// is returned with a previous call to this action. To specify the start of the result
-        /// set, do not specify a value.
+        /// Operating system that is running on the instance.
         /// </para>
         /// </summary>
-        public string NextToken
+        public OperatingSystem OperatingSystem
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._operatingSystem; }
+            set { this._operatingSystem = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if OperatingSystem property is set
+        internal bool IsSetOperatingSystem()
         {
-            return this._nextToken != null;
+            return this._operatingSystem != null;
         }
 
     }

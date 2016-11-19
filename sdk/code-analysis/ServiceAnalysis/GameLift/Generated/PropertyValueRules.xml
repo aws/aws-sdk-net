@@ -339,6 +339,14 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GameLift.Model.GetInstanceAccessRequest.FleetId</property>
+    <pattern>^fleet-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.GetInstanceAccessRequest.InstanceId</property>
+    <pattern>[a-zA-Z0-9\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GameLift.Model.ListAliasesRequest.Limit</property>
     <min>1</min>
   </property-value-rule>
@@ -735,6 +743,22 @@
   <property-value-rule>
     <property>Amazon.GameLift.Model.Instance.InstanceId</property>
     <pattern>[a-zA-Z0-9\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.InstanceAccess.FleetId</property>
+    <pattern>^fleet-\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.InstanceAccess.InstanceId</property>
+    <pattern>[a-zA-Z0-9\.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.InstanceCredentials.Secret</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GameLift.Model.InstanceCredentials.UserName</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GameLift.Model.InternalServiceException.Message</property>

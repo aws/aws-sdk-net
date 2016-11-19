@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Log entry describing an event involving an Amazon GameLift resource (such as a fleet).
+    /// Log entry describing an event involving Amazon GameLift resources (such as a fleet).
+    /// In addition to tracking activity, event codes and messages can provide additional
+    /// information for troubleshooting and debugging problems.
     /// </summary>
     public partial class Event
     {
@@ -41,7 +43,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property EventCode. 
         /// <para>
-        /// Type of event being logged.
+        /// Type of event being logged. 
         /// </para>
         /// </summary>
         public EventCode EventCode
@@ -78,7 +80,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property EventTime. 
         /// <para>
         /// Time stamp indicating when this event occurred. Format is a number expressed in Unix
-        /// time as milliseconds (ex: "1469498468.057".
+        /// time as milliseconds (ex: "1469498468.057").
         /// </para>
         /// </summary>
         public DateTime EventTime

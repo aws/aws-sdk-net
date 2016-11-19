@@ -51,7 +51,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property NewGameSessionsPerCreator. 
         /// <para>
-        /// Maximum number of game sessions an individual can create during the policy period.
+        /// Maximum number of game sessions that an individual can create during the policy period.
         /// 
         /// </para>
         /// </summary>
@@ -70,7 +70,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PolicyPeriodInMinutes. 
         /// <para>
-        /// Time span used to evaluate the resource creation limit policy. 
+        /// Time span used in evaluating the resource creation limit policy. 
         /// </para>
         /// </summary>
         public int PolicyPeriodInMinutes
