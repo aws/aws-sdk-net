@@ -85,14 +85,14 @@ namespace Amazon.ElasticTranscoder.Model
         /// objects. If you create more than one master playlist, the values of all <code>Name</code>
         /// objects must be unique.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// <b>Note:</b> Elastic Transcoder automatically appends the relevant file extension
-        /// to the file name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code>
-        /// playlists, and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists).
-        /// If you include a file extension in <code>Name</code>, the file name will have two
-        /// extensions.
+        ///  Elastic Transcoder automatically appends the relevant file extension to the file
+        /// name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists,
+        /// and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If
+        /// you include a file extension in <code>Name</code>, the file name will have two extensions.
         /// </para>
+        ///  </note>
         /// </summary>
         public string Name
         {
@@ -119,7 +119,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// OutputKeyPrefix<code>Outputs:Key</code>
+        /// OutputKeyPrefix<code>Outputs:Key</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -346,6 +346,10 @@
     <pattern>(^aes-128$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticTranscoder.Model.InputCaptions.MergePolicy</property>
+    <pattern>(^MergeOverride$)|(^MergeRetain$)|(^Override$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticTranscoder.Model.Job.Id</property>
     <pattern>^\d{13}-\w{6}$</pattern>
   </property-value-rule>

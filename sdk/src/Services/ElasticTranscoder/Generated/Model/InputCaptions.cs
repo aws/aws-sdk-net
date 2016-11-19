@@ -28,59 +28,62 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// The .jpg or .png file associated with an audio file.
+    /// The captions to be created, if any.
     /// </summary>
-    public partial class JobAlbumArt
+    public partial class InputCaptions
     {
-        private List<Artwork> _artwork = new List<Artwork>();
+        private List<CaptionSource> _captionSources = new List<CaptionSource>();
         private string _mergePolicy;
 
         /// <summary>
-        /// Gets and sets the property Artwork. 
+        /// Gets and sets the property CaptionSources. 
         /// <para>
-        /// The file to be used as album art. There can be multiple artworks associated with an
-        /// audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code>
-        /// 
+        /// Source files for the input sidecar captions used during the transcoding process. To
+        /// omit all sidecar captions, leave <code>CaptionSources</code> blank.
         /// </para>
         /// </summary>
-        public List<Artwork> Artwork
+        public List<CaptionSource> CaptionSources
         {
-            get { return this._artwork; }
-            set { this._artwork = value; }
+            get { return this._captionSources; }
+            set { this._captionSources = value; }
         }
 
-        // Check to see if Artwork property is set
-        internal bool IsSetArtwork()
+        // Check to see if CaptionSources property is set
+        internal bool IsSetCaptionSources()
         {
-            return this._artwork != null && this._artwork.Count > 0; 
+            return this._captionSources != null && this._captionSources.Count > 0; 
         }
 
         /// <summary>
         /// Gets and sets the property MergePolicy. 
         /// <para>
         /// A policy that determines how Elastic Transcoder handles the existence of multiple
-        /// album artwork files.
+        /// captions.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Replace:</code> The specified album art replaces any existing album art.
+        ///  <b>MergeOverride:</b> Elastic Transcoder transcodes both embedded and sidecar captions
+        /// into outputs. If captions for a language are embedded in the input file and also appear
+        /// in a sidecar file, Elastic Transcoder uses the sidecar captions and ignores the embedded
+        /// captions for that language.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Prepend:</code> The specified album art is placed in front of any existing
-        /// album art.
+        ///  <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions
+        /// into outputs. If captions for a language are embedded in the input file and also appear
+        /// in a sidecar file, Elastic Transcoder uses the embedded captions and ignores the sidecar
+        /// captions for that language. If <code>CaptionSources</code> is empty, Elastic Transcoder
+        /// omits all sidecar captions from the output files.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Append:</code> The specified album art is placed after any existing album art.
+        ///  <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you
+        /// specify in <code>CaptionSources</code>.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> 
         /// <para>
-        ///  <code>Fallback:</code> If the original input file contains artwork, Elastic Transcoder
-        /// uses that artwork for the output. If the original input does not contain artwork,
-        /// Elastic Transcoder uses the specified album art file.
+        ///  <code>MergePolicy</code> cannot be null.
         /// </para>
-        ///  </li> </ul>
         /// </summary>
         public string MergePolicy
         {

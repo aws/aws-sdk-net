@@ -37,7 +37,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Pipeline. 
         /// <para>
-        /// A section of the response body that provides information about the pipeline.
+        /// A section of the response body that provides information about the pipeline associated
+        /// with this notification.
         /// </para>
         /// </summary>
         public Pipeline Pipeline

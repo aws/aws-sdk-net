@@ -35,6 +35,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string _arn;
         private string _id;
         private JobInput _input;
+        private List<JobInput> _inputs = new List<JobInput>();
         private JobOutput _output;
         private string _outputKeyPrefix;
         private List<JobOutput> _outputs = new List<JobOutput>();
@@ -65,8 +66,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The identifier that Elastic Transcoder assigned to the job. You use this value to
-        /// get settings for the job or to delete the job. 
+        /// The identifier that Elastic Transcoder assigned to the job. You use this value to
+        /// get settings for the job or to delete the job.
         /// </para>
         /// </summary>
         public string Id
@@ -84,7 +85,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        ///  A section of the request or response body that provides information about the file
+        /// A section of the request or response body that provides information about the file
         /// that is being transcoded.
         /// </para>
         /// </summary>
@@ -101,6 +102,25 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Inputs. 
+        /// <para>
+        /// Information about the files that you're transcoding. If you specified multiple files
+        /// for this job, Elastic Transcoder stitches the files together to make one output.
+        /// </para>
+        /// </summary>
+        public List<JobInput> Inputs
+        {
+            get { return this._inputs; }
+            set { this._inputs = value; }
+        }
+
+        // Check to see if Inputs property is set
+        internal bool IsSetInputs()
+        {
+            return this._inputs != null && this._inputs.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Output. 
         /// <para>
         /// If you specified one output for a job, information about that output. If you specified
@@ -108,10 +128,14 @@ namespace Amazon.ElasticTranscoder.Model
         /// This duplicates the information that is listed for the first output in the Outputs
         /// object.
         /// </para>
-        ///  
+        ///  <important> 
         /// <para>
-        /// <important>Outputs recommended instead.</important> A section of the request or response
-        /// body that provides information about the transcoded (target) file. 
+        /// Outputs recommended instead.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// A section of the request or response body that provides information about the transcoded
+        /// (target) file. 
         /// </para>
         /// </summary>
         public JobOutput Output
@@ -156,7 +180,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        ///  If you specify more than one output for a job, Elastic Transcoder creates the files
+        /// If you specify more than one output for a job, Elastic Transcoder creates the files
         /// for each output in the order in which you specify them in the job.
         /// </para>
         /// </summary>
@@ -194,16 +218,19 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Playlists. 
+        /// Gets and sets the property Playlists. <important> 
         /// <para>
-        /// <important>Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify
-        /// a preset in <code>PresetId</code> for which the value of <code>Container</code> is
-        /// fmp4 (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information
+        /// Outputs in Fragmented MP4 or MPEG-TS format only.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code>
+        /// is fmp4 (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information
         /// about the master playlists that you want Elastic Transcoder to create.
         /// </para>
         ///  
         /// <para>
-        /// The maximum number of master playlists in a job is 30. 
+        /// The maximum number of master playlists in a job is 30.
         /// </para>
         /// </summary>
         public List<Playlist> Playlists
@@ -261,30 +288,30 @@ namespace Amazon.ElasticTranscoder.Model
         /// User-defined metadata that you want to associate with an Elastic Transcoder job. You
         /// specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code>
         /// pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs
-        /// will be returned in the same order in which you specify them.
+        /// are returned in the same order in which you specify them.
         /// </para>
         ///  
         /// <para>
         /// Metadata <code>keys</code> and <code>values</code> must use characters from the following
         /// list:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <code>0-9</code>
+        ///  <code>0-9</code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>A-Z</code> and <code>a-z</code>
+        ///  <code>A-Z</code> and <code>a-z</code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <code>Space</code>
+        ///  <code>Space</code> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// The following symbols: <code>_.:/=+-%@</code>
+        /// The following symbols: <code>_.:/=+-%@</code> 
         /// </para>
-        /// </li> </ul>
+        ///  </li> </ul>
         /// </summary>
         public Dictionary<string, string> UserMetadata
         {

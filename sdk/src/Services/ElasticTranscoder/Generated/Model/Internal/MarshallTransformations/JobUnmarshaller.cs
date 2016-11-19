@@ -82,6 +82,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Input = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Inputs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<JobInput, JobInputUnmarshaller>(JobInputUnmarshaller.Instance);
+                    unmarshalledObject.Inputs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Output", targetDepth))
                 {
                     var unmarshaller = JobOutputUnmarshaller.Instance;

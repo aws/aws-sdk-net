@@ -68,8 +68,15 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// The desired status of the pipeline:
         /// </para>
-        ///  <ul> <li> <code>Active</code>: The pipeline is processing jobs.</li> <li> <code>Paused</code>:
-        /// The pipeline is not currently processing jobs.</li> </ul>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Active</code>: The pipeline is processing jobs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Paused</code>: The pipeline is not currently processing jobs.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {

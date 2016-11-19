@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// Container for the parameters to the CreateJob operation.
     /// When you create a job, Elastic Transcoder returns JSON data that includes the values
-    /// that you specified plus information about the job that is created. 
+    /// that you specified plus information about the job that is created.
     /// 
     ///  
     /// <para>
@@ -42,6 +42,7 @@ namespace Amazon.ElasticTranscoder.Model
     public partial class CreateJobRequest : AmazonElasticTranscoderRequest
     {
         private JobInput _input;
+        private List<JobInput> _inputs = new List<JobInput>();
         private CreateJobOutput _output;
         private string _outputKeyPrefix;
         private List<CreateJobOutput> _outputs = new List<CreateJobOutput>();
@@ -69,7 +70,31 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Output.
+        /// Gets and sets the property Inputs. 
+        /// <para>
+        /// A section of the request body that provides information about the files that are being
+        /// transcoded.
+        /// </para>
+        /// </summary>
+        public List<JobInput> Inputs
+        {
+            get { return this._inputs; }
+            set { this._inputs = value; }
+        }
+
+        // Check to see if Inputs property is set
+        internal bool IsSetInputs()
+        {
+            return this._inputs != null && this._inputs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Output. 
+        /// <para>
+        ///  A section of the request body that provides information about the transcoded (target)
+        /// file. We strongly recommend that you use the <code>Outputs</code> syntax instead of
+        /// the <code>Output</code> syntax. 
+        /// </para>
         /// </summary>
         public CreateJobOutput Output
         {
@@ -173,7 +198,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// User-defined metadata that you want to associate with an Elastic Transcoder job. You
         /// specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code>
         /// pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs
-        /// will be returned in the same order in which you specify them.
+        /// are returned in the same order in which you specify them.
         /// </para>
         /// </summary>
         public Dictionary<string, string> UserMetadata

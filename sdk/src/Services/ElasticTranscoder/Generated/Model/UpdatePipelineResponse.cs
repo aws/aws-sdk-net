@@ -37,7 +37,10 @@ namespace Amazon.ElasticTranscoder.Model
         private List<Warning> _warnings = new List<Warning>();
 
         /// <summary>
-        /// Gets and sets the property Pipeline.
+        /// Gets and sets the property Pipeline. 
+        /// <para>
+        /// The pipeline updated by this <code>UpdatePipelineResponse</code> call.
+        /// </para>
         /// </summary>
         public Pipeline Pipeline
         {

@@ -71,9 +71,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// format to another. All captions must be in UTF-8. Elastic Transcoder supports two
         /// types of captions:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <b>Embedded:</b> Embedded captions are included in the same file as the audio and
+        ///  <b>Embedded:</b> Embedded captions are included in the same file as the audio and
         /// video. Elastic Transcoder supports only one embedded caption per language, to a maximum
         /// of 300 embedded captions per file.
         /// </para>
@@ -81,18 +81,19 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// Valid input values include: <code>CEA-608 (EIA-608</code>, first non-empty channel
         /// only), <code>CEA-708 (EIA-708</code>, first non-empty channel only), and <code>mov-text</code>
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// Valid outputs include: <code>mov-text</code>
+        /// Valid outputs include: <code>mov-text</code> 
         /// </para>
         ///  
         /// <para>
         /// Elastic Transcoder supports a maximum of one embedded format per output.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>Sidecar:</b> Sidecar captions are kept in a separate metadata file from the audio
+        ///  <b>Sidecar:</b> Sidecar captions are kept in a separate metadata file from the audio
         /// and video data. Sidecar captions require a player that is capable of understanding
         /// the relationship between the video file and the sidecar file. Elastic Transcoder supports
         /// only one sidecar caption per language, to a maximum of 20 sidecar captions per file.
@@ -101,16 +102,16 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// Valid input values include: <code>dfxp</code> (first div element only), <code>ebu-tt</code>,
         /// <code>scc</code>, <code>smpt</code>, <code>srt</code>, <code>ttml</code> (first div
-        /// element only), and <code>webvtt</code>
+        /// element only), and <code>webvtt</code> 
         /// </para>
         ///  
         /// <para>
         /// Valid outputs include: <code>dfxp</code> (first div element only), <code>scc</code>,
         /// <code>srt</code>, and <code>webvtt</code>.
         /// </para>
-        /// </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
-        ///  If you want ttml or smpte-tt compatible captions, specify dfxp as your output format.
+        /// If you want ttml or smpte-tt compatible captions, specify dfxp as your output format.
         /// </para>
         ///  
         /// <para>
@@ -254,11 +255,14 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentDuration. 
+        /// Gets and sets the property SegmentDuration. <important> 
         /// <para>
-        /// <important>(Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify
-        /// a preset in <code>PresetId</code> for which the value of <code>Container</code> is
-        /// <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code>
+        /// (Outputs in Fragmented MP4 or MPEG-TS format only.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code>
+        /// is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code>
         /// is the target maximum duration of each segment in seconds. For <code>HLSv3</code>
         /// format playlists, each media segment is stored in a separate <code>.ts</code> file.
         /// For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an
@@ -321,21 +325,24 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        ///  If you do want Elastic Transcoder to create thumbnails, specify the information that
+        /// If you do want Elastic Transcoder to create thumbnails, specify the information that
         /// you want to include in the file name for each thumbnail. You can specify the following
-        /// values in any sequence: 
+        /// values in any sequence:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b><code>{count}</code> (Required)</b>: If you want to create thumbnails, you must
+        ///  <b> <code>{count}</code> (Required)</b>: If you want to create thumbnails, you must
         /// include <code>{count}</code> in the <code>ThumbnailPattern</code> object. Wherever
         /// you specify <code>{count}</code>, Elastic Transcoder adds a five-digit sequence number
         /// (beginning with <b>00001</b>) to thumbnail file names. The number indicates where
         /// a given thumbnail appears in the sequence of thumbnails for a transcoded file. 
         /// </para>
-        ///  <important>If you specify a literal value and/or <code>{resolution}</code> but you
-        /// omit <code>{count}</code>, Elastic Transcoder returns a validation error and does
-        /// not create the job.</important> </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>,
+        /// Elastic Transcoder returns a validation error and does not create the job.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         ///  <b>Literal values (Optional)</b>: You can specify literal values anywhere in the
         /// <code>ThumbnailPattern</code> object. For example, you can include them as a file
@@ -344,7 +351,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b><code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include
+        ///  <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include
         /// the resolution in the file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code>
         /// object. 
         /// </para>

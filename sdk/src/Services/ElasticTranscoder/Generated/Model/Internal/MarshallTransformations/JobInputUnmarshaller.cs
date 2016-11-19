@@ -94,6 +94,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                     unmarshalledObject.FrameRate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InputCaptions", targetDepth))
+                {
+                    var unmarshaller = InputCaptionsUnmarshaller.Instance;
+                    unmarshalledObject.InputCaptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Interlaced", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Resolution = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TimeSpan", targetDepth))
+                {
+                    var unmarshaller = TimeSpanUnmarshaller.Instance;
+                    unmarshalledObject.TimeSpan = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

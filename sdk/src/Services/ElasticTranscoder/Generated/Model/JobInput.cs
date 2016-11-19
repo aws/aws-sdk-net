@@ -37,9 +37,11 @@ namespace Amazon.ElasticTranscoder.Model
         private DetectedProperties _detectedProperties;
         private Encryption _encryption;
         private string _frameRate;
+        private InputCaptions _inputCaptions;
         private string _interlaced;
         private string _key;
         private string _resolution;
+        private TimeSpan _timeSpan;
 
         /// <summary>
         /// Gets and sets the property AspectRatio. 
@@ -121,8 +123,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Encryption. 
         /// <para>
         /// The encryption settings, if any, that are used for decrypting your input files. If
-        /// your input file is encrypted, you must specify the mode that Elastic Transcoder will
-        /// use to decrypt your file.
+        /// your input file is encrypted, you must specify the mode that Elastic Transcoder uses
+        /// to decrypt your file.
         /// </para>
         /// </summary>
         public Encryption Encryption
@@ -168,6 +170,90 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InputCaptions. 
+        /// <para>
+        /// You can configure Elastic Transcoder to transcode captions, or subtitles, from one
+        /// format to another. All captions must be in UTF-8. Elastic Transcoder supports two
+        /// types of captions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Embedded:</b> Embedded captions are included in the same file as the audio and
+        /// video. Elastic Transcoder supports only one embedded caption per language, to a maximum
+        /// of 300 embedded captions per file.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid input values include: <code>CEA-608 (EIA-608</code>, first non-empty channel
+        /// only), <code>CEA-708 (EIA-708</code>, first non-empty channel only), and <code>mov-text</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid outputs include: <code>mov-text</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Elastic Transcoder supports a maximum of one embedded format per output.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Sidecar:</b> Sidecar captions are kept in a separate metadata file from the audio
+        /// and video data. Sidecar captions require a player that is capable of understanding
+        /// the relationship between the video file and the sidecar file. Elastic Transcoder supports
+        /// only one sidecar caption per language, to a maximum of 20 sidecar captions per file.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid input values include: <code>dfxp</code> (first div element only), <code>ebu-tt</code>,
+        /// <code>scc</code>, <code>smpt</code>, <code>srt</code>, <code>ttml</code> (first div
+        /// element only), and <code>webvtt</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid outputs include: <code>dfxp</code> (first div element only), <code>scc</code>,
+        /// <code>srt</code>, and <code>webvtt</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you want ttml or smpte-tt compatible captions, specify dfxp as your output format.
+        /// </para>
+        ///  
+        /// <para>
+        /// Elastic Transcoder does not support OCR (Optical Character Recognition), does not
+        /// accept pictures as a valid input for captions, and is not available for audio-only
+        /// transcoding. Elastic Transcoder does not preserve text formatting (for example, italics)
+        /// during the transcoding process.
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove captions or leave the captions empty, set <code>Captions</code> to null.
+        /// To pass through existing captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>,
+        /// and pass in a null <code>CaptionSources</code> array.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on embedded files, see the Subtitles Wikipedia page.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on sidecar files, see the Extensible Metadata Platform and Sidecar
+        /// file Wikipedia pages.
+        /// </para>
+        /// </summary>
+        public InputCaptions InputCaptions
+        {
+            get { return this._inputCaptions; }
+            set { this._inputCaptions = value; }
+        }
+
+        // Check to see if InputCaptions property is set
+        internal bool IsSetInputCaptions()
+        {
+            return this._inputCaptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Interlaced. 
         /// <para>
         /// Whether the input file is interlaced. If you want Elastic Transcoder to automatically
@@ -176,7 +262,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>true</code>, <code>false</code>
+        ///  <code>true</code>, <code>false</code> 
         /// </para>
         ///  
         /// <para>
@@ -240,6 +326,24 @@ namespace Amazon.ElasticTranscoder.Model
         internal bool IsSetResolution()
         {
             return this._resolution != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TimeSpan. 
+        /// <para>
+        /// Settings for clipping an input. Each input can have different clip settings.
+        /// </para>
+        /// </summary>
+        public TimeSpan TimeSpan
+        {
+            get { return this._timeSpan; }
+            set { this._timeSpan = value; }
+        }
+
+        // Check to see if TimeSpan property is set
+        internal bool IsSetTimeSpan()
+        {
+            return this._timeSpan != null;
         }
 
     }

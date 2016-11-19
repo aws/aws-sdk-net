@@ -65,10 +65,11 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// The message explaining what resources are in a different region from the pipeline.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// <b>Note:</b> AWS KMS keys must be in the same region as the pipeline.
+        /// AWS KMS keys must be in the same region as the pipeline.
         /// </para>
+        ///  </note>
         /// </summary>
         public string Message
         {

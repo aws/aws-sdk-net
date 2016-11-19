@@ -62,51 +62,51 @@ namespace Amazon.ElasticTranscoder.Model
         /// The format you specify determines whether Elastic Transcoder generates an embedded
         /// or sidecar caption for this output.
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <b>Valid Embedded Caption Formats:</b>
+        ///  <b>Valid Embedded Caption Formats:</b> 
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <b>for FLAC</b>: None
+        ///  <b>for FLAC</b>: None
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>For MP3</b>: None
+        ///  <b>For MP3</b>: None
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>For MP4</b>: mov-text
+        ///  <b>For MP4</b>: mov-text
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>For MPEG-TS</b>: None
+        ///  <b>For MPEG-TS</b>: None
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>For ogg</b>: None
+        ///  <b>For ogg</b>: None
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>For webm</b>: None
+        ///  <b>For webm</b>: None
         /// </para>
-        /// </li> </ul> </li> <li>
+        ///  </li> </ul> </li> <li> 
         /// <para>
-        /// <b>Valid Sidecar Caption Formats:</b> Elastic Transcoder supports dfxp (first div
+        ///  <b>Valid Sidecar Caption Formats:</b> Elastic Transcoder supports dfxp (first div
         /// element only), scc, srt, and webvtt. If you want ttml or smpte-tt compatible captions,
         /// specify dfxp as your output format.
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <b>For FMP4</b>: dfxp
+        ///  <b>For FMP4</b>: dfxp
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>Non-FMP4 outputs</b>: All sidecar types
+        ///  <b>Non-FMP4 outputs</b>: All sidecar types
         /// </para>
-        /// </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
-        /// <code>fmp4</code> captions have an extension of <code>.ismt</code>
+        ///  <code>fmp4</code> captions have an extension of <code>.ismt</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -128,20 +128,27 @@ namespace Amazon.ElasticTranscoder.Model
         /// The prefix for caption filenames, in the form <i>description</i>-<code>{language}</code>,
         /// where:
         /// </para>
-        ///  <ul> <li><i>description</i> is a description of the video.</li> <li><code>{language}</code>
-        /// is a literal value that Elastic Transcoder replaces with the two- or three-letter
-        /// code for the language of the caption in the output file names.</li> </ul> 
+        ///  <ul> <li> 
         /// <para>
-        /// If you don&apos;t include <code>{language}</code> in the file name pattern, Elastic
-        /// Transcoder automatically appends "<code>{language}</code>" to the value that you specify
-        /// for the description. In addition, Elastic Transcoder automatically appends the count
-        /// to the end of the segment files.
+        ///  <i>description</i> is a description of the video.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>{language}</code> is a literal value that Elastic Transcoder replaces with
+        /// the two- or three-letter code for the language of the caption in the output file names.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't include <code>{language}</code> in the file name pattern, Elastic Transcoder
+        /// automatically appends "<code>{language}</code>" to the value that you specify for
+        /// the description. In addition, Elastic Transcoder automatically appends the count to
+        /// the end of the segment files.
         /// </para>
         ///  
         /// <para>
-        /// For example, suppose you&apos;re transcoding into srt format. When you enter "Sydney-{language}-sunrise",
+        /// For example, suppose you're transcoding into srt format. When you enter "Sydney-{language}-sunrise",
         /// and the language of the captions is English (en), the name of the first caption file
-        /// will be Sydney-en-sunrise00000.srt.
+        /// is be Sydney-en-sunrise00000.srt.
         /// </para>
         /// </summary>
         public string Pattern

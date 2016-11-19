@@ -98,7 +98,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>128</code>, <code>192</code>, or <code>256</code>. 
+        ///  <code>128</code>, <code>192</code>, or <code>256</code>. 
         /// </para>
         ///  
         /// <para>
@@ -124,10 +124,10 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// The key ID must be provided in big endian, and Elastic Transcoder will convert it
-        /// to little endian before inserting it into the PlayReady DRM headers. If you are unsure
-        /// whether your license server provides your key ID in big or little endian, check with
-        /// your DRM provider.
+        /// The key ID must be provided in big endian, and Elastic Transcoder converts it to little
+        /// endian before inserting it into the PlayReady DRM headers. If you are unsure whether
+        /// your license server provides your key ID in big or little endian, check with your
+        /// DRM provider.
         /// </para>
         /// </summary>
         public string KeyId
@@ -169,7 +169,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// path, and is referenced by the PlayReady header. The PlayReady header is referenced
         /// in the protection header of the client manifest for Smooth Streaming outputs, and
         /// in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example
-        /// URL looks like this: <code>https://www.example.com/exampleKey/</code>
+        /// URL looks like this: <code>https://www.example.com/exampleKey/</code> 
         /// </para>
         /// </summary>
         public string LicenseAcquisitionUrl

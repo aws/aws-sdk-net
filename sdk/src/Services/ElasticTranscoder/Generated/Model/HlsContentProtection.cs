@@ -78,7 +78,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>128</code>, <code>192</code>, or <code>256</code>. 
+        ///  <code>128</code>, <code>192</code>, or <code>256</code>. 
         /// </para>
         /// </summary>
         public string Key
@@ -166,8 +166,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// This value will be written into the method attribute of the <code>EXT-X-KEY</code>
-        /// metadata tag in the output playlist.
+        /// This value is written into the method attribute of the <code>EXT-X-KEY</code> metadata
+        /// tag in the output playlist.
         /// </para>
         /// </summary>
         public string Method

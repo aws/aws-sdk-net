@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// <summary>
     /// The encryption settings, if any, that are used for decrypting your input files or
     /// encrypting your output files. If your input file is encrypted, you must specify the
-    /// mode that Elastic Transcoder will use to decrypt your file, otherwise you must specify
+    /// mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify
     /// the mode you want Elastic Transcoder to use to encrypt your output files.
     /// </summary>
     public partial class Encryption
@@ -70,7 +70,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// <code>128</code>, <code>192</code>, or <code>256</code>. 
+        ///  <code>128</code>, <code>192</code>, or <code>256</code>. 
         /// </para>
         ///  
         /// <para>
@@ -117,56 +117,56 @@ namespace Amazon.ElasticTranscoder.Model
         /// decrypting your input files or encrypting your output files. Elastic Transcoder supports
         /// the following options:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <b>S3:</b> Amazon S3 creates and manages the keys used for encrypting your files.
+        ///  <b>S3:</b> Amazon S3 creates and manages the keys used for encrypting your files.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>S3-AWS-KMS:</b> Amazon S3 calls the Amazon Key Management Service, which creates
+        ///  <b>S3-AWS-KMS:</b> Amazon S3 calls the Amazon Key Management Service, which creates
         /// and manages the keys that are used for encrypting your files. If you specify <code>S3-AWS-KMS</code>
         /// and you don't want to use the default key, you must add the AWS-KMS key that you want
         /// to use to your pipeline.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>AES-CBC-PKCS7:</b> A padded cipher-block mode of operation originally used for
+        ///  <b>AES-CBC-PKCS7:</b> A padded cipher-block mode of operation originally used for
         /// HLS files.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>AES-CTR:</b> AES Counter Mode.
+        ///  <b>AES-CTR:</b> AES Counter Mode.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>AES-GCM:</b> AES Galois Counter Mode, a mode of operation that is an authenticated
+        ///  <b>AES-GCM:</b> AES Galois Counter Mode, a mode of operation that is an authenticated
         /// encryption format, meaning that a file, key, or initialization vector that has been
-        /// tampered with will fail the decryption process.
+        /// tampered with fails the decryption process.
         /// </para>
-        /// </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
         /// For all three AES options, you must provide the following settings, which must be
         /// base64-encoded:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <b>Key</b>
+        ///  <b>Key</b> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>Key MD5</b>
+        ///  <b>Key MD5</b> 
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>Initialization Vector</b>
+        ///  <b>Initialization Vector</b> 
         /// </para>
-        /// </li> </ul> <important>
+        ///  </li> </ul> <important> 
         /// <para>
         /// For the AES modes, your private encryption keys and your unencrypted data are never
         /// stored by AWS; therefore, it is important that you safely manage your encryption keys.
         /// If you lose them, you won't be able to unencrypt your data.
         /// </para>
-        /// </important>
+        ///  </important>
         /// </summary>
         public string Mode
         {

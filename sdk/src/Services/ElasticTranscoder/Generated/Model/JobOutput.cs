@@ -28,10 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// <important>Outputs recommended instead.</important>If you specified one output for
-    /// a job, information about that output. If you specified multiple outputs for a job,
-    /// the <code>Output</code> object lists information about the first output. This duplicates
-    /// the information that is listed for the first output in the <code>Outputs</code> object.
+    /// <important> 
+    /// <para>
+    /// Outputs recommended instead.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// If you specified one output for a job, information about that output. If you specified
+    /// multiple outputs for a job, the <code>Output</code> object lists information about
+    /// the first output. This duplicates the information that is listed for the first output
+    /// in the <code>Outputs</code> object.
+    /// </para>
     /// </summary>
     public partial class JobOutput
     {
@@ -81,7 +88,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// If Elastic Transcoder used a preset with a <code>ColorSpaceConversionMode</code> to
         /// transcode the output file, the <code>AppliedColorSpaceConversion</code> parameter
         /// shows the conversion used. If no <code>ColorSpaceConversionMode</code> was defined
-        /// in the preset, this parameter will not be included in the job response.
+        /// in the preset, this parameter is not be included in the job response.
         /// </para>
         /// </summary>
         public string AppliedColorSpaceConversion
@@ -103,9 +110,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// format to another. All captions must be in UTF-8. Elastic Transcoder supports two
         /// types of captions:
         /// </para>
-        ///  <ul> <li>
+        ///  <ul> <li> 
         /// <para>
-        /// <b>Embedded:</b> Embedded captions are included in the same file as the audio and
+        ///  <b>Embedded:</b> Embedded captions are included in the same file as the audio and
         /// video. Elastic Transcoder supports only one embedded caption per language, to a maximum
         /// of 300 embedded captions per file.
         /// </para>
@@ -113,18 +120,19 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// Valid input values include: <code>CEA-608 (EIA-608</code>, first non-empty channel
         /// only), <code>CEA-708 (EIA-708</code>, first non-empty channel only), and <code>mov-text</code>
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// Valid outputs include: <code>mov-text</code>
+        /// Valid outputs include: <code>mov-text</code> 
         /// </para>
         ///  
         /// <para>
         /// Elastic Transcoder supports a maximum of one embedded format per output.
         /// </para>
-        /// </li> <li>
+        ///  </li> <li> 
         /// <para>
-        /// <b>Sidecar:</b> Sidecar captions are kept in a separate metadata file from the audio
+        ///  <b>Sidecar:</b> Sidecar captions are kept in a separate metadata file from the audio
         /// and video data. Sidecar captions require a player that is capable of understanding
         /// the relationship between the video file and the sidecar file. Elastic Transcoder supports
         /// only one sidecar caption per language, to a maximum of 20 sidecar captions per file.
@@ -133,16 +141,16 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// Valid input values include: <code>dfxp</code> (first div element only), <code>ebu-tt</code>,
         /// <code>scc</code>, <code>smpt</code>, <code>srt</code>, <code>ttml</code> (first div
-        /// element only), and <code>webvtt</code>
+        /// element only), and <code>webvtt</code> 
         /// </para>
         ///  
         /// <para>
         /// Valid outputs include: <code>dfxp</code> (first div element only), <code>scc</code>,
         /// <code>srt</code>, and <code>webvtt</code>.
         /// </para>
-        /// </li> </ul> 
+        ///  </li> </ul> 
         /// <para>
-        ///  If you want ttml or smpte-tt compatible captions, specify dfxp as your output format.
+        /// If you want ttml or smpte-tt compatible captions, specify dfxp as your output format.
         /// </para>
         ///  
         /// <para>
@@ -242,8 +250,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// The encryption settings, if any, that you want Elastic Transcoder to apply to your
         /// output files. If you choose to use encryption, you must specify a mode to use. If
-        /// you choose not to use encryption, Elastic Transcoder will write an unencrypted file
-        /// to your Amazon S3 bucket.
+        /// you choose not to use encryption, Elastic Transcoder writes an unencrypted file to
+        /// your Amazon S3 bucket.
         /// </para>
         /// </summary>
         public Encryption Encryption
@@ -376,12 +384,13 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Rotate. 
         /// <para>
-        ///  The number of degrees clockwise by which you want Elastic Transcoder to rotate the
-        /// output relative to the input. Enter one of the following values: 
+        /// The number of degrees clockwise by which you want Elastic Transcoder to rotate the
+        /// output relative to the input. Enter one of the following values:
         /// </para>
         ///  
         /// <para>
-        /// <code>auto</code>, <code>0</code>, <code>90</code>, <code>180</code>, <code>270</code>
+        ///  <code>auto</code>, <code>0</code>, <code>90</code>, <code>180</code>, <code>270</code>
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -402,16 +411,20 @@ namespace Amazon.ElasticTranscoder.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentDuration. 
+        /// Gets and sets the property SegmentDuration. <important> 
         /// <para>
-        /// <important>(Outputs in Fragmented MP4 or MPEG-TS format only.</important>If you specify
-        /// a preset in <code>PresetId</code> for which the value of <code>Container</code> is
-        /// <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code>
+        /// (Outputs in Fragmented MP4 or MPEG-TS format only.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code>
+        /// is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code>
         /// is the target maximum duration of each segment in seconds. For <code>HLSv3</code>
         /// format playlists, each media segment is stored in a separate <code>.ts</code> file.
-        /// For <code>HLSv4</code> and <code>Smooth</code> playlists, all media segments for an
-        /// output are stored in a single file. Each segment is approximately the length of the
-        /// <code>SegmentDuration</code>, though individual segments might be shorter or longer.
+        /// For <code>HLSv4</code>, <code>MPEG-DASH</code>, and <code>Smooth</code> playlists,
+        /// all media segments for an output are stored in a single file. Each segment is approximately
+        /// the length of the <code>SegmentDuration</code>, though individual segments might be
+        /// shorter or longer.
         /// </para>
         ///  
         /// <para>
@@ -443,17 +456,34 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         ///  The status of one output in a job. If you specified only one output for the job,
         /// <code>Outputs:Status</code> is always the same as <code>Job:Status</code>. If you
-        /// specified more than one output: <ul> <li><code>Job:Status</code> and <code>Outputs:Status</code>
-        /// for all of the outputs is Submitted until Elastic Transcoder starts to process the
-        /// first output.</li> <li>When Elastic Transcoder starts to process the first output,
-        /// <code>Outputs:Status</code> for that output and <code>Job:Status</code> both change
-        /// to Progressing. For each output, the value of <code>Outputs:Status</code> remains
-        /// Submitted until Elastic Transcoder starts to process the output.</li> <li>Job:Status
-        /// remains Progressing until all of the outputs reach a terminal status, either Complete
-        /// or Error.</li> <li>When all of the outputs reach a terminal status, <code>Job:Status</code>
-        /// changes to Complete only if <code>Outputs:Status</code> for all of the outputs is
-        /// <code>Complete</code>. If <code>Outputs:Status</code> for one or more outputs is <code>Error</code>,
-        /// the terminal status for <code>Job:Status</code> is also <code>Error</code>.</li> </ul>
+        /// specified more than one output: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Job:Status</code> and <code>Outputs:Status</code> for all of the outputs is
+        /// Submitted until Elastic Transcoder starts to process the first output.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When Elastic Transcoder starts to process the first output, <code>Outputs:Status</code>
+        /// for that output and <code>Job:Status</code> both change to Progressing. For each output,
+        /// the value of <code>Outputs:Status</code> remains Submitted until Elastic Transcoder
+        /// starts to process the output.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Job:Status remains Progressing until all of the outputs reach a terminal status, either
+        /// Complete or Error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When all of the outputs reach a terminal status, <code>Job:Status</code> changes to
+        /// Complete only if <code>Outputs:Status</code> for all of the outputs is <code>Complete</code>.
+        /// If <code>Outputs:Status</code> for one or more outputs is <code>Error</code>, the
+        /// terminal status for <code>Job:Status</code> is also <code>Error</code>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// The value of <code>Status</code> is one of the following: <code>Submitted</code>,
         /// <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
         /// 
@@ -520,21 +550,24 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        ///  If you do want Elastic Transcoder to create thumbnails, specify the information that
+        /// If you do want Elastic Transcoder to create thumbnails, specify the information that
         /// you want to include in the file name for each thumbnail. You can specify the following
-        /// values in any sequence: 
+        /// values in any sequence:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b><code>{count}</code> (Required)</b>: If you want to create thumbnails, you must
+        ///  <b> <code>{count}</code> (Required)</b>: If you want to create thumbnails, you must
         /// include <code>{count}</code> in the <code>ThumbnailPattern</code> object. Wherever
         /// you specify <code>{count}</code>, Elastic Transcoder adds a five-digit sequence number
         /// (beginning with <b>00001</b>) to thumbnail file names. The number indicates where
         /// a given thumbnail appears in the sequence of thumbnails for a transcoded file. 
         /// </para>
-        ///  <important>If you specify a literal value and/or <code>{resolution}</code> but you
-        /// omit <code>{count}</code>, Elastic Transcoder returns a validation error and does
-        /// not create the job.</important> </li> <li> 
+        ///  <important> 
+        /// <para>
+        /// If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>,
+        /// Elastic Transcoder returns a validation error and does not create the job.
+        /// </para>
+        ///  </important> </li> <li> 
         /// <para>
         ///  <b>Literal values (Optional)</b>: You can specify literal values anywhere in the
         /// <code>ThumbnailPattern</code> object. For example, you can include them as a file
@@ -543,7 +576,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b><code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include
+        ///  <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include
         /// the resolution in the file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code>
         /// object. 
         /// </para>
@@ -581,8 +614,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// the job output—the first watermark in the list is added to the output video first,
         /// the second watermark in the list is added next, and so on. As a result, if the settings
         /// in a preset cause Elastic Transcoder to place all watermarks in the same location,
-        /// the second watermark that you add will cover the first one, the third one will cover
-        /// the second, and the fourth one will cover the third.
+        /// the second watermark that you add covers the first one, the third one covers the second,
+        /// and the fourth one covers the third.
         /// </para>
         /// </summary>
         public List<JobWatermark> Watermarks
