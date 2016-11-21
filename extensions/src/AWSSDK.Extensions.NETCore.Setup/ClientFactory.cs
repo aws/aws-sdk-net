@@ -153,7 +153,7 @@ namespace Amazon.Extensions.NETCore.Setup
             }
 
             // Setting RegionEndpoint only if ServiceURL was not set, because ServiceURL value will be lost otherwise
-            if (string.IsNullOrEmpty(defaultConfig.ServiceURL))
+            if (options.Region != null && string.IsNullOrEmpty(defaultConfig.ServiceURL))
             {
                 config.RegionEndpoint = options.Region;
             }

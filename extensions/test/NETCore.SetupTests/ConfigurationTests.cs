@@ -93,5 +93,26 @@ namespace NETCore.SetupTests
             Assert.Equal(TimeSpan.FromMilliseconds(1000), client.Config.Timeout);
             Assert.Equal("us-east-1", client.Config.AuthenticationRegion);
         }
+
+        [Fact]
+        public void TestRegionFoundFromEnvironmentVariable()
+        {
+            var existingValue = Environment.GetEnvironmentVariable("AWS_REGION");
+            try
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", RegionEndpoint.APSouth1.SystemName);
+
+                var builder = new ConfigurationBuilder();
+                IConfiguration config = builder.Build();
+                var options = config.GetAWSOptions();
+
+                IAmazonS3 client = options.CreateServiceClient<IAmazonS3>();
+                Assert.Equal(RegionEndpoint.APSouth1, client.Config.RegionEndpoint);
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", existingValue);
+            }
+        } 
     }
 }
