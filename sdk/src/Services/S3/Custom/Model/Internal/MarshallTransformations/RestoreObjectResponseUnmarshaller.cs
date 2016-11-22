@@ -16,6 +16,7 @@ using System;
 using System.Net;
 using System.Collections.Generic;
 using Amazon.S3.Model;
+using Amazon.S3.Util;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
@@ -31,7 +32,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             RestoreObjectResponse response = new RestoreObjectResponse();
-            
+
+            IWebResponseData responseData = context.ResponseData;
+            if (responseData.IsHeaderPresent(S3Constants.AmzHeaderRequestCharged))
+                response.RequestCharged = RequestCharged.FindValue(responseData.GetHeaderValue(S3Constants.AmzHeaderRequestCharged));
 
             return response;
         }

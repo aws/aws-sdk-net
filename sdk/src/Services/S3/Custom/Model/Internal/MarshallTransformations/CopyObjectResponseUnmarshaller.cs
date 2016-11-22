@@ -16,6 +16,7 @@ using System;
 using System.Net;
 using System.Collections.Generic;
 using Amazon.S3.Model;
+using Amazon.S3.Util;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
@@ -87,6 +88,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.ServerSideEncryptionMethod = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-server-side-encryption"));
             if (responseData.IsHeaderPresent(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader))
                 response.ServerSideEncryptionKeyManagementServiceKeyId = S3Transforms.ToString(responseData.GetHeaderValue(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader));
+            if (responseData.IsHeaderPresent(S3Constants.AmzHeaderRequestCharged))
+                response.RequestCharged = RequestCharged.FindValue(responseData.GetHeaderValue(S3Constants.AmzHeaderRequestCharged));
 
             return;
         }

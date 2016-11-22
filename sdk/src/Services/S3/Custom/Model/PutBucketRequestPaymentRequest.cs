@@ -63,7 +63,6 @@ namespace Amazon.S3.Model
         {
             return this.requestPaymentConfiguration != null;
         }
-
     }
 }
     

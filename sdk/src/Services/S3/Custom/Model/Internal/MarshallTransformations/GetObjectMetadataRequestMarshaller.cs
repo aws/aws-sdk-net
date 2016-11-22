@@ -64,6 +64,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 else
                     request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(headObjectRequest.ServerSideEncryptionCustomerProvidedKey));
             }
+            if (headObjectRequest.IsSetRequestPayer())
+                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(headObjectRequest.RequestPayer.ToString()));
 
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}",
                                                  S3Transforms.ToStringValue(headObjectRequest.BucketName),
@@ -71,6 +73,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (headObjectRequest.IsSetVersionId())
                 request.AddSubResource("versionId", S3Transforms.ToStringValue(headObjectRequest.VersionId));
+            if (headObjectRequest.IsSetPartNumber())
+                request.AddSubResource("partNumber", S3Transforms.ToStringValue(headObjectRequest.PartNumber.Value));
 
             request.UseQueryString = true;
             

@@ -44,7 +44,9 @@ namespace Amazon.S3.Model
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
         private ReplicationStatus replicationStatus;
+        private int? partsCount;
         private S3StorageClass storageClass;
+        private RequestCharged requestCharged;
 
         /// <summary>
         /// Flag which returns true if the Expires property has been unmarshalled
@@ -342,6 +344,21 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// The count of parts this object has.
+        /// </summary>
+        public int? PartsCount
+        {
+            get { return this.partsCount; }
+            set { this.partsCount = value; }
+        }
+
+        // Check to see if PartsCount property is set
+        internal bool IsSetPartsCount()
+        {
+            return this.partsCount.HasValue;
+        }
+
+        /// <summary>
         /// The class of storage used to store the object.
         ///  
         /// </summary>
@@ -355,6 +372,24 @@ namespace Amazon.S3.Model
         internal bool IsSetStorageClass()
         {
             return this.storageClass != null;
+        }
+
+        /// <summary>
+        /// If present, indicates that the requester was successfully charged for the request.
+        /// </summary>
+        public RequestCharged RequestCharged
+        {
+            get { return this.requestCharged; }
+            set { this.requestCharged = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if RequestCharged is set.
+        /// </summary>
+        /// <returns>true, if RequestCharged property is set.</returns>
+        internal bool IsSetRequestCharged()
+        {
+            return requestCharged != null;
         }
     }
 }

@@ -29,6 +29,7 @@ namespace Amazon.S3.Model
         private ServerSideEncryptionMethod serverSideEncryption;
         private string eTag;
         private int partNumber;
+        private RequestCharged requestCharged;
 
         /// <summary>
         /// The Server-side encryption algorithm used when storing this object in S3.
@@ -64,6 +65,24 @@ namespace Amazon.S3.Model
         {
             get { return this.partNumber; }
             set { this.partNumber = value; }
+        }
+
+        /// <summary>
+        /// If present, indicates that the requester was successfully charged for the request.
+        /// </summary>
+        public RequestCharged RequestCharged
+        {
+            get { return this.requestCharged; }
+            set { this.requestCharged = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if RequestCharged is set.
+        /// </summary>
+        /// <returns>true, if RequestCharged property is set.</returns>
+        internal bool IsSetRequestCharged()
+        {
+            return requestCharged != null;
         }
     }
 }

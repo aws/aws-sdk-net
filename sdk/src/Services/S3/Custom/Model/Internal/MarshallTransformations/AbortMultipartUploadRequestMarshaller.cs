@@ -16,6 +16,7 @@
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using System.Globalization;
+using Amazon.S3.Util;
 
 #pragma warning disable 1591
 
@@ -36,6 +37,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(abortMultipartUploadRequest, "AmazonS3");
 
             request.HttpMethod = "DELETE";
+
+            if (abortMultipartUploadRequest.IsSetRequestPayer())
+                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(abortMultipartUploadRequest.RequestPayer.ToString()));
 
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}", 
                                                  S3Transforms.ToStringValue(abortMultipartUploadRequest.BucketName),

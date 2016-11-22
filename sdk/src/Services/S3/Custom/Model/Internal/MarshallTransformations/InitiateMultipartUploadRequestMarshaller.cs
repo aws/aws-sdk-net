@@ -69,6 +69,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (initiateMultipartUploadRequest.IsSetWebsiteRedirectLocation())
                 request.Headers.Add(HeaderKeys.XAmzWebsiteRedirectLocationHeader, S3Transforms.ToStringValue(initiateMultipartUploadRequest.WebsiteRedirectLocation));
+            if (initiateMultipartUploadRequest.IsSetRequestPayer())
+                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(initiateMultipartUploadRequest.RequestPayer.ToString()));
 
             AmazonS3Util.SetMetadataHeaders(request, initiateMultipartUploadRequest.Metadata);
 

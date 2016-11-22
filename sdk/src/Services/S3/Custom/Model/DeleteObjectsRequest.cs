@@ -34,6 +34,7 @@ namespace Amazon.S3.Model
         private List<KeyVersion> objects = new List<KeyVersion>();
         private bool? quiet;
         private MfaCodes mfaCodes;
+        private RequestPayer requestPayer;
 
         /// <summary>
         /// The name of the bucket containing the objects to be deleted.
@@ -119,6 +120,24 @@ namespace Amazon.S3.Model
                 (!System.String.IsNullOrEmpty(MfaCodes.AuthenticationValue));
         }
 
+        /// <summary>
+        /// Confirms that the requester knows that she or he will be charged for the list objects request.
+        /// Bucket owners need not specify this parameter in their requests.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this.requestPayer; }
+            set { this.requestPayer = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if RequetsPayer is set.
+        /// </summary>
+        /// <returns>true, if RequestPayer property is set.</returns>
+        internal bool IsSetRequestPayer()
+        {
+            return requestPayer != null;
+        }
     }
 }
     

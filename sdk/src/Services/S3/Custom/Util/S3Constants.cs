@@ -73,6 +73,11 @@ namespace Amazon.S3.Util
             PostFormDataXAmzDate = "x-amz-date",
             PostFormDataSecurityToken = "x-amz-security-token";
 
+        internal static string
+            AmzHeaderMultipartPartsCount    = "x-amz-mp-parts-count",
+            AmzHeaderRequestPayer           = "x-amz-request-payer",
+            AmzHeaderRequestCharged         = "x-amz-request-charged";
+
         // Commonly used static strings
         //internal const string RequestParam = "request";
 

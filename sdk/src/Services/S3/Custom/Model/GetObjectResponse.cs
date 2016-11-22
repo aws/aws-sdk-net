@@ -23,6 +23,7 @@ using Amazon.S3.Util;
 using Amazon.Util;
 using System.Globalization;
 using Amazon.S3.Model.Internal.MarshallTransformations;
+using Amazon.S3;
 
 namespace Amazon.S3.Model
 {
@@ -48,7 +49,9 @@ namespace Amazon.S3.Model
         private HeadersCollection headersCollection = new HeadersCollection();
         private MetadataCollection metadataCollection = new MetadataCollection();
         private ReplicationStatus replicationStatus;
+        private int? partsCount;
         private S3StorageClass storageClass;
+        private RequestCharged requestCharged;
 
         private string bucketName;
         private string key;
@@ -356,6 +359,24 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
+        /// The number of parts this oject has.
+        /// </summary>
+        public int? PartsCount
+        {
+            get { return this.partsCount; }
+            set { this.partsCount = value; }
+        }
+
+        /// <summary>
+        /// Checks if PartsCount is set.
+        /// </summary>
+        /// <returns>true if PartsCount property is set.</returns>
+        internal bool IsSetPartsCount()
+        {
+            return this.partsCount.HasValue;
+        }
+
+        /// <summary>
         /// The Server-side encryption algorithm to be used with the customer provided key.
         ///  
         /// </summary>
@@ -371,6 +392,23 @@ namespace Amazon.S3.Model
             set { this.serverSideEncryptionCustomerMethod = value; }
         }
 
+        /// <summary>
+        /// If present, indicates that the requester was successfully charged for the request.
+        /// </summary>
+        public RequestCharged RequestCharged
+        {
+            get { return this.requestCharged; }
+            set { this.requestCharged = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if RequestCharged is set.
+        /// </summary>
+        /// <returns>true, if RequestCharged property is set.</returns>
+        internal bool IsSetRequestCharged()
+        {
+            return requestCharged != null;
+        }
 
 #if BCL
 

@@ -70,6 +70,54 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
+        
+        [TestMethod]
+        [TestCategory("General")]
+        public void TestSerializaingObjects()
+        {
+            DeleteObjectsResponse response = new DeleteObjectsResponse
+            {
+                DeletedObjects = new List<DeletedObject>
+                {
+                    new DeletedObject{ Key = "hello", VersionId ="version" },
+                    new DeletedObject{ Key = "world", VersionId ="version" },
+                    new DeletedObject{ Key = "!!!" ,  VersionId ="version"}
+                },
+                DeleteErrors = new List<DeleteError>
+                {
+                    new DeleteError{ Code = "200", Key = "key", Message = "Some Message!" },
+                    new DeleteError{ Code = "500", Key = "key", Message = "Some Message!" }
+                },
+                RequestCharged = RequestCharged.Requester
+            };
+
+            var serializer = new BinaryFormatter();
+            using (var ms = new MemoryStream())
+            {
+                serializer.Serialize(ms, response);
+                ms.Seek(0, SeekOrigin.Begin);
+                DeleteObjectsResponse deserialized = serializer.Deserialize(ms) as DeleteObjectsResponse;
+
+
+                List<string> deleteObjectKeys = new List<string>{ "hello", "world", "!!!"};
+                // Validate deserialized dataa
+                foreach (var obj in deserialized.DeletedObjects)
+                {
+                    Assert.AreEqual(obj.VersionId, "version");
+                    Assert.IsTrue(deleteObjectKeys.Contains(obj.Key));
+                }
+
+                List<string> errorCodes = new List<string>{ "200", "500" };
+                foreach (var error in deserialized.DeleteErrors)
+                {
+                    Assert.AreEqual(error.Key, "key");
+                    Assert.IsTrue(errorCodes.Contains(error.Code));
+                }
+
+                Assert.AreEqual(deserialized.RequestCharged, RequestCharged.Requester);
+            }
+        }
+
         private static S3PostUploadException CreateS3PostUploadException()
         {
             var s3pue = new S3PostUploadException("ErrorCode", "Message");

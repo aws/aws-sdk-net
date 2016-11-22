@@ -16,6 +16,7 @@
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using System.Globalization;
+using Amazon.S3.Util;
 using Amazon.Util;
 
 #pragma warning disable 1591
@@ -47,6 +48,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (deleteObjectRequest.IsSetVersionId())
                 request.AddSubResource("versionId", S3Transforms.ToStringValue(deleteObjectRequest.VersionId));
+            if (deleteObjectRequest.IsSetRequestPayer())
+                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(deleteObjectRequest.RequestPayer.ToString()));
             request.UseQueryString = true;
             
             return request;

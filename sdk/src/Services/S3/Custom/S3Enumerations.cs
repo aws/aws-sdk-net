@@ -1011,4 +1011,68 @@ namespace Amazon.S3
         KeyMarker,
         UploadIdMarker
     }
+
+    /// <summary>
+    /// Acknowledges that requester pays for the operation.
+    /// </summary>
+    public sealed class RequestPayer : ConstantClass
+    {
+        /// <summary>
+        /// Requester pays for the operation.
+        /// </summary>
+        public static readonly RequestPayer Requester = new RequestPayer("requester");
+
+        private RequestPayer(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the RequestPayer instance for the string value.
+        /// </summary>
+        public static RequestPayer FindValue(string value)
+        {
+            return FindValue<RequestPayer>(value);
+        }
+
+        /// <summary>
+        /// Converts string to RequestPayer instance
+        /// </summary>
+        public static implicit operator RequestPayer(string value)
+        {
+            return FindValue<RequestPayer>(value);
+        }
+    }
+
+    /// <summary>
+    /// The response from S3 that it confirms that requester pays.
+    /// </summary>
+    public sealed class RequestCharged : ConstantClass
+    {
+        /// <summary>
+        /// S3 acknowledges that the requester pays.
+        /// </summary>
+        public static readonly RequestCharged Requester = new RequestCharged("requester");
+
+        private RequestCharged(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the RequestCharged instance for the string value
+        /// </summary>
+        public static RequestCharged FindValue(string value)
+        {
+            return FindValue<RequestCharged>(value);
+        }
+
+        /// <summary>
+        ///  converts the string to RequestCharged instance
+        /// </summary>
+        public static implicit operator RequestCharged(string value)
+        {
+            return FindValue<RequestCharged>(value);
+        }
+    }
 }

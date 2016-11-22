@@ -77,6 +77,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (putObjectRequest.IsSetServerSideEncryptionKeyManagementServiceKeyId())
                 request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader, putObjectRequest.ServerSideEncryptionKeyManagementServiceKeyId);
+            if (putObjectRequest.IsSetRequestPayer())
+                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(putObjectRequest.RequestPayer.ToString()));
 
             AmazonS3Util.SetMetadataHeaders(request, putObjectRequest.Metadata);
 

@@ -38,6 +38,7 @@ namespace Amazon.S3.Model
         private string bucketName;
         private string key;
         private string uploadId;
+        private RequestPayer requestPayer;
 
         /// <summary>
         /// The name of the bucketName containing the S3 object that was being uploaded in parts.
@@ -84,6 +85,24 @@ namespace Amazon.S3.Model
             return this.uploadId != null;
         }
 
+        /// <summary>
+        /// Confirms that the requester knows that she or he will be charged for the list objects request.
+        /// Bucket owners need not specify this parameter in their requests.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this.requestPayer; }
+            set { this.requestPayer = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if RequetsPayer is set.
+        /// </summary>
+        /// <returns>true, if RequestPayer property is set.</returns>
+        internal bool IsSetRequestPayer()
+        {
+            return requestPayer != null;
+        }
     }
 }
     

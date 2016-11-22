@@ -136,6 +136,49 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
+        [TestMethod]
+        [TestCategory("S3")]
+        public void MultipartGetNumberTest()
+        {
+            string key = "SomeTest";
+
+            Upload(key, 20 * MEG_SIZE, null, Client);
+
+            try
+            {
+
+                var objectMetadataResponse = Client.GetObjectMetadata(new GetObjectMetadataRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    PartNumber = 1,
+                });
+
+                Assert.IsTrue(objectMetadataResponse.PartsCount > 1);
+
+                int? count = objectMetadataResponse.PartsCount;
+                for (int i = 1; i <= count; i++)
+                {
+                    var objectResponse = Client.GetObject(new GetObjectRequest
+                    {
+                        BucketName = bucketName,
+                        Key = key,
+                        PartNumber = i
+                    });
+
+                    Assert.AreEqual(objectResponse.PartsCount, count);
+                }
+            }
+            finally
+            {
+                Client.DeleteObject(new DeleteObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = key
+                });
+            }
+        }
+
         void Upload(string fileName, long size, 
             TransferProgressValidator<UploadProgressArgs> progressValidator, AmazonS3Client client = null)
         {

@@ -91,8 +91,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.ServerSideEncryptionKeyManagementServiceKeyId = S3Transforms.ToString(responseData.GetHeaderValue(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader));
             if (responseData.IsHeaderPresent("x-amz-replication-status"))
                 response.ReplicationStatus = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-replication-status"));
+            if (responseData.IsHeaderPresent(S3Constants.AmzHeaderMultipartPartsCount))
+                response.PartsCount = S3Transforms.ToInt(responseData.GetHeaderValue(S3Constants.AmzHeaderMultipartPartsCount));
             if (responseData.IsHeaderPresent(HeaderKeys.XAmzStorageClassHeader))
                 response.StorageClass = S3Transforms.ToString(responseData.GetHeaderValue(HeaderKeys.XAmzStorageClassHeader));
+            if (responseData.IsHeaderPresent(S3Constants.AmzHeaderRequestCharged))
+                response.RequestCharged = RequestCharged.FindValue(responseData.GetHeaderValue(S3Constants.AmzHeaderRequestCharged));
 
             foreach (var name in responseData.GetHeaderNames())
             {

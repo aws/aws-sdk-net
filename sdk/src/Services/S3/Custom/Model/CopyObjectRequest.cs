@@ -34,6 +34,7 @@ namespace Amazon.S3.Model
         private string srcVersionId;
         private string dstBucket;
         private string dstKey;
+        private RequestPayer requestPayer;
 
         private S3CannedACL cannedACL;
 
@@ -501,6 +502,25 @@ namespace Amazon.S3.Model
         internal bool IsSetCopySourceServerSideEncryptionCustomerProvidedKeyMD5()
         {
             return !System.String.IsNullOrEmpty(this.copySourceServerSideEncryptionCustomerProvidedKeyMD5);
+        }
+
+        /// <summary>
+        /// Confirms that the requester knows that she or he will be charged for the list objects request.
+        /// Bucket owners need not specify this parameter in their requests.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this.requestPayer; }
+            set { this.requestPayer = value; }
+        }
+
+        /// <summary>
+        /// Checks to see if RequetsPayer is set.
+        /// </summary>
+        /// <returns>true, if RequestPayer property is set.</returns>
+        internal bool IsSetRequestPayer()
+        {
+            return requestPayer != null;
         }
     }
 }
