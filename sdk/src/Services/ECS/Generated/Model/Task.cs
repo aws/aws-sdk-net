@@ -45,6 +45,7 @@ namespace Amazon.ECS.Model
         private string _stoppedReason;
         private string _taskArn;
         private string _taskDefinitionArn;
+        private long? _version;
 
         /// <summary>
         /// Gets and sets the property ClusterArn. 
@@ -283,6 +284,29 @@ namespace Amazon.ECS.Model
         internal bool IsSetTaskDefinitionArn()
         {
             return this._taskDefinitionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The version counter for the task. Every time a task experiences a change that triggers
+        /// a CloudWatch event, the version counter is incremented. If you are replicating your
+        /// Amazon ECS task state with CloudWatch events, you can compare the version of a task
+        /// reported by the Amazon ECS APIs with the version reported in CloudWatch events for
+        /// the task (inside the <code>detail</code> object) to verify that the version in your
+        /// event stream is current.
+        /// </para>
+        /// </summary>
+        public long Version
+        {
+            get { return this._version.GetValueOrDefault(); }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version.HasValue; 
         }
 
     }

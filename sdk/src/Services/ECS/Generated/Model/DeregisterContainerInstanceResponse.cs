@@ -35,7 +35,10 @@ namespace Amazon.ECS.Model
         private ContainerInstance _containerInstance;
 
         /// <summary>
-        /// Gets and sets the property ContainerInstance.
+        /// Gets and sets the property ContainerInstance. 
+        /// <para>
+        /// The container instance that was deregistered.
+        /// </para>
         /// </summary>
         public ContainerInstance ContainerInstance
         {
