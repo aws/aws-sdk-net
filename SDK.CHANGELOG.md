@@ -1,3 +1,11 @@
+### 3.3.23.0 (2016-11-22 03:06 UTC)
+* CloudTrail (3.3.1.0)
+	* API Update for CloudTrail : supports configuring your trail with event selector
+* ECS (3.3.1.0)
+	* APIUpdate for ECS : the new API will include a new field named "version" in API responses relating to tasks and container instances.
+* S3 (3.3.2.0)
+	* API Update for S3 : Get-Partnumber and Request-Payer support
+
 ### 3.3.22.0 (2016-11-19 00:10 UTC)
 * ApplicationAutoScaling (3.3.1.0)
 	* API Update for ApplicationAutoScaling : support for a new target resource (EMR Instance Groups) as a scalable target
