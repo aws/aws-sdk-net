@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Event Object
+    /// Response Unmarshaller for EventSelector Object
     /// </summary>  
-    public class EventUnmarshaller : IUnmarshaller<Event, XmlUnmarshallerContext>, IUnmarshaller<Event, JsonUnmarshallerContext>
+    public class EventSelectorUnmarshaller : IUnmarshaller<EventSelector, XmlUnmarshallerContext>, IUnmarshaller<EventSelector, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Event IUnmarshaller<Event, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EventSelector IUnmarshaller<EventSelector, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,57 +53,33 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Event Unmarshall(JsonUnmarshallerContext context)
+        public EventSelector Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Event unmarshalledObject = new Event();
+            EventSelector unmarshalledObject = new EventSelector();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CloudTrailEvent", targetDepth))
+                if (context.TestExpression("DataResources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DataResource, DataResourceUnmarshaller>(DataResourceUnmarshaller.Instance);
+                    unmarshalledObject.DataResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IncludeManagementEvents", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeManagementEvents = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ReadWriteType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CloudTrailEvent = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EventId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EventName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EventSource", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventSource = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EventTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EventTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Resources", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Resource, ResourceUnmarshaller>(ResourceUnmarshaller.Instance);
-                    unmarshalledObject.Resources = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Username", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Username = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReadWriteType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -112,12 +88,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         }
 
 
-        private static EventUnmarshaller _instance = new EventUnmarshaller();        
+        private static EventSelectorUnmarshaller _instance = new EventSelectorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EventUnmarshaller Instance
+        public static EventSelectorUnmarshaller Instance
         {
             get
             {
