@@ -8,7 +8,8 @@ namespace TestWrapper
 
     class RunTests
     {
-        private static int MAX_TEST_RUNS = 5;
+        private static int MAX_TEST_RUNS = 15;
+        private static int MAX_CONSECUTIVE_FAILURE = 3;
         private static bool ExecuteRunner(ITestRunner runner)
         {
             bool allTestsPassed = false;
@@ -16,6 +17,7 @@ namespace TestWrapper
             {
                 ResultsSummary summary = new ResultsSummary();
                 int prevFailedTestCount = Int32.MaxValue;
+                int consecutiveFailureCount = 0;
                 
                 for(int runCount = 1; runCount < MAX_TEST_RUNS; runCount++)
                 {
@@ -30,9 +32,15 @@ namespace TestWrapper
                     {
                         break;
                     }
+
                     if (summary.Failed < prevFailedTestCount)
                     {
                         prevFailedTestCount = summary.Failed;
+                        consecutiveFailureCount = 0;
+                    }
+                    else if (consecutiveFailureCount < MAX_CONSECUTIVE_FAILURE)
+                    {
+                        consecutiveFailureCount++;
                     }
                     else
                     {
