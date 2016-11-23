@@ -276,9 +276,8 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
-        /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Amazon
-        /// Route 53 returns this error when the VPC specified by <code>VPCId</code> does not
-        /// belong to you.
+        /// The VPC ID that you specified either isn't a valid ID or the current account is not
+        /// authorized to access this VPC.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
         /// The limits specified for a resource have been exceeded.
@@ -378,56 +377,90 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE</code>: Deletes an existing resource record set that has the applicable
-        /// values for the following elements:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>Name</code>: required to delete any resource record set
+        ///  <code>DELETE</code>: Deletes an existing resource record set that has the specified
+        /// values.
         /// </para>
         ///  </li> <li> 
-        /// <para>
-        ///  <code>Type</code>: required to delete any resource record set
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>AliasTarget</code>, <code>DNSName</code>, <code>EvaluateTargetHealth</code>,
-        /// and <code>HostedZoneId</code>: required to delete an alias resource record set
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>SetIdentifier</code>: required to delete a failover, geolocation, latency,
-        /// or weighted resource record set 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>TTL</code>: required to delete any resource record set except an alias resource
-        /// record set (For alias resource record sets, the TTL is determined by the AWS resource
-        /// tat you're routing traffic to.)
-        /// </para>
-        ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <code>UPSERT</code>: If a resource record set does not already exist, AWS creates
         /// it. If a resource set does exist, Amazon Route 53 updates it with the values in the
-        /// request. Amazon Route 53 can update an existing resource record set only when all
-        /// of the following values match: <code>Name</code>, <code>Type</code>, and <code>Set
-        /// Identifier</code> (for weighted, latency, geolocation, and failover resource record
-        /// sets).
+        /// request. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// In response to a <code>ChangeResourceRecordSets</code> request, the DNS data is changed
-        /// on all Amazon Route 53 DNS servers. Initially, the status of a change is <code>PENDING</code>,
-        /// meaning the change has not yet propagated to all the authoritative Amazon Route 53
-        /// DNS servers. When the change is propagated to all hosts, the change returns a status
-        /// of <code>INSYNC</code>.
+        /// The values that you need to include in the request depend on the type of resource
+        /// record set that you're creating, deleting, or updating:
         /// </para>
         ///  
         /// <para>
-        /// After sending a change request, confirm your change has propagated to all Amazon Route
-        /// 53 DNS servers. Changes generally propagate to all Amazon Route 53 name servers in
-        /// a few minutes. In rare circumstances, propagation can take up to 30 minutes. For more
-        /// information, see <a>GetChange</a>.
+        ///  <b>Basic resource record sets (excluding alias, failover, geolocation, latency, and
+        /// weighted resource record sets)</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Name</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Type</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TTL</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Failover, geolocation, latency, or weighted resource record sets (excluding alias
+        /// resource record sets)</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Name</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Type</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TTL</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SetIdentifier</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Alias resource record sets (including failover alias, geolocation alias, latency
+        /// alias, and weighted alias resource record sets)</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Name</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Type</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AliasTarget</code> (includes <code>DNSName</code>, <code>EvaluateTargetHealth</code>,
+        /// and <code>HostedZoneId</code>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SetIdentifier</code> (for failover, geolocation, latency, and weighted resource
+        /// record sets)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When you submit a <code>ChangeResourceRecordSets</code> request, Amazon Route 53 propagates
+        /// your changes to all of the Amazon Route 53 authoritative DNS servers. While your changes
+        /// are propagating, <code>GetChange</code> returns a status of <code>PENDING</code>.
+        /// When propagation is complete, <code>GetChange</code> returns a status of <code>INSYNC</code>.
+        /// Changes generally propagate to all Amazon Route 53 name servers in a few minutes.
+        /// In rare circumstances, propagation can take up to 30 minutes. For more information,
+        /// see <a>GetChange</a> 
         /// </para>
         ///  
         /// <para>
@@ -738,9 +771,8 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
-        /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Amazon
-        /// Route 53 returns this error when the VPC specified by <code>VPCId</code> does not
-        /// belong to you.
+        /// The VPC ID that you specified either isn't a valid ID or the current account is not
+        /// authorized to access this VPC.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
         /// A reusable delegation set with the specified ID does not exist.
@@ -1084,9 +1116,8 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
-        /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Amazon
-        /// Route 53 returns this error when the VPC specified by <code>VPCId</code> does not
-        /// belong to you.
+        /// The VPC ID that you specified either isn't a valid ID or the current account is not
+        /// authorized to access this VPC.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -1466,9 +1497,8 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
-        /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Amazon
-        /// Route 53 returns this error when the VPC specified by <code>VPCId</code> does not
-        /// belong to you.
+        /// The VPC ID that you specified either isn't a valid ID or the current account is not
+        /// authorized to access this VPC.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -1536,9 +1566,8 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidVPCIdException">
-        /// The hosted zone you are trying to create for your VPC_ID does not belong to you. Amazon
-        /// Route 53 returns this error when the VPC specified by <code>VPCId</code> does not
-        /// belong to you.
+        /// The VPC ID that you specified either isn't a valid ID or the current account is not
+        /// authorized to access this VPC.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.LastVPCAssociationException">
         /// The VPC that you're trying to disassociate from the private hosted zone is the last
