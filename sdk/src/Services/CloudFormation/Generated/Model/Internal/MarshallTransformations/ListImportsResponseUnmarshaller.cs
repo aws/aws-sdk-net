@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ExecuteChangeSet operation
+    /// Response Unmarshaller for ListImports operation
     /// </summary>  
-    public class ExecuteChangeSetResponseUnmarshaller : XmlResponseUnmarshaller
+    public class ListImportsResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            ExecuteChangeSetResponse response = new ExecuteChangeSetResponse();
+            ListImportsResponse response = new ListImportsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("ExecuteChangeSetResult", 2))
+                    if(context.TestExpression("ListImportsResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,8 +67,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             return response;
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
-        private static void UnmarshallResult(XmlUnmarshallerContext context, ExecuteChangeSetResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, ListImportsResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -82,6 +81,19 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("Imports/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        response.Imports.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("NextToken", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.NextToken = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
            }
 
@@ -99,23 +111,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ChangeSetNotFound"))
-            {
-                return new ChangeSetNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientCapabilitiesException"))
-            {
-                return new InsufficientCapabilitiesException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidChangeSetStatus"))
-            {
-                return new InvalidChangeSetStatusException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonCloudFormationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static ExecuteChangeSetResponseUnmarshaller _instance = new ExecuteChangeSetResponseUnmarshaller();        
+        private static ListImportsResponseUnmarshaller _instance = new ListImportsResponseUnmarshaller();        
 
-        internal static ExecuteChangeSetResponseUnmarshaller GetInstance()
+        internal static ListImportsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -123,7 +123,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ExecuteChangeSetResponseUnmarshaller Instance
+        public static ListImportsResponseUnmarshaller Instance
         {
             get
             {

@@ -938,6 +938,10 @@ namespace Amazon.CloudFormation
         /// The specified change set name or ID doesn't exit. To view valid change sets for a
         /// stack, use the <code>ListChangeSets</code> action.
         /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.InsufficientCapabilitiesException">
+        /// The template contains resources with capabilities that were not specified in the Capabilities
+        /// parameter.
+        /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.InvalidChangeSetStatusException">
         /// The specified change set cannot be used to update the stack. For example, the change
         /// set status might be <code>CREATE_IN_PROGRESS</code> or the stack status might be <code>UPDATE_IN_PROGRESS</code>.
@@ -1029,6 +1033,10 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the GetTemplate service method.</param>
         /// 
         /// <returns>The response from the GetTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ChangeSetNotFoundException">
+        /// The specified change set name or ID doesn't exit. To view valid change sets for a
+        /// stack, use the <code>ListChangeSets</code> action.
+        /// </exception>
         public GetTemplateResponse GetTemplate(GetTemplateRequest request)
         {
             var marshaller = new GetTemplateRequestMarshaller();
@@ -1188,6 +1196,51 @@ namespace Amazon.CloudFormation
             var unmarshaller = ListExportsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListExportsRequest,ListExportsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListImports
+
+
+        /// <summary>
+        /// Lists all stacks that are importing an exported output value. To modify or remove
+        /// an exported output value, first use this action to see which stacks are using it.
+        /// To see the exported output values in your account, see <a>ListExports</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about importing an exported output value, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+        /// <code>Fn::ImportValue</code> </a> function. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
+        /// 
+        /// <returns>The response from the ListImports service method, as returned by CloudFormation.</returns>
+        public ListImportsResponse ListImports(ListImportsRequest request)
+        {
+            var marshaller = new ListImportsRequestMarshaller();
+            var unmarshaller = ListImportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportsRequest,ListImportsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImports operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListImportsResponse> ListImportsAsync(ListImportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListImportsRequestMarshaller();
+            var unmarshaller = ListImportsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListImportsRequest,ListImportsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

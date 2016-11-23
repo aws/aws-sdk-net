@@ -241,6 +241,16 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListImportsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListImportsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.ListStackResourcesRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>

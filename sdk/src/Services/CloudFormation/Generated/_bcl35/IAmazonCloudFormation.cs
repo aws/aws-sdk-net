@@ -716,6 +716,10 @@ namespace Amazon.CloudFormation
         /// The specified change set name or ID doesn't exit. To view valid change sets for a
         /// stack, use the <code>ListChangeSets</code> action.
         /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.InsufficientCapabilitiesException">
+        /// The template contains resources with capabilities that were not specified in the Capabilities
+        /// parameter.
+        /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.InvalidChangeSetStatusException">
         /// The specified change set cannot be used to update the stack. For example, the change
         /// set status might be <code>CREATE_IN_PROGRESS</code> or the stack status might be <code>UPDATE_IN_PROGRESS</code>.
@@ -807,6 +811,10 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the GetTemplate service method.</param>
         /// 
         /// <returns>The response from the GetTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ChangeSetNotFoundException">
+        /// The specified change set name or ID doesn't exit. To view valid change sets for a
+        /// stack, use the <code>ListChangeSets</code> action.
+        /// </exception>
         GetTemplateResponse GetTemplate(GetTemplateRequest request);
 
         /// <summary>
@@ -968,6 +976,51 @@ namespace Amazon.CloudFormation
         /// 
         /// <returns>Returns a  ListExportsResult from CloudFormation.</returns>
         ListExportsResponse EndListExports(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListImports
+
+
+        /// <summary>
+        /// Lists all stacks that are importing an exported output value. To modify or remove
+        /// an exported output value, first use this action to see which stacks are using it.
+        /// To see the exported output values in your account, see <a>ListExports</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about importing an exported output value, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+        /// <code>Fn::ImportValue</code> </a> function. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
+        /// 
+        /// <returns>The response from the ListImports service method, as returned by CloudFormation.</returns>
+        ListImportsResponse ListImports(ListImportsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImports operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImports
+        ///         operation.</returns>
+        IAsyncResult BeginListImports(ListImportsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListImports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListImports.</param>
+        /// 
+        /// <returns>Returns a  ListImportsResult from CloudFormation.</returns>
+        ListImportsResponse EndListImports(IAsyncResult asyncResult);
 
         #endregion
         

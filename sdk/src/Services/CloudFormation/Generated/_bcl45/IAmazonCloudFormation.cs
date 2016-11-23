@@ -581,6 +581,10 @@ namespace Amazon.CloudFormation
         /// The specified change set name or ID doesn't exit. To view valid change sets for a
         /// stack, use the <code>ListChangeSets</code> action.
         /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.InsufficientCapabilitiesException">
+        /// The template contains resources with capabilities that were not specified in the Capabilities
+        /// parameter.
+        /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.InvalidChangeSetStatusException">
         /// The specified change set cannot be used to update the stack. For example, the change
         /// set status might be <code>CREATE_IN_PROGRESS</code> or the stack status might be <code>UPDATE_IN_PROGRESS</code>.
@@ -648,6 +652,10 @@ namespace Amazon.CloudFormation
         /// <param name="request">Container for the necessary parameters to execute the GetTemplate service method.</param>
         /// 
         /// <returns>The response from the GetTemplate service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.ChangeSetNotFoundException">
+        /// The specified change set name or ID doesn't exit. To view valid change sets for a
+        /// stack, use the <code>ListChangeSets</code> action.
+        /// </exception>
         GetTemplateResponse GetTemplate(GetTemplateRequest request);
 
 
@@ -761,6 +769,39 @@ namespace Amazon.CloudFormation
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ListExportsResponse> ListExportsAsync(ListExportsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListImports
+
+
+        /// <summary>
+        /// Lists all stacks that are importing an exported output value. To modify or remove
+        /// an exported output value, first use this action to see which stacks are using it.
+        /// To see the exported output values in your account, see <a>ListExports</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// For more information about importing an exported output value, see the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
+        /// <code>Fn::ImportValue</code> </a> function. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
+        /// 
+        /// <returns>The response from the ListImports service method, as returned by CloudFormation.</returns>
+        ListImportsResponse ListImports(ListImportsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImports operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListImportsResponse> ListImportsAsync(ListImportsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

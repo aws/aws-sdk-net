@@ -490,6 +490,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudFormation")]
+        public void ListImportsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListImports");
+
+            var request = InstantiateClassGenerator.Execute<ListImportsRequest>();
+            var marshaller = new ListImportsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListImportsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListImportsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
         public void ListStackResourcesMarshallTest()
         {
             var operation = service_model.FindOperation("ListStackResources");

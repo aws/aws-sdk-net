@@ -52,8 +52,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ChangeSetName. 
         /// <para>
-        /// Returns the template for a change set using the Amazon Resource Name (ARN) or name
-        /// of the change set. If you specify a name, you must also specify the <code>StackName</code>.
+        /// The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation
+        /// returns the associated template. If you specify a name, you must also specify the
+        /// <code>StackName</code>.
         /// </para>
         /// </summary>
         public string ChangeSetName
@@ -102,23 +103,17 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TemplateStage. 
         /// <para>
-        /// The stage of the template that is returned.
+        /// For templates that include transforms, the stage of the template that AWS CloudFormation
+        /// returns. To get the user-submitted template, specify <code>Original</code>. To get
+        /// the template after AWS CloudFormation has processed all transforms, specify <code>Processed</code>.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// Valid values are <code>Original</code> and <code>Processed</code>. The default value
-        /// is <code>Original</code>.
+        /// If the template doesn't include transforms, <code>Original</code> and <code>Processed</code>
+        /// return the same template. By default, AWS CloudFormation specifies <code>Original</code>.
+        /// 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>Original</code> - Use this value to return the user-submitted template.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Processed</code> - Use this value to return the template after all transforms
-        /// have been processed.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public TemplateStage TemplateStage
         {
