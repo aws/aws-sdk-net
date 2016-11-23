@@ -52,7 +52,7 @@ namespace Amazon
 
         static AWSConfigsS3()
         {
-#if NET35 || NET45 || CORECLR
+#if BCL || CORECLR
             _useSignatureVersion4 = true;
 #else
             _useSignatureVersion4 = false;
