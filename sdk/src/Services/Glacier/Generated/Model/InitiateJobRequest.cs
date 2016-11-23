@@ -31,17 +31,17 @@ namespace Amazon.Glacier.Model
     /// Container for the parameters to the InitiateJob operation.
     /// This operation initiates a job of the specified type. In this release, you can initiate
     /// a job to retrieve either an archive or a vault inventory (a list of archives in a
-    /// vault). 
+    /// vault).
     /// 
     ///  
     /// <para>
-    /// Retrieving data from Amazon Glacier is a two-step process: 
+    /// Retrieving data from Amazon Glacier is a two-step process:
     /// </para>
     ///  <ol> <li> 
     /// <para>
     /// Initiate a retrieval job.
     /// </para>
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// A data retrieval policy can cause your initiate retrieval job request to fail with
     /// a PolicyEnforcedException exception. For more information about data retrieval policies,
@@ -50,11 +50,11 @@ namespace Amazon.Glacier.Model
     /// exception, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-error-responses.html">Error
     /// Responses</a>.
     /// </para>
-    ///  </note> </li> <li>
+    ///  </note> </li> <li> 
     /// <para>
     /// After the job completes, download the bytes.
     /// </para>
-    /// </li> </ol> 
+    ///  </li> </ol> 
     /// <para>
     /// The retrieval request is executed asynchronously. When you initiate a retrieval job,
     /// Amazon Glacier creates a job and returns a job ID in the response. When Amazon Glacier
@@ -68,24 +68,24 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// <b>Use Amazon SNS Notification</b> You can specify an Amazon Simple Notification Service
-    /// (Amazon SNS) topic to which Amazon Glacier can post a notification after the job is
-    /// completed. You can specify an SNS topic per job request. The notification is sent
-    /// only after Amazon Glacier completes the job. In addition to specifying an SNS topic
-    /// per job request, you can configure vault notifications for a vault so that job notifications
-    /// are always sent. For more information, see <a>SetVaultNotifications</a>.
+    ///  <b>Use Amazon SNS Notification</b> You can specify an Amazon Simple Notification
+    /// Service (Amazon SNS) topic to which Amazon Glacier can post a notification after the
+    /// job is completed. You can specify an SNS topic per job request. The notification is
+    /// sent only after Amazon Glacier completes the job. In addition to specifying an SNS
+    /// topic per job request, you can configure vault notifications for a vault so that job
+    /// notifications are always sent. For more information, see <a>SetVaultNotifications</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <b>Get job details</b> You can make a <a>DescribeJob</a> request to obtain job status
+    ///  <b>Get job details</b> You can make a <a>DescribeJob</a> request to obtain job status
     /// information while a job is in progress. However, it is more efficient to use an Amazon
     /// SNS notification to determine when a job is complete.
     /// </para>
-    ///  </li> </ul> <note>
+    ///  </li> </ul> <note> 
     /// <para>
     /// The information you get via notification is same that you get by calling <a>DescribeJob</a>.
     /// </para>
-    /// </note> 
+    ///  </note> 
     /// <para>
     /// If for a specific event, you add both the notification configuration on the vault
     /// and also specify an SNS topic in your initiate job request, Amazon Glacier sends both
@@ -101,7 +101,7 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  
     /// <para>
-    /// <b>About the Vault Inventory</b>
+    ///  <b>About the Vault Inventory</b> 
     /// </para>
     ///  
     /// <para>
@@ -116,11 +116,11 @@ namespace Amazon.Glacier.Model
     /// of characters. So, you might maintain your own database that maps archive names to
     /// their corresponding Amazon Glacier assigned archive IDs. You might find the vault
     /// inventory useful in the event you need to reconcile information in your database with
-    /// the actual vault inventory. 
+    /// the actual vault inventory.
     /// </para>
     ///  
     /// <para>
-    /// <b>Range Inventory Retrieval</b>
+    ///  <b>Range Inventory Retrieval</b> 
     /// </para>
     ///  
     /// <para>
@@ -129,7 +129,7 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  
     /// <para>
-    /// <i>Filtering by Archive Creation Date</i>
+    ///  <i>Filtering by Archive Creation Date</i> 
     /// </para>
     ///  
     /// <para>
@@ -143,7 +143,7 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  
     /// <para>
-    /// <i>Limiting Inventory Items per Retrieval</i>
+    ///  <i>Limiting Inventory Items per Retrieval</i> 
     /// </para>
     ///  
     /// <para>
@@ -164,18 +164,18 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  
     /// <para>
-    /// <b>About Ranged Archive Retrieval</b>
+    ///  <b>About Ranged Archive Retrieval</b> 
     /// </para>
     ///  
     /// <para>
-    ///  You can initiate an archive retrieval for the whole archive or a range of the archive.
+    /// You can initiate an archive retrieval for the whole archive or a range of the archive.
     /// In the case of ranged archive retrieval, you specify a byte range to return or the
     /// whole archive. The range specified must be megabyte (MB) aligned, that is the range
     /// start value must be divisible by 1 MB and range end value plus 1 must be divisible
     /// by 1 MB or equal the end of the archive. If the ranged archive retrieval is not megabyte
     /// aligned, this operation returns a 400 response. Furthermore, to ensure you get checksum
     /// values for data you download using Get Job Output API, the range must be tree hash
-    /// aligned. 
+    /// aligned.
     /// </para>
     ///  
     /// <para>
@@ -187,9 +187,39 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  
     /// <para>
-    /// For conceptual information and the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">Initiate
+    /// For conceptual information and the underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">Initiate
     /// a Job</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">Downloading
     /// a Vault Inventory</a> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Expedited and Bulk Archive Retrievals</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// When retrieving an archive, you can specify one of the following options in the <code>Tier</code>
+    /// field of the request body: 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>Standard</b> The default type of retrieval, which allows access to any of your
+    /// archives within several hours. Standard retrievals typically complete within 3–5 hours.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Bulk</b> Amazon Glacier’s lowest-cost retrieval option, which enables you to retrieve
+    /// large amounts of data inexpensively in a day. Bulk retrieval requests typically complete
+    /// within 5–12 hours. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Expedited</b> Amazon Glacier’s option for the fastest retrievals. Archives requested
+    /// using the expedited retrievals typically become accessible within 1–5 minutes. 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more information about expedited and bulk retrievals, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive-two-steps.html">Retrieving
+    /// Amazon Glacier Archives</a>.
     /// </para>
     /// </summary>
     public partial class InitiateJobRequest : AmazonGlacierRequest
@@ -217,7 +247,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates InitiateJobRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID.</param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="jobParameters">Provides options for specifying job information.</param>
         public InitiateJobRequest(string accountId, string vaultName, JobParameters jobParameters)
@@ -231,10 +261,10 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
-        /// vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos
+        /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
         /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens (apos-apos) in the ID.
+        /// hyphens ('-') in the ID.
         /// </para>
         /// </summary>
         public string AccountId

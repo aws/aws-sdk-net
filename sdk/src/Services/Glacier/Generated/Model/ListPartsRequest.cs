@@ -39,12 +39,11 @@ namespace Amazon.Glacier.Model
     /// <para>
     /// The List Parts operation supports pagination. By default, this operation returns up
     /// to 1,000 uploaded parts in the response. You should always check the response for
-    /// a <code class="code">marker</code> at which to continue the list; if there are no
-    /// more items the <code class="code">marker</code> is <code class="code">null</code>.
-    /// To return a list of parts that begins at a specific part, set the <code>marker</code>
-    /// request parameter to the value you obtained from a previous List Parts request. You
-    /// can also limit the number of parts returned in the response by specifying the <code>limit</code>
-    /// parameter in the request. 
+    /// a <code>marker</code> at which to continue the list; if there are no more items the
+    /// <code>marker</code> is <code>null</code>. To return a list of parts that begins at
+    /// a specific part, set the <code>marker</code> request parameter to the value you obtained
+    /// from a previous List Parts request. You can also limit the number of parts returned
+    /// in the response by specifying the <code>limit</code> parameter in the request. 
     /// </para>
     ///  
     /// <para>
@@ -56,7 +55,7 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  
     /// <para>
-    /// For conceptual information and the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
+    /// For conceptual information and the underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
     /// with Archives in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html">List
     /// Parts</a> in the <i>Amazon Glacier Developer Guide</i>.
     /// </para>
@@ -88,7 +87,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates ListPartsRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="uploadId">The upload ID of the multipart upload.</param>
         public ListPartsRequest(string accountId, string vaultName, string uploadId)
@@ -102,10 +101,10 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
-        /// vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos
+        /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
         /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens (apos-apos) in the ID. 
+        /// hyphens ('-') in the ID. 
         /// </para>
         /// </summary>
         public string AccountId
@@ -123,8 +122,9 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Specifies the maximum number of parts returned in the response body. If this value
-        /// is not specified, the List Parts operation returns up to 1,000 uploads.
+        /// The maximum number of parts to be returned. The default limit is 1000. The number
+        /// of parts returned might be fewer than the specified limit, but the number of returned
+        /// parts never exceeds the limit.
         /// </para>
         /// </summary>
         public int Limit

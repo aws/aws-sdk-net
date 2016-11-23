@@ -40,7 +40,7 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// <b>SHA256 tree hash does not match</b>To ensure that part data is not corrupted in
+    ///  <b>SHA256 tree hash does not match</b>To ensure that part data is not corrupted in
     /// transmission, you compute a SHA256 tree hash of the part and include it in your request.
     /// Upon receiving the part data, Amazon Glacier also computes a SHA256 tree hash. If
     /// these hash values don't match, the operation fails. For information about computing
@@ -49,23 +49,27 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// <b>Part size does not match</b>The size of each part except the last must match the
+    ///  <b>Part size does not match</b>The size of each part except the last must match the
     /// size specified in the corresponding <a>InitiateMultipartUpload</a> request. The size
     /// of the last part must be the same size as, or smaller than, the specified size.
     /// </para>
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// If you upload a part whose size is smaller than the part size you specified in your
     /// initiate multipart upload request and that part is not the last part, then the upload
     /// part request will succeed. However, the subsequent Complete Multipart Upload request
     /// will fail.
     /// </para>
-    /// </note> </li> <li> <b>Range does not align</b>The byte range value in the request
-    /// does not align with the part size specified in the corresponding initiate request.
-    /// For example, if you specify a part size of 4194304 bytes (4 MB), then 0 to 4194303
-    /// bytes (4 MB - 1) and 4194304 (4 MB) to 8388607 (8 MB - 1) are valid part ranges. However,
-    /// if you set a range value of 2 MB to 6 MB, the range does not align with the part size
-    /// and the upload will fail. </li> </ul> 
+    ///  </note> </li> <li> 
+    /// <para>
+    ///  <b>Range does not align</b>The byte range value in the request does not align with
+    /// the part size specified in the corresponding initiate request. For example, if you
+    /// specify a part size of 4194304 bytes (4 MB), then 0 to 4194303 bytes (4 MB - 1) and
+    /// 4194304 (4 MB) to 8388607 (8 MB - 1) are valid part ranges. However, if you set a
+    /// range value of 2 MB to 6 MB, the range does not align with the part size and the upload
+    /// will fail. 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// This operation is idempotent. If you upload the same part multiple times, the data
     /// included in the most recent request overwrites the previously uploaded data.
@@ -80,7 +84,7 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  
     /// <para>
-    ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
+    ///  For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
     /// Large Archives in Parts (Multipart Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html">Upload
     /// Part </a> in the <i>Amazon Glacier Developer Guide</i>.
     /// </para>
@@ -104,7 +108,7 @@ namespace Amazon.Glacier.Model
         /// </summary>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="uploadId">The upload ID of the multipart upload.</param>
-        /// <param name="checksum">The SHA256 tree hash of the data being uploaded. </param>
+        /// <param name="checksum">The SHA256 tree hash of the data being uploaded.</param>
         /// <param name="range">Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</param>
         /// <param name="body">The data to upload.</param>
         public UploadMultipartPartRequest(string vaultName, string uploadId, string checksum, string range, Stream body)
@@ -119,10 +123,10 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates UploadMultipartPartRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="uploadId">The upload ID of the multipart upload.</param>
-        /// <param name="checksum">The SHA256 tree hash of the data being uploaded. </param>
+        /// <param name="checksum">The SHA256 tree hash of the data being uploaded.</param>
         /// <param name="range">Identifies the range of bytes in the assembled archive that will be uploaded in this part. Amazon Glacier uses this information to assemble the archive in the proper sequence. The format of this header follows RFC 2616. An example header is Content-Range:bytes 0-4194303/*.</param>
         /// <param name="body">The data to upload.</param>
         public UploadMultipartPartRequest(string accountId, string vaultName, string uploadId, string checksum, string range, Stream body)
@@ -139,10 +143,10 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
-        /// vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos
+        /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
         /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens (apos-apos) in the ID. 
+        /// hyphens ('-') in the ID. 
         /// </para>
         /// </summary>
         public string AccountId
@@ -178,7 +182,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Checksum. 
         /// <para>
-        /// The SHA256 tree hash of the data being uploaded. 
+        /// The SHA256 tree hash of the data being uploaded.
         /// </para>
         /// </summary>
         public string Checksum

@@ -45,34 +45,34 @@ namespace Amazon.Glacier
     /// Amazon Glacier is a great storage choice when low storage cost is paramount, your
     /// data is rarely retrieved, and retrieval latency of several hours is acceptable. If
     /// your application requires fast or frequent access to your data, consider using Amazon
-    /// S3. For more information, go to <a href="http://aws.amazon.com/s3/">Amazon Simple
-    /// Storage Service (Amazon S3)</a>.
+    /// S3. For more information, see <a href="http://aws.amazon.com/s3/">Amazon Simple Storage
+    /// Service (Amazon S3)</a>.
     /// </para>
     ///  
     /// <para>
     /// You can store any kind of data in any format. There is no maximum limit on the total
-    /// amount of data you can store in Amazon Glacier. 
+    /// amount of data you can store in Amazon Glacier.
     /// </para>
     ///  
     /// <para>
     /// If you are a first-time user of Amazon Glacier, we recommend that you begin by reading
     /// the following sections in the <i>Amazon Glacier Developer Guide</i>:
     /// </para>
-    ///  <ul> <li>
+    ///  <ul> <li> 
     /// <para>
-    /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html">What
+    ///  <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html">What
     /// is Amazon Glacier</a> - This section of the Developer Guide describes the underlying
     /// data model, the operations it supports, and the AWS SDKs that you can use to interact
     /// with the service.
     /// </para>
-    /// </li> <li>
+    ///  </li> <li> 
     /// <para>
-    /// <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html">Getting
+    ///  <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html">Getting
     /// Started with Amazon Glacier</a> - The Getting Started section walks you through the
     /// process of creating a vault, uploading archives, creating jobs to download archives,
     /// retrieving the job output, and deleting archives.
     /// </para>
-    /// </li> </ul>
+    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonGlacier : IAmazonService, IDisposable
     {
@@ -106,7 +106,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
+        ///  For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
         /// with Archives in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort
         /// Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. 
         /// </para>
@@ -121,7 +121,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -191,7 +191,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -249,7 +249,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -310,7 +310,7 @@ namespace Amazon.Glacier
         /// <para>
         /// Additionally, Amazon Glacier also checks for any missing content ranges when assembling
         /// the archive, if missing content ranges are found, Amazon Glacier returns an error
-        /// and the operation fails. 
+        /// and the operation fails.
         /// </para>
         ///  
         /// <para>
@@ -334,7 +334,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
+        ///  For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
         /// Large Archives in Parts (Multipart Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-complete-upload.html">Complete
         /// Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. 
         /// </para>
@@ -349,7 +349,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -419,7 +419,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -463,21 +463,17 @@ namespace Amazon.Glacier
         /// 
         ///  
         /// <para>
-        /// You must use the following guidelines when naming a vault. 
+        /// You must use the following guidelines when naming a vault.
         /// </para>
-        ///  
-        /// <para>
         ///  <ul> <li> 
         /// <para>
-        ///  Names can be between 1 and 255 characters long. 
+        /// Names can be between 1 and 255 characters long.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), and '.' (period).
         /// </para>
         ///  </li> </ul> 
-        /// </para>
-        ///  
         /// <para>
         /// This operation is idempotent.
         /// </para>
@@ -491,7 +487,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html">Creating
+        ///  For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html">Creating
         /// a Vault in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html">Create
         /// Vault </a> in the <i>Amazon Glacier Developer Guide</i>. 
         /// </para>
@@ -547,14 +543,22 @@ namespace Amazon.Glacier
         /// retrieval of this archive will fail. Archive retrievals that are in progress for this
         /// archive ID may or may not succeed according to the following scenarios:
         /// 
-        ///  <ul> <li>If the archive retrieval job is actively preparing the data for download
-        /// when Amazon Glacier receives the delete archive request, the archival retrieval operation
-        /// might fail. </li> <li>If the archive retrieval job has successfully prepared the archive
-        /// for download when Amazon Glacier receives the delete archive request, you will be
-        /// able to download the output. </li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        /// If the archive retrieval job is actively preparing the data for download when Amazon
+        /// Glacier receives the delete archive request, the archival retrieval operation might
+        /// fail.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the archive retrieval job has successfully prepared the archive for download when
+        /// Amazon Glacier receives the delete archive request, you will be able to download the
+        /// output.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// This operation is idempotent. Attempting to delete an already-deleted archive does
-        /// not result in an error. 
+        /// not result in an error.
         /// </para>
         ///  
         /// <para>
@@ -566,7 +570,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive.html">Deleting
+        ///  For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive.html">Deleting
         /// an Archive in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html">Delete
         /// Archive</a> in the <i>Amazon Glacier Developer Guide</i>. 
         /// </para>
@@ -581,7 +585,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -643,7 +647,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html">Deleting
+        ///  For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html">Deleting
         /// a Vault in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html">Delete
         /// Vault </a> in the <i>Amazon Glacier Developer Guide</i>. 
         /// </para>
@@ -658,7 +662,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -719,7 +723,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -760,7 +764,7 @@ namespace Amazon.Glacier
         /// This operation deletes the notification configuration set for a vault. The operation
         /// is eventually consistent; that is, it might take some time for Amazon Glacier to completely
         /// disable the notifications and you might still receive some notifications for a short
-        /// time after you send the delete request. 
+        /// time after you send the delete request.
         /// 
         ///  
         /// <para>
@@ -772,7 +776,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
+        ///  For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
         /// Vault Notifications in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">Delete
         /// Vault Notification Configuration </a> in the Amazon Glacier Developer Guide. 
         /// </para>
@@ -787,7 +791,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -830,16 +834,16 @@ namespace Amazon.Glacier
         /// and the Amazon SNS topic to notify after Amazon Glacier completes the job. For more
         /// information about initiating a job, see <a>InitiateJob</a>. 
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// This operation enables you to check the status of your job. However, it is strongly
         /// recommended that you set up an Amazon SNS topic and specify it in your initiate job
-        /// request so that Amazon Glacier can notify the topic after it completes the job. 
+        /// request so that Amazon Glacier can notify the topic after it completes the job.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// A job ID will not expire for at least 24 hours after Amazon Glacier completes the
-        /// job. 
+        /// job.
         /// </para>
         ///  
         /// <para>
@@ -851,7 +855,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        ///  For information about the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html">Working
+        ///  For information about the underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html">Working
         /// with Archives in Amazon Glacier</a> in the <i>Amazon Glacier Developer Guide</i>.
         /// 
         /// </para>
@@ -866,7 +870,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -924,7 +928,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        /// For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
+        /// For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
         /// Vault Metadata in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html">Describe
         /// Vault </a> in the <i>Amazon Glacier Developer Guide</i>. 
         /// </para>
@@ -939,7 +943,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -1032,45 +1036,43 @@ namespace Amazon.Glacier
         /// 
         ///  
         /// <para>
+        /// You can download all the job output or download a portion of the output by specifying
+        /// a byte range. In the case of an archive retrieval job, depending on the byte range
+        /// you specify, Amazon Glacier returns the checksum for the portion of the data. You
+        /// can compute the checksum on the client and verify that the values match to ensure
+        /// the portion you downloaded is the correct data.
+        /// </para>
+        ///  
+        /// <para>
         /// A job ID will not expire for at least 24 hours after Amazon Glacier completes the
+        /// job. That a byte range. For both archive and inventory retrieval jobs, you should
+        /// verify the downloaded size against the size returned in the headers from the <b>Get
+        /// Job Output</b> response.
+        /// </para>
+        ///  
+        /// <para>
+        /// For archive retrieval jobs, you should also verify that the size is what you expected.
+        /// If you download a portion of the output, the expected size is based on the range of
+        /// bytes you specified. For example, if you specify a range of <code>bytes=0-1048575</code>,
+        /// you should verify your download size is 1,048,576 bytes. If you download an entire
+        /// archive, the expected size is the size of the archive when you uploaded it to Amazon
+        /// Glacier The expected size is also returned in the headers from the <b>Get Job Output</b>
+        /// response.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the case of an archive retrieval job, depending on the byte range you specify,
+        /// Amazon Glacier returns the checksum for the portion of the data. To ensure the portion
+        /// you downloaded is the correct data, compute the checksum on the client, verify that
+        /// the values match, and verify that the size is what you expected.
+        /// </para>
+        ///  
+        /// <para>
+        /// A job ID does not expire for at least 24 hours after Amazon Glacier completes the
         /// job. That is, you can download the job output within the 24 hours period after Amazon
         /// Glacier completes the job.
         /// </para>
         ///  
-        /// <para>
-        /// If the job output is large, then you can use the <code>Range</code> request header
-        /// to retrieve a portion of the output. This allows you to download the entire output
-        /// in smaller chunks of bytes. For example, suppose you have 1 GB of job output you want
-        /// to download and you decide to download 128 MB chunks of data at a time, which is a
-        /// total of eight Get Job Output requests. You use the following process to download
-        /// the job output:
-        /// </para>
-        ///  <ol> <li> 
-        /// <para>
-        /// Download a 128 MB chunk of output by specifying the appropriate byte range using the
-        /// <code>Range</code> header.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Along with the data, the response includes a SHA256 tree hash of the payload. You
-        /// compute the checksum of the payload on the client and compare it with the checksum
-        /// you received in the response to ensure you received all the expected data.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Repeat steps 1 and 2 for all the eight 128 MB chunks of output data, each time specifying
-        /// the appropriate byte range.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// After downloading all the parts of the job output, you have a list of eight checksum
-        /// values. Compute the tree hash of these values to find the checksum of the entire output.
-        /// Using the <a>DescribeJob</a> API, obtain job information of the job that provided
-        /// you the output. The response includes the checksum of the entire archive stored in
-        /// Amazon Glacier. You compare this value with the checksum you computed to ensure you
-        /// have downloaded the entire archive content with no errors.
-        /// </para>
-        ///  </li> </ol> 
         /// <para>
         /// An AWS account has full permission to perform all operations (actions). However, AWS
         /// Identity and Access Management (IAM) users don't have any permissions by default.
@@ -1080,7 +1082,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        /// For conceptual information and the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">Downloading
+        /// For conceptual information and the underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">Downloading
         /// a Vault Inventory</a>, <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive.html">Downloading
         /// an Archive</a>, and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-job-output-get.html">Get
         /// Job Output </a> 
@@ -1096,7 +1098,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -1151,7 +1153,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -1190,10 +1192,12 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// This operation retrieves the following attributes from the <code>lock-policy</code>
-        /// subresource set on the specified vault: <ul> <li> 
+        /// subresource set on the specified vault: 
+        /// 
+        ///  <ul> <li> 
         /// <para>
         /// The vault lock policy set on the vault.
-        /// 
+        /// </para>
         ///  </li> <li> 
         /// <para>
         /// The state of the vault lock, which is either <code>InProgess</code> or <code>Locked</code>.
@@ -1207,8 +1211,6 @@ namespace Amazon.Glacier
         /// When the vault lock was initiated and put into the <code>InProgress</code> state.
         /// </para>
         ///  </li> </ul> 
-        /// </para>
-        ///  
         /// <para>
         /// A vault lock is put into the <code>InProgress</code> state by calling <a>InitiateVaultLock</a>.
         /// A vault lock is put into the <code>Locked</code> state by calling <a>CompleteVaultLock</a>.
@@ -1233,7 +1235,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -1271,15 +1273,14 @@ namespace Amazon.Glacier
 
 
         /// <summary>
-        /// This operation retrieves the <code class="code">notification-configuration</code>
-        /// subresource of the specified vault.
+        /// This operation retrieves the <code>notification-configuration</code> subresource of
+        /// the specified vault.
         /// 
         ///  
         /// <para>
         /// For information about setting a notification configuration on a vault, see <a>SetVaultNotifications</a>.
-        /// If a notification configuration for a vault is not set, the operation returns a <code
-        /// class="code">404 Not Found</code> error. For more information about vault notifications,
-        /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
+        /// If a notification configuration for a vault is not set, the operation returns a <code>404
+        /// Not Found</code> error. For more information about vault notifications, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
         /// Vault Notifications in Amazon Glacier</a>. 
         /// </para>
         ///  
@@ -1292,7 +1293,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        /// For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
+        /// For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
         /// Vault Notifications in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html">Get
         /// Vault Notification Configuration </a> in the <i>Amazon Glacier Developer Guide</i>.
         /// 
@@ -1308,7 +1309,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -1348,17 +1349,17 @@ namespace Amazon.Glacier
         /// <summary>
         /// This operation initiates a job of the specified type. In this release, you can initiate
         /// a job to retrieve either an archive or a vault inventory (a list of archives in a
-        /// vault). 
+        /// vault).
         /// 
         ///  
         /// <para>
-        /// Retrieving data from Amazon Glacier is a two-step process: 
+        /// Retrieving data from Amazon Glacier is a two-step process:
         /// </para>
         ///  <ol> <li> 
         /// <para>
         /// Initiate a retrieval job.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// A data retrieval policy can cause your initiate retrieval job request to fail with
         /// a PolicyEnforcedException exception. For more information about data retrieval policies,
@@ -1367,11 +1368,11 @@ namespace Amazon.Glacier
         /// exception, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-error-responses.html">Error
         /// Responses</a>.
         /// </para>
-        ///  </note> </li> <li>
+        ///  </note> </li> <li> 
         /// <para>
         /// After the job completes, download the bytes.
         /// </para>
-        /// </li> </ol> 
+        ///  </li> </ol> 
         /// <para>
         /// The retrieval request is executed asynchronously. When you initiate a retrieval job,
         /// Amazon Glacier creates a job and returns a job ID in the response. When Amazon Glacier
@@ -1385,24 +1386,24 @@ namespace Amazon.Glacier
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <b>Use Amazon SNS Notification</b> You can specify an Amazon Simple Notification Service
-        /// (Amazon SNS) topic to which Amazon Glacier can post a notification after the job is
-        /// completed. You can specify an SNS topic per job request. The notification is sent
-        /// only after Amazon Glacier completes the job. In addition to specifying an SNS topic
-        /// per job request, you can configure vault notifications for a vault so that job notifications
-        /// are always sent. For more information, see <a>SetVaultNotifications</a>.
+        ///  <b>Use Amazon SNS Notification</b> You can specify an Amazon Simple Notification
+        /// Service (Amazon SNS) topic to which Amazon Glacier can post a notification after the
+        /// job is completed. You can specify an SNS topic per job request. The notification is
+        /// sent only after Amazon Glacier completes the job. In addition to specifying an SNS
+        /// topic per job request, you can configure vault notifications for a vault so that job
+        /// notifications are always sent. For more information, see <a>SetVaultNotifications</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <b>Get job details</b> You can make a <a>DescribeJob</a> request to obtain job status
+        ///  <b>Get job details</b> You can make a <a>DescribeJob</a> request to obtain job status
         /// information while a job is in progress. However, it is more efficient to use an Amazon
         /// SNS notification to determine when a job is complete.
         /// </para>
-        ///  </li> </ul> <note>
+        ///  </li> </ul> <note> 
         /// <para>
         /// The information you get via notification is same that you get by calling <a>DescribeJob</a>.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// If for a specific event, you add both the notification configuration on the vault
         /// and also specify an SNS topic in your initiate job request, Amazon Glacier sends both
@@ -1418,7 +1419,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        /// <b>About the Vault Inventory</b>
+        ///  <b>About the Vault Inventory</b> 
         /// </para>
         ///  
         /// <para>
@@ -1433,11 +1434,11 @@ namespace Amazon.Glacier
         /// of characters. So, you might maintain your own database that maps archive names to
         /// their corresponding Amazon Glacier assigned archive IDs. You might find the vault
         /// inventory useful in the event you need to reconcile information in your database with
-        /// the actual vault inventory. 
+        /// the actual vault inventory.
         /// </para>
         ///  
         /// <para>
-        /// <b>Range Inventory Retrieval</b>
+        ///  <b>Range Inventory Retrieval</b> 
         /// </para>
         ///  
         /// <para>
@@ -1446,7 +1447,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        /// <i>Filtering by Archive Creation Date</i>
+        ///  <i>Filtering by Archive Creation Date</i> 
         /// </para>
         ///  
         /// <para>
@@ -1460,7 +1461,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        /// <i>Limiting Inventory Items per Retrieval</i>
+        ///  <i>Limiting Inventory Items per Retrieval</i> 
         /// </para>
         ///  
         /// <para>
@@ -1481,18 +1482,18 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        /// <b>About Ranged Archive Retrieval</b>
+        ///  <b>About Ranged Archive Retrieval</b> 
         /// </para>
         ///  
         /// <para>
-        ///  You can initiate an archive retrieval for the whole archive or a range of the archive.
+        /// You can initiate an archive retrieval for the whole archive or a range of the archive.
         /// In the case of ranged archive retrieval, you specify a byte range to return or the
         /// whole archive. The range specified must be megabyte (MB) aligned, that is the range
         /// start value must be divisible by 1 MB and range end value plus 1 must be divisible
         /// by 1 MB or equal the end of the archive. If the ranged archive retrieval is not megabyte
         /// aligned, this operation returns a 400 response. Furthermore, to ensure you get checksum
         /// values for data you download using Get Job Output API, the range must be tree hash
-        /// aligned. 
+        /// aligned.
         /// </para>
         ///  
         /// <para>
@@ -1504,14 +1505,48 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        /// For conceptual information and the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">Initiate
+        /// For conceptual information and the underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">Initiate
         /// a Job</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">Downloading
         /// a Vault Inventory</a> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Expedited and Bulk Archive Retrievals</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// When retrieving an archive, you can specify one of the following options in the <code>Tier</code>
+        /// field of the request body: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Standard</b> The default type of retrieval, which allows access to any of your
+        /// archives within several hours. Standard retrievals typically complete within 3–5 hours.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Bulk</b> Amazon Glacier’s lowest-cost retrieval option, which enables you to retrieve
+        /// large amounts of data inexpensively in a day. Bulk retrieval requests typically complete
+        /// within 5–12 hours. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Expedited</b> Amazon Glacier’s option for the fastest retrievals. Archives requested
+        /// using the expedited retrievals typically become accessible within 1–5 minutes. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about expedited and bulk retrievals, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/downloading-an-archive-two-steps.html">Retrieving
+        /// Amazon Glacier Archives</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InitiateJob service method.</param>
         /// 
         /// <returns>The response from the InitiateJob service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InsufficientCapacityException">
+        /// Returned if there is insufficient capacity to process this expedited request. This
+        /// error only applies to expedited retrievals and not to standard or bulk retrievals.
+        /// </exception>
         /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
         /// Returned if a parameter of the request is incorrectly specified.
         /// </exception>
@@ -1523,7 +1558,7 @@ namespace Amazon.Glacier
         /// limit. For more information about data retrieval policies,
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -1580,12 +1615,12 @@ namespace Amazon.Glacier
         /// upload with a part size of 4 MB, you will upload four parts of 4 MB each and one part
         /// of 0.2 MB. 
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// You don't need to know the size of the archive when you start a multipart upload because
         /// Amazon Glacier does not require you to specify the overall archive size.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// After you complete the multipart upload, Amazon Glacier removes the multipart upload
         /// resource referenced by the ID. Amazon Glacier also removes the multipart upload resource
@@ -1602,7 +1637,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        /// For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
+        /// For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
         /// Large Archives in Parts (Multipart Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html">Initiate
         /// Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>.
         /// </para>
@@ -1617,7 +1652,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -1655,22 +1690,21 @@ namespace Amazon.Glacier
 
 
         /// <summary>
-        /// This operation initiates the vault locking process by doing the following: <ul> <li>
+        /// This operation initiates the vault locking process by doing the following:
         /// 
+        ///  <ul> <li> 
         /// <para>
         /// Installing a vault lock policy on the specified vault.
-        /// 
+        /// </para>
         ///  </li> <li> 
         /// <para>
         /// Setting the lock state of vault lock to <code>InProgress</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Returning a lock ID, which is used to complete the vault locking process. 
+        /// Returning a lock ID, which is used to complete the vault locking process.
         /// </para>
         ///  </li> </ul> 
-        /// </para>
-        ///  
         /// <para>
         /// You can set one vault lock policy for each vault and this policy can be up to 20 KB
         /// in size. For more information about vault lock policies, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
@@ -1715,7 +1749,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -1754,9 +1788,9 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// This operation lists jobs for a vault, including jobs that are in-progress and jobs
-        /// that have recently finished. 
+        /// that have recently finished.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Amazon Glacier retains recently completed jobs for a period before deleting them;
         /// however, it eventually removes completed jobs. The output of completed jobs can be
@@ -1765,46 +1799,46 @@ namespace Amazon.Glacier
         /// or your first attempt to download it fails. For example, suppose you start an archive
         /// retrieval job to download an archive. After the job completes, you start to download
         /// the archive but encounter a network error. In this scenario, you can retry and download
-        /// the archive while the job exists. 
+        /// the archive while the job exists.
         /// </para>
-        /// </note> 
+        ///  </note> 
         /// <para>
         /// To retrieve an archive or retrieve a vault inventory from Amazon Glacier, you first
         /// initiate a job, and after the job completes, you download the data. For an archive
-        /// retrieval, the output is the archive data, and for an inventory retrieval, it is the
-        /// inventory list. The List Job operation returns a list of these jobs sorted by job
-        /// initiation time.
+        /// retrieval, the output is the archive data. For an inventory retrieval, it is the inventory
+        /// list. The List Job operation returns a list of these jobs sorted by job initiation
+        /// time.
         /// </para>
         ///  
         /// <para>
-        /// This List Jobs operation supports pagination. By default, this operation returns up
-        /// to 1,000 jobs in the response. You should always check the response for a <code>marker</code>
-        /// at which to continue the list; if there are no more items the <code>marker</code>
-        /// is <code>null</code>. To return a list of jobs that begins at a specific job, set
-        /// the <code>marker</code> request parameter to the value you obtained from a previous
-        /// List Jobs request. You can also limit the number of jobs returned in the response
-        /// by specifying the <code>limit</code> parameter in the request.
+        /// The List Jobs operation supports pagination. You should always check the response
+        /// <code>Marker</code> field. If there are no more jobs to list, the <code>Marker</code>
+        /// field is set to <code>null</code>. If there are more jobs to list, the <code>Marker</code>
+        /// field is set to a non-null value, which you can use to continue the pagination of
+        /// the list. To return a list of jobs that begins at a specific job, set the marker request
+        /// parameter to the <code>Marker</code> value for that job that you obtained from a previous
+        /// List Jobs request.
         /// </para>
         ///  
         /// <para>
-        /// Additionally, you can filter the jobs list returned by specifying an optional <code>statuscode</code>
-        /// (InProgress, Succeeded, or Failed) and <code>completed</code> (true, false) parameter.
-        /// The <code>statuscode</code> allows you to specify that only jobs that match a specified
-        /// status are returned. The <code>completed</code> parameter allows you to specify that
-        /// only jobs in a specific completion state are returned.
+        /// You can set a maximum limit for the number of jobs returned in the response by specifying
+        /// the <code>limit</code> parameter in the request. The default limit is 1000. The number
+        /// of jobs returned might be fewer than the limit, but the number of returned jobs never
+        /// exceeds the limit.
         /// </para>
         ///  
         /// <para>
-        /// An AWS account has full permission to perform all operations (actions). However, AWS
-        /// Identity and Access Management (IAM) users don't have any permissions by default.
-        /// You must grant them explicit permission to perform specific actions. For more information,
-        /// see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
-        /// Control Using AWS Identity and Access Management (IAM)</a>.
+        /// Additionally, you can filter the jobs list returned by specifying the optional <code>statuscode</code>
+        /// parameter or <code>completed</code> parameter, or both. Using the <code>statuscode</code>
+        /// parameter, you can specify to return only jobs that match either the <code>InProgress</code>,
+        /// <code>Succeeded</code>, or <code>Failed</code> status. Using the <code>completed</code>
+        /// parameter, you can specify to return only jobs that were completed (<code>true</code>)
+        /// or jobs that were not completed (<code>false</code>).
         /// </para>
         ///  
         /// <para>
-        /// For the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html">List
-        /// Jobs </a> 
+        /// For the underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html">List
+        /// Jobs</a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
@@ -1817,7 +1851,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -1888,7 +1922,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        /// For conceptual information and the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
+        /// For conceptual information and the underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
         /// with Archives in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html">List
         /// Multipart Uploads </a> in the <i>Amazon Glacier Developer Guide</i>.
         /// </para>
@@ -1903,7 +1937,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -1951,12 +1985,11 @@ namespace Amazon.Glacier
         /// <para>
         /// The List Parts operation supports pagination. By default, this operation returns up
         /// to 1,000 uploaded parts in the response. You should always check the response for
-        /// a <code class="code">marker</code> at which to continue the list; if there are no
-        /// more items the <code class="code">marker</code> is <code class="code">null</code>.
-        /// To return a list of parts that begins at a specific part, set the <code>marker</code>
-        /// request parameter to the value you obtained from a previous List Parts request. You
-        /// can also limit the number of parts returned in the response by specifying the <code>limit</code>
-        /// parameter in the request. 
+        /// a <code>marker</code> at which to continue the list; if there are no more items the
+        /// <code>marker</code> is <code>null</code>. To return a list of parts that begins at
+        /// a specific part, set the <code>marker</code> request parameter to the value you obtained
+        /// from a previous List Parts request. You can also limit the number of parts returned
+        /// in the response by specifying the <code>limit</code> parameter in the request. 
         /// </para>
         ///  
         /// <para>
@@ -1968,7 +2001,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        /// For conceptual information and the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
+        /// For conceptual information and the underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
         /// with Archives in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html">List
         /// Parts</a> in the <i>Amazon Glacier Developer Guide</i>.
         /// </para>
@@ -1983,7 +2016,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -2017,6 +2050,52 @@ namespace Amazon.Glacier
 
         #endregion
         
+        #region  ListProvisionedCapacity
+
+
+        /// <summary>
+        /// This operation lists the provisioned capacity for the specified AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisionedCapacity service method.</param>
+        /// 
+        /// <returns>The response from the ListProvisionedCapacity service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        ListProvisionedCapacityResponse ListProvisionedCapacity(ListProvisionedCapacityRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProvisionedCapacity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProvisionedCapacity operation on AmazonGlacierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProvisionedCapacity
+        ///         operation.</returns>
+        IAsyncResult BeginListProvisionedCapacity(ListProvisionedCapacityRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProvisionedCapacity operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProvisionedCapacity.</param>
+        /// 
+        /// <returns>Returns a  ListProvisionedCapacityResult from Glacier.</returns>
+        ListProvisionedCapacityResponse EndListProvisionedCapacity(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTagsForVault
 
 
@@ -2035,7 +2114,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -2074,18 +2153,18 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// This operation lists all vaults owned by the calling user's account. The list returned
-        /// in the response is ASCII-sorted by vault name. 
+        /// in the response is ASCII-sorted by vault name.
         /// 
         ///  
         /// <para>
         /// By default, this operation returns up to 1,000 items. If there are more vaults to
-        /// list, the response <code class="code">marker</code> field contains the vault Amazon
-        /// Resource Name (ARN) at which to continue the list with a new List Vaults request;
-        /// otherwise, the <code class="code">marker</code> field is <code class="code">null</code>.
-        /// To return a list of vaults that begins at a specific vault, set the <code class="code">marker</code>
-        /// request parameter to the vault ARN you obtained from a previous List Vaults request.
-        /// You can also limit the number of vaults returned in the response by specifying the
-        /// <code class="code">limit</code> parameter in the request. 
+        /// list, the response <code>marker</code> field contains the vault Amazon Resource Name
+        /// (ARN) at which to continue the list with a new List Vaults request; otherwise, the
+        /// <code>marker</code> field is <code>null</code>. To return a list of vaults that begins
+        /// at a specific vault, set the <code>marker</code> request parameter to the vault ARN
+        /// you obtained from a previous List Vaults request. You can also limit the number of
+        /// vaults returned in the response by specifying the <code>limit</code> parameter in
+        /// the request. 
         /// </para>
         ///  
         /// <para>
@@ -2097,7 +2176,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        /// For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
+        /// For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
         /// Vault Metadata in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">List
         /// Vaults </a> in the <i>Amazon Glacier Developer Guide</i>. 
         /// </para>
@@ -2111,7 +2190,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -2121,18 +2200,18 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// This operation lists all vaults owned by the calling user's account. The list returned
-        /// in the response is ASCII-sorted by vault name. 
+        /// in the response is ASCII-sorted by vault name.
         /// 
         ///  
         /// <para>
         /// By default, this operation returns up to 1,000 items. If there are more vaults to
-        /// list, the response <code class="code">marker</code> field contains the vault Amazon
-        /// Resource Name (ARN) at which to continue the list with a new List Vaults request;
-        /// otherwise, the <code class="code">marker</code> field is <code class="code">null</code>.
-        /// To return a list of vaults that begins at a specific vault, set the <code class="code">marker</code>
-        /// request parameter to the vault ARN you obtained from a previous List Vaults request.
-        /// You can also limit the number of vaults returned in the response by specifying the
-        /// <code class="code">limit</code> parameter in the request. 
+        /// list, the response <code>marker</code> field contains the vault Amazon Resource Name
+        /// (ARN) at which to continue the list with a new List Vaults request; otherwise, the
+        /// <code>marker</code> field is <code>null</code>. To return a list of vaults that begins
+        /// at a specific vault, set the <code>marker</code> request parameter to the vault ARN
+        /// you obtained from a previous List Vaults request. You can also limit the number of
+        /// vaults returned in the response by specifying the <code>limit</code> parameter in
+        /// the request. 
         /// </para>
         ///  
         /// <para>
@@ -2144,7 +2223,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        /// For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
+        /// For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
         /// Vault Metadata in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">List
         /// Vaults </a> in the <i>Amazon Glacier Developer Guide</i>. 
         /// </para>
@@ -2159,7 +2238,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -2193,6 +2272,55 @@ namespace Amazon.Glacier
 
         #endregion
         
+        #region  PurchaseProvisionedCapacity
+
+
+        /// <summary>
+        /// This operation purchases a provisioned capacity unit for an AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseProvisionedCapacity service method.</param>
+        /// 
+        /// <returns>The response from the PurchaseProvisionedCapacity service method, as returned by Glacier.</returns>
+        /// <exception cref="Amazon.Glacier.Model.InvalidParameterValueException">
+        /// Returned if a parameter of the request is incorrectly specified.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.LimitExceededException">
+        /// Returned if the request results in a vault or account limit being exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.MissingParameterValueException">
+        /// Returned if a required header or parameter is missing from the request.
+        /// </exception>
+        /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
+        /// Returned if the service cannot complete the request.
+        /// </exception>
+        PurchaseProvisionedCapacityResponse PurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PurchaseProvisionedCapacity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseProvisionedCapacity operation on AmazonGlacierClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseProvisionedCapacity
+        ///         operation.</returns>
+        IAsyncResult BeginPurchaseProvisionedCapacity(PurchaseProvisionedCapacityRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PurchaseProvisionedCapacity operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseProvisionedCapacity.</param>
+        /// 
+        /// <returns>Returns a  PurchaseProvisionedCapacityResult from Glacier.</returns>
+        PurchaseProvisionedCapacityResponse EndPurchaseProvisionedCapacity(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RemoveTagsFromVault
 
 
@@ -2212,7 +2340,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -2252,7 +2380,7 @@ namespace Amazon.Glacier
         /// <summary>
         /// This operation sets and then enacts a data retrieval policy in the region specified
         /// in the PUT request. You can set one policy per region for an AWS account. The policy
-        /// is enacted within a few minutes of a successful PUT operation. 
+        /// is enacted within a few minutes of a successful PUT operation.
         /// 
         ///  
         /// <para>
@@ -2323,7 +2451,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -2362,11 +2490,11 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// This operation configures notifications that will be sent when specific events happen
-        /// to a vault. By default, you don't get any notifications. 
+        /// to a vault. By default, you don't get any notifications.
         /// 
         ///  
         /// <para>
-        /// To configure vault notifications, send a PUT request to the <code class="code">notification-configuration</code>
+        /// To configure vault notifications, send a PUT request to the <code>notification-configuration</code>
         /// subresource of the vault. The request should include a JSON document that provides
         /// an Amazon SNS topic and specific events for which you want Amazon Glacier to send
         /// notifications to the topic.
@@ -2377,14 +2505,21 @@ namespace Amazon.Glacier
         /// to the topic. You can configure a vault to publish a notification for the following
         /// vault events:
         /// </para>
-        ///  <ul> <li> <b>ArchiveRetrievalCompleted</b> This event occurs when a job that was
-        /// initiated for an archive retrieval is completed (<a>InitiateJob</a>). The status of
-        /// the completed job can be "Succeeded" or "Failed". The notification sent to the SNS
-        /// topic is the same output as returned from <a>DescribeJob</a>. </li> <li> <b>InventoryRetrievalCompleted</b>
-        /// This event occurs when a job that was initiated for an inventory retrieval is completed
-        /// (<a>InitiateJob</a>). The status of the completed job can be "Succeeded" or "Failed".
-        /// The notification sent to the SNS topic is the same output as returned from <a>DescribeJob</a>.
-        /// </li> </ul> 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>ArchiveRetrievalCompleted</b> This event occurs when a job that was initiated
+        /// for an archive retrieval is completed (<a>InitiateJob</a>). The status of the completed
+        /// job can be "Succeeded" or "Failed". The notification sent to the SNS topic is the
+        /// same output as returned from <a>DescribeJob</a>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>InventoryRetrievalCompleted</b> This event occurs when a job that was initiated
+        /// for an inventory retrieval is completed (<a>InitiateJob</a>). The status of the completed
+        /// job can be "Succeeded" or "Failed". The notification sent to the SNS topic is the
+        /// same output as returned from <a>DescribeJob</a>. 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// An AWS account has full permission to perform all operations (actions). However, AWS
         /// Identity and Access Management (IAM) users don't have any permissions by default.
@@ -2394,7 +2529,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        /// For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
+        /// For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
         /// Vault Notifications in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html">Set
         /// Vault Notification Configuration </a> in the <i>Amazon Glacier Developer Guide</i>.
         /// 
@@ -2410,7 +2545,7 @@ namespace Amazon.Glacier
         /// Returned if a required header or parameter is missing from the request.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -2450,7 +2585,7 @@ namespace Amazon.Glacier
         /// <summary>
         /// This operation adds an archive to a vault. This is a synchronous operation, and for
         /// a successful upload, your data is durably persisted. Amazon Glacier returns the archive
-        /// ID in the <code class="code">x-amz-archive-id</code> header of the response. 
+        /// ID in the <code>x-amz-archive-id</code> header of the response. 
         /// 
         ///  
         /// <para>
@@ -2480,7 +2615,7 @@ namespace Amazon.Glacier
         ///  
         /// <para>
         /// Archives are immutable. After you upload an archive, you cannot edit the archive or
-        /// its description. 
+        /// its description.
         /// </para>
         ///  
         /// <para>
@@ -2492,7 +2627,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html">Uploading
+        ///  For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-an-archive.html">Uploading
         /// an Archive in Amazon Glacier</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload
         /// Archive</a> in the <i>Amazon Glacier Developer Guide</i>. 
         /// </para>
@@ -2511,7 +2646,7 @@ namespace Amazon.Glacier
         /// upload.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">
@@ -2560,7 +2695,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// <b>SHA256 tree hash does not match</b>To ensure that part data is not corrupted in
+        ///  <b>SHA256 tree hash does not match</b>To ensure that part data is not corrupted in
         /// transmission, you compute a SHA256 tree hash of the part and include it in your request.
         /// Upon receiving the part data, Amazon Glacier also computes a SHA256 tree hash. If
         /// these hash values don't match, the operation fails. For information about computing
@@ -2569,23 +2704,27 @@ namespace Amazon.Glacier
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// <b>Part size does not match</b>The size of each part except the last must match the
+        ///  <b>Part size does not match</b>The size of each part except the last must match the
         /// size specified in the corresponding <a>InitiateMultipartUpload</a> request. The size
         /// of the last part must be the same size as, or smaller than, the specified size.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// If you upload a part whose size is smaller than the part size you specified in your
         /// initiate multipart upload request and that part is not the last part, then the upload
         /// part request will succeed. However, the subsequent Complete Multipart Upload request
         /// will fail.
         /// </para>
-        /// </note> </li> <li> <b>Range does not align</b>The byte range value in the request
-        /// does not align with the part size specified in the corresponding initiate request.
-        /// For example, if you specify a part size of 4194304 bytes (4 MB), then 0 to 4194303
-        /// bytes (4 MB - 1) and 4194304 (4 MB) to 8388607 (8 MB - 1) are valid part ranges. However,
-        /// if you set a range value of 2 MB to 6 MB, the range does not align with the part size
-        /// and the upload will fail. </li> </ul> 
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  <b>Range does not align</b>The byte range value in the request does not align with
+        /// the part size specified in the corresponding initiate request. For example, if you
+        /// specify a part size of 4194304 bytes (4 MB), then 0 to 4194303 bytes (4 MB - 1) and
+        /// 4194304 (4 MB) to 8388607 (8 MB - 1) are valid part ranges. However, if you set a
+        /// range value of 2 MB to 6 MB, the range does not align with the part size and the upload
+        /// will fail. 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// This operation is idempotent. If you upload the same part multiple times, the data
         /// included in the most recent request overwrites the previously uploaded data.
@@ -2600,7 +2739,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        ///  For conceptual information and underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
+        ///  For conceptual information and underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/uploading-archive-mpu.html">Uploading
         /// Large Archives in Parts (Multipart Upload)</a> and <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html">Upload
         /// Part </a> in the <i>Amazon Glacier Developer Guide</i>.
         /// </para>
@@ -2619,7 +2758,7 @@ namespace Amazon.Glacier
         /// upload.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ResourceNotFoundException">
-        /// Returned if the specified resource, such as a vault, upload ID, or job ID, does not
+        /// Returned if the specified resource (such as a vault, upload ID, or job ID) doesn't
         /// exist.
         /// </exception>
         /// <exception cref="Amazon.Glacier.Model.ServiceUnavailableException">

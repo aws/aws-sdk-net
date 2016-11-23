@@ -42,8 +42,8 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property EndDate. 
         /// <para>
         /// The end of the date range in UTC for vault inventory retrieval that includes archives
-        /// created before this date. A string representation of ISO 8601 date format, for example,
-        /// 2013-03-20T17:03:43Z.
+        /// created before this date. This value should be a string in the ISO 8601 date format,
+        /// for example <code>2013-03-20T17:03:43Z</code>.
         /// </para>
         /// </summary>
         public string EndDate
@@ -62,8 +62,8 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property Format. 
         /// <para>
         /// The output format for the vault inventory list, which is set by the <b>InitiateJob</b>
-        /// request when initiating a job to retrieve a vault inventory. Valid values are "CSV"
-        /// and "JSON".
+        /// request when initiating a job to retrieve a vault inventory. Valid values are <code>CSV</code>
+        /// and <code>JSON</code>.
         /// </para>
         /// </summary>
         public string Format
@@ -81,9 +81,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Specifies the maximum number of inventory items returned per vault inventory retrieval
-        /// request. This limit is set when initiating the job with the a <b>InitiateJob</b> request.
-        /// 
+        /// The maximum number of inventory items returned per vault inventory retrieval request.
+        /// This limit is set when initiating the job with the a <b>InitiateJob</b> request. 
         /// </para>
         /// </summary>
         public string Limit
@@ -123,9 +122,9 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property StartDate. 
         /// <para>
-        /// The start of the date range in UTC for vault inventory retrieval that includes archives
-        /// created on or after this date. A string representation of ISO 8601 date format, for
-        /// example, 2013-03-20T17:03:43Z.
+        /// The start of the date range in Universal Coordinated Time (UTC) for vault inventory
+        /// retrieval that includes archives created on or after this date. This value should
+        /// be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.
         /// </para>
         /// </summary>
         public string StartDate

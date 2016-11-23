@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Contains the Amazon Glacier response to your request.
+    /// This is the response object from the PurchaseProvisionedCapacity operation.
     /// </summary>
-    public partial class InitiateVaultLockResponse : AmazonWebServiceResponse
+    public partial class PurchaseProvisionedCapacityResponse : AmazonWebServiceResponse
     {
-        private string _lockId;
+        private string _capacityId;
 
         /// <summary>
-        /// Gets and sets the property LockId. 
+        /// Gets and sets the property CapacityId. 
         /// <para>
-        /// The lock ID, which is used to complete the vault locking process.
+        /// The ID that identifies the provisioned capacity unit.
         /// </para>
         /// </summary>
-        public string LockId
+        public string CapacityId
         {
-            get { return this._lockId; }
-            set { this._lockId = value; }
+            get { return this._capacityId; }
+            set { this._capacityId = value; }
         }
 
-        // Check to see if LockId property is set
-        internal bool IsSetLockId()
+        // Check to see if CapacityId property is set
+        internal bool IsSetCapacityId()
         {
-            return this._lockId != null;
+            return this._capacityId != null;
         }
 
     }

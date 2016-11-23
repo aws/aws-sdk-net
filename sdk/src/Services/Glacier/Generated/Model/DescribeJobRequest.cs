@@ -34,16 +34,16 @@ namespace Amazon.Glacier.Model
     /// and the Amazon SNS topic to notify after Amazon Glacier completes the job. For more
     /// information about initiating a job, see <a>InitiateJob</a>. 
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// This operation enables you to check the status of your job. However, it is strongly
     /// recommended that you set up an Amazon SNS topic and specify it in your initiate job
-    /// request so that Amazon Glacier can notify the topic after it completes the job. 
+    /// request so that Amazon Glacier can notify the topic after it completes the job.
     /// </para>
-    /// </note> 
+    ///  </note> 
     /// <para>
     /// A job ID will not expire for at least 24 hours after Amazon Glacier completes the
-    /// job. 
+    /// job.
     /// </para>
     ///  
     /// <para>
@@ -55,7 +55,7 @@ namespace Amazon.Glacier.Model
     /// </para>
     ///  
     /// <para>
-    ///  For information about the underlying REST API, go to <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html">Working
+    ///  For information about the underlying REST API, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html">Working
     /// with Archives in Amazon Glacier</a> in the <i>Amazon Glacier Developer Guide</i>.
     /// 
     /// </para>
@@ -74,7 +74,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Instantiates DescribeJobRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens (apos-apos) in the ID. </param>
+        /// <param name="accountId">The <code>AccountId</code> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID. </param>
         /// <param name="vaultName">The name of the vault.</param>
         /// <param name="jobId">The ID of the job to describe.</param>
         public DescribeJobRequest(string accountId, string vaultName, string jobId)
@@ -99,10 +99,10 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
-        /// vault. You can either specify an AWS account ID or optionally a single apos<code>-</code>apos
+        /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
         /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
         /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens (apos-apos) in the ID. 
+        /// hyphens ('-') in the ID. 
         /// </para>
         /// </summary>
         public string AccountId

@@ -28,24 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTagsForVault operation.
-    /// This operation lists all the tags attached to a vault. The operation returns an empty
-    /// map if there are no tags. For more information about tags, see <a href="http://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
-    /// Amazon Glacier Resources</a>.
+    /// Container for the parameters to the PurchaseProvisionedCapacity operation.
+    /// This operation purchases a provisioned capacity unit for an AWS account.
     /// </summary>
-    public partial class ListTagsForVaultRequest : AmazonGlacierRequest
+    public partial class PurchaseProvisionedCapacityRequest : AmazonGlacierRequest
     {
         private string _accountId;
-        private string _vaultName;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
-        /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
-        /// (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the
-        /// credentials used to sign the request. If you use an account ID, do not include any
-        /// hyphens ('-') in the ID.
+        /// The AWS account ID of the account that owns the vault. You can either specify an AWS
+        /// account ID or optionally a single '-' (hyphen), in which case Amazon Glacier uses
+        /// the AWS account ID associated with the credentials used to sign the request. If you
+        /// use an account ID, don't include any hyphens ('-') in the ID. 
         /// </para>
         /// </summary>
         public string AccountId
@@ -58,24 +54,6 @@ namespace Amazon.Glacier.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VaultName. 
-        /// <para>
-        /// The name of the vault.
-        /// </para>
-        /// </summary>
-        public string VaultName
-        {
-            get { return this._vaultName; }
-            set { this._vaultName = value; }
-        }
-
-        // Check to see if VaultName property is set
-        internal bool IsSetVaultName()
-        {
-            return this._vaultName != null;
         }
 
     }

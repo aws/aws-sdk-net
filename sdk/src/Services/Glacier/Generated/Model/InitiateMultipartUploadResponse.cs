@@ -38,7 +38,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Location. 
         /// <para>
-        /// The relative URI path of the multipart upload ID Amazon Glacier created. 
+        /// The relative URI path of the multipart upload ID Amazon Glacier created.
         /// </para>
         /// </summary>
         public string Location
@@ -57,7 +57,6 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property UploadId. 
         /// <para>
         /// The ID of the multipart upload. This value is also included as part of the location.
-        /// 
         /// </para>
         /// </summary>
         public string UploadId

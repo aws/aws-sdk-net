@@ -41,8 +41,8 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property EndDate. 
         /// <para>
         /// The end of the date range in UTC for vault inventory retrieval that includes archives
-        /// created before this date. A string representation of ISO 8601 date format, for example,
-        /// 2013-03-20T17:03:43Z.
+        /// created before this date. This value should be a string in the ISO 8601 date format,
+        /// for example <code>2013-03-20T17:03:43Z</code>.
         /// </para>
         /// </summary>
         public string EndDate
@@ -100,8 +100,8 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property StartDate. 
         /// <para>
         /// The start of the date range in UTC for vault inventory retrieval that includes archives
-        /// created on or after this date. A string representation of ISO 8601 date format, for
-        /// example, 2013-03-20T17:03:43Z.
+        /// created on or after this date. This value should be a string in the ISO 8601 date
+        /// format, for example <code>2013-03-20T17:03:43Z</code>.
         /// </para>
         /// </summary>
         public string StartDate

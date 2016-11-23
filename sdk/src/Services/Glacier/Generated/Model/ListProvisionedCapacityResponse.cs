@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glacier.Model
 {
     /// <summary>
-    /// Contains the Amazon Glacier response to your request.
+    /// This is the response object from the ListProvisionedCapacity operation.
     /// </summary>
-    public partial class InitiateVaultLockResponse : AmazonWebServiceResponse
+    public partial class ListProvisionedCapacityResponse : AmazonWebServiceResponse
     {
-        private string _lockId;
+        private List<ProvisionedCapacityDescription> _provisionedCapacityList = new List<ProvisionedCapacityDescription>();
 
         /// <summary>
-        /// Gets and sets the property LockId. 
+        /// Gets and sets the property ProvisionedCapacityList. 
         /// <para>
-        /// The lock ID, which is used to complete the vault locking process.
+        /// The response body contains the following JSON fields.
         /// </para>
         /// </summary>
-        public string LockId
+        public List<ProvisionedCapacityDescription> ProvisionedCapacityList
         {
-            get { return this._lockId; }
-            set { this._lockId = value; }
+            get { return this._provisionedCapacityList; }
+            set { this._provisionedCapacityList = value; }
         }
 
-        // Check to see if LockId property is set
-        internal bool IsSetLockId()
+        // Check to see if ProvisionedCapacityList property is set
+        internal bool IsSetProvisionedCapacityList()
         {
-            return this._lockId != null;
+            return this._provisionedCapacityList != null && this._provisionedCapacityList.Count > 0; 
         }
 
     }

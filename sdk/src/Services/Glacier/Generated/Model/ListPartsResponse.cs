@@ -118,7 +118,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Parts. 
         /// <para>
-        /// A list of the part sizes of the multipart upload.
+        /// A list of the part sizes of the multipart upload. Each object in the array contains
+        /// a <code>RangeBytes</code> and <code>sha256-tree-hash</code> name/value pair.
         /// </para>
         /// </summary>
         public List<PartListElement> Parts
@@ -136,7 +137,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property PartSizeInBytes. 
         /// <para>
-        /// The part size in bytes.
+        /// The part size in bytes. This is the same value that you specified in the Initiate
+        /// Multipart Upload request.
         /// </para>
         /// </summary>
         public long PartSizeInBytes

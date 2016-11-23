@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InitiateJob operation
+    /// Response Unmarshaller for PurchaseProvisionedCapacity operation
     /// </summary>  
-    public class InitiateJobResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PurchaseProvisionedCapacityResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,12 +45,10 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            InitiateJobResponse response = new InitiateJobResponse();
+            PurchaseProvisionedCapacityResponse response = new PurchaseProvisionedCapacityResponse();
 
-            if (context.ResponseData.IsHeaderPresent("x-amz-job-id"))
-                response.JobId = context.ResponseData.GetHeaderValue("x-amz-job-id");
-            if (context.ResponseData.IsHeaderPresent("Location"))
-                response.Location = context.ResponseData.GetHeaderValue("Location");
+            if (context.ResponseData.IsHeaderPresent("x-amz-capacity-id"))
+                response.CapacityId = context.ResponseData.GetHeaderValue("x-amz-capacity-id");
 
             return response;
         }
@@ -65,25 +63,17 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientCapacityException"))
-            {
-                return new InsufficientCapacityException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
             {
                 return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+            {
+                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("MissingParameterValueException"))
             {
                 return new MissingParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("PolicyEnforcedException"))
-            {
-                return new PolicyEnforcedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-            {
-                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
             {
@@ -92,9 +82,9 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             return new AmazonGlacierException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static InitiateJobResponseUnmarshaller _instance = new InitiateJobResponseUnmarshaller();        
+        private static PurchaseProvisionedCapacityResponseUnmarshaller _instance = new PurchaseProvisionedCapacityResponseUnmarshaller();        
 
-        internal static InitiateJobResponseUnmarshaller GetInstance()
+        internal static PurchaseProvisionedCapacityResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -102,7 +92,7 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InitiateJobResponseUnmarshaller Instance
+        public static PurchaseProvisionedCapacityResponseUnmarshaller Instance
         {
             get
             {
