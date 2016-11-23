@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.23.0",
+    "ProductVersion" : "3.3.24.0",
     "CoreVersion"    : "3.3.5.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -26,7 +26,7 @@
             "InPreview"    : false
         },
         "CloudFormation" : {
-            "Version" : "3.3.2.3",
+            "Version" : "3.3.3.0",
             "Dependencies" : {
                 "Core" : "3.3.5.0"
             },
@@ -182,7 +182,7 @@
             "InPreview"    : false
         },
         "Glacier"              : {
-            "Version" : "3.3.0.3",
+            "Version" : "3.3.1.0",
             "Dependencies" : {
                 "Core" : "3.3.5.0",
                 "SQS"  : "3.3.0.3",
@@ -261,7 +261,7 @@
             "InPreview"    : false
         },
         "Route53"              : {
-            "Version" : "3.3.2.0",
+            "Version" : "3.3.2.1",
             "Dependencies" : {
                 "Core" : "3.3.5.0"
             },
@@ -275,7 +275,7 @@
             "InPreview"    : false
         },
         "S3"                   : {
-            "Version" : "3.3.2.0",
+            "Version" : "3.3.3.0",
             "Dependencies" : {
                 "Core" : "3.3.5.0"
             },

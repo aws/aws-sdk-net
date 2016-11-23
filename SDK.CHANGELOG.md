@@ -1,3 +1,13 @@
+### 3.3.24.0 (2016-11-23 02:51 UTC)
+* CloudFormation (3.3.3.0)
+	* API Update for CloudFormation : new API ListImports
+* Glacier (3.3.1.0)
+	* API Update for Glacier : allow customers to retrieve their data with different tiers
+* Route53 (3.3.2.1)
+	* Doc updates for Route53
+* S3 (3.3.3.0)
+	* API Update for S3 : Enable customers to specify different restore tiers when accessing their data.
+
 ### 3.3.23.0 (2016-11-22 03:06 UTC)
 * CloudTrail (3.3.1.0)
 	* API Update for CloudTrail : supports configuring your trail with event selector
