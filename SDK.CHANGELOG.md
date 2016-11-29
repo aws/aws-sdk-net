@@ -1,3 +1,7 @@
+### 3.3.25.0 (2016-11-29 17:47 UTC)
+* S3 (3.3.4.0)
+	* API Update for S3 : new operations for object tagging, new API for configuring Storage Insights, and new Filter Rule to LifeCycleConfiguration
+
 ### 3.3.24.0 (2016-11-23 02:51 UTC)
 * CloudFormation (3.3.3.0)
 	* API Update for CloudFormation : new API ListImports
