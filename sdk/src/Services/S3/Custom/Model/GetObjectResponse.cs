@@ -52,6 +52,7 @@ namespace Amazon.S3.Model
         private int? partsCount;
         private S3StorageClass storageClass;
         private RequestCharged requestCharged;
+        private int? tagCount;
 
         private string bucketName;
         private string key;
@@ -408,6 +409,15 @@ namespace Amazon.S3.Model
         internal bool IsSetRequestCharged()
         {
             return requestCharged != null;
+        }
+
+        /// <summary>
+        /// The number of tags, if any, on the object.
+        /// </summary>
+        public int TagCount
+        {
+            get { return this.tagCount ?? 0; }
+            set { this.tagCount = value; }
         }
 
 #if BCL

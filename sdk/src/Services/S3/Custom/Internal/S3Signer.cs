@@ -170,6 +170,18 @@ namespace Amazon.S3.Internal
             StringComparer.OrdinalIgnoreCase
         );
 
+        //This is a list of sub resources that S3 does not expect to be signed
+        //and thus have to be excluded from the signer. This is only applicable to S3SigV2 signer
+        //id:- subresource belongs to analytics,inventory and metrics S3 APIs
+        private static readonly HashSet<string> SubResourcesSigningExclusion = new HashSet<string>
+        (
+            new[]
+            {
+                "id"
+            },
+            StringComparer.OrdinalIgnoreCase
+        );
+
         static string BuildCanonicalizedResource(IRequest request)
         {
             // CanonicalResourcePrefix will hold the bucket name if we switched to virtual host addressing
@@ -187,7 +199,10 @@ namespace Amazon.S3.Internal
             {
                 foreach (var subResource in request.SubResources)
                 {
-                    resourcesToSign.Add(subResource.Key, subResource.Value);
+                    if (!SubResourcesSigningExclusion.Contains(subResource.Key))
+                    {
+                        resourcesToSign.Add(subResource.Key, subResource.Value);
+                    }
                 }
             }
 

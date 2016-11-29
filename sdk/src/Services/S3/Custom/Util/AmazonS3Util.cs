@@ -20,21 +20,19 @@
  *
  */
 
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.S3.Model;
+using Amazon.S3.Model.Internal.MarshallTransformations;
+using Amazon.Util;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
-
-using Amazon.S3.Model;
-using Amazon.Util;
-using System.Threading;
-using Amazon.Runtime.Internal;
-using Amazon.S3.Model.Internal.MarshallTransformations;
-using Amazon.Runtime;
+using System.Xml;
 
 namespace Amazon.S3.Util
 {
@@ -444,6 +442,61 @@ namespace Amazon.S3.Util
             queryString.AppendFormat("{0}={1}", parameterName, parameterValue);
             if (parameterMap != null)
                 parameterMap.Add(parameterName, parameterValue);
+        }
+
+        internal static string TagSetToQueryString(List<Tag> tags)
+        {
+            StringBuilder builder = new StringBuilder();
+            foreach(var tag in tags)
+            {
+                AddQueryStringParameter(builder, tag.Key, tag.Value);
+            }
+            return builder.ToString();
+        }
+
+        internal static void SerializeTagToXml(XmlWriter xmlWriter, Tag tag)
+        {
+            xmlWriter.WriteStartElement("Tag", "");
+
+            if (tag.IsSetKey())
+            {
+                xmlWriter.WriteElementString("Key", "", S3Transforms.ToXmlStringValue(tag.Key));
+            }
+            if (tag.IsSetValue())
+            {
+                xmlWriter.WriteElementString("Value", "", S3Transforms.ToXmlStringValue(tag.Value));
+            }
+
+            xmlWriter.WriteEndElement();
+        }
+
+        internal static void SerializeTagSetToXml(XmlWriter xmlWriter, List<Tag> tagset)
+        {
+            xmlWriter.WriteStartElement("TagSet", "");
+
+            if (tagset != null && tagset.Count > 0)
+            {
+                foreach (var tag in tagset)
+                {
+                    SerializeTagToXml(xmlWriter, tag);
+                }
+            }
+            xmlWriter.WriteEndElement();
+        }
+
+        internal static string SerializeTaggingToXml(Tagging tagging)
+        {
+            var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true }))
+            {
+                xmlWriter.WriteStartElement("Tagging", "");
+
+                SerializeTagSetToXml(xmlWriter, tagging.TagSet);
+
+                xmlWriter.WriteEndElement();
+            }
+
+            return stringWriter.ToString();
         }
 
         internal static void ParseAmzRestoreHeader(string header, out bool restoreInProgress, out DateTime? restoreExpiration)

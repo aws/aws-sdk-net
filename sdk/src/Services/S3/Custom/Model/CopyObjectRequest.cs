@@ -43,6 +43,8 @@ namespace Amazon.S3.Model
         private DateTime? modifiedSinceDate;
         private DateTime? unmodifiedSinceDate;
 
+        private List<Tag> tagset;
+
         private S3MetadataDirective metadataDirective;
         private S3StorageClass storageClass;
         private string websiteRedirectLocation;
@@ -522,6 +524,23 @@ namespace Amazon.S3.Model
         {
             return requestPayer != null;
         }
+
+        /// <summary>
+        /// The tag-set for the object destination object this value must be used in conjunction with the TaggingDirective. The tag-set must be encoded as URL Query parameters.
+        /// </summary>
+        public List<Tag> TagSet
+        {
+            get { return this.tagset; }
+            set { this.tagset = value; }
+        }
+
+        /// <summary>
+        /// Checks if Tagging property is set
+        /// </summary>
+        /// <returns>true if Tagging is set.</returns>
+        internal bool IsSetTagSet()
+        {
+            return this.tagset != null;
+        }
     }
 }
-    

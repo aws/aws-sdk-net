@@ -76,7 +76,10 @@ namespace Amazon.S3.Util
         internal static string
             AmzHeaderMultipartPartsCount    = "x-amz-mp-parts-count",
             AmzHeaderRequestPayer           = "x-amz-request-payer",
-            AmzHeaderRequestCharged         = "x-amz-request-charged";
+            AmzHeaderRequestCharged         = "x-amz-request-charged",
+            AmzHeaderTagging                = "x-amz-tagging",
+            AmzHeaderTaggingDirective       = "x-amz-tagging-directive",
+            AmzHeaderTaggingCount           = "x-amz-tagging-count";
 
         // Commonly used static strings
         //internal const string RequestParam = "request";

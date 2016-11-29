@@ -12,25 +12,20 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>Tag
+    /// <summary>
+    /// Tag is a key-value pair of metadata associated with an S3Object
     /// </summary>
     public class Tag
     {
-        
         private string key;
         private string value;
 
         /// <summary>
         /// Name of the tag.
-        ///  
         /// </summary>
         public string Key
         {
@@ -46,7 +41,6 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Value of the tag.
-        ///  
         /// </summary>
         public string Value
         {
@@ -58,6 +52,22 @@ namespace Amazon.S3.Model
         internal bool IsSetValue()
         {
             return this.value != null;
+        }
+    }
+
+    /// <summary>
+    /// Structure that contains list of Tags
+    /// </summary>
+    public class Tagging
+    {
+        private List<Tag> tagSet = new List<Tag>();
+
+        /// <summary>
+        /// TagSet
+        /// </summary>
+        public List<Tag> TagSet
+        {
+            get; set;
         }
     }
 }

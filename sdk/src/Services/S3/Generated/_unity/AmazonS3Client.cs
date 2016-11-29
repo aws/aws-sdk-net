@@ -503,6 +503,102 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  DeleteBucketAnalyticsConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketAnalyticsConfiguration operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketAnalyticsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void DeleteBucketAnalyticsConfigurationAsync(DeleteBucketAnalyticsConfigurationRequest request, AmazonServiceCallback<DeleteBucketAnalyticsConfigurationRequest, DeleteBucketAnalyticsConfigurationResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("DeleteBucketAnalyticsConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new DeleteBucketAnalyticsConfigurationRequestMarshaller();
+            var unmarshaller = DeleteBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DeleteBucketAnalyticsConfigurationRequest,DeleteBucketAnalyticsConfigurationResponse> responseObject 
+                            = new AmazonServiceResult<DeleteBucketAnalyticsConfigurationRequest,DeleteBucketAnalyticsConfigurationResponse>((DeleteBucketAnalyticsConfigurationRequest)req, (DeleteBucketAnalyticsConfigurationResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DeleteBucketAnalyticsConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  DeleteBucketInventoryConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketInventoryConfiguration operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketInventoryConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void DeleteBucketInventoryConfigurationAsync(DeleteBucketInventoryConfigurationRequest request, AmazonServiceCallback<DeleteBucketInventoryConfigurationRequest, DeleteBucketInventoryConfigurationResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("DeleteBucketInventoryConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new DeleteBucketInventoryConfigurationRequestMarshaller();
+            var unmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DeleteBucketInventoryConfigurationRequest,DeleteBucketInventoryConfigurationResponse> responseObject 
+                            = new AmazonServiceResult<DeleteBucketInventoryConfigurationRequest,DeleteBucketInventoryConfigurationResponse>((DeleteBucketInventoryConfigurationRequest)req, (DeleteBucketInventoryConfigurationResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DeleteBucketInventoryConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  DeleteBucketMetricsConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketMetricsConfiguration operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetricsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void DeleteBucketMetricsConfigurationAsync(DeleteBucketMetricsConfigurationRequest request, AmazonServiceCallback<DeleteBucketMetricsConfigurationRequest, DeleteBucketMetricsConfigurationResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("DeleteBucketMetricsConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new DeleteBucketMetricsConfigurationRequestMarshaller();
+            var unmarshaller = DeleteBucketMetricsConfigurationResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DeleteBucketMetricsConfigurationRequest,DeleteBucketMetricsConfigurationResponse> responseObject 
+                            = new AmazonServiceResult<DeleteBucketMetricsConfigurationRequest,DeleteBucketMetricsConfigurationResponse>((DeleteBucketMetricsConfigurationRequest)req, (DeleteBucketMetricsConfigurationResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DeleteBucketMetricsConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  DeleteBucketPolicy
 
         /// <summary>
@@ -904,6 +1000,38 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  DeleteObjectTagging
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteObjectTagging operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteObjectTagging operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void DeleteObjectTaggingAsync(DeleteObjectTaggingRequest request, AmazonServiceCallback<DeleteObjectTaggingRequest, DeleteObjectTaggingResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("DeleteObjectTagging is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new DeleteObjectTaggingRequestMarshaller();
+            var unmarshaller = DeleteObjectTaggingResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DeleteObjectTaggingRequest,DeleteObjectTaggingResponse> responseObject 
+                            = new AmazonServiceResult<DeleteObjectTaggingRequest,DeleteObjectTaggingResponse>((DeleteObjectTaggingRequest)req, (DeleteObjectTaggingResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DeleteObjectTaggingRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  GetACL
 
         /// <summary>
@@ -992,6 +1120,60 @@ namespace Amazon.S3
                         callback(responseObject); 
                 };
             BeginInvoke<GetBucketAccelerateConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  GetBucketAnalyticsConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketAnalyticsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketAnalyticsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void GetBucketAnalyticsConfigurationAsync(GetBucketAnalyticsConfigurationRequest request, AmazonServiceCallback<GetBucketAnalyticsConfigurationRequest, GetBucketAnalyticsConfigurationResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new GetBucketAnalyticsConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetBucketAnalyticsConfigurationRequest,GetBucketAnalyticsConfigurationResponse> responseObject 
+                            = new AmazonServiceResult<GetBucketAnalyticsConfigurationRequest,GetBucketAnalyticsConfigurationResponse>((GetBucketAnalyticsConfigurationRequest)req, (GetBucketAnalyticsConfigurationResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<GetBucketAnalyticsConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  GetBucketInventoryConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketInventoryConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketInventoryConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void GetBucketInventoryConfigurationAsync(GetBucketInventoryConfigurationRequest request, AmazonServiceCallback<GetBucketInventoryConfigurationRequest, GetBucketInventoryConfigurationResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new GetBucketInventoryConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketInventoryConfigurationResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetBucketInventoryConfigurationRequest,GetBucketInventoryConfigurationResponse> responseObject 
+                            = new AmazonServiceResult<GetBucketInventoryConfigurationRequest,GetBucketInventoryConfigurationResponse>((GetBucketInventoryConfigurationRequest)req, (GetBucketInventoryConfigurationResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<GetBucketInventoryConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -1085,6 +1267,33 @@ namespace Amazon.S3
                         callback(responseObject); 
                 };
             BeginInvoke<GetBucketLoggingRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  GetBucketMetricsConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketMetricsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketMetricsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void GetBucketMetricsConfigurationAsync(GetBucketMetricsConfigurationRequest request, AmazonServiceCallback<GetBucketMetricsConfigurationRequest, GetBucketMetricsConfigurationResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new GetBucketMetricsConfigurationRequestMarshaller();
+            var unmarshaller = GetBucketMetricsConfigurationResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetBucketMetricsConfigurationRequest,GetBucketMetricsConfigurationResponse> responseObject 
+                            = new AmazonServiceResult<GetBucketMetricsConfigurationRequest,GetBucketMetricsConfigurationResponse>((GetBucketMetricsConfigurationRequest)req, (GetBucketMetricsConfigurationResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<GetBucketMetricsConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -1623,6 +1832,33 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetObjectTagging
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectTagging operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectTagging operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void GetObjectTaggingAsync(GetObjectTaggingRequest request, AmazonServiceCallback<GetObjectTaggingRequest, GetObjectTaggingResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new GetObjectTaggingRequestMarshaller();
+            var unmarshaller = GetObjectTaggingResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetObjectTaggingRequest,GetObjectTaggingResponse> responseObject 
+                            = new AmazonServiceResult<GetObjectTaggingRequest,GetObjectTaggingResponse>((GetObjectTaggingRequest)req, (GetObjectTaggingResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<GetObjectTaggingRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  GetObjectTorrent
 
         /// <summary>
@@ -1761,6 +1997,87 @@ namespace Amazon.S3
                         callback(responseObject); 
                 };
             BeginInvoke<InitiateMultipartUploadRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  ListBucketAnalyticsConfigurations
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBucketAnalyticsConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketAnalyticsConfigurations operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void ListBucketAnalyticsConfigurationsAsync(ListBucketAnalyticsConfigurationsRequest request, AmazonServiceCallback<ListBucketAnalyticsConfigurationsRequest, ListBucketAnalyticsConfigurationsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new ListBucketAnalyticsConfigurationsRequestMarshaller();
+            var unmarshaller = ListBucketAnalyticsConfigurationsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<ListBucketAnalyticsConfigurationsRequest,ListBucketAnalyticsConfigurationsResponse> responseObject 
+                            = new AmazonServiceResult<ListBucketAnalyticsConfigurationsRequest,ListBucketAnalyticsConfigurationsResponse>((ListBucketAnalyticsConfigurationsRequest)req, (ListBucketAnalyticsConfigurationsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<ListBucketAnalyticsConfigurationsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  ListBucketInventoryConfigurations
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBucketInventoryConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketInventoryConfigurations operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void ListBucketInventoryConfigurationsAsync(ListBucketInventoryConfigurationsRequest request, AmazonServiceCallback<ListBucketInventoryConfigurationsRequest, ListBucketInventoryConfigurationsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new ListBucketInventoryConfigurationsRequestMarshaller();
+            var unmarshaller = ListBucketInventoryConfigurationsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<ListBucketInventoryConfigurationsRequest,ListBucketInventoryConfigurationsResponse> responseObject 
+                            = new AmazonServiceResult<ListBucketInventoryConfigurationsRequest,ListBucketInventoryConfigurationsResponse>((ListBucketInventoryConfigurationsRequest)req, (ListBucketInventoryConfigurationsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<ListBucketInventoryConfigurationsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  ListBucketMetricsConfigurations
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBucketMetricsConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBucketMetricsConfigurations operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void ListBucketMetricsConfigurationsAsync(ListBucketMetricsConfigurationsRequest request, AmazonServiceCallback<ListBucketMetricsConfigurationsRequest, ListBucketMetricsConfigurationsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new ListBucketMetricsConfigurationsRequestMarshaller();
+            var unmarshaller = ListBucketMetricsConfigurationsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<ListBucketMetricsConfigurationsRequest,ListBucketMetricsConfigurationsResponse> responseObject 
+                            = new AmazonServiceResult<ListBucketMetricsConfigurationsRequest,ListBucketMetricsConfigurationsResponse>((ListBucketMetricsConfigurationsRequest)req, (ListBucketMetricsConfigurationsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<ListBucketMetricsConfigurationsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -2218,6 +2535,70 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  PutBucketAnalyticsConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketAnalyticsConfiguration operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketAnalyticsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void PutBucketAnalyticsConfigurationAsync(PutBucketAnalyticsConfigurationRequest request, AmazonServiceCallback<PutBucketAnalyticsConfigurationRequest, PutBucketAnalyticsConfigurationResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("PutBucketAnalyticsConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new PutBucketAnalyticsConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketAnalyticsConfigurationResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<PutBucketAnalyticsConfigurationRequest,PutBucketAnalyticsConfigurationResponse> responseObject 
+                            = new AmazonServiceResult<PutBucketAnalyticsConfigurationRequest,PutBucketAnalyticsConfigurationResponse>((PutBucketAnalyticsConfigurationRequest)req, (PutBucketAnalyticsConfigurationResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<PutBucketAnalyticsConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  PutBucketInventoryConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketInventoryConfiguration operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketInventoryConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void PutBucketInventoryConfigurationAsync(PutBucketInventoryConfigurationRequest request, AmazonServiceCallback<PutBucketInventoryConfigurationRequest, PutBucketInventoryConfigurationResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("PutBucketInventoryConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new PutBucketInventoryConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketInventoryConfigurationResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<PutBucketInventoryConfigurationRequest,PutBucketInventoryConfigurationResponse> responseObject 
+                            = new AmazonServiceResult<PutBucketInventoryConfigurationRequest,PutBucketInventoryConfigurationResponse>((PutBucketInventoryConfigurationRequest)req, (PutBucketInventoryConfigurationResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<PutBucketInventoryConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  PutBucketLogging
 
         /// <summary>
@@ -2246,6 +2627,38 @@ namespace Amazon.S3
                         callback(responseObject); 
                 };
             BeginInvoke<PutBucketLoggingRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  PutBucketMetricsConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBucketMetricsConfiguration operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBucketMetricsConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void PutBucketMetricsConfigurationAsync(PutBucketMetricsConfigurationRequest request, AmazonServiceCallback<PutBucketMetricsConfigurationRequest, PutBucketMetricsConfigurationResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("PutBucketMetricsConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new PutBucketMetricsConfigurationRequestMarshaller();
+            var unmarshaller = PutBucketMetricsConfigurationResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<PutBucketMetricsConfigurationRequest,PutBucketMetricsConfigurationResponse> responseObject 
+                            = new AmazonServiceResult<PutBucketMetricsConfigurationRequest,PutBucketMetricsConfigurationResponse>((PutBucketMetricsConfigurationRequest)req, (PutBucketMetricsConfigurationResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<PutBucketMetricsConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -2728,6 +3141,38 @@ namespace Amazon.S3
                         callback(responseObject); 
                 };
             BeginInvoke<PutObjectRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  PutObjectTagging
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObjectTagging operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectTagging operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void PutObjectTaggingAsync(PutObjectTaggingRequest request, AmazonServiceCallback<PutObjectTaggingRequest, PutObjectTaggingResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("PutObjectTagging is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new PutObjectTaggingRequestMarshaller();
+            var unmarshaller = PutObjectTaggingResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<PutObjectTaggingRequest,PutObjectTaggingResponse> responseObject 
+                            = new AmazonServiceResult<PutObjectTaggingRequest,PutObjectTaggingResponse>((PutObjectTaggingRequest)req, (PutObjectTaggingResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<PutObjectTaggingRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion

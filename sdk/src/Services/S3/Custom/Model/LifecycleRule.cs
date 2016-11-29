@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,17 +14,14 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>Rules Item
+    /// <summary>
+    /// Rules Item
     /// </summary>
     public class LifecycleRule
     {
-        
         private string id;
         private string prefix;
         private LifecycleRuleExpiration expiration;
@@ -33,7 +30,7 @@ namespace Amazon.S3.Model
         private List<LifecycleTransition> transitions;
         private List<LifecycleRuleNoncurrentVersionTransition> noncurrentVersionTransitions;
         private LifecycleRuleAbortIncompleteMultipartUpload abortIncompleteMultipartUpload;
-
+        private LifecycleFilter filter;
 
         /// <summary>
         /// Defines the length of time, in days, before objects expire.
@@ -69,6 +66,7 @@ namespace Amazon.S3.Model
         /// Prefix identifying one or more objects to which the rule applies.
         ///  
         /// </summary>
+        [Obsolete("This property is obsolete.  Use the Filter property instead.")]
         public string Prefix
         {
             get { return this.prefix; }
@@ -79,6 +77,21 @@ namespace Amazon.S3.Model
         internal bool IsSetPrefix()
         {
             return this.prefix != null;
+        }
+
+        /// <summary>
+        /// Filter identifying one or more objects to which the rule applies.
+        /// </summary>
+        public LifecycleFilter Filter
+        {
+            get { return this.filter; }
+            set { this.filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this.filter != null;
         }
 
         /// <summary>

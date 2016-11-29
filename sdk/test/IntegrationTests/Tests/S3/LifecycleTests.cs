@@ -1,4 +1,19 @@
-﻿using System;
+/*
+ * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -13,6 +28,7 @@ using Amazon.S3.Model;
 using AWSSDK_DotNet.IntegrationTests.Tests;
 using AWSSDK_DotNet.IntegrationTests.Tests.S3;
 using Amazon.S3.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 
 namespace S3UnitTest
 {
@@ -20,6 +36,34 @@ namespace S3UnitTest
     public class LifecycleTests : TestBase<AmazonS3Client>
     {
         private static string bucketName;
+
+        private readonly LifecyclePrefixPredicate BasicPrefixPredicate1 = new LifecyclePrefixPredicate()
+        {
+            Prefix = "thePrefix1"
+        };
+
+        private readonly LifecyclePrefixPredicate BasicPrefixPredicate2 = new LifecyclePrefixPredicate()
+        {
+            Prefix = "thePrefix2"
+        };
+
+        private readonly LifecycleTagPredicate BasicTagPredicate1 = new LifecycleTagPredicate()
+        {
+            Tag = new Tag()
+            {
+                Key = "theKey1",
+                Value = "theValue1"
+            }
+        };
+
+        private readonly LifecycleTagPredicate BasicTagPredicate2 = new LifecycleTagPredicate()
+        {
+            Tag = new Tag()
+            {
+                Key = "theKey2",
+                Value = "theValue2"
+            }
+        };
 
         [TestInitialize]
         public void Init()
@@ -44,11 +88,13 @@ namespace S3UnitTest
 
             var configuration = new LifecycleConfiguration
             {
-                Rules =new List<LifecycleRule>
+                Rules = new List<LifecycleRule>
                 {
                     new LifecycleRule
                     {
+#pragma warning disable 618
                         Prefix = "rule1-",
+#pragma warning restore 618
                         Status = LifecycleRuleStatus.Enabled,
                         Expiration = new LifecycleRuleExpiration
                         {
@@ -73,7 +119,9 @@ namespace S3UnitTest
                     },
                     new LifecycleRule
                     {
+#pragma warning disable 618
                         Prefix = "rule2-",
+#pragma warning restore 618
                         Expiration = new LifecycleRuleExpiration
                         {
                             Days = 120
@@ -107,7 +155,9 @@ namespace S3UnitTest
                     },
                     new LifecycleRule
                     {
+#pragma warning disable 618
                         Prefix = "rule3-",
+#pragma warning restore 618
                         Expiration = new LifecycleRuleExpiration 
                         {
                             ExpiredObjectDeleteMarker = true
@@ -155,32 +205,14 @@ namespace S3UnitTest
             Assert.AreEqual(configuration.Rules.Count, s3Configuration.Rules.Count);
             for(int i=0;i<configuration.Rules.Count;i++)
             {
+                var s3Rule = s3Configuration.Rules[i];
                 var rule = configuration.Rules[i];
                 Assert.IsNotNull(rule);
-                var s3Rule = s3Configuration.Rules[i];
                 Assert.IsNotNull(s3Rule);
-                Assert.IsFalse(string.IsNullOrEmpty(s3Rule.Id));
-
-                Assert.AreEqual(rule.Transitions.Count, s3Rule.Transitions.Count);
-                Assert.AreEqual(rule.NoncurrentVersionTransitions.Count, s3Rule.NoncurrentVersionTransitions.Count);
-                if (rule.AbortIncompleteMultipartUpload == null)
-                {
-                    Assert.IsNull(s3Rule.AbortIncompleteMultipartUpload);
-                    Assert.AreEqual(LifecycleRuleStatus.Disabled, s3Rule.Status);
-                }
-                else
-                {
-                    Assert.AreEqual(rule.AbortIncompleteMultipartUpload.DaysAfterInitiation, s3Rule.AbortIncompleteMultipartUpload.DaysAfterInitiation);
-                    Assert.AreEqual(LifecycleRuleStatus.Enabled, s3Rule.Status);
+                if (rule.AbortIncompleteMultipartUpload != null)
                     abortRuleId = s3Rule.Id;
-                }
-                Assert.AreEqual(rule.Expiration.Days, s3Rule.Expiration.Days);
-                Assert.AreEqual(rule.Expiration.ExpiredObjectDeleteMarker, s3Rule.Expiration.ExpiredObjectDeleteMarker);
 
-#pragma warning disable 618
-                Assert.AreEqual(rule.Transition.Days, s3Rule.Transition.Days);
-                Assert.AreEqual(rule.NoncurrentVersionTransition.NoncurrentDays, s3Rule.NoncurrentVersionTransition.NoncurrentDays);
-#pragma warning restore 618
+                AssertRulesAreEqual(rule, s3Rule);
             }
 
             var expectedMinAbortDate = DateTime.Now.Date.AddDays(7);
@@ -196,6 +228,184 @@ namespace S3UnitTest
             Assert.AreEqual(abortRuleId, listResponse.AbortRuleId);
             Assert.AreEqual(initResponse.AbortDate, listResponse.AbortDate);
             Assert.IsTrue(expectedMinAbortDate < initResponse.AbortDate);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestLifecycleFilterPrefix()
+        {
+            TestLifecycleFilterPredicate(BasicPrefixPredicate1);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestLifecycleFilterTag()
+        {
+            TestLifecycleFilterPredicate(BasicTagPredicate1);
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestLifecycleFilterAndPrefixTag()
+        {
+            TestLifecycleFilterPredicate(BuildAndOperator(BasicPrefixPredicate1, BasicTagPredicate1));
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestLifecycleFilterAndTwoTags()
+        {
+            TestLifecycleFilterPredicate(BuildAndOperator(BasicTagPredicate1, BasicTagPredicate2));
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestLifecycleFilterAndTwoPrefixes()
+        {
+            // make a client that fails faster since that's what we're expecting
+            var oneRetryClient = new AmazonS3Client(new AmazonS3Config()
+            {
+                MaxErrorRetry = 1
+            });
+
+            AssertExtensions.ExpectException(() =>
+            {
+                TestLifecycleFilterPredicate(BuildAndOperator(BasicPrefixPredicate1, BasicPrefixPredicate2), oneRetryClient);
+            }, typeof(AmazonS3Exception), "An And operator may only contain one 'Prefix'.");
+        }
+
+        private static LifecycleAndOperator BuildAndOperator(params LifecycleFilterPredicate[] operands)
+        {
+            return new LifecycleAndOperator()
+            {
+                Operands = new List<LifecycleFilterPredicate>(operands)
+            };
+        }
+
+        private static void TestLifecycleFilterPredicate(LifecycleFilterPredicate predicate, AmazonS3Client client = null)
+        {
+            var filter = new LifecycleFilter()
+            {
+                LifecycleFilterPredicate = predicate
+            };
+
+            var rule = new LifecycleRule
+            {
+                Filter = filter,
+                Status = LifecycleRuleStatus.Enabled,
+                Transitions = new List<LifecycleTransition>()
+                {
+                    new LifecycleTransition
+                    {
+                        Days = 1,
+                        StorageClass = S3StorageClass.Glacier
+                    }
+                }
+            };
+
+            if (client == null)
+                client = Client;
+
+            client.PutLifecycleConfiguration(new PutLifecycleConfigurationRequest
+            {
+                BucketName = bucketName,
+                Configuration = new LifecycleConfiguration
+                {
+                    Rules = new List<LifecycleRule>
+                    {
+                        rule
+                    }
+                }
+            });
+
+            var actualConfig = client.GetLifecycleConfiguration(bucketName).Configuration;
+            Assert.IsNotNull(actualConfig);
+            Assert.IsNotNull(actualConfig.Rules);
+            Assert.AreEqual(1, actualConfig.Rules.Count);
+            AssertRulesAreEqual(rule, actualConfig.Rules[0]);
+        }
+
+        private static void AssertRulesAreEqual(LifecycleRule expected, LifecycleRule actual)
+        {
+            Assert.IsFalse(string.IsNullOrEmpty(actual.Id));
+
+#pragma warning disable 618
+            Assert.AreEqual(expected.Prefix, actual.Prefix);
+#pragma warning restore 618
+            AssertFiltersAreEqual(expected.Filter, actual.Filter);
+
+            Assert.AreEqual(expected.Transitions.Count, actual.Transitions.Count);
+            Assert.AreEqual(expected.NoncurrentVersionTransitions.Count, actual.NoncurrentVersionTransitions.Count);
+            if (expected.AbortIncompleteMultipartUpload == null)
+            {
+                Assert.IsNull(actual.AbortIncompleteMultipartUpload);
+            }
+            else
+            {
+                Assert.AreEqual(expected.AbortIncompleteMultipartUpload.DaysAfterInitiation, actual.AbortIncompleteMultipartUpload.DaysAfterInitiation);
+            }
+            Assert.AreEqual(expected.Status, actual.Status);
+            Assert.AreEqual(expected.Expiration?.Days, actual?.Expiration?.Days);
+            Assert.AreEqual(expected.Expiration?.ExpiredObjectDeleteMarker, actual.Expiration?.ExpiredObjectDeleteMarker);
+
+#pragma warning disable 618
+            Assert.AreEqual(expected.Transition.Days, actual.Transition.Days);
+            Assert.AreEqual(expected.NoncurrentVersionTransition?.NoncurrentDays, actual.NoncurrentVersionTransition?.NoncurrentDays);
+#pragma warning restore 618
+        }
+
+        private static void AssertFiltersAreEqual(LifecycleFilter expected, LifecycleFilter actual)
+        {
+            if (expected == null)
+            {
+                Assert.IsNull(actual);
+            }
+            else
+            {
+                AssertPredicatesAreEqual(expected.LifecycleFilterPredicate, actual.LifecycleFilterPredicate);
+            }
+        }
+
+        private  static void AssertPredicatesAreEqual(LifecycleFilterPredicate expected, LifecycleFilterPredicate actual)
+        {
+            Assert.IsNotNull(expected);
+            Assert.IsNotNull(actual);
+            Assert.AreEqual(expected.GetType(), actual.GetType());
+
+            if (expected is LifecyclePrefixPredicate)
+            {
+                var expectedPrefixPredicate = expected as LifecyclePrefixPredicate;
+                var actualPrefixPredicate = actual as LifecyclePrefixPredicate;
+
+                Assert.AreEqual(expectedPrefixPredicate.Prefix, actualPrefixPredicate.Prefix);
+            }
+            else if (expected is LifecycleTagPredicate)
+            {
+                var expectedTagPredicate = expected as LifecycleTagPredicate;
+                var actualTagPredicate = actual as LifecycleTagPredicate;
+
+                Assert.AreEqual(expectedTagPredicate.Tag.Key, actualTagPredicate.Tag.Key);
+                Assert.AreEqual(expectedTagPredicate.Tag.Value, actualTagPredicate.Tag.Value);
+            }
+            else if (expected is LifecycleAndOperator)
+            {
+                var expectedAndOperator = expected as LifecycleAndOperator;
+                var actualAndOperator = actual as LifecycleAndOperator;
+
+                var expectedOperands = expectedAndOperator.Operands.ToArray();
+                var actualOperands = actualAndOperator.Operands.ToArray();
+
+                Assert.AreEqual(expectedOperands.Length, actualOperands.Length);
+
+                for (int i = 0; i < expectedOperands.Length; i++)
+                {
+                    AssertPredicatesAreEqual(expectedOperands[i], actualOperands[i]);
+                }
+            }
+            else
+            {
+                throw new Exception("Unknown predicate type " + expected.GetType().FullName);
+            }
         }
     }
 }
