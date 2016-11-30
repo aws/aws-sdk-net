@@ -611,6 +611,15 @@
             "service-url": "https://kinesisanalytics.us-east-1.amazonaws.com/",
             "synopsis": "Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL."
 		},
+		{
+            "active": true,
+
+            "model": "lightsail",
+            "base-name": "Lightsail",
+            "region-lookup-name": "lightsail",
+            "authentication-service-name": "lightsail",
+            "synopsis": "An extremely simplified VM creation and management service."
+		},
         {
             "active": true,
 
@@ -678,6 +687,15 @@
             "service-url": "https://iot.us-east-1.amazonaws.com/",
             "synopsis": "AWS IoT allows you to leverage AWS to build your Internet of Things."
         },
+		{
+            "active": true,
+
+            "model": "lightsail",
+            "base-name": "Lightsail",
+            "region-lookup-name": "lightsail",
+            "authentication-service-name": "lightsail",
+            "synopsis": "An extremely simplified VM creation and management service."
+		},
         {
             "active": true,
 

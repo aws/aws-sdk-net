@@ -76,9 +76,11 @@
       <Directory>$(ProjectDir)/src/Services/kinesisanalytics/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesisfirehose/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/lambda/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/lightsail/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/machinelearning/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mobileanalytics/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/opsworks/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/polly/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/rds/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/redshift/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/route53/bin/Release/net35/</Directory>
@@ -153,9 +155,11 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.KinesisAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.KinesisFirehose.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Lambda.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Lightsail.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MachineLearning.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MobileAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.OpsWorks.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Polly.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.RDS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Redshift.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Route53.dll" Analyze="True" AnalyzeAllChildren="True" />

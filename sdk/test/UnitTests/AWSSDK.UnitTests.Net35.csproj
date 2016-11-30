@@ -276,6 +276,10 @@
       <Project>{787D3BC7-1984-4203-B8A2-BF50E708E751}</Project>
       <Name>AWSSDK.Lambda.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Lightsail\AWSSDK.Lightsail.Net35.csproj">
+      <Project>{672230BD-8D64-4250-B5C2-111E9B48B650}</Project>
+      <Name>AWSSDK.Lightsail.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\MachineLearning\AWSSDK.MachineLearning.Net35.csproj">
       <Project>{6C97BF81-D77B-4050-BD1E-ABB7F756E7D5}</Project>
       <Name>AWSSDK.MachineLearning.Net35</Name>
