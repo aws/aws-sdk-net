@@ -1,3 +1,13 @@
+### 3.3.26.0 (2016-11-30 19:09 UTC)
+* Lightsail (3.3.0.0)
+	* New service Lightsail : a simplified VM creation and management service.
+* Polly (3.3.0.0)
+	* New service Polly : Amazon Polly service turns text into lifelike speech, making it easy to develop applications that use high-quality speech to increase engagement and accessibility
+* Rekognition (3.3.0.0)
+	* New service Rekognition : Rekognition is a deep-learning based service to search, verify and organize images. With Rekognition, you can detect objects, scenes, and faces in images. You can also search and compare faces.
+* Snowball (3.3.1.0)
+	* API Update for Snowball : this release of AWS Snowball introduces a new job type, new APIs, and the new AWS Snowball Edge device to support local compute and storage use cases.
+
 ### 3.3.25.0 (2016-11-29 17:47 UTC)
 * S3 (3.3.4.0)
 	* API Update for S3 : new operations for object tagging, new API for configuring Storage Insights, and new Filter Rule to LifeCycleConfiguration

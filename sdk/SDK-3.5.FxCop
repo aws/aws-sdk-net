@@ -100,7 +100,6 @@
       <Directory>$(ProjectDir)/src/Services/storagegateway/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/waf/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/workspaces/bin/Release/net35/</Directory>
-      <Directory>$(ProjectDir)/src/Services/xray/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Core/bin/Release/net35/</Directory>
     </AssemblyReferenceDirectories>
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.APIGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -181,7 +180,6 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.StorageGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.WAF.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.WorkSpaces.dll" Analyze="True" AnalyzeAllChildren="True" />
-    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.XRay.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Core.dll" Analyze="True" AnalyzeAllChildren="False">
       <Modules AnalyzeAllChildren="False">
         <Module Name="awssdk.core.dll" Analyze="True" AnalyzeAllChildren="False">
