@@ -850,6 +850,15 @@
         {
             "active": true,
 
+            "model": "rekognition",
+            "base-name": "Rekognition",
+            "region-lookup-name": "rekognition",
+            "authentication-service-name": "rekognition",
+            "synopsis": "AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering."
+        },
+        {
+            "active": true,
+
             "model": "route53-",
             "base-name": "Route53",
             "region-lookup-name": "route53",

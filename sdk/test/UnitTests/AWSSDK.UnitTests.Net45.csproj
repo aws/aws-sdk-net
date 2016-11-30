@@ -306,6 +306,10 @@
       <Project>{70CA134F-2307-49F7-BD2A-B30371B88FF1}</Project>
       <Name>AWSSDK.Redshift.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Rekognition\AWSSDK.Rekognition.Net45.csproj">
+      <Project>{B340B99E-1351-4616-940E-C8AF852F6EB5}</Project>
+      <Name>AWSSDK.Rekognition.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Route53\AWSSDK.Route53.Net45.csproj">
       <Project>{297FC084-5027-44B3-BE25-2E16D16E85D2}</Project>
       <Name>AWSSDK.Route53.Net45</Name>

@@ -300,6 +300,10 @@
       <Project>{5D839AEF-54F6-431D-BC37-681F7DF77C01}</Project>
       <Name>AWSSDK.Redshift.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Rekognition/AWSSDK.Rekognition.CodeAnalysis.csproj">
+      <Project>{D9D10ED3-F14F-4133-ABF9-60BC06101CA6}</Project>
+      <Name>AWSSDK.Rekognition.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Route53/AWSSDK.Route53.CodeAnalysis.csproj">
       <Project>{3CE0119E-8964-4015-AA92-9A0017A5B423}</Project>
       <Name>AWSSDK.Route53.CodeAnalysis</Name>
