@@ -1,0 +1,548 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the polly-2016-06-10.normal.json service model.
+ */
+
+using System;
+
+using Amazon.Runtime;
+
+namespace Amazon.Polly
+{
+
+    /// <summary>
+    /// Constants used for properties of type Gender.
+    /// </summary>
+    public class Gender : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Female for Gender
+        /// </summary>
+        public static readonly Gender Female = new Gender("Female");
+        /// <summary>
+        /// Constant Male for Gender
+        /// </summary>
+        public static readonly Gender Male = new Gender("Male");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Gender(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Gender FindValue(string value)
+        {
+            return FindValue<Gender>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Gender(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LanguageCode.
+    /// </summary>
+    public class LanguageCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CyGB for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode CyGB = new LanguageCode("cy-GB");
+        /// <summary>
+        /// Constant DaDK for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode DaDK = new LanguageCode("da-DK");
+        /// <summary>
+        /// Constant DeDE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode DeDE = new LanguageCode("de-DE");
+        /// <summary>
+        /// Constant EnAU for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnAU = new LanguageCode("en-AU");
+        /// <summary>
+        /// Constant EnGB for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnGB = new LanguageCode("en-GB");
+        /// <summary>
+        /// Constant EnGBWLS for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnGBWLS = new LanguageCode("en-GB-WLS");
+        /// <summary>
+        /// Constant EnIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnIN = new LanguageCode("en-IN");
+        /// <summary>
+        /// Constant EnUS for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnUS = new LanguageCode("en-US");
+        /// <summary>
+        /// Constant EsES for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EsES = new LanguageCode("es-ES");
+        /// <summary>
+        /// Constant EsUS for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EsUS = new LanguageCode("es-US");
+        /// <summary>
+        /// Constant FrCA for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode FrCA = new LanguageCode("fr-CA");
+        /// <summary>
+        /// Constant FrFR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode FrFR = new LanguageCode("fr-FR");
+        /// <summary>
+        /// Constant IsIS for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode IsIS = new LanguageCode("is-IS");
+        /// <summary>
+        /// Constant ItIT for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ItIT = new LanguageCode("it-IT");
+        /// <summary>
+        /// Constant JaJP for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode JaJP = new LanguageCode("ja-JP");
+        /// <summary>
+        /// Constant NbNO for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode NbNO = new LanguageCode("nb-NO");
+        /// <summary>
+        /// Constant NlNL for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode NlNL = new LanguageCode("nl-NL");
+        /// <summary>
+        /// Constant PlPL for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode PlPL = new LanguageCode("pl-PL");
+        /// <summary>
+        /// Constant PtBR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode PtBR = new LanguageCode("pt-BR");
+        /// <summary>
+        /// Constant PtPT for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode PtPT = new LanguageCode("pt-PT");
+        /// <summary>
+        /// Constant RoRO for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode RoRO = new LanguageCode("ro-RO");
+        /// <summary>
+        /// Constant RuRU for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode RuRU = new LanguageCode("ru-RU");
+        /// <summary>
+        /// Constant SvSE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SvSE = new LanguageCode("sv-SE");
+        /// <summary>
+        /// Constant TrTR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode TrTR = new LanguageCode("tr-TR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LanguageCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LanguageCode FindValue(string value)
+        {
+            return FindValue<LanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LanguageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OutputFormat.
+    /// </summary>
+    public class OutputFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Mp3 for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat Mp3 = new OutputFormat("mp3");
+        /// <summary>
+        /// Constant Ogg_vorbis for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat Ogg_vorbis = new OutputFormat("ogg_vorbis");
+        /// <summary>
+        /// Constant Pcm for OutputFormat
+        /// </summary>
+        public static readonly OutputFormat Pcm = new OutputFormat("pcm");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutputFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutputFormat FindValue(string value)
+        {
+            return FindValue<OutputFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutputFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TextType.
+    /// </summary>
+    public class TextType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ssml for TextType
+        /// </summary>
+        public static readonly TextType Ssml = new TextType("ssml");
+        /// <summary>
+        /// Constant Text for TextType
+        /// </summary>
+        public static readonly TextType Text = new TextType("text");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TextType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TextType FindValue(string value)
+        {
+            return FindValue<TextType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TextType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VoiceId.
+    /// </summary>
+    public class VoiceId : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Amy for VoiceId
+        /// </summary>
+        public static readonly VoiceId Amy = new VoiceId("Amy");
+        /// <summary>
+        /// Constant Astrid for VoiceId
+        /// </summary>
+        public static readonly VoiceId Astrid = new VoiceId("Astrid");
+        /// <summary>
+        /// Constant Brian for VoiceId
+        /// </summary>
+        public static readonly VoiceId Brian = new VoiceId("Brian");
+        /// <summary>
+        /// Constant Carla for VoiceId
+        /// </summary>
+        public static readonly VoiceId Carla = new VoiceId("Carla");
+        /// <summary>
+        /// Constant Carmen for VoiceId
+        /// </summary>
+        public static readonly VoiceId Carmen = new VoiceId("Carmen");
+        /// <summary>
+        /// Constant Celine for VoiceId
+        /// </summary>
+        public static readonly VoiceId Celine = new VoiceId("Celine");
+        /// <summary>
+        /// Constant Chantal for VoiceId
+        /// </summary>
+        public static readonly VoiceId Chantal = new VoiceId("Chantal");
+        /// <summary>
+        /// Constant Conchita for VoiceId
+        /// </summary>
+        public static readonly VoiceId Conchita = new VoiceId("Conchita");
+        /// <summary>
+        /// Constant Cristiano for VoiceId
+        /// </summary>
+        public static readonly VoiceId Cristiano = new VoiceId("Cristiano");
+        /// <summary>
+        /// Constant Dora for VoiceId
+        /// </summary>
+        public static readonly VoiceId Dora = new VoiceId("Dora");
+        /// <summary>
+        /// Constant Emma for VoiceId
+        /// </summary>
+        public static readonly VoiceId Emma = new VoiceId("Emma");
+        /// <summary>
+        /// Constant Enrique for VoiceId
+        /// </summary>
+        public static readonly VoiceId Enrique = new VoiceId("Enrique");
+        /// <summary>
+        /// Constant Ewa for VoiceId
+        /// </summary>
+        public static readonly VoiceId Ewa = new VoiceId("Ewa");
+        /// <summary>
+        /// Constant Filiz for VoiceId
+        /// </summary>
+        public static readonly VoiceId Filiz = new VoiceId("Filiz");
+        /// <summary>
+        /// Constant Geraint for VoiceId
+        /// </summary>
+        public static readonly VoiceId Geraint = new VoiceId("Geraint");
+        /// <summary>
+        /// Constant Giorgio for VoiceId
+        /// </summary>
+        public static readonly VoiceId Giorgio = new VoiceId("Giorgio");
+        /// <summary>
+        /// Constant Gwyneth for VoiceId
+        /// </summary>
+        public static readonly VoiceId Gwyneth = new VoiceId("Gwyneth");
+        /// <summary>
+        /// Constant Hans for VoiceId
+        /// </summary>
+        public static readonly VoiceId Hans = new VoiceId("Hans");
+        /// <summary>
+        /// Constant Ines for VoiceId
+        /// </summary>
+        public static readonly VoiceId Ines = new VoiceId("Ines");
+        /// <summary>
+        /// Constant Ivy for VoiceId
+        /// </summary>
+        public static readonly VoiceId Ivy = new VoiceId("Ivy");
+        /// <summary>
+        /// Constant Jacek for VoiceId
+        /// </summary>
+        public static readonly VoiceId Jacek = new VoiceId("Jacek");
+        /// <summary>
+        /// Constant Jan for VoiceId
+        /// </summary>
+        public static readonly VoiceId Jan = new VoiceId("Jan");
+        /// <summary>
+        /// Constant Joanna for VoiceId
+        /// </summary>
+        public static readonly VoiceId Joanna = new VoiceId("Joanna");
+        /// <summary>
+        /// Constant Joey for VoiceId
+        /// </summary>
+        public static readonly VoiceId Joey = new VoiceId("Joey");
+        /// <summary>
+        /// Constant Justin for VoiceId
+        /// </summary>
+        public static readonly VoiceId Justin = new VoiceId("Justin");
+        /// <summary>
+        /// Constant Karl for VoiceId
+        /// </summary>
+        public static readonly VoiceId Karl = new VoiceId("Karl");
+        /// <summary>
+        /// Constant Kendra for VoiceId
+        /// </summary>
+        public static readonly VoiceId Kendra = new VoiceId("Kendra");
+        /// <summary>
+        /// Constant Kimberly for VoiceId
+        /// </summary>
+        public static readonly VoiceId Kimberly = new VoiceId("Kimberly");
+        /// <summary>
+        /// Constant Liv for VoiceId
+        /// </summary>
+        public static readonly VoiceId Liv = new VoiceId("Liv");
+        /// <summary>
+        /// Constant Lotte for VoiceId
+        /// </summary>
+        public static readonly VoiceId Lotte = new VoiceId("Lotte");
+        /// <summary>
+        /// Constant Mads for VoiceId
+        /// </summary>
+        public static readonly VoiceId Mads = new VoiceId("Mads");
+        /// <summary>
+        /// Constant Maja for VoiceId
+        /// </summary>
+        public static readonly VoiceId Maja = new VoiceId("Maja");
+        /// <summary>
+        /// Constant Marlene for VoiceId
+        /// </summary>
+        public static readonly VoiceId Marlene = new VoiceId("Marlene");
+        /// <summary>
+        /// Constant Mathieu for VoiceId
+        /// </summary>
+        public static readonly VoiceId Mathieu = new VoiceId("Mathieu");
+        /// <summary>
+        /// Constant Maxim for VoiceId
+        /// </summary>
+        public static readonly VoiceId Maxim = new VoiceId("Maxim");
+        /// <summary>
+        /// Constant Miguel for VoiceId
+        /// </summary>
+        public static readonly VoiceId Miguel = new VoiceId("Miguel");
+        /// <summary>
+        /// Constant Mizuki for VoiceId
+        /// </summary>
+        public static readonly VoiceId Mizuki = new VoiceId("Mizuki");
+        /// <summary>
+        /// Constant Naja for VoiceId
+        /// </summary>
+        public static readonly VoiceId Naja = new VoiceId("Naja");
+        /// <summary>
+        /// Constant Nicole for VoiceId
+        /// </summary>
+        public static readonly VoiceId Nicole = new VoiceId("Nicole");
+        /// <summary>
+        /// Constant Penelope for VoiceId
+        /// </summary>
+        public static readonly VoiceId Penelope = new VoiceId("Penelope");
+        /// <summary>
+        /// Constant Raveena for VoiceId
+        /// </summary>
+        public static readonly VoiceId Raveena = new VoiceId("Raveena");
+        /// <summary>
+        /// Constant Ricardo for VoiceId
+        /// </summary>
+        public static readonly VoiceId Ricardo = new VoiceId("Ricardo");
+        /// <summary>
+        /// Constant Ruben for VoiceId
+        /// </summary>
+        public static readonly VoiceId Ruben = new VoiceId("Ruben");
+        /// <summary>
+        /// Constant Russell for VoiceId
+        /// </summary>
+        public static readonly VoiceId Russell = new VoiceId("Russell");
+        /// <summary>
+        /// Constant Salli for VoiceId
+        /// </summary>
+        public static readonly VoiceId Salli = new VoiceId("Salli");
+        /// <summary>
+        /// Constant Tatyana for VoiceId
+        /// </summary>
+        public static readonly VoiceId Tatyana = new VoiceId("Tatyana");
+        /// <summary>
+        /// Constant Vitoria for VoiceId
+        /// </summary>
+        public static readonly VoiceId Vitoria = new VoiceId("Vitoria");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VoiceId(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VoiceId FindValue(string value)
+        {
+            return FindValue<VoiceId>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VoiceId(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+}

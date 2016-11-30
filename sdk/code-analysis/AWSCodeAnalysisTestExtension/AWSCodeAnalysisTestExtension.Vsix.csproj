@@ -288,6 +288,10 @@
       <Project>{7F36180A-2EE4-41E8-B237-964EEF734D42}</Project>
       <Name>AWSSDK.OpsWorks.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Polly/AWSSDK.Polly.CodeAnalysis.csproj">
+      <Project>{4846B39F-6A15-4FC7-B7D5-6A4FA76D09DC}</Project>
+      <Name>AWSSDK.Polly.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/RDS/AWSSDK.RDS.CodeAnalysis.csproj">
       <Project>{B3C3F105-ECCC-43C7-BD16-11E15487264C}</Project>
       <Name>AWSSDK.RDS.CodeAnalysis</Name>

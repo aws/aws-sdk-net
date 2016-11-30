@@ -807,6 +807,26 @@
             "service-url": "https://opsworks.us-east-1.amazonaws.com/",
             "synopsis": "AWS OpsWorks is an application management service that makes it easy to deploy and operate applications of all shapes and sizes. You can define the application's architecture and the specification of each component including package installation, software configuration and resources such as storage."
         },
+		{
+          "active": true,
+
+          "model": "polly",
+          "base-name": "Polly",
+          "region-lookup-name": "polly",
+          "authentication-service-name": "polly",
+          "service-url": "https://polly.us-east-1.amazonaws.com/",
+          "synopsis": "Amazon Polly is a service that turns text into lifelike speech, making it easy to develop applications that use high-quality speech to increase engagement and accessibility."
+        },
+        {
+          "active": true,
+
+          "model": "polly",
+          "base-name": "Polly",
+          "region-lookup-name": "polly",
+          "authentication-service-name": "polly",
+          "service-url": "https://polly.us-east-1.amazonaws.com/",
+          "synopsis": "Amazon Polly is a service that turns text into lifelike speech, making it easy to develop applications that use high-quality speech to increase engagement and accessibility."
+        },
         {
             "active": true,
 

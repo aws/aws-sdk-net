@@ -280,6 +280,10 @@
       <Project>{9123E499-47D5-4B7C-BAB4-155A96CA5E9C}</Project>
       <Name>AWSSDK.OpsWorks.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Polly\AWSSDK.Polly.Net45.csproj">
+      <Project>{0DA4279F-8955-40E6-8A3C-42CFEC91262A}</Project>
+      <Name>AWSSDK.Polly.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\RDS\AWSSDK.RDS.Net45.csproj">
       <Project>{18F3ECAE-0CD6-4A59-8CB2-80533F276AA3}</Project>
       <Name>AWSSDK.RDS.Net45</Name>
