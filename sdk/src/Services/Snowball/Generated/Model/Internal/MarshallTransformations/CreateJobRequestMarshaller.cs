@@ -73,6 +73,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AddressId);
                 }
 
+                if(publicRequest.IsSetClusterId())
+                {
+                    context.Writer.WritePropertyName("ClusterId");
+                    context.Writer.Write(publicRequest.ClusterId);
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");
@@ -129,6 +135,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("SnowballCapacityPreference");
                     context.Writer.Write(publicRequest.SnowballCapacityPreference);
+                }
+
+                if(publicRequest.IsSetSnowballType())
+                {
+                    context.Writer.WritePropertyName("SnowballType");
+                    context.Writer.Write(publicRequest.SnowballType);
                 }
 
         

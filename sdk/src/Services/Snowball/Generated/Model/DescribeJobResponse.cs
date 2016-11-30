@@ -39,7 +39,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property JobMetadata. 
         /// <para>
         /// Information about a specific job, including shipping information, job status, and
-        /// other important metadata. 
+        /// other important metadata.
         /// </para>
         /// </summary>
         public JobMetadata JobMetadata
@@ -58,7 +58,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property SubJobMetadata. 
         /// <para>
         /// Information about a specific job part (in the case of an export job), including shipping
-        /// information, job status, and other important metadata. 
+        /// information, job status, and other important metadata.
         /// </para>
         /// </summary>
         public List<JobMetadata> SubJobMetadata

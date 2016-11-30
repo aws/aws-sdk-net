@@ -45,6 +45,22 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobResource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetLambdaResources())
+            {
+                context.Writer.WritePropertyName("LambdaResources");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLambdaResourcesListValue in requestObject.LambdaResources)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LambdaResourceMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLambdaResourcesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetS3Resources())
             {
                 context.Writer.WritePropertyName("S3Resources");

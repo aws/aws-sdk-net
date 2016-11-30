@@ -35,6 +35,7 @@ namespace Amazon.Snowball.Model
     public partial class JobMetadata
     {
         private string _addressId;
+        private string _clusterId;
         private DateTime? _creationDate;
         private DataTransfer _dataTransferProgress;
         private string _description;
@@ -48,6 +49,7 @@ namespace Amazon.Snowball.Model
         private string _roleARN;
         private ShippingDetails _shippingDetails;
         private SnowballCapacity _snowballCapacityPreference;
+        private SnowballType _snowballType;
 
         /// <summary>
         /// Gets and sets the property AddressId. 
@@ -65,6 +67,24 @@ namespace Amazon.Snowball.Model
         internal bool IsSetAddressId()
         {
             return this._addressId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterId. 
+        /// <para>
+        /// The 39-character ID for the cluster, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
+        /// </para>
+        /// </summary>
+        public string ClusterId
+        {
+            get { return this._clusterId; }
+            set { this._clusterId = value; }
+        }
+
+        // Check to see if ClusterId property is set
+        internal bool IsSetClusterId()
+        {
+            return this._clusterId != null;
         }
 
         /// <summary>
@@ -89,7 +109,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property DataTransferProgress. 
         /// <para>
         /// A value that defines the real-time status of a Snowball's data transfer while the
-        /// appliance is at AWS. Note that this data is only available while a job has a <code>JobState</code>
+        /// appliance is at AWS. This data is only available while a job has a <code>JobState</code>
         /// value of <code>InProgress</code>, for both import and export jobs.
         /// </para>
         /// </summary>
@@ -165,7 +185,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property JobState. 
         /// <para>
-        /// The current state of the jobs.
+        /// The current status of the jobs.
         /// </para>
         /// </summary>
         public JobState JobState
@@ -314,6 +334,24 @@ namespace Amazon.Snowball.Model
         internal bool IsSetSnowballCapacityPreference()
         {
             return this._snowballCapacityPreference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnowballType. 
+        /// <para>
+        /// The type of appliance used with this job.
+        /// </para>
+        /// </summary>
+        public SnowballType SnowballType
+        {
+            get { return this._snowballType; }
+            set { this._snowballType = value; }
+        }
+
+        // Check to see if SnowballType property is set
+        internal bool IsSetSnowballType()
+        {
+            return this._snowballType != null;
         }
 
     }

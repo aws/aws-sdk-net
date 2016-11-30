@@ -178,7 +178,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property SnowballCapacityPreference. 
         /// <para>
         /// The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a>
-        /// object. Note that the 50 TB Snowballs are only available in the US regions.
+        /// object. The 50 TB Snowballs are only available in the US regions.
         /// </para>
         /// </summary>
         public SnowballCapacity SnowballCapacityPreference

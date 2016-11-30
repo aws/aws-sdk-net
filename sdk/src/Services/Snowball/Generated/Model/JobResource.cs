@@ -34,7 +34,26 @@ namespace Amazon.Snowball.Model
     /// </summary>
     public partial class JobResource
     {
+        private List<LambdaResource> _lambdaResources = new List<LambdaResource>();
         private List<S3Resource> _s3Resources = new List<S3Resource>();
+
+        /// <summary>
+        /// Gets and sets the property LambdaResources. 
+        /// <para>
+        /// The Python-language Lambda functions for this job.
+        /// </para>
+        /// </summary>
+        public List<LambdaResource> LambdaResources
+        {
+            get { return this._lambdaResources; }
+            set { this._lambdaResources = value; }
+        }
+
+        // Check to see if LambdaResources property is set
+        internal bool IsSetLambdaResources()
+        {
+            return this._lambdaResources != null && this._lambdaResources.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property S3Resources. 

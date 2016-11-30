@@ -64,6 +64,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("LambdaResources", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LambdaResource, LambdaResourceUnmarshaller>(LambdaResourceUnmarshaller.Instance);
+                    unmarshalledObject.LambdaResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3Resources", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<S3Resource, S3ResourceUnmarshaller>(S3ResourceUnmarshaller.Instance);

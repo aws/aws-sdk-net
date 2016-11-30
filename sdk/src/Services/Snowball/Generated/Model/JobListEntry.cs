@@ -33,9 +33,50 @@ namespace Amazon.Snowball.Model
     /// </summary>
     public partial class JobListEntry
     {
+        private DateTime? _creationDate;
+        private string _description;
         private bool? _isMaster;
         private string _jobId;
         private JobState _jobState;
+        private JobType _jobType;
+        private SnowballType _snowballType;
+
+        /// <summary>
+        /// Gets and sets the property CreationDate. 
+        /// <para>
+        /// The creation date for this job.
+        /// </para>
+        /// </summary>
+        public DateTime CreationDate
+        {
+            get { return this._creationDate.GetValueOrDefault(); }
+            set { this._creationDate = value; }
+        }
+
+        // Check to see if CreationDate property is set
+        internal bool IsSetCreationDate()
+        {
+            return this._creationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The optional description of this specific job, for example <code>Important Photos
+        /// 2016-08-11</code>.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IsMaster. 
@@ -93,6 +134,42 @@ namespace Amazon.Snowball.Model
         internal bool IsSetJobState()
         {
             return this._jobState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobType. 
+        /// <para>
+        /// The type of job.
+        /// </para>
+        /// </summary>
+        public JobType JobType
+        {
+            get { return this._jobType; }
+            set { this._jobType = value; }
+        }
+
+        // Check to see if JobType property is set
+        internal bool IsSetJobType()
+        {
+            return this._jobType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnowballType. 
+        /// <para>
+        /// The type of appliance used with this job.
+        /// </para>
+        /// </summary>
+        public SnowballType SnowballType
+        {
+            get { return this._snowballType; }
+            set { this._snowballType = value; }
+        }
+
+        // Check to see if SnowballType property is set
+        internal bool IsSetSnowballType()
+        {
+            return this._snowballType != null;
         }
 
     }

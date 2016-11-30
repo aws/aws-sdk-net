@@ -34,8 +34,8 @@ namespace Amazon.Snowball.Model
     /// 
     ///  
     /// <para>
-    /// Note that the default service limit for the number of Snowballs that you can have
-    /// at one time is 1. If you want to increase your service limit, contact AWS Support.
+    /// The default service limit for the number of Snowballs that you can have at one time
+    /// is 1. If you want to increase your service limit, contact AWS Support.
     /// </para>
     /// </summary>
     public partial class GetSnowballUsageRequest : AmazonSnowballRequest

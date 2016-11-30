@@ -64,6 +64,18 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CreationDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IsMaster", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -80,6 +92,18 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("JobType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JobType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SnowballType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SnowballType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

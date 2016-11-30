@@ -30,12 +30,15 @@ namespace Amazon.Snowball.Model
     /// <summary>
     /// Container for the parameters to the CreateJob operation.
     /// Creates a job to import or export data between Amazon S3 and your on-premises data
-    /// center. Note that your AWS account must have the right trust policies and permissions
-    /// in place to create a job for Snowball. For more information, see <a>api-reference-policies</a>.
+    /// center. Your AWS account must have the right trust policies and permissions in place
+    /// to create a job for Snowball. If you're creating a job for a node in a cluster, you
+    /// only need to provide the <code>clusterId</code> value; the other job attributes are
+    /// inherited from the cluster. .
     /// </summary>
     public partial class CreateJobRequest : AmazonSnowballRequest
     {
         private string _addressId;
+        private string _clusterId;
         private string _description;
         private JobType _jobType;
         private string _kmsKeyARN;
@@ -44,6 +47,7 @@ namespace Amazon.Snowball.Model
         private string _roleARN;
         private ShippingOption _shippingOption;
         private SnowballCapacity _snowballCapacityPreference;
+        private SnowballType _snowballType;
 
         /// <summary>
         /// Gets and sets the property AddressId. 
@@ -61,6 +65,26 @@ namespace Amazon.Snowball.Model
         internal bool IsSetAddressId()
         {
             return this._addressId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterId. 
+        /// <para>
+        /// The ID of a cluster. If you're creating a job for a node in a cluster, you need to
+        /// provide only this <code>clusterId</code> value. The other job attributes are inherited
+        /// from the cluster.
+        /// </para>
+        /// </summary>
+        public string ClusterId
+        {
+            get { return this._clusterId; }
+            set { this._clusterId = value; }
+        }
+
+        // Check to see if ClusterId property is set
+        internal bool IsSetClusterId()
+        {
+            return this._clusterId != null;
         }
 
         /// <summary>
@@ -193,9 +217,9 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property ShippingOption. 
         /// <para>
-        /// The shipping speed for this job. Note that this speed does not dictate how soon you'll
-        /// get the Snowball, rather it represents how quickly the Snowball moves to its destination
-        /// while in transit. Regional shipping speeds are as follows:
+        /// The shipping speed for this job. This speed doesn't dictate how soon you'll get the
+        /// Snowball, rather it represents how quickly the Snowball moves to its destination while
+        /// in transit. Regional shipping speeds are as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -248,6 +272,25 @@ namespace Amazon.Snowball.Model
         internal bool IsSetSnowballCapacityPreference()
         {
             return this._snowballCapacityPreference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnowballType. 
+        /// <para>
+        /// The type of AWS Snowball appliance to use for this job. Currently, the only supported
+        /// appliance type for cluster jobs is <code>EDGE</code>.
+        /// </para>
+        /// </summary>
+        public SnowballType SnowballType
+        {
+            get { return this._snowballType; }
+            set { this._snowballType = value; }
+        }
+
+        // Check to see if SnowballType property is set
+        internal bool IsSetSnowballType()
+        {
+            return this._snowballType != null;
         }
 
     }

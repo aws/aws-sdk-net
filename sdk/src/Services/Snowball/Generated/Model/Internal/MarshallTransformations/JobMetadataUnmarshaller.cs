@@ -70,6 +70,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     unmarshalledObject.AddressId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ClusterId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ClusterId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -146,6 +152,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SnowballCapacityPreference = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SnowballType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SnowballType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

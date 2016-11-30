@@ -33,7 +33,14 @@ namespace Amazon.Snowball
     /// <summary>
     /// Implementation for accessing Snowball
     ///
-    /// This is a test of the welcome page front matter.
+    /// AWS Snowball is a petabyte-scale data transport solution that uses secure appliances
+    /// to transfer large amounts of data between your on-premises data centers and Amazon
+    /// Simple Storage Service (Amazon S3). The Snowball commands described here provide access
+    /// to the same functionality that is available in the AWS Snowball Management Console,
+    /// which enables you to create and manage jobs for Snowball. To transfer data locally
+    /// with a Snowball appliance, you'll need to use the Snowball client or the Amazon S3
+    /// API adapter for Snowball. For more information, see the <a href="http://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
+    /// Guide</a>.
     /// </summary>
     public partial class AmazonSnowballClient : AmazonServiceClient, IAmazonSnowball
     {
@@ -223,10 +230,73 @@ namespace Amazon.Snowball
         #endregion
 
         
+        #region  CancelCluster
+
+        /// <summary>
+        /// Cancels a cluster job. You can only cancel a cluster job while it's in the <code>AwaitingQuorum</code>
+        /// status. You'll have at least an hour after creating a cluster job to cancel it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelCluster service method.</param>
+        /// 
+        /// <returns>The response from the CancelCluster service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidJobStateException">
+        /// The action can't be performed because the job's current state doesn't allow that action
+        /// to be performed.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.KMSRequestFailedException">
+        /// The provided AWS Key Management Service key lacks the permissions to perform the specified
+        /// <a>CreateJob</a> or <a>UpdateJob</a> action.
+        /// </exception>
+        public CancelClusterResponse CancelCluster(CancelClusterRequest request)
+        {
+            var marshaller = new CancelClusterRequestMarshaller();
+            var unmarshaller = CancelClusterResponseUnmarshaller.Instance;
+
+            return Invoke<CancelClusterRequest,CancelClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelCluster operation on AmazonSnowballClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelCluster
+        ///         operation.</returns>
+        public IAsyncResult BeginCancelCluster(CancelClusterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CancelClusterRequestMarshaller();
+            var unmarshaller = CancelClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CancelClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelCluster.</param>
+        /// 
+        /// <returns>Returns a  CancelClusterResult from Snowball.</returns>
+        public  CancelClusterResponse EndCancelCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CancelClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CancelJob
 
         /// <summary>
-        /// Cancels the specified job. Note that you can only cancel a job before its <code>JobState</code>
+        /// Cancels the specified job. You can only cancel a job before its <code>JobState</code>
         /// value changes to <code>PreparingAppliance</code>. Requesting the <code>ListJobs</code>
         /// or <code>DescribeJob</code> action will return a job's <code>JobState</code> as part
         /// of the response element data returned.
@@ -354,16 +424,93 @@ namespace Amazon.Snowball
 
         #endregion
         
+        #region  CreateCluster
+
+        /// <summary>
+        /// Creates an empty cluster. Each cluster supports five nodes. You use the <a>CreateJob</a>
+        /// action separately to create the jobs for each of these nodes. The cluster does not
+        /// ship until these five node jobs have been created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
+        /// 
+        /// <returns>The response from the CreateCluster service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
+        /// Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
+        /// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>,
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.KMSRequestFailedException">
+        /// The provided AWS Key Management Service key lacks the permissions to perform the specified
+        /// <a>CreateJob</a> or <a>UpdateJob</a> action.
+        /// </exception>
+        public CreateClusterResponse CreateCluster(CreateClusterRequest request)
+        {
+            var marshaller = new CreateClusterRequestMarshaller();
+            var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateClusterRequest,CreateClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCluster operation on AmazonSnowballClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCluster
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateClusterRequestMarshaller();
+            var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCluster.</param>
+        /// 
+        /// <returns>Returns a  CreateClusterResult from Snowball.</returns>
+        public  CreateClusterResponse EndCreateCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateJob
 
         /// <summary>
         /// Creates a job to import or export data between Amazon S3 and your on-premises data
-        /// center. Note that your AWS account must have the right trust policies and permissions
-        /// in place to create a job for Snowball. For more information, see <a>api-reference-policies</a>.
+        /// center. Your AWS account must have the right trust policies and permissions in place
+        /// to create a job for Snowball. If you're creating a job for a node in a cluster, you
+        /// only need to provide the <code>clusterId</code> value; the other job attributes are
+        /// inherited from the cluster. .
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// 
         /// <returns>The response from the CreateJob service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.ClusterLimitExceededException">
+        /// Job creation failed. Currently, clusters support five nodes. If you have less than
+        /// five nodes for your cluster and you have more nodes to create for this cluster, try
+        /// again and create jobs until your cluster has exactly five notes.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
+        /// Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
+        /// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>,
+        /// and try again.
+        /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
@@ -525,11 +672,66 @@ namespace Amazon.Snowball
 
         #endregion
         
+        #region  DescribeCluster
+
+        /// <summary>
+        /// Returns information about a specific cluster including shipping information, cluster
+        /// status, and other important metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCluster service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCluster service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        public DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
+        {
+            var marshaller = new DescribeClusterRequestMarshaller();
+            var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterRequest,DescribeClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCluster operation on AmazonSnowballClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCluster
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeCluster(DescribeClusterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeClusterRequestMarshaller();
+            var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCluster.</param>
+        /// 
+        /// <returns>Returns a  DescribeClusterResult from Snowball.</returns>
+        public  DescribeClusterResponse EndDescribeCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeJob
 
         /// <summary>
         /// Returns information about a specific job including shipping information, job status,
-        /// and other important metadata.
+        /// and other important metadata. .
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJob service method.</param>
         /// 
@@ -605,8 +807,8 @@ namespace Amazon.Snowball
         /// </para>
         ///  
         /// <para>
-        /// Note that the credentials of a given job, including its manifest file and unlock code,
-        /// expire 90 days after the job is created.
+        /// The credentials of a given job, including its manifest file and unlock code, expire
+        /// 90 days after the job is created.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetJobManifest service method.</param>
@@ -745,8 +947,8 @@ namespace Amazon.Snowball
         /// 
         ///  
         /// <para>
-        /// Note that the default service limit for the number of Snowballs that you can have
-        /// at one time is 1. If you want to increase your service limit, contact AWS Support.
+        /// The default service limit for the number of Snowballs that you can have at one time
+        /// is 1. If you want to increase your service limit, contact AWS Support.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSnowballUsage service method.</param>
@@ -790,6 +992,114 @@ namespace Amazon.Snowball
         public  GetSnowballUsageResponse EndGetSnowballUsage(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSnowballUsageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListClusterJobs
+
+        /// <summary>
+        /// Returns an array of <code>JobListEntry</code> objects of the specified length. Each
+        /// <code>JobListEntry</code> object is for a job in the specified cluster and contains
+        /// a job's state, a job's ID, and other information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListClusterJobs service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        public ListClusterJobsResponse ListClusterJobs(ListClusterJobsRequest request)
+        {
+            var marshaller = new ListClusterJobsRequestMarshaller();
+            var unmarshaller = ListClusterJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListClusterJobsRequest,ListClusterJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClusterJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterJobs operation on AmazonSnowballClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClusterJobs
+        ///         operation.</returns>
+        public IAsyncResult BeginListClusterJobs(ListClusterJobsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListClusterJobsRequestMarshaller();
+            var unmarshaller = ListClusterJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListClusterJobsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListClusterJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClusterJobs.</param>
+        /// 
+        /// <returns>Returns a  ListClusterJobsResult from Snowball.</returns>
+        public  ListClusterJobsResponse EndListClusterJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListClusterJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListClusters
+
+        /// <summary>
+        /// Returns an array of <code>ClusterListEntry</code> objects of the specified length.
+        /// Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's
+        /// ID, and other important status information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
+        /// 
+        /// <returns>The response from the ListClusters service method, as returned by Snowball.</returns>
+        public ListClustersResponse ListClusters(ListClustersRequest request)
+        {
+            var marshaller = new ListClustersRequestMarshaller();
+            var unmarshaller = ListClustersResponseUnmarshaller.Instance;
+
+            return Invoke<ListClustersRequest,ListClustersResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClusters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClusters operation on AmazonSnowballClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClusters
+        ///         operation.</returns>
+        public IAsyncResult BeginListClusters(ListClustersRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListClustersRequestMarshaller();
+            var unmarshaller = ListClustersResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListClustersRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListClusters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClusters.</param>
+        /// 
+        /// <returns>Returns a  ListClustersResult from Snowball.</returns>
+        public  ListClustersResponse EndListClusters(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListClustersResponse>(asyncResult);
         }
 
         #endregion
@@ -848,6 +1158,76 @@ namespace Amazon.Snowball
 
         #endregion
         
+        #region  UpdateCluster
+
+        /// <summary>
+        /// While a cluster's <code>ClusterState</code> value is in the <code>AwaitingQuorum</code>
+        /// state, you can update some of the information associated with a cluster. Once the
+        /// cluster changes to a different job state, usually 60 minutes after the cluster being
+        /// created, this action is no longer available.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCluster service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCluster service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
+        /// Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
+        /// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>,
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidJobStateException">
+        /// The action can't be performed because the job's current state doesn't allow that action
+        /// to be performed.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.KMSRequestFailedException">
+        /// The provided AWS Key Management Service key lacks the permissions to perform the specified
+        /// <a>CreateJob</a> or <a>UpdateJob</a> action.
+        /// </exception>
+        public UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
+        {
+            var marshaller = new UpdateClusterRequestMarshaller();
+            var unmarshaller = UpdateClusterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClusterRequest,UpdateClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCluster operation on AmazonSnowballClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCluster
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateCluster(UpdateClusterRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateClusterRequestMarshaller();
+            var unmarshaller = UpdateClusterResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateClusterRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCluster.</param>
+        /// 
+        /// <returns>Returns a  UpdateClusterResult from Snowball.</returns>
+        public  UpdateClusterResponse EndUpdateCluster(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateClusterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateJob
 
         /// <summary>
@@ -859,6 +1239,16 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the UpdateJob service method.</param>
         /// 
         /// <returns>The response from the UpdateJob service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.ClusterLimitExceededException">
+        /// Job creation failed. Currently, clusters support five nodes. If you have less than
+        /// five nodes for your cluster and you have more nodes to create for this cluster, try
+        /// again and create jobs until your cluster has exactly five notes.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
+        /// Job or cluster creation failed. One ore more inputs were invalid. Confirm that the
+        /// <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>,
+        /// and try again.
+        /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidJobStateException">
         /// The action can't be performed because the job's current state doesn't allow that action
         /// to be performed.

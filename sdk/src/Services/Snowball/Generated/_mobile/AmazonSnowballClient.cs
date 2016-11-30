@@ -36,7 +36,14 @@ namespace Amazon.Snowball
     /// <summary>
     /// Implementation for accessing Snowball
     ///
-    /// This is a test of the welcome page front matter.
+    /// AWS Snowball is a petabyte-scale data transport solution that uses secure appliances
+    /// to transfer large amounts of data between your on-premises data centers and Amazon
+    /// Simple Storage Service (Amazon S3). The Snowball commands described here provide access
+    /// to the same functionality that is available in the AWS Snowball Management Console,
+    /// which enables you to create and manage jobs for Snowball. To transfer data locally
+    /// with a Snowball appliance, you'll need to use the Snowball client or the Amazon S3
+    /// API adapter for Snowball. For more information, see the <a href="http://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
+    /// Guide</a>.
     /// </summary>
     public partial class AmazonSnowballClient : AmazonServiceClient, IAmazonSnowball
     {
@@ -230,6 +237,37 @@ namespace Amazon.Snowball
         #endregion
 
         
+        #region  CancelCluster
+
+        internal CancelClusterResponse CancelCluster(CancelClusterRequest request)
+        {
+            var marshaller = new CancelClusterRequestMarshaller();
+            var unmarshaller = CancelClusterResponseUnmarshaller.Instance;
+
+            return Invoke<CancelClusterRequest,CancelClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CancelClusterResponse> CancelClusterAsync(CancelClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CancelClusterRequestMarshaller();
+            var unmarshaller = CancelClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelClusterRequest,CancelClusterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelJob
 
         internal CancelJobResponse CancelJob(CancelJobRequest request)
@@ -287,6 +325,37 @@ namespace Amazon.Snowball
             var unmarshaller = CreateAddressResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateAddressRequest,CreateAddressResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCluster
+
+        internal CreateClusterResponse CreateCluster(CreateClusterRequest request)
+        {
+            var marshaller = new CreateClusterRequestMarshaller();
+            var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateClusterRequest,CreateClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateClusterRequestMarshaller();
+            var unmarshaller = CreateClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateClusterRequest,CreateClusterResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -380,6 +449,37 @@ namespace Amazon.Snowball
             var unmarshaller = DescribeAddressesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAddressesRequest,DescribeAddressesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCluster
+
+        internal DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
+        {
+            var marshaller = new DescribeClusterRequestMarshaller();
+            var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterRequest,DescribeClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeClusterRequestMarshaller();
+            var unmarshaller = DescribeClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeClusterRequest,DescribeClusterResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -509,6 +609,68 @@ namespace Amazon.Snowball
 
         #endregion
         
+        #region  ListClusterJobs
+
+        internal ListClusterJobsResponse ListClusterJobs(ListClusterJobsRequest request)
+        {
+            var marshaller = new ListClusterJobsRequestMarshaller();
+            var unmarshaller = ListClusterJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListClusterJobsRequest,ListClusterJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClusterJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListClusterJobsResponse> ListClusterJobsAsync(ListClusterJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListClusterJobsRequestMarshaller();
+            var unmarshaller = ListClusterJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListClusterJobsRequest,ListClusterJobsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListClusters
+
+        internal ListClustersResponse ListClusters(ListClustersRequest request)
+        {
+            var marshaller = new ListClustersRequestMarshaller();
+            var unmarshaller = ListClustersResponseUnmarshaller.Instance;
+
+            return Invoke<ListClustersRequest,ListClustersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClusters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClusters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListClustersRequestMarshaller();
+            var unmarshaller = ListClustersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListClustersRequest,ListClustersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListJobs
 
         internal ListJobsResponse ListJobs(ListJobsRequest request)
@@ -535,6 +697,37 @@ namespace Amazon.Snowball
             var unmarshaller = ListJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListJobsRequest,ListJobsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCluster
+
+        internal UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
+        {
+            var marshaller = new UpdateClusterRequestMarshaller();
+            var unmarshaller = UpdateClusterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClusterRequest,UpdateClusterResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCluster operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateClusterResponse> UpdateClusterAsync(UpdateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateClusterRequestMarshaller();
+            var unmarshaller = UpdateClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateClusterRequest,UpdateClusterResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -30,7 +30,7 @@ namespace Amazon.Snowball.Model
     /// <summary>
     /// Container for the parameters to the DescribeJob operation.
     /// Returns information about a specific job including shipping information, job status,
-    /// and other important metadata.
+    /// and other important metadata. .
     /// </summary>
     public partial class DescribeJobRequest : AmazonSnowballRequest
     {

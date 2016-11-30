@@ -25,6 +25,68 @@ namespace Amazon.Snowball
 {
 
     /// <summary>
+    /// Constants used for properties of type ClusterState.
+    /// </summary>
+    public class ClusterState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AwaitingQuorum for ClusterState
+        /// </summary>
+        public static readonly ClusterState AwaitingQuorum = new ClusterState("AwaitingQuorum");
+        /// <summary>
+        /// Constant Cancelled for ClusterState
+        /// </summary>
+        public static readonly ClusterState Cancelled = new ClusterState("Cancelled");
+        /// <summary>
+        /// Constant Complete for ClusterState
+        /// </summary>
+        public static readonly ClusterState Complete = new ClusterState("Complete");
+        /// <summary>
+        /// Constant InUse for ClusterState
+        /// </summary>
+        public static readonly ClusterState InUse = new ClusterState("InUse");
+        /// <summary>
+        /// Constant Pending for ClusterState
+        /// </summary>
+        public static readonly ClusterState Pending = new ClusterState("Pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClusterState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClusterState FindValue(string value)
+        {
+            return FindValue<ClusterState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClusterState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobState.
     /// </summary>
     public class JobState : ConstantClass
@@ -128,6 +190,10 @@ namespace Amazon.Snowball
         /// Constant IMPORT for JobType
         /// </summary>
         public static readonly JobType IMPORT = new JobType("IMPORT");
+        /// <summary>
+        /// Constant LOCAL_USE for JobType
+        /// </summary>
+        public static readonly JobType LOCAL_USE = new JobType("LOCAL_USE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -233,6 +299,10 @@ namespace Amazon.Snowball
         /// </summary>
         public static readonly SnowballCapacity NoPreference = new SnowballCapacity("NoPreference");
         /// <summary>
+        /// Constant T100 for SnowballCapacity
+        /// </summary>
+        public static readonly SnowballCapacity T100 = new SnowballCapacity("T100");
+        /// <summary>
         /// Constant T50 for SnowballCapacity
         /// </summary>
         public static readonly SnowballCapacity T50 = new SnowballCapacity("T50");
@@ -270,6 +340,56 @@ namespace Amazon.Snowball
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SnowballCapacity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SnowballType.
+    /// </summary>
+    public class SnowballType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EDGE for SnowballType
+        /// </summary>
+        public static readonly SnowballType EDGE = new SnowballType("EDGE");
+        /// <summary>
+        /// Constant STANDARD for SnowballType
+        /// </summary>
+        public static readonly SnowballType STANDARD = new SnowballType("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SnowballType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnowballType FindValue(string value)
+        {
+            return FindValue<SnowballType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnowballType(string value)
         {
             return FindValue(value);
         }
