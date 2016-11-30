@@ -345,12 +345,27 @@ namespace S3UnitTest
                 Assert.AreEqual(expected.AbortIncompleteMultipartUpload.DaysAfterInitiation, actual.AbortIncompleteMultipartUpload.DaysAfterInitiation);
             }
             Assert.AreEqual(expected.Status, actual.Status);
-            Assert.AreEqual(expected.Expiration?.Days, actual?.Expiration?.Days);
-            Assert.AreEqual(expected.Expiration?.ExpiredObjectDeleteMarker, actual.Expiration?.ExpiredObjectDeleteMarker);
+            if (expected.Expiration == null)
+            {
+                Assert.IsNull(actual.Expiration);
+            }
+            else
+            {
+                Assert.AreEqual(expected.Expiration.Days, actual.Expiration.Days);
+                Assert.AreEqual(expected.Expiration.ExpiredObjectDeleteMarker, actual.Expiration.ExpiredObjectDeleteMarker);
+            }
 
 #pragma warning disable 618
             Assert.AreEqual(expected.Transition.Days, actual.Transition.Days);
-            Assert.AreEqual(expected.NoncurrentVersionTransition?.NoncurrentDays, actual.NoncurrentVersionTransition?.NoncurrentDays);
+            if (expected.NoncurrentVersionTransition == null)
+            {
+                Assert.IsNull(actual.NoncurrentVersionTransition);
+            }
+            else
+            {
+                Assert.AreEqual(expected.NoncurrentVersionTransition.NoncurrentDays,
+                    actual.NoncurrentVersionTransition.NoncurrentDays);
+            }
 #pragma warning restore 618
         }
 
