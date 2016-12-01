@@ -301,6 +301,16 @@
         {
             "active": true,
 
+            "model": "codebuild",
+            "base-name": "CodeBuild",
+            "region-lookup-name": "codebuild",
+            "authentication-service-name": "codebuild",
+            "service-url": "http://codebuild.us-east-1.amazonaws.com",
+            "synopsis": "AWS CodeBuild is a fully-managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit tests, and produces artifacts that are ready to deploy."
+        },
+        {
+            "active": true,
+
             "model": "codecommit",
             "base-name": "CodeCommit",
             "region-lookup-name": "codecommit",

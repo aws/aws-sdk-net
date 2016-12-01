@@ -136,6 +136,10 @@
       <Project>{6B43421E-9EA1-4811-9897-E7C130CA175D}</Project>
       <Name>AWSSDK.CloudWatchLogs.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CodeBuild\AWSSDK.CodeBuild.Net35.csproj">
+      <Project>{34ED2608-B8D5-4431-9107-074DC9FD709C}</Project>
+      <Name>AWSSDK.CodeBuild.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CodeCommit\AWSSDK.CodeCommit.Net35.csproj">
       <Project>{12D6C04C-72EB-483A-A8D7-1E58C0F07BDC}</Project>
       <Name>AWSSDK.CodeCommit.Net35</Name>

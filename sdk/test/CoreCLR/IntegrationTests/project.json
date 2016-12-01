@@ -94,6 +94,7 @@
         "StepFunctions"                   : "1.0.0-*",
         "AppStream"                       : "1.0.0-*",
         "OpsWorksCM"                      : "1.0.0-*",
+        "CodeBuild"                       : "1.0.0-*",
         "Lightsail"                       : "1.0.0-*",
         "Polly"                           : "1.0.0-*",
         "Rekognition"                     : "1.0.0-*",

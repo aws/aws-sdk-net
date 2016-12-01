@@ -128,6 +128,10 @@
       <Project>{CF63ED2A-7FFE-4851-B21F-FCCF802D101B}</Project>
       <Name>AWSSDK.CloudWatchLogs.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CodeBuild/AWSSDK.CodeBuild.CodeAnalysis.csproj">
+      <Project>{BF9F0805-E702-46A1-9CAB-E93E0FF099DE}</Project>
+      <Name>AWSSDK.CodeBuild.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CodeCommit/AWSSDK.CodeCommit.CodeAnalysis.csproj">
       <Project>{7A278EA3-D9A6-409F-8B87-DB450B9B9F13}</Project>
       <Name>AWSSDK.CodeCommit.CodeAnalysis</Name>

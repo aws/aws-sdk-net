@@ -41,6 +41,7 @@
       <Directory>$(ProjectDir)/src/Services/cloudwatch/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/cloudwatchevents/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/cloudwatchlogs/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/codebuild/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/codecommit/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/codedeploy/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/codepipeline/bin/Release/net45/</Directory>
@@ -125,6 +126,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CloudWatch.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CloudWatchEvents.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CloudWatchLogs.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CodeBuild.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CodeCommit.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CodeDeploy.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CodePipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
