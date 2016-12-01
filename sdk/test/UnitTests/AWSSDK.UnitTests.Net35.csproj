@@ -304,6 +304,10 @@
       <Project>{533FA482-DF58-4CB8-8D3F-ABE97FAC9FCD}</Project>
       <Name>AWSSDK.OpsWorksCM.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Pinpoint\AWSSDK.Pinpoint.Net35.csproj">
+      <Project>{CC7C7F7F-BA0C-4926-8146-D86F044B657E}</Project>
+      <Name>AWSSDK.Pinpoint.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Polly\AWSSDK.Polly.Net35.csproj">
       <Project>{97723246-514D-425A-99E8-838FCEC89A83}</Project>
       <Name>AWSSDK.Polly.Net35</Name>

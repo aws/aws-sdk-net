@@ -300,6 +300,10 @@
       <Project>{E8067CB9-E496-41AF-BC14-921EE1521237}</Project>
       <Name>AWSSDK.OpsWorksCM.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Pinpoint/AWSSDK.Pinpoint.CodeAnalysis.csproj">
+      <Project>{82F5F402-030D-49B3-9AB7-1AF67F16EEA9}</Project>
+      <Name>AWSSDK.Pinpoint.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Polly/AWSSDK.Polly.CodeAnalysis.csproj">
       <Project>{4846B39F-6A15-4FC7-B7D5-6A4FA76D09DC}</Project>
       <Name>AWSSDK.Polly.CodeAnalysis</Name>

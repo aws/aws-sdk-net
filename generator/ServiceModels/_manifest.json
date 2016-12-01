@@ -836,6 +836,16 @@
             "service-url": "https://opsworks.us-east-1.amazonaws.com/",
             "synopsis": "AWS OpsWorks is an application management service that makes it easy to deploy and operate applications of all shapes and sizes. You can define the application's architecture and the specification of each component including package installation, software configuration and resources such as storage."
         },
+        {
+            "active": true,
+
+            "model": "pinpoint",
+            "base-name": "Pinpoint",
+            "region-lookup-name": "pinpoint",
+            "authentication-service-name": "mobiletargeting",
+            "service-url": "https://pinpoint.us-east-1.amazonaws.com",
+            "synopsis": "Amazon Pinpoint makes it easy to run targeted campaigns to improve user engagement. Pinpoint helps you understand your users behavior, define who to target, what messages to send, when to deliver them, and tracks the results of the campaign."
+        },
 		{
           "active": true,
 
