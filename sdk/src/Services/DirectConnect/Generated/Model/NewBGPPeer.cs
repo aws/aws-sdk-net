@@ -28,18 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// A structure containing information about a private virtual interface that will be
-    /// provisioned on a connection.
+    /// A structure containing information about a new BGP peer.
     /// </summary>
-    public partial class NewPrivateVirtualInterfaceAllocation
+    public partial class NewBGPPeer
     {
         private AddressFamily _addressFamily;
         private string _amazonAddress;
         private int? _asn;
         private string _authKey;
         private string _customerAddress;
-        private string _virtualInterfaceName;
-        private int? _vlan;
 
         /// <summary>
         /// Gets and sets the property AddressFamily.
@@ -114,36 +111,6 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetCustomerAddress()
         {
             return this._customerAddress != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VirtualInterfaceName.
-        /// </summary>
-        public string VirtualInterfaceName
-        {
-            get { return this._virtualInterfaceName; }
-            set { this._virtualInterfaceName = value; }
-        }
-
-        // Check to see if VirtualInterfaceName property is set
-        internal bool IsSetVirtualInterfaceName()
-        {
-            return this._virtualInterfaceName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Vlan.
-        /// </summary>
-        public int Vlan
-        {
-            get { return this._vlan.GetValueOrDefault(); }
-            set { this._vlan = value; }
-        }
-
-        // Check to see if Vlan property is set
-        internal bool IsSetVlan()
-        {
-            return this._vlan.HasValue; 
         }
 
     }

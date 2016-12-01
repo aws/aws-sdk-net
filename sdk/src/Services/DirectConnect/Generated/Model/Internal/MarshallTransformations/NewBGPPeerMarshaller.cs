@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// NewPublicVirtualInterfaceAllocation Marshaller
+    /// NewBGPPeer Marshaller
     /// </summary>       
-    public class NewPublicVirtualInterfaceAllocationMarshaller : IRequestMarshaller<NewPublicVirtualInterfaceAllocation, JsonMarshallerContext> 
+    public class NewBGPPeerMarshaller : IRequestMarshaller<NewBGPPeer, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NewPublicVirtualInterfaceAllocation requestObject, JsonMarshallerContext context)
+        public void Marshall(NewBGPPeer requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetAddressFamily())
             {
@@ -75,40 +75,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CustomerAddress);
             }
 
-            if(requestObject.IsSetRouteFilterPrefixes())
-            {
-                context.Writer.WritePropertyName("routeFilterPrefixes");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectRouteFilterPrefixesListValue in requestObject.RouteFilterPrefixes)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = RouteFilterPrefixMarshaller.Instance;
-                    marshaller.Marshall(requestObjectRouteFilterPrefixesListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetVirtualInterfaceName())
-            {
-                context.Writer.WritePropertyName("virtualInterfaceName");
-                context.Writer.Write(requestObject.VirtualInterfaceName);
-            }
-
-            if(requestObject.IsSetVlan())
-            {
-                context.Writer.WritePropertyName("vlan");
-                context.Writer.Write(requestObject.Vlan);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static NewPublicVirtualInterfaceAllocationMarshaller Instance = new NewPublicVirtualInterfaceAllocationMarshaller();
+        public readonly static NewBGPPeerMarshaller Instance = new NewBGPPeerMarshaller();
 
     }
 }

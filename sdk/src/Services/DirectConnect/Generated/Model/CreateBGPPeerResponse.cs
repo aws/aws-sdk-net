@@ -28,37 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
-    /// A route filter prefix that the customer can advertise through Border Gateway Protocol
-    /// (BGP) over a public virtual interface.
+    /// The response received when CreateBGPPeer is called.
     /// </summary>
-    public partial class RouteFilterPrefix
+    public partial class CreateBGPPeerResponse : AmazonWebServiceResponse
     {
-        private string _cidr;
+        private VirtualInterface _virtualInterface;
 
         /// <summary>
-        /// Gets and sets the property Cidr. 
-        /// <para>
-        /// CIDR notation for the advertised route. Multiple routes are separated by commas.
-        /// </para>
-        ///  
-        /// <para>
-        /// IPv6 CIDRs must be at least a /64 or shorter
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: 10.10.10.0/24,10.10.11.0/24,2001:db8::/64
-        /// </para>
+        /// Gets and sets the property VirtualInterface.
         /// </summary>
-        public string Cidr
+        public VirtualInterface VirtualInterface
         {
-            get { return this._cidr; }
-            set { this._cidr = value; }
+            get { return this._virtualInterface; }
+            set { this._virtualInterface = value; }
         }
 
-        // Check to see if Cidr property is set
-        internal bool IsSetCidr()
+        // Check to see if VirtualInterface property is set
+        internal bool IsSetVirtualInterface()
         {
-            return this._cidr != null;
+            return this._virtualInterface != null;
         }
 
     }

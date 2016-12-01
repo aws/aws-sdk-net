@@ -426,6 +426,37 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  CreateBGPPeer
+
+        internal CreateBGPPeerResponse CreateBGPPeer(CreateBGPPeerRequest request)
+        {
+            var marshaller = new CreateBGPPeerRequestMarshaller();
+            var unmarshaller = CreateBGPPeerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBGPPeerRequest,CreateBGPPeerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBGPPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBGPPeer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateBGPPeerResponse> CreateBGPPeerAsync(CreateBGPPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateBGPPeerRequestMarshaller();
+            var unmarshaller = CreateBGPPeerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateBGPPeerRequest,CreateBGPPeerResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateConnection
 
         internal CreateConnectionResponse CreateConnection(CreateConnectionRequest request)
@@ -545,6 +576,37 @@ namespace Amazon.DirectConnect
             var unmarshaller = CreatePublicVirtualInterfaceResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreatePublicVirtualInterfaceRequest,CreatePublicVirtualInterfaceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteBGPPeer
+
+        internal DeleteBGPPeerResponse DeleteBGPPeer(DeleteBGPPeerRequest request)
+        {
+            var marshaller = new DeleteBGPPeerRequestMarshaller();
+            var unmarshaller = DeleteBGPPeerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBGPPeerRequest,DeleteBGPPeerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBGPPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBGPPeer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteBGPPeerResponse> DeleteBGPPeerAsync(DeleteBGPPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteBGPPeerRequestMarshaller();
+            var unmarshaller = DeleteBGPPeerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBGPPeerRequest,DeleteBGPPeerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
