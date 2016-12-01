@@ -374,6 +374,10 @@
       <Project>{60819F67-5CD7-41A4-9E02-BB27E5A3F715}</Project>
       <Name>AWSSDK.WorkSpaces.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\XRay\AWSSDK.XRay.Net45.csproj">
+      <Project>{5AA74244-EFF5-480C-A52F-AC4C7587786A}</Project>
+      <Name>AWSSDK.XRay.Net45</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj">

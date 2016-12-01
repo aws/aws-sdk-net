@@ -1004,6 +1004,15 @@
             "region-lookup-name": "workspaces",
             "service-url": "https://workspaces.us-east-1.amazonaws.com",
             "synopsis": "Amazon WorkSpaces is a managed desktop computing service in the cloud."
+        },
+        {
+            "active": true,
+
+            "model": "xray",
+            "base-name": "XRay",
+            "authentication-service-name": "xray",
+            "region-lookup-name": "xray",
+            "synopsis": "AWS X-Ray helps developers analyze and debug distributed applications. With X-Ray, you can understand how your application and its underlying services are performing to identify and troubleshoot the root cause of performance issues and errors."
         }
     ]
 }
