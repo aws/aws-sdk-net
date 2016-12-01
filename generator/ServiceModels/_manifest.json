@@ -620,6 +620,14 @@
             "synopsis": "Amazon Kinesis Firehose is a fully managed service for ingesting data streams directly into AWS data services such as Amazon S3 and Amazon Redshift.",
             "platforms": [ "Unity" ]
         },
+        {
+            "active" : true,
+            "model" : "health",
+            "base-name": "AWSHealth",
+            "region-lookup-name": "health",
+            "authentication-service-name" : "health",
+            "synopsis": "The AWS Health API serves as the primary source for you to receive personalized information related to your AWS infrastructure, guiding your through scheduled changes, and accelerating the troubleshooting of issues impacting your AWS resources and accounts."
+        },
 		{
             "active": true,
 

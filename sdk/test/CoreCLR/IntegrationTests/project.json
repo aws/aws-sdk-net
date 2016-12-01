@@ -100,7 +100,8 @@
         "Rekognition"                     : "1.0.0-*",
         "XRay"                            : "1.0.0-*",
         "Shield"                          : "1.0.0-*",
-        "Pinpoint"                        : "1.0.0-*"
+        "Pinpoint"                        : "1.0.0-*",
+        "AWSHealth"                       : "1.0.0-*"
     },
     "testRunner"   : "xunit",
     "frameworks"   : {

@@ -80,6 +80,10 @@
       <Project>{88F2CD8C-2C47-4E66-A4D4-93B2CF5BDCBC}</Project>
       <Name>AWSSDK.AutoScaling.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\AWSHealth\AWSSDK.AWSHealth.Net35.csproj">
+      <Project>{51D1852C-D945-4086-B169-BAFCED9132AC}</Project>
+      <Name>AWSSDK.AWSHealth.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\AWSMarketplaceCommerceAnalytics\AWSSDK.AWSMarketplaceCommerceAnalytics.Net35.csproj">
       <Project>{51D44631-1D3D-4C44-A1F1-0AB86639E682}</Project>
       <Name>AWSSDK.AWSMarketplaceCommerceAnalytics.Net35</Name>

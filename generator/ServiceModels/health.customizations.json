@@ -1,0 +1,11 @@
+{
+    "shapeModifiers": {
+        "Event": {
+            "modify": [
+                {
+                    "Event": { "emitPropertyName": "Value" }
+                }
+            ]
+        }
+    }
+}

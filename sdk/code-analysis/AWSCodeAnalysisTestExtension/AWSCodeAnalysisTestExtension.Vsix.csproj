@@ -72,6 +72,10 @@
       <Project>{DE877AEA-BBDF-43E5-90C5-765D0B02BFC3}</Project>
       <Name>AWSSDK.AutoScaling.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/AWSHealth/AWSSDK.AWSHealth.CodeAnalysis.csproj">
+      <Project>{7F0433C6-FE15-4580-A334-B9B9F5A19F04}</Project>
+      <Name>AWSSDK.AWSHealth.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/AWSMarketplaceCommerceAnalytics/AWSSDK.AWSMarketplaceCommerceAnalytics.CodeAnalysis.csproj">
       <Project>{CE92E696-6109-4623-9C98-F353D3B85527}</Project>
       <Name>AWSSDK.AWSMarketplaceCommerceAnalytics.CodeAnalysis</Name>
