@@ -98,7 +98,8 @@
         "Lightsail"                       : "1.0.0-*",
         "Polly"                           : "1.0.0-*",
         "Rekognition"                     : "1.0.0-*",
-        "XRay"                            : "1.0.0-*"
+        "XRay"                            : "1.0.0-*",
+        "Shield"                          : "1.0.0-*"
     },
     "testRunner"   : "xunit",
     "frameworks"   : {

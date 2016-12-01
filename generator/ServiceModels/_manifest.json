@@ -718,6 +718,16 @@
         {
             "active": true,
 
+            "model": "shield",
+            "base-name": "Shield",
+            "region-lookup-name": "shield",
+            "authentication-service-name": "shield",
+            "service-url": "https://shield.us-east-1.amazonaws.com",
+            "synopsis": "AWS Shield protects web applications from large and sophisticated DDoS attacks at Layer 3, 4 and 7. In addition AWS Shield provides visibility in attacks, and access to 24X7 DDoS Response Team."
+        },
+        {
+            "active": true,
+
             "model": "snowball",
             "base-name": "Snowball",
             "region-lookup-name": "snowball",

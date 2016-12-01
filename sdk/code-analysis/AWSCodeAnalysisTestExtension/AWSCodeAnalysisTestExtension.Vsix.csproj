@@ -340,6 +340,10 @@
       <Project>{89E9593C-1969-4C92-8722-989E3AE1E3B4}</Project>
       <Name>AWSSDK.ServiceCatalog.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Shield/AWSSDK.Shield.CodeAnalysis.csproj">
+      <Project>{03C02718-4F53-4F68-972B-750EF9839187}</Project>
+      <Name>AWSSDK.Shield.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SimpleDB/AWSSDK.SimpleDB.CodeAnalysis.csproj">
       <Project>{63F6BADD-A734-409F-836A-46817493F7C6}</Project>
       <Name>AWSSDK.SimpleDB.CodeAnalysis</Name>

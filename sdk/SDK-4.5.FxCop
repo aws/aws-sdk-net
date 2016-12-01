@@ -93,6 +93,7 @@
       <Directory>$(ProjectDir)/src/Services/securitytoken/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/servermigrationservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/servicecatalog/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/shield/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/simpledb/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/simpleemail/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/simplenotificationservice/bin/Release/net45/</Directory>
@@ -178,6 +179,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SecurityToken.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ServerMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ServiceCatalog.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Shield.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SimpleDB.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SimpleEmail.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SimpleNotificationService.dll" Analyze="True" AnalyzeAllChildren="True" />

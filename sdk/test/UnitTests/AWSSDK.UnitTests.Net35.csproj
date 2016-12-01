@@ -344,6 +344,10 @@
       <Project>{F263FC0C-4701-4B32-A021-9B7C328BA85E}</Project>
       <Name>AWSSDK.ServiceCatalog.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Shield\AWSSDK.Shield.Net35.csproj">
+      <Project>{8F7D1017-B267-4838-BF10-A74C66A4B126}</Project>
+      <Name>AWSSDK.Shield.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\SimpleDB\AWSSDK.SimpleDB.Net35.csproj">
       <Project>{18355D7A-4D71-4CBF-AC85-EB9CA5E3533E}</Project>
       <Name>AWSSDK.SimpleDB.Net35</Name>
