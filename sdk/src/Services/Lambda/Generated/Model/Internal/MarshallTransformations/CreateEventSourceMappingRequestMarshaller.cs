@@ -95,6 +95,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StartingPosition);
                 }
 
+                if(publicRequest.IsSetStartingPositionTimestamp())
+                {
+                    context.Writer.WritePropertyName("StartingPositionTimestamp");
+                    context.Writer.Write(publicRequest.StartingPositionTimestamp);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

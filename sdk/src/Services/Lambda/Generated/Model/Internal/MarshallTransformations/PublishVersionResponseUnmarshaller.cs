@@ -63,6 +63,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.CodeSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeadLetterConfig", targetDepth))
+                {
+                    var unmarshaller = DeadLetterConfigUnmarshaller.Instance;
+                    response.DeadLetterConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
