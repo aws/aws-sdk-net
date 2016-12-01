@@ -19,4 +19,8 @@ namespace Amazon.Runtime.Internal
     public class AutoConstructedList<T> : List<T>
     {
     }
+
+    public class AutoConstructedDictionary<K, V> : Dictionary<K, V>
+    {
+    }
 }
