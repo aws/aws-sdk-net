@@ -91,6 +91,7 @@
         "Snowball"                        : "1.0.0-*",
         "Budgets"                         : "1.0.0-*",
         "ServerMigrationService"          : "1.0.0-*",
+        "StepFunctions"                   : "1.0.0-*",
         "Lightsail"                       : "1.0.0-*",
         "Polly"                           : "1.0.0-*",
         "Rekognition"                     : "1.0.0-*",

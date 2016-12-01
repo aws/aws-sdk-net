@@ -360,6 +360,10 @@
       <Project>{1A3A5C87-069B-4D11-854A-F476BA5122F4}</Project>
       <Name>AWSSDK.SQS.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\StepFunctions\AWSSDK.StepFunctions.Net35.csproj">
+      <Project>{AFC5D74F-DC02-4B61-967D-019C036E9591}</Project>
+      <Name>AWSSDK.StepFunctions.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\StorageGateway\AWSSDK.StorageGateway.Net35.csproj">
       <Project>{E5D769F1-F0F0-4CA4-B2D6-3DE560DCE248}</Project>
       <Name>AWSSDK.StorageGateway.Net35</Name>
