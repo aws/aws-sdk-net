@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -43,13 +43,28 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>cidr</code> - The CIDR block of the VPC. The CIDR block you specify must exactly
-        /// match the VPC's CIDR block for information to be returned for the VPC. Must contain
-        /// the slash followed by one or two digits (for example, <code>/28</code>).
+        ///  <code>cidr</code> - The IPv4 CIDR block of the VPC. The CIDR block you specify must
+        /// exactly match the VPC's CIDR block for information to be returned for the VPC. Must
+        /// contain the slash followed by one or two digits (for example, <code>/28</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>dhcp-options-id</code> - The ID of a set of DHCP options.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block associated
+        /// with the VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ipv6-cidr-block-association.association-id</code> - The association ID for
+        /// an IPv6 CIDR block associated with the VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
+        /// associated with the VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>

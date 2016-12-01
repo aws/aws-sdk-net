@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private int? _fromPort;
         private string _ipProtocol;
         private List<string> _ipRanges = new List<string>();
+        private List<Ipv6Range> _ipv6Ranges = new List<Ipv6Range>();
         private List<PrefixListId> _prefixListIds = new List<PrefixListId>();
         private int? _toPort;
         private List<UserIdGroupPair> _userIdGroupPairs = new List<UserIdGroupPair>();
@@ -42,8 +43,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property FromPort. 
         /// <para>
-        /// The start of port range for the TCP and UDP protocols, or an ICMP type number. A value
-        /// of <code>-1</code> indicates all ICMP types.
+        /// The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type number.
+        /// A value of <code>-1</code> indicates all ICMP/ICMPv6 types.
         /// </para>
         /// </summary>
         public int FromPort
@@ -61,14 +62,19 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpProtocol. 
         /// <para>
-        /// The IP protocol name (for <code>tcp</code>, <code>udp</code>, and <code>icmp</code>)
-        /// or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+        /// The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>) or number
+        /// (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
         /// Numbers</a>). 
         /// </para>
         ///  
         /// <para>
-        /// [EC2-VPC only] When you authorize or revoke security group rules, you can use <code>-1</code>
-        /// to specify all.
+        /// [EC2-VPC only] Use <code>-1</code> to specify all protocols. When authorizing security
+        /// group rules, specifying <code>-1</code> or a protocol number other than <code>tcp</code>,
+        /// <code>udp</code>, <code>icmp</code>, or <code>58</code> (ICMPv6) allows traffic on
+        /// all ports, regardless of any port range you specify. For <code>tcp</code>, <code>udp</code>,
+        /// and <code>icmp</code>, you must specify a port range. For <code>58</code> (ICMPv6),
+        /// you can optionally specify a port range; if you don't, traffic for all types and codes
+        /// is allowed when authorizing rules. 
         /// </para>
         /// </summary>
         public string IpProtocol
@@ -86,7 +92,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpRanges. 
         /// <para>
-        /// One or more IP ranges.
+        /// One or more IPv4 ranges.
         /// </para>
         /// </summary>
         public List<string> IpRanges
@@ -99,6 +105,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIpRanges()
         {
             return this._ipRanges != null && this._ipRanges.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Ranges. 
+        /// <para>
+        /// [EC2-VPC only] One or more IPv6 ranges.
+        /// </para>
+        /// </summary>
+        public List<Ipv6Range> Ipv6Ranges
+        {
+            get { return this._ipv6Ranges; }
+            set { this._ipv6Ranges = value; }
+        }
+
+        // Check to see if Ipv6Ranges property is set
+        internal bool IsSetIpv6Ranges()
+        {
+            return this._ipv6Ranges != null && this._ipv6Ranges.Count > 0; 
         }
 
         /// <summary>
@@ -126,8 +150,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ToPort. 
         /// <para>
-        /// The end of port range for the TCP and UDP protocols, or an ICMP code. A value of <code>-1</code>
-        /// indicates all ICMP codes for the specified ICMP type.
+        /// The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value
+        /// of <code>-1</code> indicates all ICMP/ICMPv6 codes for the specified ICMP type.
         /// </para>
         /// </summary>
         public int ToPort

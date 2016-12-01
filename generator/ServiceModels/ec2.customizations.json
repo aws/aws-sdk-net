@@ -185,6 +185,13 @@
                 }
             ]
         },
+        "Ipv6CidrBlock": {
+            "modify": [
+                {
+                    "Ipv6CidrBlock": { "emitPropertyName": "Value" }
+                }
+            ]
+        },
         "LaunchSpecification": {
             "modify": [
                 {

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -78,13 +78,23 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>route.destination-cidr-block</code> - The CIDR range specified in a route in
-        /// the table.
+        ///  <code>route.destination-cidr-block</code> - The IPv4 CIDR range specified in a route
+        /// in the table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>route.destination-ipv6-cidr-block</code> - The IPv6 CIDR range specified in
+        /// a route in the route table.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>route.destination-prefix-list-id</code> - The ID (prefix) of the AWS service
         /// specified in a route in the table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>route.egress-only-internet-gateway-id</code> - The ID of an egress-only Internet
+        /// gateway specified in a route in the route table.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,13 +34,14 @@ namespace Amazon.EC2.Model
     public partial class DeleteRouteRequest : AmazonEC2Request
     {
         private string _destinationCidrBlock;
+        private string _destinationIpv6CidrBlock;
         private string _routeTableId;
 
         /// <summary>
         /// Gets and sets the property DestinationCidrBlock. 
         /// <para>
-        /// The CIDR range for the route. The value you specify must match the CIDR for the route
-        /// exactly.
+        /// The IPv4 CIDR range for the route. The value you specify must match the CIDR for the
+        /// route exactly.
         /// </para>
         /// </summary>
         public string DestinationCidrBlock
@@ -53,6 +54,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetDestinationCidrBlock()
         {
             return this._destinationCidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationIpv6CidrBlock. 
+        /// <para>
+        /// The IPv6 CIDR range for the route. The value you specify must match the CIDR for the
+        /// route exactly.
+        /// </para>
+        /// </summary>
+        public string DestinationIpv6CidrBlock
+        {
+            get { return this._destinationIpv6CidrBlock; }
+            set { this._destinationIpv6CidrBlock = value; }
+        }
+
+        // Check to see if DestinationIpv6CidrBlock property is set
+        internal bool IsSetDestinationIpv6CidrBlock()
+        {
+            return this._destinationIpv6CidrBlock != null;
         }
 
         /// <summary>

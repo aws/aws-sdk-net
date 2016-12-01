@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -57,8 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OfferingId. 
         /// <para>
-        /// The Convertible Reserved Instance offering ID. If this isn't included in the request,
-        /// the response lists your current Convertible Reserved Instance/s and their value/s.
+        /// The Convertible Reserved Instance offering ID.
         /// </para>
         /// </summary>
         public string OfferingId

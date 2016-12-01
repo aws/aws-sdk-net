@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property IsValidExchange. 
         /// <para>
         /// If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot
-        /// be performed.
+        /// be completed.
         /// </para>
         /// </summary>
         public bool IsValidExchange
@@ -184,7 +184,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ValidationFailureReason. 
         /// <para>
-        /// Describes the reason why the exchange can not be completed.
+        /// Describes the reason why the exchange cannot be completed.
         /// </para>
         /// </summary>
         public string ValidationFailureReason

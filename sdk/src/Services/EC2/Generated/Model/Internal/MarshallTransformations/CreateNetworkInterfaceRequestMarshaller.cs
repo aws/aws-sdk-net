@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EC2");
             request.Parameters.Add("Action", "CreateNetworkInterface");
-            request.Parameters.Add("Version", "2016-09-15");
+            request.Parameters.Add("Version", "2016-11-15");
 
             if(publicRequest != null)
             {
@@ -68,6 +68,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     foreach(var publicRequestlistValue in publicRequest.Groups)
                     {
                         request.Parameters.Add("SecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetIpv6AddressCount())
+                {
+                    request.Parameters.Add("Ipv6AddressCount", StringUtils.FromInt(publicRequest.Ipv6AddressCount));
+                }
+                if(publicRequest.IsSetIpv6Addresses())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Ipv6Addresses)
+                    {
+                        if(publicRequestlistValue.IsSetIpv6Address())
+                        {
+                            request.Parameters.Add("Ipv6Addresses" + "." + publicRequestlistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestlistValue.Ipv6Address));
+                        }
                         publicRequestlistValueIndex++;
                     }
                 }

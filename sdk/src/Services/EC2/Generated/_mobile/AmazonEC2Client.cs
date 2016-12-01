@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 
 
@@ -394,6 +394,37 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AssignIpv6Addresses
+
+        internal AssignIpv6AddressesResponse AssignIpv6Addresses(AssignIpv6AddressesRequest request)
+        {
+            var marshaller = new AssignIpv6AddressesRequestMarshaller();
+            var unmarshaller = AssignIpv6AddressesResponseUnmarshaller.Instance;
+
+            return Invoke<AssignIpv6AddressesRequest,AssignIpv6AddressesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssignIpv6Addresses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssignIpv6Addresses operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AssignIpv6AddressesResponse> AssignIpv6AddressesAsync(AssignIpv6AddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AssignIpv6AddressesRequestMarshaller();
+            var unmarshaller = AssignIpv6AddressesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssignIpv6AddressesRequest,AssignIpv6AddressesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssignPrivateIpAddresses
 
         internal AssignPrivateIpAddressesResponse AssignPrivateIpAddresses(AssignPrivateIpAddressesRequest request)
@@ -513,6 +544,68 @@ namespace Amazon.EC2
             var unmarshaller = AssociateRouteTableResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateRouteTableRequest,AssociateRouteTableResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateSubnetCidrBlock
+
+        internal AssociateSubnetCidrBlockResponse AssociateSubnetCidrBlock(AssociateSubnetCidrBlockRequest request)
+        {
+            var marshaller = new AssociateSubnetCidrBlockRequestMarshaller();
+            var unmarshaller = AssociateSubnetCidrBlockResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSubnetCidrBlockRequest,AssociateSubnetCidrBlockResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSubnetCidrBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSubnetCidrBlock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AssociateSubnetCidrBlockResponse> AssociateSubnetCidrBlockAsync(AssociateSubnetCidrBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AssociateSubnetCidrBlockRequestMarshaller();
+            var unmarshaller = AssociateSubnetCidrBlockResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateSubnetCidrBlockRequest,AssociateSubnetCidrBlockResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateVpcCidrBlock
+
+        internal AssociateVpcCidrBlockResponse AssociateVpcCidrBlock(AssociateVpcCidrBlockRequest request)
+        {
+            var marshaller = new AssociateVpcCidrBlockRequestMarshaller();
+            var unmarshaller = AssociateVpcCidrBlockResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateVpcCidrBlockRequest,AssociateVpcCidrBlockResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateVpcCidrBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateVpcCidrBlock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<AssociateVpcCidrBlockResponse> AssociateVpcCidrBlockAsync(AssociateVpcCidrBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new AssociateVpcCidrBlockRequestMarshaller();
+            var unmarshaller = AssociateVpcCidrBlockResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateVpcCidrBlockRequest,AssociateVpcCidrBlockResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1133,6 +1226,37 @@ namespace Amazon.EC2
             var unmarshaller = CreateDhcpOptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDhcpOptionsRequest,CreateDhcpOptionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateEgressOnlyInternetGateway
+
+        internal CreateEgressOnlyInternetGatewayResponse CreateEgressOnlyInternetGateway(CreateEgressOnlyInternetGatewayRequest request)
+        {
+            var marshaller = new CreateEgressOnlyInternetGatewayRequestMarshaller();
+            var unmarshaller = CreateEgressOnlyInternetGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEgressOnlyInternetGatewayRequest,CreateEgressOnlyInternetGatewayResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEgressOnlyInternetGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEgressOnlyInternetGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateEgressOnlyInternetGatewayResponse> CreateEgressOnlyInternetGatewayAsync(CreateEgressOnlyInternetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateEgressOnlyInternetGatewayRequestMarshaller();
+            var unmarshaller = CreateEgressOnlyInternetGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateEgressOnlyInternetGatewayRequest,CreateEgressOnlyInternetGatewayResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1995,6 +2119,37 @@ namespace Amazon.EC2
             var unmarshaller = DeleteDhcpOptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDhcpOptionsRequest,DeleteDhcpOptionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteEgressOnlyInternetGateway
+
+        internal DeleteEgressOnlyInternetGatewayResponse DeleteEgressOnlyInternetGateway(DeleteEgressOnlyInternetGatewayRequest request)
+        {
+            var marshaller = new DeleteEgressOnlyInternetGatewayRequestMarshaller();
+            var unmarshaller = DeleteEgressOnlyInternetGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEgressOnlyInternetGatewayRequest,DeleteEgressOnlyInternetGatewayResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEgressOnlyInternetGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEgressOnlyInternetGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteEgressOnlyInternetGatewayResponse> DeleteEgressOnlyInternetGatewayAsync(DeleteEgressOnlyInternetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteEgressOnlyInternetGatewayRequestMarshaller();
+            var unmarshaller = DeleteEgressOnlyInternetGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEgressOnlyInternetGatewayRequest,DeleteEgressOnlyInternetGatewayResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3177,6 +3332,37 @@ namespace Amazon.EC2
             var unmarshaller = DescribeDhcpOptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeDhcpOptionsRequest,DescribeDhcpOptionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEgressOnlyInternetGateways
+
+        internal DescribeEgressOnlyInternetGatewaysResponse DescribeEgressOnlyInternetGateways(DescribeEgressOnlyInternetGatewaysRequest request)
+        {
+            var marshaller = new DescribeEgressOnlyInternetGatewaysRequestMarshaller();
+            var unmarshaller = DescribeEgressOnlyInternetGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEgressOnlyInternetGatewaysRequest,DescribeEgressOnlyInternetGatewaysResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEgressOnlyInternetGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEgressOnlyInternetGateways operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeEgressOnlyInternetGatewaysResponse> DescribeEgressOnlyInternetGatewaysAsync(DescribeEgressOnlyInternetGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeEgressOnlyInternetGatewaysRequestMarshaller();
+            var unmarshaller = DescribeEgressOnlyInternetGatewaysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEgressOnlyInternetGatewaysRequest,DescribeEgressOnlyInternetGatewaysResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -5021,9 +5207,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Spot price history. The prices returned are listed in chronological
-        /// order, from the oldest to the most recent, for up to the past 90 days. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
+        /// Describes the Spot price history. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
         /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  
@@ -6065,6 +6249,68 @@ namespace Amazon.EC2
             var unmarshaller = DisassociateRouteTableResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateRouteTableRequest,DisassociateRouteTableResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateSubnetCidrBlock
+
+        internal DisassociateSubnetCidrBlockResponse DisassociateSubnetCidrBlock(DisassociateSubnetCidrBlockRequest request)
+        {
+            var marshaller = new DisassociateSubnetCidrBlockRequestMarshaller();
+            var unmarshaller = DisassociateSubnetCidrBlockResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSubnetCidrBlockRequest,DisassociateSubnetCidrBlockResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateSubnetCidrBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSubnetCidrBlock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DisassociateSubnetCidrBlockResponse> DisassociateSubnetCidrBlockAsync(DisassociateSubnetCidrBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DisassociateSubnetCidrBlockRequestMarshaller();
+            var unmarshaller = DisassociateSubnetCidrBlockResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateSubnetCidrBlockRequest,DisassociateSubnetCidrBlockResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateVpcCidrBlock
+
+        internal DisassociateVpcCidrBlockResponse DisassociateVpcCidrBlock(DisassociateVpcCidrBlockRequest request)
+        {
+            var marshaller = new DisassociateVpcCidrBlockRequestMarshaller();
+            var unmarshaller = DisassociateVpcCidrBlockResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateVpcCidrBlockRequest,DisassociateVpcCidrBlockResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateVpcCidrBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateVpcCidrBlock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DisassociateVpcCidrBlockResponse> DisassociateVpcCidrBlockAsync(DisassociateVpcCidrBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DisassociateVpcCidrBlockRequestMarshaller();
+            var unmarshaller = DisassociateVpcCidrBlockResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateVpcCidrBlockRequest,DisassociateVpcCidrBlockResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -7863,6 +8109,37 @@ namespace Amazon.EC2
             var unmarshaller = TerminateInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<TerminateInstancesRequest,TerminateInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UnassignIpv6Addresses
+
+        internal UnassignIpv6AddressesResponse UnassignIpv6Addresses(UnassignIpv6AddressesRequest request)
+        {
+            var marshaller = new UnassignIpv6AddressesRequestMarshaller();
+            var unmarshaller = UnassignIpv6AddressesResponseUnmarshaller.Instance;
+
+            return Invoke<UnassignIpv6AddressesRequest,UnassignIpv6AddressesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UnassignIpv6Addresses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UnassignIpv6Addresses operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UnassignIpv6AddressesResponse> UnassignIpv6AddressesAsync(UnassignIpv6AddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UnassignIpv6AddressesRequestMarshaller();
+            var unmarshaller = UnassignIpv6AddressesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UnassignIpv6AddressesRequest,UnassignIpv6AddressesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

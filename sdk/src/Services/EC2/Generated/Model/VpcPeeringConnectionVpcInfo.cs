@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class VpcPeeringConnectionVpcInfo
     {
         private string _cidrBlock;
+        private List<Ipv6CidrBlock> _ipv6CidrBlockSet = new List<Ipv6CidrBlock>();
         private string _ownerId;
         private VpcPeeringConnectionOptionsDescription _peeringOptions;
         private string _vpcId;
@@ -40,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CidrBlock. 
         /// <para>
-        /// The CIDR block for the VPC.
+        /// The IPv4 CIDR block for the VPC.
         /// </para>
         /// </summary>
         public string CidrBlock
@@ -53,6 +54,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetCidrBlock()
         {
             return this._cidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6CidrBlockSet. 
+        /// <para>
+        /// The IPv6 CIDR block for the VPC.
+        /// </para>
+        /// </summary>
+        public List<Ipv6CidrBlock> Ipv6CidrBlockSet
+        {
+            get { return this._ipv6CidrBlockSet; }
+            set { this._ipv6CidrBlockSet = value; }
+        }
+
+        // Check to see if Ipv6CidrBlockSet property is set
+        internal bool IsSetIpv6CidrBlockSet()
+        {
+            return this._ipv6CidrBlockSet != null && this._ipv6CidrBlockSet.Count > 0; 
         }
 
         /// <summary>

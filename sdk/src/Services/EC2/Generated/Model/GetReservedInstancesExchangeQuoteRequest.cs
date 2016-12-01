@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -30,8 +30,8 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the GetReservedInstancesExchangeQuote operation.
     /// Returns details about the values and term of your specified Convertible Reserved Instances.
-    /// When an offering ID is specified it returns information about whether the exchange
-    /// is valid and can be performed.
+    /// When a target configuration is specified, it returns information about whether the
+    /// exchange is valid and can be performed.
     /// </summary>
     public partial class GetReservedInstancesExchangeQuoteRequest : AmazonEC2Request
     {
@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ReservedInstanceIds. 
         /// <para>
-        /// The ID/s of the Convertible Reserved Instances you want to exchange.
+        /// The IDs of the Convertible Reserved Instances to exchange.
         /// </para>
         /// </summary>
         public List<string> ReservedInstanceIds
@@ -59,8 +59,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TargetConfigurations. 
         /// <para>
-        /// The configuration requirements of the Convertible Reserved Instances you want in exchange
-        /// for your current Convertible Reserved Instances.
+        /// The configuration requirements of the Convertible Reserved Instances to exchange for
+        /// your current Convertible Reserved Instances.
         /// </para>
         /// </summary>
         public List<TargetConfigurationRequest> TargetConfigurations

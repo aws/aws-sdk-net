@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 
 
@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class EC2MarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("ec2-2016-09-15.normal.json", "ec2.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("ec2-2016-11-15.normal.json", "ec2.customizations.json");
         
 
         [TestMethod]
@@ -141,6 +141,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void AssignIpv6AddressesMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssignIpv6Addresses");
+
+            var request = InstantiateClassGenerator.Execute<AssignIpv6AddressesRequest>();
+            var marshaller = new AssignIpv6AddressesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = AssignIpv6AddressesResponseUnmarshaller.Instance.Unmarshall(context)
+                as AssignIpv6AddressesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void AssignPrivateIpAddressesMarshallTest()
         {
             var operation = service_model.FindOperation("AssignPrivateIpAddresses");
@@ -218,6 +242,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = AssociateRouteTableResponseUnmarshaller.Instance.Unmarshall(context)
                 as AssociateRouteTableResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void AssociateSubnetCidrBlockMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateSubnetCidrBlock");
+
+            var request = InstantiateClassGenerator.Execute<AssociateSubnetCidrBlockRequest>();
+            var marshaller = new AssociateSubnetCidrBlockRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = AssociateSubnetCidrBlockResponseUnmarshaller.Instance.Unmarshall(context)
+                as AssociateSubnetCidrBlockResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void AssociateVpcCidrBlockMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateVpcCidrBlock");
+
+            var request = InstantiateClassGenerator.Execute<AssociateVpcCidrBlockRequest>();
+            var marshaller = new AssociateVpcCidrBlockRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = AssociateVpcCidrBlockResponseUnmarshaller.Instance.Unmarshall(context)
+                as AssociateVpcCidrBlockResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -673,6 +745,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = CreateDhcpOptionsResponseUnmarshaller.Instance.Unmarshall(context)
                 as CreateDhcpOptionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void CreateEgressOnlyInternetGatewayMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateEgressOnlyInternetGateway");
+
+            var request = InstantiateClassGenerator.Execute<CreateEgressOnlyInternetGatewayRequest>();
+            var marshaller = new CreateEgressOnlyInternetGatewayRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = CreateEgressOnlyInternetGatewayResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateEgressOnlyInternetGatewayResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -1292,6 +1388,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DeleteEgressOnlyInternetGatewayMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteEgressOnlyInternetGateway");
+
+            var request = InstantiateClassGenerator.Execute<DeleteEgressOnlyInternetGatewayRequest>();
+            var marshaller = new DeleteEgressOnlyInternetGatewayRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DeleteEgressOnlyInternetGatewayResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteEgressOnlyInternetGatewayResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -1940,6 +2060,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = DescribeDhcpOptionsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeDhcpOptionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DescribeEgressOnlyInternetGatewaysMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeEgressOnlyInternetGateways");
+
+            var request = InstantiateClassGenerator.Execute<DescribeEgressOnlyInternetGatewaysRequest>();
+            var marshaller = new DescribeEgressOnlyInternetGatewaysRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeEgressOnlyInternetGatewaysResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeEgressOnlyInternetGatewaysResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -3503,6 +3647,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DisassociateSubnetCidrBlockMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateSubnetCidrBlock");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateSubnetCidrBlockRequest>();
+            var marshaller = new DisassociateSubnetCidrBlockRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisassociateSubnetCidrBlockResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisassociateSubnetCidrBlockResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void DisassociateVpcCidrBlockMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateVpcCidrBlock");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateVpcCidrBlockRequest>();
+            var marshaller = new DisassociateVpcCidrBlockRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisassociateVpcCidrBlockResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisassociateVpcCidrBlockResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void EnableVgwRoutePropagationMarshallTest()
         {
             var operation = service_model.FindOperation("EnableVgwRoutePropagation");
@@ -4776,6 +4968,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = TerminateInstancesResponseUnmarshaller.Instance.Unmarshall(context)
                 as TerminateInstancesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void UnassignIpv6AddressesMarshallTest()
+        {
+            var operation = service_model.FindOperation("UnassignIpv6Addresses");
+
+            var request = InstantiateClassGenerator.Execute<UnassignIpv6AddressesRequest>();
+            var marshaller = new UnassignIpv6AddressesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = UnassignIpv6AddressesResponseUnmarshaller.Instance.Unmarshall(context)
+                as UnassignIpv6AddressesResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -71,6 +71,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         var unmarshaller = StringUnmarshaller.Instance;
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.IpRanges.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ipv6Ranges/item", targetDepth))
+                    {
+                        var unmarshaller = Ipv6RangeUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Ipv6Ranges.Add(item);
                         continue;
                     }
                     if (context.TestExpression("prefixListIds/item", targetDepth))

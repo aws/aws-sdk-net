@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -103,6 +103,11 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>description</code> - The description of the image (provided during image creation).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ena-support</code> - A Boolean that indicates whether enhanced networking with
+        /// ENA is enabled.
         /// </para>
         ///  </li> <li> 
         /// <para>
