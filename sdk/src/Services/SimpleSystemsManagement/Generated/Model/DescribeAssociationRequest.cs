@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribeAssociationRequest : AmazonSimpleSystemsManagementRequest
     {
+        private string _associationId;
         private string _instanceId;
         private string _name;
 
@@ -50,6 +51,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         {
             _instanceId = instanceId;
             _name = name;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociationId. 
+        /// <para>
+        /// The association ID for which you want information.
+        /// </para>
+        /// </summary>
+        public string AssociationId
+        {
+            get { return this._associationId; }
+            set { this._associationId = value; }
+        }
+
+        // Check to see if AssociationId property is set
+        internal bool IsSetAssociationId()
+        {
+            return this._associationId != null;
         }
 
         /// <summary>

@@ -67,6 +67,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDocumentVersion())
+                {
+                    context.Writer.WritePropertyName("DocumentVersion");
+                    context.Writer.Write(publicRequest.DocumentVersion);
+                }
+
                 if(publicRequest.IsSetInstanceId())
                 {
                     context.Writer.WritePropertyName("InstanceId");
@@ -77,6 +83,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("Name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetOutputLocation())
+                {
+                    context.Writer.WritePropertyName("OutputLocation");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InstanceAssociationOutputLocationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutputLocation, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetParameters())
@@ -96,6 +113,28 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetScheduleExpression())
+                {
+                    context.Writer.WritePropertyName("ScheduleExpression");
+                    context.Writer.Write(publicRequest.ScheduleExpression);
+                }
+
+                if(publicRequest.IsSetTargets())
+                {
+                    context.Writer.WritePropertyName("Targets");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTargetsListValue in publicRequest.Targets)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TargetMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTargetsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
         

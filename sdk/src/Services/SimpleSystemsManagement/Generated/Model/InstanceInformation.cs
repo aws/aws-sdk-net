@@ -34,12 +34,16 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private string _activationId;
         private string _agentVersion;
+        private InstanceAggregatedAssociationOverview _associationOverview;
+        private string _associationStatus;
         private string _computerName;
         private string _iamRole;
         private string _instanceId;
         private string _ipAddress;
         private bool? _isLatestVersion;
+        private DateTime? _lastAssociationExecutionDate;
         private DateTime? _lastPingDateTime;
+        private DateTime? _lastSuccessfulAssociationExecutionDate;
         private string _name;
         private PingStatus _pingStatus;
         private string _platformName;
@@ -51,7 +55,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ActivationId. 
         /// <para>
-        /// The activation ID created by SSM when the server or VM was registered.
+        /// The activation ID created by Systems Manager when the server or VM was registered.
         /// </para>
         /// </summary>
         public string ActivationId
@@ -82,6 +86,42 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAgentVersion()
         {
             return this._agentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociationOverview. 
+        /// <para>
+        /// Information about the association.
+        /// </para>
+        /// </summary>
+        public InstanceAggregatedAssociationOverview AssociationOverview
+        {
+            get { return this._associationOverview; }
+            set { this._associationOverview = value; }
+        }
+
+        // Check to see if AssociationOverview property is set
+        internal bool IsSetAssociationOverview()
+        {
+            return this._associationOverview != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociationStatus. 
+        /// <para>
+        /// The status of the association.
+        /// </para>
+        /// </summary>
+        public string AssociationStatus
+        {
+            get { return this._associationStatus; }
+            set { this._associationStatus = value; }
+        }
+
+        // Check to see if AssociationStatus property is set
+        internal bool IsSetAssociationStatus()
+        {
+            return this._associationStatus != null;
         }
 
         /// <summary>
@@ -176,9 +216,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastAssociationExecutionDate. 
+        /// <para>
+        /// The date the association was last executed.
+        /// </para>
+        /// </summary>
+        public DateTime LastAssociationExecutionDate
+        {
+            get { return this._lastAssociationExecutionDate.GetValueOrDefault(); }
+            set { this._lastAssociationExecutionDate = value; }
+        }
+
+        // Check to see if LastAssociationExecutionDate property is set
+        internal bool IsSetLastAssociationExecutionDate()
+        {
+            return this._lastAssociationExecutionDate.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LastPingDateTime. 
         /// <para>
-        /// The date and time when agent last pinged SSM service. 
+        /// The date and time when agent last pinged Systems Manager service. 
         /// </para>
         /// </summary>
         public DateTime LastPingDateTime
@@ -191,6 +249,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetLastPingDateTime()
         {
             return this._lastPingDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastSuccessfulAssociationExecutionDate. 
+        /// <para>
+        /// The last date the association was successfully run.
+        /// </para>
+        /// </summary>
+        public DateTime LastSuccessfulAssociationExecutionDate
+        {
+            get { return this._lastSuccessfulAssociationExecutionDate.GetValueOrDefault(); }
+            set { this._lastSuccessfulAssociationExecutionDate = value; }
+        }
+
+        // Check to see if LastSuccessfulAssociationExecutionDate property is set
+        internal bool IsSetLastSuccessfulAssociationExecutionDate()
+        {
+            return this._lastSuccessfulAssociationExecutionDate.HasValue; 
         }
 
         /// <summary>

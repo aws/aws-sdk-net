@@ -76,10 +76,22 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.Comment = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CompletedCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.CompletedCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DocumentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DocumentName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ErrorCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ErrorCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ExpiresAfter", targetDepth))
@@ -92,6 +104,18 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.InstanceIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxConcurrency", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MaxConcurrency = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxErrors", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MaxErrors = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("NotificationConfig", targetDepth))
@@ -110,6 +134,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OutputS3KeyPrefix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OutputS3Region", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutputS3Region = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Parameters", targetDepth))
@@ -134,6 +164,24 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatusDetails", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TargetCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TargetCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Targets", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Target, TargetUnmarshaller>(TargetUnmarshaller.Instance);
+                    unmarshalledObject.Targets = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

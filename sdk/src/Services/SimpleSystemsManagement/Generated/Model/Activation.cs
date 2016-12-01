@@ -47,7 +47,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ActivationId. 
         /// <para>
-        /// The ID created by SSM when you submitted the activation.
+        /// The ID created by Systems Manager when you submitted the activation.
         /// </para>
         /// </summary>
         public string ActivationId

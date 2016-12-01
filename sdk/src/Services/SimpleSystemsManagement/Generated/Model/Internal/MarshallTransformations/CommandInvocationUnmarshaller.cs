@@ -94,6 +94,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstanceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NotificationConfig", targetDepth))
                 {
                     var unmarshaller = NotificationConfigUnmarshaller.Instance;
@@ -112,10 +118,28 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.ServiceRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StandardErrorUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StandardErrorUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StandardOutputUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StandardOutputUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatusDetails", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TraceOutput", targetDepth))

@@ -32,9 +32,31 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class CreateAssociationBatchRequestEntry
     {
+        private string _documentVersion;
         private string _instanceId;
         private string _name;
+        private InstanceAssociationOutputLocation _outputLocation;
         private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
+        private string _scheduleExpression;
+        private List<Target> _targets = new List<Target>();
+
+        /// <summary>
+        /// Gets and sets the property DocumentVersion. 
+        /// <para>
+        /// The document version.
+        /// </para>
+        /// </summary>
+        public string DocumentVersion
+        {
+            get { return this._documentVersion; }
+            set { this._documentVersion = value; }
+        }
+
+        // Check to see if DocumentVersion property is set
+        internal bool IsSetDocumentVersion()
+        {
+            return this._documentVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -73,6 +95,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutputLocation. 
+        /// <para>
+        /// An Amazon S3 bucket where you want to store the results of this request.
+        /// </para>
+        /// </summary>
+        public InstanceAssociationOutputLocation OutputLocation
+        {
+            get { return this._outputLocation; }
+            set { this._outputLocation = value; }
+        }
+
+        // Check to see if OutputLocation property is set
+        internal bool IsSetOutputLocation()
+        {
+            return this._outputLocation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
         /// A description of the parameters for a document. 
@@ -88,6 +128,42 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleExpression. 
+        /// <para>
+        /// A cron expression that specifies a schedule when the association runs.
+        /// </para>
+        /// </summary>
+        public string ScheduleExpression
+        {
+            get { return this._scheduleExpression; }
+            set { this._scheduleExpression = value; }
+        }
+
+        // Check to see if ScheduleExpression property is set
+        internal bool IsSetScheduleExpression()
+        {
+            return this._scheduleExpression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Targets. 
+        /// <para>
+        /// The instances targeted by the request.
+        /// </para>
+        /// </summary>
+        public List<Target> Targets
+        {
+            get { return this._targets; }
+            set { this._targets = value; }
+        }
+
+        // Check to see if Targets property is set
+        internal bool IsSetTargets()
+        {
+            return this._targets != null && this._targets.Count > 0; 
         }
 
     }

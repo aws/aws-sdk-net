@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class GetDocumentRequest : AmazonSimpleSystemsManagementRequest
     {
+        private string _documentVersion;
         private string _name;
 
         /// <summary>
@@ -47,6 +48,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         public GetDocumentRequest(string name)
         {
             _name = name;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentVersion. 
+        /// <para>
+        /// The document version for which you want information.
+        /// </para>
+        /// </summary>
+        public string DocumentVersion
+        {
+            get { return this._documentVersion; }
+            set { this._documentVersion = value; }
+        }
+
+        // Check to see if DocumentVersion property is set
+        internal bool IsSetDocumentVersion()
+        {
+            return this._documentVersion != null;
         }
 
         /// <summary>

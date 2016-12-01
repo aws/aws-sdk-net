@@ -76,6 +76,18 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AssociationOverview", targetDepth))
+                {
+                    var unmarshaller = InstanceAggregatedAssociationOverviewUnmarshaller.Instance;
+                    unmarshalledObject.AssociationOverview = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AssociationStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AssociationStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ComputerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -106,10 +118,22 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsLatestVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastAssociationExecutionDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastAssociationExecutionDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastPingDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastPingDateTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LastSuccessfulAssociationExecutionDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastSuccessfulAssociationExecutionDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))

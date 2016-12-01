@@ -39,8 +39,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property NotificationArn. 
         /// <para>
-        /// An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. SSM pushes
-        /// notifications about command status changes to this topic.
+        /// An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. Run Command
+        /// pushes notifications about command status changes to this topic.
         /// </para>
         /// </summary>
         public string NotificationArn

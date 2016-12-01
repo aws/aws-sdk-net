@@ -32,9 +32,12 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DocumentIdentifier
     {
+        private DocumentType _documentType;
+        private string _documentVersion;
         private string _name;
         private string _owner;
         private List<string> _platformTypes = new List<string>();
+        private string _schemaVersion;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -48,6 +51,42 @@ namespace Amazon.SimpleSystemsManagement.Model
         public DocumentIdentifier(string name)
         {
             _name = name;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentType. 
+        /// <para>
+        /// The document type.
+        /// </para>
+        /// </summary>
+        public DocumentType DocumentType
+        {
+            get { return this._documentType; }
+            set { this._documentType = value; }
+        }
+
+        // Check to see if DocumentType property is set
+        internal bool IsSetDocumentType()
+        {
+            return this._documentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentVersion. 
+        /// <para>
+        /// The document version.
+        /// </para>
+        /// </summary>
+        public string DocumentVersion
+        {
+            get { return this._documentVersion; }
+            set { this._documentVersion = value; }
+        }
+
+        // Check to see if DocumentVersion property is set
+        internal bool IsSetDocumentVersion()
+        {
+            return this._documentVersion != null;
         }
 
         /// <summary>
@@ -102,6 +141,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetPlatformTypes()
         {
             return this._platformTypes != null && this._platformTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaVersion. 
+        /// <para>
+        /// The schema version.
+        /// </para>
+        /// </summary>
+        public string SchemaVersion
+        {
+            get { return this._schemaVersion; }
+            set { this._schemaVersion = value; }
+        }
+
+        // Check to see if SchemaVersion property is set
+        internal bool IsSetSchemaVersion()
+        {
+            return this._schemaVersion != null;
         }
 
     }

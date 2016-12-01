@@ -36,10 +36,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _output;
         private string _outputS3BucketName;
         private string _outputS3KeyPrefix;
+        private string _outputS3Region;
         private int? _responseCode;
         private DateTime? _responseFinishDateTime;
         private DateTime? _responseStartDateTime;
+        private string _standardErrorUrl;
+        private string _standardOutputUrl;
         private CommandPluginStatus _status;
+        private string _statusDetails;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -83,7 +87,28 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property OutputS3BucketName. 
         /// <para>
         /// The S3 bucket where the responses to the command executions should be stored. This
-        /// was requested when issuing the command.
+        /// was requested when issuing the command. For example, in the following response:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>test_folder</code> is the name of the Amazon S3 bucket;
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>i-1234567876543</code> is the instance ID;
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>awsrunShellScript</code> is the name of the plugin.
         /// </para>
         /// </summary>
         public string OutputS3BucketName
@@ -102,7 +127,29 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property OutputS3KeyPrefix. 
         /// <para>
         /// The S3 directory path inside the bucket where the responses to the command executions
-        /// should be stored. This was requested when issuing the command. 
+        /// should be stored. This was requested when issuing the command. For example, in the
+        /// following response:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>test_folder</code> is the name of the Amazon S3 bucket;
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>i-1234567876543</code> is the instance ID;
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>awsrunShellScript</code> is the name of the plugin.
         /// </para>
         /// </summary>
         public string OutputS3KeyPrefix
@@ -115,6 +162,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetOutputS3KeyPrefix()
         {
             return this._outputS3KeyPrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputS3Region. 
+        /// <para>
+        /// The name of the region where the output is stored in Amazon S3.
+        /// </para>
+        /// </summary>
+        public string OutputS3Region
+        {
+            get { return this._outputS3Region; }
+            set { this._outputS3Region = value; }
+        }
+
+        // Check to see if OutputS3Region property is set
+        internal bool IsSetOutputS3Region()
+        {
+            return this._outputS3Region != null;
         }
 
         /// <summary>
@@ -173,6 +238,44 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StandardErrorUrl. 
+        /// <para>
+        /// The URL for the complete text written by the plugin to stderr. If execution is not
+        /// yet complete, then this string is empty.
+        /// </para>
+        /// </summary>
+        public string StandardErrorUrl
+        {
+            get { return this._standardErrorUrl; }
+            set { this._standardErrorUrl = value; }
+        }
+
+        // Check to see if StandardErrorUrl property is set
+        internal bool IsSetStandardErrorUrl()
+        {
+            return this._standardErrorUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StandardOutputUrl. 
+        /// <para>
+        /// The URL for the complete text written by the plugin to stdout in Amazon S3. If the
+        /// Amazon S3 bucket for the command was not specified, then this string is empty.
+        /// </para>
+        /// </summary>
+        public string StandardOutputUrl
+        {
+            get { return this._standardOutputUrl; }
+            set { this._standardOutputUrl = value; }
+        }
+
+        // Check to see if StandardOutputUrl property is set
+        internal bool IsSetStandardOutputUrl()
+        {
+            return this._standardOutputUrl != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of this plugin. You can execute a document with multiple plugins.
@@ -188,6 +291,83 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusDetails. 
+        /// <para>
+        /// A detailed status of the plugin execution. <code>StatusDetails</code> includes more
+        /// information than <code>Status</code> because it includes states resulting from error
+        /// and concurrency control parameters. <code>StatusDetails</code> can show different
+        /// results than <code>Status</code>. For more information about these statuses, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-commands.html">Monitor
+        /// Commands</a> (Linux) or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/monitor-commands.html">Monitor
+        /// Commands</a> (Windows). <code>StatusDetails</code> can be one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Pending – The command has not been sent to the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// In Progress – The command has been sent to the instance but has not reached a terminal
+        /// state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Success – The execution of the command or plugin was successfully completed. This
+        /// is a terminal state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Delivery Timed Out – The command was not delivered to the instance before the delivery
+        /// timeout expired. Delivery timeouts do not count against the parent command’s <code>MaxErrors</code>
+        /// limit, but they do contribute to whether the parent command status is <code>Success</code>
+        /// or <code>Incomplete</code>. This is a terminal state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Execution Timed Out – Command execution started on the instance, but the execution
+        /// was not complete before the execution timeout expired. Execution timeouts count against
+        /// the <code>MaxErrors</code> limit of the parent command. This is a terminal state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Failed – The command was not successful on the instance. For a plugin, this indicates
+        /// that the result code was not zero. For a command invocation, this indicates that the
+        /// result code for one or more plugins was not zero. Invocation failures count against
+        /// the <code>MaxErrors</code> limit of the parent command. This is a terminal state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Canceled – The command was terminated before it was completed. This is a terminal
+        /// state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Undeliverable – The command can't be delivered to the instance. The instance might
+        /// not exist, or it might not be responding. Undeliverable invocations don't count against
+        /// the parent command’s <code>MaxErrors</code> limit, and they don't contribute to whether
+        /// the parent command status is <code>Success</code> or <code>Incomplete</code>. This
+        /// is a terminal state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Terminated – The parent command exceeded its <code>MaxErrors</code> limit and subsequent
+        /// command invocations were canceled by the system. This is a terminal state.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string StatusDetails
+        {
+            get { return this._statusDetails; }
+            set { this._statusDetails = value; }
+        }
+
+        // Check to see if StatusDetails property is set
+        internal bool IsSetStatusDetails()
+        {
+            return this._statusDetails != null;
         }
 
     }

@@ -86,15 +86,6 @@
             "InstanceIds"
           ]
         ]
-      },
-      "UpdateAssociation": {
-        "methodForms": [
-          [
-            "AssociationStatus",
-            "InstanceId",
-            "Name"
-          ]
-        ]
       }
     }
   }
