@@ -287,6 +287,9 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="request">Container for the necessary parameters to execute the CreateApplicationVersion service method.</param>
         /// 
         /// <returns>The response from the CreateApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
+        /// <exception cref="Amazon.ElasticBeanstalk.Model.CodeBuildNotInServiceRegionException">
+        /// The CodeBuild service is not supported in this region.
+        /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
         /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
@@ -757,16 +760,14 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Retrieve a list of application versions stored in your AWS Elastic Beanstalk storage
-        /// bucket.
+        /// Retrieve a list of application versions.
         /// </summary>
         /// 
         /// <returns>The response from the DescribeApplicationVersions service method, as returned by ElasticBeanstalk.</returns>
         DescribeApplicationVersionsResponse DescribeApplicationVersions();
 
         /// <summary>
-        /// Retrieve a list of application versions stored in your AWS Elastic Beanstalk storage
-        /// bucket.
+        /// Retrieve a list of application versions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationVersions service method.</param>
         /// 
@@ -1183,9 +1184,9 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Returns more detailed information about the health of the specified instances (for
-        /// example, CPU utilization, load average, and causes). The <b>DescribeInstancesHealth</b>
-        /// operation is only available with AWS Elastic Beanstalk Enhanced Health.
+        /// Retrives detailed information about the health of instances in your AWS Elastic Beanstalk.
+        /// This operation requires <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+        /// health reporting</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstancesHealth service method.</param>
         /// 

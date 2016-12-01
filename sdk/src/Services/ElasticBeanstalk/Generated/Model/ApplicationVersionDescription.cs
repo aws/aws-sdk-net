@@ -33,6 +33,7 @@ namespace Amazon.ElasticBeanstalk.Model
     public partial class ApplicationVersionDescription
     {
         private string _applicationName;
+        private string _buildArn;
         private DateTime? _dateCreated;
         private DateTime? _dateUpdated;
         private string _description;
@@ -49,7 +50,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of the application associated with this release.
+        /// The name of the application to which the application version belongs.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -62,6 +63,21 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetApplicationName()
         {
             return this._applicationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BuildArn.
+        /// </summary>
+        public string BuildArn
+        {
+            get { return this._buildArn; }
+            set { this._buildArn = value; }
+        }
+
+        // Check to see if BuildArn property is set
+        internal bool IsSetBuildArn()
+        {
+            return this._buildArn != null;
         }
 
         /// <summary>
@@ -103,7 +119,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of this application version.
+        /// The description of the application version.
         /// </para>
         /// </summary>
         public string Description
@@ -119,7 +135,11 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceBuildInformation.
+        /// Gets and sets the property SourceBuildInformation. 
+        /// <para>
+        /// If the version's source code was retrieved from AWS CodeCommit, the location of the
+        /// source code for the application version.
+        /// </para>
         /// </summary>
         public SourceBuildInformation SourceBuildInformation
         {
@@ -136,7 +156,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SourceBundle. 
         /// <para>
-        /// The location where the source bundle is located for this version.
+        /// The storage location of the application version's source bundle in Amazon S3.
         /// </para>
         /// </summary>
         public S3Location SourceBundle
@@ -172,7 +192,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property VersionLabel. 
         /// <para>
-        /// A label uniquely identifying the version for the associated application.
+        /// A unique identifier for the application version.
         /// </para>
         /// </summary>
         public string VersionLabel

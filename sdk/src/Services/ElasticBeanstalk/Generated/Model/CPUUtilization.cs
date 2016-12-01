@@ -28,9 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Represents CPU utilization information from the specified instance that belongs to
-    /// the AWS Elastic Beanstalk environment. Use the <code>instanceId</code> property to
-    /// specify the application instance for which you'd like to return data.
+    /// CPU utilization metrics for an instance.
     /// </summary>
     public partial class CPUUtilization
     {

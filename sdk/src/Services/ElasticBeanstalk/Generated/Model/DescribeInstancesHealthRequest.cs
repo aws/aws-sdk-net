@@ -29,9 +29,9 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstancesHealth operation.
-    /// Returns more detailed information about the health of the specified instances (for
-    /// example, CPU utilization, load average, and causes). The <b>DescribeInstancesHealth</b>
-    /// operation is only available with AWS Elastic Beanstalk Enhanced Health.
+    /// Retrives detailed information about the health of instances in your AWS Elastic Beanstalk.
+    /// This operation requires <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+    /// health reporting</a>.
     /// </summary>
     public partial class DescribeInstancesHealthRequest : AmazonElasticBeanstalkRequest
     {
@@ -43,8 +43,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property AttributeNames. 
         /// <para>
-        /// Specifies the response elements you wish to receive. If no attribute names are specified,
-        /// AWS Elastic Beanstalk only returns a list of instances.
+        /// Specifies the response elements you wish to receive. To retrieve all attributes, set
+        /// to <code>All</code>. If no attribute names are specified, returns a list of instances.
         /// </para>
         /// </summary>
         public List<string> AttributeNames
@@ -62,7 +62,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        /// Specifies the AWS Elastic Beanstalk environment ID.
+        /// Specify the AWS Elastic Beanstalk environment by ID.
         /// </para>
         /// </summary>
         public string EnvironmentId
@@ -80,7 +80,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        /// Specifies the AWS Elastic Beanstalk environment name.
+        /// Specify the AWS Elastic Beanstalk environment by name.
         /// </para>
         /// </summary>
         public string EnvironmentName
@@ -98,7 +98,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Specifies the next token of the request.
+        /// Specify the pagination token returned by a previous call.
         /// </para>
         /// </summary>
         public string NextToken

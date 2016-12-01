@@ -29,8 +29,7 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeApplicationVersions operation.
-    /// Retrieve a list of application versions stored in your AWS Elastic Beanstalk storage
-    /// bucket.
+    /// Retrieve a list of application versions.
     /// </summary>
     public partial class DescribeApplicationVersionsRequest : AmazonElasticBeanstalkRequest
     {
@@ -47,8 +46,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include
-        /// ones that are associated with the specified application.
+        /// Specify an application name to show only application versions for that application.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -102,8 +100,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property VersionLabels. 
         /// <para>
-        /// If specified, restricts the returned descriptions to only include ones that have the
-        /// specified version labels.
+        /// Specify a version label to show a specific application version.
         /// </para>
         /// </summary>
         public List<string> VersionLabels

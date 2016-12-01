@@ -61,7 +61,10 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Namespace.
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        /// The namespace to which the option belongs.
+        /// </para>
         /// </summary>
         public string Namespace
         {
@@ -76,7 +79,10 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OptionName.
+        /// Gets and sets the property OptionName. 
+        /// <para>
+        /// The name of the option.
+        /// </para>
         /// </summary>
         public string OptionName
         {

@@ -323,8 +323,7 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Retrieve a list of application versions stored in your AWS Elastic Beanstalk storage
-        /// bucket.
+        /// Retrieve a list of application versions.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
