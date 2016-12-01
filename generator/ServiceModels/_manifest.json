@@ -809,7 +809,7 @@
         {
             "active": true,
 
-            "model": "opsworks",
+            "model": "opsworks-",
             "base-name": "OpsWorks",
             "region-lookup-name": "opsworks",
             "authentication-service-name": "opsworks",
@@ -835,6 +835,15 @@
           "authentication-service-name": "polly",
           "service-url": "https://polly.us-east-1.amazonaws.com/",
           "synopsis": "Amazon Polly is a service that turns text into lifelike speech, making it easy to develop applications that use high-quality speech to increase engagement and accessibility."
+        },
+        {
+            "active": true,
+
+            "model": "opsworkscm",
+            "base-name": "OpsWorksCM",
+            "region-lookup-name": "opsworks-cm",
+            "authentication-service-name": "opsworks-cm",
+            "synopsis": "AWS OpsWorks for Chef Automate gives customers a single tenant Chef Automate server. The Chef Automate server is fully managed by AWS and supports automatic backup, restore and upgrade operations."
         },
         {
             "active": true,

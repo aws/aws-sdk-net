@@ -1,0 +1,7 @@
+{
+    "shapeSubstitutions" : {
+        "Server" : {
+            "renameShape" : "CMServer"
+        }
+    }
+}
