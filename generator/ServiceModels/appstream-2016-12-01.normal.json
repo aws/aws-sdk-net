@@ -1,0 +1,1212 @@
+{
+  "version":"2.0",
+  "metadata":{
+    "apiVersion":"2016-12-01",
+    "endpointPrefix":"appstream2",
+    "jsonVersion":"1.1",
+    "protocol":"json",
+    "serviceFullName":"Amazon AppStream",
+    "signatureVersion":"v4",
+    "signingName":"appstream",
+    "targetPrefix":"PhotonAdminProxyService",
+    "uid":"appstream-2016-12-01"
+  },
+  "operations":{
+    "AssociateFleet":{
+      "name":"AssociateFleet",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"AssociateFleetRequest"},
+      "output":{"shape":"AssociateFleetResult"},
+      "errors":[
+        {"shape":"LimitExceededException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Attach a fleet to a Stack.</p>"
+    },
+    "CreateFleet":{
+      "name":"CreateFleet",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateFleetRequest"},
+      "output":{"shape":"CreateFleetResult"},
+      "errors":[
+        {"shape":"ResourceAlreadyExistsException"},
+        {"shape":"ResourceNotAvailableException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"InvalidRoleException"}
+      ],
+      "documentation":"<p>Creates a new fleet.</p>"
+    },
+    "CreateStack":{
+      "name":"CreateStack",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateStackRequest"},
+      "output":{"shape":"CreateStackResult"},
+      "errors":[
+        {"shape":"LimitExceededException"},
+        {"shape":"ResourceAlreadyExistsException"}
+      ],
+      "documentation":"<p>Create a new stack.</p>"
+    },
+    "CreateStreamingURL":{
+      "name":"CreateStreamingURL",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateStreamingURLRequest"},
+      "output":{"shape":"CreateStreamingURLResult"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceNotAvailableException"}
+      ],
+      "documentation":"<p>Gives a URL to start a AppStream stream for a user. The URL is valid only for 1 minute from the time that it is generated.</p>"
+    },
+    "DeleteFleet":{
+      "name":"DeleteFleet",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteFleetRequest"},
+      "output":{"shape":"DeleteFleetResult"},
+      "errors":[
+        {"shape":"ResourceInUseException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Deletes a fleet.</p>"
+    },
+    "DeleteStack":{
+      "name":"DeleteStack",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteStackRequest"},
+      "output":{"shape":"DeleteStackResult"},
+      "errors":[
+        {"shape":"ResourceInUseException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Deletes the stack. After this operation completes, the environment can no longer be activated, and the alias reservation is released.</p>"
+    },
+    "DescribeFleets":{
+      "name":"DescribeFleets",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeFleetsRequest"},
+      "output":{"shape":"DescribeFleetsResult"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Describes the fleets. If a fleet name is provided, this operation describes that environment. If name is not provided, this operation describes all the fleets for the AWS account. This operation returns a paginated list of results; use the <code>nextToken</code> to get the next page.</p>"
+    },
+    "DescribeImages":{
+      "name":"DescribeImages",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeImagesRequest"},
+      "output":{"shape":"DescribeImagesResult"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Gets the images. If a list of names is not provided, all images in your account are returned. This operation does not return a paginated result.</p>"
+    },
+    "DescribeSessions":{
+      "name":"DescribeSessions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeSessionsRequest"},
+      "output":{"shape":"DescribeSessionsResult"},
+      "documentation":"<p>Describes the streaming sessions for a stack and fleet. If a user ID is provided, this operation returns streaming sessions for only that user. This operation returns a paginated list of results; use the <code>nextToken</code> to get the next page.</p>"
+    },
+    "DescribeStacks":{
+      "name":"DescribeStacks",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeStacksRequest"},
+      "output":{"shape":"DescribeStacksResult"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Describes the stack. If a stack name is provided, this operation describes that environment. If name is not provided, this operation describes all the stacks for the AWS account. This operation returns a paginated list of results; use the <code>nextToken</code> to get the next page.</p>"
+    },
+    "DisassociateFleet":{
+      "name":"DisassociateFleet",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DisassociateFleetRequest"},
+      "output":{"shape":"DisassociateFleetResult"},
+      "errors":[
+        {"shape":"ResourceInUseException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Detach a fleet from a stack.</p>"
+    },
+    "ExpireSession":{
+      "name":"ExpireSession",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ExpireSessionRequest"},
+      "output":{"shape":"ExpireSessionResult"},
+      "documentation":"<p>This operation immediately stops a streaming session.</p>"
+    },
+    "ListAssociatedFleets":{
+      "name":"ListAssociatedFleets",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListAssociatedFleetsRequest"},
+      "output":{"shape":"ListAssociatedFleetsResult"},
+      "documentation":"<p>Lists all fleets attached to the specified resource.</p>"
+    },
+    "ListAssociatedStacks":{
+      "name":"ListAssociatedStacks",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListAssociatedStacksRequest"},
+      "output":{"shape":"ListAssociatedStacksResult"},
+      "documentation":"<p>Lists all stacks attached to the specified resource.</p>"
+    },
+    "StartFleet":{
+      "name":"StartFleet",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StartFleetRequest"},
+      "output":{"shape":"StartFleetResult"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"LimitExceededException"}
+      ],
+      "documentation":"<p>Activates a fleet.</p>"
+    },
+    "StopFleet":{
+      "name":"StopFleet",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StopFleetRequest"},
+      "output":{"shape":"StopFleetResult"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Deactivates a fleet.</p>"
+    },
+    "UpdateFleet":{
+      "name":"UpdateFleet",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateFleetRequest"},
+      "output":{"shape":"UpdateFleetResult"},
+      "errors":[
+        {"shape":"ResourceInUseException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"InvalidRoleException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Updates an existing fleet. All the attributes except the fleet name can be updated in the INACTIVE state. Only ComputeResourceCapacity and imageName can be updated in any other state. </p>"
+    },
+    "UpdateStack":{
+      "name":"UpdateStack",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateStackRequest"},
+      "output":{"shape":"UpdateStackResult"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ResourceInUseException"}
+      ],
+      "documentation":"<p>Updates the specified fields in the stack with the specified name.</p>"
+    }
+  },
+  "shapes":{
+    "Application":{
+      "type":"structure",
+      "members":{
+        "Name":{
+          "shape":"String",
+          "documentation":"<p>The unique identifier for the application. The format of the identifier is currently undefined, but may contain any of the following symbols: <code>:/._</code> </p>"
+        },
+        "DisplayName":{
+          "shape":"String",
+          "documentation":"<p>The name of the application shown to end users.</p>"
+        },
+        "IconURL":{
+          "shape":"String",
+          "documentation":"<p>The URL for the application icon. This URL may be time-limited.</p>"
+        },
+        "LaunchPath":{
+          "shape":"String",
+          "documentation":"<p>The path to the application executable.</p>"
+        },
+        "LaunchParameters":{
+          "shape":"String",
+          "documentation":"<p>A list of arguments that are passed to the application at launch.</p>"
+        },
+        "Enabled":{
+          "shape":"Boolean",
+          "documentation":"<p>An application can be disabled after image creation if there is a problem.</p>"
+        },
+        "Metadata":{
+          "shape":"Metadata",
+          "documentation":"<p>Attributes that are not necessary for standard use are added to this map.</p>"
+        }
+      },
+      "documentation":"<p>An entry for a single application in the application catalog.</p>"
+    },
+    "Applications":{
+      "type":"list",
+      "member":{"shape":"Application"}
+    },
+    "Arn":{
+      "type":"string",
+      "pattern":"^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$"
+    },
+    "AssociateFleetRequest":{
+      "type":"structure",
+      "required":[
+        "FleetName",
+        "StackName"
+      ],
+      "members":{
+        "FleetName":{
+          "shape":"String",
+          "documentation":"<p>The name of the fleet to attach.</p>"
+        },
+        "StackName":{
+          "shape":"String",
+          "documentation":"<p>The name of the stack to which the fleet is attached.</p>"
+        }
+      }
+    },
+    "AssociateFleetResult":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "Boolean":{"type":"boolean"},
+    "ComputeCapacity":{
+      "type":"structure",
+      "required":["DesiredInstances"],
+      "members":{
+        "DesiredInstances":{
+          "shape":"Integer",
+          "documentation":"<p>The desired number of streaming instances.</p>"
+        }
+      },
+      "documentation":"<p>The capacity configuration for the fleet.</p>"
+    },
+    "ComputeCapacityStatus":{
+      "type":"structure",
+      "required":["Desired"],
+      "members":{
+        "Desired":{
+          "shape":"Integer",
+          "documentation":"<p>The desired number of streaming instances.</p>"
+        },
+        "Running":{
+          "shape":"Integer",
+          "documentation":"<p>The total number of simultaneous streaming instances that are running.</p>"
+        },
+        "InUse":{
+          "shape":"Integer",
+          "documentation":"<p>The number of instances that are being used for streaming.</p>"
+        },
+        "Available":{
+          "shape":"Integer",
+          "documentation":"<p>The number of currently available instances that can be used to stream sessions.</p>"
+        }
+      },
+      "documentation":"<p>The capacity information for the fleet.</p>"
+    },
+    "CreateFleetRequest":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "ImageName",
+        "InstanceType",
+        "ComputeCapacity"
+      ],
+      "members":{
+        "Name":{
+          "shape":"Name",
+          "documentation":"<p>The name of the fleet.</p>"
+        },
+        "ImageName":{
+          "shape":"String",
+          "documentation":"<p>The image name to use.</p>"
+        },
+        "InstanceType":{
+          "shape":"String",
+          "documentation":"<p>The instance type of compute resources for the fleet.</p>"
+        },
+        "ComputeCapacity":{
+          "shape":"ComputeCapacity",
+          "documentation":"<p>Parameters for the capacity allocated to the fleet.</p>"
+        },
+        "VpcConfig":{
+          "shape":"VpcConfig",
+          "documentation":"<p>The VPC configuration for the fleet.</p>"
+        },
+        "MaxUserDurationInSeconds":{
+          "shape":"Integer",
+          "documentation":"<p>The maximum time during which a streaming session can run.</p>"
+        },
+        "DisconnectTimeoutInSeconds":{
+          "shape":"Integer",
+          "documentation":"<p>The time after disconnection when a session is considered to have ended.</p>"
+        },
+        "Description":{
+          "shape":"Description",
+          "documentation":"<p>The description of the fleet.</p>"
+        },
+        "DisplayName":{
+          "shape":"DisplayName",
+          "documentation":"<p>The display name of the fleet.</p>"
+        }
+      },
+      "documentation":"<p>Contains the parameters for the new fleet to create.</p>"
+    },
+    "CreateFleetResult":{
+      "type":"structure",
+      "members":{
+        "Fleet":{
+          "shape":"Fleet",
+          "documentation":"<p>The details for the created fleet.</p>"
+        }
+      }
+    },
+    "CreateStackRequest":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"String",
+          "documentation":"<p>The unique name for this stack.</p>"
+        },
+        "Description":{
+          "shape":"Description",
+          "documentation":"<p>The description displayed to end users on the AppStream portal.</p>"
+        },
+        "DisplayName":{
+          "shape":"DisplayName",
+          "documentation":"<p>The name displayed to end users on the AppStream portal.</p>"
+        }
+      }
+    },
+    "CreateStackResult":{
+      "type":"structure",
+      "members":{
+        "Stack":{
+          "shape":"Stack",
+          "documentation":"<p>The details for the created stack.</p>"
+        }
+      }
+    },
+    "CreateStreamingURLRequest":{
+      "type":"structure",
+      "required":[
+        "StackName",
+        "FleetName",
+        "UserId"
+      ],
+      "members":{
+        "StackName":{
+          "shape":"String",
+          "documentation":"<p>The stack for which the URL is generated.</p>"
+        },
+        "FleetName":{
+          "shape":"String",
+          "documentation":"<p>The fleet for which the URL is generated.</p>"
+        },
+        "UserId":{
+          "shape":"UserId",
+          "documentation":"<p>A unique user ID for which the URL is generated.</p>"
+        },
+        "ApplicationId":{
+          "shape":"String",
+          "documentation":"<p>ID of the application that must be launched after the session starts.</p>"
+        },
+        "Validity":{
+          "shape":"Long",
+          "documentation":"<p>The validity duration of the URL in seconds.</p>"
+        },
+        "SessionContext":{
+          "shape":"String",
+          "documentation":"<p>The sessionContext of the AppStream stream.</p>"
+        }
+      }
+    },
+    "CreateStreamingURLResult":{
+      "type":"structure",
+      "members":{
+        "StreamingURL":{
+          "shape":"String",
+          "documentation":"<p>The URL to start the AppStream stream.</p>"
+        },
+        "Expires":{
+          "shape":"Timestamp",
+          "documentation":"<p>Elapsed seconds after the Unix epoch, at which time this URL expires.</p>"
+        }
+      }
+    },
+    "DeleteFleetRequest":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"String",
+          "documentation":"<p>The name of the fleet to delete.</p>"
+        }
+      }
+    },
+    "DeleteFleetResult":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DeleteStackRequest":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"String",
+          "documentation":"<p>The name of the stack to delete.</p>"
+        }
+      }
+    },
+    "DeleteStackResult":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DescribeFleetsRequest":{
+      "type":"structure",
+      "members":{
+        "Names":{
+          "shape":"StringList",
+          "documentation":"<p>The fleet names to describe. Use null to describe all the fleets for the AWS account.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The next token to iterate the list. If a name is specified in the request or the request is for the first page, this value should be null.</p>"
+        }
+      }
+    },
+    "DescribeFleetsResult":{
+      "type":"structure",
+      "members":{
+        "Fleets":{
+          "shape":"FleetList",
+          "documentation":"<p>The list of fleet details.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The next token to iterate the list. If a name was specified in the request or there are no more entries left to iterate, this value is null.</p>"
+        }
+      }
+    },
+    "DescribeImagesRequest":{
+      "type":"structure",
+      "members":{
+        "Names":{
+          "shape":"StringList",
+          "documentation":"<p>A specific list of images to return.</p>"
+        }
+      }
+    },
+    "DescribeImagesResult":{
+      "type":"structure",
+      "members":{
+        "Images":{
+          "shape":"ImageList",
+          "documentation":"<p>The list of images.</p>"
+        }
+      }
+    },
+    "DescribeSessionsRequest":{
+      "type":"structure",
+      "required":[
+        "StackName",
+        "FleetName"
+      ],
+      "members":{
+        "StackName":{
+          "shape":"String",
+          "documentation":"<p>The name of the stack for which to list sessions.</p>"
+        },
+        "FleetName":{
+          "shape":"String",
+          "documentation":"<p>The name of the fleet for which to list sessions.</p>"
+        },
+        "UserId":{
+          "shape":"UserId",
+          "documentation":"<p>The user for whom to list sessions. Use null to describe all the sessions for the stack and fleet.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The next token to iterate the list. If the request is for the first page, this value should be null.</p>"
+        },
+        "Limit":{
+          "shape":"Integer",
+          "documentation":"<p>The size of each page of results. The default value is 20 and the maximum supported value is 50.</p>"
+        }
+      }
+    },
+    "DescribeSessionsResult":{
+      "type":"structure",
+      "members":{
+        "Sessions":{
+          "shape":"SessionList",
+          "documentation":"<p>The list of streaming sessions.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The next token to iterate the list. If there are no more entries left to iterate, this value is null.</p>"
+        }
+      }
+    },
+    "DescribeStacksRequest":{
+      "type":"structure",
+      "members":{
+        "Names":{
+          "shape":"StringList",
+          "documentation":"<p>The stack names to describe. Use null to describe all the stacks for the AWS account.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The next token to iterate the list. If a name is specified in the request or the request is for the first page, this value should be null.</p>"
+        }
+      }
+    },
+    "DescribeStacksResult":{
+      "type":"structure",
+      "members":{
+        "Stacks":{
+          "shape":"StackList",
+          "documentation":"<p>The list of stack details.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The next token to iterate the list. If a name was specified in the request or there are no more entries left to iterate, this value is null.</p>"
+        }
+      }
+    },
+    "Description":{
+      "type":"string",
+      "max":256
+    },
+    "DisassociateFleetRequest":{
+      "type":"structure",
+      "required":[
+        "FleetName",
+        "StackName"
+      ],
+      "members":{
+        "FleetName":{
+          "shape":"String",
+          "documentation":"<p>The name of the fleet to detach.</p>"
+        },
+        "StackName":{"shape":"String"}
+      }
+    },
+    "DisassociateFleetResult":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DisplayName":{
+      "type":"string",
+      "max":100
+    },
+    "ErrorMessage":{"type":"string"},
+    "ExpireSessionRequest":{
+      "type":"structure",
+      "required":["SessionId"],
+      "members":{
+        "SessionId":{
+          "shape":"String",
+          "documentation":"<p>The unique identifier of the streaming session to be stopped.</p>"
+        }
+      }
+    },
+    "ExpireSessionResult":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "Fleet":{
+      "type":"structure",
+      "required":[
+        "Arn",
+        "Name",
+        "ImageName",
+        "InstanceType",
+        "ComputeCapacityStatus",
+        "State"
+      ],
+      "members":{
+        "Arn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN for the fleet.</p>"
+        },
+        "Name":{
+          "shape":"String",
+          "documentation":"<p>The name of the fleet.</p>"
+        },
+        "DisplayName":{
+          "shape":"String",
+          "documentation":"<p>The name displayed to end users on the AppStream portal.</p>"
+        },
+        "Description":{
+          "shape":"String",
+          "documentation":"<p>The description displayed to end users on the AppStream portal.</p>"
+        },
+        "ImageName":{
+          "shape":"String",
+          "documentation":"<p>The image from which a Fleet is created.</p>"
+        },
+        "InstanceType":{
+          "shape":"String",
+          "documentation":"<p>The instance type of compute resources for the fleet.</p>"
+        },
+        "ComputeCapacityStatus":{
+          "shape":"ComputeCapacityStatus",
+          "documentation":"<p>The capacity information for the fleet.</p>"
+        },
+        "MaxUserDurationInSeconds":{
+          "shape":"Integer",
+          "documentation":"<p>The maximum time during which a streaming session can run.</p>"
+        },
+        "DisconnectTimeoutInSeconds":{
+          "shape":"Integer",
+          "documentation":"<p>The time after disconnection when a session is considered to have ended.</p>"
+        },
+        "State":{
+          "shape":"FleetState",
+          "documentation":"<p>The current state for the fleet.</p>"
+        },
+        "VpcConfig":{
+          "shape":"VpcConfig",
+          "documentation":"<p>The VPC configuration for the fleet.</p>"
+        },
+        "CreatedTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The time at which the fleet was created.</p>"
+        },
+        "FleetErrors":{
+          "shape":"FleetErrors",
+          "documentation":"<p>The list of Fleet errors is appended to this list.</p>"
+        }
+      },
+      "documentation":"<p>Contains the parameters for a fleet.</p>"
+    },
+    "FleetError":{
+      "type":"structure",
+      "members":{
+        "ErrorCode":{
+          "shape":"FleetErrorCode",
+          "documentation":"<p>The error code for the fleet error.</p>"
+        },
+        "ErrorMessage":{
+          "shape":"String",
+          "documentation":"<p>The error message generated when the fleet has errors.</p>"
+        }
+      },
+      "documentation":"<p>The deatils for fleet error.</p>"
+    },
+    "FleetErrorCode":{
+      "type":"string",
+      "enum":[
+        "INVALID_PHOTON_ROLE_MISSING_ENI_DESCRIBE_ACTION",
+        "INVALID_PHOTON_ROLE_MISSING_ENI_CREATE_ACTION",
+        "INVALID_PHOTON_ROLE_MISSING_ENI_DELETE_ACTION",
+        "NETWORK_INTERFACE_LIMIT_EXCEEDED",
+        "INTERNAL_SERVICE_ERROR",
+        "MISSING_ROLE",
+        "INSUFFICIENT_AVAILABLE_IP_ADDRESSES",
+        "INVALID_PHOTON_ROLE_MISSING_SUBNET_DESCRIBE_ACTION",
+        "MISSING_SUBNET",
+        "INVALID_SUBNET_CONFIGURATION",
+        "MISSING_IMAGE"
+      ]
+    },
+    "FleetErrors":{
+      "type":"list",
+      "member":{"shape":"FleetError"}
+    },
+    "FleetList":{
+      "type":"list",
+      "member":{"shape":"Fleet"},
+      "documentation":"<p>A list of fleets.</p>"
+    },
+    "FleetState":{
+      "type":"string",
+      "enum":[
+        "STARTING",
+        "RUNNING",
+        "STOPPING",
+        "STOPPED"
+      ]
+    },
+    "Image":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"String",
+          "documentation":"<p>The unique identifier for the image.</p>"
+        },
+        "Arn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN for the image.</p>"
+        },
+        "BaseImageArn":{
+          "shape":"Arn",
+          "documentation":"<p>Either <code>copy-image.source-image</code> or <code>create-image.image-builder.image</code> depending on how this image was created.</p>"
+        },
+        "DisplayName":{
+          "shape":"String",
+          "documentation":"<p>The name displayed to end users on the AppStream portal.</p>"
+        },
+        "State":{
+          "shape":"ImageState",
+          "documentation":"<p>The image starts in the <b>PENDING</b> state, and then moves to <b>AVAILABLE</b> if image creation succeeds and <b>FAILED</b> if it has failed.</p>"
+        },
+        "Visibility":{
+          "shape":"VisibilityType",
+          "documentation":"<p>The visibility of an Image to the user, it can be Public/Private.</p>"
+        },
+        "Platform":{
+          "shape":"PlatformType",
+          "documentation":"<p>The Platform where the image is launched.</p>"
+        },
+        "Description":{
+          "shape":"String",
+          "documentation":"<p>User information.</p>"
+        },
+        "StateChangeReason":{
+          "shape":"ImageStateChangeReason",
+          "documentation":"<p>The reason why the last state change occurred.</p>"
+        },
+        "Applications":{
+          "shape":"Applications",
+          "documentation":"<p>The applications associated with an Image.</p>"
+        },
+        "CreatedTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The timestamp when the image was created.</p>"
+        }
+      },
+      "documentation":"<p>New streaming instances are booted from images. The image stores the application catalog and is connected to fleets.</p>"
+    },
+    "ImageList":{
+      "type":"list",
+      "member":{"shape":"Image"}
+    },
+    "ImageState":{
+      "type":"string",
+      "enum":[
+        "PENDING",
+        "AVAILABLE",
+        "FAILED",
+        "DELETING"
+      ]
+    },
+    "ImageStateChangeReason":{
+      "type":"structure",
+      "members":{
+        "Code":{
+          "shape":"ImageStateChangeReasonCode",
+          "documentation":"<p>The state change reason code of the image.</p>"
+        },
+        "Message":{
+          "shape":"String",
+          "documentation":"<p>The state change reason message to the end user.</p>"
+        }
+      },
+      "documentation":"<p>The reason why the last state change occurred.</p>"
+    },
+    "ImageStateChangeReasonCode":{
+      "type":"string",
+      "enum":[
+        "INTERNAL_ERROR",
+        "IMAGE_BUILDER_NOT_AVAILABLE"
+      ]
+    },
+    "Integer":{"type":"integer"},
+    "InvalidRoleException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>The specified role is invalid.</p>",
+      "exception":true
+    },
+    "LimitExceededException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>The requested limit exceeds the permitted limit for an account.</p>",
+      "exception":true
+    },
+    "ListAssociatedFleetsRequest":{
+      "type":"structure",
+      "required":["StackName"],
+      "members":{
+        "StackName":{
+          "shape":"String",
+          "documentation":"<p>The name of the stack whose attached fleets are listed.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The page token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>"
+        }
+      }
+    },
+    "ListAssociatedFleetsResult":{
+      "type":"structure",
+      "members":{
+        "Names":{
+          "shape":"StringList",
+          "documentation":"<p>The names of attached fleets.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>If this value is not null, more results are available. Pass this value for the <code>nextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items.</p>"
+        }
+      },
+      "documentation":"<p>The response from a successful operation.</p>"
+    },
+    "ListAssociatedStacksRequest":{
+      "type":"structure",
+      "required":["FleetName"],
+      "members":{
+        "FleetName":{
+          "shape":"String",
+          "documentation":"<p>The name of the fleet whose attached stacks are listed.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>The page token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>"
+        }
+      }
+    },
+    "ListAssociatedStacksResult":{
+      "type":"structure",
+      "members":{
+        "Names":{
+          "shape":"StringList",
+          "documentation":"<p>The names of attached stacks.</p>"
+        },
+        "NextToken":{
+          "shape":"String",
+          "documentation":"<p>If this value is not null, more results are available. Pass this value for the <code>nextToken</code> parameter in a subsequent call to this operation to retrieve the next set of items.</p>"
+        }
+      },
+      "documentation":"<p>The response from a successful operation.</p>"
+    },
+    "Long":{"type":"long"},
+    "Metadata":{
+      "type":"map",
+      "key":{"shape":"String"},
+      "value":{"shape":"String"}
+    },
+    "Name":{
+      "type":"string",
+      "pattern":"^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,100}$"
+    },
+    "PlatformType":{
+      "type":"string",
+      "enum":["WINDOWS"]
+    },
+    "ResourceAlreadyExistsException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>The specified resource already exists.</p>",
+      "exception":true
+    },
+    "ResourceInUseException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>The specified resource is in use.</p>",
+      "exception":true
+    },
+    "ResourceNotAvailableException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>The specified resource exists and is not in use, but isn't available.</p>",
+      "exception":true
+    },
+    "ResourceNotFoundException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>The specified resource was not found.</p>",
+      "exception":true
+    },
+    "Session":{
+      "type":"structure",
+      "required":[
+        "Id",
+        "UserId",
+        "StackName",
+        "FleetName",
+        "State"
+      ],
+      "members":{
+        "Id":{
+          "shape":"String",
+          "documentation":"<p>The unique ID for a streaming session.</p>"
+        },
+        "UserId":{
+          "shape":"UserId",
+          "documentation":"<p>The identifier of the user for whom the session was requested.</p>"
+        },
+        "StackName":{
+          "shape":"String",
+          "documentation":"<p>The name of the stack in which the streaming session was created.</p>"
+        },
+        "FleetName":{
+          "shape":"String",
+          "documentation":"<p>The name of the fleet in which the streaming session was created.</p>"
+        },
+        "State":{
+          "shape":"SessionState",
+          "documentation":"<p>The current state of the streaming session.</p>"
+        }
+      },
+      "documentation":"<p>Contains the parameters for a streaming session.</p>"
+    },
+    "SessionList":{
+      "type":"list",
+      "member":{"shape":"Session"},
+      "documentation":"<p>List of sessions.</p>"
+    },
+    "SessionState":{
+      "type":"string",
+      "documentation":"<p>Possible values for the state of a streaming session.</p>",
+      "enum":[
+        "ACTIVE",
+        "PENDING",
+        "EXPIRED"
+      ]
+    },
+    "Stack":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Arn":{
+          "shape":"Arn",
+          "documentation":"<p>The Arn of the stack.</p>"
+        },
+        "Name":{
+          "shape":"String",
+          "documentation":"<p>Name of the stack.</p>"
+        },
+        "Description":{
+          "shape":"String",
+          "documentation":"<p>The description displayed to end users on the AppStream portal.</p>"
+        },
+        "DisplayName":{
+          "shape":"String",
+          "documentation":"<p>The name displayed to end users on the AppStream portal.</p>"
+        },
+        "CreatedTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The timestamp when the stack was created.</p>"
+        }
+      },
+      "documentation":"<p>Details about a stack.</p>"
+    },
+    "StackList":{
+      "type":"list",
+      "member":{"shape":"Stack"},
+      "documentation":"<p>A list of stackss.</p>"
+    },
+    "StartFleetRequest":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"String",
+          "documentation":"<p>The name of the fleet to activate.</p>"
+        }
+      }
+    },
+    "StartFleetResult":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "StopFleetRequest":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"String",
+          "documentation":"<p>The name of the fleet to deactivate.</p>"
+        }
+      }
+    },
+    "StopFleetResult":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "String":{
+      "type":"string",
+      "min":1
+    },
+    "StringList":{
+      "type":"list",
+      "member":{"shape":"String"}
+    },
+    "SubnetIdList":{
+      "type":"list",
+      "member":{"shape":"String"},
+      "documentation":"<p>A list of subnet IDs.</p>",
+      "min":1
+    },
+    "Timestamp":{"type":"timestamp"},
+    "UpdateFleetRequest":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "ImageName":{
+          "shape":"String",
+          "documentation":"<p>The image name from which a fleet is created.</p>"
+        },
+        "Name":{
+          "shape":"String",
+          "documentation":"<p>The name of the fleet.</p>"
+        },
+        "InstanceType":{
+          "shape":"String",
+          "documentation":"<p>The instance type of compute resources for the fleet.</p>"
+        },
+        "ComputeCapacity":{
+          "shape":"ComputeCapacity",
+          "documentation":"<p>Parameters for the capacity allocated to the fleet. </p>"
+        },
+        "VpcConfig":{
+          "shape":"VpcConfig",
+          "documentation":"<p>The VPC configuration for the fleet.</p>"
+        },
+        "MaxUserDurationInSeconds":{
+          "shape":"Integer",
+          "documentation":"<p>The maximum time during which a streaming session can run.</p>"
+        },
+        "DisconnectTimeoutInSeconds":{
+          "shape":"Integer",
+          "documentation":"<p>The time after disconnection when a session is considered to have ended. </p>"
+        },
+        "DeleteVpcConfig":{
+          "shape":"Boolean",
+          "documentation":"<p>Delete Vpc Config, if the parameter is set and the fleet has Vpc Config, it can be deleted.</p>"
+        },
+        "Description":{"shape":"Description"},
+        "DisplayName":{"shape":"DisplayName"}
+      }
+    },
+    "UpdateFleetResult":{
+      "type":"structure",
+      "members":{
+        "Fleet":{
+          "shape":"Fleet",
+          "documentation":"<p>A list of fleet details.</p>"
+        }
+      }
+    },
+    "UpdateStackRequest":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "DisplayName":{
+          "shape":"DisplayName",
+          "documentation":"<p>The name displayed to end users on the AppStream portal.</p>"
+        },
+        "Description":{
+          "shape":"Description",
+          "documentation":"<p>The description displayed to end users on the AppStream portal.</p>"
+        },
+        "Name":{
+          "shape":"String",
+          "documentation":"<p>The name of the stack to update.</p>"
+        }
+      }
+    },
+    "UpdateStackResult":{
+      "type":"structure",
+      "members":{
+        "Stack":{
+          "shape":"Stack",
+          "documentation":"<p>A list of stack details.</p>"
+        }
+      }
+    },
+    "UserId":{
+      "type":"string",
+      "max":32,
+      "min":2
+    },
+    "VisibilityType":{
+      "type":"string",
+      "enum":[
+        "PUBLIC",
+        "PRIVATE"
+      ]
+    },
+    "VpcConfig":{
+      "type":"structure",
+      "required":["SubnetIds"],
+      "members":{
+        "SubnetIds":{
+          "shape":"SubnetIdList",
+          "documentation":"<p>The list of subnets in which the fleet is launched.</p>"
+        }
+      },
+      "documentation":"<p>The VPC in which the fleet is launched.</p>"
+    }
+  },
+  "documentation":"<p>API documentation for AppStream</p>"
+}

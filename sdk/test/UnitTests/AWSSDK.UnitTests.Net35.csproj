@@ -72,6 +72,10 @@
       <Project>{42CFDE78-4934-4555-BFA6-ECCF1A8271DF}</Project>
       <Name>AWSSDK.ApplicationDiscoveryService.Net35</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\AppStream\AWSSDK.AppStream.Net35.csproj">
+      <Project>{24DDBBEC-9989-47BA-B006-53FC49085B36}</Project>
+      <Name>AWSSDK.AppStream.Net35</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\AutoScaling\AWSSDK.AutoScaling.Net35.csproj">
       <Project>{88F2CD8C-2C47-4E66-A4D4-93B2CF5BDCBC}</Project>
       <Name>AWSSDK.AutoScaling.Net35</Name>

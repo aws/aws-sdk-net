@@ -413,7 +413,7 @@ namespace ServiceClientGenerator
                 case "string":
                     if (!treatEnumsAsString && memberShape["enum"] != null)
                     {
-                        return ServiceModel.CapitalizeFirstChar(extendsNode.ToString());
+                        return ServiceModel.CapitalizeFirstChar(renameShape ?? extendsNode.ToString());
                     }
                     return "string";
                 case "blob":

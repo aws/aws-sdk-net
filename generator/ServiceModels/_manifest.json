@@ -141,6 +141,15 @@
         {
             "active": true,
 
+            "model": "appstream",
+            "base-name": "AppStream",
+            "region-lookup-name": "appstream2",
+            "authentication-service-name": "appstream",
+            "synopsis": "Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser."
+        },
+        {
+            "active": true,
+
             "model": "budgets",
             "base-name": "Budgets",
             "region-lookup-name": "budgets",
