@@ -122,7 +122,11 @@ namespace Amazon.APIGateway.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProductCode.
+        /// Gets and sets the property ProductCode. 
+        /// <para>
+        /// The AWS Markeplace product identifier to associate with the usage plan as a SaaS product
+        /// on AWS Marketplace.
+        /// </para>
         /// </summary>
         public string ProductCode
         {

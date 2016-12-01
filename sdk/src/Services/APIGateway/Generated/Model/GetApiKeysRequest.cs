@@ -40,7 +40,11 @@ namespace Amazon.APIGateway.Model
         private string _position;
 
         /// <summary>
-        /// Gets and sets the property CustomerId.
+        /// Gets and sets the property CustomerId. 
+        /// <para>
+        /// The identifier of a customer in AWS Marketplace or an external system, such as a developer
+        /// portal.
+        /// </para>
         /// </summary>
         public string CustomerId
         {

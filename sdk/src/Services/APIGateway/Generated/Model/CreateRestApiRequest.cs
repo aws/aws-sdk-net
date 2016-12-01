@@ -115,7 +115,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the <a>RestApi</a>.
+        /// A version identifier for the API.
         /// </para>
         /// </summary>
         public string Version

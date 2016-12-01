@@ -92,6 +92,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetDocumentationVersion())
+                {
+                    context.Writer.WritePropertyName("documentationVersion");
+                    context.Writer.Write(publicRequest.DocumentationVersion);
+                }
+
                 if(publicRequest.IsSetStageName())
                 {
                     context.Writer.WritePropertyName("stageName");

@@ -505,6 +505,142 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  CreateDocumentationPart
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationPart service method.</param>
+        /// 
+        /// <returns>The response from the CreateDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public CreateDocumentationPartResponse CreateDocumentationPart(CreateDocumentationPartRequest request)
+        {
+            var marshaller = new CreateDocumentationPartRequestMarshaller();
+            var unmarshaller = CreateDocumentationPartResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDocumentationPartRequest,CreateDocumentationPartResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationPart operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDocumentationPart
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateDocumentationPart(CreateDocumentationPartRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateDocumentationPartRequestMarshaller();
+            var unmarshaller = CreateDocumentationPartResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateDocumentationPartRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDocumentationPart.</param>
+        /// 
+        /// <returns>Returns a  CreateDocumentationPartResult from APIGateway.</returns>
+        public  CreateDocumentationPartResponse EndCreateDocumentationPart(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDocumentationPartResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateDocumentationVersion
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public CreateDocumentationVersionResponse CreateDocumentationVersion(CreateDocumentationVersionRequest request)
+        {
+            var marshaller = new CreateDocumentationVersionRequestMarshaller();
+            var unmarshaller = CreateDocumentationVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDocumentationVersionRequest,CreateDocumentationVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationVersion operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDocumentationVersion
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateDocumentationVersion(CreateDocumentationVersionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateDocumentationVersionRequestMarshaller();
+            var unmarshaller = CreateDocumentationVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateDocumentationVersionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDocumentationVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateDocumentationVersionResult from APIGateway.</returns>
+        public  CreateDocumentationVersionResponse EndCreateDocumentationVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDocumentationVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateDomainName
 
         /// <summary>
@@ -1275,6 +1411,136 @@ namespace Amazon.APIGateway
         public  DeleteDeploymentResponse EndDeleteDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDeploymentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteDocumentationPart
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationPart service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public DeleteDocumentationPartResponse DeleteDocumentationPart(DeleteDocumentationPartRequest request)
+        {
+            var marshaller = new DeleteDocumentationPartRequestMarshaller();
+            var unmarshaller = DeleteDocumentationPartResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDocumentationPartRequest,DeleteDocumentationPartResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationPart operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDocumentationPart
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteDocumentationPart(DeleteDocumentationPartRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteDocumentationPartRequestMarshaller();
+            var unmarshaller = DeleteDocumentationPartResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteDocumentationPartRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDocumentationPart.</param>
+        /// 
+        /// <returns>Returns a  DeleteDocumentationPartResult from APIGateway.</returns>
+        public  DeleteDocumentationPartResponse EndDeleteDocumentationPart(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDocumentationPartResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteDocumentationVersion
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public DeleteDocumentationVersionResponse DeleteDocumentationVersion(DeleteDocumentationVersionRequest request)
+        {
+            var marshaller = new DeleteDocumentationVersionRequestMarshaller();
+            var unmarshaller = DeleteDocumentationVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDocumentationVersionRequest,DeleteDocumentationVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationVersion operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDocumentationVersion
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteDocumentationVersion(DeleteDocumentationVersionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteDocumentationVersionRequestMarshaller();
+            var unmarshaller = DeleteDocumentationVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteDocumentationVersionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDocumentationVersion.</param>
+        /// 
+        /// <returns>Returns a  DeleteDocumentationVersionResult from APIGateway.</returns>
+        public  DeleteDocumentationVersionResponse EndDeleteDocumentationVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDocumentationVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -2821,6 +3087,248 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  GetDocumentationPart
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationPart service method.</param>
+        /// 
+        /// <returns>The response from the GetDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetDocumentationPartResponse GetDocumentationPart(GetDocumentationPartRequest request)
+        {
+            var marshaller = new GetDocumentationPartRequestMarshaller();
+            var unmarshaller = GetDocumentationPartResponseUnmarshaller.Instance;
+
+            return Invoke<GetDocumentationPartRequest,GetDocumentationPartResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationPart operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentationPart
+        ///         operation.</returns>
+        public IAsyncResult BeginGetDocumentationPart(GetDocumentationPartRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetDocumentationPartRequestMarshaller();
+            var unmarshaller = GetDocumentationPartResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetDocumentationPartRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocumentationPart.</param>
+        /// 
+        /// <returns>Returns a  GetDocumentationPartResult from APIGateway.</returns>
+        public  GetDocumentationPartResponse EndGetDocumentationPart(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDocumentationPartResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDocumentationParts
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationParts service method.</param>
+        /// 
+        /// <returns>The response from the GetDocumentationParts service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetDocumentationPartsResponse GetDocumentationParts(GetDocumentationPartsRequest request)
+        {
+            var marshaller = new GetDocumentationPartsRequestMarshaller();
+            var unmarshaller = GetDocumentationPartsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDocumentationPartsRequest,GetDocumentationPartsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationParts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationParts operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentationParts
+        ///         operation.</returns>
+        public IAsyncResult BeginGetDocumentationParts(GetDocumentationPartsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetDocumentationPartsRequestMarshaller();
+            var unmarshaller = GetDocumentationPartsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetDocumentationPartsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDocumentationParts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocumentationParts.</param>
+        /// 
+        /// <returns>Returns a  GetDocumentationPartsResult from APIGateway.</returns>
+        public  GetDocumentationPartsResponse EndGetDocumentationParts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDocumentationPartsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDocumentationVersion
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetDocumentationVersionResponse GetDocumentationVersion(GetDocumentationVersionRequest request)
+        {
+            var marshaller = new GetDocumentationVersionRequestMarshaller();
+            var unmarshaller = GetDocumentationVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetDocumentationVersionRequest,GetDocumentationVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersion operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentationVersion
+        ///         operation.</returns>
+        public IAsyncResult BeginGetDocumentationVersion(GetDocumentationVersionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetDocumentationVersionRequestMarshaller();
+            var unmarshaller = GetDocumentationVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetDocumentationVersionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocumentationVersion.</param>
+        /// 
+        /// <returns>Returns a  GetDocumentationVersionResult from APIGateway.</returns>
+        public  GetDocumentationVersionResponse EndGetDocumentationVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDocumentationVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDocumentationVersions
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersions service method.</param>
+        /// 
+        /// <returns>The response from the GetDocumentationVersions service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetDocumentationVersionsResponse GetDocumentationVersions(GetDocumentationVersionsRequest request)
+        {
+            var marshaller = new GetDocumentationVersionsRequestMarshaller();
+            var unmarshaller = GetDocumentationVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDocumentationVersionsRequest,GetDocumentationVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersions operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocumentationVersions
+        ///         operation.</returns>
+        public IAsyncResult BeginGetDocumentationVersions(GetDocumentationVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetDocumentationVersionsRequestMarshaller();
+            var unmarshaller = GetDocumentationVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetDocumentationVersionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDocumentationVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocumentationVersions.</param>
+        /// 
+        /// <returns>Returns a  GetDocumentationVersionsResult from APIGateway.</returns>
+        public  GetDocumentationVersionsResponse EndGetDocumentationVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDocumentationVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetDomainName
 
         /// <summary>
@@ -4226,6 +4734,71 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  ImportDocumentationParts
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportDocumentationParts service method.</param>
+        /// 
+        /// <returns>The response from the ImportDocumentationParts service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public ImportDocumentationPartsResponse ImportDocumentationParts(ImportDocumentationPartsRequest request)
+        {
+            var marshaller = new ImportDocumentationPartsRequestMarshaller();
+            var unmarshaller = ImportDocumentationPartsResponseUnmarshaller.Instance;
+
+            return Invoke<ImportDocumentationPartsRequest,ImportDocumentationPartsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportDocumentationParts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportDocumentationParts operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportDocumentationParts
+        ///         operation.</returns>
+        public IAsyncResult BeginImportDocumentationParts(ImportDocumentationPartsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ImportDocumentationPartsRequestMarshaller();
+            var unmarshaller = ImportDocumentationPartsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ImportDocumentationPartsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportDocumentationParts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportDocumentationParts.</param>
+        /// 
+        /// <returns>Returns a  ImportDocumentationPartsResult from APIGateway.</returns>
+        public  ImportDocumentationPartsResponse EndImportDocumentationParts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ImportDocumentationPartsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ImportRestApi
 
         /// <summary>
@@ -5140,6 +5713,139 @@ namespace Amazon.APIGateway
         public  UpdateDeploymentResponse EndUpdateDeployment(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDeploymentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDocumentationPart
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationPart service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public UpdateDocumentationPartResponse UpdateDocumentationPart(UpdateDocumentationPartRequest request)
+        {
+            var marshaller = new UpdateDocumentationPartRequestMarshaller();
+            var unmarshaller = UpdateDocumentationPartResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDocumentationPartRequest,UpdateDocumentationPartResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationPart operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDocumentationPart
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateDocumentationPart(UpdateDocumentationPartRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateDocumentationPartRequestMarshaller();
+            var unmarshaller = UpdateDocumentationPartResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateDocumentationPartRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDocumentationPart.</param>
+        /// 
+        /// <returns>Returns a  UpdateDocumentationPartResult from APIGateway.</returns>
+        public  UpdateDocumentationPartResponse EndUpdateDocumentationPart(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDocumentationPartResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDocumentationVersion
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public UpdateDocumentationVersionResponse UpdateDocumentationVersion(UpdateDocumentationVersionRequest request)
+        {
+            var marshaller = new UpdateDocumentationVersionRequestMarshaller();
+            var unmarshaller = UpdateDocumentationVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDocumentationVersionRequest,UpdateDocumentationVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationVersion operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDocumentationVersion
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateDocumentationVersion(UpdateDocumentationVersionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateDocumentationVersionRequestMarshaller();
+            var unmarshaller = UpdateDocumentationVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateDocumentationVersionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDocumentationVersion.</param>
+        /// 
+        /// <returns>Returns a  UpdateDocumentationVersionResult from APIGateway.</returns>
+        public  UpdateDocumentationVersionResponse EndUpdateDocumentationVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDocumentationVersionResponse>(asyncResult);
         }
 
         #endregion

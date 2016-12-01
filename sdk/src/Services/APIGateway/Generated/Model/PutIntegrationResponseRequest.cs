@@ -33,7 +33,7 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class PutIntegrationResponseRequest : AmazonAPIGatewayRequest
     {
-        private ContentHandlingType _contentHandling;
+        private ContentHandlingStrategy _contentHandling;
         private string _httpMethod;
         private string _resourceId;
         private Dictionary<string, string> _responseParameters = new Dictionary<string, string>();
@@ -65,7 +65,7 @@ namespace Amazon.APIGateway.Model
         /// the integration response to the method response without modification.
         /// </para>
         /// </summary>
-        public ContentHandlingType ContentHandling
+        public ContentHandlingStrategy ContentHandling
         {
             get { return this._contentHandling; }
             set { this._contentHandling = value; }

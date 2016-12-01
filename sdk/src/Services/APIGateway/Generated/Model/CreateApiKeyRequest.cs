@@ -45,7 +45,10 @@ namespace Amazon.APIGateway.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property CustomerId.
+        /// Gets and sets the property CustomerId. 
+        /// <para>
+        /// An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.
+        /// </para>
         /// </summary>
         public string CustomerId
         {

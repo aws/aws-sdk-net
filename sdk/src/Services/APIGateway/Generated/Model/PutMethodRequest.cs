@@ -37,7 +37,6 @@ namespace Amazon.APIGateway.Model
         private string _authorizationType;
         private string _authorizerId;
         private string _httpMethod;
-        private string _operationName;
         private Dictionary<string, string> _requestModels = new Dictionary<string, string>();
         private Dictionary<string, bool> _requestParameters = new Dictionary<string, bool>();
         private string _resourceId;
@@ -114,21 +113,6 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetHttpMethod()
         {
             return this._httpMethod != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property OperationName.
-        /// </summary>
-        public string OperationName
-        {
-            get { return this._operationName; }
-            set { this._operationName = value; }
-        }
-
-        // Check to see if OperationName property is set
-        internal bool IsSetOperationName()
-        {
-            return this._operationName != null;
         }
 
         /// <summary>

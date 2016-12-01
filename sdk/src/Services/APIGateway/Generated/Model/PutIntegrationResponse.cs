@@ -39,7 +39,7 @@ namespace Amazon.APIGateway.Model
     {
         private List<string> _cacheKeyParameters = new List<string>();
         private string _cacheNamespace;
-        private ContentHandlingType _contentHandling;
+        private ContentHandlingStrategy _contentHandling;
         private string _credentials;
         private string _httpMethod;
         private Dictionary<string, IntegrationResponse> _integrationResponses = new Dictionary<string, IntegrationResponse>();
@@ -109,7 +109,7 @@ namespace Amazon.APIGateway.Model
         /// is configured to support payload pass-through.
         /// </para>
         /// </summary>
-        public ContentHandlingType ContentHandling
+        public ContentHandlingStrategy ContentHandling
         {
             get { return this._contentHandling; }
             set { this._contentHandling = value; }
