@@ -1,3 +1,11 @@
+### 3.3.28.0 (2016-12-06 21:33 UTC)
+* ConfigService (3.3.2.0)
+	* API Update for ConfigService : AWS Config is increasing the number of configrules for all accounts from 25 to 50
+* EC2 (3.3.4.0)
+	* API Update for EC2 :  addedT2.xlarge, T2.2xlarge, and R4 instance type.
+* SecurityToken (3.3.0.4)
+	* Doc update for SecurityTokenService.
+
 ### 3.3.27.0 (2016-12-01 23:03 UTC)
 * APIGateway (3.3.3.0)
 	* You can now publish your APIs on Amazon API Gateway as products on the AWS Marketplace. Use the SDK to associate your APIs on API Gateway with Marketplace Product Codes. API Gateway will then send metering data to the Marketplace Metering Service on your behalf. Also, API Gateway now supports documenting your API.
