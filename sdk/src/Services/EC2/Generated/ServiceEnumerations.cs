@@ -2287,9 +2287,37 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType R3Xlarge = new InstanceType("r3.xlarge");
         /// <summary>
+        /// Constant R416xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R416xlarge = new InstanceType("r4.16xlarge");
+        /// <summary>
+        /// Constant R42xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R42xlarge = new InstanceType("r4.2xlarge");
+        /// <summary>
+        /// Constant R44xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R44xlarge = new InstanceType("r4.4xlarge");
+        /// <summary>
+        /// Constant R48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R48xlarge = new InstanceType("r4.8xlarge");
+        /// <summary>
+        /// Constant R4Large for InstanceType
+        /// </summary>
+        public static readonly InstanceType R4Large = new InstanceType("r4.large");
+        /// <summary>
+        /// Constant R4Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R4Xlarge = new InstanceType("r4.xlarge");
+        /// <summary>
         /// Constant T1Micro for InstanceType
         /// </summary>
         public static readonly InstanceType T1Micro = new InstanceType("t1.micro");
+        /// <summary>
+        /// Constant T22xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType T22xlarge = new InstanceType("t2.2xlarge");
         /// <summary>
         /// Constant T2Large for InstanceType
         /// </summary>
@@ -2310,6 +2338,10 @@ namespace Amazon.EC2
         /// Constant T2Small for InstanceType
         /// </summary>
         public static readonly InstanceType T2Small = new InstanceType("t2.small");
+        /// <summary>
+        /// Constant T2Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType T2Xlarge = new InstanceType("t2.xlarge");
         /// <summary>
         /// Constant X116xlarge for InstanceType
         /// </summary>
