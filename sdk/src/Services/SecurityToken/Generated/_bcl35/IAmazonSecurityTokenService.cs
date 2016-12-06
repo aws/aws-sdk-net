@@ -513,7 +513,7 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using
+        ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual.html">Using
         /// Web Identity Federation APIs for Mobile Apps</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
         /// Through a Web-based Identity Provider</a>. 
         /// </para>
@@ -757,7 +757,7 @@ namespace Amazon.SecurityToken
         /// 
         ///  <note> 
         /// <para>
-        ///  If you are creating a mobile-based or browser-based app that can authenticate users
+        /// If you are creating a mobile-based or browser-based app that can authenticate users
         /// using a web identity provider like Login with Amazon, Facebook, Google, or an OpenID
         /// Connect-compatible identity provider, we recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon
         /// Cognito</a> or <code>AssumeRoleWithWebIdentity</code>. For more information, see <a
@@ -793,7 +793,7 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You cannot call any STS APIs.
+        /// You cannot call any STS APIs except <code>GetCallerIdentity</code>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -933,7 +933,7 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You cannot call any STS API <i>except</i> <code>AssumeRole</code>.
+        /// You cannot call any STS API <i>except</i> <code>AssumeRole</code> or <code>GetCallerIdentity</code>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -1005,7 +1005,7 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You cannot call any STS API <i>except</i> <code>AssumeRole</code>.
+        /// You cannot call any STS API <i>except</i> <code>AssumeRole</code> or <code>GetCallerIdentity</code>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

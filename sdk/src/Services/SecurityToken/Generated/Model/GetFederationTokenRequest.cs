@@ -42,7 +42,7 @@ namespace Amazon.SecurityToken.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  If you are creating a mobile-based or browser-based app that can authenticate users
+    /// If you are creating a mobile-based or browser-based app that can authenticate users
     /// using a web identity provider like Login with Amazon, Facebook, Google, or an OpenID
     /// Connect-compatible identity provider, we recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon
     /// Cognito</a> or <code>AssumeRoleWithWebIdentity</code>. For more information, see <a
@@ -78,7 +78,7 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You cannot call any STS APIs.
+    /// You cannot call any STS APIs except <code>GetCallerIdentity</code>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
