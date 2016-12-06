@@ -36,6 +36,8 @@ namespace Amazon.ConfigService.Model
     public partial class DescribeConfigRuleEvaluationStatusRequest : AmazonConfigServiceRequest
     {
         private List<string> _configRuleNames = new List<string>();
+        private int? _limit;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property ConfigRuleNames. 
@@ -55,6 +57,53 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetConfigRuleNames()
         {
             return this._configRuleNames != null && this._configRuleNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Limit. 
+        /// <para>
+        /// The number of rule evaluation results that you want returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter is required if the rule limit for your account is more than the default
+        /// of 50 rules.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
+        /// Config Limits</a> in the <i>AWS General Reference Guide</i>.
+        /// </para>
+        /// </summary>
+        public int Limit
+        {
+            get { return this._limit.GetValueOrDefault(); }
+            set { this._limit = value; }
+        }
+
+        // Check to see if Limit property is set
+        internal bool IsSetLimit()
+        {
+            return this._limit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The <code>NextToken</code> string returned on a previous page that you use to get
+        /// the next page of results in a paginated response.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

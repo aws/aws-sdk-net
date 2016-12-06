@@ -41,6 +41,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.DescribeConfigRuleEvaluationStatusRequest.Limit</property>
+    <min>0</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.GetComplianceDetailsByConfigRuleRequest.ConfigRuleName</property>
     <min>1</min>
     <max>64</max>
@@ -113,7 +118,7 @@
   <property-value-rule>
     <property>Amazon.ConfigService.Model.ConfigRule.InputParameters</property>
     <min>1</min>
-    <max>256</max>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.ConfigRuleEvaluationStatus.ConfigRuleName</property>

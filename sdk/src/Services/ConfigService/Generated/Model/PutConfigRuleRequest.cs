@@ -68,7 +68,12 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// The maximum number of rules that AWS Config supports is 25.
+    /// The maximum number of rules that AWS Config supports is 50.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
+    /// Config Limits</a> in the <i>AWS General Reference Guide</i>.
     /// </para>
     ///  
     /// <para>
