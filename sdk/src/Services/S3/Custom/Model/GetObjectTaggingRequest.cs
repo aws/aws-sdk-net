@@ -24,6 +24,7 @@ namespace Amazon.S3.Model
     {
         private string bucketName;
         private string key;
+        private string versionId;
 
         /// <summary>
         /// The name of the bucket containing the object tagging.
@@ -57,6 +58,22 @@ namespace Amazon.S3.Model
         internal bool IsSetKey()
         {
             return !string.IsNullOrEmpty(this.key);
+        }
+
+        /// <summary>
+        /// VersionId used to reference a specific version of the object.
+        ///  
+        /// </summary>
+        public string VersionId
+        {
+            get { return this.versionId; }
+            set { this.versionId = value; }
+        }
+
+        // Check to see if VersionId property is set
+        internal bool IsSetVersionId()
+        {
+            return !string.IsNullOrEmpty(this.versionId);
         }
     }
 }

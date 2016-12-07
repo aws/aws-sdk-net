@@ -45,12 +45,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "PUT";
 
-
             request.ResourcePath = string.Format(CultureInfo.InvariantCulture, "/{0}/{1}", 
                                                  S3Transforms.ToStringValue(putObjectTaggingRequest.BucketName), 
                                                  S3Transforms.ToStringValue(putObjectTaggingRequest.Key));
             request.AddSubResource("tagging");
-            
+
+            if (putObjectTaggingRequest.IsSetVersionId())
+                request.AddSubResource("versionId", putObjectTaggingRequest.VersionId);
+
             try
             {
                 var content = AmazonS3Util.SerializeTaggingToXml(putObjectTaggingRequest.Tagging);

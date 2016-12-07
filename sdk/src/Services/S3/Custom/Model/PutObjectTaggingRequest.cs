@@ -26,6 +26,7 @@ namespace Amazon.S3.Model
         private string bucketName;
         private string key;
         private Tagging tagging = new Tagging();
+        private string versionId;
 
         private string md5Digest;
         
@@ -78,6 +79,22 @@ namespace Amazon.S3.Model
         internal bool IsSetTagging()
         {
             return this.tagging != null;
+        }
+
+        /// <summary>
+        /// VersionId used to reference a specific version of the object.
+        ///  
+        /// </summary>
+        public string VersionId
+        {
+            get { return this.versionId; }
+            set { this.versionId = value; }
+        }
+
+        // Check to see if VersionId property is set
+        internal bool IsSetVersionId()
+        {
+            return !string.IsNullOrEmpty(this.versionId);
         }
     }
 }

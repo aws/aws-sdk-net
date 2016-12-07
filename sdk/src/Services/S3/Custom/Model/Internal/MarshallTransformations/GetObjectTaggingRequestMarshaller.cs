@@ -46,6 +46,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                                  S3Transforms.ToStringValue(getObjectTaggingRequest.BucketName), 
                                                  S3Transforms.ToStringValue(getObjectTaggingRequest.Key));
             request.AddSubResource("tagging");
+
+            if (getObjectTaggingRequest.IsSetVersionId())
+                request.AddSubResource("versionId", getObjectTaggingRequest.VersionId);
+
             return request;
         }
     }
