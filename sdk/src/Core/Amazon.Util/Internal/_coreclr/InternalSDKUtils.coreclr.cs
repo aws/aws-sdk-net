@@ -44,36 +44,71 @@ namespace Amazon.Util.Internal
 
         public static string DetermineRuntime()
         {
-            string desc = RuntimeInformation.FrameworkDescription.Trim();
-            return GetValidSubstringOrUnknown(desc, 0, desc.LastIndexOf(' '));
+            try
+            {
+                string desc = RuntimeInformation.FrameworkDescription.Trim();
+                return GetValidSubstringOrUnknown(desc, 0, desc.LastIndexOf(' '));
+            }
+            catch
+            {
+                return _unknown;
+            }
         }
 
         public static string DetermineFramework()
         {
-            string desc = RuntimeInformation.FrameworkDescription.Trim();
-            return GetValidSubstringOrUnknown(desc, desc.LastIndexOf(' ') + 1, desc.Length);
+            try
+            {
+                string desc = RuntimeInformation.FrameworkDescription.Trim();
+                return GetValidSubstringOrUnknown(desc, desc.LastIndexOf(' ') + 1, desc.Length);
+            }
+            catch
+            {
+                return _unknown;
+            }
         }
 
         public static string DetermineOS()
         {
-            string desc = RuntimeInformation.OSDescription.Trim();
-            return GetValidSubstringOrUnknown(desc, 0, desc.LastIndexOf(' '));
+            try
+            { 
+                string desc = RuntimeInformation.OSDescription.Trim();
+                return GetValidSubstringOrUnknown(desc, 0, desc.LastIndexOf(' '));
+            }
+            catch
+            {
+                return _unknown;
+            }
         }
 
         public static string DetermineOSVersion()
         {
-            string desc = RuntimeInformation.OSDescription.Trim();
-            return GetValidSubstringOrUnknown(desc, desc.LastIndexOf(' ') + 1, desc.Length);
+            try
+            {
+                string desc = RuntimeInformation.OSDescription.Trim();
+                return GetValidSubstringOrUnknown(desc, desc.LastIndexOf(' ') + 1, desc.Length);
+            }
+            catch
+            {
+                return _unknown;
+            }
         }
 
         public static string PlatformUserAgent()
         {
-            string desc = RuntimeInformation.OSDescription;
-            if (!string.IsNullOrWhiteSpace(desc))
+            try
             {
-                return desc.Trim().Replace(' ', '_');
+                string desc = RuntimeInformation.OSDescription;
+                if (!string.IsNullOrWhiteSpace(desc))
+                {
+                    return desc.Trim().Replace(' ', '_');
+                }
+                return _unknown;
             }
-            return _unknown;
+            catch
+            {
+                return _unknown;
+            }
         }
     }
 }
