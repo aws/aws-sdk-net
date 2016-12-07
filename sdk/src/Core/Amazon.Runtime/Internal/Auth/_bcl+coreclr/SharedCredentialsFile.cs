@@ -46,6 +46,20 @@ namespace Amazon.Runtime.Internal.Auth
             iniFile = new IniFile(filePath);
         }
 
+        public List<string> ListProfileNames()
+        {
+            var names = new List<string>();
+            foreach (var profileName in iniFile.ListSectionNames())
+            {
+                ImmutableCredentials credentials = null;
+                if (TryGetCredentials(profileName, out credentials))
+                {
+                    names.Add(profileName);
+                }
+            }
+            return names;
+        }
+
         /// <summary>
         /// Get credentials for the given profile.
         /// </summary>

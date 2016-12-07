@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -100,7 +101,7 @@ namespace Amazon.Runtime.Internal.Util
             }
 
             var lineNumber = 0;
-            if (SeekSpecificSection(sectionName, ref lineNumber))
+            if (TrySeekSection(sectionName, ref lineNumber))
             {
                 lineNumber++;
                 string propertyName;
@@ -148,7 +149,7 @@ namespace Amazon.Runtime.Internal.Util
         public void EnsureSectionExists(string sectionName)
         {
             var lineNumber = 0;
-            if (!SeekSpecificSection(sectionName, ref lineNumber))
+            if (!TrySeekSection(sectionName, ref lineNumber))
             {
                 Lines.Add(sectionNamePrefix + sectionName + sectionNameSuffix);
             }
@@ -161,7 +162,7 @@ namespace Amazon.Runtime.Internal.Util
         public void DeleteSection(string sectionName)
         {
             var lineNumber = 0;
-            if (SeekSpecificSection(sectionName, ref lineNumber))
+            if (TrySeekSection(sectionName, ref lineNumber))
             {
                 Lines.RemoveAt(lineNumber);
                 while (lineNumber < Lines.Count &&
@@ -172,6 +173,23 @@ namespace Amazon.Runtime.Internal.Util
             }
         }
 
+        public HashSet<string> ListSectionNames()
+        {
+            var sectionNames = new HashSet<string>();
+            int lineNumber = 0;
+            string sectionName = null;
+            while (SeekSection(ref lineNumber, out sectionName))
+            {
+                if (!sectionNames.Contains(sectionName))
+                {
+                    sectionNames.Add(sectionName);
+                }
+                sectionNames.Add(sectionName);
+                lineNumber++;
+            }
+            return sectionNames;
+        }
+
         /// <summary>
         /// Determine if a section exists in the INI file.
         /// </summary>
@@ -180,7 +198,7 @@ namespace Amazon.Runtime.Internal.Util
         public bool SectionExists(string sectionName)
         {
             var lineNumber = 0;
-            return SeekSpecificSection(sectionName, ref lineNumber);
+            return TrySeekSection(sectionName, ref lineNumber);
         }
 
         /// <summary>
@@ -192,8 +210,47 @@ namespace Amazon.Runtime.Internal.Util
         public bool TryGetSection(string sectionName, out Dictionary<string, string> properties)
         {
             var lineNumber = 0;
-            properties = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase); ;
-            if (SeekSpecificSection(sectionName, ref lineNumber))
+            properties = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            if (TrySeekSection(sectionName, ref lineNumber))
+            {
+                lineNumber++;
+                string propertyName;
+                string propertyValue;
+                while (SeekProperty(ref lineNumber, out propertyName, out propertyValue))
+                {
+                    properties.Add(propertyName, propertyValue);
+                    lineNumber++;
+                }
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Return the properties for the section if it exists.
+        /// </summary>
+        /// <param name="sectionNameRegex">Regex to match name of section to get</param>
+        /// <param name="properties">properties contained in the section</param>
+        /// <returns>True if the section was found, false otherwise</returns>
+        public bool TryGetSection(Regex sectionNameRegex, out Dictionary<string, string> properties)
+        {
+            string dummy = null;
+            return TryGetSection(sectionNameRegex, out dummy, out properties);
+        }
+
+        /// <summary>
+        /// Return the properties for the section if it exists.
+        /// </summary>
+        /// <param name="sectionNameRegex">Regex to match name of section to get</param>
+        /// <param name="sectionName">name of section if regex matches</param>
+        /// <param name="properties">properties contained in the section</param>
+        /// <returns>True if the section was found, false otherwise</returns>
+        public bool TryGetSection(Regex sectionNameRegex, out string sectionName,
+            out Dictionary<string, string> properties)
+        {
+            var lineNumber = 0;
+            properties = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            if (TrySeekSection(sectionNameRegex, ref lineNumber, out sectionName))
             {
                 lineNumber++;
                 string propertyName;
@@ -225,15 +282,27 @@ namespace Amazon.Runtime.Internal.Util
             }
         }
 
-        private bool SeekSpecificSection(string sectionName, ref int lineNumber)
+        private bool TrySeekSection(Regex sectionNameRegex, ref int lineNumber, out string sectionName)
         {
             string currentSectionName = null;
             while (SeekSection(ref lineNumber, out currentSectionName) &&
-                !string.Equals(sectionName, currentSectionName, StringComparison.OrdinalIgnoreCase))
+                !sectionNameRegex.IsMatch(currentSectionName))
             {
                 lineNumber++;
             }
-            return string.Equals(sectionName, currentSectionName, StringComparison.OrdinalIgnoreCase);
+            sectionName = currentSectionName;
+            return currentSectionName != null && sectionNameRegex.IsMatch(currentSectionName);
+        }
+
+        private bool TrySeekSection(String sectionName, ref int lineNumber)
+        {
+            string currentSectionName = null;
+            while (SeekSection(ref lineNumber, out currentSectionName) &&
+                !string.Equals(sectionName, currentSectionName, StringComparison.Ordinal))
+            {
+                lineNumber++;
+            }
+            return string.Equals(sectionName, currentSectionName, StringComparison.Ordinal);
         }
 
         private bool SeekSection(ref int lineNumber, out string sectionName)

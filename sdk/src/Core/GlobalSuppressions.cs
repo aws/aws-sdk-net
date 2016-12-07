@@ -297,6 +297,7 @@ using System.Diagnostics.CodeAnalysis;
 
 [module: SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", Scope = "member", Target = "Amazon.Runtime.Internal.DefaultRetryPolicy.#IsInnerException`1(System.Exception,!!0&)", MessageId = "1#")]
 [module: SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", Scope = "member", Target = "Amazon.Runtime.Internal.Util.ICache`2.#GetValue(!0,System.Func`2<!0,!1>,System.Boolean&)", MessageId = "2#")]
+[module: SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", Scope = "member", Target = "Amazon.Runtime.Internal.Util.IniFile.#TryGetSection(System.Text.RegularExpressions.Regex,System.String&,System.Collections.Generic.Dictionary`2<System.String,System.String>&)", MessageId = "1#")]
 
 // Suppression for methods on IHttpRequest
 [module: SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate", Scope = "member", Target = "Amazon.Runtime.IHttpRequest`1.#GetRequestContent()")]
