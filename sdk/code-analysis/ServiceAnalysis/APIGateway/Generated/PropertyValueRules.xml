@@ -56,4 +56,8 @@
     <property>Amazon.APIGateway.Model.UpdateMethodResponseResponse.StatusCode</property>
     <pattern>[1-5]\d\d</pattern>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.APIGateway.Model.DocumentationPartLocation.StatusCode</property>
+    <pattern>^([1-5]\d\d|\*|\s*)$</pattern>
+  </property-value-rule>
 </property-value-rules>

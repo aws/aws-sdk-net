@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// 
+    /// Location of the source code for an application version.
     /// </summary>
     public partial class SourceBuildInformation
     {
@@ -37,7 +37,10 @@ namespace Amazon.ElasticBeanstalk.Model
         private SourceType _sourceType;
 
         /// <summary>
-        /// Gets and sets the property SourceLocation.
+        /// Gets and sets the property SourceLocation. 
+        /// <para>
+        /// The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.
+        /// </para>
         /// </summary>
         public string SourceLocation
         {
@@ -52,7 +55,10 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceRepository.
+        /// Gets and sets the property SourceRepository. 
+        /// <para>
+        /// Location where the repository is stored, such as <code>CodeCommit</code>.
+        /// </para>
         /// </summary>
         public SourceRepository SourceRepository
         {
@@ -67,7 +73,10 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceType.
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        /// The type of repository, such as <code>Git</code>.
+        /// </para>
         /// </summary>
         public SourceType SourceType
         {

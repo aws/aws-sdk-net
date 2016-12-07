@@ -21,6 +21,7 @@ namespace SDKDocGenerator
             {"IdentityManagement", "IAM"},
             {"DatabaseMigrationService", "DMS"},
             {"ApplicationDiscoveryService", "ADS"},
+            {"SimpleSystemsManagement", "SSM"},
         };
 
         private static string Fixup(string name)

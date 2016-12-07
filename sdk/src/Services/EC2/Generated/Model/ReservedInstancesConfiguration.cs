@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -114,7 +114,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// Whether the Reserved Instance is <code>standard</code> or <code>convertible</code>.
+        /// Whether the Reserved Instance is applied to instances in a region or instances in
+        /// a specific Availability Zone.
         /// </para>
         /// </summary>
         public Scope Scope

@@ -197,6 +197,10 @@ namespace Amazon.ElasticBeanstalk
     {
 
         /// <summary>
+        /// Constant Building for ApplicationVersionStatus
+        /// </summary>
+        public static readonly ApplicationVersionStatus Building = new ApplicationVersionStatus("Building");
+        /// <summary>
         /// Constant Failed for ApplicationVersionStatus
         /// </summary>
         public static readonly ApplicationVersionStatus Failed = new ApplicationVersionStatus("Failed");
@@ -242,6 +246,60 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ApplicationVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ComputeType.
+    /// </summary>
+    public class ComputeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BUILD_GENERAL1_LARGE for ComputeType
+        /// </summary>
+        public static readonly ComputeType BUILD_GENERAL1_LARGE = new ComputeType("BUILD_GENERAL1_LARGE");
+        /// <summary>
+        /// Constant BUILD_GENERAL1_MEDIUM for ComputeType
+        /// </summary>
+        public static readonly ComputeType BUILD_GENERAL1_MEDIUM = new ComputeType("BUILD_GENERAL1_MEDIUM");
+        /// <summary>
+        /// Constant BUILD_GENERAL1_SMALL for ComputeType
+        /// </summary>
+        public static readonly ComputeType BUILD_GENERAL1_SMALL = new ComputeType("BUILD_GENERAL1_SMALL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputeType FindValue(string value)
+        {
+            return FindValue<ComputeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputeType(string value)
         {
             return FindValue(value);
         }
@@ -902,6 +960,10 @@ namespace Amazon.ElasticBeanstalk
         /// Constant CodeCommit for SourceRepository
         /// </summary>
         public static readonly SourceRepository CodeCommit = new SourceRepository("CodeCommit");
+        /// <summary>
+        /// Constant S3 for SourceRepository
+        /// </summary>
+        public static readonly SourceRepository S3 = new SourceRepository("S3");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -948,6 +1010,10 @@ namespace Amazon.ElasticBeanstalk
         /// Constant Git for SourceType
         /// </summary>
         public static readonly SourceType Git = new SourceType("Git");
+        /// <summary>
+        /// Constant Zip for SourceType
+        /// </summary>
+        public static readonly SourceType Zip = new SourceType("Zip");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

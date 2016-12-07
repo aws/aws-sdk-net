@@ -64,6 +64,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("addressFamily", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AddressFamily = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("amazonAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -80,6 +86,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AuthKey = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("bgpPeers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BGPPeer, BGPPeerUnmarshaller>(BGPPeerUnmarshaller.Instance);
+                    unmarshalledObject.BgpPeers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("connectionId", targetDepth))

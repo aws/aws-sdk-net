@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -347,7 +347,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Monitoring. 
         /// <para>
-        /// The monitoring information for the instance.
+        /// The monitoring for the instance.
         /// </para>
         /// </summary>
         public Monitoring Monitoring
@@ -419,10 +419,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateDnsName. 
         /// <para>
-        /// The private DNS name assigned to the instance. This DNS name can only be used inside
-        /// the Amazon EC2 network. This name is not available until the instance enters the <code>running</code>
-        /// state. For EC2-VPC, this name is only available if you've enabled DNS hostnames for
-        /// your VPC.
+        /// (IPv4 only) The private DNS hostname name assigned to the instance. This DNS hostname
+        /// can only be used inside the Amazon EC2 network. This name is not available until the
+        /// instance enters the <code>running</code> state. 
+        /// </para>
+        ///  
+        /// <para>
+        /// [EC2-VPC] The Amazon-provided DNS server will resolve Amazon-provided private DNS
+        /// hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are
+        /// not using the Amazon-provided DNS server in your VPC, your custom domain name servers
+        /// must resolve the hostname as appropriate.
         /// </para>
         /// </summary>
         public string PrivateDnsName
@@ -440,7 +446,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
-        /// The private IP address assigned to the instance.
+        /// The private IPv4 address assigned to the instance.
         /// </para>
         /// </summary>
         public string PrivateIpAddress
@@ -476,9 +482,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicDnsName. 
         /// <para>
-        /// The public DNS name assigned to the instance. This name is not available until the
-        /// instance enters the <code>running</code> state. For EC2-VPC, this name is only available
-        /// if you've enabled DNS hostnames for your VPC.
+        /// (IPv4 only) The public DNS name assigned to the instance. This name is not available
+        /// until the instance enters the <code>running</code> state. For EC2-VPC, this name is
+        /// only available if you've enabled DNS hostnames for your VPC.
         /// </para>
         /// </summary>
         public string PublicDnsName
@@ -496,7 +502,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicIpAddress. 
         /// <para>
-        /// The public IP address assigned to the instance, if applicable.
+        /// The public IPv4 address assigned to the instance, if applicable.
         /// </para>
         /// </summary>
         public string PublicIpAddress

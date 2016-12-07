@@ -28,9 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Represents health information from the specified instance that belongs to the AWS
-    /// Elastic Beanstalk environment. Use the <code>InstanceId</code> property to specify
-    /// the application instance for which you'd like to return data.
+    /// Detailed health information about an Amazon EC2 instance in your Elastic Beanstalk
+    /// environment.
     /// </summary>
     public partial class SingleInstanceHealth
     {
@@ -46,7 +45,10 @@ namespace Amazon.ElasticBeanstalk.Model
         private SystemStatus _system;
 
         /// <summary>
-        /// Gets and sets the property ApplicationMetrics.
+        /// Gets and sets the property ApplicationMetrics. 
+        /// <para>
+        /// Request metrics from your application.
+        /// </para>
         /// </summary>
         public ApplicationMetrics ApplicationMetrics
         {
@@ -209,7 +211,10 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property System.
+        /// Gets and sets the property System. 
+        /// <para>
+        /// Operating system metrics from the instance.
+        /// </para>
         /// </summary>
         public SystemStatus System
         {

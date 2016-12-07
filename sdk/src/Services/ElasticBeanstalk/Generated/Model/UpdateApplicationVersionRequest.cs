@@ -52,8 +52,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Instantiates UpdateApplicationVersionRequest with the parameterized properties
         /// </summary>
-        /// <param name="applicationName">The name of the application associated with this version.  If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </param>
-        /// <param name="versionLabel">The name of the version to update.  If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </param>
+        /// <param name="applicationName">The name of the application associated with this version.  If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</param>
+        /// <param name="versionLabel">The name of the version to update. If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </param>
         public UpdateApplicationVersionRequest(string applicationName, string versionLabel)
         {
             _applicationName = applicationName;
@@ -68,7 +68,7 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  
         /// <para>
         ///  If no application is found with this name, <code>UpdateApplication</code> returns
-        /// an <code>InvalidParameterValue</code> error. 
+        /// an <code>InvalidParameterValue</code> error.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -86,7 +86,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A new description for this release.
+        /// A new description for this version.
         /// </para>
         /// </summary>
         public string Description
@@ -108,7 +108,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  If no application version is found with this label, <code>UpdateApplication</code>
+        /// If no application version is found with this label, <code>UpdateApplication</code>
         /// returns an <code>InvalidParameterValue</code> error. 
         /// </para>
         /// </summary>

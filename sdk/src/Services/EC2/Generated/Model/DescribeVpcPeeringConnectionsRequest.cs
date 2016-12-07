@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>accepter-vpc-info.cidr-block</code> - The CIDR block of the peer VPC.
+        ///  <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the peer VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -60,7 +60,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>requester-vpc-info.cidr-block</code> - The CIDR block of the requester's VPC.
+        ///  <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the requester's
+        /// VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>

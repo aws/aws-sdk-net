@@ -529,7 +529,7 @@ namespace Amazon.SecurityToken
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You cannot call any STS API <i>except</i> <code>AssumeRole</code>.
+        /// You cannot call any STS API <i>except</i> <code>AssumeRole</code> or <code>GetCallerIdentity</code>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

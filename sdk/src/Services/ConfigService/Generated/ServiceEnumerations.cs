@@ -682,6 +682,10 @@ namespace Amazon.ConfigService
         /// Constant AWSS3Bucket for ResourceType
         /// </summary>
         public static readonly ResourceType AWSS3Bucket = new ResourceType("AWS::S3::Bucket");
+        /// <summary>
+        /// Constant AWSSSMManagedInstanceInventory for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSSMManagedInstanceInventory = new ResourceType("AWS::SSM::ManagedInstanceInventory");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -37,8 +37,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Command. 
         /// <para>
-        /// The request as it was received by SSM. Also provides the command ID which can be used
-        /// future references to this request.
+        /// The request as it was received by Systems Manager. Also provides the command ID which
+        /// can be used future references to this request.
         /// </para>
         /// </summary>
         public Command Command

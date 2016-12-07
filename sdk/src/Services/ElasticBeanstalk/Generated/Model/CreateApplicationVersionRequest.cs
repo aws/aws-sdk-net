@@ -44,6 +44,7 @@ namespace Amazon.ElasticBeanstalk.Model
     {
         private string _applicationName;
         private bool? _autoCreateApplication;
+        private BuildConfiguration _buildConfiguration;
         private string _description;
         private bool? _process;
         private SourceBuildInformation _sourceBuildInformation;
@@ -88,26 +89,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property AutoCreateApplication. 
         /// <para>
-        /// Determines how the system behaves if the specified application for this version does
-        /// not already exist:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>true</code> : Automatically creates the specified application for this release
-        /// if it does not already exist.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>false</code> : Throws an <code>InvalidParameterValue</code> if the specified
-        /// application for this release does not already exist.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        ///  Default: <code>false</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  Valid Values: <code>true</code> | <code>false</code> 
+        /// Set to <code>true</code> to create an application with the specified name if it doesn't
+        /// already exist.
         /// </para>
         /// </summary>
         public bool AutoCreateApplication
@@ -120,6 +103,21 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetAutoCreateApplication()
         {
             return this._autoCreateApplication.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BuildConfiguration.
+        /// </summary>
+        public BuildConfiguration BuildConfiguration
+        {
+            get { return this._buildConfiguration; }
+            set { this._buildConfiguration = value; }
+        }
+
+        // Check to see if BuildConfiguration property is set
+        internal bool IsSetBuildConfiguration()
+        {
+            return this._buildConfiguration != null;
         }
 
         /// <summary>
@@ -161,7 +159,17 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceBuildInformation.
+        /// Gets and sets the property SourceBuildInformation. 
+        /// <para>
+        /// Specify a commit in an AWS CodeCommit Git repository to use as the source code for
+        /// the application version.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>),
+        /// but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code>
+        /// are provided, Elastic Beanstalk uses a sample application.
+        /// </para>
         /// </summary>
         public SourceBuildInformation SourceBuildInformation
         {
@@ -183,16 +191,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  If data found at the Amazon S3 location exceeds the maximum allowed source bundle
-        /// size, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. The
-        /// maximum size allowed is 512 MB. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: If not specified, AWS Elastic Beanstalk uses a sample application. If only
-        /// partially specified (for example, a bucket is provided but not the key) or if no data
-        /// is found at the Amazon S3 location, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code>
-        /// error. 
+        /// Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>),
+        /// but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code>
+        /// are provided, Elastic Beanstalk uses a sample application.
         /// </para>
         /// </summary>
         public S3Location SourceBundle

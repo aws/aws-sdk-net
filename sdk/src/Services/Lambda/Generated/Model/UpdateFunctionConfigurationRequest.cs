@@ -49,6 +49,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class UpdateFunctionConfigurationRequest : AmazonLambdaRequest
     {
+        private DeadLetterConfig _deadLetterConfig;
         private string _description;
         private Environment _environment;
         private string _functionName;
@@ -59,6 +60,25 @@ namespace Amazon.Lambda.Model
         private Runtime _runtime;
         private int? _timeout;
         private VpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property DeadLetterConfig. 
+        /// <para>
+        /// The parent object that contains the target ARN (Amazon Resource Name) of an Amazon
+        /// SQS queue or Amazon SNS topic.
+        /// </para>
+        /// </summary>
+        public DeadLetterConfig DeadLetterConfig
+        {
+            get { return this._deadLetterConfig; }
+            set { this._deadLetterConfig = value; }
+        }
+
+        // Check to see if DeadLetterConfig property is set
+        internal bool IsSetDeadLetterConfig()
+        {
+            return this._deadLetterConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -213,6 +233,12 @@ namespace Amazon.Lambda.Model
         /// To use the Node.js runtime v4.3, set the value to "nodejs4.3". To use earlier runtime
         /// (v0.10.42), set the value to "nodejs".
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can no longer downgrade to the v0.10.42 runtime version. This version will no
+        /// longer be supported as of early 2017.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Runtime Runtime
         {

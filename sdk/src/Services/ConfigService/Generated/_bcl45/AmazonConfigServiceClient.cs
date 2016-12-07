@@ -834,6 +834,10 @@ namespace Amazon.ConfigService
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigRuleEvaluationStatus service method.</param>
         /// 
         /// <returns>The response from the DescribeConfigRuleEvaluationStatus service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
+        /// One or more of the specified parameters are invalid. Verify that your parameters are
+        /// valid and try again.
+        /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
         /// One or more AWS Config rules in the request are invalid. Verify that the rule names
         /// are correct and try again.
@@ -1644,7 +1648,12 @@ namespace Amazon.ConfigService
         /// </para>
         ///  
         /// <para>
-        /// The maximum number of rules that AWS Config supports is 25.
+        /// The maximum number of rules that AWS Config supports is 50.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
+        /// Config Limits</a> in the <i>AWS General Reference Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1676,7 +1685,7 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConfigRulesExceededException">
         /// Failed to add the AWS Config rule because the account already contains the maximum
-        /// number of 25 rules. Consider deleting any deactivated rules before adding new rules.
+        /// number of 50 rules. Consider deleting any deactivated rules before adding new rules.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
         /// There are no configuration recorders available to provide the role needed to describe
@@ -1874,7 +1883,7 @@ namespace Amazon.ConfigService
         /// valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidResultTokenException">
-        /// The result token is invalid.
+        /// The speNexcified token is invalid.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
         /// One or more AWS Config rules in the request are invalid. Verify that the rule names
@@ -1912,12 +1921,19 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Evaluates your resources against the specified Config rules. You can specify up to
-        /// 25 Config rules per request.
+        /// Runs an on-demand evaluation for the specified Config rules against the last known
+        /// configuration state of the resources. Use <code>StartConfigRulesEvaluation</code>
+        /// when you want to test a rule that you updated is working as expected. <code>StartConfigRulesEvaluation</code>
+        /// does not re-record the latest configuration state for your resources; it re-runs an
+        /// evaluation against the last known state of your resources. 
         /// 
         ///  
         /// <para>
-        /// An existing <a>StartConfigRulesEvaluation</a> call must complete for the specified
+        /// You can specify up to 25 Config rules per request. 
+        /// </para>
+        ///  
+        /// <para>
+        /// An existing <code>StartConfigRulesEvaluation</code> call must complete for the specified
         /// rules before you can call the API again. If you chose to have AWS Config stream to
         /// an Amazon SNS topic, you will receive a <code>ConfigRuleEvaluationStarted</code> notification
         /// when the evaluation starts.

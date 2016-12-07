@@ -1,3 +1,41 @@
+### 3.3.28.0 (2016-12-06 21:33 UTC)
+* ConfigService (3.3.2.0)
+	* API Update for ConfigService : AWS Config is increasing the number of configrules for all accounts from 25 to 50
+* EC2 (3.3.4.0)
+	* API Update for EC2 :  addedT2.xlarge, T2.2xlarge, and R4 instance type.
+* SecurityToken (3.3.0.4)
+	* Doc update for SecurityTokenService.
+
+### 3.3.27.0 (2016-12-01 23:03 UTC)
+* APIGateway (3.3.3.0)
+	* You can now publish your APIs on Amazon API Gateway as products on the AWS Marketplace. Use the SDK to associate your APIs on API Gateway with Marketplace Product Codes. API Gateway will then send metering data to the Marketplace Metering Service on your behalf. Also, API Gateway now supports documenting your API.
+* AppStream (3.3.0.0)
+	* AppStream is a fully managed desktop application streaming service that provides users instant access to their apps from a web browser.
+* CodeBuild (3.3.0.0)
+	* AWS CodeBuild is a fully-managed build service in the cloud. CodeBuild compiles source code, runs tests, and produces packages that are ready to deploy. CodeBuild eliminates the need to provision, manage, and scale your own build servers. CodeBuild scales continuously and processes multiple builds concurrently, so your builds are never waiting in a queue. You can get started quickly with CodeBuild’s prepackaged build environments, or you can use custom build environments to use your own build tools. With CodeBuild, you only pay by the minute.
+* DirectConnect (3.3.2.0)
+	* IPv6 support
+* EC2 (3.3.3.0)
+	* IPv6 Support for EC2 and new F1 Instance types.
+* ElasticBeanstalk (3.3.2.0)
+	* Integrate AWS codebuild into the service by introducing a new API parameter BuildConfiguration
+* Health (3.3.0.0)
+	* When your business is counting on the performance of your cloud solutions, having relevant and timely insights into events impacting your AWS resources is essential. The AWS Health API serves as the primary source for you to receive personalized information related to your AWS infrastructure, guiding your through scheduled changes, and accelerating the troubleshooting of issues impacting your AWS resources and accounts. At launch, the APIs will be available to Business and Enterprise Support customers.
+* Lambda (3.3.2.0)
+	* New GetAccountSettings API, dotnetcore 1.0 runtime support, new DeadLetterConfig API, and event source mappings with Kinesis streams
+* OpsWorksCM (3.3.0.0)
+	* AWS OpsWorks Managed Chef gives customers a single tenant Chef Automate server. The Chef Automate server is fully managed by AWS and supports automatic backup, restore and upgrade operations.
+* Pinpoint (3.3.0.0)
+	* Amazon Pinpoint makes it easy to run targeted campaigns to improve user engagement. Pinpoint helps you understand your users behavior, define who to target, what messages to send, when to deliver them, and tracks the results of the campaign.
+* Shield (3.3.0.0)
+	* AWS Shield is a managed Distributed Denial of Service (DDoS) protection for web applications running on AWS.
+* SimpleSystemsManagement (3.3.1.0)
+	* Amazon EC2 Systems Manager is a flexible and easy to use management service that enables enterprises to securely manage and administer their workloads running on-premises or in the AWS cloud, using a single unified experience. These tasks include collecting system inventory, maintaining consistent state, ad hoc remote execution, automating imaging creation, applying OS patches, and managing configuration parameters.
+* StepFunctions (3.3.0.0)
+	* AWS StepFunctions allows developers to build cloud applications with breakthrough reliability using state machines.
+* XRay (3.3.0.0)
+	* AWS X-Ray helps developers analyze and debug distributed applications. With X-Ray, you can understand how your application and its underlying services are performing to identify and troubleshoot the root cause of performance issues and errors.
+
 ### 3.3.26.0 (2016-11-30 19:09 UTC)
 * Lightsail (3.3.0.0)
 	* New service Lightsail : a simplified VM creation and management service.

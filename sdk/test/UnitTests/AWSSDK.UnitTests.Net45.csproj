@@ -74,9 +74,17 @@
       <Project>{DA6397A3-62A6-401D-BCE9-C38224A5450B}</Project>
       <Name>AWSSDK.ApplicationDiscoveryService.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\AppStream\AWSSDK.AppStream.Net45.csproj">
+      <Project>{EF0EB20C-8B27-41D2-8A8F-204D4950CBC4}</Project>
+      <Name>AWSSDK.AppStream.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\AutoScaling\AWSSDK.AutoScaling.Net45.csproj">
       <Project>{47B1F84B-C7FD-4F38-A0F5-FF4383752AF4}</Project>
       <Name>AWSSDK.AutoScaling.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\AWSHealth\AWSSDK.AWSHealth.Net45.csproj">
+      <Project>{CE63327C-E2B4-40C1-A91B-430BBEEDA621}</Project>
+      <Name>AWSSDK.AWSHealth.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\AWSMarketplaceCommerceAnalytics\AWSSDK.AWSMarketplaceCommerceAnalytics.Net45.csproj">
       <Project>{C33464FA-3089-4A75-8A61-D2AAB8CCD3FD}</Project>
@@ -133,6 +141,10 @@
     <ProjectReference Include="..\..\src\Services\CloudWatchLogs\AWSSDK.CloudWatchLogs.Net45.csproj">
       <Project>{48B6C28A-93CE-437F-AABC-8CF0439CC44D}</Project>
       <Name>AWSSDK.CloudWatchLogs.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CodeBuild\AWSSDK.CodeBuild.Net45.csproj">
+      <Project>{6C8A7C54-D26E-485A-8E18-7DF01939551D}</Project>
+      <Name>AWSSDK.CodeBuild.Net45</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\src\Services\CodeCommit\AWSSDK.CodeCommit.Net45.csproj">
       <Project>{4690400D-CBE7-49B7-B3E3-2955BAB25585}</Project>
@@ -294,6 +306,14 @@
       <Project>{9123E499-47D5-4B7C-BAB4-155A96CA5E9C}</Project>
       <Name>AWSSDK.OpsWorks.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\OpsWorksCM\AWSSDK.OpsWorksCM.Net45.csproj">
+      <Project>{1848F4AC-7FD3-4D43-A34E-C045358C5B43}</Project>
+      <Name>AWSSDK.OpsWorksCM.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Pinpoint\AWSSDK.Pinpoint.Net45.csproj">
+      <Project>{6F31539F-C39F-4A2E-84AE-DA2434891D48}</Project>
+      <Name>AWSSDK.Pinpoint.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Polly\AWSSDK.Polly.Net45.csproj">
       <Project>{71059888-617C-4D12-89CE-6BBCB27F2915}</Project>
       <Name>AWSSDK.Polly.Net45</Name>
@@ -334,6 +354,10 @@
       <Project>{440F01E4-310D-4514-8478-7F7E12DBFE34}</Project>
       <Name>AWSSDK.ServiceCatalog.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Shield\AWSSDK.Shield.Net45.csproj">
+      <Project>{9EAB3CEC-17CC-43D2-A083-D431D658AD47}</Project>
+      <Name>AWSSDK.Shield.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\SimpleDB\AWSSDK.SimpleDB.Net45.csproj">
       <Project>{781F0A71-6561-4A11-9AED-1D16163938CE}</Project>
       <Name>AWSSDK.SimpleDB.Net45</Name>
@@ -362,6 +386,10 @@
       <Project>{3E6F35CA-693B-45D6-8AC0-BAE9BE94F2BB}</Project>
       <Name>AWSSDK.SQS.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\StepFunctions\AWSSDK.StepFunctions.Net45.csproj">
+      <Project>{12581827-60D2-410F-A0F2-5B16BD2888D6}</Project>
+      <Name>AWSSDK.StepFunctions.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\StorageGateway\AWSSDK.StorageGateway.Net45.csproj">
       <Project>{1B549AEC-1E3F-4D4A-8404-98A43CAF2FD9}</Project>
       <Name>AWSSDK.StorageGateway.Net45</Name>
@@ -373,6 +401,10 @@
     <ProjectReference Include="..\..\src\Services\WorkSpaces\AWSSDK.WorkSpaces.Net45.csproj">
       <Project>{60819F67-5CD7-41A4-9E02-BB27E5A3F715}</Project>
       <Name>AWSSDK.WorkSpaces.Net45</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\XRay\AWSSDK.XRay.Net45.csproj">
+      <Project>{5AA74244-EFF5-480C-A52F-AC4C7587786A}</Project>
+      <Name>AWSSDK.XRay.Net45</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -367,6 +367,12 @@ namespace Amazon.DirectConnect
         /// the virtual interface will be in 'Confirming' state, and will not be available for
         /// handling traffic.
         /// </para>
+        ///  
+        /// <para>
+        /// When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer
+        /// and amazon address fields should be left blank to use auto-assigned IPv6 space. Custom
+        /// IPv6 Addresses are currently not supported.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocatePublicVirtualInterface service method.</param>
         /// 
@@ -562,6 +568,69 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  CreateBGPPeer
+
+
+        /// <summary>
+        /// Creates a new BGP peer on a specified virtual interface. The BGP peer cannot be in
+        /// the same address family (IPv4/IPv6) of an existing BGP peer on the virtual interface.
+        /// 
+        ///  
+        /// <para>
+        /// You must create a BGP peer for the corresponding address family in order to access
+        /// AWS resources that also use that address family.
+        /// </para>
+        ///  
+        /// <para>
+        /// When creating a IPv6 BGP peer, the Amazon address and customer address fields must
+        /// be left blank. IPv6 addresses are automatically assigned from Amazon's pool of IPv6
+        /// addresses; you cannot specify custom IPv6 addresses.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a public virtual interface, the Autonomous System Number (ASN) must be private
+        /// or already whitelisted for the virtual interface.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBGPPeer service method.</param>
+        /// 
+        /// <returns>The response from the CreateBGPPeer service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        public CreateBGPPeerResponse CreateBGPPeer(CreateBGPPeerRequest request)
+        {
+            var marshaller = new CreateBGPPeerRequestMarshaller();
+            var unmarshaller = CreateBGPPeerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBGPPeerRequest,CreateBGPPeerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBGPPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBGPPeer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateBGPPeerResponse> CreateBGPPeerAsync(CreateBGPPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateBGPPeerRequestMarshaller();
+            var unmarshaller = CreateBGPPeerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateBGPPeerRequest,CreateBGPPeerResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateConnection
 
 
@@ -741,6 +810,13 @@ namespace Amazon.DirectConnect
         /// Creates a new public virtual interface. A virtual interface is the VLAN that transports
         /// AWS Direct Connect traffic. A public virtual interface supports sending traffic to
         /// public services of AWS such as Amazon Simple Storage Service (Amazon S3).
+        /// 
+        ///  
+        /// <para>
+        /// When creating an IPv6 public virtual interface (addressFamily is 'ipv6'), the customer
+        /// and amazon address fields should be left blank to use auto-assigned IPv6 space. Custom
+        /// IPv6 Addresses are currently not supported.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePublicVirtualInterface service method.</param>
         /// 
@@ -776,6 +852,52 @@ namespace Amazon.DirectConnect
             var unmarshaller = CreatePublicVirtualInterfaceResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreatePublicVirtualInterfaceRequest,CreatePublicVirtualInterfaceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteBGPPeer
+
+
+        /// <summary>
+        /// Deletes a BGP peer on the specified virtual interface that matches the specified customer
+        /// address and ASN. You cannot delete the last BGP peer from a virtual interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBGPPeer service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBGPPeer service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// The API was called with invalid parameters. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred during the API call. The error message will contain additional
+        /// details about the cause.
+        /// </exception>
+        public DeleteBGPPeerResponse DeleteBGPPeer(DeleteBGPPeerRequest request)
+        {
+            var marshaller = new DeleteBGPPeerRequestMarshaller();
+            var unmarshaller = DeleteBGPPeerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBGPPeerRequest,DeleteBGPPeerResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBGPPeer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBGPPeer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteBGPPeerResponse> DeleteBGPPeerAsync(DeleteBGPPeerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteBGPPeerRequestMarshaller();
+            var unmarshaller = DeleteBGPPeerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBGPPeerRequest,DeleteBGPPeerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

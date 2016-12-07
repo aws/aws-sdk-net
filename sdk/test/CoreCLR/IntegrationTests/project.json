@@ -91,9 +91,17 @@
         "Snowball"                        : "1.0.0-*",
         "Budgets"                         : "1.0.0-*",
         "ServerMigrationService"          : "1.0.0-*",
+        "StepFunctions"                   : "1.0.0-*",
+        "AppStream"                       : "1.0.0-*",
+        "OpsWorksCM"                      : "1.0.0-*",
+        "CodeBuild"                       : "1.0.0-*",
         "Lightsail"                       : "1.0.0-*",
         "Polly"                           : "1.0.0-*",
-        "Rekognition"                     : "1.0.0-*"
+        "Rekognition"                     : "1.0.0-*",
+        "XRay"                            : "1.0.0-*",
+        "Shield"                          : "1.0.0-*",
+        "Pinpoint"                        : "1.0.0-*",
+        "AWSHealth"                       : "1.0.0-*"
     },
     "testRunner"   : "xunit",
     "frameworks"   : {

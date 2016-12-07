@@ -1,0 +1,116 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the codebuild-2016-10-06.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.CodeBuild.Model
+{
+    /// <summary>
+    /// Information about build output artifacts.
+    /// </summary>
+    public partial class BuildArtifacts
+    {
+        private string _location;
+        private string _md5sum;
+        private string _sha256sum;
+
+        /// <summary>
+        /// Gets and sets the property Location. 
+        /// <para>
+        /// Information about the build artifacts' location.
+        /// </para>
+        /// </summary>
+        public string Location
+        {
+            get { return this._location; }
+            set { this._location = value; }
+        }
+
+        // Check to see if Location property is set
+        internal bool IsSetLocation()
+        {
+            return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Md5sum. 
+        /// <para>
+        /// The MD5 hash of the build artifact.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this hash along with a checksum tool to confirm both file integrity and
+        /// authenticity.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This value is available only if the related build project's <code>packaging</code>
+        /// value is set to <code>zip</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string Md5sum
+        {
+            get { return this._md5sum; }
+            set { this._md5sum = value; }
+        }
+
+        // Check to see if Md5sum property is set
+        internal bool IsSetMd5sum()
+        {
+            return this._md5sum != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sha256sum. 
+        /// <para>
+        /// The SHA-256 hash of the build artifact.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this hash along with a checksum tool to confirm both file integrity and
+        /// authenticity.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This value is available only if the related build project's <code>packaging</code>
+        /// value is set to <code>zip</code>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string Sha256sum
+        {
+            get { return this._sha256sum; }
+            set { this._sha256sum = value; }
+        }
+
+        // Check to see if Sha256sum property is set
+        internal bool IsSetSha256sum()
+        {
+            return this._sha256sum != null;
+        }
+
+    }
+}

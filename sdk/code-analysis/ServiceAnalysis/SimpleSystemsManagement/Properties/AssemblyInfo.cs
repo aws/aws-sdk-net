@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.SimpleSystemsManagement")]
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Simple Systems Management Service. Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Simple Systems Manager (SSM). Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]
@@ -29,4 +29,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.3")]
-[assembly: AssemblyFileVersion("3.3.0.3")]
+[assembly: AssemblyFileVersion("3.3.1.0")]

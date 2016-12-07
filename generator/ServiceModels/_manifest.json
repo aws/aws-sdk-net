@@ -141,6 +141,15 @@
         {
             "active": true,
 
+            "model": "appstream",
+            "base-name": "AppStream",
+            "region-lookup-name": "appstream2",
+            "authentication-service-name": "appstream",
+            "synopsis": "Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser."
+        },
+        {
+            "active": true,
+
             "model": "budgets",
             "base-name": "Budgets",
             "region-lookup-name": "budgets",
@@ -288,6 +297,16 @@
             "authentication-service-name": "logs",
             "service-url": "https://logs.us-east-1.amazonaws.com",
             "synopsis": "Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms."
+        },
+        {
+            "active": true,
+
+            "model": "codebuild",
+            "base-name": "CodeBuild",
+            "region-lookup-name": "codebuild",
+            "authentication-service-name": "codebuild",
+            "service-url": "http://codebuild.us-east-1.amazonaws.com",
+            "synopsis": "AWS CodeBuild is a fully-managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit tests, and produces artifacts that are ready to deploy."
         },
         {
             "active": true,
@@ -601,6 +620,14 @@
             "synopsis": "Amazon Kinesis Firehose is a fully managed service for ingesting data streams directly into AWS data services such as Amazon S3 and Amazon Redshift.",
             "platforms": [ "Unity" ]
         },
+        {
+            "active" : true,
+            "model" : "health",
+            "base-name": "AWSHealth",
+            "region-lookup-name": "health",
+            "authentication-service-name" : "health",
+            "synopsis": "The AWS Health API serves as the primary source for you to receive personalized information related to your AWS infrastructure, guiding your through scheduled changes, and accelerating the troubleshooting of issues impacting your AWS resources and accounts."
+        },
 		{
             "active": true,
 
@@ -696,6 +723,16 @@
             "authentication-service-name": "lightsail",
             "synopsis": "An extremely simplified VM creation and management service."
 		},
+        {
+            "active": true,
+
+            "model": "shield",
+            "base-name": "Shield",
+            "region-lookup-name": "shield",
+            "authentication-service-name": "shield",
+            "service-url": "https://shield.us-east-1.amazonaws.com",
+            "synopsis": "AWS Shield protects web applications from large and sophisticated DDoS attacks at Layer 3, 4 and 7. In addition AWS Shield provides visibility in attacks, and access to 24X7 DDoS Response Team."
+        },
         {
             "active": true,
 
@@ -800,12 +837,22 @@
         {
             "active": true,
 
-            "model": "opsworks",
+            "model": "opsworks-",
             "base-name": "OpsWorks",
             "region-lookup-name": "opsworks",
             "authentication-service-name": "opsworks",
             "service-url": "https://opsworks.us-east-1.amazonaws.com/",
             "synopsis": "AWS OpsWorks is an application management service that makes it easy to deploy and operate applications of all shapes and sizes. You can define the application's architecture and the specification of each component including package installation, software configuration and resources such as storage."
+        },
+        {
+            "active": true,
+
+            "model": "pinpoint",
+            "base-name": "Pinpoint",
+            "region-lookup-name": "pinpoint",
+            "authentication-service-name": "mobiletargeting",
+            "service-url": "https://pinpoint.us-east-1.amazonaws.com",
+            "synopsis": "Amazon Pinpoint makes it easy to run targeted campaigns to improve user engagement. Pinpoint helps you understand your users behavior, define who to target, what messages to send, when to deliver them, and tracks the results of the campaign."
         },
 		{
           "active": true,
@@ -826,6 +873,15 @@
           "authentication-service-name": "polly",
           "service-url": "https://polly.us-east-1.amazonaws.com/",
           "synopsis": "Amazon Polly is a service that turns text into lifelike speech, making it easy to develop applications that use high-quality speech to increase engagement and accessibility."
+        },
+        {
+            "active": true,
+
+            "model": "opsworkscm",
+            "base-name": "OpsWorksCM",
+            "region-lookup-name": "opsworks-cm",
+            "authentication-service-name": "opsworks-cm",
+            "synopsis": "AWS OpsWorks for Chef Automate gives customers a single tenant Chef Automate server. The Chef Automate server is fully managed by AWS and supports automatic backup, restore and upgrade operations."
         },
         {
             "active": true,
@@ -980,6 +1036,14 @@
         {
             "active": true,
 
+            "model": "states",
+            "base-name": "StepFunctions",
+            "region-lookup-name": "states",
+            "synopsis": "AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines."
+        },		
+        {
+            "active": true,
+
             "model": "storagegateway",
             "base-name": "StorageGateway",
             "region-lookup-name": "storagegateway",
@@ -1004,6 +1068,15 @@
             "region-lookup-name": "workspaces",
             "service-url": "https://workspaces.us-east-1.amazonaws.com",
             "synopsis": "Amazon WorkSpaces is a managed desktop computing service in the cloud."
+        },
+        {
+            "active": true,
+
+            "model": "xray",
+            "base-name": "XRay",
+            "authentication-service-name": "xray",
+            "region-lookup-name": "xray",
+            "synopsis": "AWS X-Ray helps developers analyze and debug distributed applications. With X-Ray, you can understand how your application and its underlying services are performing to identify and troubleshoot the root cause of performance issues and errors."
         }
     ]
 }

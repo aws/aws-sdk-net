@@ -31,176 +31,24 @@ namespace Amazon.SimpleSystemsManagement
     /// <summary>
     /// Interface for accessing SimpleSystemsManagement
     ///
-    /// Amazon EC2 Simple Systems Manager (SSM) enables you to remotely manage the configuration
-    /// of your Amazon EC2 instances, virtual machines (VMs), or servers in your on-premises
-    /// environment or in an environment provided by other cloud providers using scripts,
-    /// commands, or the Amazon EC2 console. SSM includes an on-demand solution called <i>Amazon
-    /// EC2 Run Command</i> and a lightweight instance configuration solution called <i>SSM
-    /// Config</i>. 
+    /// Amazon EC2 Systems Manager is a collection of capabilities that helps you automate
+    /// management tasks such as collecting system inventory, applying operating system (OS)
+    /// patches, automating the creation of Amazon Machine Images (AMIs), and configuring
+    /// operating systems (OSs) and applications at scale. Systems Manager works with managed
+    /// instances: Amazon EC2 instances and servers or virtual machines (VMs) in your on-premises
+    /// environment that are configured for Systems Manager. 
     /// 
     ///  
     /// <para>
-    /// This references is intended to be used with the EC2 Run Command User Guide for <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/execute-remote-commands.html">Linux</a>
-    /// or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/execute-remote-commands.html">Windows</a>.
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// You must register your on-premises servers and VMs through an activation process before
-    /// you can configure them using Run Command. Registered servers and VMs are called <i>managed
-    /// instances</i>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting
-    /// Up Run Command On Managed Instances (On-Premises Servers and VMs) on Linux</a> or
-    /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting
-    /// Up Run Command On Managed Instances (On-Premises Servers and VMs) on Windows</a>.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    ///  <b>Run Command</b> 
+    /// This references is intended to be used with the EC2 Systems Manager User Guide (<a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager.html">Linux</a>)
+    /// (<a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager.html">Windows</a>).
     /// </para>
     ///  
     /// <para>
-    /// Run Command provides an on-demand experience for executing commands. You can use pre-defined
-    /// SSM documents to perform the actions listed later in this section, or you can create
-    /// your own documents. With these documents, you can remotely configure your instances
-    /// by sending commands using the <b>Commands</b> page in the <a href="http://console.aws.amazon.com/ec2/">Amazon
-    /// EC2 console</a>, <a href="http://docs.aws.amazon.com/powershell/latest/reference/items/Amazon_Simple_Systems_Management_cmdlets.html">AWS
-    /// Tools for Windows PowerShell</a>, the <a href="http://docs.aws.amazon.com/cli/latest/reference/ssm/index.html">AWS
-    /// CLI</a>, or AWS SDKs.
+    /// To get started, verify prerequisites and configure managed instances (<a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager-prereqs.html">Linux</a>)
+    /// (<a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager-prereqs.html">Windows</a>).
     /// </para>
-    ///  
-    /// <para>
-    /// Run Command reports the status of the command execution for each instance targeted
-    /// by a command. You can also audit the command execution to understand who executed
-    /// commands, when, and what changes were made. By switching between different SSM documents,
-    /// you can quickly configure your instances with different types of commands. To get
-    /// started with Run Command, verify that your environment meets the prerequisites for
-    /// remotely running commands on EC2 instances (<a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/remote-commands-prereq.html">Linux</a>
-    /// or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/remote-commands-prereq.html">Windows</a>).
-    /// 
-    /// </para>
-    ///   
-    /// <para>
-    ///  <b>SSM Config</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// SSM Config is a lightweight instance configuration solution. SSM Config is currently
-    /// only available for Windows instances. With SSM Config, you can specify a setup configuration
-    /// for your instances. SSM Config is similar to EC2 User Data, which is another way of
-    /// running one-time scripts or applying settings during instance launch. SSM Config is
-    /// an extension of this capability. Using SSM documents, you can specify which actions
-    /// the system should perform on your instances, including which applications to install,
-    /// which AWS Directory Service directory to join, which Microsoft PowerShell modules
-    /// to install, etc. If an instance is missing one or more of these configurations, the
-    /// system makes those changes. By default, the system checks every five minutes to see
-    /// if there is a new configuration to apply as defined in a new SSM document. If so,
-    /// the system updates the instances accordingly. In this way, you can remotely maintain
-    /// a consistent configuration baseline on your instances. SSM Config is available using
-    /// the AWS CLI or the AWS Tools for Windows PowerShell. For more information, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-configuration-manage.html">Managing
-    /// Windows Instance Configuration</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// SSM Config and Run Command include the following pre-defined documents.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Linux</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <b>AWS-RunShellScript</b> to run shell scripts
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-UpdateSSMAgent</b> to update the Amazon SSM agent
-    /// </para>
-    ///  </li> </ul>  
-    /// <para>
-    ///  <b>Windows</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <b>AWS-JoinDirectoryServiceDomain</b> to join an AWS Directory
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-RunPowerShellScript</b> to run PowerShell commands or scripts
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-UpdateEC2Config</b> to update the EC2Config service
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-ConfigureWindowsUpdate</b> to configure Windows Update settings
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-InstallApplication</b> to install, repair, or uninstall software using an
-    /// MSI package
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-InstallPowerShellModule</b> to install PowerShell modules 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-ConfigureCloudWatch</b> to configure Amazon CloudWatch Logs to monitor applications
-    /// and systems
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-ListWindowsInventory</b> to collect information about an EC2 instance running
-    /// in Windows.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-FindWindowsUpdates</b> to scan an instance and determines which updates are
-    /// missing.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-InstallMissingWindowsUpdates</b> to install missing updates on your EC2 instance.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-InstallSpecificWindowsUpdates</b> to install one or more specific updates.
-    /// </para>
-    ///  </li> </ul> <important> 
-    /// <para>
-    /// The commands or scripts specified in SSM documents run with administrative privilege
-    /// on your instances because the Amazon SSM agent runs as root on Linux and the EC2Config
-    /// service runs in the Local System account on Windows. If a user has permission to execute
-    /// any of the pre-defined SSM documents (any document that begins with AWS-*) then that
-    /// user also has administrator access to the instance. Delegate access to Run Command
-    /// and SSM Config judiciously. This becomes extremely important if you create your own
-    /// SSM documents. Amazon Web Services does not provide guidance about how to create secure
-    /// SSM documents. You create SSM documents and delegate access to Run Command at your
-    /// own risk. As a security best practice, we recommend that you assign access to "AWS-*"
-    /// documents, especially the AWS-RunShellScript document on Linux and the AWS-RunPowerShellScript
-    /// document on Windows, to trusted administrators only. You can create SSM documents
-    /// for specific tasks and delegate access to non-administrators.
-    /// </para>
-    ///  </important> 
-    /// <para>
-    /// For information about creating and sharing SSM documents, see the following topics
-    /// in the SSM User Guide: 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-ssm-doc.html">Creating
-    /// SSM Documents</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssm-sharing.html">Sharing
-    /// SSM Documents</a> (Linux)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/create-ssm-doc.html">Creating
-    /// SSM Documents</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ssm-sharing.html">Sharing
-    /// SSM Documents</a> (Windows)
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonSimpleSystemsManagement : IAmazonService, IDisposable
     {
@@ -221,7 +69,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        ///  We recommend that you devise a set of tag keys that meets your needs for each resource
+        /// We recommend that you devise a set of tag keys that meets your needs for each resource
         /// type. Using a consistent set of tag keys makes it easier for you to manage your resources.
         /// You can search and filter the resources based on the tags you add. Tags don't have
         /// any semantic meaning to Amazon EC2 and are interpreted strictly as a string of characters.
@@ -245,6 +93,10 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceTypeException">
         /// The resource type is not valid. If you are attempting to tag an instance, the instance
         /// must be a registered, managed instance.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyTagsErrorException">
+        /// The <code>Targets</code> parameter includes too many tags. Remove one or more tags
+        /// and try the command again.
         /// </exception>
         AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request);
 
@@ -282,8 +134,28 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         CancelCommandResponse CancelCommand(string commandId);
 
@@ -305,8 +177,28 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         CancelCommandResponse CancelCommand(string commandId, List<string> instanceIds);
 
@@ -327,8 +219,28 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         CancelCommandResponse CancelCommand(CancelCommandRequest request);
 
@@ -353,8 +265,28 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         Task<CancelCommandResponse> CancelCommandAsync(string commandId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -379,8 +311,28 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         Task<CancelCommandResponse> CancelCommandAsync(string commandId, List<string> instanceIds, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -434,13 +386,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Associates the specified SSM document with the specified instance.
+        /// Associates the specified SSM document with the specified instances or targets.
         /// 
         ///  
         /// <para>
-        /// When you associate an SSM document with an instance, the configuration agent on the
-        /// instance (SSM agent for Linux and EC2Config service for Windows) processes the document
-        /// and configures the instance as specified.
+        /// When you associate an SSM document with one or more instances using instance IDs or
+        /// tags, the SSM agent running on the instance processes the document and configures
+        /// the instance as specified.
         /// </para>
         ///  
         /// <para>
@@ -464,13 +416,46 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputLocationException">
+        /// The output location is not valid or does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
         /// You must specify values for all required parameters in the SSM document. You can only
         /// supply values to parameters defined in the SSM document.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
+        /// The schedule is invalid. Verify your cron or rate expression and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
+        /// The target is not valid or does not exist. It might not be configured for EC2 Systems
+        /// Manager or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
         /// The document does not support the platform type of the given instance ID(s). For example,
@@ -479,13 +464,13 @@ namespace Amazon.SimpleSystemsManagement
         CreateAssociationResponse CreateAssociation(string instanceId, string name);
 
         /// <summary>
-        /// Associates the specified SSM document with the specified instance.
+        /// Associates the specified SSM document with the specified instances or targets.
         /// 
         ///  
         /// <para>
-        /// When you associate an SSM document with an instance, the configuration agent on the
-        /// instance (SSM agent for Linux and EC2Config service for Windows) processes the document
-        /// and configures the instance as specified.
+        /// When you associate an SSM document with one or more instances using instance IDs or
+        /// tags, the SSM agent running on the instance processes the document and configures
+        /// the instance as specified.
         /// </para>
         ///  
         /// <para>
@@ -508,13 +493,46 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputLocationException">
+        /// The output location is not valid or does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
         /// You must specify values for all required parameters in the SSM document. You can only
         /// supply values to parameters defined in the SSM document.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
+        /// The schedule is invalid. Verify your cron or rate expression and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
+        /// The target is not valid or does not exist. It might not be configured for EC2 Systems
+        /// Manager or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
         /// The document does not support the platform type of the given instance ID(s). For example,
@@ -524,13 +542,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Associates the specified SSM document with the specified instance.
+        /// Associates the specified SSM document with the specified instances or targets.
         /// 
         ///  
         /// <para>
-        /// When you associate an SSM document with an instance, the configuration agent on the
-        /// instance (SSM agent for Linux and EC2Config service for Windows) processes the document
-        /// and configures the instance as specified.
+        /// When you associate an SSM document with one or more instances using instance IDs or
+        /// tags, the SSM agent running on the instance processes the document and configures
+        /// the instance as specified.
         /// </para>
         ///  
         /// <para>
@@ -557,13 +575,46 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputLocationException">
+        /// The output location is not valid or does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
         /// You must specify values for all required parameters in the SSM document. You can only
         /// supply values to parameters defined in the SSM document.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
+        /// The schedule is invalid. Verify your cron or rate expression and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
+        /// The target is not valid or does not exist. It might not be configured for EC2 Systems
+        /// Manager or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
         /// The document does not support the platform type of the given instance ID(s). For example,
@@ -588,13 +639,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Associates the specified SSM document with the specified instances.
+        /// Associates the specified SSM document with the specified instances or targets.
         /// 
         ///  
         /// <para>
-        /// When you associate an SSM document with an instance, the configuration agent on the
-        /// instance (SSM agent for Linux and EC2Config service for Windows) processes the document
-        /// and configures the instance as specified.
+        /// When you associate an SSM document with one or more instances using instance IDs or
+        /// tags, the SSM agent running on the instance processes the document and configures
+        /// the instance as specified.
         /// </para>
         ///  
         /// <para>
@@ -617,13 +668,46 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputLocationException">
+        /// The output location is not valid or does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
         /// You must specify values for all required parameters in the SSM document. You can only
         /// supply values to parameters defined in the SSM document.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
+        /// The schedule is invalid. Verify your cron or rate expression and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
+        /// The target is not valid or does not exist. It might not be configured for EC2 Systems
+        /// Manager or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
         /// The document does not support the platform type of the given instance ID(s). For example,
@@ -673,6 +757,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
         /// The content for the SSM document is not valid.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentSchemaVersionException">
+        /// The version of the document schema is not supported.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of an SSM document is 64 KB.
         /// </exception>
@@ -701,6 +788,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
         /// The content for the SSM document is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentSchemaVersionException">
+        /// The version of the document schema is not supported.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of an SSM document is 64 KB.
@@ -736,6 +826,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
         /// The content for the SSM document is not valid.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentSchemaVersionException">
+        /// The version of the document schema is not supported.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of an SSM document is 64 KB.
         /// </exception>
@@ -751,6 +844,42 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<CreateDocumentResponse> CreateDocumentAsync(CreateDocumentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateMaintenanceWindow
+
+
+        /// <summary>
+        /// Creates a new Maintenance Window.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMaintenanceWindow service method.</param>
+        /// 
+        /// <returns>The response from the CreateMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
+        /// Error returned when an idempotent operation is retried and the parameters don’t match
+        /// the original call to the API with the same idempotency token.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceLimitExceededException">
+        /// Error returned when the caller has exceeded the default resource limits (e.g. too
+        /// many Maintenance Windows have been created).
+        /// </exception>
+        CreateMaintenanceWindowResponse CreateMaintenanceWindow(CreateMaintenanceWindowRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMaintenanceWindow operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateMaintenanceWindowResponse> CreateMaintenanceWindowAsync(CreateMaintenanceWindowRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -821,8 +950,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -853,8 +1002,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -890,8 +1059,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -1012,6 +1201,65 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DeleteMaintenanceWindow
+
+
+        /// <summary>
+        /// Deletes a Maintenance Window.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMaintenanceWindow service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        DeleteMaintenanceWindowResponse DeleteMaintenanceWindow(DeleteMaintenanceWindowRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMaintenanceWindow operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteMaintenanceWindowResponse> DeleteMaintenanceWindowAsync(DeleteMaintenanceWindowRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteParameter
+
+
+        /// <summary>
+        /// Delete a parameter from the system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteParameter service method.</param>
+        /// 
+        /// <returns>The response from the DeleteParameter service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
+        /// The parameter could not be found. Verify the name and try again.
+        /// </exception>
+        DeleteParameterResponse DeleteParameter(DeleteParameterRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteParameter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteParameter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteParameterResponse> DeleteParameterAsync(DeleteParameterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeregisterManagedInstance
 
 
@@ -1027,8 +1275,28 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         DeregisterManagedInstanceResponse DeregisterManagedInstance(DeregisterManagedInstanceRequest request);
 
@@ -1043,6 +1311,70 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeregisterManagedInstanceResponse> DeregisterManagedInstanceAsync(DeregisterManagedInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeregisterTargetFromMaintenanceWindow
+
+
+        /// <summary>
+        /// Removes a target from a Maintenance Window.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterTargetFromMaintenanceWindow service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterTargetFromMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        DeregisterTargetFromMaintenanceWindowResponse DeregisterTargetFromMaintenanceWindow(DeregisterTargetFromMaintenanceWindowRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterTargetFromMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterTargetFromMaintenanceWindow operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeregisterTargetFromMaintenanceWindowResponse> DeregisterTargetFromMaintenanceWindowAsync(DeregisterTargetFromMaintenanceWindowRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeregisterTaskFromMaintenanceWindow
+
+
+        /// <summary>
+        /// Removes a task from a Maintenance Window.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterTaskFromMaintenanceWindow service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterTaskFromMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        DeregisterTaskFromMaintenanceWindowResponse DeregisterTaskFromMaintenanceWindow(DeregisterTaskFromMaintenanceWindowRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterTaskFromMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterTaskFromMaintenanceWindow operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeregisterTaskFromMaintenanceWindowResponse> DeregisterTaskFromMaintenanceWindowAsync(DeregisterTaskFromMaintenanceWindowRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1102,8 +1434,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         DescribeAssociationResponse DescribeAssociation(string instanceId, string name);
 
@@ -1123,8 +1475,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         DescribeAssociationResponse DescribeAssociation(DescribeAssociationRequest request);
 
@@ -1149,8 +1521,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         Task<DescribeAssociationResponse> DescribeAssociationAsync(string instanceId, string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1164,6 +1556,37 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeAssociationResponse> DescribeAssociationAsync(DescribeAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAutomationExecutions
+
+
+        /// <summary>
+        /// Provides details about all active and terminated Automation executions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAutomationExecutions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAutomationExecutions service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        DescribeAutomationExecutionsResponse DescribeAutomationExecutions(DescribeAutomationExecutionsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAutomationExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAutomationExecutions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeAutomationExecutionsResponse> DescribeAutomationExecutionsAsync(DescribeAutomationExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1182,6 +1605,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
+        /// </exception>
         DescribeDocumentResponse DescribeDocument(string name);
 
         /// <summary>
@@ -1195,6 +1621,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
         /// </exception>
         DescribeDocumentResponse DescribeDocument(DescribeDocumentRequest request);
 
@@ -1213,6 +1642,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
         /// </exception>
         Task<DescribeDocumentResponse> DescribeDocumentAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1266,6 +1698,116 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeEffectiveInstanceAssociations
+
+
+        /// <summary>
+        /// All associations for the instance(s).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEffectiveInstanceAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEffectiveInstanceAssociations service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        DescribeEffectiveInstanceAssociationsResponse DescribeEffectiveInstanceAssociations(DescribeEffectiveInstanceAssociationsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEffectiveInstanceAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEffectiveInstanceAssociations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeEffectiveInstanceAssociationsResponse> DescribeEffectiveInstanceAssociationsAsync(DescribeEffectiveInstanceAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeInstanceAssociationsStatus
+
+
+        /// <summary>
+        /// The status of the associations for the instance(s).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAssociationsStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceAssociationsStatus service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        DescribeInstanceAssociationsStatusResponse DescribeInstanceAssociationsStatus(DescribeInstanceAssociationsStatusRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceAssociationsStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAssociationsStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeInstanceAssociationsStatusResponse> DescribeInstanceAssociationsStatusAsync(DescribeInstanceAssociationsStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeInstanceInformation
 
 
@@ -1286,8 +1828,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceInformationFilterValueException">
         /// The specified filter value is not valid.
@@ -1316,8 +1878,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceInformationFilterValueException">
         /// The specified filter value is not valid.
@@ -1348,8 +1930,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceInformationFilterValueException">
         /// The specified filter value is not valid.
@@ -1373,6 +1975,321 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeMaintenanceWindowExecutions
+
+
+        /// <summary>
+        /// Lists the executions of a Maintenance Window (meaning, information about when the
+        /// Maintenance Window was scheduled to be active and information about tasks registered
+        /// and run with the Maintenance Window).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowExecutions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMaintenanceWindowExecutions service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        DescribeMaintenanceWindowExecutionsResponse DescribeMaintenanceWindowExecutions(DescribeMaintenanceWindowExecutionsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMaintenanceWindowExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowExecutions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeMaintenanceWindowExecutionsResponse> DescribeMaintenanceWindowExecutionsAsync(DescribeMaintenanceWindowExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeMaintenanceWindowExecutionTaskInvocations
+
+
+        /// <summary>
+        /// Retrieves the individual task executions (one per target) for a particular task executed
+        /// as part of a Maintenance Window execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowExecutionTaskInvocations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMaintenanceWindowExecutionTaskInvocations service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        DescribeMaintenanceWindowExecutionTaskInvocationsResponse DescribeMaintenanceWindowExecutionTaskInvocations(DescribeMaintenanceWindowExecutionTaskInvocationsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMaintenanceWindowExecutionTaskInvocations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowExecutionTaskInvocations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeMaintenanceWindowExecutionTaskInvocationsResponse> DescribeMaintenanceWindowExecutionTaskInvocationsAsync(DescribeMaintenanceWindowExecutionTaskInvocationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeMaintenanceWindowExecutionTasks
+
+
+        /// <summary>
+        /// For a given Maintenance Window execution, lists the tasks that were executed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowExecutionTasks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMaintenanceWindowExecutionTasks service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        DescribeMaintenanceWindowExecutionTasksResponse DescribeMaintenanceWindowExecutionTasks(DescribeMaintenanceWindowExecutionTasksRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMaintenanceWindowExecutionTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowExecutionTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeMaintenanceWindowExecutionTasksResponse> DescribeMaintenanceWindowExecutionTasksAsync(DescribeMaintenanceWindowExecutionTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeMaintenanceWindows
+
+
+        /// <summary>
+        /// Retrieves the Maintenance Windows in an AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindows service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMaintenanceWindows service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        DescribeMaintenanceWindowsResponse DescribeMaintenanceWindows(DescribeMaintenanceWindowsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMaintenanceWindows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindows operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeMaintenanceWindowsResponse> DescribeMaintenanceWindowsAsync(DescribeMaintenanceWindowsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeMaintenanceWindowTargets
+
+
+        /// <summary>
+        /// Lists the targets registered with the Maintenance Window.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowTargets service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMaintenanceWindowTargets service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        DescribeMaintenanceWindowTargetsResponse DescribeMaintenanceWindowTargets(DescribeMaintenanceWindowTargetsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMaintenanceWindowTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowTargets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeMaintenanceWindowTargetsResponse> DescribeMaintenanceWindowTargetsAsync(DescribeMaintenanceWindowTargetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeMaintenanceWindowTasks
+
+
+        /// <summary>
+        /// Lists the tasks in a Maintenance Window.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowTasks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMaintenanceWindowTasks service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        DescribeMaintenanceWindowTasksResponse DescribeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMaintenanceWindowTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeMaintenanceWindowTasksResponse> DescribeMaintenanceWindowTasksAsync(DescribeMaintenanceWindowTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeParameters
+
+
+        /// <summary>
+        /// Get information about a parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeParameters service method.</param>
+        /// 
+        /// <returns>The response from the DescribeParameters service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterValueException">
+        /// The filter value is not valid. Verify the value and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        DescribeParametersResponse DescribeParameters(DescribeParametersRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeParameters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeParametersResponse> DescribeParametersAsync(DescribeParametersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAutomationExecution
+
+
+        /// <summary>
+        /// Get detailed information about a particular Automation execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomationExecution service method.</param>
+        /// 
+        /// <returns>The response from the GetAutomationExecution service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationExecutionNotFoundException">
+        /// There is no automation execution information for the requested automation execution
+        /// ID.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        GetAutomationExecutionResponse GetAutomationExecution(GetAutomationExecutionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAutomationExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomationExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetAutomationExecutionResponse> GetAutomationExecutionAsync(GetAutomationExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetCommandInvocation
+
+
+        /// <summary>
+        /// Returns detailed information about command execution for an invocation or plugin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCommandInvocation service method.</param>
+        /// 
+        /// <returns>The response from the GetCommandInvocation service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidCommandIdException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidPluginNameException">
+        /// The plugin name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvocationDoesNotExistException">
+        /// The command ID and instance ID you specified did not match any invocations. Verify
+        /// the command ID adn the instance ID and try again.
+        /// </exception>
+        GetCommandInvocationResponse GetCommandInvocation(GetCommandInvocationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCommandInvocation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCommandInvocation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetCommandInvocationResponse> GetCommandInvocationAsync(GetCommandInvocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetDocument
 
 
@@ -1388,6 +2305,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
+        /// </exception>
         GetDocumentResponse GetDocument(string name);
 
         /// <summary>
@@ -1401,6 +2321,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
         /// </exception>
         GetDocumentResponse GetDocument(GetDocumentRequest request);
 
@@ -1420,6 +2343,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
+        /// </exception>
         Task<GetDocumentResponse> GetDocumentAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -1432,6 +2358,240 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetDocumentResponse> GetDocumentAsync(GetDocumentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetInventory
+
+
+        /// <summary>
+        /// Query inventory information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInventory service method.</param>
+        /// 
+        /// <returns>The response from the GetInventory service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResultAttributeException">
+        /// The specified inventory item result attribute is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
+        /// The parameter type name is not valid.
+        /// </exception>
+        GetInventoryResponse GetInventory(GetInventoryRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInventory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInventory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetInventoryResponse> GetInventoryAsync(GetInventoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetInventorySchema
+
+
+        /// <summary>
+        /// Return a list of inventory type names for the account, or return a list of attribute
+        /// names for a specific Inventory item type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInventorySchema service method.</param>
+        /// 
+        /// <returns>The response from the GetInventorySchema service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
+        /// The parameter type name is not valid.
+        /// </exception>
+        GetInventorySchemaResponse GetInventorySchema(GetInventorySchemaRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInventorySchema operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInventorySchema operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetInventorySchemaResponse> GetInventorySchemaAsync(GetInventorySchemaRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetMaintenanceWindow
+
+
+        /// <summary>
+        /// Retrieves a Maintenance Window.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindow service method.</param>
+        /// 
+        /// <returns>The response from the GetMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        GetMaintenanceWindowResponse GetMaintenanceWindow(GetMaintenanceWindowRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindow operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetMaintenanceWindowResponse> GetMaintenanceWindowAsync(GetMaintenanceWindowRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetMaintenanceWindowExecution
+
+
+        /// <summary>
+        /// Retrieves details about a specific task executed as part of a Maintenance Window execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowExecution service method.</param>
+        /// 
+        /// <returns>The response from the GetMaintenanceWindowExecution service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        GetMaintenanceWindowExecutionResponse GetMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMaintenanceWindowExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetMaintenanceWindowExecutionResponse> GetMaintenanceWindowExecutionAsync(GetMaintenanceWindowExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetMaintenanceWindowExecutionTask
+
+
+        /// <summary>
+        /// Retrieves the details about a specific task executed as part of a Maintenance Window
+        /// execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowExecutionTask service method.</param>
+        /// 
+        /// <returns>The response from the GetMaintenanceWindowExecutionTask service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        GetMaintenanceWindowExecutionTaskResponse GetMaintenanceWindowExecutionTask(GetMaintenanceWindowExecutionTaskRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMaintenanceWindowExecutionTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowExecutionTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetMaintenanceWindowExecutionTaskResponse> GetMaintenanceWindowExecutionTaskAsync(GetMaintenanceWindowExecutionTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetParameterHistory
+
+
+        /// <summary>
+        /// Query a list of all parameters used by the AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetParameterHistory service method.</param>
+        /// 
+        /// <returns>The response from the GetParameterHistory service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
+        /// The parameter could not be found. Verify the name and try again.
+        /// </exception>
+        GetParameterHistoryResponse GetParameterHistory(GetParameterHistoryRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetParameterHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetParameterHistory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetParameterHistoryResponse> GetParameterHistoryAsync(GetParameterHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetParameters
+
+
+        /// <summary>
+        /// Get a list of parameters used by the AWS account.&gt;
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetParameters service method.</param>
+        /// 
+        /// <returns>The response from the GetParameters service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        GetParametersResponse GetParameters(GetParametersRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetParameters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetParametersResponse> GetParametersAsync(GetParametersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1488,8 +2648,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -1517,8 +2697,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -1545,8 +2745,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -1576,8 +2796,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -1608,8 +2848,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -1647,8 +2907,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -1672,8 +2952,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -1696,8 +2996,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -1723,8 +3043,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -1751,8 +3091,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -1843,6 +3203,101 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ListDocumentVersions
+
+
+        /// <summary>
+        /// List all versions for a document.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDocumentVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListDocumentVersions service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        ListDocumentVersionsResponse ListDocumentVersions(ListDocumentVersionsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDocumentVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDocumentVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListDocumentVersionsResponse> ListDocumentVersionsAsync(ListDocumentVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListInventoryEntries
+
+
+        /// <summary>
+        /// A list of inventory items returned by the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInventoryEntries service method.</param>
+        /// 
+        /// <returns>The response from the ListInventoryEntries service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
+        /// The parameter type name is not valid.
+        /// </exception>
+        ListInventoryEntriesResponse ListInventoryEntries(ListInventoryEntriesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInventoryEntries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInventoryEntries operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListInventoryEntriesResponse> ListInventoryEntriesAsync(ListInventoryEntriesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -1923,6 +3378,207 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  PutInventory
+
+
+        /// <summary>
+        /// Bulk update custom inventory items on one more instance. The request adds an inventory
+        /// item, if it doesn't already exist, or updates an inventory item, if it does exist.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutInventory service method.</param>
+        /// 
+        /// <returns>The response from the PutInventory service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.CustomSchemaCountLimitExceededException">
+        /// You have exceeded the limit for custom schemas. Delete one or more custom schemas
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidItemContentException">
+        /// One or more content items is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
+        /// The parameter type name is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ItemContentMismatchException">
+        /// The inventory item has invalid content.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ItemSizeLimitExceededException">
+        /// The inventory item size has exceeded the size limit.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TotalSizeLimitExceededException">
+        /// The size of inventory data has exceeded the total size limit for the resource.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedInventorySchemaVersionException">
+        /// Inventory item type schema version has to match supported versions in the service.
+        /// Check output of <code>GetInventorySchema</code> to see the available schema version
+        /// for each type.
+        /// </exception>
+        PutInventoryResponse PutInventory(PutInventoryRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutInventory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutInventory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutInventoryResponse> PutInventoryAsync(PutInventoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutParameter
+
+
+        /// <summary>
+        /// Add one or more paramaters to the system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutParameter service method.</param>
+        /// 
+        /// <returns>The response from the PutParameter service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidKeyIdException">
+        /// The query key ID is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterAlreadyExistsException">
+        /// The parameter already exists. You can't create duplicate parameters.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterLimitExceededException">
+        /// You have exceeded the number of parameters for this AWS account. Delete one or more
+        /// parameters and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
+        /// There are concurrent updates for a resource that supports one update at a time.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedParameterTypeException">
+        /// The parameter type is not supported.
+        /// </exception>
+        PutParameterResponse PutParameter(PutParameterRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutParameter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutParameter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutParameterResponse> PutParameterAsync(PutParameterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RegisterTargetWithMaintenanceWindow
+
+
+        /// <summary>
+        /// Registers a target with a Maintenance Window.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterTargetWithMaintenanceWindow service method.</param>
+        /// 
+        /// <returns>The response from the RegisterTargetWithMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
+        /// Error returned when an idempotent operation is retried and the parameters don’t match
+        /// the original call to the API with the same idempotency token.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceLimitExceededException">
+        /// Error returned when the caller has exceeded the default resource limits (e.g. too
+        /// many Maintenance Windows have been created).
+        /// </exception>
+        RegisterTargetWithMaintenanceWindowResponse RegisterTargetWithMaintenanceWindow(RegisterTargetWithMaintenanceWindowRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterTargetWithMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterTargetWithMaintenanceWindow operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RegisterTargetWithMaintenanceWindowResponse> RegisterTargetWithMaintenanceWindowAsync(RegisterTargetWithMaintenanceWindowRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RegisterTaskWithMaintenanceWindow
+
+
+        /// <summary>
+        /// Adds a new task to a Maintenance Window.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterTaskWithMaintenanceWindow service method.</param>
+        /// 
+        /// <returns>The response from the RegisterTaskWithMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
+        /// Error returned when an idempotent operation is retried and the parameters don’t match
+        /// the original call to the API with the same idempotency token.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceLimitExceededException">
+        /// Error returned when the caller has exceeded the default resource limits (e.g. too
+        /// many Maintenance Windows have been created).
+        /// </exception>
+        RegisterTaskWithMaintenanceWindowResponse RegisterTaskWithMaintenanceWindow(RegisterTaskWithMaintenanceWindowRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterTaskWithMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterTaskWithMaintenanceWindow operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RegisterTaskWithMaintenanceWindowResponse> RegisterTaskWithMaintenanceWindowAsync(RegisterTaskWithMaintenanceWindowRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RemoveTagsFromResource
 
 
@@ -1978,8 +3634,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNotificationConfigException">
         /// One or more configuration items is not valid. Verify that a valid Amazon Resource
@@ -1995,8 +3671,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidRoleException">
         /// The role name can't contain invalid characters. Also verify that you specified an
         /// IAM role for notifications that includes the required trust policy. For information
-        /// about configuring the IAM role for SSM notifications, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html">Configuring
-        /// SNS Notifications SSM</a> in the <i>Amazon Elastic Compute Cloud User Guide </i>.
+        /// about configuring the IAM role for Run Command notifications, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html">Getting
+        /// Amazon SNS Notifications When a Command Changes Status</a> in the <i>Amazon Elastic
+        /// Compute Cloud User Guide </i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of an SSM document is 64 KB.
@@ -2023,8 +3700,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNotificationConfigException">
         /// One or more configuration items is not valid. Verify that a valid Amazon Resource
@@ -2040,8 +3737,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidRoleException">
         /// The role name can't contain invalid characters. Also verify that you specified an
         /// IAM role for notifications that includes the required trust policy. For information
-        /// about configuring the IAM role for SSM notifications, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html">Configuring
-        /// SNS Notifications SSM</a> in the <i>Amazon Elastic Compute Cloud User Guide </i>.
+        /// about configuring the IAM role for Run Command notifications, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html">Getting
+        /// Amazon SNS Notifications When a Command Changes Status</a> in the <i>Amazon Elastic
+        /// Compute Cloud User Guide </i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of an SSM document is 64 KB.
@@ -2073,8 +3771,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNotificationConfigException">
         /// One or more configuration items is not valid. Verify that a valid Amazon Resource
@@ -2090,8 +3808,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidRoleException">
         /// The role name can't contain invalid characters. Also verify that you specified an
         /// IAM role for notifications that includes the required trust policy. For information
-        /// about configuring the IAM role for SSM notifications, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html">Configuring
-        /// SNS Notifications SSM</a> in the <i>Amazon Elastic Compute Cloud User Guide </i>.
+        /// about configuring the IAM role for Run Command notifications, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html">Getting
+        /// Amazon SNS Notifications When a Command Changes Status</a> in the <i>Amazon Elastic
+        /// Compute Cloud User Guide </i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of an SSM document is 64 KB.
@@ -2115,6 +3834,132 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  StartAutomationExecution
+
+
+        /// <summary>
+        /// Initiates execution of an Automation document.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAutomationExecution service method.</param>
+        /// 
+        /// <returns>The response from the StartAutomationExecution service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationDefinitionNotFoundException">
+        /// An Automation document with the specified name could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationDefinitionVersionNotFoundException">
+        /// An Automation document with the specified name and version could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationExecutionLimitExceededException">
+        /// The number of simultaneously running Automation executions exceeded the allowable
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidAutomationExecutionParametersException">
+        /// The supplied parameters for invoking the specified Automation document are incorrect.
+        /// For example, they may not match the set of parameters permitted for the specified
+        /// Automation document.
+        /// </exception>
+        StartAutomationExecutionResponse StartAutomationExecution(StartAutomationExecutionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAutomationExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAutomationExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<StartAutomationExecutionResponse> StartAutomationExecutionAsync(StartAutomationExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopAutomationExecution
+
+
+        /// <summary>
+        /// Stop an Automation that is currently executing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopAutomationExecution service method.</param>
+        /// 
+        /// <returns>The response from the StopAutomationExecution service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AutomationExecutionNotFoundException">
+        /// There is no automation execution information for the requested automation execution
+        /// ID.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        StopAutomationExecutionResponse StopAutomationExecution(StopAutomationExecutionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopAutomationExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopAutomationExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<StopAutomationExecutionResponse> StopAutomationExecutionAsync(StopAutomationExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAssociation
+
+
+        /// <summary>
+        /// Updates an association. You can only update the document version, schedule, parameters,
+        /// and Amazon S3 output of an association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAssociation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAssociation service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AssociationDoesNotExistException">
+        /// The specified association does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputLocationException">
+        /// The output location is not valid or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
+        /// You must specify values for all required parameters in the SSM document. You can only
+        /// supply values to parameters defined in the SSM document.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
+        /// The schedule is invalid. Verify your cron or rate expression and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidUpdateException">
+        /// The update is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
+        /// There are concurrent updates for a resource that supports one update at a time.
+        /// </exception>
+        UpdateAssociationResponse UpdateAssociation(UpdateAssociationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAssociation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateAssociationResponse> UpdateAssociationAsync(UpdateAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateAssociationStatus
 
 
@@ -2134,8 +3979,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.StatusUnchangedException">
         /// The updated status is the same as the current status.
@@ -2159,6 +4024,125 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  UpdateDocument
+
+
+        /// <summary>
+        /// The document you want to update.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocument service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDocument service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentVersionLimitExceededException">
+        /// The document has too many versions. Delete one or more document versions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DuplicateDocumentContentException">
+        /// The content of the association document matches another document. Change the content
+        /// of the document and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
+        /// The content for the SSM document is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentSchemaVersionException">
+        /// The version of the document schema is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
+        /// The size limit of an SSM document is 64 KB.
+        /// </exception>
+        UpdateDocumentResponse UpdateDocument(UpdateDocumentRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDocument operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocument operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateDocumentResponse> UpdateDocumentAsync(UpdateDocumentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateDocumentDefaultVersion
+
+
+        /// <summary>
+        /// Set the default version of a document.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentDefaultVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDocumentDefaultVersion service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
+        /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentSchemaVersionException">
+        /// The version of the document schema is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
+        /// </exception>
+        UpdateDocumentDefaultVersionResponse UpdateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDocumentDefaultVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentDefaultVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateDocumentDefaultVersionResponse> UpdateDocumentDefaultVersionAsync(UpdateDocumentDefaultVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateMaintenanceWindow
+
+
+        /// <summary>
+        /// Updates an existing Maintenance Window. Only specified parameters are modified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMaintenanceWindow service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMaintenanceWindow service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        UpdateMaintenanceWindowResponse UpdateMaintenanceWindow(UpdateMaintenanceWindowRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMaintenanceWindow operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateMaintenanceWindowResponse> UpdateMaintenanceWindowAsync(UpdateMaintenanceWindowRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateManagedInstanceRole
 
 
@@ -2173,8 +4157,28 @@ namespace Amazon.SimpleSystemsManagement
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         UpdateManagedInstanceRoleResponse UpdateManagedInstanceRole(UpdateManagedInstanceRoleRequest request);
 

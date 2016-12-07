@@ -257,19 +257,19 @@ namespace Amazon.APIGateway
 
 
     /// <summary>
-    /// Constants used for properties of type ContentHandlingType.
+    /// Constants used for properties of type ContentHandlingStrategy.
     /// </summary>
-    public class ContentHandlingType : ConstantClass
+    public class ContentHandlingStrategy : ConstantClass
     {
 
         /// <summary>
-        /// Constant CONVERT_TO_BINARY for ContentHandlingType
+        /// Constant CONVERT_TO_BINARY for ContentHandlingStrategy
         /// </summary>
-        public static readonly ContentHandlingType CONVERT_TO_BINARY = new ContentHandlingType("CONVERT_TO_BINARY");
+        public static readonly ContentHandlingStrategy CONVERT_TO_BINARY = new ContentHandlingStrategy("CONVERT_TO_BINARY");
         /// <summary>
-        /// Constant CONVERT_TO_TEXT for ContentHandlingType
+        /// Constant CONVERT_TO_TEXT for ContentHandlingStrategy
         /// </summary>
-        public static readonly ContentHandlingType CONVERT_TO_TEXT = new ContentHandlingType("CONVERT_TO_TEXT");
+        public static readonly ContentHandlingStrategy CONVERT_TO_TEXT = new ContentHandlingStrategy("CONVERT_TO_TEXT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -279,7 +279,7 @@ namespace Amazon.APIGateway
         /// defined as statics, for instance if attempting to use a feature that is
         /// newer than the current version of the SDK.
         /// </summary>
-        public ContentHandlingType(string value)
+        public ContentHandlingStrategy(string value)
             : base(value)
         {
         }
@@ -289,9 +289,9 @@ namespace Amazon.APIGateway
         /// </summary>
         /// <param name="value">The unique value for the constant</param>
         /// <returns>The constant for the unique value</returns>
-        public static ContentHandlingType FindValue(string value)
+        public static ContentHandlingStrategy FindValue(string value)
         {
-            return FindValue<ContentHandlingType>(value);
+            return FindValue<ContentHandlingStrategy>(value);
         }
 
         /// <summary>
@@ -299,7 +299,97 @@ namespace Amazon.APIGateway
         /// </summary>
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
-        public static implicit operator ContentHandlingType(string value)
+        public static implicit operator ContentHandlingStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DocumentationPartType.
+    /// </summary>
+    public class DocumentationPartType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant API for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType API = new DocumentationPartType("API");
+        /// <summary>
+        /// Constant AUTHORIZER for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType AUTHORIZER = new DocumentationPartType("AUTHORIZER");
+        /// <summary>
+        /// Constant METHOD for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType METHOD = new DocumentationPartType("METHOD");
+        /// <summary>
+        /// Constant MODEL for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType MODEL = new DocumentationPartType("MODEL");
+        /// <summary>
+        /// Constant PATH_PARAMETER for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType PATH_PARAMETER = new DocumentationPartType("PATH_PARAMETER");
+        /// <summary>
+        /// Constant QUERY_PARAMETER for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType QUERY_PARAMETER = new DocumentationPartType("QUERY_PARAMETER");
+        /// <summary>
+        /// Constant REQUEST_BODY for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType REQUEST_BODY = new DocumentationPartType("REQUEST_BODY");
+        /// <summary>
+        /// Constant REQUEST_HEADER for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType REQUEST_HEADER = new DocumentationPartType("REQUEST_HEADER");
+        /// <summary>
+        /// Constant RESOURCE for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType RESOURCE = new DocumentationPartType("RESOURCE");
+        /// <summary>
+        /// Constant RESPONSE for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType RESPONSE = new DocumentationPartType("RESPONSE");
+        /// <summary>
+        /// Constant RESPONSE_BODY for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType RESPONSE_BODY = new DocumentationPartType("RESPONSE_BODY");
+        /// <summary>
+        /// Constant RESPONSE_HEADER for DocumentationPartType
+        /// </summary>
+        public static readonly DocumentationPartType RESPONSE_HEADER = new DocumentationPartType("RESPONSE_HEADER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentationPartType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentationPartType FindValue(string value)
+        {
+            return FindValue<DocumentationPartType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentationPartType(string value)
         {
             return FindValue(value);
         }

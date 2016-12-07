@@ -74,6 +74,7 @@ namespace Amazon.Lambda.Model
         private string _eventSourceArn;
         private string _functionName;
         private EventSourcePosition _startingPosition;
+        private DateTime? _startingPositionTimestamp;
 
         /// <summary>
         /// Gets and sets the property BatchSize. 
@@ -194,6 +195,28 @@ namespace Amazon.Lambda.Model
         internal bool IsSetStartingPosition()
         {
             return this._startingPosition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartingPositionTimestamp. 
+        /// <para>
+        /// The timestamp of the data record from which to start reading. Used with <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">shard
+        /// iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist,
+        /// the iterator returned is for the next (later) record. If the timestamp is older than
+        /// the current trim horizon, the iterator returned is for the oldest untrimmed data record
+        /// (TRIM_HORIZON). 
+        /// </para>
+        /// </summary>
+        public DateTime StartingPositionTimestamp
+        {
+            get { return this._startingPositionTimestamp.GetValueOrDefault(); }
+            set { this._startingPositionTimestamp = value; }
+        }
+
+        // Check to see if StartingPositionTimestamp property is set
+        internal bool IsSetStartingPositionTimestamp()
+        {
+            return this._startingPositionTimestamp.HasValue; 
         }
 
     }

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -70,6 +70,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = IcmpTypeCodeUnmarshaller.Instance;
                         unmarshalledObject.IcmpTypeCode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ipv6CidrBlock", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Ipv6CidrBlock = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("portRange", targetDepth))

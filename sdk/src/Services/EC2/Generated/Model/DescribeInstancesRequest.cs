@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -72,6 +72,26 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>architecture</code> - The instance architecture (<code>i386</code> | <code>x86_64</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>association.public-ip</code> - The address of the Elastic IP address (IPv4)
+        /// bound to the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4)
+        /// associated with the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>association.allocation-id</code> - The allocation ID returned when you allocated
+        /// the Elastic IP address (IPv4) for your network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>association.association-id</code> - The association ID returned when the network
+        /// interface was associated with an IPv4 address.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -176,7 +196,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ip-address</code> - The public IP address of the instance.
+        ///  <code>ip-address</code> - The public IPv4 address of the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -197,8 +217,133 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>monitoring-state</code> - Indicates whether monitoring is enabled for the instance
+        ///  <code>monitoring-state</code> - Indicates whether detailed monitoring is enabled
         /// (<code>disabled</code> | <code>enabled</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address
+        /// associated with the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address
+        /// of the network interface is the primary private IPv4 address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.addresses.association.public-ip</code> - The ID of the association
+        /// of an Elastic IP address (IPv4) with a network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.addresses.association.ip-owner-id</code> - The owner ID of
+        /// the private IPv4 address associated with the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.attachment.attachment-id</code> - The ID of the interface
+        /// attachment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.attachment.instance-id</code> - The ID of the instance to
+        /// which the network interface is attached.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.attachment.instance-owner-id</code> - The owner ID of the
+        /// instance to which the network interface is attached.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.attachment.device-index</code> - The device index to which
+        /// the network interface is attached.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.attachment.status</code> - The status of the attachment (<code>attaching</code>
+        /// | <code>attached</code> | <code>detaching</code> | <code>detached</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.attachment.attach-time</code> - The time that the network
+        /// interface was attached to an instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.attachment.delete-on-termination</code> - Specifies whether
+        /// the attachment is deleted when an instance is terminated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.availability-zone</code> - The Availability Zone for the
+        /// network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.description</code> - The description of the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.group-id</code> - The ID of a security group associated with
+        /// the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.group-name</code> - The name of a security group associated
+        /// with the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.ipv6-addresses.ipv6-address</code> - The IPv6 address associated
+        /// with the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.mac-address</code> - The MAC address of the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.network-interface-id</code> - The ID of the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.owner-id</code> - The ID of the owner of the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.private-dns-name</code> - The private DNS name of the network
+        /// interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.requester-id</code> - The requester ID for the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.requester-managed</code> - Indicates whether the network
+        /// interface is being managed by AWS.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.status</code> - The status of the network interface (<code>available</code>)
+        /// | <code>in-use</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.source-dest-check</code> - Whether the network interface
+        /// performs source/destination checking. A value of <code>true</code> means checking
+        /// is enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code>
+        /// for the network interface to perform network address translation (NAT) in your VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.subnet-id</code> - The ID of the subnet for the network interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -215,11 +360,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>private-dns-name</code> - The private DNS name of the instance.
+        ///  <code>private-dns-name</code> - The private IPv4 DNS name of the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>private-ip-address</code> - The private IP address of the instance.
+        ///  <code>private-ip-address</code> - The private IPv4 address of the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -320,146 +465,6 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>vpc-id</code> - The ID of the VPC that the instance is running in.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.description</code> - The description of the network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.subnet-id</code> - The ID of the subnet for the network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.network-interface-id</code> - The ID of the network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.owner-id</code> - The ID of the owner of the network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.availability-zone</code> - The Availability Zone for the
-        /// network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.requester-id</code> - The requester ID for the network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.requester-managed</code> - Indicates whether the network
-        /// interface is being managed by AWS.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.status</code> - The status of the network interface (<code>available</code>)
-        /// | <code>in-use</code>).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.mac-address</code> - The MAC address of the network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.private-dns-name</code> - The private DNS name of the network
-        /// interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.source-dest-check</code> - Whether the network interface
-        /// performs source/destination checking. A value of <code>true</code> means checking
-        /// is enabled, and <code>false</code> means checking is disabled. The value must be <code>false</code>
-        /// for the network interface to perform network address translation (NAT) in your VPC.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.group-id</code> - The ID of a security group associated with
-        /// the network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.group-name</code> - The name of a security group associated
-        /// with the network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.attachment.attachment-id</code> - The ID of the interface
-        /// attachment.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.attachment.instance-id</code> - The ID of the instance to
-        /// which the network interface is attached.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.attachment.instance-owner-id</code> - The owner ID of the
-        /// instance to which the network interface is attached.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.addresses.private-ip-address</code> - The private IP address
-        /// associated with the network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.attachment.device-index</code> - The device index to which
-        /// the network interface is attached.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.attachment.status</code> - The status of the attachment (<code>attaching</code>
-        /// | <code>attached</code> | <code>detaching</code> | <code>detached</code>).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.attachment.attach-time</code> - The time that the network
-        /// interface was attached to an instance.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.attachment.delete-on-termination</code> - Specifies whether
-        /// the attachment is deleted when an instance is terminated.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.addresses.primary</code> - Specifies whether the IP address
-        /// of the network interface is the primary private IP address.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.addresses.association.public-ip</code> - The ID of the association
-        /// of an Elastic IP address with a network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>network-interface.addresses.association.ip-owner-id</code> - The owner ID of
-        /// the private IP address associated with the network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>association.public-ip</code> - The address of the Elastic IP address bound
-        /// to the network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>association.ip-owner-id</code> - The owner of the Elastic IP address associated
-        /// with the network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>association.allocation-id</code> - The allocation ID returned when you allocated
-        /// the Elastic IP address for your network interface.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>association.association-id</code> - The association ID returned when the network
-        /// interface was associated with an IP address.
         /// </para>
         ///  </li> </ul>
         /// </summary>

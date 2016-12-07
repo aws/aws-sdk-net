@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -37,6 +37,8 @@ namespace Amazon.EC2.Model
         private string _description;
         private int? _deviceIndex;
         private List<string> _groups = new List<string>();
+        private int? _ipv6AddressCount;
+        private List<InstanceIpv6Address> _ipv6Addresses = new List<InstanceIpv6Address>();
         private string _networkInterfaceId;
         private string _privateIpAddress;
         private List<PrivateIpAddressSpecification> _privateIpAddresses = new List<PrivateIpAddressSpecification>();
@@ -46,7 +48,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AssociatePublicIpAddress. 
         /// <para>
-        /// Indicates whether to assign a public IP address to an instance you launch in a VPC.
+        /// Indicates whether to assign a public IPv4 address to an instance you launch in a VPC.
         /// The public IP address can only be assigned to a network interface for eth0, and can
         /// only be assigned to a new network interface, not an existing one. You cannot specify
         /// more than one network interface in the request. If launching into a default subnet,
@@ -144,6 +146,48 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Ipv6AddressCount. 
+        /// <para>
+        /// A number of IPv6 addresses to assign to the network interface. Amazon EC2 chooses
+        /// the IPv6 addresses from the range of the subnet. You cannot specify this option and
+        /// the option to assign specific IPv6 addresses in the same request. You can specify
+        /// this option if you've specified a minimum number of instances to launch.
+        /// </para>
+        /// </summary>
+        public int Ipv6AddressCount
+        {
+            get { return this._ipv6AddressCount.GetValueOrDefault(); }
+            set { this._ipv6AddressCount = value; }
+        }
+
+        // Check to see if Ipv6AddressCount property is set
+        internal bool IsSetIpv6AddressCount()
+        {
+            return this._ipv6AddressCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Addresses. 
+        /// <para>
+        /// One or more IPv6 addresses to assign to the network interface. You cannot specify
+        /// this option and the option to assign a number of IPv6 addresses in the same request.
+        /// You cannot specify this option if you've specified a minimum number of instances to
+        /// launch.
+        /// </para>
+        /// </summary>
+        public List<InstanceIpv6Address> Ipv6Addresses
+        {
+            get { return this._ipv6Addresses; }
+            set { this._ipv6Addresses = value; }
+        }
+
+        // Check to see if Ipv6Addresses property is set
+        internal bool IsSetIpv6Addresses()
+        {
+            return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkInterfaceId. 
         /// <para>
         /// The ID of the network interface.
@@ -164,7 +208,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
-        /// The private IP address of the network interface. Applies only if creating a network
+        /// The private IPv4 address of the network interface. Applies only if creating a network
         /// interface when launching an instance. You cannot specify this option if you're launching
         /// more than one instance in a <a>RunInstances</a> request.
         /// </para>
@@ -184,8 +228,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddresses. 
         /// <para>
-        /// One or more private IP addresses to assign to the network interface. Only one private
-        /// IP address can be designated as primary. You cannot specify this option if you're
+        /// One or more private IPv4 addresses to assign to the network interface. Only one private
+        /// IPv4 address can be designated as primary. You cannot specify this option if you're
         /// launching more than one instance in a <a>RunInstances</a> request.
         /// </para>
         /// </summary>
@@ -204,9 +248,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecondaryPrivateIpAddressCount. 
         /// <para>
-        /// The number of secondary private IP addresses. You can't specify this option and specify
-        /// more than one private IP address using the private IP addresses option. You cannot
-        /// specify this option if you're launching more than one instance in a <a>RunInstances</a>
+        /// The number of secondary private IPv4 addresses. You can't specify this option and
+        /// specify more than one private IP address using the private IP addresses option. You
+        /// cannot specify this option if you're launching more than one instance in a <a>RunInstances</a>
         /// request.
         /// </para>
         /// </summary>

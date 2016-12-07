@@ -219,6 +219,92 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  CreateDocumentationPart
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationPart service method.</param>
+        /// 
+        /// <returns>The response from the CreateDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        CreateDocumentationPartResponse CreateDocumentationPart(CreateDocumentationPartRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationPart operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateDocumentationPartResponse> CreateDocumentationPartAsync(CreateDocumentationPartRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateDocumentationVersion
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        CreateDocumentationVersionResponse CreateDocumentationVersion(CreateDocumentationVersionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateDocumentationVersionResponse> CreateDocumentationVersionAsync(CreateDocumentationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateDomainName
 
 
@@ -690,6 +776,86 @@ namespace Amazon.APIGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteDeploymentResponse> DeleteDeploymentAsync(DeleteDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteDocumentationPart
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationPart service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        DeleteDocumentationPartResponse DeleteDocumentationPart(DeleteDocumentationPartRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationPart operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteDocumentationPartResponse> DeleteDocumentationPartAsync(DeleteDocumentationPartRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteDocumentationVersion
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        DeleteDocumentationVersionResponse DeleteDocumentationVersion(DeleteDocumentationVersionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteDocumentationVersionResponse> DeleteDocumentationVersionAsync(DeleteDocumentationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1610,6 +1776,148 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  GetDocumentationPart
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationPart service method.</param>
+        /// 
+        /// <returns>The response from the GetDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetDocumentationPartResponse GetDocumentationPart(GetDocumentationPartRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationPart operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetDocumentationPartResponse> GetDocumentationPartAsync(GetDocumentationPartRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetDocumentationParts
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationParts service method.</param>
+        /// 
+        /// <returns>The response from the GetDocumentationParts service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetDocumentationPartsResponse GetDocumentationParts(GetDocumentationPartsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationParts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationParts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetDocumentationPartsResponse> GetDocumentationPartsAsync(GetDocumentationPartsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetDocumentationVersion
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetDocumentationVersionResponse GetDocumentationVersion(GetDocumentationVersionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetDocumentationVersionResponse> GetDocumentationVersionAsync(GetDocumentationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetDocumentationVersions
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersions service method.</param>
+        /// 
+        /// <returns>The response from the GetDocumentationVersions service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        GetDocumentationVersionsResponse GetDocumentationVersions(GetDocumentationVersionsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetDocumentationVersionsResponse> GetDocumentationVersionsAsync(GetDocumentationVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetDomainName
 
 
@@ -2440,6 +2748,46 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  ImportDocumentationParts
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportDocumentationParts service method.</param>
+        /// 
+        /// <returns>The response from the ImportDocumentationParts service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        ImportDocumentationPartsResponse ImportDocumentationParts(ImportDocumentationPartsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportDocumentationParts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportDocumentationParts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ImportDocumentationPartsResponse> ImportDocumentationPartsAsync(ImportDocumentationPartsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ImportRestApi
 
 
@@ -3005,6 +3353,89 @@ namespace Amazon.APIGateway
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<UpdateDeploymentResponse> UpdateDeploymentAsync(UpdateDeploymentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateDocumentationPart
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationPart service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDocumentationPart service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.LimitExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        UpdateDocumentationPartResponse UpdateDocumentationPart(UpdateDocumentationPartRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationPart operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateDocumentationPartResponse> UpdateDocumentationPartAsync(UpdateDocumentationPartRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateDocumentationVersion
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDocumentationVersion service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.BadRequestException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        UpdateDocumentationVersionResponse UpdateDocumentationVersion(UpdateDocumentationVersionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateDocumentationVersionResponse> UpdateDocumentationVersionAsync(UpdateDocumentationVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

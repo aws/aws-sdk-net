@@ -78,7 +78,7 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
 
             if (structure.PayloadMemberName != null)
             {
-                this.WriteStructure(writer, structure.Members[0].Shape);
+                this.WriteStructure(writer, structure.PayloadMember.Shape);
                 return;
             }
 

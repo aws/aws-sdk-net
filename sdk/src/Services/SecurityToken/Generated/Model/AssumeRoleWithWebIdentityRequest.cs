@@ -118,7 +118,7 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual">Using
+    ///  <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc_manual.html">Using
     /// Web Identity Federation APIs for Mobile Apps</a> and <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
     /// Through a Web-based Identity Provider</a>. 
     /// </para>

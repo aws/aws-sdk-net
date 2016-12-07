@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -37,6 +37,8 @@ namespace Amazon.EC2.Model
         private string _description;
         private int? _deviceIndex;
         private List<string> _groups = new List<string>();
+        private int? _ipv6AddressCount;
+        private List<ScheduledInstancesIpv6Address> _ipv6Addresses = new List<ScheduledInstancesIpv6Address>();
         private string _networkInterfaceId;
         private string _privateIpAddress;
         private List<ScheduledInstancesPrivateIpAddressConfig> _privateIpAddressConfigs = new List<ScheduledInstancesPrivateIpAddressConfig>();
@@ -46,11 +48,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AssociatePublicIpAddress. 
         /// <para>
-        /// Indicates whether to assign a public IP address to instances launched in a VPC. The
-        /// public IP address can only be assigned to a network interface for eth0, and can only
-        /// be assigned to a new network interface, not an existing one. You cannot specify more
-        /// than one network interface in the request. If launching into a default subnet, the
-        /// default value is <code>true</code>.
+        /// Indicates whether to assign a public IPv4 address to instances launched in a VPC.
+        /// The public IPv4 address can only be assigned to a network interface for eth0, and
+        /// can only be assigned to a new network interface, not an existing one. You cannot specify
+        /// more than one network interface in the request. If launching into a default subnet,
+        /// the default value is <code>true</code>.
         /// </para>
         /// </summary>
         public bool AssociatePublicIpAddress
@@ -138,6 +140,43 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Ipv6AddressCount. 
+        /// <para>
+        /// The number of IPv6 addresses to assign to the network interface. The IPv6 addresses
+        /// are automatically selected from the subnet range.
+        /// </para>
+        /// </summary>
+        public int Ipv6AddressCount
+        {
+            get { return this._ipv6AddressCount.GetValueOrDefault(); }
+            set { this._ipv6AddressCount = value; }
+        }
+
+        // Check to see if Ipv6AddressCount property is set
+        internal bool IsSetIpv6AddressCount()
+        {
+            return this._ipv6AddressCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Addresses. 
+        /// <para>
+        /// One or more specific IPv6 addresses from the subnet range.
+        /// </para>
+        /// </summary>
+        public List<ScheduledInstancesIpv6Address> Ipv6Addresses
+        {
+            get { return this._ipv6Addresses; }
+            set { this._ipv6Addresses = value; }
+        }
+
+        // Check to see if Ipv6Addresses property is set
+        internal bool IsSetIpv6Addresses()
+        {
+            return this._ipv6Addresses != null && this._ipv6Addresses.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkInterfaceId. 
         /// <para>
         /// The ID of the network interface.
@@ -158,7 +197,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddress. 
         /// <para>
-        /// The IP address of the network interface within the subnet.
+        /// The IPv4 address of the network interface within the subnet.
         /// </para>
         /// </summary>
         public string PrivateIpAddress
@@ -176,7 +215,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateIpAddressConfigs. 
         /// <para>
-        /// The private IP addresses.
+        /// The private IPv4 addresses.
         /// </para>
         /// </summary>
         public List<ScheduledInstancesPrivateIpAddressConfig> PrivateIpAddressConfigs
@@ -194,7 +233,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecondaryPrivateIpAddressCount. 
         /// <para>
-        /// The number of secondary private IP addresses.
+        /// The number of secondary private IPv4 addresses.
         /// </para>
         /// </summary>
         public int SecondaryPrivateIpAddressCount

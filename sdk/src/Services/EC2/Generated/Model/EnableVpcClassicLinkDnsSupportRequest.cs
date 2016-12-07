@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
     /// of an instance in a VPC resolves to its private IP address when addressed from a linked
     /// EC2-Classic instance. For more information about ClassicLink, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-    /// in the Amazon Elastic Compute Cloud User Guide.
+    /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </summary>
     public partial class EnableVpcClassicLinkDnsSupportRequest : AmazonEC2Request
     {

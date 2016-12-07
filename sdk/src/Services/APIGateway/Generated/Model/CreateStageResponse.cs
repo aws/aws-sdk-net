@@ -43,6 +43,7 @@ namespace Amazon.APIGateway.Model
         private DateTime? _createdDate;
         private string _deploymentId;
         private string _description;
+        private string _documentationVersion;
         private DateTime? _lastUpdatedDate;
         private Dictionary<string, MethodSetting> _methodSettings = new Dictionary<string, MethodSetting>();
         private string _stageName;
@@ -173,6 +174,24 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentationVersion. 
+        /// <para>
+        /// The version of the associated API documentation.
+        /// </para>
+        /// </summary>
+        public string DocumentationVersion
+        {
+            get { return this._documentationVersion; }
+            set { this._documentationVersion = value; }
+        }
+
+        // Check to see if DocumentationVersion property is set
+        internal bool IsSetDocumentationVersion()
+        {
+            return this._documentationVersion != null;
         }
 
         /// <summary>

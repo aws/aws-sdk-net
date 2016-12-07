@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// The identifier of an API key used to reference an API key in a usage plan.
+    /// The identifier of an <a>ApiKey</a> used in a <a>UsagePlan</a>.
     /// </summary>
     public partial class ImportApiKeysResponse : AmazonWebServiceResponse
     {

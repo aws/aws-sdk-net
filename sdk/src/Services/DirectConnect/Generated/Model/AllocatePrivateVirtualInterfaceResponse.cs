@@ -33,9 +33,11 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class AllocatePrivateVirtualInterfaceResponse : AmazonWebServiceResponse
     {
+        private AddressFamily _addressFamily;
         private string _amazonAddress;
         private int? _asn;
         private string _authKey;
+        private List<BGPPeer> _bgpPeers = new List<BGPPeer>();
         private string _connectionId;
         private string _customerAddress;
         private string _customerRouterConfig;
@@ -48,6 +50,21 @@ namespace Amazon.DirectConnect.Model
         private VirtualInterfaceState _virtualInterfaceState;
         private string _virtualInterfaceType;
         private int? _vlan;
+
+        /// <summary>
+        /// Gets and sets the property AddressFamily.
+        /// </summary>
+        public AddressFamily AddressFamily
+        {
+            get { return this._addressFamily; }
+            set { this._addressFamily = value; }
+        }
+
+        // Check to see if AddressFamily property is set
+        internal bool IsSetAddressFamily()
+        {
+            return this._addressFamily != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AmazonAddress.
@@ -92,6 +109,21 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetAuthKey()
         {
             return this._authKey != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BgpPeers.
+        /// </summary>
+        public List<BGPPeer> BgpPeers
+        {
+            get { return this._bgpPeers; }
+            set { this._bgpPeers = value; }
+        }
+
+        // Check to see if BgpPeers property is set
+        internal bool IsSetBgpPeers()
+        {
+            return this._bgpPeers != null && this._bgpPeers.Count > 0; 
         }
 
         /// <summary>

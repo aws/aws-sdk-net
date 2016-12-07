@@ -8,15 +8,15 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.SimpleSystemsManagement")]
 #if BCL35
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Simple Systems Management Service. Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Simple Systems Manager (SSM). Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.")]
 #elif BCL45
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Simple Systems Management Service. Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Simple Systems Manager (SSM). Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.")]
 #elif PCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Simple Systems Management Service. Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (PCL) -  Amazon Simple Systems Manager (SSM). Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.")]
 #elif UNITY
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Simple Systems Management Service. Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (Unity) - Amazon Simple Systems Manager (SSM). Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.")]
 #elif CORECLR
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- Amazon Simple Systems Management Service. Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (CoreCLR)- Amazon Simple Systems Manager (SSM). Amazon EC2 Simple Systems Manager (SSM) enables you to manage a number of administrative and configuration tasks on your instances.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
@@ -44,7 +44,7 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.3")]
-[assembly: AssemblyFileVersion("3.3.0.3")]
+[assembly: AssemblyFileVersion("3.3.1.0")]
 
 #if WINDOWS_PHONE || UNITY
 [assembly: System.CLSCompliant(false)]

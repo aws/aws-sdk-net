@@ -36,176 +36,24 @@ namespace Amazon.SimpleSystemsManagement
     /// <summary>
     /// Implementation for accessing SimpleSystemsManagement
     ///
-    /// Amazon EC2 Simple Systems Manager (SSM) enables you to remotely manage the configuration
-    /// of your Amazon EC2 instances, virtual machines (VMs), or servers in your on-premises
-    /// environment or in an environment provided by other cloud providers using scripts,
-    /// commands, or the Amazon EC2 console. SSM includes an on-demand solution called <i>Amazon
-    /// EC2 Run Command</i> and a lightweight instance configuration solution called <i>SSM
-    /// Config</i>. 
+    /// Amazon EC2 Systems Manager is a collection of capabilities that helps you automate
+    /// management tasks such as collecting system inventory, applying operating system (OS)
+    /// patches, automating the creation of Amazon Machine Images (AMIs), and configuring
+    /// operating systems (OSs) and applications at scale. Systems Manager works with managed
+    /// instances: Amazon EC2 instances and servers or virtual machines (VMs) in your on-premises
+    /// environment that are configured for Systems Manager. 
     /// 
     ///  
     /// <para>
-    /// This references is intended to be used with the EC2 Run Command User Guide for <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/execute-remote-commands.html">Linux</a>
-    /// or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/execute-remote-commands.html">Windows</a>.
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// You must register your on-premises servers and VMs through an activation process before
-    /// you can configure them using Run Command. Registered servers and VMs are called <i>managed
-    /// instances</i>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managed-instances.html">Setting
-    /// Up Run Command On Managed Instances (On-Premises Servers and VMs) on Linux</a> or
-    /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/managed-instances.html">Setting
-    /// Up Run Command On Managed Instances (On-Premises Servers and VMs) on Windows</a>.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    ///  <b>Run Command</b> 
+    /// This references is intended to be used with the EC2 Systems Manager User Guide (<a
+    /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager.html">Linux</a>)
+    /// (<a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager.html">Windows</a>).
     /// </para>
     ///  
     /// <para>
-    /// Run Command provides an on-demand experience for executing commands. You can use pre-defined
-    /// SSM documents to perform the actions listed later in this section, or you can create
-    /// your own documents. With these documents, you can remotely configure your instances
-    /// by sending commands using the <b>Commands</b> page in the <a href="http://console.aws.amazon.com/ec2/">Amazon
-    /// EC2 console</a>, <a href="http://docs.aws.amazon.com/powershell/latest/reference/items/Amazon_Simple_Systems_Management_cmdlets.html">AWS
-    /// Tools for Windows PowerShell</a>, the <a href="http://docs.aws.amazon.com/cli/latest/reference/ssm/index.html">AWS
-    /// CLI</a>, or AWS SDKs.
+    /// To get started, verify prerequisites and configure managed instances (<a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/systems-manager-prereqs.html">Linux</a>)
+    /// (<a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/systems-manager-prereqs.html">Windows</a>).
     /// </para>
-    ///  
-    /// <para>
-    /// Run Command reports the status of the command execution for each instance targeted
-    /// by a command. You can also audit the command execution to understand who executed
-    /// commands, when, and what changes were made. By switching between different SSM documents,
-    /// you can quickly configure your instances with different types of commands. To get
-    /// started with Run Command, verify that your environment meets the prerequisites for
-    /// remotely running commands on EC2 instances (<a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/remote-commands-prereq.html">Linux</a>
-    /// or <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/remote-commands-prereq.html">Windows</a>).
-    /// 
-    /// </para>
-    ///   
-    /// <para>
-    ///  <b>SSM Config</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// SSM Config is a lightweight instance configuration solution. SSM Config is currently
-    /// only available for Windows instances. With SSM Config, you can specify a setup configuration
-    /// for your instances. SSM Config is similar to EC2 User Data, which is another way of
-    /// running one-time scripts or applying settings during instance launch. SSM Config is
-    /// an extension of this capability. Using SSM documents, you can specify which actions
-    /// the system should perform on your instances, including which applications to install,
-    /// which AWS Directory Service directory to join, which Microsoft PowerShell modules
-    /// to install, etc. If an instance is missing one or more of these configurations, the
-    /// system makes those changes. By default, the system checks every five minutes to see
-    /// if there is a new configuration to apply as defined in a new SSM document. If so,
-    /// the system updates the instances accordingly. In this way, you can remotely maintain
-    /// a consistent configuration baseline on your instances. SSM Config is available using
-    /// the AWS CLI or the AWS Tools for Windows PowerShell. For more information, see <a
-    /// href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-configuration-manage.html">Managing
-    /// Windows Instance Configuration</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// SSM Config and Run Command include the following pre-defined documents.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Linux</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <b>AWS-RunShellScript</b> to run shell scripts
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-UpdateSSMAgent</b> to update the Amazon SSM agent
-    /// </para>
-    ///  </li> </ul>  
-    /// <para>
-    ///  <b>Windows</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <b>AWS-JoinDirectoryServiceDomain</b> to join an AWS Directory
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-RunPowerShellScript</b> to run PowerShell commands or scripts
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-UpdateEC2Config</b> to update the EC2Config service
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-ConfigureWindowsUpdate</b> to configure Windows Update settings
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-InstallApplication</b> to install, repair, or uninstall software using an
-    /// MSI package
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-InstallPowerShellModule</b> to install PowerShell modules 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-ConfigureCloudWatch</b> to configure Amazon CloudWatch Logs to monitor applications
-    /// and systems
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-ListWindowsInventory</b> to collect information about an EC2 instance running
-    /// in Windows.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-FindWindowsUpdates</b> to scan an instance and determines which updates are
-    /// missing.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-InstallMissingWindowsUpdates</b> to install missing updates on your EC2 instance.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <b>AWS-InstallSpecificWindowsUpdates</b> to install one or more specific updates.
-    /// </para>
-    ///  </li> </ul> <important> 
-    /// <para>
-    /// The commands or scripts specified in SSM documents run with administrative privilege
-    /// on your instances because the Amazon SSM agent runs as root on Linux and the EC2Config
-    /// service runs in the Local System account on Windows. If a user has permission to execute
-    /// any of the pre-defined SSM documents (any document that begins with AWS-*) then that
-    /// user also has administrator access to the instance. Delegate access to Run Command
-    /// and SSM Config judiciously. This becomes extremely important if you create your own
-    /// SSM documents. Amazon Web Services does not provide guidance about how to create secure
-    /// SSM documents. You create SSM documents and delegate access to Run Command at your
-    /// own risk. As a security best practice, we recommend that you assign access to "AWS-*"
-    /// documents, especially the AWS-RunShellScript document on Linux and the AWS-RunPowerShellScript
-    /// document on Windows, to trusted administrators only. You can create SSM documents
-    /// for specific tasks and delegate access to non-administrators.
-    /// </para>
-    ///  </important> 
-    /// <para>
-    /// For information about creating and sharing SSM documents, see the following topics
-    /// in the SSM User Guide: 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-ssm-doc.html">Creating
-    /// SSM Documents</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssm-sharing.html">Sharing
-    /// SSM Documents</a> (Linux)
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/create-ssm-doc.html">Creating
-    /// SSM Documents</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ssm-sharing.html">Sharing
-    /// SSM Documents</a> (Windows)
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class AmazonSimpleSystemsManagementClient : AmazonServiceClient, IAmazonSimpleSystemsManagement
     {
@@ -461,8 +309,28 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         public Task<CancelCommandResponse> CancelCommandAsync(string commandId, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -493,8 +361,28 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         public Task<CancelCommandResponse> CancelCommandAsync(string commandId, List<string> instanceIds, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -568,13 +456,13 @@ namespace Amazon.SimpleSystemsManagement
 
 
         /// <summary>
-        /// Associates the specified SSM document with the specified instance.
+        /// Associates the specified SSM document with the specified instances or targets.
         /// 
         ///  
         /// <para>
-        /// When you associate an SSM document with an instance, the configuration agent on the
-        /// instance (SSM agent for Linux and EC2Config service for Windows) processes the document
-        /// and configures the instance as specified.
+        /// When you associate an SSM document with one or more instances using instance IDs or
+        /// tags, the SSM agent running on the instance processes the document and configures
+        /// the instance as specified.
         /// </para>
         ///  
         /// <para>
@@ -601,13 +489,46 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidOutputLocationException">
+        /// The output location is not valid or does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidParametersException">
         /// You must specify values for all required parameters in the SSM document. You can only
         /// supply values to parameters defined in the SSM document.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidScheduleException">
+        /// The schedule is invalid. Verify your cron or rate expression and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTargetException">
+        /// The target is not valid or does not exist. It might not be configured for EC2 Systems
+        /// Manager or you might not have permission to perform the operation.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedPlatformTypeException">
         /// The document does not support the platform type of the given instance ID(s). For example,
@@ -712,6 +633,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentContentException">
         /// The content for the SSM document is not valid.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentSchemaVersionException">
+        /// The version of the document schema is not supported.
+        /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of an SSM document is 64 KB.
         /// </exception>
@@ -739,6 +663,37 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = CreateDocumentResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDocumentRequest,CreateDocumentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateMaintenanceWindow
+
+        internal CreateMaintenanceWindowResponse CreateMaintenanceWindow(CreateMaintenanceWindowRequest request)
+        {
+            var marshaller = new CreateMaintenanceWindowRequestMarshaller();
+            var unmarshaller = CreateMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMaintenanceWindowRequest,CreateMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMaintenanceWindow operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateMaintenanceWindowResponse> CreateMaintenanceWindowAsync(CreateMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateMaintenanceWindowRequestMarshaller();
+            var unmarshaller = CreateMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateMaintenanceWindowRequest,CreateMaintenanceWindowResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -814,8 +769,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
@@ -916,6 +891,68 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DeleteMaintenanceWindow
+
+        internal DeleteMaintenanceWindowResponse DeleteMaintenanceWindow(DeleteMaintenanceWindowRequest request)
+        {
+            var marshaller = new DeleteMaintenanceWindowRequestMarshaller();
+            var unmarshaller = DeleteMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMaintenanceWindowRequest,DeleteMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMaintenanceWindow operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteMaintenanceWindowResponse> DeleteMaintenanceWindowAsync(DeleteMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteMaintenanceWindowRequestMarshaller();
+            var unmarshaller = DeleteMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteMaintenanceWindowRequest,DeleteMaintenanceWindowResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteParameter
+
+        internal DeleteParameterResponse DeleteParameter(DeleteParameterRequest request)
+        {
+            var marshaller = new DeleteParameterRequestMarshaller();
+            var unmarshaller = DeleteParameterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteParameterRequest,DeleteParameterResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteParameter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteParameter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteParameterResponse> DeleteParameterAsync(DeleteParameterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteParameterRequestMarshaller();
+            var unmarshaller = DeleteParameterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteParameterRequest,DeleteParameterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeregisterManagedInstance
 
         internal DeregisterManagedInstanceResponse DeregisterManagedInstance(DeregisterManagedInstanceRequest request)
@@ -942,6 +979,68 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = DeregisterManagedInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeregisterManagedInstanceRequest,DeregisterManagedInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeregisterTargetFromMaintenanceWindow
+
+        internal DeregisterTargetFromMaintenanceWindowResponse DeregisterTargetFromMaintenanceWindow(DeregisterTargetFromMaintenanceWindowRequest request)
+        {
+            var marshaller = new DeregisterTargetFromMaintenanceWindowRequestMarshaller();
+            var unmarshaller = DeregisterTargetFromMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterTargetFromMaintenanceWindowRequest,DeregisterTargetFromMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterTargetFromMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterTargetFromMaintenanceWindow operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeregisterTargetFromMaintenanceWindowResponse> DeregisterTargetFromMaintenanceWindowAsync(DeregisterTargetFromMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeregisterTargetFromMaintenanceWindowRequestMarshaller();
+            var unmarshaller = DeregisterTargetFromMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterTargetFromMaintenanceWindowRequest,DeregisterTargetFromMaintenanceWindowResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeregisterTaskFromMaintenanceWindow
+
+        internal DeregisterTaskFromMaintenanceWindowResponse DeregisterTaskFromMaintenanceWindow(DeregisterTaskFromMaintenanceWindowRequest request)
+        {
+            var marshaller = new DeregisterTaskFromMaintenanceWindowRequestMarshaller();
+            var unmarshaller = DeregisterTaskFromMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterTaskFromMaintenanceWindowRequest,DeregisterTaskFromMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterTaskFromMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterTaskFromMaintenanceWindow operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeregisterTaskFromMaintenanceWindowResponse> DeregisterTaskFromMaintenanceWindowAsync(DeregisterTaskFromMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeregisterTaskFromMaintenanceWindowRequestMarshaller();
+            var unmarshaller = DeregisterTaskFromMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterTaskFromMaintenanceWindowRequest,DeregisterTaskFromMaintenanceWindowResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1009,8 +1108,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         public Task<DescribeAssociationResponse> DescribeAssociationAsync(string instanceId, string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1041,6 +1160,37 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeAutomationExecutions
+
+        internal DescribeAutomationExecutionsResponse DescribeAutomationExecutions(DescribeAutomationExecutionsRequest request)
+        {
+            var marshaller = new DescribeAutomationExecutionsRequestMarshaller();
+            var unmarshaller = DescribeAutomationExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAutomationExecutionsRequest,DescribeAutomationExecutionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAutomationExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAutomationExecutions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeAutomationExecutionsResponse> DescribeAutomationExecutionsAsync(DescribeAutomationExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeAutomationExecutionsRequestMarshaller();
+            var unmarshaller = DescribeAutomationExecutionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAutomationExecutionsRequest,DescribeAutomationExecutionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDocument
 
         internal DescribeDocumentResponse DescribeDocument(DescribeDocumentRequest request)
@@ -1066,6 +1216,9 @@ namespace Amazon.SimpleSystemsManagement
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
         /// </exception>
         public Task<DescribeDocumentResponse> DescribeDocumentAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1126,6 +1279,68 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeEffectiveInstanceAssociations
+
+        internal DescribeEffectiveInstanceAssociationsResponse DescribeEffectiveInstanceAssociations(DescribeEffectiveInstanceAssociationsRequest request)
+        {
+            var marshaller = new DescribeEffectiveInstanceAssociationsRequestMarshaller();
+            var unmarshaller = DescribeEffectiveInstanceAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEffectiveInstanceAssociationsRequest,DescribeEffectiveInstanceAssociationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEffectiveInstanceAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEffectiveInstanceAssociations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeEffectiveInstanceAssociationsResponse> DescribeEffectiveInstanceAssociationsAsync(DescribeEffectiveInstanceAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeEffectiveInstanceAssociationsRequestMarshaller();
+            var unmarshaller = DescribeEffectiveInstanceAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEffectiveInstanceAssociationsRequest,DescribeEffectiveInstanceAssociationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInstanceAssociationsStatus
+
+        internal DescribeInstanceAssociationsStatusResponse DescribeInstanceAssociationsStatus(DescribeInstanceAssociationsStatusRequest request)
+        {
+            var marshaller = new DescribeInstanceAssociationsStatusRequestMarshaller();
+            var unmarshaller = DescribeInstanceAssociationsStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstanceAssociationsStatusRequest,DescribeInstanceAssociationsStatusResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceAssociationsStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAssociationsStatus operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeInstanceAssociationsStatusResponse> DescribeInstanceAssociationsStatusAsync(DescribeInstanceAssociationsStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeInstanceAssociationsStatusRequestMarshaller();
+            var unmarshaller = DescribeInstanceAssociationsStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInstanceAssociationsStatusRequest,DescribeInstanceAssociationsStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeInstanceInformation
 
         internal DescribeInstanceInformationResponse DescribeInstanceInformation()
@@ -1161,8 +1376,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceInformationFilterValueException">
         /// The specified filter value is not valid.
@@ -1196,6 +1431,285 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeMaintenanceWindowExecutions
+
+        internal DescribeMaintenanceWindowExecutionsResponse DescribeMaintenanceWindowExecutions(DescribeMaintenanceWindowExecutionsRequest request)
+        {
+            var marshaller = new DescribeMaintenanceWindowExecutionsRequestMarshaller();
+            var unmarshaller = DescribeMaintenanceWindowExecutionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMaintenanceWindowExecutionsRequest,DescribeMaintenanceWindowExecutionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMaintenanceWindowExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowExecutions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeMaintenanceWindowExecutionsResponse> DescribeMaintenanceWindowExecutionsAsync(DescribeMaintenanceWindowExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeMaintenanceWindowExecutionsRequestMarshaller();
+            var unmarshaller = DescribeMaintenanceWindowExecutionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMaintenanceWindowExecutionsRequest,DescribeMaintenanceWindowExecutionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeMaintenanceWindowExecutionTaskInvocations
+
+        internal DescribeMaintenanceWindowExecutionTaskInvocationsResponse DescribeMaintenanceWindowExecutionTaskInvocations(DescribeMaintenanceWindowExecutionTaskInvocationsRequest request)
+        {
+            var marshaller = new DescribeMaintenanceWindowExecutionTaskInvocationsRequestMarshaller();
+            var unmarshaller = DescribeMaintenanceWindowExecutionTaskInvocationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMaintenanceWindowExecutionTaskInvocationsRequest,DescribeMaintenanceWindowExecutionTaskInvocationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMaintenanceWindowExecutionTaskInvocations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowExecutionTaskInvocations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeMaintenanceWindowExecutionTaskInvocationsResponse> DescribeMaintenanceWindowExecutionTaskInvocationsAsync(DescribeMaintenanceWindowExecutionTaskInvocationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeMaintenanceWindowExecutionTaskInvocationsRequestMarshaller();
+            var unmarshaller = DescribeMaintenanceWindowExecutionTaskInvocationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMaintenanceWindowExecutionTaskInvocationsRequest,DescribeMaintenanceWindowExecutionTaskInvocationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeMaintenanceWindowExecutionTasks
+
+        internal DescribeMaintenanceWindowExecutionTasksResponse DescribeMaintenanceWindowExecutionTasks(DescribeMaintenanceWindowExecutionTasksRequest request)
+        {
+            var marshaller = new DescribeMaintenanceWindowExecutionTasksRequestMarshaller();
+            var unmarshaller = DescribeMaintenanceWindowExecutionTasksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMaintenanceWindowExecutionTasksRequest,DescribeMaintenanceWindowExecutionTasksResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMaintenanceWindowExecutionTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowExecutionTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeMaintenanceWindowExecutionTasksResponse> DescribeMaintenanceWindowExecutionTasksAsync(DescribeMaintenanceWindowExecutionTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeMaintenanceWindowExecutionTasksRequestMarshaller();
+            var unmarshaller = DescribeMaintenanceWindowExecutionTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMaintenanceWindowExecutionTasksRequest,DescribeMaintenanceWindowExecutionTasksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeMaintenanceWindows
+
+        internal DescribeMaintenanceWindowsResponse DescribeMaintenanceWindows(DescribeMaintenanceWindowsRequest request)
+        {
+            var marshaller = new DescribeMaintenanceWindowsRequestMarshaller();
+            var unmarshaller = DescribeMaintenanceWindowsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMaintenanceWindowsRequest,DescribeMaintenanceWindowsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMaintenanceWindows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindows operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeMaintenanceWindowsResponse> DescribeMaintenanceWindowsAsync(DescribeMaintenanceWindowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeMaintenanceWindowsRequestMarshaller();
+            var unmarshaller = DescribeMaintenanceWindowsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMaintenanceWindowsRequest,DescribeMaintenanceWindowsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeMaintenanceWindowTargets
+
+        internal DescribeMaintenanceWindowTargetsResponse DescribeMaintenanceWindowTargets(DescribeMaintenanceWindowTargetsRequest request)
+        {
+            var marshaller = new DescribeMaintenanceWindowTargetsRequestMarshaller();
+            var unmarshaller = DescribeMaintenanceWindowTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMaintenanceWindowTargetsRequest,DescribeMaintenanceWindowTargetsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMaintenanceWindowTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowTargets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeMaintenanceWindowTargetsResponse> DescribeMaintenanceWindowTargetsAsync(DescribeMaintenanceWindowTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeMaintenanceWindowTargetsRequestMarshaller();
+            var unmarshaller = DescribeMaintenanceWindowTargetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMaintenanceWindowTargetsRequest,DescribeMaintenanceWindowTargetsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeMaintenanceWindowTasks
+
+        internal DescribeMaintenanceWindowTasksResponse DescribeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest request)
+        {
+            var marshaller = new DescribeMaintenanceWindowTasksRequestMarshaller();
+            var unmarshaller = DescribeMaintenanceWindowTasksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMaintenanceWindowTasksRequest,DescribeMaintenanceWindowTasksResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMaintenanceWindowTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMaintenanceWindowTasks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeMaintenanceWindowTasksResponse> DescribeMaintenanceWindowTasksAsync(DescribeMaintenanceWindowTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeMaintenanceWindowTasksRequestMarshaller();
+            var unmarshaller = DescribeMaintenanceWindowTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMaintenanceWindowTasksRequest,DescribeMaintenanceWindowTasksResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeParameters
+
+        internal DescribeParametersResponse DescribeParameters(DescribeParametersRequest request)
+        {
+            var marshaller = new DescribeParametersRequestMarshaller();
+            var unmarshaller = DescribeParametersResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeParametersRequest,DescribeParametersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeParameters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeParametersResponse> DescribeParametersAsync(DescribeParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeParametersRequestMarshaller();
+            var unmarshaller = DescribeParametersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeParametersRequest,DescribeParametersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAutomationExecution
+
+        internal GetAutomationExecutionResponse GetAutomationExecution(GetAutomationExecutionRequest request)
+        {
+            var marshaller = new GetAutomationExecutionRequestMarshaller();
+            var unmarshaller = GetAutomationExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<GetAutomationExecutionRequest,GetAutomationExecutionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAutomationExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAutomationExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetAutomationExecutionResponse> GetAutomationExecutionAsync(GetAutomationExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetAutomationExecutionRequestMarshaller();
+            var unmarshaller = GetAutomationExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAutomationExecutionRequest,GetAutomationExecutionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCommandInvocation
+
+        internal GetCommandInvocationResponse GetCommandInvocation(GetCommandInvocationRequest request)
+        {
+            var marshaller = new GetCommandInvocationRequestMarshaller();
+            var unmarshaller = GetCommandInvocationResponseUnmarshaller.Instance;
+
+            return Invoke<GetCommandInvocationRequest,GetCommandInvocationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCommandInvocation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCommandInvocation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetCommandInvocationResponse> GetCommandInvocationAsync(GetCommandInvocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetCommandInvocationRequestMarshaller();
+            var unmarshaller = GetCommandInvocationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCommandInvocationRequest,GetCommandInvocationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDocument
 
         internal GetDocumentResponse GetDocument(GetDocumentRequest request)
@@ -1222,6 +1736,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentException">
         /// The specified document does not exist.
         /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
+        /// The document version is not valid or does not exist.
+        /// </exception>
         public Task<GetDocumentResponse> GetDocumentAsync(string name, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetDocumentRequest();
@@ -1245,6 +1762,223 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = GetDocumentResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDocumentRequest,GetDocumentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetInventory
+
+        internal GetInventoryResponse GetInventory(GetInventoryRequest request)
+        {
+            var marshaller = new GetInventoryRequestMarshaller();
+            var unmarshaller = GetInventoryResponseUnmarshaller.Instance;
+
+            return Invoke<GetInventoryRequest,GetInventoryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInventory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInventory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetInventoryResponse> GetInventoryAsync(GetInventoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetInventoryRequestMarshaller();
+            var unmarshaller = GetInventoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetInventoryRequest,GetInventoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetInventorySchema
+
+        internal GetInventorySchemaResponse GetInventorySchema(GetInventorySchemaRequest request)
+        {
+            var marshaller = new GetInventorySchemaRequestMarshaller();
+            var unmarshaller = GetInventorySchemaResponseUnmarshaller.Instance;
+
+            return Invoke<GetInventorySchemaRequest,GetInventorySchemaResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInventorySchema operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInventorySchema operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetInventorySchemaResponse> GetInventorySchemaAsync(GetInventorySchemaRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetInventorySchemaRequestMarshaller();
+            var unmarshaller = GetInventorySchemaResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetInventorySchemaRequest,GetInventorySchemaResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMaintenanceWindow
+
+        internal GetMaintenanceWindowResponse GetMaintenanceWindow(GetMaintenanceWindowRequest request)
+        {
+            var marshaller = new GetMaintenanceWindowRequestMarshaller();
+            var unmarshaller = GetMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return Invoke<GetMaintenanceWindowRequest,GetMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindow operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetMaintenanceWindowResponse> GetMaintenanceWindowAsync(GetMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetMaintenanceWindowRequestMarshaller();
+            var unmarshaller = GetMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMaintenanceWindowRequest,GetMaintenanceWindowResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMaintenanceWindowExecution
+
+        internal GetMaintenanceWindowExecutionResponse GetMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest request)
+        {
+            var marshaller = new GetMaintenanceWindowExecutionRequestMarshaller();
+            var unmarshaller = GetMaintenanceWindowExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<GetMaintenanceWindowExecutionRequest,GetMaintenanceWindowExecutionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMaintenanceWindowExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetMaintenanceWindowExecutionResponse> GetMaintenanceWindowExecutionAsync(GetMaintenanceWindowExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetMaintenanceWindowExecutionRequestMarshaller();
+            var unmarshaller = GetMaintenanceWindowExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMaintenanceWindowExecutionRequest,GetMaintenanceWindowExecutionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetMaintenanceWindowExecutionTask
+
+        internal GetMaintenanceWindowExecutionTaskResponse GetMaintenanceWindowExecutionTask(GetMaintenanceWindowExecutionTaskRequest request)
+        {
+            var marshaller = new GetMaintenanceWindowExecutionTaskRequestMarshaller();
+            var unmarshaller = GetMaintenanceWindowExecutionTaskResponseUnmarshaller.Instance;
+
+            return Invoke<GetMaintenanceWindowExecutionTaskRequest,GetMaintenanceWindowExecutionTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMaintenanceWindowExecutionTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMaintenanceWindowExecutionTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetMaintenanceWindowExecutionTaskResponse> GetMaintenanceWindowExecutionTaskAsync(GetMaintenanceWindowExecutionTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetMaintenanceWindowExecutionTaskRequestMarshaller();
+            var unmarshaller = GetMaintenanceWindowExecutionTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetMaintenanceWindowExecutionTaskRequest,GetMaintenanceWindowExecutionTaskResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetParameterHistory
+
+        internal GetParameterHistoryResponse GetParameterHistory(GetParameterHistoryRequest request)
+        {
+            var marshaller = new GetParameterHistoryRequestMarshaller();
+            var unmarshaller = GetParameterHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<GetParameterHistoryRequest,GetParameterHistoryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetParameterHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetParameterHistory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetParameterHistoryResponse> GetParameterHistoryAsync(GetParameterHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetParameterHistoryRequestMarshaller();
+            var unmarshaller = GetParameterHistoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetParameterHistoryRequest,GetParameterHistoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetParameters
+
+        internal GetParametersResponse GetParameters(GetParametersRequest request)
+        {
+            var marshaller = new GetParametersRequestMarshaller();
+            var unmarshaller = GetParametersResponseUnmarshaller.Instance;
+
+            return Invoke<GetParametersRequest,GetParametersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetParameters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetParameters operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetParametersResponse> GetParametersAsync(GetParametersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetParametersRequestMarshaller();
+            var unmarshaller = GetParametersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetParametersRequest,GetParametersResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1318,8 +2052,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -1353,8 +2107,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -1420,8 +2194,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -1451,8 +2245,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified key is not valid.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
@@ -1543,6 +2357,68 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  ListDocumentVersions
+
+        internal ListDocumentVersionsResponse ListDocumentVersions(ListDocumentVersionsRequest request)
+        {
+            var marshaller = new ListDocumentVersionsRequestMarshaller();
+            var unmarshaller = ListDocumentVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDocumentVersionsRequest,ListDocumentVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDocumentVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDocumentVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListDocumentVersionsResponse> ListDocumentVersionsAsync(ListDocumentVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListDocumentVersionsRequestMarshaller();
+            var unmarshaller = ListDocumentVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDocumentVersionsRequest,ListDocumentVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListInventoryEntries
+
+        internal ListInventoryEntriesResponse ListInventoryEntries(ListInventoryEntriesRequest request)
+        {
+            var marshaller = new ListInventoryEntriesRequestMarshaller();
+            var unmarshaller = ListInventoryEntriesResponseUnmarshaller.Instance;
+
+            return Invoke<ListInventoryEntriesRequest,ListInventoryEntriesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInventoryEntries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInventoryEntries operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListInventoryEntriesResponse> ListInventoryEntriesAsync(ListInventoryEntriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListInventoryEntriesRequestMarshaller();
+            var unmarshaller = ListInventoryEntriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListInventoryEntriesRequest,ListInventoryEntriesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
         internal ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -1600,6 +2476,130 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = ModifyDocumentPermissionResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyDocumentPermissionRequest,ModifyDocumentPermissionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutInventory
+
+        internal PutInventoryResponse PutInventory(PutInventoryRequest request)
+        {
+            var marshaller = new PutInventoryRequestMarshaller();
+            var unmarshaller = PutInventoryResponseUnmarshaller.Instance;
+
+            return Invoke<PutInventoryRequest,PutInventoryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutInventory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutInventory operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutInventoryResponse> PutInventoryAsync(PutInventoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutInventoryRequestMarshaller();
+            var unmarshaller = PutInventoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutInventoryRequest,PutInventoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutParameter
+
+        internal PutParameterResponse PutParameter(PutParameterRequest request)
+        {
+            var marshaller = new PutParameterRequestMarshaller();
+            var unmarshaller = PutParameterResponseUnmarshaller.Instance;
+
+            return Invoke<PutParameterRequest,PutParameterResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutParameter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutParameter operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<PutParameterResponse> PutParameterAsync(PutParameterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new PutParameterRequestMarshaller();
+            var unmarshaller = PutParameterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutParameterRequest,PutParameterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterTargetWithMaintenanceWindow
+
+        internal RegisterTargetWithMaintenanceWindowResponse RegisterTargetWithMaintenanceWindow(RegisterTargetWithMaintenanceWindowRequest request)
+        {
+            var marshaller = new RegisterTargetWithMaintenanceWindowRequestMarshaller();
+            var unmarshaller = RegisterTargetWithMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterTargetWithMaintenanceWindowRequest,RegisterTargetWithMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterTargetWithMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterTargetWithMaintenanceWindow operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RegisterTargetWithMaintenanceWindowResponse> RegisterTargetWithMaintenanceWindowAsync(RegisterTargetWithMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RegisterTargetWithMaintenanceWindowRequestMarshaller();
+            var unmarshaller = RegisterTargetWithMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterTargetWithMaintenanceWindowRequest,RegisterTargetWithMaintenanceWindowResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterTaskWithMaintenanceWindow
+
+        internal RegisterTaskWithMaintenanceWindowResponse RegisterTaskWithMaintenanceWindow(RegisterTaskWithMaintenanceWindowRequest request)
+        {
+            var marshaller = new RegisterTaskWithMaintenanceWindowRequestMarshaller();
+            var unmarshaller = RegisterTaskWithMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterTaskWithMaintenanceWindowRequest,RegisterTaskWithMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterTaskWithMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterTaskWithMaintenanceWindow operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RegisterTaskWithMaintenanceWindowResponse> RegisterTaskWithMaintenanceWindowAsync(RegisterTaskWithMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RegisterTaskWithMaintenanceWindowRequestMarshaller();
+            var unmarshaller = RegisterTaskWithMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterTaskWithMaintenanceWindowRequest,RegisterTaskWithMaintenanceWindowResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1667,8 +2667,28 @@ namespace Amazon.SimpleSystemsManagement
         /// The specified document does not exist.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
         /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
         /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNotificationConfigException">
         /// One or more configuration items is not valid. Verify that a valid Amazon Resource
@@ -1684,8 +2704,9 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidRoleException">
         /// The role name can't contain invalid characters. Also verify that you specified an
         /// IAM role for notifications that includes the required trust policy. For information
-        /// about configuring the IAM role for SSM notifications, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html">Configuring
-        /// SNS Notifications SSM</a> in the <i>Amazon Elastic Compute Cloud User Guide </i>.
+        /// about configuring the IAM role for Run Command notifications, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/rc-sns.html">Getting
+        /// Amazon SNS Notifications When a Command Changes Status</a> in the <i>Amazon Elastic
+        /// Compute Cloud User Guide </i>.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of an SSM document is 64 KB.
@@ -1723,6 +2744,99 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  StartAutomationExecution
+
+        internal StartAutomationExecutionResponse StartAutomationExecution(StartAutomationExecutionRequest request)
+        {
+            var marshaller = new StartAutomationExecutionRequestMarshaller();
+            var unmarshaller = StartAutomationExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StartAutomationExecutionRequest,StartAutomationExecutionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAutomationExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAutomationExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<StartAutomationExecutionResponse> StartAutomationExecutionAsync(StartAutomationExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StartAutomationExecutionRequestMarshaller();
+            var unmarshaller = StartAutomationExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartAutomationExecutionRequest,StartAutomationExecutionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopAutomationExecution
+
+        internal StopAutomationExecutionResponse StopAutomationExecution(StopAutomationExecutionRequest request)
+        {
+            var marshaller = new StopAutomationExecutionRequestMarshaller();
+            var unmarshaller = StopAutomationExecutionResponseUnmarshaller.Instance;
+
+            return Invoke<StopAutomationExecutionRequest,StopAutomationExecutionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopAutomationExecution operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopAutomationExecution operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<StopAutomationExecutionResponse> StopAutomationExecutionAsync(StopAutomationExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new StopAutomationExecutionRequestMarshaller();
+            var unmarshaller = StopAutomationExecutionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopAutomationExecutionRequest,StopAutomationExecutionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAssociation
+
+        internal UpdateAssociationResponse UpdateAssociation(UpdateAssociationRequest request)
+        {
+            var marshaller = new UpdateAssociationRequestMarshaller();
+            var unmarshaller = UpdateAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAssociationRequest,UpdateAssociationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAssociation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateAssociationResponse> UpdateAssociationAsync(UpdateAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateAssociationRequestMarshaller();
+            var unmarshaller = UpdateAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAssociationRequest,UpdateAssociationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateAssociationStatus
 
         internal UpdateAssociationStatusResponse UpdateAssociationStatus(UpdateAssociationStatusRequest request)
@@ -1749,6 +2863,99 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = UpdateAssociationStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateAssociationStatusRequest,UpdateAssociationStatusResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDocument
+
+        internal UpdateDocumentResponse UpdateDocument(UpdateDocumentRequest request)
+        {
+            var marshaller = new UpdateDocumentRequestMarshaller();
+            var unmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDocumentRequest,UpdateDocumentResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDocument operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocument operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateDocumentResponse> UpdateDocumentAsync(UpdateDocumentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateDocumentRequestMarshaller();
+            var unmarshaller = UpdateDocumentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDocumentRequest,UpdateDocumentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDocumentDefaultVersion
+
+        internal UpdateDocumentDefaultVersionResponse UpdateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest request)
+        {
+            var marshaller = new UpdateDocumentDefaultVersionRequestMarshaller();
+            var unmarshaller = UpdateDocumentDefaultVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDocumentDefaultVersionRequest,UpdateDocumentDefaultVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDocumentDefaultVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentDefaultVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateDocumentDefaultVersionResponse> UpdateDocumentDefaultVersionAsync(UpdateDocumentDefaultVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateDocumentDefaultVersionRequestMarshaller();
+            var unmarshaller = UpdateDocumentDefaultVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDocumentDefaultVersionRequest,UpdateDocumentDefaultVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateMaintenanceWindow
+
+        internal UpdateMaintenanceWindowResponse UpdateMaintenanceWindow(UpdateMaintenanceWindowRequest request)
+        {
+            var marshaller = new UpdateMaintenanceWindowRequestMarshaller();
+            var unmarshaller = UpdateMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMaintenanceWindowRequest,UpdateMaintenanceWindowResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMaintenanceWindow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMaintenanceWindow operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateMaintenanceWindowResponse> UpdateMaintenanceWindowAsync(UpdateMaintenanceWindowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateMaintenanceWindowRequestMarshaller();
+            var unmarshaller = UpdateMaintenanceWindowResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMaintenanceWindowRequest,UpdateMaintenanceWindowResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -34,6 +34,7 @@ namespace Amazon.Lambda.Model
     {
         private string _codeSha256;
         private long? _codeSize;
+        private DeadLetterConfig _deadLetterConfig;
         private string _description;
         private EnvironmentResponse _environment;
         private string _functionArn;
@@ -82,6 +83,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetCodeSize()
         {
             return this._codeSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeadLetterConfig. 
+        /// <para>
+        /// The parent object that contains the target ARN (Amazon Resource Name) of an Amazon
+        /// SQS queue or Amazon SNS topic.
+        /// </para>
+        /// </summary>
+        public DeadLetterConfig DeadLetterConfig
+        {
+            get { return this._deadLetterConfig; }
+            set { this._deadLetterConfig = value; }
+        }
+
+        // Check to see if DeadLetterConfig property is set
+        internal bool IsSetDeadLetterConfig()
+        {
+            return this._deadLetterConfig != null;
         }
 
         /// <summary>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -60,10 +60,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DestinationCidrBlock = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("destinationIpv6CidrBlock", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DestinationIpv6CidrBlock = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("destinationPrefixListId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.DestinationPrefixListId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("egressOnlyInternetGatewayId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EgressOnlyInternetGatewayId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("gatewayId", targetDepth))

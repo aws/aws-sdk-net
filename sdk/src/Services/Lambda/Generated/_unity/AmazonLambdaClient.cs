@@ -41,7 +41,7 @@ namespace Amazon.Lambda
     /// <para>
     /// This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides
     /// additional information. For the service overview, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
-    /// is AWS Lambda</a>, and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+    /// is AWS Lambda</a>, and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lamdba/latest/dg/lambda-introduction.html">AWS
     /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -432,6 +432,33 @@ namespace Amazon.Lambda
                         callback(responseObject); 
                 };
             BeginInvoke<DeleteFunctionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  GetAccountSettings
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public void GetAccountSettingsAsync(GetAccountSettingsRequest request, AmazonServiceCallback<GetAccountSettingsRequest, GetAccountSettingsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = new GetAccountSettingsRequestMarshaller();
+            var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetAccountSettingsRequest,GetAccountSettingsResponse> responseObject 
+                            = new AmazonServiceResult<GetAccountSettingsRequest,GetAccountSettingsResponse>((GetAccountSettingsRequest)req, (GetAccountSettingsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<GetAccountSettingsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion

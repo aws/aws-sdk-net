@@ -56,8 +56,12 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Application Auto Scaling is a general purpose Auto Scaling service for supported elastic AWS resources. With Application Auto Scaling, you can automatically scale your AWS resources, with an experience similar to that of Amazon EC2 Auto Scaling.
 * [AWSSDK.ApplicationDiscoveryService](https://www.nuget.org/packages/AWSSDK.ApplicationDiscoveryService/)
 	* AWS Application Discovery Service helps Systems Integrators quickly and reliably plan application migration projects by automatically identifying applications running in your data center, their associated dependencies, and their performance profile.
+* [AWSSDK.AppStream](https://www.nuget.org/packages/AWSSDK.AppStream/)
+	* Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.
 * [AWSSDK.AutoScaling](https://www.nuget.org/packages/AWSSDK.AutoScaling/)
 	* Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.
+* [AWSSDK.AWSHealth](https://www.nuget.org/packages/AWSSDK.AWSHealth/)
+	* The AWS Health API serves as the primary source for you to receive personalized information related to your AWS infrastructure, guiding your through scheduled changes, and accelerating the troubleshooting of issues impacting your AWS resources and accounts.
 * [AWSSDK.AWSMarketplaceCommerceAnalytics](https://www.nuget.org/packages/AWSSDK.AWSMarketplaceCommerceAnalytics/)
 	* The AWS Marketplace Commerce Analytics service allows marketplace partners to programmatically request business intelligence data from AWS Marketplace. This service provides the same data that was previously only available through the AWS Marketplace Management Portal, but offers the data in a fully-machine-readable format and available in fine-grained data sets rather than large reports.
 * [AWSSDK.AWSMarketplaceMetering](https://www.nuget.org/packages/AWSSDK.AWSMarketplaceMetering/)
@@ -86,6 +90,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon CloudWatch Events helps you to respond to state changes in your AWS resources. When your resources change state they automatically send events into an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a pre-determined schedule.
 * [AWSSDK.CloudWatchLogs](https://www.nuget.org/packages/AWSSDK.CloudWatchLogs/)
 	* Amazon CloudWatch is a monitoring service for AWS cloud resources and the applications you run on AWS. You can use Amazon CloudWatch to collect and track metrics, collect and monitor log files, and set alarms.
+* [AWSSDK.CodeBuild](https://www.nuget.org/packages/AWSSDK.CodeBuild/)
+	* AWS CodeBuild is a fully-managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit tests, and produces artifacts that are ready to deploy.
 * [AWSSDK.CodeCommit](https://www.nuget.org/packages/AWSSDK.CodeCommit/)
 	* AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories.
 * [AWSSDK.CodeDeploy](https://www.nuget.org/packages/AWSSDK.CodeDeploy/)
@@ -166,6 +172,10 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Mobile Analytics is a service that lets you simply and cost effectively collect and analyze your application usage data. In addition to providing usage summary charts that are available for quick reference, Amazon Mobile Analytics enables you to set up automatic export of your data to Amazon S3 for use with other data analytics tools such as Amazon Redshift, Amazon Elastic MapReduce (EMR), Extract, Transform and Load (ETL) software, or your own data warehouse.
 * [AWSSDK.OpsWorks](https://www.nuget.org/packages/AWSSDK.OpsWorks/)
 	* AWS OpsWorks is an application management service that makes it easy to deploy and operate applications of all shapes and sizes. You can define the application's architecture and the specification of each component including package installation, software configuration and resources such as storage.
+* [AWSSDK.OpsWorksCM](https://www.nuget.org/packages/AWSSDK.OpsWorksCM/)
+	* AWS OpsWorks for Chef Automate gives customers a single tenant Chef Automate server. The Chef Automate server is fully managed by AWS and supports automatic backup, restore and upgrade operations.
+* [AWSSDK.Pinpoint](https://www.nuget.org/packages/AWSSDK.Pinpoint/)
+	* Amazon Pinpoint makes it easy to run targeted campaigns to improve user engagement. Pinpoint helps you understand your users behavior, define who to target, what messages to send, when to deliver them, and tracks the results of the campaign.
 * [AWSSDK.Polly](https://www.nuget.org/packages/AWSSDK.Polly/)
 	* Amazon Polly is a service that turns text into lifelike speech, making it easy to develop applications that use high-quality speech to increase engagement and accessibility.
 * [AWSSDK.RDS](https://www.nuget.org/packages/AWSSDK.RDS/)
@@ -186,6 +196,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Server Migration Service (SMS) is an agentless service which makes it easier and faster for you to migrate thousands of on-premises workloads to AWS.
 * [AWSSDK.ServiceCatalog](https://www.nuget.org/packages/AWSSDK.ServiceCatalog/)
 	* AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS.
+* [AWSSDK.Shield](https://www.nuget.org/packages/AWSSDK.Shield/)
+	* AWS Shield protects web applications from large and sophisticated DDoS attacks at Layer 3, 4 and 7. In addition AWS Shield provides visibility in attacks, and access to 24X7 DDoS Response Team.
 * [AWSSDK.SimpleDB](https://www.nuget.org/packages/AWSSDK.SimpleDB/)
 	* Amazon SimpleDB is a highly available, scalable, and flexible non-relational data store that enables you to store and query data items using web services requests.
 * [AWSSDK.SimpleEmail](https://www.nuget.org/packages/AWSSDK.SimpleEmail/)
@@ -200,12 +212,16 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large amounts of data into and out of the AWS cloud
 * [AWSSDK.SQS](https://www.nuget.org/packages/AWSSDK.SQS/)
 	* Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service. SQS makes it simple and cost-effective to decouple the components of a cloud application.
+* [AWSSDK.StepFunctions](https://www.nuget.org/packages/AWSSDK.StepFunctions/)
+	* AWS Step Functions is a web service that enables you to coordinate a network of computing resources across distributed components using state machines.
 * [AWSSDK.StorageGateway](https://www.nuget.org/packages/AWSSDK.StorageGateway/)
 	* The AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.
 * [AWSSDK.WAF](https://www.nuget.org/packages/AWSSDK.WAF/)
 	* AWS WAF (Web Application Firewall) protects web applications from attack by allowing customers to block bad actors and provides filters against common web exploits like SQL injection.
 * [AWSSDK.WorkSpaces](https://www.nuget.org/packages/AWSSDK.WorkSpaces/)
 	* Amazon WorkSpaces is a managed desktop computing service in the cloud.
+* [AWSSDK.XRay](https://www.nuget.org/packages/AWSSDK.XRay/)
+	* AWS X-Ray helps developers analyze and debug distributed applications. With X-Ray, you can understand how your application and its underlying services are performing to identify and troubleshoot the root cause of performance issues and errors.
 
 ### Code Generator
 

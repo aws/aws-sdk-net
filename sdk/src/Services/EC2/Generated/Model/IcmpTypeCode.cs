@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The ICMP type. A value of -1 means all types.
+        /// The ICMP code. A value of -1 means all codes for the specified ICMP type.
         /// </para>
         /// </summary>
         public int Code
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The ICMP code. A value of -1 means all codes for the specified ICMP type.
+        /// The ICMP type. A value of -1 means all types.
         /// </para>
         /// </summary>
         public int Type

@@ -45,6 +45,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CreateAssociationBatchRequestEntry requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDocumentVersion())
+            {
+                context.Writer.WritePropertyName("DocumentVersion");
+                context.Writer.Write(requestObject.DocumentVersion);
+            }
+
             if(requestObject.IsSetInstanceId())
             {
                 context.Writer.WritePropertyName("InstanceId");
@@ -55,6 +61,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Name");
                 context.Writer.Write(requestObject.Name);
+            }
+
+            if(requestObject.IsSetOutputLocation())
+            {
+                context.Writer.WritePropertyName("OutputLocation");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InstanceAssociationOutputLocationMarshaller.Instance;
+                marshaller.Marshall(requestObject.OutputLocation, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetParameters())
@@ -74,6 +91,28 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetScheduleExpression())
+            {
+                context.Writer.WritePropertyName("ScheduleExpression");
+                context.Writer.Write(requestObject.ScheduleExpression);
+            }
+
+            if(requestObject.IsSetTargets())
+            {
+                context.Writer.WritePropertyName("Targets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTargetsListValue in requestObject.Targets)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TargetMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTargetsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }

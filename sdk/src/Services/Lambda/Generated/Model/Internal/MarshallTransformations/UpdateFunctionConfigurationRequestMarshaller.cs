@@ -68,6 +68,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDeadLetterConfig())
+                {
+                    context.Writer.WritePropertyName("DeadLetterConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeadLetterConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeadLetterConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");

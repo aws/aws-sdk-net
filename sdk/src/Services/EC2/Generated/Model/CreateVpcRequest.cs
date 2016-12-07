@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,14 +29,16 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVpc operation.
-    /// Creates a VPC with the specified CIDR block.
+    /// Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create
+    /// uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
+    /// IPv4 addresses). To help you decide how big to make your VPC, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+    /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
     /// 
     ///  
     /// <para>
-    /// The smallest VPC you can create uses a /28 netmask (16 IP addresses), and the largest
-    /// uses a /16 netmask (65,536 IP addresses). To help you decide how big to make your
-    /// VPC, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
-    /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// You can optionally request an Amazon-provided IPv6 CIDR block for the VPC. The IPv6
+    /// CIDR block uses a /56 prefix length, and is allocated from Amazon's pool of IPv6 addresses.
+    /// You cannot choose the IPv6 range for your VPC.
     /// </para>
     ///  
     /// <para>
@@ -54,6 +56,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateVpcRequest : AmazonEC2Request
     {
+        private bool? _amazonProvidedIpv6CidrBlock;
         private string _cidrBlock;
         private Tenancy _instanceTenancy;
 
@@ -65,16 +68,35 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateVpcRequest with the parameterized properties
         /// </summary>
-        /// <param name="cidrBlock">The network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.</param>
+        /// <param name="cidrBlock">The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.</param>
         public CreateVpcRequest(string cidrBlock)
         {
             _cidrBlock = cidrBlock;
         }
 
         /// <summary>
+        /// Gets and sets the property AmazonProvidedIpv6CidrBlock. 
+        /// <para>
+        /// Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC.
+        /// You cannot specify the range of IP addresses, or the size of the CIDR block.
+        /// </para>
+        /// </summary>
+        public bool AmazonProvidedIpv6CidrBlock
+        {
+            get { return this._amazonProvidedIpv6CidrBlock.GetValueOrDefault(); }
+            set { this._amazonProvidedIpv6CidrBlock = value; }
+        }
+
+        // Check to see if AmazonProvidedIpv6CidrBlock property is set
+        internal bool IsSetAmazonProvidedIpv6CidrBlock()
+        {
+            return this._amazonProvidedIpv6CidrBlock.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property CidrBlock. 
         /// <para>
-        /// The network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.
+        /// The IPv4 network range for the VPC, in CIDR notation. For example, <code>10.0.0.0/16</code>.
         /// </para>
         /// </summary>
         public string CidrBlock

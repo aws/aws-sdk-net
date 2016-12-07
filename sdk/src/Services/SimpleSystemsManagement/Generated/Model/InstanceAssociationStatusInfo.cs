@@ -1,0 +1,227 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the ssm-2014-11-06.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.SimpleSystemsManagement.Model
+{
+    /// <summary>
+    /// Status information about the instance association.
+    /// </summary>
+    public partial class InstanceAssociationStatusInfo
+    {
+        private string _associationId;
+        private string _detailedStatus;
+        private string _documentVersion;
+        private string _errorCode;
+        private DateTime? _executionDate;
+        private string _executionSummary;
+        private string _instanceId;
+        private string _name;
+        private InstanceAssociationOutputUrl _outputUrl;
+        private string _status;
+
+        /// <summary>
+        /// Gets and sets the property AssociationId. 
+        /// <para>
+        /// The association ID.
+        /// </para>
+        /// </summary>
+        public string AssociationId
+        {
+            get { return this._associationId; }
+            set { this._associationId = value; }
+        }
+
+        // Check to see if AssociationId property is set
+        internal bool IsSetAssociationId()
+        {
+            return this._associationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DetailedStatus. 
+        /// <para>
+        /// Detailed status information about the instance association.
+        /// </para>
+        /// </summary>
+        public string DetailedStatus
+        {
+            get { return this._detailedStatus; }
+            set { this._detailedStatus = value; }
+        }
+
+        // Check to see if DetailedStatus property is set
+        internal bool IsSetDetailedStatus()
+        {
+            return this._detailedStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentVersion. 
+        /// <para>
+        /// The association document verions.
+        /// </para>
+        /// </summary>
+        public string DocumentVersion
+        {
+            get { return this._documentVersion; }
+            set { this._documentVersion = value; }
+        }
+
+        // Check to see if DocumentVersion property is set
+        internal bool IsSetDocumentVersion()
+        {
+            return this._documentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorCode. 
+        /// <para>
+        /// An error code returned by the request to create the association.
+        /// </para>
+        /// </summary>
+        public string ErrorCode
+        {
+            get { return this._errorCode; }
+            set { this._errorCode = value; }
+        }
+
+        // Check to see if ErrorCode property is set
+        internal bool IsSetErrorCode()
+        {
+            return this._errorCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionDate. 
+        /// <para>
+        /// The date the instance association executed. 
+        /// </para>
+        /// </summary>
+        public DateTime ExecutionDate
+        {
+            get { return this._executionDate.GetValueOrDefault(); }
+            set { this._executionDate = value; }
+        }
+
+        // Check to see if ExecutionDate property is set
+        internal bool IsSetExecutionDate()
+        {
+            return this._executionDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionSummary. 
+        /// <para>
+        /// Summary information about association execution.
+        /// </para>
+        /// </summary>
+        public string ExecutionSummary
+        {
+            get { return this._executionSummary; }
+            set { this._executionSummary = value; }
+        }
+
+        // Check to see if ExecutionSummary property is set
+        internal bool IsSetExecutionSummary()
+        {
+            return this._executionSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The instance ID where the association was created.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the association.
+        /// </para>
+        /// </summary>
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputUrl. 
+        /// <para>
+        /// A URL for an Amazon S3 bucket where you want to store the results of this request.
+        /// </para>
+        /// </summary>
+        public InstanceAssociationOutputUrl OutputUrl
+        {
+            get { return this._outputUrl; }
+            set { this._outputUrl = value; }
+        }
+
+        // Check to see if OutputUrl property is set
+        internal bool IsSetOutputUrl()
+        {
+            return this._outputUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Status information about the instance association.
+        /// </para>
+        /// </summary>
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+    }
+}

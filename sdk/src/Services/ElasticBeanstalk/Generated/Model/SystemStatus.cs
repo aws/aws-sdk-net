@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Represents CPU utilization and load average information for applications running in
-    /// the specified environment.
+    /// CPU utilization and load average metrics for an Amazon EC2 instance.
     /// </summary>
     public partial class SystemStatus
     {
@@ -37,7 +36,10 @@ namespace Amazon.ElasticBeanstalk.Model
         private List<double> _loadAverage = new List<double>();
 
         /// <summary>
-        /// Gets and sets the property CPUUtilization.
+        /// Gets and sets the property CPUUtilization. 
+        /// <para>
+        /// CPU utilization metrics for the instance.
+        /// </para>
         /// </summary>
         public CPUUtilization CPUUtilization
         {

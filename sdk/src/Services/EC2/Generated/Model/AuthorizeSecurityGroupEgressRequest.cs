@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -31,16 +31,14 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the AuthorizeSecurityGroupEgress operation.
     /// [EC2-VPC only] Adds one or more egress rules to a security group for use with a VPC.
     /// Specifically, this action permits instances to send traffic to one or more destination
-    /// CIDR IP address ranges, or to one or more destination security groups for the same
-    /// VPC. This action doesn't apply to security groups for use in EC2-Classic. For more
-    /// information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-    /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// IPv4 or IPv6 CIDR address ranges, or to one or more destination security groups for
+    /// the same VPC. This action doesn't apply to security groups for use in EC2-Classic.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+    /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. For
+    /// more information about security group limits, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+    /// VPC Limits</a>.
     /// 
-    ///  <important> 
-    /// <para>
-    /// You can have up to 50 rules per security group (covering both ingress and egress rules).
-    /// </para>
-    ///  </important> 
+    ///  
     /// <para>
     /// Each rule consists of the protocol (for example, TCP), plus either a CIDR range or
     /// a source group. For the TCP and UDP protocols, you must also specify the destination

@@ -41,7 +41,7 @@ namespace Amazon.Lambda
     /// <para>
     /// This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides
     /// additional information. For the service overview, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
-    /// is AWS Lambda</a>, and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+    /// is AWS Lambda</a>, and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lamdba/latest/dg/lambda-introduction.html">AWS
     /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -864,6 +864,70 @@ namespace Amazon.Lambda
         public  DeleteFunctionResponse EndDeleteFunction(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFunctionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAccountSettings
+
+        /// <summary>
+        /// Returns a customer's account settings.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this operation to retrieve Lambda limit information such as code size
+        /// and concurrency limits. For more information on limits, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS
+        /// Lambda Limits</a>. You can also retrieve resource usage statistics such as code storage
+        /// usage and function count.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountSettings service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        public GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
+        {
+            var marshaller = new GetAccountSettingsRequestMarshaller();
+            var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountSettingsRequest,GetAccountSettingsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAccountSettings
+        ///         operation.</returns>
+        public IAsyncResult BeginGetAccountSettings(GetAccountSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetAccountSettingsRequestMarshaller();
+            var unmarshaller = GetAccountSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetAccountSettingsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAccountSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAccountSettings.</param>
+        /// 
+        /// <returns>Returns a  GetAccountSettingsResult from Lambda.</returns>
+        public  GetAccountSettingsResponse EndGetAccountSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAccountSettingsResponse>(asyncResult);
         }
 
         #endregion

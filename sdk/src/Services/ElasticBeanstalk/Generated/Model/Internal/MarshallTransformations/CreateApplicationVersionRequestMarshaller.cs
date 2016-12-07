@@ -66,6 +66,29 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoCreateApplication", StringUtils.FromBool(publicRequest.AutoCreateApplication));
                 }
+                if(publicRequest.IsSetBuildConfiguration())
+                {
+                    if(publicRequest.BuildConfiguration.IsSetArtifactName())
+                    {
+                        request.Parameters.Add("BuildConfiguration" + "." + "ArtifactName", StringUtils.FromString(publicRequest.BuildConfiguration.ArtifactName));
+                    }
+                    if(publicRequest.BuildConfiguration.IsSetCodeBuildServiceRole())
+                    {
+                        request.Parameters.Add("BuildConfiguration" + "." + "CodeBuildServiceRole", StringUtils.FromString(publicRequest.BuildConfiguration.CodeBuildServiceRole));
+                    }
+                    if(publicRequest.BuildConfiguration.IsSetComputeType())
+                    {
+                        request.Parameters.Add("BuildConfiguration" + "." + "ComputeType", StringUtils.FromString(publicRequest.BuildConfiguration.ComputeType));
+                    }
+                    if(publicRequest.BuildConfiguration.IsSetImage())
+                    {
+                        request.Parameters.Add("BuildConfiguration" + "." + "Image", StringUtils.FromString(publicRequest.BuildConfiguration.Image));
+                    }
+                    if(publicRequest.BuildConfiguration.IsSetTimeoutInMinutes())
+                    {
+                        request.Parameters.Add("BuildConfiguration" + "." + "TimeoutInMinutes", StringUtils.FromInt(publicRequest.BuildConfiguration.TimeoutInMinutes));
+                    }
+                }
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));

@@ -39,7 +39,7 @@ namespace Amazon.Lambda
     /// <para>
     /// This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides
     /// additional information. For the service overview, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
-    /// is AWS Lambda</a>, and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+    /// is AWS Lambda</a>, and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lamdba/latest/dg/lambda-introduction.html">AWS
     /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -203,6 +203,22 @@ namespace Amazon.Lambda
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAccountSettings
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAccountSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

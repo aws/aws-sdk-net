@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the monitoring information of the instance.
+    /// Describes the monitoring of an instance.
     /// </summary>
     public partial class InstanceMonitoring
     {
@@ -56,7 +56,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Monitoring. 
         /// <para>
-        /// The monitoring information.
+        /// The monitoring for the instance.
         /// </para>
         /// </summary>
         public Monitoring Monitoring

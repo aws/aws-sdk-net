@@ -31,6 +31,10 @@ namespace Amazon.Lambda
     {
 
         /// <summary>
+        /// Constant AT_TIMESTAMP for EventSourcePosition
+        /// </summary>
+        public static readonly EventSourcePosition AT_TIMESTAMP = new EventSourcePosition("AT_TIMESTAMP");
+        /// <summary>
         /// Constant LATEST for EventSourcePosition
         /// </summary>
         public static readonly EventSourcePosition LATEST = new EventSourcePosition("LATEST");
@@ -185,6 +189,10 @@ namespace Amazon.Lambda
     {
 
         /// <summary>
+        /// Constant Dotnetcore10 for Runtime
+        /// </summary>
+        public static readonly Runtime Dotnetcore10 = new Runtime("dotnetcore1.0");
+        /// <summary>
         /// Constant Java8 for Runtime
         /// </summary>
         public static readonly Runtime Java8 = new Runtime("java8");
@@ -196,6 +204,10 @@ namespace Amazon.Lambda
         /// Constant Nodejs43 for Runtime
         /// </summary>
         public static readonly Runtime Nodejs43 = new Runtime("nodejs4.3");
+        /// <summary>
+        /// Constant Nodejs43Edge for Runtime
+        /// </summary>
+        public static readonly Runtime Nodejs43Edge = new Runtime("nodejs4.3-edge");
         /// <summary>
         /// Constant Python27 for Runtime
         /// </summary>

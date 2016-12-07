@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -29,9 +29,14 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the MonitorInstances operation.
-    /// Enables monitoring for a running instance. For more information about monitoring instances,
-    /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
+    /// Enables detailed monitoring for a running instance. Otherwise, basic monitoring is
+    /// enabled. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
     /// Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// 
+    ///  
+    /// <para>
+    /// To disable detailed monitoring, see .
+    /// </para>
     /// </summary>
     public partial class MonitorInstancesRequest : AmazonEC2Request
     {

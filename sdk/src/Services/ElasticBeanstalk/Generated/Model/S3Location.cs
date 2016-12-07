@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// A specification of a location in Amazon S3.
+    /// The bucket and key of an item stored in Amazon S3.
     /// </summary>
     public partial class S3Location
     {

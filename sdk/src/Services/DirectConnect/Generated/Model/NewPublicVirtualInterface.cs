@@ -32,6 +32,7 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class NewPublicVirtualInterface
     {
+        private AddressFamily _addressFamily;
         private string _amazonAddress;
         private int? _asn;
         private string _authKey;
@@ -39,6 +40,21 @@ namespace Amazon.DirectConnect.Model
         private List<RouteFilterPrefix> _routeFilterPrefixes = new List<RouteFilterPrefix>();
         private string _virtualInterfaceName;
         private int? _vlan;
+
+        /// <summary>
+        /// Gets and sets the property AddressFamily.
+        /// </summary>
+        public AddressFamily AddressFamily
+        {
+            get { return this._addressFamily; }
+            set { this._addressFamily = value; }
+        }
+
+        // Check to see if AddressFamily property is set
+        internal bool IsSetAddressFamily()
+        {
+            return this._addressFamily != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AmazonAddress.

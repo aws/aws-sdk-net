@@ -38,9 +38,28 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribeInstanceInformationRequest : AmazonSimpleSystemsManagementRequest
     {
+        private List<InstanceInformationStringFilter> _filters = new List<InstanceInformationStringFilter>();
         private List<InstanceInformationFilter> _instanceInformationFilterList = new List<InstanceInformationFilter>();
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// One or more filters. Use a filter to return a more specific list of instances.
+        /// </para>
+        /// </summary>
+        public List<InstanceInformationStringFilter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && this._filters.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceInformationFilterList. 

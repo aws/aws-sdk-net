@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 
 
@@ -46,7 +46,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Purchases Convertible Reserved Instance offerings described in the <a>GetReservedInstancesExchangeQuote</a>
+        /// Accepts the Convertible Reserved Instance exchange quote described in the <a>GetReservedInstancesExchangeQuote</a>
         /// call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptReservedInstancesExchangeQuote service method.</param>
@@ -184,6 +184,37 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<AllocateHostsResponse> AllocateHostsAsync(AllocateHostsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AssignIpv6Addresses
+
+
+        /// <summary>
+        /// Assigns one or more IPv6 addresses to the specified network interface. You can specify
+        /// one or more specific IPv6 addresses, or you can specify the number of IPv6 addresses
+        /// to be automatically assigned from within the subnet's IPv6 CIDR block range. You can
+        /// assign as many IPv6 addresses to a network interface as you can assign private IPv4
+        /// addresses, and the limit varies per instance type. For information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
+        /// Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic Compute
+        /// Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssignIpv6Addresses service method.</param>
+        /// 
+        /// <returns>The response from the AssignIpv6Addresses service method, as returned by EC2.</returns>
+        AssignIpv6AddressesResponse AssignIpv6Addresses(AssignIpv6AddressesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssignIpv6Addresses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssignIpv6Addresses operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AssignIpv6AddressesResponse> AssignIpv6AddressesAsync(AssignIpv6AddressesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -349,6 +380,58 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<AssociateRouteTableResponse> AssociateRouteTableAsync(AssociateRouteTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AssociateSubnetCidrBlock
+
+
+        /// <summary>
+        /// Associates a CIDR block with your subnet. You can only associate a single IPv6 CIDR
+        /// block with your subnet. An IPv6 CIDR block must have a prefix length of /64.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSubnetCidrBlock service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSubnetCidrBlock service method, as returned by EC2.</returns>
+        AssociateSubnetCidrBlockResponse AssociateSubnetCidrBlock(AssociateSubnetCidrBlockRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSubnetCidrBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSubnetCidrBlock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AssociateSubnetCidrBlockResponse> AssociateSubnetCidrBlockAsync(AssociateSubnetCidrBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AssociateVpcCidrBlock
+
+
+        /// <summary>
+        /// Associates a CIDR block with your VPC. You can only associate a single Amazon-provided
+        /// IPv6 CIDR block with your VPC. The IPv6 CIDR block size is fixed at /56.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateVpcCidrBlock service method.</param>
+        /// 
+        /// <returns>The response from the AssociateVpcCidrBlock service method, as returned by EC2.</returns>
+        AssociateVpcCidrBlockResponse AssociateVpcCidrBlock(AssociateVpcCidrBlockRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateVpcCidrBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateVpcCidrBlock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<AssociateVpcCidrBlockResponse> AssociateVpcCidrBlockAsync(AssociateVpcCidrBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -550,16 +633,14 @@ namespace Amazon.EC2
         /// <summary>
         /// [EC2-VPC only] Adds one or more egress rules to a security group for use with a VPC.
         /// Specifically, this action permits instances to send traffic to one or more destination
-        /// CIDR IP address ranges, or to one or more destination security groups for the same
-        /// VPC. This action doesn't apply to security groups for use in EC2-Classic. For more
-        /// information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
-        /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// IPv4 or IPv6 CIDR address ranges, or to one or more destination security groups for
+        /// the same VPC. This action doesn't apply to security groups for use in EC2-Classic.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+        /// Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. For
+        /// more information about security group limits, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+        /// VPC Limits</a>.
         /// 
-        ///  <important> 
-        /// <para>
-        /// You can have up to 50 rules per security group (covering both ingress and egress rules).
-        /// </para>
-        ///  </important> 
+        ///  
         /// <para>
         /// Each rule consists of the protocol (for example, TCP), plus either a CIDR range or
         /// a source group. For the TCP and UDP protocols, you must also specify the destination
@@ -597,32 +678,27 @@ namespace Amazon.EC2
         /// <summary>
         /// Adds one or more ingress rules to a security group.
         /// 
-        ///  <important> 
-        /// <para>
-        /// EC2-Classic: You can have up to 100 rules per group.
-        /// </para>
         ///  
-        /// <para>
-        /// EC2-VPC: You can have up to 50 rules per group (covering both ingress and egress rules).
-        /// </para>
-        ///  </important> 
         /// <para>
         /// Rule changes are propagated to instances within the security group as quickly as possible.
         /// However, a small delay might occur.
         /// </para>
         ///  
         /// <para>
-        /// [EC2-Classic] This action gives one or more CIDR IP address ranges permission to access
-        /// a security group in your account, or gives one or more security groups (called the
-        /// <i>source groups</i>) permission to access a security group for your account. A source
-        /// group can be for your own AWS account, or another.
+        /// [EC2-Classic] This action gives one or more IPv4 CIDR address ranges permission to
+        /// access a security group in your account, or gives one or more security groups (called
+        /// the <i>source groups</i>) permission to access a security group for your account.
+        /// A source group can be for your own AWS account, or another. You can have up to 100
+        /// rules per group.
         /// </para>
         ///  
         /// <para>
-        /// [EC2-VPC] This action gives one or more CIDR IP address ranges permission to access
-        /// a security group in your VPC, or gives one or more other security groups (called the
-        /// <i>source groups</i>) permission to access a security group for your VPC. The security
-        /// groups must all be for the same VPC.
+        /// [EC2-VPC] This action gives one or more IPv4 or IPv6 CIDR address ranges permission
+        /// to access a security group in your VPC, or gives one or more other security groups
+        /// (called the <i>source groups</i>) permission to access a security group for your VPC.
+        /// The security groups must all be for the same VPC or a peer VPC in a VPC peering connection.
+        /// For more information about VPC security group limits, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+        /// VPC Limits</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupIngress service method.</param>
@@ -1143,6 +1219,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateEgressOnlyInternetGateway
+
+
+        /// <summary>
+        /// [IPv6 only] Creates an egress-only Internet gateway for your VPC. An egress-only Internet
+        /// gateway is used to enable outbound communication over IPv6 from instances in your
+        /// VPC to the Internet, and prevents hosts outside of your VPC from initiating an IPv6
+        /// connection with your instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEgressOnlyInternetGateway service method.</param>
+        /// 
+        /// <returns>The response from the CreateEgressOnlyInternetGateway service method, as returned by EC2.</returns>
+        CreateEgressOnlyInternetGatewayResponse CreateEgressOnlyInternetGateway(CreateEgressOnlyInternetGatewayRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEgressOnlyInternetGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEgressOnlyInternetGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateEgressOnlyInternetGatewayResponse> CreateEgressOnlyInternetGatewayAsync(CreateEgressOnlyInternetGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateFlowLogs
 
 
@@ -1476,7 +1580,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For more information about network interfaces, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
-        /// Network Interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// Network Interfaces</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInterface service method.</param>
@@ -1590,13 +1694,14 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You must specify one of the following targets: Internet gateway or virtual private
-        /// gateway, NAT instance, NAT gateway, VPC peering connection, or network interface.
+        /// gateway, NAT instance, NAT gateway, VPC peering connection, network interface, or
+        /// egress-only Internet gateway.
         /// </para>
         ///  
         /// <para>
         /// When determining how to route traffic, we use the route with the most specific match.
-        /// For example, let's say the traffic is destined for <code>192.0.2.3</code>, and the
-        /// route table includes the following two routes:
+        /// For example, traffic is destined for the IPv4 address <code>192.0.2.3</code>, and
+        /// the route table includes the following two IPv4 routes:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1829,11 +1934,16 @@ namespace Amazon.EC2
         /// <para>
         /// When you create each subnet, you provide the VPC ID and the CIDR block you want for
         /// the subnet. After you create a subnet, you can't change its CIDR block. The subnet's
-        /// CIDR block can be the same as the VPC's CIDR block (assuming you want only a single
-        /// subnet in the VPC), or a subset of the VPC's CIDR block. If you create more than one
-        /// subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest subnet (and
-        /// VPC) you can create uses a /28 netmask (16 IP addresses), and the largest uses a /16
-        /// netmask (65,536 IP addresses).
+        /// IPv4 CIDR block can be the same as the VPC's IPv4 CIDR block (assuming you want only
+        /// a single subnet in the VPC), or a subset of the VPC's IPv4 CIDR block. If you create
+        /// more than one subnet in a VPC, the subnets' CIDR blocks must not overlap. The smallest
+        /// IPv4 subnet (and VPC) you can create uses a /28 netmask (16 IPv4 addresses), and the
+        /// largest uses a /16 netmask (65,536 IPv4 addresses).
+        /// </para>
+        ///  
+        /// <para>
+        /// If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with
+        /// an IPv6 CIDR block that uses a /64 prefix length. 
         /// </para>
         ///  <important> 
         /// <para>
@@ -1967,14 +2077,16 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a VPC with the specified CIDR block.
+        /// Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create
+        /// uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536
+        /// IPv4 addresses). To help you decide how big to make your VPC, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+        /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// 
         ///  
         /// <para>
-        /// The smallest VPC you can create uses a /28 netmask (16 IP addresses), and the largest
-        /// uses a /16 netmask (65,536 IP addresses). To help you decide how big to make your
-        /// VPC, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
-        /// VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// You can optionally request an Amazon-provided IPv6 CIDR block for the VPC. The IPv6
+        /// CIDR block uses a /56 prefix length, and is allocated from Amazon's pool of IPv6 addresses.
+        /// You cannot choose the IPv6 range for your VPC.
         /// </para>
         ///  
         /// <para>
@@ -2254,6 +2366,31 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeleteDhcpOptionsResponse> DeleteDhcpOptionsAsync(DeleteDhcpOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteEgressOnlyInternetGateway
+
+
+        /// <summary>
+        /// Deletes an egress-only Internet gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEgressOnlyInternetGateway service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEgressOnlyInternetGateway service method, as returned by EC2.</returns>
+        DeleteEgressOnlyInternetGatewayResponse DeleteEgressOnlyInternetGateway(DeleteEgressOnlyInternetGatewayRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEgressOnlyInternetGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEgressOnlyInternetGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteEgressOnlyInternetGatewayResponse> DeleteEgressOnlyInternetGatewayAsync(DeleteEgressOnlyInternetGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3498,6 +3635,31 @@ namespace Amazon.EC2
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeDhcpOptionsResponse> DescribeDhcpOptionsAsync(DescribeDhcpOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeEgressOnlyInternetGateways
+
+
+        /// <summary>
+        /// Describes one or more of your egress-only Internet gateways.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEgressOnlyInternetGateways service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEgressOnlyInternetGateways service method, as returned by EC2.</returns>
+        DescribeEgressOnlyInternetGatewaysResponse DescribeEgressOnlyInternetGateways(DescribeEgressOnlyInternetGatewaysRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEgressOnlyInternetGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEgressOnlyInternetGateways operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeEgressOnlyInternetGatewaysResponse> DescribeEgressOnlyInternetGatewaysAsync(DescribeEgressOnlyInternetGatewaysRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5688,9 +5850,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Spot price history. The prices returned are listed in chronological
-        /// order, from the oldest to the most recent, for up to the past 90 days. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
+        /// Describes the Spot price history. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
         /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  
@@ -5707,9 +5867,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Spot price history. The prices returned are listed in chronological
-        /// order, from the oldest to the most recent, for up to the past 90 days. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
+        /// Describes the Spot price history. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
         /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  
@@ -5727,9 +5885,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Spot price history. The prices returned are listed in chronological
-        /// order, from the oldest to the most recent, for up to the past 90 days. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
+        /// Describes the Spot price history. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
         /// Instance Pricing History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// 
         ///  
@@ -6866,6 +7022,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateSubnetCidrBlock
+
+
+        /// <summary>
+        /// Disassociates a CIDR block from a subnet. Currently, you can disassociate an IPv6
+        /// CIDR block only. You must detach or delete all gateways and resources that are associated
+        /// with the CIDR block before you can disassociate it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSubnetCidrBlock service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSubnetCidrBlock service method, as returned by EC2.</returns>
+        DisassociateSubnetCidrBlockResponse DisassociateSubnetCidrBlock(DisassociateSubnetCidrBlockRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateSubnetCidrBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSubnetCidrBlock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DisassociateSubnetCidrBlockResponse> DisassociateSubnetCidrBlockAsync(DisassociateSubnetCidrBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DisassociateVpcCidrBlock
+
+
+        /// <summary>
+        /// Disassociates a CIDR block from a VPC. Currently, you can disassociate an IPv6 CIDR
+        /// block only. You must detach or delete all gateways and resources that are associated
+        /// with the CIDR block before you can disassociate it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateVpcCidrBlock service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateVpcCidrBlock service method, as returned by EC2.</returns>
+        DisassociateVpcCidrBlockResponse DisassociateVpcCidrBlock(DisassociateVpcCidrBlockRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateVpcCidrBlock operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateVpcCidrBlock operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DisassociateVpcCidrBlockResponse> DisassociateVpcCidrBlockAsync(DisassociateVpcCidrBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  EnableVgwRoutePropagation
 
 
@@ -6958,7 +7168,7 @@ namespace Amazon.EC2
         /// addressed from an instance in the VPC to which it's linked. Similarly, the DNS hostname
         /// of an instance in a VPC resolves to its private IP address when addressed from a linked
         /// EC2-Classic instance. For more information about ClassicLink, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-        /// in the Amazon Elastic Compute Cloud User Guide.
+        /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLinkDnsSupport service method.</param>
         /// 
@@ -7142,8 +7352,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Returns details about the values and term of your specified Convertible Reserved Instances.
-        /// When an offering ID is specified it returns information about whether the exchange
-        /// is valid and can be performed.
+        /// When a target configuration is specified, it returns information about whether the
+        /// exchange is valid and can be performed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReservedInstancesExchangeQuote service method.</param>
         /// 
@@ -7716,7 +7926,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies a subnet attribute.
+        /// Modifies a subnet attribute. You can only modify one attribute at a time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifySubnetAttribute service method.</param>
         /// 
@@ -7881,9 +8091,14 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Enables monitoring for a running instance. For more information about monitoring instances,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
+        /// Enables detailed monitoring for a running instance. Otherwise, basic monitoring is
+        /// enabled. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
         /// Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// To disable detailed monitoring, see .
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MonitorInstances service method.</param>
         /// 
@@ -8326,7 +8541,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Replaces an existing route within a route table in a VPC. You must provide only one
         /// of the following: Internet gateway or virtual private gateway, NAT instance, NAT gateway,
-        /// VPC peering connection, or network interface.
+        /// VPC peering connection, network interface, or egress-only Internet gateway.
         /// 
         ///  
         /// <para>
@@ -8662,9 +8877,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// Each rule consists of the protocol and the CIDR range or source security group. For
-        /// the TCP and UDP protocols, you must also specify the destination port or range of
-        /// ports. For the ICMP protocol, you must also specify the ICMP type and code.
+        /// Each rule consists of the protocol and the IPv4 or IPv6 CIDR range or source security
+        /// group. For the TCP and UDP protocols, you must also specify the destination port or
+        /// range of ports. For the ICMP protocol, you must also specify the ICMP type and code.
         /// </para>
         ///  
         /// <para>
@@ -8736,39 +8951,63 @@ namespace Amazon.EC2
         /// <summary>
         /// Launches the specified number of instances using an AMI for which you have permissions.
         /// 
+        /// 
         ///  
         /// <para>
-        /// When you launch an instance, it enters the <code>pending</code> state. After the instance
-        /// is ready for you, it enters the <code>running</code> state. To check the state of
-        /// your instance, call <a>DescribeInstances</a>.
+        /// You can specify a number of options, or leave the default options. The following rules
+        /// apply:
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// [EC2-VPC] If you don't specify a subnet ID, we choose a default subnet from your default
+        /// VPC for you. If you don't have a default VPC, you must specify a subnet ID in the
+        /// request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// [EC2-Classic] If don't specify an Availability Zone, we choose one for you.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Some instance types must be launched into a VPC. If you do not have a default VPC,
+        /// or if you do not specify a subnet ID, the request fails. For more information, see
+        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
+        /// Types Available Only in a VPC</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// [EC2-VPC] All instances have a network interface with a primary private IPv4 address.
+        /// If you don't specify this address, we choose one from the IPv4 range of your subnet.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Not all instance types support IPv6 addresses. For more information, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
+        /// EC2 Instance Types</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you don't specify a security group ID, we use the default security group. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
+        /// Groups</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If any of the AMIs have a product code attached for which the user has not subscribed,
+        /// the request fails.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// To ensure faster instance launches, break up large requests into smaller batches.
-        /// For example, create five separate launch requests for 100 instances each instead of
-        /// one launch request for 500 instances.
+        /// For example, create 5 separate launch requests for 100 instances each instead of 1
+        /// launch request for 500 instances.
         /// </para>
         ///  
         /// <para>
-        /// To tag your instance, ensure that it is <code>running</code> as <a>CreateTags</a>
-        /// requires a resource ID. For more information about tagging, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+        /// An instance is ready for you to use when it's in the <code>running</code> state. You
+        /// can check the state of your instance using <a>DescribeInstances</a>. After launch,
+        /// you can apply tags to your running instance (requires a resource ID). For more information,
+        /// see <a>CreateTags</a> and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
         /// Your Amazon EC2 Resources</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you don't specify a security group when launching an instance, Amazon EC2 uses
-        /// the default security group. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
-        /// Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// [EC2-VPC only accounts] If you don't specify a subnet in the request, we choose a
-        /// default subnet from your default VPC for you.
-        /// </para>
-        ///  
-        /// <para>
-        /// [EC2-Classic accounts] If you're launching into EC2-Classic and you don't specify
-        /// an Availability Zone, we choose one for you.
         /// </para>
         ///  
         /// <para>
@@ -8779,25 +9018,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can provide optional user data when launching an instance. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance
-        /// Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// If any of the AMIs have a product code attached for which the user has not subscribed,
-        /// <code>RunInstances</code> fails.
-        /// </para>
-        ///  
-        /// <para>
-        /// Some instance types can only be launched into a VPC. If you do not have a default
-        /// VPC, or if you do not specify a subnet ID in the request, <code>RunInstances</code>
-        /// fails. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
-        /// Types Available Only in a VPC</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For more information about troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
+        /// For troubleshooting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
         /// To Do If An Instance Immediately Terminates</a>, and <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
         /// Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
@@ -9028,6 +9249,31 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  UnassignIpv6Addresses
+
+
+        /// <summary>
+        /// Unassigns one or more IPv6 addresses from a network interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnassignIpv6Addresses service method.</param>
+        /// 
+        /// <returns>The response from the UnassignIpv6Addresses service method, as returned by EC2.</returns>
+        UnassignIpv6AddressesResponse UnassignIpv6Addresses(UnassignIpv6AddressesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UnassignIpv6Addresses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UnassignIpv6Addresses operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UnassignIpv6AddressesResponse> UnassignIpv6AddressesAsync(UnassignIpv6AddressesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UnassignPrivateIpAddresses
 
 
@@ -9057,8 +9303,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Disables monitoring for a running instance. For more information about monitoring
-        /// instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
+        /// Disables detailed monitoring for a running instance. For more information, see <a
+        /// href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
         /// Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnmonitorInstances service method.</param>

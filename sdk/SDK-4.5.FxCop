@@ -25,7 +25,9 @@
       <Directory>$(ProjectDir)/src/Services/apigateway/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/applicationautoscaling/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/applicationdiscoveryservice/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/appstream/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/autoscaling/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/awshealth/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/awsmarketplacecommerceanalytics/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/awsmarketplacemetering/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/awssupport/bin/Release/net45/</Directory>
@@ -40,6 +42,7 @@
       <Directory>$(ProjectDir)/src/Services/cloudwatch/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/cloudwatchevents/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/cloudwatchlogs/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/codebuild/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/codecommit/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/codedeploy/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/codepipeline/bin/Release/net45/</Directory>
@@ -80,6 +83,8 @@
       <Directory>$(ProjectDir)/src/Services/machinelearning/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/mobileanalytics/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/opsworks/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/opsworkscm/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/pinpoint/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/polly/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/rds/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/redshift/bin/Release/net45/</Directory>
@@ -90,6 +95,7 @@
       <Directory>$(ProjectDir)/src/Services/securitytoken/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/servermigrationservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/servicecatalog/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/shield/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/simpledb/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/simpleemail/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/simplenotificationservice/bin/Release/net45/</Directory>
@@ -97,15 +103,19 @@
       <Directory>$(ProjectDir)/src/Services/simpleworkflow/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/snowball/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/sqs/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/stepfunctions/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/storagegateway/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/waf/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/workspaces/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/xray/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Core/bin/Release/net45/</Directory>
     </AssemblyReferenceDirectories>
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.APIGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ApplicationAutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ApplicationDiscoveryService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AppStream.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AWSHealth.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AWSMarketplaceCommerceAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AWSMarketplaceMetering.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AWSSupport.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -120,6 +130,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CloudWatch.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CloudWatchEvents.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CloudWatchLogs.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CodeBuild.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CodeCommit.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CodeDeploy.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CodePipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -160,6 +171,8 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MachineLearning.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MobileAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.OpsWorks.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.OpsWorksCM.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Pinpoint.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Polly.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.RDS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Redshift.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -170,6 +183,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SecurityToken.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ServerMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ServiceCatalog.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Shield.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SimpleDB.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SimpleEmail.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SimpleNotificationService.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -177,9 +191,11 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SimpleWorkflow.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Snowball.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SQS.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.StepFunctions.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.StorageGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.WAF.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.WorkSpaces.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.XRay.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Core.dll" Analyze="True" AnalyzeAllChildren="False">
       <Modules AnalyzeAllChildren="False">
         <Module Name="awssdk.core.dll" Analyze="True" AnalyzeAllChildren="False">

@@ -287,6 +287,20 @@ namespace ServiceClientGenerator
             }
         }
 
+
+        /// <summary>
+        /// Find the member that is marked as payload
+        /// </summary>
+        public Member PayloadMember
+        {
+            get
+            {
+                return Members.SingleOrDefault<Member>(m => string.Equals(m.ModeledName, PayloadMemberName
+                    , StringComparison.InvariantCultureIgnoreCase));
+            }
+        }
+
+
         /// <summary>
         /// Returns if the shape should be generated as an exception for the service
         /// </summary>

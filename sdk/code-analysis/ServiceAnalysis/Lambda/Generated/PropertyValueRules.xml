@@ -698,6 +698,10 @@
     <pattern>(\$LATEST|[0-9]+)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.DeadLetterConfig.TargetArn</property>
+    <pattern>(arn:aws:[a-z0-9-.]+:.*)|()</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.FunctionCode.S3Bucket</property>
     <min>3</min>
     <max>63</max>

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the ec2-2016-09-15.normal.json service model.
+ * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -54,12 +54,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>available-ip-address-count</code> - The number of IP addresses in the subnet
+        ///  <code>available-ip-address-count</code> - The number of IPv4 addresses in the subnet
         /// that are available.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cidrBlock</code> - The CIDR block of the subnet. The CIDR block you specify
+        ///  <code>cidrBlock</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify
         /// must exactly match the subnet's CIDR block for information to be returned for the
         /// subnet. You can also use <code>cidr</code> or <code>cidr-block</code> as the filter
         /// names.
@@ -68,6 +68,21 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>defaultForAz</code> - Indicates whether this is the default subnet for the
         /// Availability Zone. You can also use <code>default-for-az</code> as the filter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block associated
+        /// with the subnet.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ipv6-cidr-block-association.association-id</code> - An association ID for an
+        /// IPv6 CIDR block associated with the subnet.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
+        /// associated with the subnet.
         /// </para>
         ///  </li> <li> 
         /// <para>

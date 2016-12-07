@@ -360,6 +360,68 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  CreateDocumentationPart
+
+        internal CreateDocumentationPartResponse CreateDocumentationPart(CreateDocumentationPartRequest request)
+        {
+            var marshaller = new CreateDocumentationPartRequestMarshaller();
+            var unmarshaller = CreateDocumentationPartResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDocumentationPartRequest,CreateDocumentationPartResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationPart operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateDocumentationPartResponse> CreateDocumentationPartAsync(CreateDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateDocumentationPartRequestMarshaller();
+            var unmarshaller = CreateDocumentationPartResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDocumentationPartRequest,CreateDocumentationPartResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDocumentationVersion
+
+        internal CreateDocumentationVersionResponse CreateDocumentationVersion(CreateDocumentationVersionRequest request)
+        {
+            var marshaller = new CreateDocumentationVersionRequestMarshaller();
+            var unmarshaller = CreateDocumentationVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDocumentationVersionRequest,CreateDocumentationVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentationVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateDocumentationVersionResponse> CreateDocumentationVersionAsync(CreateDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateDocumentationVersionRequestMarshaller();
+            var unmarshaller = CreateDocumentationVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDocumentationVersionRequest,CreateDocumentationVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDomainName
 
         internal CreateDomainNameResponse CreateDomainName(CreateDomainNameRequest request)
@@ -727,6 +789,68 @@ namespace Amazon.APIGateway
             var unmarshaller = DeleteDeploymentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDeploymentRequest,DeleteDeploymentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDocumentationPart
+
+        internal DeleteDocumentationPartResponse DeleteDocumentationPart(DeleteDocumentationPartRequest request)
+        {
+            var marshaller = new DeleteDocumentationPartRequestMarshaller();
+            var unmarshaller = DeleteDocumentationPartResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDocumentationPartRequest,DeleteDocumentationPartResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationPart operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteDocumentationPartResponse> DeleteDocumentationPartAsync(DeleteDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteDocumentationPartRequestMarshaller();
+            var unmarshaller = DeleteDocumentationPartResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDocumentationPartRequest,DeleteDocumentationPartResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDocumentationVersion
+
+        internal DeleteDocumentationVersionResponse DeleteDocumentationVersion(DeleteDocumentationVersionRequest request)
+        {
+            var marshaller = new DeleteDocumentationVersionRequestMarshaller();
+            var unmarshaller = DeleteDocumentationVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDocumentationVersionRequest,DeleteDocumentationVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentationVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteDocumentationVersionResponse> DeleteDocumentationVersionAsync(DeleteDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteDocumentationVersionRequestMarshaller();
+            var unmarshaller = DeleteDocumentationVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDocumentationVersionRequest,DeleteDocumentationVersionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1507,6 +1631,130 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  GetDocumentationPart
+
+        internal GetDocumentationPartResponse GetDocumentationPart(GetDocumentationPartRequest request)
+        {
+            var marshaller = new GetDocumentationPartRequestMarshaller();
+            var unmarshaller = GetDocumentationPartResponseUnmarshaller.Instance;
+
+            return Invoke<GetDocumentationPartRequest,GetDocumentationPartResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationPart operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetDocumentationPartResponse> GetDocumentationPartAsync(GetDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDocumentationPartRequestMarshaller();
+            var unmarshaller = GetDocumentationPartResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDocumentationPartRequest,GetDocumentationPartResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDocumentationParts
+
+        internal GetDocumentationPartsResponse GetDocumentationParts(GetDocumentationPartsRequest request)
+        {
+            var marshaller = new GetDocumentationPartsRequestMarshaller();
+            var unmarshaller = GetDocumentationPartsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDocumentationPartsRequest,GetDocumentationPartsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationParts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationParts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetDocumentationPartsResponse> GetDocumentationPartsAsync(GetDocumentationPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDocumentationPartsRequestMarshaller();
+            var unmarshaller = GetDocumentationPartsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDocumentationPartsRequest,GetDocumentationPartsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDocumentationVersion
+
+        internal GetDocumentationVersionResponse GetDocumentationVersion(GetDocumentationVersionRequest request)
+        {
+            var marshaller = new GetDocumentationVersionRequestMarshaller();
+            var unmarshaller = GetDocumentationVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetDocumentationVersionRequest,GetDocumentationVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetDocumentationVersionResponse> GetDocumentationVersionAsync(GetDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDocumentationVersionRequestMarshaller();
+            var unmarshaller = GetDocumentationVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDocumentationVersionRequest,GetDocumentationVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDocumentationVersions
+
+        internal GetDocumentationVersionsResponse GetDocumentationVersions(GetDocumentationVersionsRequest request)
+        {
+            var marshaller = new GetDocumentationVersionsRequestMarshaller();
+            var unmarshaller = GetDocumentationVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDocumentationVersionsRequest,GetDocumentationVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDocumentationVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDocumentationVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetDocumentationVersionsResponse> GetDocumentationVersionsAsync(GetDocumentationVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDocumentationVersionsRequestMarshaller();
+            var unmarshaller = GetDocumentationVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDocumentationVersionsRequest,GetDocumentationVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDomainName
 
         internal GetDomainNameResponse GetDomainName(GetDomainNameRequest request)
@@ -2220,6 +2468,37 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  ImportDocumentationParts
+
+        internal ImportDocumentationPartsResponse ImportDocumentationParts(ImportDocumentationPartsRequest request)
+        {
+            var marshaller = new ImportDocumentationPartsRequestMarshaller();
+            var unmarshaller = ImportDocumentationPartsResponseUnmarshaller.Instance;
+
+            return Invoke<ImportDocumentationPartsRequest,ImportDocumentationPartsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportDocumentationParts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportDocumentationParts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ImportDocumentationPartsResponse> ImportDocumentationPartsAsync(ImportDocumentationPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ImportDocumentationPartsRequestMarshaller();
+            var unmarshaller = ImportDocumentationPartsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportDocumentationPartsRequest,ImportDocumentationPartsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ImportRestApi
 
         internal ImportRestApiResponse ImportRestApi(ImportRestApiRequest request)
@@ -2649,6 +2928,68 @@ namespace Amazon.APIGateway
             var unmarshaller = UpdateDeploymentResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDeploymentRequest,UpdateDeploymentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDocumentationPart
+
+        internal UpdateDocumentationPartResponse UpdateDocumentationPart(UpdateDocumentationPartRequest request)
+        {
+            var marshaller = new UpdateDocumentationPartRequestMarshaller();
+            var unmarshaller = UpdateDocumentationPartResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDocumentationPartRequest,UpdateDocumentationPartResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDocumentationPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationPart operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateDocumentationPartResponse> UpdateDocumentationPartAsync(UpdateDocumentationPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateDocumentationPartRequestMarshaller();
+            var unmarshaller = UpdateDocumentationPartResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDocumentationPartRequest,UpdateDocumentationPartResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateDocumentationVersion
+
+        internal UpdateDocumentationVersionResponse UpdateDocumentationVersion(UpdateDocumentationVersionRequest request)
+        {
+            var marshaller = new UpdateDocumentationVersionRequestMarshaller();
+            var unmarshaller = UpdateDocumentationVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDocumentationVersionRequest,UpdateDocumentationVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDocumentationVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDocumentationVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateDocumentationVersionResponse> UpdateDocumentationVersionAsync(UpdateDocumentationVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateDocumentationVersionRequestMarshaller();
+            var unmarshaller = UpdateDocumentationVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDocumentationVersionRequest,UpdateDocumentationVersionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -22,6 +22,16 @@ using System.Diagnostics.CodeAnalysis;
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.#Parameters")]
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.SimpleSystemsManagement.Model.AssociationDescription.#Parameters")]
 [module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.SimpleSystemsManagement.Model.Command.#Parameters")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.SimpleSystemsManagement.Model.StartAutomationExecutionRequest.#Parameters")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.SimpleSystemsManagement.Model.GetMaintenanceWindowExecutionTaskResponse.#TaskParameters")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.SimpleSystemsManagement.Model.AutomationExecutionMetadata.#Outputs")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.SimpleSystemsManagement.Model.ListInventoryEntriesResponse.#Entries")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.SimpleSystemsManagement.Model.InventoryItem.#Content")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.SimpleSystemsManagement.Model.StepExecution.#Outputs")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.SimpleSystemsManagement.Model.UpdateAssociationRequest.#Parameters")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.SimpleSystemsManagement.Model.InventoryResultItem.#Content")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.SimpleSystemsManagement.Model.AutomationExecution.#Parameters")]
+[module: SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures", Scope="member", Target="Amazon.SimpleSystemsManagement.Model.AutomationExecution.#Outputs")]
 
 // Types names matching namespaces
 [module: SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces", Scope = "type", Target = "Amazon.SimpleSystemsManagement.Model.Activation")]
