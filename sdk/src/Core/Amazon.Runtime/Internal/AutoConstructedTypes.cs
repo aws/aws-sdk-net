@@ -15,6 +15,10 @@
 using System;
 using System.Collections.Generic;
 
+#if !PCL && !CORECLR
+using System.Runtime.Serialization;
+#endif
+
 namespace Amazon.Runtime.Internal
 {
     /// <summary>
@@ -35,5 +39,12 @@ namespace Amazon.Runtime.Internal
 #endif
     public class AutoConstructedDictionary<K, V> : Dictionary<K, V>
     {
+#if !PCL && !CORECLR        
+        protected AutoConstructedDictionary(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+
+        }
+#endif
     }
 }
