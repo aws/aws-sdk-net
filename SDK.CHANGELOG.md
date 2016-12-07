@@ -1,3 +1,8 @@
+### 3.3.28.1 (2016-12-07 10:12 UTC)
+* Core 3.3.5.1
+	* Fixed issue getting environment info running under Lambda
+	* all services packages updated to require new core
+
 ### 3.3.28.0 (2016-12-06 21:33 UTC)
 * ConfigService (3.3.2.0)
 	* API Update for ConfigService : AWS Config is increasing the number of configrules for all accounts from 25 to 50
