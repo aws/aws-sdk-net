@@ -277,6 +277,10 @@ namespace Amazon.S3
         /// Specifies that the S3 Bucket should use CN-NORTH-1 locality.
         /// </summary>
         public static readonly S3Region CN1 = new S3Region("cn-north-1");
+        /// <summary>
+        /// Specifies that the S3 Bucket should use CA-CENTRAL-1 locality.
+        /// </summary>
+        public static readonly S3Region CAN1 = new S3Region("ca-central-1");
 
         /// <summary>
         /// Specifies that the S3 Bucket should use US-WEST-1 locality.
