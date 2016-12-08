@@ -81,7 +81,7 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property MessageId. 
         /// <para>
         /// An element containing the message ID of the message sent to the queue. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/ImportantIdentifiers.html">Queue
+        /// see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
         /// and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. 
         /// </para>
         /// </summary>

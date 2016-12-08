@@ -105,8 +105,8 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property MessageAttributes. 
         /// <para>
         /// Each message attribute consists of a Name, Type, and Value. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSMessageAttributes.html#SQSMessageAttributesNTV">Message
-        /// Attribute Items</a> in the <i>Amazon SQS Developer Guide</i>.
+        /// see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+        /// Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, MessageAttributeValue> MessageAttributes

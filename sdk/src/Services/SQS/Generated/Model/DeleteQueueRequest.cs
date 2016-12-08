@@ -49,7 +49,7 @@ namespace Amazon.SQS.Model
     ///  
     /// <para>
     /// We reserve the right to delete queues that have had no activity for more than 30 days.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSConcepts.html">How
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html">How
     /// Amazon SQS Queues Work</a> in the <i>Amazon SQS Developer Guide</i>. 
     /// </para>
     /// </summary>

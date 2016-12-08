@@ -42,7 +42,7 @@ namespace Amazon.SQS.Model
     ///  You can't change the queue type after you create it and you can't convert an existing
     /// standard queue into a FIFO queue. You must either create a new FIFO queue for your
     /// application or delete your existing standard queue and recreate it as a FIFO queue.
-    /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-moving.html">
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">
     /// Moving From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer Guide</i>.
     /// 
     /// </para>
@@ -156,7 +156,7 @@ namespace Amazon.SQS.Model
         /// <para>
         ///  <code>RedrivePolicy</code> - The parameters for the dead letter queue functionality
         /// of the source queue. For more information about the redrive policy and dead letter
-        /// queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSDeadLetterQueue.html">Using
+        /// queues, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
         /// Amazon SQS Dead Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. 
         /// </para>
         ///  <note> 
@@ -168,7 +168,7 @@ namespace Amazon.SQS.Model
         /// <para>
         ///  <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer
         /// from 0 to 43200 (12 hours). The default is 30. For more information about the visibility
-        /// timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AboutVT.html">Visibility
+        /// timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
         /// Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         ///  </li> </ul> 
