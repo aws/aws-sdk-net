@@ -1,3 +1,11 @@
+### 3.3.29.0 (2016-12-08 01:18 UTC)
+* ConfigService (3.3.3.0)
+	* API Update for ConfigService : AWS Config supporting Redshift Cluster, ClusterParameterGroup, ClusterSecurityGroup, ClusterSnapshot, ClusterSubnetGroup, and EventSubscription resource types for all customers
+* S3 (3.3.5.0)
+	* S3 now defaults to Sigv4 on BCL; fixed versionId not being marshalled correctly in tagging operations
+* SQS (3.3.1.2)
+	* Doc update for SQS
+
 ### 3.3.28.1 (2016-12-07 10:12 UTC)
 * Core 3.3.5.1
 	* Fixed issue getting environment info running under Lambda
