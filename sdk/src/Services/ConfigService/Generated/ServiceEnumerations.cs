@@ -679,6 +679,30 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSRDSEventSubscription = new ResourceType("AWS::RDS::EventSubscription");
         /// <summary>
+        /// Constant AWSRedshiftCluster for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRedshiftCluster = new ResourceType("AWS::Redshift::Cluster");
+        /// <summary>
+        /// Constant AWSRedshiftClusterParameterGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRedshiftClusterParameterGroup = new ResourceType("AWS::Redshift::ClusterParameterGroup");
+        /// <summary>
+        /// Constant AWSRedshiftClusterSecurityGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRedshiftClusterSecurityGroup = new ResourceType("AWS::Redshift::ClusterSecurityGroup");
+        /// <summary>
+        /// Constant AWSRedshiftClusterSnapshot for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRedshiftClusterSnapshot = new ResourceType("AWS::Redshift::ClusterSnapshot");
+        /// <summary>
+        /// Constant AWSRedshiftClusterSubnetGroup for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRedshiftClusterSubnetGroup = new ResourceType("AWS::Redshift::ClusterSubnetGroup");
+        /// <summary>
+        /// Constant AWSRedshiftEventSubscription for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSRedshiftEventSubscription = new ResourceType("AWS::Redshift::EventSubscription");
+        /// <summary>
         /// Constant AWSS3Bucket for ResourceType
         /// </summary>
         public static readonly ResourceType AWSS3Bucket = new ResourceType("AWS::S3::Bucket");
