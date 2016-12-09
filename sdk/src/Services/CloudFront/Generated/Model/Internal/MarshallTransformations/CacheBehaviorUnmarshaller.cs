@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -77,6 +77,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = ForwardedValuesUnmarshaller.Instance;
                         unmarshalledObject.ForwardedValues = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("LambdaFunctionAssociations", targetDepth))
+                    {
+                        var unmarshaller = LambdaFunctionAssociationsUnmarshaller.Instance;
+                        unmarshalledObject.LambdaFunctionAssociations = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MaxTTL", targetDepth))

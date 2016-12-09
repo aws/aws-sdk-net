@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -73,6 +73,7 @@ namespace Amazon.CloudFront.Model
         private bool? _compress;
         private long? _defaultTTL;
         private ForwardedValues _forwardedValues;
+        private LambdaFunctionAssociations _lambdaFunctionAssociations;
         private long? _maxTTL;
         private long? _minTTL;
         private string _pathPattern;
@@ -157,6 +158,25 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetForwardedValues()
         {
             return this._forwardedValues != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaFunctionAssociations. 
+        /// <para>
+        /// A complex type that contains zero or more Lambda function associations for a cache
+        /// behavior.
+        /// </para>
+        /// </summary>
+        public LambdaFunctionAssociations LambdaFunctionAssociations
+        {
+            get { return this._lambdaFunctionAssociations; }
+            set { this._lambdaFunctionAssociations = value; }
+        }
+
+        // Check to see if LambdaFunctionAssociations property is set
+        internal bool IsSetLambdaFunctionAssociations()
+        {
+            return this._lambdaFunctionAssociations != null;
         }
 
         /// <summary>

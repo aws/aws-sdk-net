@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 
 
@@ -135,6 +135,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
+        /// The specified Lambda function association is invalid.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
         /// 
         /// </exception>
@@ -198,8 +201,15 @@ namespace Amazon.CloudFront
         /// Processing your request would cause you to exceed the maximum number of distributions
         /// allowed.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
+        /// Processing your request would cause the maximum number of distributions with Lambda
+        /// function associations per owner to be exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
         /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
+        /// Your request contains more Lambda function associations than are allowed per distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
         /// 
@@ -274,6 +284,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidHeadersForS3OriginException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
+        /// The specified Lambda function association is invalid.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
         /// 
         /// </exception>
@@ -340,8 +353,15 @@ namespace Amazon.CloudFront
         /// Processing your request would cause you to exceed the maximum number of distributions
         /// allowed.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
+        /// Processing your request would cause the maximum number of distributions with Lambda
+        /// function associations per owner to be exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
         /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
+        /// Your request contains more Lambda function associations than are allowed per distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
         /// 
@@ -1862,6 +1882,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <code>If-Match</code> version is missing or not valid for the distribution.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
+        /// The specified Lambda function association is invalid.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidLocationCodeException">
         /// 
         /// </exception>
@@ -1920,8 +1943,15 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionCNAMEsException">
         /// Your request contains more CNAMEs than are allowed per distribution.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyDistributionsWithLambdaAssociationsException">
+        /// Processing your request would cause the maximum number of distributions with Lambda
+        /// function associations per owner to be exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyHeadersInForwardedValuesException">
         /// 
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.TooManyLambdaFunctionAssociationsException">
+        /// Your request contains more Lambda function associations than are allowed per distribution.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyOriginCustomHeadersException">
         /// 

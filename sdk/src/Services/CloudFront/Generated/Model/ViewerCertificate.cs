@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2016-09-29.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2016-11-25.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -62,13 +62,7 @@ namespace Amazon.CloudFront.Model
         private SSLSupportMethod _sslSupportMethod;
 
         /// <summary>
-        /// Gets and sets the property ACMCertificateArn. 
-        /// <para>
-        /// If you want viewers to use HTTPS to request your objects and you're using an alternate
-        /// domain name in your object URLs (for example, <code>https://example.com/logo.jpg)</code>,
-        /// specify the ACM certificate ARN of the custom viewer certificate for this distribution.
-        /// Specify either this value, <code>IAMCertificateId</code>, or <code>CloudFrontDefaultCertificate</code>.
-        /// </para>
+        /// Gets and sets the property ACMCertificateArn.
         /// </summary>
         public string ACMCertificateArn
         {
@@ -250,13 +244,7 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CloudFrontDefaultCertificate. 
-        /// <para>
-        /// If you want viewers to use HTTPS to request your objects and you're using the CloudFront
-        /// domain name of your distribution in your object URLs (for example, <code>https://d111111abcdef8.cloudfront.net/logo.jpg</code>),
-        /// set to <code>true</code>. Omit this value if you are setting an <code>ACMCertificateArn</code>
-        /// or <code>IAMCertificateId</code>.
-        /// </para>
+        /// Gets and sets the property CloudFrontDefaultCertificate.
         /// </summary>
         public bool CloudFrontDefaultCertificate
         {
@@ -271,13 +259,7 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IAMCertificateId. 
-        /// <para>
-        /// If you want viewers to use HTTPS to request your objects and you're using an alternate
-        /// domain name in your object URLs (for example, <code>https://example.com/logo.jpg)</code>,
-        /// specify the IAM certificate identifier of the custom viewer certificate for this distribution.
-        /// Specify either this value, <code>ACMCertificateArn</code>, or <code>CloudFrontDefaultCertificate</code>.
-        /// </para>
+        /// Gets and sets the property IAMCertificateId.
         /// </summary>
         public string IAMCertificateId
         {
