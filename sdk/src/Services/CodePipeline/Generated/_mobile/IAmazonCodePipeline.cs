@@ -95,16 +95,16 @@ namespace Amazon.CodePipeline
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Pipelines include <i>stages</i>, which are which are logical groupings of gates and
-    /// actions. Each stage contains one or more actions that must complete before the next
-    /// stage begins. A stage will result in success or failure. If a stage fails, then the
-    /// pipeline stops at that stage and will remain stopped until either a new version of
-    /// an artifact appears in the source location, or a user takes action to re-run the most
-    /// recent artifact through the pipeline. You can call <a>GetPipelineState</a>, which
-    /// displays the status of a pipeline, including the status of stages in the pipeline,
-    /// or <a>GetPipeline</a>, which returns the entire structure of the pipeline, including
-    /// the stages of that pipeline. For more information about the structure of stages and
-    /// actions, also refer to the <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
+    /// Pipelines include <i>stages</i>, which are logical groupings of gates and actions.
+    /// Each stage contains one or more actions that must complete before the next stage begins.
+    /// A stage will result in success or failure. If a stage fails, then the pipeline stops
+    /// at that stage and will remain stopped until either a new version of an artifact appears
+    /// in the source location, or a user takes action to re-run the most recent artifact
+    /// through the pipeline. You can call <a>GetPipelineState</a>, which displays the status
+    /// of a pipeline, including the status of stages in the pipeline, or <a>GetPipeline</a>,
+    /// which returns the entire structure of the pipeline, including the stages of that pipeline.
+    /// For more information about the structure of stages and actions, also refer to the
+    /// <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
     /// CodePipeline Pipeline Structure Reference</a>.
     /// </para>
     ///  
@@ -222,7 +222,7 @@ namespace Amazon.CodePipeline
         /// the job worker. Only used for custom actions.
         /// </summary>
         /// <param name="jobId">The unique system-generated ID of the job for which you want to confirm receipt.</param>
-        /// <param name="nonce">A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. This number must be returned in the response.</param>
+        /// <param name="nonce">A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response of the <a>PollForJobs</a> request that returned this job.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -260,7 +260,7 @@ namespace Amazon.CodePipeline
         /// </summary>
         /// <param name="clientToken">The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</param>
         /// <param name="jobId">The unique system-generated ID of the job.</param>
-        /// <param name="nonce">A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. This number must be returned in the response.</param>
+        /// <param name="nonce">A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a <a>GetThirdPartyJobDetails</a> request.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
