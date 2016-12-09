@@ -197,6 +197,9 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
         /// 
         /// <returns>The response from the AddTagsToResource service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
@@ -424,8 +427,12 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// If you are copying from a shared manual DB snapshot, the <code>SourceDBSnapshotIdentifier</code>
-        /// must be the ARN of the shared DB snapshot.
+        /// To copy a DB snapshot from a shared manual DB snapshot, <code>SourceDBSnapshotIdentifier</code>
+        /// must be the Amazon Resource Name (ARN) of the shared DB snapshot.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can not copy an encrypted DB snapshot from another AWS region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyDBSnapshot service method.</param>
@@ -540,6 +547,9 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBSubnetGroupStateException">
         /// The DB subnet group cannot be deleted because it is in use.
@@ -2816,16 +2826,16 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// A failover for a DB cluster promotes one of the read-only instances in the DB cluster
-        /// to the master DB instance (the cluster writer) and deletes the current primary instance.
+        /// A failover for a DB cluster promotes one of the Aurora Replicas (read-only instances)
+        /// in the DB cluster to be the primary instance (the cluster writer).
         /// </para>
         ///  
         /// <para>
-        /// Amazon Aurora will automatically fail over to a read-only instance, if one exists,
-        /// when the primary instance fails. You can force a failover when you want to simulate
-        /// a failure of a DB instance for testing. Because each instance in a DB cluster has
-        /// its own endpoint address, you will need to clean up and re-establish any existing
-        /// connections that use those endpoint addresses when the failover is complete.
+        /// Amazon Aurora will automatically fail over to an Aurora Replica, if one exists, when
+        /// the primary instance fails. You can force a failover when you want to simulate a failure
+        /// of a primary instance for testing. Because each instance in a DB cluster has its own
+        /// endpoint address, you will need to clean up and re-establish any existing connections
+        /// that use those endpoint addresses when the failover is complete.
         /// </para>
         ///  
         /// <para>
@@ -2876,6 +2886,9 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>
@@ -3639,6 +3652,9 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
         /// 
         /// <returns>The response from the RemoveTagsFromResource service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBClusterNotFoundException">
+        /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
         /// </exception>

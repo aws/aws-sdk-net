@@ -51,9 +51,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon
+        ///  <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon
         /// Resource Names (ARNs). The results list will only include pending maintenance actions
-        /// for the DB instances identified by these ARNs.
+        /// for the DB clusters identified by these ARNs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance ARNs.
+        /// The results list will only include pending maintenance actions for the DB instances
+        /// identified by these ARNs.
         /// </para>
         ///  </li> </ul>
         /// </summary>

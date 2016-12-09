@@ -66,6 +66,7 @@ namespace Amazon.RDS.Model
         private List<string> _availabilityZones = new List<string>();
         private int? _backupRetentionPeriod;
         private string _characterSetName;
+        private DateTime? _clusterCreateTime;
         private string _databaseName;
         private string _dbClusterArn;
         private string _dbClusterIdentifier;
@@ -82,6 +83,7 @@ namespace Amazon.RDS.Model
         private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
         private string _masterUsername;
+        private bool? _multiAZ;
         private string _percentProgress;
         private int? _port;
         private string _preferredBackupWindow;
@@ -185,6 +187,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetCharacterSetName()
         {
             return this._characterSetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterCreateTime. 
+        /// <para>
+        /// Specifies the time when the DB cluster was created, in Universal Coordinated Time
+        /// (UTC).
+        /// </para>
+        /// </summary>
+        public DateTime ClusterCreateTime
+        {
+            get { return this._clusterCreateTime.GetValueOrDefault(); }
+            set { this._clusterCreateTime = value; }
+        }
+
+        // Check to see if ClusterCreateTime property is set
+        internal bool IsSetClusterCreateTime()
+        {
+            return this._clusterCreateTime.HasValue; 
         }
 
         /// <summary>
@@ -480,6 +501,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetMasterUsername()
         {
             return this._masterUsername != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZ. 
+        /// <para>
+        /// Specifies whether the DB cluster has instances in multiple Availability Zones.
+        /// </para>
+        /// </summary>
+        public bool MultiAZ
+        {
+            get { return this._multiAZ.GetValueOrDefault(); }
+            set { this._multiAZ = value; }
+        }
+
+        // Check to see if MultiAZ property is set
+        internal bool IsSetMultiAZ()
+        {
+            return this._multiAZ.HasValue; 
         }
 
         /// <summary>

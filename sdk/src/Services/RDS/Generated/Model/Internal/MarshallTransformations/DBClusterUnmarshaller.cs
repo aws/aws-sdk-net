@@ -86,6 +86,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.CharacterSetName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ClusterCreateTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.ClusterCreateTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DatabaseName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -182,6 +188,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.MasterUsername = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MultiAZ", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.MultiAZ = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("PercentProgress", targetDepth))

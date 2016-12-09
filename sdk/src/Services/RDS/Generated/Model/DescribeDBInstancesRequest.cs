@@ -82,8 +82,19 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// This parameter is not currently supported.
+        /// A filter that specifies one or more DB instances to describe.
         /// </para>
+        ///  
+        /// <para>
+        /// Supported filters:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon
+        /// Resource Names (ARNs). The results list will only include information about the DB
+        /// instances identified by these ARNs.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public List<Filter> Filters
         {
