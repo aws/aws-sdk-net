@@ -1,3 +1,16 @@
+### 3.3.30.0 (2016-12-09 00:42 UTC)
+* CloudFront (3.3.2.0)
+	* API Update for CloudFront : add lambda function associations to cache behaviors
+* CodePipeline (3.3.0.6)
+	* Doc update for CodePipeline
+* RDS (3.3.3.0)
+	* API Upate for RDS : add cluster create time to DBCluster APIs
+* WAFRegional (3.3.0.0)
+	* New Service WAFRegional : With this new feature, customers can use AWS WAF directly on Application Load Balancers in a VPC within available regions to protect their websites and web services from malicious attacks such as SQL injection, Cross Site Scripting, bad bots, etc.
+* Core 3.3.6.0
+	* New region launch ca-central-1
+	* all services packages updated to require new core
+
 ### 3.3.29.0 (2016-12-08 01:18 UTC)
 * ConfigService (3.3.3.0)
 	* API Update for ConfigService : AWS Config supporting Redshift Cluster, ClusterParameterGroup, ClusterSecurityGroup, ClusterSnapshot, ClusterSubnetGroup, and EventSubscription resource types for all customers
