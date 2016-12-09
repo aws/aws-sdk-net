@@ -170,7 +170,8 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
                         childObj = ParseMemoryStream(reader, propInfo.PropertyType);
                     }
                     else if (
-                        propInfo.DeclaringType.FullName == "Amazon.WAF.Model.ByteMatchTuple" &&
+                        (propInfo.DeclaringType.FullName == "Amazon.WAF.Model.ByteMatchTuple" ||
+                        propInfo.DeclaringType.FullName == "Amazon.WAFRegional.Model.ByteMatchTuple") &&
                         propInfo.Name == "TargetString")
                     {
                         reader.Read();

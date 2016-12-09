@@ -106,6 +106,7 @@
       <Directory>$(ProjectDir)/src/Services/stepfunctions/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/storagegateway/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/waf/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/wafregional/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/workspaces/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/xray/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Core/bin/Release/net35/</Directory>
@@ -194,6 +195,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.StepFunctions.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.StorageGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.WAF.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.WAFRegional.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.WorkSpaces.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.XRay.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Core.dll" Analyze="True" AnalyzeAllChildren="False">

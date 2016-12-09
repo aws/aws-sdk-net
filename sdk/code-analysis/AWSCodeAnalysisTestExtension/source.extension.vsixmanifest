@@ -185,6 +185,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.StorageGateway.CodeAnalysis" Path="|AWSSDK.StorageGateway.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.WAF.CodeAnalysis" Path="|AWSSDK.WAF.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.WAF.CodeAnalysis" Path="|AWSSDK.WAF.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.WAFRegional.CodeAnalysis" Path="|AWSSDK.WAFRegional.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.WAFRegional.CodeAnalysis" Path="|AWSSDK.WAFRegional.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.WorkSpaces.CodeAnalysis" Path="|AWSSDK.WorkSpaces.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.WorkSpaces.CodeAnalysis" Path="|AWSSDK.WorkSpaces.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.XRay.CodeAnalysis" Path="|AWSSDK.XRay.CodeAnalysis|"/>

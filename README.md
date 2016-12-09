@@ -218,6 +218,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* The AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.
 * [AWSSDK.WAF](https://www.nuget.org/packages/AWSSDK.WAF/)
 	* AWS WAF (Web Application Firewall) protects web applications from attack by allowing customers to block bad actors and provides filters against common web exploits like SQL injection.
+* [AWSSDK.WAFRegional](https://www.nuget.org/packages/AWSSDK.WAFRegional/)
+	* AWS WAF (Web Application Firewall) Regional protects web applications from attack via ALB load balancer and provides API to associate it with a WAF WebACL.
 * [AWSSDK.WorkSpaces](https://www.nuget.org/packages/AWSSDK.WorkSpaces/)
 	* Amazon WorkSpaces is a managed desktop computing service in the cloud.
 * [AWSSDK.XRay](https://www.nuget.org/packages/AWSSDK.XRay/)

@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
     [TestClass]
     public class WAFMarshallingTests
     {
-        static readonly ServiceModel service_model = Utils.LoadServiceModel("waf-2015-08-24.normal.json", "waf.customizations.json");
+        static readonly ServiceModel service_model = Utils.LoadServiceModel("waf-2015-08-24.normal.json", "waf-2015-08-24.customizations.json");
         
         [TestMethod]
         [TestCategory("UnitTest")]

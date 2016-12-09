@@ -1,0 +1,182 @@
+{
+    "noArgOverloads": [
+        "GetChangeToken"
+    ],
+    "simpleMethods": {
+        "operations": {
+            "CreateByteMatchSet": {
+                "methodForms": [
+                    [
+                        "Name",
+                        "ChangeToken"
+                    ]
+                ]
+            },
+            "CreateIPSet": {
+                "methodForms": [
+                    [
+                        "Name",
+                        "ChangeToken"
+                    ]
+                ]
+            },
+            "CreateRule": {
+                "methodForms": [
+                    [
+                        "Name",
+                        "ChangeToken",
+                        "MetricName"
+                    ]
+                ]
+            },
+            "CreateSqlInjectionMatchSet": {
+                "methodForms": [
+                    [
+                        "Name",
+                        "ChangeToken"
+                    ]
+                ]
+            },
+
+            "DeleteByteMatchSet": {
+                "methodForms": [
+                    [
+                        "ByteMatchSetId",
+                        "ChangeToken"
+                    ]
+                ]
+            },
+            "DeleteIPSet": {
+                "methodForms": [
+                    [
+                        "IPSetId",
+                        "ChangeToken"
+                    ]
+                ]
+            },
+            "DeleteRule": {
+                "methodForms": [
+                    [
+                        "RuleId",
+                        "ChangeToken"
+                    ]
+                ]
+            },
+            "DeleteSqlInjectionMatchSet": {
+                "methodForms": [
+                    [
+                        "SqlInjectionMatchSetId",
+                        "ChangeToken"
+                    ]
+                ]
+            },
+            "DeleteWebACL": {
+                "methodForms": [
+                    [
+                        "WebACLId",
+                        "ChangeToken"
+                    ]
+                ]
+            },
+
+            "GetByteMatchSet": {
+                "methodForms": [
+                    [
+                        "ByteMatchSetId"
+                    ]
+                ]
+            },
+            "GetChangeTokenStatus": {
+                "methodForms": [
+                    [
+                        "ChangeToken"
+                    ]
+                ]
+            },
+            "GetIPSet": {
+                "methodForms": [
+                    [
+                        "IPSetId"
+                    ]
+                ]
+            },
+            "GetRule": {
+                "methodForms": [
+                    [
+                        "RuleId"
+                    ]
+                ]
+            },
+            "GetSqlInjectionMatchSet": {
+                "methodForms": [
+                    [
+                        "SqlInjectionMatchSetId"
+                    ]
+                ]
+            },
+            "GetWebACL": {
+                "methodForms": [
+                    [
+                        "WebACLId"
+                    ]
+                ]
+            },
+
+
+            "UpdateByteMatchSet": {
+                "methodForms": [
+                    [
+                        "ByteMatchSetId",
+                        "Updates",
+                        "ChangeToken"
+                    ]
+                ]
+            },
+            "UpdateIPSet": {
+                "methodForms": [
+                    [
+                        "IPSetId",
+                        "Updates",
+                        "ChangeToken"
+                    ]
+                ]
+            },
+            "UpdateRule": {
+                "methodForms": [
+                    [
+                        "RuleId",
+                        "Updates",
+                        "ChangeToken"
+                    ]
+                ]
+            },
+            "UpdateSqlInjectionMatchSet": {
+                "methodForms": [
+                    [
+                        "SqlInjectionMatchSetId",
+                        "Updates",
+                        "ChangeToken"
+                    ]
+                ]
+            },
+
+
+            "GetChangeTokenStatus": {
+                "methodForms": [
+                    [
+                        "ChangeToken"
+                    ]
+                ]
+            }
+        }
+    },
+    "shapeModifiers": {
+        "ByteMatchTuple": {
+            "modify": [
+                {
+                    "TargetString": { "emitPropertyName": "TargetStream" }
+                }
+            ]
+        }
+    }
+}

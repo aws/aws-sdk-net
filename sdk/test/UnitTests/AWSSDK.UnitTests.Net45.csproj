@@ -398,6 +398,10 @@
       <Project>{70766489-2019-4896-B4DA-0A9FE0D189DB}</Project>
       <Name>AWSSDK.WAF.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\WAFRegional\AWSSDK.WAFRegional.Net45.csproj">
+      <Project>{0416C93A-B3E1-4EF3-9562-6F100F4AEAD0}</Project>
+      <Name>AWSSDK.WAFRegional.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\WorkSpaces\AWSSDK.WorkSpaces.Net45.csproj">
       <Project>{60819F67-5CD7-41A4-9E02-BB27E5A3F715}</Project>
       <Name>AWSSDK.WorkSpaces.Net45</Name>
