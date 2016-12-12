@@ -15,18 +15,48 @@ namespace SDKDocGenerator
 {
     public abstract class AbstractWrapper : MarshalByRefObject
     {
+        public string DocId
+        {
+            private set;
+            get;
+        }
+
+        public AbstractWrapper(string docId)
+        {
+            DocId = docId;
+        }
+
         public override object InitializeLifetimeService()
         {
             return null;
         }
     }
 
-    public class AssemblyWrapper : AbstractWrapper
+    public abstract class AbstractTypeProvider : AbstractWrapper
+    {
+        public AbstractTypeProvider(string docId)
+            : base(docId)
+        {
+        }
+
+        virtual public TypeWrapper GetType(string name) { return null; }
+        virtual public IEnumerable<TypeWrapper> GetTypes() { return null; }
+        virtual public IEnumerable<string> GetNamespaces() { return null; }
+        virtual public IEnumerable<TypeWrapper> GetTypesForNamespace(string namespaceName) { return null; }
+    }
+
+    public class AssemblyWrapper : AbstractTypeProvider
     {
         Assembly _assembly;
         IList<TypeWrapper> _allTypes;
         IDictionary<string, TypeWrapper> _typesByFullName;
         IDictionary<string, IList<TypeWrapper>> _typesByNamespace;
+        AbstractTypeProvider _secondaryTypeProvider;
+
+        public AssemblyWrapper(string docId)
+            : base(docId)
+        {
+        }
 
         public void LoadAssembly(string path)
         {
@@ -38,16 +68,21 @@ namespace SDKDocGenerator
 
             foreach (var type in this._assembly.GetTypes())
             {
-                if (type.Namespace == null || !type.Namespace.StartsWith("Amazon") || type.Namespace.Contains("Internal") || !type.IsPublic)
+                if (type.Namespace == null ||
+                    !type.Namespace.StartsWith("Amazon") ||
+                    type.Namespace.Contains("Internal") ||
+                    !(type.IsPublic || type.IsNestedPublic))
+                {
                     continue;
+                }
 
-                var wrapper = new TypeWrapper(type);
+                var wrapper = new TypeWrapper(type, DocId);
 
                 _typesByFullName[wrapper.FullName] = wrapper;
                 _allTypes.Add(wrapper);
 
                 IList<TypeWrapper> namespaceTypes;
-                if(!this._typesByNamespace.TryGetValue(wrapper.Namespace, out namespaceTypes))
+                if (!this._typesByNamespace.TryGetValue(wrapper.Namespace, out namespaceTypes))
                 {
                     namespaceTypes = new List<TypeWrapper>();
                     _typesByNamespace[wrapper.Namespace] = namespaceTypes;
@@ -61,37 +96,64 @@ namespace SDKDocGenerator
             get { return this._assembly.GetName().Version.ToString(); }
         }
 
-        public TypeWrapper GetType(string name)
+        public void SetSecondaryTypeProvider(AbstractTypeProvider typeProvider)
+        {
+            _secondaryTypeProvider = typeProvider;
+        }
+
+        public override TypeWrapper GetType(string name)
         {
             TypeWrapper wrapper;
             if (!this._typesByFullName.TryGetValue(name, out wrapper))
             {
+                if (_secondaryTypeProvider != null)
+                {
+                    return _secondaryTypeProvider.GetType(name);
+                }
                 return null;
             }
-
 
             return wrapper;
         }
 
-        public IEnumerable<TypeWrapper> GetTypes()
+        public override IEnumerable<TypeWrapper> GetTypes()
         {
-            return this._allTypes;
-        }
-
-        public IEnumerable<string> GetNamespaces()
-        {
-            return this._typesByNamespace.Keys;
-        }
-
-        public IEnumerable<TypeWrapper> GetTypesForNamespace(string namespaceName)
-        {
-            IList<TypeWrapper> namespaceTypes;
-            if (!this._typesByNamespace.TryGetValue(namespaceName, out namespaceTypes))
+            var types = new HashSet<TypeWrapper>(this._allTypes);
+            
+            if (_secondaryTypeProvider != null)
             {
-                return new TypeWrapper[0];
+                types.UnionWith(_secondaryTypeProvider.GetTypes());
+            }
+            return types;
+        }
+
+        public override IEnumerable<string> GetNamespaces()
+        {
+             var namespaces = new HashSet<string>(this._typesByNamespace.Keys);
+            
+            if (_secondaryTypeProvider != null)
+            {
+                namespaces.UnionWith(_secondaryTypeProvider.GetNamespaces());
             }
 
-            return namespaceTypes;
+            return namespaces;
+        }
+
+        public override IEnumerable<TypeWrapper> GetTypesForNamespace(string namespaceName)
+        {
+            HashSet<TypeWrapper> typeSet = new HashSet<TypeWrapper>();
+            IList<TypeWrapper> namespaceTypes;
+            if (this._typesByNamespace.TryGetValue(namespaceName, out namespaceTypes))
+            {
+                typeSet.UnionWith(namespaceTypes);
+            }
+
+            if(_secondaryTypeProvider != null)
+            {
+                typeSet.UnionWith(_secondaryTypeProvider.GetTypesForNamespace(namespaceName));
+            }
+
+            return typeSet;
         }
 
         public override string ToString()
@@ -100,18 +162,83 @@ namespace SDKDocGenerator
         }
     }
 
+    public class PartialTypeProvider : AbstractTypeProvider
+    {
+        private IDictionary<string, TypeWrapper> typeDictionary = new Dictionary<string, TypeWrapper>();
+        private IDictionary<string, IList<TypeWrapper>> namespaceToTypes = new Dictionary<string, IList<TypeWrapper>>();
+
+        public PartialTypeProvider(string docId)
+            : base(docId)
+        {
+        }
+
+        public void ProcessTypes(IEnumerable<TypeWrapper> types)
+        {
+            foreach(var type in types)
+            {
+                IList<TypeWrapper> list;
+                if (namespaceToTypes.TryGetValue(type.Namespace, out list))
+                {
+                    list.Add(type);
+                }
+                else
+                {
+                    namespaceToTypes.Add(type.Namespace, new List<TypeWrapper> { type });
+                }
+                typeDictionary.Add(type.FullName, type);
+            }
+        }
+
+        public override TypeWrapper GetType(string fullName) 
+        {
+            TypeWrapper type = null;
+            typeDictionary.TryGetValue(fullName, out type);
+            return type;
+        }
+        public override IEnumerable<TypeWrapper> GetTypes()
+        {
+            return typeDictionary.Values;
+        }
+        public override IEnumerable<string> GetNamespaces() 
+        {
+            return namespaceToTypes.Keys;
+        }
+        public override IEnumerable<TypeWrapper> GetTypesForNamespace(string namespaceName)
+        {
+            IList<TypeWrapper> types;
+
+            if (namespaceToTypes.TryGetValue(namespaceName, out types))
+            {
+                return types;
+            }
+            else
+            {
+                return new List<TypeWrapper>();
+            }
+        }
+    }
+
     public class TypeWrapper : AbstractWrapper
     {
         readonly Type _type;
 
-        public TypeWrapper(Type type)
+        public TypeWrapper(Type type, string docId)
+            : base(docId)
         {
             this._type = type;
         }
 
         public string Name
         {
-            get { return this._type.Name; }
+            get {
+                string name = this._type.Name;
+
+                if (name != null && this._type.IsNested)
+                {
+                    name = string.Format("{0}.{1}", this._type.DeclaringType.Name, this._type.Name);
+                }
+                return name; 
+            }
         }
 
         public string Namespace
@@ -121,7 +248,17 @@ namespace SDKDocGenerator
 
         public string FullName
         {
-            get { return this._type.FullName; }
+            get {
+                string fullName = this._type.FullName;
+
+                // _type can be of generic type T in which case FullName is null
+                if (fullName != null && this._type.IsNested)
+                {
+                    fullName = fullName.Replace("+", ".");
+                }
+
+                return fullName;
+            }
         }
 
         public string ManifestModuleName
@@ -172,7 +309,7 @@ namespace SDKDocGenerator
                     {
                         if (pars.Length > 0)
                             pars.Append(", ");
-                        pars.AppendFormat(new TypeWrapper(t).GetDisplayName(useFullName));
+                        pars.AppendFormat(new TypeWrapper(t, DocId).GetDisplayName(useFullName));
                     }
                 }
 
@@ -202,7 +339,7 @@ namespace SDKDocGenerator
                 this._constructors = new List<ConstructorInfoWrapper>();
                 foreach (var info in this._type.GetConstructors())
                 {
-                    this._constructors.Add(new ConstructorInfoWrapper(info));
+                    this._constructors.Add(new ConstructorInfoWrapper(info, DocId));
                 }
             }
 
@@ -216,7 +353,7 @@ namespace SDKDocGenerator
                 if (this._type.BaseType == null)
                     return null;
 
-                return new TypeWrapper(this._type.BaseType); 
+                return new TypeWrapper(this._type.BaseType, DocId); 
             }
         }
 
@@ -226,7 +363,7 @@ namespace SDKDocGenerator
 
             foreach(var real in this._type.GetInterfaces())
             {
-                interfaces.Add(new TypeWrapper(real));
+                interfaces.Add(new TypeWrapper(real, DocId));
             }
 
             return interfaces;
@@ -239,7 +376,7 @@ namespace SDKDocGenerator
 
             foreach (var info in this._type.GetProperties())
             {
-                wrappers.Add(new PropertyInfoWrapper(info));
+                wrappers.Add(new PropertyInfoWrapper(info, DocId));
             }
 
             return wrappers;
@@ -261,8 +398,21 @@ namespace SDKDocGenerator
                                                                 x.DeclaringType != typeof(object)))
             {
                 if(info.DeclaringType.Namespace.StartsWith("Amazon"))
-                    wrappers.Add(new MethodInfoWrapper(info));
+                    wrappers.Add(new MethodInfoWrapper(info, DocId));
             }
+
+            return wrappers;
+        }
+
+        public IList<TypeWrapper> GetNestedTypesToDocument()
+        {
+            var wrappers = new List<TypeWrapper>();
+
+            wrappers.AddRange(this._type.GetMembers()
+                .Where(x =>
+                    x.MemberType.Equals(MemberTypes.NestedType) &&
+                    x.DeclaringType.Namespace.StartsWith("Amazon"))
+                .Select(member => new TypeWrapper(_type.GetNestedType(member.Name), DocId)));
 
             return wrappers;
         }
@@ -273,7 +423,7 @@ namespace SDKDocGenerator
 
             foreach (var info in this._type.GetEvents().Where(x => x.AddMethod.IsPublic))
             {
-                wrappers.Add(new EventInfoWrapper(info));
+                wrappers.Add(new EventInfoWrapper(info, DocId));
             }
 
             return wrappers;
@@ -287,7 +437,7 @@ namespace SDKDocGenerator
                 this._fields = new List<FieldInfoWrapper>();
                 foreach (var info in this._type.GetFields().Where(x => x.IsPublic))
                 {
-                    this._fields.Add(new FieldInfoWrapper(info));
+                    this._fields.Add(new FieldInfoWrapper(info, DocId));
                 }
             }
 
@@ -380,9 +530,14 @@ namespace SDKDocGenerator
             get { return this._type.IsGenericTypeDefinition; }
         }
 
+        public bool IsNested
+        {
+            get { return this._type.IsNested; }
+        }
+
         public bool IsPublic
         {
-            get { return this._type.IsPublic; }
+            get { return this._type.IsPublic || this._type.IsNestedPublic; }
         }
 
         public bool IsSealed
@@ -433,7 +588,7 @@ namespace SDKDocGenerator
                 this._genericTypeArguments = new List<TypeWrapper>();
                 foreach (var type in this._type.GenericTypeArguments)
                 {
-                    this._genericTypeArguments.Add(new TypeWrapper(type));
+                    this._genericTypeArguments.Add(new TypeWrapper(type, DocId));
                 }
             }
 
@@ -445,7 +600,8 @@ namespace SDKDocGenerator
     {
         readonly MemberInfo _info;
 
-        public MemberInfoWrapper(MemberInfo info)
+        public MemberInfoWrapper(MemberInfo info, string docId)
+            : base(docId)
         {
             this._info = info;
         }
@@ -457,7 +613,7 @@ namespace SDKDocGenerator
 
         public TypeWrapper DeclaringType
         {
-            get { return new TypeWrapper(this._info.DeclaringType); }
+            get { return new TypeWrapper(this._info.DeclaringType, DocId); }
         }
 
         public override string ToString()
@@ -471,8 +627,8 @@ namespace SDKDocGenerator
     {
         readonly FieldInfo _info;
 
-        public FieldInfoWrapper(FieldInfo info)
-            : base(info)
+        public FieldInfoWrapper(FieldInfo info, string docId)
+            : base(info, docId)
         {
             this._info = info;
         }
@@ -503,7 +659,7 @@ namespace SDKDocGenerator
             get
             {
                 if (this._fieldType == null)
-                    this._fieldType = new TypeWrapper(this._info.FieldType);
+                    this._fieldType = new TypeWrapper(this._info.FieldType, DocId);
 
                 return this._fieldType;
             }
@@ -514,8 +670,8 @@ namespace SDKDocGenerator
     {
         readonly MethodBase _info;
 
-        public MethodBaseWrapper(MethodBase info)
-            : base(info)
+        public MethodBaseWrapper(MethodBase info, string docId)
+            : base(info, docId)
         {
             this._info = info;
         }
@@ -526,7 +682,7 @@ namespace SDKDocGenerator
 
             foreach (var info in this._info.GetParameters())
             {
-                wrappers.Add(new ParameterInfoWrapper(info));
+                wrappers.Add(new ParameterInfoWrapper(info, DocId));
             }
 
             return wrappers;
@@ -543,8 +699,8 @@ namespace SDKDocGenerator
     {
         readonly ConstructorInfo _info;
 
-        public ConstructorInfoWrapper(ConstructorInfo info)
-            : base(info)
+        public ConstructorInfoWrapper(ConstructorInfo info, string docId)
+            : base(info, docId)
         {
             this._info = info;
         }
@@ -562,8 +718,8 @@ namespace SDKDocGenerator
     {
         readonly MethodInfo _info;
 
-        public MethodInfoWrapper(MethodInfo info)
-            : base(info)
+        public MethodInfoWrapper(MethodInfo info, string docId)
+            : base(info, docId)
         {
             this._info = info;
         }
@@ -588,7 +744,7 @@ namespace SDKDocGenerator
 
         public TypeWrapper ReturnType
         {
-            get { return new TypeWrapper(this._info.ReturnType); }
+            get { return new TypeWrapper(this._info.ReturnType, DocId); }
         }
 
         public bool IsGenericMethod
@@ -605,7 +761,7 @@ namespace SDKDocGenerator
             var wrappers = new TypeWrapper[types.Length];
             for(int i = 0; i < types.Length; i++)
             {
-                wrappers[i] = new TypeWrapper(types[i]);
+                wrappers[i] = new TypeWrapper(types[i], DocId);
             }
 
             return wrappers;
@@ -616,8 +772,8 @@ namespace SDKDocGenerator
     {
         readonly PropertyInfo _info;
 
-        public PropertyInfoWrapper(PropertyInfo info)
-            : base(info)
+        public PropertyInfoWrapper(PropertyInfo info, string docId)
+            : base(info, docId)
         {
             this._info = info;
         }
@@ -663,7 +819,7 @@ namespace SDKDocGenerator
 
         public TypeWrapper PropertyType
         {
-            get { return new TypeWrapper(this._info.PropertyType); }
+            get { return new TypeWrapper(this._info.PropertyType, DocId); }
         }
 
         public MethodInfoWrapper GetGetMethod()
@@ -672,7 +828,7 @@ namespace SDKDocGenerator
             if (method == null)
                 return null;
 
-            return new MethodInfoWrapper(method);
+            return new MethodInfoWrapper(method, DocId);
         }
 
         public MethodInfoWrapper GetSetMethod()
@@ -681,7 +837,7 @@ namespace SDKDocGenerator
             if (method == null)
                 return null;
 
-            return new MethodInfoWrapper(method);
+            return new MethodInfoWrapper(method, DocId);
         }
     }
 
@@ -689,7 +845,8 @@ namespace SDKDocGenerator
     {
         readonly ParameterInfo _info;
 
-        public ParameterInfoWrapper(ParameterInfo info)
+        public ParameterInfoWrapper(ParameterInfo info, string docId)
+            : base(docId)
         {
             this._info = info;
         }
@@ -704,9 +861,9 @@ namespace SDKDocGenerator
             get
             {
                 if (this._info.ParameterType.IsByRef)
-                    return new TypeWrapper(this._info.ParameterType.GetElementType());
+                    return new TypeWrapper(this._info.ParameterType.GetElementType(), DocId);
 
-                return new TypeWrapper(this._info.ParameterType);
+                return new TypeWrapper(this._info.ParameterType, DocId);
             }
         }
 
@@ -725,8 +882,8 @@ namespace SDKDocGenerator
     {
         readonly EventInfo _info;
 
-        public EventInfoWrapper(EventInfo info)
-            : base(info)
+        public EventInfoWrapper(EventInfo info, string docId)
+            : base(info, docId)
         {
             this._info = info;
         }

@@ -11,7 +11,7 @@ namespace SDKDocGenerator
         // we shorten some namespaces to avoid hitting folder name limits in Windows. We need
         // to know this info when generating filenames as well as generating cross-service
         // urls
-        public static Dictionary<string, string> ServiceNamespaceContractions = new Dictionary<string, string>
+        public static Dictionary<string, string> ServiceNamespaceContractions = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase)
         {
             {"ElasticLoadBalancing", "ELB"},
             {"ElasticBeanstalk", "EB"},
@@ -24,9 +24,16 @@ namespace SDKDocGenerator
             {"SimpleSystemsManagement", "SSM"},
         };
 
+        private static Dictionary<string, string> fixedupNameDictionary = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
         private static string Fixup(string name)
         {
-            var fixedUpName = name.Replace('.', '_');
+            string fixedUpName;
+            if (fixedupNameDictionary.TryGetValue(name, out fixedUpName))
+            {
+                return fixedUpName;
+            }
+
+            fixedUpName = name.Replace('.', '_');
             // don't use encoded <> in filename, as browsers re-encode it in links to %3C
             // and the link fails
             fixedUpName = fixedUpName.Replace("&lt;", "!").Replace("&gt;", "!");
@@ -35,6 +42,7 @@ namespace SDKDocGenerator
             fixedUpName = fixedUpName.Replace("_Begin", "");
             fixedUpName = fixedUpName.Replace("_End", "");
             fixedUpName = fixedUpName.Replace("Client_", "");
+            fixedUpName = fixedUpName.Replace("+", "");
             fixedUpName = fixedUpName.Replace("_", "");
 
             foreach (var k in ServiceNamespaceContractions.Keys)
@@ -47,6 +55,7 @@ namespace SDKDocGenerator
                 throw new ApplicationException(string.Format("Filename: {0} is too long", fixedUpName));
             }
 
+            fixedupNameDictionary[name] = fixedUpName;
             return fixedUpName;
         }
 

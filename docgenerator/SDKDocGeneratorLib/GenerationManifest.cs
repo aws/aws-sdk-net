@@ -6,6 +6,7 @@ using System.Xml.Linq;
 using System.Xml.XPath;
 using SDKDocGenerator.Writers;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace SDKDocGenerator
 {
@@ -50,27 +51,17 @@ namespace SDKDocGenerator
                                   bool useAppDomain)
         {
             AssemblyPath = Path.GetFullPath(assemblyPath);
-            Options = options;
-            AssemblyWrapper = CreateAssemblyWrapper(AssemblyPath, useAppDomain);
-
-            OutputFolder = Path.GetFullPath(outputFolderRoot);
-
             var assemblyName = Path.GetFileNameWithoutExtension(AssemblyPath);
             ServiceName = assemblyName.StartsWith(AWSAssemblyNamePrefix + ".", StringComparison.OrdinalIgnoreCase)
                 ? assemblyName.Substring(AWSAssemblyNamePrefix.Length + 1)
-                : assemblyName;
+                : assemblyName;            
+            Options = options;
+            AssemblyWrapper = CreateAssemblyWrapper(AssemblyPath, useAppDomain);
+            OutputFolder = Path.GetFullPath(outputFolderRoot);
 
-            NDocTables = new Dictionary<string, IDictionary<string, XElement>>();
-
-            var ndocFilename = assemblyName + ".xml";
-            foreach (var p in allPlatforms)
+            foreach(var platform in allPlatforms)
             {
-                var platformSpecificNdocFile = Path.Combine(Options.SDKAssembliesRoot, p, ndocFilename);
-                if (File.Exists(platformSpecificNdocFile))
-                {
-                    var platformNDoc = CreateNDocTable(platformSpecificNdocFile);
-                    NDocTables.Add(p, platformNDoc);
-                }
+                NDocUtilities.LoadDocumentation(assemblyName, ServiceName, platform, options);
             }
 
             if (Options.Verbose)
@@ -106,11 +97,6 @@ namespace SDKDocGenerator
         public AssemblyWrapper AssemblyWrapper { get; private set; }
 
         /// <summary>
-        /// The collection of ndoc tables, one per platform we discover.
-        /// </summary>
-        public IDictionary<string, IDictionary<string, XElement>> NDocTables { get; private set; }
-
-        /// <summary>
         /// Returns the discovered NDoc table for a given platform, if it existed. If platform
         /// is not specified, we attempt to return the NDoc for the primary platform specified
         /// in the generator options.
@@ -120,12 +106,10 @@ namespace SDKDocGenerator
         public IDictionary<string, XElement> NDocForPlatform(string platform = null)
         {
             if (string.IsNullOrEmpty(platform))
-                return NDocTables[Options.Platform];
-
-            if (NDocTables.ContainsKey(platform))
-                return NDocTables[platform];
-
-            return null;
+            {
+                platform = Options.Platform;
+            }
+            return NDocUtilities.GetDocumentationInstance(ServiceName, platform);
         }
 
         /// <summary>
@@ -176,7 +160,7 @@ namespace SDKDocGenerator
         /// manifest, starting at the namespace(s) in the assembly and working
         /// down through the type hierarchy.
         /// </summary>
-        public void Generate()
+        public void Generate(IEnumerable<string> ignoreNamespaces)
         {
             Trace.WriteLine(String.Format("\tgenerating from {0}/{1}", Options.Platform, Path.GetFileName(AssemblyPath)));
 
@@ -184,8 +168,12 @@ namespace SDKDocGenerator
 
             var frameworkVersion = FrameworkVersion.FromPlatformFolder(Options.Platform);
             var processed = 0;
+
             foreach (var namespaceName in namespaceNames)
             {
+                if (ignoreNamespaces != null && ignoreNamespaces.Contains(namespaceName))
+                    continue;
+
                 WriteNamespace(frameworkVersion, namespaceName);
                 Trace.WriteLine(String.Format("\t\t{0} processed ({1} of {2})", namespaceName, ++processed, namespaceNames.Count()));
             }
@@ -199,43 +187,26 @@ namespace SDKDocGenerator
         /// <returns></returns>
         private AssemblyWrapper CreateAssemblyWrapper(string filePath, bool useAppDomain)
         {
+            var docId = NDocUtilities.GenerateDocId(ServiceName, Options.Platform);
             if (useAppDomain)
             {
                 var domain = AppDomain.CreateDomain(filePath);
-                var inst = domain.CreateInstance(this.GetType().Assembly.FullName, typeof(AssemblyWrapper).FullName);
+                var inst = domain.CreateInstance(   this.GetType().Assembly.FullName,
+                                                    typeof(AssemblyWrapper).FullName, 
+                                                    true,
+                                                    BindingFlags.CreateInstance | BindingFlags.Public | BindingFlags.Instance,
+                                                    null,
+                                                    new object[] {docId}, null, null);
                 var wrapper = (AssemblyWrapper)inst.Unwrap();
                 wrapper.LoadAssembly(filePath);
                 return wrapper;
             }
             else
             {
-                var wrapper = new AssemblyWrapper();
+                var wrapper = new AssemblyWrapper(docId);
                 wrapper.LoadAssembly(filePath);
                 return wrapper;
             }
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="filePath"></param>
-        /// <returns></returns>
-        private IDictionary<string, XElement> CreateNDocTable(string filePath)
-        {
-            var dict = new Dictionary<string, XElement>();
-            var document = NDocUtilities.LoadAssemblyDocumentationWithSamples(filePath, Options.CodeSamplesRootFolder, ServiceName);
-            NDocUtilities.PreprocessCodeBlocksToPreTags(Options, document);
-
-            foreach (var element in document.XPathSelectElements("//members/member"))
-            {
-                var xattribute = element.Attributes().FirstOrDefault(x => x.Name.LocalName == "name");
-                if (xattribute == null)
-                    continue;
-
-                dict[xattribute.Value] = element;
-            }
-
-            return dict;
         }
 
         void WriteNamespace(FrameworkVersion version, string namespaceName)

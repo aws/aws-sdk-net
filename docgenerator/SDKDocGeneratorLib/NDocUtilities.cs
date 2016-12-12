@@ -28,6 +28,72 @@ namespace SDKDocGenerator
         public const string innerCrefAttributeText = "cref=\"";
         public const string innerHrefAttributeText = "href=\"";
 
+
+        #region manage ndoc instances
+        // The reason we cache the doc data on the side instead of directly referencing doc instances from
+        // the type information is becasue we are loading the assemblies for reflection in a separate app domain.
+
+        private static IDictionary<string, IDictionary<string, XElement>> _ndocCache = new Dictionary<string, IDictionary<string, XElement>>();
+
+        public static string GenerateDocId(string serviceName, string platform)
+        {
+            // platform can be null; in which case we just use an empty string to construct the id.
+            return string.Format("{0}:{1}", serviceName, platform == null ? "" : platform);
+        }
+
+        public static void LoadDocumentation(string assemblyName, string serviceName, string platform, GeneratorOptions options)
+        {
+            string docId = null;
+            var ndocFilename = assemblyName + ".xml";
+            var platformSpecificNdocFile = Path.Combine(options.SDKAssembliesRoot, platform, ndocFilename);
+            if (File.Exists(platformSpecificNdocFile))
+            {
+                docId = GenerateDocId(serviceName, platform);
+                _ndocCache.Add(docId, CreateNDocTable(platformSpecificNdocFile, serviceName, options));
+            }
+        }
+
+        public static IDictionary<string, XElement> GetDocumentationInstance(string serviceName, string platform)
+        {
+            return GetDocumentationInstance(GenerateDocId(serviceName, platform));
+        }
+
+        public static IDictionary<string, XElement> GetDocumentationInstance(string docId)
+        {
+            IDictionary<string, XElement> doc = null;
+            if (_ndocCache.TryGetValue(docId, out doc))
+            {
+                return doc;
+            }
+            return null;
+        }
+        
+        private static IDictionary<string, XElement> CreateNDocTable(string filePath, string serviceName, GeneratorOptions options)
+        {
+            var dict = new Dictionary<string, XElement>();
+            var document = LoadAssemblyDocumentationWithSamples(filePath, options.CodeSamplesRootFolder, serviceName);
+            PreprocessCodeBlocksToPreTags(options, document);
+
+            foreach (var element in document.XPathSelectElements("//members/member"))
+            {
+                var xattribute = element.Attributes().FirstOrDefault(x => x.Name.LocalName == "name");
+                if (xattribute == null)
+                    continue;
+
+                dict[xattribute.Value] = element;
+            }
+
+            return dict;
+        }
+        #endregion
+
+
+        public static XElement FindDocumentation(AbstractWrapper wrapper)
+        {
+            var ndoc = GetDocumentationInstance(wrapper.DocId);
+            return FindDocumentation(ndoc, wrapper);
+        }
+
         public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, AbstractWrapper wrapper)
         {
             if (ndoc == null)
@@ -55,6 +121,12 @@ namespace SDKDocGenerator
                 return null;
 
             return element;
+        }
+
+        public static XElement FindFieldDocumentation(TypeWrapper type, string fieldName)
+        {
+            var ndoc = GetDocumentationInstance(type.DocId);
+            return FindFieldDocumentation(ndoc, type, fieldName);
         }
 
         public static XElement FindFieldDocumentation(IDictionary<string, XElement> ndoc, TypeWrapper type, string fieldName)
@@ -99,9 +171,9 @@ namespace SDKDocGenerator
             return element;
         }
 
-        public static string DetermineNDocNameLookupSignature(MethodInfo info)
+        public static string DetermineNDocNameLookupSignature(MethodInfo info, string docId)
         {
-            return DetermineNDocNameLookupSignature(new MethodInfoWrapper(info));
+            return DetermineNDocNameLookupSignature(new MethodInfoWrapper(info, docId));
         }
 
         public static string DetermineNDocNameLookupSignature(MethodInfoWrapper info)
@@ -451,7 +523,7 @@ namespace SDKDocGenerator
             return node.Value;
         }
 
-        public static string TransformDocumentationToHTML(XElement element, string rootNodeName, AssemblyWrapper assemblyWrapper, FrameworkVersion version)
+        public static string TransformDocumentationToHTML(XElement element, string rootNodeName, AbstractTypeProvider typeProvider, FrameworkVersion version)
         {
             if (element == null)
                 return string.Empty;
@@ -501,7 +573,7 @@ namespace SDKDocGenerator
                 {
                     int crossRefTagEndIndex;
                     var cref = ExtractCrefAttributeContent(innerText, attrStart, out crossRefTagEndIndex);
-                    var replacement = BaseWriter.CreateCrossReferenceTagReplacement(assemblyWrapper, cref, version);
+                    var replacement = BaseWriter.CreateCrossReferenceTagReplacement(typeProvider, cref, version);
 
                     var oldCrossRefTag = innerText.Substring(scanIndex, crossRefTagEndIndex - scanIndex);
                     innerText = innerText.Replace(oldCrossRefTag, replacement);
