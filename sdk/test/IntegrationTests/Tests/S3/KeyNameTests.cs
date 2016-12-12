@@ -10,6 +10,7 @@ using Amazon.S3.Util;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
+using System.Net;
 
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
@@ -28,6 +29,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             @"ObjectWith/InKeyname",
             @"ObjectWith\InKeynÄme",
             @"ObjectWith/InKeynÄme",
+            @"ObjectWith$InKeynÄme",
         };
 
         static string bucketName;
@@ -58,7 +60,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
                 foreach (var k in AwkwardKeyNameBases)
                 {
-                    var keyName = k + ".AWS2.CLRv" + Environment.Version;
+                    var keyName = k + ".SigV2.AWS2.CLRv" + Environment.Version;
                     PutObjectWithQuestionableKey(s3Client, bucketName, keyName);
                 }
             }
@@ -80,7 +82,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
                 foreach (var k in AwkwardKeyNameBases)
                 {
-                    var keyName = k + ".AWS2.CLRv" + Environment.Version;
+                    var keyName = k + ".SigV4.AWS2.CLRv" + Environment.Version;
                     PutObjectWithQuestionableKey(s3Client, bucketName, keyName);
                 }
             }
@@ -111,6 +113,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 var responseContent = s.ReadToEnd();
                 Assert.AreEqual(testContent, responseContent);
+            }
+
+            var presignedUrl = s3Client.GetPreSignedURL(new GetPreSignedUrlRequest
+            {
+                BucketName = bucketName,
+                Key = keyName,
+                Verb = HttpVerb.GET,
+                Expires = DateTime.Now + TimeSpan.FromDays(5)
+            });
+
+            var httpRequest = HttpWebRequest.CreateHttp(presignedUrl);
+            using(var httpResponse = httpRequest.GetResponse())
+            using(var reader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                var content = reader.ReadToEnd();
+                Assert.AreEqual(testContent, content);
             }
         }
     }

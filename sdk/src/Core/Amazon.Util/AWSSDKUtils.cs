@@ -95,7 +95,7 @@ namespace Amazon.Util
         // per http://msdn.microsoft.com/en-us/library/hh367887%28v=vs.110%29.aspx
         private static string DetermineValidPathCharacters()
         {
-            const string basePathCharacters = "/:'()!*[]";
+            const string basePathCharacters = "/:'()!*[]$";
 
             var sb = new StringBuilder();
             foreach (var c in basePathCharacters)
