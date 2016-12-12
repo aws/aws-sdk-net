@@ -107,7 +107,8 @@ namespace Amazon.Polly
             var immutableCredentials = credentials.GetCredentials();
             if (immutableCredentials.UseToken)
             {
-                iRequest.Parameters[HeaderKeys.XAmzSecurityTokenHeader] = immutableCredentials.Token;
+                // Don't use HeaderKeys.XAmzSecurityTokenHeader because Polly treats this as case-sensitive
+                iRequest.Parameters["X-Amz-Security-Token"] = immutableCredentials.Token;
             }
 
             // Only the host header should be signed, and the signer adds that.
