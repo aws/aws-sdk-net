@@ -22,7 +22,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void TestLocation()
         {
-            foreach (var location in new S3Region[] { S3Region.USW1, S3Region.EUC1, S3Region.EUW1})
+            foreach (var location in new S3Region[] { S3Region.USW1, S3Region.EUC1, S3Region.EUW1, S3Region.EUW2})
             {
                 string bucketName = null;
                 var region = RegionEndpoint.GetBySystemName(location.Value);
