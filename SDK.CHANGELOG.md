@@ -1,3 +1,10 @@
+### 3.3.30.1 (2016-12-13 03:39 UTC)
+* IotData (3.3.0.6)
+	* Updated to use new Core, version 3.3.6.1
+	* Fix issue handling $ character in topics.
+* Core 3.3.6.1
+	* Fix issue with $ being encoded in requests.
+
 ### 3.3.30.0 (2016-12-09 00:42 UTC)
 * CloudFront (3.3.2.0)
 	* API Update for CloudFront : add lambda function associations to cache behaviors

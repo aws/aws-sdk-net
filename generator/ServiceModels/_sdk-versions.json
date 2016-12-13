@@ -1,7 +1,7 @@
 
 {
-    "ProductVersion" : "3.3.30.0",
-    "CoreVersion"    : "3.3.6.0",
+    "ProductVersion" : "3.3.30.1",
+    "CoreVersion"    : "3.3.6.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
         "CloudHSM" : {
@@ -415,9 +415,9 @@
             "InPreview"    : false
         },
         "IotData"                         : {
-            "Version" : "3.3.0.5",
+            "Version" : "3.3.0.6",
             "Dependencies" : {
-                "Core" : "3.3.6.0"
+                "Core" : "3.3.6.1"
             },
             "InPreview"    : false
         },
