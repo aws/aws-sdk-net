@@ -123,7 +123,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Expires = DateTime.Now + TimeSpan.FromDays(5)
             });
 
-            var httpRequest = HttpWebRequest.CreateHttp(presignedUrl);
+            var httpRequest = HttpWebRequest.Create(presignedUrl);
             using(var httpResponse = httpRequest.GetResponse())
             using(var reader = new StreamReader(httpResponse.GetResponseStream()))
             {
