@@ -82,6 +82,19 @@ namespace Amazon.S3
             if (endpoint == RegionEndpoint.USEast1 && fallbackToSigV2)
                 aws4Signing = false;
 
+            // If the expiration is longer than SigV4 will allow then automatically use SigV2 instead.
+            // But only if the region we're signing for allows SigV2.
+            if (aws4Signing)
+            {
+                var secondsUntilExpiration = GetSecondsUntilExpiration(request, aws4Signing);
+
+                if (secondsUntilExpiration > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry &&
+                    endpoint.GetEndpointForService("s3").SignatureVersionOverride == "2")
+                {
+                    aws4Signing = false;
+                }
+            }
+
             var immutableCredentials = Credentials.GetCredentials();
             var irequest = Marshall(request, immutableCredentials.AccessKey, immutableCredentials.Token, aws4Signing);
 
@@ -178,8 +191,7 @@ namespace Amazon.S3
                 uriResourcePath.Append(S3Transforms.ToStringValue(getPreSignedUrlRequest.Key));
             }
 
-            var baselineTime = aws4Signing ? AWSSDKUtils.CorrectedUtcNow : new DateTime(1970, 1, 1);
-            var expires = Convert.ToInt64((getPreSignedUrlRequest.Expires.ToUniversalTime() - baselineTime).TotalSeconds);
+            var expires = GetSecondsUntilExpiration(getPreSignedUrlRequest, aws4Signing);
 
             if (aws4Signing && expires > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry)
             {
@@ -215,6 +227,12 @@ namespace Amazon.S3
             request.UseQueryString = true;
 
             return request;
+        }
+
+        private static long GetSecondsUntilExpiration(GetPreSignedUrlRequest request, bool aws4Signing)
+        {
+            var baselineTime = aws4Signing ? AWSSDKUtils.CorrectedUtcNow : new DateTime(1970, 1, 1);
+            return Convert.ToInt64((request.Expires.ToUniversalTime() - baselineTime).TotalSeconds);
         }
 
         private Protocol DetermineProtocol()
