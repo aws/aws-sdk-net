@@ -324,7 +324,7 @@
 		
         <MSBuild Projects=".\TestWrapper\TestWrapper.sln"
             Targets="Clean;Build"
-            Properties="Configuration=Debug"/>        
+            Properties="Configuration=Debug"/>
     </Target>
 
     <Target Name="run-ms-tests" DependsOnTargets="build-test-wrapper">
@@ -351,7 +351,7 @@
             <Project>$([System.IO.Path]::GetFullPath($(ProjectJSON)))</Project>
         </PropertyGroup>
 
-        <Exec Command=".\TestWrapper\TestRunners\bin\Debug\TestWrapper.exe xunit &quot;$(SDKToolingExe)&quot; test &quot;$(Project)&quot; -c $(Configuration)"/>
+        <Exec Command=".\TestWrapper\TestRunners\bin\Debug\TestWrapper.exe xunit &quot;$(SDKToolingExe)&quot; test --no-build &quot;$(Project)&quot; -c $(Configuration)"/>
 
          <!-- Clear our properties -->
         <PropertyGroup >
