@@ -49,6 +49,11 @@ namespace Amazon.Runtime.Internal.Auth
         static readonly Regex CompressWhitespaceRegex = new Regex("\\s+");
         const SigningAlgorithm SignerAlgorithm = SigningAlgorithm.HmacSHA256;
 
+
+        private static IEnumerable<string> _headersToIgnoreWhenSigning = new HashSet<string>{
+            HeaderKeys.XAmznTraceIdHeader
+        };
+
         public override ClientProtocol Protocol
         {
             get { return ClientProtocol.RestProtocol; }
@@ -134,7 +139,7 @@ namespace Amazon.Runtime.Internal.Auth
             var parametersToCanonicalize = GetParametersToCanonicalize(request);
             var canonicalParameters = CanonicalizeQueryParameters(parametersToCanonicalize);
             var bodyHash = SetRequestBodyHash(request);
-            var sortedHeaders = SortHeaders(request.Headers);
+            var sortedHeaders = SortAndPruneHeaders(request.Headers);
             
             var canonicalRequest = CanonicalizeRequest(request.Endpoint,
                                                        request.ResourcePath,
@@ -573,18 +578,22 @@ namespace Amazon.Runtime.Internal.Auth
 
             return canonicalRequest.ToString();
         }
-
+        
         /// <summary>
         /// Reorders the headers for the request for canonicalization.
         /// </summary>
         /// <param name="requestHeaders">The set of proposed headers for the request</param>
         /// <returns>List of headers that must be included in the signature</returns>
         /// <remarks>For AWS4 signing, all headers are considered viable for inclusion</remarks>
-        protected static IDictionary<string, string> SortHeaders(IEnumerable<KeyValuePair<string, string>> requestHeaders)
+        protected static IDictionary<string, string> SortAndPruneHeaders(IEnumerable<KeyValuePair<string, string>> requestHeaders)
         {
             var sortedHeaders = new SortedDictionary<string, string>(StringComparer.OrdinalIgnoreCase);
             foreach (var header in requestHeaders)
             {
+                if (_headersToIgnoreWhenSigning.Contains(header.Key))
+                {
+                    continue;
+                }
                 sortedHeaders.Add(header.Key, header.Value);
             }
             
@@ -974,7 +983,7 @@ namespace Amazon.Runtime.Internal.Auth
             if (request.Headers.ContainsKey(HeaderKeys.XAmzContentSha256Header))
                 request.Headers.Remove(HeaderKeys.XAmzContentSha256Header);
 
-            var sortedHeaders = SortHeaders(request.Headers);
+            var sortedHeaders = SortAndPruneHeaders(request.Headers);
             var canonicalizedHeaderNames = CanonicalizeHeaderNames(sortedHeaders);
 
             var parametersToCanonicalize = GetParametersToCanonicalize(request);

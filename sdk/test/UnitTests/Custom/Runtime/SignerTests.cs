@@ -42,7 +42,7 @@ namespace AWSSDK.UnitTests
         [TestCategory("Runtime")]
         public void TestSignerWithBasicCredentials()
         {
-            var pipeline = new RuntimePipeline(new MockHandler());            
+            var pipeline = new RuntimePipeline(new MockHandler());
             pipeline.AddHandler(new Signer());
             pipeline.AddHandler(new CredentialsRetriever(new BasicAWSCredentials("accessKey", "secretKey")));
 
@@ -53,6 +53,29 @@ namespace AWSSDK.UnitTests
 
             Assert.IsTrue(context.RequestContext.IsSigned);
             Assert.AreEqual(1, signer.SignCount);
+        }
+
+        [TestMethod][TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestSignerWithMutableHeader()
+        {
+            var pipeline = new RuntimePipeline(new MockHandler());           
+            pipeline.AddHandler(new Signer());
+            pipeline.AddHandler(new CredentialsRetriever(new BasicAWSCredentials("accessKey", "secretKey")));
+
+            var context = CreateTestContext();
+            var signer = new AWS4Signer();
+            ((RequestContext)context.RequestContext).Signer = signer;
+
+            // inject a mutable header that the signer should strip out
+            context.RequestContext.Request.Headers[HeaderKeys.XAmznTraceIdHeader] = "stuff";
+            pipeline.InvokeSync(context);
+
+            // verify that the header is not in the signature
+            var t = context.RequestContext.Request.Headers[HeaderKeys.AuthorizationHeader];
+            Assert.IsFalse(t.Contains(HeaderKeys.XAmznTraceIdHeader));
+
+            Assert.IsTrue(context.RequestContext.Request.Headers.ContainsKey(HeaderKeys.XAmznTraceIdHeader));
         }
 
         [TestMethod]
