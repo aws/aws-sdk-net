@@ -125,6 +125,68 @@ namespace AWSSDK.UnitTests
             UserIdentity = "user_identity"
         };
 
+        private static readonly string UpdatedProfileTypeTextBefore = new StringBuilder()
+            .AppendLine("[updated_profile]")
+            .AppendLine("aws_access_key_id=session_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
+            .Append("aws_session_token=session_aws_session_token")
+            .ToString();
+
+        private static readonly CredentialProfileOptions UpdatedProfileTypeOptionsBefore = new CredentialProfileOptions()
+        {
+            AccessKey = "session_aws_access_key_id",
+            SecretKey = "session_aws_secret_access_key",
+            Token = "session_aws_session_token"
+        };
+
+        private static readonly string UpdatedProfileTypeTextAfter = new StringBuilder()
+            .AppendLine("[updated_profile]")
+            .AppendLine("aws_access_key_id=session_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
+            .ToString();
+
+        private static readonly CredentialProfileOptions UpdatedProfileTypeOptionsAfter = new CredentialProfileOptions()
+        {
+            AccessKey = "session_aws_access_key_id",
+            SecretKey = "session_aws_secret_access_key"
+        };
+
+        private static readonly CredentialProfileOptions UpdatedProfileWithPropertiesOptions = new CredentialProfileOptions()
+        {
+            AccessKey = "session_aws_access_key_id",
+            SecretKey = "session_aws_secret_access_key"
+        };
+
+        private static readonly string UpdatedProfileWithPropertiesTextBefore = new StringBuilder()
+            .AppendLine("[basic_profile]")
+            .AppendLine("property1=value1")
+            .AppendLine("aws_access_key_id=session_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
+            .AppendLine("property3=value3")
+            .AppendLine("property2=value2")
+            .ToString();
+
+        private static readonly Dictionary<string,string> UpdatedProfileWithPropertiesBefore = new Dictionary<string, string>()
+        {
+            { "property1", "value1" },
+            { "property2", "value2" },
+            { "property3", "value3" }
+        };
+
+        private static readonly string UpdatedProfileWithPropertiesTextAfter = new StringBuilder()
+            .AppendLine("[basic_profile]")
+            .AppendLine("aws_access_key_id=session_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
+            .AppendLine("property3=valueZ")
+            .Append("property4=value4")
+            .ToString();
+
+        private static readonly Dictionary<string, string> UpdatedProfileWithPropertiesAfter = new Dictionary<string, string>()
+        {
+            { "property3", "valueZ" },
+            { "property4", "value4" }
+        };
+
         private static readonly CredentialProfileOptions InvalidProfileOptions = new CredentialProfileOptions();
 
         [TestMethod]
@@ -142,6 +204,34 @@ namespace AWSSDK.UnitTests
             using (var tester = new SharedCredentialsFileTestFixture())
             {
                 tester.AssertWriteProfile("basic_profile", BasicProfileOptions, BasicProfileCredentialsText);
+            }
+        }
+
+        [TestMethod]
+        public void WriteBasicProfileReservedPropertyName()
+        {
+            TestReservedProperty("aws_access_key_id");
+        }
+
+        [TestMethod]
+        public void WriteBasicProfileReservedPropertyNameIgnoreCase()
+        {
+            TestReservedProperty("Aws_Access_Key_ID");
+        }
+
+        private void TestReservedProperty(string propertyName)
+        {
+            using (var tester = new SharedCredentialsFileTestFixture())
+            {
+                var properties = new Dictionary<string, string>()
+                {
+                    { propertyName, "aargh!" }
+                };
+                AssertExtensions.ExpectException(() =>
+                {
+                    tester.AssertWriteProfile("basic_profile", BasicProfileOptions, properties, BasicProfileCredentialsText);
+                }, typeof(ArgumentException), "The profile properties dictionary cannot contain a key named "+ propertyName +
+                " because it is in the name mapping dictionary.");
             }
         }
 
@@ -218,6 +308,26 @@ namespace AWSSDK.UnitTests
             {
                 tester.ReadAndAssertProfile("session_profile", SessionProfileOptions);
                 tester.AssertWriteProfile("session_profile", SessionProfileOptionsUpdated, SessionProfileTextUpdated);
+            }
+        }
+
+        [TestMethod]
+        public void UpdateProfileDifferentType()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture())
+            {
+                tester.AssertWriteProfile("updated_profile", UpdatedProfileTypeOptionsBefore, UpdatedProfileTypeTextBefore);
+                tester.AssertWriteProfile("updated_profile", UpdatedProfileTypeOptionsAfter, UpdatedProfileTypeTextAfter);
+            }
+        }
+
+        [TestMethod]
+        public void UpdateProfileWithProperties()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(UpdatedProfileWithPropertiesTextBefore))
+            {
+                tester.ReadAndAssertProfile("basic_profile", UpdatedProfileWithPropertiesOptions, UpdatedProfileWithPropertiesBefore);
+                tester.AssertWriteProfile("basic_profile", UpdatedProfileWithPropertiesOptions, UpdatedProfileWithPropertiesAfter, UpdatedProfileWithPropertiesTextAfter);
             }
         }
 

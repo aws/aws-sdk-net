@@ -16,6 +16,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 
@@ -62,10 +63,17 @@ namespace AWSSDK.UnitTests
         {
         }
 
+        public void ReadAndAssertProfile(string profileName, CredentialProfileOptions expectedProfileOptions, Dictionary<string, string> expectedProperties)
+        {
+            var expectedProfile = CredentialProfileTestHelper.GetCredentialProfile(profileName, expectedProfileOptions, expectedProperties);
+            var actualProfile = TestTryGetProfile(profileName, true, expectedProfile.CanCreateAWSCredentials);
+            Assert.AreEqual(expectedProfile, actualProfile);
+
+        }
+
         public void ReadAndAssertProfile(string profileName, CredentialProfileOptions expectedProfileOptions)
         {
-            var expectedProfile = CredentialProfileTestHelper.GetCredentialProfile(profileName, expectedProfileOptions);
-            Assert.AreEqual(expectedProfile, TestTryGetProfile(profileName, true, expectedProfile.CanCreateAWSCredentials));
+            ReadAndAssertProfile(profileName, expectedProfileOptions, null);
         }
 
         public CredentialProfile TestTryGetProfile(string profileName, bool expectProfile, bool expectValidProfile)
@@ -79,7 +87,12 @@ namespace AWSSDK.UnitTests
 
         public void AssertWriteProfile(string profileName, CredentialProfileOptions profileOptions, string expectedFileContents)
         {
-            CredentialsFile.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(profileName, profileOptions));
+            AssertWriteProfile(profileName, profileOptions, null, expectedFileContents);
+        }
+
+        public void AssertWriteProfile(string profileName, CredentialProfileOptions profileOptions, Dictionary<string, string> properties, string expectedFileContents)
+        {
+            CredentialsFile.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(profileName, profileOptions, properties));
             AssertCredentialsFileContents(expectedFileContents);
         }
 

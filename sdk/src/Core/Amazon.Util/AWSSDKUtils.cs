@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright 2008-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *  Copyright 2008-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
  *
@@ -556,6 +556,17 @@ namespace Amazon.Util
                 return true;
 
             return (a.Equals(b));
+        }
+
+        internal static bool DictionariesAreEqual<K,V>(Dictionary<K, V> a, Dictionary<K, V> b)
+        {
+            if (a == null || b == null)
+                return (a == b);
+
+            if (object.ReferenceEquals(a, b))
+                return true;
+
+            return a.Count == b.Count && !a.Except(b).Any();
         }
 
         /// <summary>

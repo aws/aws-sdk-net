@@ -44,27 +44,25 @@ namespace Amazon.Util
     public class CredentialProfileManager : ICredentialProfileSource
     {
         public const string DefaultProfileName = "default";
+        public static readonly string DefaultSharedCredentialsFileDirectory;
+        public static readonly string DefaultSharedCredentialsFilePath;
 
-        private static readonly string DefaultSharedCredentialsFileDirectory;
-        private static readonly string DefaultSharedCredentialsFilePath;
         private ICredentialProfileStore primaryStore;
         private List<ICredentialProfileStore> profileStoreChain;
 
         static CredentialProfileManager()
         {
-            var baseDirectory = "~";
+            var baseDirectory = Environment.GetEnvironmentVariable("HOME");
 
-            if (IsWindows)
-            {
-                baseDirectory =
-                    Environment.GetEnvironmentVariable("HOME") ??
-                    Environment.GetEnvironmentVariable("USERPROFILE") ??
+            if (string.IsNullOrEmpty(baseDirectory))
+                baseDirectory = Environment.GetEnvironmentVariable("USERPROFILE");
+
+            if (string.IsNullOrEmpty(baseDirectory))
 #if CORECLR
-                    Directory.GetCurrentDirectory();
+                baseDirectory = Directory.GetCurrentDirectory();
 #else
-                    Environment.CurrentDirectory;
+                baseDirectory = Environment.CurrentDirectory;
 #endif
-            }
 
             DefaultSharedCredentialsFileDirectory = Path.Combine(baseDirectory, ".aws");
             DefaultSharedCredentialsFilePath = Path.Combine(DefaultSharedCredentialsFileDirectory, "credentials");
@@ -219,6 +217,22 @@ namespace Amazon.Util
         }
 
         /// <summary>
+        /// Register a new CredentialProfile, or update an existing one with the same name.
+        /// The CredentialProfile will either be persisted to the credentials file or the encrypted store.
+        /// The destination of the new CredentialProfile depends on the availability of the encrypted store,
+        /// and how this CredentialProfileManager was constructed.
+        /// </summary>
+        /// <param name="profileName">The name of the CredentialProfile.</param>
+        /// <param name="profileOptions">The options to save.</param>
+        /// <param name="properties">The properties to save.</param>
+        internal void RegisterProfileWithProperties(string profileName, CredentialProfileOptions profileOptions,
+            Dictionary<string, string> properties)
+        {
+            var profile = new CredentialProfile(profileName, profileOptions, properties, primaryStore);
+            profile.Persist();
+        }
+
+        /// <summary>
         /// Delete the default profile.
         /// Deletes default profiles from both the credentials file and the encrypted store regardless of
         /// how this CredentialProfileManager was constructed.
@@ -241,27 +255,5 @@ namespace Amazon.Util
                 store.UnregisterProfile(profileName);
             }
         }
-
-        private static bool IsWindows
-        {
-            get
-            {
-#if CORECLR
-                try
-                {
-                    if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-                        return false;
-
-                    if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-                        return false;
-                }
-                catch
-                {
-                }
-#endif
-                return true;
-            }
-        }
-
     }
 }

@@ -26,18 +26,22 @@ namespace Amazon.Runtime.Internal
     public class CredentialProfilePropertyMapping
     {
         private static readonly HashSet<string> TypePropertySet =
-            new HashSet<string>(typeof(CredentialProfileOptions).GetProperties().Select((p) => p.Name));
+            new HashSet<string>(typeof(CredentialProfileOptions).GetProperties().Select((p) => p.Name), StringComparer.OrdinalIgnoreCase);
+
+        private static readonly PropertyInfo[] credentialProfileProperties = typeof(CredentialProfileOptions).GetProperties();
 
         private Dictionary<string, string> nameMapping;
+        private HashSet<string> mappedNames;
 
         public CredentialProfilePropertyMapping(Dictionary<string, string> nameMapping)
         {
-            if (!TypePropertySet.SetEquals(new HashSet<string>(nameMapping.Keys)))
+            if (!TypePropertySet.SetEquals(new HashSet<string>(nameMapping.Keys, StringComparer.OrdinalIgnoreCase)))
             {
                 throw new ArgumentException("The nameMapping Dictionary must contain a name mapping for each ProfileOptions property, and no additional keys.");
             }
 
             this.nameMapping = nameMapping;
+            mappedNames = new HashSet<string>(nameMapping.Values.Where(v => !string.IsNullOrEmpty(v)), StringComparer.OrdinalIgnoreCase);
         }
 
         public List<KeyValuePair<string, string>> Convert(CredentialProfileOptions profileOptions)
@@ -68,20 +72,53 @@ namespace Amazon.Runtime.Internal
             return list;
         }
 
-        public CredentialProfileOptions Convert(Dictionary<string, string> properties)
+        /// <summary>
+        /// Remove keys related to the CredentialsProfileOptions from the dictionary
+        /// and create a CredentialsProfileOptions object out of them.
+        ///
+        /// Warning: This method modifies the contents of the properties dictionary.
+        /// </summary>
+        /// <param name="properties"></param>
+        /// <returns></returns>
+        public CredentialProfileOptions ExtractCredentialProfileOptions(Dictionary<string, string> properties)
         {
             var profileOptions = new CredentialProfileOptions();
 
-            foreach (var property in typeof(CredentialProfileOptions).GetProperties())
+            foreach (var property in credentialProfileProperties)
             {
                 string value = null;
-                if (nameMapping[property.Name] != null &&
-                    properties.TryGetValue(nameMapping[property.Name], out value))
+                var mappedName = nameMapping[property.Name];
+                if (mappedName != null)
                 {
-                    property.SetValue(profileOptions, value, null);
+                    if (properties.TryGetValue(mappedName, out value))
+                    {
+                        property.SetValue(profileOptions, value, null);
+                    }
+                    properties.Remove(mappedName);
                 }
             }
             return profileOptions;
+        }
+
+        /// <summary>
+        /// Make sure the profileProperties dictionary doesn't contain any keys that
+        /// overlap with the names of mapped names for CredentialProfileOptions property names.
+        /// Check is case-insensitive for added safety.
+        /// </summary>
+        /// <param name="profileProperties"></param>
+        public void ValidateNoProfileOptionsProperties(Dictionary<string, string> profileProperties)
+        {
+            if (profileProperties != null)
+            {
+                foreach (var key in profileProperties.Keys)
+                {
+                    if (mappedNames.Contains(key, StringComparer.OrdinalIgnoreCase))
+                    {
+                        throw new ArgumentException("The profile properties dictionary cannot contain a key named " + key +
+                            " because it is in the name mapping dictionary.");
+                    }
+                }
+            }
         }
     }
 }

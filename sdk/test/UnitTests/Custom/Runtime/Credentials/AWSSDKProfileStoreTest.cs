@@ -16,8 +16,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace AWSSDK.UnitTests
@@ -25,6 +28,9 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class AWSSDKProfileStoreTest
     {
+        private const string HiddenFieldExceptionFormat = "The profile properties cannot contain reserved names as keys: {0}";
+        private const string CredentialsFieldExceptionFormat = "The profile properties dictionary cannot contain a key named {0} because it is in the name mapping dictionary.";
+
         private const string AWSCredentialsProfileType = "AWS";
         private const string SAMLRoleProfileType = "SAML";
 
@@ -34,6 +40,14 @@ namespace AWSSDK.UnitTests
             .AppendLine("        \"DisplayName\" : \"InvalidProfile\",")
             .AppendLine("        \"SessionType\" : \"AWS\",")
             .AppendLine("        \"AWSAccessKey\" : \"access_key_id\",")
+            .AppendLine("    }")
+            .AppendLine("}").ToString();
+
+        private static readonly string LegacyCredentialsTypeProfileText = new StringBuilder()
+            .AppendLine("{")
+            .AppendLine("    \"deefa421-989c-4dd6-9dbc-baecfb5e63f6\" : {")
+            .AppendLine("        \"DisplayName\" : \"LegacyCredentialsTypeProfile\",")
+            .AppendLine("        \"CredentialsType\" : \"the_credentials_type\",")
             .AppendLine("    }")
             .AppendLine("}").ToString();
 
@@ -67,6 +81,45 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void RegisterProfileReservedPropertyName1()
+        {
+            TestReservedPropertyName(HiddenFieldExceptionFormat, "DisplayName");
+        }
+
+        [TestMethod]
+        public void RegisterProfileReservedPropertyName2()
+        {
+            TestReservedPropertyName(HiddenFieldExceptionFormat, "ProfileType");
+        }
+
+        [TestMethod]
+        public void RegisterProfileReservedPropertyName3()
+        {
+            TestReservedPropertyName(CredentialsFieldExceptionFormat, "RoleArn");
+        }
+
+        [TestMethod]
+        public void RegisterProfileReservedPropertyNameIgnoreCase()
+        {
+            TestReservedPropertyName(CredentialsFieldExceptionFormat, "rolearn");
+        }
+
+        private void TestReservedPropertyName(string exceptionFormat, string propertyName)
+        {
+            AssertExtensions.ExpectException(() =>
+            {
+                using (var tester = new AWSSDKProfileStoreTestFixture())
+                {
+                    var profileName = Guid.NewGuid().ToString();
+                    var profile = CredentialProfileTestHelper.GetRandomProfile(profileName, CredentialProfileType.Basic, tester.ProfileStore);
+                    var properties = CredentialProfileUtils.GetProperties(profile);
+                    properties.Add(propertyName, "aargh!");
+                    tester.ProfileStore.RegisterProfile(profile);
+                }
+            }, typeof(ArgumentException), string.Format(CultureInfo.InvariantCulture, exceptionFormat, propertyName));
+        }
+
+        [TestMethod]
         public void ProfileNotFound()
         {
             using (var tester = new AWSSDKProfileStoreTestFixture())
@@ -81,6 +134,17 @@ namespace AWSSDK.UnitTests
             using (var tester = new AWSSDKProfileStoreTestFixture(InvalidProfileText))
             {
                 tester.TestTryGetProfile("InvalidProfile", true, false);
+            }
+        }
+
+        [TestMethod]
+        public void LegacyCredentialsTypeProfile()
+        {
+            using (var tester = new AWSSDKProfileStoreTestFixture(LegacyCredentialsTypeProfileText))
+            {
+                var profile = tester.TestTryGetProfile("LegacyCredentialsTypeProfile", true, false);
+                var credentialType = CredentialProfileUtils.GetProperty(profile, "CredentialsType");
+                Assert.AreEqual("the_credentials_type", credentialType);
             }
         }
 

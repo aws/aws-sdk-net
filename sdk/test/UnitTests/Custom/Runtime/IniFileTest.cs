@@ -140,6 +140,7 @@ namespace AWSSDK.UnitTests
         public void AddProperty()
         {
             var properties = new List<KeyValuePair<string, string>>();
+            properties.Add(new KeyValuePair<string, string>("property", "value"));
             properties.Add(new KeyValuePair<string, string>("property2", "value2"));
 
             using (var tester = new IniFileTester(ValidSection1))

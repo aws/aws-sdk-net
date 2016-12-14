@@ -123,7 +123,16 @@ namespace Amazon.Runtime.Internal
                         "{1} profile but {2} does not support the {1} profile type.",
                         profile.Name, profile.ProfileType, GetType().Name));
                 }
-                credentialsFile.EditSection(profile.Name, PropertyMapping.Convert(profile.Options));
+
+                // make sure the property keys aren't reserved for profile options
+                PropertyMapping.ValidateNoProfileOptionsProperties(profile.Properties);
+
+                var flattenedDictionary = PropertyMapping.Convert(profile.Options);
+
+                if (profile.Properties != null)
+                    flattenedDictionary.AddRange(profile.Properties);
+
+                credentialsFile.EditSection(profile.Name, flattenedDictionary);
                 credentialsFile.Persist();
             }
             else
@@ -188,8 +197,10 @@ namespace Amazon.Runtime.Internal
             Dictionary<string, string> properties = null;
             if (TryGetSection(profileName, out properties))
             {
-                var profileOptions = PropertyMapping.Convert(properties);
-                profile = new CredentialProfile(profileName, profileOptions, this);
+                var profileOptions = PropertyMapping.ExtractCredentialProfileOptions(properties);
+                // properties now contains "leftover properties" that aren't part of profileOptions
+
+                profile = new CredentialProfile(profileName, profileOptions, properties, this);
                 if (!IsSupportedProfileType(profile.ProfileType))
                 {
                     throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture,
@@ -210,9 +221,9 @@ namespace Amazon.Runtime.Internal
         /// If there are identically named properties in both files, the properties in the credentials file take precedence.
         /// </summary>
         /// <param name="sectionName"></param>
-        /// <param name="properties"></param>
+        /// <param name="iniProperties"></param>
         /// <returns></returns>
-        private bool TryGetSection(string sectionName, out Dictionary<string, string> properties)
+        private bool TryGetSection(string sectionName, out Dictionary<string, string> iniProperties)
         {
             Dictionary<string, string> credentialsProperties = null;
             Dictionary<string, string> configProperties = null;
@@ -225,7 +236,7 @@ namespace Amazon.Runtime.Internal
 
             if (hasConfigProperties.GetValueOrDefault())
             {
-                properties = configProperties;
+                iniProperties = configProperties;
                 if (hasCredentialsProperties)
                 {
                     // Add all the properties from the credentials file.
@@ -234,14 +245,14 @@ namespace Amazon.Runtime.Internal
                     // the config file.
                     foreach (var pair in credentialsProperties)
                     {
-                        properties[pair.Key] = pair.Value;
+                        iniProperties[pair.Key] = pair.Value;
                     }
                 }
                 return true;
             }
             else
             {
-                properties = credentialsProperties;
+                iniProperties = credentialsProperties;
                 return hasCredentialsProperties;
             }
         }

@@ -81,10 +81,11 @@ namespace Amazon.Runtime.Internal.Util
         /// Update the section with the properties given.
         /// If the section doesn't exist, it will be appended to the file.
         ///
-        /// -Any properties that do exist in the section will be updated.
-        /// -A null value for a property denotes that it should be deleted from the section
-        /// -If any properties don't exist they will be appended to the end of the section
+        /// - Any properties that do exist in the section will be updated.
+        /// - A null value for a property denotes that it should be deleted from the section
+        /// - If any properties don't exist they will be appended to the end of the section
         /// in the same order they appear in the list.
+        /// - Any existing properties not in the list will be deleted.
         /// </summary>
         /// <param name="sectionName">name of the section to operate on</param>
         /// <param name="properties">ordered list of properties to add/update/delete</param>
@@ -127,6 +128,13 @@ namespace Amazon.Runtime.Internal.Util
                         }
                         propertiesLookup.Remove(propertyName);
                     }
+                    else
+                    {
+                        // delete the line
+                        Lines.RemoveAt(lineNumber);
+                        propertyDeleted = true;
+                    }
+
                     if (!propertyDeleted)
                     {
                         lineNumber++;
@@ -134,7 +142,7 @@ namespace Amazon.Runtime.Internal.Util
                 }
                 foreach (var pair in properties)
                 {
-                    if (propertiesLookup.ContainsKey(pair.Key))
+                    if (propertiesLookup.ContainsKey(pair.Key) && propertiesLookup[pair.Key] != null)
                     {
                         Lines.Insert(lineNumber++, pair.Key + keyValueSeparator + pair.Value);
                     }

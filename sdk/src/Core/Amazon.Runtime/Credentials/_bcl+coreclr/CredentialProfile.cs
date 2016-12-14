@@ -17,7 +17,7 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
+using System.Linq;
 
 namespace Amazon.Runtime
 {
@@ -35,6 +35,11 @@ namespace Amazon.Runtime
         /// The options to be used to create AWSCredentials.
         /// </summary>
         public CredentialProfileOptions Options { get; private set; }
+
+        /// <summary>
+        /// An optional dictionary of name-value pairs stored with the CredentialProfile
+        /// </summary>
+        internal Dictionary<string, string> Properties { get; private set; }
 
         /// <summary>
         /// True if the properties of the Options object can be converted into AWSCredentials, false otherwise.
@@ -84,6 +89,18 @@ namespace Amazon.Runtime
         /// <param name="profileOptions"></param>
         /// <param name="profileStore"></param>
         internal CredentialProfile(string name, CredentialProfileOptions profileOptions, ICredentialProfileStore profileStore)
+            : this(name, profileOptions, new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase), profileStore)
+        {
+        }
+
+        /// <summary>
+        /// Construct a new CredentialProfile.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="profileOptions"></param>
+        /// <param name="properties"></param>
+        /// <param name="profileStore"></param>
+        internal CredentialProfile(string name, CredentialProfileOptions profileOptions, Dictionary<string, string> properties, ICredentialProfileStore profileStore)
         {
             if (string.IsNullOrEmpty(name))
             {
@@ -98,9 +115,13 @@ namespace Amazon.Runtime
                 throw new ArgumentNullException("profileStore");
             }
 
+            if (properties == null)
+                properties = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+
             Name = name;
             Options = profileOptions;
             ProfileStore = profileStore;
+            Properties = properties;
         }
 
         /// <summary>
@@ -137,10 +158,16 @@ namespace Amazon.Runtime
             return AWSCredentialsFactory.GetAWSCredentials(this, nonCallbackOnly);
         }
 
+        private string GetPropertiesString()
+        {
+            return "{" + string.Join(",", Properties.OrderBy(p=>p.Key).Select(p => p.Key + "=" + p.Value).ToArray()) + "}";
+        }
+
         public override string ToString()
         {
             return "[Name=" + Name + "," +
                 "Options = " + Options + "," +
+                "Properties = " + GetPropertiesString() + "," +
                 "ProfileType = " + ProfileType + "," +
                 "CanCreateAWSCredentials = " + CanCreateAWSCredentials + "]";
         }
@@ -156,12 +183,13 @@ namespace Amazon.Runtime
 
             return AWSSDKUtils.AreEqual(
                 new object[] { Name, Options, ProfileType, CanCreateAWSCredentials },
-                new object[] { p.Name, p.Options, p.ProfileType, p.CanCreateAWSCredentials });
+                new object[] { p.Name, p.Options, p.ProfileType, p.CanCreateAWSCredentials }) &&
+                AWSSDKUtils.DictionariesAreEqual(Properties, p.Properties);
         }
 
         public override int GetHashCode()
         {
-            return Hashing.Hash(Name, Options, ProfileType, CanCreateAWSCredentials);
+            return Hashing.Hash(Name, Options, ProfileType, CanCreateAWSCredentials, GetPropertiesString());
         }
     }
 }

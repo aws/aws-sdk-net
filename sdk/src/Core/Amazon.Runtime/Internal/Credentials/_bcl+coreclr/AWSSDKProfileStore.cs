@@ -34,9 +34,15 @@ namespace Amazon.Runtime.Internal
         private const string AWSCredentialsProfileType = "AWS";
         private const string SAMLRoleProfileType = "SAML";
 
+        private static readonly HashSet<string> InvalidPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        {
+            SettingsConstants.DisplayNameField,
+            SettingsConstants.ProfileTypeField
+        };
+
         private static readonly CredentialProfilePropertyMapping PropertyMapping =
             new CredentialProfilePropertyMapping(
-                new Dictionary<string, string>()
+                new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
                 {
                     { "AccessKey", SettingsConstants.AccessKeyField },
 #if BCL
@@ -93,7 +99,11 @@ namespace Amazon.Runtime.Internal
             {
                 try
                 {
-                    profile = new CredentialProfile(profileName, PropertyMapping.Convert(properties), this);
+                    var profileOptions = PropertyMapping.ExtractCredentialProfileOptions(properties);
+                    FilterOutReservedNames(properties);
+                    // properties now contains "leftover properties" that aren't part of profileOptions
+
+                    profile = new CredentialProfile(profileName, profileOptions, properties, this);
                     return true;
                 }
                 catch (ArgumentException)
@@ -117,19 +127,61 @@ namespace Amazon.Runtime.Internal
         {
             if (profile.CanCreateAWSCredentials)
             {
-                var properties = new Dictionary<string, string>();
-                SetProfileTypeField(properties, profile.ProfileType.Value);
+                ValidateProperties(profile.Properties);
+
+                var allProperties = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+
+                // set profile type field for backward compatibility
+                SetProfileTypeField(allProperties, profile.ProfileType.Value);
+
+                // add entries for Options properties
                 foreach (var pair in PropertyMapping.Convert(profile.Options))
                 {
-                    properties[pair.Key] = pair.Value;
+                    allProperties[pair.Key] = pair.Value;
                 }
-                objectManager.RegisterObject(profile.Name, properties);
+
+                // add entries for properties in profile.Properties dictionary
+                foreach (var pair in profile.Properties)
+                {
+                    allProperties[pair.Key] = pair.Value;
+                }
+
+                objectManager.RegisterObject(profile.Name, allProperties);
             }
             else
             {
                 throw new ArgumentException(String.Format(CultureInfo.InvariantCulture,
                     "Unable to register profile {0}.  The CredentialProfile provided is not a valid profile.", profile.Name));
             }
+        }
+
+        private static void FilterOutReservedNames(Dictionary<string, string> properties)
+        {
+            var keys = new List<string>(properties.Keys);
+            foreach (var key in keys)
+            {
+                if (InvalidPropertyNames.Contains(key))
+                    properties.Remove(key);
+            }
+        }
+
+        private static void ValidateProperties(Dictionary<string, string> properties)
+        {
+            // make sure the profile property keys aren't reserved for profile options
+            PropertyMapping.ValidateNoProfileOptionsProperties(properties);
+
+            List<string> invalidKeys = new List<string>();
+            foreach (var key in InvalidPropertyNames)
+            {
+                if (properties.Keys.Contains(key, StringComparer.OrdinalIgnoreCase))
+                {
+                    invalidKeys.Add(key);
+                }
+            }
+
+            if (invalidKeys.Count > 0)
+                throw new ArgumentException("The profile properties cannot contain reserved names as keys: " +
+                    string.Join(" or ",invalidKeys.ToArray()));
         }
 
         /// <summary>
