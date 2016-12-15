@@ -268,6 +268,8 @@
 		<Exec Command="&quot;$(SDKToolingExe)&quot; restore" 
 			WorkingDirectory="..\extensions"/>		
 			
+		<Exec Command="&quot;$(SDKToolingExe)&quot; build -c $(Configuration)" 
+			WorkingDirectory="..\extensions\test\NETCore.SetupTests"/>		
 			
 		<Message Text="Build and Test .NET Core Setup Extension"/>
         <MSBuild
