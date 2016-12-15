@@ -1,21 +1,16 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Amazon;
 using Amazon.Runtime;
-using System.IO;
-using AWSSDK_DotNet35.UnitTests;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Model.Internal.MarshallTransformations;
-using Amazon.Runtime.Internal.Util;
-using System.Threading;
+using System;
 using System.Net;
-using Amazon.Runtime.Internal.Auth;
-using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Transform;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests
 {
@@ -34,7 +29,10 @@ namespace AWSSDK.UnitTests
                 OriginalRequest = putObjectRequest,
                 Request = new PutObjectRequestMarshaller().Marshall(putObjectRequest),
                 Unmarshaller = PutObjectResponseUnmarshaller.Instance,
-                ClientConfig = new AmazonS3Config()
+                ClientConfig = new AmazonS3Config
+                {
+                    RegionEndpoint = RegionEndpoint.USEast1
+                }
             };
             requestContext.Request.Endpoint = new Uri("https://s3.amazonaws.com");
 

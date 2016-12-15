@@ -130,7 +130,7 @@ namespace SDKDocGenerator.Writers
 
                 writer.WriteLine("<td>");
 
-                    var docs = NDocUtilities.FindDocumentation(this._currentNDoc, info);
+                    var docs = NDocUtilities.FindDocumentation(NDocUtilities.GetDocumentationInstance(info.DocId), info);
                     var html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.AssemblyWrapper, this._version);
 
                     writer.WriteLine(html);

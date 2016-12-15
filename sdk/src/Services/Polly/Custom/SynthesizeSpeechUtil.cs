@@ -121,7 +121,7 @@ namespace Amazon.Polly
 
             var authorization = "&" + signingResult.ForQueryParameters;
 
-            return ComposeUrl(iRequest) + authorization;
+            return ComposeUrl(iRequest).AbsoluteUri + authorization;
         }
 
         /// <summary>
@@ -263,7 +263,7 @@ namespace Amazon.Polly
                 if (request.Headers.ContainsKey(HeaderKeys.XAmzContentSha256Header))
                     request.Headers.Remove(HeaderKeys.XAmzContentSha256Header);
 
-                var sortedHeaders = SortHeaders(request.Headers);
+                var sortedHeaders = SortAndPruneHeaders(request.Headers);
                 var canonicalizedHeaderNames = CanonicalizeHeaderNames(sortedHeaders);
 
                 var parametersToCanonicalize = GetParametersToCanonicalize(request);

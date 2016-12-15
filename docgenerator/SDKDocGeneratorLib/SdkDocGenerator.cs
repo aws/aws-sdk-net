@@ -84,12 +84,35 @@ namespace SDKDocGenerator
             // service manifests to process
             var manifests = ConstructGenerationManifests();
 
-            // and process them to produce the doc set
-            Info("Processing manifests...");
+            // We want to aggregate all types(such as AmazonS3Config) under Amazon namespace before generating docs for Core.
+            // Currently, the doc generator will stomp over files with conflicting namespaces across dll.  If we encounter manifest
+            // for Core, stash all its types and process it last.
+            List<string> namespacesToIgnore = 
+                new List<string> {
+                    "Amazon",
+                    "Amazon.Util",
+                    "Amazon.Runtime",
+                    "Amazon.Runtime.SharedInterfaces"
+                };
+            GenerationManifest coreManifest = null;
+            PartialTypeProvider additionalTypeProvider = new PartialTypeProvider(null);
             foreach (var m in manifests)
             {
-                m.Generate();
+                if (m.ServiceName.Equals("Core", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    coreManifest = m;
+                    continue;
+                }
+
+                m.Generate(namespacesToIgnore);
+
+                foreach(var namespaceName in namespacesToIgnore)
+                {
+                    additionalTypeProvider.ProcessTypes(m.AssemblyWrapper.GetTypesForNamespace(namespaceName));
+                }
             }
+            coreManifest.AssemblyWrapper.SetSecondaryTypeProvider(additionalTypeProvider);
+            coreManifest.Generate(null);
 
             // finish up by outputting/updating the TOC and emitting the static doc framework content if requested
             // we try and generate the toc based on the .Net 4.5 platform by preference, falling back as necessary

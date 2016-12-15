@@ -16,7 +16,7 @@ namespace SDKDocGenerator.UnitTests
         public void GenericReturnMethod()
         {
             var methodInfo = typeof(TestMethods).GetMethod("Query", new Type[] { typeof(string) });
-            var signature = NDocUtilities.DetermineNDocNameLookupSignature(methodInfo);
+            var signature = NDocUtilities.DetermineNDocNameLookupSignature(methodInfo, "");
             Assert.Equal("M:SDKDocGenerator.UnitTests.TestMethods.Query``1(System.String)", signature);
         }
 
@@ -24,7 +24,7 @@ namespace SDKDocGenerator.UnitTests
         public void CollectionTestMethod()
         {
             var methodInfo = typeof(TestMethods).GetMethods().First(x => x.Name == "CollectionTest");
-            var signature = NDocUtilities.DetermineNDocNameLookupSignature(methodInfo);
+            var signature = NDocUtilities.DetermineNDocNameLookupSignature(methodInfo, "");
             Assert.Equal(
                 "M:SDKDocGenerator.UnitTests.TestMethods.CollectionTest(System.Collections.Generic.IList{System.Collections.Generic.IDictionary{System.String,SDKDocGenerator.UnitTests.TestMethods}})",
                 signature);
@@ -34,7 +34,7 @@ namespace SDKDocGenerator.UnitTests
         public void MultiOutTestMethod()
         {
             var methodInfo = typeof(TestMethods).GetMethods().First(x => x.Name == "MultiOutTest");
-            var signature = NDocUtilities.DetermineNDocNameLookupSignature(methodInfo);
+            var signature = NDocUtilities.DetermineNDocNameLookupSignature(methodInfo, "");
             Assert.Equal(
                 "M:SDKDocGenerator.UnitTests.TestMethods.MultiOutTest(System.Int32@,System.String@)",
                 signature);
@@ -44,7 +44,7 @@ namespace SDKDocGenerator.UnitTests
         public void CollectionOutTestMethod()
         {
             var methodInfo = typeof(TestMethods).GetMethods().First(x => x.Name == "CollectionOutTest");
-            var signature = NDocUtilities.DetermineNDocNameLookupSignature(methodInfo);
+            var signature = NDocUtilities.DetermineNDocNameLookupSignature(methodInfo, "");
             Assert.Equal(
                 "M:SDKDocGenerator.UnitTests.TestMethods.CollectionOutTest(System.Collections.Generic.IList{System.String}@)",
                 signature);

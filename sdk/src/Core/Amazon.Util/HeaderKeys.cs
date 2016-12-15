@@ -90,5 +90,6 @@ namespace Amazon.Util
         public const string XAmzUserAgentHeader = "x-amz-user-agent";
         public const string XAmzAbortDateHeader = "x-amz-abort-date";
         public const string XAmzAbortRuleIdHeader = "x-amz-abort-rule-id";
+        public const string XAmznTraceIdHeader = " x-amzn-trace-id";
     }
 }

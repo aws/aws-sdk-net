@@ -13,7 +13,6 @@ namespace SDKDocGenerator.Writers
     public abstract class BaseWriter
     {
         protected FrameworkVersion _version;
-        protected IDictionary<string, XElement> _currentNDoc;
         protected bool _unityVersionOfAsyncExists = false;
         protected bool _referAsyncAlternativeUnity = false;
         protected bool _referAsyncAlternativePCL = false;
@@ -55,12 +54,18 @@ namespace SDKDocGenerator.Writers
                     + "Click <a href=\"https://{0}/en_us/aws/latest/userguide/services.html\">Getting Started with Amazon AWS</a> to see specific differences applicable to the China (Beijing) Region.";
 
         public GenerationManifest Artifacts { get; private set; }
+        public AbstractTypeProvider TypeProvider { get; private set; }
 
-        protected BaseWriter(GenerationManifest artifacts, FrameworkVersion version)
+        protected BaseWriter(GenerationManifest artifacts, AbstractTypeProvider typeProvider, FrameworkVersion version)
         {
             Artifacts = artifacts;
+            TypeProvider = typeProvider;
             _version = version;
-            _currentNDoc = this.Artifacts.NDocForPlatform(); // yields the default platform ndoc
+        }
+
+        protected BaseWriter(GenerationManifest artifacts, FrameworkVersion version)
+            : this(artifacts, artifacts.AssemblyWrapper, version)
+        {
         }
 
         public string BJSRegionDisclaimer
@@ -431,7 +436,7 @@ namespace SDKDocGenerator.Writers
             var element = GetSummaryDocumentation();
             if (element != null)
             {
-                var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, "summary", Artifacts.AssemblyWrapper, this._version);
+                var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, "summary", TypeProvider, this._version);
                 writer.WriteLine(htmlDocs);
 
                 AddSummaryNotes(writer);
@@ -445,7 +450,7 @@ namespace SDKDocGenerator.Writers
             var element = GetSummaryDocumentation();
             if (element != null)
             {
-                var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, "remarks", Artifacts.AssemblyWrapper, this._version);
+                var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, "remarks", TypeProvider, this._version);
                 if (string.IsNullOrEmpty(htmlDocs))
                     return;
 
@@ -460,7 +465,7 @@ namespace SDKDocGenerator.Writers
             var element = GetSummaryDocumentation();
             if (element != null)
             {
-                var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, "example", Artifacts.AssemblyWrapper, this._version);
+                var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, "example", TypeProvider, this._version);
                 if (string.IsNullOrEmpty(htmlDocs))
                     return;
 
@@ -574,11 +579,11 @@ namespace SDKDocGenerator.Writers
 
         public void WriteCrossReferenceTagReplacement(TextWriter writer, string typeName)
         {
-            var replacement = CreateCrossReferenceTagReplacement(Artifacts.AssemblyWrapper, typeName, this._version);
+            var replacement = CreateCrossReferenceTagReplacement(TypeProvider, typeName, this._version);
             writer.Write(replacement);
         }
 
-        public static string CreateCrossReferenceTagReplacement(AssemblyWrapper assembly, string crefTypeName, FrameworkVersion version)
+        public static string CreateCrossReferenceTagReplacement(AbstractTypeProvider typeProvider, string crefTypeName, FrameworkVersion version)
         {
             const string amazonNamespaceRoot = "Amazon.";
 
@@ -591,7 +596,7 @@ namespace SDKDocGenerator.Writers
             else
                 typeName = crefTypeName;
 
-            var typeWrapper = assembly.GetType(typeName);
+            var typeWrapper = typeProvider.GetType(typeName);
 
             if (typeWrapper != null)
                 url = string.Format("./{0}", FilenameGenerator.GenerateFilename(typeWrapper));

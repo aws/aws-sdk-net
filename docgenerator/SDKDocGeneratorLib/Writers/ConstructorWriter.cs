@@ -59,7 +59,7 @@ namespace SDKDocGenerator.Writers
 
         protected override XElement GetSummaryDocumentation()
         {
-            var element = NDocUtilities.FindDocumentation(this._currentNDoc, this._constructorInfo);
+            var element = NDocUtilities.FindDocumentation(this._constructorInfo);
             return element;
         }
 
