@@ -121,7 +121,7 @@ namespace Amazon.Polly
 
             var authorization = "&" + signingResult.ForQueryParameters;
 
-            return ComposeUrl(iRequest) + authorization;
+            return ComposeUrl(iRequest).AbsoluteUri + authorization;
         }
 
         /// <summary>
