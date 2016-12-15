@@ -39,8 +39,20 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SourceLocation. 
         /// <para>
-        /// The repository name and commit ID, separated by a forward slash. For example, <code>my-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.
+        /// The location of the source code, as a formatted string, depending on the value of
+        /// <code>SourceRepository</code> 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <code>CodeCommit</code>, the format is the repository name and commit ID, separated
+        /// by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>S3</code>, the format is the S3 bucket name and object key, separated by
+        /// a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string SourceLocation
         {
@@ -57,8 +69,17 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SourceRepository. 
         /// <para>
-        /// Location where the repository is stored, such as <code>CodeCommit</code>.
+        /// Location where the repository is stored.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>CodeCommit</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>S3</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public SourceRepository SourceRepository
         {
@@ -75,8 +96,17 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        /// The type of repository, such as <code>Git</code>.
+        /// The type of repository.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Git</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Zip</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public SourceType SourceType
         {

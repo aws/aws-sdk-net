@@ -29,8 +29,27 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApplicationVersion operation.
-    /// Creates an application version for the specified application.
+    /// Creates an application version for the specified application. You can create an application
+    /// version from a source bundle in Amazon S3, a commit in AWS CodeCommit, or the output
+    /// of an AWS CodeBuild build as follows:
     /// 
+    ///  
+    /// <para>
+    /// Specify a commit in an AWS CodeCommit repository with <code>SourceBuildInformation</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Specify a build in an AWS CodeBuild with <code>SourceBuildInformation</code> and <code>BuildConfiguration</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Specify a source bundle in S3 with <code>SourceBundle</code> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Omit both <code>SourceBuildInformation</code> and <code>SourceBundle</code> to use
+    /// the default sample application.
+    /// </para>
     ///  <note> 
     /// <para>
     /// Once you create an application version with a specified Amazon S3 bucket and key location,
@@ -106,7 +125,10 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BuildConfiguration.
+        /// Gets and sets the property BuildConfiguration. 
+        /// <para>
+        /// Settings for an AWS CodeBuild build.
+        /// </para>
         /// </summary>
         public BuildConfiguration BuildConfiguration
         {
@@ -164,12 +186,6 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Specify a commit in an AWS CodeCommit Git repository to use as the source code for
         /// the application version.
         /// </para>
-        ///  
-        /// <para>
-        /// Specify a commit in an AWS CodeCommit repository or a source bundle in S3 (with <code>SourceBundle</code>),
-        /// but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code>
-        /// are provided, Elastic Beanstalk uses a sample application.
-        /// </para>
         /// </summary>
         public SourceBuildInformation SourceBuildInformation
         {
@@ -189,7 +205,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The Amazon S3 bucket and key that identify the location of the source bundle for this
         /// version.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The Amazon S3 bucket must be in the same region as the environment.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>),
         /// but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code>

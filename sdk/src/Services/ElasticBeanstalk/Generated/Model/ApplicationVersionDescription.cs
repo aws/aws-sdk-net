@@ -66,7 +66,10 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BuildArn.
+        /// Gets and sets the property BuildArn. 
+        /// <para>
+        /// Reference to the artifact from the AWS CodeBuild build.
+        /// </para>
         /// </summary>
         public string BuildArn
         {

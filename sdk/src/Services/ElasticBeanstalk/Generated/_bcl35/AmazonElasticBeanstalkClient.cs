@@ -525,8 +525,27 @@ namespace Amazon.ElasticBeanstalk
         #region  CreateApplicationVersion
 
         /// <summary>
-        /// Creates an application version for the specified application.
+        /// Creates an application version for the specified application. You can create an application
+        /// version from a source bundle in Amazon S3, a commit in AWS CodeCommit, or the output
+        /// of an AWS CodeBuild build as follows:
         /// 
+        ///  
+        /// <para>
+        /// Specify a commit in an AWS CodeCommit repository with <code>SourceBuildInformation</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify a build in an AWS CodeBuild with <code>SourceBuildInformation</code> and <code>BuildConfiguration</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify a source bundle in S3 with <code>SourceBundle</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Omit both <code>SourceBuildInformation</code> and <code>SourceBundle</code> to use
+        /// the default sample application.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Once you create an application version with a specified Amazon S3 bucket and key location,
@@ -540,13 +559,28 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.CodeBuildNotInServiceRegionException">
-        /// The CodeBuild service is not supported in this region.
+        /// AWS CodeBuild is not available in the specified region.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
         /// The specified account does not have sufficient privileges for one of more AWS services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.S3LocationNotInServiceRegionException">
         /// The specified S3 bucket does not belong to the S3 region in which the service is running.
+        /// The following regions are supported:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// IAD/us-east-1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PDX/us-west-2
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DUB/eu-west-1
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyApplicationsException">
         /// The specified account has reached its limit of applications.
@@ -903,6 +937,21 @@ namespace Amazon.ElasticBeanstalk
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.S3LocationNotInServiceRegionException">
         /// The specified S3 bucket does not belong to the S3 region in which the service is running.
+        /// The following regions are supported:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// IAD/us-east-1
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PDX/us-west-2
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DUB/eu-west-1
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.SourceBundleDeletionException">
         /// Unable to delete the Amazon S3 source bundle associated with the application version.
