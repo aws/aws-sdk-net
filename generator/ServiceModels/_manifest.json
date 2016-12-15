@@ -150,6 +150,16 @@
         {
             "active": true,
 
+            "model": "batch",
+            "base-name": "Batch",
+            "region-lookup-name": "batch",
+            "authentication-service-name": "batch",
+            "service-url": "https://batch.us-east-1.amazonaws.com",
+            "synopsis" : "AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS. "
+        },
+        {
+            "active": true,
+
             "model": "budgets",
             "base-name": "Budgets",
             "region-lookup-name": "budgets",

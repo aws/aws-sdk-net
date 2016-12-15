@@ -98,6 +98,10 @@
       <Project>{7AFB6468-FE81-4A38-8446-3DFF539B2CFC}</Project>
       <Name>AWSSDK.AWSSupport.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\Batch\AWSSDK.Batch.Net45.csproj">
+      <Project>{76828732-E8E2-4362-8C1C-E05F95BC91A5}</Project>
+      <Name>AWSSDK.Batch.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\Budgets\AWSSDK.Budgets.Net45.csproj">
       <Project>{ECBD6D41-B42A-45EC-8D11-A6A4952BA235}</Project>
       <Name>AWSSDK.Budgets.Net45</Name>
