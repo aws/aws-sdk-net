@@ -127,6 +127,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ServerName);
                 }
 
+                if(publicRequest.IsSetServiceAccessRoleArn())
+                {
+                    context.Writer.WritePropertyName("ServiceAccessRoleArn");
+                    context.Writer.Write(publicRequest.ServiceAccessRoleArn);
+                }
+
                 if(publicRequest.IsSetSslMode())
                 {
                     context.Writer.WritePropertyName("SslMode");

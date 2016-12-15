@@ -43,6 +43,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private ReplicationTaskStats _replicationTaskStats;
         private string _sourceEndpointArn;
         private string _status;
+        private string _stopReason;
         private string _tableMappings;
         private string _targetEndpointArn;
 
@@ -259,6 +260,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StopReason. 
+        /// <para>
+        /// The reason the replication task was stopped.
+        /// </para>
+        /// </summary>
+        public string StopReason
+        {
+            get { return this._stopReason; }
+            set { this._stopReason = value; }
+        }
+
+        // Check to see if StopReason property is set
+        internal bool IsSetStopReason()
+        {
+            return this._stopReason != null;
         }
 
         /// <summary>

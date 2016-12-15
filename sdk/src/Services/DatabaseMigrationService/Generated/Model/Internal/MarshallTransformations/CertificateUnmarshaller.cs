@@ -94,6 +94,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.CertificatePem = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CertificateWallet", targetDepth))
+                {
+                    var unmarshaller = MemoryStreamUnmarshaller.Instance;
+                    unmarshalledObject.CertificateWallet = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KeyLength", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -38,6 +38,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _certificateIdentifier;
         private string _certificateOwner;
         private string _certificatePem;
+        private MemoryStream _certificateWallet;
         private int? _keyLength;
         private string _signingAlgorithm;
         private DateTime? _validFromDate;
@@ -64,7 +65,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CertificateCreationDate. 
         /// <para>
-        /// the date the certificate was created.
+        /// The date that the certificate was created.
         /// </para>
         /// </summary>
         public DateTime CertificateCreationDate
@@ -82,7 +83,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CertificateIdentifier. 
         /// <para>
-        /// The customer-assigned name of the certificate. Valid characters are [A-z_0-9].
+        /// The customer-assigned name of the certificate. Valid characters are A-z and 0-9.
         /// </para>
         /// </summary>
         public string CertificateIdentifier
@@ -118,7 +119,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CertificatePem. 
         /// <para>
-        /// The contents of the .pem X.509 certificate file.
+        /// The contents of the .pem X.509 certificate file for the certificate.
         /// </para>
         /// </summary>
         public string CertificatePem
@@ -131,6 +132,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetCertificatePem()
         {
             return this._certificatePem != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateWallet. 
+        /// <para>
+        /// The location of the imported Oracle Wallet certificate for use with SSL.
+        /// </para>
+        /// </summary>
+        public MemoryStream CertificateWallet
+        {
+            get { return this._certificateWallet; }
+            set { this._certificateWallet = value; }
+        }
+
+        // Check to see if CertificateWallet property is set
+        internal bool IsSetCertificateWallet()
+        {
+            return this._certificateWallet != null;
         }
 
         /// <summary>
@@ -172,7 +191,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ValidFromDate. 
         /// <para>
-        /// The beginning date the certificate is valid.
+        /// The beginning date that the certificate is valid.
         /// </para>
         /// </summary>
         public DateTime ValidFromDate
@@ -190,7 +209,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ValidToDate. 
         /// <para>
-        /// the final date the certificate is valid.
+        /// The final date that the certificate is valid.
         /// </para>
         /// </summary>
         public DateTime ValidToDate

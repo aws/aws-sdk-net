@@ -43,6 +43,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _password;
         private int? _port;
         private string _serverName;
+        private string _serviceAccessRoleArn;
         private DmsSslModeValue _sslMode;
         private List<Tag> _tags = new List<Tag>();
         private string _username;
@@ -125,7 +126,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property EngineName. 
         /// <para>
         /// The type of engine for the endpoint. Valid values include MYSQL, ORACLE, POSTGRES,
-        /// MARIADB, AURORA, REDSHIFT, and SQLSERVER.
+        /// MARIADB, AURORA, REDSHIFT, SYBASE, and SQLSERVER.
         /// </para>
         /// </summary>
         public string EngineName
@@ -231,6 +232,21 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServerName()
         {
             return this._serverName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceAccessRoleArn.
+        /// </summary>
+        public string ServiceAccessRoleArn
+        {
+            get { return this._serviceAccessRoleArn; }
+            set { this._serviceAccessRoleArn = value; }
+        }
+
+        // Check to see if ServiceAccessRoleArn property is set
+        internal bool IsSetServiceAccessRoleArn()
+        {
+            return this._serviceAccessRoleArn != null;
         }
 
         /// <summary>

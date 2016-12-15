@@ -28,20 +28,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateReplicationTask operation.
-    /// Creates a replication task using the specified parameters.
+    /// Container for the parameters to the ModifyReplicationTask operation.
+    /// Modifies the specified replication task.
+    /// 
+    ///  
+    /// <para>
+    /// You can't modify the task endpoints. The task must be stopped before you can modify
+    /// it. 
+    /// </para>
     /// </summary>
-    public partial class CreateReplicationTaskRequest : AmazonDatabaseMigrationServiceRequest
+    public partial class ModifyReplicationTaskRequest : AmazonDatabaseMigrationServiceRequest
     {
         private DateTime? _cdcStartTime;
         private MigrationTypeValue _migrationType;
-        private string _replicationInstanceArn;
+        private string _replicationTaskArn;
         private string _replicationTaskIdentifier;
         private string _replicationTaskSettings;
-        private string _sourceEndpointArn;
         private string _tableMappings;
-        private List<Tag> _tags = new List<Tag>();
-        private string _targetEndpointArn;
 
         /// <summary>
         /// Gets and sets the property CdcStartTime. 
@@ -66,6 +69,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// The migration type.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values: full-load | cdc | full-load-and-cdc
+        /// </para>
         /// </summary>
         public MigrationTypeValue MigrationType
         {
@@ -80,21 +87,21 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReplicationInstanceArn. 
+        /// Gets and sets the property ReplicationTaskArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the replication instance.
+        /// The Amazon Resource Name (ARN) of the replication task.
         /// </para>
         /// </summary>
-        public string ReplicationInstanceArn
+        public string ReplicationTaskArn
         {
-            get { return this._replicationInstanceArn; }
-            set { this._replicationInstanceArn = value; }
+            get { return this._replicationTaskArn; }
+            set { this._replicationTaskArn = value; }
         }
 
-        // Check to see if ReplicationInstanceArn property is set
-        internal bool IsSetReplicationInstanceArn()
+        // Check to see if ReplicationTaskArn property is set
+        internal bool IsSetReplicationTaskArn()
         {
-            return this._replicationInstanceArn != null;
+            return this._replicationTaskArn != null;
         }
 
         /// <summary>
@@ -135,9 +142,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationTaskSettings. 
         /// <para>
-        /// Settings for the task, such as target metadata settings. For a complete list of task
-        /// settings, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-        /// Settings for AWS Database Migration Service Tasks</a>.
+        /// JSON file that contains settings for the task, such as target metadata settings.
         /// </para>
         /// </summary>
         public string ReplicationTaskSettings
@@ -150,24 +155,6 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetReplicationTaskSettings()
         {
             return this._replicationTaskSettings != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SourceEndpointArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
-        /// </para>
-        /// </summary>
-        public string SourceEndpointArn
-        {
-            get { return this._sourceEndpointArn; }
-            set { this._sourceEndpointArn = value; }
-        }
-
-        // Check to see if SourceEndpointArn property is set
-        internal bool IsSetSourceEndpointArn()
-        {
-            return this._sourceEndpointArn != null;
         }
 
         /// <summary>
@@ -191,42 +178,6 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetTableMappings()
         {
             return this._tableMappings != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// Tags to be added to the replication instance.
-        /// </para>
-        /// </summary>
-        public List<Tag> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && this._tags.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property TargetEndpointArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
-        /// </para>
-        /// </summary>
-        public string TargetEndpointArn
-        {
-            get { return this._targetEndpointArn; }
-            set { this._targetEndpointArn = value; }
-        }
-
-        // Check to see if TargetEndpointArn property is set
-        internal bool IsSetTargetEndpointArn()
-        {
-            return this._targetEndpointArn != null;
         }
 
     }

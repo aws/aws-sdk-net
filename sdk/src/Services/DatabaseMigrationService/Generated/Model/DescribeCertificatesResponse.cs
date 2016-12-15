@@ -38,7 +38,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// The SSL certificates associated with the replication instance.
+        /// The Secure Sockets Layer (SSL) certificates associated with the replication instance.
         /// </para>
         /// </summary>
         public List<Certificate> Certificates

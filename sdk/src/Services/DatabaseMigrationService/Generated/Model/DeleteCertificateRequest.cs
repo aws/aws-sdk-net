@@ -38,7 +38,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// the Amazon Resource Name (ARN) of the deleted certificate.
+        /// The Amazon Resource Name (ARN) of the deleted certificate.
         /// </para>
         /// </summary>
         public string CertificateArn

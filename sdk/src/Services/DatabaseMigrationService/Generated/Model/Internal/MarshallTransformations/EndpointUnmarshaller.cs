@@ -124,6 +124,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ServerName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ServiceAccessRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ServiceAccessRoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SslMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

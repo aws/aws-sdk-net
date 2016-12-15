@@ -42,6 +42,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _kmsKeyId;
         private int? _port;
         private string _serverName;
+        private string _serviceAccessRoleArn;
         private DmsSslModeValue _sslMode;
         private string _status;
         private string _username;
@@ -141,7 +142,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The database engine name.
+        /// The database engine name. Valid values include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA,
+        /// REDSHIFT, SYBASE, and SQLSERVER.
         /// </para>
         /// </summary>
         public string EngineName
@@ -229,6 +231,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServerName()
         {
             return this._serverName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceAccessRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) used by the service access IAM role.
+        /// </para>
+        /// </summary>
+        public string ServiceAccessRoleArn
+        {
+            get { return this._serviceAccessRoleArn; }
+            set { this._serviceAccessRoleArn = value; }
+        }
+
+        // Check to see if ServiceAccessRoleArn property is set
+        internal bool IsSetServiceAccessRoleArn()
+        {
+            return this._serviceAccessRoleArn != null;
         }
 
         /// <summary>

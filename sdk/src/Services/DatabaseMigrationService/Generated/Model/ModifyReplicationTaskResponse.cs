@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteCertificate operation.
+    /// 
     /// </summary>
-    public partial class DeleteCertificateResponse : AmazonWebServiceResponse
+    public partial class ModifyReplicationTaskResponse : AmazonWebServiceResponse
     {
-        private Certificate _certificate;
+        private ReplicationTask _replicationTask;
 
         /// <summary>
-        /// Gets and sets the property Certificate. 
+        /// Gets and sets the property ReplicationTask. 
         /// <para>
-        /// The Secure Sockets Layer (SSL) certificate.
+        /// The replication task that was modified.
         /// </para>
         /// </summary>
-        public Certificate Certificate
+        public ReplicationTask ReplicationTask
         {
-            get { return this._certificate; }
-            set { this._certificate = value; }
+            get { return this._replicationTask; }
+            set { this._replicationTask = value; }
         }
 
-        // Check to see if Certificate property is set
-        internal bool IsSetCertificate()
+        // Check to see if ReplicationTask property is set
+        internal bool IsSetReplicationTask()
         {
-            return this._certificate != null;
+            return this._replicationTask != null;
         }
 
     }

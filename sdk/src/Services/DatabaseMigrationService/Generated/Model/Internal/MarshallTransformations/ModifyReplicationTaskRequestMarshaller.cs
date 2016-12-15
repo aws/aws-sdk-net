@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ImportCertificate Request Marshaller
+    /// ModifyReplicationTask Request Marshaller
     /// </summary>       
-    public class ImportCertificateRequestMarshaller : IMarshaller<IRequest, ImportCertificateRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ModifyReplicationTaskRequestMarshaller : IMarshaller<IRequest, ModifyReplicationTaskRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ImportCertificateRequest)input);
+            return this.Marshall((ModifyReplicationTaskRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ImportCertificateRequest publicRequest)
+        public IRequest Marshall(ModifyReplicationTaskRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DatabaseMigrationService");
-            string target = "AmazonDMSv20160101.ImportCertificate";
+            string target = "AmazonDMSv20160101.ModifyReplicationTask";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,22 +67,40 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCertificateIdentifier())
+                if(publicRequest.IsSetCdcStartTime())
                 {
-                    context.Writer.WritePropertyName("CertificateIdentifier");
-                    context.Writer.Write(publicRequest.CertificateIdentifier);
+                    context.Writer.WritePropertyName("CdcStartTime");
+                    context.Writer.Write(publicRequest.CdcStartTime);
                 }
 
-                if(publicRequest.IsSetCertificatePem())
+                if(publicRequest.IsSetMigrationType())
                 {
-                    context.Writer.WritePropertyName("CertificatePem");
-                    context.Writer.Write(publicRequest.CertificatePem);
+                    context.Writer.WritePropertyName("MigrationType");
+                    context.Writer.Write(publicRequest.MigrationType);
                 }
 
-                if(publicRequest.IsSetCertificateWallet())
+                if(publicRequest.IsSetReplicationTaskArn())
                 {
-                    context.Writer.WritePropertyName("CertificateWallet");
-                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.CertificateWallet));
+                    context.Writer.WritePropertyName("ReplicationTaskArn");
+                    context.Writer.Write(publicRequest.ReplicationTaskArn);
+                }
+
+                if(publicRequest.IsSetReplicationTaskIdentifier())
+                {
+                    context.Writer.WritePropertyName("ReplicationTaskIdentifier");
+                    context.Writer.Write(publicRequest.ReplicationTaskIdentifier);
+                }
+
+                if(publicRequest.IsSetReplicationTaskSettings())
+                {
+                    context.Writer.WritePropertyName("ReplicationTaskSettings");
+                    context.Writer.Write(publicRequest.ReplicationTaskSettings);
+                }
+
+                if(publicRequest.IsSetTableMappings())
+                {
+                    context.Writer.WritePropertyName("TableMappings");
+                    context.Writer.Write(publicRequest.TableMappings);
                 }
 
         

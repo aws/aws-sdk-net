@@ -40,9 +40,10 @@ namespace Amazon.DatabaseMigrationService
     /// <para>
     /// AWS Database Migration Service (AWS DMS) can migrate your data to and from the most
     /// widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft
-    /// SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, and MySQL. The service supports
-    /// homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations
-    /// between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.
+    /// SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server
+    /// Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle,
+    /// as well as heterogeneous migrations between different database platforms, such as
+    /// Oracle to MySQL or SQL Server to PostgreSQL.
     /// </para>
     /// </summary>
     public partial class AmazonDatabaseMigrationServiceClient : AmazonServiceClient, IAmazonDatabaseMigrationService
@@ -1069,6 +1070,37 @@ namespace Amazon.DatabaseMigrationService
             var unmarshaller = ModifyReplicationSubnetGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyReplicationSubnetGroupRequest,ModifyReplicationSubnetGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyReplicationTask
+
+        internal ModifyReplicationTaskResponse ModifyReplicationTask(ModifyReplicationTaskRequest request)
+        {
+            var marshaller = new ModifyReplicationTaskRequestMarshaller();
+            var unmarshaller = ModifyReplicationTaskResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyReplicationTaskRequest,ModifyReplicationTaskResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyReplicationTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationTask operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ModifyReplicationTaskResponse> ModifyReplicationTaskAsync(ModifyReplicationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ModifyReplicationTaskRequestMarshaller();
+            var unmarshaller = ModifyReplicationTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyReplicationTaskRequest,ModifyReplicationTaskResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

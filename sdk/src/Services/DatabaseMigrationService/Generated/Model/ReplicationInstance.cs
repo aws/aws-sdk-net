@@ -51,6 +51,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private List<string> _replicationInstancePublicIpAddresses = new List<string>();
         private string _replicationInstanceStatus;
         private ReplicationSubnetGroup _replicationSubnetGroup;
+        private string _secondaryAvailabilityZone;
         private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
 
         /// <summary>
@@ -426,6 +427,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetReplicationSubnetGroup()
         {
             return this._replicationSubnetGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryAvailabilityZone. 
+        /// <para>
+        /// The availability zone of the standby replication instance in a Multi-AZ deployment.
+        /// </para>
+        /// </summary>
+        public string SecondaryAvailabilityZone
+        {
+            get { return this._secondaryAvailabilityZone; }
+            set { this._secondaryAvailabilityZone = value; }
+        }
+
+        // Check to see if SecondaryAvailabilityZone property is set
+        internal bool IsSetSecondaryAvailabilityZone()
+        {
+            return this._secondaryAvailabilityZone != null;
         }
 
         /// <summary>
