@@ -12,6 +12,7 @@ using Amazon.Runtime;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon.Util;
 using System.Globalization;
+using System.Threading;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -39,6 +40,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                             BucketRegion = location
                         });
 
+                        Thread.Sleep(500);
                         var returnedLocation = client.GetBucketLocation(new GetBucketLocationRequest
                         {
                             BucketName = bucketName
