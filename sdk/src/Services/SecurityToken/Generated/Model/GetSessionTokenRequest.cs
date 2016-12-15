@@ -136,9 +136,9 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  
         /// <para>
-        /// The format for this parameter, as described by its regex pattern, is a string of characters
-        /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
-        /// also include underscores or any of the following characters: =,.@-
+        /// The regex used to validate this parameter is a string of characters consisting of
+        /// upper- and lower-case alphanumeric characters with no spaces. You can also include
+        /// underscores or any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string SerialNumber
