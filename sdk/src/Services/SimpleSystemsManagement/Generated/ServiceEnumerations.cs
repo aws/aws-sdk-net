@@ -1023,6 +1023,64 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type InstancePatchStateOperatorType.
+    /// </summary>
+    public class InstancePatchStateOperatorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Equal for InstancePatchStateOperatorType
+        /// </summary>
+        public static readonly InstancePatchStateOperatorType Equal = new InstancePatchStateOperatorType("Equal");
+        /// <summary>
+        /// Constant GreaterThan for InstancePatchStateOperatorType
+        /// </summary>
+        public static readonly InstancePatchStateOperatorType GreaterThan = new InstancePatchStateOperatorType("GreaterThan");
+        /// <summary>
+        /// Constant LessThan for InstancePatchStateOperatorType
+        /// </summary>
+        public static readonly InstancePatchStateOperatorType LessThan = new InstancePatchStateOperatorType("LessThan");
+        /// <summary>
+        /// Constant NotEqual for InstancePatchStateOperatorType
+        /// </summary>
+        public static readonly InstancePatchStateOperatorType NotEqual = new InstancePatchStateOperatorType("NotEqual");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstancePatchStateOperatorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstancePatchStateOperatorType FindValue(string value)
+        {
+            return FindValue<InstancePatchStateOperatorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstancePatchStateOperatorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InventoryAttributeDataType.
     /// </summary>
     public class InventoryAttributeDataType : ConstantClass
@@ -1518,6 +1576,234 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ParameterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PatchComplianceDataState.
+    /// </summary>
+    public class PatchComplianceDataState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for PatchComplianceDataState
+        /// </summary>
+        public static readonly PatchComplianceDataState FAILED = new PatchComplianceDataState("FAILED");
+        /// <summary>
+        /// Constant INSTALLED for PatchComplianceDataState
+        /// </summary>
+        public static readonly PatchComplianceDataState INSTALLED = new PatchComplianceDataState("INSTALLED");
+        /// <summary>
+        /// Constant INSTALLED_OTHER for PatchComplianceDataState
+        /// </summary>
+        public static readonly PatchComplianceDataState INSTALLED_OTHER = new PatchComplianceDataState("INSTALLED_OTHER");
+        /// <summary>
+        /// Constant MISSING for PatchComplianceDataState
+        /// </summary>
+        public static readonly PatchComplianceDataState MISSING = new PatchComplianceDataState("MISSING");
+        /// <summary>
+        /// Constant NOT_APPLICABLE for PatchComplianceDataState
+        /// </summary>
+        public static readonly PatchComplianceDataState NOT_APPLICABLE = new PatchComplianceDataState("NOT_APPLICABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PatchComplianceDataState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PatchComplianceDataState FindValue(string value)
+        {
+            return FindValue<PatchComplianceDataState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PatchComplianceDataState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PatchDeploymentStatus.
+    /// </summary>
+    public class PatchDeploymentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVED for PatchDeploymentStatus
+        /// </summary>
+        public static readonly PatchDeploymentStatus APPROVED = new PatchDeploymentStatus("APPROVED");
+        /// <summary>
+        /// Constant EXPLICIT_APPROVED for PatchDeploymentStatus
+        /// </summary>
+        public static readonly PatchDeploymentStatus EXPLICIT_APPROVED = new PatchDeploymentStatus("EXPLICIT_APPROVED");
+        /// <summary>
+        /// Constant EXPLICIT_REJECTED for PatchDeploymentStatus
+        /// </summary>
+        public static readonly PatchDeploymentStatus EXPLICIT_REJECTED = new PatchDeploymentStatus("EXPLICIT_REJECTED");
+        /// <summary>
+        /// Constant PENDING_APPROVAL for PatchDeploymentStatus
+        /// </summary>
+        public static readonly PatchDeploymentStatus PENDING_APPROVAL = new PatchDeploymentStatus("PENDING_APPROVAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PatchDeploymentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PatchDeploymentStatus FindValue(string value)
+        {
+            return FindValue<PatchDeploymentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PatchDeploymentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PatchFilterKey.
+    /// </summary>
+    public class PatchFilterKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLASSIFICATION for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey CLASSIFICATION = new PatchFilterKey("CLASSIFICATION");
+        /// <summary>
+        /// Constant MSRC_SEVERITY for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey MSRC_SEVERITY = new PatchFilterKey("MSRC_SEVERITY");
+        /// <summary>
+        /// Constant PATCH_ID for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey PATCH_ID = new PatchFilterKey("PATCH_ID");
+        /// <summary>
+        /// Constant PRODUCT for PatchFilterKey
+        /// </summary>
+        public static readonly PatchFilterKey PRODUCT = new PatchFilterKey("PRODUCT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PatchFilterKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PatchFilterKey FindValue(string value)
+        {
+            return FindValue<PatchFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PatchFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PatchOperationType.
+    /// </summary>
+    public class PatchOperationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Install for PatchOperationType
+        /// </summary>
+        public static readonly PatchOperationType Install = new PatchOperationType("Install");
+        /// <summary>
+        /// Constant Scan for PatchOperationType
+        /// </summary>
+        public static readonly PatchOperationType Scan = new PatchOperationType("Scan");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PatchOperationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PatchOperationType FindValue(string value)
+        {
+            return FindValue<PatchOperationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PatchOperationType(string value)
         {
             return FindValue(value);
         }

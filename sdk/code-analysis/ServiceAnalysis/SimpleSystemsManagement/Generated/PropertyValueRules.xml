@@ -92,6 +92,28 @@
     <pattern>^mw-[0-9a-f]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreatePatchBaselineRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreatePatchBaselineRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreatePatchBaselineRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreatePatchBaselineResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeleteActivationRequest.ActivationId</property>
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
@@ -130,8 +152,44 @@
     <pattern>^(?!^([aA][wW][sS]|[sS][sS][mM]))(?=^[a-zA-Z0-9_.-]*$).*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeletePatchBaselineRequest.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeletePatchBaselineResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeregisterManagedInstanceRequest.InstanceId</property>
     <pattern>^mi-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeregisterPatchBaselineForPatchGroupRequest.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeregisterPatchBaselineForPatchGroupRequest.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeregisterPatchBaselineForPatchGroupResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeregisterPatchBaselineForPatchGroupResponse.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeregisterTargetFromMaintenanceWindowRequest.WindowId</property>
@@ -204,6 +262,11 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeAvailablePatchesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DescribeDocumentRequest.DocumentVersion</property>
     <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
@@ -225,6 +288,17 @@
     <max>5</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeEffectivePatchesForPatchBaselineRequest.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeEffectivePatchesForPatchBaselineRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DescribeInstanceAssociationsStatusRequest.InstanceId</property>
     <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
   </property-value-rule>
@@ -237,6 +311,31 @@
     <property>Amazon.SimpleSystemsManagement.Model.DescribeInstanceInformationRequest.MaxResults</property>
     <min>5</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeInstancePatchesRequest.InstanceId</property>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeInstancePatchesRequest.MaxResults</property>
+    <min>10</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeInstancePatchStatesRequest.MaxResults</property>
+    <min>10</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeInstancePatchStatesForPatchGroupRequest.MaxResults</property>
+    <min>10</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeInstancePatchStatesForPatchGroupRequest.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DescribeMaintenanceWindowExecutionsRequest.MaxResults</property>
@@ -310,6 +409,22 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribePatchBaselinesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribePatchGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribePatchGroupStateRequest.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetAutomationExecutionRequest.AutomationExecutionId</property>
     <min>36</min>
     <max>36</max>
@@ -372,6 +487,32 @@
     <property>Amazon.SimpleSystemsManagement.Model.GetCommandInvocationResponse.StatusDetails</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetDefaultPatchBaselineResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetDeployablePatchSnapshotForInstanceRequest.InstanceId</property>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetDeployablePatchSnapshotForInstanceRequest.SnapshotId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetDeployablePatchSnapshotForInstanceResponse.InstanceId</property>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetDeployablePatchSnapshotForInstanceResponse.SnapshotId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetDocumentRequest.DocumentVersion</property>
@@ -520,6 +661,47 @@
     <pattern>^(?!^([aA][wW][sS]|[sS][sS][mM]))(?=^[a-zA-Z0-9_.-]*$).*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetPatchBaselineRequest.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetPatchBaselineResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetPatchBaselineResponse.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetPatchBaselineResponse.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetPatchBaselineForPatchGroupRequest.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetPatchBaselineForPatchGroupResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetPatchBaselineForPatchGroupResponse.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ListAssociationsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -631,6 +813,42 @@
     <pattern>^(?:(?!(\{\{.*\}\})).)*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterDefaultPatchBaselineRequest.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterDefaultPatchBaselineResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterPatchBaselineForPatchGroupRequest.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterPatchBaselineForPatchGroupRequest.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterPatchBaselineForPatchGroupResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.RegisterPatchBaselineForPatchGroupResponse.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.RegisterTargetWithMaintenanceWindowRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -735,7 +953,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.StartAutomationExecutionRequest.DocumentName</property>
-    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+    <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.StartAutomationExecutionRequest.DocumentVersion</property>
@@ -853,6 +1071,40 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateManagedInstanceRoleRequest.InstanceId</property>
     <pattern>^mi-[0-9a-f]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdatePatchBaselineRequest.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdatePatchBaselineRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdatePatchBaselineRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdatePatchBaselineResponse.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdatePatchBaselineResponse.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdatePatchBaselineResponse.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Activation.ActivationId</property>
@@ -1210,6 +1462,38 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstancePatchState.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstancePatchState.InstanceId</property>
+    <pattern>(^i-(\w{8}|\w{17})$)|(^mi-\w{17}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstancePatchState.OwnerInformation</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstancePatchState.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstancePatchState.SnapshotId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstancePatchStateFilter.Key</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InvalidItemContentException.TypeName</property>
     <min>1</min>
     <max>100</max>
@@ -1491,6 +1775,43 @@
     <min>1</min>
     <max>1024</max>
     <pattern>^(?!^([aA][wW][sS]|[sS][sS][mM]))(?=^[a-zA-Z0-9_.-]*$).*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.Patch.Id</property>
+    <pattern>(^KB[0-9]{1,7}$)|(^MS[0-9]{2}\-[0-9]{3}$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PatchBaselineIdentity.BaselineDescription</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PatchBaselineIdentity.BaselineId</property>
+    <min>20</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-:/]{20,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PatchBaselineIdentity.BaselineName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PatchGroupPatchBaselineMapping.PatchGroup</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PatchOrchestratorFilter.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.PatchRule.ApproveAfterDays</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ResultAttribute.TypeName</property>

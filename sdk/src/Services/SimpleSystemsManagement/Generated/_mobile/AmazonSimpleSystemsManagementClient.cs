@@ -699,6 +699,37 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  CreatePatchBaseline
+
+        internal CreatePatchBaselineResponse CreatePatchBaseline(CreatePatchBaselineRequest request)
+        {
+            var marshaller = new CreatePatchBaselineRequestMarshaller();
+            var unmarshaller = CreatePatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePatchBaselineRequest,CreatePatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreatePatchBaselineResponse> CreatePatchBaselineAsync(CreatePatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreatePatchBaselineRequestMarshaller();
+            var unmarshaller = CreatePatchBaselineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePatchBaselineRequest,CreatePatchBaselineResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteActivation
 
         internal DeleteActivationResponse DeleteActivation(DeleteActivationRequest request)
@@ -953,6 +984,37 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DeletePatchBaseline
+
+        internal DeletePatchBaselineResponse DeletePatchBaseline(DeletePatchBaselineRequest request)
+        {
+            var marshaller = new DeletePatchBaselineRequestMarshaller();
+            var unmarshaller = DeletePatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePatchBaselineRequest,DeletePatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeletePatchBaselineResponse> DeletePatchBaselineAsync(DeletePatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeletePatchBaselineRequestMarshaller();
+            var unmarshaller = DeletePatchBaselineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePatchBaselineRequest,DeletePatchBaselineResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeregisterManagedInstance
 
         internal DeregisterManagedInstanceResponse DeregisterManagedInstance(DeregisterManagedInstanceRequest request)
@@ -979,6 +1041,37 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = DeregisterManagedInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeregisterManagedInstanceRequest,DeregisterManagedInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeregisterPatchBaselineForPatchGroup
+
+        internal DeregisterPatchBaselineForPatchGroupResponse DeregisterPatchBaselineForPatchGroup(DeregisterPatchBaselineForPatchGroupRequest request)
+        {
+            var marshaller = new DeregisterPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = DeregisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterPatchBaselineForPatchGroupRequest,DeregisterPatchBaselineForPatchGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterPatchBaselineForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterPatchBaselineForPatchGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeregisterPatchBaselineForPatchGroupResponse> DeregisterPatchBaselineForPatchGroupAsync(DeregisterPatchBaselineForPatchGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeregisterPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = DeregisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterPatchBaselineForPatchGroupRequest,DeregisterPatchBaselineForPatchGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1191,6 +1284,37 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeAvailablePatches
+
+        internal DescribeAvailablePatchesResponse DescribeAvailablePatches(DescribeAvailablePatchesRequest request)
+        {
+            var marshaller = new DescribeAvailablePatchesRequestMarshaller();
+            var unmarshaller = DescribeAvailablePatchesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAvailablePatchesRequest,DescribeAvailablePatchesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAvailablePatches operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAvailablePatches operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeAvailablePatchesResponse> DescribeAvailablePatchesAsync(DescribeAvailablePatchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeAvailablePatchesRequestMarshaller();
+            var unmarshaller = DescribeAvailablePatchesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAvailablePatchesRequest,DescribeAvailablePatchesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDocument
 
         internal DescribeDocumentResponse DescribeDocument(DescribeDocumentRequest request)
@@ -1305,6 +1429,37 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = DescribeEffectiveInstanceAssociationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEffectiveInstanceAssociationsRequest,DescribeEffectiveInstanceAssociationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEffectivePatchesForPatchBaseline
+
+        internal DescribeEffectivePatchesForPatchBaselineResponse DescribeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request)
+        {
+            var marshaller = new DescribeEffectivePatchesForPatchBaselineRequestMarshaller();
+            var unmarshaller = DescribeEffectivePatchesForPatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEffectivePatchesForPatchBaselineRequest,DescribeEffectivePatchesForPatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEffectivePatchesForPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEffectivePatchesForPatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeEffectivePatchesForPatchBaselineResponse> DescribeEffectivePatchesForPatchBaselineAsync(DescribeEffectivePatchesForPatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeEffectivePatchesForPatchBaselineRequestMarshaller();
+            var unmarshaller = DescribeEffectivePatchesForPatchBaselineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEffectivePatchesForPatchBaselineRequest,DescribeEffectivePatchesForPatchBaselineResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1426,6 +1581,99 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = DescribeInstanceInformationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeInstanceInformationRequest,DescribeInstanceInformationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInstancePatches
+
+        internal DescribeInstancePatchesResponse DescribeInstancePatches(DescribeInstancePatchesRequest request)
+        {
+            var marshaller = new DescribeInstancePatchesRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstancePatchesRequest,DescribeInstancePatchesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstancePatches operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatches operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeInstancePatchesResponse> DescribeInstancePatchesAsync(DescribeInstancePatchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeInstancePatchesRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInstancePatchesRequest,DescribeInstancePatchesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInstancePatchStates
+
+        internal DescribeInstancePatchStatesResponse DescribeInstancePatchStates(DescribeInstancePatchStatesRequest request)
+        {
+            var marshaller = new DescribeInstancePatchStatesRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchStatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstancePatchStatesRequest,DescribeInstancePatchStatesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstancePatchStates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatchStates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeInstancePatchStatesResponse> DescribeInstancePatchStatesAsync(DescribeInstancePatchStatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeInstancePatchStatesRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchStatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInstancePatchStatesRequest,DescribeInstancePatchStatesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInstancePatchStatesForPatchGroup
+
+        internal DescribeInstancePatchStatesForPatchGroupResponse DescribeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request)
+        {
+            var marshaller = new DescribeInstancePatchStatesForPatchGroupRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchStatesForPatchGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstancePatchStatesForPatchGroupRequest,DescribeInstancePatchStatesForPatchGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstancePatchStatesForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatchStatesForPatchGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeInstancePatchStatesForPatchGroupResponse> DescribeInstancePatchStatesForPatchGroupAsync(DescribeInstancePatchStatesForPatchGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeInstancePatchStatesForPatchGroupRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchStatesForPatchGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInstancePatchStatesForPatchGroupRequest,DescribeInstancePatchStatesForPatchGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1648,6 +1896,99 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribePatchBaselines
+
+        internal DescribePatchBaselinesResponse DescribePatchBaselines(DescribePatchBaselinesRequest request)
+        {
+            var marshaller = new DescribePatchBaselinesRequestMarshaller();
+            var unmarshaller = DescribePatchBaselinesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePatchBaselinesRequest,DescribePatchBaselinesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePatchBaselines operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchBaselines operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribePatchBaselinesResponse> DescribePatchBaselinesAsync(DescribePatchBaselinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribePatchBaselinesRequestMarshaller();
+            var unmarshaller = DescribePatchBaselinesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePatchBaselinesRequest,DescribePatchBaselinesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribePatchGroups
+
+        internal DescribePatchGroupsResponse DescribePatchGroups(DescribePatchGroupsRequest request)
+        {
+            var marshaller = new DescribePatchGroupsRequestMarshaller();
+            var unmarshaller = DescribePatchGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePatchGroupsRequest,DescribePatchGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePatchGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribePatchGroupsResponse> DescribePatchGroupsAsync(DescribePatchGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribePatchGroupsRequestMarshaller();
+            var unmarshaller = DescribePatchGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePatchGroupsRequest,DescribePatchGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribePatchGroupState
+
+        internal DescribePatchGroupStateResponse DescribePatchGroupState(DescribePatchGroupStateRequest request)
+        {
+            var marshaller = new DescribePatchGroupStateRequestMarshaller();
+            var unmarshaller = DescribePatchGroupStateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePatchGroupStateRequest,DescribePatchGroupStateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePatchGroupState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchGroupState operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribePatchGroupStateResponse> DescribePatchGroupStateAsync(DescribePatchGroupStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribePatchGroupStateRequestMarshaller();
+            var unmarshaller = DescribePatchGroupStateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePatchGroupStateRequest,DescribePatchGroupStateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAutomationExecution
 
         internal GetAutomationExecutionResponse GetAutomationExecution(GetAutomationExecutionRequest request)
@@ -1705,6 +2046,68 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = GetCommandInvocationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCommandInvocationRequest,GetCommandInvocationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDefaultPatchBaseline
+
+        internal GetDefaultPatchBaselineResponse GetDefaultPatchBaseline(GetDefaultPatchBaselineRequest request)
+        {
+            var marshaller = new GetDefaultPatchBaselineRequestMarshaller();
+            var unmarshaller = GetDefaultPatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<GetDefaultPatchBaselineRequest,GetDefaultPatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDefaultPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultPatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetDefaultPatchBaselineResponse> GetDefaultPatchBaselineAsync(GetDefaultPatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDefaultPatchBaselineRequestMarshaller();
+            var unmarshaller = GetDefaultPatchBaselineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDefaultPatchBaselineRequest,GetDefaultPatchBaselineResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDeployablePatchSnapshotForInstance
+
+        internal GetDeployablePatchSnapshotForInstanceResponse GetDeployablePatchSnapshotForInstance(GetDeployablePatchSnapshotForInstanceRequest request)
+        {
+            var marshaller = new GetDeployablePatchSnapshotForInstanceRequestMarshaller();
+            var unmarshaller = GetDeployablePatchSnapshotForInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<GetDeployablePatchSnapshotForInstanceRequest,GetDeployablePatchSnapshotForInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeployablePatchSnapshotForInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployablePatchSnapshotForInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetDeployablePatchSnapshotForInstanceResponse> GetDeployablePatchSnapshotForInstanceAsync(GetDeployablePatchSnapshotForInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDeployablePatchSnapshotForInstanceRequestMarshaller();
+            var unmarshaller = GetDeployablePatchSnapshotForInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDeployablePatchSnapshotForInstanceRequest,GetDeployablePatchSnapshotForInstanceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1979,6 +2382,68 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = GetParametersResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetParametersRequest,GetParametersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPatchBaseline
+
+        internal GetPatchBaselineResponse GetPatchBaseline(GetPatchBaselineRequest request)
+        {
+            var marshaller = new GetPatchBaselineRequestMarshaller();
+            var unmarshaller = GetPatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<GetPatchBaselineRequest,GetPatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetPatchBaselineResponse> GetPatchBaselineAsync(GetPatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetPatchBaselineRequestMarshaller();
+            var unmarshaller = GetPatchBaselineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPatchBaselineRequest,GetPatchBaselineResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPatchBaselineForPatchGroup
+
+        internal GetPatchBaselineForPatchGroupResponse GetPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest request)
+        {
+            var marshaller = new GetPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = GetPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetPatchBaselineForPatchGroupRequest,GetPatchBaselineForPatchGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPatchBaselineForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPatchBaselineForPatchGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetPatchBaselineForPatchGroupResponse> GetPatchBaselineForPatchGroupAsync(GetPatchBaselineForPatchGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = GetPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPatchBaselineForPatchGroupRequest,GetPatchBaselineForPatchGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2543,6 +3008,68 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  RegisterDefaultPatchBaseline
+
+        internal RegisterDefaultPatchBaselineResponse RegisterDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest request)
+        {
+            var marshaller = new RegisterDefaultPatchBaselineRequestMarshaller();
+            var unmarshaller = RegisterDefaultPatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterDefaultPatchBaselineRequest,RegisterDefaultPatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterDefaultPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDefaultPatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RegisterDefaultPatchBaselineResponse> RegisterDefaultPatchBaselineAsync(RegisterDefaultPatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RegisterDefaultPatchBaselineRequestMarshaller();
+            var unmarshaller = RegisterDefaultPatchBaselineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterDefaultPatchBaselineRequest,RegisterDefaultPatchBaselineResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterPatchBaselineForPatchGroup
+
+        internal RegisterPatchBaselineForPatchGroupResponse RegisterPatchBaselineForPatchGroup(RegisterPatchBaselineForPatchGroupRequest request)
+        {
+            var marshaller = new RegisterPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = RegisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterPatchBaselineForPatchGroupRequest,RegisterPatchBaselineForPatchGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterPatchBaselineForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterPatchBaselineForPatchGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RegisterPatchBaselineForPatchGroupResponse> RegisterPatchBaselineForPatchGroupAsync(RegisterPatchBaselineForPatchGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RegisterPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = RegisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterPatchBaselineForPatchGroupRequest,RegisterPatchBaselineForPatchGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RegisterTargetWithMaintenanceWindow
 
         internal RegisterTargetWithMaintenanceWindowResponse RegisterTargetWithMaintenanceWindow(RegisterTargetWithMaintenanceWindowRequest request)
@@ -2987,6 +3514,37 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = UpdateManagedInstanceRoleResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateManagedInstanceRoleRequest,UpdateManagedInstanceRoleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePatchBaseline
+
+        internal UpdatePatchBaselineResponse UpdatePatchBaseline(UpdatePatchBaselineRequest request)
+        {
+            var marshaller = new UpdatePatchBaselineRequestMarshaller();
+            var unmarshaller = UpdatePatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePatchBaselineRequest,UpdatePatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdatePatchBaselineResponse> UpdatePatchBaselineAsync(UpdatePatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdatePatchBaselineRequestMarshaller();
+            var unmarshaller = UpdatePatchBaselineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdatePatchBaselineRequest,UpdatePatchBaselineResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -1209,6 +1209,54 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  CreatePatchBaseline
+
+
+        /// <summary>
+        /// Creates a patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the CreatePatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
+        /// Error returned when an idempotent operation is retried and the parameters don’t match
+        /// the original call to the API with the same idempotency token.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceLimitExceededException">
+        /// Error returned when the caller has exceeded the default resource limits (e.g. too
+        /// many Maintenance Windows have been created).
+        /// </exception>
+        public CreatePatchBaselineResponse CreatePatchBaseline(CreatePatchBaselineRequest request)
+        {
+            var marshaller = new CreatePatchBaselineRequestMarshaller();
+            var unmarshaller = CreatePatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePatchBaselineRequest,CreatePatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreatePatchBaselineResponse> CreatePatchBaselineAsync(CreatePatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreatePatchBaselineRequestMarshaller();
+            var unmarshaller = CreatePatchBaselineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePatchBaselineRequest,CreatePatchBaselineResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteActivation
 
 
@@ -1672,6 +1720,50 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DeletePatchBaseline
+
+
+        /// <summary>
+        /// Deletes a patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the DeletePatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceInUseException">
+        /// Error returned if an attempt is made to delete a patch baseline that is registered
+        /// for a patch group.
+        /// </exception>
+        public DeletePatchBaselineResponse DeletePatchBaseline(DeletePatchBaselineRequest request)
+        {
+            var marshaller = new DeletePatchBaselineRequestMarshaller();
+            var unmarshaller = DeletePatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePatchBaselineRequest,DeletePatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeletePatchBaselineResponse> DeletePatchBaselineAsync(DeletePatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeletePatchBaselineRequestMarshaller();
+            var unmarshaller = DeletePatchBaselineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeletePatchBaselineRequest,DeletePatchBaselineResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeregisterManagedInstance
 
 
@@ -1733,6 +1825,49 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = DeregisterManagedInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeregisterManagedInstanceRequest,DeregisterManagedInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeregisterPatchBaselineForPatchGroup
+
+
+        /// <summary>
+        /// Removes a patch group from a patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterPatchBaselineForPatchGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterPatchBaselineForPatchGroup service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        public DeregisterPatchBaselineForPatchGroupResponse DeregisterPatchBaselineForPatchGroup(DeregisterPatchBaselineForPatchGroupRequest request)
+        {
+            var marshaller = new DeregisterPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = DeregisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterPatchBaselineForPatchGroupRequest,DeregisterPatchBaselineForPatchGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterPatchBaselineForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterPatchBaselineForPatchGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeregisterPatchBaselineForPatchGroupResponse> DeregisterPatchBaselineForPatchGroupAsync(DeregisterPatchBaselineForPatchGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeregisterPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = DeregisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterPatchBaselineForPatchGroupRequest,DeregisterPatchBaselineForPatchGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2088,6 +2223,46 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeAvailablePatches
+
+
+        /// <summary>
+        /// Lists all patches that could possibly be included in a patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAvailablePatches service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAvailablePatches service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        public DescribeAvailablePatchesResponse DescribeAvailablePatches(DescribeAvailablePatchesRequest request)
+        {
+            var marshaller = new DescribeAvailablePatchesRequestMarshaller();
+            var unmarshaller = DescribeAvailablePatchesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAvailablePatchesRequest,DescribeAvailablePatchesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAvailablePatches operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAvailablePatches operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeAvailablePatchesResponse> DescribeAvailablePatchesAsync(DescribeAvailablePatchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeAvailablePatchesRequestMarshaller();
+            var unmarshaller = DescribeAvailablePatchesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAvailablePatchesRequest,DescribeAvailablePatchesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDocument
 
 
@@ -2294,6 +2469,54 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = DescribeEffectiveInstanceAssociationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEffectiveInstanceAssociationsRequest,DescribeEffectiveInstanceAssociationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEffectivePatchesForPatchBaseline
+
+
+        /// <summary>
+        /// Retrieves the current effective patches (the patch and the approval state) for the
+        /// specified patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEffectivePatchesForPatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEffectivePatchesForPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        public DescribeEffectivePatchesForPatchBaselineResponse DescribeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request)
+        {
+            var marshaller = new DescribeEffectivePatchesForPatchBaselineRequestMarshaller();
+            var unmarshaller = DescribeEffectivePatchesForPatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEffectivePatchesForPatchBaselineRequest,DescribeEffectivePatchesForPatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEffectivePatchesForPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEffectivePatchesForPatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeEffectivePatchesForPatchBaselineResponse> DescribeEffectivePatchesForPatchBaselineAsync(DescribeEffectivePatchesForPatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeEffectivePatchesForPatchBaselineRequestMarshaller();
+            var unmarshaller = DescribeEffectivePatchesForPatchBaselineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEffectivePatchesForPatchBaselineRequest,DescribeEffectivePatchesForPatchBaselineResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2545,6 +2768,166 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = DescribeInstanceInformationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeInstanceInformationRequest,DescribeInstanceInformationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInstancePatches
+
+
+        /// <summary>
+        /// Retrieves information about the patches on the specified instance and their state
+        /// relative to the patch baseline being used for the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatches service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstancePatches service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public DescribeInstancePatchesResponse DescribeInstancePatches(DescribeInstancePatchesRequest request)
+        {
+            var marshaller = new DescribeInstancePatchesRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstancePatchesRequest,DescribeInstancePatchesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstancePatches operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatches operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeInstancePatchesResponse> DescribeInstancePatchesAsync(DescribeInstancePatchesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeInstancePatchesRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInstancePatchesRequest,DescribeInstancePatchesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInstancePatchStates
+
+
+        /// <summary>
+        /// Retrieves the high-level patch state of one or more instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatchStates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstancePatchStates service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public DescribeInstancePatchStatesResponse DescribeInstancePatchStates(DescribeInstancePatchStatesRequest request)
+        {
+            var marshaller = new DescribeInstancePatchStatesRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchStatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstancePatchStatesRequest,DescribeInstancePatchStatesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstancePatchStates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatchStates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeInstancePatchStatesResponse> DescribeInstancePatchStatesAsync(DescribeInstancePatchStatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeInstancePatchStatesRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchStatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInstancePatchStatesRequest,DescribeInstancePatchStatesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeInstancePatchStatesForPatchGroup
+
+
+        /// <summary>
+        /// Retrieves the high-level patch state for the instances in the specified patch group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatchStatesForPatchGroup service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstancePatchStatesForPatchGroup service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public DescribeInstancePatchStatesForPatchGroupResponse DescribeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request)
+        {
+            var marshaller = new DescribeInstancePatchStatesForPatchGroupRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchStatesForPatchGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstancePatchStatesForPatchGroupRequest,DescribeInstancePatchStatesForPatchGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstancePatchStatesForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatchStatesForPatchGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeInstancePatchStatesForPatchGroupResponse> DescribeInstancePatchStatesForPatchGroupAsync(DescribeInstancePatchStatesForPatchGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeInstancePatchStatesForPatchGroupRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchStatesForPatchGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeInstancePatchStatesForPatchGroupRequest,DescribeInstancePatchStatesForPatchGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2855,6 +3238,129 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribePatchBaselines
+
+
+        /// <summary>
+        /// Lists the patch baselines in your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchBaselines service method.</param>
+        /// 
+        /// <returns>The response from the DescribePatchBaselines service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        public DescribePatchBaselinesResponse DescribePatchBaselines(DescribePatchBaselinesRequest request)
+        {
+            var marshaller = new DescribePatchBaselinesRequestMarshaller();
+            var unmarshaller = DescribePatchBaselinesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePatchBaselinesRequest,DescribePatchBaselinesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePatchBaselines operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchBaselines operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribePatchBaselinesResponse> DescribePatchBaselinesAsync(DescribePatchBaselinesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribePatchBaselinesRequestMarshaller();
+            var unmarshaller = DescribePatchBaselinesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePatchBaselinesRequest,DescribePatchBaselinesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribePatchGroups
+
+
+        /// <summary>
+        /// Lists all patch groups that have been registered with patch baselines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribePatchGroups service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        public DescribePatchGroupsResponse DescribePatchGroups(DescribePatchGroupsRequest request)
+        {
+            var marshaller = new DescribePatchGroupsRequestMarshaller();
+            var unmarshaller = DescribePatchGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePatchGroupsRequest,DescribePatchGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePatchGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribePatchGroupsResponse> DescribePatchGroupsAsync(DescribePatchGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribePatchGroupsRequestMarshaller();
+            var unmarshaller = DescribePatchGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePatchGroupsRequest,DescribePatchGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribePatchGroupState
+
+
+        /// <summary>
+        /// Returns high-level aggregated patch compliance state for a patch group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchGroupState service method.</param>
+        /// 
+        /// <returns>The response from the DescribePatchGroupState service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public DescribePatchGroupStateResponse DescribePatchGroupState(DescribePatchGroupStateRequest request)
+        {
+            var marshaller = new DescribePatchGroupStateRequestMarshaller();
+            var unmarshaller = DescribePatchGroupStateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePatchGroupStateRequest,DescribePatchGroupStateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePatchGroupState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchGroupState operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribePatchGroupStateResponse> DescribePatchGroupStateAsync(DescribePatchGroupStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribePatchGroupStateRequestMarshaller();
+            var unmarshaller = DescribePatchGroupStateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribePatchGroupStateRequest,DescribePatchGroupStateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAutomationExecution
 
 
@@ -2968,6 +3474,87 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = GetCommandInvocationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCommandInvocationRequest,GetCommandInvocationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDefaultPatchBaseline
+
+
+        /// <summary>
+        /// Retrieves the default patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultPatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the GetDefaultPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        public GetDefaultPatchBaselineResponse GetDefaultPatchBaseline(GetDefaultPatchBaselineRequest request)
+        {
+            var marshaller = new GetDefaultPatchBaselineRequestMarshaller();
+            var unmarshaller = GetDefaultPatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<GetDefaultPatchBaselineRequest,GetDefaultPatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDefaultPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultPatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetDefaultPatchBaselineResponse> GetDefaultPatchBaselineAsync(GetDefaultPatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDefaultPatchBaselineRequestMarshaller();
+            var unmarshaller = GetDefaultPatchBaselineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDefaultPatchBaselineRequest,GetDefaultPatchBaselineResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDeployablePatchSnapshotForInstance
+
+
+        /// <summary>
+        /// Retrieves the current snapshot for the patch baseline the instance uses. This API
+        /// is primarily used by the AWS-ApplyPatchBaseline Systems Manager document.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployablePatchSnapshotForInstance service method.</param>
+        /// 
+        /// <returns>The response from the GetDeployablePatchSnapshotForInstance service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        public GetDeployablePatchSnapshotForInstanceResponse GetDeployablePatchSnapshotForInstance(GetDeployablePatchSnapshotForInstanceRequest request)
+        {
+            var marshaller = new GetDeployablePatchSnapshotForInstanceRequestMarshaller();
+            var unmarshaller = GetDeployablePatchSnapshotForInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<GetDeployablePatchSnapshotForInstanceRequest,GetDeployablePatchSnapshotForInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeployablePatchSnapshotForInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployablePatchSnapshotForInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetDeployablePatchSnapshotForInstanceResponse> GetDeployablePatchSnapshotForInstanceAsync(GetDeployablePatchSnapshotForInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetDeployablePatchSnapshotForInstanceRequestMarshaller();
+            var unmarshaller = GetDeployablePatchSnapshotForInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDeployablePatchSnapshotForInstanceRequest,GetDeployablePatchSnapshotForInstanceResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -3381,6 +3968,93 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = GetParametersResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetParametersRequest,GetParametersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPatchBaseline
+
+
+        /// <summary>
+        /// Retrieves information about a patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the GetPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        public GetPatchBaselineResponse GetPatchBaseline(GetPatchBaselineRequest request)
+        {
+            var marshaller = new GetPatchBaselineRequestMarshaller();
+            var unmarshaller = GetPatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<GetPatchBaselineRequest,GetPatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetPatchBaselineResponse> GetPatchBaselineAsync(GetPatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetPatchBaselineRequestMarshaller();
+            var unmarshaller = GetPatchBaselineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPatchBaselineRequest,GetPatchBaselineResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPatchBaselineForPatchGroup
+
+
+        /// <summary>
+        /// Retrieves the patch baseline that should be used for the specified patch group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPatchBaselineForPatchGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetPatchBaselineForPatchGroup service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        public GetPatchBaselineForPatchGroupResponse GetPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest request)
+        {
+            var marshaller = new GetPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = GetPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetPatchBaselineForPatchGroupRequest,GetPatchBaselineForPatchGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPatchBaselineForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPatchBaselineForPatchGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetPatchBaselineForPatchGroupResponse> GetPatchBaselineForPatchGroupAsync(GetPatchBaselineForPatchGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = GetPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetPatchBaselineForPatchGroupRequest,GetPatchBaselineForPatchGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4449,6 +5123,108 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  RegisterDefaultPatchBaseline
+
+
+        /// <summary>
+        /// Defines the default patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDefaultPatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the RegisterDefaultPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        public RegisterDefaultPatchBaselineResponse RegisterDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest request)
+        {
+            var marshaller = new RegisterDefaultPatchBaselineRequestMarshaller();
+            var unmarshaller = RegisterDefaultPatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterDefaultPatchBaselineRequest,RegisterDefaultPatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterDefaultPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDefaultPatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RegisterDefaultPatchBaselineResponse> RegisterDefaultPatchBaselineAsync(RegisterDefaultPatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RegisterDefaultPatchBaselineRequestMarshaller();
+            var unmarshaller = RegisterDefaultPatchBaselineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterDefaultPatchBaselineRequest,RegisterDefaultPatchBaselineResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RegisterPatchBaselineForPatchGroup
+
+
+        /// <summary>
+        /// Registers a patch baseline for a patch group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterPatchBaselineForPatchGroup service method.</param>
+        /// 
+        /// <returns>The response from the RegisterPatchBaselineForPatchGroup service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AlreadyExistsException">
+        /// Error returned if an attempt is made to register a patch group with a patch baseline
+        /// that is already registered with a different patch baseline.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceLimitExceededException">
+        /// Error returned when the caller has exceeded the default resource limits (e.g. too
+        /// many Maintenance Windows have been created).
+        /// </exception>
+        public RegisterPatchBaselineForPatchGroupResponse RegisterPatchBaselineForPatchGroup(RegisterPatchBaselineForPatchGroupRequest request)
+        {
+            var marshaller = new RegisterPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = RegisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterPatchBaselineForPatchGroupRequest,RegisterPatchBaselineForPatchGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterPatchBaselineForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterPatchBaselineForPatchGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<RegisterPatchBaselineForPatchGroupResponse> RegisterPatchBaselineForPatchGroupAsync(RegisterPatchBaselineForPatchGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new RegisterPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = RegisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RegisterPatchBaselineForPatchGroupRequest,RegisterPatchBaselineForPatchGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RegisterTargetWithMaintenanceWindow
 
 
@@ -5299,6 +6075,51 @@ namespace Amazon.SimpleSystemsManagement
             var unmarshaller = UpdateManagedInstanceRoleResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateManagedInstanceRoleRequest,UpdateManagedInstanceRoleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePatchBaseline
+
+
+        /// <summary>
+        /// Modifies an existing patch baseline. Fields not specified in the request are left
+        /// unchanged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        public UpdatePatchBaselineResponse UpdatePatchBaseline(UpdatePatchBaselineRequest request)
+        {
+            var marshaller = new UpdatePatchBaselineRequestMarshaller();
+            var unmarshaller = UpdatePatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePatchBaselineRequest,UpdatePatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdatePatchBaselineResponse> UpdatePatchBaselineAsync(UpdatePatchBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdatePatchBaselineRequestMarshaller();
+            var unmarshaller = UpdatePatchBaselineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdatePatchBaselineRequest,UpdatePatchBaselineResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

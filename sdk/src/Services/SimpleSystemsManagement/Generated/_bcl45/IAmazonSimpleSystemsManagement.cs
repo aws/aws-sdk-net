@@ -883,6 +883,42 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  CreatePatchBaseline
+
+
+        /// <summary>
+        /// Creates a patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the CreatePatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
+        /// Error returned when an idempotent operation is retried and the parameters don’t match
+        /// the original call to the API with the same idempotency token.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceLimitExceededException">
+        /// Error returned when the caller has exceeded the default resource limits (e.g. too
+        /// many Maintenance Windows have been created).
+        /// </exception>
+        CreatePatchBaselineResponse CreatePatchBaseline(CreatePatchBaselineRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreatePatchBaselineResponse> CreatePatchBaselineAsync(CreatePatchBaselineRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteActivation
 
 
@@ -1260,6 +1296,38 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DeletePatchBaseline
+
+
+        /// <summary>
+        /// Deletes a patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the DeletePatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceInUseException">
+        /// Error returned if an attempt is made to delete a patch baseline that is registered
+        /// for a patch group.
+        /// </exception>
+        DeletePatchBaselineResponse DeletePatchBaseline(DeletePatchBaselineRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeletePatchBaselineResponse> DeletePatchBaselineAsync(DeletePatchBaselineRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeregisterManagedInstance
 
 
@@ -1311,6 +1379,37 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DeregisterManagedInstanceResponse> DeregisterManagedInstanceAsync(DeregisterManagedInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeregisterPatchBaselineForPatchGroup
+
+
+        /// <summary>
+        /// Removes a patch group from a patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterPatchBaselineForPatchGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterPatchBaselineForPatchGroup service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        DeregisterPatchBaselineForPatchGroupResponse DeregisterPatchBaselineForPatchGroup(DeregisterPatchBaselineForPatchGroupRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterPatchBaselineForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterPatchBaselineForPatchGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeregisterPatchBaselineForPatchGroupResponse> DeregisterPatchBaselineForPatchGroupAsync(DeregisterPatchBaselineForPatchGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1590,6 +1689,34 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeAvailablePatches
+
+
+        /// <summary>
+        /// Lists all patches that could possibly be included in a patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAvailablePatches service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAvailablePatches service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        DescribeAvailablePatchesResponse DescribeAvailablePatches(DescribeAvailablePatchesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAvailablePatches operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAvailablePatches operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeAvailablePatchesResponse> DescribeAvailablePatchesAsync(DescribeAvailablePatchesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeDocument
 
 
@@ -1750,6 +1877,42 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<DescribeEffectiveInstanceAssociationsResponse> DescribeEffectiveInstanceAssociationsAsync(DescribeEffectiveInstanceAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeEffectivePatchesForPatchBaseline
+
+
+        /// <summary>
+        /// Retrieves the current effective patches (the patch and the approval state) for the
+        /// specified patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEffectivePatchesForPatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEffectivePatchesForPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        DescribeEffectivePatchesForPatchBaselineResponse DescribeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEffectivePatchesForPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEffectivePatchesForPatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeEffectivePatchesForPatchBaselineResponse> DescribeEffectivePatchesForPatchBaselineAsync(DescribeEffectivePatchesForPatchBaselineRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1975,6 +2138,130 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeInstancePatches
+
+
+        /// <summary>
+        /// Retrieves information about the patches on the specified instance and their state
+        /// relative to the patch baseline being used for the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatches service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstancePatches service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        DescribeInstancePatchesResponse DescribeInstancePatches(DescribeInstancePatchesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstancePatches operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatches operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeInstancePatchesResponse> DescribeInstancePatchesAsync(DescribeInstancePatchesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeInstancePatchStates
+
+
+        /// <summary>
+        /// Retrieves the high-level patch state of one or more instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatchStates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstancePatchStates service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        DescribeInstancePatchStatesResponse DescribeInstancePatchStates(DescribeInstancePatchStatesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstancePatchStates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatchStates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeInstancePatchStatesResponse> DescribeInstancePatchStatesAsync(DescribeInstancePatchStatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeInstancePatchStatesForPatchGroup
+
+
+        /// <summary>
+        /// Retrieves the high-level patch state for the instances in the specified patch group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatchStatesForPatchGroup service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstancePatchStatesForPatchGroup service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        DescribeInstancePatchStatesForPatchGroupResponse DescribeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstancePatchStatesForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatchStatesForPatchGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribeInstancePatchStatesForPatchGroupResponse> DescribeInstancePatchStatesForPatchGroupAsync(DescribeInstancePatchStatesForPatchGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeMaintenanceWindowExecutions
 
 
@@ -2196,6 +2483,93 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribePatchBaselines
+
+
+        /// <summary>
+        /// Lists the patch baselines in your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchBaselines service method.</param>
+        /// 
+        /// <returns>The response from the DescribePatchBaselines service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        DescribePatchBaselinesResponse DescribePatchBaselines(DescribePatchBaselinesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePatchBaselines operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchBaselines operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribePatchBaselinesResponse> DescribePatchBaselinesAsync(DescribePatchBaselinesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribePatchGroups
+
+
+        /// <summary>
+        /// Lists all patch groups that have been registered with patch baselines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribePatchGroups service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        DescribePatchGroupsResponse DescribePatchGroups(DescribePatchGroupsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePatchGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribePatchGroupsResponse> DescribePatchGroupsAsync(DescribePatchGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribePatchGroupState
+
+
+        /// <summary>
+        /// Returns high-level aggregated patch compliance state for a patch group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchGroupState service method.</param>
+        /// 
+        /// <returns>The response from the DescribePatchGroupState service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        DescribePatchGroupStateResponse DescribePatchGroupState(DescribePatchGroupStateRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePatchGroupState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchGroupState operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DescribePatchGroupStateResponse> DescribePatchGroupStateAsync(DescribePatchGroupStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetAutomationExecution
 
 
@@ -2287,6 +2661,63 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetCommandInvocationResponse> GetCommandInvocationAsync(GetCommandInvocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetDefaultPatchBaseline
+
+
+        /// <summary>
+        /// Retrieves the default patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultPatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the GetDefaultPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        GetDefaultPatchBaselineResponse GetDefaultPatchBaseline(GetDefaultPatchBaselineRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDefaultPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultPatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetDefaultPatchBaselineResponse> GetDefaultPatchBaselineAsync(GetDefaultPatchBaselineRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetDeployablePatchSnapshotForInstance
+
+
+        /// <summary>
+        /// Retrieves the current snapshot for the patch baseline the instance uses. This API
+        /// is primarily used by the AWS-ApplyPatchBaseline Systems Manager document.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployablePatchSnapshotForInstance service method.</param>
+        /// 
+        /// <returns>The response from the GetDeployablePatchSnapshotForInstance service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        GetDeployablePatchSnapshotForInstanceResponse GetDeployablePatchSnapshotForInstance(GetDeployablePatchSnapshotForInstanceRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeployablePatchSnapshotForInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployablePatchSnapshotForInstance operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetDeployablePatchSnapshotForInstanceResponse> GetDeployablePatchSnapshotForInstanceAsync(GetDeployablePatchSnapshotForInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2592,6 +3023,69 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetParametersResponse> GetParametersAsync(GetParametersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetPatchBaseline
+
+
+        /// <summary>
+        /// Retrieves information about a patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the GetPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        GetPatchBaselineResponse GetPatchBaseline(GetPatchBaselineRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetPatchBaselineResponse> GetPatchBaselineAsync(GetPatchBaselineRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetPatchBaselineForPatchGroup
+
+
+        /// <summary>
+        /// Retrieves the patch baseline that should be used for the specified patch group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPatchBaselineForPatchGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetPatchBaselineForPatchGroup service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        GetPatchBaselineForPatchGroupResponse GetPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPatchBaselineForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPatchBaselineForPatchGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetPatchBaselineForPatchGroupResponse> GetPatchBaselineForPatchGroupAsync(GetPatchBaselineForPatchGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3499,6 +3993,84 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  RegisterDefaultPatchBaseline
+
+
+        /// <summary>
+        /// Defines the default patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDefaultPatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the RegisterDefaultPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        RegisterDefaultPatchBaselineResponse RegisterDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterDefaultPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDefaultPatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RegisterDefaultPatchBaselineResponse> RegisterDefaultPatchBaselineAsync(RegisterDefaultPatchBaselineRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RegisterPatchBaselineForPatchGroup
+
+
+        /// <summary>
+        /// Registers a patch baseline for a patch group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterPatchBaselineForPatchGroup service method.</param>
+        /// 
+        /// <returns>The response from the RegisterPatchBaselineForPatchGroup service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AlreadyExistsException">
+        /// Error returned if an attempt is made to register a patch group with a patch baseline
+        /// that is already registered with a different patch baseline.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceLimitExceededException">
+        /// Error returned when the caller has exceeded the default resource limits (e.g. too
+        /// many Maintenance Windows have been created).
+        /// </exception>
+        RegisterPatchBaselineForPatchGroupResponse RegisterPatchBaselineForPatchGroup(RegisterPatchBaselineForPatchGroupRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterPatchBaselineForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterPatchBaselineForPatchGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<RegisterPatchBaselineForPatchGroupResponse> RegisterPatchBaselineForPatchGroupAsync(RegisterPatchBaselineForPatchGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RegisterTargetWithMaintenanceWindow
 
 
@@ -4193,6 +4765,39 @@ namespace Amazon.SimpleSystemsManagement
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<UpdateManagedInstanceRoleResponse> UpdateManagedInstanceRoleAsync(UpdateManagedInstanceRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdatePatchBaseline
+
+
+        /// <summary>
+        /// Modifies an existing patch baseline. Fields not specified in the request are left
+        /// unchanged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        UpdatePatchBaselineResponse UpdatePatchBaseline(UpdatePatchBaselineRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePatchBaseline operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdatePatchBaselineResponse> UpdatePatchBaselineAsync(UpdatePatchBaselineRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -1063,6 +1063,67 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  CreatePatchBaseline
+
+        /// <summary>
+        /// Creates a patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the CreatePatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.IdempotentParameterMismatchException">
+        /// Error returned when an idempotent operation is retried and the parameters don’t match
+        /// the original call to the API with the same idempotency token.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceLimitExceededException">
+        /// Error returned when the caller has exceeded the default resource limits (e.g. too
+        /// many Maintenance Windows have been created).
+        /// </exception>
+        public CreatePatchBaselineResponse CreatePatchBaseline(CreatePatchBaselineRequest request)
+        {
+            var marshaller = new CreatePatchBaselineRequestMarshaller();
+            var unmarshaller = CreatePatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePatchBaselineRequest,CreatePatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePatchBaseline operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePatchBaseline
+        ///         operation.</returns>
+        public IAsyncResult BeginCreatePatchBaseline(CreatePatchBaselineRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreatePatchBaselineRequestMarshaller();
+            var unmarshaller = CreatePatchBaselineResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreatePatchBaselineRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePatchBaseline.</param>
+        /// 
+        /// <returns>Returns a  CreatePatchBaselineResult from SimpleSystemsManagement.</returns>
+        public  CreatePatchBaselineResponse EndCreatePatchBaseline(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePatchBaselineResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteActivation
 
         /// <summary>
@@ -1492,6 +1553,63 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DeletePatchBaseline
+
+        /// <summary>
+        /// Deletes a patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the DeletePatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceInUseException">
+        /// Error returned if an attempt is made to delete a patch baseline that is registered
+        /// for a patch group.
+        /// </exception>
+        public DeletePatchBaselineResponse DeletePatchBaseline(DeletePatchBaselineRequest request)
+        {
+            var marshaller = new DeletePatchBaselineRequestMarshaller();
+            var unmarshaller = DeletePatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePatchBaselineRequest,DeletePatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePatchBaseline operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePatchBaseline
+        ///         operation.</returns>
+        public IAsyncResult BeginDeletePatchBaseline(DeletePatchBaselineRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeletePatchBaselineRequestMarshaller();
+            var unmarshaller = DeletePatchBaselineResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeletePatchBaselineRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePatchBaseline.</param>
+        /// 
+        /// <returns>Returns a  DeletePatchBaselineResult from SimpleSystemsManagement.</returns>
+        public  DeletePatchBaselineResponse EndDeletePatchBaseline(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePatchBaselineResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeregisterManagedInstance
 
         /// <summary>
@@ -1567,6 +1685,62 @@ namespace Amazon.SimpleSystemsManagement
         public  DeregisterManagedInstanceResponse EndDeregisterManagedInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterManagedInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeregisterPatchBaselineForPatchGroup
+
+        /// <summary>
+        /// Removes a patch group from a patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterPatchBaselineForPatchGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterPatchBaselineForPatchGroup service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        public DeregisterPatchBaselineForPatchGroupResponse DeregisterPatchBaselineForPatchGroup(DeregisterPatchBaselineForPatchGroupRequest request)
+        {
+            var marshaller = new DeregisterPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = DeregisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterPatchBaselineForPatchGroupRequest,DeregisterPatchBaselineForPatchGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterPatchBaselineForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterPatchBaselineForPatchGroup operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterPatchBaselineForPatchGroup
+        ///         operation.</returns>
+        public IAsyncResult BeginDeregisterPatchBaselineForPatchGroup(DeregisterPatchBaselineForPatchGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeregisterPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = DeregisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeregisterPatchBaselineForPatchGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeregisterPatchBaselineForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterPatchBaselineForPatchGroup.</param>
+        /// 
+        /// <returns>Returns a  DeregisterPatchBaselineForPatchGroupResult from SimpleSystemsManagement.</returns>
+        public  DeregisterPatchBaselineForPatchGroupResponse EndDeregisterPatchBaselineForPatchGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeregisterPatchBaselineForPatchGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -1934,6 +2108,59 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeAvailablePatches
+
+        /// <summary>
+        /// Lists all patches that could possibly be included in a patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAvailablePatches service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAvailablePatches service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        public DescribeAvailablePatchesResponse DescribeAvailablePatches(DescribeAvailablePatchesRequest request)
+        {
+            var marshaller = new DescribeAvailablePatchesRequestMarshaller();
+            var unmarshaller = DescribeAvailablePatchesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAvailablePatchesRequest,DescribeAvailablePatchesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAvailablePatches operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAvailablePatches operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAvailablePatches
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeAvailablePatches(DescribeAvailablePatchesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeAvailablePatchesRequestMarshaller();
+            var unmarshaller = DescribeAvailablePatchesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeAvailablePatchesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAvailablePatches operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAvailablePatches.</param>
+        /// 
+        /// <returns>Returns a  DescribeAvailablePatchesResult from SimpleSystemsManagement.</returns>
+        public  DescribeAvailablePatchesResponse EndDescribeAvailablePatches(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAvailablePatchesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDocument
 
         /// <summary>
@@ -2158,6 +2385,67 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribeEffectivePatchesForPatchBaseline
+
+        /// <summary>
+        /// Retrieves the current effective patches (the patch and the approval state) for the
+        /// specified patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEffectivePatchesForPatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEffectivePatchesForPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        public DescribeEffectivePatchesForPatchBaselineResponse DescribeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request)
+        {
+            var marshaller = new DescribeEffectivePatchesForPatchBaselineRequestMarshaller();
+            var unmarshaller = DescribeEffectivePatchesForPatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEffectivePatchesForPatchBaselineRequest,DescribeEffectivePatchesForPatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEffectivePatchesForPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEffectivePatchesForPatchBaseline operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEffectivePatchesForPatchBaseline
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeEffectivePatchesForPatchBaselineRequestMarshaller();
+            var unmarshaller = DescribeEffectivePatchesForPatchBaselineResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeEffectivePatchesForPatchBaselineRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEffectivePatchesForPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEffectivePatchesForPatchBaseline.</param>
+        /// 
+        /// <returns>Returns a  DescribeEffectivePatchesForPatchBaselineResult from SimpleSystemsManagement.</returns>
+        public  DescribeEffectivePatchesForPatchBaselineResponse EndDescribeEffectivePatchesForPatchBaseline(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeEffectivePatchesForPatchBaselineResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeInstanceAssociationsStatus
 
         /// <summary>
@@ -2376,6 +2664,205 @@ namespace Amazon.SimpleSystemsManagement
         public  DescribeInstanceInformationResponse EndDescribeInstanceInformation(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInstanceInformationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeInstancePatches
+
+        /// <summary>
+        /// Retrieves information about the patches on the specified instance and their state
+        /// relative to the patch baseline being used for the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatches service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstancePatches service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidInstanceIdException">
+        /// The following problems can cause this exception:
+        /// 
+        ///  
+        /// <para>
+        /// You do not have permission to access the instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent is not running. On managed instances and Linux instances, verify that
+        /// the SSM agent is running. On EC2 Windows instances, verify that the EC2Config service
+        /// is running.
+        /// </para>
+        ///  
+        /// <para>
+        /// The SSM agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling
+        /// the SSM agent or EC2Config service.
+        /// </para>
+        ///  
+        /// <para>
+        /// The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping.
+        /// Invalid states are: Shutting-down and Terminated.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public DescribeInstancePatchesResponse DescribeInstancePatches(DescribeInstancePatchesRequest request)
+        {
+            var marshaller = new DescribeInstancePatchesRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstancePatchesRequest,DescribeInstancePatchesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstancePatches operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatches operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstancePatches
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeInstancePatches(DescribeInstancePatchesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeInstancePatchesRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeInstancePatchesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstancePatches operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstancePatches.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstancePatchesResult from SimpleSystemsManagement.</returns>
+        public  DescribeInstancePatchesResponse EndDescribeInstancePatches(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeInstancePatchesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeInstancePatchStates
+
+        /// <summary>
+        /// Retrieves the high-level patch state of one or more instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatchStates service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstancePatchStates service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public DescribeInstancePatchStatesResponse DescribeInstancePatchStates(DescribeInstancePatchStatesRequest request)
+        {
+            var marshaller = new DescribeInstancePatchStatesRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchStatesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstancePatchStatesRequest,DescribeInstancePatchStatesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstancePatchStates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatchStates operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstancePatchStates
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeInstancePatchStates(DescribeInstancePatchStatesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeInstancePatchStatesRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchStatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeInstancePatchStatesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstancePatchStates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstancePatchStates.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstancePatchStatesResult from SimpleSystemsManagement.</returns>
+        public  DescribeInstancePatchStatesResponse EndDescribeInstancePatchStates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeInstancePatchStatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeInstancePatchStatesForPatchGroup
+
+        /// <summary>
+        /// Retrieves the high-level patch state for the instances in the specified patch group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatchStatesForPatchGroup service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstancePatchStatesForPatchGroup service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidFilterException">
+        /// The filter name is not valid. Verify the you entered the correct name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public DescribeInstancePatchStatesForPatchGroupResponse DescribeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request)
+        {
+            var marshaller = new DescribeInstancePatchStatesForPatchGroupRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchStatesForPatchGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeInstancePatchStatesForPatchGroupRequest,DescribeInstancePatchStatesForPatchGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstancePatchStatesForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstancePatchStatesForPatchGroup operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstancePatchStatesForPatchGroup
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribeInstancePatchStatesForPatchGroupRequestMarshaller();
+            var unmarshaller = DescribeInstancePatchStatesForPatchGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeInstancePatchStatesForPatchGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstancePatchStatesForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstancePatchStatesForPatchGroup.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstancePatchStatesForPatchGroupResult from SimpleSystemsManagement.</returns>
+        public  DescribeInstancePatchStatesForPatchGroupResponse EndDescribeInstancePatchStatesForPatchGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeInstancePatchStatesForPatchGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -2776,6 +3263,168 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  DescribePatchBaselines
+
+        /// <summary>
+        /// Lists the patch baselines in your AWS account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchBaselines service method.</param>
+        /// 
+        /// <returns>The response from the DescribePatchBaselines service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        public DescribePatchBaselinesResponse DescribePatchBaselines(DescribePatchBaselinesRequest request)
+        {
+            var marshaller = new DescribePatchBaselinesRequestMarshaller();
+            var unmarshaller = DescribePatchBaselinesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePatchBaselinesRequest,DescribePatchBaselinesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePatchBaselines operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchBaselines operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePatchBaselines
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribePatchBaselines(DescribePatchBaselinesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribePatchBaselinesRequestMarshaller();
+            var unmarshaller = DescribePatchBaselinesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribePatchBaselinesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePatchBaselines operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePatchBaselines.</param>
+        /// 
+        /// <returns>Returns a  DescribePatchBaselinesResult from SimpleSystemsManagement.</returns>
+        public  DescribePatchBaselinesResponse EndDescribePatchBaselines(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribePatchBaselinesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribePatchGroups
+
+        /// <summary>
+        /// Lists all patch groups that have been registered with patch baselines.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchGroups service method.</param>
+        /// 
+        /// <returns>The response from the DescribePatchGroups service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        public DescribePatchGroupsResponse DescribePatchGroups(DescribePatchGroupsRequest request)
+        {
+            var marshaller = new DescribePatchGroupsRequestMarshaller();
+            var unmarshaller = DescribePatchGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePatchGroupsRequest,DescribePatchGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePatchGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchGroups operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePatchGroups
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribePatchGroups(DescribePatchGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribePatchGroupsRequestMarshaller();
+            var unmarshaller = DescribePatchGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribePatchGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePatchGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePatchGroups.</param>
+        /// 
+        /// <returns>Returns a  DescribePatchGroupsResult from SimpleSystemsManagement.</returns>
+        public  DescribePatchGroupsResponse EndDescribePatchGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribePatchGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribePatchGroupState
+
+        /// <summary>
+        /// Returns high-level aggregated patch compliance state for a patch group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchGroupState service method.</param>
+        /// 
+        /// <returns>The response from the DescribePatchGroupState service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
+        /// The specified token is not valid.
+        /// </exception>
+        public DescribePatchGroupStateResponse DescribePatchGroupState(DescribePatchGroupStateRequest request)
+        {
+            var marshaller = new DescribePatchGroupStateRequestMarshaller();
+            var unmarshaller = DescribePatchGroupStateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePatchGroupStateRequest,DescribePatchGroupStateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePatchGroupState operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePatchGroupState operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePatchGroupState
+        ///         operation.</returns>
+        public IAsyncResult BeginDescribePatchGroupState(DescribePatchGroupStateRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DescribePatchGroupStateRequestMarshaller();
+            var unmarshaller = DescribePatchGroupStateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribePatchGroupStateRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePatchGroupState operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePatchGroupState.</param>
+        /// 
+        /// <returns>Returns a  DescribePatchGroupStateResult from SimpleSystemsManagement.</returns>
+        public  DescribePatchGroupStateResponse EndDescribePatchGroupState(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribePatchGroupStateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAutomationExecution
 
         /// <summary>
@@ -2916,6 +3565,113 @@ namespace Amazon.SimpleSystemsManagement
         public  GetCommandInvocationResponse EndGetCommandInvocation(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCommandInvocationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDefaultPatchBaseline
+
+        /// <summary>
+        /// Retrieves the default patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultPatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the GetDefaultPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        public GetDefaultPatchBaselineResponse GetDefaultPatchBaseline(GetDefaultPatchBaselineRequest request)
+        {
+            var marshaller = new GetDefaultPatchBaselineRequestMarshaller();
+            var unmarshaller = GetDefaultPatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<GetDefaultPatchBaselineRequest,GetDefaultPatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDefaultPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDefaultPatchBaseline operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDefaultPatchBaseline
+        ///         operation.</returns>
+        public IAsyncResult BeginGetDefaultPatchBaseline(GetDefaultPatchBaselineRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetDefaultPatchBaselineRequestMarshaller();
+            var unmarshaller = GetDefaultPatchBaselineResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetDefaultPatchBaselineRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDefaultPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDefaultPatchBaseline.</param>
+        /// 
+        /// <returns>Returns a  GetDefaultPatchBaselineResult from SimpleSystemsManagement.</returns>
+        public  GetDefaultPatchBaselineResponse EndGetDefaultPatchBaseline(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDefaultPatchBaselineResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDeployablePatchSnapshotForInstance
+
+        /// <summary>
+        /// Retrieves the current snapshot for the patch baseline the instance uses. This API
+        /// is primarily used by the AWS-ApplyPatchBaseline Systems Manager document.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployablePatchSnapshotForInstance service method.</param>
+        /// 
+        /// <returns>The response from the GetDeployablePatchSnapshotForInstance service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        public GetDeployablePatchSnapshotForInstanceResponse GetDeployablePatchSnapshotForInstance(GetDeployablePatchSnapshotForInstanceRequest request)
+        {
+            var marshaller = new GetDeployablePatchSnapshotForInstanceRequestMarshaller();
+            var unmarshaller = GetDeployablePatchSnapshotForInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<GetDeployablePatchSnapshotForInstanceRequest,GetDeployablePatchSnapshotForInstanceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeployablePatchSnapshotForInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeployablePatchSnapshotForInstance operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeployablePatchSnapshotForInstance
+        ///         operation.</returns>
+        public IAsyncResult BeginGetDeployablePatchSnapshotForInstance(GetDeployablePatchSnapshotForInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetDeployablePatchSnapshotForInstanceRequestMarshaller();
+            var unmarshaller = GetDeployablePatchSnapshotForInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetDeployablePatchSnapshotForInstanceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDeployablePatchSnapshotForInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeployablePatchSnapshotForInstance.</param>
+        /// 
+        /// <returns>Returns a  GetDeployablePatchSnapshotForInstanceResult from SimpleSystemsManagement.</returns>
+        public  GetDeployablePatchSnapshotForInstanceResponse EndGetDeployablePatchSnapshotForInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDeployablePatchSnapshotForInstanceResponse>(asyncResult);
         }
 
         #endregion
@@ -3407,6 +4163,119 @@ namespace Amazon.SimpleSystemsManagement
         public  GetParametersResponse EndGetParameters(IAsyncResult asyncResult)
         {
             return EndInvoke<GetParametersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPatchBaseline
+
+        /// <summary>
+        /// Retrieves information about a patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the GetPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        public GetPatchBaselineResponse GetPatchBaseline(GetPatchBaselineRequest request)
+        {
+            var marshaller = new GetPatchBaselineRequestMarshaller();
+            var unmarshaller = GetPatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<GetPatchBaselineRequest,GetPatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPatchBaseline operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPatchBaseline
+        ///         operation.</returns>
+        public IAsyncResult BeginGetPatchBaseline(GetPatchBaselineRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetPatchBaselineRequestMarshaller();
+            var unmarshaller = GetPatchBaselineResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetPatchBaselineRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPatchBaseline.</param>
+        /// 
+        /// <returns>Returns a  GetPatchBaselineResult from SimpleSystemsManagement.</returns>
+        public  GetPatchBaselineResponse EndGetPatchBaseline(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPatchBaselineResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPatchBaselineForPatchGroup
+
+        /// <summary>
+        /// Retrieves the patch baseline that should be used for the specified patch group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPatchBaselineForPatchGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetPatchBaselineForPatchGroup service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        public GetPatchBaselineForPatchGroupResponse GetPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest request)
+        {
+            var marshaller = new GetPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = GetPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetPatchBaselineForPatchGroupRequest,GetPatchBaselineForPatchGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPatchBaselineForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPatchBaselineForPatchGroup operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPatchBaselineForPatchGroup
+        ///         operation.</returns>
+        public IAsyncResult BeginGetPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = GetPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetPatchBaselineForPatchGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPatchBaselineForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPatchBaselineForPatchGroup.</param>
+        /// 
+        /// <returns>Returns a  GetPatchBaselineForPatchGroupResult from SimpleSystemsManagement.</returns>
+        public  GetPatchBaselineForPatchGroupResponse EndGetPatchBaselineForPatchGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPatchBaselineForPatchGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -4367,6 +5236,134 @@ namespace Amazon.SimpleSystemsManagement
 
         #endregion
         
+        #region  RegisterDefaultPatchBaseline
+
+        /// <summary>
+        /// Defines the default patch baseline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDefaultPatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the RegisterDefaultPatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        public RegisterDefaultPatchBaselineResponse RegisterDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest request)
+        {
+            var marshaller = new RegisterDefaultPatchBaselineRequestMarshaller();
+            var unmarshaller = RegisterDefaultPatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterDefaultPatchBaselineRequest,RegisterDefaultPatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterDefaultPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDefaultPatchBaseline operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterDefaultPatchBaseline
+        ///         operation.</returns>
+        public IAsyncResult BeginRegisterDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new RegisterDefaultPatchBaselineRequestMarshaller();
+            var unmarshaller = RegisterDefaultPatchBaselineResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RegisterDefaultPatchBaselineRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterDefaultPatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterDefaultPatchBaseline.</param>
+        /// 
+        /// <returns>Returns a  RegisterDefaultPatchBaselineResult from SimpleSystemsManagement.</returns>
+        public  RegisterDefaultPatchBaselineResponse EndRegisterDefaultPatchBaseline(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RegisterDefaultPatchBaselineResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  RegisterPatchBaselineForPatchGroup
+
+        /// <summary>
+        /// Registers a patch baseline for a patch group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterPatchBaselineForPatchGroup service method.</param>
+        /// 
+        /// <returns>The response from the RegisterPatchBaselineForPatchGroup service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.AlreadyExistsException">
+        /// Error returned if an attempt is made to register a patch group with a patch baseline
+        /// that is already registered with a different patch baseline.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
+        /// The resource ID is not valid. Verify that you entered the correct ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceLimitExceededException">
+        /// Error returned when the caller has exceeded the default resource limits (e.g. too
+        /// many Maintenance Windows have been created).
+        /// </exception>
+        public RegisterPatchBaselineForPatchGroupResponse RegisterPatchBaselineForPatchGroup(RegisterPatchBaselineForPatchGroupRequest request)
+        {
+            var marshaller = new RegisterPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = RegisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterPatchBaselineForPatchGroupRequest,RegisterPatchBaselineForPatchGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RegisterPatchBaselineForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RegisterPatchBaselineForPatchGroup operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterPatchBaselineForPatchGroup
+        ///         operation.</returns>
+        public IAsyncResult BeginRegisterPatchBaselineForPatchGroup(RegisterPatchBaselineForPatchGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new RegisterPatchBaselineForPatchGroupRequestMarshaller();
+            var unmarshaller = RegisterPatchBaselineForPatchGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RegisterPatchBaselineForPatchGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RegisterPatchBaselineForPatchGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterPatchBaselineForPatchGroup.</param>
+        /// 
+        /// <returns>Returns a  RegisterPatchBaselineForPatchGroupResult from SimpleSystemsManagement.</returns>
+        public  RegisterPatchBaselineForPatchGroupResponse EndRegisterPatchBaselineForPatchGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RegisterPatchBaselineForPatchGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RegisterTargetWithMaintenanceWindow
 
         /// <summary>
@@ -5297,6 +6294,64 @@ namespace Amazon.SimpleSystemsManagement
         public  UpdateManagedInstanceRoleResponse EndUpdateManagedInstanceRole(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateManagedInstanceRoleResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdatePatchBaseline
+
+        /// <summary>
+        /// Modifies an existing patch baseline. Fields not specified in the request are left
+        /// unchanged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePatchBaseline service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePatchBaseline service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.DoesNotExistException">
+        /// Error returned when the ID specified for a resource (e.g. a Maintenance Window) doesn’t
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        public UpdatePatchBaselineResponse UpdatePatchBaseline(UpdatePatchBaselineRequest request)
+        {
+            var marshaller = new UpdatePatchBaselineRequestMarshaller();
+            var unmarshaller = UpdatePatchBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePatchBaselineRequest,UpdatePatchBaselineResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePatchBaseline operation on AmazonSimpleSystemsManagementClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePatchBaseline
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdatePatchBaseline(UpdatePatchBaselineRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdatePatchBaselineRequestMarshaller();
+            var unmarshaller = UpdatePatchBaselineResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdatePatchBaselineRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePatchBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePatchBaseline.</param>
+        /// 
+        /// <returns>Returns a  UpdatePatchBaselineResult from SimpleSystemsManagement.</returns>
+        public  UpdatePatchBaselineResponse EndUpdatePatchBaseline(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdatePatchBaselineResponse>(asyncResult);
         }
 
         #endregion
