@@ -34,6 +34,7 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private long? _creationTime;
         private string _destinationArn;
+        private Distribution _distribution;
         private string _filterName;
         private string _filterPattern;
         private string _logGroupName;
@@ -73,6 +74,25 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetDestinationArn()
         {
             return this._destinationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Distribution. 
+        /// <para>
+        /// The method used to distribute log data to the destination, when the destination is
+        /// an Amazon Kinesis stream.
+        /// </para>
+        /// </summary>
+        public Distribution Distribution
+        {
+            get { return this._distribution; }
+            set { this._distribution = value; }
+        }
+
+        // Check to see if Distribution property is set
+        internal bool IsSetDistribution()
+        {
+            return this._distribution != null;
         }
 
         /// <summary>

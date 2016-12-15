@@ -701,7 +701,7 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Lists the specified metric filters. You can list all the metric filters or filter
-        /// the results by log name, prefix, metric name, or metric namespace. The results are
+        /// the results by log name, prefix, metric name, and metric namespace. The results are
         /// ASCII-sorted by filter name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMetricFilters service method.</param>
@@ -853,6 +853,42 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  ListTagsLogGroup
+
+
+        /// <summary>
+        /// Lists the tags for the specified log group.
+        /// 
+        ///  
+        /// <para>
+        /// To add tags, use <a>TagLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsLogGroup service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsLogGroup service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        ListTagsLogGroupResponse ListTagsLogGroup(ListTagsLogGroupRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsLogGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsLogGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListTagsLogGroupResponse> ListTagsLogGroupAsync(ListTagsLogGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutDestination
 
 
@@ -969,7 +1005,9 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The log events in the batch must be in chronological ordered by their timestamp.
+        /// The log events in the batch must be in chronological ordered by their timestamp (the
+        /// time the event occurred, expressed as the number of milliseconds since Jan 1, 1970
+        /// 00:00:00 UTC).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -977,8 +1015,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A batch of log events in a single PutLogEvents request cannot span more than 24 hours.
-        /// Otherwise, the PutLogEvents operation will fail.
+        /// A batch of log events in a single request cannot span more than 24 hours. Otherwise,
+        /// the operation fails.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1168,6 +1206,48 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  TagLogGroup
+
+
+        /// <summary>
+        /// Adds or updates the specified tags for the specified log group.
+        /// 
+        ///  
+        /// <para>
+        /// To list the tags for a log group, use <a>ListTagsLogGroup</a>. To remove tags, use
+        /// <a>UntagLogGroup</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about tags, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html">Tag
+        /// Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagLogGroup service method.</param>
+        /// 
+        /// <returns>The response from the TagLogGroup service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        TagLogGroupResponse TagLogGroup(TagLogGroupRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagLogGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagLogGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<TagLogGroupResponse> TagLogGroupAsync(TagLogGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  TestMetricFilter
 
 
@@ -1197,6 +1277,39 @@ namespace Amazon.CloudWatchLogs
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<TestMetricFilterResponse> TestMetricFilterAsync(TestMetricFilterRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagLogGroup
+
+
+        /// <summary>
+        /// Removes the specified tags from the specified log group.
+        /// 
+        ///  
+        /// <para>
+        /// To list the tags for a log group, use <a>ListTagsLogGroup</a>. To add tags, use <a>UntagLogGroup</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagLogGroup service method.</param>
+        /// 
+        /// <returns>The response from the UntagLogGroup service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        UntagLogGroupResponse UntagLogGroup(UntagLogGroupRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagLogGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagLogGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UntagLogGroupResponse> UntagLogGroupAsync(UntagLogGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

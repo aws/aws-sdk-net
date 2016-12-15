@@ -849,6 +849,37 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  ListTagsLogGroup
+
+        internal ListTagsLogGroupResponse ListTagsLogGroup(ListTagsLogGroupRequest request)
+        {
+            var marshaller = new ListTagsLogGroupRequestMarshaller();
+            var unmarshaller = ListTagsLogGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsLogGroupRequest,ListTagsLogGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsLogGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsLogGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListTagsLogGroupResponse> ListTagsLogGroupAsync(ListTagsLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListTagsLogGroupRequestMarshaller();
+            var unmarshaller = ListTagsLogGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsLogGroupRequest,ListTagsLogGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PutDestination
 
         internal PutDestinationResponse PutDestination(PutDestinationRequest request)
@@ -1035,6 +1066,37 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  TagLogGroup
+
+        internal TagLogGroupResponse TagLogGroup(TagLogGroupRequest request)
+        {
+            var marshaller = new TagLogGroupRequestMarshaller();
+            var unmarshaller = TagLogGroupResponseUnmarshaller.Instance;
+
+            return Invoke<TagLogGroupRequest,TagLogGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagLogGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagLogGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<TagLogGroupResponse> TagLogGroupAsync(TagLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new TagLogGroupRequestMarshaller();
+            var unmarshaller = TagLogGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagLogGroupRequest,TagLogGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TestMetricFilter
 
         internal TestMetricFilterResponse TestMetricFilter(TestMetricFilterRequest request)
@@ -1061,6 +1123,37 @@ namespace Amazon.CloudWatchLogs
             var unmarshaller = TestMetricFilterResponseUnmarshaller.Instance;
 
             return InvokeAsync<TestMetricFilterRequest,TestMetricFilterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagLogGroup
+
+        internal UntagLogGroupResponse UntagLogGroup(UntagLogGroupRequest request)
+        {
+            var marshaller = new UntagLogGroupRequestMarshaller();
+            var unmarshaller = UntagLogGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UntagLogGroupRequest,UntagLogGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagLogGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagLogGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UntagLogGroupResponse> UntagLogGroupAsync(UntagLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UntagLogGroupRequestMarshaller();
+            var unmarshaller = UntagLogGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagLogGroupRequest,UntagLogGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

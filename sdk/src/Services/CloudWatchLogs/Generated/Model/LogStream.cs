@@ -81,7 +81,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property FirstEventTimestamp. 
         /// <para>
-        /// The time of the first event.
+        /// The time of the first event, expressed as the number of milliseconds since Jan 1,
+        /// 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
         public DateTime FirstEventTimestamp
@@ -99,7 +100,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LastEventTimestamp. 
         /// <para>
-        /// The time of the last event.
+        /// The time of the last event, expressed as the number of milliseconds since Jan 1, 1970
+        /// 00:00:00 UTC.
         /// </para>
         /// </summary>
         public DateTime LastEventTimestamp

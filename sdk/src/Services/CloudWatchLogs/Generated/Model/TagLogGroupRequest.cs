@@ -28,50 +28,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateLogGroup operation.
-    /// Creates a log group with the specified name.
+    /// Container for the parameters to the TagLogGroup operation.
+    /// Adds or updates the specified tags for the specified log group.
     /// 
     ///  
     /// <para>
-    /// You can create up to 5000 log groups per account.
+    /// To list the tags for a log group, use <a>ListTagsLogGroup</a>. To remove tags, use
+    /// <a>UntagLogGroup</a>.
     /// </para>
     ///  
     /// <para>
-    /// You must use the following guidelines when naming a log group:
+    /// For more information about tags, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html">Tag
+    /// Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Log group names must be unique within a region for an AWS account.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Log group names can be between 1 and 512 characters long.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore),
-    /// '-' (hyphen), '/' (forward slash), and '.' (period).
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
-    public partial class CreateLogGroupRequest : AmazonCloudWatchLogsRequest
+    public partial class TagLogGroupRequest : AmazonCloudWatchLogsRequest
     {
         private string _logGroupName;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
-
-        /// <summary>
-        /// Empty constructor used to set  properties independently even when a simple constructor is available
-        /// </summary>
-        public CreateLogGroupRequest() { }
-
-        /// <summary>
-        /// Instantiates CreateLogGroupRequest with the parameterized properties
-        /// </summary>
-        /// <param name="logGroupName">The name of the log group.</param>
-        public CreateLogGroupRequest(string logGroupName)
-        {
-            _logGroupName = logGroupName;
-        }
 
         /// <summary>
         /// Gets and sets the property LogGroupName. 

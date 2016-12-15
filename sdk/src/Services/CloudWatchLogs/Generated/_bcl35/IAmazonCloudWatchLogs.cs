@@ -848,7 +848,7 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Lists the specified metric filters. You can list all the metric filters or filter
-        /// the results by log name, prefix, metric name, or metric namespace. The results are
+        /// the results by log name, prefix, metric name, and metric namespace. The results are
         /// ASCII-sorted by filter name.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeMetricFilters service method.</param>
@@ -1048,6 +1048,54 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  ListTagsLogGroup
+
+
+        /// <summary>
+        /// Lists the tags for the specified log group.
+        /// 
+        ///  
+        /// <para>
+        /// To add tags, use <a>TagLogGroup</a>. To remove tags, use <a>UntagLogGroup</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsLogGroup service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsLogGroup service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        ListTagsLogGroupResponse ListTagsLogGroup(ListTagsLogGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsLogGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsLogGroup operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsLogGroup
+        ///         operation.</returns>
+        IAsyncResult BeginListTagsLogGroup(ListTagsLogGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsLogGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsLogGroup.</param>
+        /// 
+        /// <returns>Returns a  ListTagsLogGroupResult from CloudWatchLogs.</returns>
+        ListTagsLogGroupResponse EndListTagsLogGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutDestination
 
 
@@ -1188,7 +1236,9 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The log events in the batch must be in chronological ordered by their timestamp.
+        /// The log events in the batch must be in chronological ordered by their timestamp (the
+        /// time the event occurred, expressed as the number of milliseconds since Jan 1, 1970
+        /// 00:00:00 UTC).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1196,8 +1246,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A batch of log events in a single PutLogEvents request cannot span more than 24 hours.
-        /// Otherwise, the PutLogEvents operation will fail.
+        /// A batch of log events in a single request cannot span more than 24 hours. Otherwise,
+        /// the operation fails.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1435,6 +1485,60 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  TagLogGroup
+
+
+        /// <summary>
+        /// Adds or updates the specified tags for the specified log group.
+        /// 
+        ///  
+        /// <para>
+        /// To list the tags for a log group, use <a>ListTagsLogGroup</a>. To remove tags, use
+        /// <a>UntagLogGroup</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about tags, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/log-group-tagging.html">Tag
+        /// Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagLogGroup service method.</param>
+        /// 
+        /// <returns>The response from the TagLogGroup service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        TagLogGroupResponse TagLogGroup(TagLogGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagLogGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagLogGroup operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagLogGroup
+        ///         operation.</returns>
+        IAsyncResult BeginTagLogGroup(TagLogGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagLogGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagLogGroup.</param>
+        /// 
+        /// <returns>Returns a  TagLogGroupResult from CloudWatchLogs.</returns>
+        TagLogGroupResponse EndTagLogGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  TestMetricFilter
 
 
@@ -1476,6 +1580,51 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>Returns a  TestMetricFilterResult from CloudWatchLogs.</returns>
         TestMetricFilterResponse EndTestMetricFilter(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagLogGroup
+
+
+        /// <summary>
+        /// Removes the specified tags from the specified log group.
+        /// 
+        ///  
+        /// <para>
+        /// To list the tags for a log group, use <a>ListTagsLogGroup</a>. To add tags, use <a>UntagLogGroup</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagLogGroup service method.</param>
+        /// 
+        /// <returns>The response from the UntagLogGroup service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        UntagLogGroupResponse UntagLogGroup(UntagLogGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagLogGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagLogGroup operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagLogGroup
+        ///         operation.</returns>
+        IAsyncResult BeginUntagLogGroup(UntagLogGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagLogGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagLogGroup.</param>
+        /// 
+        /// <returns>Returns a  UntagLogGroupResult from CloudWatchLogs.</returns>
+        UntagLogGroupResponse EndUntagLogGroup(IAsyncResult asyncResult);
 
         #endregion
         

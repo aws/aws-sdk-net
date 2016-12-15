@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateLogGroup Request Marshaller
+    /// UntagLogGroup Request Marshaller
     /// </summary>       
-    public class CreateLogGroupRequestMarshaller : IMarshaller<IRequest, CreateLogGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UntagLogGroupRequestMarshaller : IMarshaller<IRequest, UntagLogGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateLogGroupRequest)input);
+            return this.Marshall((UntagLogGroupRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateLogGroupRequest publicRequest)
+        public IRequest Marshall(UntagLogGroupRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
-            string target = "Logs_20140328.CreateLogGroup";
+            string target = "Logs_20140328.UntagLogGroup";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -76,15 +76,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                            context.Writer.Write(publicRequestTagsListValue);
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
         

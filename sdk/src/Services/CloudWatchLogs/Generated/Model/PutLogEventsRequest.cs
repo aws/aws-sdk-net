@@ -57,7 +57,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The log events in the batch must be in chronological ordered by their timestamp.
+    /// The log events in the batch must be in chronological ordered by their timestamp (the
+    /// time the event occurred, expressed as the number of milliseconds since Jan 1, 1970
+    /// 00:00:00 UTC).
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -65,8 +67,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A batch of log events in a single PutLogEvents request cannot span more than 24 hours.
-    /// Otherwise, the PutLogEvents operation will fail.
+    /// A batch of log events in a single request cannot span more than 24 hours. Otherwise,
+    /// the operation fails.
     /// </para>
     ///  </li> </ul>
     /// </summary>

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateLogGroup Request Marshaller
+    /// TagLogGroup Request Marshaller
     /// </summary>       
-    public class CreateLogGroupRequestMarshaller : IMarshaller<IRequest, CreateLogGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagLogGroupRequestMarshaller : IMarshaller<IRequest, TagLogGroupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateLogGroupRequest)input);
+            return this.Marshall((TagLogGroupRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateLogGroupRequest publicRequest)
+        public IRequest Marshall(TagLogGroupRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatchLogs");
-            string target = "Logs_20140328.CreateLogGroup";
+            string target = "Logs_20140328.TagLogGroup";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";

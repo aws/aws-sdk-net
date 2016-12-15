@@ -113,7 +113,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The time the event occurred.
+        /// The time the event occurred, expressed as the number of milliseconds since Jan 1,
+        /// 1970 00:00:00 UTC.
         /// </para>
         /// </summary>
         public long Timestamp

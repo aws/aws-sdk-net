@@ -448,6 +448,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CloudWatchLogs")]
+        public void ListTagsLogGroupMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListTagsLogGroupRequest>();
+            var marshaller = new ListTagsLogGroupRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListTagsLogGroupRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListTagsLogGroup").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListTagsLogGroupResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListTagsLogGroupResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CloudWatchLogs")]
         public void PutDestinationMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<PutDestinationRequest>();
@@ -570,6 +599,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CloudWatchLogs")]
+        public void TagLogGroupMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<TagLogGroupRequest>();
+            var marshaller = new TagLogGroupRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<TagLogGroupRequest>(request,jsonRequest);
+
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CloudWatchLogs")]
         public void TestMetricFilterMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<TestMetricFilterRequest>();
@@ -592,6 +637,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = TestMetricFilterResponseUnmarshaller.Instance.Unmarshall(context)
                 as TestMetricFilterResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CloudWatchLogs")]
+        public void UntagLogGroupMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<UntagLogGroupRequest>();
+            var marshaller = new UntagLogGroupRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<UntagLogGroupRequest>(request,jsonRequest);
+
         }
 
             }
