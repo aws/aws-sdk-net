@@ -71,10 +71,10 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         /// <para>
         ///  Specifies the data set type to be written to the output csv file. The data set types
         /// customer_support_contacts_data and test_customer_support_contacts_data both result
-        /// in a csv file containing the following fields: Product Id, Customer Guid, Subscription
-        /// Guid, Subscription Start Date, Organization, AWS Account Id, Given Name, Surname,
-        /// Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type, and Operation
-        /// Time. Currently, only the test_customer_support_contacts_data value is supported 
+        /// in a csv file containing the following fields: Product Id, Product Code, Customer
+        /// Guid, Subscription Guid, Subscription Start Date, Organization, AWS Account Id, Given
+        /// Name, Surname, Telephone Number, Email, Title, Country Code, ZIP Code, Operation Type,
+        /// and Operation Time. 
         /// </para>
         ///  
         /// <para>
@@ -135,7 +135,8 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
 
         /// <summary>
         /// Gets and sets the property FromDate. The start date from which to retrieve the data
-        /// set. This parameter only affects the customer_support_contacts_data data set type.
+        /// set in UTC. This parameter only affects the customer_support_contacts_data data set
+        /// type.
         /// </summary>
         public DateTime FromDate
         {
