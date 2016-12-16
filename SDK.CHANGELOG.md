@@ -1,3 +1,30 @@
+### 3.3.31.0 (2016-12-15 23:20 UTC)
+* AWSMarketplaceCommerceAnalytics (3.3.1.0)
+	* Add new enum to DataSetType: sales_compensation_billed_revenue
+* Batch (3.3.0.0)
+	* AWS Batch is a batch computing service that lets customers define queues and compute environments and then submit work as batch jobs.
+* CloudWatchLogs (3.3.2.0)
+	* Add support for associating LogGroups with AWSTagris tags.
+* DatabaseMigrationService (3.3.1.0)
+	* Adds support for SSL enabled Oracle endpoints and task modification.
+* ElasticBeanstalk (3.3.2.3)
+	* Doc-only Update for Elastic Beanstalk: CodeBuild.
+* Polly (3.3.0.3)
+	* Fix to send X-Amz-Security-Token header in the casing currently expected by the service.
+* RDS (3.3.3.1)
+	* Doc-only Update for RDS: New versions available in CreateDBInstance
+* S3 (3.3.5.2)
+	* Fixed presigned url helper to switch to non-AWS Signature v4, if region allows, if requested expiry date is greater than the maximum permitted range for the signature algorithm.
+* SecurityToken (3.3.0.7)
+	* Documentation update.
+* SimpleSystemsManagement (3.3.2.0)
+	* Added support for the new Patch Baseline and Patch Compliance APIs.
+* Core 3.3.7.0
+	* Added region endpoint constants for new EU West (London) region.
+Added new region endpoints for Amazon Cognito.
+Omit x-amzn-trace-id during signing.
+	* all services packages updated to require new core
+
 ### 3.3.30.1 (2016-12-13 03:39 UTC)
 * IotData (3.3.0.6)
 	* Updated to use new Core, version 3.3.6.1
