@@ -85,13 +85,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private string CreateBucketAndObject(AmazonS3Client client)
         {
-            var bucketName = S3TestUtils.CreateBucket(client);
+            var bucketName = S3TestUtils.CreateBucketWithWait(client);
             client.PutObject(new PutObjectRequest
             {
                 BucketName = bucketName,
                 Key = TestKey,
                 ContentBody = TestContent
             });
+            S3TestUtils.WaitForObject(client, bucketName, TestKey, 30);
             return bucketName;
         }
 

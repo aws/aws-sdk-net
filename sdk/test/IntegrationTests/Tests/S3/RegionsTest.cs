@@ -32,15 +32,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     try
                     {
-                        bucketName = UtilityMethods.SDK_TEST_PREFIX + DateTime.Now.Ticks;
-
-                        client.PutBucket(new PutBucketRequest
-                        {
-                            BucketName = bucketName,
-                            BucketRegion = location
-                        });
-
-                        Thread.Sleep(500);
+                        bucketName = S3TestUtils.CreateBucketWithWait(client);
                         var returnedLocation = client.GetBucketLocation(new GetBucketLocationRequest
                         {
                             BucketName = bucketName
