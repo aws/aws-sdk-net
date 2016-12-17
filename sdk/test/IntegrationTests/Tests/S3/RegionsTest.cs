@@ -38,7 +38,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                             BucketName = bucketName
                         }).Location;
 
-                        Assert.AreEqual(location, returnedLocation);
+                        //Map S3Region.EUW1 to S3Region.EU
+                        //S3 considers this as the same region.
+                        if (location == S3Region.EUW1)
+                        {
+                            Assert.AreEqual(S3Region.EU, returnedLocation);
+                        }
+                        else
+                        {
+                            Assert.AreEqual(location, returnedLocation);
+                        }
+                        
                     }
                     finally
                     {
