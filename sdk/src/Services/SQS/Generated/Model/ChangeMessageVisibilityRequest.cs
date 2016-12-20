@@ -30,20 +30,20 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Container for the parameters to the ChangeMessageVisibility operation.
     /// Changes the visibility timeout of a specified message in a queue to a new value. The
-    /// maximum allowed timeout value you can set the value to is 12 hours. This means you
-    /// can't extend the timeout of a message in an existing queue to more than a total visibility
-    /// timeout of 12 hours. (For more information visibility timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-    /// Timeout</a> in the <i>Amazon SQS Developer Guide</i>.)
+    /// maximum allowed timeout value is 12 hours. Thus, you can't extend the timeout of a
+    /// message in an existing queue to more than a total visibility timeout of 12 hours.
+    /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+    /// Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
     /// 
     ///  
     /// <para>
-    /// For example, let's say you have a message and its default message visibility timeout
-    /// is 5 minutes. After 3 minutes, you call <code>ChangeMessageVisiblity</code> with a
-    /// timeout of 10 minutes. At that time, the timeout for the message would be extended
-    /// by 10 minutes beyond the time of the ChangeMessageVisibility call. This results in
-    /// a total visibility timeout of 13 minutes. You can continue to call ChangeMessageVisibility
-    /// to extend the visibility timeout to a maximum of 12 hours. If you try to extend beyond
-    /// 12 hours, the request will be rejected.
+    /// For example, you have a message and with the default visibility timeout of 5 minutes.
+    /// After 3 minutes, you call <code>ChangeMessageVisiblity</code> with a timeout of 10
+    /// minutes. At that time, the timeout for the message is extended by 10 minutes beyond
+    /// the time of the <code>ChangeMessageVisibility</code> action. This results in a total
+    /// visibility timeout of 13 minutes. You can continue to call the <code>ChangeMessageVisibility</code>
+    /// to extend the visibility timeout to a maximum of 12 hours. If you try to extend the
+    /// visibility timeout beyond 12 hours, your request is rejected.
     /// </para>
     ///  
     /// <para>
@@ -64,17 +64,17 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// If you attempt to set the <code>VisibilityTimeout</code> to an amount more than the
-    /// maximum time left, Amazon SQS returns an error. It will not automatically recalculate
-    /// and increase the timeout to the maximum time remaining.
+    /// If you attempt to set the <code>VisibilityTimeout</code> to a value greater than the
+    /// maximum time left, Amazon SQS returns an error. Amazon SQS doesn't automatically recalculate
+    /// and increase the timeout to the maximum remaining time.
     /// </para>
     ///  
     /// <para>
-    /// Unlike with a queue, when you change the visibility timeout for a specific message,
-    /// that timeout value is applied immediately but is not saved in memory for that message.
+    /// Unlike with a queue, when you change the visibility timeout for a specific message
+    /// the timeout value is applied immediately but isn't saved in memory for that message.
     /// If you don't delete a message after it is received, the visibility timeout for the
-    /// message the next time it is received reverts to the original timeout value, not the
-    /// value you set with the <code>ChangeMessageVisibility</code> action.
+    /// message reverts to the original timeout value (not to the value you set using the
+    /// <code>ChangeMessageVisibility</code> action) the next time the message is received.
     /// </para>
     ///  </important>
     /// </summary>
@@ -92,9 +92,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates ChangeMessageVisibilityRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
-        /// <param name="receiptHandle">The receipt handle associated with the message whose visibility timeout should be changed. This parameter is returned by the <a>ReceiveMessage</a> action.</param>
-        /// <param name="visibilityTimeout">The new value (in seconds - from 0 to 43200 - maximum 12 hours) for the message's visibility timeout.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue whose message's visibility is changed. Queue URLs are case-sensitive.</param>
+        /// <param name="receiptHandle">The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code> <a>ReceiveMessage</a> </code> action.</param>
+        /// <param name="visibilityTimeout">The new value for the message's visibility timeout (in seconds). Values values: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</param>
         public ChangeMessageVisibilityRequest(string queueUrl, string receiptHandle, int visibilityTimeout)
         {
             _queueUrl = queueUrl;
@@ -105,7 +105,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property QueueUrl. 
         /// <para>
-        /// The URL of the Amazon SQS queue to take action on.
+        /// The URL of the Amazon SQS queue whose message's visibility is changed.
         /// </para>
         ///  
         /// <para>
@@ -127,8 +127,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property ReceiptHandle. 
         /// <para>
-        /// The receipt handle associated with the message whose visibility timeout should be
-        /// changed. This parameter is returned by the <a>ReceiveMessage</a> action.
+        /// The receipt handle associated with the message whose visibility timeout is changed.
+        /// This parameter is returned by the <code> <a>ReceiveMessage</a> </code> action.
         /// </para>
         /// </summary>
         public string ReceiptHandle
@@ -146,8 +146,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property VisibilityTimeout. 
         /// <para>
-        /// The new value (in seconds - from 0 to 43200 - maximum 12 hours) for the message's
-        /// visibility timeout.
+        /// The new value for the message's visibility timeout (in seconds). Values values: <code>0</code>
+        /// to <code>43200</code>. Maximum: 12 hours.
         /// </para>
         /// </summary>
         public int VisibilityTimeout

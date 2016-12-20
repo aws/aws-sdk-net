@@ -38,7 +38,7 @@ namespace Amazon.SQS.Model
     /// The result of sending each message is reported individually in the response. Because
     /// the batch request can result in a combination of successful and unsuccessful actions,
     /// you should check for batch errors even when the call returns an HTTP status code of
-    /// 200.
+    /// <code>200</code>.
     /// </para>
     ///  
     /// <para>
@@ -51,36 +51,55 @@ namespace Amazon.SQS.Model
     /// The following list shows the characters (in Unicode) that are allowed in your message,
     /// according to the W3C XML specification:
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    ///  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | [<code>#x20</code> to <code>#xD7FF</code>]
-    /// | [<code>#xE000</code> to <code>#xFFFD</code>] | [<code>#x10000</code> to <code>#x10FFFF</code>]
+    ///  <code>#x9</code> 
     /// </para>
-    ///  
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>#xA</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>#xD</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>#x20</code> to <code>#xD7FF</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>#xE000</code> to <code>#xFFFD</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>#x10000</code> to <code>#x10FFFF</code> 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
-    /// If you send any characters that aren't included in this list, your request will be
-    /// rejected.
+    /// If you send any characters that aren't included in this list, your request is rejected.
     /// </para>
     ///  </important> 
     /// <para>
     /// If you don't specify the <code>DelaySeconds</code> parameter for an entry, Amazon
-    /// SQS uses the default for the queue.
+    /// SQS uses the default value for the queue.
     /// </para>
     ///  <note> 
     /// <para>
-    /// Some API actions take lists of parameters. These lists are specified using the <code>param.n</code>
+    /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
     /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
-    /// list with two elements looks like this: 
-    /// </para>
-    ///  </note> 
-    /// <para>
-    ///  <code>&amp;amp;Attribute.1=this</code> 
+    /// list with two elements looks like this:
     /// </para>
     ///  
     /// <para>
-    ///  <code>&amp;amp;Attribute.2=that</code> 
+    ///  <code>&amp;Attribute.1=this</code> 
     /// </para>
+    ///  
+    /// <para>
+    ///  <code>&amp;Attribute.2=that</code> 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class SendMessageBatchRequest : AmazonSQSRequest
     {
@@ -95,8 +114,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates SendMessageBatchRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
-        /// <param name="entries">A list of <a>SendMessageBatchRequestEntry</a> items.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to which batched messages are sent. Queue URLs are case-sensitive.</param>
+        /// <param name="entries">A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.</param>
         public SendMessageBatchRequest(string queueUrl, List<SendMessageBatchRequestEntry> entries)
         {
             _queueUrl = queueUrl;
@@ -106,7 +125,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// A list of <a>SendMessageBatchRequestEntry</a> items.
+        /// A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.
         /// </para>
         /// </summary>
         public List<SendMessageBatchRequestEntry> Entries
@@ -124,7 +143,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property QueueUrl. 
         /// <para>
-        /// The URL of the Amazon SQS queue to take action on.
+        /// The URL of the Amazon SQS queue to which batched messages are sent.
         /// </para>
         ///  
         /// <para>
