@@ -1,0 +1,114 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the cognito-identity-2014-06-30.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.CognitoIdentity.Model
+{
+    /// <summary>
+    /// A rule that maps a claim name, a claim value, and a match type to a role ARN.
+    /// </summary>
+    public partial class MappingRule
+    {
+        private string _claim;
+        private MappingRuleMatchType _matchType;
+        private string _roleARN;
+        private string _value;
+
+        /// <summary>
+        /// Gets and sets the property Claim. 
+        /// <para>
+        /// The claim name that must be present in the token, for example, "isAdmin" or "paid".
+        /// </para>
+        /// </summary>
+        public string Claim
+        {
+            get { return this._claim; }
+            set { this._claim = value; }
+        }
+
+        // Check to see if Claim property is set
+        internal bool IsSetClaim()
+        {
+            return this._claim != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MatchType. 
+        /// <para>
+        /// The match condition that specifies how closely the claim value in the IdP token must
+        /// match <code>Value</code>.
+        /// </para>
+        /// </summary>
+        public MappingRuleMatchType MatchType
+        {
+            get { return this._matchType; }
+            set { this._matchType = value; }
+        }
+
+        // Check to see if MatchType property is set
+        internal bool IsSetMatchType()
+        {
+            return this._matchType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleARN. 
+        /// <para>
+        /// The role ARN.
+        /// </para>
+        /// </summary>
+        public string RoleARN
+        {
+            get { return this._roleARN; }
+            set { this._roleARN = value; }
+        }
+
+        // Check to see if RoleARN property is set
+        internal bool IsSetRoleARN()
+        {
+            return this._roleARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// A brief string that the claim must match, for example, "paid" or "yes".
+        /// </para>
+        /// </summary>
+        public string Value
+        {
+            get { return this._value; }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value != null;
+        }
+
+    }
+}

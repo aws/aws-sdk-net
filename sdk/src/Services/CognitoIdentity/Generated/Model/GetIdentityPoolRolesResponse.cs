@@ -33,6 +33,7 @@ namespace Amazon.CognitoIdentity.Model
     public partial class GetIdentityPoolRolesResponse : AmazonWebServiceResponse
     {
         private string _identityPoolId;
+        private Dictionary<string, RoleMapping> _roleMappings = new Dictionary<string, RoleMapping>();
         private Dictionary<string, string> _roles = new Dictionary<string, string>();
 
         /// <summary>
@@ -51,6 +52,26 @@ namespace Amazon.CognitoIdentity.Model
         internal bool IsSetIdentityPoolId()
         {
             return this._identityPoolId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleMappings. 
+        /// <para>
+        /// How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a>
+        /// object map. The string identifies the identity provider, for example, "graph.facebook.com"
+        /// or "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
+        /// </para>
+        /// </summary>
+        public Dictionary<string, RoleMapping> RoleMappings
+        {
+            get { return this._roleMappings; }
+            set { this._roleMappings = value; }
+        }
+
+        // Check to see if RoleMappings property is set
+        internal bool IsSetRoleMappings()
+        {
+            return this._roleMappings != null && this._roleMappings.Count > 0; 
         }
 
         /// <summary>

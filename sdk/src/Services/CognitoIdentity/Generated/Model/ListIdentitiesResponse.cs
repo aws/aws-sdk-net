@@ -37,8 +37,10 @@ namespace Amazon.CognitoIdentity.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Identities. An object containing a set of identities and
-        /// associated mappings.
+        /// Gets and sets the property Identities. 
+        /// <para>
+        /// An object containing a set of identities and associated mappings.
+        /// </para>
         /// </summary>
         public List<IdentityDescription> Identities
         {
@@ -53,7 +55,10 @@ namespace Amazon.CognitoIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IdentityPoolId. An identity pool ID in the format REGION:GUID.
+        /// Gets and sets the property IdentityPoolId. 
+        /// <para>
+        /// An identity pool ID in the format REGION:GUID.
+        /// </para>
         /// </summary>
         public string IdentityPoolId
         {
@@ -68,7 +73,10 @@ namespace Amazon.CognitoIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. A pagination token.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A pagination token.
+        /// </para>
         /// </summary>
         public string NextToken
         {

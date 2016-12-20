@@ -28,35 +28,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeIdentity operation.
-    /// Returns metadata related to the given identity, including when the identity was created
-    /// and any associated linked logins.
-    /// 
-    ///  
-    /// <para>
-    /// You must use AWS Developer credentials to call this API.
-    /// </para>
+    /// A container for rules.
     /// </summary>
-    public partial class DescribeIdentityRequest : AmazonCognitoIdentityRequest
+    public partial class RulesConfigurationType
     {
-        private string _identityId;
+        private List<MappingRule> _rules = new List<MappingRule>();
 
         /// <summary>
-        /// Gets and sets the property IdentityId. 
+        /// Gets and sets the property Rules. 
         /// <para>
-        /// A unique identifier in the format REGION:GUID.
+        /// An array of rules. You can specify up to 25 rules per identity provider.
+        /// </para>
+        ///  
+        /// <para>
+        /// Rules are evaluated in order. The first one to match specifies the role.
         /// </para>
         /// </summary>
-        public string IdentityId
+        public List<MappingRule> Rules
         {
-            get { return this._identityId; }
-            set { this._identityId = value; }
+            get { return this._rules; }
+            set { this._rules = value; }
         }
 
-        // Check to see if IdentityId property is set
-        internal bool IsSetIdentityId()
+        // Check to see if Rules property is set
+        internal bool IsSetRules()
         {
-            return this._identityId != null;
+            return this._rules != null && this._rules.Count > 0; 
         }
 
     }

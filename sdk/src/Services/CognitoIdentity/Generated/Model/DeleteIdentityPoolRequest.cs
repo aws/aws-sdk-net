@@ -32,7 +32,7 @@ namespace Amazon.CognitoIdentity.Model
     /// Deletes a user pool. Once a pool is deleted, users will not be able to authenticate
     /// with the pool.
     /// 
-    /// 
+    ///  
     /// <para>
     /// You must use AWS Developer credentials to call this API.
     /// </para>
@@ -42,7 +42,10 @@ namespace Amazon.CognitoIdentity.Model
         private string _identityPoolId;
 
         /// <summary>
-        /// Gets and sets the property IdentityPoolId. An identity pool ID in the format REGION:GUID.
+        /// Gets and sets the property IdentityPoolId. 
+        /// <para>
+        /// An identity pool ID in the format REGION:GUID.
+        /// </para>
         /// </summary>
         public string IdentityPoolId
         {

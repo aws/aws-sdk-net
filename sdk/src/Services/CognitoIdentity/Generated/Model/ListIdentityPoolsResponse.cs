@@ -36,8 +36,10 @@ namespace Amazon.CognitoIdentity.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property IdentityPools. The identity pools returned by the ListIdentityPools
-        /// action.
+        /// Gets and sets the property IdentityPools. 
+        /// <para>
+        /// The identity pools returned by the ListIdentityPools action.
+        /// </para>
         /// </summary>
         public List<IdentityPoolShortDescription> IdentityPools
         {
@@ -52,7 +54,10 @@ namespace Amazon.CognitoIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. A pagination token.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// A pagination token.
+        /// </para>
         /// </summary>
         public string NextToken
         {

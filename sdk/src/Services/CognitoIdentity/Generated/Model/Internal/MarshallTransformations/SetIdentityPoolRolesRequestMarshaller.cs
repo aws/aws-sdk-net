@@ -73,6 +73,25 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IdentityPoolId);
                 }
 
+                if(publicRequest.IsSetRoleMappings())
+                {
+                    context.Writer.WritePropertyName("RoleMappings");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestRoleMappingsKvp in publicRequest.RoleMappings)
+                    {
+                        context.Writer.WritePropertyName(publicRequestRoleMappingsKvp.Key);
+                        var publicRequestRoleMappingsValue = publicRequestRoleMappingsKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RoleMappingMarshaller.Instance;
+                        marshaller.Marshall(publicRequestRoleMappingsValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRoles())
                 {
                     context.Writer.WritePropertyName("Roles");

@@ -32,7 +32,7 @@ namespace Amazon.CognitoIdentity.Model
     /// Deletes identities from an identity pool. You can specify a list of 1-60 identities
     /// that you want to delete.
     /// 
-    /// 
+    ///  
     /// <para>
     /// You must use AWS Developer credentials to call this API.
     /// </para>

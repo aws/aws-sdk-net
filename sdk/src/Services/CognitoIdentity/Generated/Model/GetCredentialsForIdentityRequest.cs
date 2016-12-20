@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentity.Model
     /// it will be passed through to AWS Security Token Service with the appropriate role
     /// for the token.
     /// 
-    /// 
+    ///  
     /// <para>
     /// This is a public API. You do not need any credentials to call this API.
     /// </para>

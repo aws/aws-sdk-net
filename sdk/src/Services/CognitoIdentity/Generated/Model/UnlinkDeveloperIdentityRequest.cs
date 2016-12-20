@@ -34,7 +34,7 @@ namespace Amazon.CognitoIdentity.Model
     /// a given Cognito identity, you remove all federated identities as well as the developer
     /// user identifier, the Cognito identity becomes inaccessible.
     /// 
-    /// 
+    ///  
     /// <para>
     /// You must use AWS Developer credentials to call this API.
     /// </para>
@@ -65,8 +65,10 @@ namespace Amazon.CognitoIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DeveloperUserIdentifier. A unique ID used by your backend
-        /// authentication process to identify a user.
+        /// Gets and sets the property DeveloperUserIdentifier. 
+        /// <para>
+        /// A unique ID used by your backend authentication process to identify a user.
+        /// </para>
         /// </summary>
         public string DeveloperUserIdentifier
         {

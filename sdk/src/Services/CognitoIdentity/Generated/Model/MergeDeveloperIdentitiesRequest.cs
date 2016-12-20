@@ -37,7 +37,7 @@ namespace Amazon.CognitoIdentity.Model
     /// users can be merged. If the users to be merged are associated with the same public
     /// provider, but as two different users, an exception will be thrown.
     /// 
-    /// 
+    ///  
     /// <para>
     /// You must use AWS Developer credentials to call this API.
     /// </para>

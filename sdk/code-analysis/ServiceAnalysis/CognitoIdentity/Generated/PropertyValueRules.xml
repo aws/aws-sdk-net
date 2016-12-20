@@ -200,7 +200,6 @@
     <property>Amazon.CognitoIdentity.Model.LookupDeveloperIdentityRequest.DeveloperUserIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\w.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.LookupDeveloperIdentityRequest.IdentityId</property>
@@ -239,7 +238,6 @@
     <property>Amazon.CognitoIdentity.Model.MergeDeveloperIdentitiesRequest.DestinationUserIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\w.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.MergeDeveloperIdentitiesRequest.DeveloperProviderName</property>
@@ -257,7 +255,6 @@
     <property>Amazon.CognitoIdentity.Model.MergeDeveloperIdentitiesRequest.SourceUserIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\w.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.MergeDeveloperIdentitiesResponse.IdentityId</property>
@@ -281,7 +278,6 @@
     <property>Amazon.CognitoIdentity.Model.UnlinkDeveloperIdentityRequest.DeveloperUserIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\w.@_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.UnlinkDeveloperIdentityRequest.IdentityId</property>
@@ -360,6 +356,22 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentity.Model.MappingRule.Claim</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentity.Model.MappingRule.RoleARN</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentity.Model.MappingRule.Value</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentity.Model.UnprocessedIdentityId.IdentityId</property>
