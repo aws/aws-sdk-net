@@ -1,3 +1,15 @@
+### 3.3.32.0 (2016-12-20 00:59 UTC)
+* ApplicationDiscoveryService (3.3.1.0)
+	* API Update for ApplicationDiscoveryService : Adds new APIs to group discovered servers into Applications with get summary and neighbors. Includes additional filters for ListConfigurations and DescribeAgents API.
+* CloudFormation (3.3.3.4)
+	* Doc update for Cloudformation
+* CognitoIdentity (3.3.1.0)
+	* Added Groups to Cognito user pools. Developers can perform CRUD operations on groups, add and remove users from groups, list users in groups, etc; Added fine-grained role-based access control for Cognito identity pools. Developers can configure an identity pool to get the IAM role from an authenticated user's token, or they can configure rules that will map a user to a different role.
+* Inspector (3.3.0.7)
+	* Doc update for Inspector
+* SQS (3.3.1.5)
+	* Doc update for SQS
+
 ### 3.3.31.0 (2016-12-15 23:20 UTC)
 * AWSMarketplaceCommerceAnalytics (3.3.1.0)
 	* Add new enum to DataSetType: sales_compensation_billed_revenue
