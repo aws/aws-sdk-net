@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Container for the parameters to the CreateQueue operation.
     /// Creates a new standard or FIFO queue or returns the URL of an existing queue. You
-    /// can pass one or more attributes in the request.
+    /// can pass one or more attributes in the request. Keep the following caveats in mind:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -64,8 +64,9 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  
     /// <para>
-    /// To get the queue URL, use the <a>GetQueueUrl</a> action. <a>GetQueueUrl</a> requires
-    /// only the <code>QueueName</code> parameter.
+    /// To get the queue URL, use the <code> <a>GetQueueUrl</a> </code> action. <code> <a>GetQueueUrl</a>
+    /// </code> requires only the <code>QueueName</code> parameter. be aware of existing queue
+    /// names:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -78,20 +79,21 @@ namespace Amazon.SQS.Model
     /// If the queue name, attribute names, or attribute values don't match an existing queue,
     /// <code>CreateQueue</code> returns an error.
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> </ul> <note> 
     /// <para>
-    /// Some API actions take lists of parameters. Specify these lists using the <code>param.n</code>
-    /// notation. Values of <code>n</code> are integers starting from 1. The following is
-    /// an example of a parameter list with two elements:
+    /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+    /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+    /// list with two elements looks like this:
     /// </para>
     ///  
     /// <para>
-    ///  <code>&amp;amp;Attribute.1=this</code> 
+    ///  <code>&amp;Attribute.1=this</code> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>&amp;amp;Attribute.2=that</code> 
+    ///  <code>&amp;Attribute.2=that</code> 
     /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateQueueRequest : AmazonSQSRequest
     {
@@ -106,7 +108,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates CreateQueueRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueName">The name of the new queue. The following limits apply to this name: <ul> <li> A queue name can have up to 80 characters. </li> <li> The following are accepted: alphanumeric chatacters, hyphens (<code>-</code>), and underscores (<code>_</code>). </li> <li> A FIFO queue name must end with the <code>.fifo</code> suffix. </li> </ul> Queue names are case-sensitive.</param>
+        /// <param name="queueName">The name of the new queue. The following limits apply to this name: <ul> <li> A queue name can have up to 80 characters. </li> <li> Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>). </li> <li> A FIFO queue name must end with the <code>.fifo</code> suffix. </li> </ul> Queue names are case-sensitive.</param>
         public CreateQueueRequest(string queueName)
         {
             _queueName = queueName;
@@ -125,20 +127,20 @@ namespace Amazon.SQS.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>DelaySeconds</code> - The number of seconds for which the delivery of all messages
-        /// in the queue is delayed. An integer from 0 to 900 (15 minutes). The default is 0 (zero).
-        /// 
+        /// in the queue is delayed. Valid values: An integer from 0 to 900 seconds (15 minutes).
+        /// The default is 0 (zero). 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>MaximumMessageSize</code> - The limit of how many bytes a message can contain
-        /// before Amazon SQS rejects it. An integer from 1,024 bytes (1 KiB) up to 262,144 bytes
-        /// (256 KiB). The default is 262,144 (256 KiB). 
+        /// before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) to
+        /// 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>MessageRetentionPeriod</code> - The number of seconds for which Amazon SQS
-        /// retains a message. An integer representing seconds, from 60 (1 minute) to 120,9600
-        /// (14 days). The default is 345,600 (4 days). 
+        /// retains a message. Valid values: An integer from 60 seconds (1 minute) to 1,209,600
+        /// seconds (14 days). The default is 345,600 (4 days). 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -148,9 +150,9 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <a>ReceiveMessage</a>
-        /// action will wait for a message to arrive. An integer from 0 to 20 (seconds). The default
-        /// is 0. 
+        ///  <code>ReceiveMessageWaitTimeSeconds</code> - The number of seconds for which a <code>
+        /// <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values:
+        /// An integer from 0 to 20 (seconds). The default is 0 (zero). 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -166,9 +168,9 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <code>VisibilityTimeout</code> - The visibility timeout for the queue. An integer
-        /// from 0 to 43200 (12 hours). The default is 30. For more information about the visibility
-        /// timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+        ///  <code>VisibilityTimeout</code> - The visibility timeout for the queue. Valid values:
+        /// An integer from 0 to 43,200 (12 hours). The default is 30. For more information about
+        /// the visibility timeout, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
         /// Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         ///  </li> </ul> 
@@ -179,7 +181,7 @@ namespace Amazon.SQS.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>FifoQueue</code> - Designates a queue as FIFO. You can provide this attribute
-        /// only during queue creation; you can't change it for an existing queue. When you set
+        /// only during queue creation. You can't change it for an existing queue. When you set
         /// this attribute, you must provide a <code>MessageGroupId</code> explicitly.
         /// </para>
         ///  
@@ -238,11 +240,33 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// Any other valid special request parameters that are specified (such as <code>ApproximateNumberOfMessages</code>,
-        /// <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>,
-        /// <code>CreatedTimestamp</code>, <code>LastModifiedTimestamp</code>, and <code>QueueArn</code>)
-        /// will be ignored.
+        /// Any other valid special request parameters (such as the following) are ignored:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ApproximateNumberOfMessages</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ApproximateNumberOfMessagesDelayed</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ApproximateNumberOfMessagesNotVisible</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CreatedTimestamp</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>LastModifiedTimestamp</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>QueueArn</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Dictionary<string, string> Attributes
         {
@@ -267,8 +291,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The following are accepted: alphanumeric chatacters, hyphens (<code>-</code>), and
-        /// underscores (<code>_</code>).
+        /// Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

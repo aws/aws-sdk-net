@@ -28,23 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Information about agents associated with the user’s AWS account. Information includes
-    /// agent IDs, IP addresses, media access control (MAC) addresses, agent health, hostname
-    /// where the agent resides, and agent version for each agent.
+    /// Information about agents or connectors associated with the user’s AWS account. Information
+    /// includes agent or connector IDs, IP addresses, media access control (MAC) addresses,
+    /// agent or connector health, hostname where the agent or connector resides, and agent
+    /// version for each agent.
     /// </summary>
     public partial class AgentInfo
     {
         private string _agentId;
         private List<AgentNetworkInfo> _agentNetworkInfoList = new List<AgentNetworkInfo>();
+        private string _agentType;
+        private string _collectionStatus;
         private string _connectorId;
         private AgentStatus _health;
         private string _hostName;
+        private string _lastHealthPingTime;
+        private string _registeredTime;
         private string _version;
 
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// The agent ID.
+        /// The agent or connector ID.
         /// </para>
         /// </summary>
         public string AgentId
@@ -62,7 +67,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property AgentNetworkInfoList. 
         /// <para>
-        /// Network details about the host where the agent resides.
+        /// Network details about the host where the agent or connector resides.
         /// </para>
         /// </summary>
         public List<AgentNetworkInfo> AgentNetworkInfoList
@@ -78,9 +83,45 @@ namespace Amazon.ApplicationDiscoveryService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AgentType. 
+        /// <para>
+        /// Type of agent.
+        /// </para>
+        /// </summary>
+        public string AgentType
+        {
+            get { return this._agentType; }
+            set { this._agentType = value; }
+        }
+
+        // Check to see if AgentType property is set
+        internal bool IsSetAgentType()
+        {
+            return this._agentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CollectionStatus. 
+        /// <para>
+        /// Status of the collection process for an agent or connector.
+        /// </para>
+        /// </summary>
+        public string CollectionStatus
+        {
+            get { return this._collectionStatus; }
+            set { this._collectionStatus = value; }
+        }
+
+        // Check to see if CollectionStatus property is set
+        internal bool IsSetCollectionStatus()
+        {
+            return this._collectionStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ConnectorId. 
         /// <para>
-        /// This data type is currently not valid.
+        /// The ID of the connector.
         /// </para>
         /// </summary>
         public string ConnectorId
@@ -98,7 +139,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Health. 
         /// <para>
-        /// The health of the agent.
+        /// The health of the agent or connector.
         /// </para>
         /// </summary>
         public AgentStatus Health
@@ -116,8 +157,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property HostName. 
         /// <para>
-        /// The name of the host where the agent resides. The host can be a server or virtual
-        /// machine.
+        /// The name of the host where the agent or connector resides. The host can be a server
+        /// or virtual machine.
         /// </para>
         /// </summary>
         public string HostName
@@ -133,9 +174,45 @@ namespace Amazon.ApplicationDiscoveryService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastHealthPingTime. 
+        /// <para>
+        /// Time since agent or connector health was reported.
+        /// </para>
+        /// </summary>
+        public string LastHealthPingTime
+        {
+            get { return this._lastHealthPingTime; }
+            set { this._lastHealthPingTime = value; }
+        }
+
+        // Check to see if LastHealthPingTime property is set
+        internal bool IsSetLastHealthPingTime()
+        {
+            return this._lastHealthPingTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RegisteredTime. 
+        /// <para>
+        /// Agent's first registration time stamp in UTC.
+        /// </para>
+        /// </summary>
+        public string RegisteredTime
+        {
+            get { return this._registeredTime; }
+            set { this._registeredTime = value; }
+        }
+
+        // Check to see if RegisteredTime property is set
+        internal bool IsSetRegisteredTime()
+        {
+            return this._registeredTime != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The agent version.
+        /// The agent or connector version.
         /// </para>
         /// </summary>
         public string Version

@@ -49,18 +49,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
-        public void CACentral1Under7Days()
+        public void EUCentral1Under7Days()
         {
-            TestPreSignedUrl(RegionEndpoint.CACentral1, DateTime.Now.AddDays(7).AddSeconds(-1), true, true);
+            TestPreSignedUrl(RegionEndpoint.EUCentral1, DateTime.Now.AddDays(7).AddSeconds(-1), true, true);
         }
 
         [TestMethod]
         [TestCategory("S3")]
-        public void CACentral1Over7Days()
+        public void EUCentral1Over7Days()
         {
-            // ca-central-1 doesn't allow SigV2 so we expect an error since the expiration > 7 days
+            // EUCentral1 doesn't allow SigV2 so we expect an error since the expiration > 7 days
             AssertExtensions.ExpectException(()=>{
-                TestPreSignedUrl(RegionEndpoint.CACentral1, DateTime.Now.AddDays(7).AddMinutes(1), true, true);
+                TestPreSignedUrl(RegionEndpoint.EUCentral1, DateTime.Now.AddDays(7).AddMinutes(1), true, true);
             }, typeof(ArgumentException), "The maximum expiry period for a presigned url using AWS4 signing is 604800 seconds");
         }
 

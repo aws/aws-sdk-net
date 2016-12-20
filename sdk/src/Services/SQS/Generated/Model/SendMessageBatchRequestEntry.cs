@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Contains the details of a single Amazon SQS message along with a <code>Id</code>.
+    /// Contains the details of a single Amazon SQS message along with an <code>Id</code>.
     /// </summary>
     public partial class SendMessageBatchRequestEntry
     {
@@ -47,8 +47,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates SendMessageBatchRequestEntry with the parameterized properties
         /// </summary>
-        /// <param name="id">An identifier for the message in this batch. This is used to communicate the result. Note that the <code>Id</code>s of a batch request need to be unique within the request.</param>
-        /// <param name="messageBody">Body of the message.</param>
+        /// <param name="id">An identifier for a message in this batch used to communicate the result. <note> The <code>Id</code>s of a batch request need to be unique within a request </note></param>
+        /// <param name="messageBody">The body of the message.</param>
         public SendMessageBatchRequestEntry(string id, string messageBody)
         {
             _id = id;
@@ -58,10 +58,10 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property DelaySeconds. 
         /// <para>
-        /// The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages
-        /// with a positive <code>DelaySeconds</code> value become available for processing after
-        /// the delay time is finished. If you don't specify a value, the default value for the
-        /// queue applies. 
+        /// The number of seconds for which a specific message is delayed. Valid values: 0 to
+        /// 900. Maximum: 15 minutes. Messages with a positive <code>DelaySeconds</code> value
+        /// become available for processing after the delay period is finished. If you don't specify
+        /// a value, the default value for the queue is applied. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -85,9 +85,13 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// An identifier for the message in this batch. This is used to communicate the result.
-        /// Note that the <code>Id</code>s of a batch request need to be unique within the request.
+        /// An identifier for a message in this batch used to communicate the result.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <code>Id</code>s of a batch request need to be unique within a request
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Id
         {
@@ -104,8 +108,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MessageAttributes. 
         /// <para>
-        /// Each message attribute consists of a Name, Type, and Value. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+        /// Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
         /// Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -124,7 +128,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MessageBody. 
         /// <para>
-        /// Body of the message.
+        /// The body of the message.
         /// </para>
         /// </summary>
         public string MessageBody

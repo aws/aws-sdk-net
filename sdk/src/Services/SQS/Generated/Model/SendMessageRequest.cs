@@ -36,16 +36,34 @@ namespace Amazon.SQS.Model
     /// The following list shows the characters (in Unicode) that are allowed in your message,
     /// according to the W3C XML specification:
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    ///  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | [<code>#x20</code> to <code>#xD7FF</code>]
-    /// | [<code>#xE000</code> to <code>#xFFFD</code>] | [<code>#x10000</code> to <code>#x10FFFF</code>]
+    ///  <code>#x9</code> 
     /// </para>
-    ///  
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>#xA</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>#xD</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>#x20</code> to <code>#xD7FF</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>#xE000</code> to <code>#xFFFD</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>#x10000</code> to <code>#x10FFFF</code> 
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
-    /// If you send any characters that aren't included in this list, your request will be
-    /// rejected.
+    /// If you send any characters that aren't included in this list, your request is rejected.
     /// </para>
     ///  </important>
     /// </summary>
@@ -66,8 +84,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Instantiates SendMessageRequest with the parameterized properties
         /// </summary>
-        /// <param name="queueUrl">The URL of the Amazon SQS queue to take action on. Queue URLs are case-sensitive.</param>
-        /// <param name="messageBody">The message to send. String maximum 256 KB in size. For a list of allowed characters, see the preceding note.</param>
+        /// <param name="queueUrl">The URL of the Amazon SQS queue to which a message is sent. Queue URLs are case-sensitive.</param>
+        /// <param name="messageBody">The message to send. The maximum string size is 256 KB. <important> The following list shows the characters (in Unicode) that are allowed in your message, according to the W3C XML specification: <ul> <li>  <code>#x9</code>  </li> <li>  <code>#xA</code>  </li> <li>  <code>#xD</code>  </li> <li>  <code>#x20</code> to <code>#xD7FF</code>  </li> <li>  <code>#xE000</code> to <code>#xFFFD</code>  </li> <li>  <code>#x10000</code> to <code>#x10FFFF</code>  </li> </ul> For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>. If you send any characters that aren't included in this list, your request is rejected. </important></param>
         public SendMessageRequest(string queueUrl, string messageBody)
         {
             _queueUrl = queueUrl;
@@ -77,10 +95,10 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property DelaySeconds. 
         /// <para>
-        ///  The number of seconds (0 to 900 - 15 minutes) to delay a specific message. Messages
-        /// with a positive <code>DelaySeconds</code> value become available for processing after
-        /// the delay time is finished. If you don't specify a value, the default value for the
-        /// queue applies. 
+        ///  The number of seconds to delay a specific message. Valid values: 0 to 900. Maximum:
+        /// 15 minutes. Messages with a positive <code>DelaySeconds</code> value become available
+        /// for processing after the delay period is finished. If you don't specify a value, the
+        /// default value for the queue applies. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -104,8 +122,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MessageAttributes. 
         /// <para>
-        /// Each message attribute consists of a Name, Type, and Value. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
+        /// Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
         /// Attribute Items and Validation</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -124,9 +142,43 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MessageBody. 
         /// <para>
-        /// The message to send. String maximum 256 KB in size. For a list of allowed characters,
-        /// see the preceding note.
+        /// The message to send. The maximum string size is 256 KB.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The following list shows the characters (in Unicode) that are allowed in your message,
+        /// according to the W3C XML specification:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>#x9</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>#xA</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>#xD</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>#x20</code> to <code>#xD7FF</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>#xE000</code> to <code>#xFFFD</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>#x10000</code> to <code>#x10FFFF</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://www.ietf.org/rfc/rfc1321.txt">RFC1321</a>.
+        /// If you send any characters that aren't included in this list, your request is rejected.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string MessageBody
         {
@@ -203,7 +255,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  
         /// <para>
-        /// If a message is sent successfully but the acknowledgdment is lost and the message
+        /// If a message is sent successfully but the acknowledgement is lost and the message
         /// is resent with the same <code>MessageDeduplicationId</code> after the deduplication
         /// interval, Amazon SQS can't detect duplicate messages.
         /// </para>
@@ -283,7 +335,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property QueueUrl. 
         /// <para>
-        /// The URL of the Amazon SQS queue to take action on.
+        /// The URL of the Amazon SQS queue to which a message is sent.
         /// </para>
         ///  
         /// <para>

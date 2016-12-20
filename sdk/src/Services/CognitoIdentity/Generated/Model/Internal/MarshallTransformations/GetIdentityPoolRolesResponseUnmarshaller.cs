@@ -57,6 +57,12 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
                     response.IdentityPoolId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RoleMappings", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, RoleMapping, StringUnmarshaller, RoleMappingUnmarshaller>(StringUnmarshaller.Instance, RoleMappingUnmarshaller.Instance);
+                    response.RoleMappings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Roles", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

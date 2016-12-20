@@ -35,7 +35,10 @@ namespace Amazon.CognitoIdentity.Model
         private string _identityId;
 
         /// <summary>
-        /// Gets and sets the property IdentityId. A unique identifier in the format REGION:GUID.
+        /// Gets and sets the property IdentityId. 
+        /// <para>
+        /// A unique identifier in the format REGION:GUID.
+        /// </para>
         /// </summary>
         public string IdentityId
         {

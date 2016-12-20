@@ -32,7 +32,7 @@ namespace Amazon.CognitoIdentity.Model
     /// Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit
     /// linked account.
     /// 
-    /// 
+    ///  
     /// <para>
     /// This is a public API. You do not need any credentials to call this API.
     /// </para>
@@ -44,7 +44,10 @@ namespace Amazon.CognitoIdentity.Model
         private Dictionary<string, string> _logins = new Dictionary<string, string>();
 
         /// <summary>
-        /// Gets and sets the property AccountId. A standard AWS account ID (9+ digits).
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// A standard AWS account ID (9+ digits).
+        /// </para>
         /// </summary>
         public string AccountId
         {
@@ -59,7 +62,10 @@ namespace Amazon.CognitoIdentity.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IdentityPoolId. An identity pool ID in the format REGION:GUID.
+        /// Gets and sets the property IdentityPoolId. 
+        /// <para>
+        /// An identity pool ID in the format REGION:GUID.
+        /// </para>
         /// </summary>
         public string IdentityPoolId
         {
@@ -76,15 +82,35 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property Logins. 
         /// <para>
-        /// A set of optional name-value pairs that map provider names to provider tokens.
+        /// A set of optional name-value pairs that map provider names to provider tokens. The
+        /// available provider names for <code>Logins</code> are as follows:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook:
-        /// <code>graph.facebook.com</code></li> <li>Google: <code>accounts.google.com</code></li>
-        /// <li>Amazon: <code>www.amazon.com</code></li> <li>Twitter: <code>api.twitter.com</code></li>
-        /// <li>Digits: <code>www.digits.com</code></li> </ul> 
+        /// Facebook: <code>graph.facebook.com</code> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Google: <code>accounts.google.com</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon: <code>www.amazon.com</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Twitter: <code>api.twitter.com</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Digits: <code>www.digits.com</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Dictionary<string, string> Logins
         {

@@ -31,11 +31,32 @@ namespace Amazon.CognitoIdentity.Model
     /// Container for the parameters to the CreateIdentityPool operation.
     /// Creates a new identity pool. The identity pool is a store of user identity information
     /// that is specific to your AWS account. The limit on identity pools is 60 per account.
-    /// The keys for <code>SupportedLoginProviders</code> are as follows: <ul> <li>Facebook:
-    /// <code>graph.facebook.com</code></li> <li>Google: <code>accounts.google.com</code></li>
-    /// <li>Amazon: <code>www.amazon.com</code></li> <li>Twitter: <code>api.twitter.com</code></li>
-    /// <li>Digits: <code>www.digits.com</code></li> </ul> You must use AWS Developer credentials
-    /// to call this API.
+    /// The keys for <code>SupportedLoginProviders</code> are as follows:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// Facebook: <code>graph.facebook.com</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Google: <code>accounts.google.com</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Amazon: <code>www.amazon.com</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Twitter: <code>api.twitter.com</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Digits: <code>www.digits.com</code> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You must use AWS Developer credentials to call this API.
+    /// </para>
     /// </summary>
     public partial class CreateIdentityPoolRequest : AmazonCognitoIdentityRequest
     {
@@ -68,7 +89,7 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property CognitoIdentityProviders. 
         /// <para>
-        /// An array of Amazon Cognito Identity user pools.
+        /// An array of Amazon Cognito Identity user pools and their client IDs.
         /// </para>
         /// </summary>
         public List<CognitoIdentityProviderInfo> CognitoIdentityProviders

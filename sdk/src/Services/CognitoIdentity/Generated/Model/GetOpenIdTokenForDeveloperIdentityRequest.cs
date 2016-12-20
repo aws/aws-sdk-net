@@ -44,7 +44,7 @@ namespace Amazon.CognitoIdentity.Model
     /// identity, you can do so by providing the existing <code>IdentityId</code>. This API
     /// will create the identity in the specified <code>IdentityPoolId</code>.
     /// </para>
-    /// 
+    ///  
     /// <para>
     /// You must use AWS Developer credentials to call this API.
     /// </para>

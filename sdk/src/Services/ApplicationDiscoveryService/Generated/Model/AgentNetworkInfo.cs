@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Network details about the host where the agent resides.
+    /// Network details about the host where the agent/Connector resides.
     /// </summary>
     public partial class AgentNetworkInfo
     {
@@ -38,7 +38,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The IP address for the host where the agent resides.
+        /// The IP address for the host where the agent/Connector resides.
         /// </para>
         /// </summary>
         public string IpAddress
@@ -56,7 +56,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property MacAddress. 
         /// <para>
-        /// The MAC address for the host where the agent resides.
+        /// The MAC address for the host where the agent/Connector resides.
         /// </para>
         /// </summary>
         public string MacAddress

@@ -38,7 +38,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property QueueUrl. 
         /// <para>
-        /// The URL for the queue.
+        /// The URL of the queue.
         /// </para>
         /// </summary>
         public string QueueUrl

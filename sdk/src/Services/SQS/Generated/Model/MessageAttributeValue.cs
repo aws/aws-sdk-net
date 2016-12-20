@@ -28,16 +28,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// The user-specified message attribute value. For string data types, the value attribute
-    /// has the same restrictions on the content as the message body. For more information,
-    /// see <a>SendMessage</a>.
+    /// The user-specified message attribute value. For string data types, the <code>Value</code>
+    /// attribute has the same restrictions on the content as the message body. For more information,
+    /// see <code> <a>SendMessage</a> </code>.
     /// 
     ///  
     /// <para>
-    /// Name, type, and value must not be empty or null. In addition, the message body should
-    /// not be empty or null. All parts of the message attribute, including name, type, and
-    /// value, are included in the message size restriction, which is currently 256 KB (262,144
-    /// bytes).
+    ///  <code>Name</code>, <code>type</code>, <code>value</code> and the message body must
+    /// not be empty or null. All parts of the message attribute, including <code>Name</code>,
+    /// <code>Type</code>, and <code>Value</code>, are part of the message size restriction
+    /// (256 KB or 262,144 bytes).
     /// </para>
     /// </summary>
     public partial class MessageAttributeValue
@@ -69,7 +69,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property BinaryValue. 
         /// <para>
-        /// Binary type attributes can store any binary data, for example, compressed data, encrypted
+        /// Binary type attributes can store any binary data, such as compressed data, encrypted
         /// data, or images.
         /// </para>
         /// </summary>
@@ -88,8 +88,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
-        /// Amazon SQS supports the following logical data types: String, Number, and Binary.
-        /// For the Number data type, you must use StringValue.
+        /// Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>,
+        /// and <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.
         /// </para>
         ///  
         /// <para>
@@ -130,8 +130,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property StringValue. 
         /// <para>
-        /// Strings are Unicode with UTF8 binary encoding. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
-        /// Printable Characters</a>.
+        /// Strings are Unicode with UTF-8 binary encoding. For a list of code values, see <a
+        /// href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII Printable
+        /// Characters</a>.
         /// </para>
         /// </summary>
         public string StringValue
