@@ -333,7 +333,10 @@ namespace Amazon.Runtime.Internal.Util
         {
             get
             {
-                return Contents.Keys.ToList();
+                lock (CacheLock)
+                {
+                    return Contents.Keys.ToList();
+                }
             }
         }
 
@@ -365,7 +368,10 @@ namespace Amazon.Runtime.Internal.Util
         {
             get
             {
-                return Contents.Count;
+                lock (CacheLock)
+                {
+                    return Contents.Count;
+                }
             }
         }
 
@@ -412,22 +418,19 @@ namespace Amazon.Runtime.Internal.Util
             CacheItem<TValue> item = null;
             if (AWSConfigs.UseSdkCache)
             {
-                if (!Contents.TryGetValue(key, out item) || !IsValidItem(item))
+                lock (CacheLock)
                 {
-                    lock (CacheLock)
+                    if (!Contents.TryGetValue(key, out item) || !IsValidItem(item))
                     {
-                        if (!Contents.TryGetValue(key, out item) || !IsValidItem(item))
-                        {
-                            if (creator == null)
-                                throw new InvalidOperationException("Unable to calculate value for key " + key);
+                        if (creator == null)
+                            throw new InvalidOperationException("Unable to calculate value for key " + key);
 
-                            var value = creator(key);
-                            isStaleItem = false;
-                            item = new CacheItem<TValue>(value);
-                            Contents[key] = item;
+                        var value = creator(key);
+                        isStaleItem = false;
+                        item = new CacheItem<TValue>(value);
+                        Contents[key] = item;
 
-                            RemoveOldItems_Locked();
-                        }
+                        RemoveOldItems_Locked();
                     }
                 }
             }
