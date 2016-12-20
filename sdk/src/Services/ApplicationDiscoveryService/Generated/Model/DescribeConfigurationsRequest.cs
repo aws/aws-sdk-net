@@ -29,9 +29,17 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConfigurations operation.
-    /// Retrieves a list of attributes for a specific configuration ID. For example, the output
-    /// for a <i>server</i> configuration item includes a list of attributes about the server,
-    /// including host name, operating system, number of network cards, etc.
+    /// Retrieves attributes for a list of configuration item IDs. All of the supplied IDs
+    /// must be for the same asset type (server, application, process, or connection). Output
+    /// fields are specific to the asset type selected. For example, the output for a <i>server</i>
+    /// configuration item includes a list of attributes about the server, such as host name,
+    /// operating system, and number of network cards.
+    /// 
+    ///  
+    /// <para>
+    /// For a complete list of outputs for each asset type, see <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/querying-configuration-items.html#DescribeConfigurations">Querying
+    /// Discovered Configuration Items</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeConfigurationsRequest : AmazonApplicationDiscoveryServiceRequest
     {

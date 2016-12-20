@@ -37,9 +37,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property AgentsConfigurationStatus. 
         /// <para>
-        /// Information about agents that were instructed to stop collecting data. Information
-        /// includes the agent ID, a description of the operation performed, and whether or not
-        /// the agent configuration was updated.
+        /// Information about agents or the Connector that were instructed to stop collecting
+        /// data. Information includes the agent/Connector ID, a description of the operation
+        /// performed, and whether or not the agent/Connector configuration was updated.
         /// </para>
         /// </summary>
         public List<AgentConfigurationStatus> AgentsConfigurationStatus

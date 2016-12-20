@@ -101,6 +101,22 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetOrderBy())
+                {
+                    context.Writer.WritePropertyName("orderBy");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestOrderByListValue in publicRequest.OrderBy)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OrderByElementMarshaller.Instance;
+                        marshaller.Marshall(publicRequestOrderByListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

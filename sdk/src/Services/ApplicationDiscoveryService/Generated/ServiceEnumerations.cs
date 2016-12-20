@@ -97,6 +97,10 @@ namespace Amazon.ApplicationDiscoveryService
     {
 
         /// <summary>
+        /// Constant APPLICATION for ConfigurationItemType
+        /// </summary>
+        public static readonly ConfigurationItemType APPLICATION = new ConfigurationItemType("APPLICATION");
+        /// <summary>
         /// Constant CONNECTION for ConfigurationItemType
         /// </summary>
         public static readonly ConfigurationItemType CONNECTION = new ConfigurationItemType("CONNECTION");
@@ -192,6 +196,56 @@ namespace Amazon.ApplicationDiscoveryService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OrderString.
+    /// </summary>
+    public class OrderString : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASC for OrderString
+        /// </summary>
+        public static readonly OrderString ASC = new OrderString("ASC");
+        /// <summary>
+        /// Constant DESC for OrderString
+        /// </summary>
+        public static readonly OrderString DESC = new OrderString("DESC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrderString(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrderString FindValue(string value)
+        {
+            return FindValue<OrderString>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrderString(string value)
         {
             return FindValue(value);
         }
