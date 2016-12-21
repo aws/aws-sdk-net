@@ -835,6 +835,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>12.1.0.2.v6</code> (supported for EE in all AWS regions, and SE2 in all AWS
+        /// regions except us-gov-west-1)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>12.1.0.2.v5</code> (supported for EE in all AWS regions, and SE2 in all AWS
         /// regions except us-gov-west-1)
         /// </para>
@@ -893,6 +898,10 @@ namespace Amazon.RDS.Model
         ///  <b>Oracle 11g</b> 
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <code>11.2.0.4.v10</code> (supported for EE, SE1, and SE, in all AWS regions)
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>11.2.0.4.v9</code> (supported for EE, SE1, and SE, in all AWS regions)
         /// </para>
