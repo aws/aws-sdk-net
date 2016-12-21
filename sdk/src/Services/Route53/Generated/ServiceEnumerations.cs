@@ -551,6 +551,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly ResourceRecordSetRegion ApSoutheast2 = new ResourceRecordSetRegion("ap-southeast-2");
         /// <summary>
+        /// Constant CaCentral1 for ResourceRecordSetRegion
+        /// </summary>
+        public static readonly ResourceRecordSetRegion CaCentral1 = new ResourceRecordSetRegion("ca-central-1");
+        /// <summary>
         /// Constant CnNorth1 for ResourceRecordSetRegion
         /// </summary>
         public static readonly ResourceRecordSetRegion CnNorth1 = new ResourceRecordSetRegion("cn-north-1");
@@ -562,6 +566,10 @@ namespace Amazon.Route53
         /// Constant EuWest1 for ResourceRecordSetRegion
         /// </summary>
         public static readonly ResourceRecordSetRegion EuWest1 = new ResourceRecordSetRegion("eu-west-1");
+        /// <summary>
+        /// Constant EuWest2 for ResourceRecordSetRegion
+        /// </summary>
+        public static readonly ResourceRecordSetRegion EuWest2 = new ResourceRecordSetRegion("eu-west-2");
         /// <summary>
         /// Constant SaEast1 for ResourceRecordSetRegion
         /// </summary>
@@ -843,6 +851,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly VPCRegion ApSoutheast2 = new VPCRegion("ap-southeast-2");
         /// <summary>
+        /// Constant CaCentral1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion CaCentral1 = new VPCRegion("ca-central-1");
+        /// <summary>
         /// Constant CnNorth1 for VPCRegion
         /// </summary>
         public static readonly VPCRegion CnNorth1 = new VPCRegion("cn-north-1");
@@ -854,6 +866,10 @@ namespace Amazon.Route53
         /// Constant EuWest1 for VPCRegion
         /// </summary>
         public static readonly VPCRegion EuWest1 = new VPCRegion("eu-west-1");
+        /// <summary>
+        /// Constant EuWest2 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion EuWest2 = new VPCRegion("eu-west-2");
         /// <summary>
         /// Constant SaEast1 for VPCRegion
         /// </summary>

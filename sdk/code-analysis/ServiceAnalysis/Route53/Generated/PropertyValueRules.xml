@@ -82,6 +82,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateTrafficPolicyInstanceRequest.TrafficPolicyId</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -95,6 +96,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.CreateTrafficPolicyVersionRequest.Id</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -131,6 +133,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.DeleteTrafficPolicyRequest.Id</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -140,6 +143,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.DeleteTrafficPolicyInstanceRequest.Id</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -191,6 +195,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.GetTrafficPolicyRequest.Id</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -200,6 +205,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.GetTrafficPolicyInstanceRequest.Id</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -324,10 +330,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListTrafficPoliciesRequest.TrafficPolicyIdMarker</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListTrafficPoliciesResponse.TrafficPolicyIdMarker</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -360,6 +368,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListTrafficPolicyInstancesByPolicyRequest.TrafficPolicyId</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -385,6 +394,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ListTrafficPolicyVersionsRequest.Id</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -493,6 +503,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.UpdateTrafficPolicyCommentRequest.Id</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -506,6 +517,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.UpdateTrafficPolicyInstanceRequest.Id</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -515,6 +527,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.UpdateTrafficPolicyInstanceRequest.TrafficPolicyId</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -745,6 +758,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.ResourceRecordSet.TrafficPolicyInstanceId</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -761,6 +775,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.TrafficPolicy.Id</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -782,6 +797,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.TrafficPolicyInstance.Id</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -803,6 +819,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.TrafficPolicyInstance.TrafficPolicyId</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
@@ -812,6 +829,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53.Model.TrafficPolicySummary.Id</property>
+    <min>1</min>
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
