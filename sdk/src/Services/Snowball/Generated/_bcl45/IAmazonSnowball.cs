@@ -66,6 +66,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster">REST API Reference for CancelCluster Operation</seealso>
         CancelClusterResponse CancelCluster(CancelClusterRequest request);
 
 
@@ -78,6 +79,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster">REST API Reference for CancelCluster Operation</seealso>
         Task<CancelClusterResponse> CancelClusterAsync(CancelClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -106,6 +108,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">REST API Reference for CancelJob Operation</seealso>
         CancelJobResponse CancelJob(CancelJobRequest request);
 
 
@@ -118,6 +121,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">REST API Reference for CancelJob Operation</seealso>
         Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -147,6 +151,7 @@ namespace Amazon.Snowball
         /// Check the address with your region's carrier and try again. If the issue persists,
         /// contact AWS Support.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">REST API Reference for CreateAddress Operation</seealso>
         CreateAddressResponse CreateAddress(CreateAddressRequest request);
 
 
@@ -159,6 +164,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">REST API Reference for CreateAddress Operation</seealso>
         Task<CreateAddressResponse> CreateAddressAsync(CreateAddressRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -187,6 +193,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         CreateClusterResponse CreateCluster(CreateClusterRequest request);
 
 
@@ -199,6 +206,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -234,6 +242,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">REST API Reference for CreateJob Operation</seealso>
         CreateJobResponse CreateJob(CreateJobRequest request);
 
 
@@ -246,6 +255,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">REST API Reference for CreateJob Operation</seealso>
         Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -264,6 +274,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddress">REST API Reference for DescribeAddress Operation</seealso>
         DescribeAddressResponse DescribeAddress(DescribeAddressRequest request);
 
 
@@ -276,6 +287,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddress">REST API Reference for DescribeAddress Operation</seealso>
         Task<DescribeAddressResponse> DescribeAddressAsync(DescribeAddressRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -295,6 +307,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         DescribeAddressesResponse DescribeAddresses(DescribeAddressesRequest request);
 
 
@@ -307,6 +320,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         Task<DescribeAddressesResponse> DescribeAddressesAsync(DescribeAddressesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -325,6 +339,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         DescribeClusterResponse DescribeCluster(DescribeClusterRequest request);
 
 
@@ -337,6 +352,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -355,6 +371,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         DescribeJobResponse DescribeJob(DescribeJobRequest request);
 
 
@@ -367,6 +384,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -412,6 +430,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest">REST API Reference for GetJobManifest Operation</seealso>
         GetJobManifestResponse GetJobManifest(GetJobManifestRequest request);
 
 
@@ -424,6 +443,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest">REST API Reference for GetJobManifest Operation</seealso>
         Task<GetJobManifestResponse> GetJobManifestAsync(GetJobManifestRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -462,6 +482,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode">REST API Reference for GetJobUnlockCode Operation</seealso>
         GetJobUnlockCodeResponse GetJobUnlockCode(GetJobUnlockCodeRequest request);
 
 
@@ -474,6 +495,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode">REST API Reference for GetJobUnlockCode Operation</seealso>
         Task<GetJobUnlockCodeResponse> GetJobUnlockCodeAsync(GetJobUnlockCodeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -494,6 +516,7 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the GetSnowballUsage service method.</param>
         /// 
         /// <returns>The response from the GetSnowballUsage service method, as returned by Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">REST API Reference for GetSnowballUsage Operation</seealso>
         GetSnowballUsageResponse GetSnowballUsage(GetSnowballUsageRequest request);
 
 
@@ -506,6 +529,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">REST API Reference for GetSnowballUsage Operation</seealso>
         Task<GetSnowballUsageResponse> GetSnowballUsageAsync(GetSnowballUsageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -525,6 +549,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs">REST API Reference for ListClusterJobs Operation</seealso>
         ListClusterJobsResponse ListClusterJobs(ListClusterJobsRequest request);
 
 
@@ -537,6 +562,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs">REST API Reference for ListClusterJobs Operation</seealso>
         Task<ListClusterJobsResponse> ListClusterJobsAsync(ListClusterJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -552,6 +578,7 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
         /// 
         /// <returns>The response from the ListClusters service method, as returned by Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters">REST API Reference for ListClusters Operation</seealso>
         ListClustersResponse ListClusters(ListClustersRequest request);
 
 
@@ -564,6 +591,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters">REST API Reference for ListClusters Operation</seealso>
         Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -581,6 +609,7 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// 
         /// <returns>The response from the ListJobs service method, as returned by Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs">REST API Reference for ListJobs Operation</seealso>
         ListJobsResponse ListJobs(ListJobsRequest request);
 
 
@@ -593,6 +622,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs">REST API Reference for ListJobs Operation</seealso>
         Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -626,6 +656,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         UpdateClusterResponse UpdateCluster(UpdateClusterRequest request);
 
 
@@ -638,6 +669,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         Task<UpdateClusterResponse> UpdateClusterAsync(UpdateClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -676,6 +708,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         UpdateJobResponse UpdateJob(UpdateJobRequest request);
 
 
@@ -688,6 +721,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

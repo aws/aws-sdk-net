@@ -93,6 +93,7 @@ namespace Amazon.Route53
         /// You're trying to associate a VPC with a public hosted zone. Amazon Route 53 doesn't
         /// support associating a VPC with a public hosted zone.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">REST API Reference for AssociateVPCWithHostedZone Operation</seealso>
         AssociateVPCWithHostedZoneResponse AssociateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest request);
 
         /// <summary>
@@ -106,6 +107,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateVPCWithHostedZone
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">REST API Reference for AssociateVPCWithHostedZone Operation</seealso>
         IAsyncResult BeginAssociateVPCWithHostedZone(AssociateVPCWithHostedZoneRequest request, AsyncCallback callback, object state);
 
 
@@ -117,6 +119,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateVPCWithHostedZone.</param>
         /// 
         /// <returns>Returns a  AssociateVPCWithHostedZoneResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/AssociateVPCWithHostedZone">REST API Reference for AssociateVPCWithHostedZone Operation</seealso>
         AssociateVPCWithHostedZoneResponse EndAssociateVPCWithHostedZone(IAsyncResult asyncResult);
 
         #endregion
@@ -294,6 +297,7 @@ namespace Amazon.Route53
         /// same request, we recommend that you wait, in intervals of increasing duration, before
         /// you try the request again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets">REST API Reference for ChangeResourceRecordSets Operation</seealso>
         ChangeResourceRecordSetsResponse ChangeResourceRecordSets(ChangeResourceRecordSetsRequest request);
 
         /// <summary>
@@ -307,6 +311,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndChangeResourceRecordSets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets">REST API Reference for ChangeResourceRecordSets Operation</seealso>
         IAsyncResult BeginChangeResourceRecordSets(ChangeResourceRecordSetsRequest request, AsyncCallback callback, object state);
 
 
@@ -318,6 +323,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginChangeResourceRecordSets.</param>
         /// 
         /// <returns>Returns a  ChangeResourceRecordSetsResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets">REST API Reference for ChangeResourceRecordSets Operation</seealso>
         ChangeResourceRecordSetsResponse EndChangeResourceRecordSets(IAsyncResult asyncResult);
 
         #endregion
@@ -357,6 +363,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.ThrottlingException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource">REST API Reference for ChangeTagsForResource Operation</seealso>
         ChangeTagsForResourceResponse ChangeTagsForResource(ChangeTagsForResourceRequest request);
 
         /// <summary>
@@ -370,6 +377,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndChangeTagsForResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource">REST API Reference for ChangeTagsForResource Operation</seealso>
         IAsyncResult BeginChangeTagsForResource(ChangeTagsForResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -381,6 +389,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginChangeTagsForResource.</param>
         /// 
         /// <returns>Returns a  ChangeTagsForResourceResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeTagsForResource">REST API Reference for ChangeTagsForResource Operation</seealso>
         ChangeTagsForResourceResponse EndChangeTagsForResource(IAsyncResult asyncResult);
 
         #endregion
@@ -455,6 +464,7 @@ namespace Amazon.Route53
         /// default limit is 100. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create
         /// a case</a> with the AWS Support Center.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">REST API Reference for CreateHealthCheck Operation</seealso>
         CreateHealthCheckResponse CreateHealthCheck(CreateHealthCheckRequest request);
 
         /// <summary>
@@ -468,6 +478,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHealthCheck
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">REST API Reference for CreateHealthCheck Operation</seealso>
         IAsyncResult BeginCreateHealthCheck(CreateHealthCheckRequest request, AsyncCallback callback, object state);
 
 
@@ -479,6 +490,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHealthCheck.</param>
         /// 
         /// <returns>Returns a  CreateHealthCheckResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHealthCheck">REST API Reference for CreateHealthCheck Operation</seealso>
         CreateHealthCheckResponse EndCreateHealthCheck(IAsyncResult asyncResult);
 
         #endregion
@@ -583,6 +595,7 @@ namespace Amazon.Route53
         /// a limit increase, go to the Amazon Route 53 <a href="http://aws.amazon.com/route53-request/">Contact
         /// Us</a> page.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">REST API Reference for CreateHostedZone Operation</seealso>
         CreateHostedZoneResponse CreateHostedZone(CreateHostedZoneRequest request);
 
         /// <summary>
@@ -596,6 +609,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHostedZone
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">REST API Reference for CreateHostedZone Operation</seealso>
         IAsyncResult BeginCreateHostedZone(CreateHostedZoneRequest request, AsyncCallback callback, object state);
 
 
@@ -607,6 +621,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHostedZone.</param>
         /// 
         /// <returns>Returns a  CreateHostedZoneResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZone">REST API Reference for CreateHostedZone Operation</seealso>
         CreateHostedZoneResponse EndCreateHostedZone(IAsyncResult asyncResult);
 
         #endregion
@@ -664,6 +679,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.LimitsExceededException">
         /// The limits specified for a resource have been exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet">REST API Reference for CreateReusableDelegationSet Operation</seealso>
         CreateReusableDelegationSetResponse CreateReusableDelegationSet(CreateReusableDelegationSetRequest request);
 
         /// <summary>
@@ -677,6 +693,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReusableDelegationSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet">REST API Reference for CreateReusableDelegationSet Operation</seealso>
         IAsyncResult BeginCreateReusableDelegationSet(CreateReusableDelegationSetRequest request, AsyncCallback callback, object state);
 
 
@@ -688,6 +705,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReusableDelegationSet.</param>
         /// 
         /// <returns>Returns a  CreateReusableDelegationSetResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateReusableDelegationSet">REST API Reference for CreateReusableDelegationSet Operation</seealso>
         CreateReusableDelegationSetResponse EndCreateReusableDelegationSet(IAsyncResult asyncResult);
 
         #endregion
@@ -725,6 +743,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.TrafficPolicyAlreadyExistsException">
         /// A traffic policy that has the same value for <code>Name</code> already exists.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy">REST API Reference for CreateTrafficPolicy Operation</seealso>
         CreateTrafficPolicyResponse CreateTrafficPolicy(CreateTrafficPolicyRequest request);
 
         /// <summary>
@@ -738,6 +757,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrafficPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy">REST API Reference for CreateTrafficPolicy Operation</seealso>
         IAsyncResult BeginCreateTrafficPolicy(CreateTrafficPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -749,6 +769,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrafficPolicy.</param>
         /// 
         /// <returns>Returns a  CreateTrafficPolicyResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy">REST API Reference for CreateTrafficPolicy Operation</seealso>
         CreateTrafficPolicyResponse EndCreateTrafficPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -792,6 +813,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.TrafficPolicyInstanceAlreadyExistsException">
         /// Traffic policy instance with given Id already exists.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance">REST API Reference for CreateTrafficPolicyInstance Operation</seealso>
         CreateTrafficPolicyInstanceResponse CreateTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest request);
 
         /// <summary>
@@ -805,6 +827,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrafficPolicyInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance">REST API Reference for CreateTrafficPolicyInstance Operation</seealso>
         IAsyncResult BeginCreateTrafficPolicyInstance(CreateTrafficPolicyInstanceRequest request, AsyncCallback callback, object state);
 
 
@@ -816,6 +839,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrafficPolicyInstance.</param>
         /// 
         /// <returns>Returns a  CreateTrafficPolicyInstanceResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance">REST API Reference for CreateTrafficPolicyInstance Operation</seealso>
         CreateTrafficPolicyInstanceResponse EndCreateTrafficPolicyInstance(IAsyncResult asyncResult);
 
         #endregion
@@ -857,6 +881,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
         /// No traffic policy exists with the specified ID.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion">REST API Reference for CreateTrafficPolicyVersion Operation</seealso>
         CreateTrafficPolicyVersionResponse CreateTrafficPolicyVersion(CreateTrafficPolicyVersionRequest request);
 
         /// <summary>
@@ -870,6 +895,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrafficPolicyVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion">REST API Reference for CreateTrafficPolicyVersion Operation</seealso>
         IAsyncResult BeginCreateTrafficPolicyVersion(CreateTrafficPolicyVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -881,6 +907,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrafficPolicyVersion.</param>
         /// 
         /// <returns>Returns a  CreateTrafficPolicyVersionResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyVersion">REST API Reference for CreateTrafficPolicyVersion Operation</seealso>
         CreateTrafficPolicyVersionResponse EndCreateTrafficPolicyVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -930,6 +957,7 @@ namespace Amazon.Route53
         /// To get a list of existing authorizations, submit a <code>ListVPCAssociationAuthorizations</code>
         /// request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">REST API Reference for CreateVPCAssociationAuthorization Operation</seealso>
         CreateVPCAssociationAuthorizationResponse CreateVPCAssociationAuthorization(CreateVPCAssociationAuthorizationRequest request);
 
         /// <summary>
@@ -943,6 +971,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVPCAssociationAuthorization
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">REST API Reference for CreateVPCAssociationAuthorization Operation</seealso>
         IAsyncResult BeginCreateVPCAssociationAuthorization(CreateVPCAssociationAuthorizationRequest request, AsyncCallback callback, object state);
 
 
@@ -954,6 +983,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVPCAssociationAuthorization.</param>
         /// 
         /// <returns>Returns a  CreateVPCAssociationAuthorizationResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">REST API Reference for CreateVPCAssociationAuthorization Operation</seealso>
         CreateVPCAssociationAuthorizationResponse EndCreateVPCAssociationAuthorization(IAsyncResult asyncResult);
 
         #endregion
@@ -991,6 +1021,7 @@ namespace Amazon.Route53
         /// No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code>
         /// request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheck">REST API Reference for DeleteHealthCheck Operation</seealso>
         DeleteHealthCheckResponse DeleteHealthCheck(DeleteHealthCheckRequest request);
 
         /// <summary>
@@ -1004,6 +1035,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHealthCheck
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheck">REST API Reference for DeleteHealthCheck Operation</seealso>
         IAsyncResult BeginDeleteHealthCheck(DeleteHealthCheckRequest request, AsyncCallback callback, object state);
 
 
@@ -1015,6 +1047,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHealthCheck.</param>
         /// 
         /// <returns>Returns a  DeleteHealthCheckResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHealthCheck">REST API Reference for DeleteHealthCheck Operation</seealso>
         DeleteHealthCheckResponse EndDeleteHealthCheck(IAsyncResult asyncResult);
 
         #endregion
@@ -1059,6 +1092,7 @@ namespace Amazon.Route53
         /// same request, we recommend that you wait, in intervals of increasing duration, before
         /// you try the request again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone">REST API Reference for DeleteHostedZone Operation</seealso>
         DeleteHostedZoneResponse DeleteHostedZone(DeleteHostedZoneRequest request);
 
         /// <summary>
@@ -1072,6 +1106,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHostedZone
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone">REST API Reference for DeleteHostedZone Operation</seealso>
         IAsyncResult BeginDeleteHostedZone(DeleteHostedZoneRequest request, AsyncCallback callback, object state);
 
 
@@ -1083,6 +1118,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHostedZone.</param>
         /// 
         /// <returns>Returns a  DeleteHostedZoneResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone">REST API Reference for DeleteHostedZone Operation</seealso>
         DeleteHostedZoneResponse EndDeleteHostedZone(IAsyncResult asyncResult);
 
         #endregion
@@ -1121,6 +1157,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
         /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet">REST API Reference for DeleteReusableDelegationSet Operation</seealso>
         DeleteReusableDelegationSetResponse DeleteReusableDelegationSet(DeleteReusableDelegationSetRequest request);
 
         /// <summary>
@@ -1134,6 +1171,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteReusableDelegationSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet">REST API Reference for DeleteReusableDelegationSet Operation</seealso>
         IAsyncResult BeginDeleteReusableDelegationSet(DeleteReusableDelegationSetRequest request, AsyncCallback callback, object state);
 
 
@@ -1145,6 +1183,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteReusableDelegationSet.</param>
         /// 
         /// <returns>Returns a  DeleteReusableDelegationSetResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteReusableDelegationSet">REST API Reference for DeleteReusableDelegationSet Operation</seealso>
         DeleteReusableDelegationSetResponse EndDeleteReusableDelegationSet(IAsyncResult asyncResult);
 
         #endregion
@@ -1177,6 +1216,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.TrafficPolicyInUseException">
         /// One or more traffic policy instances were created by using the specified traffic policy.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy">REST API Reference for DeleteTrafficPolicy Operation</seealso>
         DeleteTrafficPolicyResponse DeleteTrafficPolicy(DeleteTrafficPolicyRequest request);
 
         /// <summary>
@@ -1190,6 +1230,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrafficPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy">REST API Reference for DeleteTrafficPolicy Operation</seealso>
         IAsyncResult BeginDeleteTrafficPolicy(DeleteTrafficPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -1201,6 +1242,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrafficPolicy.</param>
         /// 
         /// <returns>Returns a  DeleteTrafficPolicyResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicy">REST API Reference for DeleteTrafficPolicy Operation</seealso>
         DeleteTrafficPolicyResponse EndDeleteTrafficPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -1239,6 +1281,7 @@ namespace Amazon.Route53
         /// same request, we recommend that you wait, in intervals of increasing duration, before
         /// you try the request again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance">REST API Reference for DeleteTrafficPolicyInstance Operation</seealso>
         DeleteTrafficPolicyInstanceResponse DeleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest request);
 
         /// <summary>
@@ -1252,6 +1295,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrafficPolicyInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance">REST API Reference for DeleteTrafficPolicyInstance Operation</seealso>
         IAsyncResult BeginDeleteTrafficPolicyInstance(DeleteTrafficPolicyInstanceRequest request, AsyncCallback callback, object state);
 
 
@@ -1263,6 +1307,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrafficPolicyInstance.</param>
         /// 
         /// <returns>Returns a  DeleteTrafficPolicyInstanceResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance">REST API Reference for DeleteTrafficPolicyInstance Operation</seealso>
         DeleteTrafficPolicyInstanceResponse EndDeleteTrafficPolicyInstance(IAsyncResult asyncResult);
 
         #endregion
@@ -1307,6 +1352,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.VPCAssociationAuthorizationNotFoundException">
         /// The VPC that you specified is not authorized to be associated with the hosted zone.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization">REST API Reference for DeleteVPCAssociationAuthorization Operation</seealso>
         DeleteVPCAssociationAuthorizationResponse DeleteVPCAssociationAuthorization(DeleteVPCAssociationAuthorizationRequest request);
 
         /// <summary>
@@ -1320,6 +1366,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVPCAssociationAuthorization
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization">REST API Reference for DeleteVPCAssociationAuthorization Operation</seealso>
         IAsyncResult BeginDeleteVPCAssociationAuthorization(DeleteVPCAssociationAuthorizationRequest request, AsyncCallback callback, object state);
 
 
@@ -1331,6 +1378,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVPCAssociationAuthorization.</param>
         /// 
         /// <returns>Returns a  DeleteVPCAssociationAuthorizationResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteVPCAssociationAuthorization">REST API Reference for DeleteVPCAssociationAuthorization Operation</seealso>
         DeleteVPCAssociationAuthorizationResponse EndDeleteVPCAssociationAuthorization(IAsyncResult asyncResult);
 
         #endregion
@@ -1381,6 +1429,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.VPCAssociationNotFoundException">
         /// The specified VPC and hosted zone are not currently associated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">REST API Reference for DisassociateVPCFromHostedZone Operation</seealso>
         DisassociateVPCFromHostedZoneResponse DisassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request);
 
         /// <summary>
@@ -1394,6 +1443,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateVPCFromHostedZone
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">REST API Reference for DisassociateVPCFromHostedZone Operation</seealso>
         IAsyncResult BeginDisassociateVPCFromHostedZone(DisassociateVPCFromHostedZoneRequest request, AsyncCallback callback, object state);
 
 
@@ -1405,6 +1455,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateVPCFromHostedZone.</param>
         /// 
         /// <returns>Returns a  DisassociateVPCFromHostedZoneResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisassociateVPCFromHostedZone">REST API Reference for DisassociateVPCFromHostedZone Operation</seealso>
         DisassociateVPCFromHostedZoneResponse EndDisassociateVPCFromHostedZone(IAsyncResult asyncResult);
 
         #endregion
@@ -1438,6 +1489,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchChangeException">
         /// A change with the specified change ID does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetChange">REST API Reference for GetChange Operation</seealso>
         GetChangeResponse GetChange(GetChangeRequest request);
 
         /// <summary>
@@ -1451,6 +1503,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetChange
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetChange">REST API Reference for GetChange Operation</seealso>
         IAsyncResult BeginGetChange(GetChangeRequest request, AsyncCallback callback, object state);
 
 
@@ -1462,6 +1515,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetChange.</param>
         /// 
         /// <returns>Returns a  GetChangeResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetChange">REST API Reference for GetChange Operation</seealso>
         GetChangeResponse EndGetChange(IAsyncResult asyncResult);
 
         #endregion
@@ -1479,6 +1533,7 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the GetCheckerIpRanges service method.</param>
         /// 
         /// <returns>The response from the GetCheckerIpRanges service method, as returned by Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges">REST API Reference for GetCheckerIpRanges Operation</seealso>
         GetCheckerIpRangesResponse GetCheckerIpRanges(GetCheckerIpRangesRequest request);
 
         /// <summary>
@@ -1492,6 +1547,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCheckerIpRanges
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges">REST API Reference for GetCheckerIpRanges Operation</seealso>
         IAsyncResult BeginGetCheckerIpRanges(GetCheckerIpRangesRequest request, AsyncCallback callback, object state);
 
 
@@ -1503,6 +1559,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCheckerIpRanges.</param>
         /// 
         /// <returns>Returns a  GetCheckerIpRangesResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetCheckerIpRanges">REST API Reference for GetCheckerIpRanges Operation</seealso>
         GetCheckerIpRangesResponse EndGetCheckerIpRanges(IAsyncResult asyncResult);
 
         #endregion
@@ -1524,6 +1581,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchGeoLocationException">
         /// Amazon Route 53 doesn't support the specified geolocation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation">REST API Reference for GetGeoLocation Operation</seealso>
         GetGeoLocationResponse GetGeoLocation(GetGeoLocationRequest request);
 
         /// <summary>
@@ -1537,6 +1595,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGeoLocation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation">REST API Reference for GetGeoLocation Operation</seealso>
         IAsyncResult BeginGetGeoLocation(GetGeoLocationRequest request, AsyncCallback callback, object state);
 
 
@@ -1548,6 +1607,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGeoLocation.</param>
         /// 
         /// <returns>Returns a  GetGeoLocationResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetGeoLocation">REST API Reference for GetGeoLocation Operation</seealso>
         GetGeoLocationResponse EndGetGeoLocation(IAsyncResult asyncResult);
 
         #endregion
@@ -1575,6 +1635,7 @@ namespace Amazon.Route53
         /// No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code>
         /// request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck">REST API Reference for GetHealthCheck Operation</seealso>
         GetHealthCheckResponse GetHealthCheck(GetHealthCheckRequest request);
 
         /// <summary>
@@ -1588,6 +1649,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHealthCheck
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck">REST API Reference for GetHealthCheck Operation</seealso>
         IAsyncResult BeginGetHealthCheck(GetHealthCheckRequest request, AsyncCallback callback, object state);
 
 
@@ -1599,6 +1661,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHealthCheck.</param>
         /// 
         /// <returns>Returns a  GetHealthCheckResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheck">REST API Reference for GetHealthCheck Operation</seealso>
         GetHealthCheckResponse EndGetHealthCheck(IAsyncResult asyncResult);
 
         #endregion
@@ -1613,6 +1676,7 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the GetHealthCheckCount service method.</param>
         /// 
         /// <returns>The response from the GetHealthCheckCount service method, as returned by Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount">REST API Reference for GetHealthCheckCount Operation</seealso>
         GetHealthCheckCountResponse GetHealthCheckCount(GetHealthCheckCountRequest request);
 
         /// <summary>
@@ -1626,6 +1690,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHealthCheckCount
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount">REST API Reference for GetHealthCheckCount Operation</seealso>
         IAsyncResult BeginGetHealthCheckCount(GetHealthCheckCountRequest request, AsyncCallback callback, object state);
 
 
@@ -1637,6 +1702,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHealthCheckCount.</param>
         /// 
         /// <returns>Returns a  GetHealthCheckCountResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckCount">REST API Reference for GetHealthCheckCount Operation</seealso>
         GetHealthCheckCountResponse EndGetHealthCheckCount(IAsyncResult asyncResult);
 
         #endregion
@@ -1660,6 +1726,7 @@ namespace Amazon.Route53
         /// No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code>
         /// request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReason">REST API Reference for GetHealthCheckLastFailureReason Operation</seealso>
         GetHealthCheckLastFailureReasonResponse GetHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest request);
 
         /// <summary>
@@ -1673,6 +1740,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHealthCheckLastFailureReason
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReason">REST API Reference for GetHealthCheckLastFailureReason Operation</seealso>
         IAsyncResult BeginGetHealthCheckLastFailureReason(GetHealthCheckLastFailureReasonRequest request, AsyncCallback callback, object state);
 
 
@@ -1684,6 +1752,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHealthCheckLastFailureReason.</param>
         /// 
         /// <returns>Returns a  GetHealthCheckLastFailureReasonResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckLastFailureReason">REST API Reference for GetHealthCheckLastFailureReason Operation</seealso>
         GetHealthCheckLastFailureReasonResponse EndGetHealthCheckLastFailureReason(IAsyncResult asyncResult);
 
         #endregion
@@ -1706,6 +1775,7 @@ namespace Amazon.Route53
         /// No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code>
         /// request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatus">REST API Reference for GetHealthCheckStatus Operation</seealso>
         GetHealthCheckStatusResponse GetHealthCheckStatus(GetHealthCheckStatusRequest request);
 
         /// <summary>
@@ -1719,6 +1789,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHealthCheckStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatus">REST API Reference for GetHealthCheckStatus Operation</seealso>
         IAsyncResult BeginGetHealthCheckStatus(GetHealthCheckStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -1730,6 +1801,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHealthCheckStatus.</param>
         /// 
         /// <returns>Returns a  GetHealthCheckStatusResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHealthCheckStatus">REST API Reference for GetHealthCheckStatus Operation</seealso>
         GetHealthCheckStatusResponse EndGetHealthCheckStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -1751,6 +1823,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone">REST API Reference for GetHostedZone Operation</seealso>
         GetHostedZoneResponse GetHostedZone(GetHostedZoneRequest request);
 
         /// <summary>
@@ -1764,6 +1837,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHostedZone
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone">REST API Reference for GetHostedZone Operation</seealso>
         IAsyncResult BeginGetHostedZone(GetHostedZoneRequest request, AsyncCallback callback, object state);
 
 
@@ -1775,6 +1849,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHostedZone.</param>
         /// 
         /// <returns>Returns a  GetHostedZoneResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZone">REST API Reference for GetHostedZone Operation</seealso>
         GetHostedZoneResponse EndGetHostedZone(IAsyncResult asyncResult);
 
         #endregion
@@ -1791,6 +1866,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount">REST API Reference for GetHostedZoneCount Operation</seealso>
         GetHostedZoneCountResponse GetHostedZoneCount();
 
         /// <summary>
@@ -1803,6 +1879,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount">REST API Reference for GetHostedZoneCount Operation</seealso>
         GetHostedZoneCountResponse GetHostedZoneCount(GetHostedZoneCountRequest request);
 
         /// <summary>
@@ -1816,6 +1893,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHostedZoneCount
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount">REST API Reference for GetHostedZoneCount Operation</seealso>
         IAsyncResult BeginGetHostedZoneCount(GetHostedZoneCountRequest request, AsyncCallback callback, object state);
 
 
@@ -1827,6 +1905,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHostedZoneCount.</param>
         /// 
         /// <returns>Returns a  GetHostedZoneCountResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetHostedZoneCount">REST API Reference for GetHostedZoneCount Operation</seealso>
         GetHostedZoneCountResponse EndGetHostedZoneCount(IAsyncResult asyncResult);
 
         #endregion
@@ -1850,6 +1929,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
         /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSet">REST API Reference for GetReusableDelegationSet Operation</seealso>
         GetReusableDelegationSetResponse GetReusableDelegationSet(GetReusableDelegationSetRequest request);
 
         /// <summary>
@@ -1863,6 +1943,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetReusableDelegationSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSet">REST API Reference for GetReusableDelegationSet Operation</seealso>
         IAsyncResult BeginGetReusableDelegationSet(GetReusableDelegationSetRequest request, AsyncCallback callback, object state);
 
 
@@ -1874,6 +1955,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetReusableDelegationSet.</param>
         /// 
         /// <returns>Returns a  GetReusableDelegationSetResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetReusableDelegationSet">REST API Reference for GetReusableDelegationSet Operation</seealso>
         GetReusableDelegationSetResponse EndGetReusableDelegationSet(IAsyncResult asyncResult);
 
         #endregion
@@ -1899,6 +1981,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
         /// No traffic policy exists with the specified ID.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy">REST API Reference for GetTrafficPolicy Operation</seealso>
         GetTrafficPolicyResponse GetTrafficPolicy(GetTrafficPolicyRequest request);
 
         /// <summary>
@@ -1912,6 +1995,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrafficPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy">REST API Reference for GetTrafficPolicy Operation</seealso>
         IAsyncResult BeginGetTrafficPolicy(GetTrafficPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -1923,6 +2007,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTrafficPolicy.</param>
         /// 
         /// <returns>Returns a  GetTrafficPolicyResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicy">REST API Reference for GetTrafficPolicy Operation</seealso>
         GetTrafficPolicyResponse EndGetTrafficPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -1960,6 +2045,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyInstanceException">
         /// No traffic policy instance exists with the specified ID.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance">REST API Reference for GetTrafficPolicyInstance Operation</seealso>
         GetTrafficPolicyInstanceResponse GetTrafficPolicyInstance(GetTrafficPolicyInstanceRequest request);
 
         /// <summary>
@@ -1973,6 +2059,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrafficPolicyInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance">REST API Reference for GetTrafficPolicyInstance Operation</seealso>
         IAsyncResult BeginGetTrafficPolicyInstance(GetTrafficPolicyInstanceRequest request, AsyncCallback callback, object state);
 
 
@@ -1984,6 +2071,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTrafficPolicyInstance.</param>
         /// 
         /// <returns>Returns a  GetTrafficPolicyInstanceResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance">REST API Reference for GetTrafficPolicyInstance Operation</seealso>
         GetTrafficPolicyInstanceResponse EndGetTrafficPolicyInstance(IAsyncResult asyncResult);
 
         #endregion
@@ -2004,6 +2092,7 @@ namespace Amazon.Route53
         /// <param name="request">Container for the necessary parameters to execute the GetTrafficPolicyInstanceCount service method.</param>
         /// 
         /// <returns>The response from the GetTrafficPolicyInstanceCount service method, as returned by Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount">REST API Reference for GetTrafficPolicyInstanceCount Operation</seealso>
         GetTrafficPolicyInstanceCountResponse GetTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest request);
 
         /// <summary>
@@ -2017,6 +2106,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrafficPolicyInstanceCount
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount">REST API Reference for GetTrafficPolicyInstanceCount Operation</seealso>
         IAsyncResult BeginGetTrafficPolicyInstanceCount(GetTrafficPolicyInstanceCountRequest request, AsyncCallback callback, object state);
 
 
@@ -2028,6 +2118,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTrafficPolicyInstanceCount.</param>
         /// 
         /// <returns>Returns a  GetTrafficPolicyInstanceCountResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstanceCount">REST API Reference for GetTrafficPolicyInstanceCount Operation</seealso>
         GetTrafficPolicyInstanceCountResponse EndGetTrafficPolicyInstanceCount(IAsyncResult asyncResult);
 
         #endregion
@@ -2054,6 +2145,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations">REST API Reference for ListGeoLocations Operation</seealso>
         ListGeoLocationsResponse ListGeoLocations();
 
         /// <summary>
@@ -2076,6 +2168,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations">REST API Reference for ListGeoLocations Operation</seealso>
         ListGeoLocationsResponse ListGeoLocations(ListGeoLocationsRequest request);
 
         /// <summary>
@@ -2089,6 +2182,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGeoLocations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations">REST API Reference for ListGeoLocations Operation</seealso>
         IAsyncResult BeginListGeoLocations(ListGeoLocationsRequest request, AsyncCallback callback, object state);
 
 
@@ -2100,6 +2194,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGeoLocations.</param>
         /// 
         /// <returns>Returns a  ListGeoLocationsResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListGeoLocations">REST API Reference for ListGeoLocations Operation</seealso>
         ListGeoLocationsResponse EndListGeoLocations(IAsyncResult asyncResult);
 
         #endregion
@@ -2131,6 +2226,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks">REST API Reference for ListHealthChecks Operation</seealso>
         ListHealthChecksResponse ListHealthChecks();
 
         /// <summary>
@@ -2158,6 +2254,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks">REST API Reference for ListHealthChecks Operation</seealso>
         ListHealthChecksResponse ListHealthChecks(ListHealthChecksRequest request);
 
         /// <summary>
@@ -2171,6 +2268,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHealthChecks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks">REST API Reference for ListHealthChecks Operation</seealso>
         IAsyncResult BeginListHealthChecks(ListHealthChecksRequest request, AsyncCallback callback, object state);
 
 
@@ -2182,6 +2280,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHealthChecks.</param>
         /// 
         /// <returns>Returns a  ListHealthChecksResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHealthChecks">REST API Reference for ListHealthChecks Operation</seealso>
         ListHealthChecksResponse EndListHealthChecks(IAsyncResult asyncResult);
 
         #endregion
@@ -2243,6 +2342,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
         /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones">REST API Reference for ListHostedZones Operation</seealso>
         ListHostedZonesResponse ListHostedZones();
 
         /// <summary>
@@ -2300,6 +2400,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchDelegationSetException">
         /// A reusable delegation set with the specified ID does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones">REST API Reference for ListHostedZones Operation</seealso>
         ListHostedZonesResponse ListHostedZones(ListHostedZonesRequest request);
 
         /// <summary>
@@ -2313,6 +2414,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHostedZones
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones">REST API Reference for ListHostedZones Operation</seealso>
         IAsyncResult BeginListHostedZones(ListHostedZonesRequest request, AsyncCallback callback, object state);
 
 
@@ -2324,6 +2426,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHostedZones.</param>
         /// 
         /// <returns>Returns a  ListHostedZonesResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZones">REST API Reference for ListHostedZones Operation</seealso>
         ListHostedZonesResponse EndListHostedZones(IAsyncResult asyncResult);
 
         #endregion
@@ -2419,6 +2522,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByName">REST API Reference for ListHostedZonesByName Operation</seealso>
         ListHostedZonesByNameResponse ListHostedZonesByName(ListHostedZonesByNameRequest request);
 
         /// <summary>
@@ -2432,6 +2536,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHostedZonesByName
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByName">REST API Reference for ListHostedZonesByName Operation</seealso>
         IAsyncResult BeginListHostedZonesByName(ListHostedZonesByNameRequest request, AsyncCallback callback, object state);
 
 
@@ -2443,6 +2548,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHostedZonesByName.</param>
         /// 
         /// <returns>Returns a  ListHostedZonesByNameResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByName">REST API Reference for ListHostedZonesByName Operation</seealso>
         ListHostedZonesByNameResponse EndListHostedZonesByName(IAsyncResult asyncResult);
 
         #endregion
@@ -2520,6 +2626,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSets">REST API Reference for ListResourceRecordSets Operation</seealso>
         ListResourceRecordSetsResponse ListResourceRecordSets(ListResourceRecordSetsRequest request);
 
         /// <summary>
@@ -2533,6 +2640,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListResourceRecordSets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSets">REST API Reference for ListResourceRecordSets Operation</seealso>
         IAsyncResult BeginListResourceRecordSets(ListResourceRecordSetsRequest request, AsyncCallback callback, object state);
 
 
@@ -2544,6 +2652,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListResourceRecordSets.</param>
         /// 
         /// <returns>Returns a  ListResourceRecordSetsResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSets">REST API Reference for ListResourceRecordSets Operation</seealso>
         ListResourceRecordSetsResponse EndListResourceRecordSets(IAsyncResult asyncResult);
 
         #endregion
@@ -2572,6 +2681,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets">REST API Reference for ListReusableDelegationSets Operation</seealso>
         ListReusableDelegationSetsResponse ListReusableDelegationSets();
 
         /// <summary>
@@ -2596,6 +2706,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets">REST API Reference for ListReusableDelegationSets Operation</seealso>
         ListReusableDelegationSetsResponse ListReusableDelegationSets(ListReusableDelegationSetsRequest request);
 
         /// <summary>
@@ -2609,6 +2720,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReusableDelegationSets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets">REST API Reference for ListReusableDelegationSets Operation</seealso>
         IAsyncResult BeginListReusableDelegationSets(ListReusableDelegationSetsRequest request, AsyncCallback callback, object state);
 
 
@@ -2620,6 +2732,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReusableDelegationSets.</param>
         /// 
         /// <returns>Returns a  ListReusableDelegationSetsResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListReusableDelegationSets">REST API Reference for ListReusableDelegationSets Operation</seealso>
         ListReusableDelegationSetsResponse EndListReusableDelegationSets(IAsyncResult asyncResult);
 
         #endregion
@@ -2659,6 +2772,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.ThrottlingException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
         /// <summary>
@@ -2672,6 +2786,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -2683,6 +2798,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
 
         #endregion
@@ -2722,6 +2838,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.ThrottlingException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources">REST API Reference for ListTagsForResources Operation</seealso>
         ListTagsForResourcesResponse ListTagsForResources(ListTagsForResourcesRequest request);
 
         /// <summary>
@@ -2735,6 +2852,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResources
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources">REST API Reference for ListTagsForResources Operation</seealso>
         IAsyncResult BeginListTagsForResources(ListTagsForResourcesRequest request, AsyncCallback callback, object state);
 
 
@@ -2746,6 +2864,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResources.</param>
         /// 
         /// <returns>Returns a  ListTagsForResourcesResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTagsForResources">REST API Reference for ListTagsForResources Operation</seealso>
         ListTagsForResourcesResponse EndListTagsForResources(IAsyncResult asyncResult);
 
         #endregion
@@ -2817,6 +2936,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies">REST API Reference for ListTrafficPolicies Operation</seealso>
         ListTrafficPoliciesResponse ListTrafficPolicies(ListTrafficPoliciesRequest request);
 
         /// <summary>
@@ -2830,6 +2950,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrafficPolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies">REST API Reference for ListTrafficPolicies Operation</seealso>
         IAsyncResult BeginListTrafficPolicies(ListTrafficPoliciesRequest request, AsyncCallback callback, object state);
 
 
@@ -2841,6 +2962,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrafficPolicies.</param>
         /// 
         /// <returns>Returns a  ListTrafficPoliciesResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicies">REST API Reference for ListTrafficPolicies Operation</seealso>
         ListTrafficPoliciesResponse EndListTrafficPolicies(IAsyncResult asyncResult);
 
         #endregion
@@ -2927,6 +3049,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyInstanceException">
         /// No traffic policy instance exists with the specified ID.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstances">REST API Reference for ListTrafficPolicyInstances Operation</seealso>
         ListTrafficPolicyInstancesResponse ListTrafficPolicyInstances(ListTrafficPolicyInstancesRequest request);
 
         /// <summary>
@@ -2940,6 +3063,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrafficPolicyInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstances">REST API Reference for ListTrafficPolicyInstances Operation</seealso>
         IAsyncResult BeginListTrafficPolicyInstances(ListTrafficPolicyInstancesRequest request, AsyncCallback callback, object state);
 
 
@@ -2951,6 +3075,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrafficPolicyInstances.</param>
         /// 
         /// <returns>Returns a  ListTrafficPolicyInstancesResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstances">REST API Reference for ListTrafficPolicyInstances Operation</seealso>
         ListTrafficPolicyInstancesResponse EndListTrafficPolicyInstances(IAsyncResult asyncResult);
 
         #endregion
@@ -3040,6 +3165,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyInstanceException">
         /// No traffic policy instance exists with the specified ID.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZone">REST API Reference for ListTrafficPolicyInstancesByHostedZone Operation</seealso>
         ListTrafficPolicyInstancesByHostedZoneResponse ListTrafficPolicyInstancesByHostedZone(ListTrafficPolicyInstancesByHostedZoneRequest request);
 
         /// <summary>
@@ -3053,6 +3179,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrafficPolicyInstancesByHostedZone
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZone">REST API Reference for ListTrafficPolicyInstancesByHostedZone Operation</seealso>
         IAsyncResult BeginListTrafficPolicyInstancesByHostedZone(ListTrafficPolicyInstancesByHostedZoneRequest request, AsyncCallback callback, object state);
 
 
@@ -3064,6 +3191,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrafficPolicyInstancesByHostedZone.</param>
         /// 
         /// <returns>Returns a  ListTrafficPolicyInstancesByHostedZoneResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByHostedZone">REST API Reference for ListTrafficPolicyInstancesByHostedZone Operation</seealso>
         ListTrafficPolicyInstancesByHostedZoneResponse EndListTrafficPolicyInstancesByHostedZone(IAsyncResult asyncResult);
 
         #endregion
@@ -3152,6 +3280,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyInstanceException">
         /// No traffic policy instance exists with the specified ID.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByPolicy">REST API Reference for ListTrafficPolicyInstancesByPolicy Operation</seealso>
         ListTrafficPolicyInstancesByPolicyResponse ListTrafficPolicyInstancesByPolicy(ListTrafficPolicyInstancesByPolicyRequest request);
 
         /// <summary>
@@ -3165,6 +3294,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrafficPolicyInstancesByPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByPolicy">REST API Reference for ListTrafficPolicyInstancesByPolicy Operation</seealso>
         IAsyncResult BeginListTrafficPolicyInstancesByPolicy(ListTrafficPolicyInstancesByPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -3176,6 +3306,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrafficPolicyInstancesByPolicy.</param>
         /// 
         /// <returns>Returns a  ListTrafficPolicyInstancesByPolicyResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyInstancesByPolicy">REST API Reference for ListTrafficPolicyInstancesByPolicy Operation</seealso>
         ListTrafficPolicyInstancesByPolicyResponse EndListTrafficPolicyInstancesByPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -3252,6 +3383,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
         /// No traffic policy exists with the specified ID.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyVersions">REST API Reference for ListTrafficPolicyVersions Operation</seealso>
         ListTrafficPolicyVersionsResponse ListTrafficPolicyVersions(ListTrafficPolicyVersionsRequest request);
 
         /// <summary>
@@ -3265,6 +3397,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrafficPolicyVersions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyVersions">REST API Reference for ListTrafficPolicyVersions Operation</seealso>
         IAsyncResult BeginListTrafficPolicyVersions(ListTrafficPolicyVersionsRequest request, AsyncCallback callback, object state);
 
 
@@ -3276,6 +3409,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrafficPolicyVersions.</param>
         /// 
         /// <returns>Returns a  ListTrafficPolicyVersionsResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListTrafficPolicyVersions">REST API Reference for ListTrafficPolicyVersions Operation</seealso>
         ListTrafficPolicyVersionsResponse EndListTrafficPolicyVersions(IAsyncResult asyncResult);
 
         #endregion
@@ -3330,6 +3464,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListVPCAssociationAuthorizations">REST API Reference for ListVPCAssociationAuthorizations Operation</seealso>
         ListVPCAssociationAuthorizationsResponse ListVPCAssociationAuthorizations(ListVPCAssociationAuthorizationsRequest request);
 
         /// <summary>
@@ -3343,6 +3478,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVPCAssociationAuthorizations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListVPCAssociationAuthorizations">REST API Reference for ListVPCAssociationAuthorizations Operation</seealso>
         IAsyncResult BeginListVPCAssociationAuthorizations(ListVPCAssociationAuthorizationsRequest request, AsyncCallback callback, object state);
 
 
@@ -3354,6 +3490,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVPCAssociationAuthorizations.</param>
         /// 
         /// <returns>Returns a  ListVPCAssociationAuthorizationsResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListVPCAssociationAuthorizations">REST API Reference for ListVPCAssociationAuthorizations Operation</seealso>
         ListVPCAssociationAuthorizationsResponse EndListVPCAssociationAuthorizations(IAsyncResult asyncResult);
 
         #endregion
@@ -3375,6 +3512,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswer">REST API Reference for TestDNSAnswer Operation</seealso>
         TestDNSAnswerResponse TestDNSAnswer(TestDNSAnswerRequest request);
 
         /// <summary>
@@ -3388,6 +3526,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestDNSAnswer
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswer">REST API Reference for TestDNSAnswer Operation</seealso>
         IAsyncResult BeginTestDNSAnswer(TestDNSAnswerRequest request, AsyncCallback callback, object state);
 
 
@@ -3399,6 +3538,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestDNSAnswer.</param>
         /// 
         /// <returns>Returns a  TestDNSAnswerResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/TestDNSAnswer">REST API Reference for TestDNSAnswer Operation</seealso>
         TestDNSAnswerResponse EndTestDNSAnswer(IAsyncResult asyncResult);
 
         #endregion
@@ -3431,6 +3571,7 @@ namespace Amazon.Route53
         /// No health check exists with the ID that you specified in the <code>DeleteHealthCheck</code>
         /// request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheck">REST API Reference for UpdateHealthCheck Operation</seealso>
         UpdateHealthCheckResponse UpdateHealthCheck(UpdateHealthCheckRequest request);
 
         /// <summary>
@@ -3444,6 +3585,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateHealthCheck
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheck">REST API Reference for UpdateHealthCheck Operation</seealso>
         IAsyncResult BeginUpdateHealthCheck(UpdateHealthCheckRequest request, AsyncCallback callback, object state);
 
 
@@ -3455,6 +3597,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateHealthCheck.</param>
         /// 
         /// <returns>Returns a  UpdateHealthCheckResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHealthCheck">REST API Reference for UpdateHealthCheck Operation</seealso>
         UpdateHealthCheckResponse EndUpdateHealthCheck(IAsyncResult asyncResult);
 
         #endregion
@@ -3475,6 +3618,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment">REST API Reference for UpdateHostedZoneComment Operation</seealso>
         UpdateHostedZoneCommentResponse UpdateHostedZoneComment(UpdateHostedZoneCommentRequest request);
 
         /// <summary>
@@ -3488,6 +3632,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateHostedZoneComment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment">REST API Reference for UpdateHostedZoneComment Operation</seealso>
         IAsyncResult BeginUpdateHostedZoneComment(UpdateHostedZoneCommentRequest request, AsyncCallback callback, object state);
 
 
@@ -3499,6 +3644,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateHostedZoneComment.</param>
         /// 
         /// <returns>Returns a  UpdateHostedZoneCommentResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment">REST API Reference for UpdateHostedZoneComment Operation</seealso>
         UpdateHostedZoneCommentResponse EndUpdateHostedZoneComment(IAsyncResult asyncResult);
 
         #endregion
@@ -3532,6 +3678,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
         /// No traffic policy exists with the specified ID.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment">REST API Reference for UpdateTrafficPolicyComment Operation</seealso>
         UpdateTrafficPolicyCommentResponse UpdateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest request);
 
         /// <summary>
@@ -3545,6 +3692,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTrafficPolicyComment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment">REST API Reference for UpdateTrafficPolicyComment Operation</seealso>
         IAsyncResult BeginUpdateTrafficPolicyComment(UpdateTrafficPolicyCommentRequest request, AsyncCallback callback, object state);
 
 
@@ -3556,6 +3704,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTrafficPolicyComment.</param>
         /// 
         /// <returns>Returns a  UpdateTrafficPolicyCommentResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyComment">REST API Reference for UpdateTrafficPolicyComment Operation</seealso>
         UpdateTrafficPolicyCommentResponse EndUpdateTrafficPolicyComment(IAsyncResult asyncResult);
 
         #endregion
@@ -3623,6 +3772,7 @@ namespace Amazon.Route53
         /// same request, we recommend that you wait, in intervals of increasing duration, before
         /// you try the request again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstance">REST API Reference for UpdateTrafficPolicyInstance Operation</seealso>
         UpdateTrafficPolicyInstanceResponse UpdateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest request);
 
         /// <summary>
@@ -3636,6 +3786,7 @@ namespace Amazon.Route53
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateTrafficPolicyInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstance">REST API Reference for UpdateTrafficPolicyInstance Operation</seealso>
         IAsyncResult BeginUpdateTrafficPolicyInstance(UpdateTrafficPolicyInstanceRequest request, AsyncCallback callback, object state);
 
 
@@ -3647,6 +3798,7 @@ namespace Amazon.Route53
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateTrafficPolicyInstance.</param>
         /// 
         /// <returns>Returns a  UpdateTrafficPolicyInstanceResult from Route53.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstance">REST API Reference for UpdateTrafficPolicyInstance Operation</seealso>
         UpdateTrafficPolicyInstanceResponse EndUpdateTrafficPolicyInstance(IAsyncResult asyncResult);
 
         #endregion

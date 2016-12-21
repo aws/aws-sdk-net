@@ -261,6 +261,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public CancelJobResponse CancelJob(CancelJobRequest request)
         {
             var marshaller = new CancelJobRequestMarshaller();
@@ -280,6 +281,7 @@ namespace Amazon.Batch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public IAsyncResult BeginCancelJob(CancelJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelJobRequestMarshaller();
@@ -296,6 +298,7 @@ namespace Amazon.Batch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelJob.</param>
         /// 
         /// <returns>Returns a  CancelJobResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public  CancelJobResponse EndCancelJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelJobResponse>(asyncResult);
@@ -344,6 +347,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">REST API Reference for CreateComputeEnvironment Operation</seealso>
         public CreateComputeEnvironmentResponse CreateComputeEnvironment(CreateComputeEnvironmentRequest request)
         {
             var marshaller = new CreateComputeEnvironmentRequestMarshaller();
@@ -363,6 +367,7 @@ namespace Amazon.Batch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateComputeEnvironment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">REST API Reference for CreateComputeEnvironment Operation</seealso>
         public IAsyncResult BeginCreateComputeEnvironment(CreateComputeEnvironmentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateComputeEnvironmentRequestMarshaller();
@@ -379,6 +384,7 @@ namespace Amazon.Batch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateComputeEnvironment.</param>
         /// 
         /// <returns>Returns a  CreateComputeEnvironmentResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">REST API Reference for CreateComputeEnvironment Operation</seealso>
         public  CreateComputeEnvironmentResponse EndCreateComputeEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateComputeEnvironmentResponse>(asyncResult);
@@ -412,6 +418,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateJobQueue">REST API Reference for CreateJobQueue Operation</seealso>
         public CreateJobQueueResponse CreateJobQueue(CreateJobQueueRequest request)
         {
             var marshaller = new CreateJobQueueRequestMarshaller();
@@ -431,6 +438,7 @@ namespace Amazon.Batch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateJobQueue
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateJobQueue">REST API Reference for CreateJobQueue Operation</seealso>
         public IAsyncResult BeginCreateJobQueue(CreateJobQueueRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateJobQueueRequestMarshaller();
@@ -447,6 +455,7 @@ namespace Amazon.Batch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateJobQueue.</param>
         /// 
         /// <returns>Returns a  CreateJobQueueResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateJobQueue">REST API Reference for CreateJobQueue Operation</seealso>
         public  CreateJobQueueResponse EndCreateJobQueue(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateJobQueueResponse>(asyncResult);
@@ -477,6 +486,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteComputeEnvironment">REST API Reference for DeleteComputeEnvironment Operation</seealso>
         public DeleteComputeEnvironmentResponse DeleteComputeEnvironment(DeleteComputeEnvironmentRequest request)
         {
             var marshaller = new DeleteComputeEnvironmentRequestMarshaller();
@@ -496,6 +506,7 @@ namespace Amazon.Batch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteComputeEnvironment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteComputeEnvironment">REST API Reference for DeleteComputeEnvironment Operation</seealso>
         public IAsyncResult BeginDeleteComputeEnvironment(DeleteComputeEnvironmentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteComputeEnvironmentRequestMarshaller();
@@ -512,6 +523,7 @@ namespace Amazon.Batch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteComputeEnvironment.</param>
         /// 
         /// <returns>Returns a  DeleteComputeEnvironmentResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteComputeEnvironment">REST API Reference for DeleteComputeEnvironment Operation</seealso>
         public  DeleteComputeEnvironmentResponse EndDeleteComputeEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteComputeEnvironmentResponse>(asyncResult);
@@ -543,6 +555,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteJobQueue">REST API Reference for DeleteJobQueue Operation</seealso>
         public DeleteJobQueueResponse DeleteJobQueue(DeleteJobQueueRequest request)
         {
             var marshaller = new DeleteJobQueueRequestMarshaller();
@@ -562,6 +575,7 @@ namespace Amazon.Batch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteJobQueue
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteJobQueue">REST API Reference for DeleteJobQueue Operation</seealso>
         public IAsyncResult BeginDeleteJobQueue(DeleteJobQueueRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteJobQueueRequestMarshaller();
@@ -578,6 +592,7 @@ namespace Amazon.Batch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteJobQueue.</param>
         /// 
         /// <returns>Returns a  DeleteJobQueueResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteJobQueue">REST API Reference for DeleteJobQueue Operation</seealso>
         public  DeleteJobQueueResponse EndDeleteJobQueue(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteJobQueueResponse>(asyncResult);
@@ -601,6 +616,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition">REST API Reference for DeregisterJobDefinition Operation</seealso>
         public DeregisterJobDefinitionResponse DeregisterJobDefinition(DeregisterJobDefinitionRequest request)
         {
             var marshaller = new DeregisterJobDefinitionRequestMarshaller();
@@ -620,6 +636,7 @@ namespace Amazon.Batch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterJobDefinition
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition">REST API Reference for DeregisterJobDefinition Operation</seealso>
         public IAsyncResult BeginDeregisterJobDefinition(DeregisterJobDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterJobDefinitionRequestMarshaller();
@@ -636,6 +653,7 @@ namespace Amazon.Batch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterJobDefinition.</param>
         /// 
         /// <returns>Returns a  DeregisterJobDefinitionResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition">REST API Reference for DeregisterJobDefinition Operation</seealso>
         public  DeregisterJobDefinitionResponse EndDeregisterJobDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterJobDefinitionResponse>(asyncResult);
@@ -666,6 +684,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments">REST API Reference for DescribeComputeEnvironments Operation</seealso>
         public DescribeComputeEnvironmentsResponse DescribeComputeEnvironments(DescribeComputeEnvironmentsRequest request)
         {
             var marshaller = new DescribeComputeEnvironmentsRequestMarshaller();
@@ -685,6 +704,7 @@ namespace Amazon.Batch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeComputeEnvironments
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments">REST API Reference for DescribeComputeEnvironments Operation</seealso>
         public IAsyncResult BeginDescribeComputeEnvironments(DescribeComputeEnvironmentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeComputeEnvironmentsRequestMarshaller();
@@ -701,6 +721,7 @@ namespace Amazon.Batch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeComputeEnvironments.</param>
         /// 
         /// <returns>Returns a  DescribeComputeEnvironmentsResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments">REST API Reference for DescribeComputeEnvironments Operation</seealso>
         public  DescribeComputeEnvironmentsResponse EndDescribeComputeEnvironments(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeComputeEnvironmentsResponse>(asyncResult);
@@ -725,6 +746,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitions">REST API Reference for DescribeJobDefinitions Operation</seealso>
         public DescribeJobDefinitionsResponse DescribeJobDefinitions(DescribeJobDefinitionsRequest request)
         {
             var marshaller = new DescribeJobDefinitionsRequestMarshaller();
@@ -744,6 +766,7 @@ namespace Amazon.Batch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeJobDefinitions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitions">REST API Reference for DescribeJobDefinitions Operation</seealso>
         public IAsyncResult BeginDescribeJobDefinitions(DescribeJobDefinitionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeJobDefinitionsRequestMarshaller();
@@ -760,6 +783,7 @@ namespace Amazon.Batch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJobDefinitions.</param>
         /// 
         /// <returns>Returns a  DescribeJobDefinitionsResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitions">REST API Reference for DescribeJobDefinitions Operation</seealso>
         public  DescribeJobDefinitionsResponse EndDescribeJobDefinitions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeJobDefinitionsResponse>(asyncResult);
@@ -783,6 +807,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobQueues">REST API Reference for DescribeJobQueues Operation</seealso>
         public DescribeJobQueuesResponse DescribeJobQueues(DescribeJobQueuesRequest request)
         {
             var marshaller = new DescribeJobQueuesRequestMarshaller();
@@ -802,6 +827,7 @@ namespace Amazon.Batch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeJobQueues
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobQueues">REST API Reference for DescribeJobQueues Operation</seealso>
         public IAsyncResult BeginDescribeJobQueues(DescribeJobQueuesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeJobQueuesRequestMarshaller();
@@ -818,6 +844,7 @@ namespace Amazon.Batch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJobQueues.</param>
         /// 
         /// <returns>Returns a  DescribeJobQueuesResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobQueues">REST API Reference for DescribeJobQueues Operation</seealso>
         public  DescribeJobQueuesResponse EndDescribeJobQueues(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeJobQueuesResponse>(asyncResult);
@@ -841,6 +868,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobs">REST API Reference for DescribeJobs Operation</seealso>
         public DescribeJobsResponse DescribeJobs(DescribeJobsRequest request)
         {
             var marshaller = new DescribeJobsRequestMarshaller();
@@ -860,6 +888,7 @@ namespace Amazon.Batch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobs">REST API Reference for DescribeJobs Operation</seealso>
         public IAsyncResult BeginDescribeJobs(DescribeJobsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeJobsRequestMarshaller();
@@ -876,6 +905,7 @@ namespace Amazon.Batch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJobs.</param>
         /// 
         /// <returns>Returns a  DescribeJobsResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobs">REST API Reference for DescribeJobs Operation</seealso>
         public  DescribeJobsResponse EndDescribeJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeJobsResponse>(asyncResult);
@@ -900,6 +930,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public ListJobsResponse ListJobs(ListJobsRequest request)
         {
             var marshaller = new ListJobsRequestMarshaller();
@@ -919,6 +950,7 @@ namespace Amazon.Batch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListJobsRequestMarshaller();
@@ -935,6 +967,7 @@ namespace Amazon.Batch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobs.</param>
         /// 
         /// <returns>Returns a  ListJobsResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public  ListJobsResponse EndListJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListJobsResponse>(asyncResult);
@@ -958,6 +991,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition">REST API Reference for RegisterJobDefinition Operation</seealso>
         public RegisterJobDefinitionResponse RegisterJobDefinition(RegisterJobDefinitionRequest request)
         {
             var marshaller = new RegisterJobDefinitionRequestMarshaller();
@@ -977,6 +1011,7 @@ namespace Amazon.Batch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterJobDefinition
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition">REST API Reference for RegisterJobDefinition Operation</seealso>
         public IAsyncResult BeginRegisterJobDefinition(RegisterJobDefinitionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterJobDefinitionRequestMarshaller();
@@ -993,6 +1028,7 @@ namespace Amazon.Batch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterJobDefinition.</param>
         /// 
         /// <returns>Returns a  RegisterJobDefinitionResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition">REST API Reference for RegisterJobDefinition Operation</seealso>
         public  RegisterJobDefinitionResponse EndRegisterJobDefinition(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterJobDefinitionResponse>(asyncResult);
@@ -1017,6 +1053,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">REST API Reference for SubmitJob Operation</seealso>
         public SubmitJobResponse SubmitJob(SubmitJobRequest request)
         {
             var marshaller = new SubmitJobRequestMarshaller();
@@ -1036,6 +1073,7 @@ namespace Amazon.Batch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSubmitJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">REST API Reference for SubmitJob Operation</seealso>
         public IAsyncResult BeginSubmitJob(SubmitJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SubmitJobRequestMarshaller();
@@ -1052,6 +1090,7 @@ namespace Amazon.Batch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSubmitJob.</param>
         /// 
         /// <returns>Returns a  SubmitJobResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">REST API Reference for SubmitJob Operation</seealso>
         public  SubmitJobResponse EndSubmitJob(IAsyncResult asyncResult)
         {
             return EndInvoke<SubmitJobResponse>(asyncResult);
@@ -1077,6 +1116,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob">REST API Reference for TerminateJob Operation</seealso>
         public TerminateJobResponse TerminateJob(TerminateJobRequest request)
         {
             var marshaller = new TerminateJobRequestMarshaller();
@@ -1096,6 +1136,7 @@ namespace Amazon.Batch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTerminateJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob">REST API Reference for TerminateJob Operation</seealso>
         public IAsyncResult BeginTerminateJob(TerminateJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TerminateJobRequestMarshaller();
@@ -1112,6 +1153,7 @@ namespace Amazon.Batch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTerminateJob.</param>
         /// 
         /// <returns>Returns a  TerminateJobResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob">REST API Reference for TerminateJob Operation</seealso>
         public  TerminateJobResponse EndTerminateJob(IAsyncResult asyncResult)
         {
             return EndInvoke<TerminateJobResponse>(asyncResult);
@@ -1135,6 +1177,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironment">REST API Reference for UpdateComputeEnvironment Operation</seealso>
         public UpdateComputeEnvironmentResponse UpdateComputeEnvironment(UpdateComputeEnvironmentRequest request)
         {
             var marshaller = new UpdateComputeEnvironmentRequestMarshaller();
@@ -1154,6 +1197,7 @@ namespace Amazon.Batch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateComputeEnvironment
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironment">REST API Reference for UpdateComputeEnvironment Operation</seealso>
         public IAsyncResult BeginUpdateComputeEnvironment(UpdateComputeEnvironmentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateComputeEnvironmentRequestMarshaller();
@@ -1170,6 +1214,7 @@ namespace Amazon.Batch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateComputeEnvironment.</param>
         /// 
         /// <returns>Returns a  UpdateComputeEnvironmentResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironment">REST API Reference for UpdateComputeEnvironment Operation</seealso>
         public  UpdateComputeEnvironmentResponse EndUpdateComputeEnvironment(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateComputeEnvironmentResponse>(asyncResult);
@@ -1193,6 +1238,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateJobQueue">REST API Reference for UpdateJobQueue Operation</seealso>
         public UpdateJobQueueResponse UpdateJobQueue(UpdateJobQueueRequest request)
         {
             var marshaller = new UpdateJobQueueRequestMarshaller();
@@ -1212,6 +1258,7 @@ namespace Amazon.Batch
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJobQueue
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateJobQueue">REST API Reference for UpdateJobQueue Operation</seealso>
         public IAsyncResult BeginUpdateJobQueue(UpdateJobQueueRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateJobQueueRequestMarshaller();
@@ -1228,6 +1275,7 @@ namespace Amazon.Batch
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJobQueue.</param>
         /// 
         /// <returns>Returns a  UpdateJobQueueResult from Batch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateJobQueue">REST API Reference for UpdateJobQueue Operation</seealso>
         public  UpdateJobQueueResponse EndUpdateJobQueue(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateJobQueueResponse>(asyncResult);

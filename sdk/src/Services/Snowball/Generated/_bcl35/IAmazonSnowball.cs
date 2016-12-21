@@ -64,6 +64,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster">REST API Reference for CancelCluster Operation</seealso>
         CancelClusterResponse CancelCluster(CancelClusterRequest request);
 
         /// <summary>
@@ -77,6 +78,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelCluster
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster">REST API Reference for CancelCluster Operation</seealso>
         IAsyncResult BeginCancelCluster(CancelClusterRequest request, AsyncCallback callback, object state);
 
 
@@ -88,6 +90,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelCluster.</param>
         /// 
         /// <returns>Returns a  CancelClusterResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster">REST API Reference for CancelCluster Operation</seealso>
         CancelClusterResponse EndCancelCluster(IAsyncResult asyncResult);
 
         #endregion
@@ -116,6 +119,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">REST API Reference for CancelJob Operation</seealso>
         CancelJobResponse CancelJob(CancelJobRequest request);
 
         /// <summary>
@@ -129,6 +133,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">REST API Reference for CancelJob Operation</seealso>
         IAsyncResult BeginCancelJob(CancelJobRequest request, AsyncCallback callback, object state);
 
 
@@ -140,6 +145,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelJob.</param>
         /// 
         /// <returns>Returns a  CancelJobResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">REST API Reference for CancelJob Operation</seealso>
         CancelJobResponse EndCancelJob(IAsyncResult asyncResult);
 
         #endregion
@@ -169,6 +175,7 @@ namespace Amazon.Snowball
         /// Check the address with your region's carrier and try again. If the issue persists,
         /// contact AWS Support.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">REST API Reference for CreateAddress Operation</seealso>
         CreateAddressResponse CreateAddress(CreateAddressRequest request);
 
         /// <summary>
@@ -182,6 +189,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAddress
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">REST API Reference for CreateAddress Operation</seealso>
         IAsyncResult BeginCreateAddress(CreateAddressRequest request, AsyncCallback callback, object state);
 
 
@@ -193,6 +201,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAddress.</param>
         /// 
         /// <returns>Returns a  CreateAddressResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">REST API Reference for CreateAddress Operation</seealso>
         CreateAddressResponse EndCreateAddress(IAsyncResult asyncResult);
 
         #endregion
@@ -221,6 +230,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         CreateClusterResponse CreateCluster(CreateClusterRequest request);
 
         /// <summary>
@@ -234,6 +244,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCluster
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state);
 
 
@@ -245,6 +256,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCluster.</param>
         /// 
         /// <returns>Returns a  CreateClusterResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         CreateClusterResponse EndCreateCluster(IAsyncResult asyncResult);
 
         #endregion
@@ -280,6 +292,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">REST API Reference for CreateJob Operation</seealso>
         CreateJobResponse CreateJob(CreateJobRequest request);
 
         /// <summary>
@@ -293,6 +306,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">REST API Reference for CreateJob Operation</seealso>
         IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state);
 
 
@@ -304,6 +318,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateJob.</param>
         /// 
         /// <returns>Returns a  CreateJobResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">REST API Reference for CreateJob Operation</seealso>
         CreateJobResponse EndCreateJob(IAsyncResult asyncResult);
 
         #endregion
@@ -322,6 +337,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddress">REST API Reference for DescribeAddress Operation</seealso>
         DescribeAddressResponse DescribeAddress(DescribeAddressRequest request);
 
         /// <summary>
@@ -335,6 +351,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAddress
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddress">REST API Reference for DescribeAddress Operation</seealso>
         IAsyncResult BeginDescribeAddress(DescribeAddressRequest request, AsyncCallback callback, object state);
 
 
@@ -346,6 +363,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAddress.</param>
         /// 
         /// <returns>Returns a  DescribeAddressResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddress">REST API Reference for DescribeAddress Operation</seealso>
         DescribeAddressResponse EndDescribeAddress(IAsyncResult asyncResult);
 
         #endregion
@@ -365,6 +383,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         DescribeAddressesResponse DescribeAddresses(DescribeAddressesRequest request);
 
         /// <summary>
@@ -378,6 +397,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAddresses
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         IAsyncResult BeginDescribeAddresses(DescribeAddressesRequest request, AsyncCallback callback, object state);
 
 
@@ -389,6 +409,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAddresses.</param>
         /// 
         /// <returns>Returns a  DescribeAddressesResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         DescribeAddressesResponse EndDescribeAddresses(IAsyncResult asyncResult);
 
         #endregion
@@ -407,6 +428,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         DescribeClusterResponse DescribeCluster(DescribeClusterRequest request);
 
         /// <summary>
@@ -420,6 +442,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCluster
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         IAsyncResult BeginDescribeCluster(DescribeClusterRequest request, AsyncCallback callback, object state);
 
 
@@ -431,6 +454,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCluster.</param>
         /// 
         /// <returns>Returns a  DescribeClusterResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         DescribeClusterResponse EndDescribeCluster(IAsyncResult asyncResult);
 
         #endregion
@@ -449,6 +473,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         DescribeJobResponse DescribeJob(DescribeJobRequest request);
 
         /// <summary>
@@ -462,6 +487,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         IAsyncResult BeginDescribeJob(DescribeJobRequest request, AsyncCallback callback, object state);
 
 
@@ -473,6 +499,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJob.</param>
         /// 
         /// <returns>Returns a  DescribeJobResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         DescribeJobResponse EndDescribeJob(IAsyncResult asyncResult);
 
         #endregion
@@ -518,6 +545,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest">REST API Reference for GetJobManifest Operation</seealso>
         GetJobManifestResponse GetJobManifest(GetJobManifestRequest request);
 
         /// <summary>
@@ -531,6 +559,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJobManifest
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest">REST API Reference for GetJobManifest Operation</seealso>
         IAsyncResult BeginGetJobManifest(GetJobManifestRequest request, AsyncCallback callback, object state);
 
 
@@ -542,6 +571,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJobManifest.</param>
         /// 
         /// <returns>Returns a  GetJobManifestResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest">REST API Reference for GetJobManifest Operation</seealso>
         GetJobManifestResponse EndGetJobManifest(IAsyncResult asyncResult);
 
         #endregion
@@ -580,6 +610,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode">REST API Reference for GetJobUnlockCode Operation</seealso>
         GetJobUnlockCodeResponse GetJobUnlockCode(GetJobUnlockCodeRequest request);
 
         /// <summary>
@@ -593,6 +624,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJobUnlockCode
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode">REST API Reference for GetJobUnlockCode Operation</seealso>
         IAsyncResult BeginGetJobUnlockCode(GetJobUnlockCodeRequest request, AsyncCallback callback, object state);
 
 
@@ -604,6 +636,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJobUnlockCode.</param>
         /// 
         /// <returns>Returns a  GetJobUnlockCodeResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode">REST API Reference for GetJobUnlockCode Operation</seealso>
         GetJobUnlockCodeResponse EndGetJobUnlockCode(IAsyncResult asyncResult);
 
         #endregion
@@ -624,6 +657,7 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the GetSnowballUsage service method.</param>
         /// 
         /// <returns>The response from the GetSnowballUsage service method, as returned by Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">REST API Reference for GetSnowballUsage Operation</seealso>
         GetSnowballUsageResponse GetSnowballUsage(GetSnowballUsageRequest request);
 
         /// <summary>
@@ -637,6 +671,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSnowballUsage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">REST API Reference for GetSnowballUsage Operation</seealso>
         IAsyncResult BeginGetSnowballUsage(GetSnowballUsageRequest request, AsyncCallback callback, object state);
 
 
@@ -648,6 +683,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSnowballUsage.</param>
         /// 
         /// <returns>Returns a  GetSnowballUsageResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">REST API Reference for GetSnowballUsage Operation</seealso>
         GetSnowballUsageResponse EndGetSnowballUsage(IAsyncResult asyncResult);
 
         #endregion
@@ -667,6 +703,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs">REST API Reference for ListClusterJobs Operation</seealso>
         ListClusterJobsResponse ListClusterJobs(ListClusterJobsRequest request);
 
         /// <summary>
@@ -680,6 +717,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClusterJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs">REST API Reference for ListClusterJobs Operation</seealso>
         IAsyncResult BeginListClusterJobs(ListClusterJobsRequest request, AsyncCallback callback, object state);
 
 
@@ -691,6 +729,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClusterJobs.</param>
         /// 
         /// <returns>Returns a  ListClusterJobsResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs">REST API Reference for ListClusterJobs Operation</seealso>
         ListClusterJobsResponse EndListClusterJobs(IAsyncResult asyncResult);
 
         #endregion
@@ -706,6 +745,7 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
         /// 
         /// <returns>The response from the ListClusters service method, as returned by Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters">REST API Reference for ListClusters Operation</seealso>
         ListClustersResponse ListClusters(ListClustersRequest request);
 
         /// <summary>
@@ -719,6 +759,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClusters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters">REST API Reference for ListClusters Operation</seealso>
         IAsyncResult BeginListClusters(ListClustersRequest request, AsyncCallback callback, object state);
 
 
@@ -730,6 +771,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClusters.</param>
         /// 
         /// <returns>Returns a  ListClustersResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters">REST API Reference for ListClusters Operation</seealso>
         ListClustersResponse EndListClusters(IAsyncResult asyncResult);
 
         #endregion
@@ -747,6 +789,7 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// 
         /// <returns>The response from the ListJobs service method, as returned by Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs">REST API Reference for ListJobs Operation</seealso>
         ListJobsResponse ListJobs(ListJobsRequest request);
 
         /// <summary>
@@ -760,6 +803,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs">REST API Reference for ListJobs Operation</seealso>
         IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state);
 
 
@@ -771,6 +815,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobs.</param>
         /// 
         /// <returns>Returns a  ListJobsResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs">REST API Reference for ListJobs Operation</seealso>
         ListJobsResponse EndListJobs(IAsyncResult asyncResult);
 
         #endregion
@@ -804,6 +849,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         UpdateClusterResponse UpdateCluster(UpdateClusterRequest request);
 
         /// <summary>
@@ -817,6 +863,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCluster
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         IAsyncResult BeginUpdateCluster(UpdateClusterRequest request, AsyncCallback callback, object state);
 
 
@@ -828,6 +875,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCluster.</param>
         /// 
         /// <returns>Returns a  UpdateClusterResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         UpdateClusterResponse EndUpdateCluster(IAsyncResult asyncResult);
 
         #endregion
@@ -866,6 +914,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         UpdateJobResponse UpdateJob(UpdateJobRequest request);
 
         /// <summary>
@@ -879,6 +928,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         IAsyncResult BeginUpdateJob(UpdateJobRequest request, AsyncCallback callback, object state);
 
 
@@ -890,6 +940,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJob.</param>
         /// 
         /// <returns>Returns a  UpdateJobResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         UpdateJobResponse EndUpdateJob(IAsyncResult asyncResult);
 
         #endregion

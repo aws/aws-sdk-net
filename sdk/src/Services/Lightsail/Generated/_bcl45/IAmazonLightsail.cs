@@ -87,6 +87,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp">REST API Reference for AllocateStaticIp Operation</seealso>
         AllocateStaticIpResponse AllocateStaticIp(AllocateStaticIpRequest request);
 
 
@@ -99,6 +100,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp">REST API Reference for AllocateStaticIp Operation</seealso>
         Task<AllocateStaticIpResponse> AllocateStaticIpAsync(AllocateStaticIpRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -136,6 +138,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp">REST API Reference for AttachStaticIp Operation</seealso>
         AttachStaticIpResponse AttachStaticIp(AttachStaticIpRequest request);
 
 
@@ -148,6 +151,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp">REST API Reference for AttachStaticIp Operation</seealso>
         Task<AttachStaticIpResponse> AttachStaticIpAsync(AttachStaticIpRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -185,6 +189,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">REST API Reference for CloseInstancePublicPorts Operation</seealso>
         CloseInstancePublicPortsResponse CloseInstancePublicPorts(CloseInstancePublicPortsRequest request);
 
 
@@ -197,6 +202,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">REST API Reference for CloseInstancePublicPorts Operation</seealso>
         Task<CloseInstancePublicPortsResponse> CloseInstancePublicPortsAsync(CloseInstancePublicPortsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -234,6 +240,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         CreateDomainResponse CreateDomain(CreateDomainRequest request);
 
 
@@ -246,6 +253,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         Task<CreateDomainResponse> CreateDomainAsync(CreateDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -284,6 +292,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">REST API Reference for CreateDomainEntry Operation</seealso>
         CreateDomainEntryResponse CreateDomainEntry(CreateDomainEntryRequest request);
 
 
@@ -296,6 +305,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">REST API Reference for CreateDomainEntry Operation</seealso>
         Task<CreateDomainEntryResponse> CreateDomainEntryAsync(CreateDomainEntryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -333,6 +343,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances">REST API Reference for CreateInstances Operation</seealso>
         CreateInstancesResponse CreateInstances(CreateInstancesRequest request);
 
 
@@ -345,6 +356,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances">REST API Reference for CreateInstances Operation</seealso>
         Task<CreateInstancesResponse> CreateInstancesAsync(CreateInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -383,6 +395,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot">REST API Reference for CreateInstancesFromSnapshot Operation</seealso>
         CreateInstancesFromSnapshotResponse CreateInstancesFromSnapshot(CreateInstancesFromSnapshotRequest request);
 
 
@@ -395,6 +408,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot">REST API Reference for CreateInstancesFromSnapshot Operation</seealso>
         Task<CreateInstancesFromSnapshotResponse> CreateInstancesFromSnapshotAsync(CreateInstancesFromSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -433,6 +447,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot">REST API Reference for CreateInstanceSnapshot Operation</seealso>
         CreateInstanceSnapshotResponse CreateInstanceSnapshot(CreateInstanceSnapshotRequest request);
 
 
@@ -445,6 +460,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot">REST API Reference for CreateInstanceSnapshot Operation</seealso>
         Task<CreateInstanceSnapshotResponse> CreateInstanceSnapshotAsync(CreateInstanceSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -482,6 +498,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         CreateKeyPairResponse CreateKeyPair(CreateKeyPairRequest request);
 
 
@@ -494,6 +511,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         Task<CreateKeyPairResponse> CreateKeyPairAsync(CreateKeyPairRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -531,6 +549,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         DeleteDomainResponse DeleteDomain(DeleteDomainRequest request);
 
 
@@ -543,6 +562,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         Task<DeleteDomainResponse> DeleteDomainAsync(DeleteDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -580,6 +600,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry">REST API Reference for DeleteDomainEntry Operation</seealso>
         DeleteDomainEntryResponse DeleteDomainEntry(DeleteDomainEntryRequest request);
 
 
@@ -592,6 +613,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry">REST API Reference for DeleteDomainEntry Operation</seealso>
         Task<DeleteDomainEntryResponse> DeleteDomainEntryAsync(DeleteDomainEntryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -629,6 +651,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request);
 
 
@@ -641,6 +664,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -678,6 +702,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot">REST API Reference for DeleteInstanceSnapshot Operation</seealso>
         DeleteInstanceSnapshotResponse DeleteInstanceSnapshot(DeleteInstanceSnapshotRequest request);
 
 
@@ -690,6 +715,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot">REST API Reference for DeleteInstanceSnapshot Operation</seealso>
         Task<DeleteInstanceSnapshotResponse> DeleteInstanceSnapshotAsync(DeleteInstanceSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -727,6 +753,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         DeleteKeyPairResponse DeleteKeyPair(DeleteKeyPairRequest request);
 
 
@@ -739,6 +766,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         Task<DeleteKeyPairResponse> DeleteKeyPairAsync(DeleteKeyPairRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -776,6 +804,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachStaticIp">REST API Reference for DetachStaticIp Operation</seealso>
         DetachStaticIpResponse DetachStaticIp(DetachStaticIpRequest request);
 
 
@@ -788,6 +817,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachStaticIp">REST API Reference for DetachStaticIp Operation</seealso>
         Task<DetachStaticIpResponse> DetachStaticIpAsync(DetachStaticIpRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -825,6 +855,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair">REST API Reference for DownloadDefaultKeyPair Operation</seealso>
         DownloadDefaultKeyPairResponse DownloadDefaultKeyPair(DownloadDefaultKeyPairRequest request);
 
 
@@ -837,6 +868,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair">REST API Reference for DownloadDefaultKeyPair Operation</seealso>
         Task<DownloadDefaultKeyPairResponse> DownloadDefaultKeyPairAsync(DownloadDefaultKeyPairRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -874,6 +906,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetActiveNames">REST API Reference for GetActiveNames Operation</seealso>
         GetActiveNamesResponse GetActiveNames(GetActiveNamesRequest request);
 
 
@@ -886,6 +919,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetActiveNames">REST API Reference for GetActiveNames Operation</seealso>
         Task<GetActiveNamesResponse> GetActiveNamesAsync(GetActiveNamesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -926,6 +960,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">REST API Reference for GetBlueprints Operation</seealso>
         GetBlueprintsResponse GetBlueprints(GetBlueprintsRequest request);
 
 
@@ -938,6 +973,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">REST API Reference for GetBlueprints Operation</seealso>
         Task<GetBlueprintsResponse> GetBlueprintsAsync(GetBlueprintsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -976,6 +1012,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles">REST API Reference for GetBundles Operation</seealso>
         GetBundlesResponse GetBundles(GetBundlesRequest request);
 
 
@@ -988,6 +1025,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles">REST API Reference for GetBundles Operation</seealso>
         Task<GetBundlesResponse> GetBundlesAsync(GetBundlesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1025,6 +1063,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain">REST API Reference for GetDomain Operation</seealso>
         GetDomainResponse GetDomain(GetDomainRequest request);
 
 
@@ -1037,6 +1076,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain">REST API Reference for GetDomain Operation</seealso>
         Task<GetDomainResponse> GetDomainAsync(GetDomainRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1074,6 +1114,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains">REST API Reference for GetDomains Operation</seealso>
         GetDomainsResponse GetDomains(GetDomainsRequest request);
 
 
@@ -1086,6 +1127,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains">REST API Reference for GetDomains Operation</seealso>
         Task<GetDomainsResponse> GetDomainsAsync(GetDomainsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1124,6 +1166,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance">REST API Reference for GetInstance Operation</seealso>
         GetInstanceResponse GetInstance(GetInstanceRequest request);
 
 
@@ -1136,6 +1179,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance">REST API Reference for GetInstance Operation</seealso>
         Task<GetInstanceResponse> GetInstanceAsync(GetInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1174,6 +1218,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">REST API Reference for GetInstanceAccessDetails Operation</seealso>
         GetInstanceAccessDetailsResponse GetInstanceAccessDetails(GetInstanceAccessDetailsRequest request);
 
 
@@ -1186,6 +1231,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">REST API Reference for GetInstanceAccessDetails Operation</seealso>
         Task<GetInstanceAccessDetailsResponse> GetInstanceAccessDetailsAsync(GetInstanceAccessDetailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1224,6 +1270,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData">REST API Reference for GetInstanceMetricData Operation</seealso>
         GetInstanceMetricDataResponse GetInstanceMetricData(GetInstanceMetricDataRequest request);
 
 
@@ -1236,6 +1283,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData">REST API Reference for GetInstanceMetricData Operation</seealso>
         Task<GetInstanceMetricDataResponse> GetInstanceMetricDataAsync(GetInstanceMetricDataRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1273,6 +1321,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">REST API Reference for GetInstancePortStates Operation</seealso>
         GetInstancePortStatesResponse GetInstancePortStates(GetInstancePortStatesRequest request);
 
 
@@ -1285,6 +1334,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">REST API Reference for GetInstancePortStates Operation</seealso>
         Task<GetInstancePortStatesResponse> GetInstancePortStatesAsync(GetInstancePortStatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1322,6 +1372,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances">REST API Reference for GetInstances Operation</seealso>
         GetInstancesResponse GetInstances(GetInstancesRequest request);
 
 
@@ -1334,6 +1385,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances">REST API Reference for GetInstances Operation</seealso>
         Task<GetInstancesResponse> GetInstancesAsync(GetInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1371,6 +1423,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshot">REST API Reference for GetInstanceSnapshot Operation</seealso>
         GetInstanceSnapshotResponse GetInstanceSnapshot(GetInstanceSnapshotRequest request);
 
 
@@ -1383,6 +1436,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshot">REST API Reference for GetInstanceSnapshot Operation</seealso>
         Task<GetInstanceSnapshotResponse> GetInstanceSnapshotAsync(GetInstanceSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1420,6 +1474,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots">REST API Reference for GetInstanceSnapshots Operation</seealso>
         GetInstanceSnapshotsResponse GetInstanceSnapshots(GetInstanceSnapshotsRequest request);
 
 
@@ -1432,6 +1487,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots">REST API Reference for GetInstanceSnapshots Operation</seealso>
         Task<GetInstanceSnapshotsResponse> GetInstanceSnapshotsAsync(GetInstanceSnapshotsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1469,6 +1525,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceState">REST API Reference for GetInstanceState Operation</seealso>
         GetInstanceStateResponse GetInstanceState(GetInstanceStateRequest request);
 
 
@@ -1481,6 +1538,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceState">REST API Reference for GetInstanceState Operation</seealso>
         Task<GetInstanceStateResponse> GetInstanceStateAsync(GetInstanceStateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1518,6 +1576,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPair">REST API Reference for GetKeyPair Operation</seealso>
         GetKeyPairResponse GetKeyPair(GetKeyPairRequest request);
 
 
@@ -1530,6 +1589,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPair">REST API Reference for GetKeyPair Operation</seealso>
         Task<GetKeyPairResponse> GetKeyPairAsync(GetKeyPairRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1567,6 +1627,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPairs">REST API Reference for GetKeyPairs Operation</seealso>
         GetKeyPairsResponse GetKeyPairs(GetKeyPairsRequest request);
 
 
@@ -1579,6 +1640,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPairs">REST API Reference for GetKeyPairs Operation</seealso>
         Task<GetKeyPairsResponse> GetKeyPairsAsync(GetKeyPairsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1617,6 +1679,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperation">REST API Reference for GetOperation Operation</seealso>
         GetOperationResponse GetOperation(GetOperationRequest request);
 
 
@@ -1629,6 +1692,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperation">REST API Reference for GetOperation Operation</seealso>
         Task<GetOperationResponse> GetOperationAsync(GetOperationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1673,6 +1737,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperations">REST API Reference for GetOperations Operation</seealso>
         GetOperationsResponse GetOperations(GetOperationsRequest request);
 
 
@@ -1685,6 +1750,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperations">REST API Reference for GetOperations Operation</seealso>
         Task<GetOperationsResponse> GetOperationsAsync(GetOperationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1722,6 +1788,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource">REST API Reference for GetOperationsForResource Operation</seealso>
         GetOperationsForResourceResponse GetOperationsForResource(GetOperationsForResourceRequest request);
 
 
@@ -1734,6 +1801,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource">REST API Reference for GetOperationsForResource Operation</seealso>
         Task<GetOperationsForResourceResponse> GetOperationsForResourceAsync(GetOperationsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1771,6 +1839,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRegions">REST API Reference for GetRegions Operation</seealso>
         GetRegionsResponse GetRegions(GetRegionsRequest request);
 
 
@@ -1783,6 +1852,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRegions">REST API Reference for GetRegions Operation</seealso>
         Task<GetRegionsResponse> GetRegionsAsync(GetRegionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1820,6 +1890,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp">REST API Reference for GetStaticIp Operation</seealso>
         GetStaticIpResponse GetStaticIp(GetStaticIpRequest request);
 
 
@@ -1832,6 +1903,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp">REST API Reference for GetStaticIp Operation</seealso>
         Task<GetStaticIpResponse> GetStaticIpAsync(GetStaticIpRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1869,6 +1941,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIps">REST API Reference for GetStaticIps Operation</seealso>
         GetStaticIpsResponse GetStaticIps(GetStaticIpsRequest request);
 
 
@@ -1881,6 +1954,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIps">REST API Reference for GetStaticIps Operation</seealso>
         Task<GetStaticIpsResponse> GetStaticIpsAsync(GetStaticIpsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1918,6 +1992,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         ImportKeyPairResponse ImportKeyPair(ImportKeyPairRequest request);
 
 
@@ -1930,6 +2005,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         Task<ImportKeyPairResponse> ImportKeyPairAsync(ImportKeyPairRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1967,6 +2043,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/IsVpcPeered">REST API Reference for IsVpcPeered Operation</seealso>
         IsVpcPeeredResponse IsVpcPeered(IsVpcPeeredRequest request);
 
 
@@ -1979,6 +2056,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/IsVpcPeered">REST API Reference for IsVpcPeered Operation</seealso>
         Task<IsVpcPeeredResponse> IsVpcPeeredAsync(IsVpcPeeredRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2016,6 +2094,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">REST API Reference for OpenInstancePublicPorts Operation</seealso>
         OpenInstancePublicPortsResponse OpenInstancePublicPorts(OpenInstancePublicPortsRequest request);
 
 
@@ -2028,6 +2107,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">REST API Reference for OpenInstancePublicPorts Operation</seealso>
         Task<OpenInstancePublicPortsResponse> OpenInstancePublicPortsAsync(OpenInstancePublicPortsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2065,6 +2145,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PeerVpc">REST API Reference for PeerVpc Operation</seealso>
         PeerVpcResponse PeerVpc(PeerVpcRequest request);
 
 
@@ -2077,6 +2158,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PeerVpc">REST API Reference for PeerVpc Operation</seealso>
         Task<PeerVpcResponse> PeerVpcAsync(PeerVpcRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2116,6 +2198,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
         RebootInstanceResponse RebootInstance(RebootInstanceRequest request);
 
 
@@ -2128,6 +2211,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
         Task<RebootInstanceResponse> RebootInstanceAsync(RebootInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2165,6 +2249,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp">REST API Reference for ReleaseStaticIp Operation</seealso>
         ReleaseStaticIpResponse ReleaseStaticIp(ReleaseStaticIpRequest request);
 
 
@@ -2177,6 +2262,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp">REST API Reference for ReleaseStaticIp Operation</seealso>
         Task<ReleaseStaticIpResponse> ReleaseStaticIpAsync(ReleaseStaticIpRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2215,6 +2301,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">REST API Reference for StartInstance Operation</seealso>
         StartInstanceResponse StartInstance(StartInstanceRequest request);
 
 
@@ -2227,6 +2314,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">REST API Reference for StartInstance Operation</seealso>
         Task<StartInstanceResponse> StartInstanceAsync(StartInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2264,6 +2352,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">REST API Reference for StopInstance Operation</seealso>
         StopInstanceResponse StopInstance(StopInstanceRequest request);
 
 
@@ -2276,6 +2365,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">REST API Reference for StopInstance Operation</seealso>
         Task<StopInstanceResponse> StopInstanceAsync(StopInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2313,6 +2403,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UnpeerVpc">REST API Reference for UnpeerVpc Operation</seealso>
         UnpeerVpcResponse UnpeerVpc(UnpeerVpcRequest request);
 
 
@@ -2325,6 +2416,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UnpeerVpc">REST API Reference for UnpeerVpc Operation</seealso>
         Task<UnpeerVpcResponse> UnpeerVpcAsync(UnpeerVpcRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2362,6 +2454,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">REST API Reference for UpdateDomainEntry Operation</seealso>
         UpdateDomainEntryResponse UpdateDomainEntry(UpdateDomainEntryRequest request);
 
 
@@ -2374,6 +2467,7 @@ namespace Amazon.Lightsail
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">REST API Reference for UpdateDomainEntry Operation</seealso>
         Task<UpdateDomainEntryResponse> UpdateDomainEntryAsync(UpdateDomainEntryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

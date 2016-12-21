@@ -39,10 +39,20 @@ namespace ServiceClientGenerator
         {
             get
             {
-                var modifiers = this.model.Customizations.GetOperationModifiers(this.name);
+                var modifiers = this.model.Customizations.GetOperationModifiers(ShapeName);
                 if (modifiers != null && !string.IsNullOrEmpty(modifiers.Name))
                     return modifiers.Name;
 
+                return ShapeName;
+            }
+        }
+        /// <summary>
+        /// Returns the raw shape name without customization
+        /// </summary>
+        public string ShapeName
+        {
+            get
+            {
                 return this.name;
             }
         }
@@ -606,6 +616,66 @@ namespace ServiceClientGenerator
         public CustomizationsModel.OperationModifiers OperationModifiers
         {
             get { return this.model.Customizations.GetOperationModifiers(this.Name); }
+        }
+
+        public string RestAPIDocUrl
+        {
+            get {
+                string serviceId = this.model.ServiceId;
+                if (!string.IsNullOrEmpty(serviceId) && !IsExcludedServiceId(serviceId))
+                {
+                    return string.Format(@"http://docs.aws.amazon.com/goto/WebAPI/{0}/{1}", serviceId, ShapeName);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        private static List<string> _excludedServiceList = new List<string>
+        {
+            "apigateway",
+            "budgets",
+            "cloudsearch",
+            "cloudsearchdomain",
+            "discovery",
+            "elastictranscoder",
+            "es",
+            "glacier",
+            "importexport",
+            "iot",
+            "iot-data",
+            "machinelearning",
+            "rekognition",
+            "s3",
+            "sdb",
+            "swf",
+            "xray"
+        };
+        private static Dictionary<string, bool> _checkedService = new Dictionary<string, bool>();
+        private static bool IsExcludedServiceId(string serviceId)
+        {
+            bool excluded = false;
+
+            if (_checkedService.TryGetValue(serviceId, out excluded))
+            {
+                return excluded;
+            }
+            else
+            {
+                foreach (string excludedService in _excludedServiceList)
+                {
+                    if (serviceId.StartsWith(excludedService, StringComparison.OrdinalIgnoreCase))
+                    {
+                        excluded = true;
+                        break;
+                    }
+                }
+
+                _checkedService[serviceId] = excluded;
+                return excluded;
+            }
         }
     }
 }

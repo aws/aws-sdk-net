@@ -351,6 +351,7 @@ namespace Amazon.SQS
         /// returns this error if the maximum number of inflight messages is reached. <code> <a>AddPermission</a>
         /// </code> returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public AddPermissionResponse AddPermission(string queueUrl, string label, List<string> awsAccountIds, List<string> actions)
         {
             var request = new AddPermissionRequest();
@@ -404,6 +405,7 @@ namespace Amazon.SQS
         /// returns this error if the maximum number of inflight messages is reached. <code> <a>AddPermission</a>
         /// </code> returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
             var marshaller = new AddPermissionRequestMarshaller();
@@ -461,6 +463,7 @@ namespace Amazon.SQS
         /// returns this error if the maximum number of inflight messages is reached. <code> <a>AddPermission</a>
         /// </code> returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public Task<AddPermissionResponse> AddPermissionAsync(string queueUrl, string label, List<string> awsAccountIds, List<string> actions, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new AddPermissionRequest();
@@ -480,6 +483,7 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddPermissionRequestMarshaller();
@@ -555,6 +559,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The receipt handle provided isn't valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         public ChangeMessageVisibilityResponse ChangeMessageVisibility(string queueUrl, string receiptHandle, int visibilityTimeout)
         {
             var request = new ChangeMessageVisibilityRequest();
@@ -624,6 +629,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The receipt handle provided isn't valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         public ChangeMessageVisibilityResponse ChangeMessageVisibility(ChangeMessageVisibilityRequest request)
         {
             var marshaller = new ChangeMessageVisibilityRequestMarshaller();
@@ -697,6 +703,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The receipt handle provided isn't valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         public Task<ChangeMessageVisibilityResponse> ChangeMessageVisibilityAsync(string queueUrl, string receiptHandle, int visibilityTimeout, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ChangeMessageVisibilityRequest();
@@ -715,6 +722,7 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         public Task<ChangeMessageVisibilityResponse> ChangeMessageVisibilityAsync(ChangeMessageVisibilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ChangeMessageVisibilityRequestMarshaller();
@@ -773,6 +781,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         public ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(string queueUrl, List<ChangeMessageVisibilityBatchRequestEntry> entries)
         {
             var request = new ChangeMessageVisibilityBatchRequest();
@@ -825,6 +834,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         public ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request)
         {
             var marshaller = new ChangeMessageVisibilityBatchRequestMarshaller();
@@ -881,6 +891,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         public Task<ChangeMessageVisibilityBatchResponse> ChangeMessageVisibilityBatchAsync(string queueUrl, List<ChangeMessageVisibilityBatchRequestEntry> entries, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ChangeMessageVisibilityBatchRequest();
@@ -898,6 +909,7 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         public Task<ChangeMessageVisibilityBatchResponse> ChangeMessageVisibilityBatchAsync(ChangeMessageVisibilityBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ChangeMessageVisibilityBatchRequestMarshaller();
@@ -990,6 +1002,7 @@ namespace Amazon.SQS
         /// A queue already exists with this name. Amazon SQS returns this error only if the request
         /// includes attributes whose values differ from those of the existing queue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public CreateQueueResponse CreateQueue(string queueName)
         {
             var request = new CreateQueueRequest();
@@ -1076,6 +1089,7 @@ namespace Amazon.SQS
         /// A queue already exists with this name. Amazon SQS returns this error only if the request
         /// includes attributes whose values differ from those of the existing queue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public CreateQueueResponse CreateQueue(CreateQueueRequest request)
         {
             var marshaller = new CreateQueueRequestMarshaller();
@@ -1166,6 +1180,7 @@ namespace Amazon.SQS
         /// A queue already exists with this name. Amazon SQS returns this error only if the request
         /// includes attributes whose values differ from those of the existing queue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public Task<CreateQueueResponse> CreateQueueAsync(string queueName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new CreateQueueRequest();
@@ -1182,6 +1197,7 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public Task<CreateQueueResponse> CreateQueueAsync(CreateQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateQueueRequestMarshaller();
@@ -1233,6 +1249,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The receipt handle provided isn't valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         public DeleteMessageResponse DeleteMessage(string queueUrl, string receiptHandle)
         {
             var request = new DeleteMessageRequest();
@@ -1278,6 +1295,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The receipt handle provided isn't valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         public DeleteMessageResponse DeleteMessage(DeleteMessageRequest request)
         {
             var marshaller = new DeleteMessageRequestMarshaller();
@@ -1327,6 +1345,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The receipt handle provided isn't valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         public Task<DeleteMessageResponse> DeleteMessageAsync(string queueUrl, string receiptHandle, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteMessageRequest();
@@ -1344,6 +1363,7 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         public Task<DeleteMessageResponse> DeleteMessageAsync(DeleteMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteMessageRequestMarshaller();
@@ -1401,6 +1421,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         public DeleteMessageBatchResponse DeleteMessageBatch(string queueUrl, List<DeleteMessageBatchRequestEntry> entries)
         {
             var request = new DeleteMessageBatchRequest();
@@ -1452,6 +1473,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         public DeleteMessageBatchResponse DeleteMessageBatch(DeleteMessageBatchRequest request)
         {
             var marshaller = new DeleteMessageBatchRequestMarshaller();
@@ -1507,6 +1529,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         public Task<DeleteMessageBatchResponse> DeleteMessageBatchAsync(string queueUrl, List<DeleteMessageBatchRequestEntry> entries, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteMessageBatchRequest();
@@ -1524,6 +1547,7 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         public Task<DeleteMessageBatchResponse> DeleteMessageBatchAsync(DeleteMessageBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteMessageBatchRequestMarshaller();
@@ -1563,6 +1587,7 @@ namespace Amazon.SQS
         /// <param name="queueUrl">The URL of the Amazon SQS queue to delete. Queue URLs are case-sensitive.</param>
         /// 
         /// <returns>The response from the DeleteQueue service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public DeleteQueueResponse DeleteQueue(string queueUrl)
         {
             var request = new DeleteQueueRequest();
@@ -1596,6 +1621,7 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
         /// 
         /// <returns>The response from the DeleteQueue service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public DeleteQueueResponse DeleteQueue(DeleteQueueRequest request)
         {
             var marshaller = new DeleteQueueRequestMarshaller();
@@ -1633,6 +1659,7 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the DeleteQueue service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public Task<DeleteQueueResponse> DeleteQueueAsync(string queueUrl, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteQueueRequest();
@@ -1649,6 +1676,7 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public Task<DeleteQueueResponse> DeleteQueueAsync(DeleteQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteQueueRequestMarshaller();
@@ -1689,6 +1717,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The attribute referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         public GetQueueAttributesResponse GetQueueAttributes(string queueUrl, List<string> attributeNames)
         {
             var request = new GetQueueAttributesRequest();
@@ -1723,6 +1752,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The attribute referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         public GetQueueAttributesResponse GetQueueAttributes(GetQueueAttributesRequest request)
         {
             var marshaller = new GetQueueAttributesRequestMarshaller();
@@ -1761,6 +1791,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The attribute referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         public Task<GetQueueAttributesResponse> GetQueueAttributesAsync(string queueUrl, List<string> attributeNames, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetQueueAttributesRequest();
@@ -1778,6 +1809,7 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         public Task<GetQueueAttributesResponse> GetQueueAttributesAsync(GetQueueAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetQueueAttributesRequestMarshaller();
@@ -1811,6 +1843,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The queue referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         public GetQueueUrlResponse GetQueueUrl(string queueName)
         {
             var request = new GetQueueUrlRequest();
@@ -1838,6 +1871,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The queue referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         public GetQueueUrlResponse GetQueueUrl(GetQueueUrlRequest request)
         {
             var marshaller = new GetQueueUrlRequestMarshaller();
@@ -1869,6 +1903,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The queue referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         public Task<GetQueueUrlResponse> GetQueueUrlAsync(string queueName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetQueueUrlRequest();
@@ -1885,6 +1920,7 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         public Task<GetQueueUrlResponse> GetQueueUrlAsync(GetQueueUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetQueueUrlRequestMarshaller();
@@ -1915,6 +1951,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The queue referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">REST API Reference for ListDeadLetterSourceQueues Operation</seealso>
         public ListDeadLetterSourceQueuesResponse ListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request)
         {
             var marshaller = new ListDeadLetterSourceQueuesRequestMarshaller();
@@ -1932,6 +1969,7 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">REST API Reference for ListDeadLetterSourceQueues Operation</seealso>
         public Task<ListDeadLetterSourceQueuesResponse> ListDeadLetterSourceQueuesAsync(ListDeadLetterSourceQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDeadLetterSourceQueuesRequestMarshaller();
@@ -1954,6 +1992,7 @@ namespace Amazon.SQS
         /// <param name="queueNamePrefix">A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned. Queue names are case-sensitive.</param>
         /// 
         /// <returns>The response from the ListQueues service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public ListQueuesResponse ListQueues(string queueNamePrefix)
         {
             var request = new ListQueuesRequest();
@@ -1970,6 +2009,7 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the ListQueues service method.</param>
         /// 
         /// <returns>The response from the ListQueues service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public ListQueuesResponse ListQueues(ListQueuesRequest request)
         {
             var marshaller = new ListQueuesRequestMarshaller();
@@ -1990,6 +2030,7 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the ListQueues service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public Task<ListQueuesResponse> ListQueuesAsync(string queueNamePrefix, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListQueuesRequest();
@@ -2006,6 +2047,7 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public Task<ListQueuesResponse> ListQueuesAsync(ListQueuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListQueuesRequestMarshaller();
@@ -2047,6 +2089,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The queue referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         public PurgeQueueResponse PurgeQueue(string queueUrl)
         {
             var request = new PurgeQueueRequest();
@@ -2082,6 +2125,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The queue referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         public PurgeQueueResponse PurgeQueue(PurgeQueueRequest request)
         {
             var marshaller = new PurgeQueueRequestMarshaller();
@@ -2121,6 +2165,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The queue referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         public Task<PurgeQueueResponse> PurgeQueueAsync(string queueUrl, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new PurgeQueueRequest();
@@ -2137,6 +2182,7 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         public Task<PurgeQueueResponse> PurgeQueueAsync(PurgeQueueRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PurgeQueueRequestMarshaller();
@@ -2229,6 +2275,7 @@ namespace Amazon.SQS
         /// returns this error if the maximum number of inflight messages is reached. <code> <a>AddPermission</a>
         /// </code> returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         public ReceiveMessageResponse ReceiveMessage(string queueUrl)
         {
             var request = new ReceiveMessageRequest();
@@ -2315,6 +2362,7 @@ namespace Amazon.SQS
         /// returns this error if the maximum number of inflight messages is reached. <code> <a>AddPermission</a>
         /// </code> returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         public ReceiveMessageResponse ReceiveMessage(ReceiveMessageRequest request)
         {
             var marshaller = new ReceiveMessageRequestMarshaller();
@@ -2405,6 +2453,7 @@ namespace Amazon.SQS
         /// returns this error if the maximum number of inflight messages is reached. <code> <a>AddPermission</a>
         /// </code> returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         public Task<ReceiveMessageResponse> ReceiveMessageAsync(string queueUrl, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ReceiveMessageRequest();
@@ -2421,6 +2470,7 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         public Task<ReceiveMessageResponse> ReceiveMessageAsync(ReceiveMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReceiveMessageRequestMarshaller();
@@ -2443,6 +2493,7 @@ namespace Amazon.SQS
         /// <param name="label">The identification of the permission to remove. This is the label added using the <code> <a>AddPermission</a> </code> action.</param>
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public RemovePermissionResponse RemovePermission(string queueUrl, string label)
         {
             var request = new RemovePermissionRequest();
@@ -2459,6 +2510,7 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission service method.</param>
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
             var marshaller = new RemovePermissionRequestMarshaller();
@@ -2479,6 +2531,7 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public Task<RemovePermissionResponse> RemovePermissionAsync(string queueUrl, string label, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new RemovePermissionRequest();
@@ -2496,6 +2549,7 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemovePermissionRequestMarshaller();
@@ -2559,6 +2613,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
         public SendMessageResponse SendMessage(string queueUrl, string messageBody)
         {
             var request = new SendMessageRequest();
@@ -2616,6 +2671,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
         public SendMessageResponse SendMessage(SendMessageRequest request)
         {
             var marshaller = new SendMessageRequestMarshaller();
@@ -2677,6 +2733,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
         public Task<SendMessageResponse> SendMessageAsync(string queueUrl, string messageBody, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new SendMessageRequest();
@@ -2694,6 +2751,7 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
         public Task<SendMessageResponse> SendMessageAsync(SendMessageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SendMessageRequestMarshaller();
@@ -2803,6 +2861,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
         public SendMessageBatchResponse SendMessageBatch(string queueUrl, List<SendMessageBatchRequestEntry> entries)
         {
             var request = new SendMessageBatchRequest();
@@ -2906,6 +2965,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
         public SendMessageBatchResponse SendMessageBatch(SendMessageBatchRequest request)
         {
             var marshaller = new SendMessageBatchRequestMarshaller();
@@ -3013,6 +3073,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
         public Task<SendMessageBatchResponse> SendMessageBatchAsync(string queueUrl, List<SendMessageBatchRequestEntry> entries, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new SendMessageBatchRequest();
@@ -3030,6 +3091,7 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
         public Task<SendMessageBatchResponse> SendMessageBatchAsync(SendMessageBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SendMessageBatchRequestMarshaller();
@@ -3064,6 +3126,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The attribute referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         public SetQueueAttributesResponse SetQueueAttributes(string queueUrl, Dictionary<string, string> attributes)
         {
             var request = new SetQueueAttributesRequest();
@@ -3092,6 +3155,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The attribute referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         public SetQueueAttributesResponse SetQueueAttributes(SetQueueAttributesRequest request)
         {
             var marshaller = new SetQueueAttributesRequestMarshaller();
@@ -3124,6 +3188,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The attribute referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         public Task<SetQueueAttributesResponse> SetQueueAttributesAsync(string queueUrl, Dictionary<string, string> attributes, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new SetQueueAttributesRequest();
@@ -3141,6 +3206,7 @@ namespace Amazon.SQS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         public Task<SetQueueAttributesResponse> SetQueueAttributesAsync(SetQueueAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SetQueueAttributesRequestMarshaller();

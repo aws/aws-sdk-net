@@ -373,6 +373,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion">REST API Reference for CancelKeyDeletion Operation</seealso>
         public CancelKeyDeletionResponse CancelKeyDeletion(string keyId)
         {
             var request = new CancelKeyDeletionRequest();
@@ -418,6 +419,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion">REST API Reference for CancelKeyDeletion Operation</seealso>
         public CancelKeyDeletionResponse CancelKeyDeletion(CancelKeyDeletionRequest request)
         {
             var marshaller = new CancelKeyDeletionRequestMarshaller();
@@ -437,6 +439,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelKeyDeletion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion">REST API Reference for CancelKeyDeletion Operation</seealso>
         public IAsyncResult BeginCancelKeyDeletion(CancelKeyDeletionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelKeyDeletionRequestMarshaller();
@@ -453,6 +456,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelKeyDeletion.</param>
         /// 
         /// <returns>Returns a  CancelKeyDeletionResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion">REST API Reference for CancelKeyDeletion Operation</seealso>
         public  CancelKeyDeletionResponse EndCancelKeyDeletion(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelKeyDeletionResponse>(asyncResult);
@@ -516,6 +520,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public CreateAliasResponse CreateAlias(string aliasName, string targetKeyId)
         {
             var request = new CreateAliasRequest();
@@ -578,6 +583,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
             var marshaller = new CreateAliasRequestMarshaller();
@@ -597,6 +603,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAlias
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public IAsyncResult BeginCreateAlias(CreateAliasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateAliasRequestMarshaller();
@@ -613,6 +620,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAlias.</param>
         /// 
         /// <returns>Returns a  CreateAliasResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public  CreateAliasResponse EndCreateAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAliasResponse>(asyncResult);
@@ -670,6 +678,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateGrant">REST API Reference for CreateGrant Operation</seealso>
         public CreateGrantResponse CreateGrant(CreateGrantRequest request)
         {
             var marshaller = new CreateGrantRequestMarshaller();
@@ -689,6 +698,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGrant
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateGrant">REST API Reference for CreateGrant Operation</seealso>
         public IAsyncResult BeginCreateGrant(CreateGrantRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateGrantRequestMarshaller();
@@ -705,6 +715,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGrant.</param>
         /// 
         /// <returns>Returns a  CreateGrantResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateGrant">REST API Reference for CreateGrant Operation</seealso>
         public  CreateGrantResponse EndCreateGrant(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateGrantResponse>(asyncResult);
@@ -762,6 +773,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified parameter is not supported or a specified
         /// resource is not valid for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateKey">REST API Reference for CreateKey Operation</seealso>
         public CreateKeyResponse CreateKey(CreateKeyRequest request)
         {
             var marshaller = new CreateKeyRequestMarshaller();
@@ -781,6 +793,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateKey">REST API Reference for CreateKey Operation</seealso>
         public IAsyncResult BeginCreateKey(CreateKeyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateKeyRequestMarshaller();
@@ -797,6 +810,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateKey.</param>
         /// 
         /// <returns>Returns a  CreateKeyResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateKey">REST API Reference for CreateKey Operation</seealso>
         public  CreateKeyResponse EndCreateKey(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateKeyResponse>(asyncResult);
@@ -872,6 +886,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Decrypt">REST API Reference for Decrypt Operation</seealso>
         public DecryptResponse Decrypt(DecryptRequest request)
         {
             var marshaller = new DecryptRequestMarshaller();
@@ -891,6 +906,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDecrypt
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Decrypt">REST API Reference for Decrypt Operation</seealso>
         public IAsyncResult BeginDecrypt(DecryptRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DecryptRequestMarshaller();
@@ -907,6 +923,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDecrypt.</param>
         /// 
         /// <returns>Returns a  DecryptResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Decrypt">REST API Reference for Decrypt Operation</seealso>
         public  DecryptResponse EndDecrypt(IAsyncResult asyncResult)
         {
             return EndInvoke<DecryptResponse>(asyncResult);
@@ -943,6 +960,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public DeleteAliasResponse DeleteAlias(string aliasName)
         {
             var request = new DeleteAliasRequest();
@@ -978,6 +996,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
             var marshaller = new DeleteAliasRequestMarshaller();
@@ -997,6 +1016,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAlias
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public IAsyncResult BeginDeleteAlias(DeleteAliasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteAliasRequestMarshaller();
@@ -1013,6 +1033,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAlias.</param>
         /// 
         /// <returns>Returns a  DeleteAliasResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public  DeleteAliasResponse EndDeleteAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAliasResponse>(asyncResult);
@@ -1070,6 +1091,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified parameter is not supported or a specified
         /// resource is not valid for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteImportedKeyMaterial">REST API Reference for DeleteImportedKeyMaterial Operation</seealso>
         public DeleteImportedKeyMaterialResponse DeleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest request)
         {
             var marshaller = new DeleteImportedKeyMaterialRequestMarshaller();
@@ -1089,6 +1111,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteImportedKeyMaterial
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteImportedKeyMaterial">REST API Reference for DeleteImportedKeyMaterial Operation</seealso>
         public IAsyncResult BeginDeleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteImportedKeyMaterialRequestMarshaller();
@@ -1105,6 +1128,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteImportedKeyMaterial.</param>
         /// 
         /// <returns>Returns a  DeleteImportedKeyMaterialResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteImportedKeyMaterial">REST API Reference for DeleteImportedKeyMaterial Operation</seealso>
         public  DeleteImportedKeyMaterialResponse EndDeleteImportedKeyMaterial(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteImportedKeyMaterialResponse>(asyncResult);
@@ -1133,6 +1157,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeKey">REST API Reference for DescribeKey Operation</seealso>
         public DescribeKeyResponse DescribeKey(string keyId)
         {
             var request = new DescribeKeyRequest();
@@ -1160,6 +1185,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeKey">REST API Reference for DescribeKey Operation</seealso>
         public DescribeKeyResponse DescribeKey(DescribeKeyRequest request)
         {
             var marshaller = new DescribeKeyRequestMarshaller();
@@ -1179,6 +1205,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeKey">REST API Reference for DescribeKey Operation</seealso>
         public IAsyncResult BeginDescribeKey(DescribeKeyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeKeyRequestMarshaller();
@@ -1195,6 +1222,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeKey.</param>
         /// 
         /// <returns>Returns a  DescribeKeyResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeKey">REST API Reference for DescribeKey Operation</seealso>
         public  DescribeKeyResponse EndDescribeKey(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeKeyResponse>(asyncResult);
@@ -1238,6 +1266,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey">REST API Reference for DisableKey Operation</seealso>
         public DisableKeyResponse DisableKey(string keyId)
         {
             var request = new DisableKeyRequest();
@@ -1280,6 +1309,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey">REST API Reference for DisableKey Operation</seealso>
         public DisableKeyResponse DisableKey(DisableKeyRequest request)
         {
             var marshaller = new DisableKeyRequestMarshaller();
@@ -1299,6 +1329,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey">REST API Reference for DisableKey Operation</seealso>
         public IAsyncResult BeginDisableKey(DisableKeyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisableKeyRequestMarshaller();
@@ -1315,6 +1346,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableKey.</param>
         /// 
         /// <returns>Returns a  DisableKeyResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey">REST API Reference for DisableKey Operation</seealso>
         public  DisableKeyResponse EndDisableKey(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableKeyResponse>(asyncResult);
@@ -1361,6 +1393,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified parameter is not supported or a specified
         /// resource is not valid for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">REST API Reference for DisableKeyRotation Operation</seealso>
         public DisableKeyRotationResponse DisableKeyRotation(string keyId)
         {
             var request = new DisableKeyRotationRequest();
@@ -1406,6 +1439,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified parameter is not supported or a specified
         /// resource is not valid for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">REST API Reference for DisableKeyRotation Operation</seealso>
         public DisableKeyRotationResponse DisableKeyRotation(DisableKeyRotationRequest request)
         {
             var marshaller = new DisableKeyRotationRequestMarshaller();
@@ -1425,6 +1459,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableKeyRotation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">REST API Reference for DisableKeyRotation Operation</seealso>
         public IAsyncResult BeginDisableKeyRotation(DisableKeyRotationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisableKeyRotationRequestMarshaller();
@@ -1441,6 +1476,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableKeyRotation.</param>
         /// 
         /// <returns>Returns a  DisableKeyRotationResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">REST API Reference for DisableKeyRotation Operation</seealso>
         public  DisableKeyRotationResponse EndDisableKeyRotation(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableKeyRotationResponse>(asyncResult);
@@ -1485,6 +1521,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey">REST API Reference for EnableKey Operation</seealso>
         public EnableKeyResponse EnableKey(string keyId)
         {
             var request = new EnableKeyRequest();
@@ -1528,6 +1565,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey">REST API Reference for EnableKey Operation</seealso>
         public EnableKeyResponse EnableKey(EnableKeyRequest request)
         {
             var marshaller = new EnableKeyRequestMarshaller();
@@ -1547,6 +1585,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey">REST API Reference for EnableKey Operation</seealso>
         public IAsyncResult BeginEnableKey(EnableKeyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnableKeyRequestMarshaller();
@@ -1563,6 +1602,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableKey.</param>
         /// 
         /// <returns>Returns a  EnableKeyResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey">REST API Reference for EnableKey Operation</seealso>
         public  EnableKeyResponse EndEnableKey(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableKeyResponse>(asyncResult);
@@ -1609,6 +1649,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified parameter is not supported or a specified
         /// resource is not valid for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">REST API Reference for EnableKeyRotation Operation</seealso>
         public EnableKeyRotationResponse EnableKeyRotation(string keyId)
         {
             var request = new EnableKeyRotationRequest();
@@ -1654,6 +1695,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified parameter is not supported or a specified
         /// resource is not valid for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">REST API Reference for EnableKeyRotation Operation</seealso>
         public EnableKeyRotationResponse EnableKeyRotation(EnableKeyRotationRequest request)
         {
             var marshaller = new EnableKeyRotationRequestMarshaller();
@@ -1673,6 +1715,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableKeyRotation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">REST API Reference for EnableKeyRotation Operation</seealso>
         public IAsyncResult BeginEnableKeyRotation(EnableKeyRotationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnableKeyRotationRequestMarshaller();
@@ -1689,6 +1732,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableKeyRotation.</param>
         /// 
         /// <returns>Returns a  EnableKeyRotationResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">REST API Reference for EnableKeyRotation Operation</seealso>
         public  EnableKeyRotationResponse EndEnableKeyRotation(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableKeyRotationResponse>(asyncResult);
@@ -1765,6 +1809,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Encrypt">REST API Reference for Encrypt Operation</seealso>
         public EncryptResponse Encrypt(EncryptRequest request)
         {
             var marshaller = new EncryptRequestMarshaller();
@@ -1784,6 +1829,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEncrypt
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Encrypt">REST API Reference for Encrypt Operation</seealso>
         public IAsyncResult BeginEncrypt(EncryptRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EncryptRequestMarshaller();
@@ -1800,6 +1846,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEncrypt.</param>
         /// 
         /// <returns>Returns a  EncryptResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Encrypt">REST API Reference for Encrypt Operation</seealso>
         public  EncryptResponse EndEncrypt(IAsyncResult asyncResult)
         {
             return EndInvoke<EncryptResponse>(asyncResult);
@@ -1912,6 +1959,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKey">REST API Reference for GenerateDataKey Operation</seealso>
         public GenerateDataKeyResponse GenerateDataKey(GenerateDataKeyRequest request)
         {
             var marshaller = new GenerateDataKeyRequestMarshaller();
@@ -1931,6 +1979,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGenerateDataKey
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKey">REST API Reference for GenerateDataKey Operation</seealso>
         public IAsyncResult BeginGenerateDataKey(GenerateDataKeyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GenerateDataKeyRequestMarshaller();
@@ -1947,6 +1996,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateDataKey.</param>
         /// 
         /// <returns>Returns a  GenerateDataKeyResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKey">REST API Reference for GenerateDataKey Operation</seealso>
         public  GenerateDataKeyResponse EndGenerateDataKey(IAsyncResult asyncResult)
         {
             return EndInvoke<GenerateDataKeyResponse>(asyncResult);
@@ -2013,6 +2063,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyWithoutPlaintext">REST API Reference for GenerateDataKeyWithoutPlaintext Operation</seealso>
         public GenerateDataKeyWithoutPlaintextResponse GenerateDataKeyWithoutPlaintext(GenerateDataKeyWithoutPlaintextRequest request)
         {
             var marshaller = new GenerateDataKeyWithoutPlaintextRequestMarshaller();
@@ -2032,6 +2083,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGenerateDataKeyWithoutPlaintext
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyWithoutPlaintext">REST API Reference for GenerateDataKeyWithoutPlaintext Operation</seealso>
         public IAsyncResult BeginGenerateDataKeyWithoutPlaintext(GenerateDataKeyWithoutPlaintextRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GenerateDataKeyWithoutPlaintextRequestMarshaller();
@@ -2048,6 +2100,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateDataKeyWithoutPlaintext.</param>
         /// 
         /// <returns>Returns a  GenerateDataKeyWithoutPlaintextResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyWithoutPlaintext">REST API Reference for GenerateDataKeyWithoutPlaintext Operation</seealso>
         public  GenerateDataKeyWithoutPlaintextResponse EndGenerateDataKeyWithoutPlaintext(IAsyncResult asyncResult)
         {
             return EndInvoke<GenerateDataKeyWithoutPlaintextResponse>(asyncResult);
@@ -2070,6 +2123,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">REST API Reference for GenerateRandom Operation</seealso>
         public GenerateRandomResponse GenerateRandom(int numberOfBytes)
         {
             var request = new GenerateRandomRequest();
@@ -2091,6 +2145,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">REST API Reference for GenerateRandom Operation</seealso>
         public GenerateRandomResponse GenerateRandom(GenerateRandomRequest request)
         {
             var marshaller = new GenerateRandomRequestMarshaller();
@@ -2110,6 +2165,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGenerateRandom
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">REST API Reference for GenerateRandom Operation</seealso>
         public IAsyncResult BeginGenerateRandom(GenerateRandomRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GenerateRandomRequestMarshaller();
@@ -2126,6 +2182,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateRandom.</param>
         /// 
         /// <returns>Returns a  GenerateRandomResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">REST API Reference for GenerateRandom Operation</seealso>
         public  GenerateRandomResponse EndGenerateRandom(IAsyncResult asyncResult)
         {
             return EndInvoke<GenerateRandomResponse>(asyncResult);
@@ -2166,6 +2223,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyPolicy">REST API Reference for GetKeyPolicy Operation</seealso>
         public GetKeyPolicyResponse GetKeyPolicy(string keyId, string policyName)
         {
             var request = new GetKeyPolicyRequest();
@@ -2205,6 +2263,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyPolicy">REST API Reference for GetKeyPolicy Operation</seealso>
         public GetKeyPolicyResponse GetKeyPolicy(GetKeyPolicyRequest request)
         {
             var marshaller = new GetKeyPolicyRequestMarshaller();
@@ -2224,6 +2283,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetKeyPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyPolicy">REST API Reference for GetKeyPolicy Operation</seealso>
         public IAsyncResult BeginGetKeyPolicy(GetKeyPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetKeyPolicyRequestMarshaller();
@@ -2240,6 +2300,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetKeyPolicy.</param>
         /// 
         /// <returns>Returns a  GetKeyPolicyResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyPolicy">REST API Reference for GetKeyPolicy Operation</seealso>
         public  GetKeyPolicyResponse EndGetKeyPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<GetKeyPolicyResponse>(asyncResult);
@@ -2284,6 +2345,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified parameter is not supported or a specified
         /// resource is not valid for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">REST API Reference for GetKeyRotationStatus Operation</seealso>
         public GetKeyRotationStatusResponse GetKeyRotationStatus(string keyId)
         {
             var request = new GetKeyRotationStatusRequest();
@@ -2327,6 +2389,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified parameter is not supported or a specified
         /// resource is not valid for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">REST API Reference for GetKeyRotationStatus Operation</seealso>
         public GetKeyRotationStatusResponse GetKeyRotationStatus(GetKeyRotationStatusRequest request)
         {
             var marshaller = new GetKeyRotationStatusRequestMarshaller();
@@ -2346,6 +2409,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetKeyRotationStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">REST API Reference for GetKeyRotationStatus Operation</seealso>
         public IAsyncResult BeginGetKeyRotationStatus(GetKeyRotationStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetKeyRotationStatusRequestMarshaller();
@@ -2362,6 +2426,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetKeyRotationStatus.</param>
         /// 
         /// <returns>Returns a  GetKeyRotationStatusResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">REST API Reference for GetKeyRotationStatus Operation</seealso>
         public  GetKeyRotationStatusResponse EndGetKeyRotationStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<GetKeyRotationStatusResponse>(asyncResult);
@@ -2425,6 +2490,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified parameter is not supported or a specified
         /// resource is not valid for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetParametersForImport">REST API Reference for GetParametersForImport Operation</seealso>
         public GetParametersForImportResponse GetParametersForImport(GetParametersForImportRequest request)
         {
             var marshaller = new GetParametersForImportRequestMarshaller();
@@ -2444,6 +2510,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetParametersForImport
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetParametersForImport">REST API Reference for GetParametersForImport Operation</seealso>
         public IAsyncResult BeginGetParametersForImport(GetParametersForImportRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetParametersForImportRequestMarshaller();
@@ -2460,6 +2527,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetParametersForImport.</param>
         /// 
         /// <returns>Returns a  GetParametersForImportResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetParametersForImport">REST API Reference for GetParametersForImport Operation</seealso>
         public  GetParametersForImportResponse EndGetParametersForImport(IAsyncResult asyncResult)
         {
             return EndInvoke<GetParametersForImportResponse>(asyncResult);
@@ -2546,6 +2614,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified parameter is not supported or a specified
         /// resource is not valid for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ImportKeyMaterial">REST API Reference for ImportKeyMaterial Operation</seealso>
         public ImportKeyMaterialResponse ImportKeyMaterial(ImportKeyMaterialRequest request)
         {
             var marshaller = new ImportKeyMaterialRequestMarshaller();
@@ -2565,6 +2634,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportKeyMaterial
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ImportKeyMaterial">REST API Reference for ImportKeyMaterial Operation</seealso>
         public IAsyncResult BeginImportKeyMaterial(ImportKeyMaterialRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ImportKeyMaterialRequestMarshaller();
@@ -2581,6 +2651,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportKeyMaterial.</param>
         /// 
         /// <returns>Returns a  ImportKeyMaterialResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ImportKeyMaterial">REST API Reference for ImportKeyMaterial Operation</seealso>
         public  ImportKeyMaterialResponse EndImportKeyMaterial(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportKeyMaterialResponse>(asyncResult);
@@ -2607,6 +2678,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
             var marshaller = new ListAliasesRequestMarshaller();
@@ -2626,6 +2698,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAliases
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public IAsyncResult BeginListAliases(ListAliasesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAliasesRequestMarshaller();
@@ -2642,6 +2715,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAliases.</param>
         /// 
         /// <returns>Returns a  ListAliasesResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public  ListAliasesResponse EndListAliases(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAliasesResponse>(asyncResult);
@@ -2685,6 +2759,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListGrants">REST API Reference for ListGrants Operation</seealso>
         public ListGrantsResponse ListGrants(ListGrantsRequest request)
         {
             var marshaller = new ListGrantsRequestMarshaller();
@@ -2704,6 +2779,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGrants
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListGrants">REST API Reference for ListGrants Operation</seealso>
         public IAsyncResult BeginListGrants(ListGrantsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListGrantsRequestMarshaller();
@@ -2720,6 +2796,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGrants.</param>
         /// 
         /// <returns>Returns a  ListGrantsResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListGrants">REST API Reference for ListGrants Operation</seealso>
         public  ListGrantsResponse EndListGrants(IAsyncResult asyncResult)
         {
             return EndInvoke<ListGrantsResponse>(asyncResult);
@@ -2759,6 +2836,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeyPolicies">REST API Reference for ListKeyPolicies Operation</seealso>
         public ListKeyPoliciesResponse ListKeyPolicies(ListKeyPoliciesRequest request)
         {
             var marshaller = new ListKeyPoliciesRequestMarshaller();
@@ -2778,6 +2856,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListKeyPolicies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeyPolicies">REST API Reference for ListKeyPolicies Operation</seealso>
         public IAsyncResult BeginListKeyPolicies(ListKeyPoliciesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListKeyPoliciesRequestMarshaller();
@@ -2794,6 +2873,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListKeyPolicies.</param>
         /// 
         /// <returns>Returns a  ListKeyPoliciesResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeyPolicies">REST API Reference for ListKeyPolicies Operation</seealso>
         public  ListKeyPoliciesResponse EndListKeyPolicies(IAsyncResult asyncResult)
         {
             return EndInvoke<ListKeyPoliciesResponse>(asyncResult);
@@ -2820,6 +2900,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because an internal exception occurred. The request can be
         /// retried.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeys">REST API Reference for ListKeys Operation</seealso>
         public ListKeysResponse ListKeys(ListKeysRequest request)
         {
             var marshaller = new ListKeysRequestMarshaller();
@@ -2839,6 +2920,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListKeys
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeys">REST API Reference for ListKeys Operation</seealso>
         public IAsyncResult BeginListKeys(ListKeysRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListKeysRequestMarshaller();
@@ -2855,6 +2937,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListKeys.</param>
         /// 
         /// <returns>Returns a  ListKeysResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeys">REST API Reference for ListKeys Operation</seealso>
         public  ListKeysResponse EndListKeys(IAsyncResult asyncResult)
         {
             return EndInvoke<ListKeysResponse>(asyncResult);
@@ -2894,6 +2977,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
         public ListRetirableGrantsResponse ListRetirableGrants(string retiringPrincipal)
         {
             var request = new ListRetirableGrantsRequest();
@@ -2931,6 +3015,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
         public ListRetirableGrantsResponse ListRetirableGrants()
         {
             var request = new ListRetirableGrantsRequest();
@@ -2968,6 +3053,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
         public ListRetirableGrantsResponse ListRetirableGrants(ListRetirableGrantsRequest request)
         {
             var marshaller = new ListRetirableGrantsRequestMarshaller();
@@ -2987,6 +3073,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRetirableGrants
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
         public IAsyncResult BeginListRetirableGrants(ListRetirableGrantsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListRetirableGrantsRequestMarshaller();
@@ -3003,6 +3090,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRetirableGrants.</param>
         /// 
         /// <returns>Returns a  ListRetirableGrantsResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListRetirableGrants">REST API Reference for ListRetirableGrants Operation</seealso>
         public  ListRetirableGrantsResponse EndListRetirableGrants(IAsyncResult asyncResult)
         {
             return EndInvoke<ListRetirableGrantsResponse>(asyncResult);
@@ -3063,6 +3151,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified parameter is not supported or a specified
         /// resource is not valid for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/PutKeyPolicy">REST API Reference for PutKeyPolicy Operation</seealso>
         public PutKeyPolicyResponse PutKeyPolicy(string keyId, string policy, string policyName)
         {
             var request = new PutKeyPolicyRequest();
@@ -3122,6 +3211,7 @@ namespace Amazon.KeyManagementService
         /// The request was rejected because a specified parameter is not supported or a specified
         /// resource is not valid for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/PutKeyPolicy">REST API Reference for PutKeyPolicy Operation</seealso>
         public PutKeyPolicyResponse PutKeyPolicy(PutKeyPolicyRequest request)
         {
             var marshaller = new PutKeyPolicyRequestMarshaller();
@@ -3141,6 +3231,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutKeyPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/PutKeyPolicy">REST API Reference for PutKeyPolicy Operation</seealso>
         public IAsyncResult BeginPutKeyPolicy(PutKeyPolicyRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutKeyPolicyRequestMarshaller();
@@ -3157,6 +3248,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutKeyPolicy.</param>
         /// 
         /// <returns>Returns a  PutKeyPolicyResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/PutKeyPolicy">REST API Reference for PutKeyPolicy Operation</seealso>
         public  PutKeyPolicyResponse EndPutKeyPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutKeyPolicyResponse>(asyncResult);
@@ -3225,6 +3317,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ReEncrypt">REST API Reference for ReEncrypt Operation</seealso>
         public ReEncryptResponse ReEncrypt(ReEncryptRequest request)
         {
             var marshaller = new ReEncryptRequestMarshaller();
@@ -3244,6 +3337,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReEncrypt
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ReEncrypt">REST API Reference for ReEncrypt Operation</seealso>
         public IAsyncResult BeginReEncrypt(ReEncryptRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ReEncryptRequestMarshaller();
@@ -3260,6 +3354,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReEncrypt.</param>
         /// 
         /// <returns>Returns a  ReEncryptResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ReEncrypt">REST API Reference for ReEncrypt Operation</seealso>
         public  ReEncryptResponse EndReEncrypt(IAsyncResult asyncResult)
         {
             return EndInvoke<ReEncryptResponse>(asyncResult);
@@ -3325,6 +3420,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RetireGrant">REST API Reference for RetireGrant Operation</seealso>
         public RetireGrantResponse RetireGrant(string grantToken)
         {
             var request = new RetireGrantRequest();
@@ -3389,6 +3485,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RetireGrant">REST API Reference for RetireGrant Operation</seealso>
         public RetireGrantResponse RetireGrant(RetireGrantRequest request)
         {
             var marshaller = new RetireGrantRequestMarshaller();
@@ -3408,6 +3505,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRetireGrant
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RetireGrant">REST API Reference for RetireGrant Operation</seealso>
         public IAsyncResult BeginRetireGrant(RetireGrantRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RetireGrantRequestMarshaller();
@@ -3424,6 +3522,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRetireGrant.</param>
         /// 
         /// <returns>Returns a  RetireGrantResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RetireGrant">REST API Reference for RetireGrant Operation</seealso>
         public  RetireGrantResponse EndRetireGrant(IAsyncResult asyncResult)
         {
             return EndInvoke<RetireGrantResponse>(asyncResult);
@@ -3468,6 +3567,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">REST API Reference for RevokeGrant Operation</seealso>
         public RevokeGrantResponse RevokeGrant(string grantId, string keyId)
         {
             var request = new RevokeGrantRequest();
@@ -3511,6 +3611,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">REST API Reference for RevokeGrant Operation</seealso>
         public RevokeGrantResponse RevokeGrant(RevokeGrantRequest request)
         {
             var marshaller = new RevokeGrantRequestMarshaller();
@@ -3530,6 +3631,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeGrant
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">REST API Reference for RevokeGrant Operation</seealso>
         public IAsyncResult BeginRevokeGrant(RevokeGrantRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RevokeGrantRequestMarshaller();
@@ -3546,6 +3648,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeGrant.</param>
         /// 
         /// <returns>Returns a  RevokeGrantResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">REST API Reference for RevokeGrant Operation</seealso>
         public  RevokeGrantResponse EndRevokeGrant(IAsyncResult asyncResult)
         {
             return EndInvoke<RevokeGrantResponse>(asyncResult);
@@ -3603,6 +3706,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
         public ScheduleKeyDeletionResponse ScheduleKeyDeletion(string keyId)
         {
             var request = new ScheduleKeyDeletionRequest();
@@ -3660,6 +3764,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
         public ScheduleKeyDeletionResponse ScheduleKeyDeletion(string keyId, int pendingWindowInDays)
         {
             var request = new ScheduleKeyDeletionRequest();
@@ -3717,6 +3822,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
         public ScheduleKeyDeletionResponse ScheduleKeyDeletion(ScheduleKeyDeletionRequest request)
         {
             var marshaller = new ScheduleKeyDeletionRequestMarshaller();
@@ -3736,6 +3842,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndScheduleKeyDeletion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
         public IAsyncResult BeginScheduleKeyDeletion(ScheduleKeyDeletionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ScheduleKeyDeletionRequestMarshaller();
@@ -3752,6 +3859,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginScheduleKeyDeletion.</param>
         /// 
         /// <returns>Returns a  ScheduleKeyDeletionResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">REST API Reference for ScheduleKeyDeletion Operation</seealso>
         public  ScheduleKeyDeletionResponse EndScheduleKeyDeletion(IAsyncResult asyncResult)
         {
             return EndInvoke<ScheduleKeyDeletionResponse>(asyncResult);
@@ -3807,6 +3915,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public UpdateAliasResponse UpdateAlias(string aliasName, string targetKeyId)
         {
             var request = new UpdateAliasRequest();
@@ -3861,6 +3970,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
         {
             var marshaller = new UpdateAliasRequestMarshaller();
@@ -3880,6 +3990,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAlias
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public IAsyncResult BeginUpdateAlias(UpdateAliasRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateAliasRequestMarshaller();
@@ -3896,6 +4007,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAlias.</param>
         /// 
         /// <returns>Returns a  UpdateAliasResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public  UpdateAliasResponse EndUpdateAlias(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAliasResponse>(asyncResult);
@@ -3936,6 +4048,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription">REST API Reference for UpdateKeyDescription Operation</seealso>
         public UpdateKeyDescriptionResponse UpdateKeyDescription(string keyId, string description)
         {
             var request = new UpdateKeyDescriptionRequest();
@@ -3975,6 +4088,7 @@ namespace Amazon.KeyManagementService
         /// <exception cref="Amazon.KeyManagementService.Model.NotFoundException">
         /// The request was rejected because the specified entity or resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription">REST API Reference for UpdateKeyDescription Operation</seealso>
         public UpdateKeyDescriptionResponse UpdateKeyDescription(UpdateKeyDescriptionRequest request)
         {
             var marshaller = new UpdateKeyDescriptionRequestMarshaller();
@@ -3994,6 +4108,7 @@ namespace Amazon.KeyManagementService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateKeyDescription
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription">REST API Reference for UpdateKeyDescription Operation</seealso>
         public IAsyncResult BeginUpdateKeyDescription(UpdateKeyDescriptionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateKeyDescriptionRequestMarshaller();
@@ -4010,6 +4125,7 @@ namespace Amazon.KeyManagementService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateKeyDescription.</param>
         /// 
         /// <returns>Returns a  UpdateKeyDescriptionResult from KeyManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription">REST API Reference for UpdateKeyDescription Operation</seealso>
         public  UpdateKeyDescriptionResponse EndUpdateKeyDescription(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateKeyDescriptionResponse>(asyncResult);

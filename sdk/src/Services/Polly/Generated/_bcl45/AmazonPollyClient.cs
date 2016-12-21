@@ -263,6 +263,7 @@ namespace Amazon.Polly
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">REST API Reference for DeleteLexicon Operation</seealso>
         public DeleteLexiconResponse DeleteLexicon(DeleteLexiconRequest request)
         {
             var marshaller = new DeleteLexiconRequestMarshaller();
@@ -280,6 +281,7 @@ namespace Amazon.Polly
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">REST API Reference for DeleteLexicon Operation</seealso>
         public Task<DeleteLexiconResponse> DeleteLexiconAsync(DeleteLexiconRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteLexiconRequestMarshaller();
@@ -331,6 +333,7 @@ namespace Amazon.Polly
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices">REST API Reference for DescribeVoices Operation</seealso>
         public DescribeVoicesResponse DescribeVoices(DescribeVoicesRequest request)
         {
             var marshaller = new DescribeVoicesRequestMarshaller();
@@ -348,6 +351,7 @@ namespace Amazon.Polly
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices">REST API Reference for DescribeVoices Operation</seealso>
         public Task<DescribeVoicesResponse> DescribeVoicesAsync(DescribeVoicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVoicesRequestMarshaller();
@@ -384,6 +388,7 @@ namespace Amazon.Polly
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">REST API Reference for GetLexicon Operation</seealso>
         public GetLexiconResponse GetLexicon(GetLexiconRequest request)
         {
             var marshaller = new GetLexiconRequestMarshaller();
@@ -401,6 +406,7 @@ namespace Amazon.Polly
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">REST API Reference for GetLexicon Operation</seealso>
         public Task<GetLexiconResponse> GetLexiconAsync(GetLexiconRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetLexiconRequestMarshaller();
@@ -429,6 +435,7 @@ namespace Amazon.Polly
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">REST API Reference for ListLexicons Operation</seealso>
         public ListLexiconsResponse ListLexicons(ListLexiconsRequest request)
         {
             var marshaller = new ListLexiconsRequestMarshaller();
@@ -446,6 +453,7 @@ namespace Amazon.Polly
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">REST API Reference for ListLexicons Operation</seealso>
         public Task<ListLexiconsResponse> ListLexiconsAsync(ListLexiconsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListLexiconsRequestMarshaller();
@@ -500,6 +508,7 @@ namespace Amazon.Polly
         /// see <a href="http://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon
         /// Attributes</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">REST API Reference for PutLexicon Operation</seealso>
         public PutLexiconResponse PutLexicon(PutLexiconRequest request)
         {
             var marshaller = new PutLexiconRequestMarshaller();
@@ -517,6 +526,7 @@ namespace Amazon.Polly
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">REST API Reference for PutLexicon Operation</seealso>
         public Task<PutLexiconResponse> PutLexiconAsync(PutLexiconRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutLexiconRequestMarshaller();
@@ -567,6 +577,7 @@ namespace Amazon.Polly
         /// input text is a maximum of 3000 characters total, of which no more than 1500 can be
         /// billed characters. SSML tags are not counted as billed characters.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">REST API Reference for SynthesizeSpeech Operation</seealso>
         public SynthesizeSpeechResponse SynthesizeSpeech(SynthesizeSpeechRequest request)
         {
             var marshaller = new SynthesizeSpeechRequestMarshaller();
@@ -584,6 +595,7 @@ namespace Amazon.Polly
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">REST API Reference for SynthesizeSpeech Operation</seealso>
         public Task<SynthesizeSpeechResponse> SynthesizeSpeechAsync(SynthesizeSpeechRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new SynthesizeSpeechRequestMarshaller();

@@ -306,6 +306,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds">REST API Reference for BatchGetBuilds Operation</seealso>
         public BatchGetBuildsResponse BatchGetBuilds(BatchGetBuildsRequest request)
         {
             var marshaller = new BatchGetBuildsRequestMarshaller();
@@ -323,6 +324,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds">REST API Reference for BatchGetBuilds Operation</seealso>
         public Task<BatchGetBuildsResponse> BatchGetBuildsAsync(BatchGetBuildsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchGetBuildsRequestMarshaller();
@@ -346,6 +348,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">REST API Reference for BatchGetProjects Operation</seealso>
         public BatchGetProjectsResponse BatchGetProjects(BatchGetProjectsRequest request)
         {
             var marshaller = new BatchGetProjectsRequestMarshaller();
@@ -363,6 +366,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">REST API Reference for BatchGetProjects Operation</seealso>
         public Task<BatchGetProjectsResponse> BatchGetProjectsAsync(BatchGetProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BatchGetProjectsRequestMarshaller();
@@ -393,6 +397,7 @@ namespace Amazon.CodeBuild
         /// The specified AWS resource cannot be created, because an AWS resource with the same
         /// settings already exists.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public CreateProjectResponse CreateProject(CreateProjectRequest request)
         {
             var marshaller = new CreateProjectRequestMarshaller();
@@ -410,6 +415,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject">REST API Reference for CreateProject Operation</seealso>
         public Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateProjectRequestMarshaller();
@@ -433,6 +439,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public DeleteProjectResponse DeleteProject(DeleteProjectRequest request)
         {
             var marshaller = new DeleteProjectRequestMarshaller();
@@ -450,6 +457,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         public Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteProjectRequestMarshaller();
@@ -473,6 +481,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         public ListBuildsResponse ListBuilds(ListBuildsRequest request)
         {
             var marshaller = new ListBuildsRequestMarshaller();
@@ -490,6 +499,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         public Task<ListBuildsResponse> ListBuildsAsync(ListBuildsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListBuildsRequestMarshaller();
@@ -517,6 +527,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
         /// The specified AWS resource cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject">REST API Reference for ListBuildsForProject Operation</seealso>
         public ListBuildsForProjectResponse ListBuildsForProject(ListBuildsForProjectRequest request)
         {
             var marshaller = new ListBuildsForProjectRequestMarshaller();
@@ -534,6 +545,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject">REST API Reference for ListBuildsForProject Operation</seealso>
         public Task<ListBuildsForProjectResponse> ListBuildsForProjectAsync(ListBuildsForProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListBuildsForProjectRequestMarshaller();
@@ -554,6 +566,7 @@ namespace Amazon.CodeBuild
         /// <param name="request">Container for the necessary parameters to execute the ListCuratedEnvironmentImages service method.</param>
         /// 
         /// <returns>The response from the ListCuratedEnvironmentImages service method, as returned by CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages">REST API Reference for ListCuratedEnvironmentImages Operation</seealso>
         public ListCuratedEnvironmentImagesResponse ListCuratedEnvironmentImages(ListCuratedEnvironmentImagesRequest request)
         {
             var marshaller = new ListCuratedEnvironmentImagesRequestMarshaller();
@@ -571,6 +584,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages">REST API Reference for ListCuratedEnvironmentImages Operation</seealso>
         public Task<ListCuratedEnvironmentImagesResponse> ListCuratedEnvironmentImagesAsync(ListCuratedEnvironmentImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListCuratedEnvironmentImagesRequestMarshaller();
@@ -595,6 +609,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public ListProjectsResponse ListProjects(ListProjectsRequest request)
         {
             var marshaller = new ListProjectsRequestMarshaller();
@@ -612,6 +627,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects">REST API Reference for ListProjects Operation</seealso>
         public Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListProjectsRequestMarshaller();
@@ -641,6 +657,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
         /// The specified AWS resource cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">REST API Reference for StartBuild Operation</seealso>
         public StartBuildResponse StartBuild(StartBuildRequest request)
         {
             var marshaller = new StartBuildRequestMarshaller();
@@ -658,6 +675,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">REST API Reference for StartBuild Operation</seealso>
         public Task<StartBuildResponse> StartBuildAsync(StartBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartBuildRequestMarshaller();
@@ -690,6 +708,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
         /// The specified AWS resource cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">REST API Reference for StopBuild Operation</seealso>
         public StopBuildResponse StopBuild(StopBuildRequest request)
         {
             var marshaller = new StopBuildRequestMarshaller();
@@ -707,6 +726,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">REST API Reference for StopBuild Operation</seealso>
         public Task<StopBuildResponse> StopBuildAsync(StopBuildRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopBuildRequestMarshaller();
@@ -733,6 +753,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
         /// The specified AWS resource cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public UpdateProjectResponse UpdateProject(UpdateProjectRequest request)
         {
             var marshaller = new UpdateProjectRequestMarshaller();
@@ -750,6 +771,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         public Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateProjectRequestMarshaller();

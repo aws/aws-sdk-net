@@ -76,6 +76,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob">REST API Reference for CancelJob Operation</seealso>
         CancelJobResponse CancelJob(CancelJobRequest request);
 
 
@@ -88,6 +89,7 @@ namespace Amazon.Batch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJob">REST API Reference for CancelJob Operation</seealso>
         Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -134,6 +136,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">REST API Reference for CreateComputeEnvironment Operation</seealso>
         CreateComputeEnvironmentResponse CreateComputeEnvironment(CreateComputeEnvironmentRequest request);
 
 
@@ -146,6 +149,7 @@ namespace Amazon.Batch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">REST API Reference for CreateComputeEnvironment Operation</seealso>
         Task<CreateComputeEnvironmentResponse> CreateComputeEnvironmentAsync(CreateComputeEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -177,6 +181,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateJobQueue">REST API Reference for CreateJobQueue Operation</seealso>
         CreateJobQueueResponse CreateJobQueue(CreateJobQueueRequest request);
 
 
@@ -189,6 +194,7 @@ namespace Amazon.Batch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateJobQueue">REST API Reference for CreateJobQueue Operation</seealso>
         Task<CreateJobQueueResponse> CreateJobQueueAsync(CreateJobQueueRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -217,6 +223,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteComputeEnvironment">REST API Reference for DeleteComputeEnvironment Operation</seealso>
         DeleteComputeEnvironmentResponse DeleteComputeEnvironment(DeleteComputeEnvironmentRequest request);
 
 
@@ -229,6 +236,7 @@ namespace Amazon.Batch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteComputeEnvironment">REST API Reference for DeleteComputeEnvironment Operation</seealso>
         Task<DeleteComputeEnvironmentResponse> DeleteComputeEnvironmentAsync(DeleteComputeEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -258,6 +266,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteJobQueue">REST API Reference for DeleteJobQueue Operation</seealso>
         DeleteJobQueueResponse DeleteJobQueue(DeleteJobQueueRequest request);
 
 
@@ -270,6 +279,7 @@ namespace Amazon.Batch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeleteJobQueue">REST API Reference for DeleteJobQueue Operation</seealso>
         Task<DeleteJobQueueResponse> DeleteJobQueueAsync(DeleteJobQueueRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -291,6 +301,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition">REST API Reference for DeregisterJobDefinition Operation</seealso>
         DeregisterJobDefinitionResponse DeregisterJobDefinition(DeregisterJobDefinitionRequest request);
 
 
@@ -303,6 +314,7 @@ namespace Amazon.Batch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition">REST API Reference for DeregisterJobDefinition Operation</seealso>
         Task<DeregisterJobDefinitionResponse> DeregisterJobDefinitionAsync(DeregisterJobDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -331,6 +343,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments">REST API Reference for DescribeComputeEnvironments Operation</seealso>
         DescribeComputeEnvironmentsResponse DescribeComputeEnvironments(DescribeComputeEnvironmentsRequest request);
 
 
@@ -343,6 +356,7 @@ namespace Amazon.Batch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments">REST API Reference for DescribeComputeEnvironments Operation</seealso>
         Task<DescribeComputeEnvironmentsResponse> DescribeComputeEnvironmentsAsync(DescribeComputeEnvironmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -365,6 +379,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitions">REST API Reference for DescribeJobDefinitions Operation</seealso>
         DescribeJobDefinitionsResponse DescribeJobDefinitions(DescribeJobDefinitionsRequest request);
 
 
@@ -377,6 +392,7 @@ namespace Amazon.Batch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobDefinitions">REST API Reference for DescribeJobDefinitions Operation</seealso>
         Task<DescribeJobDefinitionsResponse> DescribeJobDefinitionsAsync(DescribeJobDefinitionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -398,6 +414,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobQueues">REST API Reference for DescribeJobQueues Operation</seealso>
         DescribeJobQueuesResponse DescribeJobQueues(DescribeJobQueuesRequest request);
 
 
@@ -410,6 +427,7 @@ namespace Amazon.Batch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobQueues">REST API Reference for DescribeJobQueues Operation</seealso>
         Task<DescribeJobQueuesResponse> DescribeJobQueuesAsync(DescribeJobQueuesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -431,6 +449,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobs">REST API Reference for DescribeJobs Operation</seealso>
         DescribeJobsResponse DescribeJobs(DescribeJobsRequest request);
 
 
@@ -443,6 +462,7 @@ namespace Amazon.Batch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeJobs">REST API Reference for DescribeJobs Operation</seealso>
         Task<DescribeJobsResponse> DescribeJobsAsync(DescribeJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -465,6 +485,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs">REST API Reference for ListJobs Operation</seealso>
         ListJobsResponse ListJobs(ListJobsRequest request);
 
 
@@ -477,6 +498,7 @@ namespace Amazon.Batch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs">REST API Reference for ListJobs Operation</seealso>
         Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -498,6 +520,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition">REST API Reference for RegisterJobDefinition Operation</seealso>
         RegisterJobDefinitionResponse RegisterJobDefinition(RegisterJobDefinitionRequest request);
 
 
@@ -510,6 +533,7 @@ namespace Amazon.Batch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RegisterJobDefinition">REST API Reference for RegisterJobDefinition Operation</seealso>
         Task<RegisterJobDefinitionResponse> RegisterJobDefinitionAsync(RegisterJobDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -532,6 +556,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">REST API Reference for SubmitJob Operation</seealso>
         SubmitJobResponse SubmitJob(SubmitJobRequest request);
 
 
@@ -544,6 +569,7 @@ namespace Amazon.Batch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/SubmitJob">REST API Reference for SubmitJob Operation</seealso>
         Task<SubmitJobResponse> SubmitJobAsync(SubmitJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -567,6 +593,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob">REST API Reference for TerminateJob Operation</seealso>
         TerminateJobResponse TerminateJob(TerminateJobRequest request);
 
 
@@ -579,6 +606,7 @@ namespace Amazon.Batch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJob">REST API Reference for TerminateJob Operation</seealso>
         Task<TerminateJobResponse> TerminateJobAsync(TerminateJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -600,6 +628,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironment">REST API Reference for UpdateComputeEnvironment Operation</seealso>
         UpdateComputeEnvironmentResponse UpdateComputeEnvironment(UpdateComputeEnvironmentRequest request);
 
 
@@ -612,6 +641,7 @@ namespace Amazon.Batch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateComputeEnvironment">REST API Reference for UpdateComputeEnvironment Operation</seealso>
         Task<UpdateComputeEnvironmentResponse> UpdateComputeEnvironmentAsync(UpdateComputeEnvironmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -633,6 +663,7 @@ namespace Amazon.Batch
         /// <exception cref="Amazon.Batch.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateJobQueue">REST API Reference for UpdateJobQueue Operation</seealso>
         UpdateJobQueueResponse UpdateJobQueue(UpdateJobQueueRequest request);
 
 
@@ -645,6 +676,7 @@ namespace Amazon.Batch
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdateJobQueue">REST API Reference for UpdateJobQueue Operation</seealso>
         Task<UpdateJobQueueResponse> UpdateJobQueueAsync(UpdateJobQueueRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

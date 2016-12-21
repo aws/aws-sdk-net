@@ -246,6 +246,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         public DescribeAffectedEntitiesResponse DescribeAffectedEntities(DescribeAffectedEntitiesRequest request)
         {
             var marshaller = new DescribeAffectedEntitiesRequestMarshaller();
@@ -265,6 +266,7 @@ namespace Amazon.AWSHealth
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAffectedEntities
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         public IAsyncResult BeginDescribeAffectedEntities(DescribeAffectedEntitiesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAffectedEntitiesRequestMarshaller();
@@ -281,6 +283,7 @@ namespace Amazon.AWSHealth
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAffectedEntities.</param>
         /// 
         /// <returns>Returns a  DescribeAffectedEntitiesResult from AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         public  DescribeAffectedEntitiesResponse EndDescribeAffectedEntities(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAffectedEntitiesResponse>(asyncResult);
@@ -296,6 +299,7 @@ namespace Amazon.AWSHealth
         /// <param name="request">Container for the necessary parameters to execute the DescribeEntityAggregates service method.</param>
         /// 
         /// <returns>The response from the DescribeEntityAggregates service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">REST API Reference for DescribeEntityAggregates Operation</seealso>
         public DescribeEntityAggregatesResponse DescribeEntityAggregates(DescribeEntityAggregatesRequest request)
         {
             var marshaller = new DescribeEntityAggregatesRequestMarshaller();
@@ -315,6 +319,7 @@ namespace Amazon.AWSHealth
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEntityAggregates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">REST API Reference for DescribeEntityAggregates Operation</seealso>
         public IAsyncResult BeginDescribeEntityAggregates(DescribeEntityAggregatesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEntityAggregatesRequestMarshaller();
@@ -331,6 +336,7 @@ namespace Amazon.AWSHealth
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEntityAggregates.</param>
         /// 
         /// <returns>Returns a  DescribeEntityAggregatesResult from AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">REST API Reference for DescribeEntityAggregates Operation</seealso>
         public  DescribeEntityAggregatesResponse EndDescribeEntityAggregates(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEntityAggregatesResponse>(asyncResult);
@@ -349,6 +355,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         public DescribeEventAggregatesResponse DescribeEventAggregates(DescribeEventAggregatesRequest request)
         {
             var marshaller = new DescribeEventAggregatesRequestMarshaller();
@@ -368,6 +375,7 @@ namespace Amazon.AWSHealth
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEventAggregates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         public IAsyncResult BeginDescribeEventAggregates(DescribeEventAggregatesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEventAggregatesRequestMarshaller();
@@ -384,6 +392,7 @@ namespace Amazon.AWSHealth
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventAggregates.</param>
         /// 
         /// <returns>Returns a  DescribeEventAggregatesResult from AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         public  DescribeEventAggregatesResponse EndDescribeEventAggregates(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEventAggregatesResponse>(asyncResult);
@@ -404,6 +413,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         public DescribeEventDetailsResponse DescribeEventDetails(DescribeEventDetailsRequest request)
         {
             var marshaller = new DescribeEventDetailsRequestMarshaller();
@@ -423,6 +433,7 @@ namespace Amazon.AWSHealth
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEventDetails
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         public IAsyncResult BeginDescribeEventDetails(DescribeEventDetailsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEventDetailsRequestMarshaller();
@@ -439,6 +450,7 @@ namespace Amazon.AWSHealth
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventDetails.</param>
         /// 
         /// <returns>Returns a  DescribeEventDetailsResult from AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         public  DescribeEventDetailsResponse EndDescribeEventDetails(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEventDetailsResponse>(asyncResult);
@@ -465,6 +477,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
             var marshaller = new DescribeEventsRequestMarshaller();
@@ -484,6 +497,7 @@ namespace Amazon.AWSHealth
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEvents
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEventsRequestMarshaller();
@@ -500,6 +514,7 @@ namespace Amazon.AWSHealth
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEvents.</param>
         /// 
         /// <returns>Returns a  DescribeEventsResult from AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public  DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEventsResponse>(asyncResult);
@@ -523,6 +538,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         public DescribeEventTypesResponse DescribeEventTypes(DescribeEventTypesRequest request)
         {
             var marshaller = new DescribeEventTypesRequestMarshaller();
@@ -542,6 +558,7 @@ namespace Amazon.AWSHealth
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEventTypes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         public IAsyncResult BeginDescribeEventTypes(DescribeEventTypesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEventTypesRequestMarshaller();
@@ -558,6 +575,7 @@ namespace Amazon.AWSHealth
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventTypes.</param>
         /// 
         /// <returns>Returns a  DescribeEventTypesResult from AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         public  DescribeEventTypesResponse EndDescribeEventTypes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEventTypesResponse>(asyncResult);

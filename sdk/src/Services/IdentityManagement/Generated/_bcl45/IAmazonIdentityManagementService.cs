@@ -143,6 +143,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddClientIDToOpenIDConnectProvider">REST API Reference for AddClientIDToOpenIDConnectProvider Operation</seealso>
         AddClientIDToOpenIDConnectProviderResponse AddClientIDToOpenIDConnectProvider(AddClientIDToOpenIDConnectProviderRequest request);
 
 
@@ -155,6 +156,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddClientIDToOpenIDConnectProvider">REST API Reference for AddClientIDToOpenIDConnectProvider Operation</seealso>
         Task<AddClientIDToOpenIDConnectProviderResponse> AddClientIDToOpenIDConnectProviderAsync(AddClientIDToOpenIDConnectProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -194,6 +196,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddRoleToInstanceProfile">REST API Reference for AddRoleToInstanceProfile Operation</seealso>
         AddRoleToInstanceProfileResponse AddRoleToInstanceProfile(AddRoleToInstanceProfileRequest request);
 
 
@@ -206,6 +209,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddRoleToInstanceProfile">REST API Reference for AddRoleToInstanceProfile Operation</seealso>
         Task<AddRoleToInstanceProfileResponse> AddRoleToInstanceProfileAsync(AddRoleToInstanceProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -230,6 +234,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddUserToGroup">REST API Reference for AddUserToGroup Operation</seealso>
         AddUserToGroupResponse AddUserToGroup(AddUserToGroupRequest request);
 
 
@@ -242,6 +247,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AddUserToGroup">REST API Reference for AddUserToGroup Operation</seealso>
         Task<AddUserToGroupResponse> AddUserToGroupAsync(AddUserToGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -281,6 +287,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachGroupPolicy">REST API Reference for AttachGroupPolicy Operation</seealso>
         AttachGroupPolicyResponse AttachGroupPolicy(AttachGroupPolicyRequest request);
 
 
@@ -293,6 +300,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachGroupPolicy">REST API Reference for AttachGroupPolicy Operation</seealso>
         Task<AttachGroupPolicyResponse> AttachGroupPolicyAsync(AttachGroupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -335,6 +343,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachRolePolicy">REST API Reference for AttachRolePolicy Operation</seealso>
         AttachRolePolicyResponse AttachRolePolicy(AttachRolePolicyRequest request);
 
 
@@ -347,6 +356,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachRolePolicy">REST API Reference for AttachRolePolicy Operation</seealso>
         Task<AttachRolePolicyResponse> AttachRolePolicyAsync(AttachRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -386,6 +396,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachUserPolicy">REST API Reference for AttachUserPolicy Operation</seealso>
         AttachUserPolicyResponse AttachUserPolicy(AttachUserPolicyRequest request);
 
 
@@ -398,6 +409,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachUserPolicy">REST API Reference for AttachUserPolicy Operation</seealso>
         Task<AttachUserPolicyResponse> AttachUserPolicyAsync(AttachUserPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -443,6 +455,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ChangePassword">REST API Reference for ChangePassword Operation</seealso>
         ChangePasswordResponse ChangePassword(ChangePasswordRequest request);
 
 
@@ -455,6 +468,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ChangePassword">REST API Reference for ChangePassword Operation</seealso>
         Task<ChangePasswordResponse> ChangePasswordAsync(ChangePasswordRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -500,6 +514,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey">REST API Reference for CreateAccessKey Operation</seealso>
         CreateAccessKeyResponse CreateAccessKey();
 
 
@@ -542,6 +557,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey">REST API Reference for CreateAccessKey Operation</seealso>
         CreateAccessKeyResponse CreateAccessKey(CreateAccessKeyRequest request);
 
 
@@ -586,6 +602,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey">REST API Reference for CreateAccessKey Operation</seealso>
         Task<CreateAccessKeyResponse> CreateAccessKeyAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -598,6 +615,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccessKey">REST API Reference for CreateAccessKey Operation</seealso>
         Task<CreateAccessKeyResponse> CreateAccessKeyAsync(CreateAccessKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -623,6 +641,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccountAlias">REST API Reference for CreateAccountAlias Operation</seealso>
         CreateAccountAliasResponse CreateAccountAlias(CreateAccountAliasRequest request);
 
 
@@ -635,6 +654,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateAccountAlias">REST API Reference for CreateAccountAlias Operation</seealso>
         Task<CreateAccountAliasResponse> CreateAccountAliasAsync(CreateAccountAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -668,6 +688,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         CreateGroupResponse CreateGroup(CreateGroupRequest request);
 
 
@@ -680,6 +701,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateGroup">REST API Reference for CreateGroup Operation</seealso>
         Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -711,6 +733,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateInstanceProfile">REST API Reference for CreateInstanceProfile Operation</seealso>
         CreateInstanceProfileResponse CreateInstanceProfile(CreateInstanceProfileRequest request);
 
 
@@ -723,6 +746,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateInstanceProfile">REST API Reference for CreateInstanceProfile Operation</seealso>
         Task<CreateInstanceProfileResponse> CreateInstanceProfileAsync(CreateInstanceProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -757,6 +781,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateLoginProfile">REST API Reference for CreateLoginProfile Operation</seealso>
         CreateLoginProfileResponse CreateLoginProfile(CreateLoginProfileRequest request);
 
 
@@ -769,6 +794,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateLoginProfile">REST API Reference for CreateLoginProfile Operation</seealso>
         Task<CreateLoginProfileResponse> CreateLoginProfileAsync(CreateLoginProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -818,6 +844,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider">REST API Reference for CreateOpenIDConnectProvider Operation</seealso>
         CreateOpenIDConnectProviderResponse CreateOpenIDConnectProvider(CreateOpenIDConnectProviderRequest request);
 
 
@@ -830,6 +857,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateOpenIDConnectProvider">REST API Reference for CreateOpenIDConnectProvider Operation</seealso>
         Task<CreateOpenIDConnectProviderResponse> CreateOpenIDConnectProviderAsync(CreateOpenIDConnectProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -874,6 +902,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         CreatePolicyResponse CreatePolicy(CreatePolicyRequest request);
 
 
@@ -886,6 +915,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicy">REST API Reference for CreatePolicy Operation</seealso>
         Task<CreatePolicyResponse> CreatePolicyAsync(CreatePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -933,6 +963,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         CreatePolicyVersionResponse CreatePolicyVersion(CreatePolicyVersionRequest request);
 
 
@@ -945,6 +976,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreatePolicyVersion">REST API Reference for CreatePolicyVersion Operation</seealso>
         Task<CreatePolicyVersionResponse> CreatePolicyVersionAsync(CreatePolicyVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -976,6 +1008,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateRole">REST API Reference for CreateRole Operation</seealso>
         CreateRoleResponse CreateRole(CreateRoleRequest request);
 
 
@@ -988,6 +1021,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateRole">REST API Reference for CreateRole Operation</seealso>
         Task<CreateRoleResponse> CreateRoleAsync(CreateRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1043,6 +1077,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateSAMLProvider">REST API Reference for CreateSAMLProvider Operation</seealso>
         CreateSAMLProviderResponse CreateSAMLProvider(CreateSAMLProviderRequest request);
 
 
@@ -1055,6 +1090,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateSAMLProvider">REST API Reference for CreateSAMLProvider Operation</seealso>
         Task<CreateSAMLProviderResponse> CreateSAMLProviderAsync(CreateSAMLProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1101,6 +1137,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceNotSupportedException">
         /// The specified service does not support service-specific credentials.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceSpecificCredential">REST API Reference for CreateServiceSpecificCredential Operation</seealso>
         CreateServiceSpecificCredentialResponse CreateServiceSpecificCredential(CreateServiceSpecificCredentialRequest request);
 
 
@@ -1113,6 +1150,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceSpecificCredential">REST API Reference for CreateServiceSpecificCredential Operation</seealso>
         Task<CreateServiceSpecificCredentialResponse> CreateServiceSpecificCredentialAsync(CreateServiceSpecificCredentialRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1147,6 +1185,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateUser">REST API Reference for CreateUser Operation</seealso>
         CreateUserResponse CreateUser(CreateUserRequest request);
 
 
@@ -1159,6 +1198,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateUser">REST API Reference for CreateUser Operation</seealso>
         Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1199,6 +1239,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateVirtualMFADevice">REST API Reference for CreateVirtualMFADevice Operation</seealso>
         CreateVirtualMFADeviceResponse CreateVirtualMFADevice(CreateVirtualMFADeviceRequest request);
 
 
@@ -1211,6 +1252,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateVirtualMFADevice">REST API Reference for CreateVirtualMFADevice Operation</seealso>
         Task<CreateVirtualMFADeviceResponse> CreateVirtualMFADeviceAsync(CreateVirtualMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1249,6 +1291,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeactivateMFADevice">REST API Reference for DeactivateMFADevice Operation</seealso>
         DeactivateMFADeviceResponse DeactivateMFADevice(DeactivateMFADeviceRequest request);
 
 
@@ -1261,6 +1304,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeactivateMFADevice">REST API Reference for DeactivateMFADevice Operation</seealso>
         Task<DeactivateMFADeviceResponse> DeactivateMFADeviceAsync(DeactivateMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1293,6 +1337,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccessKey">REST API Reference for DeleteAccessKey Operation</seealso>
         DeleteAccessKeyResponse DeleteAccessKey(DeleteAccessKeyRequest request);
 
 
@@ -1305,6 +1350,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccessKey">REST API Reference for DeleteAccessKey Operation</seealso>
         Task<DeleteAccessKeyResponse> DeleteAccessKeyAsync(DeleteAccessKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1331,6 +1377,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountAlias">REST API Reference for DeleteAccountAlias Operation</seealso>
         DeleteAccountAliasResponse DeleteAccountAlias(DeleteAccountAliasRequest request);
 
 
@@ -1343,6 +1390,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountAlias">REST API Reference for DeleteAccountAlias Operation</seealso>
         Task<DeleteAccountAliasResponse> DeleteAccountAliasAsync(DeleteAccountAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1366,6 +1414,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy">REST API Reference for DeleteAccountPasswordPolicy Operation</seealso>
         DeleteAccountPasswordPolicyResponse DeleteAccountPasswordPolicy();
 
 
@@ -1386,6 +1435,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy">REST API Reference for DeleteAccountPasswordPolicy Operation</seealso>
         DeleteAccountPasswordPolicyResponse DeleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest request);
 
 
@@ -1408,6 +1458,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy">REST API Reference for DeleteAccountPasswordPolicy Operation</seealso>
         Task<DeleteAccountPasswordPolicyResponse> DeleteAccountPasswordPolicyAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -1420,6 +1471,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteAccountPasswordPolicy">REST API Reference for DeleteAccountPasswordPolicy Operation</seealso>
         Task<DeleteAccountPasswordPolicyResponse> DeleteAccountPasswordPolicyAsync(DeleteAccountPasswordPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1449,6 +1501,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         DeleteGroupResponse DeleteGroup(DeleteGroupRequest request);
 
 
@@ -1461,6 +1514,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroup">REST API Reference for DeleteGroup Operation</seealso>
         Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1493,6 +1547,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroupPolicy">REST API Reference for DeleteGroupPolicy Operation</seealso>
         DeleteGroupPolicyResponse DeleteGroupPolicy(DeleteGroupPolicyRequest request);
 
 
@@ -1505,6 +1560,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteGroupPolicy">REST API Reference for DeleteGroupPolicy Operation</seealso>
         Task<DeleteGroupPolicyResponse> DeleteGroupPolicyAsync(DeleteGroupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1546,6 +1602,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteInstanceProfile">REST API Reference for DeleteInstanceProfile Operation</seealso>
         DeleteInstanceProfileResponse DeleteInstanceProfile(DeleteInstanceProfileRequest request);
 
 
@@ -1558,6 +1615,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteInstanceProfile">REST API Reference for DeleteInstanceProfile Operation</seealso>
         Task<DeleteInstanceProfileResponse> DeleteInstanceProfileAsync(DeleteInstanceProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1599,6 +1657,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteLoginProfile">REST API Reference for DeleteLoginProfile Operation</seealso>
         DeleteLoginProfileResponse DeleteLoginProfile(DeleteLoginProfileRequest request);
 
 
@@ -1611,6 +1670,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteLoginProfile">REST API Reference for DeleteLoginProfile Operation</seealso>
         Task<DeleteLoginProfileResponse> DeleteLoginProfileAsync(DeleteLoginProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1647,6 +1707,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteOpenIDConnectProvider">REST API Reference for DeleteOpenIDConnectProvider Operation</seealso>
         DeleteOpenIDConnectProviderResponse DeleteOpenIDConnectProvider(DeleteOpenIDConnectProviderRequest request);
 
 
@@ -1659,6 +1720,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteOpenIDConnectProvider">REST API Reference for DeleteOpenIDConnectProvider Operation</seealso>
         Task<DeleteOpenIDConnectProviderResponse> DeleteOpenIDConnectProviderAsync(DeleteOpenIDConnectProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1721,6 +1783,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         DeletePolicyResponse DeletePolicy(DeletePolicyRequest request);
 
 
@@ -1733,6 +1796,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicy">REST API Reference for DeletePolicy Operation</seealso>
         Task<DeletePolicyResponse> DeletePolicyAsync(DeletePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1777,6 +1841,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
         DeletePolicyVersionResponse DeletePolicyVersion(DeletePolicyVersionRequest request);
 
 
@@ -1789,6 +1854,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeletePolicyVersion">REST API Reference for DeletePolicyVersion Operation</seealso>
         Task<DeletePolicyVersionResponse> DeletePolicyVersionAsync(DeletePolicyVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1827,6 +1893,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRole">REST API Reference for DeleteRole Operation</seealso>
         DeleteRoleResponse DeleteRole(DeleteRoleRequest request);
 
 
@@ -1839,6 +1906,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRole">REST API Reference for DeleteRole Operation</seealso>
         Task<DeleteRoleResponse> DeleteRoleAsync(DeleteRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1871,6 +1939,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePolicy">REST API Reference for DeleteRolePolicy Operation</seealso>
         DeleteRolePolicyResponse DeleteRolePolicy(DeleteRolePolicyRequest request);
 
 
@@ -1883,6 +1952,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteRolePolicy">REST API Reference for DeleteRolePolicy Operation</seealso>
         Task<DeleteRolePolicyResponse> DeleteRolePolicyAsync(DeleteRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1924,6 +1994,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSAMLProvider">REST API Reference for DeleteSAMLProvider Operation</seealso>
         DeleteSAMLProviderResponse DeleteSAMLProvider(DeleteSAMLProviderRequest request);
 
 
@@ -1936,6 +2007,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSAMLProvider">REST API Reference for DeleteSAMLProvider Operation</seealso>
         Task<DeleteSAMLProviderResponse> DeleteSAMLProviderAsync(DeleteSAMLProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1982,6 +2054,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServerCertificate">REST API Reference for DeleteServerCertificate Operation</seealso>
         DeleteServerCertificateResponse DeleteServerCertificate(DeleteServerCertificateRequest request);
 
 
@@ -1994,6 +2067,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServerCertificate">REST API Reference for DeleteServerCertificate Operation</seealso>
         Task<DeleteServerCertificateResponse> DeleteServerCertificateAsync(DeleteServerCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2011,6 +2085,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential">REST API Reference for DeleteServiceSpecificCredential Operation</seealso>
         DeleteServiceSpecificCredentialResponse DeleteServiceSpecificCredential(DeleteServiceSpecificCredentialRequest request);
 
 
@@ -2023,6 +2098,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential">REST API Reference for DeleteServiceSpecificCredential Operation</seealso>
         Task<DeleteServiceSpecificCredentialResponse> DeleteServiceSpecificCredentialAsync(DeleteServiceSpecificCredentialRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2055,6 +2131,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSigningCertificate">REST API Reference for DeleteSigningCertificate Operation</seealso>
         DeleteSigningCertificateResponse DeleteSigningCertificate(DeleteSigningCertificateRequest request);
 
 
@@ -2067,6 +2144,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSigningCertificate">REST API Reference for DeleteSigningCertificate Operation</seealso>
         Task<DeleteSigningCertificateResponse> DeleteSigningCertificateAsync(DeleteSigningCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2092,6 +2170,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSSHPublicKey">REST API Reference for DeleteSSHPublicKey Operation</seealso>
         DeleteSSHPublicKeyResponse DeleteSSHPublicKey(DeleteSSHPublicKeyRequest request);
 
 
@@ -2104,6 +2183,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSSHPublicKey">REST API Reference for DeleteSSHPublicKey Operation</seealso>
         Task<DeleteSSHPublicKeyResponse> DeleteSSHPublicKeyAsync(DeleteSSHPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2133,6 +2213,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         DeleteUserResponse DeleteUser(DeleteUserRequest request);
 
 
@@ -2145,6 +2226,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
         Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2177,6 +2259,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPolicy">REST API Reference for DeleteUserPolicy Operation</seealso>
         DeleteUserPolicyResponse DeleteUserPolicy(DeleteUserPolicyRequest request);
 
 
@@ -2189,6 +2272,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteUserPolicy">REST API Reference for DeleteUserPolicy Operation</seealso>
         Task<DeleteUserPolicyResponse> DeleteUserPolicyAsync(DeleteUserPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2224,6 +2308,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteVirtualMFADevice">REST API Reference for DeleteVirtualMFADevice Operation</seealso>
         DeleteVirtualMFADeviceResponse DeleteVirtualMFADevice(DeleteVirtualMFADeviceRequest request);
 
 
@@ -2236,6 +2321,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteVirtualMFADevice">REST API Reference for DeleteVirtualMFADevice Operation</seealso>
         Task<DeleteVirtualMFADeviceResponse> DeleteVirtualMFADeviceAsync(DeleteVirtualMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2271,6 +2357,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachGroupPolicy">REST API Reference for DetachGroupPolicy Operation</seealso>
         DetachGroupPolicyResponse DetachGroupPolicy(DetachGroupPolicyRequest request);
 
 
@@ -2283,6 +2370,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachGroupPolicy">REST API Reference for DetachGroupPolicy Operation</seealso>
         Task<DetachGroupPolicyResponse> DetachGroupPolicyAsync(DetachGroupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2318,6 +2406,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachRolePolicy">REST API Reference for DetachRolePolicy Operation</seealso>
         DetachRolePolicyResponse DetachRolePolicy(DetachRolePolicyRequest request);
 
 
@@ -2330,6 +2419,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachRolePolicy">REST API Reference for DetachRolePolicy Operation</seealso>
         Task<DetachRolePolicyResponse> DetachRolePolicyAsync(DetachRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2365,6 +2455,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachUserPolicy">REST API Reference for DetachUserPolicy Operation</seealso>
         DetachUserPolicyResponse DetachUserPolicy(DetachUserPolicyRequest request);
 
 
@@ -2377,6 +2468,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DetachUserPolicy">REST API Reference for DetachUserPolicy Operation</seealso>
         Task<DetachUserPolicyResponse> DetachUserPolicyAsync(DetachUserPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2416,6 +2508,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableMFADevice">REST API Reference for EnableMFADevice Operation</seealso>
         EnableMFADeviceResponse EnableMFADevice(EnableMFADeviceRequest request);
 
 
@@ -2428,6 +2521,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableMFADevice">REST API Reference for EnableMFADevice Operation</seealso>
         Task<EnableMFADeviceResponse> EnableMFADeviceAsync(EnableMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2449,6 +2543,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateCredentialReport">REST API Reference for GenerateCredentialReport Operation</seealso>
         GenerateCredentialReportResponse GenerateCredentialReport();
 
 
@@ -2467,6 +2562,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateCredentialReport">REST API Reference for GenerateCredentialReport Operation</seealso>
         GenerateCredentialReportResponse GenerateCredentialReport(GenerateCredentialReportRequest request);
 
 
@@ -2487,6 +2583,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateCredentialReport">REST API Reference for GenerateCredentialReport Operation</seealso>
         Task<GenerateCredentialReportResponse> GenerateCredentialReportAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -2499,6 +2596,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateCredentialReport">REST API Reference for GenerateCredentialReport Operation</seealso>
         Task<GenerateCredentialReportResponse> GenerateCredentialReportAsync(GenerateCredentialReportRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2518,6 +2616,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsed">REST API Reference for GetAccessKeyLastUsed Operation</seealso>
         GetAccessKeyLastUsedResponse GetAccessKeyLastUsed(GetAccessKeyLastUsedRequest request);
 
 
@@ -2530,6 +2629,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsed">REST API Reference for GetAccessKeyLastUsed Operation</seealso>
         Task<GetAccessKeyLastUsedResponse> GetAccessKeyLastUsedAsync(GetAccessKeyLastUsedRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2555,6 +2655,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountAuthorizationDetails">REST API Reference for GetAccountAuthorizationDetails Operation</seealso>
         GetAccountAuthorizationDetailsResponse GetAccountAuthorizationDetails(GetAccountAuthorizationDetailsRequest request);
 
 
@@ -2567,6 +2668,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountAuthorizationDetails">REST API Reference for GetAccountAuthorizationDetails Operation</seealso>
         Task<GetAccountAuthorizationDetailsResponse> GetAccountAuthorizationDetailsAsync(GetAccountAuthorizationDetailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2588,6 +2690,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy">REST API Reference for GetAccountPasswordPolicy Operation</seealso>
         GetAccountPasswordPolicyResponse GetAccountPasswordPolicy();
 
 
@@ -2606,6 +2709,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy">REST API Reference for GetAccountPasswordPolicy Operation</seealso>
         GetAccountPasswordPolicyResponse GetAccountPasswordPolicy(GetAccountPasswordPolicyRequest request);
 
 
@@ -2626,6 +2730,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy">REST API Reference for GetAccountPasswordPolicy Operation</seealso>
         Task<GetAccountPasswordPolicyResponse> GetAccountPasswordPolicyAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -2638,6 +2743,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountPasswordPolicy">REST API Reference for GetAccountPasswordPolicy Operation</seealso>
         Task<GetAccountPasswordPolicyResponse> GetAccountPasswordPolicyAsync(GetAccountPasswordPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2659,6 +2765,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary">REST API Reference for GetAccountSummary Operation</seealso>
         GetAccountSummaryResponse GetAccountSummary();
 
 
@@ -2677,6 +2784,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary">REST API Reference for GetAccountSummary Operation</seealso>
         GetAccountSummaryResponse GetAccountSummary(GetAccountSummaryRequest request);
 
 
@@ -2697,6 +2805,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary">REST API Reference for GetAccountSummary Operation</seealso>
         Task<GetAccountSummaryResponse> GetAccountSummaryAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -2709,6 +2818,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountSummary">REST API Reference for GetAccountSummary Operation</seealso>
         Task<GetAccountSummaryResponse> GetAccountSummaryAsync(GetAccountSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2738,6 +2848,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForCustomPolicy">REST API Reference for GetContextKeysForCustomPolicy Operation</seealso>
         GetContextKeysForCustomPolicyResponse GetContextKeysForCustomPolicy(List<string> policyInputList);
 
         /// <summary>
@@ -2762,6 +2873,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForCustomPolicy">REST API Reference for GetContextKeysForCustomPolicy Operation</seealso>
         GetContextKeysForCustomPolicyResponse GetContextKeysForCustomPolicy(GetContextKeysForCustomPolicyRequest request);
 
 
@@ -2790,6 +2902,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForCustomPolicy">REST API Reference for GetContextKeysForCustomPolicy Operation</seealso>
         Task<GetContextKeysForCustomPolicyResponse> GetContextKeysForCustomPolicyAsync(List<string> policyInputList, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -2801,6 +2914,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForCustomPolicy">REST API Reference for GetContextKeysForCustomPolicy Operation</seealso>
         Task<GetContextKeysForCustomPolicyResponse> GetContextKeysForCustomPolicyAsync(GetContextKeysForCustomPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2845,6 +2959,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         GetContextKeysForPrincipalPolicyResponse GetContextKeysForPrincipalPolicy(string policySourceArn);
 
         /// <summary>
@@ -2885,6 +3000,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         GetContextKeysForPrincipalPolicyResponse GetContextKeysForPrincipalPolicy(string policySourceArn, List<string> policyInputList);
 
         /// <summary>
@@ -2924,6 +3040,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         GetContextKeysForPrincipalPolicyResponse GetContextKeysForPrincipalPolicy(GetContextKeysForPrincipalPolicyRequest request);
 
 
@@ -2967,6 +3084,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         Task<GetContextKeysForPrincipalPolicyResponse> GetContextKeysForPrincipalPolicyAsync(string policySourceArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -3010,6 +3128,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         Task<GetContextKeysForPrincipalPolicyResponse> GetContextKeysForPrincipalPolicyAsync(string policySourceArn, List<string> policyInputList, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -3021,6 +3140,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         Task<GetContextKeysForPrincipalPolicyResponse> GetContextKeysForPrincipalPolicyAsync(GetContextKeysForPrincipalPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3051,6 +3171,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetCredentialReport">REST API Reference for GetCredentialReport Operation</seealso>
         GetCredentialReportResponse GetCredentialReport();
 
 
@@ -3078,6 +3199,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetCredentialReport">REST API Reference for GetCredentialReport Operation</seealso>
         GetCredentialReportResponse GetCredentialReport(GetCredentialReportRequest request);
 
 
@@ -3107,6 +3229,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetCredentialReport">REST API Reference for GetCredentialReport Operation</seealso>
         Task<GetCredentialReportResponse> GetCredentialReportAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -3119,6 +3242,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetCredentialReport">REST API Reference for GetCredentialReport Operation</seealso>
         Task<GetCredentialReportResponse> GetCredentialReportAsync(GetCredentialReportRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3140,6 +3264,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroup">REST API Reference for GetGroup Operation</seealso>
         GetGroupResponse GetGroup(GetGroupRequest request);
 
 
@@ -3152,6 +3277,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroup">REST API Reference for GetGroup Operation</seealso>
         Task<GetGroupResponse> GetGroupAsync(GetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3194,6 +3320,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroupPolicy">REST API Reference for GetGroupPolicy Operation</seealso>
         GetGroupPolicyResponse GetGroupPolicy(GetGroupPolicyRequest request);
 
 
@@ -3206,6 +3333,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetGroupPolicy">REST API Reference for GetGroupPolicy Operation</seealso>
         Task<GetGroupPolicyResponse> GetGroupPolicyAsync(GetGroupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3229,6 +3357,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetInstanceProfile">REST API Reference for GetInstanceProfile Operation</seealso>
         GetInstanceProfileResponse GetInstanceProfile(GetInstanceProfileRequest request);
 
 
@@ -3241,6 +3370,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetInstanceProfile">REST API Reference for GetInstanceProfile Operation</seealso>
         Task<GetInstanceProfileResponse> GetInstanceProfileAsync(GetInstanceProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3263,6 +3393,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetLoginProfile">REST API Reference for GetLoginProfile Operation</seealso>
         GetLoginProfileResponse GetLoginProfile(GetLoginProfileRequest request);
 
 
@@ -3275,6 +3406,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetLoginProfile">REST API Reference for GetLoginProfile Operation</seealso>
         Task<GetLoginProfileResponse> GetLoginProfileAsync(GetLoginProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3300,6 +3432,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOpenIDConnectProvider">REST API Reference for GetOpenIDConnectProvider Operation</seealso>
         GetOpenIDConnectProviderResponse GetOpenIDConnectProvider(GetOpenIDConnectProviderRequest request);
 
 
@@ -3312,6 +3445,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetOpenIDConnectProvider">REST API Reference for GetOpenIDConnectProvider Operation</seealso>
         Task<GetOpenIDConnectProviderResponse> GetOpenIDConnectProviderAsync(GetOpenIDConnectProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3353,6 +3487,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         GetPolicyResponse GetPolicy(GetPolicyRequest request);
 
 
@@ -3365,6 +3500,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3419,6 +3555,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         GetPolicyVersionResponse GetPolicyVersion(GetPolicyVersionRequest request);
 
 
@@ -3431,6 +3568,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetPolicyVersion">REST API Reference for GetPolicyVersion Operation</seealso>
         Task<GetPolicyVersionResponse> GetPolicyVersionAsync(GetPolicyVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3464,6 +3602,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRole">REST API Reference for GetRole Operation</seealso>
         GetRoleResponse GetRole(GetRoleRequest request);
 
 
@@ -3476,6 +3615,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRole">REST API Reference for GetRole Operation</seealso>
         Task<GetRoleResponse> GetRoleAsync(GetRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3522,6 +3662,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRolePolicy">REST API Reference for GetRolePolicy Operation</seealso>
         GetRolePolicyResponse GetRolePolicy(GetRolePolicyRequest request);
 
 
@@ -3534,6 +3675,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRolePolicy">REST API Reference for GetRolePolicy Operation</seealso>
         Task<GetRolePolicyResponse> GetRolePolicyAsync(GetRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3566,6 +3708,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSAMLProvider">REST API Reference for GetSAMLProvider Operation</seealso>
         GetSAMLProviderResponse GetSAMLProvider(GetSAMLProviderRequest request);
 
 
@@ -3578,6 +3721,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSAMLProvider">REST API Reference for GetSAMLProvider Operation</seealso>
         Task<GetSAMLProviderResponse> GetSAMLProviderAsync(GetSAMLProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3605,6 +3749,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServerCertificate">REST API Reference for GetServerCertificate Operation</seealso>
         GetServerCertificateResponse GetServerCertificate(GetServerCertificateRequest request);
 
 
@@ -3617,6 +3762,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServerCertificate">REST API Reference for GetServerCertificate Operation</seealso>
         Task<GetServerCertificateResponse> GetServerCertificateAsync(GetServerCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3646,6 +3792,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because the public key encoding format is unsupported or
         /// unrecognized.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSSHPublicKey">REST API Reference for GetSSHPublicKey Operation</seealso>
         GetSSHPublicKeyResponse GetSSHPublicKey(GetSSHPublicKeyRequest request);
 
 
@@ -3658,6 +3805,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetSSHPublicKey">REST API Reference for GetSSHPublicKey Operation</seealso>
         Task<GetSSHPublicKeyResponse> GetSSHPublicKeyAsync(GetSSHPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3684,6 +3832,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUser">REST API Reference for GetUser Operation</seealso>
         GetUserResponse GetUser();
 
 
@@ -3707,6 +3856,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUser">REST API Reference for GetUser Operation</seealso>
         GetUserResponse GetUser(GetUserRequest request);
 
 
@@ -3732,6 +3882,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUser">REST API Reference for GetUser Operation</seealso>
         Task<GetUserResponse> GetUserAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -3744,6 +3895,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUser">REST API Reference for GetUser Operation</seealso>
         Task<GetUserResponse> GetUserAsync(GetUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3785,6 +3937,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUserPolicy">REST API Reference for GetUserPolicy Operation</seealso>
         GetUserPolicyResponse GetUserPolicy(GetUserPolicyRequest request);
 
 
@@ -3797,6 +3950,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetUserPolicy">REST API Reference for GetUserPolicy Operation</seealso>
         Task<GetUserPolicyResponse> GetUserPolicyAsync(GetUserPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3836,6 +3990,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys">REST API Reference for ListAccessKeys Operation</seealso>
         ListAccessKeysResponse ListAccessKeys();
 
 
@@ -3872,6 +4027,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys">REST API Reference for ListAccessKeys Operation</seealso>
         ListAccessKeysResponse ListAccessKeys(ListAccessKeysRequest request);
 
 
@@ -3910,6 +4066,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys">REST API Reference for ListAccessKeys Operation</seealso>
         Task<ListAccessKeysResponse> ListAccessKeysAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -3922,6 +4079,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccessKeys">REST API Reference for ListAccessKeys Operation</seealso>
         Task<ListAccessKeysResponse> ListAccessKeysAsync(ListAccessKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3939,6 +4097,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases">REST API Reference for ListAccountAliases Operation</seealso>
         ListAccountAliasesResponse ListAccountAliases();
 
 
@@ -3953,6 +4112,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases">REST API Reference for ListAccountAliases Operation</seealso>
         ListAccountAliasesResponse ListAccountAliases(ListAccountAliasesRequest request);
 
 
@@ -3969,6 +4129,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases">REST API Reference for ListAccountAliases Operation</seealso>
         Task<ListAccountAliasesResponse> ListAccountAliasesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -3981,6 +4142,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAccountAliases">REST API Reference for ListAccountAliases Operation</seealso>
         Task<ListAccountAliasesResponse> ListAccountAliasesAsync(ListAccountAliasesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4021,6 +4183,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedGroupPolicies">REST API Reference for ListAttachedGroupPolicies Operation</seealso>
         ListAttachedGroupPoliciesResponse ListAttachedGroupPolicies(ListAttachedGroupPoliciesRequest request);
 
 
@@ -4033,6 +4196,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedGroupPolicies">REST API Reference for ListAttachedGroupPolicies Operation</seealso>
         Task<ListAttachedGroupPoliciesResponse> ListAttachedGroupPoliciesAsync(ListAttachedGroupPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4073,6 +4237,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedRolePolicies">REST API Reference for ListAttachedRolePolicies Operation</seealso>
         ListAttachedRolePoliciesResponse ListAttachedRolePolicies(ListAttachedRolePoliciesRequest request);
 
 
@@ -4085,6 +4250,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedRolePolicies">REST API Reference for ListAttachedRolePolicies Operation</seealso>
         Task<ListAttachedRolePoliciesResponse> ListAttachedRolePoliciesAsync(ListAttachedRolePoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4125,6 +4291,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedUserPolicies">REST API Reference for ListAttachedUserPolicies Operation</seealso>
         ListAttachedUserPoliciesResponse ListAttachedUserPolicies(ListAttachedUserPoliciesRequest request);
 
 
@@ -4137,6 +4304,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListAttachedUserPolicies">REST API Reference for ListAttachedUserPolicies Operation</seealso>
         Task<ListAttachedUserPoliciesResponse> ListAttachedUserPoliciesAsync(ListAttachedUserPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4175,6 +4343,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListEntitiesForPolicy">REST API Reference for ListEntitiesForPolicy Operation</seealso>
         ListEntitiesForPolicyResponse ListEntitiesForPolicy(ListEntitiesForPolicyRequest request);
 
 
@@ -4187,6 +4356,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListEntitiesForPolicy">REST API Reference for ListEntitiesForPolicy Operation</seealso>
         Task<ListEntitiesForPolicyResponse> ListEntitiesForPolicyAsync(ListEntitiesForPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4221,6 +4391,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupPolicies">REST API Reference for ListGroupPolicies Operation</seealso>
         ListGroupPoliciesResponse ListGroupPolicies(ListGroupPoliciesRequest request);
 
 
@@ -4233,6 +4404,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupPolicies">REST API Reference for ListGroupPolicies Operation</seealso>
         Task<ListGroupPoliciesResponse> ListGroupPoliciesAsync(ListGroupPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4254,6 +4426,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroups">REST API Reference for ListGroups Operation</seealso>
         ListGroupsResponse ListGroups();
 
 
@@ -4272,6 +4445,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroups">REST API Reference for ListGroups Operation</seealso>
         ListGroupsResponse ListGroups(ListGroupsRequest request);
 
 
@@ -4292,6 +4466,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroups">REST API Reference for ListGroups Operation</seealso>
         Task<ListGroupsResponse> ListGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -4304,6 +4479,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroups">REST API Reference for ListGroups Operation</seealso>
         Task<ListGroupsResponse> ListGroupsAsync(ListGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4330,6 +4506,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupsForUser">REST API Reference for ListGroupsForUser Operation</seealso>
         ListGroupsForUserResponse ListGroupsForUser(ListGroupsForUserRequest request);
 
 
@@ -4342,6 +4519,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListGroupsForUser">REST API Reference for ListGroupsForUser Operation</seealso>
         Task<ListGroupsForUserResponse> ListGroupsForUserAsync(ListGroupsForUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4366,6 +4544,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfiles">REST API Reference for ListInstanceProfiles Operation</seealso>
         ListInstanceProfilesResponse ListInstanceProfiles();
 
 
@@ -4387,6 +4566,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfiles">REST API Reference for ListInstanceProfiles Operation</seealso>
         ListInstanceProfilesResponse ListInstanceProfiles(ListInstanceProfilesRequest request);
 
 
@@ -4410,6 +4590,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfiles">REST API Reference for ListInstanceProfiles Operation</seealso>
         Task<ListInstanceProfilesResponse> ListInstanceProfilesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -4422,6 +4603,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfiles">REST API Reference for ListInstanceProfiles Operation</seealso>
         Task<ListInstanceProfilesResponse> ListInstanceProfilesAsync(ListInstanceProfilesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4451,6 +4633,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfilesForRole">REST API Reference for ListInstanceProfilesForRole Operation</seealso>
         ListInstanceProfilesForRoleResponse ListInstanceProfilesForRole(ListInstanceProfilesForRoleRequest request);
 
 
@@ -4463,6 +4646,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListInstanceProfilesForRole">REST API Reference for ListInstanceProfilesForRole Operation</seealso>
         Task<ListInstanceProfilesForRoleResponse> ListInstanceProfilesForRoleAsync(ListInstanceProfilesForRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4491,6 +4675,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADevices">REST API Reference for ListMFADevices Operation</seealso>
         ListMFADevicesResponse ListMFADevices();
 
 
@@ -4516,6 +4701,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADevices">REST API Reference for ListMFADevices Operation</seealso>
         ListMFADevicesResponse ListMFADevices(ListMFADevicesRequest request);
 
 
@@ -4543,6 +4729,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADevices">REST API Reference for ListMFADevices Operation</seealso>
         Task<ListMFADevicesResponse> ListMFADevicesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -4555,6 +4742,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListMFADevices">REST API Reference for ListMFADevices Operation</seealso>
         Task<ListMFADevicesResponse> ListMFADevicesAsync(ListMFADevicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4572,6 +4760,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviders">REST API Reference for ListOpenIDConnectProviders Operation</seealso>
         ListOpenIDConnectProvidersResponse ListOpenIDConnectProviders(ListOpenIDConnectProvidersRequest request);
 
 
@@ -4584,6 +4773,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviders">REST API Reference for ListOpenIDConnectProviders Operation</seealso>
         Task<ListOpenIDConnectProvidersResponse> ListOpenIDConnectProvidersAsync(ListOpenIDConnectProvidersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4618,6 +4808,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         ListPoliciesResponse ListPolicies();
 
 
@@ -4649,6 +4840,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         ListPoliciesResponse ListPolicies(ListPoliciesRequest request);
 
 
@@ -4682,6 +4874,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         Task<ListPoliciesResponse> ListPoliciesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -4694,6 +4887,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4725,6 +4919,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         ListPolicyVersionsResponse ListPolicyVersions(ListPolicyVersionsRequest request);
 
 
@@ -4737,6 +4932,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicyVersions">REST API Reference for ListPolicyVersions Operation</seealso>
         Task<ListPolicyVersionsResponse> ListPolicyVersionsAsync(ListPolicyVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4771,6 +4967,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRolePolicies">REST API Reference for ListRolePolicies Operation</seealso>
         ListRolePoliciesResponse ListRolePolicies(ListRolePoliciesRequest request);
 
 
@@ -4783,6 +4980,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRolePolicies">REST API Reference for ListRolePolicies Operation</seealso>
         Task<ListRolePoliciesResponse> ListRolePoliciesAsync(ListRolePoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4806,6 +5004,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoles">REST API Reference for ListRoles Operation</seealso>
         ListRolesResponse ListRoles();
 
 
@@ -4826,6 +5025,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoles">REST API Reference for ListRoles Operation</seealso>
         ListRolesResponse ListRoles(ListRolesRequest request);
 
 
@@ -4848,6 +5048,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoles">REST API Reference for ListRoles Operation</seealso>
         Task<ListRolesResponse> ListRolesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -4860,6 +5061,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoles">REST API Reference for ListRoles Operation</seealso>
         Task<ListRolesResponse> ListRolesAsync(ListRolesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4882,6 +5084,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviders">REST API Reference for ListSAMLProviders Operation</seealso>
         ListSAMLProvidersResponse ListSAMLProviders();
 
 
@@ -4901,6 +5104,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviders">REST API Reference for ListSAMLProviders Operation</seealso>
         ListSAMLProvidersResponse ListSAMLProviders(ListSAMLProvidersRequest request);
 
 
@@ -4922,6 +5126,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviders">REST API Reference for ListSAMLProviders Operation</seealso>
         Task<ListSAMLProvidersResponse> ListSAMLProvidersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -4934,6 +5139,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSAMLProviders">REST API Reference for ListSAMLProviders Operation</seealso>
         Task<ListSAMLProvidersResponse> ListSAMLProvidersAsync(ListSAMLProvidersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -4962,6 +5168,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificates">REST API Reference for ListServerCertificates Operation</seealso>
         ListServerCertificatesResponse ListServerCertificates();
 
 
@@ -4987,6 +5194,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificates">REST API Reference for ListServerCertificates Operation</seealso>
         ListServerCertificatesResponse ListServerCertificates(ListServerCertificatesRequest request);
 
 
@@ -5014,6 +5222,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificates">REST API Reference for ListServerCertificates Operation</seealso>
         Task<ListServerCertificatesResponse> ListServerCertificatesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -5026,6 +5235,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServerCertificates">REST API Reference for ListServerCertificates Operation</seealso>
         Task<ListServerCertificatesResponse> ListServerCertificatesAsync(ListServerCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5051,6 +5261,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceNotSupportedException">
         /// The specified service does not support service-specific credentials.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServiceSpecificCredentials">REST API Reference for ListServiceSpecificCredentials Operation</seealso>
         ListServiceSpecificCredentialsResponse ListServiceSpecificCredentials(ListServiceSpecificCredentialsRequest request);
 
 
@@ -5063,6 +5274,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListServiceSpecificCredentials">REST API Reference for ListServiceSpecificCredentials Operation</seealso>
         Task<ListServiceSpecificCredentialsResponse> ListServiceSpecificCredentialsAsync(ListServiceSpecificCredentialsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5096,6 +5308,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates">REST API Reference for ListSigningCertificates Operation</seealso>
         ListSigningCertificatesResponse ListSigningCertificates();
 
 
@@ -5126,6 +5339,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates">REST API Reference for ListSigningCertificates Operation</seealso>
         ListSigningCertificatesResponse ListSigningCertificates(ListSigningCertificatesRequest request);
 
 
@@ -5158,6 +5372,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates">REST API Reference for ListSigningCertificates Operation</seealso>
         Task<ListSigningCertificatesResponse> ListSigningCertificatesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -5170,6 +5385,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSigningCertificates">REST API Reference for ListSigningCertificates Operation</seealso>
         Task<ListSigningCertificatesResponse> ListSigningCertificatesAsync(ListSigningCertificatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5201,6 +5417,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSSHPublicKeys">REST API Reference for ListSSHPublicKeys Operation</seealso>
         ListSSHPublicKeysResponse ListSSHPublicKeys(ListSSHPublicKeysRequest request);
 
 
@@ -5213,6 +5430,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSSHPublicKeys">REST API Reference for ListSSHPublicKeys Operation</seealso>
         Task<ListSSHPublicKeysResponse> ListSSHPublicKeysAsync(ListSSHPublicKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5247,6 +5465,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUserPolicies">REST API Reference for ListUserPolicies Operation</seealso>
         ListUserPoliciesResponse ListUserPolicies(ListUserPoliciesRequest request);
 
 
@@ -5259,6 +5478,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUserPolicies">REST API Reference for ListUserPolicies Operation</seealso>
         Task<ListUserPoliciesResponse> ListUserPoliciesAsync(ListUserPoliciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5282,6 +5502,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers">REST API Reference for ListUsers Operation</seealso>
         ListUsersResponse ListUsers();
 
 
@@ -5302,6 +5523,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers">REST API Reference for ListUsers Operation</seealso>
         ListUsersResponse ListUsers(ListUsersRequest request);
 
 
@@ -5324,6 +5546,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers">REST API Reference for ListUsers Operation</seealso>
         Task<ListUsersResponse> ListUsersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -5336,6 +5559,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUsers">REST API Reference for ListUsers Operation</seealso>
         Task<ListUsersResponse> ListUsersAsync(ListUsersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5357,6 +5581,7 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// 
         /// <returns>The response from the ListVirtualMFADevices service method, as returned by IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices">REST API Reference for ListVirtualMFADevices Operation</seealso>
         ListVirtualMFADevicesResponse ListVirtualMFADevices();
 
 
@@ -5375,6 +5600,7 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ListVirtualMFADevices service method.</param>
         /// 
         /// <returns>The response from the ListVirtualMFADevices service method, as returned by IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices">REST API Reference for ListVirtualMFADevices Operation</seealso>
         ListVirtualMFADevicesResponse ListVirtualMFADevices(ListVirtualMFADevicesRequest request);
 
 
@@ -5395,6 +5621,7 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// 
         /// <returns>The response from the ListVirtualMFADevices service method, as returned by IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices">REST API Reference for ListVirtualMFADevices Operation</seealso>
         Task<ListVirtualMFADevicesResponse> ListVirtualMFADevicesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -5407,6 +5634,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListVirtualMFADevices">REST API Reference for ListVirtualMFADevices Operation</seealso>
         Task<ListVirtualMFADevicesResponse> ListVirtualMFADevicesAsync(ListVirtualMFADevicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5457,6 +5685,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutGroupPolicy">REST API Reference for PutGroupPolicy Operation</seealso>
         PutGroupPolicyResponse PutGroupPolicy(PutGroupPolicyRequest request);
 
 
@@ -5469,6 +5698,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutGroupPolicy">REST API Reference for PutGroupPolicy Operation</seealso>
         Task<PutGroupPolicyResponse> PutGroupPolicyAsync(PutGroupPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5527,6 +5757,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePolicy">REST API Reference for PutRolePolicy Operation</seealso>
         PutRolePolicyResponse PutRolePolicy(PutRolePolicyRequest request);
 
 
@@ -5539,6 +5770,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutRolePolicy">REST API Reference for PutRolePolicy Operation</seealso>
         Task<PutRolePolicyResponse> PutRolePolicyAsync(PutRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5589,6 +5821,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPolicy">REST API Reference for PutUserPolicy Operation</seealso>
         PutUserPolicyResponse PutUserPolicy(PutUserPolicyRequest request);
 
 
@@ -5601,6 +5834,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPolicy">REST API Reference for PutUserPolicy Operation</seealso>
         Task<PutUserPolicyResponse> PutUserPolicyAsync(PutUserPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5632,6 +5866,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveClientIDFromOpenIDConnectProvider">REST API Reference for RemoveClientIDFromOpenIDConnectProvider Operation</seealso>
         RemoveClientIDFromOpenIDConnectProviderResponse RemoveClientIDFromOpenIDConnectProvider(RemoveClientIDFromOpenIDConnectProviderRequest request);
 
 
@@ -5644,6 +5879,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveClientIDFromOpenIDConnectProvider">REST API Reference for RemoveClientIDFromOpenIDConnectProvider Operation</seealso>
         Task<RemoveClientIDFromOpenIDConnectProviderResponse> RemoveClientIDFromOpenIDConnectProviderAsync(RemoveClientIDFromOpenIDConnectProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5681,6 +5917,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveRoleFromInstanceProfile">REST API Reference for RemoveRoleFromInstanceProfile Operation</seealso>
         RemoveRoleFromInstanceProfileResponse RemoveRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest request);
 
 
@@ -5693,6 +5930,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveRoleFromInstanceProfile">REST API Reference for RemoveRoleFromInstanceProfile Operation</seealso>
         Task<RemoveRoleFromInstanceProfileResponse> RemoveRoleFromInstanceProfileAsync(RemoveRoleFromInstanceProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5717,6 +5955,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveUserFromGroup">REST API Reference for RemoveUserFromGroup Operation</seealso>
         RemoveUserFromGroupResponse RemoveUserFromGroup(RemoveUserFromGroupRequest request);
 
 
@@ -5729,6 +5968,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RemoveUserFromGroup">REST API Reference for RemoveUserFromGroup Operation</seealso>
         Task<RemoveUserFromGroupResponse> RemoveUserFromGroupAsync(RemoveUserFromGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5748,6 +5988,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResetServiceSpecificCredential">REST API Reference for ResetServiceSpecificCredential Operation</seealso>
         ResetServiceSpecificCredentialResponse ResetServiceSpecificCredential(ResetServiceSpecificCredentialRequest request);
 
 
@@ -5760,6 +6001,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResetServiceSpecificCredential">REST API Reference for ResetServiceSpecificCredential Operation</seealso>
         Task<ResetServiceSpecificCredentialResponse> ResetServiceSpecificCredentialAsync(ResetServiceSpecificCredentialRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5795,6 +6037,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResyncMFADevice">REST API Reference for ResyncMFADevice Operation</seealso>
         ResyncMFADeviceResponse ResyncMFADevice(ResyncMFADeviceRequest request);
 
 
@@ -5807,6 +6050,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResyncMFADevice">REST API Reference for ResyncMFADevice Operation</seealso>
         Task<ResyncMFADeviceResponse> ResyncMFADeviceAsync(ResyncMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5848,6 +6092,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
         SetDefaultPolicyVersionResponse SetDefaultPolicyVersion(SetDefaultPolicyVersionRequest request);
 
 
@@ -5860,6 +6105,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SetDefaultPolicyVersion">REST API Reference for SetDefaultPolicyVersion Operation</seealso>
         Task<SetDefaultPolicyVersionResponse> SetDefaultPolicyVersionAsync(SetDefaultPolicyVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5906,6 +6152,7 @@ namespace Amazon.IdentityManagement
         /// The request failed because a provided policy could not be successfully evaluated.
         /// An additional detail message indicates the source of the failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulateCustomPolicy">REST API Reference for SimulateCustomPolicy Operation</seealso>
         SimulateCustomPolicyResponse SimulateCustomPolicy(SimulateCustomPolicyRequest request);
 
 
@@ -5918,6 +6165,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulateCustomPolicy">REST API Reference for SimulateCustomPolicy Operation</seealso>
         Task<SimulateCustomPolicyResponse> SimulateCustomPolicyAsync(SimulateCustomPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -5982,6 +6230,7 @@ namespace Amazon.IdentityManagement
         /// The request failed because a provided policy could not be successfully evaluated.
         /// An additional detail message indicates the source of the failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulatePrincipalPolicy">REST API Reference for SimulatePrincipalPolicy Operation</seealso>
         SimulatePrincipalPolicyResponse SimulatePrincipalPolicy(SimulatePrincipalPolicyRequest request);
 
 
@@ -5994,6 +6243,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SimulatePrincipalPolicy">REST API Reference for SimulatePrincipalPolicy Operation</seealso>
         Task<SimulatePrincipalPolicyResponse> SimulatePrincipalPolicyAsync(SimulatePrincipalPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6032,6 +6282,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccessKey">REST API Reference for UpdateAccessKey Operation</seealso>
         UpdateAccessKeyResponse UpdateAccessKey(UpdateAccessKeyRequest request);
 
 
@@ -6044,6 +6295,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccessKey">REST API Reference for UpdateAccessKey Operation</seealso>
         Task<UpdateAccessKeyResponse> UpdateAccessKeyAsync(UpdateAccessKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6083,6 +6335,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccountPasswordPolicy">REST API Reference for UpdateAccountPasswordPolicy Operation</seealso>
         UpdateAccountPasswordPolicyResponse UpdateAccountPasswordPolicy();
 
 
@@ -6119,6 +6372,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccountPasswordPolicy">REST API Reference for UpdateAccountPasswordPolicy Operation</seealso>
         UpdateAccountPasswordPolicyResponse UpdateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest request);
 
 
@@ -6157,6 +6411,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccountPasswordPolicy">REST API Reference for UpdateAccountPasswordPolicy Operation</seealso>
         Task<UpdateAccountPasswordPolicyResponse> UpdateAccountPasswordPolicyAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -6169,6 +6424,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAccountPasswordPolicy">REST API Reference for UpdateAccountPasswordPolicy Operation</seealso>
         Task<UpdateAccountPasswordPolicyResponse> UpdateAccountPasswordPolicyAsync(UpdateAccountPasswordPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6200,6 +6456,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAssumeRolePolicy">REST API Reference for UpdateAssumeRolePolicy Operation</seealso>
         UpdateAssumeRolePolicyResponse UpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest request);
 
 
@@ -6212,6 +6469,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateAssumeRolePolicy">REST API Reference for UpdateAssumeRolePolicy Operation</seealso>
         Task<UpdateAssumeRolePolicyResponse> UpdateAssumeRolePolicyAsync(UpdateAssumeRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6256,6 +6514,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         UpdateGroupResponse UpdateGroup(UpdateGroupRequest request);
 
 
@@ -6268,6 +6527,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateGroup">REST API Reference for UpdateGroup Operation</seealso>
         Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6309,6 +6569,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateLoginProfile">REST API Reference for UpdateLoginProfile Operation</seealso>
         UpdateLoginProfileResponse UpdateLoginProfile(UpdateLoginProfileRequest request);
 
 
@@ -6321,6 +6582,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateLoginProfile">REST API Reference for UpdateLoginProfile Operation</seealso>
         Task<UpdateLoginProfileResponse> UpdateLoginProfileAsync(UpdateLoginProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6366,6 +6628,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProviderThumbprint">REST API Reference for UpdateOpenIDConnectProviderThumbprint Operation</seealso>
         UpdateOpenIDConnectProviderThumbprintResponse UpdateOpenIDConnectProviderThumbprint(UpdateOpenIDConnectProviderThumbprintRequest request);
 
 
@@ -6378,6 +6641,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateOpenIDConnectProviderThumbprint">REST API Reference for UpdateOpenIDConnectProviderThumbprint Operation</seealso>
         Task<UpdateOpenIDConnectProviderThumbprintResponse> UpdateOpenIDConnectProviderThumbprintAsync(UpdateOpenIDConnectProviderThumbprintRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6413,6 +6677,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSAMLProvider">REST API Reference for UpdateSAMLProvider Operation</seealso>
         UpdateSAMLProviderResponse UpdateSAMLProvider(UpdateSAMLProviderRequest request);
 
 
@@ -6425,6 +6690,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSAMLProvider">REST API Reference for UpdateSAMLProvider Operation</seealso>
         Task<UpdateSAMLProviderResponse> UpdateSAMLProviderAsync(UpdateSAMLProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6475,6 +6741,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServerCertificate">REST API Reference for UpdateServerCertificate Operation</seealso>
         UpdateServerCertificateResponse UpdateServerCertificate(UpdateServerCertificateRequest request);
 
 
@@ -6487,6 +6754,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServerCertificate">REST API Reference for UpdateServerCertificate Operation</seealso>
         Task<UpdateServerCertificateResponse> UpdateServerCertificateAsync(UpdateServerCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6507,6 +6775,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential">REST API Reference for UpdateServiceSpecificCredential Operation</seealso>
         UpdateServiceSpecificCredentialResponse UpdateServiceSpecificCredential(UpdateServiceSpecificCredentialRequest request);
 
 
@@ -6519,6 +6788,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential">REST API Reference for UpdateServiceSpecificCredential Operation</seealso>
         Task<UpdateServiceSpecificCredentialResponse> UpdateServiceSpecificCredentialAsync(UpdateServiceSpecificCredentialRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6553,6 +6823,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSigningCertificate">REST API Reference for UpdateSigningCertificate Operation</seealso>
         UpdateSigningCertificateResponse UpdateSigningCertificate(UpdateSigningCertificateRequest request);
 
 
@@ -6565,6 +6836,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSigningCertificate">REST API Reference for UpdateSigningCertificate Operation</seealso>
         Task<UpdateSigningCertificateResponse> UpdateSigningCertificateAsync(UpdateSigningCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6592,6 +6864,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error message describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSSHPublicKey">REST API Reference for UpdateSSHPublicKey Operation</seealso>
         UpdateSSHPublicKeyResponse UpdateSSHPublicKey(UpdateSSHPublicKeyRequest request);
 
 
@@ -6604,6 +6877,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSSHPublicKey">REST API Reference for UpdateSSHPublicKey Operation</seealso>
         Task<UpdateSSHPublicKeyResponse> UpdateSSHPublicKeyAsync(UpdateSSHPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6654,6 +6928,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         UpdateUserResponse UpdateUser(UpdateUserRequest request);
 
 
@@ -6666,6 +6941,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateUser">REST API Reference for UpdateUser Operation</seealso>
         Task<UpdateUserResponse> UpdateUserAsync(UpdateUserRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6722,6 +6998,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadServerCertificate">REST API Reference for UploadServerCertificate Operation</seealso>
         UploadServerCertificateResponse UploadServerCertificate(UploadServerCertificateRequest request);
 
 
@@ -6734,6 +7011,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadServerCertificate">REST API Reference for UploadServerCertificate Operation</seealso>
         Task<UploadServerCertificateResponse> UploadServerCertificateAsync(UploadServerCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6793,6 +7071,7 @@ namespace Amazon.IdentityManagement
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSigningCertificate">REST API Reference for UploadSigningCertificate Operation</seealso>
         UploadSigningCertificateResponse UploadSigningCertificate(UploadSigningCertificateRequest request);
 
 
@@ -6805,6 +7084,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSigningCertificate">REST API Reference for UploadSigningCertificate Operation</seealso>
         Task<UploadSigningCertificateResponse> UploadSigningCertificateAsync(UploadSigningCertificateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -6845,6 +7125,7 @@ namespace Amazon.IdentityManagement
         /// The request was rejected because the public key encoding format is unsupported or
         /// unrecognized.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSSHPublicKey">REST API Reference for UploadSSHPublicKey Operation</seealso>
         UploadSSHPublicKeyResponse UploadSSHPublicKey(UploadSSHPublicKeyRequest request);
 
 
@@ -6857,6 +7138,7 @@ namespace Amazon.IdentityManagement
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UploadSSHPublicKey">REST API Reference for UploadSSHPublicKey Operation</seealso>
         Task<UploadSSHPublicKeyResponse> UploadSSHPublicKeyAsync(UploadSSHPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

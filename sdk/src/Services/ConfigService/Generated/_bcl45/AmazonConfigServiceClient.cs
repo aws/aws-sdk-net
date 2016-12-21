@@ -285,6 +285,7 @@ namespace Amazon.ConfigService
         /// The rule is currently being deleted or the rule is deleting your evaluation results.
         /// Try your request again later.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule">REST API Reference for DeleteConfigRule Operation</seealso>
         public DeleteConfigRuleResponse DeleteConfigRule(DeleteConfigRuleRequest request)
         {
             var marshaller = new DeleteConfigRuleRequestMarshaller();
@@ -302,6 +303,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule">REST API Reference for DeleteConfigRule Operation</seealso>
         public Task<DeleteConfigRuleResponse> DeleteConfigRuleAsync(DeleteConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteConfigRuleRequestMarshaller();
@@ -338,6 +340,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder">REST API Reference for DeleteConfigurationRecorder Operation</seealso>
         public DeleteConfigurationRecorderResponse DeleteConfigurationRecorder(DeleteConfigurationRecorderRequest request)
         {
             var marshaller = new DeleteConfigurationRecorderRequestMarshaller();
@@ -355,6 +358,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder">REST API Reference for DeleteConfigurationRecorder Operation</seealso>
         public Task<DeleteConfigurationRecorderResponse> DeleteConfigurationRecorderAsync(DeleteConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteConfigurationRecorderRequestMarshaller();
@@ -388,6 +392,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">REST API Reference for DeleteDeliveryChannel Operation</seealso>
         public DeleteDeliveryChannelResponse DeleteDeliveryChannel(string deliveryChannelName)
         {
             var request = new DeleteDeliveryChannelRequest();
@@ -415,6 +420,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">REST API Reference for DeleteDeliveryChannel Operation</seealso>
         public DeleteDeliveryChannelResponse DeleteDeliveryChannel(DeleteDeliveryChannelRequest request)
         {
             var marshaller = new DeleteDeliveryChannelRequestMarshaller();
@@ -446,6 +452,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">REST API Reference for DeleteDeliveryChannel Operation</seealso>
         public Task<DeleteDeliveryChannelResponse> DeleteDeliveryChannelAsync(string deliveryChannelName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteDeliveryChannelRequest();
@@ -462,6 +469,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">REST API Reference for DeleteDeliveryChannel Operation</seealso>
         public Task<DeleteDeliveryChannelResponse> DeleteDeliveryChannelAsync(DeleteDeliveryChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDeliveryChannelRequestMarshaller();
@@ -493,6 +501,7 @@ namespace Amazon.ConfigService
         /// The rule is currently being deleted or the rule is deleting your evaluation results.
         /// Try your request again later.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">REST API Reference for DeleteEvaluationResults Operation</seealso>
         public DeleteEvaluationResultsResponse DeleteEvaluationResults(DeleteEvaluationResultsRequest request)
         {
             var marshaller = new DeleteEvaluationResultsRequestMarshaller();
@@ -510,6 +519,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">REST API Reference for DeleteEvaluationResults Operation</seealso>
         public Task<DeleteEvaluationResultsResponse> DeleteEvaluationResultsAsync(DeleteEvaluationResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteEvaluationResultsRequestMarshaller();
@@ -556,6 +566,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">REST API Reference for DeliverConfigSnapshot Operation</seealso>
         public DeliverConfigSnapshotResponse DeliverConfigSnapshot(string deliveryChannelName)
         {
             var request = new DeliverConfigSnapshotRequest();
@@ -596,6 +607,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">REST API Reference for DeliverConfigSnapshot Operation</seealso>
         public DeliverConfigSnapshotResponse DeliverConfigSnapshot(DeliverConfigSnapshotRequest request)
         {
             var marshaller = new DeliverConfigSnapshotRequestMarshaller();
@@ -640,6 +652,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">REST API Reference for DeliverConfigSnapshot Operation</seealso>
         public Task<DeliverConfigSnapshotResponse> DeliverConfigSnapshotAsync(string deliveryChannelName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeliverConfigSnapshotRequest();
@@ -656,6 +669,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">REST API Reference for DeliverConfigSnapshot Operation</seealso>
         public Task<DeliverConfigSnapshotResponse> DeliverConfigSnapshotAsync(DeliverConfigSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeliverConfigSnapshotRequestMarshaller();
@@ -716,6 +730,7 @@ namespace Amazon.ConfigService
         /// One or more AWS Config rules in the request are invalid. Verify that the rule names
         /// are correct and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">REST API Reference for DescribeComplianceByConfigRule Operation</seealso>
         public DescribeComplianceByConfigRuleResponse DescribeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest request)
         {
             var marshaller = new DescribeComplianceByConfigRuleRequestMarshaller();
@@ -733,6 +748,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">REST API Reference for DescribeComplianceByConfigRule Operation</seealso>
         public Task<DescribeComplianceByConfigRuleResponse> DescribeComplianceByConfigRuleAsync(DescribeComplianceByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeComplianceByConfigRuleRequestMarshaller();
@@ -795,6 +811,7 @@ namespace Amazon.ConfigService
         /// One or more of the specified parameters are invalid. Verify that your parameters are
         /// valid and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource">REST API Reference for DescribeComplianceByResource Operation</seealso>
         public DescribeComplianceByResourceResponse DescribeComplianceByResource(DescribeComplianceByResourceRequest request)
         {
             var marshaller = new DescribeComplianceByResourceRequestMarshaller();
@@ -812,6 +829,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource">REST API Reference for DescribeComplianceByResource Operation</seealso>
         public Task<DescribeComplianceByResourceResponse> DescribeComplianceByResourceAsync(DescribeComplianceByResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeComplianceByResourceRequestMarshaller();
@@ -842,6 +860,7 @@ namespace Amazon.ConfigService
         /// One or more AWS Config rules in the request are invalid. Verify that the rule names
         /// are correct and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">REST API Reference for DescribeConfigRuleEvaluationStatus Operation</seealso>
         public DescribeConfigRuleEvaluationStatusResponse DescribeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest request)
         {
             var marshaller = new DescribeConfigRuleEvaluationStatusRequestMarshaller();
@@ -859,6 +878,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">REST API Reference for DescribeConfigRuleEvaluationStatus Operation</seealso>
         public Task<DescribeConfigRuleEvaluationStatusResponse> DescribeConfigRuleEvaluationStatusAsync(DescribeConfigRuleEvaluationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeConfigRuleEvaluationStatusRequestMarshaller();
@@ -883,6 +903,7 @@ namespace Amazon.ConfigService
         /// One or more AWS Config rules in the request are invalid. Verify that the rule names
         /// are correct and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">REST API Reference for DescribeConfigRules Operation</seealso>
         public DescribeConfigRulesResponse DescribeConfigRules(DescribeConfigRulesRequest request)
         {
             var marshaller = new DescribeConfigRulesRequestMarshaller();
@@ -900,6 +921,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">REST API Reference for DescribeConfigRules Operation</seealso>
         public Task<DescribeConfigRulesResponse> DescribeConfigRulesAsync(DescribeConfigRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeConfigRulesRequestMarshaller();
@@ -930,6 +952,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">REST API Reference for DescribeConfigurationRecorders Operation</seealso>
         public DescribeConfigurationRecordersResponse DescribeConfigurationRecorders()
         {
             return DescribeConfigurationRecorders(new DescribeConfigurationRecordersRequest());
@@ -953,6 +976,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">REST API Reference for DescribeConfigurationRecorders Operation</seealso>
         public DescribeConfigurationRecordersResponse DescribeConfigurationRecorders(DescribeConfigurationRecordersRequest request)
         {
             var marshaller = new DescribeConfigurationRecordersRequestMarshaller();
@@ -981,6 +1005,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">REST API Reference for DescribeConfigurationRecorders Operation</seealso>
         public Task<DescribeConfigurationRecordersResponse> DescribeConfigurationRecordersAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeConfigurationRecordersAsync(new DescribeConfigurationRecordersRequest(), cancellationToken);
@@ -994,6 +1019,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">REST API Reference for DescribeConfigurationRecorders Operation</seealso>
         public Task<DescribeConfigurationRecordersResponse> DescribeConfigurationRecordersAsync(DescribeConfigurationRecordersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeConfigurationRecordersRequestMarshaller();
@@ -1024,6 +1050,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">REST API Reference for DescribeConfigurationRecorderStatus Operation</seealso>
         public DescribeConfigurationRecorderStatusResponse DescribeConfigurationRecorderStatus()
         {
             return DescribeConfigurationRecorderStatus(new DescribeConfigurationRecorderStatusRequest());
@@ -1047,6 +1074,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">REST API Reference for DescribeConfigurationRecorderStatus Operation</seealso>
         public DescribeConfigurationRecorderStatusResponse DescribeConfigurationRecorderStatus(DescribeConfigurationRecorderStatusRequest request)
         {
             var marshaller = new DescribeConfigurationRecorderStatusRequestMarshaller();
@@ -1075,6 +1103,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">REST API Reference for DescribeConfigurationRecorderStatus Operation</seealso>
         public Task<DescribeConfigurationRecorderStatusResponse> DescribeConfigurationRecorderStatusAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeConfigurationRecorderStatusAsync(new DescribeConfigurationRecorderStatusRequest(), cancellationToken);
@@ -1088,6 +1117,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">REST API Reference for DescribeConfigurationRecorderStatus Operation</seealso>
         public Task<DescribeConfigurationRecorderStatusResponse> DescribeConfigurationRecorderStatusAsync(DescribeConfigurationRecorderStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeConfigurationRecorderStatusRequestMarshaller();
@@ -1118,6 +1148,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">REST API Reference for DescribeDeliveryChannels Operation</seealso>
         public DescribeDeliveryChannelsResponse DescribeDeliveryChannels()
         {
             return DescribeDeliveryChannels(new DescribeDeliveryChannelsRequest());
@@ -1141,6 +1172,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">REST API Reference for DescribeDeliveryChannels Operation</seealso>
         public DescribeDeliveryChannelsResponse DescribeDeliveryChannels(DescribeDeliveryChannelsRequest request)
         {
             var marshaller = new DescribeDeliveryChannelsRequestMarshaller();
@@ -1169,6 +1201,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">REST API Reference for DescribeDeliveryChannels Operation</seealso>
         public Task<DescribeDeliveryChannelsResponse> DescribeDeliveryChannelsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeDeliveryChannelsAsync(new DescribeDeliveryChannelsRequest(), cancellationToken);
@@ -1182,6 +1215,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">REST API Reference for DescribeDeliveryChannels Operation</seealso>
         public Task<DescribeDeliveryChannelsResponse> DescribeDeliveryChannelsAsync(DescribeDeliveryChannelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDeliveryChannelsRequestMarshaller();
@@ -1212,6 +1246,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">REST API Reference for DescribeDeliveryChannelStatus Operation</seealso>
         public DescribeDeliveryChannelStatusResponse DescribeDeliveryChannelStatus()
         {
             return DescribeDeliveryChannelStatus(new DescribeDeliveryChannelStatusRequest());
@@ -1235,6 +1270,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">REST API Reference for DescribeDeliveryChannelStatus Operation</seealso>
         public DescribeDeliveryChannelStatusResponse DescribeDeliveryChannelStatus(DescribeDeliveryChannelStatusRequest request)
         {
             var marshaller = new DescribeDeliveryChannelStatusRequestMarshaller();
@@ -1263,6 +1299,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">REST API Reference for DescribeDeliveryChannelStatus Operation</seealso>
         public Task<DescribeDeliveryChannelStatusResponse> DescribeDeliveryChannelStatusAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeDeliveryChannelStatusAsync(new DescribeDeliveryChannelStatusRequest(), cancellationToken);
@@ -1276,6 +1313,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">REST API Reference for DescribeDeliveryChannelStatus Operation</seealso>
         public Task<DescribeDeliveryChannelStatusResponse> DescribeDeliveryChannelStatusAsync(DescribeDeliveryChannelStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDeliveryChannelStatusRequestMarshaller();
@@ -1310,6 +1348,7 @@ namespace Amazon.ConfigService
         /// One or more AWS Config rules in the request are invalid. Verify that the rule names
         /// are correct and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">REST API Reference for GetComplianceDetailsByConfigRule Operation</seealso>
         public GetComplianceDetailsByConfigRuleResponse GetComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request)
         {
             var marshaller = new GetComplianceDetailsByConfigRuleRequestMarshaller();
@@ -1327,6 +1366,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">REST API Reference for GetComplianceDetailsByConfigRule Operation</seealso>
         public Task<GetComplianceDetailsByConfigRuleResponse> GetComplianceDetailsByConfigRuleAsync(GetComplianceDetailsByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetComplianceDetailsByConfigRuleRequestMarshaller();
@@ -1353,6 +1393,7 @@ namespace Amazon.ConfigService
         /// One or more of the specified parameters are invalid. Verify that your parameters are
         /// valid and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">REST API Reference for GetComplianceDetailsByResource Operation</seealso>
         public GetComplianceDetailsByResourceResponse GetComplianceDetailsByResource(GetComplianceDetailsByResourceRequest request)
         {
             var marshaller = new GetComplianceDetailsByResourceRequestMarshaller();
@@ -1370,6 +1411,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">REST API Reference for GetComplianceDetailsByResource Operation</seealso>
         public Task<GetComplianceDetailsByResourceResponse> GetComplianceDetailsByResourceAsync(GetComplianceDetailsByResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetComplianceDetailsByResourceRequestMarshaller();
@@ -1391,6 +1433,7 @@ namespace Amazon.ConfigService
         /// <param name="request">Container for the necessary parameters to execute the GetComplianceSummaryByConfigRule service method.</param>
         /// 
         /// <returns>The response from the GetComplianceSummaryByConfigRule service method, as returned by ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule">REST API Reference for GetComplianceSummaryByConfigRule Operation</seealso>
         public GetComplianceSummaryByConfigRuleResponse GetComplianceSummaryByConfigRule(GetComplianceSummaryByConfigRuleRequest request)
         {
             var marshaller = new GetComplianceSummaryByConfigRuleRequestMarshaller();
@@ -1408,6 +1451,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule">REST API Reference for GetComplianceSummaryByConfigRule Operation</seealso>
         public Task<GetComplianceSummaryByConfigRuleResponse> GetComplianceSummaryByConfigRuleAsync(GetComplianceSummaryByConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetComplianceSummaryByConfigRuleRequestMarshaller();
@@ -1434,6 +1478,7 @@ namespace Amazon.ConfigService
         /// One or more of the specified parameters are invalid. Verify that your parameters are
         /// valid and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType">REST API Reference for GetComplianceSummaryByResourceType Operation</seealso>
         public GetComplianceSummaryByResourceTypeResponse GetComplianceSummaryByResourceType(GetComplianceSummaryByResourceTypeRequest request)
         {
             var marshaller = new GetComplianceSummaryByResourceTypeRequestMarshaller();
@@ -1451,6 +1496,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType">REST API Reference for GetComplianceSummaryByResourceType Operation</seealso>
         public Task<GetComplianceSummaryByResourceTypeResponse> GetComplianceSummaryByResourceTypeAsync(GetComplianceSummaryByResourceTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetComplianceSummaryByResourceTypeRequestMarshaller();
@@ -1509,6 +1555,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">REST API Reference for GetResourceConfigHistory Operation</seealso>
         public GetResourceConfigHistoryResponse GetResourceConfigHistory(GetResourceConfigHistoryRequest request)
         {
             var marshaller = new GetResourceConfigHistoryRequestMarshaller();
@@ -1526,6 +1573,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">REST API Reference for GetResourceConfigHistory Operation</seealso>
         public Task<GetResourceConfigHistoryResponse> GetResourceConfigHistoryAsync(GetResourceConfigHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetResourceConfigHistoryRequestMarshaller();
@@ -1577,6 +1625,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         public ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request)
         {
             var marshaller = new ListDiscoveredResourcesRequestMarshaller();
@@ -1594,6 +1643,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         public Task<ListDiscoveredResourcesResponse> ListDiscoveredResourcesAsync(ListDiscoveredResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDiscoveredResourcesRequestMarshaller();
@@ -1695,6 +1745,7 @@ namespace Amazon.ConfigService
         /// The rule is currently being deleted or the rule is deleting your evaluation results.
         /// Try your request again later.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">REST API Reference for PutConfigRule Operation</seealso>
         public PutConfigRuleResponse PutConfigRule(PutConfigRuleRequest request)
         {
             var marshaller = new PutConfigRuleRequestMarshaller();
@@ -1712,6 +1763,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">REST API Reference for PutConfigRule Operation</seealso>
         public Task<PutConfigRuleResponse> PutConfigRuleAsync(PutConfigRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutConfigRuleRequestMarshaller();
@@ -1762,6 +1814,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConfigurationRecordersExceededException">
         /// You have reached the limit on the number of recorders you can create.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
         public PutConfigurationRecorderResponse PutConfigurationRecorder(PutConfigurationRecorderRequest request)
         {
             var marshaller = new PutConfigurationRecorderRequestMarshaller();
@@ -1779,6 +1832,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
         public Task<PutConfigurationRecorderResponse> PutConfigurationRecorderAsync(PutConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutConfigurationRecorderRequestMarshaller();
@@ -1840,6 +1894,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchBucketException">
         /// The specified Amazon S3 bucket does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">REST API Reference for PutDeliveryChannel Operation</seealso>
         public PutDeliveryChannelResponse PutDeliveryChannel(PutDeliveryChannelRequest request)
         {
             var marshaller = new PutDeliveryChannelRequestMarshaller();
@@ -1857,6 +1912,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">REST API Reference for PutDeliveryChannel Operation</seealso>
         public Task<PutDeliveryChannelResponse> PutDeliveryChannelAsync(PutDeliveryChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutDeliveryChannelRequestMarshaller();
@@ -1889,6 +1945,7 @@ namespace Amazon.ConfigService
         /// One or more AWS Config rules in the request are invalid. Verify that the rule names
         /// are correct and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">REST API Reference for PutEvaluations Operation</seealso>
         public PutEvaluationsResponse PutEvaluations(PutEvaluationsRequest request)
         {
             var marshaller = new PutEvaluationsRequestMarshaller();
@@ -1906,6 +1963,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">REST API Reference for PutEvaluations Operation</seealso>
         public Task<PutEvaluationsResponse> PutEvaluationsAsync(PutEvaluationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutEvaluationsRequestMarshaller();
@@ -1991,6 +2049,7 @@ namespace Amazon.ConfigService
         /// The rule is currently being deleted or the rule is deleting your evaluation results.
         /// Try your request again later.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation">REST API Reference for StartConfigRulesEvaluation Operation</seealso>
         public StartConfigRulesEvaluationResponse StartConfigRulesEvaluation(StartConfigRulesEvaluationRequest request)
         {
             var marshaller = new StartConfigRulesEvaluationRequestMarshaller();
@@ -2008,6 +2067,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation">REST API Reference for StartConfigRulesEvaluation Operation</seealso>
         public Task<StartConfigRulesEvaluationResponse> StartConfigRulesEvaluationAsync(StartConfigRulesEvaluationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartConfigRulesEvaluationRequestMarshaller();
@@ -2041,6 +2101,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">REST API Reference for StartConfigurationRecorder Operation</seealso>
         public StartConfigurationRecorderResponse StartConfigurationRecorder(string configurationRecorderName)
         {
             var request = new StartConfigurationRecorderRequest();
@@ -2068,6 +2129,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">REST API Reference for StartConfigurationRecorder Operation</seealso>
         public StartConfigurationRecorderResponse StartConfigurationRecorder(StartConfigurationRecorderRequest request)
         {
             var marshaller = new StartConfigurationRecorderRequestMarshaller();
@@ -2099,6 +2161,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">REST API Reference for StartConfigurationRecorder Operation</seealso>
         public Task<StartConfigurationRecorderResponse> StartConfigurationRecorderAsync(string configurationRecorderName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new StartConfigurationRecorderRequest();
@@ -2115,6 +2178,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">REST API Reference for StartConfigurationRecorder Operation</seealso>
         public Task<StartConfigurationRecorderResponse> StartConfigurationRecorderAsync(StartConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartConfigurationRecorderRequestMarshaller();
@@ -2139,6 +2203,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">REST API Reference for StopConfigurationRecorder Operation</seealso>
         public StopConfigurationRecorderResponse StopConfigurationRecorder(string configurationRecorderName)
         {
             var request = new StopConfigurationRecorderRequest();
@@ -2157,6 +2222,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">REST API Reference for StopConfigurationRecorder Operation</seealso>
         public StopConfigurationRecorderResponse StopConfigurationRecorder(StopConfigurationRecorderRequest request)
         {
             var marshaller = new StopConfigurationRecorderRequestMarshaller();
@@ -2179,6 +2245,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">REST API Reference for StopConfigurationRecorder Operation</seealso>
         public Task<StopConfigurationRecorderResponse> StopConfigurationRecorderAsync(string configurationRecorderName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new StopConfigurationRecorderRequest();
@@ -2195,6 +2262,7 @@ namespace Amazon.ConfigService
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">REST API Reference for StopConfigurationRecorder Operation</seealso>
         public Task<StopConfigurationRecorderResponse> StopConfigurationRecorderAsync(StopConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopConfigurationRecorderRequestMarshaller();

@@ -283,6 +283,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The <code>Targets</code> parameter includes too many tags. Remove one or more tags
         /// and try the command again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request)
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
@@ -302,6 +303,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddTagsToResourceRequestMarshaller();
@@ -318,6 +320,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTagsToResource.</param>
         /// 
         /// <returns>Returns a  AddTagsToResourceResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         public  AddTagsToResourceResponse EndAddTagsToResource(IAsyncResult asyncResult)
         {
             return EndInvoke<AddTagsToResourceResponse>(asyncResult);
@@ -367,6 +370,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Invalid states are: Shutting-down and Terminated.
         /// </para>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         public CancelCommandResponse CancelCommand(string commandId)
         {
             var request = new CancelCommandRequest();
@@ -416,6 +420,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Invalid states are: Shutting-down and Terminated.
         /// </para>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         public CancelCommandResponse CancelCommand(string commandId, List<string> instanceIds)
         {
             var request = new CancelCommandRequest();
@@ -465,6 +470,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Invalid states are: Shutting-down and Terminated.
         /// </para>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         public CancelCommandResponse CancelCommand(CancelCommandRequest request)
         {
             var marshaller = new CancelCommandRequestMarshaller();
@@ -484,6 +490,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelCommand
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         public IAsyncResult BeginCancelCommand(CancelCommandRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelCommandRequestMarshaller();
@@ -500,6 +507,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelCommand.</param>
         /// 
         /// <returns>Returns a  CancelCommandResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         public  CancelCommandResponse EndCancelCommand(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelCommandResponse>(asyncResult);
@@ -523,6 +531,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">REST API Reference for CreateActivation Operation</seealso>
         public CreateActivationResponse CreateActivation(CreateActivationRequest request)
         {
             var marshaller = new CreateActivationRequestMarshaller();
@@ -542,6 +551,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateActivation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">REST API Reference for CreateActivation Operation</seealso>
         public IAsyncResult BeginCreateActivation(CreateActivationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateActivationRequestMarshaller();
@@ -558,6 +568,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateActivation.</param>
         /// 
         /// <returns>Returns a  CreateActivationResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">REST API Reference for CreateActivation Operation</seealso>
         public  CreateActivationResponse EndCreateActivation(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateActivationResponse>(asyncResult);
@@ -643,6 +654,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The document does not support the platform type of the given instance ID(s). For example,
         /// you sent an SSM document for a Windows instance to a Linux instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
         public CreateAssociationResponse CreateAssociation(string instanceId, string name)
         {
             var request = new CreateAssociationRequest();
@@ -727,6 +739,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The document does not support the platform type of the given instance ID(s). For example,
         /// you sent an SSM document for a Windows instance to a Linux instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
         public CreateAssociationResponse CreateAssociation(CreateAssociationRequest request)
         {
             var marshaller = new CreateAssociationRequestMarshaller();
@@ -746,6 +759,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAssociation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
         public IAsyncResult BeginCreateAssociation(CreateAssociationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateAssociationRequestMarshaller();
@@ -762,6 +776,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAssociation.</param>
         /// 
         /// <returns>Returns a  CreateAssociationResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
         public  CreateAssociationResponse EndCreateAssociation(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAssociationResponse>(asyncResult);
@@ -846,6 +861,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The document does not support the platform type of the given instance ID(s). For example,
         /// you sent an SSM document for a Windows instance to a Linux instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">REST API Reference for CreateAssociationBatch Operation</seealso>
         public CreateAssociationBatchResponse CreateAssociationBatch(CreateAssociationBatchRequest request)
         {
             var marshaller = new CreateAssociationBatchRequestMarshaller();
@@ -865,6 +881,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAssociationBatch
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">REST API Reference for CreateAssociationBatch Operation</seealso>
         public IAsyncResult BeginCreateAssociationBatch(CreateAssociationBatchRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateAssociationBatchRequestMarshaller();
@@ -881,6 +898,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAssociationBatch.</param>
         /// 
         /// <returns>Returns a  CreateAssociationBatchResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">REST API Reference for CreateAssociationBatch Operation</seealso>
         public  CreateAssociationBatchResponse EndCreateAssociationBatch(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAssociationBatchResponse>(asyncResult);
@@ -921,6 +939,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of an SSM document is 64 KB.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">REST API Reference for CreateDocument Operation</seealso>
         public CreateDocumentResponse CreateDocument(string content, string name)
         {
             var request = new CreateDocumentRequest();
@@ -960,6 +979,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of an SSM document is 64 KB.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">REST API Reference for CreateDocument Operation</seealso>
         public CreateDocumentResponse CreateDocument(CreateDocumentRequest request)
         {
             var marshaller = new CreateDocumentRequestMarshaller();
@@ -979,6 +999,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDocument
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">REST API Reference for CreateDocument Operation</seealso>
         public IAsyncResult BeginCreateDocument(CreateDocumentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDocumentRequestMarshaller();
@@ -995,6 +1016,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDocument.</param>
         /// 
         /// <returns>Returns a  CreateDocumentResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">REST API Reference for CreateDocument Operation</seealso>
         public  CreateDocumentResponse EndCreateDocument(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDocumentResponse>(asyncResult);
@@ -1021,6 +1043,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Error returned when the caller has exceeded the default resource limits (e.g. too
         /// many Maintenance Windows have been created).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">REST API Reference for CreateMaintenanceWindow Operation</seealso>
         public CreateMaintenanceWindowResponse CreateMaintenanceWindow(CreateMaintenanceWindowRequest request)
         {
             var marshaller = new CreateMaintenanceWindowRequestMarshaller();
@@ -1040,6 +1063,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMaintenanceWindow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">REST API Reference for CreateMaintenanceWindow Operation</seealso>
         public IAsyncResult BeginCreateMaintenanceWindow(CreateMaintenanceWindowRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateMaintenanceWindowRequestMarshaller();
@@ -1056,6 +1080,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMaintenanceWindow.</param>
         /// 
         /// <returns>Returns a  CreateMaintenanceWindowResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">REST API Reference for CreateMaintenanceWindow Operation</seealso>
         public  CreateMaintenanceWindowResponse EndCreateMaintenanceWindow(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateMaintenanceWindowResponse>(asyncResult);
@@ -1082,6 +1107,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Error returned when the caller has exceeded the default resource limits (e.g. too
         /// many Maintenance Windows have been created).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">REST API Reference for CreatePatchBaseline Operation</seealso>
         public CreatePatchBaselineResponse CreatePatchBaseline(CreatePatchBaselineRequest request)
         {
             var marshaller = new CreatePatchBaselineRequestMarshaller();
@@ -1101,6 +1127,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePatchBaseline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">REST API Reference for CreatePatchBaseline Operation</seealso>
         public IAsyncResult BeginCreatePatchBaseline(CreatePatchBaselineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreatePatchBaselineRequestMarshaller();
@@ -1117,6 +1144,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePatchBaseline.</param>
         /// 
         /// <returns>Returns a  CreatePatchBaselineResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">REST API Reference for CreatePatchBaseline Operation</seealso>
         public  CreatePatchBaselineResponse EndCreatePatchBaseline(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePatchBaselineResponse>(asyncResult);
@@ -1146,6 +1174,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The activation ID is not valid. Verify the you entered the correct ActivationId or
         /// ActivationCode and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">REST API Reference for DeleteActivation Operation</seealso>
         public DeleteActivationResponse DeleteActivation(DeleteActivationRequest request)
         {
             var marshaller = new DeleteActivationRequestMarshaller();
@@ -1165,6 +1194,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteActivation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">REST API Reference for DeleteActivation Operation</seealso>
         public IAsyncResult BeginDeleteActivation(DeleteActivationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteActivationRequestMarshaller();
@@ -1181,6 +1211,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteActivation.</param>
         /// 
         /// <returns>Returns a  DeleteActivationResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">REST API Reference for DeleteActivation Operation</seealso>
         public  DeleteActivationResponse EndDeleteActivation(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteActivationResponse>(asyncResult);
@@ -1241,6 +1272,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
         public DeleteAssociationResponse DeleteAssociation(string instanceId, string name)
         {
             var request = new DeleteAssociationRequest();
@@ -1300,6 +1332,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
         public DeleteAssociationResponse DeleteAssociation(DeleteAssociationRequest request)
         {
             var marshaller = new DeleteAssociationRequestMarshaller();
@@ -1319,6 +1352,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAssociation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
         public IAsyncResult BeginDeleteAssociation(DeleteAssociationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteAssociationRequestMarshaller();
@@ -1335,6 +1369,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAssociation.</param>
         /// 
         /// <returns>Returns a  DeleteAssociationResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
         public  DeleteAssociationResponse EndDeleteAssociation(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAssociationResponse>(asyncResult);
@@ -1369,6 +1404,7 @@ namespace Amazon.SimpleSystemsManagement
         /// You attempted to delete a document while it is still shared. You must stop sharing
         /// the document before you can delete it.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
         public DeleteDocumentResponse DeleteDocument(string name)
         {
             var request = new DeleteDocumentRequest();
@@ -1402,6 +1438,7 @@ namespace Amazon.SimpleSystemsManagement
         /// You attempted to delete a document while it is still shared. You must stop sharing
         /// the document before you can delete it.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
         public DeleteDocumentResponse DeleteDocument(DeleteDocumentRequest request)
         {
             var marshaller = new DeleteDocumentRequestMarshaller();
@@ -1421,6 +1458,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDocument
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
         public IAsyncResult BeginDeleteDocument(DeleteDocumentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDocumentRequestMarshaller();
@@ -1437,6 +1475,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDocument.</param>
         /// 
         /// <returns>Returns a  DeleteDocumentResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
         public  DeleteDocumentResponse EndDeleteDocument(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDocumentResponse>(asyncResult);
@@ -1455,6 +1494,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow">REST API Reference for DeleteMaintenanceWindow Operation</seealso>
         public DeleteMaintenanceWindowResponse DeleteMaintenanceWindow(DeleteMaintenanceWindowRequest request)
         {
             var marshaller = new DeleteMaintenanceWindowRequestMarshaller();
@@ -1474,6 +1514,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMaintenanceWindow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow">REST API Reference for DeleteMaintenanceWindow Operation</seealso>
         public IAsyncResult BeginDeleteMaintenanceWindow(DeleteMaintenanceWindowRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteMaintenanceWindowRequestMarshaller();
@@ -1490,6 +1531,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMaintenanceWindow.</param>
         /// 
         /// <returns>Returns a  DeleteMaintenanceWindowResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow">REST API Reference for DeleteMaintenanceWindow Operation</seealso>
         public  DeleteMaintenanceWindowResponse EndDeleteMaintenanceWindow(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteMaintenanceWindowResponse>(asyncResult);
@@ -1511,6 +1553,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
         /// The parameter could not be found. Verify the name and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">REST API Reference for DeleteParameter Operation</seealso>
         public DeleteParameterResponse DeleteParameter(DeleteParameterRequest request)
         {
             var marshaller = new DeleteParameterRequestMarshaller();
@@ -1530,6 +1573,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteParameter
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">REST API Reference for DeleteParameter Operation</seealso>
         public IAsyncResult BeginDeleteParameter(DeleteParameterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteParameterRequestMarshaller();
@@ -1546,6 +1590,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteParameter.</param>
         /// 
         /// <returns>Returns a  DeleteParameterResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">REST API Reference for DeleteParameter Operation</seealso>
         public  DeleteParameterResponse EndDeleteParameter(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteParameterResponse>(asyncResult);
@@ -1568,6 +1613,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Error returned if an attempt is made to delete a patch baseline that is registered
         /// for a patch group.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline">REST API Reference for DeletePatchBaseline Operation</seealso>
         public DeletePatchBaselineResponse DeletePatchBaseline(DeletePatchBaselineRequest request)
         {
             var marshaller = new DeletePatchBaselineRequestMarshaller();
@@ -1587,6 +1633,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePatchBaseline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline">REST API Reference for DeletePatchBaseline Operation</seealso>
         public IAsyncResult BeginDeletePatchBaseline(DeletePatchBaselineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeletePatchBaselineRequestMarshaller();
@@ -1603,6 +1650,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePatchBaseline.</param>
         /// 
         /// <returns>Returns a  DeletePatchBaselineResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline">REST API Reference for DeletePatchBaseline Operation</seealso>
         public  DeletePatchBaselineResponse EndDeletePatchBaseline(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePatchBaselineResponse>(asyncResult);
@@ -1647,6 +1695,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Invalid states are: Shutting-down and Terminated.
         /// </para>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">REST API Reference for DeregisterManagedInstance Operation</seealso>
         public DeregisterManagedInstanceResponse DeregisterManagedInstance(DeregisterManagedInstanceRequest request)
         {
             var marshaller = new DeregisterManagedInstanceRequestMarshaller();
@@ -1666,6 +1715,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterManagedInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">REST API Reference for DeregisterManagedInstance Operation</seealso>
         public IAsyncResult BeginDeregisterManagedInstance(DeregisterManagedInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterManagedInstanceRequestMarshaller();
@@ -1682,6 +1732,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterManagedInstance.</param>
         /// 
         /// <returns>Returns a  DeregisterManagedInstanceResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">REST API Reference for DeregisterManagedInstance Operation</seealso>
         public  DeregisterManagedInstanceResponse EndDeregisterManagedInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterManagedInstanceResponse>(asyncResult);
@@ -1703,6 +1754,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
         /// The resource ID is not valid. Verify that you entered the correct ID and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup">REST API Reference for DeregisterPatchBaselineForPatchGroup Operation</seealso>
         public DeregisterPatchBaselineForPatchGroupResponse DeregisterPatchBaselineForPatchGroup(DeregisterPatchBaselineForPatchGroupRequest request)
         {
             var marshaller = new DeregisterPatchBaselineForPatchGroupRequestMarshaller();
@@ -1722,6 +1774,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterPatchBaselineForPatchGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup">REST API Reference for DeregisterPatchBaselineForPatchGroup Operation</seealso>
         public IAsyncResult BeginDeregisterPatchBaselineForPatchGroup(DeregisterPatchBaselineForPatchGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterPatchBaselineForPatchGroupRequestMarshaller();
@@ -1738,6 +1791,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterPatchBaselineForPatchGroup.</param>
         /// 
         /// <returns>Returns a  DeregisterPatchBaselineForPatchGroupResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup">REST API Reference for DeregisterPatchBaselineForPatchGroup Operation</seealso>
         public  DeregisterPatchBaselineForPatchGroupResponse EndDeregisterPatchBaselineForPatchGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterPatchBaselineForPatchGroupResponse>(asyncResult);
@@ -1760,6 +1814,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow">REST API Reference for DeregisterTargetFromMaintenanceWindow Operation</seealso>
         public DeregisterTargetFromMaintenanceWindowResponse DeregisterTargetFromMaintenanceWindow(DeregisterTargetFromMaintenanceWindowRequest request)
         {
             var marshaller = new DeregisterTargetFromMaintenanceWindowRequestMarshaller();
@@ -1779,6 +1834,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterTargetFromMaintenanceWindow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow">REST API Reference for DeregisterTargetFromMaintenanceWindow Operation</seealso>
         public IAsyncResult BeginDeregisterTargetFromMaintenanceWindow(DeregisterTargetFromMaintenanceWindowRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterTargetFromMaintenanceWindowRequestMarshaller();
@@ -1795,6 +1851,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterTargetFromMaintenanceWindow.</param>
         /// 
         /// <returns>Returns a  DeregisterTargetFromMaintenanceWindowResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow">REST API Reference for DeregisterTargetFromMaintenanceWindow Operation</seealso>
         public  DeregisterTargetFromMaintenanceWindowResponse EndDeregisterTargetFromMaintenanceWindow(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterTargetFromMaintenanceWindowResponse>(asyncResult);
@@ -1817,6 +1874,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow">REST API Reference for DeregisterTaskFromMaintenanceWindow Operation</seealso>
         public DeregisterTaskFromMaintenanceWindowResponse DeregisterTaskFromMaintenanceWindow(DeregisterTaskFromMaintenanceWindowRequest request)
         {
             var marshaller = new DeregisterTaskFromMaintenanceWindowRequestMarshaller();
@@ -1836,6 +1894,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterTaskFromMaintenanceWindow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow">REST API Reference for DeregisterTaskFromMaintenanceWindow Operation</seealso>
         public IAsyncResult BeginDeregisterTaskFromMaintenanceWindow(DeregisterTaskFromMaintenanceWindowRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterTaskFromMaintenanceWindowRequestMarshaller();
@@ -1852,6 +1911,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterTaskFromMaintenanceWindow.</param>
         /// 
         /// <returns>Returns a  DeregisterTaskFromMaintenanceWindowResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow">REST API Reference for DeregisterTaskFromMaintenanceWindow Operation</seealso>
         public  DeregisterTaskFromMaintenanceWindowResponse EndDeregisterTaskFromMaintenanceWindow(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterTaskFromMaintenanceWindowResponse>(asyncResult);
@@ -1878,6 +1938,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">REST API Reference for DescribeActivations Operation</seealso>
         public DescribeActivationsResponse DescribeActivations(DescribeActivationsRequest request)
         {
             var marshaller = new DescribeActivationsRequestMarshaller();
@@ -1897,6 +1958,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeActivations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">REST API Reference for DescribeActivations Operation</seealso>
         public IAsyncResult BeginDescribeActivations(DescribeActivationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeActivationsRequestMarshaller();
@@ -1913,6 +1975,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeActivations.</param>
         /// 
         /// <returns>Returns a  DescribeActivationsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">REST API Reference for DescribeActivations Operation</seealso>
         public  DescribeActivationsResponse EndDescribeActivations(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeActivationsResponse>(asyncResult);
@@ -1962,6 +2025,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Invalid states are: Shutting-down and Terminated.
         /// </para>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">REST API Reference for DescribeAssociation Operation</seealso>
         public DescribeAssociationResponse DescribeAssociation(string instanceId, string name)
         {
             var request = new DescribeAssociationRequest();
@@ -2010,6 +2074,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Invalid states are: Shutting-down and Terminated.
         /// </para>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">REST API Reference for DescribeAssociation Operation</seealso>
         public DescribeAssociationResponse DescribeAssociation(DescribeAssociationRequest request)
         {
             var marshaller = new DescribeAssociationRequestMarshaller();
@@ -2029,6 +2094,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAssociation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">REST API Reference for DescribeAssociation Operation</seealso>
         public IAsyncResult BeginDescribeAssociation(DescribeAssociationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAssociationRequestMarshaller();
@@ -2045,6 +2111,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAssociation.</param>
         /// 
         /// <returns>Returns a  DescribeAssociationResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">REST API Reference for DescribeAssociation Operation</seealso>
         public  DescribeAssociationResponse EndDescribeAssociation(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAssociationResponse>(asyncResult);
@@ -2066,6 +2133,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions">REST API Reference for DescribeAutomationExecutions Operation</seealso>
         public DescribeAutomationExecutionsResponse DescribeAutomationExecutions(DescribeAutomationExecutionsRequest request)
         {
             var marshaller = new DescribeAutomationExecutionsRequestMarshaller();
@@ -2085,6 +2153,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAutomationExecutions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions">REST API Reference for DescribeAutomationExecutions Operation</seealso>
         public IAsyncResult BeginDescribeAutomationExecutions(DescribeAutomationExecutionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAutomationExecutionsRequestMarshaller();
@@ -2101,6 +2170,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAutomationExecutions.</param>
         /// 
         /// <returns>Returns a  DescribeAutomationExecutionsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions">REST API Reference for DescribeAutomationExecutions Operation</seealso>
         public  DescribeAutomationExecutionsResponse EndDescribeAutomationExecutions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAutomationExecutionsResponse>(asyncResult);
@@ -2119,6 +2189,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">REST API Reference for DescribeAvailablePatches Operation</seealso>
         public DescribeAvailablePatchesResponse DescribeAvailablePatches(DescribeAvailablePatchesRequest request)
         {
             var marshaller = new DescribeAvailablePatchesRequestMarshaller();
@@ -2138,6 +2209,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAvailablePatches
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">REST API Reference for DescribeAvailablePatches Operation</seealso>
         public IAsyncResult BeginDescribeAvailablePatches(DescribeAvailablePatchesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAvailablePatchesRequestMarshaller();
@@ -2154,6 +2226,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAvailablePatches.</param>
         /// 
         /// <returns>Returns a  DescribeAvailablePatchesResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">REST API Reference for DescribeAvailablePatches Operation</seealso>
         public  DescribeAvailablePatchesResponse EndDescribeAvailablePatches(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAvailablePatchesResponse>(asyncResult);
@@ -2178,6 +2251,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
         /// The document version is not valid or does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">REST API Reference for DescribeDocument Operation</seealso>
         public DescribeDocumentResponse DescribeDocument(string name)
         {
             var request = new DescribeDocumentRequest();
@@ -2201,6 +2275,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
         /// The document version is not valid or does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">REST API Reference for DescribeDocument Operation</seealso>
         public DescribeDocumentResponse DescribeDocument(DescribeDocumentRequest request)
         {
             var marshaller = new DescribeDocumentRequestMarshaller();
@@ -2220,6 +2295,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDocument
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">REST API Reference for DescribeDocument Operation</seealso>
         public IAsyncResult BeginDescribeDocument(DescribeDocumentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeDocumentRequestMarshaller();
@@ -2236,6 +2312,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDocument.</param>
         /// 
         /// <returns>Returns a  DescribeDocumentResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">REST API Reference for DescribeDocument Operation</seealso>
         public  DescribeDocumentResponse EndDescribeDocument(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDocumentResponse>(asyncResult);
@@ -2263,6 +2340,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The permission type is not supported. <i>Share</i> is the only supported permission
         /// type.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">REST API Reference for DescribeDocumentPermission Operation</seealso>
         public DescribeDocumentPermissionResponse DescribeDocumentPermission(DescribeDocumentPermissionRequest request)
         {
             var marshaller = new DescribeDocumentPermissionRequestMarshaller();
@@ -2282,6 +2360,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDocumentPermission
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">REST API Reference for DescribeDocumentPermission Operation</seealso>
         public IAsyncResult BeginDescribeDocumentPermission(DescribeDocumentPermissionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeDocumentPermissionRequestMarshaller();
@@ -2298,6 +2377,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDocumentPermission.</param>
         /// 
         /// <returns>Returns a  DescribeDocumentPermissionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">REST API Reference for DescribeDocumentPermission Operation</seealso>
         public  DescribeDocumentPermissionResponse EndDescribeDocumentPermission(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDocumentPermissionResponse>(asyncResult);
@@ -2343,6 +2423,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">REST API Reference for DescribeEffectiveInstanceAssociations Operation</seealso>
         public DescribeEffectiveInstanceAssociationsResponse DescribeEffectiveInstanceAssociations(DescribeEffectiveInstanceAssociationsRequest request)
         {
             var marshaller = new DescribeEffectiveInstanceAssociationsRequestMarshaller();
@@ -2362,6 +2443,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEffectiveInstanceAssociations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">REST API Reference for DescribeEffectiveInstanceAssociations Operation</seealso>
         public IAsyncResult BeginDescribeEffectiveInstanceAssociations(DescribeEffectiveInstanceAssociationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEffectiveInstanceAssociationsRequestMarshaller();
@@ -2378,6 +2460,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEffectiveInstanceAssociations.</param>
         /// 
         /// <returns>Returns a  DescribeEffectiveInstanceAssociationsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">REST API Reference for DescribeEffectiveInstanceAssociations Operation</seealso>
         public  DescribeEffectiveInstanceAssociationsResponse EndDescribeEffectiveInstanceAssociations(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEffectiveInstanceAssociationsResponse>(asyncResult);
@@ -2404,6 +2487,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
         /// The resource ID is not valid. Verify that you entered the correct ID and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">REST API Reference for DescribeEffectivePatchesForPatchBaseline Operation</seealso>
         public DescribeEffectivePatchesForPatchBaselineResponse DescribeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request)
         {
             var marshaller = new DescribeEffectivePatchesForPatchBaselineRequestMarshaller();
@@ -2423,6 +2507,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEffectivePatchesForPatchBaseline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">REST API Reference for DescribeEffectivePatchesForPatchBaseline Operation</seealso>
         public IAsyncResult BeginDescribeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEffectivePatchesForPatchBaselineRequestMarshaller();
@@ -2439,6 +2524,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEffectivePatchesForPatchBaseline.</param>
         /// 
         /// <returns>Returns a  DescribeEffectivePatchesForPatchBaselineResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">REST API Reference for DescribeEffectivePatchesForPatchBaseline Operation</seealso>
         public  DescribeEffectivePatchesForPatchBaselineResponse EndDescribeEffectivePatchesForPatchBaseline(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEffectivePatchesForPatchBaselineResponse>(asyncResult);
@@ -2484,6 +2570,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">REST API Reference for DescribeInstanceAssociationsStatus Operation</seealso>
         public DescribeInstanceAssociationsStatusResponse DescribeInstanceAssociationsStatus(DescribeInstanceAssociationsStatusRequest request)
         {
             var marshaller = new DescribeInstanceAssociationsStatusRequestMarshaller();
@@ -2503,6 +2590,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceAssociationsStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">REST API Reference for DescribeInstanceAssociationsStatus Operation</seealso>
         public IAsyncResult BeginDescribeInstanceAssociationsStatus(DescribeInstanceAssociationsStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeInstanceAssociationsStatusRequestMarshaller();
@@ -2519,6 +2607,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceAssociationsStatus.</param>
         /// 
         /// <returns>Returns a  DescribeInstanceAssociationsStatusResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">REST API Reference for DescribeInstanceAssociationsStatus Operation</seealso>
         public  DescribeInstanceAssociationsStatusResponse EndDescribeInstanceAssociationsStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInstanceAssociationsStatusResponse>(asyncResult);
@@ -2574,6 +2663,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">REST API Reference for DescribeInstanceInformation Operation</seealso>
         public DescribeInstanceInformationResponse DescribeInstanceInformation()
         {
             return DescribeInstanceInformation(new DescribeInstanceInformationRequest());
@@ -2626,6 +2716,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">REST API Reference for DescribeInstanceInformation Operation</seealso>
         public DescribeInstanceInformationResponse DescribeInstanceInformation(DescribeInstanceInformationRequest request)
         {
             var marshaller = new DescribeInstanceInformationRequestMarshaller();
@@ -2645,6 +2736,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceInformation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">REST API Reference for DescribeInstanceInformation Operation</seealso>
         public IAsyncResult BeginDescribeInstanceInformation(DescribeInstanceInformationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeInstanceInformationRequestMarshaller();
@@ -2661,6 +2753,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceInformation.</param>
         /// 
         /// <returns>Returns a  DescribeInstanceInformationResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">REST API Reference for DescribeInstanceInformation Operation</seealso>
         public  DescribeInstanceInformationResponse EndDescribeInstanceInformation(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInstanceInformationResponse>(asyncResult);
@@ -2710,6 +2803,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">REST API Reference for DescribeInstancePatches Operation</seealso>
         public DescribeInstancePatchesResponse DescribeInstancePatches(DescribeInstancePatchesRequest request)
         {
             var marshaller = new DescribeInstancePatchesRequestMarshaller();
@@ -2729,6 +2823,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstancePatches
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">REST API Reference for DescribeInstancePatches Operation</seealso>
         public IAsyncResult BeginDescribeInstancePatches(DescribeInstancePatchesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeInstancePatchesRequestMarshaller();
@@ -2745,6 +2840,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstancePatches.</param>
         /// 
         /// <returns>Returns a  DescribeInstancePatchesResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">REST API Reference for DescribeInstancePatches Operation</seealso>
         public  DescribeInstancePatchesResponse EndDescribeInstancePatches(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInstancePatchesResponse>(asyncResult);
@@ -2766,6 +2862,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">REST API Reference for DescribeInstancePatchStates Operation</seealso>
         public DescribeInstancePatchStatesResponse DescribeInstancePatchStates(DescribeInstancePatchStatesRequest request)
         {
             var marshaller = new DescribeInstancePatchStatesRequestMarshaller();
@@ -2785,6 +2882,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstancePatchStates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">REST API Reference for DescribeInstancePatchStates Operation</seealso>
         public IAsyncResult BeginDescribeInstancePatchStates(DescribeInstancePatchStatesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeInstancePatchStatesRequestMarshaller();
@@ -2801,6 +2899,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstancePatchStates.</param>
         /// 
         /// <returns>Returns a  DescribeInstancePatchStatesResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">REST API Reference for DescribeInstancePatchStates Operation</seealso>
         public  DescribeInstancePatchStatesResponse EndDescribeInstancePatchStates(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInstancePatchStatesResponse>(asyncResult);
@@ -2825,6 +2924,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">REST API Reference for DescribeInstancePatchStatesForPatchGroup Operation</seealso>
         public DescribeInstancePatchStatesForPatchGroupResponse DescribeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request)
         {
             var marshaller = new DescribeInstancePatchStatesForPatchGroupRequestMarshaller();
@@ -2844,6 +2944,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstancePatchStatesForPatchGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">REST API Reference for DescribeInstancePatchStatesForPatchGroup Operation</seealso>
         public IAsyncResult BeginDescribeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeInstancePatchStatesForPatchGroupRequestMarshaller();
@@ -2860,6 +2961,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstancePatchStatesForPatchGroup.</param>
         /// 
         /// <returns>Returns a  DescribeInstancePatchStatesForPatchGroupResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">REST API Reference for DescribeInstancePatchStatesForPatchGroup Operation</seealso>
         public  DescribeInstancePatchStatesForPatchGroupResponse EndDescribeInstancePatchStatesForPatchGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInstancePatchStatesForPatchGroupResponse>(asyncResult);
@@ -2880,6 +2982,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions">REST API Reference for DescribeMaintenanceWindowExecutions Operation</seealso>
         public DescribeMaintenanceWindowExecutionsResponse DescribeMaintenanceWindowExecutions(DescribeMaintenanceWindowExecutionsRequest request)
         {
             var marshaller = new DescribeMaintenanceWindowExecutionsRequestMarshaller();
@@ -2899,6 +3002,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMaintenanceWindowExecutions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions">REST API Reference for DescribeMaintenanceWindowExecutions Operation</seealso>
         public IAsyncResult BeginDescribeMaintenanceWindowExecutions(DescribeMaintenanceWindowExecutionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeMaintenanceWindowExecutionsRequestMarshaller();
@@ -2915,6 +3019,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMaintenanceWindowExecutions.</param>
         /// 
         /// <returns>Returns a  DescribeMaintenanceWindowExecutionsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions">REST API Reference for DescribeMaintenanceWindowExecutions Operation</seealso>
         public  DescribeMaintenanceWindowExecutionsResponse EndDescribeMaintenanceWindowExecutions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMaintenanceWindowExecutionsResponse>(asyncResult);
@@ -2938,6 +3043,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">REST API Reference for DescribeMaintenanceWindowExecutionTaskInvocations Operation</seealso>
         public DescribeMaintenanceWindowExecutionTaskInvocationsResponse DescribeMaintenanceWindowExecutionTaskInvocations(DescribeMaintenanceWindowExecutionTaskInvocationsRequest request)
         {
             var marshaller = new DescribeMaintenanceWindowExecutionTaskInvocationsRequestMarshaller();
@@ -2957,6 +3063,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMaintenanceWindowExecutionTaskInvocations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">REST API Reference for DescribeMaintenanceWindowExecutionTaskInvocations Operation</seealso>
         public IAsyncResult BeginDescribeMaintenanceWindowExecutionTaskInvocations(DescribeMaintenanceWindowExecutionTaskInvocationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeMaintenanceWindowExecutionTaskInvocationsRequestMarshaller();
@@ -2973,6 +3080,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMaintenanceWindowExecutionTaskInvocations.</param>
         /// 
         /// <returns>Returns a  DescribeMaintenanceWindowExecutionTaskInvocationsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">REST API Reference for DescribeMaintenanceWindowExecutionTaskInvocations Operation</seealso>
         public  DescribeMaintenanceWindowExecutionTaskInvocationsResponse EndDescribeMaintenanceWindowExecutionTaskInvocations(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMaintenanceWindowExecutionTaskInvocationsResponse>(asyncResult);
@@ -2995,6 +3103,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">REST API Reference for DescribeMaintenanceWindowExecutionTasks Operation</seealso>
         public DescribeMaintenanceWindowExecutionTasksResponse DescribeMaintenanceWindowExecutionTasks(DescribeMaintenanceWindowExecutionTasksRequest request)
         {
             var marshaller = new DescribeMaintenanceWindowExecutionTasksRequestMarshaller();
@@ -3014,6 +3123,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMaintenanceWindowExecutionTasks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">REST API Reference for DescribeMaintenanceWindowExecutionTasks Operation</seealso>
         public IAsyncResult BeginDescribeMaintenanceWindowExecutionTasks(DescribeMaintenanceWindowExecutionTasksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeMaintenanceWindowExecutionTasksRequestMarshaller();
@@ -3030,6 +3140,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMaintenanceWindowExecutionTasks.</param>
         /// 
         /// <returns>Returns a  DescribeMaintenanceWindowExecutionTasksResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">REST API Reference for DescribeMaintenanceWindowExecutionTasks Operation</seealso>
         public  DescribeMaintenanceWindowExecutionTasksResponse EndDescribeMaintenanceWindowExecutionTasks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMaintenanceWindowExecutionTasksResponse>(asyncResult);
@@ -3048,6 +3159,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">REST API Reference for DescribeMaintenanceWindows Operation</seealso>
         public DescribeMaintenanceWindowsResponse DescribeMaintenanceWindows(DescribeMaintenanceWindowsRequest request)
         {
             var marshaller = new DescribeMaintenanceWindowsRequestMarshaller();
@@ -3067,6 +3179,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMaintenanceWindows
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">REST API Reference for DescribeMaintenanceWindows Operation</seealso>
         public IAsyncResult BeginDescribeMaintenanceWindows(DescribeMaintenanceWindowsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeMaintenanceWindowsRequestMarshaller();
@@ -3083,6 +3196,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMaintenanceWindows.</param>
         /// 
         /// <returns>Returns a  DescribeMaintenanceWindowsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">REST API Reference for DescribeMaintenanceWindows Operation</seealso>
         public  DescribeMaintenanceWindowsResponse EndDescribeMaintenanceWindows(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMaintenanceWindowsResponse>(asyncResult);
@@ -3105,6 +3219,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets">REST API Reference for DescribeMaintenanceWindowTargets Operation</seealso>
         public DescribeMaintenanceWindowTargetsResponse DescribeMaintenanceWindowTargets(DescribeMaintenanceWindowTargetsRequest request)
         {
             var marshaller = new DescribeMaintenanceWindowTargetsRequestMarshaller();
@@ -3124,6 +3239,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMaintenanceWindowTargets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets">REST API Reference for DescribeMaintenanceWindowTargets Operation</seealso>
         public IAsyncResult BeginDescribeMaintenanceWindowTargets(DescribeMaintenanceWindowTargetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeMaintenanceWindowTargetsRequestMarshaller();
@@ -3140,6 +3256,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMaintenanceWindowTargets.</param>
         /// 
         /// <returns>Returns a  DescribeMaintenanceWindowTargetsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets">REST API Reference for DescribeMaintenanceWindowTargets Operation</seealso>
         public  DescribeMaintenanceWindowTargetsResponse EndDescribeMaintenanceWindowTargets(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMaintenanceWindowTargetsResponse>(asyncResult);
@@ -3162,6 +3279,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">REST API Reference for DescribeMaintenanceWindowTasks Operation</seealso>
         public DescribeMaintenanceWindowTasksResponse DescribeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest request)
         {
             var marshaller = new DescribeMaintenanceWindowTasksRequestMarshaller();
@@ -3181,6 +3299,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMaintenanceWindowTasks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">REST API Reference for DescribeMaintenanceWindowTasks Operation</seealso>
         public IAsyncResult BeginDescribeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeMaintenanceWindowTasksRequestMarshaller();
@@ -3197,6 +3316,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMaintenanceWindowTasks.</param>
         /// 
         /// <returns>Returns a  DescribeMaintenanceWindowTasksResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">REST API Reference for DescribeMaintenanceWindowTasks Operation</seealso>
         public  DescribeMaintenanceWindowTasksResponse EndDescribeMaintenanceWindowTasks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMaintenanceWindowTasksResponse>(asyncResult);
@@ -3221,6 +3341,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         public DescribeParametersResponse DescribeParameters(DescribeParametersRequest request)
         {
             var marshaller = new DescribeParametersRequestMarshaller();
@@ -3240,6 +3361,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeParameters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         public IAsyncResult BeginDescribeParameters(DescribeParametersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeParametersRequestMarshaller();
@@ -3256,6 +3378,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeParameters.</param>
         /// 
         /// <returns>Returns a  DescribeParametersResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         public  DescribeParametersResponse EndDescribeParameters(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeParametersResponse>(asyncResult);
@@ -3274,6 +3397,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines">REST API Reference for DescribePatchBaselines Operation</seealso>
         public DescribePatchBaselinesResponse DescribePatchBaselines(DescribePatchBaselinesRequest request)
         {
             var marshaller = new DescribePatchBaselinesRequestMarshaller();
@@ -3293,6 +3417,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePatchBaselines
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines">REST API Reference for DescribePatchBaselines Operation</seealso>
         public IAsyncResult BeginDescribePatchBaselines(DescribePatchBaselinesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribePatchBaselinesRequestMarshaller();
@@ -3309,6 +3434,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePatchBaselines.</param>
         /// 
         /// <returns>Returns a  DescribePatchBaselinesResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines">REST API Reference for DescribePatchBaselines Operation</seealso>
         public  DescribePatchBaselinesResponse EndDescribePatchBaselines(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribePatchBaselinesResponse>(asyncResult);
@@ -3327,6 +3453,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups">REST API Reference for DescribePatchGroups Operation</seealso>
         public DescribePatchGroupsResponse DescribePatchGroups(DescribePatchGroupsRequest request)
         {
             var marshaller = new DescribePatchGroupsRequestMarshaller();
@@ -3346,6 +3473,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePatchGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups">REST API Reference for DescribePatchGroups Operation</seealso>
         public IAsyncResult BeginDescribePatchGroups(DescribePatchGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribePatchGroupsRequestMarshaller();
@@ -3362,6 +3490,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePatchGroups.</param>
         /// 
         /// <returns>Returns a  DescribePatchGroupsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups">REST API Reference for DescribePatchGroups Operation</seealso>
         public  DescribePatchGroupsResponse EndDescribePatchGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribePatchGroupsResponse>(asyncResult);
@@ -3383,6 +3512,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">REST API Reference for DescribePatchGroupState Operation</seealso>
         public DescribePatchGroupStateResponse DescribePatchGroupState(DescribePatchGroupStateRequest request)
         {
             var marshaller = new DescribePatchGroupStateRequestMarshaller();
@@ -3402,6 +3532,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePatchGroupState
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">REST API Reference for DescribePatchGroupState Operation</seealso>
         public IAsyncResult BeginDescribePatchGroupState(DescribePatchGroupStateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribePatchGroupStateRequestMarshaller();
@@ -3418,6 +3549,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePatchGroupState.</param>
         /// 
         /// <returns>Returns a  DescribePatchGroupStateResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">REST API Reference for DescribePatchGroupState Operation</seealso>
         public  DescribePatchGroupStateResponse EndDescribePatchGroupState(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribePatchGroupStateResponse>(asyncResult);
@@ -3440,6 +3572,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution">REST API Reference for GetAutomationExecution Operation</seealso>
         public GetAutomationExecutionResponse GetAutomationExecution(GetAutomationExecutionRequest request)
         {
             var marshaller = new GetAutomationExecutionRequestMarshaller();
@@ -3459,6 +3592,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAutomationExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution">REST API Reference for GetAutomationExecution Operation</seealso>
         public IAsyncResult BeginGetAutomationExecution(GetAutomationExecutionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetAutomationExecutionRequestMarshaller();
@@ -3475,6 +3609,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAutomationExecution.</param>
         /// 
         /// <returns>Returns a  GetAutomationExecutionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution">REST API Reference for GetAutomationExecution Operation</seealso>
         public  GetAutomationExecutionResponse EndGetAutomationExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAutomationExecutionResponse>(asyncResult);
@@ -3527,6 +3662,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The command ID and instance ID you specified did not match any invocations. Verify
         /// the command ID adn the instance ID and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">REST API Reference for GetCommandInvocation Operation</seealso>
         public GetCommandInvocationResponse GetCommandInvocation(GetCommandInvocationRequest request)
         {
             var marshaller = new GetCommandInvocationRequestMarshaller();
@@ -3546,6 +3682,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCommandInvocation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">REST API Reference for GetCommandInvocation Operation</seealso>
         public IAsyncResult BeginGetCommandInvocation(GetCommandInvocationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCommandInvocationRequestMarshaller();
@@ -3562,6 +3699,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCommandInvocation.</param>
         /// 
         /// <returns>Returns a  GetCommandInvocationResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">REST API Reference for GetCommandInvocation Operation</seealso>
         public  GetCommandInvocationResponse EndGetCommandInvocation(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCommandInvocationResponse>(asyncResult);
@@ -3580,6 +3718,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">REST API Reference for GetDefaultPatchBaseline Operation</seealso>
         public GetDefaultPatchBaselineResponse GetDefaultPatchBaseline(GetDefaultPatchBaselineRequest request)
         {
             var marshaller = new GetDefaultPatchBaselineRequestMarshaller();
@@ -3599,6 +3738,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDefaultPatchBaseline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">REST API Reference for GetDefaultPatchBaseline Operation</seealso>
         public IAsyncResult BeginGetDefaultPatchBaseline(GetDefaultPatchBaselineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDefaultPatchBaselineRequestMarshaller();
@@ -3615,6 +3755,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDefaultPatchBaseline.</param>
         /// 
         /// <returns>Returns a  GetDefaultPatchBaselineResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">REST API Reference for GetDefaultPatchBaseline Operation</seealso>
         public  GetDefaultPatchBaselineResponse EndGetDefaultPatchBaseline(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDefaultPatchBaselineResponse>(asyncResult);
@@ -3634,6 +3775,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">REST API Reference for GetDeployablePatchSnapshotForInstance Operation</seealso>
         public GetDeployablePatchSnapshotForInstanceResponse GetDeployablePatchSnapshotForInstance(GetDeployablePatchSnapshotForInstanceRequest request)
         {
             var marshaller = new GetDeployablePatchSnapshotForInstanceRequestMarshaller();
@@ -3653,6 +3795,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeployablePatchSnapshotForInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">REST API Reference for GetDeployablePatchSnapshotForInstance Operation</seealso>
         public IAsyncResult BeginGetDeployablePatchSnapshotForInstance(GetDeployablePatchSnapshotForInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDeployablePatchSnapshotForInstanceRequestMarshaller();
@@ -3669,6 +3812,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeployablePatchSnapshotForInstance.</param>
         /// 
         /// <returns>Returns a  GetDeployablePatchSnapshotForInstanceResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">REST API Reference for GetDeployablePatchSnapshotForInstance Operation</seealso>
         public  GetDeployablePatchSnapshotForInstanceResponse EndGetDeployablePatchSnapshotForInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDeployablePatchSnapshotForInstanceResponse>(asyncResult);
@@ -3693,6 +3837,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
         /// The document version is not valid or does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">REST API Reference for GetDocument Operation</seealso>
         public GetDocumentResponse GetDocument(string name)
         {
             var request = new GetDocumentRequest();
@@ -3716,6 +3861,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
         /// The document version is not valid or does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">REST API Reference for GetDocument Operation</seealso>
         public GetDocumentResponse GetDocument(GetDocumentRequest request)
         {
             var marshaller = new GetDocumentRequestMarshaller();
@@ -3735,6 +3881,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocument
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">REST API Reference for GetDocument Operation</seealso>
         public IAsyncResult BeginGetDocument(GetDocumentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetDocumentRequestMarshaller();
@@ -3751,6 +3898,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocument.</param>
         /// 
         /// <returns>Returns a  GetDocumentResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">REST API Reference for GetDocument Operation</seealso>
         public  GetDocumentResponse EndGetDocument(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDocumentResponse>(asyncResult);
@@ -3781,6 +3929,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
         /// The parameter type name is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">REST API Reference for GetInventory Operation</seealso>
         public GetInventoryResponse GetInventory(GetInventoryRequest request)
         {
             var marshaller = new GetInventoryRequestMarshaller();
@@ -3800,6 +3949,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInventory
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">REST API Reference for GetInventory Operation</seealso>
         public IAsyncResult BeginGetInventory(GetInventoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetInventoryRequestMarshaller();
@@ -3816,6 +3966,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInventory.</param>
         /// 
         /// <returns>Returns a  GetInventoryResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">REST API Reference for GetInventory Operation</seealso>
         public  GetInventoryResponse EndGetInventory(IAsyncResult asyncResult)
         {
             return EndInvoke<GetInventoryResponse>(asyncResult);
@@ -3841,6 +3992,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
         /// The parameter type name is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema">REST API Reference for GetInventorySchema Operation</seealso>
         public GetInventorySchemaResponse GetInventorySchema(GetInventorySchemaRequest request)
         {
             var marshaller = new GetInventorySchemaRequestMarshaller();
@@ -3860,6 +4012,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInventorySchema
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema">REST API Reference for GetInventorySchema Operation</seealso>
         public IAsyncResult BeginGetInventorySchema(GetInventorySchemaRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetInventorySchemaRequestMarshaller();
@@ -3876,6 +4029,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInventorySchema.</param>
         /// 
         /// <returns>Returns a  GetInventorySchemaResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema">REST API Reference for GetInventorySchema Operation</seealso>
         public  GetInventorySchemaResponse EndGetInventorySchema(IAsyncResult asyncResult)
         {
             return EndInvoke<GetInventorySchemaResponse>(asyncResult);
@@ -3898,6 +4052,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow">REST API Reference for GetMaintenanceWindow Operation</seealso>
         public GetMaintenanceWindowResponse GetMaintenanceWindow(GetMaintenanceWindowRequest request)
         {
             var marshaller = new GetMaintenanceWindowRequestMarshaller();
@@ -3917,6 +4072,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMaintenanceWindow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow">REST API Reference for GetMaintenanceWindow Operation</seealso>
         public IAsyncResult BeginGetMaintenanceWindow(GetMaintenanceWindowRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetMaintenanceWindowRequestMarshaller();
@@ -3933,6 +4089,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMaintenanceWindow.</param>
         /// 
         /// <returns>Returns a  GetMaintenanceWindowResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow">REST API Reference for GetMaintenanceWindow Operation</seealso>
         public  GetMaintenanceWindowResponse EndGetMaintenanceWindow(IAsyncResult asyncResult)
         {
             return EndInvoke<GetMaintenanceWindowResponse>(asyncResult);
@@ -3955,6 +4112,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">REST API Reference for GetMaintenanceWindowExecution Operation</seealso>
         public GetMaintenanceWindowExecutionResponse GetMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest request)
         {
             var marshaller = new GetMaintenanceWindowExecutionRequestMarshaller();
@@ -3974,6 +4132,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMaintenanceWindowExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">REST API Reference for GetMaintenanceWindowExecution Operation</seealso>
         public IAsyncResult BeginGetMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetMaintenanceWindowExecutionRequestMarshaller();
@@ -3990,6 +4149,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMaintenanceWindowExecution.</param>
         /// 
         /// <returns>Returns a  GetMaintenanceWindowExecutionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">REST API Reference for GetMaintenanceWindowExecution Operation</seealso>
         public  GetMaintenanceWindowExecutionResponse EndGetMaintenanceWindowExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<GetMaintenanceWindowExecutionResponse>(asyncResult);
@@ -4013,6 +4173,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">REST API Reference for GetMaintenanceWindowExecutionTask Operation</seealso>
         public GetMaintenanceWindowExecutionTaskResponse GetMaintenanceWindowExecutionTask(GetMaintenanceWindowExecutionTaskRequest request)
         {
             var marshaller = new GetMaintenanceWindowExecutionTaskRequestMarshaller();
@@ -4032,6 +4193,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMaintenanceWindowExecutionTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">REST API Reference for GetMaintenanceWindowExecutionTask Operation</seealso>
         public IAsyncResult BeginGetMaintenanceWindowExecutionTask(GetMaintenanceWindowExecutionTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetMaintenanceWindowExecutionTaskRequestMarshaller();
@@ -4048,6 +4210,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMaintenanceWindowExecutionTask.</param>
         /// 
         /// <returns>Returns a  GetMaintenanceWindowExecutionTaskResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">REST API Reference for GetMaintenanceWindowExecutionTask Operation</seealso>
         public  GetMaintenanceWindowExecutionTaskResponse EndGetMaintenanceWindowExecutionTask(IAsyncResult asyncResult)
         {
             return EndInvoke<GetMaintenanceWindowExecutionTaskResponse>(asyncResult);
@@ -4072,6 +4235,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
         /// The parameter could not be found. Verify the name and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">REST API Reference for GetParameterHistory Operation</seealso>
         public GetParameterHistoryResponse GetParameterHistory(GetParameterHistoryRequest request)
         {
             var marshaller = new GetParameterHistoryRequestMarshaller();
@@ -4091,6 +4255,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetParameterHistory
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">REST API Reference for GetParameterHistory Operation</seealso>
         public IAsyncResult BeginGetParameterHistory(GetParameterHistoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetParameterHistoryRequestMarshaller();
@@ -4107,6 +4272,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetParameterHistory.</param>
         /// 
         /// <returns>Returns a  GetParameterHistoryResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">REST API Reference for GetParameterHistory Operation</seealso>
         public  GetParameterHistoryResponse EndGetParameterHistory(IAsyncResult asyncResult)
         {
             return EndInvoke<GetParameterHistoryResponse>(asyncResult);
@@ -4125,6 +4291,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">REST API Reference for GetParameters Operation</seealso>
         public GetParametersResponse GetParameters(GetParametersRequest request)
         {
             var marshaller = new GetParametersRequestMarshaller();
@@ -4144,6 +4311,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetParameters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">REST API Reference for GetParameters Operation</seealso>
         public IAsyncResult BeginGetParameters(GetParametersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetParametersRequestMarshaller();
@@ -4160,6 +4328,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetParameters.</param>
         /// 
         /// <returns>Returns a  GetParametersResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">REST API Reference for GetParameters Operation</seealso>
         public  GetParametersResponse EndGetParameters(IAsyncResult asyncResult)
         {
             return EndInvoke<GetParametersResponse>(asyncResult);
@@ -4185,6 +4354,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
         /// The resource ID is not valid. Verify that you entered the correct ID and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline">REST API Reference for GetPatchBaseline Operation</seealso>
         public GetPatchBaselineResponse GetPatchBaseline(GetPatchBaselineRequest request)
         {
             var marshaller = new GetPatchBaselineRequestMarshaller();
@@ -4204,6 +4374,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPatchBaseline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline">REST API Reference for GetPatchBaseline Operation</seealso>
         public IAsyncResult BeginGetPatchBaseline(GetPatchBaselineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetPatchBaselineRequestMarshaller();
@@ -4220,6 +4391,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPatchBaseline.</param>
         /// 
         /// <returns>Returns a  GetPatchBaselineResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline">REST API Reference for GetPatchBaseline Operation</seealso>
         public  GetPatchBaselineResponse EndGetPatchBaseline(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPatchBaselineResponse>(asyncResult);
@@ -4238,6 +4410,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup">REST API Reference for GetPatchBaselineForPatchGroup Operation</seealso>
         public GetPatchBaselineForPatchGroupResponse GetPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest request)
         {
             var marshaller = new GetPatchBaselineForPatchGroupRequestMarshaller();
@@ -4257,6 +4430,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPatchBaselineForPatchGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup">REST API Reference for GetPatchBaselineForPatchGroup Operation</seealso>
         public IAsyncResult BeginGetPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetPatchBaselineForPatchGroupRequestMarshaller();
@@ -4273,6 +4447,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPatchBaselineForPatchGroup.</param>
         /// 
         /// <returns>Returns a  GetPatchBaselineForPatchGroupResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup">REST API Reference for GetPatchBaselineForPatchGroup Operation</seealso>
         public  GetPatchBaselineForPatchGroupResponse EndGetPatchBaselineForPatchGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPatchBaselineForPatchGroupResponse>(asyncResult);
@@ -4294,6 +4469,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         public ListAssociationsResponse ListAssociations(ListAssociationsRequest request)
         {
             var marshaller = new ListAssociationsRequestMarshaller();
@@ -4313,6 +4489,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssociations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         public IAsyncResult BeginListAssociations(ListAssociationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListAssociationsRequestMarshaller();
@@ -4329,6 +4506,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssociations.</param>
         /// 
         /// <returns>Returns a  ListAssociationsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         public  ListAssociationsResponse EndListAssociations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAssociationsResponse>(asyncResult);
@@ -4383,6 +4561,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         public ListCommandInvocationsResponse ListCommandInvocations()
         {
             return ListCommandInvocations(new ListCommandInvocationsRequest());
@@ -4434,6 +4613,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         public ListCommandInvocationsResponse ListCommandInvocations(string commandId)
         {
             var request = new ListCommandInvocationsRequest();
@@ -4488,6 +4668,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         public ListCommandInvocationsResponse ListCommandInvocations(ListCommandInvocationsRequest request)
         {
             var marshaller = new ListCommandInvocationsRequestMarshaller();
@@ -4507,6 +4688,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCommandInvocations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         public IAsyncResult BeginListCommandInvocations(ListCommandInvocationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListCommandInvocationsRequestMarshaller();
@@ -4523,6 +4705,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCommandInvocations.</param>
         /// 
         /// <returns>Returns a  ListCommandInvocationsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         public  ListCommandInvocationsResponse EndListCommandInvocations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCommandInvocationsResponse>(asyncResult);
@@ -4573,6 +4756,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         public ListCommandsResponse ListCommands()
         {
             return ListCommands(new ListCommandsRequest());
@@ -4620,6 +4804,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         public ListCommandsResponse ListCommands(string commandId)
         {
             var request = new ListCommandsRequest();
@@ -4670,6 +4855,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         public ListCommandsResponse ListCommands(ListCommandsRequest request)
         {
             var marshaller = new ListCommandsRequestMarshaller();
@@ -4689,6 +4875,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCommands
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         public IAsyncResult BeginListCommands(ListCommandsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListCommandsRequestMarshaller();
@@ -4705,6 +4892,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCommands.</param>
         /// 
         /// <returns>Returns a  ListCommandsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         public  ListCommandsResponse EndListCommands(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCommandsResponse>(asyncResult);
@@ -4728,6 +4916,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         public ListDocumentsResponse ListDocuments()
         {
             return ListDocuments(new ListDocumentsRequest());
@@ -4748,6 +4937,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         public ListDocumentsResponse ListDocuments(ListDocumentsRequest request)
         {
             var marshaller = new ListDocumentsRequestMarshaller();
@@ -4767,6 +4957,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDocuments
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         public IAsyncResult BeginListDocuments(ListDocumentsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDocumentsRequestMarshaller();
@@ -4783,6 +4974,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDocuments.</param>
         /// 
         /// <returns>Returns a  ListDocumentsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         public  ListDocumentsResponse EndListDocuments(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDocumentsResponse>(asyncResult);
@@ -4807,6 +4999,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions">REST API Reference for ListDocumentVersions Operation</seealso>
         public ListDocumentVersionsResponse ListDocumentVersions(ListDocumentVersionsRequest request)
         {
             var marshaller = new ListDocumentVersionsRequestMarshaller();
@@ -4826,6 +5019,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDocumentVersions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions">REST API Reference for ListDocumentVersions Operation</seealso>
         public IAsyncResult BeginListDocumentVersions(ListDocumentVersionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDocumentVersionsRequestMarshaller();
@@ -4842,6 +5036,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDocumentVersions.</param>
         /// 
         /// <returns>Returns a  ListDocumentVersionsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions">REST API Reference for ListDocumentVersions Operation</seealso>
         public  ListDocumentVersionsResponse EndListDocumentVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDocumentVersionsResponse>(asyncResult);
@@ -4893,6 +5088,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
         /// The parameter type name is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries">REST API Reference for ListInventoryEntries Operation</seealso>
         public ListInventoryEntriesResponse ListInventoryEntries(ListInventoryEntriesRequest request)
         {
             var marshaller = new ListInventoryEntriesRequestMarshaller();
@@ -4912,6 +5108,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInventoryEntries
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries">REST API Reference for ListInventoryEntries Operation</seealso>
         public IAsyncResult BeginListInventoryEntries(ListInventoryEntriesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListInventoryEntriesRequestMarshaller();
@@ -4928,6 +5125,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInventoryEntries.</param>
         /// 
         /// <returns>Returns a  ListInventoryEntriesResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries">REST API Reference for ListInventoryEntries Operation</seealso>
         public  ListInventoryEntriesResponse EndListInventoryEntries(IAsyncResult asyncResult)
         {
             return EndInvoke<ListInventoryEntriesResponse>(asyncResult);
@@ -4953,6 +5151,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The resource type is not valid. If you are attempting to tag an instance, the instance
         /// must be a registered, managed instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
@@ -4972,6 +5171,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsForResourceRequestMarshaller();
@@ -4988,6 +5188,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public  ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
@@ -5023,6 +5224,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The permission type is not supported. <i>Share</i> is the only supported permission
         /// type.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">REST API Reference for ModifyDocumentPermission Operation</seealso>
         public ModifyDocumentPermissionResponse ModifyDocumentPermission(ModifyDocumentPermissionRequest request)
         {
             var marshaller = new ModifyDocumentPermissionRequestMarshaller();
@@ -5042,6 +5244,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyDocumentPermission
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">REST API Reference for ModifyDocumentPermission Operation</seealso>
         public IAsyncResult BeginModifyDocumentPermission(ModifyDocumentPermissionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyDocumentPermissionRequestMarshaller();
@@ -5058,6 +5261,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyDocumentPermission.</param>
         /// 
         /// <returns>Returns a  ModifyDocumentPermissionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">REST API Reference for ModifyDocumentPermission Operation</seealso>
         public  ModifyDocumentPermissionResponse EndModifyDocumentPermission(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyDocumentPermissionResponse>(asyncResult);
@@ -5125,6 +5329,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Check output of <code>GetInventorySchema</code> to see the available schema version
         /// for each type.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory">REST API Reference for PutInventory Operation</seealso>
         public PutInventoryResponse PutInventory(PutInventoryRequest request)
         {
             var marshaller = new PutInventoryRequestMarshaller();
@@ -5144,6 +5349,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutInventory
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory">REST API Reference for PutInventory Operation</seealso>
         public IAsyncResult BeginPutInventory(PutInventoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutInventoryRequestMarshaller();
@@ -5160,6 +5366,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutInventory.</param>
         /// 
         /// <returns>Returns a  PutInventoryResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory">REST API Reference for PutInventory Operation</seealso>
         public  PutInventoryResponse EndPutInventory(IAsyncResult asyncResult)
         {
             return EndInvoke<PutInventoryResponse>(asyncResult);
@@ -5194,6 +5401,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedParameterTypeException">
         /// The parameter type is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">REST API Reference for PutParameter Operation</seealso>
         public PutParameterResponse PutParameter(PutParameterRequest request)
         {
             var marshaller = new PutParameterRequestMarshaller();
@@ -5213,6 +5421,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutParameter
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">REST API Reference for PutParameter Operation</seealso>
         public IAsyncResult BeginPutParameter(PutParameterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutParameterRequestMarshaller();
@@ -5229,6 +5438,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutParameter.</param>
         /// 
         /// <returns>Returns a  PutParameterResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">REST API Reference for PutParameter Operation</seealso>
         public  PutParameterResponse EndPutParameter(IAsyncResult asyncResult)
         {
             return EndInvoke<PutParameterResponse>(asyncResult);
@@ -5254,6 +5464,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
         /// The resource ID is not valid. Verify that you entered the correct ID and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">REST API Reference for RegisterDefaultPatchBaseline Operation</seealso>
         public RegisterDefaultPatchBaselineResponse RegisterDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest request)
         {
             var marshaller = new RegisterDefaultPatchBaselineRequestMarshaller();
@@ -5273,6 +5484,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterDefaultPatchBaseline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">REST API Reference for RegisterDefaultPatchBaseline Operation</seealso>
         public IAsyncResult BeginRegisterDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterDefaultPatchBaselineRequestMarshaller();
@@ -5289,6 +5501,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterDefaultPatchBaseline.</param>
         /// 
         /// <returns>Returns a  RegisterDefaultPatchBaselineResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">REST API Reference for RegisterDefaultPatchBaseline Operation</seealso>
         public  RegisterDefaultPatchBaselineResponse EndRegisterDefaultPatchBaseline(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterDefaultPatchBaselineResponse>(asyncResult);
@@ -5322,6 +5535,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Error returned when the caller has exceeded the default resource limits (e.g. too
         /// many Maintenance Windows have been created).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup">REST API Reference for RegisterPatchBaselineForPatchGroup Operation</seealso>
         public RegisterPatchBaselineForPatchGroupResponse RegisterPatchBaselineForPatchGroup(RegisterPatchBaselineForPatchGroupRequest request)
         {
             var marshaller = new RegisterPatchBaselineForPatchGroupRequestMarshaller();
@@ -5341,6 +5555,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterPatchBaselineForPatchGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup">REST API Reference for RegisterPatchBaselineForPatchGroup Operation</seealso>
         public IAsyncResult BeginRegisterPatchBaselineForPatchGroup(RegisterPatchBaselineForPatchGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterPatchBaselineForPatchGroupRequestMarshaller();
@@ -5357,6 +5572,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterPatchBaselineForPatchGroup.</param>
         /// 
         /// <returns>Returns a  RegisterPatchBaselineForPatchGroupResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup">REST API Reference for RegisterPatchBaselineForPatchGroup Operation</seealso>
         public  RegisterPatchBaselineForPatchGroupResponse EndRegisterPatchBaselineForPatchGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterPatchBaselineForPatchGroupResponse>(asyncResult);
@@ -5387,6 +5603,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Error returned when the caller has exceeded the default resource limits (e.g. too
         /// many Maintenance Windows have been created).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">REST API Reference for RegisterTargetWithMaintenanceWindow Operation</seealso>
         public RegisterTargetWithMaintenanceWindowResponse RegisterTargetWithMaintenanceWindow(RegisterTargetWithMaintenanceWindowRequest request)
         {
             var marshaller = new RegisterTargetWithMaintenanceWindowRequestMarshaller();
@@ -5406,6 +5623,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterTargetWithMaintenanceWindow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">REST API Reference for RegisterTargetWithMaintenanceWindow Operation</seealso>
         public IAsyncResult BeginRegisterTargetWithMaintenanceWindow(RegisterTargetWithMaintenanceWindowRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterTargetWithMaintenanceWindowRequestMarshaller();
@@ -5422,6 +5640,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterTargetWithMaintenanceWindow.</param>
         /// 
         /// <returns>Returns a  RegisterTargetWithMaintenanceWindowResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">REST API Reference for RegisterTargetWithMaintenanceWindow Operation</seealso>
         public  RegisterTargetWithMaintenanceWindowResponse EndRegisterTargetWithMaintenanceWindow(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterTargetWithMaintenanceWindowResponse>(asyncResult);
@@ -5452,6 +5671,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Error returned when the caller has exceeded the default resource limits (e.g. too
         /// many Maintenance Windows have been created).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">REST API Reference for RegisterTaskWithMaintenanceWindow Operation</seealso>
         public RegisterTaskWithMaintenanceWindowResponse RegisterTaskWithMaintenanceWindow(RegisterTaskWithMaintenanceWindowRequest request)
         {
             var marshaller = new RegisterTaskWithMaintenanceWindowRequestMarshaller();
@@ -5471,6 +5691,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterTaskWithMaintenanceWindow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">REST API Reference for RegisterTaskWithMaintenanceWindow Operation</seealso>
         public IAsyncResult BeginRegisterTaskWithMaintenanceWindow(RegisterTaskWithMaintenanceWindowRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterTaskWithMaintenanceWindowRequestMarshaller();
@@ -5487,6 +5708,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterTaskWithMaintenanceWindow.</param>
         /// 
         /// <returns>Returns a  RegisterTaskWithMaintenanceWindowResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">REST API Reference for RegisterTaskWithMaintenanceWindow Operation</seealso>
         public  RegisterTaskWithMaintenanceWindowResponse EndRegisterTaskWithMaintenanceWindow(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterTaskWithMaintenanceWindowResponse>(asyncResult);
@@ -5512,6 +5734,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The resource type is not valid. If you are attempting to tag an instance, the instance
         /// must be a registered, managed instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request)
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
@@ -5531,6 +5754,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveTagsFromResourceRequestMarshaller();
@@ -5547,6 +5771,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTagsFromResource.</param>
         /// 
         /// <returns>Returns a  RemoveTagsFromResourceResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         public  RemoveTagsFromResourceResponse EndRemoveTagsFromResource(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTagsFromResourceResponse>(asyncResult);
@@ -5621,6 +5846,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The document does not support the platform type of the given instance ID(s). For example,
         /// you sent an SSM document for a Windows instance to a Linux instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
         public SendCommandResponse SendCommand(string documentName, List<string> instanceIds)
         {
             var request = new SendCommandRequest();
@@ -5694,6 +5920,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The document does not support the platform type of the given instance ID(s). For example,
         /// you sent an SSM document for a Windows instance to a Linux instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
         public SendCommandResponse SendCommand(SendCommandRequest request)
         {
             var marshaller = new SendCommandRequestMarshaller();
@@ -5713,6 +5940,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendCommand
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
         public IAsyncResult BeginSendCommand(SendCommandRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SendCommandRequestMarshaller();
@@ -5729,6 +5957,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendCommand.</param>
         /// 
         /// <returns>Returns a  SendCommandResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
         public  SendCommandResponse EndSendCommand(IAsyncResult asyncResult)
         {
             return EndInvoke<SendCommandResponse>(asyncResult);
@@ -5762,6 +5991,7 @@ namespace Amazon.SimpleSystemsManagement
         /// For example, they may not match the set of parameters permitted for the specified
         /// Automation document.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">REST API Reference for StartAutomationExecution Operation</seealso>
         public StartAutomationExecutionResponse StartAutomationExecution(StartAutomationExecutionRequest request)
         {
             var marshaller = new StartAutomationExecutionRequestMarshaller();
@@ -5781,6 +6011,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAutomationExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">REST API Reference for StartAutomationExecution Operation</seealso>
         public IAsyncResult BeginStartAutomationExecution(StartAutomationExecutionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartAutomationExecutionRequestMarshaller();
@@ -5797,6 +6028,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAutomationExecution.</param>
         /// 
         /// <returns>Returns a  StartAutomationExecutionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">REST API Reference for StartAutomationExecution Operation</seealso>
         public  StartAutomationExecutionResponse EndStartAutomationExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<StartAutomationExecutionResponse>(asyncResult);
@@ -5819,6 +6051,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">REST API Reference for StopAutomationExecution Operation</seealso>
         public StopAutomationExecutionResponse StopAutomationExecution(StopAutomationExecutionRequest request)
         {
             var marshaller = new StopAutomationExecutionRequestMarshaller();
@@ -5838,6 +6071,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopAutomationExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">REST API Reference for StopAutomationExecution Operation</seealso>
         public IAsyncResult BeginStopAutomationExecution(StopAutomationExecutionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopAutomationExecutionRequestMarshaller();
@@ -5854,6 +6088,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopAutomationExecution.</param>
         /// 
         /// <returns>Returns a  StopAutomationExecutionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">REST API Reference for StopAutomationExecution Operation</seealso>
         public  StopAutomationExecutionResponse EndStopAutomationExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<StopAutomationExecutionResponse>(asyncResult);
@@ -5895,6 +6130,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">REST API Reference for UpdateAssociation Operation</seealso>
         public UpdateAssociationResponse UpdateAssociation(UpdateAssociationRequest request)
         {
             var marshaller = new UpdateAssociationRequestMarshaller();
@@ -5914,6 +6150,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAssociation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">REST API Reference for UpdateAssociation Operation</seealso>
         public IAsyncResult BeginUpdateAssociation(UpdateAssociationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateAssociationRequestMarshaller();
@@ -5930,6 +6167,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAssociation.</param>
         /// 
         /// <returns>Returns a  UpdateAssociationResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">REST API Reference for UpdateAssociation Operation</seealso>
         public  UpdateAssociationResponse EndUpdateAssociation(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAssociationResponse>(asyncResult);
@@ -5984,6 +6222,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">REST API Reference for UpdateAssociationStatus Operation</seealso>
         public UpdateAssociationStatusResponse UpdateAssociationStatus(UpdateAssociationStatusRequest request)
         {
             var marshaller = new UpdateAssociationStatusRequestMarshaller();
@@ -6003,6 +6242,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAssociationStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">REST API Reference for UpdateAssociationStatus Operation</seealso>
         public IAsyncResult BeginUpdateAssociationStatus(UpdateAssociationStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateAssociationStatusRequestMarshaller();
@@ -6019,6 +6259,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAssociationStatus.</param>
         /// 
         /// <returns>Returns a  UpdateAssociationStatusResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">REST API Reference for UpdateAssociationStatus Operation</seealso>
         public  UpdateAssociationStatusResponse EndUpdateAssociationStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAssociationStatusResponse>(asyncResult);
@@ -6059,6 +6300,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of an SSM document is 64 KB.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
         public UpdateDocumentResponse UpdateDocument(UpdateDocumentRequest request)
         {
             var marshaller = new UpdateDocumentRequestMarshaller();
@@ -6078,6 +6320,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDocument
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
         public IAsyncResult BeginUpdateDocument(UpdateDocumentRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDocumentRequestMarshaller();
@@ -6094,6 +6337,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDocument.</param>
         /// 
         /// <returns>Returns a  UpdateDocumentResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
         public  UpdateDocumentResponse EndUpdateDocument(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDocumentResponse>(asyncResult);
@@ -6121,6 +6365,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
         /// The document version is not valid or does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">REST API Reference for UpdateDocumentDefaultVersion Operation</seealso>
         public UpdateDocumentDefaultVersionResponse UpdateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest request)
         {
             var marshaller = new UpdateDocumentDefaultVersionRequestMarshaller();
@@ -6140,6 +6385,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDocumentDefaultVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">REST API Reference for UpdateDocumentDefaultVersion Operation</seealso>
         public IAsyncResult BeginUpdateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDocumentDefaultVersionRequestMarshaller();
@@ -6156,6 +6402,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDocumentDefaultVersion.</param>
         /// 
         /// <returns>Returns a  UpdateDocumentDefaultVersionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">REST API Reference for UpdateDocumentDefaultVersion Operation</seealso>
         public  UpdateDocumentDefaultVersionResponse EndUpdateDocumentDefaultVersion(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDocumentDefaultVersionResponse>(asyncResult);
@@ -6178,6 +6425,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">REST API Reference for UpdateMaintenanceWindow Operation</seealso>
         public UpdateMaintenanceWindowResponse UpdateMaintenanceWindow(UpdateMaintenanceWindowRequest request)
         {
             var marshaller = new UpdateMaintenanceWindowRequestMarshaller();
@@ -6197,6 +6445,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMaintenanceWindow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">REST API Reference for UpdateMaintenanceWindow Operation</seealso>
         public IAsyncResult BeginUpdateMaintenanceWindow(UpdateMaintenanceWindowRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateMaintenanceWindowRequestMarshaller();
@@ -6213,6 +6462,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMaintenanceWindow.</param>
         /// 
         /// <returns>Returns a  UpdateMaintenanceWindowResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">REST API Reference for UpdateMaintenanceWindow Operation</seealso>
         public  UpdateMaintenanceWindowResponse EndUpdateMaintenanceWindow(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateMaintenanceWindowResponse>(asyncResult);
@@ -6256,6 +6506,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Invalid states are: Shutting-down and Terminated.
         /// </para>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">REST API Reference for UpdateManagedInstanceRole Operation</seealso>
         public UpdateManagedInstanceRoleResponse UpdateManagedInstanceRole(UpdateManagedInstanceRoleRequest request)
         {
             var marshaller = new UpdateManagedInstanceRoleRequestMarshaller();
@@ -6275,6 +6526,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateManagedInstanceRole
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">REST API Reference for UpdateManagedInstanceRole Operation</seealso>
         public IAsyncResult BeginUpdateManagedInstanceRole(UpdateManagedInstanceRoleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateManagedInstanceRoleRequestMarshaller();
@@ -6291,6 +6543,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateManagedInstanceRole.</param>
         /// 
         /// <returns>Returns a  UpdateManagedInstanceRoleResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">REST API Reference for UpdateManagedInstanceRole Operation</seealso>
         public  UpdateManagedInstanceRoleResponse EndUpdateManagedInstanceRole(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateManagedInstanceRoleResponse>(asyncResult);
@@ -6314,6 +6567,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">REST API Reference for UpdatePatchBaseline Operation</seealso>
         public UpdatePatchBaselineResponse UpdatePatchBaseline(UpdatePatchBaselineRequest request)
         {
             var marshaller = new UpdatePatchBaselineRequestMarshaller();
@@ -6333,6 +6587,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePatchBaseline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">REST API Reference for UpdatePatchBaseline Operation</seealso>
         public IAsyncResult BeginUpdatePatchBaseline(UpdatePatchBaselineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdatePatchBaselineRequestMarshaller();
@@ -6349,6 +6604,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePatchBaseline.</param>
         /// 
         /// <returns>Returns a  UpdatePatchBaselineResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">REST API Reference for UpdatePatchBaseline Operation</seealso>
         public  UpdatePatchBaselineResponse EndUpdatePatchBaseline(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdatePatchBaselineResponse>(asyncResult);

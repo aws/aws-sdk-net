@@ -295,6 +295,7 @@ namespace Amazon.SQS
         /// returns this error if the maximum number of inflight messages is reached. <code> <a>AddPermission</a>
         /// </code> returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public void AddPermissionAsync(string queueUrl, string label, List<string> awsAccountIds, List<string> actions,  AmazonServiceCallback<AddPermissionRequest, AddPermissionResponse> callback, AsyncOptions options = null)
         {
             var request = new AddPermissionRequest();
@@ -314,6 +315,7 @@ namespace Amazon.SQS
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public void AddPermissionAsync(AddPermissionRequest request, AmazonServiceCallback<AddPermissionRequest, AddPermissionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -399,6 +401,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The receipt handle provided isn't valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         public void ChangeMessageVisibilityAsync(string queueUrl, string receiptHandle, int visibilityTimeout,  AmazonServiceCallback<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResponse> callback, AsyncOptions options = null)
         {
             var request = new ChangeMessageVisibilityRequest();
@@ -417,6 +420,7 @@ namespace Amazon.SQS
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         public void ChangeMessageVisibilityAsync(ChangeMessageVisibilityRequest request, AmazonServiceCallback<ChangeMessageVisibilityRequest, ChangeMessageVisibilityResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -485,6 +489,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         public void ChangeMessageVisibilityBatchAsync(string queueUrl, List<ChangeMessageVisibilityBatchRequestEntry> entries,  AmazonServiceCallback<ChangeMessageVisibilityBatchRequest, ChangeMessageVisibilityBatchResponse> callback, AsyncOptions options = null)
         {
             var request = new ChangeMessageVisibilityBatchRequest();
@@ -502,6 +507,7 @@ namespace Amazon.SQS
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         public void ChangeMessageVisibilityBatchAsync(ChangeMessageVisibilityBatchRequest request, AmazonServiceCallback<ChangeMessageVisibilityBatchRequest, ChangeMessageVisibilityBatchResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -604,6 +610,7 @@ namespace Amazon.SQS
         /// A queue already exists with this name. Amazon SQS returns this error only if the request
         /// includes attributes whose values differ from those of the existing queue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public void CreateQueueAsync(string queueName,  AmazonServiceCallback<CreateQueueRequest, CreateQueueResponse> callback, AsyncOptions options = null)
         {
             var request = new CreateQueueRequest();
@@ -620,6 +627,7 @@ namespace Amazon.SQS
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         public void CreateQueueAsync(CreateQueueRequest request, AmazonServiceCallback<CreateQueueRequest, CreateQueueResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -681,6 +689,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The receipt handle provided isn't valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         public void DeleteMessageAsync(string queueUrl, string receiptHandle,  AmazonServiceCallback<DeleteMessageRequest, DeleteMessageResponse> callback, AsyncOptions options = null)
         {
             var request = new DeleteMessageRequest();
@@ -698,6 +707,7 @@ namespace Amazon.SQS
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         public void DeleteMessageAsync(DeleteMessageRequest request, AmazonServiceCallback<DeleteMessageRequest, DeleteMessageResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -765,6 +775,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         public void DeleteMessageBatchAsync(string queueUrl, List<DeleteMessageBatchRequestEntry> entries,  AmazonServiceCallback<DeleteMessageBatchRequest, DeleteMessageBatchResponse> callback, AsyncOptions options = null)
         {
             var request = new DeleteMessageBatchRequest();
@@ -782,6 +793,7 @@ namespace Amazon.SQS
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         public void DeleteMessageBatchAsync(DeleteMessageBatchRequest request, AmazonServiceCallback<DeleteMessageBatchRequest, DeleteMessageBatchResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -831,6 +843,7 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the DeleteQueue service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public void DeleteQueueAsync(string queueUrl,  AmazonServiceCallback<DeleteQueueRequest, DeleteQueueResponse> callback, AsyncOptions options = null)
         {
             var request = new DeleteQueueRequest();
@@ -847,6 +860,7 @@ namespace Amazon.SQS
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         public void DeleteQueueAsync(DeleteQueueRequest request, AmazonServiceCallback<DeleteQueueRequest, DeleteQueueResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -897,6 +911,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The attribute referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         public void GetQueueAttributesAsync(string queueUrl, List<string> attributeNames,  AmazonServiceCallback<GetQueueAttributesRequest, GetQueueAttributesResponse> callback, AsyncOptions options = null)
         {
             var request = new GetQueueAttributesRequest();
@@ -914,6 +929,7 @@ namespace Amazon.SQS
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         public void GetQueueAttributesAsync(GetQueueAttributesRequest request, AmazonServiceCallback<GetQueueAttributesRequest, GetQueueAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -957,6 +973,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The queue referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         public void GetQueueUrlAsync(string queueName,  AmazonServiceCallback<GetQueueUrlRequest, GetQueueUrlResponse> callback, AsyncOptions options = null)
         {
             var request = new GetQueueUrlRequest();
@@ -973,6 +990,7 @@ namespace Amazon.SQS
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         public void GetQueueUrlAsync(GetQueueUrlRequest request, AmazonServiceCallback<GetQueueUrlRequest, GetQueueUrlResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -1000,6 +1018,7 @@ namespace Amazon.SQS
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">REST API Reference for ListDeadLetterSourceQueues Operation</seealso>
         public void ListDeadLetterSourceQueuesAsync(ListDeadLetterSourceQueuesRequest request, AmazonServiceCallback<ListDeadLetterSourceQueuesRequest, ListDeadLetterSourceQueuesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -1032,6 +1051,7 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the ListQueues service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public void ListQueuesAsync(string queueNamePrefix,  AmazonServiceCallback<ListQueuesRequest, ListQueuesResponse> callback, AsyncOptions options = null)
         {
             var request = new ListQueuesRequest();
@@ -1048,6 +1068,7 @@ namespace Amazon.SQS
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         public void ListQueuesAsync(ListQueuesRequest request, AmazonServiceCallback<ListQueuesRequest, ListQueuesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -1099,6 +1120,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The queue referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         public void PurgeQueueAsync(string queueUrl,  AmazonServiceCallback<PurgeQueueRequest, PurgeQueueResponse> callback, AsyncOptions options = null)
         {
             var request = new PurgeQueueRequest();
@@ -1115,6 +1137,7 @@ namespace Amazon.SQS
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         public void PurgeQueueAsync(PurgeQueueRequest request, AmazonServiceCallback<PurgeQueueRequest, PurgeQueueResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -1217,6 +1240,7 @@ namespace Amazon.SQS
         /// returns this error if the maximum number of inflight messages is reached. <code> <a>AddPermission</a>
         /// </code> returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         public void ReceiveMessageAsync(string queueUrl,  AmazonServiceCallback<ReceiveMessageRequest, ReceiveMessageResponse> callback, AsyncOptions options = null)
         {
             var request = new ReceiveMessageRequest();
@@ -1233,6 +1257,7 @@ namespace Amazon.SQS
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         public void ReceiveMessageAsync(ReceiveMessageRequest request, AmazonServiceCallback<ReceiveMessageRequest, ReceiveMessageResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -1265,6 +1290,7 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public void RemovePermissionAsync(string queueUrl, string label,  AmazonServiceCallback<RemovePermissionRequest, RemovePermissionResponse> callback, AsyncOptions options = null)
         {
             var request = new RemovePermissionRequest();
@@ -1282,6 +1308,7 @@ namespace Amazon.SQS
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public void RemovePermissionAsync(RemovePermissionRequest request, AmazonServiceCallback<RemovePermissionRequest, RemovePermissionResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -1355,6 +1382,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
         public void SendMessageAsync(string queueUrl, string messageBody,  AmazonServiceCallback<SendMessageRequest, SendMessageResponse> callback, AsyncOptions options = null)
         {
             var request = new SendMessageRequest();
@@ -1372,6 +1400,7 @@ namespace Amazon.SQS
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
         public void SendMessageAsync(SendMessageRequest request, AmazonServiceCallback<SendMessageRequest, SendMessageResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -1491,6 +1520,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
         public void SendMessageBatchAsync(string queueUrl, List<SendMessageBatchRequestEntry> entries,  AmazonServiceCallback<SendMessageBatchRequest, SendMessageBatchResponse> callback, AsyncOptions options = null)
         {
             var request = new SendMessageBatchRequest();
@@ -1508,6 +1538,7 @@ namespace Amazon.SQS
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
         public void SendMessageBatchAsync(SendMessageBatchRequest request, AmazonServiceCallback<SendMessageBatchRequest, SendMessageBatchResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -1552,6 +1583,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The attribute referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         public void SetQueueAttributesAsync(string queueUrl, Dictionary<string, string> attributes,  AmazonServiceCallback<SetQueueAttributesRequest, SetQueueAttributesResponse> callback, AsyncOptions options = null)
         {
             var request = new SetQueueAttributesRequest();
@@ -1569,6 +1601,7 @@ namespace Amazon.SQS
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         public void SetQueueAttributesAsync(SetQueueAttributesRequest request, AmazonServiceCallback<SetQueueAttributesRequest, SetQueueAttributesResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;

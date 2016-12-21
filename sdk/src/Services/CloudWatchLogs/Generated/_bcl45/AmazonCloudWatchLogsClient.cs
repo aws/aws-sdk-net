@@ -287,6 +287,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
         public CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
         {
             var marshaller = new CancelExportTaskRequestMarshaller();
@@ -304,6 +305,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
         public Task<CancelExportTaskResponse> CancelExportTaskAsync(CancelExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelExportTaskRequestMarshaller();
@@ -358,6 +360,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">REST API Reference for CreateExportTask Operation</seealso>
         public CreateExportTaskResponse CreateExportTask(CreateExportTaskRequest request)
         {
             var marshaller = new CreateExportTaskRequestMarshaller();
@@ -375,6 +378,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">REST API Reference for CreateExportTask Operation</seealso>
         public Task<CreateExportTaskResponse> CreateExportTaskAsync(CreateExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateExportTaskRequestMarshaller();
@@ -433,6 +437,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">REST API Reference for CreateLogGroup Operation</seealso>
         public CreateLogGroupResponse CreateLogGroup(CreateLogGroupRequest request)
         {
             var marshaller = new CreateLogGroupRequestMarshaller();
@@ -450,6 +455,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">REST API Reference for CreateLogGroup Operation</seealso>
         public Task<CreateLogGroupResponse> CreateLogGroupAsync(CreateLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateLogGroupRequestMarshaller();
@@ -504,6 +510,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogStream">REST API Reference for CreateLogStream Operation</seealso>
         public CreateLogStreamResponse CreateLogStream(CreateLogStreamRequest request)
         {
             var marshaller = new CreateLogStreamRequestMarshaller();
@@ -521,6 +528,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogStream">REST API Reference for CreateLogStream Operation</seealso>
         public Task<CreateLogStreamResponse> CreateLogStreamAsync(CreateLogStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateLogStreamRequestMarshaller();
@@ -555,6 +563,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDestination">REST API Reference for DeleteDestination Operation</seealso>
         public DeleteDestinationResponse DeleteDestination(DeleteDestinationRequest request)
         {
             var marshaller = new DeleteDestinationRequestMarshaller();
@@ -572,6 +581,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDestination">REST API Reference for DeleteDestination Operation</seealso>
         public Task<DeleteDestinationResponse> DeleteDestinationAsync(DeleteDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDestinationRequestMarshaller();
@@ -605,6 +615,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogGroup">REST API Reference for DeleteLogGroup Operation</seealso>
         public DeleteLogGroupResponse DeleteLogGroup(DeleteLogGroupRequest request)
         {
             var marshaller = new DeleteLogGroupRequestMarshaller();
@@ -622,6 +633,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogGroup">REST API Reference for DeleteLogGroup Operation</seealso>
         public Task<DeleteLogGroupResponse> DeleteLogGroupAsync(DeleteLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteLogGroupRequestMarshaller();
@@ -655,6 +667,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogStream">REST API Reference for DeleteLogStream Operation</seealso>
         public DeleteLogStreamResponse DeleteLogStream(DeleteLogStreamRequest request)
         {
             var marshaller = new DeleteLogStreamRequestMarshaller();
@@ -672,6 +685,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogStream">REST API Reference for DeleteLogStream Operation</seealso>
         public Task<DeleteLogStreamResponse> DeleteLogStreamAsync(DeleteLogStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteLogStreamRequestMarshaller();
@@ -704,6 +718,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteMetricFilter">REST API Reference for DeleteMetricFilter Operation</seealso>
         public DeleteMetricFilterResponse DeleteMetricFilter(DeleteMetricFilterRequest request)
         {
             var marshaller = new DeleteMetricFilterRequestMarshaller();
@@ -721,6 +736,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteMetricFilter">REST API Reference for DeleteMetricFilter Operation</seealso>
         public Task<DeleteMetricFilterResponse> DeleteMetricFilterAsync(DeleteMetricFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteMetricFilterRequestMarshaller();
@@ -758,6 +774,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
         public DeleteRetentionPolicyResponse DeleteRetentionPolicy(DeleteRetentionPolicyRequest request)
         {
             var marshaller = new DeleteRetentionPolicyRequestMarshaller();
@@ -775,6 +792,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
         public Task<DeleteRetentionPolicyResponse> DeleteRetentionPolicyAsync(DeleteRetentionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRetentionPolicyRequestMarshaller();
@@ -807,6 +825,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteSubscriptionFilter">REST API Reference for DeleteSubscriptionFilter Operation</seealso>
         public DeleteSubscriptionFilterResponse DeleteSubscriptionFilter(DeleteSubscriptionFilterRequest request)
         {
             var marshaller = new DeleteSubscriptionFilterRequestMarshaller();
@@ -824,6 +843,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteSubscriptionFilter">REST API Reference for DeleteSubscriptionFilter Operation</seealso>
         public Task<DeleteSubscriptionFilterResponse> DeleteSubscriptionFilterAsync(DeleteSubscriptionFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSubscriptionFilterRequestMarshaller();
@@ -850,6 +870,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDestinations">REST API Reference for DescribeDestinations Operation</seealso>
         public DescribeDestinationsResponse DescribeDestinations(DescribeDestinationsRequest request)
         {
             var marshaller = new DescribeDestinationsRequestMarshaller();
@@ -867,6 +888,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDestinations">REST API Reference for DescribeDestinations Operation</seealso>
         public Task<DescribeDestinationsResponse> DescribeDestinationsAsync(DescribeDestinationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDestinationsRequestMarshaller();
@@ -894,6 +916,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
         {
             var marshaller = new DescribeExportTasksRequestMarshaller();
@@ -911,6 +934,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeExportTasksRequestMarshaller();
@@ -937,6 +961,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups">REST API Reference for DescribeLogGroups Operation</seealso>
         public DescribeLogGroupsResponse DescribeLogGroups()
         {
             return DescribeLogGroups(new DescribeLogGroupsRequest());
@@ -956,6 +981,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups">REST API Reference for DescribeLogGroups Operation</seealso>
         public DescribeLogGroupsResponse DescribeLogGroups(DescribeLogGroupsRequest request)
         {
             var marshaller = new DescribeLogGroupsRequestMarshaller();
@@ -980,6 +1006,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups">REST API Reference for DescribeLogGroups Operation</seealso>
         public Task<DescribeLogGroupsResponse> DescribeLogGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeLogGroupsAsync(new DescribeLogGroupsRequest(), cancellationToken);
@@ -993,6 +1020,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups">REST API Reference for DescribeLogGroups Operation</seealso>
         public Task<DescribeLogGroupsResponse> DescribeLogGroupsAsync(DescribeLogGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLogGroupsRequestMarshaller();
@@ -1029,6 +1057,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogStreams">REST API Reference for DescribeLogStreams Operation</seealso>
         public DescribeLogStreamsResponse DescribeLogStreams(DescribeLogStreamsRequest request)
         {
             var marshaller = new DescribeLogStreamsRequestMarshaller();
@@ -1046,6 +1075,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogStreams">REST API Reference for DescribeLogStreams Operation</seealso>
         public Task<DescribeLogStreamsResponse> DescribeLogStreamsAsync(DescribeLogStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeLogStreamsRequestMarshaller();
@@ -1077,6 +1107,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeMetricFilters">REST API Reference for DescribeMetricFilters Operation</seealso>
         public DescribeMetricFiltersResponse DescribeMetricFilters(DescribeMetricFiltersRequest request)
         {
             var marshaller = new DescribeMetricFiltersRequestMarshaller();
@@ -1094,6 +1125,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeMetricFilters">REST API Reference for DescribeMetricFilters Operation</seealso>
         public Task<DescribeMetricFiltersResponse> DescribeMetricFiltersAsync(DescribeMetricFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeMetricFiltersRequestMarshaller();
@@ -1124,6 +1156,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeSubscriptionFilters">REST API Reference for DescribeSubscriptionFilters Operation</seealso>
         public DescribeSubscriptionFiltersResponse DescribeSubscriptionFilters(DescribeSubscriptionFiltersRequest request)
         {
             var marshaller = new DescribeSubscriptionFiltersRequestMarshaller();
@@ -1141,6 +1174,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeSubscriptionFilters">REST API Reference for DescribeSubscriptionFilters Operation</seealso>
         public Task<DescribeSubscriptionFiltersResponse> DescribeSubscriptionFiltersAsync(DescribeSubscriptionFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSubscriptionFiltersRequestMarshaller();
@@ -1179,6 +1213,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilterLogEvents">REST API Reference for FilterLogEvents Operation</seealso>
         public FilterLogEventsResponse FilterLogEvents(FilterLogEventsRequest request)
         {
             var marshaller = new FilterLogEventsRequestMarshaller();
@@ -1196,6 +1231,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilterLogEvents">REST API Reference for FilterLogEvents Operation</seealso>
         public Task<FilterLogEventsResponse> FilterLogEventsAsync(FilterLogEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new FilterLogEventsRequestMarshaller();
@@ -1234,6 +1270,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents">REST API Reference for GetLogEvents Operation</seealso>
         public GetLogEventsResponse GetLogEvents(GetLogEventsRequest request)
         {
             var marshaller = new GetLogEventsRequestMarshaller();
@@ -1251,6 +1288,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents">REST API Reference for GetLogEvents Operation</seealso>
         public Task<GetLogEventsResponse> GetLogEventsAsync(GetLogEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetLogEventsRequestMarshaller();
@@ -1282,6 +1320,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup">REST API Reference for ListTagsLogGroup Operation</seealso>
         public ListTagsLogGroupResponse ListTagsLogGroup(ListTagsLogGroupRequest request)
         {
             var marshaller = new ListTagsLogGroupRequestMarshaller();
@@ -1299,6 +1338,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup">REST API Reference for ListTagsLogGroup Operation</seealso>
         public Task<ListTagsLogGroupResponse> ListTagsLogGroupAsync(ListTagsLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListTagsLogGroupRequestMarshaller();
@@ -1341,6 +1381,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination">REST API Reference for PutDestination Operation</seealso>
         public PutDestinationResponse PutDestination(PutDestinationRequest request)
         {
             var marshaller = new PutDestinationRequestMarshaller();
@@ -1358,6 +1399,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination">REST API Reference for PutDestination Operation</seealso>
         public Task<PutDestinationResponse> PutDestinationAsync(PutDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutDestinationRequestMarshaller();
@@ -1390,6 +1432,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestinationPolicy">REST API Reference for PutDestinationPolicy Operation</seealso>
         public PutDestinationPolicyResponse PutDestinationPolicy(PutDestinationPolicyRequest request)
         {
             var marshaller = new PutDestinationPolicyRequestMarshaller();
@@ -1407,6 +1450,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestinationPolicy">REST API Reference for PutDestinationPolicy Operation</seealso>
         public Task<PutDestinationPolicyResponse> PutDestinationPolicyAsync(PutDestinationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutDestinationPolicyRequestMarshaller();
@@ -1483,6 +1527,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents">REST API Reference for PutLogEvents Operation</seealso>
         public PutLogEventsResponse PutLogEvents(PutLogEventsRequest request)
         {
             var marshaller = new PutLogEventsRequestMarshaller();
@@ -1500,6 +1545,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents">REST API Reference for PutLogEvents Operation</seealso>
         public Task<PutLogEventsResponse> PutLogEventsAsync(PutLogEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutLogEventsRequestMarshaller();
@@ -1542,6 +1588,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter">REST API Reference for PutMetricFilter Operation</seealso>
         public PutMetricFilterResponse PutMetricFilter(PutMetricFilterRequest request)
         {
             var marshaller = new PutMetricFilterRequestMarshaller();
@@ -1559,6 +1606,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter">REST API Reference for PutMetricFilter Operation</seealso>
         public Task<PutMetricFilterResponse> PutMetricFilterAsync(PutMetricFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutMetricFilterRequestMarshaller();
@@ -1592,6 +1640,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy">REST API Reference for PutRetentionPolicy Operation</seealso>
         public PutRetentionPolicyResponse PutRetentionPolicy(PutRetentionPolicyRequest request)
         {
             var marshaller = new PutRetentionPolicyRequestMarshaller();
@@ -1609,6 +1658,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy">REST API Reference for PutRetentionPolicy Operation</seealso>
         public Task<PutRetentionPolicyResponse> PutRetentionPolicyAsync(PutRetentionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutRetentionPolicyRequestMarshaller();
@@ -1671,6 +1721,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">REST API Reference for PutSubscriptionFilter Operation</seealso>
         public PutSubscriptionFilterResponse PutSubscriptionFilter(PutSubscriptionFilterRequest request)
         {
             var marshaller = new PutSubscriptionFilterRequestMarshaller();
@@ -1688,6 +1739,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">REST API Reference for PutSubscriptionFilter Operation</seealso>
         public Task<PutSubscriptionFilterResponse> PutSubscriptionFilterAsync(PutSubscriptionFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutSubscriptionFilterRequestMarshaller();
@@ -1725,6 +1777,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup">REST API Reference for TagLogGroup Operation</seealso>
         public TagLogGroupResponse TagLogGroup(TagLogGroupRequest request)
         {
             var marshaller = new TagLogGroupRequestMarshaller();
@@ -1742,6 +1795,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup">REST API Reference for TagLogGroup Operation</seealso>
         public Task<TagLogGroupResponse> TagLogGroupAsync(TagLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TagLogGroupRequestMarshaller();
@@ -1769,6 +1823,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TestMetricFilter">REST API Reference for TestMetricFilter Operation</seealso>
         public TestMetricFilterResponse TestMetricFilter(TestMetricFilterRequest request)
         {
             var marshaller = new TestMetricFilterRequestMarshaller();
@@ -1786,6 +1841,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TestMetricFilter">REST API Reference for TestMetricFilter Operation</seealso>
         public Task<TestMetricFilterResponse> TestMetricFilterAsync(TestMetricFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TestMetricFilterRequestMarshaller();
@@ -1814,6 +1870,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup">REST API Reference for UntagLogGroup Operation</seealso>
         public UntagLogGroupResponse UntagLogGroup(UntagLogGroupRequest request)
         {
             var marshaller = new UntagLogGroupRequestMarshaller();
@@ -1831,6 +1888,7 @@ namespace Amazon.CloudWatchLogs
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup">REST API Reference for UntagLogGroup Operation</seealso>
         public Task<UntagLogGroupResponse> UntagLogGroupAsync(UntagLogGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UntagLogGroupRequestMarshaller();

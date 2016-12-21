@@ -475,6 +475,21 @@ namespace SDKDocGenerator.Writers
             }
         }
 
+        protected void AddSeeAlso(TextWriter writer)
+        {
+            var element = GetSummaryDocumentation();
+            if (element != null)
+            {
+                var htmlDocs = NDocUtilities.TransformDocumentationToHTML(element, "seealso", TypeProvider, this._version);
+                if (string.IsNullOrEmpty(htmlDocs))
+                    return;
+
+                AddSectionHeader(writer, "See Also");
+                writer.WriteLine(htmlDocs);
+                AddSectionClosing(writer);
+            }
+        }
+
         protected void AddNamespace(TextWriter writer, string ns, string moduleName)
         {
             writer.WriteLine("<div id=\"namespaceblock\">");

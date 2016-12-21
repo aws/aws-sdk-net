@@ -69,6 +69,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
         /// The provided name is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">REST API Reference for CreateActivity Operation</seealso>
         CreateActivityResponse CreateActivity(CreateActivityRequest request);
 
         /// <summary>
@@ -82,6 +83,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateActivity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">REST API Reference for CreateActivity Operation</seealso>
         IAsyncResult BeginCreateActivity(CreateActivityRequest request, AsyncCallback callback, object state);
 
 
@@ -93,6 +95,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateActivity.</param>
         /// 
         /// <returns>Returns a  CreateActivityResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">REST API Reference for CreateActivity Operation</seealso>
         CreateActivityResponse EndCreateActivity(IAsyncResult asyncResult);
 
         #endregion
@@ -126,6 +129,7 @@ namespace Amazon.StepFunctions
         /// The maximum number of state machines has been reached. Existing state machines must
         /// be deleted before a new state machine can be created.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">REST API Reference for CreateStateMachine Operation</seealso>
         CreateStateMachineResponse CreateStateMachine(CreateStateMachineRequest request);
 
         /// <summary>
@@ -139,6 +143,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStateMachine
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">REST API Reference for CreateStateMachine Operation</seealso>
         IAsyncResult BeginCreateStateMachine(CreateStateMachineRequest request, AsyncCallback callback, object state);
 
 
@@ -150,6 +155,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStateMachine.</param>
         /// 
         /// <returns>Returns a  CreateStateMachineResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">REST API Reference for CreateStateMachine Operation</seealso>
         CreateStateMachineResponse EndCreateStateMachine(IAsyncResult asyncResult);
 
         #endregion
@@ -166,6 +172,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity">REST API Reference for DeleteActivity Operation</seealso>
         DeleteActivityResponse DeleteActivity(DeleteActivityRequest request);
 
         /// <summary>
@@ -179,6 +186,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteActivity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity">REST API Reference for DeleteActivity Operation</seealso>
         IAsyncResult BeginDeleteActivity(DeleteActivityRequest request, AsyncCallback callback, object state);
 
 
@@ -190,6 +198,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteActivity.</param>
         /// 
         /// <returns>Returns a  DeleteActivityResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity">REST API Reference for DeleteActivity Operation</seealso>
         DeleteActivityResponse EndDeleteActivity(IAsyncResult asyncResult);
 
         #endregion
@@ -207,6 +216,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">REST API Reference for DeleteStateMachine Operation</seealso>
         DeleteStateMachineResponse DeleteStateMachine(DeleteStateMachineRequest request);
 
         /// <summary>
@@ -220,6 +230,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStateMachine
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">REST API Reference for DeleteStateMachine Operation</seealso>
         IAsyncResult BeginDeleteStateMachine(DeleteStateMachineRequest request, AsyncCallback callback, object state);
 
 
@@ -231,6 +242,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStateMachine.</param>
         /// 
         /// <returns>Returns a  DeleteStateMachineResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">REST API Reference for DeleteStateMachine Operation</seealso>
         DeleteStateMachineResponse EndDeleteStateMachine(IAsyncResult asyncResult);
 
         #endregion
@@ -250,6 +262,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity">REST API Reference for DescribeActivity Operation</seealso>
         DescribeActivityResponse DescribeActivity(DescribeActivityRequest request);
 
         /// <summary>
@@ -263,6 +276,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeActivity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity">REST API Reference for DescribeActivity Operation</seealso>
         IAsyncResult BeginDescribeActivity(DescribeActivityRequest request, AsyncCallback callback, object state);
 
 
@@ -274,6 +288,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeActivity.</param>
         /// 
         /// <returns>Returns a  DescribeActivityResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity">REST API Reference for DescribeActivity Operation</seealso>
         DescribeActivityResponse EndDescribeActivity(IAsyncResult asyncResult);
 
         #endregion
@@ -293,6 +308,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
         DescribeExecutionResponse DescribeExecution(DescribeExecutionRequest request);
 
         /// <summary>
@@ -306,6 +322,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
         IAsyncResult BeginDescribeExecution(DescribeExecutionRequest request, AsyncCallback callback, object state);
 
 
@@ -317,6 +334,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExecution.</param>
         /// 
         /// <returns>Returns a  DescribeExecutionResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
         DescribeExecutionResponse EndDescribeExecution(IAsyncResult asyncResult);
 
         #endregion
@@ -336,6 +354,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
         /// The specified state machine does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine">REST API Reference for DescribeStateMachine Operation</seealso>
         DescribeStateMachineResponse DescribeStateMachine(DescribeStateMachineRequest request);
 
         /// <summary>
@@ -349,6 +368,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStateMachine
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine">REST API Reference for DescribeStateMachine Operation</seealso>
         IAsyncResult BeginDescribeStateMachine(DescribeStateMachineRequest request, AsyncCallback callback, object state);
 
 
@@ -360,6 +380,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStateMachine.</param>
         /// 
         /// <returns>Returns a  DescribeStateMachineResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine">REST API Reference for DescribeStateMachine Operation</seealso>
         DescribeStateMachineResponse EndDescribeStateMachine(IAsyncResult asyncResult);
 
         #endregion
@@ -395,6 +416,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">REST API Reference for GetActivityTask Operation</seealso>
         GetActivityTaskResponse GetActivityTask(GetActivityTaskRequest request);
 
         /// <summary>
@@ -408,6 +430,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetActivityTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">REST API Reference for GetActivityTask Operation</seealso>
         IAsyncResult BeginGetActivityTask(GetActivityTaskRequest request, AsyncCallback callback, object state);
 
 
@@ -419,6 +442,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetActivityTask.</param>
         /// 
         /// <returns>Returns a  GetActivityTaskResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">REST API Reference for GetActivityTask Operation</seealso>
         GetActivityTaskResponse EndGetActivityTask(IAsyncResult asyncResult);
 
         #endregion
@@ -445,6 +469,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
         /// The provided token is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">REST API Reference for GetExecutionHistory Operation</seealso>
         GetExecutionHistoryResponse GetExecutionHistory(GetExecutionHistoryRequest request);
 
         /// <summary>
@@ -458,6 +483,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExecutionHistory
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">REST API Reference for GetExecutionHistory Operation</seealso>
         IAsyncResult BeginGetExecutionHistory(GetExecutionHistoryRequest request, AsyncCallback callback, object state);
 
 
@@ -469,6 +495,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetExecutionHistory.</param>
         /// 
         /// <returns>Returns a  GetExecutionHistoryResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">REST API Reference for GetExecutionHistory Operation</seealso>
         GetExecutionHistoryResponse EndGetExecutionHistory(IAsyncResult asyncResult);
 
         #endregion
@@ -487,6 +514,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
         /// The provided token is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">REST API Reference for ListActivities Operation</seealso>
         ListActivitiesResponse ListActivities(ListActivitiesRequest request);
 
         /// <summary>
@@ -500,6 +528,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListActivities
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">REST API Reference for ListActivities Operation</seealso>
         IAsyncResult BeginListActivities(ListActivitiesRequest request, AsyncCallback callback, object state);
 
 
@@ -511,6 +540,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListActivities.</param>
         /// 
         /// <returns>Returns a  ListActivitiesResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">REST API Reference for ListActivities Operation</seealso>
         ListActivitiesResponse EndListActivities(IAsyncResult asyncResult);
 
         #endregion
@@ -535,6 +565,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
         /// The specified state machine does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         ListExecutionsResponse ListExecutions(ListExecutionsRequest request);
 
         /// <summary>
@@ -548,6 +579,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExecutions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         IAsyncResult BeginListExecutions(ListExecutionsRequest request, AsyncCallback callback, object state);
 
 
@@ -559,6 +591,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExecutions.</param>
         /// 
         /// <returns>Returns a  ListExecutionsResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         ListExecutionsResponse EndListExecutions(IAsyncResult asyncResult);
 
         #endregion
@@ -577,6 +610,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
         /// The provided token is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">REST API Reference for ListStateMachines Operation</seealso>
         ListStateMachinesResponse ListStateMachines(ListStateMachinesRequest request);
 
         /// <summary>
@@ -590,6 +624,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStateMachines
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">REST API Reference for ListStateMachines Operation</seealso>
         IAsyncResult BeginListStateMachines(ListStateMachinesRequest request, AsyncCallback callback, object state);
 
 
@@ -601,6 +636,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStateMachines.</param>
         /// 
         /// <returns>Returns a  ListStateMachinesResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">REST API Reference for ListStateMachines Operation</seealso>
         ListStateMachinesResponse EndListStateMachines(IAsyncResult asyncResult);
 
         #endregion
@@ -623,6 +659,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.TaskTimedOutException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">REST API Reference for SendTaskFailure Operation</seealso>
         SendTaskFailureResponse SendTaskFailure(SendTaskFailureRequest request);
 
         /// <summary>
@@ -636,6 +673,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendTaskFailure
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">REST API Reference for SendTaskFailure Operation</seealso>
         IAsyncResult BeginSendTaskFailure(SendTaskFailureRequest request, AsyncCallback callback, object state);
 
 
@@ -647,6 +685,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendTaskFailure.</param>
         /// 
         /// <returns>Returns a  SendTaskFailureResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">REST API Reference for SendTaskFailure Operation</seealso>
         SendTaskFailureResponse EndSendTaskFailure(IAsyncResult asyncResult);
 
         #endregion
@@ -687,6 +726,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.TaskTimedOutException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat">REST API Reference for SendTaskHeartbeat Operation</seealso>
         SendTaskHeartbeatResponse SendTaskHeartbeat(SendTaskHeartbeatRequest request);
 
         /// <summary>
@@ -700,6 +740,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendTaskHeartbeat
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat">REST API Reference for SendTaskHeartbeat Operation</seealso>
         IAsyncResult BeginSendTaskHeartbeat(SendTaskHeartbeatRequest request, AsyncCallback callback, object state);
 
 
@@ -711,6 +752,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendTaskHeartbeat.</param>
         /// 
         /// <returns>Returns a  SendTaskHeartbeatResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat">REST API Reference for SendTaskHeartbeat Operation</seealso>
         SendTaskHeartbeatResponse EndSendTaskHeartbeat(IAsyncResult asyncResult);
 
         #endregion
@@ -737,6 +779,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.TaskTimedOutException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess">REST API Reference for SendTaskSuccess Operation</seealso>
         SendTaskSuccessResponse SendTaskSuccess(SendTaskSuccessRequest request);
 
         /// <summary>
@@ -750,6 +793,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendTaskSuccess
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess">REST API Reference for SendTaskSuccess Operation</seealso>
         IAsyncResult BeginSendTaskSuccess(SendTaskSuccessRequest request, AsyncCallback callback, object state);
 
 
@@ -761,6 +805,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendTaskSuccess.</param>
         /// 
         /// <returns>Returns a  SendTaskSuccessResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess">REST API Reference for SendTaskSuccess Operation</seealso>
         SendTaskSuccessResponse EndSendTaskSuccess(IAsyncResult asyncResult);
 
         #endregion
@@ -796,6 +841,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
         /// The specified state machine does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution">REST API Reference for StartExecution Operation</seealso>
         StartExecutionResponse StartExecution(StartExecutionRequest request);
 
         /// <summary>
@@ -809,6 +855,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution">REST API Reference for StartExecution Operation</seealso>
         IAsyncResult BeginStartExecution(StartExecutionRequest request, AsyncCallback callback, object state);
 
 
@@ -820,6 +867,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartExecution.</param>
         /// 
         /// <returns>Returns a  StartExecutionResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution">REST API Reference for StartExecution Operation</seealso>
         StartExecutionResponse EndStartExecution(IAsyncResult asyncResult);
 
         #endregion
@@ -839,6 +887,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">REST API Reference for StopExecution Operation</seealso>
         StopExecutionResponse StopExecution(StopExecutionRequest request);
 
         /// <summary>
@@ -852,6 +901,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">REST API Reference for StopExecution Operation</seealso>
         IAsyncResult BeginStopExecution(StopExecutionRequest request, AsyncCallback callback, object state);
 
 
@@ -863,6 +913,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopExecution.</param>
         /// 
         /// <returns>Returns a  StopExecutionResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">REST API Reference for StopExecution Operation</seealso>
         StopExecutionResponse EndStopExecution(IAsyncResult asyncResult);
 
         #endregion

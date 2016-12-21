@@ -50,6 +50,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">REST API Reference for AssociateFleet Operation</seealso>
         AssociateFleetResponse AssociateFleet(AssociateFleetRequest request);
 
         /// <summary>
@@ -63,6 +64,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateFleet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">REST API Reference for AssociateFleet Operation</seealso>
         IAsyncResult BeginAssociateFleet(AssociateFleetRequest request, AsyncCallback callback, object state);
 
 
@@ -74,6 +76,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateFleet.</param>
         /// 
         /// <returns>Returns a  AssociateFleetResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">REST API Reference for AssociateFleet Operation</seealso>
         AssociateFleetResponse EndAssociateFleet(IAsyncResult asyncResult);
 
         #endregion
@@ -102,6 +105,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         CreateFleetResponse CreateFleet(CreateFleetRequest request);
 
         /// <summary>
@@ -115,6 +119,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFleet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         IAsyncResult BeginCreateFleet(CreateFleetRequest request, AsyncCallback callback, object state);
 
 
@@ -126,6 +131,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFleet.</param>
         /// 
         /// <returns>Returns a  CreateFleetResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         CreateFleetResponse EndCreateFleet(IAsyncResult asyncResult);
 
         #endregion
@@ -145,6 +151,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">REST API Reference for CreateStack Operation</seealso>
         CreateStackResponse CreateStack(CreateStackRequest request);
 
         /// <summary>
@@ -158,6 +165,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStack
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">REST API Reference for CreateStack Operation</seealso>
         IAsyncResult BeginCreateStack(CreateStackRequest request, AsyncCallback callback, object state);
 
 
@@ -169,6 +177,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStack.</param>
         /// 
         /// <returns>Returns a  CreateStackResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">REST API Reference for CreateStack Operation</seealso>
         CreateStackResponse EndCreateStack(IAsyncResult asyncResult);
 
         #endregion
@@ -189,6 +198,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">REST API Reference for CreateStreamingURL Operation</seealso>
         CreateStreamingURLResponse CreateStreamingURL(CreateStreamingURLRequest request);
 
         /// <summary>
@@ -202,6 +212,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStreamingURL
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">REST API Reference for CreateStreamingURL Operation</seealso>
         IAsyncResult BeginCreateStreamingURL(CreateStreamingURLRequest request, AsyncCallback callback, object state);
 
 
@@ -213,6 +224,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStreamingURL.</param>
         /// 
         /// <returns>Returns a  CreateStreamingURLResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">REST API Reference for CreateStreamingURL Operation</seealso>
         CreateStreamingURLResponse EndCreateStreamingURL(IAsyncResult asyncResult);
 
         #endregion
@@ -232,6 +244,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         DeleteFleetResponse DeleteFleet(DeleteFleetRequest request);
 
         /// <summary>
@@ -245,6 +258,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFleet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         IAsyncResult BeginDeleteFleet(DeleteFleetRequest request, AsyncCallback callback, object state);
 
 
@@ -256,6 +270,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFleet.</param>
         /// 
         /// <returns>Returns a  DeleteFleetResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         DeleteFleetResponse EndDeleteFleet(IAsyncResult asyncResult);
 
         #endregion
@@ -276,6 +291,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         DeleteStackResponse DeleteStack(DeleteStackRequest request);
 
         /// <summary>
@@ -289,6 +305,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStack
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         IAsyncResult BeginDeleteStack(DeleteStackRequest request, AsyncCallback callback, object state);
 
 
@@ -300,6 +317,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStack.</param>
         /// 
         /// <returns>Returns a  DeleteStackResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         DeleteStackResponse EndDeleteStack(IAsyncResult asyncResult);
 
         #endregion
@@ -319,6 +337,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
         DescribeFleetsResponse DescribeFleets(DescribeFleetsRequest request);
 
         /// <summary>
@@ -332,6 +351,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFleets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
         IAsyncResult BeginDescribeFleets(DescribeFleetsRequest request, AsyncCallback callback, object state);
 
 
@@ -343,6 +363,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFleets.</param>
         /// 
         /// <returns>Returns a  DescribeFleetsResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
         DescribeFleetsResponse EndDescribeFleets(IAsyncResult asyncResult);
 
         #endregion
@@ -360,6 +381,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         DescribeImagesResponse DescribeImages(DescribeImagesRequest request);
 
         /// <summary>
@@ -373,6 +395,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImages
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         IAsyncResult BeginDescribeImages(DescribeImagesRequest request, AsyncCallback callback, object state);
 
 
@@ -384,6 +407,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeImages.</param>
         /// 
         /// <returns>Returns a  DescribeImagesResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         DescribeImagesResponse EndDescribeImages(IAsyncResult asyncResult);
 
         #endregion
@@ -399,6 +423,7 @@ namespace Amazon.AppStream
         /// <param name="request">Container for the necessary parameters to execute the DescribeSessions service method.</param>
         /// 
         /// <returns>The response from the DescribeSessions service method, as returned by AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
         DescribeSessionsResponse DescribeSessions(DescribeSessionsRequest request);
 
         /// <summary>
@@ -412,6 +437,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSessions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
         IAsyncResult BeginDescribeSessions(DescribeSessionsRequest request, AsyncCallback callback, object state);
 
 
@@ -423,6 +449,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSessions.</param>
         /// 
         /// <returns>Returns a  DescribeSessionsResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
         DescribeSessionsResponse EndDescribeSessions(IAsyncResult asyncResult);
 
         #endregion
@@ -442,6 +469,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         DescribeStacksResponse DescribeStacks(DescribeStacksRequest request);
 
         /// <summary>
@@ -455,6 +483,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStacks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         IAsyncResult BeginDescribeStacks(DescribeStacksRequest request, AsyncCallback callback, object state);
 
 
@@ -466,6 +495,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStacks.</param>
         /// 
         /// <returns>Returns a  DescribeStacksResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         DescribeStacksResponse EndDescribeStacks(IAsyncResult asyncResult);
 
         #endregion
@@ -485,6 +515,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">REST API Reference for DisassociateFleet Operation</seealso>
         DisassociateFleetResponse DisassociateFleet(DisassociateFleetRequest request);
 
         /// <summary>
@@ -498,6 +529,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateFleet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">REST API Reference for DisassociateFleet Operation</seealso>
         IAsyncResult BeginDisassociateFleet(DisassociateFleetRequest request, AsyncCallback callback, object state);
 
 
@@ -509,6 +541,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateFleet.</param>
         /// 
         /// <returns>Returns a  DisassociateFleetResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">REST API Reference for DisassociateFleet Operation</seealso>
         DisassociateFleetResponse EndDisassociateFleet(IAsyncResult asyncResult);
 
         #endregion
@@ -522,6 +555,7 @@ namespace Amazon.AppStream
         /// <param name="request">Container for the necessary parameters to execute the ExpireSession service method.</param>
         /// 
         /// <returns>The response from the ExpireSession service method, as returned by AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">REST API Reference for ExpireSession Operation</seealso>
         ExpireSessionResponse ExpireSession(ExpireSessionRequest request);
 
         /// <summary>
@@ -535,6 +569,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExpireSession
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">REST API Reference for ExpireSession Operation</seealso>
         IAsyncResult BeginExpireSession(ExpireSessionRequest request, AsyncCallback callback, object state);
 
 
@@ -546,6 +581,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExpireSession.</param>
         /// 
         /// <returns>Returns a  ExpireSessionResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">REST API Reference for ExpireSession Operation</seealso>
         ExpireSessionResponse EndExpireSession(IAsyncResult asyncResult);
 
         #endregion
@@ -559,6 +595,7 @@ namespace Amazon.AppStream
         /// <param name="request">Container for the necessary parameters to execute the ListAssociatedFleets service method.</param>
         /// 
         /// <returns>The response from the ListAssociatedFleets service method, as returned by AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">REST API Reference for ListAssociatedFleets Operation</seealso>
         ListAssociatedFleetsResponse ListAssociatedFleets(ListAssociatedFleetsRequest request);
 
         /// <summary>
@@ -572,6 +609,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssociatedFleets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">REST API Reference for ListAssociatedFleets Operation</seealso>
         IAsyncResult BeginListAssociatedFleets(ListAssociatedFleetsRequest request, AsyncCallback callback, object state);
 
 
@@ -583,6 +621,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssociatedFleets.</param>
         /// 
         /// <returns>Returns a  ListAssociatedFleetsResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">REST API Reference for ListAssociatedFleets Operation</seealso>
         ListAssociatedFleetsResponse EndListAssociatedFleets(IAsyncResult asyncResult);
 
         #endregion
@@ -596,6 +635,7 @@ namespace Amazon.AppStream
         /// <param name="request">Container for the necessary parameters to execute the ListAssociatedStacks service method.</param>
         /// 
         /// <returns>The response from the ListAssociatedStacks service method, as returned by AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">REST API Reference for ListAssociatedStacks Operation</seealso>
         ListAssociatedStacksResponse ListAssociatedStacks(ListAssociatedStacksRequest request);
 
         /// <summary>
@@ -609,6 +649,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssociatedStacks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">REST API Reference for ListAssociatedStacks Operation</seealso>
         IAsyncResult BeginListAssociatedStacks(ListAssociatedStacksRequest request, AsyncCallback callback, object state);
 
 
@@ -620,6 +661,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssociatedStacks.</param>
         /// 
         /// <returns>Returns a  ListAssociatedStacksResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">REST API Reference for ListAssociatedStacks Operation</seealso>
         ListAssociatedStacksResponse EndListAssociatedStacks(IAsyncResult asyncResult);
 
         #endregion
@@ -639,6 +681,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">REST API Reference for StartFleet Operation</seealso>
         StartFleetResponse StartFleet(StartFleetRequest request);
 
         /// <summary>
@@ -652,6 +695,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartFleet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">REST API Reference for StartFleet Operation</seealso>
         IAsyncResult BeginStartFleet(StartFleetRequest request, AsyncCallback callback, object state);
 
 
@@ -663,6 +707,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartFleet.</param>
         /// 
         /// <returns>Returns a  StartFleetResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">REST API Reference for StartFleet Operation</seealso>
         StartFleetResponse EndStartFleet(IAsyncResult asyncResult);
 
         #endregion
@@ -679,6 +724,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">REST API Reference for StopFleet Operation</seealso>
         StopFleetResponse StopFleet(StopFleetRequest request);
 
         /// <summary>
@@ -692,6 +738,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopFleet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">REST API Reference for StopFleet Operation</seealso>
         IAsyncResult BeginStopFleet(StopFleetRequest request, AsyncCallback callback, object state);
 
 
@@ -703,6 +750,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopFleet.</param>
         /// 
         /// <returns>Returns a  StopFleetResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">REST API Reference for StopFleet Operation</seealso>
         StopFleetResponse EndStopFleet(IAsyncResult asyncResult);
 
         #endregion
@@ -730,6 +778,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
         UpdateFleetResponse UpdateFleet(UpdateFleetRequest request);
 
         /// <summary>
@@ -743,6 +792,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateFleet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
         IAsyncResult BeginUpdateFleet(UpdateFleetRequest request, AsyncCallback callback, object state);
 
 
@@ -754,6 +804,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateFleet.</param>
         /// 
         /// <returns>Returns a  UpdateFleetResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
         UpdateFleetResponse EndUpdateFleet(IAsyncResult asyncResult);
 
         #endregion
@@ -773,6 +824,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         UpdateStackResponse UpdateStack(UpdateStackRequest request);
 
         /// <summary>
@@ -786,6 +838,7 @@ namespace Amazon.AppStream
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateStack
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         IAsyncResult BeginUpdateStack(UpdateStackRequest request, AsyncCallback callback, object state);
 
 
@@ -797,6 +850,7 @@ namespace Amazon.AppStream
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateStack.</param>
         /// 
         /// <returns>Returns a  UpdateStackResult from AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         UpdateStackResponse EndUpdateStack(IAsyncResult asyncResult);
 
         #endregion

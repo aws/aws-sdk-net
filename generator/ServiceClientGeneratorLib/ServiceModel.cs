@@ -41,6 +41,8 @@ namespace ServiceClientGenerator
         public const string WrapperKey = "wrapper";
         public const string DeprecatedKey = "deprecated";
         public const string IdempotencyTokenKey = "idempotencyToken";
+        public const string UidKey = "uid";
+
         /// <summary>
         /// This model contains information about customizations needed during the generation process
         /// </summary>
@@ -120,6 +122,17 @@ namespace ServiceClientGenerator
                 if (version == "1")
                     version = "1.0";
                 return version;
+            }
+        }
+
+        /// <summary>
+        /// Unique Service ID.  For models without this entry, this may return null;
+        /// </summary>
+        public string ServiceId
+        {
+            get
+            {
+                return this._metadata[UidKey] == null ? null : this._metadata[UidKey].ToString();
             }
         }
 

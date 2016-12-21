@@ -307,6 +307,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceInUseException">
         /// The resource is already in use and not available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">REST API Reference for CreateDeliveryStream Operation</seealso>
         public CreateDeliveryStreamResponse CreateDeliveryStream(CreateDeliveryStreamRequest request)
         {
             var marshaller = new CreateDeliveryStreamRequestMarshaller();
@@ -326,6 +327,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDeliveryStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">REST API Reference for CreateDeliveryStream Operation</seealso>
         public IAsyncResult BeginCreateDeliveryStream(CreateDeliveryStreamRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDeliveryStreamRequestMarshaller();
@@ -342,6 +344,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDeliveryStream.</param>
         /// 
         /// <returns>Returns a  CreateDeliveryStreamResult from KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">REST API Reference for CreateDeliveryStream Operation</seealso>
         public  CreateDeliveryStreamResponse EndCreateDeliveryStream(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDeliveryStreamResponse>(asyncResult);
@@ -381,6 +384,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         public DeleteDeliveryStreamResponse DeleteDeliveryStream(string deliveryStreamName)
         {
             var request = new DeleteDeliveryStreamRequest();
@@ -419,6 +423,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         public DeleteDeliveryStreamResponse DeleteDeliveryStream(DeleteDeliveryStreamRequest request)
         {
             var marshaller = new DeleteDeliveryStreamRequestMarshaller();
@@ -438,6 +443,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDeliveryStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         public IAsyncResult BeginDeleteDeliveryStream(DeleteDeliveryStreamRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDeliveryStreamRequestMarshaller();
@@ -454,6 +460,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDeliveryStream.</param>
         /// 
         /// <returns>Returns a  DeleteDeliveryStreamResult from KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         public  DeleteDeliveryStreamResponse EndDeleteDeliveryStream(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDeliveryStreamResponse>(asyncResult);
@@ -474,6 +481,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream">REST API Reference for DescribeDeliveryStream Operation</seealso>
         public DescribeDeliveryStreamResponse DescribeDeliveryStream(DescribeDeliveryStreamRequest request)
         {
             var marshaller = new DescribeDeliveryStreamRequestMarshaller();
@@ -493,6 +501,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDeliveryStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream">REST API Reference for DescribeDeliveryStream Operation</seealso>
         public IAsyncResult BeginDescribeDeliveryStream(DescribeDeliveryStreamRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeDeliveryStreamRequestMarshaller();
@@ -509,6 +518,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDeliveryStream.</param>
         /// 
         /// <returns>Returns a  DescribeDeliveryStreamResult from KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream">REST API Reference for DescribeDeliveryStream Operation</seealso>
         public  DescribeDeliveryStreamResponse EndDescribeDeliveryStream(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDeliveryStreamResponse>(asyncResult);
@@ -534,6 +544,7 @@ namespace Amazon.KinesisFirehose
         /// </summary>
         /// 
         /// <returns>The response from the ListDeliveryStreams service method, as returned by KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         public ListDeliveryStreamsResponse ListDeliveryStreams()
         {
             return ListDeliveryStreams(new ListDeliveryStreamsRequest());
@@ -556,6 +567,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="request">Container for the necessary parameters to execute the ListDeliveryStreams service method.</param>
         /// 
         /// <returns>The response from the ListDeliveryStreams service method, as returned by KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         public ListDeliveryStreamsResponse ListDeliveryStreams(ListDeliveryStreamsRequest request)
         {
             var marshaller = new ListDeliveryStreamsRequestMarshaller();
@@ -575,6 +587,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeliveryStreams
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         public IAsyncResult BeginListDeliveryStreams(ListDeliveryStreamsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListDeliveryStreamsRequestMarshaller();
@@ -591,6 +604,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeliveryStreams.</param>
         /// 
         /// <returns>Returns a  ListDeliveryStreamsResult from KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         public  ListDeliveryStreamsResponse EndListDeliveryStreams(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDeliveryStreamsResponse>(asyncResult);
@@ -664,6 +678,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         public PutRecordResponse PutRecord(string deliveryStreamName, Record record)
         {
             var request = new PutRecordRequest();
@@ -736,6 +751,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         public PutRecordResponse PutRecord(PutRecordRequest request)
         {
             var marshaller = new PutRecordRequestMarshaller();
@@ -755,6 +771,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRecord
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         public IAsyncResult BeginPutRecord(PutRecordRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutRecordRequestMarshaller();
@@ -771,6 +788,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRecord.</param>
         /// 
         /// <returns>Returns a  PutRecordResult from KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         public  PutRecordResponse EndPutRecord(IAsyncResult asyncResult)
         {
             return EndInvoke<PutRecordResponse>(asyncResult);
@@ -871,6 +889,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         public PutRecordBatchResponse PutRecordBatch(string deliveryStreamName, List<Record> records)
         {
             var request = new PutRecordBatchRequest();
@@ -970,6 +989,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         public PutRecordBatchResponse PutRecordBatch(PutRecordBatchRequest request)
         {
             var marshaller = new PutRecordBatchRequestMarshaller();
@@ -989,6 +1009,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRecordBatch
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         public IAsyncResult BeginPutRecordBatch(PutRecordBatchRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PutRecordBatchRequestMarshaller();
@@ -1005,6 +1026,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRecordBatch.</param>
         /// 
         /// <returns>Returns a  PutRecordBatchResult from KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         public  PutRecordBatchResponse EndPutRecordBatch(IAsyncResult asyncResult)
         {
             return EndInvoke<PutRecordBatchResponse>(asyncResult);
@@ -1072,6 +1094,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">REST API Reference for UpdateDestination Operation</seealso>
         public UpdateDestinationResponse UpdateDestination(UpdateDestinationRequest request)
         {
             var marshaller = new UpdateDestinationRequestMarshaller();
@@ -1091,6 +1114,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDestination
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">REST API Reference for UpdateDestination Operation</seealso>
         public IAsyncResult BeginUpdateDestination(UpdateDestinationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateDestinationRequestMarshaller();
@@ -1107,6 +1131,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDestination.</param>
         /// 
         /// <returns>Returns a  UpdateDestinationResult from KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">REST API Reference for UpdateDestination Operation</seealso>
         public  UpdateDestinationResponse EndUpdateDestination(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDestinationResponse>(asyncResult);

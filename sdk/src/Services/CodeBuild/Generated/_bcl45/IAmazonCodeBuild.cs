@@ -118,6 +118,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds">REST API Reference for BatchGetBuilds Operation</seealso>
         BatchGetBuildsResponse BatchGetBuilds(BatchGetBuildsRequest request);
 
 
@@ -130,6 +131,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds">REST API Reference for BatchGetBuilds Operation</seealso>
         Task<BatchGetBuildsResponse> BatchGetBuildsAsync(BatchGetBuildsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -146,6 +148,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">REST API Reference for BatchGetProjects Operation</seealso>
         BatchGetProjectsResponse BatchGetProjects(BatchGetProjectsRequest request);
 
 
@@ -158,6 +161,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">REST API Reference for BatchGetProjects Operation</seealso>
         Task<BatchGetProjectsResponse> BatchGetProjectsAsync(BatchGetProjectsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -181,6 +185,7 @@ namespace Amazon.CodeBuild
         /// The specified AWS resource cannot be created, because an AWS resource with the same
         /// settings already exists.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject">REST API Reference for CreateProject Operation</seealso>
         CreateProjectResponse CreateProject(CreateProjectRequest request);
 
 
@@ -193,6 +198,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject">REST API Reference for CreateProject Operation</seealso>
         Task<CreateProjectResponse> CreateProjectAsync(CreateProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -209,6 +215,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         DeleteProjectResponse DeleteProject(DeleteProjectRequest request);
 
 
@@ -221,6 +228,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         Task<DeleteProjectResponse> DeleteProjectAsync(DeleteProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -237,6 +245,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         ListBuildsResponse ListBuilds(ListBuildsRequest request);
 
 
@@ -249,6 +258,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         Task<ListBuildsResponse> ListBuildsAsync(ListBuildsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -269,6 +279,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
         /// The specified AWS resource cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject">REST API Reference for ListBuildsForProject Operation</seealso>
         ListBuildsForProjectResponse ListBuildsForProject(ListBuildsForProjectRequest request);
 
 
@@ -281,6 +292,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject">REST API Reference for ListBuildsForProject Operation</seealso>
         Task<ListBuildsForProjectResponse> ListBuildsForProjectAsync(ListBuildsForProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -294,6 +306,7 @@ namespace Amazon.CodeBuild
         /// <param name="request">Container for the necessary parameters to execute the ListCuratedEnvironmentImages service method.</param>
         /// 
         /// <returns>The response from the ListCuratedEnvironmentImages service method, as returned by CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages">REST API Reference for ListCuratedEnvironmentImages Operation</seealso>
         ListCuratedEnvironmentImagesResponse ListCuratedEnvironmentImages(ListCuratedEnvironmentImagesRequest request);
 
 
@@ -306,6 +319,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages">REST API Reference for ListCuratedEnvironmentImages Operation</seealso>
         Task<ListCuratedEnvironmentImagesResponse> ListCuratedEnvironmentImagesAsync(ListCuratedEnvironmentImagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -323,6 +337,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects">REST API Reference for ListProjects Operation</seealso>
         ListProjectsResponse ListProjects(ListProjectsRequest request);
 
 
@@ -335,6 +350,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects">REST API Reference for ListProjects Operation</seealso>
         Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -357,6 +373,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
         /// The specified AWS resource cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">REST API Reference for StartBuild Operation</seealso>
         StartBuildResponse StartBuild(StartBuildRequest request);
 
 
@@ -369,6 +386,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">REST API Reference for StartBuild Operation</seealso>
         Task<StartBuildResponse> StartBuildAsync(StartBuildRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -394,6 +412,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
         /// The specified AWS resource cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">REST API Reference for StopBuild Operation</seealso>
         StopBuildResponse StopBuild(StopBuildRequest request);
 
 
@@ -406,6 +425,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">REST API Reference for StopBuild Operation</seealso>
         Task<StopBuildResponse> StopBuildAsync(StopBuildRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -425,6 +445,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
         /// The specified AWS resource cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         UpdateProjectResponse UpdateProject(UpdateProjectRequest request);
 
 
@@ -437,6 +458,7 @@ namespace Amazon.CodeBuild
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         Task<UpdateProjectResponse> UpdateProjectAsync(UpdateProjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

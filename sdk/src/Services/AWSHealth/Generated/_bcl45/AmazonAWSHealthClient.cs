@@ -249,6 +249,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         public DescribeAffectedEntitiesResponse DescribeAffectedEntities(DescribeAffectedEntitiesRequest request)
         {
             var marshaller = new DescribeAffectedEntitiesRequestMarshaller();
@@ -266,6 +267,7 @@ namespace Amazon.AWSHealth
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         public Task<DescribeAffectedEntitiesResponse> DescribeAffectedEntitiesAsync(DescribeAffectedEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAffectedEntitiesRequestMarshaller();
@@ -286,6 +288,7 @@ namespace Amazon.AWSHealth
         /// <param name="request">Container for the necessary parameters to execute the DescribeEntityAggregates service method.</param>
         /// 
         /// <returns>The response from the DescribeEntityAggregates service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">REST API Reference for DescribeEntityAggregates Operation</seealso>
         public DescribeEntityAggregatesResponse DescribeEntityAggregates(DescribeEntityAggregatesRequest request)
         {
             var marshaller = new DescribeEntityAggregatesRequestMarshaller();
@@ -303,6 +306,7 @@ namespace Amazon.AWSHealth
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">REST API Reference for DescribeEntityAggregates Operation</seealso>
         public Task<DescribeEntityAggregatesResponse> DescribeEntityAggregatesAsync(DescribeEntityAggregatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEntityAggregatesRequestMarshaller();
@@ -326,6 +330,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         public DescribeEventAggregatesResponse DescribeEventAggregates(DescribeEventAggregatesRequest request)
         {
             var marshaller = new DescribeEventAggregatesRequestMarshaller();
@@ -343,6 +348,7 @@ namespace Amazon.AWSHealth
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         public Task<DescribeEventAggregatesResponse> DescribeEventAggregatesAsync(DescribeEventAggregatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventAggregatesRequestMarshaller();
@@ -368,6 +374,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         public DescribeEventDetailsResponse DescribeEventDetails(DescribeEventDetailsRequest request)
         {
             var marshaller = new DescribeEventDetailsRequestMarshaller();
@@ -385,6 +392,7 @@ namespace Amazon.AWSHealth
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         public Task<DescribeEventDetailsResponse> DescribeEventDetailsAsync(DescribeEventDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventDetailsRequestMarshaller();
@@ -416,6 +424,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
         {
             var marshaller = new DescribeEventsRequestMarshaller();
@@ -433,6 +442,7 @@ namespace Amazon.AWSHealth
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventsRequestMarshaller();
@@ -461,6 +471,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         public DescribeEventTypesResponse DescribeEventTypes(DescribeEventTypesRequest request)
         {
             var marshaller = new DescribeEventTypesRequestMarshaller();
@@ -478,6 +489,7 @@ namespace Amazon.AWSHealth
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         public Task<DescribeEventTypesResponse> DescribeEventTypesAsync(DescribeEventTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEventTypesRequestMarshaller();

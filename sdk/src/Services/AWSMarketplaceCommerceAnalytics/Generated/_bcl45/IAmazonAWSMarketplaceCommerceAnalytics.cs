@@ -57,6 +57,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <exception cref="Amazon.AWSMarketplaceCommerceAnalytics.Model.MarketplaceCommerceAnalyticsException">
         /// This exception is thrown when an internal service error occurs.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
         GenerateDataSetResponse GenerateDataSet(GenerateDataSetRequest request);
 
 
@@ -69,6 +70,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
         Task<GenerateDataSetResponse> GenerateDataSetAsync(GenerateDataSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -93,6 +95,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <exception cref="Amazon.AWSMarketplaceCommerceAnalytics.Model.MarketplaceCommerceAnalyticsException">
         /// This exception is thrown when an internal service error occurs.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
         StartSupportDataExportResponse StartSupportDataExport(StartSupportDataExportRequest request);
 
 
@@ -105,6 +108,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
         Task<StartSupportDataExportResponse> StartSupportDataExportAsync(StartSupportDataExportRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

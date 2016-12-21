@@ -55,6 +55,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <exception cref="Amazon.AWSMarketplaceCommerceAnalytics.Model.MarketplaceCommerceAnalyticsException">
         /// This exception is thrown when an internal service error occurs.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
         GenerateDataSetResponse GenerateDataSet(GenerateDataSetRequest request);
 
         /// <summary>
@@ -68,6 +69,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGenerateDataSet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
         IAsyncResult BeginGenerateDataSet(GenerateDataSetRequest request, AsyncCallback callback, object state);
 
 
@@ -79,6 +81,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateDataSet.</param>
         /// 
         /// <returns>Returns a  GenerateDataSetResult from AWSMarketplaceCommerceAnalytics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/GenerateDataSet">REST API Reference for GenerateDataSet Operation</seealso>
         GenerateDataSetResponse EndGenerateDataSet(IAsyncResult asyncResult);
 
         #endregion
@@ -103,6 +106,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <exception cref="Amazon.AWSMarketplaceCommerceAnalytics.Model.MarketplaceCommerceAnalyticsException">
         /// This exception is thrown when an internal service error occurs.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
         StartSupportDataExportResponse StartSupportDataExport(StartSupportDataExportRequest request);
 
         /// <summary>
@@ -116,6 +120,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSupportDataExport
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
         IAsyncResult BeginStartSupportDataExport(StartSupportDataExportRequest request, AsyncCallback callback, object state);
 
 
@@ -127,6 +132,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSupportDataExport.</param>
         /// 
         /// <returns>Returns a  StartSupportDataExportResult from AWSMarketplaceCommerceAnalytics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplacecommerceanalytics-2015-07-01/StartSupportDataExport">REST API Reference for StartSupportDataExport Operation</seealso>
         StartSupportDataExportResponse EndStartSupportDataExport(IAsyncResult asyncResult);
 
         #endregion

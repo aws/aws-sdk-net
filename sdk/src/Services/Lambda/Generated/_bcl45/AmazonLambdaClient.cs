@@ -286,6 +286,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public AddPermissionResponse AddPermission(AddPermissionRequest request)
         {
             var marshaller = new AddPermissionRequestMarshaller();
@@ -303,6 +304,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">REST API Reference for AddPermission Operation</seealso>
         public Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AddPermissionRequestMarshaller();
@@ -349,6 +351,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public CreateAliasResponse CreateAlias(CreateAliasRequest request)
         {
             var marshaller = new CreateAliasRequestMarshaller();
@@ -366,6 +369,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">REST API Reference for CreateAlias Operation</seealso>
         public Task<CreateAliasResponse> CreateAliasAsync(CreateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAliasRequestMarshaller();
@@ -440,6 +444,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">REST API Reference for CreateEventSourceMapping Operation</seealso>
         public CreateEventSourceMappingResponse CreateEventSourceMapping(CreateEventSourceMappingRequest request)
         {
             var marshaller = new CreateEventSourceMappingRequestMarshaller();
@@ -457,6 +462,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">REST API Reference for CreateEventSourceMapping Operation</seealso>
         public Task<CreateEventSourceMappingResponse> CreateEventSourceMappingAsync(CreateEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateEventSourceMappingRequestMarshaller();
@@ -513,6 +519,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         public CreateFunctionResponse CreateFunction(CreateFunctionRequest request)
         {
             var marshaller = new CreateFunctionRequestMarshaller();
@@ -530,6 +537,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
         public Task<CreateFunctionResponse> CreateFunctionAsync(CreateFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateFunctionRequestMarshaller();
@@ -567,6 +575,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public DeleteAliasResponse DeleteAlias(DeleteAliasRequest request)
         {
             var marshaller = new DeleteAliasRequestMarshaller();
@@ -584,6 +593,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">REST API Reference for DeleteAlias Operation</seealso>
         public Task<DeleteAliasResponse> DeleteAliasAsync(DeleteAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteAliasRequestMarshaller();
@@ -626,6 +636,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">REST API Reference for DeleteEventSourceMapping Operation</seealso>
         public DeleteEventSourceMappingResponse DeleteEventSourceMapping(DeleteEventSourceMappingRequest request)
         {
             var marshaller = new DeleteEventSourceMappingRequestMarshaller();
@@ -643,6 +654,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">REST API Reference for DeleteEventSourceMapping Operation</seealso>
         public Task<DeleteEventSourceMappingResponse> DeleteEventSourceMappingAsync(DeleteEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteEventSourceMappingRequestMarshaller();
@@ -700,6 +712,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public DeleteFunctionResponse DeleteFunction(string functionName)
         {
             var request = new DeleteFunctionRequest();
@@ -751,6 +764,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request)
         {
             var marshaller = new DeleteFunctionRequestMarshaller();
@@ -806,6 +820,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public Task<DeleteFunctionResponse> DeleteFunctionAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteFunctionRequest();
@@ -822,6 +837,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
         public Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteFunctionRequestMarshaller();
@@ -856,6 +872,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         public GetAccountSettingsResponse GetAccountSettings(GetAccountSettingsRequest request)
         {
             var marshaller = new GetAccountSettingsRequestMarshaller();
@@ -873,6 +890,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
         public Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetAccountSettingsRequestMarshaller();
@@ -915,6 +933,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">REST API Reference for GetAlias Operation</seealso>
         public GetAliasResponse GetAlias(GetAliasRequest request)
         {
             var marshaller = new GetAliasRequestMarshaller();
@@ -932,6 +951,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">REST API Reference for GetAlias Operation</seealso>
         public Task<GetAliasResponse> GetAliasAsync(GetAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetAliasRequestMarshaller();
@@ -973,6 +993,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">REST API Reference for GetEventSourceMapping Operation</seealso>
         public GetEventSourceMappingResponse GetEventSourceMapping(GetEventSourceMappingRequest request)
         {
             var marshaller = new GetEventSourceMappingRequestMarshaller();
@@ -990,6 +1011,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping">REST API Reference for GetEventSourceMapping Operation</seealso>
         public Task<GetEventSourceMappingResponse> GetEventSourceMappingAsync(GetEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetEventSourceMappingRequestMarshaller();
@@ -1041,6 +1063,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public GetFunctionResponse GetFunction(string functionName)
         {
             var request = new GetFunctionRequest();
@@ -1086,6 +1109,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public GetFunctionResponse GetFunction(GetFunctionRequest request)
         {
             var marshaller = new GetFunctionRequestMarshaller();
@@ -1135,6 +1159,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public Task<GetFunctionResponse> GetFunctionAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetFunctionRequest();
@@ -1151,6 +1176,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">REST API Reference for GetFunction Operation</seealso>
         public Task<GetFunctionResponse> GetFunctionAsync(GetFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetFunctionRequestMarshaller();
@@ -1202,6 +1228,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         public GetFunctionConfigurationResponse GetFunctionConfiguration(string functionName)
         {
             var request = new GetFunctionConfigurationRequest();
@@ -1247,6 +1274,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         public GetFunctionConfigurationResponse GetFunctionConfiguration(GetFunctionConfigurationRequest request)
         {
             var marshaller = new GetFunctionConfigurationRequestMarshaller();
@@ -1296,6 +1324,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         public Task<GetFunctionConfigurationResponse> GetFunctionConfigurationAsync(string functionName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new GetFunctionConfigurationRequest();
@@ -1312,6 +1341,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         public Task<GetFunctionConfigurationResponse> GetFunctionConfigurationAsync(GetFunctionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetFunctionConfigurationRequestMarshaller();
@@ -1364,6 +1394,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public GetPolicyResponse GetPolicy(GetPolicyRequest request)
         {
             var marshaller = new GetPolicyRequestMarshaller();
@@ -1381,6 +1412,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
         public Task<GetPolicyResponse> GetPolicyAsync(GetPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetPolicyRequestMarshaller();
@@ -1488,6 +1520,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.UnsupportedMediaTypeException">
         /// The content type of the <code>Invoke</code> request body is not JSON.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">REST API Reference for Invoke Operation</seealso>
         public InvokeResponse Invoke(InvokeRequest request)
         {
             var marshaller = new InvokeRequestMarshaller();
@@ -1505,6 +1538,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">REST API Reference for Invoke Operation</seealso>
         public Task<InvokeResponse> InvokeAsync(InvokeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new InvokeRequestMarshaller();
@@ -1548,6 +1582,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.ServiceException">
         /// The AWS Lambda service encountered an internal error.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync">REST API Reference for InvokeAsync Operation</seealso>
         [Obsolete("This API is deprecated. We recommend that you use Invoke API instead.")]
         public InvokeAsyncResponse InvokeAsync(InvokeAsyncRequest request)
         {
@@ -1566,6 +1601,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync">REST API Reference for InvokeAsync Operation</seealso>
         [Obsolete("This API is deprecated. We recommend that you use Invoke API instead.")]
         public Task<InvokeAsyncResponse> InvokeAsyncAsync(InvokeAsyncRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1610,6 +1646,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public ListAliasesResponse ListAliases(ListAliasesRequest request)
         {
             var marshaller = new ListAliasesRequestMarshaller();
@@ -1627,6 +1664,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">REST API Reference for ListAliases Operation</seealso>
         public Task<ListAliasesResponse> ListAliasesAsync(ListAliasesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListAliasesRequestMarshaller();
@@ -1681,6 +1719,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">REST API Reference for ListEventSourceMappings Operation</seealso>
         public ListEventSourceMappingsResponse ListEventSourceMappings(ListEventSourceMappingsRequest request)
         {
             var marshaller = new ListEventSourceMappingsRequestMarshaller();
@@ -1698,6 +1737,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">REST API Reference for ListEventSourceMappings Operation</seealso>
         public Task<ListEventSourceMappingsResponse> ListEventSourceMappingsAsync(ListEventSourceMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListEventSourceMappingsRequestMarshaller();
@@ -1736,6 +1776,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public ListFunctionsResponse ListFunctions()
         {
             var request = new ListFunctionsRequest();
@@ -1768,6 +1809,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public ListFunctionsResponse ListFunctions(ListFunctionsRequest request)
         {
             var marshaller = new ListFunctionsRequestMarshaller();
@@ -1804,6 +1846,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public Task<ListFunctionsResponse> ListFunctionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new ListFunctionsRequest();
@@ -1819,6 +1862,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
         public Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListFunctionsRequestMarshaller();
@@ -1856,6 +1900,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">REST API Reference for ListVersionsByFunction Operation</seealso>
         public ListVersionsByFunctionResponse ListVersionsByFunction(ListVersionsByFunctionRequest request)
         {
             var marshaller = new ListVersionsByFunctionRequestMarshaller();
@@ -1873,6 +1918,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">REST API Reference for ListVersionsByFunction Operation</seealso>
         public Task<ListVersionsByFunctionResponse> ListVersionsByFunctionAsync(ListVersionsByFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListVersionsByFunctionRequestMarshaller();
@@ -1915,6 +1961,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
         public PublishVersionResponse PublishVersion(PublishVersionRequest request)
         {
             var marshaller = new PublishVersionRequestMarshaller();
@@ -1932,6 +1979,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">REST API Reference for PublishVersion Operation</seealso>
         public Task<PublishVersionResponse> PublishVersionAsync(PublishVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PublishVersionRequestMarshaller();
@@ -1986,6 +2034,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public RemovePermissionResponse RemovePermission(RemovePermissionRequest request)
         {
             var marshaller = new RemovePermissionRequestMarshaller();
@@ -2003,6 +2052,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         public Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RemovePermissionRequestMarshaller();
@@ -2045,6 +2095,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public UpdateAliasResponse UpdateAlias(UpdateAliasRequest request)
         {
             var marshaller = new UpdateAliasRequestMarshaller();
@@ -2062,6 +2113,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">REST API Reference for UpdateAlias Operation</seealso>
         public Task<UpdateAliasResponse> UpdateAliasAsync(UpdateAliasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateAliasRequestMarshaller();
@@ -2123,6 +2175,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">REST API Reference for UpdateEventSourceMapping Operation</seealso>
         public UpdateEventSourceMappingResponse UpdateEventSourceMapping(UpdateEventSourceMappingRequest request)
         {
             var marshaller = new UpdateEventSourceMappingRequestMarshaller();
@@ -2140,6 +2193,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">REST API Reference for UpdateEventSourceMapping Operation</seealso>
         public Task<UpdateEventSourceMappingResponse> UpdateEventSourceMappingAsync(UpdateEventSourceMappingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateEventSourceMappingRequestMarshaller();
@@ -2192,6 +2246,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">REST API Reference for UpdateFunctionCode Operation</seealso>
         public UpdateFunctionCodeResponse UpdateFunctionCode(UpdateFunctionCodeRequest request)
         {
             var marshaller = new UpdateFunctionCodeRequestMarshaller();
@@ -2209,6 +2264,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode">REST API Reference for UpdateFunctionCode Operation</seealso>
         public Task<UpdateFunctionCodeResponse> UpdateFunctionCodeAsync(UpdateFunctionCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateFunctionCodeRequestMarshaller();
@@ -2260,6 +2316,7 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">REST API Reference for UpdateFunctionConfiguration Operation</seealso>
         public UpdateFunctionConfigurationResponse UpdateFunctionConfiguration(UpdateFunctionConfigurationRequest request)
         {
             var marshaller = new UpdateFunctionConfigurationRequestMarshaller();
@@ -2277,6 +2334,7 @@ namespace Amazon.Lambda
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">REST API Reference for UpdateFunctionConfiguration Operation</seealso>
         public Task<UpdateFunctionConfigurationResponse> UpdateFunctionConfigurationAsync(UpdateFunctionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateFunctionConfigurationRequestMarshaller();

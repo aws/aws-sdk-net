@@ -78,6 +78,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection">REST API Reference for CreateProtection Operation</seealso>
         CreateProtectionResponse CreateProtection(CreateProtectionRequest request);
 
         /// <summary>
@@ -91,6 +92,7 @@ namespace Amazon.Shield
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProtection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection">REST API Reference for CreateProtection Operation</seealso>
         IAsyncResult BeginCreateProtection(CreateProtectionRequest request, AsyncCallback callback, object state);
 
 
@@ -102,6 +104,7 @@ namespace Amazon.Shield
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateProtection.</param>
         /// 
         /// <returns>Returns a  CreateProtectionResult from Shield.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection">REST API Reference for CreateProtection Operation</seealso>
         CreateProtectionResponse EndCreateProtection(IAsyncResult asyncResult);
 
         #endregion
@@ -122,6 +125,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.ResourceAlreadyExistsException">
         /// Exception indicating the specified resource already exists.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">REST API Reference for CreateSubscription Operation</seealso>
         CreateSubscriptionResponse CreateSubscription(CreateSubscriptionRequest request);
 
         /// <summary>
@@ -135,6 +139,7 @@ namespace Amazon.Shield
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSubscription
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">REST API Reference for CreateSubscription Operation</seealso>
         IAsyncResult BeginCreateSubscription(CreateSubscriptionRequest request, AsyncCallback callback, object state);
 
 
@@ -146,6 +151,7 @@ namespace Amazon.Shield
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSubscription.</param>
         /// 
         /// <returns>Returns a  CreateSubscriptionResult from Shield.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">REST API Reference for CreateSubscription Operation</seealso>
         CreateSubscriptionResponse EndCreateSubscription(IAsyncResult asyncResult);
 
         #endregion
@@ -170,6 +176,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtection">REST API Reference for DeleteProtection Operation</seealso>
         DeleteProtectionResponse DeleteProtection(DeleteProtectionRequest request);
 
         /// <summary>
@@ -183,6 +190,7 @@ namespace Amazon.Shield
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProtection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtection">REST API Reference for DeleteProtection Operation</seealso>
         IAsyncResult BeginDeleteProtection(DeleteProtectionRequest request, AsyncCallback callback, object state);
 
 
@@ -194,6 +202,7 @@ namespace Amazon.Shield
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProtection.</param>
         /// 
         /// <returns>Returns a  DeleteProtectionResult from Shield.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtection">REST API Reference for DeleteProtection Operation</seealso>
         DeleteProtectionResponse EndDeleteProtection(IAsyncResult asyncResult);
 
         #endregion
@@ -218,6 +227,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription">REST API Reference for DeleteSubscription Operation</seealso>
         DeleteSubscriptionResponse DeleteSubscription(DeleteSubscriptionRequest request);
 
         /// <summary>
@@ -231,6 +241,7 @@ namespace Amazon.Shield
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSubscription
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription">REST API Reference for DeleteSubscription Operation</seealso>
         IAsyncResult BeginDeleteSubscription(DeleteSubscriptionRequest request, AsyncCallback callback, object state);
 
 
@@ -242,6 +253,7 @@ namespace Amazon.Shield
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSubscription.</param>
         /// 
         /// <returns>Returns a  DeleteSubscriptionResult from Shield.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription">REST API Reference for DeleteSubscription Operation</seealso>
         DeleteSubscriptionResponse EndDeleteSubscription(IAsyncResult asyncResult);
 
         #endregion
@@ -262,6 +274,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
         /// Exception that indicates that the parameters passed to the API are invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack">REST API Reference for DescribeAttack Operation</seealso>
         DescribeAttackResponse DescribeAttack(DescribeAttackRequest request);
 
         /// <summary>
@@ -275,6 +288,7 @@ namespace Amazon.Shield
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAttack
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack">REST API Reference for DescribeAttack Operation</seealso>
         IAsyncResult BeginDescribeAttack(DescribeAttackRequest request, AsyncCallback callback, object state);
 
 
@@ -286,6 +300,7 @@ namespace Amazon.Shield
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAttack.</param>
         /// 
         /// <returns>Returns a  DescribeAttackResult from Shield.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack">REST API Reference for DescribeAttack Operation</seealso>
         DescribeAttackResponse EndDescribeAttack(IAsyncResult asyncResult);
 
         #endregion
@@ -306,6 +321,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection">REST API Reference for DescribeProtection Operation</seealso>
         DescribeProtectionResponse DescribeProtection(DescribeProtectionRequest request);
 
         /// <summary>
@@ -319,6 +335,7 @@ namespace Amazon.Shield
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeProtection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection">REST API Reference for DescribeProtection Operation</seealso>
         IAsyncResult BeginDescribeProtection(DescribeProtectionRequest request, AsyncCallback callback, object state);
 
 
@@ -330,6 +347,7 @@ namespace Amazon.Shield
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeProtection.</param>
         /// 
         /// <returns>Returns a  DescribeProtectionResult from Shield.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection">REST API Reference for DescribeProtection Operation</seealso>
         DescribeProtectionResponse EndDescribeProtection(IAsyncResult asyncResult);
 
         #endregion
@@ -350,6 +368,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription">REST API Reference for DescribeSubscription Operation</seealso>
         DescribeSubscriptionResponse DescribeSubscription(DescribeSubscriptionRequest request);
 
         /// <summary>
@@ -363,6 +382,7 @@ namespace Amazon.Shield
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSubscription
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription">REST API Reference for DescribeSubscription Operation</seealso>
         IAsyncResult BeginDescribeSubscription(DescribeSubscriptionRequest request, AsyncCallback callback, object state);
 
 
@@ -374,6 +394,7 @@ namespace Amazon.Shield
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSubscription.</param>
         /// 
         /// <returns>Returns a  DescribeSubscriptionResult from Shield.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription">REST API Reference for DescribeSubscription Operation</seealso>
         DescribeSubscriptionResponse EndDescribeSubscription(IAsyncResult asyncResult);
 
         #endregion
@@ -397,6 +418,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
         /// Exception that indicates that the parameters passed to the API are invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks">REST API Reference for ListAttacks Operation</seealso>
         ListAttacksResponse ListAttacks(ListAttacksRequest request);
 
         /// <summary>
@@ -410,6 +432,7 @@ namespace Amazon.Shield
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAttacks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks">REST API Reference for ListAttacks Operation</seealso>
         IAsyncResult BeginListAttacks(ListAttacksRequest request, AsyncCallback callback, object state);
 
 
@@ -421,6 +444,7 @@ namespace Amazon.Shield
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAttacks.</param>
         /// 
         /// <returns>Returns a  ListAttacksResult from Shield.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks">REST API Reference for ListAttacks Operation</seealso>
         ListAttacksResponse EndListAttacks(IAsyncResult asyncResult);
 
         #endregion
@@ -441,6 +465,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections">REST API Reference for ListProtections Operation</seealso>
         ListProtectionsResponse ListProtections(ListProtectionsRequest request);
 
         /// <summary>
@@ -454,6 +479,7 @@ namespace Amazon.Shield
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProtections
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections">REST API Reference for ListProtections Operation</seealso>
         IAsyncResult BeginListProtections(ListProtectionsRequest request, AsyncCallback callback, object state);
 
 
@@ -465,6 +491,7 @@ namespace Amazon.Shield
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProtections.</param>
         /// 
         /// <returns>Returns a  ListProtectionsResult from Shield.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections">REST API Reference for ListProtections Operation</seealso>
         ListProtectionsResponse EndListProtections(IAsyncResult asyncResult);
 
         #endregion

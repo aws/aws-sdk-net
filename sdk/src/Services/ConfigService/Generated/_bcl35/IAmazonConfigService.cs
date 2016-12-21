@@ -95,6 +95,7 @@ namespace Amazon.ConfigService
         /// The rule is currently being deleted or the rule is deleting your evaluation results.
         /// Try your request again later.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule">REST API Reference for DeleteConfigRule Operation</seealso>
         DeleteConfigRuleResponse DeleteConfigRule(DeleteConfigRuleRequest request);
 
         /// <summary>
@@ -108,6 +109,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConfigRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule">REST API Reference for DeleteConfigRule Operation</seealso>
         IAsyncResult BeginDeleteConfigRule(DeleteConfigRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -119,6 +121,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConfigRule.</param>
         /// 
         /// <returns>Returns a  DeleteConfigRuleResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigRule">REST API Reference for DeleteConfigRule Operation</seealso>
         DeleteConfigRuleResponse EndDeleteConfigRule(IAsyncResult asyncResult);
 
         #endregion
@@ -148,6 +151,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder">REST API Reference for DeleteConfigurationRecorder Operation</seealso>
         DeleteConfigurationRecorderResponse DeleteConfigurationRecorder(DeleteConfigurationRecorderRequest request);
 
         /// <summary>
@@ -161,6 +165,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConfigurationRecorder
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder">REST API Reference for DeleteConfigurationRecorder Operation</seealso>
         IAsyncResult BeginDeleteConfigurationRecorder(DeleteConfigurationRecorderRequest request, AsyncCallback callback, object state);
 
 
@@ -172,6 +177,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConfigurationRecorder.</param>
         /// 
         /// <returns>Returns a  DeleteConfigurationRecorderResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationRecorder">REST API Reference for DeleteConfigurationRecorder Operation</seealso>
         DeleteConfigurationRecorderResponse EndDeleteConfigurationRecorder(IAsyncResult asyncResult);
 
         #endregion
@@ -198,6 +204,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">REST API Reference for DeleteDeliveryChannel Operation</seealso>
         DeleteDeliveryChannelResponse DeleteDeliveryChannel(string deliveryChannelName);
 
         /// <summary>
@@ -219,6 +226,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">REST API Reference for DeleteDeliveryChannel Operation</seealso>
         DeleteDeliveryChannelResponse DeleteDeliveryChannel(DeleteDeliveryChannelRequest request);
 
         /// <summary>
@@ -232,6 +240,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDeliveryChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">REST API Reference for DeleteDeliveryChannel Operation</seealso>
         IAsyncResult BeginDeleteDeliveryChannel(DeleteDeliveryChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -243,6 +252,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDeliveryChannel.</param>
         /// 
         /// <returns>Returns a  DeleteDeliveryChannelResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel">REST API Reference for DeleteDeliveryChannel Operation</seealso>
         DeleteDeliveryChannelResponse EndDeleteDeliveryChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -267,6 +277,7 @@ namespace Amazon.ConfigService
         /// The rule is currently being deleted or the rule is deleting your evaluation results.
         /// Try your request again later.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">REST API Reference for DeleteEvaluationResults Operation</seealso>
         DeleteEvaluationResultsResponse DeleteEvaluationResults(DeleteEvaluationResultsRequest request);
 
         /// <summary>
@@ -280,6 +291,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEvaluationResults
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">REST API Reference for DeleteEvaluationResults Operation</seealso>
         IAsyncResult BeginDeleteEvaluationResults(DeleteEvaluationResultsRequest request, AsyncCallback callback, object state);
 
 
@@ -291,6 +303,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEvaluationResults.</param>
         /// 
         /// <returns>Returns a  DeleteEvaluationResultsResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">REST API Reference for DeleteEvaluationResults Operation</seealso>
         DeleteEvaluationResultsResponse EndDeleteEvaluationResults(IAsyncResult asyncResult);
 
         #endregion
@@ -330,6 +343,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">REST API Reference for DeliverConfigSnapshot Operation</seealso>
         DeliverConfigSnapshotResponse DeliverConfigSnapshot(string deliveryChannelName);
 
         /// <summary>
@@ -364,6 +378,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">REST API Reference for DeliverConfigSnapshot Operation</seealso>
         DeliverConfigSnapshotResponse DeliverConfigSnapshot(DeliverConfigSnapshotRequest request);
 
         /// <summary>
@@ -377,6 +392,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeliverConfigSnapshot
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">REST API Reference for DeliverConfigSnapshot Operation</seealso>
         IAsyncResult BeginDeliverConfigSnapshot(DeliverConfigSnapshotRequest request, AsyncCallback callback, object state);
 
 
@@ -388,6 +404,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeliverConfigSnapshot.</param>
         /// 
         /// <returns>Returns a  DeliverConfigSnapshotResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">REST API Reference for DeliverConfigSnapshot Operation</seealso>
         DeliverConfigSnapshotResponse EndDeliverConfigSnapshot(IAsyncResult asyncResult);
 
         #endregion
@@ -441,6 +458,7 @@ namespace Amazon.ConfigService
         /// One or more AWS Config rules in the request are invalid. Verify that the rule names
         /// are correct and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">REST API Reference for DescribeComplianceByConfigRule Operation</seealso>
         DescribeComplianceByConfigRuleResponse DescribeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest request);
 
         /// <summary>
@@ -454,6 +472,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeComplianceByConfigRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">REST API Reference for DescribeComplianceByConfigRule Operation</seealso>
         IAsyncResult BeginDescribeComplianceByConfigRule(DescribeComplianceByConfigRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -465,6 +484,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeComplianceByConfigRule.</param>
         /// 
         /// <returns>Returns a  DescribeComplianceByConfigRuleResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule">REST API Reference for DescribeComplianceByConfigRule Operation</seealso>
         DescribeComplianceByConfigRuleResponse EndDescribeComplianceByConfigRule(IAsyncResult asyncResult);
 
         #endregion
@@ -520,6 +540,7 @@ namespace Amazon.ConfigService
         /// One or more of the specified parameters are invalid. Verify that your parameters are
         /// valid and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource">REST API Reference for DescribeComplianceByResource Operation</seealso>
         DescribeComplianceByResourceResponse DescribeComplianceByResource(DescribeComplianceByResourceRequest request);
 
         /// <summary>
@@ -533,6 +554,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeComplianceByResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource">REST API Reference for DescribeComplianceByResource Operation</seealso>
         IAsyncResult BeginDescribeComplianceByResource(DescribeComplianceByResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -544,6 +566,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeComplianceByResource.</param>
         /// 
         /// <returns>Returns a  DescribeComplianceByResourceResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource">REST API Reference for DescribeComplianceByResource Operation</seealso>
         DescribeComplianceByResourceResponse EndDescribeComplianceByResource(IAsyncResult asyncResult);
 
         #endregion
@@ -567,6 +590,7 @@ namespace Amazon.ConfigService
         /// One or more AWS Config rules in the request are invalid. Verify that the rule names
         /// are correct and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">REST API Reference for DescribeConfigRuleEvaluationStatus Operation</seealso>
         DescribeConfigRuleEvaluationStatusResponse DescribeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest request);
 
         /// <summary>
@@ -580,6 +604,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConfigRuleEvaluationStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">REST API Reference for DescribeConfigRuleEvaluationStatus Operation</seealso>
         IAsyncResult BeginDescribeConfigRuleEvaluationStatus(DescribeConfigRuleEvaluationStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -591,6 +616,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConfigRuleEvaluationStatus.</param>
         /// 
         /// <returns>Returns a  DescribeConfigRuleEvaluationStatusResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus">REST API Reference for DescribeConfigRuleEvaluationStatus Operation</seealso>
         DescribeConfigRuleEvaluationStatusResponse EndDescribeConfigRuleEvaluationStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -608,6 +634,7 @@ namespace Amazon.ConfigService
         /// One or more AWS Config rules in the request are invalid. Verify that the rule names
         /// are correct and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">REST API Reference for DescribeConfigRules Operation</seealso>
         DescribeConfigRulesResponse DescribeConfigRules(DescribeConfigRulesRequest request);
 
         /// <summary>
@@ -621,6 +648,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConfigRules
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">REST API Reference for DescribeConfigRules Operation</seealso>
         IAsyncResult BeginDescribeConfigRules(DescribeConfigRulesRequest request, AsyncCallback callback, object state);
 
 
@@ -632,6 +660,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConfigRules.</param>
         /// 
         /// <returns>Returns a  DescribeConfigRulesResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules">REST API Reference for DescribeConfigRules Operation</seealso>
         DescribeConfigRulesResponse EndDescribeConfigRules(IAsyncResult asyncResult);
 
         #endregion
@@ -655,6 +684,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">REST API Reference for DescribeConfigurationRecorders Operation</seealso>
         DescribeConfigurationRecordersResponse DescribeConfigurationRecorders();
 
         /// <summary>
@@ -674,6 +704,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">REST API Reference for DescribeConfigurationRecorders Operation</seealso>
         DescribeConfigurationRecordersResponse DescribeConfigurationRecorders(DescribeConfigurationRecordersRequest request);
 
         /// <summary>
@@ -687,6 +718,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConfigurationRecorders
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">REST API Reference for DescribeConfigurationRecorders Operation</seealso>
         IAsyncResult BeginDescribeConfigurationRecorders(DescribeConfigurationRecordersRequest request, AsyncCallback callback, object state);
 
 
@@ -698,6 +730,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConfigurationRecorders.</param>
         /// 
         /// <returns>Returns a  DescribeConfigurationRecordersResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">REST API Reference for DescribeConfigurationRecorders Operation</seealso>
         DescribeConfigurationRecordersResponse EndDescribeConfigurationRecorders(IAsyncResult asyncResult);
 
         #endregion
@@ -721,6 +754,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">REST API Reference for DescribeConfigurationRecorderStatus Operation</seealso>
         DescribeConfigurationRecorderStatusResponse DescribeConfigurationRecorderStatus();
 
         /// <summary>
@@ -740,6 +774,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">REST API Reference for DescribeConfigurationRecorderStatus Operation</seealso>
         DescribeConfigurationRecorderStatusResponse DescribeConfigurationRecorderStatus(DescribeConfigurationRecorderStatusRequest request);
 
         /// <summary>
@@ -753,6 +788,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConfigurationRecorderStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">REST API Reference for DescribeConfigurationRecorderStatus Operation</seealso>
         IAsyncResult BeginDescribeConfigurationRecorderStatus(DescribeConfigurationRecorderStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -764,6 +800,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConfigurationRecorderStatus.</param>
         /// 
         /// <returns>Returns a  DescribeConfigurationRecorderStatusResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">REST API Reference for DescribeConfigurationRecorderStatus Operation</seealso>
         DescribeConfigurationRecorderStatusResponse EndDescribeConfigurationRecorderStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -787,6 +824,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">REST API Reference for DescribeDeliveryChannels Operation</seealso>
         DescribeDeliveryChannelsResponse DescribeDeliveryChannels();
 
         /// <summary>
@@ -806,6 +844,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">REST API Reference for DescribeDeliveryChannels Operation</seealso>
         DescribeDeliveryChannelsResponse DescribeDeliveryChannels(DescribeDeliveryChannelsRequest request);
 
         /// <summary>
@@ -819,6 +858,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDeliveryChannels
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">REST API Reference for DescribeDeliveryChannels Operation</seealso>
         IAsyncResult BeginDescribeDeliveryChannels(DescribeDeliveryChannelsRequest request, AsyncCallback callback, object state);
 
 
@@ -830,6 +870,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDeliveryChannels.</param>
         /// 
         /// <returns>Returns a  DescribeDeliveryChannelsResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannels">REST API Reference for DescribeDeliveryChannels Operation</seealso>
         DescribeDeliveryChannelsResponse EndDescribeDeliveryChannels(IAsyncResult asyncResult);
 
         #endregion
@@ -853,6 +894,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">REST API Reference for DescribeDeliveryChannelStatus Operation</seealso>
         DescribeDeliveryChannelStatusResponse DescribeDeliveryChannelStatus();
 
         /// <summary>
@@ -872,6 +914,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchDeliveryChannelException">
         /// You have specified a delivery channel that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">REST API Reference for DescribeDeliveryChannelStatus Operation</seealso>
         DescribeDeliveryChannelStatusResponse DescribeDeliveryChannelStatus(DescribeDeliveryChannelStatusRequest request);
 
         /// <summary>
@@ -885,6 +928,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDeliveryChannelStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">REST API Reference for DescribeDeliveryChannelStatus Operation</seealso>
         IAsyncResult BeginDescribeDeliveryChannelStatus(DescribeDeliveryChannelStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -896,6 +940,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDeliveryChannelStatus.</param>
         /// 
         /// <returns>Returns a  DescribeDeliveryChannelStatusResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeDeliveryChannelStatus">REST API Reference for DescribeDeliveryChannelStatus Operation</seealso>
         DescribeDeliveryChannelStatusResponse EndDescribeDeliveryChannelStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -923,6 +968,7 @@ namespace Amazon.ConfigService
         /// One or more AWS Config rules in the request are invalid. Verify that the rule names
         /// are correct and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">REST API Reference for GetComplianceDetailsByConfigRule Operation</seealso>
         GetComplianceDetailsByConfigRuleResponse GetComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request);
 
         /// <summary>
@@ -936,6 +982,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetComplianceDetailsByConfigRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">REST API Reference for GetComplianceDetailsByConfigRule Operation</seealso>
         IAsyncResult BeginGetComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -947,6 +994,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetComplianceDetailsByConfigRule.</param>
         /// 
         /// <returns>Returns a  GetComplianceDetailsByConfigRuleResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByConfigRule">REST API Reference for GetComplianceDetailsByConfigRule Operation</seealso>
         GetComplianceDetailsByConfigRuleResponse EndGetComplianceDetailsByConfigRule(IAsyncResult asyncResult);
 
         #endregion
@@ -966,6 +1014,7 @@ namespace Amazon.ConfigService
         /// One or more of the specified parameters are invalid. Verify that your parameters are
         /// valid and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">REST API Reference for GetComplianceDetailsByResource Operation</seealso>
         GetComplianceDetailsByResourceResponse GetComplianceDetailsByResource(GetComplianceDetailsByResourceRequest request);
 
         /// <summary>
@@ -979,6 +1028,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetComplianceDetailsByResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">REST API Reference for GetComplianceDetailsByResource Operation</seealso>
         IAsyncResult BeginGetComplianceDetailsByResource(GetComplianceDetailsByResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -990,6 +1040,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetComplianceDetailsByResource.</param>
         /// 
         /// <returns>Returns a  GetComplianceDetailsByResourceResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceDetailsByResource">REST API Reference for GetComplianceDetailsByResource Operation</seealso>
         GetComplianceDetailsByResourceResponse EndGetComplianceDetailsByResource(IAsyncResult asyncResult);
 
         #endregion
@@ -1004,6 +1055,7 @@ namespace Amazon.ConfigService
         /// <param name="request">Container for the necessary parameters to execute the GetComplianceSummaryByConfigRule service method.</param>
         /// 
         /// <returns>The response from the GetComplianceSummaryByConfigRule service method, as returned by ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule">REST API Reference for GetComplianceSummaryByConfigRule Operation</seealso>
         GetComplianceSummaryByConfigRuleResponse GetComplianceSummaryByConfigRule(GetComplianceSummaryByConfigRuleRequest request);
 
         /// <summary>
@@ -1017,6 +1069,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetComplianceSummaryByConfigRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule">REST API Reference for GetComplianceSummaryByConfigRule Operation</seealso>
         IAsyncResult BeginGetComplianceSummaryByConfigRule(GetComplianceSummaryByConfigRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -1028,6 +1081,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetComplianceSummaryByConfigRule.</param>
         /// 
         /// <returns>Returns a  GetComplianceSummaryByConfigRuleResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByConfigRule">REST API Reference for GetComplianceSummaryByConfigRule Operation</seealso>
         GetComplianceSummaryByConfigRuleResponse EndGetComplianceSummaryByConfigRule(IAsyncResult asyncResult);
 
         #endregion
@@ -1047,6 +1101,7 @@ namespace Amazon.ConfigService
         /// One or more of the specified parameters are invalid. Verify that your parameters are
         /// valid and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType">REST API Reference for GetComplianceSummaryByResourceType Operation</seealso>
         GetComplianceSummaryByResourceTypeResponse GetComplianceSummaryByResourceType(GetComplianceSummaryByResourceTypeRequest request);
 
         /// <summary>
@@ -1060,6 +1115,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetComplianceSummaryByResourceType
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType">REST API Reference for GetComplianceSummaryByResourceType Operation</seealso>
         IAsyncResult BeginGetComplianceSummaryByResourceType(GetComplianceSummaryByResourceTypeRequest request, AsyncCallback callback, object state);
 
 
@@ -1071,6 +1127,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetComplianceSummaryByResourceType.</param>
         /// 
         /// <returns>Returns a  GetComplianceSummaryByResourceTypeResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetComplianceSummaryByResourceType">REST API Reference for GetComplianceSummaryByResourceType Operation</seealso>
         GetComplianceSummaryByResourceTypeResponse EndGetComplianceSummaryByResourceType(IAsyncResult asyncResult);
 
         #endregion
@@ -1122,6 +1179,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">REST API Reference for GetResourceConfigHistory Operation</seealso>
         GetResourceConfigHistoryResponse GetResourceConfigHistory(GetResourceConfigHistoryRequest request);
 
         /// <summary>
@@ -1135,6 +1193,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetResourceConfigHistory
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">REST API Reference for GetResourceConfigHistory Operation</seealso>
         IAsyncResult BeginGetResourceConfigHistory(GetResourceConfigHistoryRequest request, AsyncCallback callback, object state);
 
 
@@ -1146,6 +1205,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetResourceConfigHistory.</param>
         /// 
         /// <returns>Returns a  GetResourceConfigHistoryResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">REST API Reference for GetResourceConfigHistory Operation</seealso>
         GetResourceConfigHistoryResponse EndGetResourceConfigHistory(IAsyncResult asyncResult);
 
         #endregion
@@ -1190,6 +1250,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         ListDiscoveredResourcesResponse ListDiscoveredResources(ListDiscoveredResourcesRequest request);
 
         /// <summary>
@@ -1203,6 +1264,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDiscoveredResources
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         IAsyncResult BeginListDiscoveredResources(ListDiscoveredResourcesRequest request, AsyncCallback callback, object state);
 
 
@@ -1214,6 +1276,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDiscoveredResources.</param>
         /// 
         /// <returns>Returns a  ListDiscoveredResourcesResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
         ListDiscoveredResourcesResponse EndListDiscoveredResources(IAsyncResult asyncResult);
 
         #endregion
@@ -1308,6 +1371,7 @@ namespace Amazon.ConfigService
         /// The rule is currently being deleted or the rule is deleting your evaluation results.
         /// Try your request again later.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">REST API Reference for PutConfigRule Operation</seealso>
         PutConfigRuleResponse PutConfigRule(PutConfigRuleRequest request);
 
         /// <summary>
@@ -1321,6 +1385,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutConfigRule
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">REST API Reference for PutConfigRule Operation</seealso>
         IAsyncResult BeginPutConfigRule(PutConfigRuleRequest request, AsyncCallback callback, object state);
 
 
@@ -1332,6 +1397,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutConfigRule.</param>
         /// 
         /// <returns>Returns a  PutConfigRuleResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigRule">REST API Reference for PutConfigRule Operation</seealso>
         PutConfigRuleResponse EndPutConfigRule(IAsyncResult asyncResult);
 
         #endregion
@@ -1375,6 +1441,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConfigurationRecordersExceededException">
         /// You have reached the limit on the number of recorders you can create.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
         PutConfigurationRecorderResponse PutConfigurationRecorder(PutConfigurationRecorderRequest request);
 
         /// <summary>
@@ -1388,6 +1455,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutConfigurationRecorder
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
         IAsyncResult BeginPutConfigurationRecorder(PutConfigurationRecorderRequest request, AsyncCallback callback, object state);
 
 
@@ -1399,6 +1467,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutConfigurationRecorder.</param>
         /// 
         /// <returns>Returns a  PutConfigurationRecorderResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
         PutConfigurationRecorderResponse EndPutConfigurationRecorder(IAsyncResult asyncResult);
 
         #endregion
@@ -1453,6 +1522,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchBucketException">
         /// The specified Amazon S3 bucket does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">REST API Reference for PutDeliveryChannel Operation</seealso>
         PutDeliveryChannelResponse PutDeliveryChannel(PutDeliveryChannelRequest request);
 
         /// <summary>
@@ -1466,6 +1536,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutDeliveryChannel
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">REST API Reference for PutDeliveryChannel Operation</seealso>
         IAsyncResult BeginPutDeliveryChannel(PutDeliveryChannelRequest request, AsyncCallback callback, object state);
 
 
@@ -1477,6 +1548,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutDeliveryChannel.</param>
         /// 
         /// <returns>Returns a  PutDeliveryChannelResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutDeliveryChannel">REST API Reference for PutDeliveryChannel Operation</seealso>
         PutDeliveryChannelResponse EndPutDeliveryChannel(IAsyncResult asyncResult);
 
         #endregion
@@ -1502,6 +1574,7 @@ namespace Amazon.ConfigService
         /// One or more AWS Config rules in the request are invalid. Verify that the rule names
         /// are correct and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">REST API Reference for PutEvaluations Operation</seealso>
         PutEvaluationsResponse PutEvaluations(PutEvaluationsRequest request);
 
         /// <summary>
@@ -1515,6 +1588,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutEvaluations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">REST API Reference for PutEvaluations Operation</seealso>
         IAsyncResult BeginPutEvaluations(PutEvaluationsRequest request, AsyncCallback callback, object state);
 
 
@@ -1526,6 +1600,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutEvaluations.</param>
         /// 
         /// <returns>Returns a  PutEvaluationsResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutEvaluations">REST API Reference for PutEvaluations Operation</seealso>
         PutEvaluationsResponse EndPutEvaluations(IAsyncResult asyncResult);
 
         #endregion
@@ -1604,6 +1679,7 @@ namespace Amazon.ConfigService
         /// The rule is currently being deleted or the rule is deleting your evaluation results.
         /// Try your request again later.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation">REST API Reference for StartConfigRulesEvaluation Operation</seealso>
         StartConfigRulesEvaluationResponse StartConfigRulesEvaluation(StartConfigRulesEvaluationRequest request);
 
         /// <summary>
@@ -1617,6 +1693,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartConfigRulesEvaluation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation">REST API Reference for StartConfigRulesEvaluation Operation</seealso>
         IAsyncResult BeginStartConfigRulesEvaluation(StartConfigRulesEvaluationRequest request, AsyncCallback callback, object state);
 
 
@@ -1628,6 +1705,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartConfigRulesEvaluation.</param>
         /// 
         /// <returns>Returns a  StartConfigRulesEvaluationResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigRulesEvaluation">REST API Reference for StartConfigRulesEvaluation Operation</seealso>
         StartConfigRulesEvaluationResponse EndStartConfigRulesEvaluation(IAsyncResult asyncResult);
 
         #endregion
@@ -1654,6 +1732,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">REST API Reference for StartConfigurationRecorder Operation</seealso>
         StartConfigurationRecorderResponse StartConfigurationRecorder(string configurationRecorderName);
 
         /// <summary>
@@ -1675,6 +1754,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">REST API Reference for StartConfigurationRecorder Operation</seealso>
         StartConfigurationRecorderResponse StartConfigurationRecorder(StartConfigurationRecorderRequest request);
 
         /// <summary>
@@ -1688,6 +1768,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartConfigurationRecorder
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">REST API Reference for StartConfigurationRecorder Operation</seealso>
         IAsyncResult BeginStartConfigurationRecorder(StartConfigurationRecorderRequest request, AsyncCallback callback, object state);
 
 
@@ -1699,6 +1780,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartConfigurationRecorder.</param>
         /// 
         /// <returns>Returns a  StartConfigurationRecorderResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartConfigurationRecorder">REST API Reference for StartConfigurationRecorder Operation</seealso>
         StartConfigurationRecorderResponse EndStartConfigurationRecorder(IAsyncResult asyncResult);
 
         #endregion
@@ -1716,6 +1798,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">REST API Reference for StopConfigurationRecorder Operation</seealso>
         StopConfigurationRecorderResponse StopConfigurationRecorder(string configurationRecorderName);
 
         /// <summary>
@@ -1728,6 +1811,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationRecorderException">
         /// You have specified a configuration recorder that does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">REST API Reference for StopConfigurationRecorder Operation</seealso>
         StopConfigurationRecorderResponse StopConfigurationRecorder(StopConfigurationRecorderRequest request);
 
         /// <summary>
@@ -1741,6 +1825,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopConfigurationRecorder
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">REST API Reference for StopConfigurationRecorder Operation</seealso>
         IAsyncResult BeginStopConfigurationRecorder(StopConfigurationRecorderRequest request, AsyncCallback callback, object state);
 
 
@@ -1752,6 +1837,7 @@ namespace Amazon.ConfigService
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopConfigurationRecorder.</param>
         /// 
         /// <returns>Returns a  StopConfigurationRecorderResult from ConfigService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StopConfigurationRecorder">REST API Reference for StopConfigurationRecorder Operation</seealso>
         StopConfigurationRecorderResponse EndStopConfigurationRecorder(IAsyncResult asyncResult);
 
         #endregion

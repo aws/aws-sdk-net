@@ -256,6 +256,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
         /// The provided name is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">REST API Reference for CreateActivity Operation</seealso>
         public CreateActivityResponse CreateActivity(CreateActivityRequest request)
         {
             var marshaller = new CreateActivityRequestMarshaller();
@@ -275,6 +276,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateActivity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">REST API Reference for CreateActivity Operation</seealso>
         public IAsyncResult BeginCreateActivity(CreateActivityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateActivityRequestMarshaller();
@@ -291,6 +293,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateActivity.</param>
         /// 
         /// <returns>Returns a  CreateActivityResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">REST API Reference for CreateActivity Operation</seealso>
         public  CreateActivityResponse EndCreateActivity(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateActivityResponse>(asyncResult);
@@ -326,6 +329,7 @@ namespace Amazon.StepFunctions
         /// The maximum number of state machines has been reached. Existing state machines must
         /// be deleted before a new state machine can be created.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">REST API Reference for CreateStateMachine Operation</seealso>
         public CreateStateMachineResponse CreateStateMachine(CreateStateMachineRequest request)
         {
             var marshaller = new CreateStateMachineRequestMarshaller();
@@ -345,6 +349,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateStateMachine
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">REST API Reference for CreateStateMachine Operation</seealso>
         public IAsyncResult BeginCreateStateMachine(CreateStateMachineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateStateMachineRequestMarshaller();
@@ -361,6 +366,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateStateMachine.</param>
         /// 
         /// <returns>Returns a  CreateStateMachineResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">REST API Reference for CreateStateMachine Operation</seealso>
         public  CreateStateMachineResponse EndCreateStateMachine(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateStateMachineResponse>(asyncResult);
@@ -379,6 +385,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity">REST API Reference for DeleteActivity Operation</seealso>
         public DeleteActivityResponse DeleteActivity(DeleteActivityRequest request)
         {
             var marshaller = new DeleteActivityRequestMarshaller();
@@ -398,6 +405,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteActivity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity">REST API Reference for DeleteActivity Operation</seealso>
         public IAsyncResult BeginDeleteActivity(DeleteActivityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteActivityRequestMarshaller();
@@ -414,6 +422,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteActivity.</param>
         /// 
         /// <returns>Returns a  DeleteActivityResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity">REST API Reference for DeleteActivity Operation</seealso>
         public  DeleteActivityResponse EndDeleteActivity(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteActivityResponse>(asyncResult);
@@ -433,6 +442,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">REST API Reference for DeleteStateMachine Operation</seealso>
         public DeleteStateMachineResponse DeleteStateMachine(DeleteStateMachineRequest request)
         {
             var marshaller = new DeleteStateMachineRequestMarshaller();
@@ -452,6 +462,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteStateMachine
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">REST API Reference for DeleteStateMachine Operation</seealso>
         public IAsyncResult BeginDeleteStateMachine(DeleteStateMachineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteStateMachineRequestMarshaller();
@@ -468,6 +479,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteStateMachine.</param>
         /// 
         /// <returns>Returns a  DeleteStateMachineResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">REST API Reference for DeleteStateMachine Operation</seealso>
         public  DeleteStateMachineResponse EndDeleteStateMachine(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteStateMachineResponse>(asyncResult);
@@ -489,6 +501,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity">REST API Reference for DescribeActivity Operation</seealso>
         public DescribeActivityResponse DescribeActivity(DescribeActivityRequest request)
         {
             var marshaller = new DescribeActivityRequestMarshaller();
@@ -508,6 +521,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeActivity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity">REST API Reference for DescribeActivity Operation</seealso>
         public IAsyncResult BeginDescribeActivity(DescribeActivityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeActivityRequestMarshaller();
@@ -524,6 +538,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeActivity.</param>
         /// 
         /// <returns>Returns a  DescribeActivityResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity">REST API Reference for DescribeActivity Operation</seealso>
         public  DescribeActivityResponse EndDescribeActivity(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeActivityResponse>(asyncResult);
@@ -545,6 +560,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
         public DescribeExecutionResponse DescribeExecution(DescribeExecutionRequest request)
         {
             var marshaller = new DescribeExecutionRequestMarshaller();
@@ -564,6 +580,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
         public IAsyncResult BeginDescribeExecution(DescribeExecutionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeExecutionRequestMarshaller();
@@ -580,6 +597,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExecution.</param>
         /// 
         /// <returns>Returns a  DescribeExecutionResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
         public  DescribeExecutionResponse EndDescribeExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeExecutionResponse>(asyncResult);
@@ -601,6 +619,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
         /// The specified state machine does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine">REST API Reference for DescribeStateMachine Operation</seealso>
         public DescribeStateMachineResponse DescribeStateMachine(DescribeStateMachineRequest request)
         {
             var marshaller = new DescribeStateMachineRequestMarshaller();
@@ -620,6 +639,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStateMachine
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine">REST API Reference for DescribeStateMachine Operation</seealso>
         public IAsyncResult BeginDescribeStateMachine(DescribeStateMachineRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeStateMachineRequestMarshaller();
@@ -636,6 +656,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStateMachine.</param>
         /// 
         /// <returns>Returns a  DescribeStateMachineResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine">REST API Reference for DescribeStateMachine Operation</seealso>
         public  DescribeStateMachineResponse EndDescribeStateMachine(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStateMachineResponse>(asyncResult);
@@ -673,6 +694,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">REST API Reference for GetActivityTask Operation</seealso>
         public GetActivityTaskResponse GetActivityTask(GetActivityTaskRequest request)
         {
             var marshaller = new GetActivityTaskRequestMarshaller();
@@ -692,6 +714,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetActivityTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">REST API Reference for GetActivityTask Operation</seealso>
         public IAsyncResult BeginGetActivityTask(GetActivityTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetActivityTaskRequestMarshaller();
@@ -708,6 +731,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetActivityTask.</param>
         /// 
         /// <returns>Returns a  GetActivityTaskResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">REST API Reference for GetActivityTask Operation</seealso>
         public  GetActivityTaskResponse EndGetActivityTask(IAsyncResult asyncResult)
         {
             return EndInvoke<GetActivityTaskResponse>(asyncResult);
@@ -736,6 +760,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
         /// The provided token is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">REST API Reference for GetExecutionHistory Operation</seealso>
         public GetExecutionHistoryResponse GetExecutionHistory(GetExecutionHistoryRequest request)
         {
             var marshaller = new GetExecutionHistoryRequestMarshaller();
@@ -755,6 +780,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetExecutionHistory
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">REST API Reference for GetExecutionHistory Operation</seealso>
         public IAsyncResult BeginGetExecutionHistory(GetExecutionHistoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetExecutionHistoryRequestMarshaller();
@@ -771,6 +797,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetExecutionHistory.</param>
         /// 
         /// <returns>Returns a  GetExecutionHistoryResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">REST API Reference for GetExecutionHistory Operation</seealso>
         public  GetExecutionHistoryResponse EndGetExecutionHistory(IAsyncResult asyncResult)
         {
             return EndInvoke<GetExecutionHistoryResponse>(asyncResult);
@@ -791,6 +818,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
         /// The provided token is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">REST API Reference for ListActivities Operation</seealso>
         public ListActivitiesResponse ListActivities(ListActivitiesRequest request)
         {
             var marshaller = new ListActivitiesRequestMarshaller();
@@ -810,6 +838,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListActivities
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">REST API Reference for ListActivities Operation</seealso>
         public IAsyncResult BeginListActivities(ListActivitiesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListActivitiesRequestMarshaller();
@@ -826,6 +855,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListActivities.</param>
         /// 
         /// <returns>Returns a  ListActivitiesResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">REST API Reference for ListActivities Operation</seealso>
         public  ListActivitiesResponse EndListActivities(IAsyncResult asyncResult)
         {
             return EndInvoke<ListActivitiesResponse>(asyncResult);
@@ -852,6 +882,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
         /// The specified state machine does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         public ListExecutionsResponse ListExecutions(ListExecutionsRequest request)
         {
             var marshaller = new ListExecutionsRequestMarshaller();
@@ -871,6 +902,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExecutions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         public IAsyncResult BeginListExecutions(ListExecutionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListExecutionsRequestMarshaller();
@@ -887,6 +919,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExecutions.</param>
         /// 
         /// <returns>Returns a  ListExecutionsResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         public  ListExecutionsResponse EndListExecutions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListExecutionsResponse>(asyncResult);
@@ -907,6 +940,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
         /// The provided token is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">REST API Reference for ListStateMachines Operation</seealso>
         public ListStateMachinesResponse ListStateMachines(ListStateMachinesRequest request)
         {
             var marshaller = new ListStateMachinesRequestMarshaller();
@@ -926,6 +960,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStateMachines
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">REST API Reference for ListStateMachines Operation</seealso>
         public IAsyncResult BeginListStateMachines(ListStateMachinesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListStateMachinesRequestMarshaller();
@@ -942,6 +977,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStateMachines.</param>
         /// 
         /// <returns>Returns a  ListStateMachinesResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">REST API Reference for ListStateMachines Operation</seealso>
         public  ListStateMachinesResponse EndListStateMachines(IAsyncResult asyncResult)
         {
             return EndInvoke<ListStateMachinesResponse>(asyncResult);
@@ -966,6 +1002,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.TaskTimedOutException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">REST API Reference for SendTaskFailure Operation</seealso>
         public SendTaskFailureResponse SendTaskFailure(SendTaskFailureRequest request)
         {
             var marshaller = new SendTaskFailureRequestMarshaller();
@@ -985,6 +1022,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendTaskFailure
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">REST API Reference for SendTaskFailure Operation</seealso>
         public IAsyncResult BeginSendTaskFailure(SendTaskFailureRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SendTaskFailureRequestMarshaller();
@@ -1001,6 +1039,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendTaskFailure.</param>
         /// 
         /// <returns>Returns a  SendTaskFailureResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">REST API Reference for SendTaskFailure Operation</seealso>
         public  SendTaskFailureResponse EndSendTaskFailure(IAsyncResult asyncResult)
         {
             return EndInvoke<SendTaskFailureResponse>(asyncResult);
@@ -1043,6 +1082,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.TaskTimedOutException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat">REST API Reference for SendTaskHeartbeat Operation</seealso>
         public SendTaskHeartbeatResponse SendTaskHeartbeat(SendTaskHeartbeatRequest request)
         {
             var marshaller = new SendTaskHeartbeatRequestMarshaller();
@@ -1062,6 +1102,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendTaskHeartbeat
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat">REST API Reference for SendTaskHeartbeat Operation</seealso>
         public IAsyncResult BeginSendTaskHeartbeat(SendTaskHeartbeatRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SendTaskHeartbeatRequestMarshaller();
@@ -1078,6 +1119,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendTaskHeartbeat.</param>
         /// 
         /// <returns>Returns a  SendTaskHeartbeatResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat">REST API Reference for SendTaskHeartbeat Operation</seealso>
         public  SendTaskHeartbeatResponse EndSendTaskHeartbeat(IAsyncResult asyncResult)
         {
             return EndInvoke<SendTaskHeartbeatResponse>(asyncResult);
@@ -1106,6 +1148,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.TaskTimedOutException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess">REST API Reference for SendTaskSuccess Operation</seealso>
         public SendTaskSuccessResponse SendTaskSuccess(SendTaskSuccessRequest request)
         {
             var marshaller = new SendTaskSuccessRequestMarshaller();
@@ -1125,6 +1168,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendTaskSuccess
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess">REST API Reference for SendTaskSuccess Operation</seealso>
         public IAsyncResult BeginSendTaskSuccess(SendTaskSuccessRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new SendTaskSuccessRequestMarshaller();
@@ -1141,6 +1185,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendTaskSuccess.</param>
         /// 
         /// <returns>Returns a  SendTaskSuccessResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess">REST API Reference for SendTaskSuccess Operation</seealso>
         public  SendTaskSuccessResponse EndSendTaskSuccess(IAsyncResult asyncResult)
         {
             return EndInvoke<SendTaskSuccessResponse>(asyncResult);
@@ -1178,6 +1223,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
         /// The specified state machine does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution">REST API Reference for StartExecution Operation</seealso>
         public StartExecutionResponse StartExecution(StartExecutionRequest request)
         {
             var marshaller = new StartExecutionRequestMarshaller();
@@ -1197,6 +1243,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution">REST API Reference for StartExecution Operation</seealso>
         public IAsyncResult BeginStartExecution(StartExecutionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartExecutionRequestMarshaller();
@@ -1213,6 +1260,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartExecution.</param>
         /// 
         /// <returns>Returns a  StartExecutionResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution">REST API Reference for StartExecution Operation</seealso>
         public  StartExecutionResponse EndStartExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<StartExecutionResponse>(asyncResult);
@@ -1234,6 +1282,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">REST API Reference for StopExecution Operation</seealso>
         public StopExecutionResponse StopExecution(StopExecutionRequest request)
         {
             var marshaller = new StopExecutionRequestMarshaller();
@@ -1253,6 +1302,7 @@ namespace Amazon.StepFunctions
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">REST API Reference for StopExecution Operation</seealso>
         public IAsyncResult BeginStopExecution(StopExecutionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopExecutionRequestMarshaller();
@@ -1269,6 +1319,7 @@ namespace Amazon.StepFunctions
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopExecution.</param>
         /// 
         /// <returns>Returns a  StopExecutionResult from StepFunctions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">REST API Reference for StopExecution Operation</seealso>
         public  StopExecutionResponse EndStopExecution(IAsyncResult asyncResult)
         {
             return EndInvoke<StopExecutionResponse>(asyncResult);

@@ -180,6 +180,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">REST API Reference for CreateDeliveryStream Operation</seealso>
         public void CreateDeliveryStreamAsync(CreateDeliveryStreamRequest request, AmazonServiceCallback<CreateDeliveryStreamRequest, CreateDeliveryStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -234,6 +235,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         public void DeleteDeliveryStreamAsync(string deliveryStreamName,  AmazonServiceCallback<DeleteDeliveryStreamRequest, DeleteDeliveryStreamResponse> callback, AsyncOptions options = null)
         {
             var request = new DeleteDeliveryStreamRequest();
@@ -250,6 +252,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         public void DeleteDeliveryStreamAsync(DeleteDeliveryStreamRequest request, AmazonServiceCallback<DeleteDeliveryStreamRequest, DeleteDeliveryStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -277,6 +280,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream">REST API Reference for DescribeDeliveryStream Operation</seealso>
         public void DescribeDeliveryStreamAsync(DescribeDeliveryStreamRequest request, AmazonServiceCallback<DescribeDeliveryStreamRequest, DescribeDeliveryStreamResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -318,6 +322,7 @@ namespace Amazon.KinesisFirehose
          /// </param>
         /// 
         /// <returns>The response from the ListDeliveryStreams service method, as returned by KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         public void ListDeliveryStreamsAsync(AmazonServiceCallback<ListDeliveryStreamsRequest, ListDeliveryStreamsResponse> callback, AsyncOptions options = null)
         {
             ListDeliveryStreamsAsync(new ListDeliveryStreamsRequest(), callback, options);
@@ -332,6 +337,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         public void ListDeliveryStreamsAsync(ListDeliveryStreamsRequest request, AmazonServiceCallback<ListDeliveryStreamsRequest, ListDeliveryStreamsResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -420,6 +426,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         public void PutRecordAsync(string deliveryStreamName, Record record,  AmazonServiceCallback<PutRecordRequest, PutRecordResponse> callback, AsyncOptions options = null)
         {
             var request = new PutRecordRequest();
@@ -437,6 +444,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         public void PutRecordAsync(PutRecordRequest request, AmazonServiceCallback<PutRecordRequest, PutRecordResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -552,6 +560,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         public void PutRecordBatchAsync(string deliveryStreamName, List<Record> records,  AmazonServiceCallback<PutRecordBatchRequest, PutRecordBatchResponse> callback, AsyncOptions options = null)
         {
             var request = new PutRecordBatchRequest();
@@ -569,6 +578,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         public void PutRecordBatchAsync(PutRecordBatchRequest request, AmazonServiceCallback<PutRecordBatchRequest, PutRecordBatchResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;
@@ -596,6 +606,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">REST API Reference for UpdateDestination Operation</seealso>
         public void UpdateDestinationAsync(UpdateDestinationRequest request, AmazonServiceCallback<UpdateDestinationRequest, UpdateDestinationResponse> callback, AsyncOptions options = null)
         {
             options = options == null?new AsyncOptions():options;

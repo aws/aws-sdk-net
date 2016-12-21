@@ -251,6 +251,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster">REST API Reference for CancelCluster Operation</seealso>
         public CancelClusterResponse CancelCluster(CancelClusterRequest request)
         {
             var marshaller = new CancelClusterRequestMarshaller();
@@ -270,6 +271,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelCluster
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster">REST API Reference for CancelCluster Operation</seealso>
         public IAsyncResult BeginCancelCluster(CancelClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelClusterRequestMarshaller();
@@ -286,6 +288,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelCluster.</param>
         /// 
         /// <returns>Returns a  CancelClusterResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster">REST API Reference for CancelCluster Operation</seealso>
         public  CancelClusterResponse EndCancelCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelClusterResponse>(asyncResult);
@@ -316,6 +319,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public CancelJobResponse CancelJob(CancelJobRequest request)
         {
             var marshaller = new CancelJobRequestMarshaller();
@@ -335,6 +339,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public IAsyncResult BeginCancelJob(CancelJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelJobRequestMarshaller();
@@ -351,6 +356,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelJob.</param>
         /// 
         /// <returns>Returns a  CancelJobResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public  CancelJobResponse EndCancelJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelJobResponse>(asyncResult);
@@ -382,6 +388,7 @@ namespace Amazon.Snowball
         /// Check the address with your region's carrier and try again. If the issue persists,
         /// contact AWS Support.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">REST API Reference for CreateAddress Operation</seealso>
         public CreateAddressResponse CreateAddress(CreateAddressRequest request)
         {
             var marshaller = new CreateAddressRequestMarshaller();
@@ -401,6 +408,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAddress
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">REST API Reference for CreateAddress Operation</seealso>
         public IAsyncResult BeginCreateAddress(CreateAddressRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateAddressRequestMarshaller();
@@ -417,6 +425,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAddress.</param>
         /// 
         /// <returns>Returns a  CreateAddressResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">REST API Reference for CreateAddress Operation</seealso>
         public  CreateAddressResponse EndCreateAddress(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAddressResponse>(asyncResult);
@@ -447,6 +456,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
             var marshaller = new CreateClusterRequestMarshaller();
@@ -466,6 +476,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCluster
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateClusterRequestMarshaller();
@@ -482,6 +493,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCluster.</param>
         /// 
         /// <returns>Returns a  CreateClusterResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public  CreateClusterResponse EndCreateCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateClusterResponse>(asyncResult);
@@ -519,6 +531,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public CreateJobResponse CreateJob(CreateJobRequest request)
         {
             var marshaller = new CreateJobRequestMarshaller();
@@ -538,6 +551,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public IAsyncResult BeginCreateJob(CreateJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateJobRequestMarshaller();
@@ -554,6 +568,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateJob.</param>
         /// 
         /// <returns>Returns a  CreateJobResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public  CreateJobResponse EndCreateJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateJobResponse>(asyncResult);
@@ -574,6 +589,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddress">REST API Reference for DescribeAddress Operation</seealso>
         public DescribeAddressResponse DescribeAddress(DescribeAddressRequest request)
         {
             var marshaller = new DescribeAddressRequestMarshaller();
@@ -593,6 +609,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAddress
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddress">REST API Reference for DescribeAddress Operation</seealso>
         public IAsyncResult BeginDescribeAddress(DescribeAddressRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAddressRequestMarshaller();
@@ -609,6 +626,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAddress.</param>
         /// 
         /// <returns>Returns a  DescribeAddressResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddress">REST API Reference for DescribeAddress Operation</seealso>
         public  DescribeAddressResponse EndDescribeAddress(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAddressResponse>(asyncResult);
@@ -630,6 +648,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         public DescribeAddressesResponse DescribeAddresses(DescribeAddressesRequest request)
         {
             var marshaller = new DescribeAddressesRequestMarshaller();
@@ -649,6 +668,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAddresses
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         public IAsyncResult BeginDescribeAddresses(DescribeAddressesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAddressesRequestMarshaller();
@@ -665,6 +685,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAddresses.</param>
         /// 
         /// <returns>Returns a  DescribeAddressesResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         public  DescribeAddressesResponse EndDescribeAddresses(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAddressesResponse>(asyncResult);
@@ -685,6 +706,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
         {
             var marshaller = new DescribeClusterRequestMarshaller();
@@ -704,6 +726,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCluster
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public IAsyncResult BeginDescribeCluster(DescribeClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeClusterRequestMarshaller();
@@ -720,6 +743,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCluster.</param>
         /// 
         /// <returns>Returns a  DescribeClusterResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public  DescribeClusterResponse EndDescribeCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeClusterResponse>(asyncResult);
@@ -740,6 +764,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public DescribeJobResponse DescribeJob(DescribeJobRequest request)
         {
             var marshaller = new DescribeJobRequestMarshaller();
@@ -759,6 +784,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public IAsyncResult BeginDescribeJob(DescribeJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeJobRequestMarshaller();
@@ -775,6 +801,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeJob.</param>
         /// 
         /// <returns>Returns a  DescribeJobResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public  DescribeJobResponse EndDescribeJob(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeJobResponse>(asyncResult);
@@ -822,6 +849,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest">REST API Reference for GetJobManifest Operation</seealso>
         public GetJobManifestResponse GetJobManifest(GetJobManifestRequest request)
         {
             var marshaller = new GetJobManifestRequestMarshaller();
@@ -841,6 +869,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJobManifest
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest">REST API Reference for GetJobManifest Operation</seealso>
         public IAsyncResult BeginGetJobManifest(GetJobManifestRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetJobManifestRequestMarshaller();
@@ -857,6 +886,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJobManifest.</param>
         /// 
         /// <returns>Returns a  GetJobManifestResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest">REST API Reference for GetJobManifest Operation</seealso>
         public  GetJobManifestResponse EndGetJobManifest(IAsyncResult asyncResult)
         {
             return EndInvoke<GetJobManifestResponse>(asyncResult);
@@ -897,6 +927,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode">REST API Reference for GetJobUnlockCode Operation</seealso>
         public GetJobUnlockCodeResponse GetJobUnlockCode(GetJobUnlockCodeRequest request)
         {
             var marshaller = new GetJobUnlockCodeRequestMarshaller();
@@ -916,6 +947,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJobUnlockCode
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode">REST API Reference for GetJobUnlockCode Operation</seealso>
         public IAsyncResult BeginGetJobUnlockCode(GetJobUnlockCodeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetJobUnlockCodeRequestMarshaller();
@@ -932,6 +964,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJobUnlockCode.</param>
         /// 
         /// <returns>Returns a  GetJobUnlockCodeResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode">REST API Reference for GetJobUnlockCode Operation</seealso>
         public  GetJobUnlockCodeResponse EndGetJobUnlockCode(IAsyncResult asyncResult)
         {
             return EndInvoke<GetJobUnlockCodeResponse>(asyncResult);
@@ -954,6 +987,7 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the GetSnowballUsage service method.</param>
         /// 
         /// <returns>The response from the GetSnowballUsage service method, as returned by Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">REST API Reference for GetSnowballUsage Operation</seealso>
         public GetSnowballUsageResponse GetSnowballUsage(GetSnowballUsageRequest request)
         {
             var marshaller = new GetSnowballUsageRequestMarshaller();
@@ -973,6 +1007,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSnowballUsage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">REST API Reference for GetSnowballUsage Operation</seealso>
         public IAsyncResult BeginGetSnowballUsage(GetSnowballUsageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSnowballUsageRequestMarshaller();
@@ -989,6 +1024,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSnowballUsage.</param>
         /// 
         /// <returns>Returns a  GetSnowballUsageResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">REST API Reference for GetSnowballUsage Operation</seealso>
         public  GetSnowballUsageResponse EndGetSnowballUsage(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSnowballUsageResponse>(asyncResult);
@@ -1010,6 +1046,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs">REST API Reference for ListClusterJobs Operation</seealso>
         public ListClusterJobsResponse ListClusterJobs(ListClusterJobsRequest request)
         {
             var marshaller = new ListClusterJobsRequestMarshaller();
@@ -1029,6 +1066,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClusterJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs">REST API Reference for ListClusterJobs Operation</seealso>
         public IAsyncResult BeginListClusterJobs(ListClusterJobsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListClusterJobsRequestMarshaller();
@@ -1045,6 +1083,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClusterJobs.</param>
         /// 
         /// <returns>Returns a  ListClusterJobsResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs">REST API Reference for ListClusterJobs Operation</seealso>
         public  ListClusterJobsResponse EndListClusterJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListClusterJobsResponse>(asyncResult);
@@ -1062,6 +1101,7 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
         /// 
         /// <returns>The response from the ListClusters service method, as returned by Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public ListClustersResponse ListClusters(ListClustersRequest request)
         {
             var marshaller = new ListClustersRequestMarshaller();
@@ -1081,6 +1121,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClusters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public IAsyncResult BeginListClusters(ListClustersRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListClustersRequestMarshaller();
@@ -1097,6 +1138,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClusters.</param>
         /// 
         /// <returns>Returns a  ListClustersResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public  ListClustersResponse EndListClusters(IAsyncResult asyncResult)
         {
             return EndInvoke<ListClustersResponse>(asyncResult);
@@ -1116,6 +1158,7 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// 
         /// <returns>The response from the ListJobs service method, as returned by Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public ListJobsResponse ListJobs(ListJobsRequest request)
         {
             var marshaller = new ListJobsRequestMarshaller();
@@ -1135,6 +1178,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public IAsyncResult BeginListJobs(ListJobsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListJobsRequestMarshaller();
@@ -1151,6 +1195,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobs.</param>
         /// 
         /// <returns>Returns a  ListJobsResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public  ListJobsResponse EndListJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListJobsResponse>(asyncResult);
@@ -1186,6 +1231,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
         {
             var marshaller = new UpdateClusterRequestMarshaller();
@@ -1205,6 +1251,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCluster
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public IAsyncResult BeginUpdateCluster(UpdateClusterRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateClusterRequestMarshaller();
@@ -1221,6 +1268,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCluster.</param>
         /// 
         /// <returns>Returns a  UpdateClusterResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public  UpdateClusterResponse EndUpdateCluster(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateClusterResponse>(asyncResult);
@@ -1261,6 +1309,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         public UpdateJobResponse UpdateJob(UpdateJobRequest request)
         {
             var marshaller = new UpdateJobRequestMarshaller();
@@ -1280,6 +1329,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         public IAsyncResult BeginUpdateJob(UpdateJobRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UpdateJobRequestMarshaller();
@@ -1296,6 +1346,7 @@ namespace Amazon.Snowball
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJob.</param>
         /// 
         /// <returns>Returns a  UpdateJobResult from Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         public  UpdateJobResponse EndUpdateJob(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateJobResponse>(asyncResult);

@@ -418,6 +418,7 @@ namespace Amazon.SecurityToken
         /// STS in that region. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
         /// and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole">REST API Reference for AssumeRole Operation</seealso>
         public AssumeRoleResponse AssumeRole(AssumeRoleRequest request)
         {
             var marshaller = new AssumeRoleRequestMarshaller();
@@ -437,6 +438,7 @@ namespace Amazon.SecurityToken
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssumeRole
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole">REST API Reference for AssumeRole Operation</seealso>
         public IAsyncResult BeginAssumeRole(AssumeRoleRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssumeRoleRequestMarshaller();
@@ -453,6 +455,7 @@ namespace Amazon.SecurityToken
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssumeRole.</param>
         /// 
         /// <returns>Returns a  AssumeRoleResult from SecurityTokenService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole">REST API Reference for AssumeRole Operation</seealso>
         public  AssumeRoleResponse EndAssumeRole(IAsyncResult asyncResult)
         {
             return EndInvoke<AssumeRoleResponse>(asyncResult);
@@ -592,6 +595,7 @@ namespace Amazon.SecurityToken
         /// STS in that region. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
         /// and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML">REST API Reference for AssumeRoleWithSAML Operation</seealso>
         public AssumeRoleWithSAMLResponse AssumeRoleWithSAML(AssumeRoleWithSAMLRequest request)
         {
             var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
@@ -611,6 +615,7 @@ namespace Amazon.SecurityToken
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssumeRoleWithSAML
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML">REST API Reference for AssumeRoleWithSAML Operation</seealso>
         public IAsyncResult BeginAssumeRoleWithSAML(AssumeRoleWithSAMLRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssumeRoleWithSAMLRequestMarshaller();
@@ -627,6 +632,7 @@ namespace Amazon.SecurityToken
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssumeRoleWithSAML.</param>
         /// 
         /// <returns>Returns a  AssumeRoleWithSAMLResult from SecurityTokenService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithSAML">REST API Reference for AssumeRoleWithSAML Operation</seealso>
         public  AssumeRoleWithSAMLResponse EndAssumeRoleWithSAML(IAsyncResult asyncResult)
         {
             return EndInvoke<AssumeRoleWithSAMLResponse>(asyncResult);
@@ -797,6 +803,7 @@ namespace Amazon.SecurityToken
         /// STS in that region. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
         /// and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity">REST API Reference for AssumeRoleWithWebIdentity Operation</seealso>
         public AssumeRoleWithWebIdentityResponse AssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request)
         {
             var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
@@ -816,6 +823,7 @@ namespace Amazon.SecurityToken
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssumeRoleWithWebIdentity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity">REST API Reference for AssumeRoleWithWebIdentity Operation</seealso>
         public IAsyncResult BeginAssumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssumeRoleWithWebIdentityRequestMarshaller();
@@ -832,6 +840,7 @@ namespace Amazon.SecurityToken
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssumeRoleWithWebIdentity.</param>
         /// 
         /// <returns>Returns a  AssumeRoleWithWebIdentityResult from SecurityTokenService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity">REST API Reference for AssumeRoleWithWebIdentity Operation</seealso>
         public  AssumeRoleWithWebIdentityResponse EndAssumeRoleWithWebIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<AssumeRoleWithWebIdentityResponse>(asyncResult);
@@ -901,6 +910,7 @@ namespace Amazon.SecurityToken
         /// The error returned if the message passed to <code>DecodeAuthorizationMessage</code>
         /// was invalid. This can happen if the token contains invalid characters, such as linebreaks.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage">REST API Reference for DecodeAuthorizationMessage Operation</seealso>
         public DecodeAuthorizationMessageResponse DecodeAuthorizationMessage(DecodeAuthorizationMessageRequest request)
         {
             var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
@@ -920,6 +930,7 @@ namespace Amazon.SecurityToken
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDecodeAuthorizationMessage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage">REST API Reference for DecodeAuthorizationMessage Operation</seealso>
         public IAsyncResult BeginDecodeAuthorizationMessage(DecodeAuthorizationMessageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DecodeAuthorizationMessageRequestMarshaller();
@@ -936,6 +947,7 @@ namespace Amazon.SecurityToken
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDecodeAuthorizationMessage.</param>
         /// 
         /// <returns>Returns a  DecodeAuthorizationMessageResult from SecurityTokenService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/DecodeAuthorizationMessage">REST API Reference for DecodeAuthorizationMessage Operation</seealso>
         public  DecodeAuthorizationMessageResponse EndDecodeAuthorizationMessage(IAsyncResult asyncResult)
         {
             return EndInvoke<DecodeAuthorizationMessageResponse>(asyncResult);
@@ -951,6 +963,7 @@ namespace Amazon.SecurityToken
         /// <param name="request">Container for the necessary parameters to execute the GetCallerIdentity service method.</param>
         /// 
         /// <returns>The response from the GetCallerIdentity service method, as returned by SecurityTokenService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">REST API Reference for GetCallerIdentity Operation</seealso>
         public GetCallerIdentityResponse GetCallerIdentity(GetCallerIdentityRequest request)
         {
             var marshaller = new GetCallerIdentityRequestMarshaller();
@@ -970,6 +983,7 @@ namespace Amazon.SecurityToken
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCallerIdentity
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">REST API Reference for GetCallerIdentity Operation</seealso>
         public IAsyncResult BeginGetCallerIdentity(GetCallerIdentityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCallerIdentityRequestMarshaller();
@@ -986,6 +1000,7 @@ namespace Amazon.SecurityToken
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCallerIdentity.</param>
         /// 
         /// <returns>Returns a  GetCallerIdentityResult from SecurityTokenService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetCallerIdentity">REST API Reference for GetCallerIdentity Operation</seealso>
         public  GetCallerIdentityResponse EndGetCallerIdentity(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCallerIdentityResponse>(asyncResult);
@@ -1118,6 +1133,7 @@ namespace Amazon.SecurityToken
         /// STS in that region. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
         /// and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken">REST API Reference for GetFederationToken Operation</seealso>
         public GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
         {
             var marshaller = new GetFederationTokenRequestMarshaller();
@@ -1137,6 +1153,7 @@ namespace Amazon.SecurityToken
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFederationToken
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken">REST API Reference for GetFederationToken Operation</seealso>
         public IAsyncResult BeginGetFederationToken(GetFederationTokenRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetFederationTokenRequestMarshaller();
@@ -1153,6 +1170,7 @@ namespace Amazon.SecurityToken
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFederationToken.</param>
         /// 
         /// <returns>Returns a  GetFederationTokenResult from SecurityTokenService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken">REST API Reference for GetFederationToken Operation</seealso>
         public  GetFederationTokenResponse EndGetFederationToken(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFederationTokenResponse>(asyncResult);
@@ -1232,6 +1250,7 @@ namespace Amazon.SecurityToken
         /// STS in that region. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
         /// and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">REST API Reference for GetSessionToken Operation</seealso>
         public GetSessionTokenResponse GetSessionToken()
         {
             return GetSessionToken(new GetSessionTokenRequest());
@@ -1308,6 +1327,7 @@ namespace Amazon.SecurityToken
         /// STS in that region. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
         /// and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">REST API Reference for GetSessionToken Operation</seealso>
         public GetSessionTokenResponse GetSessionToken(GetSessionTokenRequest request)
         {
             var marshaller = new GetSessionTokenRequestMarshaller();
@@ -1327,6 +1347,7 @@ namespace Amazon.SecurityToken
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSessionToken
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">REST API Reference for GetSessionToken Operation</seealso>
         public IAsyncResult BeginGetSessionToken(GetSessionTokenRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetSessionTokenRequestMarshaller();
@@ -1343,6 +1364,7 @@ namespace Amazon.SecurityToken
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSessionToken.</param>
         /// 
         /// <returns>Returns a  GetSessionTokenResult from SecurityTokenService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetSessionToken">REST API Reference for GetSessionToken Operation</seealso>
         public  GetSessionTokenResponse EndGetSessionToken(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSessionTokenResponse>(asyncResult);

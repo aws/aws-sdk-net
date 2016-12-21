@@ -152,6 +152,7 @@ namespace Amazon.SQS
         /// returns this error if the maximum number of inflight messages is reached. <code> <a>AddPermission</a>
         /// </code> returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         AddPermissionResponse AddPermission(string queueUrl, string label, List<string> awsAccountIds, List<string> actions);
 
         /// <summary>
@@ -196,6 +197,7 @@ namespace Amazon.SQS
         /// returns this error if the maximum number of inflight messages is reached. <code> <a>AddPermission</a>
         /// </code> returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         AddPermissionResponse AddPermission(AddPermissionRequest request);
 
         /// <summary>
@@ -209,6 +211,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddPermission
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         IAsyncResult BeginAddPermission(AddPermissionRequest request, AsyncCallback callback, object state);
 
 
@@ -220,6 +223,7 @@ namespace Amazon.SQS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddPermission.</param>
         /// 
         /// <returns>Returns a  AddPermissionResult from SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         AddPermissionResponse EndAddPermission(IAsyncResult asyncResult);
 
         #endregion
@@ -288,6 +292,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The receipt handle provided isn't valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         ChangeMessageVisibilityResponse ChangeMessageVisibility(string queueUrl, string receiptHandle, int visibilityTimeout);
 
         /// <summary>
@@ -349,6 +354,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The receipt handle provided isn't valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         ChangeMessageVisibilityResponse ChangeMessageVisibility(ChangeMessageVisibilityRequest request);
 
         /// <summary>
@@ -362,6 +368,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndChangeMessageVisibility
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         IAsyncResult BeginChangeMessageVisibility(ChangeMessageVisibilityRequest request, AsyncCallback callback, object state);
 
 
@@ -373,6 +380,7 @@ namespace Amazon.SQS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginChangeMessageVisibility.</param>
         /// 
         /// <returns>Returns a  ChangeMessageVisibilityResult from SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         ChangeMessageVisibilityResponse EndChangeMessageVisibility(IAsyncResult asyncResult);
 
         #endregion
@@ -424,6 +432,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(string queueUrl, List<ChangeMessageVisibilityBatchRequestEntry> entries);
 
         /// <summary>
@@ -469,6 +478,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request);
 
         /// <summary>
@@ -482,6 +492,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndChangeMessageVisibilityBatch
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         IAsyncResult BeginChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request, AsyncCallback callback, object state);
 
 
@@ -493,6 +504,7 @@ namespace Amazon.SQS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginChangeMessageVisibilityBatch.</param>
         /// 
         /// <returns>Returns a  ChangeMessageVisibilityBatchResult from SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         ChangeMessageVisibilityBatchResponse EndChangeMessageVisibilityBatch(IAsyncResult asyncResult);
 
         #endregion
@@ -578,6 +590,7 @@ namespace Amazon.SQS
         /// A queue already exists with this name. Amazon SQS returns this error only if the request
         /// includes attributes whose values differ from those of the existing queue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         CreateQueueResponse CreateQueue(string queueName);
 
         /// <summary>
@@ -658,6 +671,7 @@ namespace Amazon.SQS
         /// A queue already exists with this name. Amazon SQS returns this error only if the request
         /// includes attributes whose values differ from those of the existing queue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         CreateQueueResponse CreateQueue(CreateQueueRequest request);
 
         /// <summary>
@@ -671,6 +685,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateQueue
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         IAsyncResult BeginCreateQueue(CreateQueueRequest request, AsyncCallback callback, object state);
 
 
@@ -682,6 +697,7 @@ namespace Amazon.SQS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateQueue.</param>
         /// 
         /// <returns>Returns a  CreateQueueResult from SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         CreateQueueResponse EndCreateQueue(IAsyncResult asyncResult);
 
         #endregion
@@ -726,6 +742,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The receipt handle provided isn't valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         DeleteMessageResponse DeleteMessage(string queueUrl, string receiptHandle);
 
         /// <summary>
@@ -764,6 +781,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The receipt handle provided isn't valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         DeleteMessageResponse DeleteMessage(DeleteMessageRequest request);
 
         /// <summary>
@@ -777,6 +795,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMessage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         IAsyncResult BeginDeleteMessage(DeleteMessageRequest request, AsyncCallback callback, object state);
 
 
@@ -788,6 +807,7 @@ namespace Amazon.SQS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMessage.</param>
         /// 
         /// <returns>Returns a  DeleteMessageResult from SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         DeleteMessageResponse EndDeleteMessage(IAsyncResult asyncResult);
 
         #endregion
@@ -838,6 +858,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         DeleteMessageBatchResponse DeleteMessageBatch(string queueUrl, List<DeleteMessageBatchRequestEntry> entries);
 
         /// <summary>
@@ -882,6 +903,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         DeleteMessageBatchResponse DeleteMessageBatch(DeleteMessageBatchRequest request);
 
         /// <summary>
@@ -895,6 +917,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMessageBatch
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         IAsyncResult BeginDeleteMessageBatch(DeleteMessageBatchRequest request, AsyncCallback callback, object state);
 
 
@@ -906,6 +929,7 @@ namespace Amazon.SQS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMessageBatch.</param>
         /// 
         /// <returns>Returns a  DeleteMessageBatchResult from SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         DeleteMessageBatchResponse EndDeleteMessageBatch(IAsyncResult asyncResult);
 
         #endregion
@@ -938,6 +962,7 @@ namespace Amazon.SQS
         /// <param name="queueUrl">The URL of the Amazon SQS queue to delete. Queue URLs are case-sensitive.</param>
         /// 
         /// <returns>The response from the DeleteQueue service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         DeleteQueueResponse DeleteQueue(string queueUrl);
 
         /// <summary>
@@ -965,6 +990,7 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
         /// 
         /// <returns>The response from the DeleteQueue service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         DeleteQueueResponse DeleteQueue(DeleteQueueRequest request);
 
         /// <summary>
@@ -978,6 +1004,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteQueue
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         IAsyncResult BeginDeleteQueue(DeleteQueueRequest request, AsyncCallback callback, object state);
 
 
@@ -989,6 +1016,7 @@ namespace Amazon.SQS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteQueue.</param>
         /// 
         /// <returns>Returns a  DeleteQueueResult from SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         DeleteQueueResponse EndDeleteQueue(IAsyncResult asyncResult);
 
         #endregion
@@ -1022,6 +1050,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The attribute referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         GetQueueAttributesResponse GetQueueAttributes(string queueUrl, List<string> attributeNames);
 
         /// <summary>
@@ -1049,6 +1078,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The attribute referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         GetQueueAttributesResponse GetQueueAttributes(GetQueueAttributesRequest request);
 
         /// <summary>
@@ -1062,6 +1092,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetQueueAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         IAsyncResult BeginGetQueueAttributes(GetQueueAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -1073,6 +1104,7 @@ namespace Amazon.SQS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetQueueAttributes.</param>
         /// 
         /// <returns>Returns a  GetQueueAttributesResult from SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         GetQueueAttributesResponse EndGetQueueAttributes(IAsyncResult asyncResult);
 
         #endregion
@@ -1099,6 +1131,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The queue referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         GetQueueUrlResponse GetQueueUrl(string queueName);
 
         /// <summary>
@@ -1120,6 +1153,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The queue referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         GetQueueUrlResponse GetQueueUrl(GetQueueUrlRequest request);
 
         /// <summary>
@@ -1133,6 +1167,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetQueueUrl
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         IAsyncResult BeginGetQueueUrl(GetQueueUrlRequest request, AsyncCallback callback, object state);
 
 
@@ -1144,6 +1179,7 @@ namespace Amazon.SQS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetQueueUrl.</param>
         /// 
         /// <returns>Returns a  GetQueueUrlResult from SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         GetQueueUrlResponse EndGetQueueUrl(IAsyncResult asyncResult);
 
         #endregion
@@ -1167,6 +1203,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The queue referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">REST API Reference for ListDeadLetterSourceQueues Operation</seealso>
         ListDeadLetterSourceQueuesResponse ListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request);
 
         /// <summary>
@@ -1180,6 +1217,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeadLetterSourceQueues
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">REST API Reference for ListDeadLetterSourceQueues Operation</seealso>
         IAsyncResult BeginListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request, AsyncCallback callback, object state);
 
 
@@ -1191,6 +1229,7 @@ namespace Amazon.SQS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeadLetterSourceQueues.</param>
         /// 
         /// <returns>Returns a  ListDeadLetterSourceQueuesResult from SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">REST API Reference for ListDeadLetterSourceQueues Operation</seealso>
         ListDeadLetterSourceQueuesResponse EndListDeadLetterSourceQueues(IAsyncResult asyncResult);
 
         #endregion
@@ -1206,6 +1245,7 @@ namespace Amazon.SQS
         /// <param name="queueNamePrefix">A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned. Queue names are case-sensitive.</param>
         /// 
         /// <returns>The response from the ListQueues service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         ListQueuesResponse ListQueues(string queueNamePrefix);
 
         /// <summary>
@@ -1216,6 +1256,7 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the ListQueues service method.</param>
         /// 
         /// <returns>The response from the ListQueues service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         ListQueuesResponse ListQueues(ListQueuesRequest request);
 
         /// <summary>
@@ -1229,6 +1270,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListQueues
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         IAsyncResult BeginListQueues(ListQueuesRequest request, AsyncCallback callback, object state);
 
 
@@ -1240,6 +1282,7 @@ namespace Amazon.SQS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListQueues.</param>
         /// 
         /// <returns>Returns a  ListQueuesResult from SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         ListQueuesResponse EndListQueues(IAsyncResult asyncResult);
 
         #endregion
@@ -1274,6 +1317,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The queue referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         PurgeQueueResponse PurgeQueue(string queueUrl);
 
         /// <summary>
@@ -1303,6 +1347,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The queue referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         PurgeQueueResponse PurgeQueue(PurgeQueueRequest request);
 
         /// <summary>
@@ -1316,6 +1361,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurgeQueue
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         IAsyncResult BeginPurgeQueue(PurgeQueueRequest request, AsyncCallback callback, object state);
 
 
@@ -1327,6 +1373,7 @@ namespace Amazon.SQS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurgeQueue.</param>
         /// 
         /// <returns>Returns a  PurgeQueueResult from SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         PurgeQueueResponse EndPurgeQueue(IAsyncResult asyncResult);
 
         #endregion
@@ -1412,6 +1459,7 @@ namespace Amazon.SQS
         /// returns this error if the maximum number of inflight messages is reached. <code> <a>AddPermission</a>
         /// </code> returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         ReceiveMessageResponse ReceiveMessage(string queueUrl);
 
         /// <summary>
@@ -1492,6 +1540,7 @@ namespace Amazon.SQS
         /// returns this error if the maximum number of inflight messages is reached. <code> <a>AddPermission</a>
         /// </code> returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         ReceiveMessageResponse ReceiveMessage(ReceiveMessageRequest request);
 
         /// <summary>
@@ -1505,6 +1554,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReceiveMessage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         IAsyncResult BeginReceiveMessage(ReceiveMessageRequest request, AsyncCallback callback, object state);
 
 
@@ -1516,6 +1566,7 @@ namespace Amazon.SQS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReceiveMessage.</param>
         /// 
         /// <returns>Returns a  ReceiveMessageResult from SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         ReceiveMessageResponse EndReceiveMessage(IAsyncResult asyncResult);
 
         #endregion
@@ -1531,6 +1582,7 @@ namespace Amazon.SQS
         /// <param name="label">The identification of the permission to remove. This is the label added using the <code> <a>AddPermission</a> </code> action.</param>
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         RemovePermissionResponse RemovePermission(string queueUrl, string label);
 
         /// <summary>
@@ -1540,6 +1592,7 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission service method.</param>
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         RemovePermissionResponse RemovePermission(RemovePermissionRequest request);
 
         /// <summary>
@@ -1553,6 +1606,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemovePermission
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         IAsyncResult BeginRemovePermission(RemovePermissionRequest request, AsyncCallback callback, object state);
 
 
@@ -1564,6 +1618,7 @@ namespace Amazon.SQS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemovePermission.</param>
         /// 
         /// <returns>Returns a  RemovePermissionResult from SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         RemovePermissionResponse EndRemovePermission(IAsyncResult asyncResult);
 
         #endregion
@@ -1620,6 +1675,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
         SendMessageResponse SendMessage(string queueUrl, string messageBody);
 
         /// <summary>
@@ -1670,6 +1726,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
         SendMessageResponse SendMessage(SendMessageRequest request);
 
         /// <summary>
@@ -1683,6 +1740,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendMessage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
         IAsyncResult BeginSendMessage(SendMessageRequest request, AsyncCallback callback, object state);
 
 
@@ -1694,6 +1752,7 @@ namespace Amazon.SQS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendMessage.</param>
         /// 
         /// <returns>Returns a  SendMessageResult from SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage">REST API Reference for SendMessage Operation</seealso>
         SendMessageResponse EndSendMessage(IAsyncResult asyncResult);
 
         #endregion
@@ -1796,6 +1855,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
         SendMessageBatchResponse SendMessageBatch(string queueUrl, List<SendMessageBatchRequestEntry> entries);
 
         /// <summary>
@@ -1892,6 +1952,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
         SendMessageBatchResponse SendMessageBatch(SendMessageBatchRequest request);
 
         /// <summary>
@@ -1905,6 +1966,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendMessageBatch
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
         IAsyncResult BeginSendMessageBatch(SendMessageBatchRequest request, AsyncCallback callback, object state);
 
 
@@ -1916,6 +1978,7 @@ namespace Amazon.SQS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendMessageBatch.</param>
         /// 
         /// <returns>Returns a  SendMessageBatchResult from SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch">REST API Reference for SendMessageBatch Operation</seealso>
         SendMessageBatchResponse EndSendMessageBatch(IAsyncResult asyncResult);
 
         #endregion
@@ -1943,6 +2006,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The attribute referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         SetQueueAttributesResponse SetQueueAttributes(string queueUrl, Dictionary<string, string> attributes);
 
         /// <summary>
@@ -1964,6 +2028,7 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The attribute referred to doesn't exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         SetQueueAttributesResponse SetQueueAttributes(SetQueueAttributesRequest request);
 
         /// <summary>
@@ -1977,6 +2042,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetQueueAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         IAsyncResult BeginSetQueueAttributes(SetQueueAttributesRequest request, AsyncCallback callback, object state);
 
 
@@ -1988,6 +2054,7 @@ namespace Amazon.SQS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetQueueAttributes.</param>
         /// 
         /// <returns>Returns a  SetQueueAttributesResult from SQS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         SetQueueAttributesResponse EndSetQueueAttributes(IAsyncResult asyncResult);
 
         #endregion

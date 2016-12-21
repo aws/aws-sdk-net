@@ -61,6 +61,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         DescribeAffectedEntitiesResponse DescribeAffectedEntities(DescribeAffectedEntitiesRequest request);
 
 
@@ -73,6 +74,7 @@ namespace Amazon.AWSHealth
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         Task<DescribeAffectedEntitiesResponse> DescribeAffectedEntitiesAsync(DescribeAffectedEntitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -86,6 +88,7 @@ namespace Amazon.AWSHealth
         /// <param name="request">Container for the necessary parameters to execute the DescribeEntityAggregates service method.</param>
         /// 
         /// <returns>The response from the DescribeEntityAggregates service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">REST API Reference for DescribeEntityAggregates Operation</seealso>
         DescribeEntityAggregatesResponse DescribeEntityAggregates(DescribeEntityAggregatesRequest request);
 
 
@@ -98,6 +101,7 @@ namespace Amazon.AWSHealth
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">REST API Reference for DescribeEntityAggregates Operation</seealso>
         Task<DescribeEntityAggregatesResponse> DescribeEntityAggregatesAsync(DescribeEntityAggregatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -114,6 +118,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         DescribeEventAggregatesResponse DescribeEventAggregates(DescribeEventAggregatesRequest request);
 
 
@@ -126,6 +131,7 @@ namespace Amazon.AWSHealth
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         Task<DescribeEventAggregatesResponse> DescribeEventAggregatesAsync(DescribeEventAggregatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -144,6 +150,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         DescribeEventDetailsResponse DescribeEventDetails(DescribeEventDetailsRequest request);
 
 
@@ -156,6 +163,7 @@ namespace Amazon.AWSHealth
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         Task<DescribeEventDetailsResponse> DescribeEventDetailsAsync(DescribeEventDetailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -180,6 +188,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         DescribeEventsResponse DescribeEvents(DescribeEventsRequest request);
 
 
@@ -192,6 +201,7 @@ namespace Amazon.AWSHealth
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         Task<DescribeEventsResponse> DescribeEventsAsync(DescribeEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -213,6 +223,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         DescribeEventTypesResponse DescribeEventTypes(DescribeEventTypesRequest request);
 
 
@@ -225,6 +236,7 @@ namespace Amazon.AWSHealth
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         Task<DescribeEventTypesResponse> DescribeEventTypesAsync(DescribeEventTypesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

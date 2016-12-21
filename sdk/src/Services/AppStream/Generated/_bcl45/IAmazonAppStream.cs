@@ -52,6 +52,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">REST API Reference for AssociateFleet Operation</seealso>
         AssociateFleetResponse AssociateFleet(AssociateFleetRequest request);
 
 
@@ -64,6 +65,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateFleet">REST API Reference for AssociateFleet Operation</seealso>
         Task<AssociateFleetResponse> AssociateFleetAsync(AssociateFleetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -92,6 +94,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         CreateFleetResponse CreateFleet(CreateFleetRequest request);
 
 
@@ -104,6 +107,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">REST API Reference for CreateFleet Operation</seealso>
         Task<CreateFleetResponse> CreateFleetAsync(CreateFleetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -123,6 +127,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceAlreadyExistsException">
         /// The specified resource already exists.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">REST API Reference for CreateStack Operation</seealso>
         CreateStackResponse CreateStack(CreateStackRequest request);
 
 
@@ -135,6 +140,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack">REST API Reference for CreateStack Operation</seealso>
         Task<CreateStackResponse> CreateStackAsync(CreateStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -155,6 +161,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">REST API Reference for CreateStreamingURL Operation</seealso>
         CreateStreamingURLResponse CreateStreamingURL(CreateStreamingURLRequest request);
 
 
@@ -167,6 +174,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStreamingURL">REST API Reference for CreateStreamingURL Operation</seealso>
         Task<CreateStreamingURLResponse> CreateStreamingURLAsync(CreateStreamingURLRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -186,6 +194,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         DeleteFleetResponse DeleteFleet(DeleteFleetRequest request);
 
 
@@ -198,6 +207,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteFleet">REST API Reference for DeleteFleet Operation</seealso>
         Task<DeleteFleetResponse> DeleteFleetAsync(DeleteFleetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -218,6 +228,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         DeleteStackResponse DeleteStack(DeleteStackRequest request);
 
 
@@ -230,6 +241,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteStack">REST API Reference for DeleteStack Operation</seealso>
         Task<DeleteStackResponse> DeleteStackAsync(DeleteStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -249,6 +261,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
         DescribeFleetsResponse DescribeFleets(DescribeFleetsRequest request);
 
 
@@ -261,6 +274,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">REST API Reference for DescribeFleets Operation</seealso>
         Task<DescribeFleetsResponse> DescribeFleetsAsync(DescribeFleetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -278,6 +292,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         DescribeImagesResponse DescribeImages(DescribeImagesRequest request);
 
 
@@ -290,6 +305,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         Task<DescribeImagesResponse> DescribeImagesAsync(DescribeImagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -305,6 +321,7 @@ namespace Amazon.AppStream
         /// <param name="request">Container for the necessary parameters to execute the DescribeSessions service method.</param>
         /// 
         /// <returns>The response from the DescribeSessions service method, as returned by AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
         DescribeSessionsResponse DescribeSessions(DescribeSessionsRequest request);
 
 
@@ -317,6 +334,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions">REST API Reference for DescribeSessions Operation</seealso>
         Task<DescribeSessionsResponse> DescribeSessionsAsync(DescribeSessionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -336,6 +354,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         DescribeStacksResponse DescribeStacks(DescribeStacksRequest request);
 
 
@@ -348,6 +367,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks">REST API Reference for DescribeStacks Operation</seealso>
         Task<DescribeStacksResponse> DescribeStacksAsync(DescribeStacksRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -367,6 +387,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">REST API Reference for DisassociateFleet Operation</seealso>
         DisassociateFleetResponse DisassociateFleet(DisassociateFleetRequest request);
 
 
@@ -379,6 +400,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateFleet">REST API Reference for DisassociateFleet Operation</seealso>
         Task<DisassociateFleetResponse> DisassociateFleetAsync(DisassociateFleetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -392,6 +414,7 @@ namespace Amazon.AppStream
         /// <param name="request">Container for the necessary parameters to execute the ExpireSession service method.</param>
         /// 
         /// <returns>The response from the ExpireSession service method, as returned by AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">REST API Reference for ExpireSession Operation</seealso>
         ExpireSessionResponse ExpireSession(ExpireSessionRequest request);
 
 
@@ -404,6 +427,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ExpireSession">REST API Reference for ExpireSession Operation</seealso>
         Task<ExpireSessionResponse> ExpireSessionAsync(ExpireSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -417,6 +441,7 @@ namespace Amazon.AppStream
         /// <param name="request">Container for the necessary parameters to execute the ListAssociatedFleets service method.</param>
         /// 
         /// <returns>The response from the ListAssociatedFleets service method, as returned by AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">REST API Reference for ListAssociatedFleets Operation</seealso>
         ListAssociatedFleetsResponse ListAssociatedFleets(ListAssociatedFleetsRequest request);
 
 
@@ -429,6 +454,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedFleets">REST API Reference for ListAssociatedFleets Operation</seealso>
         Task<ListAssociatedFleetsResponse> ListAssociatedFleetsAsync(ListAssociatedFleetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -442,6 +468,7 @@ namespace Amazon.AppStream
         /// <param name="request">Container for the necessary parameters to execute the ListAssociatedStacks service method.</param>
         /// 
         /// <returns>The response from the ListAssociatedStacks service method, as returned by AppStream.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">REST API Reference for ListAssociatedStacks Operation</seealso>
         ListAssociatedStacksResponse ListAssociatedStacks(ListAssociatedStacksRequest request);
 
 
@@ -454,6 +481,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ListAssociatedStacks">REST API Reference for ListAssociatedStacks Operation</seealso>
         Task<ListAssociatedStacksResponse> ListAssociatedStacksAsync(ListAssociatedStacksRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -473,6 +501,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">REST API Reference for StartFleet Operation</seealso>
         StartFleetResponse StartFleet(StartFleetRequest request);
 
 
@@ -485,6 +514,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet">REST API Reference for StartFleet Operation</seealso>
         Task<StartFleetResponse> StartFleetAsync(StartFleetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -501,6 +531,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">REST API Reference for StopFleet Operation</seealso>
         StopFleetResponse StopFleet(StopFleetRequest request);
 
 
@@ -513,6 +544,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopFleet">REST API Reference for StopFleet Operation</seealso>
         Task<StopFleetResponse> StopFleetAsync(StopFleetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -540,6 +572,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
         UpdateFleetResponse UpdateFleet(UpdateFleetRequest request);
 
 
@@ -552,6 +585,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateFleet">REST API Reference for UpdateFleet Operation</seealso>
         Task<UpdateFleetResponse> UpdateFleetAsync(UpdateFleetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -571,6 +605,7 @@ namespace Amazon.AppStream
         /// <exception cref="Amazon.AppStream.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         UpdateStackResponse UpdateStack(UpdateStackRequest request);
 
 
@@ -583,6 +618,7 @@ namespace Amazon.AppStream
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack">REST API Reference for UpdateStack Operation</seealso>
         Task<UpdateStackResponse> UpdateStackAsync(UpdateStackRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

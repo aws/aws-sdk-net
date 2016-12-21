@@ -38,6 +38,7 @@ namespace SDKDocGenerator.Writers
             AddRemarksDocumentation(writer);
             AddExamples(writer);
             AddVersionInformation(writer, this._info);
+            AddSeeAlso(writer);
         }
 
         protected virtual void AddParameters(TextWriter writer)

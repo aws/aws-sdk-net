@@ -247,6 +247,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AcceptReservedInstancesExchangeQuote service method.</param>
         /// 
         /// <returns>The response from the AcceptReservedInstancesExchangeQuote service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptReservedInstancesExchangeQuote">REST API Reference for AcceptReservedInstancesExchangeQuote Operation</seealso>
         public AcceptReservedInstancesExchangeQuoteResponse AcceptReservedInstancesExchangeQuote(AcceptReservedInstancesExchangeQuoteRequest request)
         {
             var marshaller = new AcceptReservedInstancesExchangeQuoteRequestMarshaller();
@@ -266,6 +267,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptReservedInstancesExchangeQuote
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptReservedInstancesExchangeQuote">REST API Reference for AcceptReservedInstancesExchangeQuote Operation</seealso>
         public IAsyncResult BeginAcceptReservedInstancesExchangeQuote(AcceptReservedInstancesExchangeQuoteRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AcceptReservedInstancesExchangeQuoteRequestMarshaller();
@@ -282,6 +284,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptReservedInstancesExchangeQuote.</param>
         /// 
         /// <returns>Returns a  AcceptReservedInstancesExchangeQuoteResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptReservedInstancesExchangeQuote">REST API Reference for AcceptReservedInstancesExchangeQuote Operation</seealso>
         public  AcceptReservedInstancesExchangeQuoteResponse EndAcceptReservedInstancesExchangeQuote(IAsyncResult asyncResult)
         {
             return EndInvoke<AcceptReservedInstancesExchangeQuoteResponse>(asyncResult);
@@ -300,6 +303,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AcceptVpcPeeringConnection service method.</param>
         /// 
         /// <returns>The response from the AcceptVpcPeeringConnection service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcPeeringConnection">REST API Reference for AcceptVpcPeeringConnection Operation</seealso>
         public AcceptVpcPeeringConnectionResponse AcceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest request)
         {
             var marshaller = new AcceptVpcPeeringConnectionRequestMarshaller();
@@ -319,6 +323,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptVpcPeeringConnection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcPeeringConnection">REST API Reference for AcceptVpcPeeringConnection Operation</seealso>
         public IAsyncResult BeginAcceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AcceptVpcPeeringConnectionRequestMarshaller();
@@ -335,6 +340,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptVpcPeeringConnection.</param>
         /// 
         /// <returns>Returns a  AcceptVpcPeeringConnectionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcPeeringConnection">REST API Reference for AcceptVpcPeeringConnection Operation</seealso>
         public  AcceptVpcPeeringConnectionResponse EndAcceptVpcPeeringConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<AcceptVpcPeeringConnectionResponse>(asyncResult);
@@ -356,6 +362,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the AllocateAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">REST API Reference for AllocateAddress Operation</seealso>
         public AllocateAddressResponse AllocateAddress()
         {
             return AllocateAddress(new AllocateAddressRequest());
@@ -374,6 +381,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AllocateAddress service method.</param>
         /// 
         /// <returns>The response from the AllocateAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">REST API Reference for AllocateAddress Operation</seealso>
         public AllocateAddressResponse AllocateAddress(AllocateAddressRequest request)
         {
             var marshaller = new AllocateAddressRequestMarshaller();
@@ -393,6 +401,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAllocateAddress
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">REST API Reference for AllocateAddress Operation</seealso>
         public IAsyncResult BeginAllocateAddress(AllocateAddressRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AllocateAddressRequestMarshaller();
@@ -409,6 +418,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAllocateAddress.</param>
         /// 
         /// <returns>Returns a  AllocateAddressResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">REST API Reference for AllocateAddress Operation</seealso>
         public  AllocateAddressResponse EndAllocateAddress(IAsyncResult asyncResult)
         {
             return EndInvoke<AllocateAddressResponse>(asyncResult);
@@ -425,6 +435,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AllocateHosts service method.</param>
         /// 
         /// <returns>The response from the AllocateHosts service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateHosts">REST API Reference for AllocateHosts Operation</seealso>
         public AllocateHostsResponse AllocateHosts(AllocateHostsRequest request)
         {
             var marshaller = new AllocateHostsRequestMarshaller();
@@ -444,6 +455,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAllocateHosts
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateHosts">REST API Reference for AllocateHosts Operation</seealso>
         public IAsyncResult BeginAllocateHosts(AllocateHostsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AllocateHostsRequestMarshaller();
@@ -460,6 +472,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAllocateHosts.</param>
         /// 
         /// <returns>Returns a  AllocateHostsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateHosts">REST API Reference for AllocateHosts Operation</seealso>
         public  AllocateHostsResponse EndAllocateHosts(IAsyncResult asyncResult)
         {
             return EndInvoke<AllocateHostsResponse>(asyncResult);
@@ -481,6 +494,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AssignIpv6Addresses service method.</param>
         /// 
         /// <returns>The response from the AssignIpv6Addresses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">REST API Reference for AssignIpv6Addresses Operation</seealso>
         public AssignIpv6AddressesResponse AssignIpv6Addresses(AssignIpv6AddressesRequest request)
         {
             var marshaller = new AssignIpv6AddressesRequestMarshaller();
@@ -500,6 +514,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssignIpv6Addresses
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">REST API Reference for AssignIpv6Addresses Operation</seealso>
         public IAsyncResult BeginAssignIpv6Addresses(AssignIpv6AddressesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssignIpv6AddressesRequestMarshaller();
@@ -516,6 +531,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssignIpv6Addresses.</param>
         /// 
         /// <returns>Returns a  AssignIpv6AddressesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">REST API Reference for AssignIpv6Addresses Operation</seealso>
         public  AssignIpv6AddressesResponse EndAssignIpv6Addresses(IAsyncResult asyncResult)
         {
             return EndInvoke<AssignIpv6AddressesResponse>(asyncResult);
@@ -543,6 +559,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AssignPrivateIpAddresses service method.</param>
         /// 
         /// <returns>The response from the AssignPrivateIpAddresses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">REST API Reference for AssignPrivateIpAddresses Operation</seealso>
         public AssignPrivateIpAddressesResponse AssignPrivateIpAddresses(AssignPrivateIpAddressesRequest request)
         {
             var marshaller = new AssignPrivateIpAddressesRequestMarshaller();
@@ -562,6 +579,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssignPrivateIpAddresses
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">REST API Reference for AssignPrivateIpAddresses Operation</seealso>
         public IAsyncResult BeginAssignPrivateIpAddresses(AssignPrivateIpAddressesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssignPrivateIpAddressesRequestMarshaller();
@@ -578,6 +596,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssignPrivateIpAddresses.</param>
         /// 
         /// <returns>Returns a  AssignPrivateIpAddressesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">REST API Reference for AssignPrivateIpAddresses Operation</seealso>
         public  AssignPrivateIpAddressesResponse EndAssignPrivateIpAddresses(IAsyncResult asyncResult)
         {
             return EndInvoke<AssignPrivateIpAddressesResponse>(asyncResult);
@@ -621,6 +640,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AssociateAddress service method.</param>
         /// 
         /// <returns>The response from the AssociateAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">REST API Reference for AssociateAddress Operation</seealso>
         public AssociateAddressResponse AssociateAddress(AssociateAddressRequest request)
         {
             var marshaller = new AssociateAddressRequestMarshaller();
@@ -640,6 +660,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateAddress
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">REST API Reference for AssociateAddress Operation</seealso>
         public IAsyncResult BeginAssociateAddress(AssociateAddressRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateAddressRequestMarshaller();
@@ -656,6 +677,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateAddress.</param>
         /// 
         /// <returns>Returns a  AssociateAddressResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">REST API Reference for AssociateAddress Operation</seealso>
         public  AssociateAddressResponse EndAssociateAddress(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateAddressResponse>(asyncResult);
@@ -686,6 +708,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AssociateDhcpOptions service method.</param>
         /// 
         /// <returns>The response from the AssociateDhcpOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions">REST API Reference for AssociateDhcpOptions Operation</seealso>
         public AssociateDhcpOptionsResponse AssociateDhcpOptions(AssociateDhcpOptionsRequest request)
         {
             var marshaller = new AssociateDhcpOptionsRequestMarshaller();
@@ -705,6 +728,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateDhcpOptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions">REST API Reference for AssociateDhcpOptions Operation</seealso>
         public IAsyncResult BeginAssociateDhcpOptions(AssociateDhcpOptionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateDhcpOptionsRequestMarshaller();
@@ -721,6 +745,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateDhcpOptions.</param>
         /// 
         /// <returns>Returns a  AssociateDhcpOptionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions">REST API Reference for AssociateDhcpOptions Operation</seealso>
         public  AssociateDhcpOptionsResponse EndAssociateDhcpOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateDhcpOptionsResponse>(asyncResult);
@@ -746,6 +771,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AssociateRouteTable service method.</param>
         /// 
         /// <returns>The response from the AssociateRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable">REST API Reference for AssociateRouteTable Operation</seealso>
         public AssociateRouteTableResponse AssociateRouteTable(AssociateRouteTableRequest request)
         {
             var marshaller = new AssociateRouteTableRequestMarshaller();
@@ -765,6 +791,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateRouteTable
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable">REST API Reference for AssociateRouteTable Operation</seealso>
         public IAsyncResult BeginAssociateRouteTable(AssociateRouteTableRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateRouteTableRequestMarshaller();
@@ -781,6 +808,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateRouteTable.</param>
         /// 
         /// <returns>Returns a  AssociateRouteTableResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable">REST API Reference for AssociateRouteTable Operation</seealso>
         public  AssociateRouteTableResponse EndAssociateRouteTable(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateRouteTableResponse>(asyncResult);
@@ -797,6 +825,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AssociateSubnetCidrBlock service method.</param>
         /// 
         /// <returns>The response from the AssociateSubnetCidrBlock service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSubnetCidrBlock">REST API Reference for AssociateSubnetCidrBlock Operation</seealso>
         public AssociateSubnetCidrBlockResponse AssociateSubnetCidrBlock(AssociateSubnetCidrBlockRequest request)
         {
             var marshaller = new AssociateSubnetCidrBlockRequestMarshaller();
@@ -816,6 +845,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateSubnetCidrBlock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSubnetCidrBlock">REST API Reference for AssociateSubnetCidrBlock Operation</seealso>
         public IAsyncResult BeginAssociateSubnetCidrBlock(AssociateSubnetCidrBlockRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateSubnetCidrBlockRequestMarshaller();
@@ -832,6 +862,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateSubnetCidrBlock.</param>
         /// 
         /// <returns>Returns a  AssociateSubnetCidrBlockResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSubnetCidrBlock">REST API Reference for AssociateSubnetCidrBlock Operation</seealso>
         public  AssociateSubnetCidrBlockResponse EndAssociateSubnetCidrBlock(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateSubnetCidrBlockResponse>(asyncResult);
@@ -848,6 +879,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AssociateVpcCidrBlock service method.</param>
         /// 
         /// <returns>The response from the AssociateVpcCidrBlock service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">REST API Reference for AssociateVpcCidrBlock Operation</seealso>
         public AssociateVpcCidrBlockResponse AssociateVpcCidrBlock(AssociateVpcCidrBlockRequest request)
         {
             var marshaller = new AssociateVpcCidrBlockRequestMarshaller();
@@ -867,6 +899,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateVpcCidrBlock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">REST API Reference for AssociateVpcCidrBlock Operation</seealso>
         public IAsyncResult BeginAssociateVpcCidrBlock(AssociateVpcCidrBlockRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AssociateVpcCidrBlockRequestMarshaller();
@@ -883,6 +916,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateVpcCidrBlock.</param>
         /// 
         /// <returns>Returns a  AssociateVpcCidrBlockResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">REST API Reference for AssociateVpcCidrBlock Operation</seealso>
         public  AssociateVpcCidrBlockResponse EndAssociateVpcCidrBlock(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateVpcCidrBlockResponse>(asyncResult);
@@ -913,6 +947,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AttachClassicLinkVpc service method.</param>
         /// 
         /// <returns>The response from the AttachClassicLinkVpc service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachClassicLinkVpc">REST API Reference for AttachClassicLinkVpc Operation</seealso>
         public AttachClassicLinkVpcResponse AttachClassicLinkVpc(AttachClassicLinkVpcRequest request)
         {
             var marshaller = new AttachClassicLinkVpcRequestMarshaller();
@@ -932,6 +967,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachClassicLinkVpc
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachClassicLinkVpc">REST API Reference for AttachClassicLinkVpc Operation</seealso>
         public IAsyncResult BeginAttachClassicLinkVpc(AttachClassicLinkVpcRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AttachClassicLinkVpcRequestMarshaller();
@@ -948,6 +984,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachClassicLinkVpc.</param>
         /// 
         /// <returns>Returns a  AttachClassicLinkVpcResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachClassicLinkVpc">REST API Reference for AttachClassicLinkVpc Operation</seealso>
         public  AttachClassicLinkVpcResponse EndAttachClassicLinkVpc(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachClassicLinkVpcResponse>(asyncResult);
@@ -966,6 +1003,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AttachInternetGateway service method.</param>
         /// 
         /// <returns>The response from the AttachInternetGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachInternetGateway">REST API Reference for AttachInternetGateway Operation</seealso>
         public AttachInternetGatewayResponse AttachInternetGateway(AttachInternetGatewayRequest request)
         {
             var marshaller = new AttachInternetGatewayRequestMarshaller();
@@ -985,6 +1023,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachInternetGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachInternetGateway">REST API Reference for AttachInternetGateway Operation</seealso>
         public IAsyncResult BeginAttachInternetGateway(AttachInternetGatewayRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AttachInternetGatewayRequestMarshaller();
@@ -1001,6 +1040,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachInternetGateway.</param>
         /// 
         /// <returns>Returns a  AttachInternetGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachInternetGateway">REST API Reference for AttachInternetGateway Operation</seealso>
         public  AttachInternetGatewayResponse EndAttachInternetGateway(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachInternetGatewayResponse>(asyncResult);
@@ -1016,6 +1056,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AttachNetworkInterface service method.</param>
         /// 
         /// <returns>The response from the AttachNetworkInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachNetworkInterface">REST API Reference for AttachNetworkInterface Operation</seealso>
         public AttachNetworkInterfaceResponse AttachNetworkInterface(AttachNetworkInterfaceRequest request)
         {
             var marshaller = new AttachNetworkInterfaceRequestMarshaller();
@@ -1035,6 +1076,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachNetworkInterface
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachNetworkInterface">REST API Reference for AttachNetworkInterface Operation</seealso>
         public IAsyncResult BeginAttachNetworkInterface(AttachNetworkInterfaceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AttachNetworkInterfaceRequestMarshaller();
@@ -1051,6 +1093,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachNetworkInterface.</param>
         /// 
         /// <returns>Returns a  AttachNetworkInterfaceResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachNetworkInterface">REST API Reference for AttachNetworkInterface Operation</seealso>
         public  AttachNetworkInterfaceResponse EndAttachNetworkInterface(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachNetworkInterfaceResponse>(asyncResult);
@@ -1113,6 +1156,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AttachVolume service method.</param>
         /// 
         /// <returns>The response from the AttachVolume service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume">REST API Reference for AttachVolume Operation</seealso>
         public AttachVolumeResponse AttachVolume(AttachVolumeRequest request)
         {
             var marshaller = new AttachVolumeRequestMarshaller();
@@ -1132,6 +1176,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachVolume
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume">REST API Reference for AttachVolume Operation</seealso>
         public IAsyncResult BeginAttachVolume(AttachVolumeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AttachVolumeRequestMarshaller();
@@ -1148,6 +1193,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachVolume.</param>
         /// 
         /// <returns>Returns a  AttachVolumeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume">REST API Reference for AttachVolume Operation</seealso>
         public  AttachVolumeResponse EndAttachVolume(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachVolumeResponse>(asyncResult);
@@ -1165,6 +1211,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AttachVpnGateway service method.</param>
         /// 
         /// <returns>The response from the AttachVpnGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">REST API Reference for AttachVpnGateway Operation</seealso>
         public AttachVpnGatewayResponse AttachVpnGateway(AttachVpnGatewayRequest request)
         {
             var marshaller = new AttachVpnGatewayRequestMarshaller();
@@ -1184,6 +1231,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachVpnGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">REST API Reference for AttachVpnGateway Operation</seealso>
         public IAsyncResult BeginAttachVpnGateway(AttachVpnGatewayRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AttachVpnGatewayRequestMarshaller();
@@ -1200,6 +1248,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachVpnGateway.</param>
         /// 
         /// <returns>Returns a  AttachVpnGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">REST API Reference for AttachVpnGateway Operation</seealso>
         public  AttachVpnGatewayResponse EndAttachVpnGateway(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachVpnGatewayResponse>(asyncResult);
@@ -1235,6 +1284,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupEgress service method.</param>
         /// 
         /// <returns>The response from the AuthorizeSecurityGroupEgress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">REST API Reference for AuthorizeSecurityGroupEgress Operation</seealso>
         public AuthorizeSecurityGroupEgressResponse AuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request)
         {
             var marshaller = new AuthorizeSecurityGroupEgressRequestMarshaller();
@@ -1254,6 +1304,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAuthorizeSecurityGroupEgress
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">REST API Reference for AuthorizeSecurityGroupEgress Operation</seealso>
         public IAsyncResult BeginAuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AuthorizeSecurityGroupEgressRequestMarshaller();
@@ -1270,6 +1321,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAuthorizeSecurityGroupEgress.</param>
         /// 
         /// <returns>Returns a  AuthorizeSecurityGroupEgressResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">REST API Reference for AuthorizeSecurityGroupEgress Operation</seealso>
         public  AuthorizeSecurityGroupEgressResponse EndAuthorizeSecurityGroupEgress(IAsyncResult asyncResult)
         {
             return EndInvoke<AuthorizeSecurityGroupEgressResponse>(asyncResult);
@@ -1308,6 +1360,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupIngress service method.</param>
         /// 
         /// <returns>The response from the AuthorizeSecurityGroupIngress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">REST API Reference for AuthorizeSecurityGroupIngress Operation</seealso>
         public AuthorizeSecurityGroupIngressResponse AuthorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest request)
         {
             var marshaller = new AuthorizeSecurityGroupIngressRequestMarshaller();
@@ -1327,6 +1380,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAuthorizeSecurityGroupIngress
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">REST API Reference for AuthorizeSecurityGroupIngress Operation</seealso>
         public IAsyncResult BeginAuthorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AuthorizeSecurityGroupIngressRequestMarshaller();
@@ -1343,6 +1397,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAuthorizeSecurityGroupIngress.</param>
         /// 
         /// <returns>Returns a  AuthorizeSecurityGroupIngressResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">REST API Reference for AuthorizeSecurityGroupIngress Operation</seealso>
         public  AuthorizeSecurityGroupIngressResponse EndAuthorizeSecurityGroupIngress(IAsyncResult asyncResult)
         {
             return EndInvoke<AuthorizeSecurityGroupIngressResponse>(asyncResult);
@@ -1374,6 +1429,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the BundleInstance service method.</param>
         /// 
         /// <returns>The response from the BundleInstance service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BundleInstance">REST API Reference for BundleInstance Operation</seealso>
         public BundleInstanceResponse BundleInstance(BundleInstanceRequest request)
         {
             var marshaller = new BundleInstanceRequestMarshaller();
@@ -1393,6 +1449,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBundleInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BundleInstance">REST API Reference for BundleInstance Operation</seealso>
         public IAsyncResult BeginBundleInstance(BundleInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new BundleInstanceRequestMarshaller();
@@ -1409,6 +1466,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBundleInstance.</param>
         /// 
         /// <returns>Returns a  BundleInstanceResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BundleInstance">REST API Reference for BundleInstance Operation</seealso>
         public  BundleInstanceResponse EndBundleInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<BundleInstanceResponse>(asyncResult);
@@ -1424,6 +1482,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CancelBundleTask service method.</param>
         /// 
         /// <returns>The response from the CancelBundleTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelBundleTask">REST API Reference for CancelBundleTask Operation</seealso>
         public CancelBundleTaskResponse CancelBundleTask(CancelBundleTaskRequest request)
         {
             var marshaller = new CancelBundleTaskRequestMarshaller();
@@ -1443,6 +1502,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelBundleTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelBundleTask">REST API Reference for CancelBundleTask Operation</seealso>
         public IAsyncResult BeginCancelBundleTask(CancelBundleTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelBundleTaskRequestMarshaller();
@@ -1459,6 +1519,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelBundleTask.</param>
         /// 
         /// <returns>Returns a  CancelBundleTaskResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelBundleTask">REST API Reference for CancelBundleTask Operation</seealso>
         public  CancelBundleTaskResponse EndCancelBundleTask(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelBundleTaskResponse>(asyncResult);
@@ -1483,6 +1544,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CancelConversionTask service method.</param>
         /// 
         /// <returns>The response from the CancelConversionTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelConversionTask">REST API Reference for CancelConversionTask Operation</seealso>
         public CancelConversionTaskResponse CancelConversionTask(CancelConversionTaskRequest request)
         {
             var marshaller = new CancelConversionTaskRequestMarshaller();
@@ -1502,6 +1564,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelConversionTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelConversionTask">REST API Reference for CancelConversionTask Operation</seealso>
         public IAsyncResult BeginCancelConversionTask(CancelConversionTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelConversionTaskRequestMarshaller();
@@ -1518,6 +1581,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelConversionTask.</param>
         /// 
         /// <returns>Returns a  CancelConversionTaskResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelConversionTask">REST API Reference for CancelConversionTask Operation</seealso>
         public  CancelConversionTaskResponse EndCancelConversionTask(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelConversionTaskResponse>(asyncResult);
@@ -1535,6 +1599,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CancelExportTask service method.</param>
         /// 
         /// <returns>The response from the CancelExportTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
         public CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
         {
             var marshaller = new CancelExportTaskRequestMarshaller();
@@ -1554,6 +1619,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelExportTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
         public IAsyncResult BeginCancelExportTask(CancelExportTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelExportTaskRequestMarshaller();
@@ -1570,6 +1636,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelExportTask.</param>
         /// 
         /// <returns>Returns a  CancelExportTaskResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
         public  CancelExportTaskResponse EndCancelExportTask(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelExportTaskResponse>(asyncResult);
@@ -1585,6 +1652,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CancelImportTask service method.</param>
         /// 
         /// <returns>The response from the CancelImportTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImportTask">REST API Reference for CancelImportTask Operation</seealso>
         public CancelImportTaskResponse CancelImportTask(CancelImportTaskRequest request)
         {
             var marshaller = new CancelImportTaskRequestMarshaller();
@@ -1604,6 +1672,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelImportTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImportTask">REST API Reference for CancelImportTask Operation</seealso>
         public IAsyncResult BeginCancelImportTask(CancelImportTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelImportTaskRequestMarshaller();
@@ -1620,6 +1689,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelImportTask.</param>
         /// 
         /// <returns>Returns a  CancelImportTaskResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImportTask">REST API Reference for CancelImportTask Operation</seealso>
         public  CancelImportTaskResponse EndCancelImportTask(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelImportTaskResponse>(asyncResult);
@@ -1641,6 +1711,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CancelReservedInstancesListing service method.</param>
         /// 
         /// <returns>The response from the CancelReservedInstancesListing service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelReservedInstancesListing">REST API Reference for CancelReservedInstancesListing Operation</seealso>
         public CancelReservedInstancesListingResponse CancelReservedInstancesListing(CancelReservedInstancesListingRequest request)
         {
             var marshaller = new CancelReservedInstancesListingRequestMarshaller();
@@ -1660,6 +1731,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelReservedInstancesListing
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelReservedInstancesListing">REST API Reference for CancelReservedInstancesListing Operation</seealso>
         public IAsyncResult BeginCancelReservedInstancesListing(CancelReservedInstancesListingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelReservedInstancesListingRequestMarshaller();
@@ -1676,6 +1748,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelReservedInstancesListing.</param>
         /// 
         /// <returns>Returns a  CancelReservedInstancesListingResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelReservedInstancesListing">REST API Reference for CancelReservedInstancesListing Operation</seealso>
         public  CancelReservedInstancesListingResponse EndCancelReservedInstancesListing(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelReservedInstancesListingResponse>(asyncResult);
@@ -1701,6 +1774,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CancelSpotFleetRequests service method.</param>
         /// 
         /// <returns>The response from the CancelSpotFleetRequests service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequests">REST API Reference for CancelSpotFleetRequests Operation</seealso>
         public CancelSpotFleetRequestsResponse CancelSpotFleetRequests(CancelSpotFleetRequestsRequest request)
         {
             var marshaller = new CancelSpotFleetRequestsRequestMarshaller();
@@ -1720,6 +1794,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelSpotFleetRequests
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequests">REST API Reference for CancelSpotFleetRequests Operation</seealso>
         public IAsyncResult BeginCancelSpotFleetRequests(CancelSpotFleetRequestsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelSpotFleetRequestsRequestMarshaller();
@@ -1736,6 +1811,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelSpotFleetRequests.</param>
         /// 
         /// <returns>Returns a  CancelSpotFleetRequestsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequests">REST API Reference for CancelSpotFleetRequests Operation</seealso>
         public  CancelSpotFleetRequestsResponse EndCancelSpotFleetRequests(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelSpotFleetRequestsResponse>(asyncResult);
@@ -1762,6 +1838,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CancelSpotInstanceRequests service method.</param>
         /// 
         /// <returns>The response from the CancelSpotInstanceRequests service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests">REST API Reference for CancelSpotInstanceRequests Operation</seealso>
         public CancelSpotInstanceRequestsResponse CancelSpotInstanceRequests(CancelSpotInstanceRequestsRequest request)
         {
             var marshaller = new CancelSpotInstanceRequestsRequestMarshaller();
@@ -1781,6 +1858,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelSpotInstanceRequests
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests">REST API Reference for CancelSpotInstanceRequests Operation</seealso>
         public IAsyncResult BeginCancelSpotInstanceRequests(CancelSpotInstanceRequestsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CancelSpotInstanceRequestsRequestMarshaller();
@@ -1797,6 +1875,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelSpotInstanceRequests.</param>
         /// 
         /// <returns>Returns a  CancelSpotInstanceRequestsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests">REST API Reference for CancelSpotInstanceRequests Operation</seealso>
         public  CancelSpotInstanceRequestsResponse EndCancelSpotInstanceRequests(IAsyncResult asyncResult)
         {
             return EndInvoke<CancelSpotInstanceRequestsResponse>(asyncResult);
@@ -1814,6 +1893,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ConfirmProductInstance service method.</param>
         /// 
         /// <returns>The response from the ConfirmProductInstance service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConfirmProductInstance">REST API Reference for ConfirmProductInstance Operation</seealso>
         public ConfirmProductInstanceResponse ConfirmProductInstance(ConfirmProductInstanceRequest request)
         {
             var marshaller = new ConfirmProductInstanceRequestMarshaller();
@@ -1833,6 +1913,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndConfirmProductInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConfirmProductInstance">REST API Reference for ConfirmProductInstance Operation</seealso>
         public IAsyncResult BeginConfirmProductInstance(ConfirmProductInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ConfirmProductInstanceRequestMarshaller();
@@ -1849,6 +1930,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginConfirmProductInstance.</param>
         /// 
         /// <returns>Returns a  ConfirmProductInstanceResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConfirmProductInstance">REST API Reference for ConfirmProductInstance Operation</seealso>
         public  ConfirmProductInstanceResponse EndConfirmProductInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<ConfirmProductInstanceResponse>(asyncResult);
@@ -1871,6 +1953,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CopyImage service method.</param>
         /// 
         /// <returns>The response from the CopyImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage">REST API Reference for CopyImage Operation</seealso>
         public CopyImageResponse CopyImage(CopyImageRequest request)
         {
             var marshaller = new CopyImageRequestMarshaller();
@@ -1890,6 +1973,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopyImage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage">REST API Reference for CopyImage Operation</seealso>
         public IAsyncResult BeginCopyImage(CopyImageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CopyImageRequestMarshaller();
@@ -1906,6 +1990,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopyImage.</param>
         /// 
         /// <returns>Returns a  CopyImageResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage">REST API Reference for CopyImage Operation</seealso>
         public  CopyImageResponse EndCopyImage(IAsyncResult asyncResult)
         {
             return EndInvoke<CopyImageResponse>(asyncResult);
@@ -1948,6 +2033,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CopySnapshot service method.</param>
         /// 
         /// <returns>The response from the CopySnapshot service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
         public CopySnapshotResponse CopySnapshot(CopySnapshotRequest request)
         {
             var marshaller = new CopySnapshotRequestMarshaller();
@@ -1967,6 +2053,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCopySnapshot
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
         public IAsyncResult BeginCopySnapshot(CopySnapshotRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CopySnapshotRequestMarshaller();
@@ -1983,6 +2070,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCopySnapshot.</param>
         /// 
         /// <returns>Returns a  CopySnapshotResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
         public  CopySnapshotResponse EndCopySnapshot(IAsyncResult asyncResult)
         {
             return EndInvoke<CopySnapshotResponse>(asyncResult);
@@ -2031,6 +2119,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomerGateway service method.</param>
         /// 
         /// <returns>The response from the CreateCustomerGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">REST API Reference for CreateCustomerGateway Operation</seealso>
         public CreateCustomerGatewayResponse CreateCustomerGateway(CreateCustomerGatewayRequest request)
         {
             var marshaller = new CreateCustomerGatewayRequestMarshaller();
@@ -2050,6 +2139,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCustomerGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">REST API Reference for CreateCustomerGateway Operation</seealso>
         public IAsyncResult BeginCreateCustomerGateway(CreateCustomerGatewayRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateCustomerGatewayRequestMarshaller();
@@ -2066,6 +2156,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCustomerGateway.</param>
         /// 
         /// <returns>Returns a  CreateCustomerGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">REST API Reference for CreateCustomerGateway Operation</seealso>
         public  CreateCustomerGatewayResponse EndCreateCustomerGateway(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCustomerGatewayResponse>(asyncResult);
@@ -2132,6 +2223,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateDhcpOptions service method.</param>
         /// 
         /// <returns>The response from the CreateDhcpOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">REST API Reference for CreateDhcpOptions Operation</seealso>
         public CreateDhcpOptionsResponse CreateDhcpOptions(CreateDhcpOptionsRequest request)
         {
             var marshaller = new CreateDhcpOptionsRequestMarshaller();
@@ -2151,6 +2243,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDhcpOptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">REST API Reference for CreateDhcpOptions Operation</seealso>
         public IAsyncResult BeginCreateDhcpOptions(CreateDhcpOptionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateDhcpOptionsRequestMarshaller();
@@ -2167,6 +2260,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDhcpOptions.</param>
         /// 
         /// <returns>Returns a  CreateDhcpOptionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">REST API Reference for CreateDhcpOptions Operation</seealso>
         public  CreateDhcpOptionsResponse EndCreateDhcpOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateDhcpOptionsResponse>(asyncResult);
@@ -2185,6 +2279,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateEgressOnlyInternetGateway service method.</param>
         /// 
         /// <returns>The response from the CreateEgressOnlyInternetGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateEgressOnlyInternetGateway">REST API Reference for CreateEgressOnlyInternetGateway Operation</seealso>
         public CreateEgressOnlyInternetGatewayResponse CreateEgressOnlyInternetGateway(CreateEgressOnlyInternetGatewayRequest request)
         {
             var marshaller = new CreateEgressOnlyInternetGatewayRequestMarshaller();
@@ -2204,6 +2299,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEgressOnlyInternetGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateEgressOnlyInternetGateway">REST API Reference for CreateEgressOnlyInternetGateway Operation</seealso>
         public IAsyncResult BeginCreateEgressOnlyInternetGateway(CreateEgressOnlyInternetGatewayRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateEgressOnlyInternetGatewayRequestMarshaller();
@@ -2220,6 +2316,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEgressOnlyInternetGateway.</param>
         /// 
         /// <returns>Returns a  CreateEgressOnlyInternetGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateEgressOnlyInternetGateway">REST API Reference for CreateEgressOnlyInternetGateway Operation</seealso>
         public  CreateEgressOnlyInternetGatewayResponse EndCreateEgressOnlyInternetGateway(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateEgressOnlyInternetGatewayResponse>(asyncResult);
@@ -2246,6 +2343,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateFlowLogs service method.</param>
         /// 
         /// <returns>The response from the CreateFlowLogs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFlowLogs">REST API Reference for CreateFlowLogs Operation</seealso>
         public CreateFlowLogsResponse CreateFlowLogs(CreateFlowLogsRequest request)
         {
             var marshaller = new CreateFlowLogsRequestMarshaller();
@@ -2265,6 +2363,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFlowLogs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFlowLogs">REST API Reference for CreateFlowLogs Operation</seealso>
         public IAsyncResult BeginCreateFlowLogs(CreateFlowLogsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateFlowLogsRequestMarshaller();
@@ -2281,6 +2380,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFlowLogs.</param>
         /// 
         /// <returns>Returns a  CreateFlowLogsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFlowLogs">REST API Reference for CreateFlowLogs Operation</seealso>
         public  CreateFlowLogsResponse EndCreateFlowLogs(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateFlowLogsResponse>(asyncResult);
@@ -2310,6 +2410,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateImage service method.</param>
         /// 
         /// <returns>The response from the CreateImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImage">REST API Reference for CreateImage Operation</seealso>
         public CreateImageResponse CreateImage(CreateImageRequest request)
         {
             var marshaller = new CreateImageRequestMarshaller();
@@ -2329,6 +2430,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateImage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImage">REST API Reference for CreateImage Operation</seealso>
         public IAsyncResult BeginCreateImage(CreateImageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateImageRequestMarshaller();
@@ -2345,6 +2447,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateImage.</param>
         /// 
         /// <returns>Returns a  CreateImageResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImage">REST API Reference for CreateImage Operation</seealso>
         public  CreateImageResponse EndCreateImage(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateImageResponse>(asyncResult);
@@ -2367,6 +2470,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateInstanceExportTask service method.</param>
         /// 
         /// <returns>The response from the CreateInstanceExportTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask">REST API Reference for CreateInstanceExportTask Operation</seealso>
         public CreateInstanceExportTaskResponse CreateInstanceExportTask(CreateInstanceExportTaskRequest request)
         {
             var marshaller = new CreateInstanceExportTaskRequestMarshaller();
@@ -2386,6 +2490,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInstanceExportTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask">REST API Reference for CreateInstanceExportTask Operation</seealso>
         public IAsyncResult BeginCreateInstanceExportTask(CreateInstanceExportTaskRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateInstanceExportTaskRequestMarshaller();
@@ -2402,6 +2507,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInstanceExportTask.</param>
         /// 
         /// <returns>Returns a  CreateInstanceExportTaskResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask">REST API Reference for CreateInstanceExportTask Operation</seealso>
         public  CreateInstanceExportTaskResponse EndCreateInstanceExportTask(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateInstanceExportTaskResponse>(asyncResult);
@@ -2423,6 +2529,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the CreateInternetGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInternetGateway">REST API Reference for CreateInternetGateway Operation</seealso>
         public CreateInternetGatewayResponse CreateInternetGateway()
         {
             return CreateInternetGateway(new CreateInternetGatewayRequest());
@@ -2441,6 +2548,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateInternetGateway service method.</param>
         /// 
         /// <returns>The response from the CreateInternetGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInternetGateway">REST API Reference for CreateInternetGateway Operation</seealso>
         public CreateInternetGatewayResponse CreateInternetGateway(CreateInternetGatewayRequest request)
         {
             var marshaller = new CreateInternetGatewayRequestMarshaller();
@@ -2460,6 +2568,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInternetGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInternetGateway">REST API Reference for CreateInternetGateway Operation</seealso>
         public IAsyncResult BeginCreateInternetGateway(CreateInternetGatewayRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateInternetGatewayRequestMarshaller();
@@ -2476,6 +2585,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInternetGateway.</param>
         /// 
         /// <returns>Returns a  CreateInternetGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInternetGateway">REST API Reference for CreateInternetGateway Operation</seealso>
         public  CreateInternetGatewayResponse EndCreateInternetGateway(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateInternetGatewayResponse>(asyncResult);
@@ -2509,6 +2619,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateKeyPair service method.</param>
         /// 
         /// <returns>The response from the CreateKeyPair service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         public CreateKeyPairResponse CreateKeyPair(CreateKeyPairRequest request)
         {
             var marshaller = new CreateKeyPairRequestMarshaller();
@@ -2528,6 +2639,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateKeyPair
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         public IAsyncResult BeginCreateKeyPair(CreateKeyPairRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateKeyPairRequestMarshaller();
@@ -2544,6 +2656,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateKeyPair.</param>
         /// 
         /// <returns>Returns a  CreateKeyPairResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         public  CreateKeyPairResponse EndCreateKeyPair(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateKeyPairResponse>(asyncResult);
@@ -2563,6 +2676,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateNatGateway service method.</param>
         /// 
         /// <returns>The response from the CreateNatGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">REST API Reference for CreateNatGateway Operation</seealso>
         public CreateNatGatewayResponse CreateNatGateway(CreateNatGatewayRequest request)
         {
             var marshaller = new CreateNatGatewayRequestMarshaller();
@@ -2582,6 +2696,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNatGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">REST API Reference for CreateNatGateway Operation</seealso>
         public IAsyncResult BeginCreateNatGateway(CreateNatGatewayRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateNatGatewayRequestMarshaller();
@@ -2598,6 +2713,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNatGateway.</param>
         /// 
         /// <returns>Returns a  CreateNatGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">REST API Reference for CreateNatGateway Operation</seealso>
         public  CreateNatGatewayResponse EndCreateNatGateway(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateNatGatewayResponse>(asyncResult);
@@ -2620,6 +2736,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkAcl service method.</param>
         /// 
         /// <returns>The response from the CreateNetworkAcl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAcl">REST API Reference for CreateNetworkAcl Operation</seealso>
         public CreateNetworkAclResponse CreateNetworkAcl(CreateNetworkAclRequest request)
         {
             var marshaller = new CreateNetworkAclRequestMarshaller();
@@ -2639,6 +2756,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNetworkAcl
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAcl">REST API Reference for CreateNetworkAcl Operation</seealso>
         public IAsyncResult BeginCreateNetworkAcl(CreateNetworkAclRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateNetworkAclRequestMarshaller();
@@ -2655,6 +2773,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNetworkAcl.</param>
         /// 
         /// <returns>Returns a  CreateNetworkAclResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAcl">REST API Reference for CreateNetworkAcl Operation</seealso>
         public  CreateNetworkAclResponse EndCreateNetworkAcl(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateNetworkAclResponse>(asyncResult);
@@ -2693,6 +2812,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkAclEntry service method.</param>
         /// 
         /// <returns>The response from the CreateNetworkAclEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAclEntry">REST API Reference for CreateNetworkAclEntry Operation</seealso>
         public CreateNetworkAclEntryResponse CreateNetworkAclEntry(CreateNetworkAclEntryRequest request)
         {
             var marshaller = new CreateNetworkAclEntryRequestMarshaller();
@@ -2712,6 +2832,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNetworkAclEntry
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAclEntry">REST API Reference for CreateNetworkAclEntry Operation</seealso>
         public IAsyncResult BeginCreateNetworkAclEntry(CreateNetworkAclEntryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateNetworkAclEntryRequestMarshaller();
@@ -2728,6 +2849,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNetworkAclEntry.</param>
         /// 
         /// <returns>Returns a  CreateNetworkAclEntryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAclEntry">REST API Reference for CreateNetworkAclEntry Operation</seealso>
         public  CreateNetworkAclEntryResponse EndCreateNetworkAclEntry(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateNetworkAclEntryResponse>(asyncResult);
@@ -2749,6 +2871,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInterface service method.</param>
         /// 
         /// <returns>The response from the CreateNetworkInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterface">REST API Reference for CreateNetworkInterface Operation</seealso>
         public CreateNetworkInterfaceResponse CreateNetworkInterface(CreateNetworkInterfaceRequest request)
         {
             var marshaller = new CreateNetworkInterfaceRequestMarshaller();
@@ -2768,6 +2891,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNetworkInterface
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterface">REST API Reference for CreateNetworkInterface Operation</seealso>
         public IAsyncResult BeginCreateNetworkInterface(CreateNetworkInterfaceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateNetworkInterfaceRequestMarshaller();
@@ -2784,6 +2908,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNetworkInterface.</param>
         /// 
         /// <returns>Returns a  CreateNetworkInterfaceResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterface">REST API Reference for CreateNetworkInterface Operation</seealso>
         public  CreateNetworkInterfaceResponse EndCreateNetworkInterface(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateNetworkInterfaceResponse>(asyncResult);
@@ -2806,6 +2931,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreatePlacementGroup service method.</param>
         /// 
         /// <returns>The response from the CreatePlacementGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">REST API Reference for CreatePlacementGroup Operation</seealso>
         public CreatePlacementGroupResponse CreatePlacementGroup(CreatePlacementGroupRequest request)
         {
             var marshaller = new CreatePlacementGroupRequestMarshaller();
@@ -2825,6 +2951,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePlacementGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">REST API Reference for CreatePlacementGroup Operation</seealso>
         public IAsyncResult BeginCreatePlacementGroup(CreatePlacementGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreatePlacementGroupRequestMarshaller();
@@ -2841,6 +2968,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePlacementGroup.</param>
         /// 
         /// <returns>Returns a  CreatePlacementGroupResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">REST API Reference for CreatePlacementGroup Operation</seealso>
         public  CreatePlacementGroupResponse EndCreatePlacementGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreatePlacementGroupResponse>(asyncResult);
@@ -2882,6 +3010,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateReservedInstancesListing service method.</param>
         /// 
         /// <returns>The response from the CreateReservedInstancesListing service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListing">REST API Reference for CreateReservedInstancesListing Operation</seealso>
         public CreateReservedInstancesListingResponse CreateReservedInstancesListing(CreateReservedInstancesListingRequest request)
         {
             var marshaller = new CreateReservedInstancesListingRequestMarshaller();
@@ -2901,6 +3030,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateReservedInstancesListing
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListing">REST API Reference for CreateReservedInstancesListing Operation</seealso>
         public IAsyncResult BeginCreateReservedInstancesListing(CreateReservedInstancesListingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateReservedInstancesListingRequestMarshaller();
@@ -2917,6 +3047,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateReservedInstancesListing.</param>
         /// 
         /// <returns>Returns a  CreateReservedInstancesListingResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListing">REST API Reference for CreateReservedInstancesListing Operation</seealso>
         public  CreateReservedInstancesListingResponse EndCreateReservedInstancesListing(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateReservedInstancesListingResponse>(asyncResult);
@@ -2964,6 +3095,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateRoute service method.</param>
         /// 
         /// <returns>The response from the CreateRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public CreateRouteResponse CreateRoute(CreateRouteRequest request)
         {
             var marshaller = new CreateRouteRequestMarshaller();
@@ -2983,6 +3115,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRoute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public IAsyncResult BeginCreateRoute(CreateRouteRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateRouteRequestMarshaller();
@@ -2999,6 +3132,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRoute.</param>
         /// 
         /// <returns>Returns a  CreateRouteResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public  CreateRouteResponse EndCreateRoute(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateRouteResponse>(asyncResult);
@@ -3021,6 +3155,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateRouteTable service method.</param>
         /// 
         /// <returns>The response from the CreateRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable">REST API Reference for CreateRouteTable Operation</seealso>
         public CreateRouteTableResponse CreateRouteTable(CreateRouteTableRequest request)
         {
             var marshaller = new CreateRouteTableRequestMarshaller();
@@ -3040,6 +3175,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRouteTable
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable">REST API Reference for CreateRouteTable Operation</seealso>
         public IAsyncResult BeginCreateRouteTable(CreateRouteTableRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateRouteTableRequestMarshaller();
@@ -3056,6 +3192,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRouteTable.</param>
         /// 
         /// <returns>Returns a  CreateRouteTableResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable">REST API Reference for CreateRouteTable Operation</seealso>
         public  CreateRouteTableResponse EndCreateRouteTable(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateRouteTableResponse>(asyncResult);
@@ -3108,6 +3245,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateSecurityGroup service method.</param>
         /// 
         /// <returns>The response from the CreateSecurityGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecurityGroup">REST API Reference for CreateSecurityGroup Operation</seealso>
         public CreateSecurityGroupResponse CreateSecurityGroup(CreateSecurityGroupRequest request)
         {
             var marshaller = new CreateSecurityGroupRequestMarshaller();
@@ -3127,6 +3265,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSecurityGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecurityGroup">REST API Reference for CreateSecurityGroup Operation</seealso>
         public IAsyncResult BeginCreateSecurityGroup(CreateSecurityGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateSecurityGroupRequestMarshaller();
@@ -3143,6 +3282,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSecurityGroup.</param>
         /// 
         /// <returns>Returns a  CreateSecurityGroupResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecurityGroup">REST API Reference for CreateSecurityGroup Operation</seealso>
         public  CreateSecurityGroupResponse EndCreateSecurityGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSecurityGroupResponse>(asyncResult);
@@ -3194,6 +3334,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
         /// 
         /// <returns>The response from the CreateSnapshot service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
             var marshaller = new CreateSnapshotRequestMarshaller();
@@ -3213,6 +3354,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSnapshot
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public IAsyncResult BeginCreateSnapshot(CreateSnapshotRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateSnapshotRequestMarshaller();
@@ -3229,6 +3371,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSnapshot.</param>
         /// 
         /// <returns>Returns a  CreateSnapshotResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public  CreateSnapshotResponse EndCreateSnapshot(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSnapshotResponse>(asyncResult);
@@ -3246,6 +3389,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateSpotDatafeedSubscription service method.</param>
         /// 
         /// <returns>The response from the CreateSpotDatafeedSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">REST API Reference for CreateSpotDatafeedSubscription Operation</seealso>
         public CreateSpotDatafeedSubscriptionResponse CreateSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest request)
         {
             var marshaller = new CreateSpotDatafeedSubscriptionRequestMarshaller();
@@ -3265,6 +3409,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSpotDatafeedSubscription
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">REST API Reference for CreateSpotDatafeedSubscription Operation</seealso>
         public IAsyncResult BeginCreateSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateSpotDatafeedSubscriptionRequestMarshaller();
@@ -3281,6 +3426,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSpotDatafeedSubscription.</param>
         /// 
         /// <returns>Returns a  CreateSpotDatafeedSubscriptionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">REST API Reference for CreateSpotDatafeedSubscription Operation</seealso>
         public  CreateSpotDatafeedSubscriptionResponse EndCreateSpotDatafeedSubscription(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSpotDatafeedSubscriptionResponse>(asyncResult);
@@ -3335,6 +3481,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateSubnet service method.</param>
         /// 
         /// <returns>The response from the CreateSubnet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">REST API Reference for CreateSubnet Operation</seealso>
         public CreateSubnetResponse CreateSubnet(CreateSubnetRequest request)
         {
             var marshaller = new CreateSubnetRequestMarshaller();
@@ -3354,6 +3501,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSubnet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">REST API Reference for CreateSubnet Operation</seealso>
         public IAsyncResult BeginCreateSubnet(CreateSubnetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateSubnetRequestMarshaller();
@@ -3370,6 +3518,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSubnet.</param>
         /// 
         /// <returns>Returns a  CreateSubnetResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">REST API Reference for CreateSubnet Operation</seealso>
         public  CreateSubnetResponse EndCreateSubnet(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSubnetResponse>(asyncResult);
@@ -3397,6 +3546,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateTags service method.</param>
         /// 
         /// <returns>The response from the CreateTags service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
             var marshaller = new CreateTagsRequestMarshaller();
@@ -3416,6 +3566,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public IAsyncResult BeginCreateTags(CreateTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateTagsRequestMarshaller();
@@ -3432,6 +3583,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTags.</param>
         /// 
         /// <returns>Returns a  CreateTagsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public  CreateTagsResponse EndCreateTags(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTagsResponse>(asyncResult);
@@ -3470,6 +3622,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateVolume service method.</param>
         /// 
         /// <returns>The response from the CreateVolume service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume">REST API Reference for CreateVolume Operation</seealso>
         public CreateVolumeResponse CreateVolume(CreateVolumeRequest request)
         {
             var marshaller = new CreateVolumeRequestMarshaller();
@@ -3489,6 +3642,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVolume
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume">REST API Reference for CreateVolume Operation</seealso>
         public IAsyncResult BeginCreateVolume(CreateVolumeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateVolumeRequestMarshaller();
@@ -3505,6 +3659,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVolume.</param>
         /// 
         /// <returns>Returns a  CreateVolumeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume">REST API Reference for CreateVolume Operation</seealso>
         public  CreateVolumeResponse EndCreateVolume(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateVolumeResponse>(asyncResult);
@@ -3543,6 +3698,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateVpc service method.</param>
         /// 
         /// <returns>The response from the CreateVpc service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc">REST API Reference for CreateVpc Operation</seealso>
         public CreateVpcResponse CreateVpc(CreateVpcRequest request)
         {
             var marshaller = new CreateVpcRequestMarshaller();
@@ -3562,6 +3718,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpc
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc">REST API Reference for CreateVpc Operation</seealso>
         public IAsyncResult BeginCreateVpc(CreateVpcRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateVpcRequestMarshaller();
@@ -3578,6 +3735,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpc.</param>
         /// 
         /// <returns>Returns a  CreateVpcResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc">REST API Reference for CreateVpc Operation</seealso>
         public  CreateVpcResponse EndCreateVpc(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateVpcResponse>(asyncResult);
@@ -3602,6 +3760,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint service method.</param>
         /// 
         /// <returns>The response from the CreateVpcEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
         public CreateVpcEndpointResponse CreateVpcEndpoint(CreateVpcEndpointRequest request)
         {
             var marshaller = new CreateVpcEndpointRequestMarshaller();
@@ -3621,6 +3780,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcEndpoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
         public IAsyncResult BeginCreateVpcEndpoint(CreateVpcEndpointRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateVpcEndpointRequestMarshaller();
@@ -3637,6 +3797,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcEndpoint.</param>
         /// 
         /// <returns>Returns a  CreateVpcEndpointResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
         public  CreateVpcEndpointResponse EndCreateVpcEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateVpcEndpointResponse>(asyncResult);
@@ -3666,6 +3827,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateVpcPeeringConnection service method.</param>
         /// 
         /// <returns>The response from the CreateVpcPeeringConnection service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
         public CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request)
         {
             var marshaller = new CreateVpcPeeringConnectionRequestMarshaller();
@@ -3685,6 +3847,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcPeeringConnection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
         public IAsyncResult BeginCreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateVpcPeeringConnectionRequestMarshaller();
@@ -3701,6 +3864,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcPeeringConnection.</param>
         /// 
         /// <returns>Returns a  CreateVpcPeeringConnectionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
         public  CreateVpcPeeringConnectionResponse EndCreateVpcPeeringConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateVpcPeeringConnectionResponse>(asyncResult);
@@ -3745,6 +3909,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnConnection service method.</param>
         /// 
         /// <returns>The response from the CreateVpnConnection service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">REST API Reference for CreateVpnConnection Operation</seealso>
         public CreateVpnConnectionResponse CreateVpnConnection(CreateVpnConnectionRequest request)
         {
             var marshaller = new CreateVpnConnectionRequestMarshaller();
@@ -3764,6 +3929,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpnConnection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">REST API Reference for CreateVpnConnection Operation</seealso>
         public IAsyncResult BeginCreateVpnConnection(CreateVpnConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateVpnConnectionRequestMarshaller();
@@ -3780,6 +3946,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpnConnection.</param>
         /// 
         /// <returns>Returns a  CreateVpnConnectionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">REST API Reference for CreateVpnConnection Operation</seealso>
         public  CreateVpnConnectionResponse EndCreateVpnConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateVpnConnectionResponse>(asyncResult);
@@ -3804,6 +3971,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnConnectionRoute service method.</param>
         /// 
         /// <returns>The response from the CreateVpnConnectionRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">REST API Reference for CreateVpnConnectionRoute Operation</seealso>
         public CreateVpnConnectionRouteResponse CreateVpnConnectionRoute(CreateVpnConnectionRouteRequest request)
         {
             var marshaller = new CreateVpnConnectionRouteRequestMarshaller();
@@ -3823,6 +3991,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpnConnectionRoute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">REST API Reference for CreateVpnConnectionRoute Operation</seealso>
         public IAsyncResult BeginCreateVpnConnectionRoute(CreateVpnConnectionRouteRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateVpnConnectionRouteRequestMarshaller();
@@ -3839,6 +4008,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpnConnectionRoute.</param>
         /// 
         /// <returns>Returns a  CreateVpnConnectionRouteResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">REST API Reference for CreateVpnConnectionRoute Operation</seealso>
         public  CreateVpnConnectionRouteResponse EndCreateVpnConnectionRoute(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateVpnConnectionRouteResponse>(asyncResult);
@@ -3863,6 +4033,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnGateway service method.</param>
         /// 
         /// <returns>The response from the CreateVpnGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">REST API Reference for CreateVpnGateway Operation</seealso>
         public CreateVpnGatewayResponse CreateVpnGateway(CreateVpnGatewayRequest request)
         {
             var marshaller = new CreateVpnGatewayRequestMarshaller();
@@ -3882,6 +4053,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpnGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">REST API Reference for CreateVpnGateway Operation</seealso>
         public IAsyncResult BeginCreateVpnGateway(CreateVpnGatewayRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateVpnGatewayRequestMarshaller();
@@ -3898,6 +4070,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpnGateway.</param>
         /// 
         /// <returns>Returns a  CreateVpnGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">REST API Reference for CreateVpnGateway Operation</seealso>
         public  CreateVpnGatewayResponse EndCreateVpnGateway(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateVpnGatewayResponse>(asyncResult);
@@ -3914,6 +4087,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomerGateway service method.</param>
         /// 
         /// <returns>The response from the DeleteCustomerGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCustomerGateway">REST API Reference for DeleteCustomerGateway Operation</seealso>
         public DeleteCustomerGatewayResponse DeleteCustomerGateway(DeleteCustomerGatewayRequest request)
         {
             var marshaller = new DeleteCustomerGatewayRequestMarshaller();
@@ -3933,6 +4107,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCustomerGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCustomerGateway">REST API Reference for DeleteCustomerGateway Operation</seealso>
         public IAsyncResult BeginDeleteCustomerGateway(DeleteCustomerGatewayRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteCustomerGatewayRequestMarshaller();
@@ -3949,6 +4124,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCustomerGateway.</param>
         /// 
         /// <returns>Returns a  DeleteCustomerGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCustomerGateway">REST API Reference for DeleteCustomerGateway Operation</seealso>
         public  DeleteCustomerGatewayResponse EndDeleteCustomerGateway(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCustomerGatewayResponse>(asyncResult);
@@ -3966,6 +4142,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteDhcpOptions service method.</param>
         /// 
         /// <returns>The response from the DeleteDhcpOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteDhcpOptions">REST API Reference for DeleteDhcpOptions Operation</seealso>
         public DeleteDhcpOptionsResponse DeleteDhcpOptions(DeleteDhcpOptionsRequest request)
         {
             var marshaller = new DeleteDhcpOptionsRequestMarshaller();
@@ -3985,6 +4162,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDhcpOptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteDhcpOptions">REST API Reference for DeleteDhcpOptions Operation</seealso>
         public IAsyncResult BeginDeleteDhcpOptions(DeleteDhcpOptionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteDhcpOptionsRequestMarshaller();
@@ -4001,6 +4179,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDhcpOptions.</param>
         /// 
         /// <returns>Returns a  DeleteDhcpOptionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteDhcpOptions">REST API Reference for DeleteDhcpOptions Operation</seealso>
         public  DeleteDhcpOptionsResponse EndDeleteDhcpOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDhcpOptionsResponse>(asyncResult);
@@ -4016,6 +4195,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteEgressOnlyInternetGateway service method.</param>
         /// 
         /// <returns>The response from the DeleteEgressOnlyInternetGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteEgressOnlyInternetGateway">REST API Reference for DeleteEgressOnlyInternetGateway Operation</seealso>
         public DeleteEgressOnlyInternetGatewayResponse DeleteEgressOnlyInternetGateway(DeleteEgressOnlyInternetGatewayRequest request)
         {
             var marshaller = new DeleteEgressOnlyInternetGatewayRequestMarshaller();
@@ -4035,6 +4215,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEgressOnlyInternetGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteEgressOnlyInternetGateway">REST API Reference for DeleteEgressOnlyInternetGateway Operation</seealso>
         public IAsyncResult BeginDeleteEgressOnlyInternetGateway(DeleteEgressOnlyInternetGatewayRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteEgressOnlyInternetGatewayRequestMarshaller();
@@ -4051,6 +4232,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEgressOnlyInternetGateway.</param>
         /// 
         /// <returns>Returns a  DeleteEgressOnlyInternetGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteEgressOnlyInternetGateway">REST API Reference for DeleteEgressOnlyInternetGateway Operation</seealso>
         public  DeleteEgressOnlyInternetGatewayResponse EndDeleteEgressOnlyInternetGateway(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteEgressOnlyInternetGatewayResponse>(asyncResult);
@@ -4066,6 +4248,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteFlowLogs service method.</param>
         /// 
         /// <returns>The response from the DeleteFlowLogs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFlowLogs">REST API Reference for DeleteFlowLogs Operation</seealso>
         public DeleteFlowLogsResponse DeleteFlowLogs(DeleteFlowLogsRequest request)
         {
             var marshaller = new DeleteFlowLogsRequestMarshaller();
@@ -4085,6 +4268,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFlowLogs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFlowLogs">REST API Reference for DeleteFlowLogs Operation</seealso>
         public IAsyncResult BeginDeleteFlowLogs(DeleteFlowLogsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteFlowLogsRequestMarshaller();
@@ -4101,6 +4285,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFlowLogs.</param>
         /// 
         /// <returns>Returns a  DeleteFlowLogsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFlowLogs">REST API Reference for DeleteFlowLogs Operation</seealso>
         public  DeleteFlowLogsResponse EndDeleteFlowLogs(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFlowLogsResponse>(asyncResult);
@@ -4117,6 +4302,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteInternetGateway service method.</param>
         /// 
         /// <returns>The response from the DeleteInternetGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInternetGateway">REST API Reference for DeleteInternetGateway Operation</seealso>
         public DeleteInternetGatewayResponse DeleteInternetGateway(DeleteInternetGatewayRequest request)
         {
             var marshaller = new DeleteInternetGatewayRequestMarshaller();
@@ -4136,6 +4322,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInternetGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInternetGateway">REST API Reference for DeleteInternetGateway Operation</seealso>
         public IAsyncResult BeginDeleteInternetGateway(DeleteInternetGatewayRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteInternetGatewayRequestMarshaller();
@@ -4152,6 +4339,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInternetGateway.</param>
         /// 
         /// <returns>Returns a  DeleteInternetGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInternetGateway">REST API Reference for DeleteInternetGateway Operation</seealso>
         public  DeleteInternetGatewayResponse EndDeleteInternetGateway(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteInternetGatewayResponse>(asyncResult);
@@ -4167,6 +4355,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteKeyPair service method.</param>
         /// 
         /// <returns>The response from the DeleteKeyPair service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         public DeleteKeyPairResponse DeleteKeyPair(DeleteKeyPairRequest request)
         {
             var marshaller = new DeleteKeyPairRequestMarshaller();
@@ -4186,6 +4375,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteKeyPair
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         public IAsyncResult BeginDeleteKeyPair(DeleteKeyPairRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteKeyPairRequestMarshaller();
@@ -4202,6 +4392,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteKeyPair.</param>
         /// 
         /// <returns>Returns a  DeleteKeyPairResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         public  DeleteKeyPairResponse EndDeleteKeyPair(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteKeyPairResponse>(asyncResult);
@@ -4219,6 +4410,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteNatGateway service method.</param>
         /// 
         /// <returns>The response from the DeleteNatGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNatGateway">REST API Reference for DeleteNatGateway Operation</seealso>
         public DeleteNatGatewayResponse DeleteNatGateway(DeleteNatGatewayRequest request)
         {
             var marshaller = new DeleteNatGatewayRequestMarshaller();
@@ -4238,6 +4430,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNatGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNatGateway">REST API Reference for DeleteNatGateway Operation</seealso>
         public IAsyncResult BeginDeleteNatGateway(DeleteNatGatewayRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteNatGatewayRequestMarshaller();
@@ -4254,6 +4447,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNatGateway.</param>
         /// 
         /// <returns>Returns a  DeleteNatGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNatGateway">REST API Reference for DeleteNatGateway Operation</seealso>
         public  DeleteNatGatewayResponse EndDeleteNatGateway(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteNatGatewayResponse>(asyncResult);
@@ -4270,6 +4464,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkAcl service method.</param>
         /// 
         /// <returns>The response from the DeleteNetworkAcl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAcl">REST API Reference for DeleteNetworkAcl Operation</seealso>
         public DeleteNetworkAclResponse DeleteNetworkAcl(DeleteNetworkAclRequest request)
         {
             var marshaller = new DeleteNetworkAclRequestMarshaller();
@@ -4289,6 +4484,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNetworkAcl
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAcl">REST API Reference for DeleteNetworkAcl Operation</seealso>
         public IAsyncResult BeginDeleteNetworkAcl(DeleteNetworkAclRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteNetworkAclRequestMarshaller();
@@ -4305,6 +4501,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNetworkAcl.</param>
         /// 
         /// <returns>Returns a  DeleteNetworkAclResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAcl">REST API Reference for DeleteNetworkAcl Operation</seealso>
         public  DeleteNetworkAclResponse EndDeleteNetworkAcl(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteNetworkAclResponse>(asyncResult);
@@ -4320,6 +4517,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkAclEntry service method.</param>
         /// 
         /// <returns>The response from the DeleteNetworkAclEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAclEntry">REST API Reference for DeleteNetworkAclEntry Operation</seealso>
         public DeleteNetworkAclEntryResponse DeleteNetworkAclEntry(DeleteNetworkAclEntryRequest request)
         {
             var marshaller = new DeleteNetworkAclEntryRequestMarshaller();
@@ -4339,6 +4537,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNetworkAclEntry
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAclEntry">REST API Reference for DeleteNetworkAclEntry Operation</seealso>
         public IAsyncResult BeginDeleteNetworkAclEntry(DeleteNetworkAclEntryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteNetworkAclEntryRequestMarshaller();
@@ -4355,6 +4554,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNetworkAclEntry.</param>
         /// 
         /// <returns>Returns a  DeleteNetworkAclEntryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAclEntry">REST API Reference for DeleteNetworkAclEntry Operation</seealso>
         public  DeleteNetworkAclEntryResponse EndDeleteNetworkAclEntry(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteNetworkAclEntryResponse>(asyncResult);
@@ -4371,6 +4571,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInterface service method.</param>
         /// 
         /// <returns>The response from the DeleteNetworkInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterface">REST API Reference for DeleteNetworkInterface Operation</seealso>
         public DeleteNetworkInterfaceResponse DeleteNetworkInterface(DeleteNetworkInterfaceRequest request)
         {
             var marshaller = new DeleteNetworkInterfaceRequestMarshaller();
@@ -4390,6 +4591,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNetworkInterface
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterface">REST API Reference for DeleteNetworkInterface Operation</seealso>
         public IAsyncResult BeginDeleteNetworkInterface(DeleteNetworkInterfaceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteNetworkInterfaceRequestMarshaller();
@@ -4406,6 +4608,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNetworkInterface.</param>
         /// 
         /// <returns>Returns a  DeleteNetworkInterfaceResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterface">REST API Reference for DeleteNetworkInterface Operation</seealso>
         public  DeleteNetworkInterfaceResponse EndDeleteNetworkInterface(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteNetworkInterfaceResponse>(asyncResult);
@@ -4424,6 +4627,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeletePlacementGroup service method.</param>
         /// 
         /// <returns>The response from the DeletePlacementGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">REST API Reference for DeletePlacementGroup Operation</seealso>
         public DeletePlacementGroupResponse DeletePlacementGroup(DeletePlacementGroupRequest request)
         {
             var marshaller = new DeletePlacementGroupRequestMarshaller();
@@ -4443,6 +4647,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePlacementGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">REST API Reference for DeletePlacementGroup Operation</seealso>
         public IAsyncResult BeginDeletePlacementGroup(DeletePlacementGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeletePlacementGroupRequestMarshaller();
@@ -4459,6 +4664,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePlacementGroup.</param>
         /// 
         /// <returns>Returns a  DeletePlacementGroupResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">REST API Reference for DeletePlacementGroup Operation</seealso>
         public  DeletePlacementGroupResponse EndDeletePlacementGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeletePlacementGroupResponse>(asyncResult);
@@ -4474,6 +4680,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteRoute service method.</param>
         /// 
         /// <returns>The response from the DeleteRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public DeleteRouteResponse DeleteRoute(DeleteRouteRequest request)
         {
             var marshaller = new DeleteRouteRequestMarshaller();
@@ -4493,6 +4700,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRoute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public IAsyncResult BeginDeleteRoute(DeleteRouteRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteRouteRequestMarshaller();
@@ -4509,6 +4717,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRoute.</param>
         /// 
         /// <returns>Returns a  DeleteRouteResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public  DeleteRouteResponse EndDeleteRoute(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRouteResponse>(asyncResult);
@@ -4525,6 +4734,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteRouteTable service method.</param>
         /// 
         /// <returns>The response from the DeleteRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteTable">REST API Reference for DeleteRouteTable Operation</seealso>
         public DeleteRouteTableResponse DeleteRouteTable(DeleteRouteTableRequest request)
         {
             var marshaller = new DeleteRouteTableRequestMarshaller();
@@ -4544,6 +4754,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRouteTable
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteTable">REST API Reference for DeleteRouteTable Operation</seealso>
         public IAsyncResult BeginDeleteRouteTable(DeleteRouteTableRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteRouteTableRequestMarshaller();
@@ -4560,6 +4771,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRouteTable.</param>
         /// 
         /// <returns>Returns a  DeleteRouteTableResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteTable">REST API Reference for DeleteRouteTable Operation</seealso>
         public  DeleteRouteTableResponse EndDeleteRouteTable(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRouteTableResponse>(asyncResult);
@@ -4582,6 +4794,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteSecurityGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecurityGroup">REST API Reference for DeleteSecurityGroup Operation</seealso>
         public DeleteSecurityGroupResponse DeleteSecurityGroup(DeleteSecurityGroupRequest request)
         {
             var marshaller = new DeleteSecurityGroupRequestMarshaller();
@@ -4601,6 +4814,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSecurityGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecurityGroup">REST API Reference for DeleteSecurityGroup Operation</seealso>
         public IAsyncResult BeginDeleteSecurityGroup(DeleteSecurityGroupRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteSecurityGroupRequestMarshaller();
@@ -4617,6 +4831,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSecurityGroup.</param>
         /// 
         /// <returns>Returns a  DeleteSecurityGroupResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecurityGroup">REST API Reference for DeleteSecurityGroup Operation</seealso>
         public  DeleteSecurityGroupResponse EndDeleteSecurityGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSecurityGroupResponse>(asyncResult);
@@ -4651,6 +4866,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshot service method.</param>
         /// 
         /// <returns>The response from the DeleteSnapshot service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
         {
             var marshaller = new DeleteSnapshotRequestMarshaller();
@@ -4670,6 +4886,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSnapshot
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public IAsyncResult BeginDeleteSnapshot(DeleteSnapshotRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteSnapshotRequestMarshaller();
@@ -4686,6 +4903,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSnapshot.</param>
         /// 
         /// <returns>Returns a  DeleteSnapshotResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public  DeleteSnapshotResponse EndDeleteSnapshot(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSnapshotResponse>(asyncResult);
@@ -4700,6 +4918,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DeleteSpotDatafeedSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSpotDatafeedSubscription">REST API Reference for DeleteSpotDatafeedSubscription Operation</seealso>
         public DeleteSpotDatafeedSubscriptionResponse DeleteSpotDatafeedSubscription()
         {
             return DeleteSpotDatafeedSubscription(new DeleteSpotDatafeedSubscriptionRequest());
@@ -4711,6 +4930,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteSpotDatafeedSubscription service method.</param>
         /// 
         /// <returns>The response from the DeleteSpotDatafeedSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSpotDatafeedSubscription">REST API Reference for DeleteSpotDatafeedSubscription Operation</seealso>
         public DeleteSpotDatafeedSubscriptionResponse DeleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest request)
         {
             var marshaller = new DeleteSpotDatafeedSubscriptionRequestMarshaller();
@@ -4730,6 +4950,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSpotDatafeedSubscription
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSpotDatafeedSubscription">REST API Reference for DeleteSpotDatafeedSubscription Operation</seealso>
         public IAsyncResult BeginDeleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteSpotDatafeedSubscriptionRequestMarshaller();
@@ -4746,6 +4967,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSpotDatafeedSubscription.</param>
         /// 
         /// <returns>Returns a  DeleteSpotDatafeedSubscriptionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSpotDatafeedSubscription">REST API Reference for DeleteSpotDatafeedSubscription Operation</seealso>
         public  DeleteSpotDatafeedSubscriptionResponse EndDeleteSpotDatafeedSubscription(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSpotDatafeedSubscriptionResponse>(asyncResult);
@@ -4762,6 +4984,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteSubnet service method.</param>
         /// 
         /// <returns>The response from the DeleteSubnet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnet">REST API Reference for DeleteSubnet Operation</seealso>
         public DeleteSubnetResponse DeleteSubnet(DeleteSubnetRequest request)
         {
             var marshaller = new DeleteSubnetRequestMarshaller();
@@ -4781,6 +5004,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSubnet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnet">REST API Reference for DeleteSubnet Operation</seealso>
         public IAsyncResult BeginDeleteSubnet(DeleteSubnetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteSubnetRequestMarshaller();
@@ -4797,6 +5021,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSubnet.</param>
         /// 
         /// <returns>Returns a  DeleteSubnetResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnet">REST API Reference for DeleteSubnet Operation</seealso>
         public  DeleteSubnetResponse EndDeleteSubnet(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteSubnetResponse>(asyncResult);
@@ -4819,6 +5044,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
         /// 
         /// <returns>The response from the DeleteTags service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
             var marshaller = new DeleteTagsRequestMarshaller();
@@ -4838,6 +5064,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteTagsRequestMarshaller();
@@ -4854,6 +5081,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTags.</param>
         /// 
         /// <returns>Returns a  DeleteTagsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public  DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTagsResponse>(asyncResult);
@@ -4880,6 +5108,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteVolume service method.</param>
         /// 
         /// <returns>The response from the DeleteVolume service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         public DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request)
         {
             var marshaller = new DeleteVolumeRequestMarshaller();
@@ -4899,6 +5128,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVolume
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         public IAsyncResult BeginDeleteVolume(DeleteVolumeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteVolumeRequestMarshaller();
@@ -4915,6 +5145,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVolume.</param>
         /// 
         /// <returns>Returns a  DeleteVolumeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         public  DeleteVolumeResponse EndDeleteVolume(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVolumeResponse>(asyncResult);
@@ -4934,6 +5165,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpc service method.</param>
         /// 
         /// <returns>The response from the DeleteVpc service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpc">REST API Reference for DeleteVpc Operation</seealso>
         public DeleteVpcResponse DeleteVpc(DeleteVpcRequest request)
         {
             var marshaller = new DeleteVpcRequestMarshaller();
@@ -4953,6 +5185,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpc
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpc">REST API Reference for DeleteVpc Operation</seealso>
         public IAsyncResult BeginDeleteVpc(DeleteVpcRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteVpcRequestMarshaller();
@@ -4969,6 +5202,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpc.</param>
         /// 
         /// <returns>Returns a  DeleteVpcResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpc">REST API Reference for DeleteVpc Operation</seealso>
         public  DeleteVpcResponse EndDeleteVpc(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVpcResponse>(asyncResult);
@@ -4985,6 +5219,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoints service method.</param>
         /// 
         /// <returns>The response from the DeleteVpcEndpoints service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints">REST API Reference for DeleteVpcEndpoints Operation</seealso>
         public DeleteVpcEndpointsResponse DeleteVpcEndpoints(DeleteVpcEndpointsRequest request)
         {
             var marshaller = new DeleteVpcEndpointsRequestMarshaller();
@@ -5004,6 +5239,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcEndpoints
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints">REST API Reference for DeleteVpcEndpoints Operation</seealso>
         public IAsyncResult BeginDeleteVpcEndpoints(DeleteVpcEndpointsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteVpcEndpointsRequestMarshaller();
@@ -5020,6 +5256,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcEndpoints.</param>
         /// 
         /// <returns>Returns a  DeleteVpcEndpointsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints">REST API Reference for DeleteVpcEndpoints Operation</seealso>
         public  DeleteVpcEndpointsResponse EndDeleteVpcEndpoints(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVpcEndpointsResponse>(asyncResult);
@@ -5038,6 +5275,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcPeeringConnection service method.</param>
         /// 
         /// <returns>The response from the DeleteVpcPeeringConnection service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
         public DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request)
         {
             var marshaller = new DeleteVpcPeeringConnectionRequestMarshaller();
@@ -5057,6 +5295,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcPeeringConnection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
         public IAsyncResult BeginDeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteVpcPeeringConnectionRequestMarshaller();
@@ -5073,6 +5312,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcPeeringConnection.</param>
         /// 
         /// <returns>Returns a  DeleteVpcPeeringConnectionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
         public  DeleteVpcPeeringConnectionResponse EndDeleteVpcPeeringConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVpcPeeringConnectionResponse>(asyncResult);
@@ -5099,6 +5339,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConnection service method.</param>
         /// 
         /// <returns>The response from the DeleteVpnConnection service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnection">REST API Reference for DeleteVpnConnection Operation</seealso>
         public DeleteVpnConnectionResponse DeleteVpnConnection(DeleteVpnConnectionRequest request)
         {
             var marshaller = new DeleteVpnConnectionRequestMarshaller();
@@ -5118,6 +5359,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpnConnection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnection">REST API Reference for DeleteVpnConnection Operation</seealso>
         public IAsyncResult BeginDeleteVpnConnection(DeleteVpnConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteVpnConnectionRequestMarshaller();
@@ -5134,6 +5376,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpnConnection.</param>
         /// 
         /// <returns>Returns a  DeleteVpnConnectionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnection">REST API Reference for DeleteVpnConnection Operation</seealso>
         public  DeleteVpnConnectionResponse EndDeleteVpnConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVpnConnectionResponse>(asyncResult);
@@ -5151,6 +5394,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConnectionRoute service method.</param>
         /// 
         /// <returns>The response from the DeleteVpnConnectionRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnectionRoute">REST API Reference for DeleteVpnConnectionRoute Operation</seealso>
         public DeleteVpnConnectionRouteResponse DeleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest request)
         {
             var marshaller = new DeleteVpnConnectionRouteRequestMarshaller();
@@ -5170,6 +5414,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpnConnectionRoute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnectionRoute">REST API Reference for DeleteVpnConnectionRoute Operation</seealso>
         public IAsyncResult BeginDeleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteVpnConnectionRouteRequestMarshaller();
@@ -5186,6 +5431,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpnConnectionRoute.</param>
         /// 
         /// <returns>Returns a  DeleteVpnConnectionRouteResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnectionRoute">REST API Reference for DeleteVpnConnectionRoute Operation</seealso>
         public  DeleteVpnConnectionRouteResponse EndDeleteVpnConnectionRoute(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVpnConnectionRouteResponse>(asyncResult);
@@ -5204,6 +5450,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpnGateway service method.</param>
         /// 
         /// <returns>The response from the DeleteVpnGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnGateway">REST API Reference for DeleteVpnGateway Operation</seealso>
         public DeleteVpnGatewayResponse DeleteVpnGateway(DeleteVpnGatewayRequest request)
         {
             var marshaller = new DeleteVpnGatewayRequestMarshaller();
@@ -5223,6 +5470,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpnGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnGateway">REST API Reference for DeleteVpnGateway Operation</seealso>
         public IAsyncResult BeginDeleteVpnGateway(DeleteVpnGatewayRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteVpnGatewayRequestMarshaller();
@@ -5239,6 +5487,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpnGateway.</param>
         /// 
         /// <returns>Returns a  DeleteVpnGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnGateway">REST API Reference for DeleteVpnGateway Operation</seealso>
         public  DeleteVpnGatewayResponse EndDeleteVpnGateway(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVpnGatewayResponse>(asyncResult);
@@ -5260,6 +5509,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeregisterImage service method.</param>
         /// 
         /// <returns>The response from the DeregisterImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterImage">REST API Reference for DeregisterImage Operation</seealso>
         public DeregisterImageResponse DeregisterImage(DeregisterImageRequest request)
         {
             var marshaller = new DeregisterImageRequestMarshaller();
@@ -5279,6 +5529,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterImage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterImage">REST API Reference for DeregisterImage Operation</seealso>
         public IAsyncResult BeginDeregisterImage(DeregisterImageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeregisterImageRequestMarshaller();
@@ -5295,6 +5546,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterImage.</param>
         /// 
         /// <returns>Returns a  DeregisterImageResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterImage">REST API Reference for DeregisterImage Operation</seealso>
         public  DeregisterImageResponse EndDeregisterImage(IAsyncResult asyncResult)
         {
             return EndInvoke<DeregisterImageResponse>(asyncResult);
@@ -5341,6 +5593,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public DescribeAccountAttributesResponse DescribeAccountAttributes()
         {
             return DescribeAccountAttributes(new DescribeAccountAttributesRequest());
@@ -5384,6 +5637,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
         {
             var marshaller = new DescribeAccountAttributesRequestMarshaller();
@@ -5403,6 +5657,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAccountAttributes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public IAsyncResult BeginDescribeAccountAttributes(DescribeAccountAttributesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAccountAttributesRequestMarshaller();
@@ -5419,6 +5674,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAccountAttributes.</param>
         /// 
         /// <returns>Returns a  DescribeAccountAttributesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public  DescribeAccountAttributesResponse EndDescribeAccountAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAccountAttributesResponse>(asyncResult);
@@ -5440,6 +5696,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAddresses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         public DescribeAddressesResponse DescribeAddresses()
         {
             return DescribeAddresses(new DescribeAddressesRequest());
@@ -5458,6 +5715,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeAddresses service method.</param>
         /// 
         /// <returns>The response from the DescribeAddresses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         public DescribeAddressesResponse DescribeAddresses(DescribeAddressesRequest request)
         {
             var marshaller = new DescribeAddressesRequestMarshaller();
@@ -5477,6 +5735,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAddresses
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         public IAsyncResult BeginDescribeAddresses(DescribeAddressesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAddressesRequestMarshaller();
@@ -5493,6 +5752,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAddresses.</param>
         /// 
         /// <returns>Returns a  DescribeAddressesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         public  DescribeAddressesResponse EndDescribeAddresses(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAddressesResponse>(asyncResult);
@@ -5516,6 +5776,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAvailabilityZones service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">REST API Reference for DescribeAvailabilityZones Operation</seealso>
         public DescribeAvailabilityZonesResponse DescribeAvailabilityZones()
         {
             return DescribeAvailabilityZones(new DescribeAvailabilityZonesRequest());
@@ -5536,6 +5797,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityZones service method.</param>
         /// 
         /// <returns>The response from the DescribeAvailabilityZones service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">REST API Reference for DescribeAvailabilityZones Operation</seealso>
         public DescribeAvailabilityZonesResponse DescribeAvailabilityZones(DescribeAvailabilityZonesRequest request)
         {
             var marshaller = new DescribeAvailabilityZonesRequestMarshaller();
@@ -5555,6 +5817,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAvailabilityZones
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">REST API Reference for DescribeAvailabilityZones Operation</seealso>
         public IAsyncResult BeginDescribeAvailabilityZones(DescribeAvailabilityZonesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeAvailabilityZonesRequestMarshaller();
@@ -5571,6 +5834,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAvailabilityZones.</param>
         /// 
         /// <returns>Returns a  DescribeAvailabilityZonesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">REST API Reference for DescribeAvailabilityZones Operation</seealso>
         public  DescribeAvailabilityZonesResponse EndDescribeAvailabilityZones(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAvailabilityZonesResponse>(asyncResult);
@@ -5594,6 +5858,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeBundleTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">REST API Reference for DescribeBundleTasks Operation</seealso>
         public DescribeBundleTasksResponse DescribeBundleTasks()
         {
             return DescribeBundleTasks(new DescribeBundleTasksRequest());
@@ -5614,6 +5879,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeBundleTasks service method.</param>
         /// 
         /// <returns>The response from the DescribeBundleTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">REST API Reference for DescribeBundleTasks Operation</seealso>
         public DescribeBundleTasksResponse DescribeBundleTasks(DescribeBundleTasksRequest request)
         {
             var marshaller = new DescribeBundleTasksRequestMarshaller();
@@ -5633,6 +5899,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBundleTasks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">REST API Reference for DescribeBundleTasks Operation</seealso>
         public IAsyncResult BeginDescribeBundleTasks(DescribeBundleTasksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeBundleTasksRequestMarshaller();
@@ -5649,6 +5916,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBundleTasks.</param>
         /// 
         /// <returns>Returns a  DescribeBundleTasksResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">REST API Reference for DescribeBundleTasks Operation</seealso>
         public  DescribeBundleTasksResponse EndDescribeBundleTasks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeBundleTasksResponse>(asyncResult);
@@ -5666,6 +5934,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeClassicLinkInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeClassicLinkInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClassicLinkInstances">REST API Reference for DescribeClassicLinkInstances Operation</seealso>
         public DescribeClassicLinkInstancesResponse DescribeClassicLinkInstances(DescribeClassicLinkInstancesRequest request)
         {
             var marshaller = new DescribeClassicLinkInstancesRequestMarshaller();
@@ -5685,6 +5954,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClassicLinkInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClassicLinkInstances">REST API Reference for DescribeClassicLinkInstances Operation</seealso>
         public IAsyncResult BeginDescribeClassicLinkInstances(DescribeClassicLinkInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeClassicLinkInstancesRequestMarshaller();
@@ -5701,6 +5971,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClassicLinkInstances.</param>
         /// 
         /// <returns>Returns a  DescribeClassicLinkInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClassicLinkInstances">REST API Reference for DescribeClassicLinkInstances Operation</seealso>
         public  DescribeClassicLinkInstancesResponse EndDescribeClassicLinkInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeClassicLinkInstancesResponse>(asyncResult);
@@ -5722,6 +5993,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeConversionTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks">REST API Reference for DescribeConversionTasks Operation</seealso>
         public DescribeConversionTasksResponse DescribeConversionTasks()
         {
             return DescribeConversionTasks(new DescribeConversionTasksRequest());
@@ -5740,6 +6012,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeConversionTasks service method.</param>
         /// 
         /// <returns>The response from the DescribeConversionTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks">REST API Reference for DescribeConversionTasks Operation</seealso>
         public DescribeConversionTasksResponse DescribeConversionTasks(DescribeConversionTasksRequest request)
         {
             var marshaller = new DescribeConversionTasksRequestMarshaller();
@@ -5759,6 +6032,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeConversionTasks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks">REST API Reference for DescribeConversionTasks Operation</seealso>
         public IAsyncResult BeginDescribeConversionTasks(DescribeConversionTasksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeConversionTasksRequestMarshaller();
@@ -5775,6 +6049,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeConversionTasks.</param>
         /// 
         /// <returns>Returns a  DescribeConversionTasksResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks">REST API Reference for DescribeConversionTasks Operation</seealso>
         public  DescribeConversionTasksResponse EndDescribeConversionTasks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeConversionTasksResponse>(asyncResult);
@@ -5796,6 +6071,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeCustomerGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">REST API Reference for DescribeCustomerGateways Operation</seealso>
         public DescribeCustomerGatewaysResponse DescribeCustomerGateways()
         {
             return DescribeCustomerGateways(new DescribeCustomerGatewaysRequest());
@@ -5814,6 +6090,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeCustomerGateways service method.</param>
         /// 
         /// <returns>The response from the DescribeCustomerGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">REST API Reference for DescribeCustomerGateways Operation</seealso>
         public DescribeCustomerGatewaysResponse DescribeCustomerGateways(DescribeCustomerGatewaysRequest request)
         {
             var marshaller = new DescribeCustomerGatewaysRequestMarshaller();
@@ -5833,6 +6110,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCustomerGateways
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">REST API Reference for DescribeCustomerGateways Operation</seealso>
         public IAsyncResult BeginDescribeCustomerGateways(DescribeCustomerGatewaysRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeCustomerGatewaysRequestMarshaller();
@@ -5849,6 +6127,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCustomerGateways.</param>
         /// 
         /// <returns>Returns a  DescribeCustomerGatewaysResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">REST API Reference for DescribeCustomerGateways Operation</seealso>
         public  DescribeCustomerGatewaysResponse EndDescribeCustomerGateways(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCustomerGatewaysResponse>(asyncResult);
@@ -5869,6 +6148,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeDhcpOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">REST API Reference for DescribeDhcpOptions Operation</seealso>
         public DescribeDhcpOptionsResponse DescribeDhcpOptions()
         {
             return DescribeDhcpOptions(new DescribeDhcpOptionsRequest());
@@ -5886,6 +6166,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeDhcpOptions service method.</param>
         /// 
         /// <returns>The response from the DescribeDhcpOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">REST API Reference for DescribeDhcpOptions Operation</seealso>
         public DescribeDhcpOptionsResponse DescribeDhcpOptions(DescribeDhcpOptionsRequest request)
         {
             var marshaller = new DescribeDhcpOptionsRequestMarshaller();
@@ -5905,6 +6186,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDhcpOptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">REST API Reference for DescribeDhcpOptions Operation</seealso>
         public IAsyncResult BeginDescribeDhcpOptions(DescribeDhcpOptionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeDhcpOptionsRequestMarshaller();
@@ -5921,6 +6203,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDhcpOptions.</param>
         /// 
         /// <returns>Returns a  DescribeDhcpOptionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">REST API Reference for DescribeDhcpOptions Operation</seealso>
         public  DescribeDhcpOptionsResponse EndDescribeDhcpOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeDhcpOptionsResponse>(asyncResult);
@@ -5936,6 +6219,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeEgressOnlyInternetGateways service method.</param>
         /// 
         /// <returns>The response from the DescribeEgressOnlyInternetGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeEgressOnlyInternetGateways">REST API Reference for DescribeEgressOnlyInternetGateways Operation</seealso>
         public DescribeEgressOnlyInternetGatewaysResponse DescribeEgressOnlyInternetGateways(DescribeEgressOnlyInternetGatewaysRequest request)
         {
             var marshaller = new DescribeEgressOnlyInternetGatewaysRequestMarshaller();
@@ -5955,6 +6239,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEgressOnlyInternetGateways
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeEgressOnlyInternetGateways">REST API Reference for DescribeEgressOnlyInternetGateways Operation</seealso>
         public IAsyncResult BeginDescribeEgressOnlyInternetGateways(DescribeEgressOnlyInternetGatewaysRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeEgressOnlyInternetGatewaysRequestMarshaller();
@@ -5971,6 +6256,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEgressOnlyInternetGateways.</param>
         /// 
         /// <returns>Returns a  DescribeEgressOnlyInternetGatewaysResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeEgressOnlyInternetGateways">REST API Reference for DescribeEgressOnlyInternetGateways Operation</seealso>
         public  DescribeEgressOnlyInternetGatewaysResponse EndDescribeEgressOnlyInternetGateways(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeEgressOnlyInternetGatewaysResponse>(asyncResult);
@@ -5985,6 +6271,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeExportTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public DescribeExportTasksResponse DescribeExportTasks()
         {
             return DescribeExportTasks(new DescribeExportTasksRequest());
@@ -5996,6 +6283,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks service method.</param>
         /// 
         /// <returns>The response from the DescribeExportTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
         {
             var marshaller = new DescribeExportTasksRequestMarshaller();
@@ -6015,6 +6303,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExportTasks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public IAsyncResult BeginDescribeExportTasks(DescribeExportTasksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeExportTasksRequestMarshaller();
@@ -6031,6 +6320,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExportTasks.</param>
         /// 
         /// <returns>Returns a  DescribeExportTasksResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public  DescribeExportTasksResponse EndDescribeExportTasks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeExportTasksResponse>(asyncResult);
@@ -6048,6 +6338,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeFlowLogs service method.</param>
         /// 
         /// <returns>The response from the DescribeFlowLogs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFlowLogs">REST API Reference for DescribeFlowLogs Operation</seealso>
         public DescribeFlowLogsResponse DescribeFlowLogs(DescribeFlowLogsRequest request)
         {
             var marshaller = new DescribeFlowLogsRequestMarshaller();
@@ -6067,6 +6358,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFlowLogs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFlowLogs">REST API Reference for DescribeFlowLogs Operation</seealso>
         public IAsyncResult BeginDescribeFlowLogs(DescribeFlowLogsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeFlowLogsRequestMarshaller();
@@ -6083,6 +6375,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFlowLogs.</param>
         /// 
         /// <returns>Returns a  DescribeFlowLogsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFlowLogs">REST API Reference for DescribeFlowLogs Operation</seealso>
         public  DescribeFlowLogsResponse EndDescribeFlowLogs(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeFlowLogsResponse>(asyncResult);
@@ -6108,6 +6401,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservationOfferings service method.</param>
         /// 
         /// <returns>The response from the DescribeHostReservationOfferings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservationOfferings">REST API Reference for DescribeHostReservationOfferings Operation</seealso>
         public DescribeHostReservationOfferingsResponse DescribeHostReservationOfferings(DescribeHostReservationOfferingsRequest request)
         {
             var marshaller = new DescribeHostReservationOfferingsRequestMarshaller();
@@ -6127,6 +6421,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHostReservationOfferings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservationOfferings">REST API Reference for DescribeHostReservationOfferings Operation</seealso>
         public IAsyncResult BeginDescribeHostReservationOfferings(DescribeHostReservationOfferingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeHostReservationOfferingsRequestMarshaller();
@@ -6143,6 +6438,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHostReservationOfferings.</param>
         /// 
         /// <returns>Returns a  DescribeHostReservationOfferingsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservationOfferings">REST API Reference for DescribeHostReservationOfferings Operation</seealso>
         public  DescribeHostReservationOfferingsResponse EndDescribeHostReservationOfferings(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeHostReservationOfferingsResponse>(asyncResult);
@@ -6159,6 +6455,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservations service method.</param>
         /// 
         /// <returns>The response from the DescribeHostReservations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservations">REST API Reference for DescribeHostReservations Operation</seealso>
         public DescribeHostReservationsResponse DescribeHostReservations(DescribeHostReservationsRequest request)
         {
             var marshaller = new DescribeHostReservationsRequestMarshaller();
@@ -6178,6 +6475,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHostReservations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservations">REST API Reference for DescribeHostReservations Operation</seealso>
         public IAsyncResult BeginDescribeHostReservations(DescribeHostReservationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeHostReservationsRequestMarshaller();
@@ -6194,6 +6492,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHostReservations.</param>
         /// 
         /// <returns>Returns a  DescribeHostReservationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservations">REST API Reference for DescribeHostReservations Operation</seealso>
         public  DescribeHostReservationsResponse EndDescribeHostReservations(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeHostReservationsResponse>(asyncResult);
@@ -6216,6 +6515,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeHosts service method.</param>
         /// 
         /// <returns>The response from the DescribeHosts service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHosts">REST API Reference for DescribeHosts Operation</seealso>
         public DescribeHostsResponse DescribeHosts(DescribeHostsRequest request)
         {
             var marshaller = new DescribeHostsRequestMarshaller();
@@ -6235,6 +6535,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHosts
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHosts">REST API Reference for DescribeHosts Operation</seealso>
         public IAsyncResult BeginDescribeHosts(DescribeHostsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeHostsRequestMarshaller();
@@ -6251,6 +6552,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHosts.</param>
         /// 
         /// <returns>Returns a  DescribeHostsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHosts">REST API Reference for DescribeHosts Operation</seealso>
         public  DescribeHostsResponse EndDescribeHosts(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeHostsResponse>(asyncResult);
@@ -6282,6 +6584,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityIdFormat service method.</param>
         /// 
         /// <returns>The response from the DescribeIdentityIdFormat service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdentityIdFormat">REST API Reference for DescribeIdentityIdFormat Operation</seealso>
         public DescribeIdentityIdFormatResponse DescribeIdentityIdFormat(DescribeIdentityIdFormatRequest request)
         {
             var marshaller = new DescribeIdentityIdFormatRequestMarshaller();
@@ -6301,6 +6604,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIdentityIdFormat
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdentityIdFormat">REST API Reference for DescribeIdentityIdFormat Operation</seealso>
         public IAsyncResult BeginDescribeIdentityIdFormat(DescribeIdentityIdFormatRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeIdentityIdFormatRequestMarshaller();
@@ -6317,6 +6621,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIdentityIdFormat.</param>
         /// 
         /// <returns>Returns a  DescribeIdentityIdFormatResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdentityIdFormat">REST API Reference for DescribeIdentityIdFormat Operation</seealso>
         public  DescribeIdentityIdFormatResponse EndDescribeIdentityIdFormat(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeIdentityIdFormatResponse>(asyncResult);
@@ -6350,6 +6655,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdFormat service method.</param>
         /// 
         /// <returns>The response from the DescribeIdFormat service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdFormat">REST API Reference for DescribeIdFormat Operation</seealso>
         public DescribeIdFormatResponse DescribeIdFormat(DescribeIdFormatRequest request)
         {
             var marshaller = new DescribeIdFormatRequestMarshaller();
@@ -6369,6 +6675,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeIdFormat
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdFormat">REST API Reference for DescribeIdFormat Operation</seealso>
         public IAsyncResult BeginDescribeIdFormat(DescribeIdFormatRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeIdFormatRequestMarshaller();
@@ -6385,6 +6692,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeIdFormat.</param>
         /// 
         /// <returns>Returns a  DescribeIdFormatResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdFormat">REST API Reference for DescribeIdFormat Operation</seealso>
         public  DescribeIdFormatResponse EndDescribeIdFormat(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeIdFormatResponse>(asyncResult);
@@ -6401,6 +6709,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeImageAttribute service method.</param>
         /// 
         /// <returns>The response from the DescribeImageAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageAttribute">REST API Reference for DescribeImageAttribute Operation</seealso>
         public DescribeImageAttributeResponse DescribeImageAttribute(DescribeImageAttributeRequest request)
         {
             var marshaller = new DescribeImageAttributeRequestMarshaller();
@@ -6420,6 +6729,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImageAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageAttribute">REST API Reference for DescribeImageAttribute Operation</seealso>
         public IAsyncResult BeginDescribeImageAttribute(DescribeImageAttributeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeImageAttributeRequestMarshaller();
@@ -6436,6 +6746,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeImageAttribute.</param>
         /// 
         /// <returns>Returns a  DescribeImageAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageAttribute">REST API Reference for DescribeImageAttribute Operation</seealso>
         public  DescribeImageAttributeResponse EndDescribeImageAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeImageAttributeResponse>(asyncResult);
@@ -6459,6 +6770,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeImages service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public DescribeImagesResponse DescribeImages()
         {
             return DescribeImages(new DescribeImagesRequest());
@@ -6479,6 +6791,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeImages service method.</param>
         /// 
         /// <returns>The response from the DescribeImages service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
         {
             var marshaller = new DescribeImagesRequestMarshaller();
@@ -6498,6 +6811,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImages
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public IAsyncResult BeginDescribeImages(DescribeImagesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeImagesRequestMarshaller();
@@ -6514,6 +6828,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeImages.</param>
         /// 
         /// <returns>Returns a  DescribeImagesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public  DescribeImagesResponse EndDescribeImages(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeImagesResponse>(asyncResult);
@@ -6530,6 +6845,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeImportImageTasks service method.</param>
         /// 
         /// <returns>The response from the DescribeImportImageTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportImageTasks">REST API Reference for DescribeImportImageTasks Operation</seealso>
         public DescribeImportImageTasksResponse DescribeImportImageTasks(DescribeImportImageTasksRequest request)
         {
             var marshaller = new DescribeImportImageTasksRequestMarshaller();
@@ -6549,6 +6865,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImportImageTasks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportImageTasks">REST API Reference for DescribeImportImageTasks Operation</seealso>
         public IAsyncResult BeginDescribeImportImageTasks(DescribeImportImageTasksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeImportImageTasksRequestMarshaller();
@@ -6565,6 +6882,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeImportImageTasks.</param>
         /// 
         /// <returns>Returns a  DescribeImportImageTasksResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportImageTasks">REST API Reference for DescribeImportImageTasks Operation</seealso>
         public  DescribeImportImageTasksResponse EndDescribeImportImageTasks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeImportImageTasksResponse>(asyncResult);
@@ -6580,6 +6898,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeImportSnapshotTasks service method.</param>
         /// 
         /// <returns>The response from the DescribeImportSnapshotTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportSnapshotTasks">REST API Reference for DescribeImportSnapshotTasks Operation</seealso>
         public DescribeImportSnapshotTasksResponse DescribeImportSnapshotTasks(DescribeImportSnapshotTasksRequest request)
         {
             var marshaller = new DescribeImportSnapshotTasksRequestMarshaller();
@@ -6599,6 +6918,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeImportSnapshotTasks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportSnapshotTasks">REST API Reference for DescribeImportSnapshotTasks Operation</seealso>
         public IAsyncResult BeginDescribeImportSnapshotTasks(DescribeImportSnapshotTasksRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeImportSnapshotTasksRequestMarshaller();
@@ -6615,6 +6935,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeImportSnapshotTasks.</param>
         /// 
         /// <returns>Returns a  DescribeImportSnapshotTasksResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportSnapshotTasks">REST API Reference for DescribeImportSnapshotTasks Operation</seealso>
         public  DescribeImportSnapshotTasksResponse EndDescribeImportSnapshotTasks(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeImportSnapshotTasksResponse>(asyncResult);
@@ -6635,6 +6956,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAttribute service method.</param>
         /// 
         /// <returns>The response from the DescribeInstanceAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceAttribute">REST API Reference for DescribeInstanceAttribute Operation</seealso>
         public DescribeInstanceAttributeResponse DescribeInstanceAttribute(DescribeInstanceAttributeRequest request)
         {
             var marshaller = new DescribeInstanceAttributeRequestMarshaller();
@@ -6654,6 +6976,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceAttribute">REST API Reference for DescribeInstanceAttribute Operation</seealso>
         public IAsyncResult BeginDescribeInstanceAttribute(DescribeInstanceAttributeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeInstanceAttributeRequestMarshaller();
@@ -6670,6 +6993,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceAttribute.</param>
         /// 
         /// <returns>Returns a  DescribeInstanceAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceAttribute">REST API Reference for DescribeInstanceAttribute Operation</seealso>
         public  DescribeInstanceAttributeResponse EndDescribeInstanceAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInstanceAttributeResponse>(asyncResult);
@@ -6705,6 +7029,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         public DescribeInstancesResponse DescribeInstances()
         {
             return DescribeInstances(new DescribeInstancesRequest());
@@ -6737,6 +7062,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         public DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
         {
             var marshaller = new DescribeInstancesRequestMarshaller();
@@ -6756,6 +7082,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         public IAsyncResult BeginDescribeInstances(DescribeInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeInstancesRequestMarshaller();
@@ -6772,6 +7099,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstances.</param>
         /// 
         /// <returns>Returns a  DescribeInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         public  DescribeInstancesResponse EndDescribeInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInstancesResponse>(asyncResult);
@@ -6814,6 +7142,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">REST API Reference for DescribeInstanceStatus Operation</seealso>
         public DescribeInstanceStatusResponse DescribeInstanceStatus()
         {
             return DescribeInstanceStatus(new DescribeInstanceStatusRequest());
@@ -6853,6 +7182,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceStatus service method.</param>
         /// 
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">REST API Reference for DescribeInstanceStatus Operation</seealso>
         public DescribeInstanceStatusResponse DescribeInstanceStatus(DescribeInstanceStatusRequest request)
         {
             var marshaller = new DescribeInstanceStatusRequestMarshaller();
@@ -6872,6 +7202,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">REST API Reference for DescribeInstanceStatus Operation</seealso>
         public IAsyncResult BeginDescribeInstanceStatus(DescribeInstanceStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeInstanceStatusRequestMarshaller();
@@ -6888,6 +7219,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceStatus.</param>
         /// 
         /// <returns>Returns a  DescribeInstanceStatusResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">REST API Reference for DescribeInstanceStatus Operation</seealso>
         public  DescribeInstanceStatusResponse EndDescribeInstanceStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInstanceStatusResponse>(asyncResult);
@@ -6902,6 +7234,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInternetGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInternetGateways">REST API Reference for DescribeInternetGateways Operation</seealso>
         public DescribeInternetGatewaysResponse DescribeInternetGateways()
         {
             return DescribeInternetGateways(new DescribeInternetGatewaysRequest());
@@ -6913,6 +7246,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeInternetGateways service method.</param>
         /// 
         /// <returns>The response from the DescribeInternetGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInternetGateways">REST API Reference for DescribeInternetGateways Operation</seealso>
         public DescribeInternetGatewaysResponse DescribeInternetGateways(DescribeInternetGatewaysRequest request)
         {
             var marshaller = new DescribeInternetGatewaysRequestMarshaller();
@@ -6932,6 +7266,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInternetGateways
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInternetGateways">REST API Reference for DescribeInternetGateways Operation</seealso>
         public IAsyncResult BeginDescribeInternetGateways(DescribeInternetGatewaysRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeInternetGatewaysRequestMarshaller();
@@ -6948,6 +7283,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInternetGateways.</param>
         /// 
         /// <returns>Returns a  DescribeInternetGatewaysResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInternetGateways">REST API Reference for DescribeInternetGateways Operation</seealso>
         public  DescribeInternetGatewaysResponse EndDescribeInternetGateways(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInternetGatewaysResponse>(asyncResult);
@@ -6968,6 +7304,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeKeyPairs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairs">REST API Reference for DescribeKeyPairs Operation</seealso>
         public DescribeKeyPairsResponse DescribeKeyPairs()
         {
             return DescribeKeyPairs(new DescribeKeyPairsRequest());
@@ -6985,6 +7322,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeKeyPairs service method.</param>
         /// 
         /// <returns>The response from the DescribeKeyPairs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairs">REST API Reference for DescribeKeyPairs Operation</seealso>
         public DescribeKeyPairsResponse DescribeKeyPairs(DescribeKeyPairsRequest request)
         {
             var marshaller = new DescribeKeyPairsRequestMarshaller();
@@ -7004,6 +7342,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeKeyPairs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairs">REST API Reference for DescribeKeyPairs Operation</seealso>
         public IAsyncResult BeginDescribeKeyPairs(DescribeKeyPairsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeKeyPairsRequestMarshaller();
@@ -7020,6 +7359,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeKeyPairs.</param>
         /// 
         /// <returns>Returns a  DescribeKeyPairsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairs">REST API Reference for DescribeKeyPairs Operation</seealso>
         public  DescribeKeyPairsResponse EndDescribeKeyPairs(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeKeyPairsResponse>(asyncResult);
@@ -7037,6 +7377,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeMovingAddresses service method.</param>
         /// 
         /// <returns>The response from the DescribeMovingAddresses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMovingAddresses">REST API Reference for DescribeMovingAddresses Operation</seealso>
         public DescribeMovingAddressesResponse DescribeMovingAddresses(DescribeMovingAddressesRequest request)
         {
             var marshaller = new DescribeMovingAddressesRequestMarshaller();
@@ -7056,6 +7397,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMovingAddresses
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMovingAddresses">REST API Reference for DescribeMovingAddresses Operation</seealso>
         public IAsyncResult BeginDescribeMovingAddresses(DescribeMovingAddressesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeMovingAddressesRequestMarshaller();
@@ -7072,6 +7414,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMovingAddresses.</param>
         /// 
         /// <returns>Returns a  DescribeMovingAddressesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMovingAddresses">REST API Reference for DescribeMovingAddresses Operation</seealso>
         public  DescribeMovingAddressesResponse EndDescribeMovingAddresses(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMovingAddressesResponse>(asyncResult);
@@ -7087,6 +7430,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeNatGateways service method.</param>
         /// 
         /// <returns>The response from the DescribeNatGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNatGateways">REST API Reference for DescribeNatGateways Operation</seealso>
         public DescribeNatGatewaysResponse DescribeNatGateways(DescribeNatGatewaysRequest request)
         {
             var marshaller = new DescribeNatGatewaysRequestMarshaller();
@@ -7106,6 +7450,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNatGateways
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNatGateways">REST API Reference for DescribeNatGateways Operation</seealso>
         public IAsyncResult BeginDescribeNatGateways(DescribeNatGatewaysRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeNatGatewaysRequestMarshaller();
@@ -7122,6 +7467,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNatGateways.</param>
         /// 
         /// <returns>Returns a  DescribeNatGatewaysResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNatGateways">REST API Reference for DescribeNatGateways Operation</seealso>
         public  DescribeNatGatewaysResponse EndDescribeNatGateways(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeNatGatewaysResponse>(asyncResult);
@@ -7142,6 +7488,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeNetworkAcls service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkAcls">REST API Reference for DescribeNetworkAcls Operation</seealso>
         public DescribeNetworkAclsResponse DescribeNetworkAcls()
         {
             return DescribeNetworkAcls(new DescribeNetworkAclsRequest());
@@ -7159,6 +7506,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkAcls service method.</param>
         /// 
         /// <returns>The response from the DescribeNetworkAcls service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkAcls">REST API Reference for DescribeNetworkAcls Operation</seealso>
         public DescribeNetworkAclsResponse DescribeNetworkAcls(DescribeNetworkAclsRequest request)
         {
             var marshaller = new DescribeNetworkAclsRequestMarshaller();
@@ -7178,6 +7526,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNetworkAcls
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkAcls">REST API Reference for DescribeNetworkAcls Operation</seealso>
         public IAsyncResult BeginDescribeNetworkAcls(DescribeNetworkAclsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeNetworkAclsRequestMarshaller();
@@ -7194,6 +7543,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNetworkAcls.</param>
         /// 
         /// <returns>Returns a  DescribeNetworkAclsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkAcls">REST API Reference for DescribeNetworkAcls Operation</seealso>
         public  DescribeNetworkAclsResponse EndDescribeNetworkAcls(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeNetworkAclsResponse>(asyncResult);
@@ -7209,6 +7559,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInterfaceAttribute service method.</param>
         /// 
         /// <returns>The response from the DescribeNetworkInterfaceAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaceAttribute">REST API Reference for DescribeNetworkInterfaceAttribute Operation</seealso>
         public DescribeNetworkInterfaceAttributeResponse DescribeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest request)
         {
             var marshaller = new DescribeNetworkInterfaceAttributeRequestMarshaller();
@@ -7228,6 +7579,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNetworkInterfaceAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaceAttribute">REST API Reference for DescribeNetworkInterfaceAttribute Operation</seealso>
         public IAsyncResult BeginDescribeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeNetworkInterfaceAttributeRequestMarshaller();
@@ -7244,6 +7596,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNetworkInterfaceAttribute.</param>
         /// 
         /// <returns>Returns a  DescribeNetworkInterfaceAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaceAttribute">REST API Reference for DescribeNetworkInterfaceAttribute Operation</seealso>
         public  DescribeNetworkInterfaceAttributeResponse EndDescribeNetworkInterfaceAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeNetworkInterfaceAttributeResponse>(asyncResult);
@@ -7258,6 +7611,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeNetworkInterfaces service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces">REST API Reference for DescribeNetworkInterfaces Operation</seealso>
         public DescribeNetworkInterfacesResponse DescribeNetworkInterfaces()
         {
             return DescribeNetworkInterfaces(new DescribeNetworkInterfacesRequest());
@@ -7269,6 +7623,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInterfaces service method.</param>
         /// 
         /// <returns>The response from the DescribeNetworkInterfaces service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces">REST API Reference for DescribeNetworkInterfaces Operation</seealso>
         public DescribeNetworkInterfacesResponse DescribeNetworkInterfaces(DescribeNetworkInterfacesRequest request)
         {
             var marshaller = new DescribeNetworkInterfacesRequestMarshaller();
@@ -7288,6 +7643,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNetworkInterfaces
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces">REST API Reference for DescribeNetworkInterfaces Operation</seealso>
         public IAsyncResult BeginDescribeNetworkInterfaces(DescribeNetworkInterfacesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeNetworkInterfacesRequestMarshaller();
@@ -7304,6 +7660,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNetworkInterfaces.</param>
         /// 
         /// <returns>Returns a  DescribeNetworkInterfacesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces">REST API Reference for DescribeNetworkInterfaces Operation</seealso>
         public  DescribeNetworkInterfacesResponse EndDescribeNetworkInterfaces(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeNetworkInterfacesResponse>(asyncResult);
@@ -7320,6 +7677,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribePlacementGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">REST API Reference for DescribePlacementGroups Operation</seealso>
         public DescribePlacementGroupsResponse DescribePlacementGroups()
         {
             return DescribePlacementGroups(new DescribePlacementGroupsRequest());
@@ -7333,6 +7691,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribePlacementGroups service method.</param>
         /// 
         /// <returns>The response from the DescribePlacementGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">REST API Reference for DescribePlacementGroups Operation</seealso>
         public DescribePlacementGroupsResponse DescribePlacementGroups(DescribePlacementGroupsRequest request)
         {
             var marshaller = new DescribePlacementGroupsRequestMarshaller();
@@ -7352,6 +7711,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePlacementGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">REST API Reference for DescribePlacementGroups Operation</seealso>
         public IAsyncResult BeginDescribePlacementGroups(DescribePlacementGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribePlacementGroupsRequestMarshaller();
@@ -7368,6 +7728,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePlacementGroups.</param>
         /// 
         /// <returns>Returns a  DescribePlacementGroupsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">REST API Reference for DescribePlacementGroups Operation</seealso>
         public  DescribePlacementGroupsResponse EndDescribePlacementGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribePlacementGroupsResponse>(asyncResult);
@@ -7386,6 +7747,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribePrefixLists service method.</param>
         /// 
         /// <returns>The response from the DescribePrefixLists service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists">REST API Reference for DescribePrefixLists Operation</seealso>
         public DescribePrefixListsResponse DescribePrefixLists(DescribePrefixListsRequest request)
         {
             var marshaller = new DescribePrefixListsRequestMarshaller();
@@ -7405,6 +7767,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePrefixLists
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists">REST API Reference for DescribePrefixLists Operation</seealso>
         public IAsyncResult BeginDescribePrefixLists(DescribePrefixListsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribePrefixListsRequestMarshaller();
@@ -7421,6 +7784,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePrefixLists.</param>
         /// 
         /// <returns>Returns a  DescribePrefixListsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists">REST API Reference for DescribePrefixLists Operation</seealso>
         public  DescribePrefixListsResponse EndDescribePrefixLists(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribePrefixListsResponse>(asyncResult);
@@ -7441,6 +7805,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeRegions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
         public DescribeRegionsResponse DescribeRegions()
         {
             return DescribeRegions(new DescribeRegionsRequest());
@@ -7458,6 +7823,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeRegions service method.</param>
         /// 
         /// <returns>The response from the DescribeRegions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
         public DescribeRegionsResponse DescribeRegions(DescribeRegionsRequest request)
         {
             var marshaller = new DescribeRegionsRequestMarshaller();
@@ -7477,6 +7843,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRegions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
         public IAsyncResult BeginDescribeRegions(DescribeRegionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeRegionsRequestMarshaller();
@@ -7493,6 +7860,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRegions.</param>
         /// 
         /// <returns>Returns a  DescribeRegionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
         public  DescribeRegionsResponse EndDescribeRegions(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeRegionsResponse>(asyncResult);
@@ -7513,6 +7881,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">REST API Reference for DescribeReservedInstances Operation</seealso>
         public DescribeReservedInstancesResponse DescribeReservedInstances()
         {
             return DescribeReservedInstances(new DescribeReservedInstancesRequest());
@@ -7530,6 +7899,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">REST API Reference for DescribeReservedInstances Operation</seealso>
         public DescribeReservedInstancesResponse DescribeReservedInstances(DescribeReservedInstancesRequest request)
         {
             var marshaller = new DescribeReservedInstancesRequestMarshaller();
@@ -7549,6 +7919,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReservedInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">REST API Reference for DescribeReservedInstances Operation</seealso>
         public IAsyncResult BeginDescribeReservedInstances(DescribeReservedInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeReservedInstancesRequestMarshaller();
@@ -7565,6 +7936,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedInstances.</param>
         /// 
         /// <returns>Returns a  DescribeReservedInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">REST API Reference for DescribeReservedInstances Operation</seealso>
         public  DescribeReservedInstancesResponse EndDescribeReservedInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeReservedInstancesResponse>(asyncResult);
@@ -7606,6 +7978,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedInstancesListings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">REST API Reference for DescribeReservedInstancesListings Operation</seealso>
         public DescribeReservedInstancesListingsResponse DescribeReservedInstancesListings()
         {
             return DescribeReservedInstancesListings(new DescribeReservedInstancesListingsRequest());
@@ -7644,6 +8017,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesListings service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedInstancesListings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">REST API Reference for DescribeReservedInstancesListings Operation</seealso>
         public DescribeReservedInstancesListingsResponse DescribeReservedInstancesListings(DescribeReservedInstancesListingsRequest request)
         {
             var marshaller = new DescribeReservedInstancesListingsRequestMarshaller();
@@ -7663,6 +8037,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReservedInstancesListings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">REST API Reference for DescribeReservedInstancesListings Operation</seealso>
         public IAsyncResult BeginDescribeReservedInstancesListings(DescribeReservedInstancesListingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeReservedInstancesListingsRequestMarshaller();
@@ -7679,6 +8054,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedInstancesListings.</param>
         /// 
         /// <returns>Returns a  DescribeReservedInstancesListingsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">REST API Reference for DescribeReservedInstancesListings Operation</seealso>
         public  DescribeReservedInstancesListingsResponse EndDescribeReservedInstancesListings(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeReservedInstancesListingsResponse>(asyncResult);
@@ -7702,6 +8078,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedInstancesModifications service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">REST API Reference for DescribeReservedInstancesModifications Operation</seealso>
         public DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications()
         {
             return DescribeReservedInstancesModifications(new DescribeReservedInstancesModificationsRequest());
@@ -7722,6 +8099,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesModifications service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedInstancesModifications service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">REST API Reference for DescribeReservedInstancesModifications Operation</seealso>
         public DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest request)
         {
             var marshaller = new DescribeReservedInstancesModificationsRequestMarshaller();
@@ -7741,6 +8119,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReservedInstancesModifications
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">REST API Reference for DescribeReservedInstancesModifications Operation</seealso>
         public IAsyncResult BeginDescribeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeReservedInstancesModificationsRequestMarshaller();
@@ -7757,6 +8136,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedInstancesModifications.</param>
         /// 
         /// <returns>Returns a  DescribeReservedInstancesModificationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">REST API Reference for DescribeReservedInstancesModifications Operation</seealso>
         public  DescribeReservedInstancesModificationsResponse EndDescribeReservedInstancesModifications(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeReservedInstancesModificationsResponse>(asyncResult);
@@ -7786,6 +8166,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedInstancesOfferings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">REST API Reference for DescribeReservedInstancesOfferings Operation</seealso>
         public DescribeReservedInstancesOfferingsResponse DescribeReservedInstancesOfferings()
         {
             return DescribeReservedInstancesOfferings(new DescribeReservedInstancesOfferingsRequest());
@@ -7812,6 +8193,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesOfferings service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedInstancesOfferings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">REST API Reference for DescribeReservedInstancesOfferings Operation</seealso>
         public DescribeReservedInstancesOfferingsResponse DescribeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest request)
         {
             var marshaller = new DescribeReservedInstancesOfferingsRequestMarshaller();
@@ -7831,6 +8213,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeReservedInstancesOfferings
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">REST API Reference for DescribeReservedInstancesOfferings Operation</seealso>
         public IAsyncResult BeginDescribeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeReservedInstancesOfferingsRequestMarshaller();
@@ -7847,6 +8230,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeReservedInstancesOfferings.</param>
         /// 
         /// <returns>Returns a  DescribeReservedInstancesOfferingsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">REST API Reference for DescribeReservedInstancesOfferings Operation</seealso>
         public  DescribeReservedInstancesOfferingsResponse EndDescribeReservedInstancesOfferings(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeReservedInstancesOfferingsResponse>(asyncResult);
@@ -7873,6 +8257,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeRouteTables service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">REST API Reference for DescribeRouteTables Operation</seealso>
         public DescribeRouteTablesResponse DescribeRouteTables()
         {
             return DescribeRouteTables(new DescribeRouteTablesRequest());
@@ -7896,6 +8281,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeRouteTables service method.</param>
         /// 
         /// <returns>The response from the DescribeRouteTables service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">REST API Reference for DescribeRouteTables Operation</seealso>
         public DescribeRouteTablesResponse DescribeRouteTables(DescribeRouteTablesRequest request)
         {
             var marshaller = new DescribeRouteTablesRequestMarshaller();
@@ -7915,6 +8301,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeRouteTables
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">REST API Reference for DescribeRouteTables Operation</seealso>
         public IAsyncResult BeginDescribeRouteTables(DescribeRouteTablesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeRouteTablesRequestMarshaller();
@@ -7931,6 +8318,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeRouteTables.</param>
         /// 
         /// <returns>Returns a  DescribeRouteTablesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">REST API Reference for DescribeRouteTables Operation</seealso>
         public  DescribeRouteTablesResponse EndDescribeRouteTables(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeRouteTablesResponse>(asyncResult);
@@ -7959,6 +8347,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledInstanceAvailability service method.</param>
         /// 
         /// <returns>The response from the DescribeScheduledInstanceAvailability service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstanceAvailability">REST API Reference for DescribeScheduledInstanceAvailability Operation</seealso>
         public DescribeScheduledInstanceAvailabilityResponse DescribeScheduledInstanceAvailability(DescribeScheduledInstanceAvailabilityRequest request)
         {
             var marshaller = new DescribeScheduledInstanceAvailabilityRequestMarshaller();
@@ -7978,6 +8367,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScheduledInstanceAvailability
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstanceAvailability">REST API Reference for DescribeScheduledInstanceAvailability Operation</seealso>
         public IAsyncResult BeginDescribeScheduledInstanceAvailability(DescribeScheduledInstanceAvailabilityRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeScheduledInstanceAvailabilityRequestMarshaller();
@@ -7994,6 +8384,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScheduledInstanceAvailability.</param>
         /// 
         /// <returns>Returns a  DescribeScheduledInstanceAvailabilityResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstanceAvailability">REST API Reference for DescribeScheduledInstanceAvailability Operation</seealso>
         public  DescribeScheduledInstanceAvailabilityResponse EndDescribeScheduledInstanceAvailability(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeScheduledInstanceAvailabilityResponse>(asyncResult);
@@ -8009,6 +8400,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeScheduledInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstances">REST API Reference for DescribeScheduledInstances Operation</seealso>
         public DescribeScheduledInstancesResponse DescribeScheduledInstances(DescribeScheduledInstancesRequest request)
         {
             var marshaller = new DescribeScheduledInstancesRequestMarshaller();
@@ -8028,6 +8420,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeScheduledInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstances">REST API Reference for DescribeScheduledInstances Operation</seealso>
         public IAsyncResult BeginDescribeScheduledInstances(DescribeScheduledInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeScheduledInstancesRequestMarshaller();
@@ -8044,6 +8437,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeScheduledInstances.</param>
         /// 
         /// <returns>Returns a  DescribeScheduledInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstances">REST API Reference for DescribeScheduledInstances Operation</seealso>
         public  DescribeScheduledInstancesResponse EndDescribeScheduledInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeScheduledInstancesResponse>(asyncResult);
@@ -8060,6 +8454,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupReferences service method.</param>
         /// 
         /// <returns>The response from the DescribeSecurityGroupReferences service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupReferences">REST API Reference for DescribeSecurityGroupReferences Operation</seealso>
         public DescribeSecurityGroupReferencesResponse DescribeSecurityGroupReferences(DescribeSecurityGroupReferencesRequest request)
         {
             var marshaller = new DescribeSecurityGroupReferencesRequestMarshaller();
@@ -8079,6 +8474,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSecurityGroupReferences
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupReferences">REST API Reference for DescribeSecurityGroupReferences Operation</seealso>
         public IAsyncResult BeginDescribeSecurityGroupReferences(DescribeSecurityGroupReferencesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSecurityGroupReferencesRequestMarshaller();
@@ -8095,6 +8491,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSecurityGroupReferences.</param>
         /// 
         /// <returns>Returns a  DescribeSecurityGroupReferencesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupReferences">REST API Reference for DescribeSecurityGroupReferences Operation</seealso>
         public  DescribeSecurityGroupReferencesResponse EndDescribeSecurityGroupReferences(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSecurityGroupReferencesResponse>(asyncResult);
@@ -8118,6 +8515,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSecurityGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroups">REST API Reference for DescribeSecurityGroups Operation</seealso>
         public DescribeSecurityGroupsResponse DescribeSecurityGroups()
         {
             return DescribeSecurityGroups(new DescribeSecurityGroupsRequest());
@@ -8138,6 +8536,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeSecurityGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroups">REST API Reference for DescribeSecurityGroups Operation</seealso>
         public DescribeSecurityGroupsResponse DescribeSecurityGroups(DescribeSecurityGroupsRequest request)
         {
             var marshaller = new DescribeSecurityGroupsRequestMarshaller();
@@ -8157,6 +8556,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSecurityGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroups">REST API Reference for DescribeSecurityGroups Operation</seealso>
         public IAsyncResult BeginDescribeSecurityGroups(DescribeSecurityGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSecurityGroupsRequestMarshaller();
@@ -8173,6 +8573,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSecurityGroups.</param>
         /// 
         /// <returns>Returns a  DescribeSecurityGroupsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroups">REST API Reference for DescribeSecurityGroups Operation</seealso>
         public  DescribeSecurityGroupsResponse EndDescribeSecurityGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSecurityGroupsResponse>(asyncResult);
@@ -8195,6 +8596,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotAttribute service method.</param>
         /// 
         /// <returns>The response from the DescribeSnapshotAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotAttribute">REST API Reference for DescribeSnapshotAttribute Operation</seealso>
         public DescribeSnapshotAttributeResponse DescribeSnapshotAttribute(DescribeSnapshotAttributeRequest request)
         {
             var marshaller = new DescribeSnapshotAttributeRequestMarshaller();
@@ -8214,6 +8616,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSnapshotAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotAttribute">REST API Reference for DescribeSnapshotAttribute Operation</seealso>
         public IAsyncResult BeginDescribeSnapshotAttribute(DescribeSnapshotAttributeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSnapshotAttributeRequestMarshaller();
@@ -8230,6 +8633,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSnapshotAttribute.</param>
         /// 
         /// <returns>Returns a  DescribeSnapshotAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotAttribute">REST API Reference for DescribeSnapshotAttribute Operation</seealso>
         public  DescribeSnapshotAttributeResponse EndDescribeSnapshotAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSnapshotAttributeResponse>(asyncResult);
@@ -8309,6 +8713,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public DescribeSnapshotsResponse DescribeSnapshots()
         {
             return DescribeSnapshots(new DescribeSnapshotsRequest());
@@ -8385,6 +8790,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshots service method.</param>
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
         {
             var marshaller = new DescribeSnapshotsRequestMarshaller();
@@ -8404,6 +8810,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSnapshots
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public IAsyncResult BeginDescribeSnapshots(DescribeSnapshotsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSnapshotsRequestMarshaller();
@@ -8420,6 +8827,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSnapshots.</param>
         /// 
         /// <returns>Returns a  DescribeSnapshotsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public  DescribeSnapshotsResponse EndDescribeSnapshots(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSnapshotsResponse>(asyncResult);
@@ -8435,6 +8843,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSpotDatafeedSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">REST API Reference for DescribeSpotDatafeedSubscription Operation</seealso>
         public DescribeSpotDatafeedSubscriptionResponse DescribeSpotDatafeedSubscription()
         {
             return DescribeSpotDatafeedSubscription(new DescribeSpotDatafeedSubscriptionRequest());
@@ -8447,6 +8856,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotDatafeedSubscription service method.</param>
         /// 
         /// <returns>The response from the DescribeSpotDatafeedSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">REST API Reference for DescribeSpotDatafeedSubscription Operation</seealso>
         public DescribeSpotDatafeedSubscriptionResponse DescribeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest request)
         {
             var marshaller = new DescribeSpotDatafeedSubscriptionRequestMarshaller();
@@ -8466,6 +8876,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSpotDatafeedSubscription
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">REST API Reference for DescribeSpotDatafeedSubscription Operation</seealso>
         public IAsyncResult BeginDescribeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSpotDatafeedSubscriptionRequestMarshaller();
@@ -8482,6 +8893,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSpotDatafeedSubscription.</param>
         /// 
         /// <returns>Returns a  DescribeSpotDatafeedSubscriptionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">REST API Reference for DescribeSpotDatafeedSubscription Operation</seealso>
         public  DescribeSpotDatafeedSubscriptionResponse EndDescribeSpotDatafeedSubscription(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSpotDatafeedSubscriptionResponse>(asyncResult);
@@ -8497,6 +8909,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeSpotFleetInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetInstances">REST API Reference for DescribeSpotFleetInstances Operation</seealso>
         public DescribeSpotFleetInstancesResponse DescribeSpotFleetInstances(DescribeSpotFleetInstancesRequest request)
         {
             var marshaller = new DescribeSpotFleetInstancesRequestMarshaller();
@@ -8516,6 +8929,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSpotFleetInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetInstances">REST API Reference for DescribeSpotFleetInstances Operation</seealso>
         public IAsyncResult BeginDescribeSpotFleetInstances(DescribeSpotFleetInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSpotFleetInstancesRequestMarshaller();
@@ -8532,6 +8946,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSpotFleetInstances.</param>
         /// 
         /// <returns>Returns a  DescribeSpotFleetInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetInstances">REST API Reference for DescribeSpotFleetInstances Operation</seealso>
         public  DescribeSpotFleetInstancesResponse EndDescribeSpotFleetInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSpotFleetInstancesResponse>(asyncResult);
@@ -8553,6 +8968,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequestHistory service method.</param>
         /// 
         /// <returns>The response from the DescribeSpotFleetRequestHistory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequestHistory">REST API Reference for DescribeSpotFleetRequestHistory Operation</seealso>
         public DescribeSpotFleetRequestHistoryResponse DescribeSpotFleetRequestHistory(DescribeSpotFleetRequestHistoryRequest request)
         {
             var marshaller = new DescribeSpotFleetRequestHistoryRequestMarshaller();
@@ -8572,6 +8988,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSpotFleetRequestHistory
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequestHistory">REST API Reference for DescribeSpotFleetRequestHistory Operation</seealso>
         public IAsyncResult BeginDescribeSpotFleetRequestHistory(DescribeSpotFleetRequestHistoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSpotFleetRequestHistoryRequestMarshaller();
@@ -8588,6 +9005,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSpotFleetRequestHistory.</param>
         /// 
         /// <returns>Returns a  DescribeSpotFleetRequestHistoryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequestHistory">REST API Reference for DescribeSpotFleetRequestHistory Operation</seealso>
         public  DescribeSpotFleetRequestHistoryResponse EndDescribeSpotFleetRequestHistory(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSpotFleetRequestHistoryResponse>(asyncResult);
@@ -8609,6 +9027,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequests service method.</param>
         /// 
         /// <returns>The response from the DescribeSpotFleetRequests service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequests">REST API Reference for DescribeSpotFleetRequests Operation</seealso>
         public DescribeSpotFleetRequestsResponse DescribeSpotFleetRequests(DescribeSpotFleetRequestsRequest request)
         {
             var marshaller = new DescribeSpotFleetRequestsRequestMarshaller();
@@ -8628,6 +9047,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSpotFleetRequests
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequests">REST API Reference for DescribeSpotFleetRequests Operation</seealso>
         public IAsyncResult BeginDescribeSpotFleetRequests(DescribeSpotFleetRequestsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSpotFleetRequestsRequestMarshaller();
@@ -8644,6 +9064,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSpotFleetRequests.</param>
         /// 
         /// <returns>Returns a  DescribeSpotFleetRequestsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequests">REST API Reference for DescribeSpotFleetRequests Operation</seealso>
         public  DescribeSpotFleetRequestsResponse EndDescribeSpotFleetRequests(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSpotFleetRequestsResponse>(asyncResult);
@@ -8677,6 +9098,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSpotInstanceRequests service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests">REST API Reference for DescribeSpotInstanceRequests Operation</seealso>
         public DescribeSpotInstanceRequestsResponse DescribeSpotInstanceRequests()
         {
             return DescribeSpotInstanceRequests(new DescribeSpotInstanceRequestsRequest());
@@ -8707,6 +9129,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotInstanceRequests service method.</param>
         /// 
         /// <returns>The response from the DescribeSpotInstanceRequests service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests">REST API Reference for DescribeSpotInstanceRequests Operation</seealso>
         public DescribeSpotInstanceRequestsResponse DescribeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest request)
         {
             var marshaller = new DescribeSpotInstanceRequestsRequestMarshaller();
@@ -8726,6 +9149,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSpotInstanceRequests
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests">REST API Reference for DescribeSpotInstanceRequests Operation</seealso>
         public IAsyncResult BeginDescribeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSpotInstanceRequestsRequestMarshaller();
@@ -8742,6 +9166,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSpotInstanceRequests.</param>
         /// 
         /// <returns>Returns a  DescribeSpotInstanceRequestsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests">REST API Reference for DescribeSpotInstanceRequests Operation</seealso>
         public  DescribeSpotInstanceRequestsResponse EndDescribeSpotInstanceRequests(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSpotInstanceRequestsResponse>(asyncResult);
@@ -8765,6 +9190,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSpotPriceHistory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory">REST API Reference for DescribeSpotPriceHistory Operation</seealso>
         public DescribeSpotPriceHistoryResponse DescribeSpotPriceHistory()
         {
             return DescribeSpotPriceHistory(new DescribeSpotPriceHistoryRequest());
@@ -8785,6 +9211,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotPriceHistory service method.</param>
         /// 
         /// <returns>The response from the DescribeSpotPriceHistory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory">REST API Reference for DescribeSpotPriceHistory Operation</seealso>
         public DescribeSpotPriceHistoryResponse DescribeSpotPriceHistory(DescribeSpotPriceHistoryRequest request)
         {
             var marshaller = new DescribeSpotPriceHistoryRequestMarshaller();
@@ -8804,6 +9231,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSpotPriceHistory
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory">REST API Reference for DescribeSpotPriceHistory Operation</seealso>
         public IAsyncResult BeginDescribeSpotPriceHistory(DescribeSpotPriceHistoryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSpotPriceHistoryRequestMarshaller();
@@ -8820,6 +9248,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSpotPriceHistory.</param>
         /// 
         /// <returns>Returns a  DescribeSpotPriceHistoryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory">REST API Reference for DescribeSpotPriceHistory Operation</seealso>
         public  DescribeSpotPriceHistoryResponse EndDescribeSpotPriceHistory(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSpotPriceHistoryResponse>(asyncResult);
@@ -8837,6 +9266,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeStaleSecurityGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeStaleSecurityGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStaleSecurityGroups">REST API Reference for DescribeStaleSecurityGroups Operation</seealso>
         public DescribeStaleSecurityGroupsResponse DescribeStaleSecurityGroups(DescribeStaleSecurityGroupsRequest request)
         {
             var marshaller = new DescribeStaleSecurityGroupsRequestMarshaller();
@@ -8856,6 +9286,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStaleSecurityGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStaleSecurityGroups">REST API Reference for DescribeStaleSecurityGroups Operation</seealso>
         public IAsyncResult BeginDescribeStaleSecurityGroups(DescribeStaleSecurityGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeStaleSecurityGroupsRequestMarshaller();
@@ -8872,6 +9303,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStaleSecurityGroups.</param>
         /// 
         /// <returns>Returns a  DescribeStaleSecurityGroupsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStaleSecurityGroups">REST API Reference for DescribeStaleSecurityGroups Operation</seealso>
         public  DescribeStaleSecurityGroupsResponse EndDescribeStaleSecurityGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStaleSecurityGroupsResponse>(asyncResult);
@@ -8892,6 +9324,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSubnets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">REST API Reference for DescribeSubnets Operation</seealso>
         public DescribeSubnetsResponse DescribeSubnets()
         {
             return DescribeSubnets(new DescribeSubnetsRequest());
@@ -8909,6 +9342,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSubnets service method.</param>
         /// 
         /// <returns>The response from the DescribeSubnets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">REST API Reference for DescribeSubnets Operation</seealso>
         public DescribeSubnetsResponse DescribeSubnets(DescribeSubnetsRequest request)
         {
             var marshaller = new DescribeSubnetsRequestMarshaller();
@@ -8928,6 +9362,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSubnets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">REST API Reference for DescribeSubnets Operation</seealso>
         public IAsyncResult BeginDescribeSubnets(DescribeSubnetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeSubnetsRequestMarshaller();
@@ -8944,6 +9379,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSubnets.</param>
         /// 
         /// <returns>Returns a  DescribeSubnetsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">REST API Reference for DescribeSubnets Operation</seealso>
         public  DescribeSubnetsResponse EndDescribeSubnets(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSubnetsResponse>(asyncResult);
@@ -8964,6 +9400,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public DescribeTagsResponse DescribeTags()
         {
             return DescribeTags(new DescribeTagsRequest());
@@ -8981,6 +9418,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -9000,6 +9438,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -9016,6 +9455,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTags.</param>
         /// 
         /// <returns>Returns a  DescribeTagsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public  DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTagsResponse>(asyncResult);
@@ -9038,6 +9478,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumeAttribute service method.</param>
         /// 
         /// <returns>The response from the DescribeVolumeAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeAttribute">REST API Reference for DescribeVolumeAttribute Operation</seealso>
         public DescribeVolumeAttributeResponse DescribeVolumeAttribute(DescribeVolumeAttributeRequest request)
         {
             var marshaller = new DescribeVolumeAttributeRequestMarshaller();
@@ -9057,6 +9498,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVolumeAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeAttribute">REST API Reference for DescribeVolumeAttribute Operation</seealso>
         public IAsyncResult BeginDescribeVolumeAttribute(DescribeVolumeAttributeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVolumeAttributeRequestMarshaller();
@@ -9073,6 +9515,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVolumeAttribute.</param>
         /// 
         /// <returns>Returns a  DescribeVolumeAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeAttribute">REST API Reference for DescribeVolumeAttribute Operation</seealso>
         public  DescribeVolumeAttributeResponse EndDescribeVolumeAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVolumeAttributeResponse>(asyncResult);
@@ -9102,6 +9545,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVolumes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         public DescribeVolumesResponse DescribeVolumes()
         {
             return DescribeVolumes(new DescribeVolumesRequest());
@@ -9128,6 +9572,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumes service method.</param>
         /// 
         /// <returns>The response from the DescribeVolumes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         public DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
         {
             var marshaller = new DescribeVolumesRequestMarshaller();
@@ -9147,6 +9592,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVolumes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         public IAsyncResult BeginDescribeVolumes(DescribeVolumesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVolumesRequestMarshaller();
@@ -9163,6 +9609,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVolumes.</param>
         /// 
         /// <returns>Returns a  DescribeVolumesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         public  DescribeVolumesResponse EndDescribeVolumes(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVolumesResponse>(asyncResult);
@@ -9222,6 +9669,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVolumeStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus">REST API Reference for DescribeVolumeStatus Operation</seealso>
         public DescribeVolumeStatusResponse DescribeVolumeStatus()
         {
             return DescribeVolumeStatus(new DescribeVolumeStatusRequest());
@@ -9278,6 +9726,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumeStatus service method.</param>
         /// 
         /// <returns>The response from the DescribeVolumeStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus">REST API Reference for DescribeVolumeStatus Operation</seealso>
         public DescribeVolumeStatusResponse DescribeVolumeStatus(DescribeVolumeStatusRequest request)
         {
             var marshaller = new DescribeVolumeStatusRequestMarshaller();
@@ -9297,6 +9746,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVolumeStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus">REST API Reference for DescribeVolumeStatus Operation</seealso>
         public IAsyncResult BeginDescribeVolumeStatus(DescribeVolumeStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVolumeStatusRequestMarshaller();
@@ -9313,6 +9763,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVolumeStatus.</param>
         /// 
         /// <returns>Returns a  DescribeVolumeStatusResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus">REST API Reference for DescribeVolumeStatus Operation</seealso>
         public  DescribeVolumeStatusResponse EndDescribeVolumeStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVolumeStatusResponse>(asyncResult);
@@ -9329,6 +9780,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcAttribute service method.</param>
         /// 
         /// <returns>The response from the DescribeVpcAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcAttribute">REST API Reference for DescribeVpcAttribute Operation</seealso>
         public DescribeVpcAttributeResponse DescribeVpcAttribute(DescribeVpcAttributeRequest request)
         {
             var marshaller = new DescribeVpcAttributeRequestMarshaller();
@@ -9348,6 +9800,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcAttribute">REST API Reference for DescribeVpcAttribute Operation</seealso>
         public IAsyncResult BeginDescribeVpcAttribute(DescribeVpcAttributeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVpcAttributeRequestMarshaller();
@@ -9364,6 +9817,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcAttribute.</param>
         /// 
         /// <returns>Returns a  DescribeVpcAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcAttribute">REST API Reference for DescribeVpcAttribute Operation</seealso>
         public  DescribeVpcAttributeResponse EndDescribeVpcAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVpcAttributeResponse>(asyncResult);
@@ -9379,6 +9833,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLink service method.</param>
         /// 
         /// <returns>The response from the DescribeVpcClassicLink service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLink">REST API Reference for DescribeVpcClassicLink Operation</seealso>
         public DescribeVpcClassicLinkResponse DescribeVpcClassicLink(DescribeVpcClassicLinkRequest request)
         {
             var marshaller = new DescribeVpcClassicLinkRequestMarshaller();
@@ -9398,6 +9853,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcClassicLink
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLink">REST API Reference for DescribeVpcClassicLink Operation</seealso>
         public IAsyncResult BeginDescribeVpcClassicLink(DescribeVpcClassicLinkRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVpcClassicLinkRequestMarshaller();
@@ -9414,6 +9870,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcClassicLink.</param>
         /// 
         /// <returns>Returns a  DescribeVpcClassicLinkResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLink">REST API Reference for DescribeVpcClassicLink Operation</seealso>
         public  DescribeVpcClassicLinkResponse EndDescribeVpcClassicLink(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVpcClassicLinkResponse>(asyncResult);
@@ -9434,6 +9891,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLinkDnsSupport service method.</param>
         /// 
         /// <returns>The response from the DescribeVpcClassicLinkDnsSupport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLinkDnsSupport">REST API Reference for DescribeVpcClassicLinkDnsSupport Operation</seealso>
         public DescribeVpcClassicLinkDnsSupportResponse DescribeVpcClassicLinkDnsSupport(DescribeVpcClassicLinkDnsSupportRequest request)
         {
             var marshaller = new DescribeVpcClassicLinkDnsSupportRequestMarshaller();
@@ -9453,6 +9911,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcClassicLinkDnsSupport
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLinkDnsSupport">REST API Reference for DescribeVpcClassicLinkDnsSupport Operation</seealso>
         public IAsyncResult BeginDescribeVpcClassicLinkDnsSupport(DescribeVpcClassicLinkDnsSupportRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVpcClassicLinkDnsSupportRequestMarshaller();
@@ -9469,6 +9928,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcClassicLinkDnsSupport.</param>
         /// 
         /// <returns>Returns a  DescribeVpcClassicLinkDnsSupportResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLinkDnsSupport">REST API Reference for DescribeVpcClassicLinkDnsSupport Operation</seealso>
         public  DescribeVpcClassicLinkDnsSupportResponse EndDescribeVpcClassicLinkDnsSupport(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVpcClassicLinkDnsSupportResponse>(asyncResult);
@@ -9484,6 +9944,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpoints service method.</param>
         /// 
         /// <returns>The response from the DescribeVpcEndpoints service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
         public DescribeVpcEndpointsResponse DescribeVpcEndpoints(DescribeVpcEndpointsRequest request)
         {
             var marshaller = new DescribeVpcEndpointsRequestMarshaller();
@@ -9503,6 +9964,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcEndpoints
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
         public IAsyncResult BeginDescribeVpcEndpoints(DescribeVpcEndpointsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVpcEndpointsRequestMarshaller();
@@ -9519,6 +9981,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcEndpoints.</param>
         /// 
         /// <returns>Returns a  DescribeVpcEndpointsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
         public  DescribeVpcEndpointsResponse EndDescribeVpcEndpoints(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVpcEndpointsResponse>(asyncResult);
@@ -9534,6 +9997,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServices service method.</param>
         /// 
         /// <returns>The response from the DescribeVpcEndpointServices service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices">REST API Reference for DescribeVpcEndpointServices Operation</seealso>
         public DescribeVpcEndpointServicesResponse DescribeVpcEndpointServices(DescribeVpcEndpointServicesRequest request)
         {
             var marshaller = new DescribeVpcEndpointServicesRequestMarshaller();
@@ -9553,6 +10017,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcEndpointServices
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices">REST API Reference for DescribeVpcEndpointServices Operation</seealso>
         public IAsyncResult BeginDescribeVpcEndpointServices(DescribeVpcEndpointServicesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVpcEndpointServicesRequestMarshaller();
@@ -9569,6 +10034,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcEndpointServices.</param>
         /// 
         /// <returns>Returns a  DescribeVpcEndpointServicesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices">REST API Reference for DescribeVpcEndpointServices Operation</seealso>
         public  DescribeVpcEndpointServicesResponse EndDescribeVpcEndpointServices(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVpcEndpointServicesResponse>(asyncResult);
@@ -9583,6 +10049,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVpcPeeringConnections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
         public DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections()
         {
             return DescribeVpcPeeringConnections(new DescribeVpcPeeringConnectionsRequest());
@@ -9594,6 +10061,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcPeeringConnections service method.</param>
         /// 
         /// <returns>The response from the DescribeVpcPeeringConnections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
         public DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request)
         {
             var marshaller = new DescribeVpcPeeringConnectionsRequestMarshaller();
@@ -9613,6 +10081,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcPeeringConnections
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
         public IAsyncResult BeginDescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVpcPeeringConnectionsRequestMarshaller();
@@ -9629,6 +10098,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcPeeringConnections.</param>
         /// 
         /// <returns>Returns a  DescribeVpcPeeringConnectionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
         public  DescribeVpcPeeringConnectionsResponse EndDescribeVpcPeeringConnections(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVpcPeeringConnectionsResponse>(asyncResult);
@@ -9643,6 +10113,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVpcs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcs">REST API Reference for DescribeVpcs Operation</seealso>
         public DescribeVpcsResponse DescribeVpcs()
         {
             return DescribeVpcs(new DescribeVpcsRequest());
@@ -9654,6 +10125,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcs service method.</param>
         /// 
         /// <returns>The response from the DescribeVpcs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcs">REST API Reference for DescribeVpcs Operation</seealso>
         public DescribeVpcsResponse DescribeVpcs(DescribeVpcsRequest request)
         {
             var marshaller = new DescribeVpcsRequestMarshaller();
@@ -9673,6 +10145,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcs">REST API Reference for DescribeVpcs Operation</seealso>
         public IAsyncResult BeginDescribeVpcs(DescribeVpcsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVpcsRequestMarshaller();
@@ -9689,6 +10162,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcs.</param>
         /// 
         /// <returns>Returns a  DescribeVpcsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcs">REST API Reference for DescribeVpcs Operation</seealso>
         public  DescribeVpcsResponse EndDescribeVpcs(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVpcsResponse>(asyncResult);
@@ -9710,6 +10184,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVpnConnections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">REST API Reference for DescribeVpnConnections Operation</seealso>
         public DescribeVpnConnectionsResponse DescribeVpnConnections()
         {
             return DescribeVpnConnections(new DescribeVpnConnectionsRequest());
@@ -9728,6 +10203,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpnConnections service method.</param>
         /// 
         /// <returns>The response from the DescribeVpnConnections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">REST API Reference for DescribeVpnConnections Operation</seealso>
         public DescribeVpnConnectionsResponse DescribeVpnConnections(DescribeVpnConnectionsRequest request)
         {
             var marshaller = new DescribeVpnConnectionsRequestMarshaller();
@@ -9747,6 +10223,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpnConnections
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">REST API Reference for DescribeVpnConnections Operation</seealso>
         public IAsyncResult BeginDescribeVpnConnections(DescribeVpnConnectionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVpnConnectionsRequestMarshaller();
@@ -9763,6 +10240,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpnConnections.</param>
         /// 
         /// <returns>Returns a  DescribeVpnConnectionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">REST API Reference for DescribeVpnConnections Operation</seealso>
         public  DescribeVpnConnectionsResponse EndDescribeVpnConnections(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVpnConnectionsResponse>(asyncResult);
@@ -9784,6 +10262,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVpnGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">REST API Reference for DescribeVpnGateways Operation</seealso>
         public DescribeVpnGatewaysResponse DescribeVpnGateways()
         {
             return DescribeVpnGateways(new DescribeVpnGatewaysRequest());
@@ -9802,6 +10281,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpnGateways service method.</param>
         /// 
         /// <returns>The response from the DescribeVpnGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">REST API Reference for DescribeVpnGateways Operation</seealso>
         public DescribeVpnGatewaysResponse DescribeVpnGateways(DescribeVpnGatewaysRequest request)
         {
             var marshaller = new DescribeVpnGatewaysRequestMarshaller();
@@ -9821,6 +10301,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpnGateways
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">REST API Reference for DescribeVpnGateways Operation</seealso>
         public IAsyncResult BeginDescribeVpnGateways(DescribeVpnGatewaysRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeVpnGatewaysRequestMarshaller();
@@ -9837,6 +10318,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpnGateways.</param>
         /// 
         /// <returns>Returns a  DescribeVpnGatewaysResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">REST API Reference for DescribeVpnGateways Operation</seealso>
         public  DescribeVpnGatewaysResponse EndDescribeVpnGateways(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVpnGatewaysResponse>(asyncResult);
@@ -9854,6 +10336,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DetachClassicLinkVpc service method.</param>
         /// 
         /// <returns>The response from the DetachClassicLinkVpc service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachClassicLinkVpc">REST API Reference for DetachClassicLinkVpc Operation</seealso>
         public DetachClassicLinkVpcResponse DetachClassicLinkVpc(DetachClassicLinkVpcRequest request)
         {
             var marshaller = new DetachClassicLinkVpcRequestMarshaller();
@@ -9873,6 +10356,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachClassicLinkVpc
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachClassicLinkVpc">REST API Reference for DetachClassicLinkVpc Operation</seealso>
         public IAsyncResult BeginDetachClassicLinkVpc(DetachClassicLinkVpcRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetachClassicLinkVpcRequestMarshaller();
@@ -9889,6 +10373,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachClassicLinkVpc.</param>
         /// 
         /// <returns>Returns a  DetachClassicLinkVpcResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachClassicLinkVpc">REST API Reference for DetachClassicLinkVpc Operation</seealso>
         public  DetachClassicLinkVpcResponse EndDetachClassicLinkVpc(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachClassicLinkVpcResponse>(asyncResult);
@@ -9905,6 +10390,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DetachInternetGateway service method.</param>
         /// 
         /// <returns>The response from the DetachInternetGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachInternetGateway">REST API Reference for DetachInternetGateway Operation</seealso>
         public DetachInternetGatewayResponse DetachInternetGateway(DetachInternetGatewayRequest request)
         {
             var marshaller = new DetachInternetGatewayRequestMarshaller();
@@ -9924,6 +10410,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachInternetGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachInternetGateway">REST API Reference for DetachInternetGateway Operation</seealso>
         public IAsyncResult BeginDetachInternetGateway(DetachInternetGatewayRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetachInternetGatewayRequestMarshaller();
@@ -9940,6 +10427,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachInternetGateway.</param>
         /// 
         /// <returns>Returns a  DetachInternetGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachInternetGateway">REST API Reference for DetachInternetGateway Operation</seealso>
         public  DetachInternetGatewayResponse EndDetachInternetGateway(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachInternetGatewayResponse>(asyncResult);
@@ -9955,6 +10443,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DetachNetworkInterface service method.</param>
         /// 
         /// <returns>The response from the DetachNetworkInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachNetworkInterface">REST API Reference for DetachNetworkInterface Operation</seealso>
         public DetachNetworkInterfaceResponse DetachNetworkInterface(DetachNetworkInterfaceRequest request)
         {
             var marshaller = new DetachNetworkInterfaceRequestMarshaller();
@@ -9974,6 +10463,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachNetworkInterface
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachNetworkInterface">REST API Reference for DetachNetworkInterface Operation</seealso>
         public IAsyncResult BeginDetachNetworkInterface(DetachNetworkInterfaceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetachNetworkInterfaceRequestMarshaller();
@@ -9990,6 +10480,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachNetworkInterface.</param>
         /// 
         /// <returns>Returns a  DetachNetworkInterfaceResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachNetworkInterface">REST API Reference for DetachNetworkInterface Operation</seealso>
         public  DetachNetworkInterfaceResponse EndDetachNetworkInterface(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachNetworkInterfaceResponse>(asyncResult);
@@ -10022,6 +10513,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DetachVolume service method.</param>
         /// 
         /// <returns>The response from the DetachVolume service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume">REST API Reference for DetachVolume Operation</seealso>
         public DetachVolumeResponse DetachVolume(DetachVolumeRequest request)
         {
             var marshaller = new DetachVolumeRequestMarshaller();
@@ -10041,6 +10533,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachVolume
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume">REST API Reference for DetachVolume Operation</seealso>
         public IAsyncResult BeginDetachVolume(DetachVolumeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetachVolumeRequestMarshaller();
@@ -10057,6 +10550,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachVolume.</param>
         /// 
         /// <returns>Returns a  DetachVolumeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume">REST API Reference for DetachVolume Operation</seealso>
         public  DetachVolumeResponse EndDetachVolume(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachVolumeResponse>(asyncResult);
@@ -10081,6 +10575,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DetachVpnGateway service method.</param>
         /// 
         /// <returns>The response from the DetachVpnGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVpnGateway">REST API Reference for DetachVpnGateway Operation</seealso>
         public DetachVpnGatewayResponse DetachVpnGateway(DetachVpnGatewayRequest request)
         {
             var marshaller = new DetachVpnGatewayRequestMarshaller();
@@ -10100,6 +10595,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachVpnGateway
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVpnGateway">REST API Reference for DetachVpnGateway Operation</seealso>
         public IAsyncResult BeginDetachVpnGateway(DetachVpnGatewayRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DetachVpnGatewayRequestMarshaller();
@@ -10116,6 +10612,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachVpnGateway.</param>
         /// 
         /// <returns>Returns a  DetachVpnGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVpnGateway">REST API Reference for DetachVpnGateway Operation</seealso>
         public  DetachVpnGatewayResponse EndDetachVpnGateway(IAsyncResult asyncResult)
         {
             return EndInvoke<DetachVpnGatewayResponse>(asyncResult);
@@ -10132,6 +10629,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DisableVgwRoutePropagation service method.</param>
         /// 
         /// <returns>The response from the DisableVgwRoutePropagation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVgwRoutePropagation">REST API Reference for DisableVgwRoutePropagation Operation</seealso>
         public DisableVgwRoutePropagationResponse DisableVgwRoutePropagation(DisableVgwRoutePropagationRequest request)
         {
             var marshaller = new DisableVgwRoutePropagationRequestMarshaller();
@@ -10151,6 +10649,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableVgwRoutePropagation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVgwRoutePropagation">REST API Reference for DisableVgwRoutePropagation Operation</seealso>
         public IAsyncResult BeginDisableVgwRoutePropagation(DisableVgwRoutePropagationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisableVgwRoutePropagationRequestMarshaller();
@@ -10167,6 +10666,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableVgwRoutePropagation.</param>
         /// 
         /// <returns>Returns a  DisableVgwRoutePropagationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVgwRoutePropagation">REST API Reference for DisableVgwRoutePropagation Operation</seealso>
         public  DisableVgwRoutePropagationResponse EndDisableVgwRoutePropagation(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableVgwRoutePropagationResponse>(asyncResult);
@@ -10183,6 +10683,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLink service method.</param>
         /// 
         /// <returns>The response from the DisableVpcClassicLink service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLink">REST API Reference for DisableVpcClassicLink Operation</seealso>
         public DisableVpcClassicLinkResponse DisableVpcClassicLink(DisableVpcClassicLinkRequest request)
         {
             var marshaller = new DisableVpcClassicLinkRequestMarshaller();
@@ -10202,6 +10703,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableVpcClassicLink
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLink">REST API Reference for DisableVpcClassicLink Operation</seealso>
         public IAsyncResult BeginDisableVpcClassicLink(DisableVpcClassicLinkRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisableVpcClassicLinkRequestMarshaller();
@@ -10218,6 +10720,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableVpcClassicLink.</param>
         /// 
         /// <returns>Returns a  DisableVpcClassicLinkResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLink">REST API Reference for DisableVpcClassicLink Operation</seealso>
         public  DisableVpcClassicLinkResponse EndDisableVpcClassicLink(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableVpcClassicLinkResponse>(asyncResult);
@@ -10236,6 +10739,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport service method.</param>
         /// 
         /// <returns>The response from the DisableVpcClassicLinkDnsSupport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">REST API Reference for DisableVpcClassicLinkDnsSupport Operation</seealso>
         public DisableVpcClassicLinkDnsSupportResponse DisableVpcClassicLinkDnsSupport(DisableVpcClassicLinkDnsSupportRequest request)
         {
             var marshaller = new DisableVpcClassicLinkDnsSupportRequestMarshaller();
@@ -10255,6 +10759,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableVpcClassicLinkDnsSupport
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">REST API Reference for DisableVpcClassicLinkDnsSupport Operation</seealso>
         public IAsyncResult BeginDisableVpcClassicLinkDnsSupport(DisableVpcClassicLinkDnsSupportRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisableVpcClassicLinkDnsSupportRequestMarshaller();
@@ -10271,6 +10776,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableVpcClassicLinkDnsSupport.</param>
         /// 
         /// <returns>Returns a  DisableVpcClassicLinkDnsSupportResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">REST API Reference for DisableVpcClassicLinkDnsSupport Operation</seealso>
         public  DisableVpcClassicLinkDnsSupportResponse EndDisableVpcClassicLinkDnsSupport(IAsyncResult asyncResult)
         {
             return EndInvoke<DisableVpcClassicLinkDnsSupportResponse>(asyncResult);
@@ -10299,6 +10805,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAddress service method.</param>
         /// 
         /// <returns>The response from the DisassociateAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateAddress">REST API Reference for DisassociateAddress Operation</seealso>
         public DisassociateAddressResponse DisassociateAddress(DisassociateAddressRequest request)
         {
             var marshaller = new DisassociateAddressRequestMarshaller();
@@ -10318,6 +10825,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateAddress
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateAddress">REST API Reference for DisassociateAddress Operation</seealso>
         public IAsyncResult BeginDisassociateAddress(DisassociateAddressRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisassociateAddressRequestMarshaller();
@@ -10334,6 +10842,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateAddress.</param>
         /// 
         /// <returns>Returns a  DisassociateAddressResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateAddress">REST API Reference for DisassociateAddress Operation</seealso>
         public  DisassociateAddressResponse EndDisassociateAddress(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateAddressResponse>(asyncResult);
@@ -10357,6 +10866,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DisassociateRouteTable service method.</param>
         /// 
         /// <returns>The response from the DisassociateRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable">REST API Reference for DisassociateRouteTable Operation</seealso>
         public DisassociateRouteTableResponse DisassociateRouteTable(DisassociateRouteTableRequest request)
         {
             var marshaller = new DisassociateRouteTableRequestMarshaller();
@@ -10376,6 +10886,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateRouteTable
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable">REST API Reference for DisassociateRouteTable Operation</seealso>
         public IAsyncResult BeginDisassociateRouteTable(DisassociateRouteTableRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisassociateRouteTableRequestMarshaller();
@@ -10392,6 +10903,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateRouteTable.</param>
         /// 
         /// <returns>Returns a  DisassociateRouteTableResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable">REST API Reference for DisassociateRouteTable Operation</seealso>
         public  DisassociateRouteTableResponse EndDisassociateRouteTable(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateRouteTableResponse>(asyncResult);
@@ -10409,6 +10921,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DisassociateSubnetCidrBlock service method.</param>
         /// 
         /// <returns>The response from the DisassociateSubnetCidrBlock service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateSubnetCidrBlock">REST API Reference for DisassociateSubnetCidrBlock Operation</seealso>
         public DisassociateSubnetCidrBlockResponse DisassociateSubnetCidrBlock(DisassociateSubnetCidrBlockRequest request)
         {
             var marshaller = new DisassociateSubnetCidrBlockRequestMarshaller();
@@ -10428,6 +10941,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateSubnetCidrBlock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateSubnetCidrBlock">REST API Reference for DisassociateSubnetCidrBlock Operation</seealso>
         public IAsyncResult BeginDisassociateSubnetCidrBlock(DisassociateSubnetCidrBlockRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisassociateSubnetCidrBlockRequestMarshaller();
@@ -10444,6 +10958,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateSubnetCidrBlock.</param>
         /// 
         /// <returns>Returns a  DisassociateSubnetCidrBlockResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateSubnetCidrBlock">REST API Reference for DisassociateSubnetCidrBlock Operation</seealso>
         public  DisassociateSubnetCidrBlockResponse EndDisassociateSubnetCidrBlock(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateSubnetCidrBlockResponse>(asyncResult);
@@ -10461,6 +10976,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DisassociateVpcCidrBlock service method.</param>
         /// 
         /// <returns>The response from the DisassociateVpcCidrBlock service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateVpcCidrBlock">REST API Reference for DisassociateVpcCidrBlock Operation</seealso>
         public DisassociateVpcCidrBlockResponse DisassociateVpcCidrBlock(DisassociateVpcCidrBlockRequest request)
         {
             var marshaller = new DisassociateVpcCidrBlockRequestMarshaller();
@@ -10480,6 +10996,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateVpcCidrBlock
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateVpcCidrBlock">REST API Reference for DisassociateVpcCidrBlock Operation</seealso>
         public IAsyncResult BeginDisassociateVpcCidrBlock(DisassociateVpcCidrBlockRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DisassociateVpcCidrBlockRequestMarshaller();
@@ -10496,6 +11013,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateVpcCidrBlock.</param>
         /// 
         /// <returns>Returns a  DisassociateVpcCidrBlockResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateVpcCidrBlock">REST API Reference for DisassociateVpcCidrBlock Operation</seealso>
         public  DisassociateVpcCidrBlockResponse EndDisassociateVpcCidrBlock(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateVpcCidrBlockResponse>(asyncResult);
@@ -10512,6 +11030,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the EnableVgwRoutePropagation service method.</param>
         /// 
         /// <returns>The response from the EnableVgwRoutePropagation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVgwRoutePropagation">REST API Reference for EnableVgwRoutePropagation Operation</seealso>
         public EnableVgwRoutePropagationResponse EnableVgwRoutePropagation(EnableVgwRoutePropagationRequest request)
         {
             var marshaller = new EnableVgwRoutePropagationRequestMarshaller();
@@ -10531,6 +11050,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableVgwRoutePropagation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVgwRoutePropagation">REST API Reference for EnableVgwRoutePropagation Operation</seealso>
         public IAsyncResult BeginEnableVgwRoutePropagation(EnableVgwRoutePropagationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnableVgwRoutePropagationRequestMarshaller();
@@ -10547,6 +11067,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableVgwRoutePropagation.</param>
         /// 
         /// <returns>Returns a  EnableVgwRoutePropagationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVgwRoutePropagation">REST API Reference for EnableVgwRoutePropagation Operation</seealso>
         public  EnableVgwRoutePropagationResponse EndEnableVgwRoutePropagation(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableVgwRoutePropagationResponse>(asyncResult);
@@ -10563,6 +11084,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the EnableVolumeIO service method.</param>
         /// 
         /// <returns>The response from the EnableVolumeIO service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVolumeIO">REST API Reference for EnableVolumeIO Operation</seealso>
         public EnableVolumeIOResponse EnableVolumeIO(EnableVolumeIORequest request)
         {
             var marshaller = new EnableVolumeIORequestMarshaller();
@@ -10582,6 +11104,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableVolumeIO
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVolumeIO">REST API Reference for EnableVolumeIO Operation</seealso>
         public IAsyncResult BeginEnableVolumeIO(EnableVolumeIORequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnableVolumeIORequestMarshaller();
@@ -10598,6 +11121,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableVolumeIO.</param>
         /// 
         /// <returns>Returns a  EnableVolumeIOResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVolumeIO">REST API Reference for EnableVolumeIO Operation</seealso>
         public  EnableVolumeIOResponse EndEnableVolumeIO(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableVolumeIOResponse>(asyncResult);
@@ -10619,6 +11143,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLink service method.</param>
         /// 
         /// <returns>The response from the EnableVpcClassicLink service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLink">REST API Reference for EnableVpcClassicLink Operation</seealso>
         public EnableVpcClassicLinkResponse EnableVpcClassicLink(EnableVpcClassicLinkRequest request)
         {
             var marshaller = new EnableVpcClassicLinkRequestMarshaller();
@@ -10638,6 +11163,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableVpcClassicLink
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLink">REST API Reference for EnableVpcClassicLink Operation</seealso>
         public IAsyncResult BeginEnableVpcClassicLink(EnableVpcClassicLinkRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnableVpcClassicLinkRequestMarshaller();
@@ -10654,6 +11180,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableVpcClassicLink.</param>
         /// 
         /// <returns>Returns a  EnableVpcClassicLinkResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLink">REST API Reference for EnableVpcClassicLink Operation</seealso>
         public  EnableVpcClassicLinkResponse EndEnableVpcClassicLink(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableVpcClassicLinkResponse>(asyncResult);
@@ -10674,6 +11201,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLinkDnsSupport service method.</param>
         /// 
         /// <returns>The response from the EnableVpcClassicLinkDnsSupport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport">REST API Reference for EnableVpcClassicLinkDnsSupport Operation</seealso>
         public EnableVpcClassicLinkDnsSupportResponse EnableVpcClassicLinkDnsSupport(EnableVpcClassicLinkDnsSupportRequest request)
         {
             var marshaller = new EnableVpcClassicLinkDnsSupportRequestMarshaller();
@@ -10693,6 +11221,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableVpcClassicLinkDnsSupport
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport">REST API Reference for EnableVpcClassicLinkDnsSupport Operation</seealso>
         public IAsyncResult BeginEnableVpcClassicLinkDnsSupport(EnableVpcClassicLinkDnsSupportRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new EnableVpcClassicLinkDnsSupportRequestMarshaller();
@@ -10709,6 +11238,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableVpcClassicLinkDnsSupport.</param>
         /// 
         /// <returns>Returns a  EnableVpcClassicLinkDnsSupportResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport">REST API Reference for EnableVpcClassicLinkDnsSupport Operation</seealso>
         public  EnableVpcClassicLinkDnsSupportResponse EndEnableVpcClassicLinkDnsSupport(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableVpcClassicLinkDnsSupportResponse>(asyncResult);
@@ -10750,6 +11280,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the GetConsoleOutput service method.</param>
         /// 
         /// <returns>The response from the GetConsoleOutput service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">REST API Reference for GetConsoleOutput Operation</seealso>
         public GetConsoleOutputResponse GetConsoleOutput(GetConsoleOutputRequest request)
         {
             var marshaller = new GetConsoleOutputRequestMarshaller();
@@ -10769,6 +11300,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConsoleOutput
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">REST API Reference for GetConsoleOutput Operation</seealso>
         public IAsyncResult BeginGetConsoleOutput(GetConsoleOutputRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetConsoleOutputRequestMarshaller();
@@ -10785,6 +11317,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConsoleOutput.</param>
         /// 
         /// <returns>Returns a  GetConsoleOutputResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">REST API Reference for GetConsoleOutput Operation</seealso>
         public  GetConsoleOutputResponse EndGetConsoleOutput(IAsyncResult asyncResult)
         {
             return EndInvoke<GetConsoleOutputResponse>(asyncResult);
@@ -10805,6 +11338,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the GetConsoleScreenshot service method.</param>
         /// 
         /// <returns>The response from the GetConsoleScreenshot service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleScreenshot">REST API Reference for GetConsoleScreenshot Operation</seealso>
         public GetConsoleScreenshotResponse GetConsoleScreenshot(GetConsoleScreenshotRequest request)
         {
             var marshaller = new GetConsoleScreenshotRequestMarshaller();
@@ -10824,6 +11358,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConsoleScreenshot
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleScreenshot">REST API Reference for GetConsoleScreenshot Operation</seealso>
         public IAsyncResult BeginGetConsoleScreenshot(GetConsoleScreenshotRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetConsoleScreenshotRequestMarshaller();
@@ -10840,6 +11375,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConsoleScreenshot.</param>
         /// 
         /// <returns>Returns a  GetConsoleScreenshotResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleScreenshot">REST API Reference for GetConsoleScreenshot Operation</seealso>
         public  GetConsoleScreenshotResponse EndGetConsoleScreenshot(IAsyncResult asyncResult)
         {
             return EndInvoke<GetConsoleScreenshotResponse>(asyncResult);
@@ -10862,6 +11398,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the GetHostReservationPurchasePreview service method.</param>
         /// 
         /// <returns>The response from the GetHostReservationPurchasePreview service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetHostReservationPurchasePreview">REST API Reference for GetHostReservationPurchasePreview Operation</seealso>
         public GetHostReservationPurchasePreviewResponse GetHostReservationPurchasePreview(GetHostReservationPurchasePreviewRequest request)
         {
             var marshaller = new GetHostReservationPurchasePreviewRequestMarshaller();
@@ -10881,6 +11418,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetHostReservationPurchasePreview
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetHostReservationPurchasePreview">REST API Reference for GetHostReservationPurchasePreview Operation</seealso>
         public IAsyncResult BeginGetHostReservationPurchasePreview(GetHostReservationPurchasePreviewRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetHostReservationPurchasePreviewRequestMarshaller();
@@ -10897,6 +11435,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetHostReservationPurchasePreview.</param>
         /// 
         /// <returns>Returns a  GetHostReservationPurchasePreviewResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetHostReservationPurchasePreview">REST API Reference for GetHostReservationPurchasePreview Operation</seealso>
         public  GetHostReservationPurchasePreviewResponse EndGetHostReservationPurchasePreview(IAsyncResult asyncResult)
         {
             return EndInvoke<GetHostReservationPurchasePreviewResponse>(asyncResult);
@@ -10932,6 +11471,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the GetPasswordData service method.</param>
         /// 
         /// <returns>The response from the GetPasswordData service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetPasswordData">REST API Reference for GetPasswordData Operation</seealso>
         public GetPasswordDataResponse GetPasswordData(GetPasswordDataRequest request)
         {
             var marshaller = new GetPasswordDataRequestMarshaller();
@@ -10951,6 +11491,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPasswordData
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetPasswordData">REST API Reference for GetPasswordData Operation</seealso>
         public IAsyncResult BeginGetPasswordData(GetPasswordDataRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetPasswordDataRequestMarshaller();
@@ -10967,6 +11508,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPasswordData.</param>
         /// 
         /// <returns>Returns a  GetPasswordDataResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetPasswordData">REST API Reference for GetPasswordData Operation</seealso>
         public  GetPasswordDataResponse EndGetPasswordData(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPasswordDataResponse>(asyncResult);
@@ -10984,6 +11526,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the GetReservedInstancesExchangeQuote service method.</param>
         /// 
         /// <returns>The response from the GetReservedInstancesExchangeQuote service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuote">REST API Reference for GetReservedInstancesExchangeQuote Operation</seealso>
         public GetReservedInstancesExchangeQuoteResponse GetReservedInstancesExchangeQuote(GetReservedInstancesExchangeQuoteRequest request)
         {
             var marshaller = new GetReservedInstancesExchangeQuoteRequestMarshaller();
@@ -11003,6 +11546,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetReservedInstancesExchangeQuote
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuote">REST API Reference for GetReservedInstancesExchangeQuote Operation</seealso>
         public IAsyncResult BeginGetReservedInstancesExchangeQuote(GetReservedInstancesExchangeQuoteRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetReservedInstancesExchangeQuoteRequestMarshaller();
@@ -11019,6 +11563,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetReservedInstancesExchangeQuote.</param>
         /// 
         /// <returns>Returns a  GetReservedInstancesExchangeQuoteResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuote">REST API Reference for GetReservedInstancesExchangeQuote Operation</seealso>
         public  GetReservedInstancesExchangeQuoteResponse EndGetReservedInstancesExchangeQuote(IAsyncResult asyncResult)
         {
             return EndInvoke<GetReservedInstancesExchangeQuoteResponse>(asyncResult);
@@ -11036,6 +11581,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ImportImage service method.</param>
         /// 
         /// <returns>The response from the ImportImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage">REST API Reference for ImportImage Operation</seealso>
         public ImportImageResponse ImportImage(ImportImageRequest request)
         {
             var marshaller = new ImportImageRequestMarshaller();
@@ -11055,6 +11601,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportImage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage">REST API Reference for ImportImage Operation</seealso>
         public IAsyncResult BeginImportImage(ImportImageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ImportImageRequestMarshaller();
@@ -11071,6 +11618,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportImage.</param>
         /// 
         /// <returns>Returns a  ImportImageResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage">REST API Reference for ImportImage Operation</seealso>
         public  ImportImageResponse EndImportImage(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportImageResponse>(asyncResult);
@@ -11095,6 +11643,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ImportInstance service method.</param>
         /// 
         /// <returns>The response from the ImportInstance service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance">REST API Reference for ImportInstance Operation</seealso>
         public ImportInstanceResponse ImportInstance(ImportInstanceRequest request)
         {
             var marshaller = new ImportInstanceRequestMarshaller();
@@ -11114,6 +11663,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance">REST API Reference for ImportInstance Operation</seealso>
         public IAsyncResult BeginImportInstance(ImportInstanceRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ImportInstanceRequestMarshaller();
@@ -11130,6 +11680,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportInstance.</param>
         /// 
         /// <returns>Returns a  ImportInstanceResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance">REST API Reference for ImportInstance Operation</seealso>
         public  ImportInstanceResponse EndImportInstance(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportInstanceResponse>(asyncResult);
@@ -11155,6 +11706,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ImportKeyPair service method.</param>
         /// 
         /// <returns>The response from the ImportKeyPair service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         public ImportKeyPairResponse ImportKeyPair(ImportKeyPairRequest request)
         {
             var marshaller = new ImportKeyPairRequestMarshaller();
@@ -11174,6 +11726,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportKeyPair
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         public IAsyncResult BeginImportKeyPair(ImportKeyPairRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ImportKeyPairRequestMarshaller();
@@ -11190,6 +11743,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportKeyPair.</param>
         /// 
         /// <returns>Returns a  ImportKeyPairResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         public  ImportKeyPairResponse EndImportKeyPair(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportKeyPairResponse>(asyncResult);
@@ -11205,6 +11759,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ImportSnapshot service method.</param>
         /// 
         /// <returns>The response from the ImportSnapshot service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportSnapshot">REST API Reference for ImportSnapshot Operation</seealso>
         public ImportSnapshotResponse ImportSnapshot(ImportSnapshotRequest request)
         {
             var marshaller = new ImportSnapshotRequestMarshaller();
@@ -11224,6 +11779,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportSnapshot
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportSnapshot">REST API Reference for ImportSnapshot Operation</seealso>
         public IAsyncResult BeginImportSnapshot(ImportSnapshotRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ImportSnapshotRequestMarshaller();
@@ -11240,6 +11796,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportSnapshot.</param>
         /// 
         /// <returns>Returns a  ImportSnapshotResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportSnapshot">REST API Reference for ImportSnapshot Operation</seealso>
         public  ImportSnapshotResponse EndImportSnapshot(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportSnapshotResponse>(asyncResult);
@@ -11263,6 +11820,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ImportVolume service method.</param>
         /// 
         /// <returns>The response from the ImportVolume service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">REST API Reference for ImportVolume Operation</seealso>
         public ImportVolumeResponse ImportVolume(ImportVolumeRequest request)
         {
             var marshaller = new ImportVolumeRequestMarshaller();
@@ -11282,6 +11840,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportVolume
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">REST API Reference for ImportVolume Operation</seealso>
         public IAsyncResult BeginImportVolume(ImportVolumeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ImportVolumeRequestMarshaller();
@@ -11298,6 +11857,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportVolume.</param>
         /// 
         /// <returns>Returns a  ImportVolumeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">REST API Reference for ImportVolume Operation</seealso>
         public  ImportVolumeResponse EndImportVolume(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportVolumeResponse>(asyncResult);
@@ -11319,6 +11879,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyHosts service method.</param>
         /// 
         /// <returns>The response from the ModifyHosts service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyHosts">REST API Reference for ModifyHosts Operation</seealso>
         public ModifyHostsResponse ModifyHosts(ModifyHostsRequest request)
         {
             var marshaller = new ModifyHostsRequestMarshaller();
@@ -11338,6 +11899,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyHosts
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyHosts">REST API Reference for ModifyHosts Operation</seealso>
         public IAsyncResult BeginModifyHosts(ModifyHostsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyHostsRequestMarshaller();
@@ -11354,6 +11916,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyHosts.</param>
         /// 
         /// <returns>Returns a  ModifyHostsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyHosts">REST API Reference for ModifyHosts Operation</seealso>
         public  ModifyHostsResponse EndModifyHosts(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyHostsResponse>(asyncResult);
@@ -11390,6 +11953,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyIdentityIdFormat service method.</param>
         /// 
         /// <returns>The response from the ModifyIdentityIdFormat service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdentityIdFormat">REST API Reference for ModifyIdentityIdFormat Operation</seealso>
         public ModifyIdentityIdFormatResponse ModifyIdentityIdFormat(ModifyIdentityIdFormatRequest request)
         {
             var marshaller = new ModifyIdentityIdFormatRequestMarshaller();
@@ -11409,6 +11973,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyIdentityIdFormat
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdentityIdFormat">REST API Reference for ModifyIdentityIdFormat Operation</seealso>
         public IAsyncResult BeginModifyIdentityIdFormat(ModifyIdentityIdFormatRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyIdentityIdFormatRequestMarshaller();
@@ -11425,6 +11990,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyIdentityIdFormat.</param>
         /// 
         /// <returns>Returns a  ModifyIdentityIdFormatResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdentityIdFormat">REST API Reference for ModifyIdentityIdFormat Operation</seealso>
         public  ModifyIdentityIdFormatResponse EndModifyIdentityIdFormat(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyIdentityIdFormatResponse>(asyncResult);
@@ -11459,6 +12025,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyIdFormat service method.</param>
         /// 
         /// <returns>The response from the ModifyIdFormat service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdFormat">REST API Reference for ModifyIdFormat Operation</seealso>
         public ModifyIdFormatResponse ModifyIdFormat(ModifyIdFormatRequest request)
         {
             var marshaller = new ModifyIdFormatRequestMarshaller();
@@ -11478,6 +12045,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyIdFormat
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdFormat">REST API Reference for ModifyIdFormat Operation</seealso>
         public IAsyncResult BeginModifyIdFormat(ModifyIdFormatRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyIdFormatRequestMarshaller();
@@ -11494,6 +12062,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyIdFormat.</param>
         /// 
         /// <returns>Returns a  ModifyIdFormatResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdFormat">REST API Reference for ModifyIdFormat Operation</seealso>
         public  ModifyIdFormatResponse EndModifyIdFormat(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyIdFormatResponse>(asyncResult);
@@ -11523,6 +12092,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyImageAttribute service method.</param>
         /// 
         /// <returns>The response from the ModifyImageAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyImageAttribute">REST API Reference for ModifyImageAttribute Operation</seealso>
         public ModifyImageAttributeResponse ModifyImageAttribute(ModifyImageAttributeRequest request)
         {
             var marshaller = new ModifyImageAttributeRequestMarshaller();
@@ -11542,6 +12112,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyImageAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyImageAttribute">REST API Reference for ModifyImageAttribute Operation</seealso>
         public IAsyncResult BeginModifyImageAttribute(ModifyImageAttributeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyImageAttributeRequestMarshaller();
@@ -11558,6 +12129,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyImageAttribute.</param>
         /// 
         /// <returns>Returns a  ModifyImageAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyImageAttribute">REST API Reference for ModifyImageAttribute Operation</seealso>
         public  ModifyImageAttributeResponse EndModifyImageAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyImageAttributeResponse>(asyncResult);
@@ -11581,6 +12153,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceAttribute service method.</param>
         /// 
         /// <returns>The response from the ModifyInstanceAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">REST API Reference for ModifyInstanceAttribute Operation</seealso>
         public ModifyInstanceAttributeResponse ModifyInstanceAttribute(ModifyInstanceAttributeRequest request)
         {
             var marshaller = new ModifyInstanceAttributeRequestMarshaller();
@@ -11600,6 +12173,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyInstanceAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">REST API Reference for ModifyInstanceAttribute Operation</seealso>
         public IAsyncResult BeginModifyInstanceAttribute(ModifyInstanceAttributeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyInstanceAttributeRequestMarshaller();
@@ -11616,6 +12190,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstanceAttribute.</param>
         /// 
         /// <returns>Returns a  ModifyInstanceAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">REST API Reference for ModifyInstanceAttribute Operation</seealso>
         public  ModifyInstanceAttributeResponse EndModifyInstanceAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyInstanceAttributeResponse>(asyncResult);
@@ -11656,6 +12231,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstancePlacement service method.</param>
         /// 
         /// <returns>The response from the ModifyInstancePlacement service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstancePlacement">REST API Reference for ModifyInstancePlacement Operation</seealso>
         public ModifyInstancePlacementResponse ModifyInstancePlacement(ModifyInstancePlacementRequest request)
         {
             var marshaller = new ModifyInstancePlacementRequestMarshaller();
@@ -11675,6 +12251,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyInstancePlacement
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstancePlacement">REST API Reference for ModifyInstancePlacement Operation</seealso>
         public IAsyncResult BeginModifyInstancePlacement(ModifyInstancePlacementRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyInstancePlacementRequestMarshaller();
@@ -11691,6 +12268,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstancePlacement.</param>
         /// 
         /// <returns>Returns a  ModifyInstancePlacementResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstancePlacement">REST API Reference for ModifyInstancePlacement Operation</seealso>
         public  ModifyInstancePlacementResponse EndModifyInstancePlacement(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyInstancePlacementResponse>(asyncResult);
@@ -11707,6 +12285,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyNetworkInterfaceAttribute service method.</param>
         /// 
         /// <returns>The response from the ModifyNetworkInterfaceAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyNetworkInterfaceAttribute">REST API Reference for ModifyNetworkInterfaceAttribute Operation</seealso>
         public ModifyNetworkInterfaceAttributeResponse ModifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest request)
         {
             var marshaller = new ModifyNetworkInterfaceAttributeRequestMarshaller();
@@ -11726,6 +12305,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyNetworkInterfaceAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyNetworkInterfaceAttribute">REST API Reference for ModifyNetworkInterfaceAttribute Operation</seealso>
         public IAsyncResult BeginModifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyNetworkInterfaceAttributeRequestMarshaller();
@@ -11742,6 +12322,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyNetworkInterfaceAttribute.</param>
         /// 
         /// <returns>Returns a  ModifyNetworkInterfaceAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyNetworkInterfaceAttribute">REST API Reference for ModifyNetworkInterfaceAttribute Operation</seealso>
         public  ModifyNetworkInterfaceAttributeResponse EndModifyNetworkInterfaceAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyNetworkInterfaceAttributeResponse>(asyncResult);
@@ -11766,6 +12347,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyReservedInstances service method.</param>
         /// 
         /// <returns>The response from the ModifyReservedInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">REST API Reference for ModifyReservedInstances Operation</seealso>
         public ModifyReservedInstancesResponse ModifyReservedInstances(ModifyReservedInstancesRequest request)
         {
             var marshaller = new ModifyReservedInstancesRequestMarshaller();
@@ -11785,6 +12367,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyReservedInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">REST API Reference for ModifyReservedInstances Operation</seealso>
         public IAsyncResult BeginModifyReservedInstances(ModifyReservedInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyReservedInstancesRequestMarshaller();
@@ -11801,6 +12384,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyReservedInstances.</param>
         /// 
         /// <returns>Returns a  ModifyReservedInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">REST API Reference for ModifyReservedInstances Operation</seealso>
         public  ModifyReservedInstancesResponse EndModifyReservedInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyReservedInstancesResponse>(asyncResult);
@@ -11830,6 +12414,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotAttribute service method.</param>
         /// 
         /// <returns>The response from the ModifySnapshotAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute">REST API Reference for ModifySnapshotAttribute Operation</seealso>
         public ModifySnapshotAttributeResponse ModifySnapshotAttribute(ModifySnapshotAttributeRequest request)
         {
             var marshaller = new ModifySnapshotAttributeRequestMarshaller();
@@ -11849,6 +12434,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifySnapshotAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute">REST API Reference for ModifySnapshotAttribute Operation</seealso>
         public IAsyncResult BeginModifySnapshotAttribute(ModifySnapshotAttributeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifySnapshotAttributeRequestMarshaller();
@@ -11865,6 +12451,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifySnapshotAttribute.</param>
         /// 
         /// <returns>Returns a  ModifySnapshotAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute">REST API Reference for ModifySnapshotAttribute Operation</seealso>
         public  ModifySnapshotAttributeResponse EndModifySnapshotAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifySnapshotAttributeResponse>(asyncResult);
@@ -11907,6 +12494,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifySpotFleetRequest service method.</param>
         /// 
         /// <returns>The response from the ModifySpotFleetRequest service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySpotFleetRequest">REST API Reference for ModifySpotFleetRequest Operation</seealso>
         public ModifySpotFleetRequestResponse ModifySpotFleetRequest(ModifySpotFleetRequestRequest request)
         {
             var marshaller = new ModifySpotFleetRequestRequestMarshaller();
@@ -11926,6 +12514,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifySpotFleetRequest
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySpotFleetRequest">REST API Reference for ModifySpotFleetRequest Operation</seealso>
         public IAsyncResult BeginModifySpotFleetRequest(ModifySpotFleetRequestRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifySpotFleetRequestRequestMarshaller();
@@ -11942,6 +12531,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifySpotFleetRequest.</param>
         /// 
         /// <returns>Returns a  ModifySpotFleetRequestResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySpotFleetRequest">REST API Reference for ModifySpotFleetRequest Operation</seealso>
         public  ModifySpotFleetRequestResponse EndModifySpotFleetRequest(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifySpotFleetRequestResponse>(asyncResult);
@@ -11957,6 +12547,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifySubnetAttribute service method.</param>
         /// 
         /// <returns>The response from the ModifySubnetAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySubnetAttribute">REST API Reference for ModifySubnetAttribute Operation</seealso>
         public ModifySubnetAttributeResponse ModifySubnetAttribute(ModifySubnetAttributeRequest request)
         {
             var marshaller = new ModifySubnetAttributeRequestMarshaller();
@@ -11976,6 +12567,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifySubnetAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySubnetAttribute">REST API Reference for ModifySubnetAttribute Operation</seealso>
         public IAsyncResult BeginModifySubnetAttribute(ModifySubnetAttributeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifySubnetAttributeRequestMarshaller();
@@ -11992,6 +12584,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifySubnetAttribute.</param>
         /// 
         /// <returns>Returns a  ModifySubnetAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySubnetAttribute">REST API Reference for ModifySubnetAttribute Operation</seealso>
         public  ModifySubnetAttributeResponse EndModifySubnetAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifySubnetAttributeResponse>(asyncResult);
@@ -12020,6 +12613,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyVolumeAttribute service method.</param>
         /// 
         /// <returns>The response from the ModifyVolumeAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolumeAttribute">REST API Reference for ModifyVolumeAttribute Operation</seealso>
         public ModifyVolumeAttributeResponse ModifyVolumeAttribute(ModifyVolumeAttributeRequest request)
         {
             var marshaller = new ModifyVolumeAttributeRequestMarshaller();
@@ -12039,6 +12633,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVolumeAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolumeAttribute">REST API Reference for ModifyVolumeAttribute Operation</seealso>
         public IAsyncResult BeginModifyVolumeAttribute(ModifyVolumeAttributeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyVolumeAttributeRequestMarshaller();
@@ -12055,6 +12650,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVolumeAttribute.</param>
         /// 
         /// <returns>Returns a  ModifyVolumeAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolumeAttribute">REST API Reference for ModifyVolumeAttribute Operation</seealso>
         public  ModifyVolumeAttributeResponse EndModifyVolumeAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyVolumeAttributeResponse>(asyncResult);
@@ -12070,6 +12666,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcAttribute service method.</param>
         /// 
         /// <returns>The response from the ModifyVpcAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcAttribute">REST API Reference for ModifyVpcAttribute Operation</seealso>
         public ModifyVpcAttributeResponse ModifyVpcAttribute(ModifyVpcAttributeRequest request)
         {
             var marshaller = new ModifyVpcAttributeRequestMarshaller();
@@ -12089,6 +12686,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVpcAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcAttribute">REST API Reference for ModifyVpcAttribute Operation</seealso>
         public IAsyncResult BeginModifyVpcAttribute(ModifyVpcAttributeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyVpcAttributeRequestMarshaller();
@@ -12105,6 +12703,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVpcAttribute.</param>
         /// 
         /// <returns>Returns a  ModifyVpcAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcAttribute">REST API Reference for ModifyVpcAttribute Operation</seealso>
         public  ModifyVpcAttributeResponse EndModifyVpcAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyVpcAttributeResponse>(asyncResult);
@@ -12121,6 +12720,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpoint service method.</param>
         /// 
         /// <returns>The response from the ModifyVpcEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpoint">REST API Reference for ModifyVpcEndpoint Operation</seealso>
         public ModifyVpcEndpointResponse ModifyVpcEndpoint(ModifyVpcEndpointRequest request)
         {
             var marshaller = new ModifyVpcEndpointRequestMarshaller();
@@ -12140,6 +12740,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVpcEndpoint
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpoint">REST API Reference for ModifyVpcEndpoint Operation</seealso>
         public IAsyncResult BeginModifyVpcEndpoint(ModifyVpcEndpointRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyVpcEndpointRequestMarshaller();
@@ -12156,6 +12757,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVpcEndpoint.</param>
         /// 
         /// <returns>Returns a  ModifyVpcEndpointResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpoint">REST API Reference for ModifyVpcEndpoint Operation</seealso>
         public  ModifyVpcEndpointResponse EndModifyVpcEndpoint(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyVpcEndpointResponse>(asyncResult);
@@ -12197,6 +12799,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcPeeringConnectionOptions service method.</param>
         /// 
         /// <returns>The response from the ModifyVpcPeeringConnectionOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcPeeringConnectionOptions">REST API Reference for ModifyVpcPeeringConnectionOptions Operation</seealso>
         public ModifyVpcPeeringConnectionOptionsResponse ModifyVpcPeeringConnectionOptions(ModifyVpcPeeringConnectionOptionsRequest request)
         {
             var marshaller = new ModifyVpcPeeringConnectionOptionsRequestMarshaller();
@@ -12216,6 +12819,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVpcPeeringConnectionOptions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcPeeringConnectionOptions">REST API Reference for ModifyVpcPeeringConnectionOptions Operation</seealso>
         public IAsyncResult BeginModifyVpcPeeringConnectionOptions(ModifyVpcPeeringConnectionOptionsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyVpcPeeringConnectionOptionsRequestMarshaller();
@@ -12232,6 +12836,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVpcPeeringConnectionOptions.</param>
         /// 
         /// <returns>Returns a  ModifyVpcPeeringConnectionOptionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcPeeringConnectionOptions">REST API Reference for ModifyVpcPeeringConnectionOptions Operation</seealso>
         public  ModifyVpcPeeringConnectionOptionsResponse EndModifyVpcPeeringConnectionOptions(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyVpcPeeringConnectionOptionsResponse>(asyncResult);
@@ -12254,6 +12859,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the MonitorInstances service method.</param>
         /// 
         /// <returns>The response from the MonitorInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances">REST API Reference for MonitorInstances Operation</seealso>
         public MonitorInstancesResponse MonitorInstances(MonitorInstancesRequest request)
         {
             var marshaller = new MonitorInstancesRequestMarshaller();
@@ -12273,6 +12879,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndMonitorInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances">REST API Reference for MonitorInstances Operation</seealso>
         public IAsyncResult BeginMonitorInstances(MonitorInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new MonitorInstancesRequestMarshaller();
@@ -12289,6 +12896,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginMonitorInstances.</param>
         /// 
         /// <returns>Returns a  MonitorInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances">REST API Reference for MonitorInstances Operation</seealso>
         public  MonitorInstancesResponse EndMonitorInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<MonitorInstancesResponse>(asyncResult);
@@ -12310,6 +12918,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the MoveAddressToVpc service method.</param>
         /// 
         /// <returns>The response from the MoveAddressToVpc service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveAddressToVpc">REST API Reference for MoveAddressToVpc Operation</seealso>
         public MoveAddressToVpcResponse MoveAddressToVpc(MoveAddressToVpcRequest request)
         {
             var marshaller = new MoveAddressToVpcRequestMarshaller();
@@ -12329,6 +12938,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndMoveAddressToVpc
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveAddressToVpc">REST API Reference for MoveAddressToVpc Operation</seealso>
         public IAsyncResult BeginMoveAddressToVpc(MoveAddressToVpcRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new MoveAddressToVpcRequestMarshaller();
@@ -12345,6 +12955,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginMoveAddressToVpc.</param>
         /// 
         /// <returns>Returns a  MoveAddressToVpcResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveAddressToVpc">REST API Reference for MoveAddressToVpc Operation</seealso>
         public  MoveAddressToVpcResponse EndMoveAddressToVpc(IAsyncResult asyncResult)
         {
             return EndInvoke<MoveAddressToVpcResponse>(asyncResult);
@@ -12363,6 +12974,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the PurchaseHostReservation service method.</param>
         /// 
         /// <returns>The response from the PurchaseHostReservation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseHostReservation">REST API Reference for PurchaseHostReservation Operation</seealso>
         public PurchaseHostReservationResponse PurchaseHostReservation(PurchaseHostReservationRequest request)
         {
             var marshaller = new PurchaseHostReservationRequestMarshaller();
@@ -12382,6 +12994,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseHostReservation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseHostReservation">REST API Reference for PurchaseHostReservation Operation</seealso>
         public IAsyncResult BeginPurchaseHostReservation(PurchaseHostReservationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PurchaseHostReservationRequestMarshaller();
@@ -12398,6 +13011,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseHostReservation.</param>
         /// 
         /// <returns>Returns a  PurchaseHostReservationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseHostReservation">REST API Reference for PurchaseHostReservation Operation</seealso>
         public  PurchaseHostReservationResponse EndPurchaseHostReservation(IAsyncResult asyncResult)
         {
             return EndInvoke<PurchaseHostReservationResponse>(asyncResult);
@@ -12427,6 +13041,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedInstancesOffering service method.</param>
         /// 
         /// <returns>The response from the PurchaseReservedInstancesOffering service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering">REST API Reference for PurchaseReservedInstancesOffering Operation</seealso>
         public PurchaseReservedInstancesOfferingResponse PurchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest request)
         {
             var marshaller = new PurchaseReservedInstancesOfferingRequestMarshaller();
@@ -12446,6 +13061,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseReservedInstancesOffering
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering">REST API Reference for PurchaseReservedInstancesOffering Operation</seealso>
         public IAsyncResult BeginPurchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PurchaseReservedInstancesOfferingRequestMarshaller();
@@ -12462,6 +13078,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseReservedInstancesOffering.</param>
         /// 
         /// <returns>Returns a  PurchaseReservedInstancesOfferingResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering">REST API Reference for PurchaseReservedInstancesOffering Operation</seealso>
         public  PurchaseReservedInstancesOfferingResponse EndPurchaseReservedInstancesOffering(IAsyncResult asyncResult)
         {
             return EndInvoke<PurchaseReservedInstancesOfferingResponse>(asyncResult);
@@ -12491,6 +13108,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the PurchaseScheduledInstances service method.</param>
         /// 
         /// <returns>The response from the PurchaseScheduledInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseScheduledInstances">REST API Reference for PurchaseScheduledInstances Operation</seealso>
         public PurchaseScheduledInstancesResponse PurchaseScheduledInstances(PurchaseScheduledInstancesRequest request)
         {
             var marshaller = new PurchaseScheduledInstancesRequestMarshaller();
@@ -12510,6 +13128,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPurchaseScheduledInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseScheduledInstances">REST API Reference for PurchaseScheduledInstances Operation</seealso>
         public IAsyncResult BeginPurchaseScheduledInstances(PurchaseScheduledInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new PurchaseScheduledInstancesRequestMarshaller();
@@ -12526,6 +13145,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPurchaseScheduledInstances.</param>
         /// 
         /// <returns>Returns a  PurchaseScheduledInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseScheduledInstances">REST API Reference for PurchaseScheduledInstances Operation</seealso>
         public  PurchaseScheduledInstancesResponse EndPurchaseScheduledInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<PurchaseScheduledInstancesResponse>(asyncResult);
@@ -12556,6 +13176,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RebootInstances service method.</param>
         /// 
         /// <returns>The response from the RebootInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances">REST API Reference for RebootInstances Operation</seealso>
         public RebootInstancesResponse RebootInstances(RebootInstancesRequest request)
         {
             var marshaller = new RebootInstancesRequestMarshaller();
@@ -12575,6 +13196,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebootInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances">REST API Reference for RebootInstances Operation</seealso>
         public IAsyncResult BeginRebootInstances(RebootInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RebootInstancesRequestMarshaller();
@@ -12591,6 +13213,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebootInstances.</param>
         /// 
         /// <returns>Returns a  RebootInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances">REST API Reference for RebootInstances Operation</seealso>
         public  RebootInstancesResponse EndRebootInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<RebootInstancesResponse>(asyncResult);
@@ -12651,6 +13274,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RegisterImage service method.</param>
         /// 
         /// <returns>The response from the RegisterImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">REST API Reference for RegisterImage Operation</seealso>
         public RegisterImageResponse RegisterImage(RegisterImageRequest request)
         {
             var marshaller = new RegisterImageRequestMarshaller();
@@ -12670,6 +13294,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterImage
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">REST API Reference for RegisterImage Operation</seealso>
         public IAsyncResult BeginRegisterImage(RegisterImageRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RegisterImageRequestMarshaller();
@@ -12686,6 +13311,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterImage.</param>
         /// 
         /// <returns>Returns a  RegisterImageResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">REST API Reference for RegisterImage Operation</seealso>
         public  RegisterImageResponse EndRegisterImage(IAsyncResult asyncResult)
         {
             return EndInvoke<RegisterImageResponse>(asyncResult);
@@ -12705,6 +13331,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RejectVpcPeeringConnection service method.</param>
         /// 
         /// <returns>The response from the RejectVpcPeeringConnection service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcPeeringConnection">REST API Reference for RejectVpcPeeringConnection Operation</seealso>
         public RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest request)
         {
             var marshaller = new RejectVpcPeeringConnectionRequestMarshaller();
@@ -12724,6 +13351,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectVpcPeeringConnection
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcPeeringConnection">REST API Reference for RejectVpcPeeringConnection Operation</seealso>
         public IAsyncResult BeginRejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RejectVpcPeeringConnectionRequestMarshaller();
@@ -12740,6 +13368,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectVpcPeeringConnection.</param>
         /// 
         /// <returns>Returns a  RejectVpcPeeringConnectionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcPeeringConnection">REST API Reference for RejectVpcPeeringConnection Operation</seealso>
         public  RejectVpcPeeringConnectionResponse EndRejectVpcPeeringConnection(IAsyncResult asyncResult)
         {
             return EndInvoke<RejectVpcPeeringConnectionResponse>(asyncResult);
@@ -12775,6 +13404,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ReleaseAddress service method.</param>
         /// 
         /// <returns>The response from the ReleaseAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseAddress">REST API Reference for ReleaseAddress Operation</seealso>
         public ReleaseAddressResponse ReleaseAddress(ReleaseAddressRequest request)
         {
             var marshaller = new ReleaseAddressRequestMarshaller();
@@ -12794,6 +13424,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReleaseAddress
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseAddress">REST API Reference for ReleaseAddress Operation</seealso>
         public IAsyncResult BeginReleaseAddress(ReleaseAddressRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ReleaseAddressRequestMarshaller();
@@ -12810,6 +13441,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReleaseAddress.</param>
         /// 
         /// <returns>Returns a  ReleaseAddressResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseAddress">REST API Reference for ReleaseAddress Operation</seealso>
         public  ReleaseAddressResponse EndReleaseAddress(IAsyncResult asyncResult)
         {
             return EndInvoke<ReleaseAddressResponse>(asyncResult);
@@ -12840,6 +13472,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ReleaseHosts service method.</param>
         /// 
         /// <returns>The response from the ReleaseHosts service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseHosts">REST API Reference for ReleaseHosts Operation</seealso>
         public ReleaseHostsResponse ReleaseHosts(ReleaseHostsRequest request)
         {
             var marshaller = new ReleaseHostsRequestMarshaller();
@@ -12859,6 +13492,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReleaseHosts
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseHosts">REST API Reference for ReleaseHosts Operation</seealso>
         public IAsyncResult BeginReleaseHosts(ReleaseHostsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ReleaseHostsRequestMarshaller();
@@ -12875,6 +13509,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReleaseHosts.</param>
         /// 
         /// <returns>Returns a  ReleaseHostsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseHosts">REST API Reference for ReleaseHosts Operation</seealso>
         public  ReleaseHostsResponse EndReleaseHosts(IAsyncResult asyncResult)
         {
             return EndInvoke<ReleaseHostsResponse>(asyncResult);
@@ -12893,6 +13528,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ReplaceNetworkAclAssociation service method.</param>
         /// 
         /// <returns>The response from the ReplaceNetworkAclAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation">REST API Reference for ReplaceNetworkAclAssociation Operation</seealso>
         public ReplaceNetworkAclAssociationResponse ReplaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest request)
         {
             var marshaller = new ReplaceNetworkAclAssociationRequestMarshaller();
@@ -12912,6 +13548,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReplaceNetworkAclAssociation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation">REST API Reference for ReplaceNetworkAclAssociation Operation</seealso>
         public IAsyncResult BeginReplaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ReplaceNetworkAclAssociationRequestMarshaller();
@@ -12928,6 +13565,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReplaceNetworkAclAssociation.</param>
         /// 
         /// <returns>Returns a  ReplaceNetworkAclAssociationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation">REST API Reference for ReplaceNetworkAclAssociation Operation</seealso>
         public  ReplaceNetworkAclAssociationResponse EndReplaceNetworkAclAssociation(IAsyncResult asyncResult)
         {
             return EndInvoke<ReplaceNetworkAclAssociationResponse>(asyncResult);
@@ -12945,6 +13583,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ReplaceNetworkAclEntry service method.</param>
         /// 
         /// <returns>The response from the ReplaceNetworkAclEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclEntry">REST API Reference for ReplaceNetworkAclEntry Operation</seealso>
         public ReplaceNetworkAclEntryResponse ReplaceNetworkAclEntry(ReplaceNetworkAclEntryRequest request)
         {
             var marshaller = new ReplaceNetworkAclEntryRequestMarshaller();
@@ -12964,6 +13603,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReplaceNetworkAclEntry
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclEntry">REST API Reference for ReplaceNetworkAclEntry Operation</seealso>
         public IAsyncResult BeginReplaceNetworkAclEntry(ReplaceNetworkAclEntryRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ReplaceNetworkAclEntryRequestMarshaller();
@@ -12980,6 +13620,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReplaceNetworkAclEntry.</param>
         /// 
         /// <returns>Returns a  ReplaceNetworkAclEntryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclEntry">REST API Reference for ReplaceNetworkAclEntry Operation</seealso>
         public  ReplaceNetworkAclEntryResponse EndReplaceNetworkAclEntry(IAsyncResult asyncResult)
         {
             return EndInvoke<ReplaceNetworkAclEntryResponse>(asyncResult);
@@ -13003,6 +13644,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ReplaceRoute service method.</param>
         /// 
         /// <returns>The response from the ReplaceRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute">REST API Reference for ReplaceRoute Operation</seealso>
         public ReplaceRouteResponse ReplaceRoute(ReplaceRouteRequest request)
         {
             var marshaller = new ReplaceRouteRequestMarshaller();
@@ -13022,6 +13664,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReplaceRoute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute">REST API Reference for ReplaceRoute Operation</seealso>
         public IAsyncResult BeginReplaceRoute(ReplaceRouteRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ReplaceRouteRequestMarshaller();
@@ -13038,6 +13681,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReplaceRoute.</param>
         /// 
         /// <returns>Returns a  ReplaceRouteResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute">REST API Reference for ReplaceRoute Operation</seealso>
         public  ReplaceRouteResponse EndReplaceRoute(IAsyncResult asyncResult)
         {
             return EndInvoke<ReplaceRouteResponse>(asyncResult);
@@ -13063,6 +13707,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ReplaceRouteTableAssociation service method.</param>
         /// 
         /// <returns>The response from the ReplaceRouteTableAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRouteTableAssociation">REST API Reference for ReplaceRouteTableAssociation Operation</seealso>
         public ReplaceRouteTableAssociationResponse ReplaceRouteTableAssociation(ReplaceRouteTableAssociationRequest request)
         {
             var marshaller = new ReplaceRouteTableAssociationRequestMarshaller();
@@ -13082,6 +13727,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReplaceRouteTableAssociation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRouteTableAssociation">REST API Reference for ReplaceRouteTableAssociation Operation</seealso>
         public IAsyncResult BeginReplaceRouteTableAssociation(ReplaceRouteTableAssociationRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ReplaceRouteTableAssociationRequestMarshaller();
@@ -13098,6 +13744,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReplaceRouteTableAssociation.</param>
         /// 
         /// <returns>Returns a  ReplaceRouteTableAssociationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRouteTableAssociation">REST API Reference for ReplaceRouteTableAssociation Operation</seealso>
         public  ReplaceRouteTableAssociationResponse EndReplaceRouteTableAssociation(IAsyncResult asyncResult)
         {
             return EndInvoke<ReplaceRouteTableAssociationResponse>(asyncResult);
@@ -13122,6 +13769,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ReportInstanceStatus service method.</param>
         /// 
         /// <returns>The response from the ReportInstanceStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReportInstanceStatus">REST API Reference for ReportInstanceStatus Operation</seealso>
         public ReportInstanceStatusResponse ReportInstanceStatus(ReportInstanceStatusRequest request)
         {
             var marshaller = new ReportInstanceStatusRequestMarshaller();
@@ -13141,6 +13789,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReportInstanceStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReportInstanceStatus">REST API Reference for ReportInstanceStatus Operation</seealso>
         public IAsyncResult BeginReportInstanceStatus(ReportInstanceStatusRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ReportInstanceStatusRequestMarshaller();
@@ -13157,6 +13806,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReportInstanceStatus.</param>
         /// 
         /// <returns>Returns a  ReportInstanceStatusResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReportInstanceStatus">REST API Reference for ReportInstanceStatus Operation</seealso>
         public  ReportInstanceStatusResponse EndReportInstanceStatus(IAsyncResult asyncResult)
         {
             return EndInvoke<ReportInstanceStatusResponse>(asyncResult);
@@ -13196,6 +13846,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotFleet service method.</param>
         /// 
         /// <returns>The response from the RequestSpotFleet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">REST API Reference for RequestSpotFleet Operation</seealso>
         public RequestSpotFleetResponse RequestSpotFleet(RequestSpotFleetRequest request)
         {
             var marshaller = new RequestSpotFleetRequestMarshaller();
@@ -13215,6 +13866,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRequestSpotFleet
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">REST API Reference for RequestSpotFleet Operation</seealso>
         public IAsyncResult BeginRequestSpotFleet(RequestSpotFleetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RequestSpotFleetRequestMarshaller();
@@ -13231,6 +13883,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRequestSpotFleet.</param>
         /// 
         /// <returns>Returns a  RequestSpotFleetResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">REST API Reference for RequestSpotFleet Operation</seealso>
         public  RequestSpotFleetResponse EndRequestSpotFleet(IAsyncResult asyncResult)
         {
             return EndInvoke<RequestSpotFleetResponse>(asyncResult);
@@ -13250,6 +13903,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method.</param>
         /// 
         /// <returns>The response from the RequestSpotInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">REST API Reference for RequestSpotInstances Operation</seealso>
         public RequestSpotInstancesResponse RequestSpotInstances(RequestSpotInstancesRequest request)
         {
             var marshaller = new RequestSpotInstancesRequestMarshaller();
@@ -13269,6 +13923,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRequestSpotInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">REST API Reference for RequestSpotInstances Operation</seealso>
         public IAsyncResult BeginRequestSpotInstances(RequestSpotInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RequestSpotInstancesRequestMarshaller();
@@ -13285,6 +13940,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRequestSpotInstances.</param>
         /// 
         /// <returns>Returns a  RequestSpotInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">REST API Reference for RequestSpotInstances Operation</seealso>
         public  RequestSpotInstancesResponse EndRequestSpotInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<RequestSpotInstancesResponse>(asyncResult);
@@ -13306,6 +13962,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ResetImageAttribute service method.</param>
         /// 
         /// <returns>The response from the ResetImageAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetImageAttribute">REST API Reference for ResetImageAttribute Operation</seealso>
         public ResetImageAttributeResponse ResetImageAttribute(ResetImageAttributeRequest request)
         {
             var marshaller = new ResetImageAttributeRequestMarshaller();
@@ -13325,6 +13982,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetImageAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetImageAttribute">REST API Reference for ResetImageAttribute Operation</seealso>
         public IAsyncResult BeginResetImageAttribute(ResetImageAttributeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ResetImageAttributeRequestMarshaller();
@@ -13341,6 +13999,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetImageAttribute.</param>
         /// 
         /// <returns>Returns a  ResetImageAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetImageAttribute">REST API Reference for ResetImageAttribute Operation</seealso>
         public  ResetImageAttributeResponse EndResetImageAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<ResetImageAttributeResponse>(asyncResult);
@@ -13367,6 +14026,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ResetInstanceAttribute service method.</param>
         /// 
         /// <returns>The response from the ResetInstanceAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttribute">REST API Reference for ResetInstanceAttribute Operation</seealso>
         public ResetInstanceAttributeResponse ResetInstanceAttribute(ResetInstanceAttributeRequest request)
         {
             var marshaller = new ResetInstanceAttributeRequestMarshaller();
@@ -13386,6 +14046,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetInstanceAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttribute">REST API Reference for ResetInstanceAttribute Operation</seealso>
         public IAsyncResult BeginResetInstanceAttribute(ResetInstanceAttributeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ResetInstanceAttributeRequestMarshaller();
@@ -13402,6 +14063,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetInstanceAttribute.</param>
         /// 
         /// <returns>Returns a  ResetInstanceAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttribute">REST API Reference for ResetInstanceAttribute Operation</seealso>
         public  ResetInstanceAttributeResponse EndResetInstanceAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<ResetInstanceAttributeResponse>(asyncResult);
@@ -13417,6 +14079,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ResetNetworkInterfaceAttribute service method.</param>
         /// 
         /// <returns>The response from the ResetNetworkInterfaceAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetNetworkInterfaceAttribute">REST API Reference for ResetNetworkInterfaceAttribute Operation</seealso>
         public ResetNetworkInterfaceAttributeResponse ResetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest request)
         {
             var marshaller = new ResetNetworkInterfaceAttributeRequestMarshaller();
@@ -13436,6 +14099,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetNetworkInterfaceAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetNetworkInterfaceAttribute">REST API Reference for ResetNetworkInterfaceAttribute Operation</seealso>
         public IAsyncResult BeginResetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ResetNetworkInterfaceAttributeRequestMarshaller();
@@ -13452,6 +14116,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetNetworkInterfaceAttribute.</param>
         /// 
         /// <returns>Returns a  ResetNetworkInterfaceAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetNetworkInterfaceAttribute">REST API Reference for ResetNetworkInterfaceAttribute Operation</seealso>
         public  ResetNetworkInterfaceAttributeResponse EndResetNetworkInterfaceAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<ResetNetworkInterfaceAttributeResponse>(asyncResult);
@@ -13473,6 +14138,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ResetSnapshotAttribute service method.</param>
         /// 
         /// <returns>The response from the ResetSnapshotAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute">REST API Reference for ResetSnapshotAttribute Operation</seealso>
         public ResetSnapshotAttributeResponse ResetSnapshotAttribute(ResetSnapshotAttributeRequest request)
         {
             var marshaller = new ResetSnapshotAttributeRequestMarshaller();
@@ -13492,6 +14158,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetSnapshotAttribute
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute">REST API Reference for ResetSnapshotAttribute Operation</seealso>
         public IAsyncResult BeginResetSnapshotAttribute(ResetSnapshotAttributeRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ResetSnapshotAttributeRequestMarshaller();
@@ -13508,6 +14175,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetSnapshotAttribute.</param>
         /// 
         /// <returns>Returns a  ResetSnapshotAttributeResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute">REST API Reference for ResetSnapshotAttribute Operation</seealso>
         public  ResetSnapshotAttributeResponse EndResetSnapshotAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<ResetSnapshotAttributeResponse>(asyncResult);
@@ -13526,6 +14194,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RestoreAddressToClassic service method.</param>
         /// 
         /// <returns>The response from the RestoreAddressToClassic service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreAddressToClassic">REST API Reference for RestoreAddressToClassic Operation</seealso>
         public RestoreAddressToClassicResponse RestoreAddressToClassic(RestoreAddressToClassicRequest request)
         {
             var marshaller = new RestoreAddressToClassicRequestMarshaller();
@@ -13545,6 +14214,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRestoreAddressToClassic
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreAddressToClassic">REST API Reference for RestoreAddressToClassic Operation</seealso>
         public IAsyncResult BeginRestoreAddressToClassic(RestoreAddressToClassicRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RestoreAddressToClassicRequestMarshaller();
@@ -13561,6 +14231,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRestoreAddressToClassic.</param>
         /// 
         /// <returns>Returns a  RestoreAddressToClassicResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreAddressToClassic">REST API Reference for RestoreAddressToClassic Operation</seealso>
         public  RestoreAddressToClassicResponse EndRestoreAddressToClassic(IAsyncResult asyncResult)
         {
             return EndInvoke<RestoreAddressToClassicResponse>(asyncResult);
@@ -13591,6 +14262,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RevokeSecurityGroupEgress service method.</param>
         /// 
         /// <returns>The response from the RevokeSecurityGroupEgress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">REST API Reference for RevokeSecurityGroupEgress Operation</seealso>
         public RevokeSecurityGroupEgressResponse RevokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest request)
         {
             var marshaller = new RevokeSecurityGroupEgressRequestMarshaller();
@@ -13610,6 +14282,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeSecurityGroupEgress
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">REST API Reference for RevokeSecurityGroupEgress Operation</seealso>
         public IAsyncResult BeginRevokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RevokeSecurityGroupEgressRequestMarshaller();
@@ -13626,6 +14299,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeSecurityGroupEgress.</param>
         /// 
         /// <returns>Returns a  RevokeSecurityGroupEgressResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">REST API Reference for RevokeSecurityGroupEgress Operation</seealso>
         public  RevokeSecurityGroupEgressResponse EndRevokeSecurityGroupEgress(IAsyncResult asyncResult)
         {
             return EndInvoke<RevokeSecurityGroupEgressResponse>(asyncResult);
@@ -13655,6 +14329,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RevokeSecurityGroupIngress service method.</param>
         /// 
         /// <returns>The response from the RevokeSecurityGroupIngress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">REST API Reference for RevokeSecurityGroupIngress Operation</seealso>
         public RevokeSecurityGroupIngressResponse RevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request)
         {
             var marshaller = new RevokeSecurityGroupIngressRequestMarshaller();
@@ -13674,6 +14349,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeSecurityGroupIngress
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">REST API Reference for RevokeSecurityGroupIngress Operation</seealso>
         public IAsyncResult BeginRevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RevokeSecurityGroupIngressRequestMarshaller();
@@ -13690,6 +14366,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeSecurityGroupIngress.</param>
         /// 
         /// <returns>Returns a  RevokeSecurityGroupIngressResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">REST API Reference for RevokeSecurityGroupIngress Operation</seealso>
         public  RevokeSecurityGroupIngressResponse EndRevokeSecurityGroupIngress(IAsyncResult asyncResult)
         {
             return EndInvoke<RevokeSecurityGroupIngressResponse>(asyncResult);
@@ -13777,6 +14454,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RunInstances service method.</param>
         /// 
         /// <returns>The response from the RunInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">REST API Reference for RunInstances Operation</seealso>
         public RunInstancesResponse RunInstances(RunInstancesRequest request)
         {
             var marshaller = new RunInstancesRequestMarshaller();
@@ -13796,6 +14474,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRunInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">REST API Reference for RunInstances Operation</seealso>
         public IAsyncResult BeginRunInstances(RunInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RunInstancesRequestMarshaller();
@@ -13812,6 +14491,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRunInstances.</param>
         /// 
         /// <returns>Returns a  RunInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">REST API Reference for RunInstances Operation</seealso>
         public  RunInstancesResponse EndRunInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<RunInstancesResponse>(asyncResult);
@@ -13841,6 +14521,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RunScheduledInstances service method.</param>
         /// 
         /// <returns>The response from the RunScheduledInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances">REST API Reference for RunScheduledInstances Operation</seealso>
         public RunScheduledInstancesResponse RunScheduledInstances(RunScheduledInstancesRequest request)
         {
             var marshaller = new RunScheduledInstancesRequestMarshaller();
@@ -13860,6 +14541,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRunScheduledInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances">REST API Reference for RunScheduledInstances Operation</seealso>
         public IAsyncResult BeginRunScheduledInstances(RunScheduledInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RunScheduledInstancesRequestMarshaller();
@@ -13876,6 +14558,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRunScheduledInstances.</param>
         /// 
         /// <returns>Returns a  RunScheduledInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances">REST API Reference for RunScheduledInstances Operation</seealso>
         public  RunScheduledInstancesResponse EndRunScheduledInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<RunScheduledInstancesResponse>(asyncResult);
@@ -13917,6 +14600,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the StartInstances service method.</param>
         /// 
         /// <returns>The response from the StartInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">REST API Reference for StartInstances Operation</seealso>
         public StartInstancesResponse StartInstances(StartInstancesRequest request)
         {
             var marshaller = new StartInstancesRequestMarshaller();
@@ -13936,6 +14620,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">REST API Reference for StartInstances Operation</seealso>
         public IAsyncResult BeginStartInstances(StartInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StartInstancesRequestMarshaller();
@@ -13952,6 +14637,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartInstances.</param>
         /// 
         /// <returns>Returns a  StartInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">REST API Reference for StartInstances Operation</seealso>
         public  StartInstancesResponse EndStartInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<StartInstancesResponse>(asyncResult);
@@ -14002,6 +14688,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the StopInstances service method.</param>
         /// 
         /// <returns>The response from the StopInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">REST API Reference for StopInstances Operation</seealso>
         public StopInstancesResponse StopInstances(StopInstancesRequest request)
         {
             var marshaller = new StopInstancesRequestMarshaller();
@@ -14021,6 +14708,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">REST API Reference for StopInstances Operation</seealso>
         public IAsyncResult BeginStopInstances(StopInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new StopInstancesRequestMarshaller();
@@ -14037,6 +14725,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopInstances.</param>
         /// 
         /// <returns>Returns a  StopInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">REST API Reference for StopInstances Operation</seealso>
         public  StopInstancesResponse EndStopInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<StopInstancesResponse>(asyncResult);
@@ -14084,6 +14773,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the TerminateInstances service method.</param>
         /// 
         /// <returns>The response from the TerminateInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances">REST API Reference for TerminateInstances Operation</seealso>
         public TerminateInstancesResponse TerminateInstances(TerminateInstancesRequest request)
         {
             var marshaller = new TerminateInstancesRequestMarshaller();
@@ -14103,6 +14793,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTerminateInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances">REST API Reference for TerminateInstances Operation</seealso>
         public IAsyncResult BeginTerminateInstances(TerminateInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new TerminateInstancesRequestMarshaller();
@@ -14119,6 +14810,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTerminateInstances.</param>
         /// 
         /// <returns>Returns a  TerminateInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances">REST API Reference for TerminateInstances Operation</seealso>
         public  TerminateInstancesResponse EndTerminateInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<TerminateInstancesResponse>(asyncResult);
@@ -14134,6 +14826,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the UnassignIpv6Addresses service method.</param>
         /// 
         /// <returns>The response from the UnassignIpv6Addresses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses">REST API Reference for UnassignIpv6Addresses Operation</seealso>
         public UnassignIpv6AddressesResponse UnassignIpv6Addresses(UnassignIpv6AddressesRequest request)
         {
             var marshaller = new UnassignIpv6AddressesRequestMarshaller();
@@ -14153,6 +14846,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnassignIpv6Addresses
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses">REST API Reference for UnassignIpv6Addresses Operation</seealso>
         public IAsyncResult BeginUnassignIpv6Addresses(UnassignIpv6AddressesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UnassignIpv6AddressesRequestMarshaller();
@@ -14169,6 +14863,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnassignIpv6Addresses.</param>
         /// 
         /// <returns>Returns a  UnassignIpv6AddressesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses">REST API Reference for UnassignIpv6Addresses Operation</seealso>
         public  UnassignIpv6AddressesResponse EndUnassignIpv6Addresses(IAsyncResult asyncResult)
         {
             return EndInvoke<UnassignIpv6AddressesResponse>(asyncResult);
@@ -14184,6 +14879,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the UnassignPrivateIpAddresses service method.</param>
         /// 
         /// <returns>The response from the UnassignPrivateIpAddresses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses">REST API Reference for UnassignPrivateIpAddresses Operation</seealso>
         public UnassignPrivateIpAddressesResponse UnassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest request)
         {
             var marshaller = new UnassignPrivateIpAddressesRequestMarshaller();
@@ -14203,6 +14899,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnassignPrivateIpAddresses
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses">REST API Reference for UnassignPrivateIpAddresses Operation</seealso>
         public IAsyncResult BeginUnassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UnassignPrivateIpAddressesRequestMarshaller();
@@ -14219,6 +14916,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnassignPrivateIpAddresses.</param>
         /// 
         /// <returns>Returns a  UnassignPrivateIpAddressesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses">REST API Reference for UnassignPrivateIpAddresses Operation</seealso>
         public  UnassignPrivateIpAddressesResponse EndUnassignPrivateIpAddresses(IAsyncResult asyncResult)
         {
             return EndInvoke<UnassignPrivateIpAddressesResponse>(asyncResult);
@@ -14236,6 +14934,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the UnmonitorInstances service method.</param>
         /// 
         /// <returns>The response from the UnmonitorInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">REST API Reference for UnmonitorInstances Operation</seealso>
         public UnmonitorInstancesResponse UnmonitorInstances(UnmonitorInstancesRequest request)
         {
             var marshaller = new UnmonitorInstancesRequestMarshaller();
@@ -14255,6 +14954,7 @@ namespace Amazon.EC2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnmonitorInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">REST API Reference for UnmonitorInstances Operation</seealso>
         public IAsyncResult BeginUnmonitorInstances(UnmonitorInstancesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new UnmonitorInstancesRequestMarshaller();
@@ -14271,6 +14971,7 @@ namespace Amazon.EC2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnmonitorInstances.</param>
         /// 
         /// <returns>Returns a  UnmonitorInstancesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">REST API Reference for UnmonitorInstances Operation</seealso>
         public  UnmonitorInstancesResponse EndUnmonitorInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<UnmonitorInstancesResponse>(asyncResult);

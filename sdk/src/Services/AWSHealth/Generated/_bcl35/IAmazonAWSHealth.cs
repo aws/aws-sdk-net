@@ -59,6 +59,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         DescribeAffectedEntitiesResponse DescribeAffectedEntities(DescribeAffectedEntitiesRequest request);
 
         /// <summary>
@@ -72,6 +73,7 @@ namespace Amazon.AWSHealth
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAffectedEntities
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         IAsyncResult BeginDescribeAffectedEntities(DescribeAffectedEntitiesRequest request, AsyncCallback callback, object state);
 
 
@@ -83,6 +85,7 @@ namespace Amazon.AWSHealth
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAffectedEntities.</param>
         /// 
         /// <returns>Returns a  DescribeAffectedEntitiesResult from AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         DescribeAffectedEntitiesResponse EndDescribeAffectedEntities(IAsyncResult asyncResult);
 
         #endregion
@@ -96,6 +99,7 @@ namespace Amazon.AWSHealth
         /// <param name="request">Container for the necessary parameters to execute the DescribeEntityAggregates service method.</param>
         /// 
         /// <returns>The response from the DescribeEntityAggregates service method, as returned by AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">REST API Reference for DescribeEntityAggregates Operation</seealso>
         DescribeEntityAggregatesResponse DescribeEntityAggregates(DescribeEntityAggregatesRequest request);
 
         /// <summary>
@@ -109,6 +113,7 @@ namespace Amazon.AWSHealth
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEntityAggregates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">REST API Reference for DescribeEntityAggregates Operation</seealso>
         IAsyncResult BeginDescribeEntityAggregates(DescribeEntityAggregatesRequest request, AsyncCallback callback, object state);
 
 
@@ -120,6 +125,7 @@ namespace Amazon.AWSHealth
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEntityAggregates.</param>
         /// 
         /// <returns>Returns a  DescribeEntityAggregatesResult from AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEntityAggregates">REST API Reference for DescribeEntityAggregates Operation</seealso>
         DescribeEntityAggregatesResponse EndDescribeEntityAggregates(IAsyncResult asyncResult);
 
         #endregion
@@ -136,6 +142,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         DescribeEventAggregatesResponse DescribeEventAggregates(DescribeEventAggregatesRequest request);
 
         /// <summary>
@@ -149,6 +156,7 @@ namespace Amazon.AWSHealth
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEventAggregates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         IAsyncResult BeginDescribeEventAggregates(DescribeEventAggregatesRequest request, AsyncCallback callback, object state);
 
 
@@ -160,6 +168,7 @@ namespace Amazon.AWSHealth
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventAggregates.</param>
         /// 
         /// <returns>Returns a  DescribeEventAggregatesResult from AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         DescribeEventAggregatesResponse EndDescribeEventAggregates(IAsyncResult asyncResult);
 
         #endregion
@@ -178,6 +187,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         DescribeEventDetailsResponse DescribeEventDetails(DescribeEventDetailsRequest request);
 
         /// <summary>
@@ -191,6 +201,7 @@ namespace Amazon.AWSHealth
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEventDetails
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         IAsyncResult BeginDescribeEventDetails(DescribeEventDetailsRequest request, AsyncCallback callback, object state);
 
 
@@ -202,6 +213,7 @@ namespace Amazon.AWSHealth
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventDetails.</param>
         /// 
         /// <returns>Returns a  DescribeEventDetailsResult from AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         DescribeEventDetailsResponse EndDescribeEventDetails(IAsyncResult asyncResult);
 
         #endregion
@@ -226,6 +238,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         DescribeEventsResponse DescribeEvents(DescribeEventsRequest request);
 
         /// <summary>
@@ -239,6 +252,7 @@ namespace Amazon.AWSHealth
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEvents
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         IAsyncResult BeginDescribeEvents(DescribeEventsRequest request, AsyncCallback callback, object state);
 
 
@@ -250,6 +264,7 @@ namespace Amazon.AWSHealth
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEvents.</param>
         /// 
         /// <returns>Returns a  DescribeEventsResult from AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult);
 
         #endregion
@@ -271,6 +286,7 @@ namespace Amazon.AWSHealth
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         DescribeEventTypesResponse DescribeEventTypes(DescribeEventTypesRequest request);
 
         /// <summary>
@@ -284,6 +300,7 @@ namespace Amazon.AWSHealth
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEventTypes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         IAsyncResult BeginDescribeEventTypes(DescribeEventTypesRequest request, AsyncCallback callback, object state);
 
 
@@ -295,6 +312,7 @@ namespace Amazon.AWSHealth
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEventTypes.</param>
         /// 
         /// <returns>Returns a  DescribeEventTypesResult from AWSHealth.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         DescribeEventTypesResponse EndDescribeEventTypes(IAsyncResult asyncResult);
 
         #endregion

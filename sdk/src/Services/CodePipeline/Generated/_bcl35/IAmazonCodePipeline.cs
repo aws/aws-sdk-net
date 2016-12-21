@@ -233,6 +233,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeJob">REST API Reference for AcknowledgeJob Operation</seealso>
         AcknowledgeJobResponse AcknowledgeJob(string jobId, string nonce);
 
         /// <summary>
@@ -251,6 +252,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeJob">REST API Reference for AcknowledgeJob Operation</seealso>
         AcknowledgeJobResponse AcknowledgeJob(AcknowledgeJobRequest request);
 
         /// <summary>
@@ -264,6 +266,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcknowledgeJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeJob">REST API Reference for AcknowledgeJob Operation</seealso>
         IAsyncResult BeginAcknowledgeJob(AcknowledgeJobRequest request, AsyncCallback callback, object state);
 
 
@@ -275,6 +278,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcknowledgeJob.</param>
         /// 
         /// <returns>Returns a  AcknowledgeJobResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeJob">REST API Reference for AcknowledgeJob Operation</seealso>
         AcknowledgeJobResponse EndAcknowledgeJob(IAsyncResult asyncResult);
 
         #endregion
@@ -302,6 +306,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeThirdPartyJob">REST API Reference for AcknowledgeThirdPartyJob Operation</seealso>
         AcknowledgeThirdPartyJobResponse AcknowledgeThirdPartyJob(string clientToken, string jobId, string nonce);
 
         /// <summary>
@@ -322,6 +327,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeThirdPartyJob">REST API Reference for AcknowledgeThirdPartyJob Operation</seealso>
         AcknowledgeThirdPartyJobResponse AcknowledgeThirdPartyJob(AcknowledgeThirdPartyJobRequest request);
 
         /// <summary>
@@ -335,6 +341,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcknowledgeThirdPartyJob
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeThirdPartyJob">REST API Reference for AcknowledgeThirdPartyJob Operation</seealso>
         IAsyncResult BeginAcknowledgeThirdPartyJob(AcknowledgeThirdPartyJobRequest request, AsyncCallback callback, object state);
 
 
@@ -346,6 +353,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcknowledgeThirdPartyJob.</param>
         /// 
         /// <returns>Returns a  AcknowledgeThirdPartyJobResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AcknowledgeThirdPartyJob">REST API Reference for AcknowledgeThirdPartyJob Operation</seealso>
         AcknowledgeThirdPartyJobResponse EndAcknowledgeThirdPartyJob(IAsyncResult asyncResult);
 
         #endregion
@@ -367,6 +375,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreateCustomActionType">REST API Reference for CreateCustomActionType Operation</seealso>
         CreateCustomActionTypeResponse CreateCustomActionType(CreateCustomActionTypeRequest request);
 
         /// <summary>
@@ -380,6 +389,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCustomActionType
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreateCustomActionType">REST API Reference for CreateCustomActionType Operation</seealso>
         IAsyncResult BeginCreateCustomActionType(CreateCustomActionTypeRequest request, AsyncCallback callback, object state);
 
 
@@ -391,6 +401,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCustomActionType.</param>
         /// 
         /// <returns>Returns a  CreateCustomActionTypeResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreateCustomActionType">REST API Reference for CreateCustomActionType Operation</seealso>
         CreateCustomActionTypeResponse EndCreateCustomActionType(IAsyncResult asyncResult);
 
         #endregion
@@ -426,6 +437,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         CreatePipelineResponse CreatePipeline(PipelineDeclaration pipeline);
 
         /// <summary>
@@ -456,6 +468,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         CreatePipelineResponse CreatePipeline(CreatePipelineRequest request);
 
         /// <summary>
@@ -469,6 +482,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePipeline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         IAsyncResult BeginCreatePipeline(CreatePipelineRequest request, AsyncCallback callback, object state);
 
 
@@ -480,6 +494,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePipeline.</param>
         /// 
         /// <returns>Returns a  CreatePipelineResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/CreatePipeline">REST API Reference for CreatePipeline Operation</seealso>
         CreatePipelineResponse EndCreatePipeline(IAsyncResult asyncResult);
 
         #endregion
@@ -504,6 +519,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType">REST API Reference for DeleteCustomActionType Operation</seealso>
         DeleteCustomActionTypeResponse DeleteCustomActionType(DeleteCustomActionTypeRequest request);
 
         /// <summary>
@@ -517,6 +533,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCustomActionType
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType">REST API Reference for DeleteCustomActionType Operation</seealso>
         IAsyncResult BeginDeleteCustomActionType(DeleteCustomActionTypeRequest request, AsyncCallback callback, object state);
 
 
@@ -528,6 +545,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCustomActionType.</param>
         /// 
         /// <returns>Returns a  DeleteCustomActionTypeResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteCustomActionType">REST API Reference for DeleteCustomActionType Operation</seealso>
         DeleteCustomActionTypeResponse EndDeleteCustomActionType(IAsyncResult asyncResult);
 
         #endregion
@@ -544,6 +562,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         DeletePipelineResponse DeletePipeline(string name);
 
         /// <summary>
@@ -555,6 +574,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         DeletePipelineResponse DeletePipeline(DeletePipelineRequest request);
 
         /// <summary>
@@ -568,6 +588,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePipeline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         IAsyncResult BeginDeletePipeline(DeletePipelineRequest request, AsyncCallback callback, object state);
 
 
@@ -579,6 +600,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePipeline.</param>
         /// 
         /// <returns>Returns a  DeletePipelineResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeletePipeline">REST API Reference for DeletePipeline Operation</seealso>
         DeletePipelineResponse EndDeletePipeline(IAsyncResult asyncResult);
 
         #endregion
@@ -601,6 +623,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DisableStageTransition">REST API Reference for DisableStageTransition Operation</seealso>
         DisableStageTransitionResponse DisableStageTransition(DisableStageTransitionRequest request);
 
         /// <summary>
@@ -614,6 +637,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableStageTransition
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DisableStageTransition">REST API Reference for DisableStageTransition Operation</seealso>
         IAsyncResult BeginDisableStageTransition(DisableStageTransitionRequest request, AsyncCallback callback, object state);
 
 
@@ -625,6 +649,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableStageTransition.</param>
         /// 
         /// <returns>Returns a  DisableStageTransitionResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DisableStageTransition">REST API Reference for DisableStageTransition Operation</seealso>
         DisableStageTransitionResponse EndDisableStageTransition(IAsyncResult asyncResult);
 
         #endregion
@@ -647,6 +672,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EnableStageTransition">REST API Reference for EnableStageTransition Operation</seealso>
         EnableStageTransitionResponse EnableStageTransition(EnableStageTransitionRequest request);
 
         /// <summary>
@@ -660,6 +686,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableStageTransition
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EnableStageTransition">REST API Reference for EnableStageTransition Operation</seealso>
         IAsyncResult BeginEnableStageTransition(EnableStageTransitionRequest request, AsyncCallback callback, object state);
 
 
@@ -671,6 +698,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableStageTransition.</param>
         /// 
         /// <returns>Returns a  EnableStageTransitionResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/EnableStageTransition">REST API Reference for EnableStageTransition Operation</seealso>
         EnableStageTransitionResponse EndEnableStageTransition(IAsyncResult asyncResult);
 
         #endregion
@@ -699,6 +727,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">REST API Reference for GetJobDetails Operation</seealso>
         GetJobDetailsResponse GetJobDetails(string jobId);
 
         /// <summary>
@@ -722,6 +751,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">REST API Reference for GetJobDetails Operation</seealso>
         GetJobDetailsResponse GetJobDetails(GetJobDetailsRequest request);
 
         /// <summary>
@@ -735,6 +765,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJobDetails
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">REST API Reference for GetJobDetails Operation</seealso>
         IAsyncResult BeginGetJobDetails(GetJobDetailsRequest request, AsyncCallback callback, object state);
 
 
@@ -746,6 +777,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJobDetails.</param>
         /// 
         /// <returns>Returns a  GetJobDetailsResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">REST API Reference for GetJobDetails Operation</seealso>
         GetJobDetailsResponse EndGetJobDetails(IAsyncResult asyncResult);
 
         #endregion
@@ -771,6 +803,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
         GetPipelineResponse GetPipeline(string name, int version);
 
         /// <summary>
@@ -790,6 +823,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
         GetPipelineResponse GetPipeline(string name);
 
         /// <summary>
@@ -809,6 +843,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
         GetPipelineResponse GetPipeline(GetPipelineRequest request);
 
         /// <summary>
@@ -822,6 +857,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPipeline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
         IAsyncResult BeginGetPipeline(GetPipelineRequest request, AsyncCallback callback, object state);
 
 
@@ -833,6 +869,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPipeline.</param>
         /// 
         /// <returns>Returns a  GetPipelineResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipeline">REST API Reference for GetPipeline Operation</seealso>
         GetPipelineResponse EndGetPipeline(IAsyncResult asyncResult);
 
         #endregion
@@ -857,6 +894,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineExecution">REST API Reference for GetPipelineExecution Operation</seealso>
         GetPipelineExecutionResponse GetPipelineExecution(GetPipelineExecutionRequest request);
 
         /// <summary>
@@ -870,6 +908,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPipelineExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineExecution">REST API Reference for GetPipelineExecution Operation</seealso>
         IAsyncResult BeginGetPipelineExecution(GetPipelineExecutionRequest request, AsyncCallback callback, object state);
 
 
@@ -881,6 +920,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPipelineExecution.</param>
         /// 
         /// <returns>Returns a  GetPipelineExecutionResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineExecution">REST API Reference for GetPipelineExecution Operation</seealso>
         GetPipelineExecutionResponse EndGetPipelineExecution(IAsyncResult asyncResult);
 
         #endregion
@@ -900,6 +940,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">REST API Reference for GetPipelineState Operation</seealso>
         GetPipelineStateResponse GetPipelineState(string name);
 
         /// <summary>
@@ -914,6 +955,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">REST API Reference for GetPipelineState Operation</seealso>
         GetPipelineStateResponse GetPipelineState(GetPipelineStateRequest request);
 
         /// <summary>
@@ -927,6 +969,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPipelineState
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">REST API Reference for GetPipelineState Operation</seealso>
         IAsyncResult BeginGetPipelineState(GetPipelineStateRequest request, AsyncCallback callback, object state);
 
 
@@ -938,6 +981,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPipelineState.</param>
         /// 
         /// <returns>Returns a  GetPipelineStateResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetPipelineState">REST API Reference for GetPipelineState Operation</seealso>
         GetPipelineStateResponse EndGetPipelineState(IAsyncResult asyncResult);
 
         #endregion
@@ -973,6 +1017,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">REST API Reference for GetThirdPartyJobDetails Operation</seealso>
         GetThirdPartyJobDetailsResponse GetThirdPartyJobDetails(string clientToken, string jobId);
 
         /// <summary>
@@ -1002,6 +1047,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">REST API Reference for GetThirdPartyJobDetails Operation</seealso>
         GetThirdPartyJobDetailsResponse GetThirdPartyJobDetails(GetThirdPartyJobDetailsRequest request);
 
         /// <summary>
@@ -1015,6 +1061,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetThirdPartyJobDetails
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">REST API Reference for GetThirdPartyJobDetails Operation</seealso>
         IAsyncResult BeginGetThirdPartyJobDetails(GetThirdPartyJobDetailsRequest request, AsyncCallback callback, object state);
 
 
@@ -1026,6 +1073,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetThirdPartyJobDetails.</param>
         /// 
         /// <returns>Returns a  GetThirdPartyJobDetailsResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">REST API Reference for GetThirdPartyJobDetails Operation</seealso>
         GetThirdPartyJobDetailsResponse EndGetThirdPartyJobDetails(IAsyncResult asyncResult);
 
         #endregion
@@ -1045,6 +1093,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes">REST API Reference for ListActionTypes Operation</seealso>
         ListActionTypesResponse ListActionTypes();
 
         /// <summary>
@@ -1060,6 +1109,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes">REST API Reference for ListActionTypes Operation</seealso>
         ListActionTypesResponse ListActionTypes(ActionOwner actionOwnerFilter);
 
         /// <summary>
@@ -1075,6 +1125,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes">REST API Reference for ListActionTypes Operation</seealso>
         ListActionTypesResponse ListActionTypes(ListActionTypesRequest request);
 
         /// <summary>
@@ -1088,6 +1139,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListActionTypes
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes">REST API Reference for ListActionTypes Operation</seealso>
         IAsyncResult BeginListActionTypes(ListActionTypesRequest request, AsyncCallback callback, object state);
 
 
@@ -1099,6 +1151,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListActionTypes.</param>
         /// 
         /// <returns>Returns a  ListActionTypesResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListActionTypes">REST API Reference for ListActionTypes Operation</seealso>
         ListActionTypesResponse EndListActionTypes(IAsyncResult asyncResult);
 
         #endregion
@@ -1115,6 +1168,7 @@ namespace Amazon.CodePipeline
         /// The next token was specified in an invalid format. Make sure that the next token you
         /// provided is the token returned by a previous call.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         ListPipelinesResponse ListPipelines();
 
         /// <summary>
@@ -1127,6 +1181,7 @@ namespace Amazon.CodePipeline
         /// The next token was specified in an invalid format. Make sure that the next token you
         /// provided is the token returned by a previous call.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         ListPipelinesResponse ListPipelines(ListPipelinesRequest request);
 
         /// <summary>
@@ -1140,6 +1195,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPipelines
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         IAsyncResult BeginListPipelines(ListPipelinesRequest request, AsyncCallback callback, object state);
 
 
@@ -1151,6 +1207,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPipelines.</param>
         /// 
         /// <returns>Returns a  ListPipelinesResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListPipelines">REST API Reference for ListPipelines Operation</seealso>
         ListPipelinesResponse EndListPipelines(IAsyncResult asyncResult);
 
         #endregion
@@ -1179,6 +1236,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">REST API Reference for PollForJobs Operation</seealso>
         PollForJobsResponse PollForJobs(PollForJobsRequest request);
 
         /// <summary>
@@ -1192,6 +1250,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPollForJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">REST API Reference for PollForJobs Operation</seealso>
         IAsyncResult BeginPollForJobs(PollForJobsRequest request, AsyncCallback callback, object state);
 
 
@@ -1203,6 +1262,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPollForJobs.</param>
         /// 
         /// <returns>Returns a  PollForJobsResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">REST API Reference for PollForJobs Operation</seealso>
         PollForJobsResponse EndPollForJobs(IAsyncResult asyncResult);
 
         #endregion
@@ -1231,6 +1291,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs">REST API Reference for PollForThirdPartyJobs Operation</seealso>
         PollForThirdPartyJobsResponse PollForThirdPartyJobs(PollForThirdPartyJobsRequest request);
 
         /// <summary>
@@ -1244,6 +1305,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPollForThirdPartyJobs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs">REST API Reference for PollForThirdPartyJobs Operation</seealso>
         IAsyncResult BeginPollForThirdPartyJobs(PollForThirdPartyJobsRequest request, AsyncCallback callback, object state);
 
 
@@ -1255,6 +1317,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPollForThirdPartyJobs.</param>
         /// 
         /// <returns>Returns a  PollForThirdPartyJobsResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs">REST API Reference for PollForThirdPartyJobs Operation</seealso>
         PollForThirdPartyJobsResponse EndPollForThirdPartyJobs(IAsyncResult asyncResult);
 
         #endregion
@@ -1280,6 +1343,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutActionRevision">REST API Reference for PutActionRevision Operation</seealso>
         PutActionRevisionResponse PutActionRevision(PutActionRevisionRequest request);
 
         /// <summary>
@@ -1293,6 +1357,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutActionRevision
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutActionRevision">REST API Reference for PutActionRevision Operation</seealso>
         IAsyncResult BeginPutActionRevision(PutActionRevisionRequest request, AsyncCallback callback, object state);
 
 
@@ -1304,6 +1369,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutActionRevision.</param>
         /// 
         /// <returns>Returns a  PutActionRevisionResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutActionRevision">REST API Reference for PutActionRevision Operation</seealso>
         PutActionRevisionResponse EndPutActionRevision(IAsyncResult asyncResult);
 
         #endregion
@@ -1336,6 +1402,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutApprovalResult">REST API Reference for PutApprovalResult Operation</seealso>
         PutApprovalResultResponse PutApprovalResult(PutApprovalResultRequest request);
 
         /// <summary>
@@ -1349,6 +1416,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutApprovalResult
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutApprovalResult">REST API Reference for PutApprovalResult Operation</seealso>
         IAsyncResult BeginPutApprovalResult(PutApprovalResultRequest request, AsyncCallback callback, object state);
 
 
@@ -1360,6 +1428,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutApprovalResult.</param>
         /// 
         /// <returns>Returns a  PutApprovalResultResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutApprovalResult">REST API Reference for PutApprovalResult Operation</seealso>
         PutApprovalResultResponse EndPutApprovalResult(IAsyncResult asyncResult);
 
         #endregion
@@ -1384,6 +1453,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult">REST API Reference for PutJobFailureResult Operation</seealso>
         PutJobFailureResultResponse PutJobFailureResult(string jobId, FailureDetails failureDetails);
 
         /// <summary>
@@ -1402,6 +1472,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult">REST API Reference for PutJobFailureResult Operation</seealso>
         PutJobFailureResultResponse PutJobFailureResult(PutJobFailureResultRequest request);
 
         /// <summary>
@@ -1415,6 +1486,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutJobFailureResult
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult">REST API Reference for PutJobFailureResult Operation</seealso>
         IAsyncResult BeginPutJobFailureResult(PutJobFailureResultRequest request, AsyncCallback callback, object state);
 
 
@@ -1426,6 +1498,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutJobFailureResult.</param>
         /// 
         /// <returns>Returns a  PutJobFailureResultResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobFailureResult">REST API Reference for PutJobFailureResult Operation</seealso>
         PutJobFailureResultResponse EndPutJobFailureResult(IAsyncResult asyncResult);
 
         #endregion
@@ -1449,6 +1522,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobSuccessResult">REST API Reference for PutJobSuccessResult Operation</seealso>
         PutJobSuccessResultResponse PutJobSuccessResult(PutJobSuccessResultRequest request);
 
         /// <summary>
@@ -1462,6 +1536,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutJobSuccessResult
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobSuccessResult">REST API Reference for PutJobSuccessResult Operation</seealso>
         IAsyncResult BeginPutJobSuccessResult(PutJobSuccessResultRequest request, AsyncCallback callback, object state);
 
 
@@ -1473,6 +1548,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutJobSuccessResult.</param>
         /// 
         /// <returns>Returns a  PutJobSuccessResultResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutJobSuccessResult">REST API Reference for PutJobSuccessResult Operation</seealso>
         PutJobSuccessResultResponse EndPutJobSuccessResult(IAsyncResult asyncResult);
 
         #endregion
@@ -1501,6 +1577,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobFailureResult">REST API Reference for PutThirdPartyJobFailureResult Operation</seealso>
         PutThirdPartyJobFailureResultResponse PutThirdPartyJobFailureResult(string jobId, string clientToken, FailureDetails failureDetails);
 
         /// <summary>
@@ -1522,6 +1599,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobFailureResult">REST API Reference for PutThirdPartyJobFailureResult Operation</seealso>
         PutThirdPartyJobFailureResultResponse PutThirdPartyJobFailureResult(PutThirdPartyJobFailureResultRequest request);
 
         /// <summary>
@@ -1535,6 +1613,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutThirdPartyJobFailureResult
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobFailureResult">REST API Reference for PutThirdPartyJobFailureResult Operation</seealso>
         IAsyncResult BeginPutThirdPartyJobFailureResult(PutThirdPartyJobFailureResultRequest request, AsyncCallback callback, object state);
 
 
@@ -1546,6 +1625,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutThirdPartyJobFailureResult.</param>
         /// 
         /// <returns>Returns a  PutThirdPartyJobFailureResultResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobFailureResult">REST API Reference for PutThirdPartyJobFailureResult Operation</seealso>
         PutThirdPartyJobFailureResultResponse EndPutThirdPartyJobFailureResult(IAsyncResult asyncResult);
 
         #endregion
@@ -1572,6 +1652,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobSuccessResult">REST API Reference for PutThirdPartyJobSuccessResult Operation</seealso>
         PutThirdPartyJobSuccessResultResponse PutThirdPartyJobSuccessResult(PutThirdPartyJobSuccessResultRequest request);
 
         /// <summary>
@@ -1585,6 +1666,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutThirdPartyJobSuccessResult
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobSuccessResult">REST API Reference for PutThirdPartyJobSuccessResult Operation</seealso>
         IAsyncResult BeginPutThirdPartyJobSuccessResult(PutThirdPartyJobSuccessResultRequest request, AsyncCallback callback, object state);
 
 
@@ -1596,6 +1678,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutThirdPartyJobSuccessResult.</param>
         /// 
         /// <returns>Returns a  PutThirdPartyJobSuccessResultResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutThirdPartyJobSuccessResult">REST API Reference for PutThirdPartyJobSuccessResult Operation</seealso>
         PutThirdPartyJobSuccessResultResponse EndPutThirdPartyJobSuccessResult(IAsyncResult asyncResult);
 
         #endregion
@@ -1627,6 +1710,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RetryStageExecution">REST API Reference for RetryStageExecution Operation</seealso>
         RetryStageExecutionResponse RetryStageExecution(RetryStageExecutionRequest request);
 
         /// <summary>
@@ -1640,6 +1724,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRetryStageExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RetryStageExecution">REST API Reference for RetryStageExecution Operation</seealso>
         IAsyncResult BeginRetryStageExecution(RetryStageExecutionRequest request, AsyncCallback callback, object state);
 
 
@@ -1651,6 +1736,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRetryStageExecution.</param>
         /// 
         /// <returns>Returns a  RetryStageExecutionResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RetryStageExecution">REST API Reference for RetryStageExecution Operation</seealso>
         RetryStageExecutionResponse EndRetryStageExecution(IAsyncResult asyncResult);
 
         #endregion
@@ -1671,6 +1757,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
         StartPipelineExecutionResponse StartPipelineExecution(string name);
 
         /// <summary>
@@ -1686,6 +1773,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
         StartPipelineExecutionResponse StartPipelineExecution(StartPipelineExecutionRequest request);
 
         /// <summary>
@@ -1699,6 +1787,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartPipelineExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
         IAsyncResult BeginStartPipelineExecution(StartPipelineExecutionRequest request, AsyncCallback callback, object state);
 
 
@@ -1710,6 +1799,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartPipelineExecution.</param>
         /// 
         /// <returns>Returns a  StartPipelineExecutionResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution">REST API Reference for StartPipelineExecution Operation</seealso>
         StartPipelineExecutionResponse EndStartPipelineExecution(IAsyncResult asyncResult);
 
         #endregion
@@ -1741,6 +1831,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         UpdatePipelineResponse UpdatePipeline(PipelineDeclaration pipeline);
 
         /// <summary>
@@ -1767,6 +1858,7 @@ namespace Amazon.CodePipeline
         /// <exception cref="Amazon.CodePipeline.Model.ValidationException">
         /// The validation was specified in an invalid format.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         UpdatePipelineResponse UpdatePipeline(UpdatePipelineRequest request);
 
         /// <summary>
@@ -1780,6 +1872,7 @@ namespace Amazon.CodePipeline
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePipeline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         IAsyncResult BeginUpdatePipeline(UpdatePipelineRequest request, AsyncCallback callback, object state);
 
 
@@ -1791,6 +1884,7 @@ namespace Amazon.CodePipeline
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePipeline.</param>
         /// 
         /// <returns>Returns a  UpdatePipelineResult from CodePipeline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline">REST API Reference for UpdatePipeline Operation</seealso>
         UpdatePipelineResponse EndUpdatePipeline(IAsyncResult asyncResult);
 
         #endregion

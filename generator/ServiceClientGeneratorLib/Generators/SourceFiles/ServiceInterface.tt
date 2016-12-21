@@ -60,7 +60,7 @@ namespace <#=this.Config.Namespace#>
 #>
         <#=operation.Name#>Response <#=operation.Name#>(<#=operation.Name#>Request request);
 
-<#AddBeginAsyncDocumentation(operation.Name);
+<#AddBeginAsyncDocumentation(operation);
 		if(operation.IsDeprecated)
 		{
 #>
@@ -72,7 +72,7 @@ namespace <#=this.Config.Namespace#>
 
 
 
-<#AddEndAsyncDocumentation(operation.Name);
+<#AddEndAsyncDocumentation(operation);
 		if(operation.IsDeprecated)
 		{
 #>

@@ -310,6 +310,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceInUseException">
         /// The resource is already in use and not available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">REST API Reference for CreateDeliveryStream Operation</seealso>
         public CreateDeliveryStreamResponse CreateDeliveryStream(CreateDeliveryStreamRequest request)
         {
             var marshaller = new CreateDeliveryStreamRequestMarshaller();
@@ -327,6 +328,7 @@ namespace Amazon.KinesisFirehose
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">REST API Reference for CreateDeliveryStream Operation</seealso>
         public Task<CreateDeliveryStreamResponse> CreateDeliveryStreamAsync(CreateDeliveryStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDeliveryStreamRequestMarshaller();
@@ -371,6 +373,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         public DeleteDeliveryStreamResponse DeleteDeliveryStream(string deliveryStreamName)
         {
             var request = new DeleteDeliveryStreamRequest();
@@ -409,6 +412,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         public DeleteDeliveryStreamResponse DeleteDeliveryStream(DeleteDeliveryStreamRequest request)
         {
             var marshaller = new DeleteDeliveryStreamRequestMarshaller();
@@ -451,6 +455,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         public Task<DeleteDeliveryStreamResponse> DeleteDeliveryStreamAsync(string deliveryStreamName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new DeleteDeliveryStreamRequest();
@@ -467,6 +472,7 @@ namespace Amazon.KinesisFirehose
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         public Task<DeleteDeliveryStreamResponse> DeleteDeliveryStreamAsync(DeleteDeliveryStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDeliveryStreamRequestMarshaller();
@@ -492,6 +498,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream">REST API Reference for DescribeDeliveryStream Operation</seealso>
         public DescribeDeliveryStreamResponse DescribeDeliveryStream(DescribeDeliveryStreamRequest request)
         {
             var marshaller = new DescribeDeliveryStreamRequestMarshaller();
@@ -509,6 +516,7 @@ namespace Amazon.KinesisFirehose
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream">REST API Reference for DescribeDeliveryStream Operation</seealso>
         public Task<DescribeDeliveryStreamResponse> DescribeDeliveryStreamAsync(DescribeDeliveryStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDeliveryStreamRequestMarshaller();
@@ -539,6 +547,7 @@ namespace Amazon.KinesisFirehose
         /// </summary>
         /// 
         /// <returns>The response from the ListDeliveryStreams service method, as returned by KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         public ListDeliveryStreamsResponse ListDeliveryStreams()
         {
             return ListDeliveryStreams(new ListDeliveryStreamsRequest());
@@ -562,6 +571,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="request">Container for the necessary parameters to execute the ListDeliveryStreams service method.</param>
         /// 
         /// <returns>The response from the ListDeliveryStreams service method, as returned by KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         public ListDeliveryStreamsResponse ListDeliveryStreams(ListDeliveryStreamsRequest request)
         {
             var marshaller = new ListDeliveryStreamsRequestMarshaller();
@@ -590,6 +600,7 @@ namespace Amazon.KinesisFirehose
         /// </param>
         /// 
         /// <returns>The response from the ListDeliveryStreams service method, as returned by KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         public Task<ListDeliveryStreamsResponse> ListDeliveryStreamsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return ListDeliveryStreamsAsync(new ListDeliveryStreamsRequest(), cancellationToken);
@@ -603,6 +614,7 @@ namespace Amazon.KinesisFirehose
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         public Task<ListDeliveryStreamsResponse> ListDeliveryStreamsAsync(ListDeliveryStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListDeliveryStreamsRequestMarshaller();
@@ -681,6 +693,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         public PutRecordResponse PutRecord(string deliveryStreamName, Record record)
         {
             var request = new PutRecordRequest();
@@ -753,6 +766,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         public PutRecordResponse PutRecord(PutRecordRequest request)
         {
             var marshaller = new PutRecordRequestMarshaller();
@@ -829,6 +843,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         public Task<PutRecordResponse> PutRecordAsync(string deliveryStreamName, Record record, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new PutRecordRequest();
@@ -846,6 +861,7 @@ namespace Amazon.KinesisFirehose
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         public Task<PutRecordResponse> PutRecordAsync(PutRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutRecordRequestMarshaller();
@@ -951,6 +967,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         public PutRecordBatchResponse PutRecordBatch(string deliveryStreamName, List<Record> records)
         {
             var request = new PutRecordBatchRequest();
@@ -1050,6 +1067,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         public PutRecordBatchResponse PutRecordBatch(PutRecordBatchRequest request)
         {
             var marshaller = new PutRecordBatchRequestMarshaller();
@@ -1153,6 +1171,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         public Task<PutRecordBatchResponse> PutRecordBatchAsync(string deliveryStreamName, List<Record> records, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var request = new PutRecordBatchRequest();
@@ -1170,6 +1189,7 @@ namespace Amazon.KinesisFirehose
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         public Task<PutRecordBatchResponse> PutRecordBatchAsync(PutRecordBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PutRecordBatchRequestMarshaller();
@@ -1242,6 +1262,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">REST API Reference for UpdateDestination Operation</seealso>
         public UpdateDestinationResponse UpdateDestination(UpdateDestinationRequest request)
         {
             var marshaller = new UpdateDestinationRequestMarshaller();
@@ -1259,6 +1280,7 @@ namespace Amazon.KinesisFirehose
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">REST API Reference for UpdateDestination Operation</seealso>
         public Task<UpdateDestinationResponse> UpdateDestinationAsync(UpdateDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateDestinationRequestMarshaller();

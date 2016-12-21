@@ -85,6 +85,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp">REST API Reference for AllocateStaticIp Operation</seealso>
         AllocateStaticIpResponse AllocateStaticIp(AllocateStaticIpRequest request);
 
         /// <summary>
@@ -98,6 +99,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAllocateStaticIp
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp">REST API Reference for AllocateStaticIp Operation</seealso>
         IAsyncResult BeginAllocateStaticIp(AllocateStaticIpRequest request, AsyncCallback callback, object state);
 
 
@@ -109,6 +111,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAllocateStaticIp.</param>
         /// 
         /// <returns>Returns a  AllocateStaticIpResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AllocateStaticIp">REST API Reference for AllocateStaticIp Operation</seealso>
         AllocateStaticIpResponse EndAllocateStaticIp(IAsyncResult asyncResult);
 
         #endregion
@@ -146,6 +149,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp">REST API Reference for AttachStaticIp Operation</seealso>
         AttachStaticIpResponse AttachStaticIp(AttachStaticIpRequest request);
 
         /// <summary>
@@ -159,6 +163,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAttachStaticIp
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp">REST API Reference for AttachStaticIp Operation</seealso>
         IAsyncResult BeginAttachStaticIp(AttachStaticIpRequest request, AsyncCallback callback, object state);
 
 
@@ -170,6 +175,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAttachStaticIp.</param>
         /// 
         /// <returns>Returns a  AttachStaticIpResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachStaticIp">REST API Reference for AttachStaticIp Operation</seealso>
         AttachStaticIpResponse EndAttachStaticIp(IAsyncResult asyncResult);
 
         #endregion
@@ -207,6 +213,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">REST API Reference for CloseInstancePublicPorts Operation</seealso>
         CloseInstancePublicPortsResponse CloseInstancePublicPorts(CloseInstancePublicPortsRequest request);
 
         /// <summary>
@@ -220,6 +227,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCloseInstancePublicPorts
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">REST API Reference for CloseInstancePublicPorts Operation</seealso>
         IAsyncResult BeginCloseInstancePublicPorts(CloseInstancePublicPortsRequest request, AsyncCallback callback, object state);
 
 
@@ -231,6 +239,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCloseInstancePublicPorts.</param>
         /// 
         /// <returns>Returns a  CloseInstancePublicPortsResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">REST API Reference for CloseInstancePublicPorts Operation</seealso>
         CloseInstancePublicPortsResponse EndCloseInstancePublicPorts(IAsyncResult asyncResult);
 
         #endregion
@@ -268,6 +277,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         CreateDomainResponse CreateDomain(CreateDomainRequest request);
 
         /// <summary>
@@ -281,6 +291,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         IAsyncResult BeginCreateDomain(CreateDomainRequest request, AsyncCallback callback, object state);
 
 
@@ -292,6 +303,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDomain.</param>
         /// 
         /// <returns>Returns a  CreateDomainResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">REST API Reference for CreateDomain Operation</seealso>
         CreateDomainResponse EndCreateDomain(IAsyncResult asyncResult);
 
         #endregion
@@ -330,6 +342,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">REST API Reference for CreateDomainEntry Operation</seealso>
         CreateDomainEntryResponse CreateDomainEntry(CreateDomainEntryRequest request);
 
         /// <summary>
@@ -343,6 +356,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDomainEntry
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">REST API Reference for CreateDomainEntry Operation</seealso>
         IAsyncResult BeginCreateDomainEntry(CreateDomainEntryRequest request, AsyncCallback callback, object state);
 
 
@@ -354,6 +368,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDomainEntry.</param>
         /// 
         /// <returns>Returns a  CreateDomainEntryResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">REST API Reference for CreateDomainEntry Operation</seealso>
         CreateDomainEntryResponse EndCreateDomainEntry(IAsyncResult asyncResult);
 
         #endregion
@@ -391,6 +406,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances">REST API Reference for CreateInstances Operation</seealso>
         CreateInstancesResponse CreateInstances(CreateInstancesRequest request);
 
         /// <summary>
@@ -404,6 +420,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances">REST API Reference for CreateInstances Operation</seealso>
         IAsyncResult BeginCreateInstances(CreateInstancesRequest request, AsyncCallback callback, object state);
 
 
@@ -415,6 +432,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInstances.</param>
         /// 
         /// <returns>Returns a  CreateInstancesResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances">REST API Reference for CreateInstances Operation</seealso>
         CreateInstancesResponse EndCreateInstances(IAsyncResult asyncResult);
 
         #endregion
@@ -453,6 +471,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot">REST API Reference for CreateInstancesFromSnapshot Operation</seealso>
         CreateInstancesFromSnapshotResponse CreateInstancesFromSnapshot(CreateInstancesFromSnapshotRequest request);
 
         /// <summary>
@@ -466,6 +485,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInstancesFromSnapshot
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot">REST API Reference for CreateInstancesFromSnapshot Operation</seealso>
         IAsyncResult BeginCreateInstancesFromSnapshot(CreateInstancesFromSnapshotRequest request, AsyncCallback callback, object state);
 
 
@@ -477,6 +497,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInstancesFromSnapshot.</param>
         /// 
         /// <returns>Returns a  CreateInstancesFromSnapshotResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot">REST API Reference for CreateInstancesFromSnapshot Operation</seealso>
         CreateInstancesFromSnapshotResponse EndCreateInstancesFromSnapshot(IAsyncResult asyncResult);
 
         #endregion
@@ -515,6 +536,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot">REST API Reference for CreateInstanceSnapshot Operation</seealso>
         CreateInstanceSnapshotResponse CreateInstanceSnapshot(CreateInstanceSnapshotRequest request);
 
         /// <summary>
@@ -528,6 +550,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInstanceSnapshot
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot">REST API Reference for CreateInstanceSnapshot Operation</seealso>
         IAsyncResult BeginCreateInstanceSnapshot(CreateInstanceSnapshotRequest request, AsyncCallback callback, object state);
 
 
@@ -539,6 +562,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInstanceSnapshot.</param>
         /// 
         /// <returns>Returns a  CreateInstanceSnapshotResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot">REST API Reference for CreateInstanceSnapshot Operation</seealso>
         CreateInstanceSnapshotResponse EndCreateInstanceSnapshot(IAsyncResult asyncResult);
 
         #endregion
@@ -576,6 +600,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         CreateKeyPairResponse CreateKeyPair(CreateKeyPairRequest request);
 
         /// <summary>
@@ -589,6 +614,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateKeyPair
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         IAsyncResult BeginCreateKeyPair(CreateKeyPairRequest request, AsyncCallback callback, object state);
 
 
@@ -600,6 +626,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateKeyPair.</param>
         /// 
         /// <returns>Returns a  CreateKeyPairResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         CreateKeyPairResponse EndCreateKeyPair(IAsyncResult asyncResult);
 
         #endregion
@@ -637,6 +664,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         DeleteDomainResponse DeleteDomain(DeleteDomainRequest request);
 
         /// <summary>
@@ -650,6 +678,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         IAsyncResult BeginDeleteDomain(DeleteDomainRequest request, AsyncCallback callback, object state);
 
 
@@ -661,6 +690,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomain.</param>
         /// 
         /// <returns>Returns a  DeleteDomainResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">REST API Reference for DeleteDomain Operation</seealso>
         DeleteDomainResponse EndDeleteDomain(IAsyncResult asyncResult);
 
         #endregion
@@ -698,6 +728,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry">REST API Reference for DeleteDomainEntry Operation</seealso>
         DeleteDomainEntryResponse DeleteDomainEntry(DeleteDomainEntryRequest request);
 
         /// <summary>
@@ -711,6 +742,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDomainEntry
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry">REST API Reference for DeleteDomainEntry Operation</seealso>
         IAsyncResult BeginDeleteDomainEntry(DeleteDomainEntryRequest request, AsyncCallback callback, object state);
 
 
@@ -722,6 +754,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDomainEntry.</param>
         /// 
         /// <returns>Returns a  DeleteDomainEntryResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry">REST API Reference for DeleteDomainEntry Operation</seealso>
         DeleteDomainEntryResponse EndDeleteDomainEntry(IAsyncResult asyncResult);
 
         #endregion
@@ -759,6 +792,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request);
 
         /// <summary>
@@ -772,6 +806,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         IAsyncResult BeginDeleteInstance(DeleteInstanceRequest request, AsyncCallback callback, object state);
 
 
@@ -783,6 +818,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInstance.</param>
         /// 
         /// <returns>Returns a  DeleteInstanceResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
         DeleteInstanceResponse EndDeleteInstance(IAsyncResult asyncResult);
 
         #endregion
@@ -820,6 +856,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot">REST API Reference for DeleteInstanceSnapshot Operation</seealso>
         DeleteInstanceSnapshotResponse DeleteInstanceSnapshot(DeleteInstanceSnapshotRequest request);
 
         /// <summary>
@@ -833,6 +870,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInstanceSnapshot
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot">REST API Reference for DeleteInstanceSnapshot Operation</seealso>
         IAsyncResult BeginDeleteInstanceSnapshot(DeleteInstanceSnapshotRequest request, AsyncCallback callback, object state);
 
 
@@ -844,6 +882,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInstanceSnapshot.</param>
         /// 
         /// <returns>Returns a  DeleteInstanceSnapshotResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot">REST API Reference for DeleteInstanceSnapshot Operation</seealso>
         DeleteInstanceSnapshotResponse EndDeleteInstanceSnapshot(IAsyncResult asyncResult);
 
         #endregion
@@ -881,6 +920,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         DeleteKeyPairResponse DeleteKeyPair(DeleteKeyPairRequest request);
 
         /// <summary>
@@ -894,6 +934,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteKeyPair
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         IAsyncResult BeginDeleteKeyPair(DeleteKeyPairRequest request, AsyncCallback callback, object state);
 
 
@@ -905,6 +946,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteKeyPair.</param>
         /// 
         /// <returns>Returns a  DeleteKeyPairResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         DeleteKeyPairResponse EndDeleteKeyPair(IAsyncResult asyncResult);
 
         #endregion
@@ -942,6 +984,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachStaticIp">REST API Reference for DetachStaticIp Operation</seealso>
         DetachStaticIpResponse DetachStaticIp(DetachStaticIpRequest request);
 
         /// <summary>
@@ -955,6 +998,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDetachStaticIp
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachStaticIp">REST API Reference for DetachStaticIp Operation</seealso>
         IAsyncResult BeginDetachStaticIp(DetachStaticIpRequest request, AsyncCallback callback, object state);
 
 
@@ -966,6 +1010,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDetachStaticIp.</param>
         /// 
         /// <returns>Returns a  DetachStaticIpResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachStaticIp">REST API Reference for DetachStaticIp Operation</seealso>
         DetachStaticIpResponse EndDetachStaticIp(IAsyncResult asyncResult);
 
         #endregion
@@ -1003,6 +1048,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair">REST API Reference for DownloadDefaultKeyPair Operation</seealso>
         DownloadDefaultKeyPairResponse DownloadDefaultKeyPair(DownloadDefaultKeyPairRequest request);
 
         /// <summary>
@@ -1016,6 +1062,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDownloadDefaultKeyPair
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair">REST API Reference for DownloadDefaultKeyPair Operation</seealso>
         IAsyncResult BeginDownloadDefaultKeyPair(DownloadDefaultKeyPairRequest request, AsyncCallback callback, object state);
 
 
@@ -1027,6 +1074,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDownloadDefaultKeyPair.</param>
         /// 
         /// <returns>Returns a  DownloadDefaultKeyPairResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DownloadDefaultKeyPair">REST API Reference for DownloadDefaultKeyPair Operation</seealso>
         DownloadDefaultKeyPairResponse EndDownloadDefaultKeyPair(IAsyncResult asyncResult);
 
         #endregion
@@ -1064,6 +1112,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetActiveNames">REST API Reference for GetActiveNames Operation</seealso>
         GetActiveNamesResponse GetActiveNames(GetActiveNamesRequest request);
 
         /// <summary>
@@ -1077,6 +1126,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetActiveNames
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetActiveNames">REST API Reference for GetActiveNames Operation</seealso>
         IAsyncResult BeginGetActiveNames(GetActiveNamesRequest request, AsyncCallback callback, object state);
 
 
@@ -1088,6 +1138,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetActiveNames.</param>
         /// 
         /// <returns>Returns a  GetActiveNamesResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetActiveNames">REST API Reference for GetActiveNames Operation</seealso>
         GetActiveNamesResponse EndGetActiveNames(IAsyncResult asyncResult);
 
         #endregion
@@ -1128,6 +1179,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">REST API Reference for GetBlueprints Operation</seealso>
         GetBlueprintsResponse GetBlueprints(GetBlueprintsRequest request);
 
         /// <summary>
@@ -1141,6 +1193,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBlueprints
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">REST API Reference for GetBlueprints Operation</seealso>
         IAsyncResult BeginGetBlueprints(GetBlueprintsRequest request, AsyncCallback callback, object state);
 
 
@@ -1152,6 +1205,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBlueprints.</param>
         /// 
         /// <returns>Returns a  GetBlueprintsResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBlueprints">REST API Reference for GetBlueprints Operation</seealso>
         GetBlueprintsResponse EndGetBlueprints(IAsyncResult asyncResult);
 
         #endregion
@@ -1190,6 +1244,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles">REST API Reference for GetBundles Operation</seealso>
         GetBundlesResponse GetBundles(GetBundlesRequest request);
 
         /// <summary>
@@ -1203,6 +1258,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBundles
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles">REST API Reference for GetBundles Operation</seealso>
         IAsyncResult BeginGetBundles(GetBundlesRequest request, AsyncCallback callback, object state);
 
 
@@ -1214,6 +1270,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBundles.</param>
         /// 
         /// <returns>Returns a  GetBundlesResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetBundles">REST API Reference for GetBundles Operation</seealso>
         GetBundlesResponse EndGetBundles(IAsyncResult asyncResult);
 
         #endregion
@@ -1251,6 +1308,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain">REST API Reference for GetDomain Operation</seealso>
         GetDomainResponse GetDomain(GetDomainRequest request);
 
         /// <summary>
@@ -1264,6 +1322,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomain
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain">REST API Reference for GetDomain Operation</seealso>
         IAsyncResult BeginGetDomain(GetDomainRequest request, AsyncCallback callback, object state);
 
 
@@ -1275,6 +1334,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomain.</param>
         /// 
         /// <returns>Returns a  GetDomainResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomain">REST API Reference for GetDomain Operation</seealso>
         GetDomainResponse EndGetDomain(IAsyncResult asyncResult);
 
         #endregion
@@ -1312,6 +1372,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains">REST API Reference for GetDomains Operation</seealso>
         GetDomainsResponse GetDomains(GetDomainsRequest request);
 
         /// <summary>
@@ -1325,6 +1386,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomains
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains">REST API Reference for GetDomains Operation</seealso>
         IAsyncResult BeginGetDomains(GetDomainsRequest request, AsyncCallback callback, object state);
 
 
@@ -1336,6 +1398,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomains.</param>
         /// 
         /// <returns>Returns a  GetDomainsResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains">REST API Reference for GetDomains Operation</seealso>
         GetDomainsResponse EndGetDomains(IAsyncResult asyncResult);
 
         #endregion
@@ -1374,6 +1437,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance">REST API Reference for GetInstance Operation</seealso>
         GetInstanceResponse GetInstance(GetInstanceRequest request);
 
         /// <summary>
@@ -1387,6 +1451,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance">REST API Reference for GetInstance Operation</seealso>
         IAsyncResult BeginGetInstance(GetInstanceRequest request, AsyncCallback callback, object state);
 
 
@@ -1398,6 +1463,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInstance.</param>
         /// 
         /// <returns>Returns a  GetInstanceResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance">REST API Reference for GetInstance Operation</seealso>
         GetInstanceResponse EndGetInstance(IAsyncResult asyncResult);
 
         #endregion
@@ -1436,6 +1502,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">REST API Reference for GetInstanceAccessDetails Operation</seealso>
         GetInstanceAccessDetailsResponse GetInstanceAccessDetails(GetInstanceAccessDetailsRequest request);
 
         /// <summary>
@@ -1449,6 +1516,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInstanceAccessDetails
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">REST API Reference for GetInstanceAccessDetails Operation</seealso>
         IAsyncResult BeginGetInstanceAccessDetails(GetInstanceAccessDetailsRequest request, AsyncCallback callback, object state);
 
 
@@ -1460,6 +1528,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInstanceAccessDetails.</param>
         /// 
         /// <returns>Returns a  GetInstanceAccessDetailsResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">REST API Reference for GetInstanceAccessDetails Operation</seealso>
         GetInstanceAccessDetailsResponse EndGetInstanceAccessDetails(IAsyncResult asyncResult);
 
         #endregion
@@ -1498,6 +1567,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData">REST API Reference for GetInstanceMetricData Operation</seealso>
         GetInstanceMetricDataResponse GetInstanceMetricData(GetInstanceMetricDataRequest request);
 
         /// <summary>
@@ -1511,6 +1581,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInstanceMetricData
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData">REST API Reference for GetInstanceMetricData Operation</seealso>
         IAsyncResult BeginGetInstanceMetricData(GetInstanceMetricDataRequest request, AsyncCallback callback, object state);
 
 
@@ -1522,6 +1593,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInstanceMetricData.</param>
         /// 
         /// <returns>Returns a  GetInstanceMetricDataResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceMetricData">REST API Reference for GetInstanceMetricData Operation</seealso>
         GetInstanceMetricDataResponse EndGetInstanceMetricData(IAsyncResult asyncResult);
 
         #endregion
@@ -1559,6 +1631,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">REST API Reference for GetInstancePortStates Operation</seealso>
         GetInstancePortStatesResponse GetInstancePortStates(GetInstancePortStatesRequest request);
 
         /// <summary>
@@ -1572,6 +1645,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInstancePortStates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">REST API Reference for GetInstancePortStates Operation</seealso>
         IAsyncResult BeginGetInstancePortStates(GetInstancePortStatesRequest request, AsyncCallback callback, object state);
 
 
@@ -1583,6 +1657,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInstancePortStates.</param>
         /// 
         /// <returns>Returns a  GetInstancePortStatesResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">REST API Reference for GetInstancePortStates Operation</seealso>
         GetInstancePortStatesResponse EndGetInstancePortStates(IAsyncResult asyncResult);
 
         #endregion
@@ -1620,6 +1695,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances">REST API Reference for GetInstances Operation</seealso>
         GetInstancesResponse GetInstances(GetInstancesRequest request);
 
         /// <summary>
@@ -1633,6 +1709,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances">REST API Reference for GetInstances Operation</seealso>
         IAsyncResult BeginGetInstances(GetInstancesRequest request, AsyncCallback callback, object state);
 
 
@@ -1644,6 +1721,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInstances.</param>
         /// 
         /// <returns>Returns a  GetInstancesResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstances">REST API Reference for GetInstances Operation</seealso>
         GetInstancesResponse EndGetInstances(IAsyncResult asyncResult);
 
         #endregion
@@ -1681,6 +1759,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshot">REST API Reference for GetInstanceSnapshot Operation</seealso>
         GetInstanceSnapshotResponse GetInstanceSnapshot(GetInstanceSnapshotRequest request);
 
         /// <summary>
@@ -1694,6 +1773,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInstanceSnapshot
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshot">REST API Reference for GetInstanceSnapshot Operation</seealso>
         IAsyncResult BeginGetInstanceSnapshot(GetInstanceSnapshotRequest request, AsyncCallback callback, object state);
 
 
@@ -1705,6 +1785,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInstanceSnapshot.</param>
         /// 
         /// <returns>Returns a  GetInstanceSnapshotResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshot">REST API Reference for GetInstanceSnapshot Operation</seealso>
         GetInstanceSnapshotResponse EndGetInstanceSnapshot(IAsyncResult asyncResult);
 
         #endregion
@@ -1742,6 +1823,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots">REST API Reference for GetInstanceSnapshots Operation</seealso>
         GetInstanceSnapshotsResponse GetInstanceSnapshots(GetInstanceSnapshotsRequest request);
 
         /// <summary>
@@ -1755,6 +1837,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInstanceSnapshots
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots">REST API Reference for GetInstanceSnapshots Operation</seealso>
         IAsyncResult BeginGetInstanceSnapshots(GetInstanceSnapshotsRequest request, AsyncCallback callback, object state);
 
 
@@ -1766,6 +1849,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInstanceSnapshots.</param>
         /// 
         /// <returns>Returns a  GetInstanceSnapshotsResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots">REST API Reference for GetInstanceSnapshots Operation</seealso>
         GetInstanceSnapshotsResponse EndGetInstanceSnapshots(IAsyncResult asyncResult);
 
         #endregion
@@ -1803,6 +1887,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceState">REST API Reference for GetInstanceState Operation</seealso>
         GetInstanceStateResponse GetInstanceState(GetInstanceStateRequest request);
 
         /// <summary>
@@ -1816,6 +1901,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInstanceState
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceState">REST API Reference for GetInstanceState Operation</seealso>
         IAsyncResult BeginGetInstanceState(GetInstanceStateRequest request, AsyncCallback callback, object state);
 
 
@@ -1827,6 +1913,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInstanceState.</param>
         /// 
         /// <returns>Returns a  GetInstanceStateResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceState">REST API Reference for GetInstanceState Operation</seealso>
         GetInstanceStateResponse EndGetInstanceState(IAsyncResult asyncResult);
 
         #endregion
@@ -1864,6 +1951,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPair">REST API Reference for GetKeyPair Operation</seealso>
         GetKeyPairResponse GetKeyPair(GetKeyPairRequest request);
 
         /// <summary>
@@ -1877,6 +1965,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetKeyPair
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPair">REST API Reference for GetKeyPair Operation</seealso>
         IAsyncResult BeginGetKeyPair(GetKeyPairRequest request, AsyncCallback callback, object state);
 
 
@@ -1888,6 +1977,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetKeyPair.</param>
         /// 
         /// <returns>Returns a  GetKeyPairResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPair">REST API Reference for GetKeyPair Operation</seealso>
         GetKeyPairResponse EndGetKeyPair(IAsyncResult asyncResult);
 
         #endregion
@@ -1925,6 +2015,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPairs">REST API Reference for GetKeyPairs Operation</seealso>
         GetKeyPairsResponse GetKeyPairs(GetKeyPairsRequest request);
 
         /// <summary>
@@ -1938,6 +2029,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetKeyPairs
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPairs">REST API Reference for GetKeyPairs Operation</seealso>
         IAsyncResult BeginGetKeyPairs(GetKeyPairsRequest request, AsyncCallback callback, object state);
 
 
@@ -1949,6 +2041,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetKeyPairs.</param>
         /// 
         /// <returns>Returns a  GetKeyPairsResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetKeyPairs">REST API Reference for GetKeyPairs Operation</seealso>
         GetKeyPairsResponse EndGetKeyPairs(IAsyncResult asyncResult);
 
         #endregion
@@ -1987,6 +2080,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperation">REST API Reference for GetOperation Operation</seealso>
         GetOperationResponse GetOperation(GetOperationRequest request);
 
         /// <summary>
@@ -2000,6 +2094,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOperation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperation">REST API Reference for GetOperation Operation</seealso>
         IAsyncResult BeginGetOperation(GetOperationRequest request, AsyncCallback callback, object state);
 
 
@@ -2011,6 +2106,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOperation.</param>
         /// 
         /// <returns>Returns a  GetOperationResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperation">REST API Reference for GetOperation Operation</seealso>
         GetOperationResponse EndGetOperation(IAsyncResult asyncResult);
 
         #endregion
@@ -2055,6 +2151,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperations">REST API Reference for GetOperations Operation</seealso>
         GetOperationsResponse GetOperations(GetOperationsRequest request);
 
         /// <summary>
@@ -2068,6 +2165,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOperations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperations">REST API Reference for GetOperations Operation</seealso>
         IAsyncResult BeginGetOperations(GetOperationsRequest request, AsyncCallback callback, object state);
 
 
@@ -2079,6 +2177,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOperations.</param>
         /// 
         /// <returns>Returns a  GetOperationsResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperations">REST API Reference for GetOperations Operation</seealso>
         GetOperationsResponse EndGetOperations(IAsyncResult asyncResult);
 
         #endregion
@@ -2116,6 +2215,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource">REST API Reference for GetOperationsForResource Operation</seealso>
         GetOperationsForResourceResponse GetOperationsForResource(GetOperationsForResourceRequest request);
 
         /// <summary>
@@ -2129,6 +2229,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetOperationsForResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource">REST API Reference for GetOperationsForResource Operation</seealso>
         IAsyncResult BeginGetOperationsForResource(GetOperationsForResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -2140,6 +2241,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetOperationsForResource.</param>
         /// 
         /// <returns>Returns a  GetOperationsForResourceResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetOperationsForResource">REST API Reference for GetOperationsForResource Operation</seealso>
         GetOperationsForResourceResponse EndGetOperationsForResource(IAsyncResult asyncResult);
 
         #endregion
@@ -2177,6 +2279,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRegions">REST API Reference for GetRegions Operation</seealso>
         GetRegionsResponse GetRegions(GetRegionsRequest request);
 
         /// <summary>
@@ -2190,6 +2293,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRegions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRegions">REST API Reference for GetRegions Operation</seealso>
         IAsyncResult BeginGetRegions(GetRegionsRequest request, AsyncCallback callback, object state);
 
 
@@ -2201,6 +2305,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRegions.</param>
         /// 
         /// <returns>Returns a  GetRegionsResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRegions">REST API Reference for GetRegions Operation</seealso>
         GetRegionsResponse EndGetRegions(IAsyncResult asyncResult);
 
         #endregion
@@ -2238,6 +2343,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp">REST API Reference for GetStaticIp Operation</seealso>
         GetStaticIpResponse GetStaticIp(GetStaticIpRequest request);
 
         /// <summary>
@@ -2251,6 +2357,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStaticIp
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp">REST API Reference for GetStaticIp Operation</seealso>
         IAsyncResult BeginGetStaticIp(GetStaticIpRequest request, AsyncCallback callback, object state);
 
 
@@ -2262,6 +2369,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStaticIp.</param>
         /// 
         /// <returns>Returns a  GetStaticIpResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp">REST API Reference for GetStaticIp Operation</seealso>
         GetStaticIpResponse EndGetStaticIp(IAsyncResult asyncResult);
 
         #endregion
@@ -2299,6 +2407,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIps">REST API Reference for GetStaticIps Operation</seealso>
         GetStaticIpsResponse GetStaticIps(GetStaticIpsRequest request);
 
         /// <summary>
@@ -2312,6 +2421,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStaticIps
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIps">REST API Reference for GetStaticIps Operation</seealso>
         IAsyncResult BeginGetStaticIps(GetStaticIpsRequest request, AsyncCallback callback, object state);
 
 
@@ -2323,6 +2433,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStaticIps.</param>
         /// 
         /// <returns>Returns a  GetStaticIpsResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIps">REST API Reference for GetStaticIps Operation</seealso>
         GetStaticIpsResponse EndGetStaticIps(IAsyncResult asyncResult);
 
         #endregion
@@ -2360,6 +2471,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         ImportKeyPairResponse ImportKeyPair(ImportKeyPairRequest request);
 
         /// <summary>
@@ -2373,6 +2485,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportKeyPair
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         IAsyncResult BeginImportKeyPair(ImportKeyPairRequest request, AsyncCallback callback, object state);
 
 
@@ -2384,6 +2497,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportKeyPair.</param>
         /// 
         /// <returns>Returns a  ImportKeyPairResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         ImportKeyPairResponse EndImportKeyPair(IAsyncResult asyncResult);
 
         #endregion
@@ -2421,6 +2535,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/IsVpcPeered">REST API Reference for IsVpcPeered Operation</seealso>
         IsVpcPeeredResponse IsVpcPeered(IsVpcPeeredRequest request);
 
         /// <summary>
@@ -2434,6 +2549,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndIsVpcPeered
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/IsVpcPeered">REST API Reference for IsVpcPeered Operation</seealso>
         IAsyncResult BeginIsVpcPeered(IsVpcPeeredRequest request, AsyncCallback callback, object state);
 
 
@@ -2445,6 +2561,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginIsVpcPeered.</param>
         /// 
         /// <returns>Returns a  IsVpcPeeredResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/IsVpcPeered">REST API Reference for IsVpcPeered Operation</seealso>
         IsVpcPeeredResponse EndIsVpcPeered(IAsyncResult asyncResult);
 
         #endregion
@@ -2482,6 +2599,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">REST API Reference for OpenInstancePublicPorts Operation</seealso>
         OpenInstancePublicPortsResponse OpenInstancePublicPorts(OpenInstancePublicPortsRequest request);
 
         /// <summary>
@@ -2495,6 +2613,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndOpenInstancePublicPorts
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">REST API Reference for OpenInstancePublicPorts Operation</seealso>
         IAsyncResult BeginOpenInstancePublicPorts(OpenInstancePublicPortsRequest request, AsyncCallback callback, object state);
 
 
@@ -2506,6 +2625,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginOpenInstancePublicPorts.</param>
         /// 
         /// <returns>Returns a  OpenInstancePublicPortsResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">REST API Reference for OpenInstancePublicPorts Operation</seealso>
         OpenInstancePublicPortsResponse EndOpenInstancePublicPorts(IAsyncResult asyncResult);
 
         #endregion
@@ -2543,6 +2663,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PeerVpc">REST API Reference for PeerVpc Operation</seealso>
         PeerVpcResponse PeerVpc(PeerVpcRequest request);
 
         /// <summary>
@@ -2556,6 +2677,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPeerVpc
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PeerVpc">REST API Reference for PeerVpc Operation</seealso>
         IAsyncResult BeginPeerVpc(PeerVpcRequest request, AsyncCallback callback, object state);
 
 
@@ -2567,6 +2689,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPeerVpc.</param>
         /// 
         /// <returns>Returns a  PeerVpcResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PeerVpc">REST API Reference for PeerVpc Operation</seealso>
         PeerVpcResponse EndPeerVpc(IAsyncResult asyncResult);
 
         #endregion
@@ -2606,6 +2729,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
         RebootInstanceResponse RebootInstance(RebootInstanceRequest request);
 
         /// <summary>
@@ -2619,6 +2743,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRebootInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
         IAsyncResult BeginRebootInstance(RebootInstanceRequest request, AsyncCallback callback, object state);
 
 
@@ -2630,6 +2755,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRebootInstance.</param>
         /// 
         /// <returns>Returns a  RebootInstanceResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">REST API Reference for RebootInstance Operation</seealso>
         RebootInstanceResponse EndRebootInstance(IAsyncResult asyncResult);
 
         #endregion
@@ -2667,6 +2793,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp">REST API Reference for ReleaseStaticIp Operation</seealso>
         ReleaseStaticIpResponse ReleaseStaticIp(ReleaseStaticIpRequest request);
 
         /// <summary>
@@ -2680,6 +2807,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReleaseStaticIp
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp">REST API Reference for ReleaseStaticIp Operation</seealso>
         IAsyncResult BeginReleaseStaticIp(ReleaseStaticIpRequest request, AsyncCallback callback, object state);
 
 
@@ -2691,6 +2819,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReleaseStaticIp.</param>
         /// 
         /// <returns>Returns a  ReleaseStaticIpResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ReleaseStaticIp">REST API Reference for ReleaseStaticIp Operation</seealso>
         ReleaseStaticIpResponse EndReleaseStaticIp(IAsyncResult asyncResult);
 
         #endregion
@@ -2729,6 +2858,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">REST API Reference for StartInstance Operation</seealso>
         StartInstanceResponse StartInstance(StartInstanceRequest request);
 
         /// <summary>
@@ -2742,6 +2872,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">REST API Reference for StartInstance Operation</seealso>
         IAsyncResult BeginStartInstance(StartInstanceRequest request, AsyncCallback callback, object state);
 
 
@@ -2753,6 +2884,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartInstance.</param>
         /// 
         /// <returns>Returns a  StartInstanceResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">REST API Reference for StartInstance Operation</seealso>
         StartInstanceResponse EndStartInstance(IAsyncResult asyncResult);
 
         #endregion
@@ -2790,6 +2922,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">REST API Reference for StopInstance Operation</seealso>
         StopInstanceResponse StopInstance(StopInstanceRequest request);
 
         /// <summary>
@@ -2803,6 +2936,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">REST API Reference for StopInstance Operation</seealso>
         IAsyncResult BeginStopInstance(StopInstanceRequest request, AsyncCallback callback, object state);
 
 
@@ -2814,6 +2948,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopInstance.</param>
         /// 
         /// <returns>Returns a  StopInstanceResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">REST API Reference for StopInstance Operation</seealso>
         StopInstanceResponse EndStopInstance(IAsyncResult asyncResult);
 
         #endregion
@@ -2851,6 +2986,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UnpeerVpc">REST API Reference for UnpeerVpc Operation</seealso>
         UnpeerVpcResponse UnpeerVpc(UnpeerVpcRequest request);
 
         /// <summary>
@@ -2864,6 +3000,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUnpeerVpc
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UnpeerVpc">REST API Reference for UnpeerVpc Operation</seealso>
         IAsyncResult BeginUnpeerVpc(UnpeerVpcRequest request, AsyncCallback callback, object state);
 
 
@@ -2875,6 +3012,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUnpeerVpc.</param>
         /// 
         /// <returns>Returns a  UnpeerVpcResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UnpeerVpc">REST API Reference for UnpeerVpc Operation</seealso>
         UnpeerVpcResponse EndUnpeerVpc(IAsyncResult asyncResult);
 
         #endregion
@@ -2912,6 +3050,7 @@ namespace Amazon.Lightsail
         /// <exception cref="Amazon.Lightsail.Model.UnauthenticatedException">
         /// Lightsail throws this exception when the user has not been authenticated.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">REST API Reference for UpdateDomainEntry Operation</seealso>
         UpdateDomainEntryResponse UpdateDomainEntry(UpdateDomainEntryRequest request);
 
         /// <summary>
@@ -2925,6 +3064,7 @@ namespace Amazon.Lightsail
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDomainEntry
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">REST API Reference for UpdateDomainEntry Operation</seealso>
         IAsyncResult BeginUpdateDomainEntry(UpdateDomainEntryRequest request, AsyncCallback callback, object state);
 
 
@@ -2936,6 +3076,7 @@ namespace Amazon.Lightsail
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDomainEntry.</param>
         /// 
         /// <returns>Returns a  UpdateDomainEntryResult from Lightsail.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">REST API Reference for UpdateDomainEntry Operation</seealso>
         UpdateDomainEntryResponse EndUpdateDomainEntry(IAsyncResult asyncResult);
 
         #endregion

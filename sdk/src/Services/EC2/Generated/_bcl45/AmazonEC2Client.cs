@@ -250,6 +250,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AcceptReservedInstancesExchangeQuote service method.</param>
         /// 
         /// <returns>The response from the AcceptReservedInstancesExchangeQuote service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptReservedInstancesExchangeQuote">REST API Reference for AcceptReservedInstancesExchangeQuote Operation</seealso>
         public AcceptReservedInstancesExchangeQuoteResponse AcceptReservedInstancesExchangeQuote(AcceptReservedInstancesExchangeQuoteRequest request)
         {
             var marshaller = new AcceptReservedInstancesExchangeQuoteRequestMarshaller();
@@ -267,6 +268,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptReservedInstancesExchangeQuote">REST API Reference for AcceptReservedInstancesExchangeQuote Operation</seealso>
         public Task<AcceptReservedInstancesExchangeQuoteResponse> AcceptReservedInstancesExchangeQuoteAsync(AcceptReservedInstancesExchangeQuoteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AcceptReservedInstancesExchangeQuoteRequestMarshaller();
@@ -290,6 +292,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AcceptVpcPeeringConnection service method.</param>
         /// 
         /// <returns>The response from the AcceptVpcPeeringConnection service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcPeeringConnection">REST API Reference for AcceptVpcPeeringConnection Operation</seealso>
         public AcceptVpcPeeringConnectionResponse AcceptVpcPeeringConnection(AcceptVpcPeeringConnectionRequest request)
         {
             var marshaller = new AcceptVpcPeeringConnectionRequestMarshaller();
@@ -307,6 +310,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptVpcPeeringConnection">REST API Reference for AcceptVpcPeeringConnection Operation</seealso>
         public Task<AcceptVpcPeeringConnectionResponse> AcceptVpcPeeringConnectionAsync(AcceptVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AcceptVpcPeeringConnectionRequestMarshaller();
@@ -333,6 +337,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the AllocateAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">REST API Reference for AllocateAddress Operation</seealso>
         public AllocateAddressResponse AllocateAddress()
         {
             return AllocateAddress(new AllocateAddressRequest());
@@ -352,6 +357,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AllocateAddress service method.</param>
         /// 
         /// <returns>The response from the AllocateAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">REST API Reference for AllocateAddress Operation</seealso>
         public AllocateAddressResponse AllocateAddress(AllocateAddressRequest request)
         {
             var marshaller = new AllocateAddressRequestMarshaller();
@@ -376,6 +382,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the AllocateAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">REST API Reference for AllocateAddress Operation</seealso>
         public Task<AllocateAddressResponse> AllocateAddressAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return AllocateAddressAsync(new AllocateAddressRequest(), cancellationToken);
@@ -389,6 +396,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">REST API Reference for AllocateAddress Operation</seealso>
         public Task<AllocateAddressResponse> AllocateAddressAsync(AllocateAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AllocateAddressRequestMarshaller();
@@ -410,6 +418,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AllocateHosts service method.</param>
         /// 
         /// <returns>The response from the AllocateHosts service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateHosts">REST API Reference for AllocateHosts Operation</seealso>
         public AllocateHostsResponse AllocateHosts(AllocateHostsRequest request)
         {
             var marshaller = new AllocateHostsRequestMarshaller();
@@ -427,6 +436,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateHosts">REST API Reference for AllocateHosts Operation</seealso>
         public Task<AllocateHostsResponse> AllocateHostsAsync(AllocateHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AllocateHostsRequestMarshaller();
@@ -453,6 +463,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AssignIpv6Addresses service method.</param>
         /// 
         /// <returns>The response from the AssignIpv6Addresses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">REST API Reference for AssignIpv6Addresses Operation</seealso>
         public AssignIpv6AddressesResponse AssignIpv6Addresses(AssignIpv6AddressesRequest request)
         {
             var marshaller = new AssignIpv6AddressesRequestMarshaller();
@@ -470,6 +481,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">REST API Reference for AssignIpv6Addresses Operation</seealso>
         public Task<AssignIpv6AddressesResponse> AssignIpv6AddressesAsync(AssignIpv6AddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssignIpv6AddressesRequestMarshaller();
@@ -502,6 +514,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AssignPrivateIpAddresses service method.</param>
         /// 
         /// <returns>The response from the AssignPrivateIpAddresses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">REST API Reference for AssignPrivateIpAddresses Operation</seealso>
         public AssignPrivateIpAddressesResponse AssignPrivateIpAddresses(AssignPrivateIpAddressesRequest request)
         {
             var marshaller = new AssignPrivateIpAddressesRequestMarshaller();
@@ -519,6 +532,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">REST API Reference for AssignPrivateIpAddresses Operation</seealso>
         public Task<AssignPrivateIpAddressesResponse> AssignPrivateIpAddressesAsync(AssignPrivateIpAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssignPrivateIpAddressesRequestMarshaller();
@@ -567,6 +581,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AssociateAddress service method.</param>
         /// 
         /// <returns>The response from the AssociateAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">REST API Reference for AssociateAddress Operation</seealso>
         public AssociateAddressResponse AssociateAddress(AssociateAddressRequest request)
         {
             var marshaller = new AssociateAddressRequestMarshaller();
@@ -584,6 +599,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">REST API Reference for AssociateAddress Operation</seealso>
         public Task<AssociateAddressResponse> AssociateAddressAsync(AssociateAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateAddressRequestMarshaller();
@@ -619,6 +635,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AssociateDhcpOptions service method.</param>
         /// 
         /// <returns>The response from the AssociateDhcpOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions">REST API Reference for AssociateDhcpOptions Operation</seealso>
         public AssociateDhcpOptionsResponse AssociateDhcpOptions(AssociateDhcpOptionsRequest request)
         {
             var marshaller = new AssociateDhcpOptionsRequestMarshaller();
@@ -636,6 +653,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions">REST API Reference for AssociateDhcpOptions Operation</seealso>
         public Task<AssociateDhcpOptionsResponse> AssociateDhcpOptionsAsync(AssociateDhcpOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateDhcpOptionsRequestMarshaller();
@@ -666,6 +684,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AssociateRouteTable service method.</param>
         /// 
         /// <returns>The response from the AssociateRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable">REST API Reference for AssociateRouteTable Operation</seealso>
         public AssociateRouteTableResponse AssociateRouteTable(AssociateRouteTableRequest request)
         {
             var marshaller = new AssociateRouteTableRequestMarshaller();
@@ -683,6 +702,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable">REST API Reference for AssociateRouteTable Operation</seealso>
         public Task<AssociateRouteTableResponse> AssociateRouteTableAsync(AssociateRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateRouteTableRequestMarshaller();
@@ -704,6 +724,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AssociateSubnetCidrBlock service method.</param>
         /// 
         /// <returns>The response from the AssociateSubnetCidrBlock service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSubnetCidrBlock">REST API Reference for AssociateSubnetCidrBlock Operation</seealso>
         public AssociateSubnetCidrBlockResponse AssociateSubnetCidrBlock(AssociateSubnetCidrBlockRequest request)
         {
             var marshaller = new AssociateSubnetCidrBlockRequestMarshaller();
@@ -721,6 +742,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSubnetCidrBlock">REST API Reference for AssociateSubnetCidrBlock Operation</seealso>
         public Task<AssociateSubnetCidrBlockResponse> AssociateSubnetCidrBlockAsync(AssociateSubnetCidrBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateSubnetCidrBlockRequestMarshaller();
@@ -742,6 +764,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AssociateVpcCidrBlock service method.</param>
         /// 
         /// <returns>The response from the AssociateVpcCidrBlock service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">REST API Reference for AssociateVpcCidrBlock Operation</seealso>
         public AssociateVpcCidrBlockResponse AssociateVpcCidrBlock(AssociateVpcCidrBlockRequest request)
         {
             var marshaller = new AssociateVpcCidrBlockRequestMarshaller();
@@ -759,6 +782,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">REST API Reference for AssociateVpcCidrBlock Operation</seealso>
         public Task<AssociateVpcCidrBlockResponse> AssociateVpcCidrBlockAsync(AssociateVpcCidrBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AssociateVpcCidrBlockRequestMarshaller();
@@ -794,6 +818,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AttachClassicLinkVpc service method.</param>
         /// 
         /// <returns>The response from the AttachClassicLinkVpc service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachClassicLinkVpc">REST API Reference for AttachClassicLinkVpc Operation</seealso>
         public AttachClassicLinkVpcResponse AttachClassicLinkVpc(AttachClassicLinkVpcRequest request)
         {
             var marshaller = new AttachClassicLinkVpcRequestMarshaller();
@@ -811,6 +836,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachClassicLinkVpc">REST API Reference for AttachClassicLinkVpc Operation</seealso>
         public Task<AttachClassicLinkVpcResponse> AttachClassicLinkVpcAsync(AttachClassicLinkVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachClassicLinkVpcRequestMarshaller();
@@ -834,6 +860,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AttachInternetGateway service method.</param>
         /// 
         /// <returns>The response from the AttachInternetGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachInternetGateway">REST API Reference for AttachInternetGateway Operation</seealso>
         public AttachInternetGatewayResponse AttachInternetGateway(AttachInternetGatewayRequest request)
         {
             var marshaller = new AttachInternetGatewayRequestMarshaller();
@@ -851,6 +878,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachInternetGateway">REST API Reference for AttachInternetGateway Operation</seealso>
         public Task<AttachInternetGatewayResponse> AttachInternetGatewayAsync(AttachInternetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachInternetGatewayRequestMarshaller();
@@ -871,6 +899,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AttachNetworkInterface service method.</param>
         /// 
         /// <returns>The response from the AttachNetworkInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachNetworkInterface">REST API Reference for AttachNetworkInterface Operation</seealso>
         public AttachNetworkInterfaceResponse AttachNetworkInterface(AttachNetworkInterfaceRequest request)
         {
             var marshaller = new AttachNetworkInterfaceRequestMarshaller();
@@ -888,6 +917,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachNetworkInterface">REST API Reference for AttachNetworkInterface Operation</seealso>
         public Task<AttachNetworkInterfaceResponse> AttachNetworkInterfaceAsync(AttachNetworkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachNetworkInterfaceRequestMarshaller();
@@ -955,6 +985,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AttachVolume service method.</param>
         /// 
         /// <returns>The response from the AttachVolume service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume">REST API Reference for AttachVolume Operation</seealso>
         public AttachVolumeResponse AttachVolume(AttachVolumeRequest request)
         {
             var marshaller = new AttachVolumeRequestMarshaller();
@@ -972,6 +1003,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume">REST API Reference for AttachVolume Operation</seealso>
         public Task<AttachVolumeResponse> AttachVolumeAsync(AttachVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachVolumeRequestMarshaller();
@@ -994,6 +1026,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AttachVpnGateway service method.</param>
         /// 
         /// <returns>The response from the AttachVpnGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">REST API Reference for AttachVpnGateway Operation</seealso>
         public AttachVpnGatewayResponse AttachVpnGateway(AttachVpnGatewayRequest request)
         {
             var marshaller = new AttachVpnGatewayRequestMarshaller();
@@ -1011,6 +1044,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">REST API Reference for AttachVpnGateway Operation</seealso>
         public Task<AttachVpnGatewayResponse> AttachVpnGatewayAsync(AttachVpnGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AttachVpnGatewayRequestMarshaller();
@@ -1051,6 +1085,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupEgress service method.</param>
         /// 
         /// <returns>The response from the AuthorizeSecurityGroupEgress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">REST API Reference for AuthorizeSecurityGroupEgress Operation</seealso>
         public AuthorizeSecurityGroupEgressResponse AuthorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest request)
         {
             var marshaller = new AuthorizeSecurityGroupEgressRequestMarshaller();
@@ -1068,6 +1103,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">REST API Reference for AuthorizeSecurityGroupEgress Operation</seealso>
         public Task<AuthorizeSecurityGroupEgressResponse> AuthorizeSecurityGroupEgressAsync(AuthorizeSecurityGroupEgressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AuthorizeSecurityGroupEgressRequestMarshaller();
@@ -1111,6 +1147,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the AuthorizeSecurityGroupIngress service method.</param>
         /// 
         /// <returns>The response from the AuthorizeSecurityGroupIngress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">REST API Reference for AuthorizeSecurityGroupIngress Operation</seealso>
         public AuthorizeSecurityGroupIngressResponse AuthorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest request)
         {
             var marshaller = new AuthorizeSecurityGroupIngressRequestMarshaller();
@@ -1128,6 +1165,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">REST API Reference for AuthorizeSecurityGroupIngress Operation</seealso>
         public Task<AuthorizeSecurityGroupIngressResponse> AuthorizeSecurityGroupIngressAsync(AuthorizeSecurityGroupIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new AuthorizeSecurityGroupIngressRequestMarshaller();
@@ -1164,6 +1202,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the BundleInstance service method.</param>
         /// 
         /// <returns>The response from the BundleInstance service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BundleInstance">REST API Reference for BundleInstance Operation</seealso>
         public BundleInstanceResponse BundleInstance(BundleInstanceRequest request)
         {
             var marshaller = new BundleInstanceRequestMarshaller();
@@ -1181,6 +1220,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BundleInstance">REST API Reference for BundleInstance Operation</seealso>
         public Task<BundleInstanceResponse> BundleInstanceAsync(BundleInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new BundleInstanceRequestMarshaller();
@@ -1201,6 +1241,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CancelBundleTask service method.</param>
         /// 
         /// <returns>The response from the CancelBundleTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelBundleTask">REST API Reference for CancelBundleTask Operation</seealso>
         public CancelBundleTaskResponse CancelBundleTask(CancelBundleTaskRequest request)
         {
             var marshaller = new CancelBundleTaskRequestMarshaller();
@@ -1218,6 +1259,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelBundleTask">REST API Reference for CancelBundleTask Operation</seealso>
         public Task<CancelBundleTaskResponse> CancelBundleTaskAsync(CancelBundleTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelBundleTaskRequestMarshaller();
@@ -1247,6 +1289,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CancelConversionTask service method.</param>
         /// 
         /// <returns>The response from the CancelConversionTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelConversionTask">REST API Reference for CancelConversionTask Operation</seealso>
         public CancelConversionTaskResponse CancelConversionTask(CancelConversionTaskRequest request)
         {
             var marshaller = new CancelConversionTaskRequestMarshaller();
@@ -1264,6 +1307,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelConversionTask">REST API Reference for CancelConversionTask Operation</seealso>
         public Task<CancelConversionTaskResponse> CancelConversionTaskAsync(CancelConversionTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelConversionTaskRequestMarshaller();
@@ -1286,6 +1330,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CancelExportTask service method.</param>
         /// 
         /// <returns>The response from the CancelExportTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
         public CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request)
         {
             var marshaller = new CancelExportTaskRequestMarshaller();
@@ -1303,6 +1348,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
         public Task<CancelExportTaskResponse> CancelExportTaskAsync(CancelExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelExportTaskRequestMarshaller();
@@ -1323,6 +1369,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CancelImportTask service method.</param>
         /// 
         /// <returns>The response from the CancelImportTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImportTask">REST API Reference for CancelImportTask Operation</seealso>
         public CancelImportTaskResponse CancelImportTask(CancelImportTaskRequest request)
         {
             var marshaller = new CancelImportTaskRequestMarshaller();
@@ -1340,6 +1387,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImportTask">REST API Reference for CancelImportTask Operation</seealso>
         public Task<CancelImportTaskResponse> CancelImportTaskAsync(CancelImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelImportTaskRequestMarshaller();
@@ -1366,6 +1414,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CancelReservedInstancesListing service method.</param>
         /// 
         /// <returns>The response from the CancelReservedInstancesListing service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelReservedInstancesListing">REST API Reference for CancelReservedInstancesListing Operation</seealso>
         public CancelReservedInstancesListingResponse CancelReservedInstancesListing(CancelReservedInstancesListingRequest request)
         {
             var marshaller = new CancelReservedInstancesListingRequestMarshaller();
@@ -1383,6 +1432,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelReservedInstancesListing">REST API Reference for CancelReservedInstancesListing Operation</seealso>
         public Task<CancelReservedInstancesListingResponse> CancelReservedInstancesListingAsync(CancelReservedInstancesListingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelReservedInstancesListingRequestMarshaller();
@@ -1413,6 +1463,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CancelSpotFleetRequests service method.</param>
         /// 
         /// <returns>The response from the CancelSpotFleetRequests service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequests">REST API Reference for CancelSpotFleetRequests Operation</seealso>
         public CancelSpotFleetRequestsResponse CancelSpotFleetRequests(CancelSpotFleetRequestsRequest request)
         {
             var marshaller = new CancelSpotFleetRequestsRequestMarshaller();
@@ -1430,6 +1481,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotFleetRequests">REST API Reference for CancelSpotFleetRequests Operation</seealso>
         public Task<CancelSpotFleetRequestsResponse> CancelSpotFleetRequestsAsync(CancelSpotFleetRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelSpotFleetRequestsRequestMarshaller();
@@ -1461,6 +1513,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CancelSpotInstanceRequests service method.</param>
         /// 
         /// <returns>The response from the CancelSpotInstanceRequests service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests">REST API Reference for CancelSpotInstanceRequests Operation</seealso>
         public CancelSpotInstanceRequestsResponse CancelSpotInstanceRequests(CancelSpotInstanceRequestsRequest request)
         {
             var marshaller = new CancelSpotInstanceRequestsRequestMarshaller();
@@ -1478,6 +1531,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelSpotInstanceRequests">REST API Reference for CancelSpotInstanceRequests Operation</seealso>
         public Task<CancelSpotInstanceRequestsResponse> CancelSpotInstanceRequestsAsync(CancelSpotInstanceRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelSpotInstanceRequestsRequestMarshaller();
@@ -1500,6 +1554,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ConfirmProductInstance service method.</param>
         /// 
         /// <returns>The response from the ConfirmProductInstance service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConfirmProductInstance">REST API Reference for ConfirmProductInstance Operation</seealso>
         public ConfirmProductInstanceResponse ConfirmProductInstance(ConfirmProductInstanceRequest request)
         {
             var marshaller = new ConfirmProductInstanceRequestMarshaller();
@@ -1517,6 +1572,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConfirmProductInstance">REST API Reference for ConfirmProductInstance Operation</seealso>
         public Task<ConfirmProductInstanceResponse> ConfirmProductInstanceAsync(ConfirmProductInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ConfirmProductInstanceRequestMarshaller();
@@ -1544,6 +1600,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CopyImage service method.</param>
         /// 
         /// <returns>The response from the CopyImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage">REST API Reference for CopyImage Operation</seealso>
         public CopyImageResponse CopyImage(CopyImageRequest request)
         {
             var marshaller = new CopyImageRequestMarshaller();
@@ -1561,6 +1618,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage">REST API Reference for CopyImage Operation</seealso>
         public Task<CopyImageResponse> CopyImageAsync(CopyImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CopyImageRequestMarshaller();
@@ -1608,6 +1666,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CopySnapshot service method.</param>
         /// 
         /// <returns>The response from the CopySnapshot service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
         public CopySnapshotResponse CopySnapshot(CopySnapshotRequest request)
         {
             var marshaller = new CopySnapshotRequestMarshaller();
@@ -1625,6 +1684,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot">REST API Reference for CopySnapshot Operation</seealso>
         public Task<CopySnapshotResponse> CopySnapshotAsync(CopySnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CopySnapshotRequestMarshaller();
@@ -1678,6 +1738,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomerGateway service method.</param>
         /// 
         /// <returns>The response from the CreateCustomerGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">REST API Reference for CreateCustomerGateway Operation</seealso>
         public CreateCustomerGatewayResponse CreateCustomerGateway(CreateCustomerGatewayRequest request)
         {
             var marshaller = new CreateCustomerGatewayRequestMarshaller();
@@ -1695,6 +1756,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">REST API Reference for CreateCustomerGateway Operation</seealso>
         public Task<CreateCustomerGatewayResponse> CreateCustomerGatewayAsync(CreateCustomerGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateCustomerGatewayRequestMarshaller();
@@ -1766,6 +1828,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateDhcpOptions service method.</param>
         /// 
         /// <returns>The response from the CreateDhcpOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">REST API Reference for CreateDhcpOptions Operation</seealso>
         public CreateDhcpOptionsResponse CreateDhcpOptions(CreateDhcpOptionsRequest request)
         {
             var marshaller = new CreateDhcpOptionsRequestMarshaller();
@@ -1783,6 +1846,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">REST API Reference for CreateDhcpOptions Operation</seealso>
         public Task<CreateDhcpOptionsResponse> CreateDhcpOptionsAsync(CreateDhcpOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateDhcpOptionsRequestMarshaller();
@@ -1806,6 +1870,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateEgressOnlyInternetGateway service method.</param>
         /// 
         /// <returns>The response from the CreateEgressOnlyInternetGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateEgressOnlyInternetGateway">REST API Reference for CreateEgressOnlyInternetGateway Operation</seealso>
         public CreateEgressOnlyInternetGatewayResponse CreateEgressOnlyInternetGateway(CreateEgressOnlyInternetGatewayRequest request)
         {
             var marshaller = new CreateEgressOnlyInternetGatewayRequestMarshaller();
@@ -1823,6 +1888,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateEgressOnlyInternetGateway">REST API Reference for CreateEgressOnlyInternetGateway Operation</seealso>
         public Task<CreateEgressOnlyInternetGatewayResponse> CreateEgressOnlyInternetGatewayAsync(CreateEgressOnlyInternetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateEgressOnlyInternetGatewayRequestMarshaller();
@@ -1854,6 +1920,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateFlowLogs service method.</param>
         /// 
         /// <returns>The response from the CreateFlowLogs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFlowLogs">REST API Reference for CreateFlowLogs Operation</seealso>
         public CreateFlowLogsResponse CreateFlowLogs(CreateFlowLogsRequest request)
         {
             var marshaller = new CreateFlowLogsRequestMarshaller();
@@ -1871,6 +1938,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFlowLogs">REST API Reference for CreateFlowLogs Operation</seealso>
         public Task<CreateFlowLogsResponse> CreateFlowLogsAsync(CreateFlowLogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateFlowLogsRequestMarshaller();
@@ -1905,6 +1973,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateImage service method.</param>
         /// 
         /// <returns>The response from the CreateImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImage">REST API Reference for CreateImage Operation</seealso>
         public CreateImageResponse CreateImage(CreateImageRequest request)
         {
             var marshaller = new CreateImageRequestMarshaller();
@@ -1922,6 +1991,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImage">REST API Reference for CreateImage Operation</seealso>
         public Task<CreateImageResponse> CreateImageAsync(CreateImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateImageRequestMarshaller();
@@ -1949,6 +2019,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateInstanceExportTask service method.</param>
         /// 
         /// <returns>The response from the CreateInstanceExportTask service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask">REST API Reference for CreateInstanceExportTask Operation</seealso>
         public CreateInstanceExportTaskResponse CreateInstanceExportTask(CreateInstanceExportTaskRequest request)
         {
             var marshaller = new CreateInstanceExportTaskRequestMarshaller();
@@ -1966,6 +2037,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask">REST API Reference for CreateInstanceExportTask Operation</seealso>
         public Task<CreateInstanceExportTaskResponse> CreateInstanceExportTaskAsync(CreateInstanceExportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateInstanceExportTaskRequestMarshaller();
@@ -1992,6 +2064,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the CreateInternetGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInternetGateway">REST API Reference for CreateInternetGateway Operation</seealso>
         public CreateInternetGatewayResponse CreateInternetGateway()
         {
             return CreateInternetGateway(new CreateInternetGatewayRequest());
@@ -2011,6 +2084,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateInternetGateway service method.</param>
         /// 
         /// <returns>The response from the CreateInternetGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInternetGateway">REST API Reference for CreateInternetGateway Operation</seealso>
         public CreateInternetGatewayResponse CreateInternetGateway(CreateInternetGatewayRequest request)
         {
             var marshaller = new CreateInternetGatewayRequestMarshaller();
@@ -2035,6 +2109,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the CreateInternetGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInternetGateway">REST API Reference for CreateInternetGateway Operation</seealso>
         public Task<CreateInternetGatewayResponse> CreateInternetGatewayAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return CreateInternetGatewayAsync(new CreateInternetGatewayRequest(), cancellationToken);
@@ -2048,6 +2123,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInternetGateway">REST API Reference for CreateInternetGateway Operation</seealso>
         public Task<CreateInternetGatewayResponse> CreateInternetGatewayAsync(CreateInternetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateInternetGatewayRequestMarshaller();
@@ -2086,6 +2162,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateKeyPair service method.</param>
         /// 
         /// <returns>The response from the CreateKeyPair service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         public CreateKeyPairResponse CreateKeyPair(CreateKeyPairRequest request)
         {
             var marshaller = new CreateKeyPairRequestMarshaller();
@@ -2103,6 +2180,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateKeyPair">REST API Reference for CreateKeyPair Operation</seealso>
         public Task<CreateKeyPairResponse> CreateKeyPairAsync(CreateKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateKeyPairRequestMarshaller();
@@ -2127,6 +2205,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateNatGateway service method.</param>
         /// 
         /// <returns>The response from the CreateNatGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">REST API Reference for CreateNatGateway Operation</seealso>
         public CreateNatGatewayResponse CreateNatGateway(CreateNatGatewayRequest request)
         {
             var marshaller = new CreateNatGatewayRequestMarshaller();
@@ -2144,6 +2223,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">REST API Reference for CreateNatGateway Operation</seealso>
         public Task<CreateNatGatewayResponse> CreateNatGatewayAsync(CreateNatGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateNatGatewayRequestMarshaller();
@@ -2171,6 +2251,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkAcl service method.</param>
         /// 
         /// <returns>The response from the CreateNetworkAcl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAcl">REST API Reference for CreateNetworkAcl Operation</seealso>
         public CreateNetworkAclResponse CreateNetworkAcl(CreateNetworkAclRequest request)
         {
             var marshaller = new CreateNetworkAclRequestMarshaller();
@@ -2188,6 +2269,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAcl">REST API Reference for CreateNetworkAcl Operation</seealso>
         public Task<CreateNetworkAclResponse> CreateNetworkAclAsync(CreateNetworkAclRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateNetworkAclRequestMarshaller();
@@ -2231,6 +2313,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkAclEntry service method.</param>
         /// 
         /// <returns>The response from the CreateNetworkAclEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAclEntry">REST API Reference for CreateNetworkAclEntry Operation</seealso>
         public CreateNetworkAclEntryResponse CreateNetworkAclEntry(CreateNetworkAclEntryRequest request)
         {
             var marshaller = new CreateNetworkAclEntryRequestMarshaller();
@@ -2248,6 +2331,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAclEntry">REST API Reference for CreateNetworkAclEntry Operation</seealso>
         public Task<CreateNetworkAclEntryResponse> CreateNetworkAclEntryAsync(CreateNetworkAclEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateNetworkAclEntryRequestMarshaller();
@@ -2274,6 +2358,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInterface service method.</param>
         /// 
         /// <returns>The response from the CreateNetworkInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterface">REST API Reference for CreateNetworkInterface Operation</seealso>
         public CreateNetworkInterfaceResponse CreateNetworkInterface(CreateNetworkInterfaceRequest request)
         {
             var marshaller = new CreateNetworkInterfaceRequestMarshaller();
@@ -2291,6 +2376,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterface">REST API Reference for CreateNetworkInterface Operation</seealso>
         public Task<CreateNetworkInterfaceResponse> CreateNetworkInterfaceAsync(CreateNetworkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateNetworkInterfaceRequestMarshaller();
@@ -2318,6 +2404,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreatePlacementGroup service method.</param>
         /// 
         /// <returns>The response from the CreatePlacementGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">REST API Reference for CreatePlacementGroup Operation</seealso>
         public CreatePlacementGroupResponse CreatePlacementGroup(CreatePlacementGroupRequest request)
         {
             var marshaller = new CreatePlacementGroupRequestMarshaller();
@@ -2335,6 +2422,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">REST API Reference for CreatePlacementGroup Operation</seealso>
         public Task<CreatePlacementGroupResponse> CreatePlacementGroupAsync(CreatePlacementGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreatePlacementGroupRequestMarshaller();
@@ -2381,6 +2469,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateReservedInstancesListing service method.</param>
         /// 
         /// <returns>The response from the CreateReservedInstancesListing service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListing">REST API Reference for CreateReservedInstancesListing Operation</seealso>
         public CreateReservedInstancesListingResponse CreateReservedInstancesListing(CreateReservedInstancesListingRequest request)
         {
             var marshaller = new CreateReservedInstancesListingRequestMarshaller();
@@ -2398,6 +2487,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListing">REST API Reference for CreateReservedInstancesListing Operation</seealso>
         public Task<CreateReservedInstancesListingResponse> CreateReservedInstancesListingAsync(CreateReservedInstancesListingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateReservedInstancesListingRequestMarshaller();
@@ -2450,6 +2540,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateRoute service method.</param>
         /// 
         /// <returns>The response from the CreateRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public CreateRouteResponse CreateRoute(CreateRouteRequest request)
         {
             var marshaller = new CreateRouteRequestMarshaller();
@@ -2467,6 +2558,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute">REST API Reference for CreateRoute Operation</seealso>
         public Task<CreateRouteResponse> CreateRouteAsync(CreateRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateRouteRequestMarshaller();
@@ -2494,6 +2586,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateRouteTable service method.</param>
         /// 
         /// <returns>The response from the CreateRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable">REST API Reference for CreateRouteTable Operation</seealso>
         public CreateRouteTableResponse CreateRouteTable(CreateRouteTableRequest request)
         {
             var marshaller = new CreateRouteTableRequestMarshaller();
@@ -2511,6 +2604,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable">REST API Reference for CreateRouteTable Operation</seealso>
         public Task<CreateRouteTableResponse> CreateRouteTableAsync(CreateRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateRouteTableRequestMarshaller();
@@ -2568,6 +2662,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateSecurityGroup service method.</param>
         /// 
         /// <returns>The response from the CreateSecurityGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecurityGroup">REST API Reference for CreateSecurityGroup Operation</seealso>
         public CreateSecurityGroupResponse CreateSecurityGroup(CreateSecurityGroupRequest request)
         {
             var marshaller = new CreateSecurityGroupRequestMarshaller();
@@ -2585,6 +2680,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSecurityGroup">REST API Reference for CreateSecurityGroup Operation</seealso>
         public Task<CreateSecurityGroupResponse> CreateSecurityGroupAsync(CreateSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSecurityGroupRequestMarshaller();
@@ -2641,6 +2737,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
         /// 
         /// <returns>The response from the CreateSnapshot service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
         {
             var marshaller = new CreateSnapshotRequestMarshaller();
@@ -2658,6 +2755,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
         public Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSnapshotRequestMarshaller();
@@ -2680,6 +2778,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateSpotDatafeedSubscription service method.</param>
         /// 
         /// <returns>The response from the CreateSpotDatafeedSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">REST API Reference for CreateSpotDatafeedSubscription Operation</seealso>
         public CreateSpotDatafeedSubscriptionResponse CreateSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest request)
         {
             var marshaller = new CreateSpotDatafeedSubscriptionRequestMarshaller();
@@ -2697,6 +2796,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">REST API Reference for CreateSpotDatafeedSubscription Operation</seealso>
         public Task<CreateSpotDatafeedSubscriptionResponse> CreateSpotDatafeedSubscriptionAsync(CreateSpotDatafeedSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSpotDatafeedSubscriptionRequestMarshaller();
@@ -2756,6 +2856,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateSubnet service method.</param>
         /// 
         /// <returns>The response from the CreateSubnet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">REST API Reference for CreateSubnet Operation</seealso>
         public CreateSubnetResponse CreateSubnet(CreateSubnetRequest request)
         {
             var marshaller = new CreateSubnetRequestMarshaller();
@@ -2773,6 +2874,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">REST API Reference for CreateSubnet Operation</seealso>
         public Task<CreateSubnetResponse> CreateSubnetAsync(CreateSubnetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateSubnetRequestMarshaller();
@@ -2805,6 +2907,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateTags service method.</param>
         /// 
         /// <returns>The response from the CreateTags service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
             var marshaller = new CreateTagsRequestMarshaller();
@@ -2822,6 +2925,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateTagsRequestMarshaller();
@@ -2865,6 +2969,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateVolume service method.</param>
         /// 
         /// <returns>The response from the CreateVolume service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume">REST API Reference for CreateVolume Operation</seealso>
         public CreateVolumeResponse CreateVolume(CreateVolumeRequest request)
         {
             var marshaller = new CreateVolumeRequestMarshaller();
@@ -2882,6 +2987,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume">REST API Reference for CreateVolume Operation</seealso>
         public Task<CreateVolumeResponse> CreateVolumeAsync(CreateVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateVolumeRequestMarshaller();
@@ -2925,6 +3031,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateVpc service method.</param>
         /// 
         /// <returns>The response from the CreateVpc service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc">REST API Reference for CreateVpc Operation</seealso>
         public CreateVpcResponse CreateVpc(CreateVpcRequest request)
         {
             var marshaller = new CreateVpcRequestMarshaller();
@@ -2942,6 +3049,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc">REST API Reference for CreateVpc Operation</seealso>
         public Task<CreateVpcResponse> CreateVpcAsync(CreateVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateVpcRequestMarshaller();
@@ -2971,6 +3079,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint service method.</param>
         /// 
         /// <returns>The response from the CreateVpcEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
         public CreateVpcEndpointResponse CreateVpcEndpoint(CreateVpcEndpointRequest request)
         {
             var marshaller = new CreateVpcEndpointRequestMarshaller();
@@ -2988,6 +3097,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpoint">REST API Reference for CreateVpcEndpoint Operation</seealso>
         public Task<CreateVpcEndpointResponse> CreateVpcEndpointAsync(CreateVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateVpcEndpointRequestMarshaller();
@@ -3022,6 +3132,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateVpcPeeringConnection service method.</param>
         /// 
         /// <returns>The response from the CreateVpcPeeringConnection service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
         public CreateVpcPeeringConnectionResponse CreateVpcPeeringConnection(CreateVpcPeeringConnectionRequest request)
         {
             var marshaller = new CreateVpcPeeringConnectionRequestMarshaller();
@@ -3039,6 +3150,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcPeeringConnection">REST API Reference for CreateVpcPeeringConnection Operation</seealso>
         public Task<CreateVpcPeeringConnectionResponse> CreateVpcPeeringConnectionAsync(CreateVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateVpcPeeringConnectionRequestMarshaller();
@@ -3088,6 +3200,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnConnection service method.</param>
         /// 
         /// <returns>The response from the CreateVpnConnection service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">REST API Reference for CreateVpnConnection Operation</seealso>
         public CreateVpnConnectionResponse CreateVpnConnection(CreateVpnConnectionRequest request)
         {
             var marshaller = new CreateVpnConnectionRequestMarshaller();
@@ -3105,6 +3218,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">REST API Reference for CreateVpnConnection Operation</seealso>
         public Task<CreateVpnConnectionResponse> CreateVpnConnectionAsync(CreateVpnConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateVpnConnectionRequestMarshaller();
@@ -3134,6 +3248,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnConnectionRoute service method.</param>
         /// 
         /// <returns>The response from the CreateVpnConnectionRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">REST API Reference for CreateVpnConnectionRoute Operation</seealso>
         public CreateVpnConnectionRouteResponse CreateVpnConnectionRoute(CreateVpnConnectionRouteRequest request)
         {
             var marshaller = new CreateVpnConnectionRouteRequestMarshaller();
@@ -3151,6 +3266,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">REST API Reference for CreateVpnConnectionRoute Operation</seealso>
         public Task<CreateVpnConnectionRouteResponse> CreateVpnConnectionRouteAsync(CreateVpnConnectionRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateVpnConnectionRouteRequestMarshaller();
@@ -3180,6 +3296,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the CreateVpnGateway service method.</param>
         /// 
         /// <returns>The response from the CreateVpnGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">REST API Reference for CreateVpnGateway Operation</seealso>
         public CreateVpnGatewayResponse CreateVpnGateway(CreateVpnGatewayRequest request)
         {
             var marshaller = new CreateVpnGatewayRequestMarshaller();
@@ -3197,6 +3314,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">REST API Reference for CreateVpnGateway Operation</seealso>
         public Task<CreateVpnGatewayResponse> CreateVpnGatewayAsync(CreateVpnGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateVpnGatewayRequestMarshaller();
@@ -3218,6 +3336,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomerGateway service method.</param>
         /// 
         /// <returns>The response from the DeleteCustomerGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCustomerGateway">REST API Reference for DeleteCustomerGateway Operation</seealso>
         public DeleteCustomerGatewayResponse DeleteCustomerGateway(DeleteCustomerGatewayRequest request)
         {
             var marshaller = new DeleteCustomerGatewayRequestMarshaller();
@@ -3235,6 +3354,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCustomerGateway">REST API Reference for DeleteCustomerGateway Operation</seealso>
         public Task<DeleteCustomerGatewayResponse> DeleteCustomerGatewayAsync(DeleteCustomerGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteCustomerGatewayRequestMarshaller();
@@ -3257,6 +3377,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteDhcpOptions service method.</param>
         /// 
         /// <returns>The response from the DeleteDhcpOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteDhcpOptions">REST API Reference for DeleteDhcpOptions Operation</seealso>
         public DeleteDhcpOptionsResponse DeleteDhcpOptions(DeleteDhcpOptionsRequest request)
         {
             var marshaller = new DeleteDhcpOptionsRequestMarshaller();
@@ -3274,6 +3395,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteDhcpOptions">REST API Reference for DeleteDhcpOptions Operation</seealso>
         public Task<DeleteDhcpOptionsResponse> DeleteDhcpOptionsAsync(DeleteDhcpOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteDhcpOptionsRequestMarshaller();
@@ -3294,6 +3416,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteEgressOnlyInternetGateway service method.</param>
         /// 
         /// <returns>The response from the DeleteEgressOnlyInternetGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteEgressOnlyInternetGateway">REST API Reference for DeleteEgressOnlyInternetGateway Operation</seealso>
         public DeleteEgressOnlyInternetGatewayResponse DeleteEgressOnlyInternetGateway(DeleteEgressOnlyInternetGatewayRequest request)
         {
             var marshaller = new DeleteEgressOnlyInternetGatewayRequestMarshaller();
@@ -3311,6 +3434,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteEgressOnlyInternetGateway">REST API Reference for DeleteEgressOnlyInternetGateway Operation</seealso>
         public Task<DeleteEgressOnlyInternetGatewayResponse> DeleteEgressOnlyInternetGatewayAsync(DeleteEgressOnlyInternetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteEgressOnlyInternetGatewayRequestMarshaller();
@@ -3331,6 +3455,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteFlowLogs service method.</param>
         /// 
         /// <returns>The response from the DeleteFlowLogs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFlowLogs">REST API Reference for DeleteFlowLogs Operation</seealso>
         public DeleteFlowLogsResponse DeleteFlowLogs(DeleteFlowLogsRequest request)
         {
             var marshaller = new DeleteFlowLogsRequestMarshaller();
@@ -3348,6 +3473,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFlowLogs">REST API Reference for DeleteFlowLogs Operation</seealso>
         public Task<DeleteFlowLogsResponse> DeleteFlowLogsAsync(DeleteFlowLogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteFlowLogsRequestMarshaller();
@@ -3369,6 +3495,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteInternetGateway service method.</param>
         /// 
         /// <returns>The response from the DeleteInternetGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInternetGateway">REST API Reference for DeleteInternetGateway Operation</seealso>
         public DeleteInternetGatewayResponse DeleteInternetGateway(DeleteInternetGatewayRequest request)
         {
             var marshaller = new DeleteInternetGatewayRequestMarshaller();
@@ -3386,6 +3513,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInternetGateway">REST API Reference for DeleteInternetGateway Operation</seealso>
         public Task<DeleteInternetGatewayResponse> DeleteInternetGatewayAsync(DeleteInternetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteInternetGatewayRequestMarshaller();
@@ -3406,6 +3534,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteKeyPair service method.</param>
         /// 
         /// <returns>The response from the DeleteKeyPair service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         public DeleteKeyPairResponse DeleteKeyPair(DeleteKeyPairRequest request)
         {
             var marshaller = new DeleteKeyPairRequestMarshaller();
@@ -3423,6 +3552,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteKeyPair">REST API Reference for DeleteKeyPair Operation</seealso>
         public Task<DeleteKeyPairResponse> DeleteKeyPairAsync(DeleteKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteKeyPairRequestMarshaller();
@@ -3445,6 +3575,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteNatGateway service method.</param>
         /// 
         /// <returns>The response from the DeleteNatGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNatGateway">REST API Reference for DeleteNatGateway Operation</seealso>
         public DeleteNatGatewayResponse DeleteNatGateway(DeleteNatGatewayRequest request)
         {
             var marshaller = new DeleteNatGatewayRequestMarshaller();
@@ -3462,6 +3593,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNatGateway">REST API Reference for DeleteNatGateway Operation</seealso>
         public Task<DeleteNatGatewayResponse> DeleteNatGatewayAsync(DeleteNatGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteNatGatewayRequestMarshaller();
@@ -3483,6 +3615,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkAcl service method.</param>
         /// 
         /// <returns>The response from the DeleteNetworkAcl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAcl">REST API Reference for DeleteNetworkAcl Operation</seealso>
         public DeleteNetworkAclResponse DeleteNetworkAcl(DeleteNetworkAclRequest request)
         {
             var marshaller = new DeleteNetworkAclRequestMarshaller();
@@ -3500,6 +3633,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAcl">REST API Reference for DeleteNetworkAcl Operation</seealso>
         public Task<DeleteNetworkAclResponse> DeleteNetworkAclAsync(DeleteNetworkAclRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteNetworkAclRequestMarshaller();
@@ -3520,6 +3654,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkAclEntry service method.</param>
         /// 
         /// <returns>The response from the DeleteNetworkAclEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAclEntry">REST API Reference for DeleteNetworkAclEntry Operation</seealso>
         public DeleteNetworkAclEntryResponse DeleteNetworkAclEntry(DeleteNetworkAclEntryRequest request)
         {
             var marshaller = new DeleteNetworkAclEntryRequestMarshaller();
@@ -3537,6 +3672,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkAclEntry">REST API Reference for DeleteNetworkAclEntry Operation</seealso>
         public Task<DeleteNetworkAclEntryResponse> DeleteNetworkAclEntryAsync(DeleteNetworkAclEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteNetworkAclEntryRequestMarshaller();
@@ -3558,6 +3694,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkInterface service method.</param>
         /// 
         /// <returns>The response from the DeleteNetworkInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterface">REST API Reference for DeleteNetworkInterface Operation</seealso>
         public DeleteNetworkInterfaceResponse DeleteNetworkInterface(DeleteNetworkInterfaceRequest request)
         {
             var marshaller = new DeleteNetworkInterfaceRequestMarshaller();
@@ -3575,6 +3712,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkInterface">REST API Reference for DeleteNetworkInterface Operation</seealso>
         public Task<DeleteNetworkInterfaceResponse> DeleteNetworkInterfaceAsync(DeleteNetworkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteNetworkInterfaceRequestMarshaller();
@@ -3598,6 +3736,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeletePlacementGroup service method.</param>
         /// 
         /// <returns>The response from the DeletePlacementGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">REST API Reference for DeletePlacementGroup Operation</seealso>
         public DeletePlacementGroupResponse DeletePlacementGroup(DeletePlacementGroupRequest request)
         {
             var marshaller = new DeletePlacementGroupRequestMarshaller();
@@ -3615,6 +3754,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">REST API Reference for DeletePlacementGroup Operation</seealso>
         public Task<DeletePlacementGroupResponse> DeletePlacementGroupAsync(DeletePlacementGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeletePlacementGroupRequestMarshaller();
@@ -3635,6 +3775,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteRoute service method.</param>
         /// 
         /// <returns>The response from the DeleteRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public DeleteRouteResponse DeleteRoute(DeleteRouteRequest request)
         {
             var marshaller = new DeleteRouteRequestMarshaller();
@@ -3652,6 +3793,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRoute">REST API Reference for DeleteRoute Operation</seealso>
         public Task<DeleteRouteResponse> DeleteRouteAsync(DeleteRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRouteRequestMarshaller();
@@ -3673,6 +3815,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteRouteTable service method.</param>
         /// 
         /// <returns>The response from the DeleteRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteTable">REST API Reference for DeleteRouteTable Operation</seealso>
         public DeleteRouteTableResponse DeleteRouteTable(DeleteRouteTableRequest request)
         {
             var marshaller = new DeleteRouteTableRequestMarshaller();
@@ -3690,6 +3833,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteRouteTable">REST API Reference for DeleteRouteTable Operation</seealso>
         public Task<DeleteRouteTableResponse> DeleteRouteTableAsync(DeleteRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteRouteTableRequestMarshaller();
@@ -3717,6 +3861,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteSecurityGroup service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecurityGroup">REST API Reference for DeleteSecurityGroup Operation</seealso>
         public DeleteSecurityGroupResponse DeleteSecurityGroup(DeleteSecurityGroupRequest request)
         {
             var marshaller = new DeleteSecurityGroupRequestMarshaller();
@@ -3734,6 +3879,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSecurityGroup">REST API Reference for DeleteSecurityGroup Operation</seealso>
         public Task<DeleteSecurityGroupResponse> DeleteSecurityGroupAsync(DeleteSecurityGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSecurityGroupRequestMarshaller();
@@ -3773,6 +3919,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshot service method.</param>
         /// 
         /// <returns>The response from the DeleteSnapshot service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public DeleteSnapshotResponse DeleteSnapshot(DeleteSnapshotRequest request)
         {
             var marshaller = new DeleteSnapshotRequestMarshaller();
@@ -3790,6 +3937,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot">REST API Reference for DeleteSnapshot Operation</seealso>
         public Task<DeleteSnapshotResponse> DeleteSnapshotAsync(DeleteSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSnapshotRequestMarshaller();
@@ -3809,6 +3957,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DeleteSpotDatafeedSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSpotDatafeedSubscription">REST API Reference for DeleteSpotDatafeedSubscription Operation</seealso>
         public DeleteSpotDatafeedSubscriptionResponse DeleteSpotDatafeedSubscription()
         {
             return DeleteSpotDatafeedSubscription(new DeleteSpotDatafeedSubscriptionRequest());
@@ -3821,6 +3970,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteSpotDatafeedSubscription service method.</param>
         /// 
         /// <returns>The response from the DeleteSpotDatafeedSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSpotDatafeedSubscription">REST API Reference for DeleteSpotDatafeedSubscription Operation</seealso>
         public DeleteSpotDatafeedSubscriptionResponse DeleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest request)
         {
             var marshaller = new DeleteSpotDatafeedSubscriptionRequestMarshaller();
@@ -3838,6 +3988,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DeleteSpotDatafeedSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSpotDatafeedSubscription">REST API Reference for DeleteSpotDatafeedSubscription Operation</seealso>
         public Task<DeleteSpotDatafeedSubscriptionResponse> DeleteSpotDatafeedSubscriptionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DeleteSpotDatafeedSubscriptionAsync(new DeleteSpotDatafeedSubscriptionRequest(), cancellationToken);
@@ -3851,6 +4002,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSpotDatafeedSubscription">REST API Reference for DeleteSpotDatafeedSubscription Operation</seealso>
         public Task<DeleteSpotDatafeedSubscriptionResponse> DeleteSpotDatafeedSubscriptionAsync(DeleteSpotDatafeedSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSpotDatafeedSubscriptionRequestMarshaller();
@@ -3872,6 +4024,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteSubnet service method.</param>
         /// 
         /// <returns>The response from the DeleteSubnet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnet">REST API Reference for DeleteSubnet Operation</seealso>
         public DeleteSubnetResponse DeleteSubnet(DeleteSubnetRequest request)
         {
             var marshaller = new DeleteSubnetRequestMarshaller();
@@ -3889,6 +4042,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSubnet">REST API Reference for DeleteSubnet Operation</seealso>
         public Task<DeleteSubnetResponse> DeleteSubnetAsync(DeleteSubnetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteSubnetRequestMarshaller();
@@ -3916,6 +4070,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteTags service method.</param>
         /// 
         /// <returns>The response from the DeleteTags service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
             var marshaller = new DeleteTagsRequestMarshaller();
@@ -3933,6 +4088,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteTagsRequestMarshaller();
@@ -3964,6 +4120,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteVolume service method.</param>
         /// 
         /// <returns>The response from the DeleteVolume service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         public DeleteVolumeResponse DeleteVolume(DeleteVolumeRequest request)
         {
             var marshaller = new DeleteVolumeRequestMarshaller();
@@ -3981,6 +4138,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume">REST API Reference for DeleteVolume Operation</seealso>
         public Task<DeleteVolumeResponse> DeleteVolumeAsync(DeleteVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVolumeRequestMarshaller();
@@ -4005,6 +4163,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpc service method.</param>
         /// 
         /// <returns>The response from the DeleteVpc service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpc">REST API Reference for DeleteVpc Operation</seealso>
         public DeleteVpcResponse DeleteVpc(DeleteVpcRequest request)
         {
             var marshaller = new DeleteVpcRequestMarshaller();
@@ -4022,6 +4181,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpc">REST API Reference for DeleteVpc Operation</seealso>
         public Task<DeleteVpcResponse> DeleteVpcAsync(DeleteVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVpcRequestMarshaller();
@@ -4043,6 +4203,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpoints service method.</param>
         /// 
         /// <returns>The response from the DeleteVpcEndpoints service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints">REST API Reference for DeleteVpcEndpoints Operation</seealso>
         public DeleteVpcEndpointsResponse DeleteVpcEndpoints(DeleteVpcEndpointsRequest request)
         {
             var marshaller = new DeleteVpcEndpointsRequestMarshaller();
@@ -4060,6 +4221,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints">REST API Reference for DeleteVpcEndpoints Operation</seealso>
         public Task<DeleteVpcEndpointsResponse> DeleteVpcEndpointsAsync(DeleteVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVpcEndpointsRequestMarshaller();
@@ -4083,6 +4245,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcPeeringConnection service method.</param>
         /// 
         /// <returns>The response from the DeleteVpcPeeringConnection service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
         public DeleteVpcPeeringConnectionResponse DeleteVpcPeeringConnection(DeleteVpcPeeringConnectionRequest request)
         {
             var marshaller = new DeleteVpcPeeringConnectionRequestMarshaller();
@@ -4100,6 +4263,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcPeeringConnection">REST API Reference for DeleteVpcPeeringConnection Operation</seealso>
         public Task<DeleteVpcPeeringConnectionResponse> DeleteVpcPeeringConnectionAsync(DeleteVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVpcPeeringConnectionRequestMarshaller();
@@ -4131,6 +4295,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConnection service method.</param>
         /// 
         /// <returns>The response from the DeleteVpnConnection service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnection">REST API Reference for DeleteVpnConnection Operation</seealso>
         public DeleteVpnConnectionResponse DeleteVpnConnection(DeleteVpnConnectionRequest request)
         {
             var marshaller = new DeleteVpnConnectionRequestMarshaller();
@@ -4148,6 +4313,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnection">REST API Reference for DeleteVpnConnection Operation</seealso>
         public Task<DeleteVpnConnectionResponse> DeleteVpnConnectionAsync(DeleteVpnConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVpnConnectionRequestMarshaller();
@@ -4170,6 +4336,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpnConnectionRoute service method.</param>
         /// 
         /// <returns>The response from the DeleteVpnConnectionRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnectionRoute">REST API Reference for DeleteVpnConnectionRoute Operation</seealso>
         public DeleteVpnConnectionRouteResponse DeleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest request)
         {
             var marshaller = new DeleteVpnConnectionRouteRequestMarshaller();
@@ -4187,6 +4354,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnectionRoute">REST API Reference for DeleteVpnConnectionRoute Operation</seealso>
         public Task<DeleteVpnConnectionRouteResponse> DeleteVpnConnectionRouteAsync(DeleteVpnConnectionRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVpnConnectionRouteRequestMarshaller();
@@ -4210,6 +4378,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpnGateway service method.</param>
         /// 
         /// <returns>The response from the DeleteVpnGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnGateway">REST API Reference for DeleteVpnGateway Operation</seealso>
         public DeleteVpnGatewayResponse DeleteVpnGateway(DeleteVpnGatewayRequest request)
         {
             var marshaller = new DeleteVpnGatewayRequestMarshaller();
@@ -4227,6 +4396,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnGateway">REST API Reference for DeleteVpnGateway Operation</seealso>
         public Task<DeleteVpnGatewayResponse> DeleteVpnGatewayAsync(DeleteVpnGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeleteVpnGatewayRequestMarshaller();
@@ -4253,6 +4423,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DeregisterImage service method.</param>
         /// 
         /// <returns>The response from the DeregisterImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterImage">REST API Reference for DeregisterImage Operation</seealso>
         public DeregisterImageResponse DeregisterImage(DeregisterImageRequest request)
         {
             var marshaller = new DeregisterImageRequestMarshaller();
@@ -4270,6 +4441,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterImage">REST API Reference for DeregisterImage Operation</seealso>
         public Task<DeregisterImageResponse> DeregisterImageAsync(DeregisterImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DeregisterImageRequestMarshaller();
@@ -4321,6 +4493,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public DescribeAccountAttributesResponse DescribeAccountAttributes()
         {
             return DescribeAccountAttributes(new DescribeAccountAttributesRequest());
@@ -4365,6 +4538,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
         {
             var marshaller = new DescribeAccountAttributesRequestMarshaller();
@@ -4414,6 +4588,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeAccountAttributesAsync(new DescribeAccountAttributesRequest(), cancellationToken);
@@ -4427,6 +4602,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAccountAttributesRequestMarshaller();
@@ -4453,6 +4629,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAddresses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         public DescribeAddressesResponse DescribeAddresses()
         {
             return DescribeAddresses(new DescribeAddressesRequest());
@@ -4472,6 +4649,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeAddresses service method.</param>
         /// 
         /// <returns>The response from the DescribeAddresses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         public DescribeAddressesResponse DescribeAddresses(DescribeAddressesRequest request)
         {
             var marshaller = new DescribeAddressesRequestMarshaller();
@@ -4496,6 +4674,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeAddresses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         public Task<DescribeAddressesResponse> DescribeAddressesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeAddressesAsync(new DescribeAddressesRequest(), cancellationToken);
@@ -4509,6 +4688,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         public Task<DescribeAddressesResponse> DescribeAddressesAsync(DescribeAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAddressesRequestMarshaller();
@@ -4537,6 +4717,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAvailabilityZones service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">REST API Reference for DescribeAvailabilityZones Operation</seealso>
         public DescribeAvailabilityZonesResponse DescribeAvailabilityZones()
         {
             return DescribeAvailabilityZones(new DescribeAvailabilityZonesRequest());
@@ -4558,6 +4739,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeAvailabilityZones service method.</param>
         /// 
         /// <returns>The response from the DescribeAvailabilityZones service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">REST API Reference for DescribeAvailabilityZones Operation</seealso>
         public DescribeAvailabilityZonesResponse DescribeAvailabilityZones(DescribeAvailabilityZonesRequest request)
         {
             var marshaller = new DescribeAvailabilityZonesRequestMarshaller();
@@ -4584,6 +4766,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeAvailabilityZones service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">REST API Reference for DescribeAvailabilityZones Operation</seealso>
         public Task<DescribeAvailabilityZonesResponse> DescribeAvailabilityZonesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeAvailabilityZonesAsync(new DescribeAvailabilityZonesRequest(), cancellationToken);
@@ -4597,6 +4780,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">REST API Reference for DescribeAvailabilityZones Operation</seealso>
         public Task<DescribeAvailabilityZonesResponse> DescribeAvailabilityZonesAsync(DescribeAvailabilityZonesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAvailabilityZonesRequestMarshaller();
@@ -4625,6 +4809,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeBundleTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">REST API Reference for DescribeBundleTasks Operation</seealso>
         public DescribeBundleTasksResponse DescribeBundleTasks()
         {
             return DescribeBundleTasks(new DescribeBundleTasksRequest());
@@ -4646,6 +4831,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeBundleTasks service method.</param>
         /// 
         /// <returns>The response from the DescribeBundleTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">REST API Reference for DescribeBundleTasks Operation</seealso>
         public DescribeBundleTasksResponse DescribeBundleTasks(DescribeBundleTasksRequest request)
         {
             var marshaller = new DescribeBundleTasksRequestMarshaller();
@@ -4672,6 +4858,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeBundleTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">REST API Reference for DescribeBundleTasks Operation</seealso>
         public Task<DescribeBundleTasksResponse> DescribeBundleTasksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeBundleTasksAsync(new DescribeBundleTasksRequest(), cancellationToken);
@@ -4685,6 +4872,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeBundleTasks">REST API Reference for DescribeBundleTasks Operation</seealso>
         public Task<DescribeBundleTasksResponse> DescribeBundleTasksAsync(DescribeBundleTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeBundleTasksRequestMarshaller();
@@ -4707,6 +4895,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeClassicLinkInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeClassicLinkInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClassicLinkInstances">REST API Reference for DescribeClassicLinkInstances Operation</seealso>
         public DescribeClassicLinkInstancesResponse DescribeClassicLinkInstances(DescribeClassicLinkInstancesRequest request)
         {
             var marshaller = new DescribeClassicLinkInstancesRequestMarshaller();
@@ -4724,6 +4913,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClassicLinkInstances">REST API Reference for DescribeClassicLinkInstances Operation</seealso>
         public Task<DescribeClassicLinkInstancesResponse> DescribeClassicLinkInstancesAsync(DescribeClassicLinkInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeClassicLinkInstancesRequestMarshaller();
@@ -4750,6 +4940,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeConversionTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks">REST API Reference for DescribeConversionTasks Operation</seealso>
         public DescribeConversionTasksResponse DescribeConversionTasks()
         {
             return DescribeConversionTasks(new DescribeConversionTasksRequest());
@@ -4769,6 +4960,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeConversionTasks service method.</param>
         /// 
         /// <returns>The response from the DescribeConversionTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks">REST API Reference for DescribeConversionTasks Operation</seealso>
         public DescribeConversionTasksResponse DescribeConversionTasks(DescribeConversionTasksRequest request)
         {
             var marshaller = new DescribeConversionTasksRequestMarshaller();
@@ -4793,6 +4985,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeConversionTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks">REST API Reference for DescribeConversionTasks Operation</seealso>
         public Task<DescribeConversionTasksResponse> DescribeConversionTasksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeConversionTasksAsync(new DescribeConversionTasksRequest(), cancellationToken);
@@ -4806,6 +4999,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks">REST API Reference for DescribeConversionTasks Operation</seealso>
         public Task<DescribeConversionTasksResponse> DescribeConversionTasksAsync(DescribeConversionTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeConversionTasksRequestMarshaller();
@@ -4832,6 +5026,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeCustomerGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">REST API Reference for DescribeCustomerGateways Operation</seealso>
         public DescribeCustomerGatewaysResponse DescribeCustomerGateways()
         {
             return DescribeCustomerGateways(new DescribeCustomerGatewaysRequest());
@@ -4851,6 +5046,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeCustomerGateways service method.</param>
         /// 
         /// <returns>The response from the DescribeCustomerGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">REST API Reference for DescribeCustomerGateways Operation</seealso>
         public DescribeCustomerGatewaysResponse DescribeCustomerGateways(DescribeCustomerGatewaysRequest request)
         {
             var marshaller = new DescribeCustomerGatewaysRequestMarshaller();
@@ -4875,6 +5071,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeCustomerGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">REST API Reference for DescribeCustomerGateways Operation</seealso>
         public Task<DescribeCustomerGatewaysResponse> DescribeCustomerGatewaysAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeCustomerGatewaysAsync(new DescribeCustomerGatewaysRequest(), cancellationToken);
@@ -4888,6 +5085,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">REST API Reference for DescribeCustomerGateways Operation</seealso>
         public Task<DescribeCustomerGatewaysResponse> DescribeCustomerGatewaysAsync(DescribeCustomerGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeCustomerGatewaysRequestMarshaller();
@@ -4913,6 +5111,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeDhcpOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">REST API Reference for DescribeDhcpOptions Operation</seealso>
         public DescribeDhcpOptionsResponse DescribeDhcpOptions()
         {
             return DescribeDhcpOptions(new DescribeDhcpOptionsRequest());
@@ -4931,6 +5130,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeDhcpOptions service method.</param>
         /// 
         /// <returns>The response from the DescribeDhcpOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">REST API Reference for DescribeDhcpOptions Operation</seealso>
         public DescribeDhcpOptionsResponse DescribeDhcpOptions(DescribeDhcpOptionsRequest request)
         {
             var marshaller = new DescribeDhcpOptionsRequestMarshaller();
@@ -4954,6 +5154,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeDhcpOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">REST API Reference for DescribeDhcpOptions Operation</seealso>
         public Task<DescribeDhcpOptionsResponse> DescribeDhcpOptionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeDhcpOptionsAsync(new DescribeDhcpOptionsRequest(), cancellationToken);
@@ -4967,6 +5168,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">REST API Reference for DescribeDhcpOptions Operation</seealso>
         public Task<DescribeDhcpOptionsResponse> DescribeDhcpOptionsAsync(DescribeDhcpOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeDhcpOptionsRequestMarshaller();
@@ -4987,6 +5189,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeEgressOnlyInternetGateways service method.</param>
         /// 
         /// <returns>The response from the DescribeEgressOnlyInternetGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeEgressOnlyInternetGateways">REST API Reference for DescribeEgressOnlyInternetGateways Operation</seealso>
         public DescribeEgressOnlyInternetGatewaysResponse DescribeEgressOnlyInternetGateways(DescribeEgressOnlyInternetGatewaysRequest request)
         {
             var marshaller = new DescribeEgressOnlyInternetGatewaysRequestMarshaller();
@@ -5004,6 +5207,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeEgressOnlyInternetGateways">REST API Reference for DescribeEgressOnlyInternetGateways Operation</seealso>
         public Task<DescribeEgressOnlyInternetGatewaysResponse> DescribeEgressOnlyInternetGatewaysAsync(DescribeEgressOnlyInternetGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeEgressOnlyInternetGatewaysRequestMarshaller();
@@ -5023,6 +5227,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeExportTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public DescribeExportTasksResponse DescribeExportTasks()
         {
             return DescribeExportTasks(new DescribeExportTasksRequest());
@@ -5035,6 +5240,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeExportTasks service method.</param>
         /// 
         /// <returns>The response from the DescribeExportTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request)
         {
             var marshaller = new DescribeExportTasksRequestMarshaller();
@@ -5052,6 +5258,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeExportTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public Task<DescribeExportTasksResponse> DescribeExportTasksAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeExportTasksAsync(new DescribeExportTasksRequest(), cancellationToken);
@@ -5065,6 +5272,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         public Task<DescribeExportTasksResponse> DescribeExportTasksAsync(DescribeExportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeExportTasksRequestMarshaller();
@@ -5087,6 +5295,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeFlowLogs service method.</param>
         /// 
         /// <returns>The response from the DescribeFlowLogs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFlowLogs">REST API Reference for DescribeFlowLogs Operation</seealso>
         public DescribeFlowLogsResponse DescribeFlowLogs(DescribeFlowLogsRequest request)
         {
             var marshaller = new DescribeFlowLogsRequestMarshaller();
@@ -5104,6 +5313,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFlowLogs">REST API Reference for DescribeFlowLogs Operation</seealso>
         public Task<DescribeFlowLogsResponse> DescribeFlowLogsAsync(DescribeFlowLogsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeFlowLogsRequestMarshaller();
@@ -5134,6 +5344,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservationOfferings service method.</param>
         /// 
         /// <returns>The response from the DescribeHostReservationOfferings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservationOfferings">REST API Reference for DescribeHostReservationOfferings Operation</seealso>
         public DescribeHostReservationOfferingsResponse DescribeHostReservationOfferings(DescribeHostReservationOfferingsRequest request)
         {
             var marshaller = new DescribeHostReservationOfferingsRequestMarshaller();
@@ -5151,6 +5362,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservationOfferings">REST API Reference for DescribeHostReservationOfferings Operation</seealso>
         public Task<DescribeHostReservationOfferingsResponse> DescribeHostReservationOfferingsAsync(DescribeHostReservationOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeHostReservationOfferingsRequestMarshaller();
@@ -5172,6 +5384,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeHostReservations service method.</param>
         /// 
         /// <returns>The response from the DescribeHostReservations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservations">REST API Reference for DescribeHostReservations Operation</seealso>
         public DescribeHostReservationsResponse DescribeHostReservations(DescribeHostReservationsRequest request)
         {
             var marshaller = new DescribeHostReservationsRequestMarshaller();
@@ -5189,6 +5402,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservations">REST API Reference for DescribeHostReservations Operation</seealso>
         public Task<DescribeHostReservationsResponse> DescribeHostReservationsAsync(DescribeHostReservationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeHostReservationsRequestMarshaller();
@@ -5216,6 +5430,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeHosts service method.</param>
         /// 
         /// <returns>The response from the DescribeHosts service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHosts">REST API Reference for DescribeHosts Operation</seealso>
         public DescribeHostsResponse DescribeHosts(DescribeHostsRequest request)
         {
             var marshaller = new DescribeHostsRequestMarshaller();
@@ -5233,6 +5448,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHosts">REST API Reference for DescribeHosts Operation</seealso>
         public Task<DescribeHostsResponse> DescribeHostsAsync(DescribeHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeHostsRequestMarshaller();
@@ -5269,6 +5485,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityIdFormat service method.</param>
         /// 
         /// <returns>The response from the DescribeIdentityIdFormat service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdentityIdFormat">REST API Reference for DescribeIdentityIdFormat Operation</seealso>
         public DescribeIdentityIdFormatResponse DescribeIdentityIdFormat(DescribeIdentityIdFormatRequest request)
         {
             var marshaller = new DescribeIdentityIdFormatRequestMarshaller();
@@ -5286,6 +5503,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdentityIdFormat">REST API Reference for DescribeIdentityIdFormat Operation</seealso>
         public Task<DescribeIdentityIdFormatResponse> DescribeIdentityIdFormatAsync(DescribeIdentityIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeIdentityIdFormatRequestMarshaller();
@@ -5324,6 +5542,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeIdFormat service method.</param>
         /// 
         /// <returns>The response from the DescribeIdFormat service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdFormat">REST API Reference for DescribeIdFormat Operation</seealso>
         public DescribeIdFormatResponse DescribeIdFormat(DescribeIdFormatRequest request)
         {
             var marshaller = new DescribeIdFormatRequestMarshaller();
@@ -5341,6 +5560,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIdFormat">REST API Reference for DescribeIdFormat Operation</seealso>
         public Task<DescribeIdFormatResponse> DescribeIdFormatAsync(DescribeIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeIdFormatRequestMarshaller();
@@ -5362,6 +5582,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeImageAttribute service method.</param>
         /// 
         /// <returns>The response from the DescribeImageAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageAttribute">REST API Reference for DescribeImageAttribute Operation</seealso>
         public DescribeImageAttributeResponse DescribeImageAttribute(DescribeImageAttributeRequest request)
         {
             var marshaller = new DescribeImageAttributeRequestMarshaller();
@@ -5379,6 +5600,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImageAttribute">REST API Reference for DescribeImageAttribute Operation</seealso>
         public Task<DescribeImageAttributeResponse> DescribeImageAttributeAsync(DescribeImageAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeImageAttributeRequestMarshaller();
@@ -5407,6 +5629,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeImages service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public DescribeImagesResponse DescribeImages()
         {
             return DescribeImages(new DescribeImagesRequest());
@@ -5428,6 +5651,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeImages service method.</param>
         /// 
         /// <returns>The response from the DescribeImages service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public DescribeImagesResponse DescribeImages(DescribeImagesRequest request)
         {
             var marshaller = new DescribeImagesRequestMarshaller();
@@ -5454,6 +5678,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeImages service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public Task<DescribeImagesResponse> DescribeImagesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeImagesAsync(new DescribeImagesRequest(), cancellationToken);
@@ -5467,6 +5692,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImages">REST API Reference for DescribeImages Operation</seealso>
         public Task<DescribeImagesResponse> DescribeImagesAsync(DescribeImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeImagesRequestMarshaller();
@@ -5488,6 +5714,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeImportImageTasks service method.</param>
         /// 
         /// <returns>The response from the DescribeImportImageTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportImageTasks">REST API Reference for DescribeImportImageTasks Operation</seealso>
         public DescribeImportImageTasksResponse DescribeImportImageTasks(DescribeImportImageTasksRequest request)
         {
             var marshaller = new DescribeImportImageTasksRequestMarshaller();
@@ -5505,6 +5732,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportImageTasks">REST API Reference for DescribeImportImageTasks Operation</seealso>
         public Task<DescribeImportImageTasksResponse> DescribeImportImageTasksAsync(DescribeImportImageTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeImportImageTasksRequestMarshaller();
@@ -5525,6 +5753,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeImportSnapshotTasks service method.</param>
         /// 
         /// <returns>The response from the DescribeImportSnapshotTasks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportSnapshotTasks">REST API Reference for DescribeImportSnapshotTasks Operation</seealso>
         public DescribeImportSnapshotTasksResponse DescribeImportSnapshotTasks(DescribeImportSnapshotTasksRequest request)
         {
             var marshaller = new DescribeImportSnapshotTasksRequestMarshaller();
@@ -5542,6 +5771,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeImportSnapshotTasks">REST API Reference for DescribeImportSnapshotTasks Operation</seealso>
         public Task<DescribeImportSnapshotTasksResponse> DescribeImportSnapshotTasksAsync(DescribeImportSnapshotTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeImportSnapshotTasksRequestMarshaller();
@@ -5567,6 +5797,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAttribute service method.</param>
         /// 
         /// <returns>The response from the DescribeInstanceAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceAttribute">REST API Reference for DescribeInstanceAttribute Operation</seealso>
         public DescribeInstanceAttributeResponse DescribeInstanceAttribute(DescribeInstanceAttributeRequest request)
         {
             var marshaller = new DescribeInstanceAttributeRequestMarshaller();
@@ -5584,6 +5815,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceAttribute">REST API Reference for DescribeInstanceAttribute Operation</seealso>
         public Task<DescribeInstanceAttributeResponse> DescribeInstanceAttributeAsync(DescribeInstanceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeInstanceAttributeRequestMarshaller();
@@ -5624,6 +5856,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         public DescribeInstancesResponse DescribeInstances()
         {
             return DescribeInstances(new DescribeInstancesRequest());
@@ -5657,6 +5890,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         public DescribeInstancesResponse DescribeInstances(DescribeInstancesRequest request)
         {
             var marshaller = new DescribeInstancesRequestMarshaller();
@@ -5695,6 +5929,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         public Task<DescribeInstancesResponse> DescribeInstancesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeInstancesAsync(new DescribeInstancesRequest(), cancellationToken);
@@ -5708,6 +5943,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstances">REST API Reference for DescribeInstances Operation</seealso>
         public Task<DescribeInstancesResponse> DescribeInstancesAsync(DescribeInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeInstancesRequestMarshaller();
@@ -5755,6 +5991,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">REST API Reference for DescribeInstanceStatus Operation</seealso>
         public DescribeInstanceStatusResponse DescribeInstanceStatus()
         {
             return DescribeInstanceStatus(new DescribeInstanceStatusRequest());
@@ -5795,6 +6032,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceStatus service method.</param>
         /// 
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">REST API Reference for DescribeInstanceStatus Operation</seealso>
         public DescribeInstanceStatusResponse DescribeInstanceStatus(DescribeInstanceStatusRequest request)
         {
             var marshaller = new DescribeInstanceStatusRequestMarshaller();
@@ -5840,6 +6078,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeInstanceStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">REST API Reference for DescribeInstanceStatus Operation</seealso>
         public Task<DescribeInstanceStatusResponse> DescribeInstanceStatusAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeInstanceStatusAsync(new DescribeInstanceStatusRequest(), cancellationToken);
@@ -5853,6 +6092,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">REST API Reference for DescribeInstanceStatus Operation</seealso>
         public Task<DescribeInstanceStatusResponse> DescribeInstanceStatusAsync(DescribeInstanceStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeInstanceStatusRequestMarshaller();
@@ -5872,6 +6112,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeInternetGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInternetGateways">REST API Reference for DescribeInternetGateways Operation</seealso>
         public DescribeInternetGatewaysResponse DescribeInternetGateways()
         {
             return DescribeInternetGateways(new DescribeInternetGatewaysRequest());
@@ -5884,6 +6125,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeInternetGateways service method.</param>
         /// 
         /// <returns>The response from the DescribeInternetGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInternetGateways">REST API Reference for DescribeInternetGateways Operation</seealso>
         public DescribeInternetGatewaysResponse DescribeInternetGateways(DescribeInternetGatewaysRequest request)
         {
             var marshaller = new DescribeInternetGatewaysRequestMarshaller();
@@ -5901,6 +6143,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeInternetGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInternetGateways">REST API Reference for DescribeInternetGateways Operation</seealso>
         public Task<DescribeInternetGatewaysResponse> DescribeInternetGatewaysAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeInternetGatewaysAsync(new DescribeInternetGatewaysRequest(), cancellationToken);
@@ -5914,6 +6157,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInternetGateways">REST API Reference for DescribeInternetGateways Operation</seealso>
         public Task<DescribeInternetGatewaysResponse> DescribeInternetGatewaysAsync(DescribeInternetGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeInternetGatewaysRequestMarshaller();
@@ -5939,6 +6183,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeKeyPairs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairs">REST API Reference for DescribeKeyPairs Operation</seealso>
         public DescribeKeyPairsResponse DescribeKeyPairs()
         {
             return DescribeKeyPairs(new DescribeKeyPairsRequest());
@@ -5957,6 +6202,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeKeyPairs service method.</param>
         /// 
         /// <returns>The response from the DescribeKeyPairs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairs">REST API Reference for DescribeKeyPairs Operation</seealso>
         public DescribeKeyPairsResponse DescribeKeyPairs(DescribeKeyPairsRequest request)
         {
             var marshaller = new DescribeKeyPairsRequestMarshaller();
@@ -5980,6 +6226,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeKeyPairs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairs">REST API Reference for DescribeKeyPairs Operation</seealso>
         public Task<DescribeKeyPairsResponse> DescribeKeyPairsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeKeyPairsAsync(new DescribeKeyPairsRequest(), cancellationToken);
@@ -5993,6 +6240,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairs">REST API Reference for DescribeKeyPairs Operation</seealso>
         public Task<DescribeKeyPairsResponse> DescribeKeyPairsAsync(DescribeKeyPairsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeKeyPairsRequestMarshaller();
@@ -6015,6 +6263,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeMovingAddresses service method.</param>
         /// 
         /// <returns>The response from the DescribeMovingAddresses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMovingAddresses">REST API Reference for DescribeMovingAddresses Operation</seealso>
         public DescribeMovingAddressesResponse DescribeMovingAddresses(DescribeMovingAddressesRequest request)
         {
             var marshaller = new DescribeMovingAddressesRequestMarshaller();
@@ -6032,6 +6281,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMovingAddresses">REST API Reference for DescribeMovingAddresses Operation</seealso>
         public Task<DescribeMovingAddressesResponse> DescribeMovingAddressesAsync(DescribeMovingAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeMovingAddressesRequestMarshaller();
@@ -6052,6 +6302,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeNatGateways service method.</param>
         /// 
         /// <returns>The response from the DescribeNatGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNatGateways">REST API Reference for DescribeNatGateways Operation</seealso>
         public DescribeNatGatewaysResponse DescribeNatGateways(DescribeNatGatewaysRequest request)
         {
             var marshaller = new DescribeNatGatewaysRequestMarshaller();
@@ -6069,6 +6320,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNatGateways">REST API Reference for DescribeNatGateways Operation</seealso>
         public Task<DescribeNatGatewaysResponse> DescribeNatGatewaysAsync(DescribeNatGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeNatGatewaysRequestMarshaller();
@@ -6094,6 +6346,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeNetworkAcls service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkAcls">REST API Reference for DescribeNetworkAcls Operation</seealso>
         public DescribeNetworkAclsResponse DescribeNetworkAcls()
         {
             return DescribeNetworkAcls(new DescribeNetworkAclsRequest());
@@ -6112,6 +6365,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkAcls service method.</param>
         /// 
         /// <returns>The response from the DescribeNetworkAcls service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkAcls">REST API Reference for DescribeNetworkAcls Operation</seealso>
         public DescribeNetworkAclsResponse DescribeNetworkAcls(DescribeNetworkAclsRequest request)
         {
             var marshaller = new DescribeNetworkAclsRequestMarshaller();
@@ -6135,6 +6389,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeNetworkAcls service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkAcls">REST API Reference for DescribeNetworkAcls Operation</seealso>
         public Task<DescribeNetworkAclsResponse> DescribeNetworkAclsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeNetworkAclsAsync(new DescribeNetworkAclsRequest(), cancellationToken);
@@ -6148,6 +6403,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkAcls">REST API Reference for DescribeNetworkAcls Operation</seealso>
         public Task<DescribeNetworkAclsResponse> DescribeNetworkAclsAsync(DescribeNetworkAclsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeNetworkAclsRequestMarshaller();
@@ -6168,6 +6424,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInterfaceAttribute service method.</param>
         /// 
         /// <returns>The response from the DescribeNetworkInterfaceAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaceAttribute">REST API Reference for DescribeNetworkInterfaceAttribute Operation</seealso>
         public DescribeNetworkInterfaceAttributeResponse DescribeNetworkInterfaceAttribute(DescribeNetworkInterfaceAttributeRequest request)
         {
             var marshaller = new DescribeNetworkInterfaceAttributeRequestMarshaller();
@@ -6185,6 +6442,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaceAttribute">REST API Reference for DescribeNetworkInterfaceAttribute Operation</seealso>
         public Task<DescribeNetworkInterfaceAttributeResponse> DescribeNetworkInterfaceAttributeAsync(DescribeNetworkInterfaceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeNetworkInterfaceAttributeRequestMarshaller();
@@ -6204,6 +6462,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeNetworkInterfaces service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces">REST API Reference for DescribeNetworkInterfaces Operation</seealso>
         public DescribeNetworkInterfacesResponse DescribeNetworkInterfaces()
         {
             return DescribeNetworkInterfaces(new DescribeNetworkInterfacesRequest());
@@ -6216,6 +6475,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInterfaces service method.</param>
         /// 
         /// <returns>The response from the DescribeNetworkInterfaces service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces">REST API Reference for DescribeNetworkInterfaces Operation</seealso>
         public DescribeNetworkInterfacesResponse DescribeNetworkInterfaces(DescribeNetworkInterfacesRequest request)
         {
             var marshaller = new DescribeNetworkInterfacesRequestMarshaller();
@@ -6233,6 +6493,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeNetworkInterfaces service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces">REST API Reference for DescribeNetworkInterfaces Operation</seealso>
         public Task<DescribeNetworkInterfacesResponse> DescribeNetworkInterfacesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeNetworkInterfacesAsync(new DescribeNetworkInterfacesRequest(), cancellationToken);
@@ -6246,6 +6507,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkInterfaces">REST API Reference for DescribeNetworkInterfaces Operation</seealso>
         public Task<DescribeNetworkInterfacesResponse> DescribeNetworkInterfacesAsync(DescribeNetworkInterfacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeNetworkInterfacesRequestMarshaller();
@@ -6267,6 +6529,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribePlacementGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">REST API Reference for DescribePlacementGroups Operation</seealso>
         public DescribePlacementGroupsResponse DescribePlacementGroups()
         {
             return DescribePlacementGroups(new DescribePlacementGroupsRequest());
@@ -6281,6 +6544,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribePlacementGroups service method.</param>
         /// 
         /// <returns>The response from the DescribePlacementGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">REST API Reference for DescribePlacementGroups Operation</seealso>
         public DescribePlacementGroupsResponse DescribePlacementGroups(DescribePlacementGroupsRequest request)
         {
             var marshaller = new DescribePlacementGroupsRequestMarshaller();
@@ -6300,6 +6564,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribePlacementGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">REST API Reference for DescribePlacementGroups Operation</seealso>
         public Task<DescribePlacementGroupsResponse> DescribePlacementGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribePlacementGroupsAsync(new DescribePlacementGroupsRequest(), cancellationToken);
@@ -6313,6 +6578,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">REST API Reference for DescribePlacementGroups Operation</seealso>
         public Task<DescribePlacementGroupsResponse> DescribePlacementGroupsAsync(DescribePlacementGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribePlacementGroupsRequestMarshaller();
@@ -6336,6 +6602,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribePrefixLists service method.</param>
         /// 
         /// <returns>The response from the DescribePrefixLists service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists">REST API Reference for DescribePrefixLists Operation</seealso>
         public DescribePrefixListsResponse DescribePrefixLists(DescribePrefixListsRequest request)
         {
             var marshaller = new DescribePrefixListsRequestMarshaller();
@@ -6353,6 +6620,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrefixLists">REST API Reference for DescribePrefixLists Operation</seealso>
         public Task<DescribePrefixListsResponse> DescribePrefixListsAsync(DescribePrefixListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribePrefixListsRequestMarshaller();
@@ -6378,6 +6646,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeRegions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
         public DescribeRegionsResponse DescribeRegions()
         {
             return DescribeRegions(new DescribeRegionsRequest());
@@ -6396,6 +6665,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeRegions service method.</param>
         /// 
         /// <returns>The response from the DescribeRegions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
         public DescribeRegionsResponse DescribeRegions(DescribeRegionsRequest request)
         {
             var marshaller = new DescribeRegionsRequestMarshaller();
@@ -6419,6 +6689,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeRegions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
         public Task<DescribeRegionsResponse> DescribeRegionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeRegionsAsync(new DescribeRegionsRequest(), cancellationToken);
@@ -6432,6 +6703,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">REST API Reference for DescribeRegions Operation</seealso>
         public Task<DescribeRegionsResponse> DescribeRegionsAsync(DescribeRegionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeRegionsRequestMarshaller();
@@ -6457,6 +6729,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">REST API Reference for DescribeReservedInstances Operation</seealso>
         public DescribeReservedInstancesResponse DescribeReservedInstances()
         {
             return DescribeReservedInstances(new DescribeReservedInstancesRequest());
@@ -6475,6 +6748,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">REST API Reference for DescribeReservedInstances Operation</seealso>
         public DescribeReservedInstancesResponse DescribeReservedInstances(DescribeReservedInstancesRequest request)
         {
             var marshaller = new DescribeReservedInstancesRequestMarshaller();
@@ -6498,6 +6772,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeReservedInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">REST API Reference for DescribeReservedInstances Operation</seealso>
         public Task<DescribeReservedInstancesResponse> DescribeReservedInstancesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeReservedInstancesAsync(new DescribeReservedInstancesRequest(), cancellationToken);
@@ -6511,6 +6786,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">REST API Reference for DescribeReservedInstances Operation</seealso>
         public Task<DescribeReservedInstancesResponse> DescribeReservedInstancesAsync(DescribeReservedInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeReservedInstancesRequestMarshaller();
@@ -6557,6 +6833,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedInstancesListings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">REST API Reference for DescribeReservedInstancesListings Operation</seealso>
         public DescribeReservedInstancesListingsResponse DescribeReservedInstancesListings()
         {
             return DescribeReservedInstancesListings(new DescribeReservedInstancesListingsRequest());
@@ -6596,6 +6873,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesListings service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedInstancesListings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">REST API Reference for DescribeReservedInstancesListings Operation</seealso>
         public DescribeReservedInstancesListingsResponse DescribeReservedInstancesListings(DescribeReservedInstancesListingsRequest request)
         {
             var marshaller = new DescribeReservedInstancesListingsRequestMarshaller();
@@ -6640,6 +6918,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeReservedInstancesListings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">REST API Reference for DescribeReservedInstancesListings Operation</seealso>
         public Task<DescribeReservedInstancesListingsResponse> DescribeReservedInstancesListingsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeReservedInstancesListingsAsync(new DescribeReservedInstancesListingsRequest(), cancellationToken);
@@ -6653,6 +6932,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">REST API Reference for DescribeReservedInstancesListings Operation</seealso>
         public Task<DescribeReservedInstancesListingsResponse> DescribeReservedInstancesListingsAsync(DescribeReservedInstancesListingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeReservedInstancesListingsRequestMarshaller();
@@ -6681,6 +6961,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedInstancesModifications service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">REST API Reference for DescribeReservedInstancesModifications Operation</seealso>
         public DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications()
         {
             return DescribeReservedInstancesModifications(new DescribeReservedInstancesModificationsRequest());
@@ -6702,6 +6983,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesModifications service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedInstancesModifications service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">REST API Reference for DescribeReservedInstancesModifications Operation</seealso>
         public DescribeReservedInstancesModificationsResponse DescribeReservedInstancesModifications(DescribeReservedInstancesModificationsRequest request)
         {
             var marshaller = new DescribeReservedInstancesModificationsRequestMarshaller();
@@ -6728,6 +7010,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeReservedInstancesModifications service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">REST API Reference for DescribeReservedInstancesModifications Operation</seealso>
         public Task<DescribeReservedInstancesModificationsResponse> DescribeReservedInstancesModificationsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeReservedInstancesModificationsAsync(new DescribeReservedInstancesModificationsRequest(), cancellationToken);
@@ -6741,6 +7024,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">REST API Reference for DescribeReservedInstancesModifications Operation</seealso>
         public Task<DescribeReservedInstancesModificationsResponse> DescribeReservedInstancesModificationsAsync(DescribeReservedInstancesModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeReservedInstancesModificationsRequestMarshaller();
@@ -6775,6 +7059,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeReservedInstancesOfferings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">REST API Reference for DescribeReservedInstancesOfferings Operation</seealso>
         public DescribeReservedInstancesOfferingsResponse DescribeReservedInstancesOfferings()
         {
             return DescribeReservedInstancesOfferings(new DescribeReservedInstancesOfferingsRequest());
@@ -6802,6 +7087,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeReservedInstancesOfferings service method.</param>
         /// 
         /// <returns>The response from the DescribeReservedInstancesOfferings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">REST API Reference for DescribeReservedInstancesOfferings Operation</seealso>
         public DescribeReservedInstancesOfferingsResponse DescribeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest request)
         {
             var marshaller = new DescribeReservedInstancesOfferingsRequestMarshaller();
@@ -6834,6 +7120,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeReservedInstancesOfferings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">REST API Reference for DescribeReservedInstancesOfferings Operation</seealso>
         public Task<DescribeReservedInstancesOfferingsResponse> DescribeReservedInstancesOfferingsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeReservedInstancesOfferingsAsync(new DescribeReservedInstancesOfferingsRequest(), cancellationToken);
@@ -6847,6 +7134,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">REST API Reference for DescribeReservedInstancesOfferings Operation</seealso>
         public Task<DescribeReservedInstancesOfferingsResponse> DescribeReservedInstancesOfferingsAsync(DescribeReservedInstancesOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeReservedInstancesOfferingsRequestMarshaller();
@@ -6878,6 +7166,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeRouteTables service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">REST API Reference for DescribeRouteTables Operation</seealso>
         public DescribeRouteTablesResponse DescribeRouteTables()
         {
             return DescribeRouteTables(new DescribeRouteTablesRequest());
@@ -6902,6 +7191,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeRouteTables service method.</param>
         /// 
         /// <returns>The response from the DescribeRouteTables service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">REST API Reference for DescribeRouteTables Operation</seealso>
         public DescribeRouteTablesResponse DescribeRouteTables(DescribeRouteTablesRequest request)
         {
             var marshaller = new DescribeRouteTablesRequestMarshaller();
@@ -6931,6 +7221,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeRouteTables service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">REST API Reference for DescribeRouteTables Operation</seealso>
         public Task<DescribeRouteTablesResponse> DescribeRouteTablesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeRouteTablesAsync(new DescribeRouteTablesRequest(), cancellationToken);
@@ -6944,6 +7235,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">REST API Reference for DescribeRouteTables Operation</seealso>
         public Task<DescribeRouteTablesResponse> DescribeRouteTablesAsync(DescribeRouteTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeRouteTablesRequestMarshaller();
@@ -6977,6 +7269,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledInstanceAvailability service method.</param>
         /// 
         /// <returns>The response from the DescribeScheduledInstanceAvailability service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstanceAvailability">REST API Reference for DescribeScheduledInstanceAvailability Operation</seealso>
         public DescribeScheduledInstanceAvailabilityResponse DescribeScheduledInstanceAvailability(DescribeScheduledInstanceAvailabilityRequest request)
         {
             var marshaller = new DescribeScheduledInstanceAvailabilityRequestMarshaller();
@@ -6994,6 +7287,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstanceAvailability">REST API Reference for DescribeScheduledInstanceAvailability Operation</seealso>
         public Task<DescribeScheduledInstanceAvailabilityResponse> DescribeScheduledInstanceAvailabilityAsync(DescribeScheduledInstanceAvailabilityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeScheduledInstanceAvailabilityRequestMarshaller();
@@ -7014,6 +7308,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeScheduledInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeScheduledInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstances">REST API Reference for DescribeScheduledInstances Operation</seealso>
         public DescribeScheduledInstancesResponse DescribeScheduledInstances(DescribeScheduledInstancesRequest request)
         {
             var marshaller = new DescribeScheduledInstancesRequestMarshaller();
@@ -7031,6 +7326,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeScheduledInstances">REST API Reference for DescribeScheduledInstances Operation</seealso>
         public Task<DescribeScheduledInstancesResponse> DescribeScheduledInstancesAsync(DescribeScheduledInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeScheduledInstancesRequestMarshaller();
@@ -7052,6 +7348,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupReferences service method.</param>
         /// 
         /// <returns>The response from the DescribeSecurityGroupReferences service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupReferences">REST API Reference for DescribeSecurityGroupReferences Operation</seealso>
         public DescribeSecurityGroupReferencesResponse DescribeSecurityGroupReferences(DescribeSecurityGroupReferencesRequest request)
         {
             var marshaller = new DescribeSecurityGroupReferencesRequestMarshaller();
@@ -7069,6 +7366,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupReferences">REST API Reference for DescribeSecurityGroupReferences Operation</seealso>
         public Task<DescribeSecurityGroupReferencesResponse> DescribeSecurityGroupReferencesAsync(DescribeSecurityGroupReferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSecurityGroupReferencesRequestMarshaller();
@@ -7097,6 +7395,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSecurityGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroups">REST API Reference for DescribeSecurityGroups Operation</seealso>
         public DescribeSecurityGroupsResponse DescribeSecurityGroups()
         {
             return DescribeSecurityGroups(new DescribeSecurityGroupsRequest());
@@ -7118,6 +7417,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeSecurityGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroups">REST API Reference for DescribeSecurityGroups Operation</seealso>
         public DescribeSecurityGroupsResponse DescribeSecurityGroups(DescribeSecurityGroupsRequest request)
         {
             var marshaller = new DescribeSecurityGroupsRequestMarshaller();
@@ -7144,6 +7444,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeSecurityGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroups">REST API Reference for DescribeSecurityGroups Operation</seealso>
         public Task<DescribeSecurityGroupsResponse> DescribeSecurityGroupsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeSecurityGroupsAsync(new DescribeSecurityGroupsRequest(), cancellationToken);
@@ -7157,6 +7458,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroups">REST API Reference for DescribeSecurityGroups Operation</seealso>
         public Task<DescribeSecurityGroupsResponse> DescribeSecurityGroupsAsync(DescribeSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSecurityGroupsRequestMarshaller();
@@ -7184,6 +7486,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshotAttribute service method.</param>
         /// 
         /// <returns>The response from the DescribeSnapshotAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotAttribute">REST API Reference for DescribeSnapshotAttribute Operation</seealso>
         public DescribeSnapshotAttributeResponse DescribeSnapshotAttribute(DescribeSnapshotAttributeRequest request)
         {
             var marshaller = new DescribeSnapshotAttributeRequestMarshaller();
@@ -7201,6 +7504,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotAttribute">REST API Reference for DescribeSnapshotAttribute Operation</seealso>
         public Task<DescribeSnapshotAttributeResponse> DescribeSnapshotAttributeAsync(DescribeSnapshotAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSnapshotAttributeRequestMarshaller();
@@ -7285,6 +7589,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public DescribeSnapshotsResponse DescribeSnapshots()
         {
             return DescribeSnapshots(new DescribeSnapshotsRequest());
@@ -7362,6 +7667,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSnapshots service method.</param>
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public DescribeSnapshotsResponse DescribeSnapshots(DescribeSnapshotsRequest request)
         {
             var marshaller = new DescribeSnapshotsRequestMarshaller();
@@ -7444,6 +7750,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeSnapshots service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeSnapshotsAsync(new DescribeSnapshotsRequest(), cancellationToken);
@@ -7457,6 +7764,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots">REST API Reference for DescribeSnapshots Operation</seealso>
         public Task<DescribeSnapshotsResponse> DescribeSnapshotsAsync(DescribeSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSnapshotsRequestMarshaller();
@@ -7477,6 +7785,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSpotDatafeedSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">REST API Reference for DescribeSpotDatafeedSubscription Operation</seealso>
         public DescribeSpotDatafeedSubscriptionResponse DescribeSpotDatafeedSubscription()
         {
             return DescribeSpotDatafeedSubscription(new DescribeSpotDatafeedSubscriptionRequest());
@@ -7490,6 +7799,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotDatafeedSubscription service method.</param>
         /// 
         /// <returns>The response from the DescribeSpotDatafeedSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">REST API Reference for DescribeSpotDatafeedSubscription Operation</seealso>
         public DescribeSpotDatafeedSubscriptionResponse DescribeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest request)
         {
             var marshaller = new DescribeSpotDatafeedSubscriptionRequestMarshaller();
@@ -7508,6 +7818,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeSpotDatafeedSubscription service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">REST API Reference for DescribeSpotDatafeedSubscription Operation</seealso>
         public Task<DescribeSpotDatafeedSubscriptionResponse> DescribeSpotDatafeedSubscriptionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeSpotDatafeedSubscriptionAsync(new DescribeSpotDatafeedSubscriptionRequest(), cancellationToken);
@@ -7521,6 +7832,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">REST API Reference for DescribeSpotDatafeedSubscription Operation</seealso>
         public Task<DescribeSpotDatafeedSubscriptionResponse> DescribeSpotDatafeedSubscriptionAsync(DescribeSpotDatafeedSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSpotDatafeedSubscriptionRequestMarshaller();
@@ -7541,6 +7853,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetInstances service method.</param>
         /// 
         /// <returns>The response from the DescribeSpotFleetInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetInstances">REST API Reference for DescribeSpotFleetInstances Operation</seealso>
         public DescribeSpotFleetInstancesResponse DescribeSpotFleetInstances(DescribeSpotFleetInstancesRequest request)
         {
             var marshaller = new DescribeSpotFleetInstancesRequestMarshaller();
@@ -7558,6 +7871,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetInstances">REST API Reference for DescribeSpotFleetInstances Operation</seealso>
         public Task<DescribeSpotFleetInstancesResponse> DescribeSpotFleetInstancesAsync(DescribeSpotFleetInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSpotFleetInstancesRequestMarshaller();
@@ -7584,6 +7898,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequestHistory service method.</param>
         /// 
         /// <returns>The response from the DescribeSpotFleetRequestHistory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequestHistory">REST API Reference for DescribeSpotFleetRequestHistory Operation</seealso>
         public DescribeSpotFleetRequestHistoryResponse DescribeSpotFleetRequestHistory(DescribeSpotFleetRequestHistoryRequest request)
         {
             var marshaller = new DescribeSpotFleetRequestHistoryRequestMarshaller();
@@ -7601,6 +7916,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequestHistory">REST API Reference for DescribeSpotFleetRequestHistory Operation</seealso>
         public Task<DescribeSpotFleetRequestHistoryResponse> DescribeSpotFleetRequestHistoryAsync(DescribeSpotFleetRequestHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSpotFleetRequestHistoryRequestMarshaller();
@@ -7627,6 +7943,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotFleetRequests service method.</param>
         /// 
         /// <returns>The response from the DescribeSpotFleetRequests service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequests">REST API Reference for DescribeSpotFleetRequests Operation</seealso>
         public DescribeSpotFleetRequestsResponse DescribeSpotFleetRequests(DescribeSpotFleetRequestsRequest request)
         {
             var marshaller = new DescribeSpotFleetRequestsRequestMarshaller();
@@ -7644,6 +7961,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequests">REST API Reference for DescribeSpotFleetRequests Operation</seealso>
         public Task<DescribeSpotFleetRequestsResponse> DescribeSpotFleetRequestsAsync(DescribeSpotFleetRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSpotFleetRequestsRequestMarshaller();
@@ -7682,6 +8000,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSpotInstanceRequests service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests">REST API Reference for DescribeSpotInstanceRequests Operation</seealso>
         public DescribeSpotInstanceRequestsResponse DescribeSpotInstanceRequests()
         {
             return DescribeSpotInstanceRequests(new DescribeSpotInstanceRequestsRequest());
@@ -7713,6 +8032,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotInstanceRequests service method.</param>
         /// 
         /// <returns>The response from the DescribeSpotInstanceRequests service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests">REST API Reference for DescribeSpotInstanceRequests Operation</seealso>
         public DescribeSpotInstanceRequestsResponse DescribeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest request)
         {
             var marshaller = new DescribeSpotInstanceRequestsRequestMarshaller();
@@ -7749,6 +8069,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeSpotInstanceRequests service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests">REST API Reference for DescribeSpotInstanceRequests Operation</seealso>
         public Task<DescribeSpotInstanceRequestsResponse> DescribeSpotInstanceRequestsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeSpotInstanceRequestsAsync(new DescribeSpotInstanceRequestsRequest(), cancellationToken);
@@ -7762,6 +8083,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotInstanceRequests">REST API Reference for DescribeSpotInstanceRequests Operation</seealso>
         public Task<DescribeSpotInstanceRequestsResponse> DescribeSpotInstanceRequestsAsync(DescribeSpotInstanceRequestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSpotInstanceRequestsRequestMarshaller();
@@ -7790,6 +8112,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSpotPriceHistory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory">REST API Reference for DescribeSpotPriceHistory Operation</seealso>
         public DescribeSpotPriceHistoryResponse DescribeSpotPriceHistory()
         {
             return DescribeSpotPriceHistory(new DescribeSpotPriceHistoryRequest());
@@ -7811,6 +8134,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSpotPriceHistory service method.</param>
         /// 
         /// <returns>The response from the DescribeSpotPriceHistory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory">REST API Reference for DescribeSpotPriceHistory Operation</seealso>
         public DescribeSpotPriceHistoryResponse DescribeSpotPriceHistory(DescribeSpotPriceHistoryRequest request)
         {
             var marshaller = new DescribeSpotPriceHistoryRequestMarshaller();
@@ -7837,6 +8161,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeSpotPriceHistory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory">REST API Reference for DescribeSpotPriceHistory Operation</seealso>
         public Task<DescribeSpotPriceHistoryResponse> DescribeSpotPriceHistoryAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeSpotPriceHistoryAsync(new DescribeSpotPriceHistoryRequest(), cancellationToken);
@@ -7850,6 +8175,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotPriceHistory">REST API Reference for DescribeSpotPriceHistory Operation</seealso>
         public Task<DescribeSpotPriceHistoryResponse> DescribeSpotPriceHistoryAsync(DescribeSpotPriceHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSpotPriceHistoryRequestMarshaller();
@@ -7872,6 +8198,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeStaleSecurityGroups service method.</param>
         /// 
         /// <returns>The response from the DescribeStaleSecurityGroups service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStaleSecurityGroups">REST API Reference for DescribeStaleSecurityGroups Operation</seealso>
         public DescribeStaleSecurityGroupsResponse DescribeStaleSecurityGroups(DescribeStaleSecurityGroupsRequest request)
         {
             var marshaller = new DescribeStaleSecurityGroupsRequestMarshaller();
@@ -7889,6 +8216,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStaleSecurityGroups">REST API Reference for DescribeStaleSecurityGroups Operation</seealso>
         public Task<DescribeStaleSecurityGroupsResponse> DescribeStaleSecurityGroupsAsync(DescribeStaleSecurityGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeStaleSecurityGroupsRequestMarshaller();
@@ -7914,6 +8242,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeSubnets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">REST API Reference for DescribeSubnets Operation</seealso>
         public DescribeSubnetsResponse DescribeSubnets()
         {
             return DescribeSubnets(new DescribeSubnetsRequest());
@@ -7932,6 +8261,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeSubnets service method.</param>
         /// 
         /// <returns>The response from the DescribeSubnets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">REST API Reference for DescribeSubnets Operation</seealso>
         public DescribeSubnetsResponse DescribeSubnets(DescribeSubnetsRequest request)
         {
             var marshaller = new DescribeSubnetsRequestMarshaller();
@@ -7955,6 +8285,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeSubnets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">REST API Reference for DescribeSubnets Operation</seealso>
         public Task<DescribeSubnetsResponse> DescribeSubnetsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeSubnetsAsync(new DescribeSubnetsRequest(), cancellationToken);
@@ -7968,6 +8299,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">REST API Reference for DescribeSubnets Operation</seealso>
         public Task<DescribeSubnetsResponse> DescribeSubnetsAsync(DescribeSubnetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeSubnetsRequestMarshaller();
@@ -7993,6 +8325,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public DescribeTagsResponse DescribeTags()
         {
             return DescribeTags(new DescribeTagsRequest());
@@ -8011,6 +8344,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeTags service method.</param>
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -8034,6 +8368,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public Task<DescribeTagsResponse> DescribeTagsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeTagsAsync(new DescribeTagsRequest(), cancellationToken);
@@ -8047,6 +8382,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public Task<DescribeTagsResponse> DescribeTagsAsync(DescribeTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -8074,6 +8410,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumeAttribute service method.</param>
         /// 
         /// <returns>The response from the DescribeVolumeAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeAttribute">REST API Reference for DescribeVolumeAttribute Operation</seealso>
         public DescribeVolumeAttributeResponse DescribeVolumeAttribute(DescribeVolumeAttributeRequest request)
         {
             var marshaller = new DescribeVolumeAttributeRequestMarshaller();
@@ -8091,6 +8428,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeAttribute">REST API Reference for DescribeVolumeAttribute Operation</seealso>
         public Task<DescribeVolumeAttributeResponse> DescribeVolumeAttributeAsync(DescribeVolumeAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVolumeAttributeRequestMarshaller();
@@ -8125,6 +8463,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVolumes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         public DescribeVolumesResponse DescribeVolumes()
         {
             return DescribeVolumes(new DescribeVolumesRequest());
@@ -8152,6 +8491,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumes service method.</param>
         /// 
         /// <returns>The response from the DescribeVolumes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         public DescribeVolumesResponse DescribeVolumes(DescribeVolumesRequest request)
         {
             var marshaller = new DescribeVolumesRequestMarshaller();
@@ -8184,6 +8524,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeVolumes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         public Task<DescribeVolumesResponse> DescribeVolumesAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeVolumesAsync(new DescribeVolumesRequest(), cancellationToken);
@@ -8197,6 +8538,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes">REST API Reference for DescribeVolumes Operation</seealso>
         public Task<DescribeVolumesResponse> DescribeVolumesAsync(DescribeVolumesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVolumesRequestMarshaller();
@@ -8261,6 +8603,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVolumeStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus">REST API Reference for DescribeVolumeStatus Operation</seealso>
         public DescribeVolumeStatusResponse DescribeVolumeStatus()
         {
             return DescribeVolumeStatus(new DescribeVolumeStatusRequest());
@@ -8318,6 +8661,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumeStatus service method.</param>
         /// 
         /// <returns>The response from the DescribeVolumeStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus">REST API Reference for DescribeVolumeStatus Operation</seealso>
         public DescribeVolumeStatusResponse DescribeVolumeStatus(DescribeVolumeStatusRequest request)
         {
             var marshaller = new DescribeVolumeStatusRequestMarshaller();
@@ -8380,6 +8724,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeVolumeStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus">REST API Reference for DescribeVolumeStatus Operation</seealso>
         public Task<DescribeVolumeStatusResponse> DescribeVolumeStatusAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeVolumeStatusAsync(new DescribeVolumeStatusRequest(), cancellationToken);
@@ -8393,6 +8738,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus">REST API Reference for DescribeVolumeStatus Operation</seealso>
         public Task<DescribeVolumeStatusResponse> DescribeVolumeStatusAsync(DescribeVolumeStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVolumeStatusRequestMarshaller();
@@ -8414,6 +8760,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcAttribute service method.</param>
         /// 
         /// <returns>The response from the DescribeVpcAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcAttribute">REST API Reference for DescribeVpcAttribute Operation</seealso>
         public DescribeVpcAttributeResponse DescribeVpcAttribute(DescribeVpcAttributeRequest request)
         {
             var marshaller = new DescribeVpcAttributeRequestMarshaller();
@@ -8431,6 +8778,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcAttribute">REST API Reference for DescribeVpcAttribute Operation</seealso>
         public Task<DescribeVpcAttributeResponse> DescribeVpcAttributeAsync(DescribeVpcAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVpcAttributeRequestMarshaller();
@@ -8451,6 +8799,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLink service method.</param>
         /// 
         /// <returns>The response from the DescribeVpcClassicLink service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLink">REST API Reference for DescribeVpcClassicLink Operation</seealso>
         public DescribeVpcClassicLinkResponse DescribeVpcClassicLink(DescribeVpcClassicLinkRequest request)
         {
             var marshaller = new DescribeVpcClassicLinkRequestMarshaller();
@@ -8468,6 +8817,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLink">REST API Reference for DescribeVpcClassicLink Operation</seealso>
         public Task<DescribeVpcClassicLinkResponse> DescribeVpcClassicLinkAsync(DescribeVpcClassicLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVpcClassicLinkRequestMarshaller();
@@ -8493,6 +8843,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcClassicLinkDnsSupport service method.</param>
         /// 
         /// <returns>The response from the DescribeVpcClassicLinkDnsSupport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLinkDnsSupport">REST API Reference for DescribeVpcClassicLinkDnsSupport Operation</seealso>
         public DescribeVpcClassicLinkDnsSupportResponse DescribeVpcClassicLinkDnsSupport(DescribeVpcClassicLinkDnsSupportRequest request)
         {
             var marshaller = new DescribeVpcClassicLinkDnsSupportRequestMarshaller();
@@ -8510,6 +8861,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLinkDnsSupport">REST API Reference for DescribeVpcClassicLinkDnsSupport Operation</seealso>
         public Task<DescribeVpcClassicLinkDnsSupportResponse> DescribeVpcClassicLinkDnsSupportAsync(DescribeVpcClassicLinkDnsSupportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVpcClassicLinkDnsSupportRequestMarshaller();
@@ -8530,6 +8882,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpoints service method.</param>
         /// 
         /// <returns>The response from the DescribeVpcEndpoints service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
         public DescribeVpcEndpointsResponse DescribeVpcEndpoints(DescribeVpcEndpointsRequest request)
         {
             var marshaller = new DescribeVpcEndpointsRequestMarshaller();
@@ -8547,6 +8900,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpoints">REST API Reference for DescribeVpcEndpoints Operation</seealso>
         public Task<DescribeVpcEndpointsResponse> DescribeVpcEndpointsAsync(DescribeVpcEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVpcEndpointsRequestMarshaller();
@@ -8567,6 +8921,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServices service method.</param>
         /// 
         /// <returns>The response from the DescribeVpcEndpointServices service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices">REST API Reference for DescribeVpcEndpointServices Operation</seealso>
         public DescribeVpcEndpointServicesResponse DescribeVpcEndpointServices(DescribeVpcEndpointServicesRequest request)
         {
             var marshaller = new DescribeVpcEndpointServicesRequestMarshaller();
@@ -8584,6 +8939,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices">REST API Reference for DescribeVpcEndpointServices Operation</seealso>
         public Task<DescribeVpcEndpointServicesResponse> DescribeVpcEndpointServicesAsync(DescribeVpcEndpointServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVpcEndpointServicesRequestMarshaller();
@@ -8603,6 +8959,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVpcPeeringConnections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
         public DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections()
         {
             return DescribeVpcPeeringConnections(new DescribeVpcPeeringConnectionsRequest());
@@ -8615,6 +8972,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcPeeringConnections service method.</param>
         /// 
         /// <returns>The response from the DescribeVpcPeeringConnections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
         public DescribeVpcPeeringConnectionsResponse DescribeVpcPeeringConnections(DescribeVpcPeeringConnectionsRequest request)
         {
             var marshaller = new DescribeVpcPeeringConnectionsRequestMarshaller();
@@ -8632,6 +8990,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeVpcPeeringConnections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
         public Task<DescribeVpcPeeringConnectionsResponse> DescribeVpcPeeringConnectionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeVpcPeeringConnectionsAsync(new DescribeVpcPeeringConnectionsRequest(), cancellationToken);
@@ -8645,6 +9004,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcPeeringConnections">REST API Reference for DescribeVpcPeeringConnections Operation</seealso>
         public Task<DescribeVpcPeeringConnectionsResponse> DescribeVpcPeeringConnectionsAsync(DescribeVpcPeeringConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVpcPeeringConnectionsRequestMarshaller();
@@ -8664,6 +9024,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVpcs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcs">REST API Reference for DescribeVpcs Operation</seealso>
         public DescribeVpcsResponse DescribeVpcs()
         {
             return DescribeVpcs(new DescribeVpcsRequest());
@@ -8676,6 +9037,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcs service method.</param>
         /// 
         /// <returns>The response from the DescribeVpcs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcs">REST API Reference for DescribeVpcs Operation</seealso>
         public DescribeVpcsResponse DescribeVpcs(DescribeVpcsRequest request)
         {
             var marshaller = new DescribeVpcsRequestMarshaller();
@@ -8693,6 +9055,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeVpcs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcs">REST API Reference for DescribeVpcs Operation</seealso>
         public Task<DescribeVpcsResponse> DescribeVpcsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeVpcsAsync(new DescribeVpcsRequest(), cancellationToken);
@@ -8706,6 +9069,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcs">REST API Reference for DescribeVpcs Operation</seealso>
         public Task<DescribeVpcsResponse> DescribeVpcsAsync(DescribeVpcsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVpcsRequestMarshaller();
@@ -8732,6 +9096,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVpnConnections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">REST API Reference for DescribeVpnConnections Operation</seealso>
         public DescribeVpnConnectionsResponse DescribeVpnConnections()
         {
             return DescribeVpnConnections(new DescribeVpnConnectionsRequest());
@@ -8751,6 +9116,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpnConnections service method.</param>
         /// 
         /// <returns>The response from the DescribeVpnConnections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">REST API Reference for DescribeVpnConnections Operation</seealso>
         public DescribeVpnConnectionsResponse DescribeVpnConnections(DescribeVpnConnectionsRequest request)
         {
             var marshaller = new DescribeVpnConnectionsRequestMarshaller();
@@ -8775,6 +9141,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeVpnConnections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">REST API Reference for DescribeVpnConnections Operation</seealso>
         public Task<DescribeVpnConnectionsResponse> DescribeVpnConnectionsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeVpnConnectionsAsync(new DescribeVpnConnectionsRequest(), cancellationToken);
@@ -8788,6 +9155,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">REST API Reference for DescribeVpnConnections Operation</seealso>
         public Task<DescribeVpnConnectionsResponse> DescribeVpnConnectionsAsync(DescribeVpnConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVpnConnectionsRequestMarshaller();
@@ -8814,6 +9182,7 @@ namespace Amazon.EC2
         /// </summary>
         /// 
         /// <returns>The response from the DescribeVpnGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">REST API Reference for DescribeVpnGateways Operation</seealso>
         public DescribeVpnGatewaysResponse DescribeVpnGateways()
         {
             return DescribeVpnGateways(new DescribeVpnGatewaysRequest());
@@ -8833,6 +9202,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpnGateways service method.</param>
         /// 
         /// <returns>The response from the DescribeVpnGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">REST API Reference for DescribeVpnGateways Operation</seealso>
         public DescribeVpnGatewaysResponse DescribeVpnGateways(DescribeVpnGatewaysRequest request)
         {
             var marshaller = new DescribeVpnGatewaysRequestMarshaller();
@@ -8857,6 +9227,7 @@ namespace Amazon.EC2
         /// </param>
         /// 
         /// <returns>The response from the DescribeVpnGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">REST API Reference for DescribeVpnGateways Operation</seealso>
         public Task<DescribeVpnGatewaysResponse> DescribeVpnGatewaysAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             return DescribeVpnGatewaysAsync(new DescribeVpnGatewaysRequest(), cancellationToken);
@@ -8870,6 +9241,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">REST API Reference for DescribeVpnGateways Operation</seealso>
         public Task<DescribeVpnGatewaysResponse> DescribeVpnGatewaysAsync(DescribeVpnGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeVpnGatewaysRequestMarshaller();
@@ -8892,6 +9264,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DetachClassicLinkVpc service method.</param>
         /// 
         /// <returns>The response from the DetachClassicLinkVpc service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachClassicLinkVpc">REST API Reference for DetachClassicLinkVpc Operation</seealso>
         public DetachClassicLinkVpcResponse DetachClassicLinkVpc(DetachClassicLinkVpcRequest request)
         {
             var marshaller = new DetachClassicLinkVpcRequestMarshaller();
@@ -8909,6 +9282,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachClassicLinkVpc">REST API Reference for DetachClassicLinkVpc Operation</seealso>
         public Task<DetachClassicLinkVpcResponse> DetachClassicLinkVpcAsync(DetachClassicLinkVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachClassicLinkVpcRequestMarshaller();
@@ -8930,6 +9304,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DetachInternetGateway service method.</param>
         /// 
         /// <returns>The response from the DetachInternetGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachInternetGateway">REST API Reference for DetachInternetGateway Operation</seealso>
         public DetachInternetGatewayResponse DetachInternetGateway(DetachInternetGatewayRequest request)
         {
             var marshaller = new DetachInternetGatewayRequestMarshaller();
@@ -8947,6 +9322,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachInternetGateway">REST API Reference for DetachInternetGateway Operation</seealso>
         public Task<DetachInternetGatewayResponse> DetachInternetGatewayAsync(DetachInternetGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachInternetGatewayRequestMarshaller();
@@ -8967,6 +9343,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DetachNetworkInterface service method.</param>
         /// 
         /// <returns>The response from the DetachNetworkInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachNetworkInterface">REST API Reference for DetachNetworkInterface Operation</seealso>
         public DetachNetworkInterfaceResponse DetachNetworkInterface(DetachNetworkInterfaceRequest request)
         {
             var marshaller = new DetachNetworkInterfaceRequestMarshaller();
@@ -8984,6 +9361,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachNetworkInterface">REST API Reference for DetachNetworkInterface Operation</seealso>
         public Task<DetachNetworkInterfaceResponse> DetachNetworkInterfaceAsync(DetachNetworkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachNetworkInterfaceRequestMarshaller();
@@ -9021,6 +9399,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DetachVolume service method.</param>
         /// 
         /// <returns>The response from the DetachVolume service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume">REST API Reference for DetachVolume Operation</seealso>
         public DetachVolumeResponse DetachVolume(DetachVolumeRequest request)
         {
             var marshaller = new DetachVolumeRequestMarshaller();
@@ -9038,6 +9417,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume">REST API Reference for DetachVolume Operation</seealso>
         public Task<DetachVolumeResponse> DetachVolumeAsync(DetachVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachVolumeRequestMarshaller();
@@ -9067,6 +9447,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DetachVpnGateway service method.</param>
         /// 
         /// <returns>The response from the DetachVpnGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVpnGateway">REST API Reference for DetachVpnGateway Operation</seealso>
         public DetachVpnGatewayResponse DetachVpnGateway(DetachVpnGatewayRequest request)
         {
             var marshaller = new DetachVpnGatewayRequestMarshaller();
@@ -9084,6 +9465,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVpnGateway">REST API Reference for DetachVpnGateway Operation</seealso>
         public Task<DetachVpnGatewayResponse> DetachVpnGatewayAsync(DetachVpnGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DetachVpnGatewayRequestMarshaller();
@@ -9105,6 +9487,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DisableVgwRoutePropagation service method.</param>
         /// 
         /// <returns>The response from the DisableVgwRoutePropagation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVgwRoutePropagation">REST API Reference for DisableVgwRoutePropagation Operation</seealso>
         public DisableVgwRoutePropagationResponse DisableVgwRoutePropagation(DisableVgwRoutePropagationRequest request)
         {
             var marshaller = new DisableVgwRoutePropagationRequestMarshaller();
@@ -9122,6 +9505,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVgwRoutePropagation">REST API Reference for DisableVgwRoutePropagation Operation</seealso>
         public Task<DisableVgwRoutePropagationResponse> DisableVgwRoutePropagationAsync(DisableVgwRoutePropagationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableVgwRoutePropagationRequestMarshaller();
@@ -9143,6 +9527,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLink service method.</param>
         /// 
         /// <returns>The response from the DisableVpcClassicLink service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLink">REST API Reference for DisableVpcClassicLink Operation</seealso>
         public DisableVpcClassicLinkResponse DisableVpcClassicLink(DisableVpcClassicLinkRequest request)
         {
             var marshaller = new DisableVpcClassicLinkRequestMarshaller();
@@ -9160,6 +9545,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLink">REST API Reference for DisableVpcClassicLink Operation</seealso>
         public Task<DisableVpcClassicLinkResponse> DisableVpcClassicLinkAsync(DisableVpcClassicLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableVpcClassicLinkRequestMarshaller();
@@ -9183,6 +9569,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DisableVpcClassicLinkDnsSupport service method.</param>
         /// 
         /// <returns>The response from the DisableVpcClassicLinkDnsSupport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">REST API Reference for DisableVpcClassicLinkDnsSupport Operation</seealso>
         public DisableVpcClassicLinkDnsSupportResponse DisableVpcClassicLinkDnsSupport(DisableVpcClassicLinkDnsSupportRequest request)
         {
             var marshaller = new DisableVpcClassicLinkDnsSupportRequestMarshaller();
@@ -9200,6 +9587,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">REST API Reference for DisableVpcClassicLinkDnsSupport Operation</seealso>
         public Task<DisableVpcClassicLinkDnsSupportResponse> DisableVpcClassicLinkDnsSupportAsync(DisableVpcClassicLinkDnsSupportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisableVpcClassicLinkDnsSupportRequestMarshaller();
@@ -9233,6 +9621,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAddress service method.</param>
         /// 
         /// <returns>The response from the DisassociateAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateAddress">REST API Reference for DisassociateAddress Operation</seealso>
         public DisassociateAddressResponse DisassociateAddress(DisassociateAddressRequest request)
         {
             var marshaller = new DisassociateAddressRequestMarshaller();
@@ -9250,6 +9639,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateAddress">REST API Reference for DisassociateAddress Operation</seealso>
         public Task<DisassociateAddressResponse> DisassociateAddressAsync(DisassociateAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateAddressRequestMarshaller();
@@ -9278,6 +9668,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DisassociateRouteTable service method.</param>
         /// 
         /// <returns>The response from the DisassociateRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable">REST API Reference for DisassociateRouteTable Operation</seealso>
         public DisassociateRouteTableResponse DisassociateRouteTable(DisassociateRouteTableRequest request)
         {
             var marshaller = new DisassociateRouteTableRequestMarshaller();
@@ -9295,6 +9686,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable">REST API Reference for DisassociateRouteTable Operation</seealso>
         public Task<DisassociateRouteTableResponse> DisassociateRouteTableAsync(DisassociateRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateRouteTableRequestMarshaller();
@@ -9317,6 +9709,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DisassociateSubnetCidrBlock service method.</param>
         /// 
         /// <returns>The response from the DisassociateSubnetCidrBlock service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateSubnetCidrBlock">REST API Reference for DisassociateSubnetCidrBlock Operation</seealso>
         public DisassociateSubnetCidrBlockResponse DisassociateSubnetCidrBlock(DisassociateSubnetCidrBlockRequest request)
         {
             var marshaller = new DisassociateSubnetCidrBlockRequestMarshaller();
@@ -9334,6 +9727,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateSubnetCidrBlock">REST API Reference for DisassociateSubnetCidrBlock Operation</seealso>
         public Task<DisassociateSubnetCidrBlockResponse> DisassociateSubnetCidrBlockAsync(DisassociateSubnetCidrBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateSubnetCidrBlockRequestMarshaller();
@@ -9356,6 +9750,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the DisassociateVpcCidrBlock service method.</param>
         /// 
         /// <returns>The response from the DisassociateVpcCidrBlock service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateVpcCidrBlock">REST API Reference for DisassociateVpcCidrBlock Operation</seealso>
         public DisassociateVpcCidrBlockResponse DisassociateVpcCidrBlock(DisassociateVpcCidrBlockRequest request)
         {
             var marshaller = new DisassociateVpcCidrBlockRequestMarshaller();
@@ -9373,6 +9768,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateVpcCidrBlock">REST API Reference for DisassociateVpcCidrBlock Operation</seealso>
         public Task<DisassociateVpcCidrBlockResponse> DisassociateVpcCidrBlockAsync(DisassociateVpcCidrBlockRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DisassociateVpcCidrBlockRequestMarshaller();
@@ -9394,6 +9790,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the EnableVgwRoutePropagation service method.</param>
         /// 
         /// <returns>The response from the EnableVgwRoutePropagation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVgwRoutePropagation">REST API Reference for EnableVgwRoutePropagation Operation</seealso>
         public EnableVgwRoutePropagationResponse EnableVgwRoutePropagation(EnableVgwRoutePropagationRequest request)
         {
             var marshaller = new EnableVgwRoutePropagationRequestMarshaller();
@@ -9411,6 +9808,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVgwRoutePropagation">REST API Reference for EnableVgwRoutePropagation Operation</seealso>
         public Task<EnableVgwRoutePropagationResponse> EnableVgwRoutePropagationAsync(EnableVgwRoutePropagationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableVgwRoutePropagationRequestMarshaller();
@@ -9432,6 +9830,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the EnableVolumeIO service method.</param>
         /// 
         /// <returns>The response from the EnableVolumeIO service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVolumeIO">REST API Reference for EnableVolumeIO Operation</seealso>
         public EnableVolumeIOResponse EnableVolumeIO(EnableVolumeIORequest request)
         {
             var marshaller = new EnableVolumeIORequestMarshaller();
@@ -9449,6 +9848,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVolumeIO">REST API Reference for EnableVolumeIO Operation</seealso>
         public Task<EnableVolumeIOResponse> EnableVolumeIOAsync(EnableVolumeIORequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableVolumeIORequestMarshaller();
@@ -9475,6 +9875,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLink service method.</param>
         /// 
         /// <returns>The response from the EnableVpcClassicLink service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLink">REST API Reference for EnableVpcClassicLink Operation</seealso>
         public EnableVpcClassicLinkResponse EnableVpcClassicLink(EnableVpcClassicLinkRequest request)
         {
             var marshaller = new EnableVpcClassicLinkRequestMarshaller();
@@ -9492,6 +9893,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLink">REST API Reference for EnableVpcClassicLink Operation</seealso>
         public Task<EnableVpcClassicLinkResponse> EnableVpcClassicLinkAsync(EnableVpcClassicLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableVpcClassicLinkRequestMarshaller();
@@ -9517,6 +9919,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLinkDnsSupport service method.</param>
         /// 
         /// <returns>The response from the EnableVpcClassicLinkDnsSupport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport">REST API Reference for EnableVpcClassicLinkDnsSupport Operation</seealso>
         public EnableVpcClassicLinkDnsSupportResponse EnableVpcClassicLinkDnsSupport(EnableVpcClassicLinkDnsSupportRequest request)
         {
             var marshaller = new EnableVpcClassicLinkDnsSupportRequestMarshaller();
@@ -9534,6 +9937,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport">REST API Reference for EnableVpcClassicLinkDnsSupport Operation</seealso>
         public Task<EnableVpcClassicLinkDnsSupportResponse> EnableVpcClassicLinkDnsSupportAsync(EnableVpcClassicLinkDnsSupportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new EnableVpcClassicLinkDnsSupportRequestMarshaller();
@@ -9580,6 +9984,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the GetConsoleOutput service method.</param>
         /// 
         /// <returns>The response from the GetConsoleOutput service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">REST API Reference for GetConsoleOutput Operation</seealso>
         public GetConsoleOutputResponse GetConsoleOutput(GetConsoleOutputRequest request)
         {
             var marshaller = new GetConsoleOutputRequestMarshaller();
@@ -9597,6 +10002,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">REST API Reference for GetConsoleOutput Operation</seealso>
         public Task<GetConsoleOutputResponse> GetConsoleOutputAsync(GetConsoleOutputRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetConsoleOutputRequestMarshaller();
@@ -9622,6 +10028,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the GetConsoleScreenshot service method.</param>
         /// 
         /// <returns>The response from the GetConsoleScreenshot service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleScreenshot">REST API Reference for GetConsoleScreenshot Operation</seealso>
         public GetConsoleScreenshotResponse GetConsoleScreenshot(GetConsoleScreenshotRequest request)
         {
             var marshaller = new GetConsoleScreenshotRequestMarshaller();
@@ -9639,6 +10046,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleScreenshot">REST API Reference for GetConsoleScreenshot Operation</seealso>
         public Task<GetConsoleScreenshotResponse> GetConsoleScreenshotAsync(GetConsoleScreenshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetConsoleScreenshotRequestMarshaller();
@@ -9666,6 +10074,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the GetHostReservationPurchasePreview service method.</param>
         /// 
         /// <returns>The response from the GetHostReservationPurchasePreview service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetHostReservationPurchasePreview">REST API Reference for GetHostReservationPurchasePreview Operation</seealso>
         public GetHostReservationPurchasePreviewResponse GetHostReservationPurchasePreview(GetHostReservationPurchasePreviewRequest request)
         {
             var marshaller = new GetHostReservationPurchasePreviewRequestMarshaller();
@@ -9683,6 +10092,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetHostReservationPurchasePreview">REST API Reference for GetHostReservationPurchasePreview Operation</seealso>
         public Task<GetHostReservationPurchasePreviewResponse> GetHostReservationPurchasePreviewAsync(GetHostReservationPurchasePreviewRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetHostReservationPurchasePreviewRequestMarshaller();
@@ -9723,6 +10133,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the GetPasswordData service method.</param>
         /// 
         /// <returns>The response from the GetPasswordData service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetPasswordData">REST API Reference for GetPasswordData Operation</seealso>
         public GetPasswordDataResponse GetPasswordData(GetPasswordDataRequest request)
         {
             var marshaller = new GetPasswordDataRequestMarshaller();
@@ -9740,6 +10151,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetPasswordData">REST API Reference for GetPasswordData Operation</seealso>
         public Task<GetPasswordDataResponse> GetPasswordDataAsync(GetPasswordDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetPasswordDataRequestMarshaller();
@@ -9762,6 +10174,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the GetReservedInstancesExchangeQuote service method.</param>
         /// 
         /// <returns>The response from the GetReservedInstancesExchangeQuote service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuote">REST API Reference for GetReservedInstancesExchangeQuote Operation</seealso>
         public GetReservedInstancesExchangeQuoteResponse GetReservedInstancesExchangeQuote(GetReservedInstancesExchangeQuoteRequest request)
         {
             var marshaller = new GetReservedInstancesExchangeQuoteRequestMarshaller();
@@ -9779,6 +10192,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuote">REST API Reference for GetReservedInstancesExchangeQuote Operation</seealso>
         public Task<GetReservedInstancesExchangeQuoteResponse> GetReservedInstancesExchangeQuoteAsync(GetReservedInstancesExchangeQuoteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetReservedInstancesExchangeQuoteRequestMarshaller();
@@ -9801,6 +10215,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ImportImage service method.</param>
         /// 
         /// <returns>The response from the ImportImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage">REST API Reference for ImportImage Operation</seealso>
         public ImportImageResponse ImportImage(ImportImageRequest request)
         {
             var marshaller = new ImportImageRequestMarshaller();
@@ -9818,6 +10233,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage">REST API Reference for ImportImage Operation</seealso>
         public Task<ImportImageResponse> ImportImageAsync(ImportImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ImportImageRequestMarshaller();
@@ -9847,6 +10263,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ImportInstance service method.</param>
         /// 
         /// <returns>The response from the ImportInstance service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance">REST API Reference for ImportInstance Operation</seealso>
         public ImportInstanceResponse ImportInstance(ImportInstanceRequest request)
         {
             var marshaller = new ImportInstanceRequestMarshaller();
@@ -9864,6 +10281,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance">REST API Reference for ImportInstance Operation</seealso>
         public Task<ImportInstanceResponse> ImportInstanceAsync(ImportInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ImportInstanceRequestMarshaller();
@@ -9894,6 +10312,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ImportKeyPair service method.</param>
         /// 
         /// <returns>The response from the ImportKeyPair service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         public ImportKeyPairResponse ImportKeyPair(ImportKeyPairRequest request)
         {
             var marshaller = new ImportKeyPairRequestMarshaller();
@@ -9911,6 +10330,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportKeyPair">REST API Reference for ImportKeyPair Operation</seealso>
         public Task<ImportKeyPairResponse> ImportKeyPairAsync(ImportKeyPairRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ImportKeyPairRequestMarshaller();
@@ -9931,6 +10351,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ImportSnapshot service method.</param>
         /// 
         /// <returns>The response from the ImportSnapshot service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportSnapshot">REST API Reference for ImportSnapshot Operation</seealso>
         public ImportSnapshotResponse ImportSnapshot(ImportSnapshotRequest request)
         {
             var marshaller = new ImportSnapshotRequestMarshaller();
@@ -9948,6 +10369,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportSnapshot">REST API Reference for ImportSnapshot Operation</seealso>
         public Task<ImportSnapshotResponse> ImportSnapshotAsync(ImportSnapshotRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ImportSnapshotRequestMarshaller();
@@ -9976,6 +10398,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ImportVolume service method.</param>
         /// 
         /// <returns>The response from the ImportVolume service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">REST API Reference for ImportVolume Operation</seealso>
         public ImportVolumeResponse ImportVolume(ImportVolumeRequest request)
         {
             var marshaller = new ImportVolumeRequestMarshaller();
@@ -9993,6 +10416,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">REST API Reference for ImportVolume Operation</seealso>
         public Task<ImportVolumeResponse> ImportVolumeAsync(ImportVolumeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ImportVolumeRequestMarshaller();
@@ -10019,6 +10443,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyHosts service method.</param>
         /// 
         /// <returns>The response from the ModifyHosts service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyHosts">REST API Reference for ModifyHosts Operation</seealso>
         public ModifyHostsResponse ModifyHosts(ModifyHostsRequest request)
         {
             var marshaller = new ModifyHostsRequestMarshaller();
@@ -10036,6 +10461,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyHosts">REST API Reference for ModifyHosts Operation</seealso>
         public Task<ModifyHostsResponse> ModifyHostsAsync(ModifyHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyHostsRequestMarshaller();
@@ -10077,6 +10503,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyIdentityIdFormat service method.</param>
         /// 
         /// <returns>The response from the ModifyIdentityIdFormat service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdentityIdFormat">REST API Reference for ModifyIdentityIdFormat Operation</seealso>
         public ModifyIdentityIdFormatResponse ModifyIdentityIdFormat(ModifyIdentityIdFormatRequest request)
         {
             var marshaller = new ModifyIdentityIdFormatRequestMarshaller();
@@ -10094,6 +10521,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdentityIdFormat">REST API Reference for ModifyIdentityIdFormat Operation</seealso>
         public Task<ModifyIdentityIdFormatResponse> ModifyIdentityIdFormatAsync(ModifyIdentityIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyIdentityIdFormatRequestMarshaller();
@@ -10133,6 +10561,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyIdFormat service method.</param>
         /// 
         /// <returns>The response from the ModifyIdFormat service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdFormat">REST API Reference for ModifyIdFormat Operation</seealso>
         public ModifyIdFormatResponse ModifyIdFormat(ModifyIdFormatRequest request)
         {
             var marshaller = new ModifyIdFormatRequestMarshaller();
@@ -10150,6 +10579,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIdFormat">REST API Reference for ModifyIdFormat Operation</seealso>
         public Task<ModifyIdFormatResponse> ModifyIdFormatAsync(ModifyIdFormatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyIdFormatRequestMarshaller();
@@ -10184,6 +10614,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyImageAttribute service method.</param>
         /// 
         /// <returns>The response from the ModifyImageAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyImageAttribute">REST API Reference for ModifyImageAttribute Operation</seealso>
         public ModifyImageAttributeResponse ModifyImageAttribute(ModifyImageAttributeRequest request)
         {
             var marshaller = new ModifyImageAttributeRequestMarshaller();
@@ -10201,6 +10632,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyImageAttribute">REST API Reference for ModifyImageAttribute Operation</seealso>
         public Task<ModifyImageAttributeResponse> ModifyImageAttributeAsync(ModifyImageAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyImageAttributeRequestMarshaller();
@@ -10229,6 +10661,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceAttribute service method.</param>
         /// 
         /// <returns>The response from the ModifyInstanceAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">REST API Reference for ModifyInstanceAttribute Operation</seealso>
         public ModifyInstanceAttributeResponse ModifyInstanceAttribute(ModifyInstanceAttributeRequest request)
         {
             var marshaller = new ModifyInstanceAttributeRequestMarshaller();
@@ -10246,6 +10679,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">REST API Reference for ModifyInstanceAttribute Operation</seealso>
         public Task<ModifyInstanceAttributeResponse> ModifyInstanceAttributeAsync(ModifyInstanceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyInstanceAttributeRequestMarshaller();
@@ -10291,6 +10725,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstancePlacement service method.</param>
         /// 
         /// <returns>The response from the ModifyInstancePlacement service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstancePlacement">REST API Reference for ModifyInstancePlacement Operation</seealso>
         public ModifyInstancePlacementResponse ModifyInstancePlacement(ModifyInstancePlacementRequest request)
         {
             var marshaller = new ModifyInstancePlacementRequestMarshaller();
@@ -10308,6 +10743,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstancePlacement">REST API Reference for ModifyInstancePlacement Operation</seealso>
         public Task<ModifyInstancePlacementResponse> ModifyInstancePlacementAsync(ModifyInstancePlacementRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyInstancePlacementRequestMarshaller();
@@ -10329,6 +10765,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyNetworkInterfaceAttribute service method.</param>
         /// 
         /// <returns>The response from the ModifyNetworkInterfaceAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyNetworkInterfaceAttribute">REST API Reference for ModifyNetworkInterfaceAttribute Operation</seealso>
         public ModifyNetworkInterfaceAttributeResponse ModifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest request)
         {
             var marshaller = new ModifyNetworkInterfaceAttributeRequestMarshaller();
@@ -10346,6 +10783,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyNetworkInterfaceAttribute">REST API Reference for ModifyNetworkInterfaceAttribute Operation</seealso>
         public Task<ModifyNetworkInterfaceAttributeResponse> ModifyNetworkInterfaceAttributeAsync(ModifyNetworkInterfaceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyNetworkInterfaceAttributeRequestMarshaller();
@@ -10375,6 +10813,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyReservedInstances service method.</param>
         /// 
         /// <returns>The response from the ModifyReservedInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">REST API Reference for ModifyReservedInstances Operation</seealso>
         public ModifyReservedInstancesResponse ModifyReservedInstances(ModifyReservedInstancesRequest request)
         {
             var marshaller = new ModifyReservedInstancesRequestMarshaller();
@@ -10392,6 +10831,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">REST API Reference for ModifyReservedInstances Operation</seealso>
         public Task<ModifyReservedInstancesResponse> ModifyReservedInstancesAsync(ModifyReservedInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyReservedInstancesRequestMarshaller();
@@ -10426,6 +10866,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotAttribute service method.</param>
         /// 
         /// <returns>The response from the ModifySnapshotAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute">REST API Reference for ModifySnapshotAttribute Operation</seealso>
         public ModifySnapshotAttributeResponse ModifySnapshotAttribute(ModifySnapshotAttributeRequest request)
         {
             var marshaller = new ModifySnapshotAttributeRequestMarshaller();
@@ -10443,6 +10884,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute">REST API Reference for ModifySnapshotAttribute Operation</seealso>
         public Task<ModifySnapshotAttributeResponse> ModifySnapshotAttributeAsync(ModifySnapshotAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifySnapshotAttributeRequestMarshaller();
@@ -10490,6 +10932,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifySpotFleetRequest service method.</param>
         /// 
         /// <returns>The response from the ModifySpotFleetRequest service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySpotFleetRequest">REST API Reference for ModifySpotFleetRequest Operation</seealso>
         public ModifySpotFleetRequestResponse ModifySpotFleetRequest(ModifySpotFleetRequestRequest request)
         {
             var marshaller = new ModifySpotFleetRequestRequestMarshaller();
@@ -10507,6 +10950,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySpotFleetRequest">REST API Reference for ModifySpotFleetRequest Operation</seealso>
         public Task<ModifySpotFleetRequestResponse> ModifySpotFleetRequestAsync(ModifySpotFleetRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifySpotFleetRequestRequestMarshaller();
@@ -10527,6 +10971,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifySubnetAttribute service method.</param>
         /// 
         /// <returns>The response from the ModifySubnetAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySubnetAttribute">REST API Reference for ModifySubnetAttribute Operation</seealso>
         public ModifySubnetAttributeResponse ModifySubnetAttribute(ModifySubnetAttributeRequest request)
         {
             var marshaller = new ModifySubnetAttributeRequestMarshaller();
@@ -10544,6 +10989,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySubnetAttribute">REST API Reference for ModifySubnetAttribute Operation</seealso>
         public Task<ModifySubnetAttributeResponse> ModifySubnetAttributeAsync(ModifySubnetAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifySubnetAttributeRequestMarshaller();
@@ -10577,6 +11023,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyVolumeAttribute service method.</param>
         /// 
         /// <returns>The response from the ModifyVolumeAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolumeAttribute">REST API Reference for ModifyVolumeAttribute Operation</seealso>
         public ModifyVolumeAttributeResponse ModifyVolumeAttribute(ModifyVolumeAttributeRequest request)
         {
             var marshaller = new ModifyVolumeAttributeRequestMarshaller();
@@ -10594,6 +11041,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVolumeAttribute">REST API Reference for ModifyVolumeAttribute Operation</seealso>
         public Task<ModifyVolumeAttributeResponse> ModifyVolumeAttributeAsync(ModifyVolumeAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyVolumeAttributeRequestMarshaller();
@@ -10614,6 +11062,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcAttribute service method.</param>
         /// 
         /// <returns>The response from the ModifyVpcAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcAttribute">REST API Reference for ModifyVpcAttribute Operation</seealso>
         public ModifyVpcAttributeResponse ModifyVpcAttribute(ModifyVpcAttributeRequest request)
         {
             var marshaller = new ModifyVpcAttributeRequestMarshaller();
@@ -10631,6 +11080,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcAttribute">REST API Reference for ModifyVpcAttribute Operation</seealso>
         public Task<ModifyVpcAttributeResponse> ModifyVpcAttributeAsync(ModifyVpcAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyVpcAttributeRequestMarshaller();
@@ -10652,6 +11102,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpoint service method.</param>
         /// 
         /// <returns>The response from the ModifyVpcEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpoint">REST API Reference for ModifyVpcEndpoint Operation</seealso>
         public ModifyVpcEndpointResponse ModifyVpcEndpoint(ModifyVpcEndpointRequest request)
         {
             var marshaller = new ModifyVpcEndpointRequestMarshaller();
@@ -10669,6 +11120,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpoint">REST API Reference for ModifyVpcEndpoint Operation</seealso>
         public Task<ModifyVpcEndpointResponse> ModifyVpcEndpointAsync(ModifyVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyVpcEndpointRequestMarshaller();
@@ -10715,6 +11167,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcPeeringConnectionOptions service method.</param>
         /// 
         /// <returns>The response from the ModifyVpcPeeringConnectionOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcPeeringConnectionOptions">REST API Reference for ModifyVpcPeeringConnectionOptions Operation</seealso>
         public ModifyVpcPeeringConnectionOptionsResponse ModifyVpcPeeringConnectionOptions(ModifyVpcPeeringConnectionOptionsRequest request)
         {
             var marshaller = new ModifyVpcPeeringConnectionOptionsRequestMarshaller();
@@ -10732,6 +11185,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcPeeringConnectionOptions">REST API Reference for ModifyVpcPeeringConnectionOptions Operation</seealso>
         public Task<ModifyVpcPeeringConnectionOptionsResponse> ModifyVpcPeeringConnectionOptionsAsync(ModifyVpcPeeringConnectionOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ModifyVpcPeeringConnectionOptionsRequestMarshaller();
@@ -10759,6 +11213,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the MonitorInstances service method.</param>
         /// 
         /// <returns>The response from the MonitorInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances">REST API Reference for MonitorInstances Operation</seealso>
         public MonitorInstancesResponse MonitorInstances(MonitorInstancesRequest request)
         {
             var marshaller = new MonitorInstancesRequestMarshaller();
@@ -10776,6 +11231,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MonitorInstances">REST API Reference for MonitorInstances Operation</seealso>
         public Task<MonitorInstancesResponse> MonitorInstancesAsync(MonitorInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new MonitorInstancesRequestMarshaller();
@@ -10802,6 +11258,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the MoveAddressToVpc service method.</param>
         /// 
         /// <returns>The response from the MoveAddressToVpc service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveAddressToVpc">REST API Reference for MoveAddressToVpc Operation</seealso>
         public MoveAddressToVpcResponse MoveAddressToVpc(MoveAddressToVpcRequest request)
         {
             var marshaller = new MoveAddressToVpcRequestMarshaller();
@@ -10819,6 +11276,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/MoveAddressToVpc">REST API Reference for MoveAddressToVpc Operation</seealso>
         public Task<MoveAddressToVpcResponse> MoveAddressToVpcAsync(MoveAddressToVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new MoveAddressToVpcRequestMarshaller();
@@ -10842,6 +11300,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the PurchaseHostReservation service method.</param>
         /// 
         /// <returns>The response from the PurchaseHostReservation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseHostReservation">REST API Reference for PurchaseHostReservation Operation</seealso>
         public PurchaseHostReservationResponse PurchaseHostReservation(PurchaseHostReservationRequest request)
         {
             var marshaller = new PurchaseHostReservationRequestMarshaller();
@@ -10859,6 +11318,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseHostReservation">REST API Reference for PurchaseHostReservation Operation</seealso>
         public Task<PurchaseHostReservationResponse> PurchaseHostReservationAsync(PurchaseHostReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PurchaseHostReservationRequestMarshaller();
@@ -10893,6 +11353,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedInstancesOffering service method.</param>
         /// 
         /// <returns>The response from the PurchaseReservedInstancesOffering service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering">REST API Reference for PurchaseReservedInstancesOffering Operation</seealso>
         public PurchaseReservedInstancesOfferingResponse PurchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest request)
         {
             var marshaller = new PurchaseReservedInstancesOfferingRequestMarshaller();
@@ -10910,6 +11371,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering">REST API Reference for PurchaseReservedInstancesOffering Operation</seealso>
         public Task<PurchaseReservedInstancesOfferingResponse> PurchaseReservedInstancesOfferingAsync(PurchaseReservedInstancesOfferingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PurchaseReservedInstancesOfferingRequestMarshaller();
@@ -10944,6 +11406,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the PurchaseScheduledInstances service method.</param>
         /// 
         /// <returns>The response from the PurchaseScheduledInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseScheduledInstances">REST API Reference for PurchaseScheduledInstances Operation</seealso>
         public PurchaseScheduledInstancesResponse PurchaseScheduledInstances(PurchaseScheduledInstancesRequest request)
         {
             var marshaller = new PurchaseScheduledInstancesRequestMarshaller();
@@ -10961,6 +11424,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseScheduledInstances">REST API Reference for PurchaseScheduledInstances Operation</seealso>
         public Task<PurchaseScheduledInstancesResponse> PurchaseScheduledInstancesAsync(PurchaseScheduledInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new PurchaseScheduledInstancesRequestMarshaller();
@@ -10996,6 +11460,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RebootInstances service method.</param>
         /// 
         /// <returns>The response from the RebootInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances">REST API Reference for RebootInstances Operation</seealso>
         public RebootInstancesResponse RebootInstances(RebootInstancesRequest request)
         {
             var marshaller = new RebootInstancesRequestMarshaller();
@@ -11013,6 +11478,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances">REST API Reference for RebootInstances Operation</seealso>
         public Task<RebootInstancesResponse> RebootInstancesAsync(RebootInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RebootInstancesRequestMarshaller();
@@ -11078,6 +11544,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RegisterImage service method.</param>
         /// 
         /// <returns>The response from the RegisterImage service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">REST API Reference for RegisterImage Operation</seealso>
         public RegisterImageResponse RegisterImage(RegisterImageRequest request)
         {
             var marshaller = new RegisterImageRequestMarshaller();
@@ -11095,6 +11562,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">REST API Reference for RegisterImage Operation</seealso>
         public Task<RegisterImageResponse> RegisterImageAsync(RegisterImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RegisterImageRequestMarshaller();
@@ -11119,6 +11587,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RejectVpcPeeringConnection service method.</param>
         /// 
         /// <returns>The response from the RejectVpcPeeringConnection service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcPeeringConnection">REST API Reference for RejectVpcPeeringConnection Operation</seealso>
         public RejectVpcPeeringConnectionResponse RejectVpcPeeringConnection(RejectVpcPeeringConnectionRequest request)
         {
             var marshaller = new RejectVpcPeeringConnectionRequestMarshaller();
@@ -11136,6 +11605,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectVpcPeeringConnection">REST API Reference for RejectVpcPeeringConnection Operation</seealso>
         public Task<RejectVpcPeeringConnectionResponse> RejectVpcPeeringConnectionAsync(RejectVpcPeeringConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RejectVpcPeeringConnectionRequestMarshaller();
@@ -11176,6 +11646,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ReleaseAddress service method.</param>
         /// 
         /// <returns>The response from the ReleaseAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseAddress">REST API Reference for ReleaseAddress Operation</seealso>
         public ReleaseAddressResponse ReleaseAddress(ReleaseAddressRequest request)
         {
             var marshaller = new ReleaseAddressRequestMarshaller();
@@ -11193,6 +11664,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseAddress">REST API Reference for ReleaseAddress Operation</seealso>
         public Task<ReleaseAddressResponse> ReleaseAddressAsync(ReleaseAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReleaseAddressRequestMarshaller();
@@ -11228,6 +11700,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ReleaseHosts service method.</param>
         /// 
         /// <returns>The response from the ReleaseHosts service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseHosts">REST API Reference for ReleaseHosts Operation</seealso>
         public ReleaseHostsResponse ReleaseHosts(ReleaseHostsRequest request)
         {
             var marshaller = new ReleaseHostsRequestMarshaller();
@@ -11245,6 +11718,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReleaseHosts">REST API Reference for ReleaseHosts Operation</seealso>
         public Task<ReleaseHostsResponse> ReleaseHostsAsync(ReleaseHostsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReleaseHostsRequestMarshaller();
@@ -11268,6 +11742,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ReplaceNetworkAclAssociation service method.</param>
         /// 
         /// <returns>The response from the ReplaceNetworkAclAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation">REST API Reference for ReplaceNetworkAclAssociation Operation</seealso>
         public ReplaceNetworkAclAssociationResponse ReplaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest request)
         {
             var marshaller = new ReplaceNetworkAclAssociationRequestMarshaller();
@@ -11285,6 +11760,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation">REST API Reference for ReplaceNetworkAclAssociation Operation</seealso>
         public Task<ReplaceNetworkAclAssociationResponse> ReplaceNetworkAclAssociationAsync(ReplaceNetworkAclAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReplaceNetworkAclAssociationRequestMarshaller();
@@ -11307,6 +11783,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ReplaceNetworkAclEntry service method.</param>
         /// 
         /// <returns>The response from the ReplaceNetworkAclEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclEntry">REST API Reference for ReplaceNetworkAclEntry Operation</seealso>
         public ReplaceNetworkAclEntryResponse ReplaceNetworkAclEntry(ReplaceNetworkAclEntryRequest request)
         {
             var marshaller = new ReplaceNetworkAclEntryRequestMarshaller();
@@ -11324,6 +11801,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclEntry">REST API Reference for ReplaceNetworkAclEntry Operation</seealso>
         public Task<ReplaceNetworkAclEntryResponse> ReplaceNetworkAclEntryAsync(ReplaceNetworkAclEntryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReplaceNetworkAclEntryRequestMarshaller();
@@ -11352,6 +11830,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ReplaceRoute service method.</param>
         /// 
         /// <returns>The response from the ReplaceRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute">REST API Reference for ReplaceRoute Operation</seealso>
         public ReplaceRouteResponse ReplaceRoute(ReplaceRouteRequest request)
         {
             var marshaller = new ReplaceRouteRequestMarshaller();
@@ -11369,6 +11848,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute">REST API Reference for ReplaceRoute Operation</seealso>
         public Task<ReplaceRouteResponse> ReplaceRouteAsync(ReplaceRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReplaceRouteRequestMarshaller();
@@ -11399,6 +11879,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ReplaceRouteTableAssociation service method.</param>
         /// 
         /// <returns>The response from the ReplaceRouteTableAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRouteTableAssociation">REST API Reference for ReplaceRouteTableAssociation Operation</seealso>
         public ReplaceRouteTableAssociationResponse ReplaceRouteTableAssociation(ReplaceRouteTableAssociationRequest request)
         {
             var marshaller = new ReplaceRouteTableAssociationRequestMarshaller();
@@ -11416,6 +11897,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRouteTableAssociation">REST API Reference for ReplaceRouteTableAssociation Operation</seealso>
         public Task<ReplaceRouteTableAssociationResponse> ReplaceRouteTableAssociationAsync(ReplaceRouteTableAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReplaceRouteTableAssociationRequestMarshaller();
@@ -11445,6 +11927,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ReportInstanceStatus service method.</param>
         /// 
         /// <returns>The response from the ReportInstanceStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReportInstanceStatus">REST API Reference for ReportInstanceStatus Operation</seealso>
         public ReportInstanceStatusResponse ReportInstanceStatus(ReportInstanceStatusRequest request)
         {
             var marshaller = new ReportInstanceStatusRequestMarshaller();
@@ -11462,6 +11945,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReportInstanceStatus">REST API Reference for ReportInstanceStatus Operation</seealso>
         public Task<ReportInstanceStatusResponse> ReportInstanceStatusAsync(ReportInstanceStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ReportInstanceStatusRequestMarshaller();
@@ -11506,6 +11990,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotFleet service method.</param>
         /// 
         /// <returns>The response from the RequestSpotFleet service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">REST API Reference for RequestSpotFleet Operation</seealso>
         public RequestSpotFleetResponse RequestSpotFleet(RequestSpotFleetRequest request)
         {
             var marshaller = new RequestSpotFleetRequestMarshaller();
@@ -11523,6 +12008,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">REST API Reference for RequestSpotFleet Operation</seealso>
         public Task<RequestSpotFleetResponse> RequestSpotFleetAsync(RequestSpotFleetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RequestSpotFleetRequestMarshaller();
@@ -11547,6 +12033,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method.</param>
         /// 
         /// <returns>The response from the RequestSpotInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">REST API Reference for RequestSpotInstances Operation</seealso>
         public RequestSpotInstancesResponse RequestSpotInstances(RequestSpotInstancesRequest request)
         {
             var marshaller = new RequestSpotInstancesRequestMarshaller();
@@ -11564,6 +12051,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">REST API Reference for RequestSpotInstances Operation</seealso>
         public Task<RequestSpotInstancesResponse> RequestSpotInstancesAsync(RequestSpotInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RequestSpotInstancesRequestMarshaller();
@@ -11590,6 +12078,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ResetImageAttribute service method.</param>
         /// 
         /// <returns>The response from the ResetImageAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetImageAttribute">REST API Reference for ResetImageAttribute Operation</seealso>
         public ResetImageAttributeResponse ResetImageAttribute(ResetImageAttributeRequest request)
         {
             var marshaller = new ResetImageAttributeRequestMarshaller();
@@ -11607,6 +12096,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetImageAttribute">REST API Reference for ResetImageAttribute Operation</seealso>
         public Task<ResetImageAttributeResponse> ResetImageAttributeAsync(ResetImageAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResetImageAttributeRequestMarshaller();
@@ -11638,6 +12128,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ResetInstanceAttribute service method.</param>
         /// 
         /// <returns>The response from the ResetInstanceAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttribute">REST API Reference for ResetInstanceAttribute Operation</seealso>
         public ResetInstanceAttributeResponse ResetInstanceAttribute(ResetInstanceAttributeRequest request)
         {
             var marshaller = new ResetInstanceAttributeRequestMarshaller();
@@ -11655,6 +12146,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttribute">REST API Reference for ResetInstanceAttribute Operation</seealso>
         public Task<ResetInstanceAttributeResponse> ResetInstanceAttributeAsync(ResetInstanceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResetInstanceAttributeRequestMarshaller();
@@ -11675,6 +12167,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ResetNetworkInterfaceAttribute service method.</param>
         /// 
         /// <returns>The response from the ResetNetworkInterfaceAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetNetworkInterfaceAttribute">REST API Reference for ResetNetworkInterfaceAttribute Operation</seealso>
         public ResetNetworkInterfaceAttributeResponse ResetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest request)
         {
             var marshaller = new ResetNetworkInterfaceAttributeRequestMarshaller();
@@ -11692,6 +12185,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetNetworkInterfaceAttribute">REST API Reference for ResetNetworkInterfaceAttribute Operation</seealso>
         public Task<ResetNetworkInterfaceAttributeResponse> ResetNetworkInterfaceAttributeAsync(ResetNetworkInterfaceAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResetNetworkInterfaceAttributeRequestMarshaller();
@@ -11718,6 +12212,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the ResetSnapshotAttribute service method.</param>
         /// 
         /// <returns>The response from the ResetSnapshotAttribute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute">REST API Reference for ResetSnapshotAttribute Operation</seealso>
         public ResetSnapshotAttributeResponse ResetSnapshotAttribute(ResetSnapshotAttributeRequest request)
         {
             var marshaller = new ResetSnapshotAttributeRequestMarshaller();
@@ -11735,6 +12230,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute">REST API Reference for ResetSnapshotAttribute Operation</seealso>
         public Task<ResetSnapshotAttributeResponse> ResetSnapshotAttributeAsync(ResetSnapshotAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ResetSnapshotAttributeRequestMarshaller();
@@ -11758,6 +12254,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RestoreAddressToClassic service method.</param>
         /// 
         /// <returns>The response from the RestoreAddressToClassic service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreAddressToClassic">REST API Reference for RestoreAddressToClassic Operation</seealso>
         public RestoreAddressToClassicResponse RestoreAddressToClassic(RestoreAddressToClassicRequest request)
         {
             var marshaller = new RestoreAddressToClassicRequestMarshaller();
@@ -11775,6 +12272,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreAddressToClassic">REST API Reference for RestoreAddressToClassic Operation</seealso>
         public Task<RestoreAddressToClassicResponse> RestoreAddressToClassicAsync(RestoreAddressToClassicRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RestoreAddressToClassicRequestMarshaller();
@@ -11810,6 +12308,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RevokeSecurityGroupEgress service method.</param>
         /// 
         /// <returns>The response from the RevokeSecurityGroupEgress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">REST API Reference for RevokeSecurityGroupEgress Operation</seealso>
         public RevokeSecurityGroupEgressResponse RevokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest request)
         {
             var marshaller = new RevokeSecurityGroupEgressRequestMarshaller();
@@ -11827,6 +12326,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">REST API Reference for RevokeSecurityGroupEgress Operation</seealso>
         public Task<RevokeSecurityGroupEgressResponse> RevokeSecurityGroupEgressAsync(RevokeSecurityGroupEgressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RevokeSecurityGroupEgressRequestMarshaller();
@@ -11861,6 +12361,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RevokeSecurityGroupIngress service method.</param>
         /// 
         /// <returns>The response from the RevokeSecurityGroupIngress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">REST API Reference for RevokeSecurityGroupIngress Operation</seealso>
         public RevokeSecurityGroupIngressResponse RevokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest request)
         {
             var marshaller = new RevokeSecurityGroupIngressRequestMarshaller();
@@ -11878,6 +12379,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">REST API Reference for RevokeSecurityGroupIngress Operation</seealso>
         public Task<RevokeSecurityGroupIngressResponse> RevokeSecurityGroupIngressAsync(RevokeSecurityGroupIngressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RevokeSecurityGroupIngressRequestMarshaller();
@@ -11970,6 +12472,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RunInstances service method.</param>
         /// 
         /// <returns>The response from the RunInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">REST API Reference for RunInstances Operation</seealso>
         public RunInstancesResponse RunInstances(RunInstancesRequest request)
         {
             var marshaller = new RunInstancesRequestMarshaller();
@@ -11987,6 +12490,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">REST API Reference for RunInstances Operation</seealso>
         public Task<RunInstancesResponse> RunInstancesAsync(RunInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RunInstancesRequestMarshaller();
@@ -12021,6 +12525,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the RunScheduledInstances service method.</param>
         /// 
         /// <returns>The response from the RunScheduledInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances">REST API Reference for RunScheduledInstances Operation</seealso>
         public RunScheduledInstancesResponse RunScheduledInstances(RunScheduledInstancesRequest request)
         {
             var marshaller = new RunScheduledInstancesRequestMarshaller();
@@ -12038,6 +12543,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances">REST API Reference for RunScheduledInstances Operation</seealso>
         public Task<RunScheduledInstancesResponse> RunScheduledInstancesAsync(RunScheduledInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new RunScheduledInstancesRequestMarshaller();
@@ -12084,6 +12590,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the StartInstances service method.</param>
         /// 
         /// <returns>The response from the StartInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">REST API Reference for StartInstances Operation</seealso>
         public StartInstancesResponse StartInstances(StartInstancesRequest request)
         {
             var marshaller = new StartInstancesRequestMarshaller();
@@ -12101,6 +12608,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">REST API Reference for StartInstances Operation</seealso>
         public Task<StartInstancesResponse> StartInstancesAsync(StartInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StartInstancesRequestMarshaller();
@@ -12156,6 +12664,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the StopInstances service method.</param>
         /// 
         /// <returns>The response from the StopInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">REST API Reference for StopInstances Operation</seealso>
         public StopInstancesResponse StopInstances(StopInstancesRequest request)
         {
             var marshaller = new StopInstancesRequestMarshaller();
@@ -12173,6 +12682,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">REST API Reference for StopInstances Operation</seealso>
         public Task<StopInstancesResponse> StopInstancesAsync(StopInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new StopInstancesRequestMarshaller();
@@ -12225,6 +12735,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the TerminateInstances service method.</param>
         /// 
         /// <returns>The response from the TerminateInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances">REST API Reference for TerminateInstances Operation</seealso>
         public TerminateInstancesResponse TerminateInstances(TerminateInstancesRequest request)
         {
             var marshaller = new TerminateInstancesRequestMarshaller();
@@ -12242,6 +12753,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances">REST API Reference for TerminateInstances Operation</seealso>
         public Task<TerminateInstancesResponse> TerminateInstancesAsync(TerminateInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new TerminateInstancesRequestMarshaller();
@@ -12262,6 +12774,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the UnassignIpv6Addresses service method.</param>
         /// 
         /// <returns>The response from the UnassignIpv6Addresses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses">REST API Reference for UnassignIpv6Addresses Operation</seealso>
         public UnassignIpv6AddressesResponse UnassignIpv6Addresses(UnassignIpv6AddressesRequest request)
         {
             var marshaller = new UnassignIpv6AddressesRequestMarshaller();
@@ -12279,6 +12792,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignIpv6Addresses">REST API Reference for UnassignIpv6Addresses Operation</seealso>
         public Task<UnassignIpv6AddressesResponse> UnassignIpv6AddressesAsync(UnassignIpv6AddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UnassignIpv6AddressesRequestMarshaller();
@@ -12299,6 +12813,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the UnassignPrivateIpAddresses service method.</param>
         /// 
         /// <returns>The response from the UnassignPrivateIpAddresses service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses">REST API Reference for UnassignPrivateIpAddresses Operation</seealso>
         public UnassignPrivateIpAddressesResponse UnassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest request)
         {
             var marshaller = new UnassignPrivateIpAddressesRequestMarshaller();
@@ -12316,6 +12831,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses">REST API Reference for UnassignPrivateIpAddresses Operation</seealso>
         public Task<UnassignPrivateIpAddressesResponse> UnassignPrivateIpAddressesAsync(UnassignPrivateIpAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UnassignPrivateIpAddressesRequestMarshaller();
@@ -12338,6 +12854,7 @@ namespace Amazon.EC2
         /// <param name="request">Container for the necessary parameters to execute the UnmonitorInstances service method.</param>
         /// 
         /// <returns>The response from the UnmonitorInstances service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">REST API Reference for UnmonitorInstances Operation</seealso>
         public UnmonitorInstancesResponse UnmonitorInstances(UnmonitorInstancesRequest request)
         {
             var marshaller = new UnmonitorInstancesRequestMarshaller();
@@ -12355,6 +12872,7 @@ namespace Amazon.EC2
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">REST API Reference for UnmonitorInstances Operation</seealso>
         public Task<UnmonitorInstancesResponse> UnmonitorInstancesAsync(UnmonitorInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UnmonitorInstancesRequestMarshaller();

@@ -323,7 +323,7 @@ namespace <#=this.Config.Namespace#>
         // Add async simple methods
         AddSimpleClientMethods(operation, false);
 
-        AddAsyncDocumentation(operation.Name);
+        AddAsyncDocumentation(operation);
 		if(operation.IsDeprecated)
 		{
 #>

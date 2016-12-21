@@ -36,27 +36,33 @@
     }
 
     // Generates documentation for async calls based on the operation name
-	public void AddAsyncDocumentation(string operationName)
+	public void AddAsyncDocumentation(Operation operation)
     {
 #>
         /// <summary>
-        /// Initiates the asynchronous execution of the <#=operationName#> operation.
+        /// Initiates the asynchronous execution of the <#=operation.Name#> operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the <#=operationName#> operation.</param>
+        /// <param name="request">Container for the necessary parameters to execute the <#=operation.Name#> operation.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
 <#+
+        if(!string.IsNullOrEmpty(operation.RestAPIDocUrl))
+        {
+#>
+        /// <seealso href="<#=operation.RestAPIDocUrl#>">REST API Reference for <#=operation.Name#> Operation</seealso>
+<#+
+        }
     }
 
 	// Generates documentation for async calls for unity based on the operation name
-	public void AddUnityAsyncDocumentation(string operationName, bool isSupportedOnlyByUnityWebRequest = false)
+	public void AddUnityAsyncDocumentation(Operation operation, bool isSupportedOnlyByUnityWebRequest = false)
     {
 #>
         /// <summary>
-        /// Initiates the asynchronous execution of the <#=operationName#> operation.
+        /// Initiates the asynchronous execution of the <#=operation.Name#> operation.
 <#+
 		if(isSupportedOnlyByUnityWebRequest)
 		{
@@ -67,44 +73,61 @@
 #>
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the <#=operationName#> operation on Amazon<#=this.Config.BaseName#>Client.</param>
+        /// <param name="request">Container for the necessary parameters to execute the <#=operation.Name#> operation on Amazon<#=this.Config.BaseName#>Client.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
 <#+
+        if(!string.IsNullOrEmpty(operation.RestAPIDocUrl))
+        {
+#>
+        /// <seealso href="<#=operation.RestAPIDocUrl#>">REST API Reference for <#=operation.Name#> Operation</seealso>
+<#+
+        }
     }
 
-
     // Adds documentation to the begin operation based on the name
-    public void AddBeginAsyncDocumentation(string operationName)
+    public void AddBeginAsyncDocumentation(Operation operation)
     {
 #>
         /// <summary>
-        /// Initiates the asynchronous execution of the <#=operationName#> operation.
+        /// Initiates the asynchronous execution of the <#=operation.Name#> operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the <#=operationName#> operation on Amazon<#=this.Config.BaseName#>Client.</param>
+        /// <param name="request">Container for the necessary parameters to execute the <#=operation.Name#> operation on Amazon<#=this.Config.BaseName#>Client.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking End<#=operationName#>
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking End<#=operation.Name#>
         ///         operation.</returns>
 <#+
+        if(!string.IsNullOrEmpty(operation.RestAPIDocUrl))
+        {
+#>
+        /// <seealso href="<#=operation.RestAPIDocUrl#>">REST API Reference for <#=operation.Name#> Operation</seealso>
+<#+
+        }
     }
 
     // Generates the end operation async documentation
-    public void AddEndAsyncDocumentation(string operationName)
+    public void AddEndAsyncDocumentation(Operation operation)
     {
 #>
         /// <summary>
-        /// Finishes the asynchronous execution of the  <#=operationName#> operation.
+        /// Finishes the asynchronous execution of the  <#=operation.Name#> operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to Begin<#=operationName#>.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to Begin<#=operation.Name#>.</param>
         /// 
-        /// <returns>Returns a  <#=operationName#>Result from <#=this.Config.BaseName#>.</returns>
+        /// <returns>Returns a  <#=operation.Name#>Result from <#=this.Config.BaseName#>.</returns>
 <#+
+        if(!string.IsNullOrEmpty(operation.RestAPIDocUrl))
+        {
+#>
+        /// <seealso href="<#=operation.RestAPIDocUrl#>">REST API Reference for <#=operation.Name#> Operation</seealso>
+<#+
+        }
     }
 
     // Generates Client documentation
@@ -257,6 +280,13 @@
                 this.FormatExceptionDocumentation(exception);
             }
         }
+		
+		if(!string.IsNullOrEmpty(operation.RestAPIDocUrl))
+        {
+#>
+        /// <seealso href="<#=operation.RestAPIDocUrl#>">REST API Reference for <#=operation.Name#> Operation</seealso>
+<#+
+        }
     }
 
         // Generates operation documentation with a param tag for each member in the list
@@ -304,6 +334,13 @@
 				this.FormatExceptionDocumentation(exception);
 			}
 		}
+
+		if(!string.IsNullOrEmpty(operation.RestAPIDocUrl))
+        {
+#>
+        /// <seealso href="<#=operation.RestAPIDocUrl#>">REST API Reference for <#=operation.Name#> Operation</seealso>
+<#+
+        }
     }
 
         // Generates operation documentation with a param tag for each member in the list
@@ -343,6 +380,13 @@
 				this.FormatExceptionDocumentation(exception);
 			}
 		}
+
+		if(!string.IsNullOrEmpty(operation.RestAPIDocUrl))
+        {
+#>
+        /// <seealso href="<#=operation.RestAPIDocUrl#>">REST API Reference for <#=operation.Name#> Operation</seealso>
+<#+
+        }
     }
 
 	public void FormatOperationRequestDocumentation(Operation operation)

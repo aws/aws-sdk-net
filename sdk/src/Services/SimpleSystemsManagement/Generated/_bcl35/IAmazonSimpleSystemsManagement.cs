@@ -96,6 +96,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The <code>Targets</code> parameter includes too many tags. Remove one or more tags
         /// and try the command again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         AddTagsToResourceResponse AddTagsToResource(AddTagsToResourceRequest request);
 
         /// <summary>
@@ -109,6 +110,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         IAsyncResult BeginAddTagsToResource(AddTagsToResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -120,6 +122,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTagsToResource.</param>
         /// 
         /// <returns>Returns a  AddTagsToResourceResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">REST API Reference for AddTagsToResource Operation</seealso>
         AddTagsToResourceResponse EndAddTagsToResource(IAsyncResult asyncResult);
 
         #endregion
@@ -167,6 +170,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Invalid states are: Shutting-down and Terminated.
         /// </para>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         CancelCommandResponse CancelCommand(string commandId);
 
         /// <summary>
@@ -210,6 +214,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Invalid states are: Shutting-down and Terminated.
         /// </para>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         CancelCommandResponse CancelCommand(string commandId, List<string> instanceIds);
 
         /// <summary>
@@ -252,6 +257,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Invalid states are: Shutting-down and Terminated.
         /// </para>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         CancelCommandResponse CancelCommand(CancelCommandRequest request);
 
         /// <summary>
@@ -265,6 +271,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelCommand
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         IAsyncResult BeginCancelCommand(CancelCommandRequest request, AsyncCallback callback, object state);
 
 
@@ -276,6 +283,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelCommand.</param>
         /// 
         /// <returns>Returns a  CancelCommandResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelCommand">REST API Reference for CancelCommand Operation</seealso>
         CancelCommandResponse EndCancelCommand(IAsyncResult asyncResult);
 
         #endregion
@@ -297,6 +305,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">REST API Reference for CreateActivation Operation</seealso>
         CreateActivationResponse CreateActivation(CreateActivationRequest request);
 
         /// <summary>
@@ -310,6 +319,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateActivation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">REST API Reference for CreateActivation Operation</seealso>
         IAsyncResult BeginCreateActivation(CreateActivationRequest request, AsyncCallback callback, object state);
 
 
@@ -321,6 +331,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateActivation.</param>
         /// 
         /// <returns>Returns a  CreateActivationResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">REST API Reference for CreateActivation Operation</seealso>
         CreateActivationResponse EndCreateActivation(IAsyncResult asyncResult);
 
         #endregion
@@ -404,6 +415,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The document does not support the platform type of the given instance ID(s). For example,
         /// you sent an SSM document for a Windows instance to a Linux instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
         CreateAssociationResponse CreateAssociation(string instanceId, string name);
 
         /// <summary>
@@ -481,6 +493,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The document does not support the platform type of the given instance ID(s). For example,
         /// you sent an SSM document for a Windows instance to a Linux instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
         CreateAssociationResponse CreateAssociation(CreateAssociationRequest request);
 
         /// <summary>
@@ -494,6 +507,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAssociation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
         IAsyncResult BeginCreateAssociation(CreateAssociationRequest request, AsyncCallback callback, object state);
 
 
@@ -505,6 +519,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAssociation.</param>
         /// 
         /// <returns>Returns a  CreateAssociationResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">REST API Reference for CreateAssociation Operation</seealso>
         CreateAssociationResponse EndCreateAssociation(IAsyncResult asyncResult);
 
         #endregion
@@ -587,6 +602,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The document does not support the platform type of the given instance ID(s). For example,
         /// you sent an SSM document for a Windows instance to a Linux instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">REST API Reference for CreateAssociationBatch Operation</seealso>
         CreateAssociationBatchResponse CreateAssociationBatch(CreateAssociationBatchRequest request);
 
         /// <summary>
@@ -600,6 +616,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAssociationBatch
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">REST API Reference for CreateAssociationBatch Operation</seealso>
         IAsyncResult BeginCreateAssociationBatch(CreateAssociationBatchRequest request, AsyncCallback callback, object state);
 
 
@@ -611,6 +628,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAssociationBatch.</param>
         /// 
         /// <returns>Returns a  CreateAssociationBatchResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">REST API Reference for CreateAssociationBatch Operation</seealso>
         CreateAssociationBatchResponse EndCreateAssociationBatch(IAsyncResult asyncResult);
 
         #endregion
@@ -649,6 +667,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of an SSM document is 64 KB.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">REST API Reference for CreateDocument Operation</seealso>
         CreateDocumentResponse CreateDocument(string content, string name);
 
         /// <summary>
@@ -681,6 +700,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of an SSM document is 64 KB.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">REST API Reference for CreateDocument Operation</seealso>
         CreateDocumentResponse CreateDocument(CreateDocumentRequest request);
 
         /// <summary>
@@ -694,6 +714,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDocument
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">REST API Reference for CreateDocument Operation</seealso>
         IAsyncResult BeginCreateDocument(CreateDocumentRequest request, AsyncCallback callback, object state);
 
 
@@ -705,6 +726,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDocument.</param>
         /// 
         /// <returns>Returns a  CreateDocumentResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateDocument">REST API Reference for CreateDocument Operation</seealso>
         CreateDocumentResponse EndCreateDocument(IAsyncResult asyncResult);
 
         #endregion
@@ -729,6 +751,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Error returned when the caller has exceeded the default resource limits (e.g. too
         /// many Maintenance Windows have been created).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">REST API Reference for CreateMaintenanceWindow Operation</seealso>
         CreateMaintenanceWindowResponse CreateMaintenanceWindow(CreateMaintenanceWindowRequest request);
 
         /// <summary>
@@ -742,6 +765,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMaintenanceWindow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">REST API Reference for CreateMaintenanceWindow Operation</seealso>
         IAsyncResult BeginCreateMaintenanceWindow(CreateMaintenanceWindowRequest request, AsyncCallback callback, object state);
 
 
@@ -753,6 +777,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMaintenanceWindow.</param>
         /// 
         /// <returns>Returns a  CreateMaintenanceWindowResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateMaintenanceWindow">REST API Reference for CreateMaintenanceWindow Operation</seealso>
         CreateMaintenanceWindowResponse EndCreateMaintenanceWindow(IAsyncResult asyncResult);
 
         #endregion
@@ -777,6 +802,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Error returned when the caller has exceeded the default resource limits (e.g. too
         /// many Maintenance Windows have been created).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">REST API Reference for CreatePatchBaseline Operation</seealso>
         CreatePatchBaselineResponse CreatePatchBaseline(CreatePatchBaselineRequest request);
 
         /// <summary>
@@ -790,6 +816,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePatchBaseline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">REST API Reference for CreatePatchBaseline Operation</seealso>
         IAsyncResult BeginCreatePatchBaseline(CreatePatchBaselineRequest request, AsyncCallback callback, object state);
 
 
@@ -801,6 +828,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePatchBaseline.</param>
         /// 
         /// <returns>Returns a  CreatePatchBaselineResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline">REST API Reference for CreatePatchBaseline Operation</seealso>
         CreatePatchBaselineResponse EndCreatePatchBaseline(IAsyncResult asyncResult);
 
         #endregion
@@ -828,6 +856,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The activation ID is not valid. Verify the you entered the correct ActivationId or
         /// ActivationCode and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">REST API Reference for DeleteActivation Operation</seealso>
         DeleteActivationResponse DeleteActivation(DeleteActivationRequest request);
 
         /// <summary>
@@ -841,6 +870,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteActivation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">REST API Reference for DeleteActivation Operation</seealso>
         IAsyncResult BeginDeleteActivation(DeleteActivationRequest request, AsyncCallback callback, object state);
 
 
@@ -852,6 +882,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteActivation.</param>
         /// 
         /// <returns>Returns a  DeleteActivationResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteActivation">REST API Reference for DeleteActivation Operation</seealso>
         DeleteActivationResponse EndDeleteActivation(IAsyncResult asyncResult);
 
         #endregion
@@ -910,6 +941,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
         DeleteAssociationResponse DeleteAssociation(string instanceId, string name);
 
         /// <summary>
@@ -962,6 +994,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
         DeleteAssociationResponse DeleteAssociation(DeleteAssociationRequest request);
 
         /// <summary>
@@ -975,6 +1008,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAssociation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
         IAsyncResult BeginDeleteAssociation(DeleteAssociationRequest request, AsyncCallback callback, object state);
 
 
@@ -986,6 +1020,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAssociation.</param>
         /// 
         /// <returns>Returns a  DeleteAssociationResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteAssociation">REST API Reference for DeleteAssociation Operation</seealso>
         DeleteAssociationResponse EndDeleteAssociation(IAsyncResult asyncResult);
 
         #endregion
@@ -1018,6 +1053,7 @@ namespace Amazon.SimpleSystemsManagement
         /// You attempted to delete a document while it is still shared. You must stop sharing
         /// the document before you can delete it.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
         DeleteDocumentResponse DeleteDocument(string name);
 
         /// <summary>
@@ -1045,6 +1081,7 @@ namespace Amazon.SimpleSystemsManagement
         /// You attempted to delete a document while it is still shared. You must stop sharing
         /// the document before you can delete it.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
         DeleteDocumentResponse DeleteDocument(DeleteDocumentRequest request);
 
         /// <summary>
@@ -1058,6 +1095,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDocument
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
         IAsyncResult BeginDeleteDocument(DeleteDocumentRequest request, AsyncCallback callback, object state);
 
 
@@ -1069,6 +1107,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDocument.</param>
         /// 
         /// <returns>Returns a  DeleteDocumentResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteDocument">REST API Reference for DeleteDocument Operation</seealso>
         DeleteDocumentResponse EndDeleteDocument(IAsyncResult asyncResult);
 
         #endregion
@@ -1085,6 +1124,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow">REST API Reference for DeleteMaintenanceWindow Operation</seealso>
         DeleteMaintenanceWindowResponse DeleteMaintenanceWindow(DeleteMaintenanceWindowRequest request);
 
         /// <summary>
@@ -1098,6 +1138,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMaintenanceWindow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow">REST API Reference for DeleteMaintenanceWindow Operation</seealso>
         IAsyncResult BeginDeleteMaintenanceWindow(DeleteMaintenanceWindowRequest request, AsyncCallback callback, object state);
 
 
@@ -1109,6 +1150,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMaintenanceWindow.</param>
         /// 
         /// <returns>Returns a  DeleteMaintenanceWindowResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteMaintenanceWindow">REST API Reference for DeleteMaintenanceWindow Operation</seealso>
         DeleteMaintenanceWindowResponse EndDeleteMaintenanceWindow(IAsyncResult asyncResult);
 
         #endregion
@@ -1128,6 +1170,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
         /// The parameter could not be found. Verify the name and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">REST API Reference for DeleteParameter Operation</seealso>
         DeleteParameterResponse DeleteParameter(DeleteParameterRequest request);
 
         /// <summary>
@@ -1141,6 +1184,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteParameter
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">REST API Reference for DeleteParameter Operation</seealso>
         IAsyncResult BeginDeleteParameter(DeleteParameterRequest request, AsyncCallback callback, object state);
 
 
@@ -1152,6 +1196,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteParameter.</param>
         /// 
         /// <returns>Returns a  DeleteParameterResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">REST API Reference for DeleteParameter Operation</seealso>
         DeleteParameterResponse EndDeleteParameter(IAsyncResult asyncResult);
 
         #endregion
@@ -1172,6 +1217,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Error returned if an attempt is made to delete a patch baseline that is registered
         /// for a patch group.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline">REST API Reference for DeletePatchBaseline Operation</seealso>
         DeletePatchBaselineResponse DeletePatchBaseline(DeletePatchBaselineRequest request);
 
         /// <summary>
@@ -1185,6 +1231,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePatchBaseline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline">REST API Reference for DeletePatchBaseline Operation</seealso>
         IAsyncResult BeginDeletePatchBaseline(DeletePatchBaselineRequest request, AsyncCallback callback, object state);
 
 
@@ -1196,6 +1243,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePatchBaseline.</param>
         /// 
         /// <returns>Returns a  DeletePatchBaselineResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeletePatchBaseline">REST API Reference for DeletePatchBaseline Operation</seealso>
         DeletePatchBaselineResponse EndDeletePatchBaseline(IAsyncResult asyncResult);
 
         #endregion
@@ -1238,6 +1286,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Invalid states are: Shutting-down and Terminated.
         /// </para>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">REST API Reference for DeregisterManagedInstance Operation</seealso>
         DeregisterManagedInstanceResponse DeregisterManagedInstance(DeregisterManagedInstanceRequest request);
 
         /// <summary>
@@ -1251,6 +1300,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterManagedInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">REST API Reference for DeregisterManagedInstance Operation</seealso>
         IAsyncResult BeginDeregisterManagedInstance(DeregisterManagedInstanceRequest request, AsyncCallback callback, object state);
 
 
@@ -1262,6 +1312,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterManagedInstance.</param>
         /// 
         /// <returns>Returns a  DeregisterManagedInstanceResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterManagedInstance">REST API Reference for DeregisterManagedInstance Operation</seealso>
         DeregisterManagedInstanceResponse EndDeregisterManagedInstance(IAsyncResult asyncResult);
 
         #endregion
@@ -1281,6 +1332,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
         /// The resource ID is not valid. Verify that you entered the correct ID and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup">REST API Reference for DeregisterPatchBaselineForPatchGroup Operation</seealso>
         DeregisterPatchBaselineForPatchGroupResponse DeregisterPatchBaselineForPatchGroup(DeregisterPatchBaselineForPatchGroupRequest request);
 
         /// <summary>
@@ -1294,6 +1346,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterPatchBaselineForPatchGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup">REST API Reference for DeregisterPatchBaselineForPatchGroup Operation</seealso>
         IAsyncResult BeginDeregisterPatchBaselineForPatchGroup(DeregisterPatchBaselineForPatchGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -1305,6 +1358,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterPatchBaselineForPatchGroup.</param>
         /// 
         /// <returns>Returns a  DeregisterPatchBaselineForPatchGroupResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterPatchBaselineForPatchGroup">REST API Reference for DeregisterPatchBaselineForPatchGroup Operation</seealso>
         DeregisterPatchBaselineForPatchGroupResponse EndDeregisterPatchBaselineForPatchGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -1325,6 +1379,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow">REST API Reference for DeregisterTargetFromMaintenanceWindow Operation</seealso>
         DeregisterTargetFromMaintenanceWindowResponse DeregisterTargetFromMaintenanceWindow(DeregisterTargetFromMaintenanceWindowRequest request);
 
         /// <summary>
@@ -1338,6 +1393,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterTargetFromMaintenanceWindow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow">REST API Reference for DeregisterTargetFromMaintenanceWindow Operation</seealso>
         IAsyncResult BeginDeregisterTargetFromMaintenanceWindow(DeregisterTargetFromMaintenanceWindowRequest request, AsyncCallback callback, object state);
 
 
@@ -1349,6 +1405,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterTargetFromMaintenanceWindow.</param>
         /// 
         /// <returns>Returns a  DeregisterTargetFromMaintenanceWindowResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTargetFromMaintenanceWindow">REST API Reference for DeregisterTargetFromMaintenanceWindow Operation</seealso>
         DeregisterTargetFromMaintenanceWindowResponse EndDeregisterTargetFromMaintenanceWindow(IAsyncResult asyncResult);
 
         #endregion
@@ -1369,6 +1426,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow">REST API Reference for DeregisterTaskFromMaintenanceWindow Operation</seealso>
         DeregisterTaskFromMaintenanceWindowResponse DeregisterTaskFromMaintenanceWindow(DeregisterTaskFromMaintenanceWindowRequest request);
 
         /// <summary>
@@ -1382,6 +1440,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterTaskFromMaintenanceWindow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow">REST API Reference for DeregisterTaskFromMaintenanceWindow Operation</seealso>
         IAsyncResult BeginDeregisterTaskFromMaintenanceWindow(DeregisterTaskFromMaintenanceWindowRequest request, AsyncCallback callback, object state);
 
 
@@ -1393,6 +1452,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterTaskFromMaintenanceWindow.</param>
         /// 
         /// <returns>Returns a  DeregisterTaskFromMaintenanceWindowResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterTaskFromMaintenanceWindow">REST API Reference for DeregisterTaskFromMaintenanceWindow Operation</seealso>
         DeregisterTaskFromMaintenanceWindowResponse EndDeregisterTaskFromMaintenanceWindow(IAsyncResult asyncResult);
 
         #endregion
@@ -1417,6 +1477,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">REST API Reference for DescribeActivations Operation</seealso>
         DescribeActivationsResponse DescribeActivations(DescribeActivationsRequest request);
 
         /// <summary>
@@ -1430,6 +1491,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeActivations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">REST API Reference for DescribeActivations Operation</seealso>
         IAsyncResult BeginDescribeActivations(DescribeActivationsRequest request, AsyncCallback callback, object state);
 
 
@@ -1441,6 +1503,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeActivations.</param>
         /// 
         /// <returns>Returns a  DescribeActivationsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeActivations">REST API Reference for DescribeActivations Operation</seealso>
         DescribeActivationsResponse EndDescribeActivations(IAsyncResult asyncResult);
 
         #endregion
@@ -1488,6 +1551,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Invalid states are: Shutting-down and Terminated.
         /// </para>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">REST API Reference for DescribeAssociation Operation</seealso>
         DescribeAssociationResponse DescribeAssociation(string instanceId, string name);
 
         /// <summary>
@@ -1529,6 +1593,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Invalid states are: Shutting-down and Terminated.
         /// </para>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">REST API Reference for DescribeAssociation Operation</seealso>
         DescribeAssociationResponse DescribeAssociation(DescribeAssociationRequest request);
 
         /// <summary>
@@ -1542,6 +1607,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAssociation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">REST API Reference for DescribeAssociation Operation</seealso>
         IAsyncResult BeginDescribeAssociation(DescribeAssociationRequest request, AsyncCallback callback, object state);
 
 
@@ -1553,6 +1619,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAssociation.</param>
         /// 
         /// <returns>Returns a  DescribeAssociationResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociation">REST API Reference for DescribeAssociation Operation</seealso>
         DescribeAssociationResponse EndDescribeAssociation(IAsyncResult asyncResult);
 
         #endregion
@@ -1572,6 +1639,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions">REST API Reference for DescribeAutomationExecutions Operation</seealso>
         DescribeAutomationExecutionsResponse DescribeAutomationExecutions(DescribeAutomationExecutionsRequest request);
 
         /// <summary>
@@ -1585,6 +1653,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAutomationExecutions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions">REST API Reference for DescribeAutomationExecutions Operation</seealso>
         IAsyncResult BeginDescribeAutomationExecutions(DescribeAutomationExecutionsRequest request, AsyncCallback callback, object state);
 
 
@@ -1596,6 +1665,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAutomationExecutions.</param>
         /// 
         /// <returns>Returns a  DescribeAutomationExecutionsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAutomationExecutions">REST API Reference for DescribeAutomationExecutions Operation</seealso>
         DescribeAutomationExecutionsResponse EndDescribeAutomationExecutions(IAsyncResult asyncResult);
 
         #endregion
@@ -1612,6 +1682,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">REST API Reference for DescribeAvailablePatches Operation</seealso>
         DescribeAvailablePatchesResponse DescribeAvailablePatches(DescribeAvailablePatchesRequest request);
 
         /// <summary>
@@ -1625,6 +1696,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAvailablePatches
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">REST API Reference for DescribeAvailablePatches Operation</seealso>
         IAsyncResult BeginDescribeAvailablePatches(DescribeAvailablePatchesRequest request, AsyncCallback callback, object state);
 
 
@@ -1636,6 +1708,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAvailablePatches.</param>
         /// 
         /// <returns>Returns a  DescribeAvailablePatchesResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">REST API Reference for DescribeAvailablePatches Operation</seealso>
         DescribeAvailablePatchesResponse EndDescribeAvailablePatches(IAsyncResult asyncResult);
 
         #endregion
@@ -1658,6 +1731,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
         /// The document version is not valid or does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">REST API Reference for DescribeDocument Operation</seealso>
         DescribeDocumentResponse DescribeDocument(string name);
 
         /// <summary>
@@ -1675,6 +1749,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
         /// The document version is not valid or does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">REST API Reference for DescribeDocument Operation</seealso>
         DescribeDocumentResponse DescribeDocument(DescribeDocumentRequest request);
 
         /// <summary>
@@ -1688,6 +1763,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDocument
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">REST API Reference for DescribeDocument Operation</seealso>
         IAsyncResult BeginDescribeDocument(DescribeDocumentRequest request, AsyncCallback callback, object state);
 
 
@@ -1699,6 +1775,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDocument.</param>
         /// 
         /// <returns>Returns a  DescribeDocumentResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocument">REST API Reference for DescribeDocument Operation</seealso>
         DescribeDocumentResponse EndDescribeDocument(IAsyncResult asyncResult);
 
         #endregion
@@ -1724,6 +1801,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The permission type is not supported. <i>Share</i> is the only supported permission
         /// type.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">REST API Reference for DescribeDocumentPermission Operation</seealso>
         DescribeDocumentPermissionResponse DescribeDocumentPermission(DescribeDocumentPermissionRequest request);
 
         /// <summary>
@@ -1737,6 +1815,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDocumentPermission
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">REST API Reference for DescribeDocumentPermission Operation</seealso>
         IAsyncResult BeginDescribeDocumentPermission(DescribeDocumentPermissionRequest request, AsyncCallback callback, object state);
 
 
@@ -1748,6 +1827,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDocumentPermission.</param>
         /// 
         /// <returns>Returns a  DescribeDocumentPermissionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission">REST API Reference for DescribeDocumentPermission Operation</seealso>
         DescribeDocumentPermissionResponse EndDescribeDocumentPermission(IAsyncResult asyncResult);
 
         #endregion
@@ -1791,6 +1871,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">REST API Reference for DescribeEffectiveInstanceAssociations Operation</seealso>
         DescribeEffectiveInstanceAssociationsResponse DescribeEffectiveInstanceAssociations(DescribeEffectiveInstanceAssociationsRequest request);
 
         /// <summary>
@@ -1804,6 +1885,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEffectiveInstanceAssociations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">REST API Reference for DescribeEffectiveInstanceAssociations Operation</seealso>
         IAsyncResult BeginDescribeEffectiveInstanceAssociations(DescribeEffectiveInstanceAssociationsRequest request, AsyncCallback callback, object state);
 
 
@@ -1815,6 +1897,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEffectiveInstanceAssociations.</param>
         /// 
         /// <returns>Returns a  DescribeEffectiveInstanceAssociationsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">REST API Reference for DescribeEffectiveInstanceAssociations Operation</seealso>
         DescribeEffectiveInstanceAssociationsResponse EndDescribeEffectiveInstanceAssociations(IAsyncResult asyncResult);
 
         #endregion
@@ -1839,6 +1922,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
         /// The resource ID is not valid. Verify that you entered the correct ID and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">REST API Reference for DescribeEffectivePatchesForPatchBaseline Operation</seealso>
         DescribeEffectivePatchesForPatchBaselineResponse DescribeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request);
 
         /// <summary>
@@ -1852,6 +1936,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEffectivePatchesForPatchBaseline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">REST API Reference for DescribeEffectivePatchesForPatchBaseline Operation</seealso>
         IAsyncResult BeginDescribeEffectivePatchesForPatchBaseline(DescribeEffectivePatchesForPatchBaselineRequest request, AsyncCallback callback, object state);
 
 
@@ -1863,6 +1948,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEffectivePatchesForPatchBaseline.</param>
         /// 
         /// <returns>Returns a  DescribeEffectivePatchesForPatchBaselineResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectivePatchesForPatchBaseline">REST API Reference for DescribeEffectivePatchesForPatchBaseline Operation</seealso>
         DescribeEffectivePatchesForPatchBaselineResponse EndDescribeEffectivePatchesForPatchBaseline(IAsyncResult asyncResult);
 
         #endregion
@@ -1906,6 +1992,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">REST API Reference for DescribeInstanceAssociationsStatus Operation</seealso>
         DescribeInstanceAssociationsStatusResponse DescribeInstanceAssociationsStatus(DescribeInstanceAssociationsStatusRequest request);
 
         /// <summary>
@@ -1919,6 +2006,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceAssociationsStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">REST API Reference for DescribeInstanceAssociationsStatus Operation</seealso>
         IAsyncResult BeginDescribeInstanceAssociationsStatus(DescribeInstanceAssociationsStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -1930,6 +2018,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceAssociationsStatus.</param>
         /// 
         /// <returns>Returns a  DescribeInstanceAssociationsStatusResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">REST API Reference for DescribeInstanceAssociationsStatus Operation</seealso>
         DescribeInstanceAssociationsStatusResponse EndDescribeInstanceAssociationsStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -1983,6 +2072,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">REST API Reference for DescribeInstanceInformation Operation</seealso>
         DescribeInstanceInformationResponse DescribeInstanceInformation();
 
         /// <summary>
@@ -2032,6 +2122,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">REST API Reference for DescribeInstanceInformation Operation</seealso>
         DescribeInstanceInformationResponse DescribeInstanceInformation(DescribeInstanceInformationRequest request);
 
         /// <summary>
@@ -2045,6 +2136,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceInformation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">REST API Reference for DescribeInstanceInformation Operation</seealso>
         IAsyncResult BeginDescribeInstanceInformation(DescribeInstanceInformationRequest request, AsyncCallback callback, object state);
 
 
@@ -2056,6 +2148,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceInformation.</param>
         /// 
         /// <returns>Returns a  DescribeInstanceInformationResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceInformation">REST API Reference for DescribeInstanceInformation Operation</seealso>
         DescribeInstanceInformationResponse EndDescribeInstanceInformation(IAsyncResult asyncResult);
 
         #endregion
@@ -2103,6 +2196,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">REST API Reference for DescribeInstancePatches Operation</seealso>
         DescribeInstancePatchesResponse DescribeInstancePatches(DescribeInstancePatchesRequest request);
 
         /// <summary>
@@ -2116,6 +2210,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstancePatches
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">REST API Reference for DescribeInstancePatches Operation</seealso>
         IAsyncResult BeginDescribeInstancePatches(DescribeInstancePatchesRequest request, AsyncCallback callback, object state);
 
 
@@ -2127,6 +2222,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstancePatches.</param>
         /// 
         /// <returns>Returns a  DescribeInstancePatchesResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatches">REST API Reference for DescribeInstancePatches Operation</seealso>
         DescribeInstancePatchesResponse EndDescribeInstancePatches(IAsyncResult asyncResult);
 
         #endregion
@@ -2146,6 +2242,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">REST API Reference for DescribeInstancePatchStates Operation</seealso>
         DescribeInstancePatchStatesResponse DescribeInstancePatchStates(DescribeInstancePatchStatesRequest request);
 
         /// <summary>
@@ -2159,6 +2256,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstancePatchStates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">REST API Reference for DescribeInstancePatchStates Operation</seealso>
         IAsyncResult BeginDescribeInstancePatchStates(DescribeInstancePatchStatesRequest request, AsyncCallback callback, object state);
 
 
@@ -2170,6 +2268,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstancePatchStates.</param>
         /// 
         /// <returns>Returns a  DescribeInstancePatchStatesResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStates">REST API Reference for DescribeInstancePatchStates Operation</seealso>
         DescribeInstancePatchStatesResponse EndDescribeInstancePatchStates(IAsyncResult asyncResult);
 
         #endregion
@@ -2192,6 +2291,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">REST API Reference for DescribeInstancePatchStatesForPatchGroup Operation</seealso>
         DescribeInstancePatchStatesForPatchGroupResponse DescribeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request);
 
         /// <summary>
@@ -2205,6 +2305,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstancePatchStatesForPatchGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">REST API Reference for DescribeInstancePatchStatesForPatchGroup Operation</seealso>
         IAsyncResult BeginDescribeInstancePatchStatesForPatchGroup(DescribeInstancePatchStatesForPatchGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -2216,6 +2317,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstancePatchStatesForPatchGroup.</param>
         /// 
         /// <returns>Returns a  DescribeInstancePatchStatesForPatchGroupResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">REST API Reference for DescribeInstancePatchStatesForPatchGroup Operation</seealso>
         DescribeInstancePatchStatesForPatchGroupResponse EndDescribeInstancePatchStatesForPatchGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -2234,6 +2336,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions">REST API Reference for DescribeMaintenanceWindowExecutions Operation</seealso>
         DescribeMaintenanceWindowExecutionsResponse DescribeMaintenanceWindowExecutions(DescribeMaintenanceWindowExecutionsRequest request);
 
         /// <summary>
@@ -2247,6 +2350,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMaintenanceWindowExecutions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions">REST API Reference for DescribeMaintenanceWindowExecutions Operation</seealso>
         IAsyncResult BeginDescribeMaintenanceWindowExecutions(DescribeMaintenanceWindowExecutionsRequest request, AsyncCallback callback, object state);
 
 
@@ -2258,6 +2362,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMaintenanceWindowExecutions.</param>
         /// 
         /// <returns>Returns a  DescribeMaintenanceWindowExecutionsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutions">REST API Reference for DescribeMaintenanceWindowExecutions Operation</seealso>
         DescribeMaintenanceWindowExecutionsResponse EndDescribeMaintenanceWindowExecutions(IAsyncResult asyncResult);
 
         #endregion
@@ -2279,6 +2384,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">REST API Reference for DescribeMaintenanceWindowExecutionTaskInvocations Operation</seealso>
         DescribeMaintenanceWindowExecutionTaskInvocationsResponse DescribeMaintenanceWindowExecutionTaskInvocations(DescribeMaintenanceWindowExecutionTaskInvocationsRequest request);
 
         /// <summary>
@@ -2292,6 +2398,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMaintenanceWindowExecutionTaskInvocations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">REST API Reference for DescribeMaintenanceWindowExecutionTaskInvocations Operation</seealso>
         IAsyncResult BeginDescribeMaintenanceWindowExecutionTaskInvocations(DescribeMaintenanceWindowExecutionTaskInvocationsRequest request, AsyncCallback callback, object state);
 
 
@@ -2303,6 +2410,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMaintenanceWindowExecutionTaskInvocations.</param>
         /// 
         /// <returns>Returns a  DescribeMaintenanceWindowExecutionTaskInvocationsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">REST API Reference for DescribeMaintenanceWindowExecutionTaskInvocations Operation</seealso>
         DescribeMaintenanceWindowExecutionTaskInvocationsResponse EndDescribeMaintenanceWindowExecutionTaskInvocations(IAsyncResult asyncResult);
 
         #endregion
@@ -2323,6 +2431,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">REST API Reference for DescribeMaintenanceWindowExecutionTasks Operation</seealso>
         DescribeMaintenanceWindowExecutionTasksResponse DescribeMaintenanceWindowExecutionTasks(DescribeMaintenanceWindowExecutionTasksRequest request);
 
         /// <summary>
@@ -2336,6 +2445,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMaintenanceWindowExecutionTasks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">REST API Reference for DescribeMaintenanceWindowExecutionTasks Operation</seealso>
         IAsyncResult BeginDescribeMaintenanceWindowExecutionTasks(DescribeMaintenanceWindowExecutionTasksRequest request, AsyncCallback callback, object state);
 
 
@@ -2347,6 +2457,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMaintenanceWindowExecutionTasks.</param>
         /// 
         /// <returns>Returns a  DescribeMaintenanceWindowExecutionTasksResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">REST API Reference for DescribeMaintenanceWindowExecutionTasks Operation</seealso>
         DescribeMaintenanceWindowExecutionTasksResponse EndDescribeMaintenanceWindowExecutionTasks(IAsyncResult asyncResult);
 
         #endregion
@@ -2363,6 +2474,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">REST API Reference for DescribeMaintenanceWindows Operation</seealso>
         DescribeMaintenanceWindowsResponse DescribeMaintenanceWindows(DescribeMaintenanceWindowsRequest request);
 
         /// <summary>
@@ -2376,6 +2488,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMaintenanceWindows
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">REST API Reference for DescribeMaintenanceWindows Operation</seealso>
         IAsyncResult BeginDescribeMaintenanceWindows(DescribeMaintenanceWindowsRequest request, AsyncCallback callback, object state);
 
 
@@ -2387,6 +2500,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMaintenanceWindows.</param>
         /// 
         /// <returns>Returns a  DescribeMaintenanceWindowsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindows">REST API Reference for DescribeMaintenanceWindows Operation</seealso>
         DescribeMaintenanceWindowsResponse EndDescribeMaintenanceWindows(IAsyncResult asyncResult);
 
         #endregion
@@ -2407,6 +2521,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets">REST API Reference for DescribeMaintenanceWindowTargets Operation</seealso>
         DescribeMaintenanceWindowTargetsResponse DescribeMaintenanceWindowTargets(DescribeMaintenanceWindowTargetsRequest request);
 
         /// <summary>
@@ -2420,6 +2535,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMaintenanceWindowTargets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets">REST API Reference for DescribeMaintenanceWindowTargets Operation</seealso>
         IAsyncResult BeginDescribeMaintenanceWindowTargets(DescribeMaintenanceWindowTargetsRequest request, AsyncCallback callback, object state);
 
 
@@ -2431,6 +2547,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMaintenanceWindowTargets.</param>
         /// 
         /// <returns>Returns a  DescribeMaintenanceWindowTargetsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets">REST API Reference for DescribeMaintenanceWindowTargets Operation</seealso>
         DescribeMaintenanceWindowTargetsResponse EndDescribeMaintenanceWindowTargets(IAsyncResult asyncResult);
 
         #endregion
@@ -2451,6 +2568,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">REST API Reference for DescribeMaintenanceWindowTasks Operation</seealso>
         DescribeMaintenanceWindowTasksResponse DescribeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest request);
 
         /// <summary>
@@ -2464,6 +2582,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMaintenanceWindowTasks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">REST API Reference for DescribeMaintenanceWindowTasks Operation</seealso>
         IAsyncResult BeginDescribeMaintenanceWindowTasks(DescribeMaintenanceWindowTasksRequest request, AsyncCallback callback, object state);
 
 
@@ -2475,6 +2594,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMaintenanceWindowTasks.</param>
         /// 
         /// <returns>Returns a  DescribeMaintenanceWindowTasksResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTasks">REST API Reference for DescribeMaintenanceWindowTasks Operation</seealso>
         DescribeMaintenanceWindowTasksResponse EndDescribeMaintenanceWindowTasks(IAsyncResult asyncResult);
 
         #endregion
@@ -2497,6 +2617,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         DescribeParametersResponse DescribeParameters(DescribeParametersRequest request);
 
         /// <summary>
@@ -2510,6 +2631,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeParameters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         IAsyncResult BeginDescribeParameters(DescribeParametersRequest request, AsyncCallback callback, object state);
 
 
@@ -2521,6 +2643,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeParameters.</param>
         /// 
         /// <returns>Returns a  DescribeParametersResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">REST API Reference for DescribeParameters Operation</seealso>
         DescribeParametersResponse EndDescribeParameters(IAsyncResult asyncResult);
 
         #endregion
@@ -2537,6 +2660,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines">REST API Reference for DescribePatchBaselines Operation</seealso>
         DescribePatchBaselinesResponse DescribePatchBaselines(DescribePatchBaselinesRequest request);
 
         /// <summary>
@@ -2550,6 +2674,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePatchBaselines
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines">REST API Reference for DescribePatchBaselines Operation</seealso>
         IAsyncResult BeginDescribePatchBaselines(DescribePatchBaselinesRequest request, AsyncCallback callback, object state);
 
 
@@ -2561,6 +2686,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePatchBaselines.</param>
         /// 
         /// <returns>Returns a  DescribePatchBaselinesResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchBaselines">REST API Reference for DescribePatchBaselines Operation</seealso>
         DescribePatchBaselinesResponse EndDescribePatchBaselines(IAsyncResult asyncResult);
 
         #endregion
@@ -2577,6 +2703,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups">REST API Reference for DescribePatchGroups Operation</seealso>
         DescribePatchGroupsResponse DescribePatchGroups(DescribePatchGroupsRequest request);
 
         /// <summary>
@@ -2590,6 +2717,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePatchGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups">REST API Reference for DescribePatchGroups Operation</seealso>
         IAsyncResult BeginDescribePatchGroups(DescribePatchGroupsRequest request, AsyncCallback callback, object state);
 
 
@@ -2601,6 +2729,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePatchGroups.</param>
         /// 
         /// <returns>Returns a  DescribePatchGroupsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroups">REST API Reference for DescribePatchGroups Operation</seealso>
         DescribePatchGroupsResponse EndDescribePatchGroups(IAsyncResult asyncResult);
 
         #endregion
@@ -2620,6 +2749,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">REST API Reference for DescribePatchGroupState Operation</seealso>
         DescribePatchGroupStateResponse DescribePatchGroupState(DescribePatchGroupStateRequest request);
 
         /// <summary>
@@ -2633,6 +2763,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePatchGroupState
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">REST API Reference for DescribePatchGroupState Operation</seealso>
         IAsyncResult BeginDescribePatchGroupState(DescribePatchGroupStateRequest request, AsyncCallback callback, object state);
 
 
@@ -2644,6 +2775,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePatchGroupState.</param>
         /// 
         /// <returns>Returns a  DescribePatchGroupStateResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribePatchGroupState">REST API Reference for DescribePatchGroupState Operation</seealso>
         DescribePatchGroupStateResponse EndDescribePatchGroupState(IAsyncResult asyncResult);
 
         #endregion
@@ -2664,6 +2796,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution">REST API Reference for GetAutomationExecution Operation</seealso>
         GetAutomationExecutionResponse GetAutomationExecution(GetAutomationExecutionRequest request);
 
         /// <summary>
@@ -2677,6 +2810,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAutomationExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution">REST API Reference for GetAutomationExecution Operation</seealso>
         IAsyncResult BeginGetAutomationExecution(GetAutomationExecutionRequest request, AsyncCallback callback, object state);
 
 
@@ -2688,6 +2822,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAutomationExecution.</param>
         /// 
         /// <returns>Returns a  GetAutomationExecutionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution">REST API Reference for GetAutomationExecution Operation</seealso>
         GetAutomationExecutionResponse EndGetAutomationExecution(IAsyncResult asyncResult);
 
         #endregion
@@ -2738,6 +2873,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The command ID and instance ID you specified did not match any invocations. Verify
         /// the command ID adn the instance ID and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">REST API Reference for GetCommandInvocation Operation</seealso>
         GetCommandInvocationResponse GetCommandInvocation(GetCommandInvocationRequest request);
 
         /// <summary>
@@ -2751,6 +2887,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCommandInvocation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">REST API Reference for GetCommandInvocation Operation</seealso>
         IAsyncResult BeginGetCommandInvocation(GetCommandInvocationRequest request, AsyncCallback callback, object state);
 
 
@@ -2762,6 +2899,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCommandInvocation.</param>
         /// 
         /// <returns>Returns a  GetCommandInvocationResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">REST API Reference for GetCommandInvocation Operation</seealso>
         GetCommandInvocationResponse EndGetCommandInvocation(IAsyncResult asyncResult);
 
         #endregion
@@ -2778,6 +2916,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">REST API Reference for GetDefaultPatchBaseline Operation</seealso>
         GetDefaultPatchBaselineResponse GetDefaultPatchBaseline(GetDefaultPatchBaselineRequest request);
 
         /// <summary>
@@ -2791,6 +2930,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDefaultPatchBaseline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">REST API Reference for GetDefaultPatchBaseline Operation</seealso>
         IAsyncResult BeginGetDefaultPatchBaseline(GetDefaultPatchBaselineRequest request, AsyncCallback callback, object state);
 
 
@@ -2802,6 +2942,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDefaultPatchBaseline.</param>
         /// 
         /// <returns>Returns a  GetDefaultPatchBaselineResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDefaultPatchBaseline">REST API Reference for GetDefaultPatchBaseline Operation</seealso>
         GetDefaultPatchBaselineResponse EndGetDefaultPatchBaseline(IAsyncResult asyncResult);
 
         #endregion
@@ -2819,6 +2960,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">REST API Reference for GetDeployablePatchSnapshotForInstance Operation</seealso>
         GetDeployablePatchSnapshotForInstanceResponse GetDeployablePatchSnapshotForInstance(GetDeployablePatchSnapshotForInstanceRequest request);
 
         /// <summary>
@@ -2832,6 +2974,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeployablePatchSnapshotForInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">REST API Reference for GetDeployablePatchSnapshotForInstance Operation</seealso>
         IAsyncResult BeginGetDeployablePatchSnapshotForInstance(GetDeployablePatchSnapshotForInstanceRequest request, AsyncCallback callback, object state);
 
 
@@ -2843,6 +2986,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeployablePatchSnapshotForInstance.</param>
         /// 
         /// <returns>Returns a  GetDeployablePatchSnapshotForInstanceResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">REST API Reference for GetDeployablePatchSnapshotForInstance Operation</seealso>
         GetDeployablePatchSnapshotForInstanceResponse EndGetDeployablePatchSnapshotForInstance(IAsyncResult asyncResult);
 
         #endregion
@@ -2865,6 +3009,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
         /// The document version is not valid or does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">REST API Reference for GetDocument Operation</seealso>
         GetDocumentResponse GetDocument(string name);
 
         /// <summary>
@@ -2882,6 +3027,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
         /// The document version is not valid or does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">REST API Reference for GetDocument Operation</seealso>
         GetDocumentResponse GetDocument(GetDocumentRequest request);
 
         /// <summary>
@@ -2895,6 +3041,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDocument
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">REST API Reference for GetDocument Operation</seealso>
         IAsyncResult BeginGetDocument(GetDocumentRequest request, AsyncCallback callback, object state);
 
 
@@ -2906,6 +3053,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDocument.</param>
         /// 
         /// <returns>Returns a  GetDocumentResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDocument">REST API Reference for GetDocument Operation</seealso>
         GetDocumentResponse EndGetDocument(IAsyncResult asyncResult);
 
         #endregion
@@ -2934,6 +3082,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
         /// The parameter type name is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">REST API Reference for GetInventory Operation</seealso>
         GetInventoryResponse GetInventory(GetInventoryRequest request);
 
         /// <summary>
@@ -2947,6 +3096,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInventory
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">REST API Reference for GetInventory Operation</seealso>
         IAsyncResult BeginGetInventory(GetInventoryRequest request, AsyncCallback callback, object state);
 
 
@@ -2958,6 +3108,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInventory.</param>
         /// 
         /// <returns>Returns a  GetInventoryResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">REST API Reference for GetInventory Operation</seealso>
         GetInventoryResponse EndGetInventory(IAsyncResult asyncResult);
 
         #endregion
@@ -2981,6 +3132,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
         /// The parameter type name is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema">REST API Reference for GetInventorySchema Operation</seealso>
         GetInventorySchemaResponse GetInventorySchema(GetInventorySchemaRequest request);
 
         /// <summary>
@@ -2994,6 +3146,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInventorySchema
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema">REST API Reference for GetInventorySchema Operation</seealso>
         IAsyncResult BeginGetInventorySchema(GetInventorySchemaRequest request, AsyncCallback callback, object state);
 
 
@@ -3005,6 +3158,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInventorySchema.</param>
         /// 
         /// <returns>Returns a  GetInventorySchemaResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventorySchema">REST API Reference for GetInventorySchema Operation</seealso>
         GetInventorySchemaResponse EndGetInventorySchema(IAsyncResult asyncResult);
 
         #endregion
@@ -3025,6 +3179,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow">REST API Reference for GetMaintenanceWindow Operation</seealso>
         GetMaintenanceWindowResponse GetMaintenanceWindow(GetMaintenanceWindowRequest request);
 
         /// <summary>
@@ -3038,6 +3193,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMaintenanceWindow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow">REST API Reference for GetMaintenanceWindow Operation</seealso>
         IAsyncResult BeginGetMaintenanceWindow(GetMaintenanceWindowRequest request, AsyncCallback callback, object state);
 
 
@@ -3049,6 +3205,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMaintenanceWindow.</param>
         /// 
         /// <returns>Returns a  GetMaintenanceWindowResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindow">REST API Reference for GetMaintenanceWindow Operation</seealso>
         GetMaintenanceWindowResponse EndGetMaintenanceWindow(IAsyncResult asyncResult);
 
         #endregion
@@ -3069,6 +3226,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">REST API Reference for GetMaintenanceWindowExecution Operation</seealso>
         GetMaintenanceWindowExecutionResponse GetMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest request);
 
         /// <summary>
@@ -3082,6 +3240,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMaintenanceWindowExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">REST API Reference for GetMaintenanceWindowExecution Operation</seealso>
         IAsyncResult BeginGetMaintenanceWindowExecution(GetMaintenanceWindowExecutionRequest request, AsyncCallback callback, object state);
 
 
@@ -3093,6 +3252,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMaintenanceWindowExecution.</param>
         /// 
         /// <returns>Returns a  GetMaintenanceWindowExecutionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">REST API Reference for GetMaintenanceWindowExecution Operation</seealso>
         GetMaintenanceWindowExecutionResponse EndGetMaintenanceWindowExecution(IAsyncResult asyncResult);
 
         #endregion
@@ -3114,6 +3274,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">REST API Reference for GetMaintenanceWindowExecutionTask Operation</seealso>
         GetMaintenanceWindowExecutionTaskResponse GetMaintenanceWindowExecutionTask(GetMaintenanceWindowExecutionTaskRequest request);
 
         /// <summary>
@@ -3127,6 +3288,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMaintenanceWindowExecutionTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">REST API Reference for GetMaintenanceWindowExecutionTask Operation</seealso>
         IAsyncResult BeginGetMaintenanceWindowExecutionTask(GetMaintenanceWindowExecutionTaskRequest request, AsyncCallback callback, object state);
 
 
@@ -3138,6 +3300,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMaintenanceWindowExecutionTask.</param>
         /// 
         /// <returns>Returns a  GetMaintenanceWindowExecutionTaskResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">REST API Reference for GetMaintenanceWindowExecutionTask Operation</seealso>
         GetMaintenanceWindowExecutionTaskResponse EndGetMaintenanceWindowExecutionTask(IAsyncResult asyncResult);
 
         #endregion
@@ -3160,6 +3323,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.ParameterNotFoundException">
         /// The parameter could not be found. Verify the name and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">REST API Reference for GetParameterHistory Operation</seealso>
         GetParameterHistoryResponse GetParameterHistory(GetParameterHistoryRequest request);
 
         /// <summary>
@@ -3173,6 +3337,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetParameterHistory
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">REST API Reference for GetParameterHistory Operation</seealso>
         IAsyncResult BeginGetParameterHistory(GetParameterHistoryRequest request, AsyncCallback callback, object state);
 
 
@@ -3184,6 +3349,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetParameterHistory.</param>
         /// 
         /// <returns>Returns a  GetParameterHistoryResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">REST API Reference for GetParameterHistory Operation</seealso>
         GetParameterHistoryResponse EndGetParameterHistory(IAsyncResult asyncResult);
 
         #endregion
@@ -3200,6 +3366,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">REST API Reference for GetParameters Operation</seealso>
         GetParametersResponse GetParameters(GetParametersRequest request);
 
         /// <summary>
@@ -3213,6 +3380,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetParameters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">REST API Reference for GetParameters Operation</seealso>
         IAsyncResult BeginGetParameters(GetParametersRequest request, AsyncCallback callback, object state);
 
 
@@ -3224,6 +3392,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetParameters.</param>
         /// 
         /// <returns>Returns a  GetParametersResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameters">REST API Reference for GetParameters Operation</seealso>
         GetParametersResponse EndGetParameters(IAsyncResult asyncResult);
 
         #endregion
@@ -3247,6 +3416,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
         /// The resource ID is not valid. Verify that you entered the correct ID and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline">REST API Reference for GetPatchBaseline Operation</seealso>
         GetPatchBaselineResponse GetPatchBaseline(GetPatchBaselineRequest request);
 
         /// <summary>
@@ -3260,6 +3430,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPatchBaseline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline">REST API Reference for GetPatchBaseline Operation</seealso>
         IAsyncResult BeginGetPatchBaseline(GetPatchBaselineRequest request, AsyncCallback callback, object state);
 
 
@@ -3271,6 +3442,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPatchBaseline.</param>
         /// 
         /// <returns>Returns a  GetPatchBaselineResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline">REST API Reference for GetPatchBaseline Operation</seealso>
         GetPatchBaselineResponse EndGetPatchBaseline(IAsyncResult asyncResult);
 
         #endregion
@@ -3287,6 +3459,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup">REST API Reference for GetPatchBaselineForPatchGroup Operation</seealso>
         GetPatchBaselineForPatchGroupResponse GetPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest request);
 
         /// <summary>
@@ -3300,6 +3473,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPatchBaselineForPatchGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup">REST API Reference for GetPatchBaselineForPatchGroup Operation</seealso>
         IAsyncResult BeginGetPatchBaselineForPatchGroup(GetPatchBaselineForPatchGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -3311,6 +3485,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPatchBaselineForPatchGroup.</param>
         /// 
         /// <returns>Returns a  GetPatchBaselineForPatchGroupResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaselineForPatchGroup">REST API Reference for GetPatchBaselineForPatchGroup Operation</seealso>
         GetPatchBaselineForPatchGroupResponse EndGetPatchBaselineForPatchGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -3330,6 +3505,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         ListAssociationsResponse ListAssociations(ListAssociationsRequest request);
 
         /// <summary>
@@ -3343,6 +3519,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssociations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         IAsyncResult BeginListAssociations(ListAssociationsRequest request, AsyncCallback callback, object state);
 
 
@@ -3354,6 +3531,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssociations.</param>
         /// 
         /// <returns>Returns a  ListAssociationsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
         ListAssociationsResponse EndListAssociations(IAsyncResult asyncResult);
 
         #endregion
@@ -3406,6 +3584,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         ListCommandInvocationsResponse ListCommandInvocations();
 
         /// <summary>
@@ -3454,6 +3633,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         ListCommandInvocationsResponse ListCommandInvocations(string commandId);
 
         /// <summary>
@@ -3502,6 +3682,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         ListCommandInvocationsResponse ListCommandInvocations(ListCommandInvocationsRequest request);
 
         /// <summary>
@@ -3515,6 +3696,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCommandInvocations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         IAsyncResult BeginListCommandInvocations(ListCommandInvocationsRequest request, AsyncCallback callback, object state);
 
 
@@ -3526,6 +3708,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCommandInvocations.</param>
         /// 
         /// <returns>Returns a  ListCommandInvocationsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">REST API Reference for ListCommandInvocations Operation</seealso>
         ListCommandInvocationsResponse EndListCommandInvocations(IAsyncResult asyncResult);
 
         #endregion
@@ -3574,6 +3757,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         ListCommandsResponse ListCommands();
 
         /// <summary>
@@ -3618,6 +3802,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         ListCommandsResponse ListCommands(string commandId);
 
         /// <summary>
@@ -3662,6 +3847,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         ListCommandsResponse ListCommands(ListCommandsRequest request);
 
         /// <summary>
@@ -3675,6 +3861,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCommands
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         IAsyncResult BeginListCommands(ListCommandsRequest request, AsyncCallback callback, object state);
 
 
@@ -3686,6 +3873,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCommands.</param>
         /// 
         /// <returns>Returns a  ListCommandsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommands">REST API Reference for ListCommands Operation</seealso>
         ListCommandsResponse EndListCommands(IAsyncResult asyncResult);
 
         #endregion
@@ -3707,6 +3895,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         ListDocumentsResponse ListDocuments();
 
         /// <summary>
@@ -3724,6 +3913,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         ListDocumentsResponse ListDocuments(ListDocumentsRequest request);
 
         /// <summary>
@@ -3737,6 +3927,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDocuments
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         IAsyncResult BeginListDocuments(ListDocumentsRequest request, AsyncCallback callback, object state);
 
 
@@ -3748,6 +3939,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDocuments.</param>
         /// 
         /// <returns>Returns a  ListDocumentsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">REST API Reference for ListDocuments Operation</seealso>
         ListDocumentsResponse EndListDocuments(IAsyncResult asyncResult);
 
         #endregion
@@ -3770,6 +3962,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidNextTokenException">
         /// The specified token is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions">REST API Reference for ListDocumentVersions Operation</seealso>
         ListDocumentVersionsResponse ListDocumentVersions(ListDocumentVersionsRequest request);
 
         /// <summary>
@@ -3783,6 +3976,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDocumentVersions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions">REST API Reference for ListDocumentVersions Operation</seealso>
         IAsyncResult BeginListDocumentVersions(ListDocumentVersionsRequest request, AsyncCallback callback, object state);
 
 
@@ -3794,6 +3988,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDocumentVersions.</param>
         /// 
         /// <returns>Returns a  ListDocumentVersionsResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentVersions">REST API Reference for ListDocumentVersions Operation</seealso>
         ListDocumentVersionsResponse EndListDocumentVersions(IAsyncResult asyncResult);
 
         #endregion
@@ -3843,6 +4038,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidTypeNameException">
         /// The parameter type name is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries">REST API Reference for ListInventoryEntries Operation</seealso>
         ListInventoryEntriesResponse ListInventoryEntries(ListInventoryEntriesRequest request);
 
         /// <summary>
@@ -3856,6 +4052,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInventoryEntries
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries">REST API Reference for ListInventoryEntries Operation</seealso>
         IAsyncResult BeginListInventoryEntries(ListInventoryEntriesRequest request, AsyncCallback callback, object state);
 
 
@@ -3867,6 +4064,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInventoryEntries.</param>
         /// 
         /// <returns>Returns a  ListInventoryEntriesResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListInventoryEntries">REST API Reference for ListInventoryEntries Operation</seealso>
         ListInventoryEntriesResponse EndListInventoryEntries(IAsyncResult asyncResult);
 
         #endregion
@@ -3890,6 +4088,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The resource type is not valid. If you are attempting to tag an instance, the instance
         /// must be a registered, managed instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
         /// <summary>
@@ -3903,6 +4102,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -3914,6 +4114,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
         /// 
         /// <returns>Returns a  ListTagsForResourceResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
 
         #endregion
@@ -3947,6 +4148,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The permission type is not supported. <i>Share</i> is the only supported permission
         /// type.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">REST API Reference for ModifyDocumentPermission Operation</seealso>
         ModifyDocumentPermissionResponse ModifyDocumentPermission(ModifyDocumentPermissionRequest request);
 
         /// <summary>
@@ -3960,6 +4162,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyDocumentPermission
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">REST API Reference for ModifyDocumentPermission Operation</seealso>
         IAsyncResult BeginModifyDocumentPermission(ModifyDocumentPermissionRequest request, AsyncCallback callback, object state);
 
 
@@ -3971,6 +4174,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyDocumentPermission.</param>
         /// 
         /// <returns>Returns a  ModifyDocumentPermissionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ModifyDocumentPermission">REST API Reference for ModifyDocumentPermission Operation</seealso>
         ModifyDocumentPermissionResponse EndModifyDocumentPermission(IAsyncResult asyncResult);
 
         #endregion
@@ -4036,6 +4240,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Check output of <code>GetInventorySchema</code> to see the available schema version
         /// for each type.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory">REST API Reference for PutInventory Operation</seealso>
         PutInventoryResponse PutInventory(PutInventoryRequest request);
 
         /// <summary>
@@ -4049,6 +4254,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutInventory
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory">REST API Reference for PutInventory Operation</seealso>
         IAsyncResult BeginPutInventory(PutInventoryRequest request, AsyncCallback callback, object state);
 
 
@@ -4060,6 +4266,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutInventory.</param>
         /// 
         /// <returns>Returns a  PutInventoryResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutInventory">REST API Reference for PutInventory Operation</seealso>
         PutInventoryResponse EndPutInventory(IAsyncResult asyncResult);
 
         #endregion
@@ -4092,6 +4299,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.UnsupportedParameterTypeException">
         /// The parameter type is not supported.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">REST API Reference for PutParameter Operation</seealso>
         PutParameterResponse PutParameter(PutParameterRequest request);
 
         /// <summary>
@@ -4105,6 +4313,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutParameter
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">REST API Reference for PutParameter Operation</seealso>
         IAsyncResult BeginPutParameter(PutParameterRequest request, AsyncCallback callback, object state);
 
 
@@ -4116,6 +4325,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutParameter.</param>
         /// 
         /// <returns>Returns a  PutParameterResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">REST API Reference for PutParameter Operation</seealso>
         PutParameterResponse EndPutParameter(IAsyncResult asyncResult);
 
         #endregion
@@ -4139,6 +4349,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidResourceIdException">
         /// The resource ID is not valid. Verify that you entered the correct ID and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">REST API Reference for RegisterDefaultPatchBaseline Operation</seealso>
         RegisterDefaultPatchBaselineResponse RegisterDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest request);
 
         /// <summary>
@@ -4152,6 +4363,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterDefaultPatchBaseline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">REST API Reference for RegisterDefaultPatchBaseline Operation</seealso>
         IAsyncResult BeginRegisterDefaultPatchBaseline(RegisterDefaultPatchBaselineRequest request, AsyncCallback callback, object state);
 
 
@@ -4163,6 +4375,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterDefaultPatchBaseline.</param>
         /// 
         /// <returns>Returns a  RegisterDefaultPatchBaselineResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultPatchBaseline">REST API Reference for RegisterDefaultPatchBaseline Operation</seealso>
         RegisterDefaultPatchBaselineResponse EndRegisterDefaultPatchBaseline(IAsyncResult asyncResult);
 
         #endregion
@@ -4194,6 +4407,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Error returned when the caller has exceeded the default resource limits (e.g. too
         /// many Maintenance Windows have been created).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup">REST API Reference for RegisterPatchBaselineForPatchGroup Operation</seealso>
         RegisterPatchBaselineForPatchGroupResponse RegisterPatchBaselineForPatchGroup(RegisterPatchBaselineForPatchGroupRequest request);
 
         /// <summary>
@@ -4207,6 +4421,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterPatchBaselineForPatchGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup">REST API Reference for RegisterPatchBaselineForPatchGroup Operation</seealso>
         IAsyncResult BeginRegisterPatchBaselineForPatchGroup(RegisterPatchBaselineForPatchGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -4218,6 +4433,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterPatchBaselineForPatchGroup.</param>
         /// 
         /// <returns>Returns a  RegisterPatchBaselineForPatchGroupResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterPatchBaselineForPatchGroup">REST API Reference for RegisterPatchBaselineForPatchGroup Operation</seealso>
         RegisterPatchBaselineForPatchGroupResponse EndRegisterPatchBaselineForPatchGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -4246,6 +4462,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Error returned when the caller has exceeded the default resource limits (e.g. too
         /// many Maintenance Windows have been created).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">REST API Reference for RegisterTargetWithMaintenanceWindow Operation</seealso>
         RegisterTargetWithMaintenanceWindowResponse RegisterTargetWithMaintenanceWindow(RegisterTargetWithMaintenanceWindowRequest request);
 
         /// <summary>
@@ -4259,6 +4476,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterTargetWithMaintenanceWindow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">REST API Reference for RegisterTargetWithMaintenanceWindow Operation</seealso>
         IAsyncResult BeginRegisterTargetWithMaintenanceWindow(RegisterTargetWithMaintenanceWindowRequest request, AsyncCallback callback, object state);
 
 
@@ -4270,6 +4488,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterTargetWithMaintenanceWindow.</param>
         /// 
         /// <returns>Returns a  RegisterTargetWithMaintenanceWindowResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTargetWithMaintenanceWindow">REST API Reference for RegisterTargetWithMaintenanceWindow Operation</seealso>
         RegisterTargetWithMaintenanceWindowResponse EndRegisterTargetWithMaintenanceWindow(IAsyncResult asyncResult);
 
         #endregion
@@ -4298,6 +4517,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Error returned when the caller has exceeded the default resource limits (e.g. too
         /// many Maintenance Windows have been created).
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">REST API Reference for RegisterTaskWithMaintenanceWindow Operation</seealso>
         RegisterTaskWithMaintenanceWindowResponse RegisterTaskWithMaintenanceWindow(RegisterTaskWithMaintenanceWindowRequest request);
 
         /// <summary>
@@ -4311,6 +4531,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterTaskWithMaintenanceWindow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">REST API Reference for RegisterTaskWithMaintenanceWindow Operation</seealso>
         IAsyncResult BeginRegisterTaskWithMaintenanceWindow(RegisterTaskWithMaintenanceWindowRequest request, AsyncCallback callback, object state);
 
 
@@ -4322,6 +4543,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterTaskWithMaintenanceWindow.</param>
         /// 
         /// <returns>Returns a  RegisterTaskWithMaintenanceWindowResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow">REST API Reference for RegisterTaskWithMaintenanceWindow Operation</seealso>
         RegisterTaskWithMaintenanceWindowResponse EndRegisterTaskWithMaintenanceWindow(IAsyncResult asyncResult);
 
         #endregion
@@ -4345,6 +4567,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The resource type is not valid. If you are attempting to tag an instance, the instance
         /// must be a registered, managed instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         RemoveTagsFromResourceResponse RemoveTagsFromResource(RemoveTagsFromResourceRequest request);
 
         /// <summary>
@@ -4358,6 +4581,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromResource
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         IAsyncResult BeginRemoveTagsFromResource(RemoveTagsFromResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -4369,6 +4593,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTagsFromResource.</param>
         /// 
         /// <returns>Returns a  RemoveTagsFromResourceResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource">REST API Reference for RemoveTagsFromResource Operation</seealso>
         RemoveTagsFromResourceResponse EndRemoveTagsFromResource(IAsyncResult asyncResult);
 
         #endregion
@@ -4441,6 +4666,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The document does not support the platform type of the given instance ID(s). For example,
         /// you sent an SSM document for a Windows instance to a Linux instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
         SendCommandResponse SendCommand(string documentName, List<string> instanceIds);
 
         /// <summary>
@@ -4507,6 +4733,7 @@ namespace Amazon.SimpleSystemsManagement
         /// The document does not support the platform type of the given instance ID(s). For example,
         /// you sent an SSM document for a Windows instance to a Linux instance.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
         SendCommandResponse SendCommand(SendCommandRequest request);
 
         /// <summary>
@@ -4520,6 +4747,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendCommand
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
         IAsyncResult BeginSendCommand(SendCommandRequest request, AsyncCallback callback, object state);
 
 
@@ -4531,6 +4759,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSendCommand.</param>
         /// 
         /// <returns>Returns a  SendCommandResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">REST API Reference for SendCommand Operation</seealso>
         SendCommandResponse EndSendCommand(IAsyncResult asyncResult);
 
         #endregion
@@ -4562,6 +4791,7 @@ namespace Amazon.SimpleSystemsManagement
         /// For example, they may not match the set of parameters permitted for the specified
         /// Automation document.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">REST API Reference for StartAutomationExecution Operation</seealso>
         StartAutomationExecutionResponse StartAutomationExecution(StartAutomationExecutionRequest request);
 
         /// <summary>
@@ -4575,6 +4805,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAutomationExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">REST API Reference for StartAutomationExecution Operation</seealso>
         IAsyncResult BeginStartAutomationExecution(StartAutomationExecutionRequest request, AsyncCallback callback, object state);
 
 
@@ -4586,6 +4817,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAutomationExecution.</param>
         /// 
         /// <returns>Returns a  StartAutomationExecutionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution">REST API Reference for StartAutomationExecution Operation</seealso>
         StartAutomationExecutionResponse EndStartAutomationExecution(IAsyncResult asyncResult);
 
         #endregion
@@ -4606,6 +4838,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">REST API Reference for StopAutomationExecution Operation</seealso>
         StopAutomationExecutionResponse StopAutomationExecution(StopAutomationExecutionRequest request);
 
         /// <summary>
@@ -4619,6 +4852,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopAutomationExecution
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">REST API Reference for StopAutomationExecution Operation</seealso>
         IAsyncResult BeginStopAutomationExecution(StopAutomationExecutionRequest request, AsyncCallback callback, object state);
 
 
@@ -4630,6 +4864,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopAutomationExecution.</param>
         /// 
         /// <returns>Returns a  StopAutomationExecutionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">REST API Reference for StopAutomationExecution Operation</seealso>
         StopAutomationExecutionResponse EndStopAutomationExecution(IAsyncResult asyncResult);
 
         #endregion
@@ -4669,6 +4904,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">REST API Reference for UpdateAssociation Operation</seealso>
         UpdateAssociationResponse UpdateAssociation(UpdateAssociationRequest request);
 
         /// <summary>
@@ -4682,6 +4918,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAssociation
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">REST API Reference for UpdateAssociation Operation</seealso>
         IAsyncResult BeginUpdateAssociation(UpdateAssociationRequest request, AsyncCallback callback, object state);
 
 
@@ -4693,6 +4930,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAssociation.</param>
         /// 
         /// <returns>Returns a  UpdateAssociationResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">REST API Reference for UpdateAssociation Operation</seealso>
         UpdateAssociationResponse EndUpdateAssociation(IAsyncResult asyncResult);
 
         #endregion
@@ -4745,6 +4983,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.TooManyUpdatesException">
         /// There are concurrent updates for a resource that supports one update at a time.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">REST API Reference for UpdateAssociationStatus Operation</seealso>
         UpdateAssociationStatusResponse UpdateAssociationStatus(UpdateAssociationStatusRequest request);
 
         /// <summary>
@@ -4758,6 +4997,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAssociationStatus
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">REST API Reference for UpdateAssociationStatus Operation</seealso>
         IAsyncResult BeginUpdateAssociationStatus(UpdateAssociationStatusRequest request, AsyncCallback callback, object state);
 
 
@@ -4769,6 +5009,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAssociationStatus.</param>
         /// 
         /// <returns>Returns a  UpdateAssociationStatusResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociationStatus">REST API Reference for UpdateAssociationStatus Operation</seealso>
         UpdateAssociationStatusResponse EndUpdateAssociationStatus(IAsyncResult asyncResult);
 
         #endregion
@@ -4807,6 +5048,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.MaxDocumentSizeExceededException">
         /// The size limit of an SSM document is 64 KB.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
         UpdateDocumentResponse UpdateDocument(UpdateDocumentRequest request);
 
         /// <summary>
@@ -4820,6 +5062,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDocument
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
         IAsyncResult BeginUpdateDocument(UpdateDocumentRequest request, AsyncCallback callback, object state);
 
 
@@ -4831,6 +5074,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDocument.</param>
         /// 
         /// <returns>Returns a  UpdateDocumentResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocument">REST API Reference for UpdateDocument Operation</seealso>
         UpdateDocumentResponse EndUpdateDocument(IAsyncResult asyncResult);
 
         #endregion
@@ -4856,6 +5100,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InvalidDocumentVersionException">
         /// The document version is not valid or does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">REST API Reference for UpdateDocumentDefaultVersion Operation</seealso>
         UpdateDocumentDefaultVersionResponse UpdateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest request);
 
         /// <summary>
@@ -4869,6 +5114,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDocumentDefaultVersion
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">REST API Reference for UpdateDocumentDefaultVersion Operation</seealso>
         IAsyncResult BeginUpdateDocumentDefaultVersion(UpdateDocumentDefaultVersionRequest request, AsyncCallback callback, object state);
 
 
@@ -4880,6 +5126,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDocumentDefaultVersion.</param>
         /// 
         /// <returns>Returns a  UpdateDocumentDefaultVersionResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentDefaultVersion">REST API Reference for UpdateDocumentDefaultVersion Operation</seealso>
         UpdateDocumentDefaultVersionResponse EndUpdateDocumentDefaultVersion(IAsyncResult asyncResult);
 
         #endregion
@@ -4900,6 +5147,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">REST API Reference for UpdateMaintenanceWindow Operation</seealso>
         UpdateMaintenanceWindowResponse UpdateMaintenanceWindow(UpdateMaintenanceWindowRequest request);
 
         /// <summary>
@@ -4913,6 +5161,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMaintenanceWindow
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">REST API Reference for UpdateMaintenanceWindow Operation</seealso>
         IAsyncResult BeginUpdateMaintenanceWindow(UpdateMaintenanceWindowRequest request, AsyncCallback callback, object state);
 
 
@@ -4924,6 +5173,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMaintenanceWindow.</param>
         /// 
         /// <returns>Returns a  UpdateMaintenanceWindowResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">REST API Reference for UpdateMaintenanceWindow Operation</seealso>
         UpdateMaintenanceWindowResponse EndUpdateMaintenanceWindow(IAsyncResult asyncResult);
 
         #endregion
@@ -4965,6 +5215,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Invalid states are: Shutting-down and Terminated.
         /// </para>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">REST API Reference for UpdateManagedInstanceRole Operation</seealso>
         UpdateManagedInstanceRoleResponse UpdateManagedInstanceRole(UpdateManagedInstanceRoleRequest request);
 
         /// <summary>
@@ -4978,6 +5229,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateManagedInstanceRole
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">REST API Reference for UpdateManagedInstanceRole Operation</seealso>
         IAsyncResult BeginUpdateManagedInstanceRole(UpdateManagedInstanceRoleRequest request, AsyncCallback callback, object state);
 
 
@@ -4989,6 +5241,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateManagedInstanceRole.</param>
         /// 
         /// <returns>Returns a  UpdateManagedInstanceRoleResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateManagedInstanceRole">REST API Reference for UpdateManagedInstanceRole Operation</seealso>
         UpdateManagedInstanceRoleResponse EndUpdateManagedInstanceRole(IAsyncResult asyncResult);
 
         #endregion
@@ -5010,6 +5263,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
         /// An error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">REST API Reference for UpdatePatchBaseline Operation</seealso>
         UpdatePatchBaselineResponse UpdatePatchBaseline(UpdatePatchBaselineRequest request);
 
         /// <summary>
@@ -5023,6 +5277,7 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePatchBaseline
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">REST API Reference for UpdatePatchBaseline Operation</seealso>
         IAsyncResult BeginUpdatePatchBaseline(UpdatePatchBaselineRequest request, AsyncCallback callback, object state);
 
 
@@ -5034,6 +5289,7 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePatchBaseline.</param>
         /// 
         /// <returns>Returns a  UpdatePatchBaselineResult from SimpleSystemsManagement.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdatePatchBaseline">REST API Reference for UpdatePatchBaseline Operation</seealso>
         UpdatePatchBaselineResponse EndUpdatePatchBaseline(IAsyncResult asyncResult);
 
         #endregion

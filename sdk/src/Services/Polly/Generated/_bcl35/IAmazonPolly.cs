@@ -73,6 +73,7 @@ namespace Amazon.Polly
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">REST API Reference for DeleteLexicon Operation</seealso>
         DeleteLexiconResponse DeleteLexicon(DeleteLexiconRequest request);
 
         /// <summary>
@@ -86,6 +87,7 @@ namespace Amazon.Polly
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLexicon
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">REST API Reference for DeleteLexicon Operation</seealso>
         IAsyncResult BeginDeleteLexicon(DeleteLexiconRequest request, AsyncCallback callback, object state);
 
 
@@ -97,6 +99,7 @@ namespace Amazon.Polly
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLexicon.</param>
         /// 
         /// <returns>Returns a  DeleteLexiconResult from Polly.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DeleteLexicon">REST API Reference for DeleteLexicon Operation</seealso>
         DeleteLexiconResponse EndDeleteLexicon(IAsyncResult asyncResult);
 
         #endregion
@@ -141,6 +144,7 @@ namespace Amazon.Polly
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices">REST API Reference for DescribeVoices Operation</seealso>
         DescribeVoicesResponse DescribeVoices(DescribeVoicesRequest request);
 
         /// <summary>
@@ -154,6 +158,7 @@ namespace Amazon.Polly
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVoices
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices">REST API Reference for DescribeVoices Operation</seealso>
         IAsyncResult BeginDescribeVoices(DescribeVoicesRequest request, AsyncCallback callback, object state);
 
 
@@ -165,6 +170,7 @@ namespace Amazon.Polly
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVoices.</param>
         /// 
         /// <returns>Returns a  DescribeVoicesResult from Polly.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/DescribeVoices">REST API Reference for DescribeVoices Operation</seealso>
         DescribeVoicesResponse EndDescribeVoices(IAsyncResult asyncResult);
 
         #endregion
@@ -194,6 +200,7 @@ namespace Amazon.Polly
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">REST API Reference for GetLexicon Operation</seealso>
         GetLexiconResponse GetLexicon(GetLexiconRequest request);
 
         /// <summary>
@@ -207,6 +214,7 @@ namespace Amazon.Polly
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLexicon
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">REST API Reference for GetLexicon Operation</seealso>
         IAsyncResult BeginGetLexicon(GetLexiconRequest request, AsyncCallback callback, object state);
 
 
@@ -218,6 +226,7 @@ namespace Amazon.Polly
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLexicon.</param>
         /// 
         /// <returns>Returns a  GetLexiconResult from Polly.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetLexicon">REST API Reference for GetLexicon Operation</seealso>
         GetLexiconResponse EndGetLexicon(IAsyncResult asyncResult);
 
         #endregion
@@ -239,6 +248,7 @@ namespace Amazon.Polly
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">REST API Reference for ListLexicons Operation</seealso>
         ListLexiconsResponse ListLexicons(ListLexiconsRequest request);
 
         /// <summary>
@@ -252,6 +262,7 @@ namespace Amazon.Polly
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLexicons
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">REST API Reference for ListLexicons Operation</seealso>
         IAsyncResult BeginListLexicons(ListLexiconsRequest request, AsyncCallback callback, object state);
 
 
@@ -263,6 +274,7 @@ namespace Amazon.Polly
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLexicons.</param>
         /// 
         /// <returns>Returns a  ListLexiconsResult from Polly.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListLexicons">REST API Reference for ListLexicons Operation</seealso>
         ListLexiconsResponse EndListLexicons(IAsyncResult asyncResult);
 
         #endregion
@@ -310,6 +322,7 @@ namespace Amazon.Polly
         /// see <a href="http://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon
         /// Attributes</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">REST API Reference for PutLexicon Operation</seealso>
         PutLexiconResponse PutLexicon(PutLexiconRequest request);
 
         /// <summary>
@@ -323,6 +336,7 @@ namespace Amazon.Polly
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutLexicon
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">REST API Reference for PutLexicon Operation</seealso>
         IAsyncResult BeginPutLexicon(PutLexiconRequest request, AsyncCallback callback, object state);
 
 
@@ -334,6 +348,7 @@ namespace Amazon.Polly
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutLexicon.</param>
         /// 
         /// <returns>Returns a  PutLexiconResult from Polly.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">REST API Reference for PutLexicon Operation</seealso>
         PutLexiconResponse EndPutLexicon(IAsyncResult asyncResult);
 
         #endregion
@@ -377,6 +392,7 @@ namespace Amazon.Polly
         /// input text is a maximum of 3000 characters total, of which no more than 1500 can be
         /// billed characters. SSML tags are not counted as billed characters.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">REST API Reference for SynthesizeSpeech Operation</seealso>
         SynthesizeSpeechResponse SynthesizeSpeech(SynthesizeSpeechRequest request);
 
         /// <summary>
@@ -390,6 +406,7 @@ namespace Amazon.Polly
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSynthesizeSpeech
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">REST API Reference for SynthesizeSpeech Operation</seealso>
         IAsyncResult BeginSynthesizeSpeech(SynthesizeSpeechRequest request, AsyncCallback callback, object state);
 
 
@@ -401,6 +418,7 @@ namespace Amazon.Polly
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSynthesizeSpeech.</param>
         /// 
         /// <returns>Returns a  SynthesizeSpeechResult from Polly.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">REST API Reference for SynthesizeSpeech Operation</seealso>
         SynthesizeSpeechResponse EndSynthesizeSpeech(IAsyncResult asyncResult);
 
         #endregion

@@ -66,6 +66,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AddAttributesToFindings">REST API Reference for AddAttributesToFindings Operation</seealso>
         AddAttributesToFindingsResponse AddAttributesToFindings(AddAttributesToFindingsRequest request);
 
 
@@ -78,6 +79,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/AddAttributesToFindings">REST API Reference for AddAttributesToFindings Operation</seealso>
         Task<AddAttributesToFindingsResponse> AddAttributesToFindingsAsync(AddAttributesToFindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -113,6 +115,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget">REST API Reference for CreateAssessmentTarget Operation</seealso>
         CreateAssessmentTargetResponse CreateAssessmentTarget(CreateAssessmentTargetRequest request);
 
 
@@ -125,6 +128,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget">REST API Reference for CreateAssessmentTarget Operation</seealso>
         Task<CreateAssessmentTargetResponse> CreateAssessmentTargetAsync(CreateAssessmentTargetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -157,6 +161,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTemplate">REST API Reference for CreateAssessmentTemplate Operation</seealso>
         CreateAssessmentTemplateResponse CreateAssessmentTemplate(CreateAssessmentTemplateRequest request);
 
 
@@ -169,6 +174,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTemplate">REST API Reference for CreateAssessmentTemplate Operation</seealso>
         Task<CreateAssessmentTemplateResponse> CreateAssessmentTemplateAsync(CreateAssessmentTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -199,6 +205,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it attempted to create resources beyond the current
         /// AWS account limits. The error code describes the limit exceeded.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateResourceGroup">REST API Reference for CreateResourceGroup Operation</seealso>
         CreateResourceGroupResponse CreateResourceGroup(CreateResourceGroupRequest request);
 
 
@@ -211,6 +218,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateResourceGroup">REST API Reference for CreateResourceGroup Operation</seealso>
         Task<CreateResourceGroupResponse> CreateResourceGroupAsync(CreateResourceGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -241,6 +249,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentRun">REST API Reference for DeleteAssessmentRun Operation</seealso>
         DeleteAssessmentRunResponse DeleteAssessmentRun(DeleteAssessmentRunRequest request);
 
 
@@ -253,6 +262,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentRun">REST API Reference for DeleteAssessmentRun Operation</seealso>
         Task<DeleteAssessmentRunResponse> DeleteAssessmentRunAsync(DeleteAssessmentRunRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -283,6 +293,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTarget">REST API Reference for DeleteAssessmentTarget Operation</seealso>
         DeleteAssessmentTargetResponse DeleteAssessmentTarget(DeleteAssessmentTargetRequest request);
 
 
@@ -295,6 +306,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTarget">REST API Reference for DeleteAssessmentTarget Operation</seealso>
         Task<DeleteAssessmentTargetResponse> DeleteAssessmentTargetAsync(DeleteAssessmentTargetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -325,6 +337,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTemplate">REST API Reference for DeleteAssessmentTemplate Operation</seealso>
         DeleteAssessmentTemplateResponse DeleteAssessmentTemplate(DeleteAssessmentTemplateRequest request);
 
 
@@ -337,6 +350,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DeleteAssessmentTemplate">REST API Reference for DeleteAssessmentTemplate Operation</seealso>
         Task<DeleteAssessmentTemplateResponse> DeleteAssessmentTemplateAsync(DeleteAssessmentTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -357,6 +371,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentRuns">REST API Reference for DescribeAssessmentRuns Operation</seealso>
         DescribeAssessmentRunsResponse DescribeAssessmentRuns(DescribeAssessmentRunsRequest request);
 
 
@@ -369,6 +384,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentRuns">REST API Reference for DescribeAssessmentRuns Operation</seealso>
         Task<DescribeAssessmentRunsResponse> DescribeAssessmentRunsAsync(DescribeAssessmentRunsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -390,6 +406,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTargets">REST API Reference for DescribeAssessmentTargets Operation</seealso>
         DescribeAssessmentTargetsResponse DescribeAssessmentTargets(DescribeAssessmentTargetsRequest request);
 
 
@@ -402,6 +419,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTargets">REST API Reference for DescribeAssessmentTargets Operation</seealso>
         Task<DescribeAssessmentTargetsResponse> DescribeAssessmentTargetsAsync(DescribeAssessmentTargetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -423,6 +441,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTemplates">REST API Reference for DescribeAssessmentTemplates Operation</seealso>
         DescribeAssessmentTemplatesResponse DescribeAssessmentTemplates(DescribeAssessmentTemplatesRequest request);
 
 
@@ -435,6 +454,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeAssessmentTemplates">REST API Reference for DescribeAssessmentTemplates Operation</seealso>
         Task<DescribeAssessmentTemplatesResponse> DescribeAssessmentTemplatesAsync(DescribeAssessmentTemplatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -451,6 +471,7 @@ namespace Amazon.Inspector
         /// <exception cref="Amazon.Inspector.Model.InternalException">
         /// Internal server error.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeCrossAccountAccessRole">REST API Reference for DescribeCrossAccountAccessRole Operation</seealso>
         DescribeCrossAccountAccessRoleResponse DescribeCrossAccountAccessRole(DescribeCrossAccountAccessRoleRequest request);
 
 
@@ -463,6 +484,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeCrossAccountAccessRole">REST API Reference for DescribeCrossAccountAccessRole Operation</seealso>
         Task<DescribeCrossAccountAccessRoleResponse> DescribeCrossAccountAccessRoleAsync(DescribeCrossAccountAccessRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -483,6 +505,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeFindings">REST API Reference for DescribeFindings Operation</seealso>
         DescribeFindingsResponse DescribeFindings(DescribeFindingsRequest request);
 
 
@@ -495,6 +518,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeFindings">REST API Reference for DescribeFindings Operation</seealso>
         Task<DescribeFindingsResponse> DescribeFindingsAsync(DescribeFindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -515,6 +539,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeResourceGroups">REST API Reference for DescribeResourceGroups Operation</seealso>
         DescribeResourceGroupsResponse DescribeResourceGroups(DescribeResourceGroupsRequest request);
 
 
@@ -527,6 +552,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeResourceGroups">REST API Reference for DescribeResourceGroups Operation</seealso>
         Task<DescribeResourceGroupsResponse> DescribeResourceGroupsAsync(DescribeResourceGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -547,6 +573,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeRulesPackages">REST API Reference for DescribeRulesPackages Operation</seealso>
         DescribeRulesPackagesResponse DescribeRulesPackages(DescribeRulesPackagesRequest request);
 
 
@@ -559,6 +586,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeRulesPackages">REST API Reference for DescribeRulesPackages Operation</seealso>
         Task<DescribeRulesPackagesResponse> DescribeRulesPackagesAsync(DescribeRulesPackagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -586,6 +614,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetTelemetryMetadata">REST API Reference for GetTelemetryMetadata Operation</seealso>
         GetTelemetryMetadataResponse GetTelemetryMetadata(GetTelemetryMetadataRequest request);
 
 
@@ -598,6 +627,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetTelemetryMetadata">REST API Reference for GetTelemetryMetadata Operation</seealso>
         Task<GetTelemetryMetadataResponse> GetTelemetryMetadataAsync(GetTelemetryMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -626,6 +656,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRunAgents">REST API Reference for ListAssessmentRunAgents Operation</seealso>
         ListAssessmentRunAgentsResponse ListAssessmentRunAgents(ListAssessmentRunAgentsRequest request);
 
 
@@ -638,6 +669,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRunAgents">REST API Reference for ListAssessmentRunAgents Operation</seealso>
         Task<ListAssessmentRunAgentsResponse> ListAssessmentRunAgentsAsync(ListAssessmentRunAgentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -666,6 +698,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRuns">REST API Reference for ListAssessmentRuns Operation</seealso>
         ListAssessmentRunsResponse ListAssessmentRuns(ListAssessmentRunsRequest request);
 
 
@@ -678,6 +711,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRuns">REST API Reference for ListAssessmentRuns Operation</seealso>
         Task<ListAssessmentRunsResponse> ListAssessmentRunsAsync(ListAssessmentRunsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -703,6 +737,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTargets">REST API Reference for ListAssessmentTargets Operation</seealso>
         ListAssessmentTargetsResponse ListAssessmentTargets(ListAssessmentTargetsRequest request);
 
 
@@ -715,6 +750,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTargets">REST API Reference for ListAssessmentTargets Operation</seealso>
         Task<ListAssessmentTargetsResponse> ListAssessmentTargetsAsync(ListAssessmentTargetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -743,6 +779,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTemplates">REST API Reference for ListAssessmentTemplates Operation</seealso>
         ListAssessmentTemplatesResponse ListAssessmentTemplates(ListAssessmentTemplatesRequest request);
 
 
@@ -755,6 +792,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentTemplates">REST API Reference for ListAssessmentTemplates Operation</seealso>
         Task<ListAssessmentTemplatesResponse> ListAssessmentTemplatesAsync(ListAssessmentTemplatesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -784,6 +822,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListEventSubscriptions">REST API Reference for ListEventSubscriptions Operation</seealso>
         ListEventSubscriptionsResponse ListEventSubscriptions(ListEventSubscriptionsRequest request);
 
 
@@ -796,6 +835,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListEventSubscriptions">REST API Reference for ListEventSubscriptions Operation</seealso>
         Task<ListEventSubscriptionsResponse> ListEventSubscriptionsAsync(ListEventSubscriptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -824,6 +864,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListFindings">REST API Reference for ListFindings Operation</seealso>
         ListFindingsResponse ListFindings(ListFindingsRequest request);
 
 
@@ -836,6 +877,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListFindings">REST API Reference for ListFindings Operation</seealso>
         Task<ListFindingsResponse> ListFindingsAsync(ListFindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -859,6 +901,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListRulesPackages">REST API Reference for ListRulesPackages Operation</seealso>
         ListRulesPackagesResponse ListRulesPackages(ListRulesPackagesRequest request);
 
 
@@ -871,6 +914,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListRulesPackages">REST API Reference for ListRulesPackages Operation</seealso>
         Task<ListRulesPackagesResponse> ListRulesPackagesAsync(ListRulesPackagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -898,6 +942,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
 
 
@@ -910,6 +955,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -942,6 +988,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/PreviewAgents">REST API Reference for PreviewAgents Operation</seealso>
         PreviewAgentsResponse PreviewAgents(PreviewAgentsRequest request);
 
 
@@ -954,6 +1001,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/PreviewAgents">REST API Reference for PreviewAgents Operation</seealso>
         Task<PreviewAgentsResponse> PreviewAgentsAsync(PreviewAgentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -982,6 +1030,7 @@ namespace Amazon.Inspector
         /// The request was rejected because an invalid or out-of-range value was supplied for
         /// an input parameter.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RegisterCrossAccountAccessRole">REST API Reference for RegisterCrossAccountAccessRole Operation</seealso>
         RegisterCrossAccountAccessRoleResponse RegisterCrossAccountAccessRole(RegisterCrossAccountAccessRoleRequest request);
 
 
@@ -994,6 +1043,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RegisterCrossAccountAccessRole">REST API Reference for RegisterCrossAccountAccessRole Operation</seealso>
         Task<RegisterCrossAccountAccessRoleResponse> RegisterCrossAccountAccessRoleAsync(RegisterCrossAccountAccessRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1022,6 +1072,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RemoveAttributesFromFindings">REST API Reference for RemoveAttributesFromFindings Operation</seealso>
         RemoveAttributesFromFindingsResponse RemoveAttributesFromFindings(RemoveAttributesFromFindingsRequest request);
 
 
@@ -1034,6 +1085,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/RemoveAttributesFromFindings">REST API Reference for RemoveAttributesFromFindings Operation</seealso>
         Task<RemoveAttributesFromFindingsResponse> RemoveAttributesFromFindingsAsync(RemoveAttributesFromFindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1062,6 +1114,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SetTagsForResource">REST API Reference for SetTagsForResource Operation</seealso>
         SetTagsForResourceResponse SetTagsForResource(SetTagsForResourceRequest request);
 
 
@@ -1074,6 +1127,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SetTagsForResource">REST API Reference for SetTagsForResource Operation</seealso>
         Task<SetTagsForResourceResponse> SetTagsForResourceAsync(SetTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1115,6 +1169,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StartAssessmentRun">REST API Reference for StartAssessmentRun Operation</seealso>
         StartAssessmentRunResponse StartAssessmentRun(StartAssessmentRunRequest request);
 
 
@@ -1127,6 +1182,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StartAssessmentRun">REST API Reference for StartAssessmentRun Operation</seealso>
         Task<StartAssessmentRunResponse> StartAssessmentRunAsync(StartAssessmentRunRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1154,6 +1210,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StopAssessmentRun">REST API Reference for StopAssessmentRun Operation</seealso>
         StopAssessmentRunResponse StopAssessmentRun(StopAssessmentRunRequest request);
 
 
@@ -1166,6 +1223,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/StopAssessmentRun">REST API Reference for StopAssessmentRun Operation</seealso>
         Task<StopAssessmentRunResponse> StopAssessmentRunAsync(StopAssessmentRunRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1198,6 +1256,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SubscribeToEvent">REST API Reference for SubscribeToEvent Operation</seealso>
         SubscribeToEventResponse SubscribeToEvent(SubscribeToEventRequest request);
 
 
@@ -1210,6 +1269,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/SubscribeToEvent">REST API Reference for SubscribeToEvent Operation</seealso>
         Task<SubscribeToEventResponse> SubscribeToEventAsync(SubscribeToEventRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1238,6 +1298,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UnsubscribeFromEvent">REST API Reference for UnsubscribeFromEvent Operation</seealso>
         UnsubscribeFromEventResponse UnsubscribeFromEvent(UnsubscribeFromEventRequest request);
 
 
@@ -1250,6 +1311,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UnsubscribeFromEvent">REST API Reference for UnsubscribeFromEvent Operation</seealso>
         Task<UnsubscribeFromEventResponse> UnsubscribeFromEventAsync(UnsubscribeFromEventRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1277,6 +1339,7 @@ namespace Amazon.Inspector
         /// The request was rejected because it referenced an entity that does not exist. The
         /// error code describes the entity.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UpdateAssessmentTarget">REST API Reference for UpdateAssessmentTarget Operation</seealso>
         UpdateAssessmentTargetResponse UpdateAssessmentTarget(UpdateAssessmentTargetRequest request);
 
 
@@ -1289,6 +1352,7 @@ namespace Amazon.Inspector
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/UpdateAssessmentTarget">REST API Reference for UpdateAssessmentTarget Operation</seealso>
         Task<UpdateAssessmentTargetResponse> UpdateAssessmentTargetAsync(UpdateAssessmentTargetRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

@@ -54,7 +54,7 @@ namespace <#=this.Config.Namespace#>
 #>
 
 <#        
-        AddAsyncDocumentation(operation.Name);
+        AddAsyncDocumentation(operation);
 		if(operation.IsDeprecated)
 		{
 #>

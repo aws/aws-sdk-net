@@ -254,6 +254,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster">REST API Reference for CancelCluster Operation</seealso>
         public CancelClusterResponse CancelCluster(CancelClusterRequest request)
         {
             var marshaller = new CancelClusterRequestMarshaller();
@@ -271,6 +272,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelCluster">REST API Reference for CancelCluster Operation</seealso>
         public Task<CancelClusterResponse> CancelClusterAsync(CancelClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelClusterRequestMarshaller();
@@ -306,6 +308,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public CancelJobResponse CancelJob(CancelJobRequest request)
         {
             var marshaller = new CancelJobRequestMarshaller();
@@ -323,6 +326,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">REST API Reference for CancelJob Operation</seealso>
         public Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CancelJobRequestMarshaller();
@@ -359,6 +363,7 @@ namespace Amazon.Snowball
         /// Check the address with your region's carrier and try again. If the issue persists,
         /// contact AWS Support.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">REST API Reference for CreateAddress Operation</seealso>
         public CreateAddressResponse CreateAddress(CreateAddressRequest request)
         {
             var marshaller = new CreateAddressRequestMarshaller();
@@ -376,6 +381,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateAddress">REST API Reference for CreateAddress Operation</seealso>
         public Task<CreateAddressResponse> CreateAddressAsync(CreateAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateAddressRequestMarshaller();
@@ -411,6 +417,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public CreateClusterResponse CreateCluster(CreateClusterRequest request)
         {
             var marshaller = new CreateClusterRequestMarshaller();
@@ -428,6 +435,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         public Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateClusterRequestMarshaller();
@@ -470,6 +478,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public CreateJobResponse CreateJob(CreateJobRequest request)
         {
             var marshaller = new CreateJobRequestMarshaller();
@@ -487,6 +496,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">REST API Reference for CreateJob Operation</seealso>
         public Task<CreateJobResponse> CreateJobAsync(CreateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new CreateJobRequestMarshaller();
@@ -512,6 +522,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddress">REST API Reference for DescribeAddress Operation</seealso>
         public DescribeAddressResponse DescribeAddress(DescribeAddressRequest request)
         {
             var marshaller = new DescribeAddressRequestMarshaller();
@@ -529,6 +540,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddress">REST API Reference for DescribeAddress Operation</seealso>
         public Task<DescribeAddressResponse> DescribeAddressAsync(DescribeAddressRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAddressRequestMarshaller();
@@ -555,6 +567,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         public DescribeAddressesResponse DescribeAddresses(DescribeAddressesRequest request)
         {
             var marshaller = new DescribeAddressesRequestMarshaller();
@@ -572,6 +585,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeAddresses">REST API Reference for DescribeAddresses Operation</seealso>
         public Task<DescribeAddressesResponse> DescribeAddressesAsync(DescribeAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeAddressesRequestMarshaller();
@@ -597,6 +611,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public DescribeClusterResponse DescribeCluster(DescribeClusterRequest request)
         {
             var marshaller = new DescribeClusterRequestMarshaller();
@@ -614,6 +629,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeCluster">REST API Reference for DescribeCluster Operation</seealso>
         public Task<DescribeClusterResponse> DescribeClusterAsync(DescribeClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeClusterRequestMarshaller();
@@ -639,6 +655,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public DescribeJobResponse DescribeJob(DescribeJobRequest request)
         {
             var marshaller = new DescribeJobRequestMarshaller();
@@ -656,6 +673,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/DescribeJob">REST API Reference for DescribeJob Operation</seealso>
         public Task<DescribeJobResponse> DescribeJobAsync(DescribeJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new DescribeJobRequestMarshaller();
@@ -708,6 +726,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest">REST API Reference for GetJobManifest Operation</seealso>
         public GetJobManifestResponse GetJobManifest(GetJobManifestRequest request)
         {
             var marshaller = new GetJobManifestRequestMarshaller();
@@ -725,6 +744,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest">REST API Reference for GetJobManifest Operation</seealso>
         public Task<GetJobManifestResponse> GetJobManifestAsync(GetJobManifestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetJobManifestRequestMarshaller();
@@ -770,6 +790,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode">REST API Reference for GetJobUnlockCode Operation</seealso>
         public GetJobUnlockCodeResponse GetJobUnlockCode(GetJobUnlockCodeRequest request)
         {
             var marshaller = new GetJobUnlockCodeRequestMarshaller();
@@ -787,6 +808,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode">REST API Reference for GetJobUnlockCode Operation</seealso>
         public Task<GetJobUnlockCodeResponse> GetJobUnlockCodeAsync(GetJobUnlockCodeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetJobUnlockCodeRequestMarshaller();
@@ -814,6 +836,7 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the GetSnowballUsage service method.</param>
         /// 
         /// <returns>The response from the GetSnowballUsage service method, as returned by Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">REST API Reference for GetSnowballUsage Operation</seealso>
         public GetSnowballUsageResponse GetSnowballUsage(GetSnowballUsageRequest request)
         {
             var marshaller = new GetSnowballUsageRequestMarshaller();
@@ -831,6 +854,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetSnowballUsage">REST API Reference for GetSnowballUsage Operation</seealso>
         public Task<GetSnowballUsageResponse> GetSnowballUsageAsync(GetSnowballUsageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new GetSnowballUsageRequestMarshaller();
@@ -857,6 +881,7 @@ namespace Amazon.Snowball
         /// The specified resource can't be found. Check the information you provided in your
         /// last request, and try again.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs">REST API Reference for ListClusterJobs Operation</seealso>
         public ListClusterJobsResponse ListClusterJobs(ListClusterJobsRequest request)
         {
             var marshaller = new ListClusterJobsRequestMarshaller();
@@ -874,6 +899,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusterJobs">REST API Reference for ListClusterJobs Operation</seealso>
         public Task<ListClusterJobsResponse> ListClusterJobsAsync(ListClusterJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListClusterJobsRequestMarshaller();
@@ -896,6 +922,7 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the ListClusters service method.</param>
         /// 
         /// <returns>The response from the ListClusters service method, as returned by Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public ListClustersResponse ListClusters(ListClustersRequest request)
         {
             var marshaller = new ListClustersRequestMarshaller();
@@ -913,6 +940,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListClusters">REST API Reference for ListClusters Operation</seealso>
         public Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListClustersRequestMarshaller();
@@ -937,6 +965,7 @@ namespace Amazon.Snowball
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
         /// 
         /// <returns>The response from the ListJobs service method, as returned by Snowball.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public ListJobsResponse ListJobs(ListJobsRequest request)
         {
             var marshaller = new ListJobsRequestMarshaller();
@@ -954,6 +983,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListJobs">REST API Reference for ListJobs Operation</seealso>
         public Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new ListJobsRequestMarshaller();
@@ -994,6 +1024,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public UpdateClusterResponse UpdateCluster(UpdateClusterRequest request)
         {
             var marshaller = new UpdateClusterRequestMarshaller();
@@ -1011,6 +1042,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         public Task<UpdateClusterResponse> UpdateClusterAsync(UpdateClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateClusterRequestMarshaller();
@@ -1056,6 +1088,7 @@ namespace Amazon.Snowball
         /// The provided AWS Key Management Service key lacks the permissions to perform the specified
         /// <a>CreateJob</a> or <a>UpdateJob</a> action.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         public UpdateJobResponse UpdateJob(UpdateJobRequest request)
         {
             var marshaller = new UpdateJobRequestMarshaller();
@@ -1073,6 +1106,7 @@ namespace Amazon.Snowball
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
         public Task<UpdateJobResponse> UpdateJobAsync(UpdateJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = new UpdateJobRequestMarshaller();

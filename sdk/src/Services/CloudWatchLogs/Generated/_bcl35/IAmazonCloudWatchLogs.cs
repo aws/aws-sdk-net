@@ -97,6 +97,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
         CancelExportTaskResponse CancelExportTask(CancelExportTaskRequest request);
 
         /// <summary>
@@ -110,6 +111,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelExportTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
         IAsyncResult BeginCancelExportTask(CancelExportTaskRequest request, AsyncCallback callback, object state);
 
 
@@ -121,6 +123,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelExportTask.</param>
         /// 
         /// <returns>Returns a  CancelExportTaskResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CancelExportTask">REST API Reference for CancelExportTask Operation</seealso>
         CancelExportTaskResponse EndCancelExportTask(IAsyncResult asyncResult);
 
         #endregion
@@ -168,6 +171,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">REST API Reference for CreateExportTask Operation</seealso>
         CreateExportTaskResponse CreateExportTask(CreateExportTaskRequest request);
 
         /// <summary>
@@ -181,6 +185,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateExportTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">REST API Reference for CreateExportTask Operation</seealso>
         IAsyncResult BeginCreateExportTask(CreateExportTaskRequest request, AsyncCallback callback, object state);
 
 
@@ -192,6 +197,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateExportTask.</param>
         /// 
         /// <returns>Returns a  CreateExportTaskResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateExportTask">REST API Reference for CreateExportTask Operation</seealso>
         CreateExportTaskResponse EndCreateExportTask(IAsyncResult asyncResult);
 
         #endregion
@@ -243,6 +249,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">REST API Reference for CreateLogGroup Operation</seealso>
         CreateLogGroupResponse CreateLogGroup(CreateLogGroupRequest request);
 
         /// <summary>
@@ -256,6 +263,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLogGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">REST API Reference for CreateLogGroup Operation</seealso>
         IAsyncResult BeginCreateLogGroup(CreateLogGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -267,6 +275,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLogGroup.</param>
         /// 
         /// <returns>Returns a  CreateLogGroupResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">REST API Reference for CreateLogGroup Operation</seealso>
         CreateLogGroupResponse EndCreateLogGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -314,6 +323,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogStream">REST API Reference for CreateLogStream Operation</seealso>
         CreateLogStreamResponse CreateLogStream(CreateLogStreamRequest request);
 
         /// <summary>
@@ -327,6 +337,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLogStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogStream">REST API Reference for CreateLogStream Operation</seealso>
         IAsyncResult BeginCreateLogStream(CreateLogStreamRequest request, AsyncCallback callback, object state);
 
 
@@ -338,6 +349,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLogStream.</param>
         /// 
         /// <returns>Returns a  CreateLogStreamResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogStream">REST API Reference for CreateLogStream Operation</seealso>
         CreateLogStreamResponse EndCreateLogStream(IAsyncResult asyncResult);
 
         #endregion
@@ -365,6 +377,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDestination">REST API Reference for DeleteDestination Operation</seealso>
         DeleteDestinationResponse DeleteDestination(DeleteDestinationRequest request);
 
         /// <summary>
@@ -378,6 +391,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDestination
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDestination">REST API Reference for DeleteDestination Operation</seealso>
         IAsyncResult BeginDeleteDestination(DeleteDestinationRequest request, AsyncCallback callback, object state);
 
 
@@ -389,6 +403,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDestination.</param>
         /// 
         /// <returns>Returns a  DeleteDestinationResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDestination">REST API Reference for DeleteDestination Operation</seealso>
         DeleteDestinationResponse EndDeleteDestination(IAsyncResult asyncResult);
 
         #endregion
@@ -415,6 +430,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogGroup">REST API Reference for DeleteLogGroup Operation</seealso>
         DeleteLogGroupResponse DeleteLogGroup(DeleteLogGroupRequest request);
 
         /// <summary>
@@ -428,6 +444,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLogGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogGroup">REST API Reference for DeleteLogGroup Operation</seealso>
         IAsyncResult BeginDeleteLogGroup(DeleteLogGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -439,6 +456,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLogGroup.</param>
         /// 
         /// <returns>Returns a  DeleteLogGroupResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogGroup">REST API Reference for DeleteLogGroup Operation</seealso>
         DeleteLogGroupResponse EndDeleteLogGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -465,6 +483,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogStream">REST API Reference for DeleteLogStream Operation</seealso>
         DeleteLogStreamResponse DeleteLogStream(DeleteLogStreamRequest request);
 
         /// <summary>
@@ -478,6 +497,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLogStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogStream">REST API Reference for DeleteLogStream Operation</seealso>
         IAsyncResult BeginDeleteLogStream(DeleteLogStreamRequest request, AsyncCallback callback, object state);
 
 
@@ -489,6 +509,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLogStream.</param>
         /// 
         /// <returns>Returns a  DeleteLogStreamResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteLogStream">REST API Reference for DeleteLogStream Operation</seealso>
         DeleteLogStreamResponse EndDeleteLogStream(IAsyncResult asyncResult);
 
         #endregion
@@ -514,6 +535,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteMetricFilter">REST API Reference for DeleteMetricFilter Operation</seealso>
         DeleteMetricFilterResponse DeleteMetricFilter(DeleteMetricFilterRequest request);
 
         /// <summary>
@@ -527,6 +549,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMetricFilter
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteMetricFilter">REST API Reference for DeleteMetricFilter Operation</seealso>
         IAsyncResult BeginDeleteMetricFilter(DeleteMetricFilterRequest request, AsyncCallback callback, object state);
 
 
@@ -538,6 +561,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMetricFilter.</param>
         /// 
         /// <returns>Returns a  DeleteMetricFilterResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteMetricFilter">REST API Reference for DeleteMetricFilter Operation</seealso>
         DeleteMetricFilterResponse EndDeleteMetricFilter(IAsyncResult asyncResult);
 
         #endregion
@@ -568,6 +592,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
         DeleteRetentionPolicyResponse DeleteRetentionPolicy(DeleteRetentionPolicyRequest request);
 
         /// <summary>
@@ -581,6 +606,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRetentionPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
         IAsyncResult BeginDeleteRetentionPolicy(DeleteRetentionPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -592,6 +618,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRetentionPolicy.</param>
         /// 
         /// <returns>Returns a  DeleteRetentionPolicyResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteRetentionPolicy">REST API Reference for DeleteRetentionPolicy Operation</seealso>
         DeleteRetentionPolicyResponse EndDeleteRetentionPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -617,6 +644,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteSubscriptionFilter">REST API Reference for DeleteSubscriptionFilter Operation</seealso>
         DeleteSubscriptionFilterResponse DeleteSubscriptionFilter(DeleteSubscriptionFilterRequest request);
 
         /// <summary>
@@ -630,6 +658,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSubscriptionFilter
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteSubscriptionFilter">REST API Reference for DeleteSubscriptionFilter Operation</seealso>
         IAsyncResult BeginDeleteSubscriptionFilter(DeleteSubscriptionFilterRequest request, AsyncCallback callback, object state);
 
 
@@ -641,6 +670,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSubscriptionFilter.</param>
         /// 
         /// <returns>Returns a  DeleteSubscriptionFilterResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteSubscriptionFilter">REST API Reference for DeleteSubscriptionFilter Operation</seealso>
         DeleteSubscriptionFilterResponse EndDeleteSubscriptionFilter(IAsyncResult asyncResult);
 
         #endregion
@@ -660,6 +690,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDestinations">REST API Reference for DescribeDestinations Operation</seealso>
         DescribeDestinationsResponse DescribeDestinations(DescribeDestinationsRequest request);
 
         /// <summary>
@@ -673,6 +704,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDestinations
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDestinations">REST API Reference for DescribeDestinations Operation</seealso>
         IAsyncResult BeginDescribeDestinations(DescribeDestinationsRequest request, AsyncCallback callback, object state);
 
 
@@ -684,6 +716,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDestinations.</param>
         /// 
         /// <returns>Returns a  DescribeDestinationsResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDestinations">REST API Reference for DescribeDestinations Operation</seealso>
         DescribeDestinationsResponse EndDescribeDestinations(IAsyncResult asyncResult);
 
         #endregion
@@ -704,6 +737,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         DescribeExportTasksResponse DescribeExportTasks(DescribeExportTasksRequest request);
 
         /// <summary>
@@ -717,6 +751,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeExportTasks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         IAsyncResult BeginDescribeExportTasks(DescribeExportTasksRequest request, AsyncCallback callback, object state);
 
 
@@ -728,6 +763,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeExportTasks.</param>
         /// 
         /// <returns>Returns a  DescribeExportTasksResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeExportTasks">REST API Reference for DescribeExportTasks Operation</seealso>
         DescribeExportTasksResponse EndDescribeExportTasks(IAsyncResult asyncResult);
 
         #endregion
@@ -747,6 +783,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups">REST API Reference for DescribeLogGroups Operation</seealso>
         DescribeLogGroupsResponse DescribeLogGroups();
 
         /// <summary>
@@ -762,6 +799,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups">REST API Reference for DescribeLogGroups Operation</seealso>
         DescribeLogGroupsResponse DescribeLogGroups(DescribeLogGroupsRequest request);
 
         /// <summary>
@@ -775,6 +813,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLogGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups">REST API Reference for DescribeLogGroups Operation</seealso>
         IAsyncResult BeginDescribeLogGroups(DescribeLogGroupsRequest request, AsyncCallback callback, object state);
 
 
@@ -786,6 +825,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLogGroups.</param>
         /// 
         /// <returns>Returns a  DescribeLogGroupsResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogGroups">REST API Reference for DescribeLogGroups Operation</seealso>
         DescribeLogGroupsResponse EndDescribeLogGroups(IAsyncResult asyncResult);
 
         #endregion
@@ -815,6 +855,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogStreams">REST API Reference for DescribeLogStreams Operation</seealso>
         DescribeLogStreamsResponse DescribeLogStreams(DescribeLogStreamsRequest request);
 
         /// <summary>
@@ -828,6 +869,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeLogStreams
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogStreams">REST API Reference for DescribeLogStreams Operation</seealso>
         IAsyncResult BeginDescribeLogStreams(DescribeLogStreamsRequest request, AsyncCallback callback, object state);
 
 
@@ -839,6 +881,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeLogStreams.</param>
         /// 
         /// <returns>Returns a  DescribeLogStreamsResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeLogStreams">REST API Reference for DescribeLogStreams Operation</seealso>
         DescribeLogStreamsResponse EndDescribeLogStreams(IAsyncResult asyncResult);
 
         #endregion
@@ -863,6 +906,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeMetricFilters">REST API Reference for DescribeMetricFilters Operation</seealso>
         DescribeMetricFiltersResponse DescribeMetricFilters(DescribeMetricFiltersRequest request);
 
         /// <summary>
@@ -876,6 +920,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMetricFilters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeMetricFilters">REST API Reference for DescribeMetricFilters Operation</seealso>
         IAsyncResult BeginDescribeMetricFilters(DescribeMetricFiltersRequest request, AsyncCallback callback, object state);
 
 
@@ -887,6 +932,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMetricFilters.</param>
         /// 
         /// <returns>Returns a  DescribeMetricFiltersResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeMetricFilters">REST API Reference for DescribeMetricFilters Operation</seealso>
         DescribeMetricFiltersResponse EndDescribeMetricFilters(IAsyncResult asyncResult);
 
         #endregion
@@ -910,6 +956,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeSubscriptionFilters">REST API Reference for DescribeSubscriptionFilters Operation</seealso>
         DescribeSubscriptionFiltersResponse DescribeSubscriptionFilters(DescribeSubscriptionFiltersRequest request);
 
         /// <summary>
@@ -923,6 +970,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSubscriptionFilters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeSubscriptionFilters">REST API Reference for DescribeSubscriptionFilters Operation</seealso>
         IAsyncResult BeginDescribeSubscriptionFilters(DescribeSubscriptionFiltersRequest request, AsyncCallback callback, object state);
 
 
@@ -934,6 +982,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSubscriptionFilters.</param>
         /// 
         /// <returns>Returns a  DescribeSubscriptionFiltersResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeSubscriptionFilters">REST API Reference for DescribeSubscriptionFilters Operation</seealso>
         DescribeSubscriptionFiltersResponse EndDescribeSubscriptionFilters(IAsyncResult asyncResult);
 
         #endregion
@@ -965,6 +1014,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilterLogEvents">REST API Reference for FilterLogEvents Operation</seealso>
         FilterLogEventsResponse FilterLogEvents(FilterLogEventsRequest request);
 
         /// <summary>
@@ -978,6 +1028,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndFilterLogEvents
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilterLogEvents">REST API Reference for FilterLogEvents Operation</seealso>
         IAsyncResult BeginFilterLogEvents(FilterLogEventsRequest request, AsyncCallback callback, object state);
 
 
@@ -989,6 +1040,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginFilterLogEvents.</param>
         /// 
         /// <returns>Returns a  FilterLogEventsResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/FilterLogEvents">REST API Reference for FilterLogEvents Operation</seealso>
         FilterLogEventsResponse EndFilterLogEvents(IAsyncResult asyncResult);
 
         #endregion
@@ -1020,6 +1072,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents">REST API Reference for GetLogEvents Operation</seealso>
         GetLogEventsResponse GetLogEvents(GetLogEventsRequest request);
 
         /// <summary>
@@ -1033,6 +1086,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLogEvents
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents">REST API Reference for GetLogEvents Operation</seealso>
         IAsyncResult BeginGetLogEvents(GetLogEventsRequest request, AsyncCallback callback, object state);
 
 
@@ -1044,6 +1098,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLogEvents.</param>
         /// 
         /// <returns>Returns a  GetLogEventsResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogEvents">REST API Reference for GetLogEvents Operation</seealso>
         GetLogEventsResponse EndGetLogEvents(IAsyncResult asyncResult);
 
         #endregion
@@ -1068,6 +1123,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup">REST API Reference for ListTagsLogGroup Operation</seealso>
         ListTagsLogGroupResponse ListTagsLogGroup(ListTagsLogGroupRequest request);
 
         /// <summary>
@@ -1081,6 +1137,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsLogGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup">REST API Reference for ListTagsLogGroup Operation</seealso>
         IAsyncResult BeginListTagsLogGroup(ListTagsLogGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -1092,6 +1149,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsLogGroup.</param>
         /// 
         /// <returns>Returns a  ListTagsLogGroupResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup">REST API Reference for ListTagsLogGroup Operation</seealso>
         ListTagsLogGroupResponse EndListTagsLogGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -1127,6 +1185,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination">REST API Reference for PutDestination Operation</seealso>
         PutDestinationResponse PutDestination(PutDestinationRequest request);
 
         /// <summary>
@@ -1140,6 +1199,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutDestination
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination">REST API Reference for PutDestination Operation</seealso>
         IAsyncResult BeginPutDestination(PutDestinationRequest request, AsyncCallback callback, object state);
 
 
@@ -1151,6 +1211,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutDestination.</param>
         /// 
         /// <returns>Returns a  PutDestinationResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination">REST API Reference for PutDestination Operation</seealso>
         PutDestinationResponse EndPutDestination(IAsyncResult asyncResult);
 
         #endregion
@@ -1176,6 +1237,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestinationPolicy">REST API Reference for PutDestinationPolicy Operation</seealso>
         PutDestinationPolicyResponse PutDestinationPolicy(PutDestinationPolicyRequest request);
 
         /// <summary>
@@ -1189,6 +1251,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutDestinationPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestinationPolicy">REST API Reference for PutDestinationPolicy Operation</seealso>
         IAsyncResult BeginPutDestinationPolicy(PutDestinationPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -1200,6 +1263,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutDestinationPolicy.</param>
         /// 
         /// <returns>Returns a  PutDestinationPolicyResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestinationPolicy">REST API Reference for PutDestinationPolicy Operation</seealso>
         PutDestinationPolicyResponse EndPutDestinationPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -1269,6 +1333,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents">REST API Reference for PutLogEvents Operation</seealso>
         PutLogEventsResponse PutLogEvents(PutLogEventsRequest request);
 
         /// <summary>
@@ -1282,6 +1347,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutLogEvents
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents">REST API Reference for PutLogEvents Operation</seealso>
         IAsyncResult BeginPutLogEvents(PutLogEventsRequest request, AsyncCallback callback, object state);
 
 
@@ -1293,6 +1359,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutLogEvents.</param>
         /// 
         /// <returns>Returns a  PutLogEventsResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutLogEvents">REST API Reference for PutLogEvents Operation</seealso>
         PutLogEventsResponse EndPutLogEvents(IAsyncResult asyncResult);
 
         #endregion
@@ -1328,6 +1395,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter">REST API Reference for PutMetricFilter Operation</seealso>
         PutMetricFilterResponse PutMetricFilter(PutMetricFilterRequest request);
 
         /// <summary>
@@ -1341,6 +1409,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutMetricFilter
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter">REST API Reference for PutMetricFilter Operation</seealso>
         IAsyncResult BeginPutMetricFilter(PutMetricFilterRequest request, AsyncCallback callback, object state);
 
 
@@ -1352,6 +1421,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMetricFilter.</param>
         /// 
         /// <returns>Returns a  PutMetricFilterResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter">REST API Reference for PutMetricFilter Operation</seealso>
         PutMetricFilterResponse EndPutMetricFilter(IAsyncResult asyncResult);
 
         #endregion
@@ -1378,6 +1448,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy">REST API Reference for PutRetentionPolicy Operation</seealso>
         PutRetentionPolicyResponse PutRetentionPolicy(PutRetentionPolicyRequest request);
 
         /// <summary>
@@ -1391,6 +1462,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRetentionPolicy
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy">REST API Reference for PutRetentionPolicy Operation</seealso>
         IAsyncResult BeginPutRetentionPolicy(PutRetentionPolicyRequest request, AsyncCallback callback, object state);
 
 
@@ -1402,6 +1474,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRetentionPolicy.</param>
         /// 
         /// <returns>Returns a  PutRetentionPolicyResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutRetentionPolicy">REST API Reference for PutRetentionPolicy Operation</seealso>
         PutRetentionPolicyResponse EndPutRetentionPolicy(IAsyncResult asyncResult);
 
         #endregion
@@ -1457,6 +1530,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">REST API Reference for PutSubscriptionFilter Operation</seealso>
         PutSubscriptionFilterResponse PutSubscriptionFilter(PutSubscriptionFilterRequest request);
 
         /// <summary>
@@ -1470,6 +1544,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutSubscriptionFilter
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">REST API Reference for PutSubscriptionFilter Operation</seealso>
         IAsyncResult BeginPutSubscriptionFilter(PutSubscriptionFilterRequest request, AsyncCallback callback, object state);
 
 
@@ -1481,6 +1556,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutSubscriptionFilter.</param>
         /// 
         /// <returns>Returns a  PutSubscriptionFilterResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">REST API Reference for PutSubscriptionFilter Operation</seealso>
         PutSubscriptionFilterResponse EndPutSubscriptionFilter(IAsyncResult asyncResult);
 
         #endregion
@@ -1511,6 +1587,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup">REST API Reference for TagLogGroup Operation</seealso>
         TagLogGroupResponse TagLogGroup(TagLogGroupRequest request);
 
         /// <summary>
@@ -1524,6 +1601,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagLogGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup">REST API Reference for TagLogGroup Operation</seealso>
         IAsyncResult BeginTagLogGroup(TagLogGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -1535,6 +1613,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagLogGroup.</param>
         /// 
         /// <returns>Returns a  TagLogGroupResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup">REST API Reference for TagLogGroup Operation</seealso>
         TagLogGroupResponse EndTagLogGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -1555,6 +1634,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
         /// The service cannot complete the request.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TestMetricFilter">REST API Reference for TestMetricFilter Operation</seealso>
         TestMetricFilterResponse TestMetricFilter(TestMetricFilterRequest request);
 
         /// <summary>
@@ -1568,6 +1648,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTestMetricFilter
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TestMetricFilter">REST API Reference for TestMetricFilter Operation</seealso>
         IAsyncResult BeginTestMetricFilter(TestMetricFilterRequest request, AsyncCallback callback, object state);
 
 
@@ -1579,6 +1660,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTestMetricFilter.</param>
         /// 
         /// <returns>Returns a  TestMetricFilterResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TestMetricFilter">REST API Reference for TestMetricFilter Operation</seealso>
         TestMetricFilterResponse EndTestMetricFilter(IAsyncResult asyncResult);
 
         #endregion
@@ -1600,6 +1682,7 @@ namespace Amazon.CloudWatchLogs
         /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup">REST API Reference for UntagLogGroup Operation</seealso>
         UntagLogGroupResponse UntagLogGroup(UntagLogGroupRequest request);
 
         /// <summary>
@@ -1613,6 +1696,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagLogGroup
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup">REST API Reference for UntagLogGroup Operation</seealso>
         IAsyncResult BeginUntagLogGroup(UntagLogGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -1624,6 +1708,7 @@ namespace Amazon.CloudWatchLogs
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagLogGroup.</param>
         /// 
         /// <returns>Returns a  UntagLogGroupResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup">REST API Reference for UntagLogGroup Operation</seealso>
         UntagLogGroupResponse EndUntagLogGroup(IAsyncResult asyncResult);
 
         #endregion

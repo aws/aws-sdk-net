@@ -71,6 +71,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidNameException">
         /// The provided name is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">REST API Reference for CreateActivity Operation</seealso>
         CreateActivityResponse CreateActivity(CreateActivityRequest request);
 
 
@@ -83,6 +84,7 @@ namespace Amazon.StepFunctions
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">REST API Reference for CreateActivity Operation</seealso>
         Task<CreateActivityResponse> CreateActivityAsync(CreateActivityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -116,6 +118,7 @@ namespace Amazon.StepFunctions
         /// The maximum number of state machines has been reached. Existing state machines must
         /// be deleted before a new state machine can be created.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">REST API Reference for CreateStateMachine Operation</seealso>
         CreateStateMachineResponse CreateStateMachine(CreateStateMachineRequest request);
 
 
@@ -128,6 +131,7 @@ namespace Amazon.StepFunctions
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">REST API Reference for CreateStateMachine Operation</seealso>
         Task<CreateStateMachineResponse> CreateStateMachineAsync(CreateStateMachineRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -144,6 +148,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity">REST API Reference for DeleteActivity Operation</seealso>
         DeleteActivityResponse DeleteActivity(DeleteActivityRequest request);
 
 
@@ -156,6 +161,7 @@ namespace Amazon.StepFunctions
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity">REST API Reference for DeleteActivity Operation</seealso>
         Task<DeleteActivityResponse> DeleteActivityAsync(DeleteActivityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -173,6 +179,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">REST API Reference for DeleteStateMachine Operation</seealso>
         DeleteStateMachineResponse DeleteStateMachine(DeleteStateMachineRequest request);
 
 
@@ -185,6 +192,7 @@ namespace Amazon.StepFunctions
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">REST API Reference for DeleteStateMachine Operation</seealso>
         Task<DeleteStateMachineResponse> DeleteStateMachineAsync(DeleteStateMachineRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -204,6 +212,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity">REST API Reference for DescribeActivity Operation</seealso>
         DescribeActivityResponse DescribeActivity(DescribeActivityRequest request);
 
 
@@ -216,6 +225,7 @@ namespace Amazon.StepFunctions
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity">REST API Reference for DescribeActivity Operation</seealso>
         Task<DescribeActivityResponse> DescribeActivityAsync(DescribeActivityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -235,6 +245,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
         DescribeExecutionResponse DescribeExecution(DescribeExecutionRequest request);
 
 
@@ -247,6 +258,7 @@ namespace Amazon.StepFunctions
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">REST API Reference for DescribeExecution Operation</seealso>
         Task<DescribeExecutionResponse> DescribeExecutionAsync(DescribeExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -266,6 +278,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
         /// The specified state machine does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine">REST API Reference for DescribeStateMachine Operation</seealso>
         DescribeStateMachineResponse DescribeStateMachine(DescribeStateMachineRequest request);
 
 
@@ -278,6 +291,7 @@ namespace Amazon.StepFunctions
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachine">REST API Reference for DescribeStateMachine Operation</seealso>
         Task<DescribeStateMachineResponse> DescribeStateMachineAsync(DescribeStateMachineRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -313,6 +327,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">REST API Reference for GetActivityTask Operation</seealso>
         GetActivityTaskResponse GetActivityTask(GetActivityTaskRequest request);
 
 
@@ -325,6 +340,7 @@ namespace Amazon.StepFunctions
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">REST API Reference for GetActivityTask Operation</seealso>
         Task<GetActivityTaskResponse> GetActivityTaskAsync(GetActivityTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -351,6 +367,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
         /// The provided token is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">REST API Reference for GetExecutionHistory Operation</seealso>
         GetExecutionHistoryResponse GetExecutionHistory(GetExecutionHistoryRequest request);
 
 
@@ -363,6 +380,7 @@ namespace Amazon.StepFunctions
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">REST API Reference for GetExecutionHistory Operation</seealso>
         Task<GetExecutionHistoryResponse> GetExecutionHistoryAsync(GetExecutionHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -381,6 +399,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
         /// The provided token is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">REST API Reference for ListActivities Operation</seealso>
         ListActivitiesResponse ListActivities(ListActivitiesRequest request);
 
 
@@ -393,6 +412,7 @@ namespace Amazon.StepFunctions
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">REST API Reference for ListActivities Operation</seealso>
         Task<ListActivitiesResponse> ListActivitiesAsync(ListActivitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -417,6 +437,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
         /// The specified state machine does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         ListExecutionsResponse ListExecutions(ListExecutionsRequest request);
 
 
@@ -429,6 +450,7 @@ namespace Amazon.StepFunctions
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">REST API Reference for ListExecutions Operation</seealso>
         Task<ListExecutionsResponse> ListExecutionsAsync(ListExecutionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -447,6 +469,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidTokenException">
         /// The provided token is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">REST API Reference for ListStateMachines Operation</seealso>
         ListStateMachinesResponse ListStateMachines(ListStateMachinesRequest request);
 
 
@@ -459,6 +482,7 @@ namespace Amazon.StepFunctions
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">REST API Reference for ListStateMachines Operation</seealso>
         Task<ListStateMachinesResponse> ListStateMachinesAsync(ListStateMachinesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -481,6 +505,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.TaskTimedOutException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">REST API Reference for SendTaskFailure Operation</seealso>
         SendTaskFailureResponse SendTaskFailure(SendTaskFailureRequest request);
 
 
@@ -493,6 +518,7 @@ namespace Amazon.StepFunctions
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure">REST API Reference for SendTaskFailure Operation</seealso>
         Task<SendTaskFailureResponse> SendTaskFailureAsync(SendTaskFailureRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -533,6 +559,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.TaskTimedOutException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat">REST API Reference for SendTaskHeartbeat Operation</seealso>
         SendTaskHeartbeatResponse SendTaskHeartbeat(SendTaskHeartbeatRequest request);
 
 
@@ -545,6 +572,7 @@ namespace Amazon.StepFunctions
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat">REST API Reference for SendTaskHeartbeat Operation</seealso>
         Task<SendTaskHeartbeatResponse> SendTaskHeartbeatAsync(SendTaskHeartbeatRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -571,6 +599,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.TaskTimedOutException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess">REST API Reference for SendTaskSuccess Operation</seealso>
         SendTaskSuccessResponse SendTaskSuccess(SendTaskSuccessRequest request);
 
 
@@ -583,6 +612,7 @@ namespace Amazon.StepFunctions
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess">REST API Reference for SendTaskSuccess Operation</seealso>
         Task<SendTaskSuccessResponse> SendTaskSuccessAsync(SendTaskSuccessRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -618,6 +648,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.StateMachineDoesNotExistException">
         /// The specified state machine does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution">REST API Reference for StartExecution Operation</seealso>
         StartExecutionResponse StartExecution(StartExecutionRequest request);
 
 
@@ -630,6 +661,7 @@ namespace Amazon.StepFunctions
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution">REST API Reference for StartExecution Operation</seealso>
         Task<StartExecutionResponse> StartExecutionAsync(StartExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -649,6 +681,7 @@ namespace Amazon.StepFunctions
         /// <exception cref="Amazon.StepFunctions.Model.InvalidArnException">
         /// The provided Amazon Resource Name (ARN) is invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">REST API Reference for StopExecution Operation</seealso>
         StopExecutionResponse StopExecution(StopExecutionRequest request);
 
 
@@ -661,6 +694,7 @@ namespace Amazon.StepFunctions
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">REST API Reference for StopExecution Operation</seealso>
         Task<StopExecutionResponse> StopExecutionAsync(StopExecutionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

@@ -122,6 +122,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceInUseException">
         /// The resource is already in use and not available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">REST API Reference for CreateDeliveryStream Operation</seealso>
         CreateDeliveryStreamResponse CreateDeliveryStream(CreateDeliveryStreamRequest request);
 
 
@@ -134,6 +135,7 @@ namespace Amazon.KinesisFirehose
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">REST API Reference for CreateDeliveryStream Operation</seealso>
         Task<CreateDeliveryStreamResponse> CreateDeliveryStreamAsync(CreateDeliveryStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -171,6 +173,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         DeleteDeliveryStreamResponse DeleteDeliveryStream(string deliveryStreamName);
 
         /// <summary>
@@ -203,6 +206,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         DeleteDeliveryStreamResponse DeleteDeliveryStream(DeleteDeliveryStreamRequest request);
 
 
@@ -239,6 +243,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         Task<DeleteDeliveryStreamResponse> DeleteDeliveryStreamAsync(string deliveryStreamName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -250,6 +255,7 @@ namespace Amazon.KinesisFirehose
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         Task<DeleteDeliveryStreamResponse> DeleteDeliveryStreamAsync(DeleteDeliveryStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -268,6 +274,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream">REST API Reference for DescribeDeliveryStream Operation</seealso>
         DescribeDeliveryStreamResponse DescribeDeliveryStream(DescribeDeliveryStreamRequest request);
 
 
@@ -280,6 +287,7 @@ namespace Amazon.KinesisFirehose
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream">REST API Reference for DescribeDeliveryStream Operation</seealso>
         Task<DescribeDeliveryStreamResponse> DescribeDeliveryStreamAsync(DescribeDeliveryStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -303,6 +311,7 @@ namespace Amazon.KinesisFirehose
         /// </summary>
         /// 
         /// <returns>The response from the ListDeliveryStreams service method, as returned by KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         ListDeliveryStreamsResponse ListDeliveryStreams();
 
 
@@ -323,6 +332,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="request">Container for the necessary parameters to execute the ListDeliveryStreams service method.</param>
         /// 
         /// <returns>The response from the ListDeliveryStreams service method, as returned by KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         ListDeliveryStreamsResponse ListDeliveryStreams(ListDeliveryStreamsRequest request);
 
 
@@ -345,6 +355,7 @@ namespace Amazon.KinesisFirehose
         /// </param>
         /// 
         /// <returns>The response from the ListDeliveryStreams service method, as returned by KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         Task<ListDeliveryStreamsResponse> ListDeliveryStreamsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
@@ -357,6 +368,7 @@ namespace Amazon.KinesisFirehose
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         Task<ListDeliveryStreamsResponse> ListDeliveryStreamsAsync(ListDeliveryStreamsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -428,6 +440,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         PutRecordResponse PutRecord(string deliveryStreamName, Record record);
 
         /// <summary>
@@ -493,6 +506,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         PutRecordResponse PutRecord(PutRecordRequest request);
 
 
@@ -563,6 +577,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         Task<PutRecordResponse> PutRecordAsync(string deliveryStreamName, Record record, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -574,6 +589,7 @@ namespace Amazon.KinesisFirehose
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         Task<PutRecordResponse> PutRecordAsync(PutRecordRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -672,6 +688,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         PutRecordBatchResponse PutRecordBatch(string deliveryStreamName, List<Record> records);
 
         /// <summary>
@@ -764,6 +781,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         PutRecordBatchResponse PutRecordBatch(PutRecordBatchRequest request);
 
 
@@ -861,6 +879,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         Task<PutRecordBatchResponse> PutRecordBatchAsync(string deliveryStreamName, List<Record> records, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
@@ -872,6 +891,7 @@ namespace Amazon.KinesisFirehose
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         Task<PutRecordBatchResponse> PutRecordBatchAsync(PutRecordBatchRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -937,6 +957,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">REST API Reference for UpdateDestination Operation</seealso>
         UpdateDestinationResponse UpdateDestination(UpdateDestinationRequest request);
 
 
@@ -949,6 +970,7 @@ namespace Amazon.KinesisFirehose
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">REST API Reference for UpdateDestination Operation</seealso>
         Task<UpdateDestinationResponse> UpdateDestinationAsync(UpdateDestinationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

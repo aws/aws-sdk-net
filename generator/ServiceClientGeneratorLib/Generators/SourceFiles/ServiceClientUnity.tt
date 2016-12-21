@@ -269,7 +269,7 @@ namespace <#=this.Config.Namespace#>
         AddSimpleClientMethodsForUnity(operation,false);
 #>
 
-<#AddUnityAsyncDocumentation(operation.Name, !this.Config.ServiceModel.AvailableInWWW(operation));
+<#AddUnityAsyncDocumentation(operation, !this.Config.ServiceModel.AvailableInWWW(operation));
 		if(operation.IsDeprecated)
 		{
 #>

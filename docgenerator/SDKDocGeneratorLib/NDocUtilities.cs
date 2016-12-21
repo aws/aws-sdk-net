@@ -529,79 +529,87 @@ namespace SDKDocGenerator
                 return string.Empty;
 
             var rootNode = element.XPathSelectElement(rootNodeName);
-            if (rootNode == null)
-                return string.Empty;
+            if (rootNode == null)       return string.Empty;
+            
+            if (rootNodeName.Equals("seealso", StringComparison.OrdinalIgnoreCase))
+                return SeeAlsoElementToHTML(rootNode, typeProvider, version);
+            else
+                return DocBlobToHTML(rootNode, typeProvider, version);
+        }
 
-            //var crossRefTags = new[] { "see", "seealso" };
-            //foreach (var crossRefTag in crossRefTags)
-            //{
-            //    var crossRefs = rootNode.Descendants(crossRefTag);
-            //    if (crossRefs.Any())
-            //    {
-            //        foreach (var crossRef in crossRefs)
-            //        {
-            //            var typeName = BaseWriter.GetCrossReferenceTypeName(crossRef);
+        private static string SeeAlsoElementToHTML(XElement rootNode, AbstractTypeProvider typeProvider, FrameworkVersion version)
+        {
+            var reader = rootNode.CreateReader();
+            reader.MoveToContent();
+            var innerXml = reader.ReadInnerXml();
+            string content = "";
 
-            //            string target;
-            //            var url = BaseWriter.CrossReferenceTypeToUrl(assemblyWrapper, typeName, version, out target);
+            var href = rootNode.Attribute("href");
+            if (href != null)
+            {
+                content += string.Format(@"<div><a href=""{0}"" target=""_blank"">{1}</a></div>", href.Value, innerXml);
+            }
 
-            //            var href = url != null ? string.Format("<a href=\"{0}\" {2}>{1}</a>", url, typeName, target) : typeName;
-            //            crossRef.ReplaceWith(href);
-            //        }
-            //    }
-            //}
+            var cref = rootNode.Attribute("cref");
+            if (cref != null)
+            {
+                content += BaseWriter.CreateCrossReferenceTagReplacement(typeProvider, cref.Value, version);
+            }
 
+            return content;
+        }
+
+        private static string DocBlobToHTML(XElement rootNode, AbstractTypeProvider typeProvider, FrameworkVersion version)
+        {
             var reader = rootNode.CreateReader();
             reader.MoveToContent();
             var innerXml = reader.ReadInnerXml();
 
-            var innerText = innerXml;
-            innerText = innerText.Replace("<summary>", "<p>");
-            innerText = innerText.Replace("</summary>", "</p>");
-            innerText = innerText.Replace("<para>", "<p>");
-            innerText = innerText.Replace("</para>", "</p>");
+            innerXml = innerXml.Replace("<summary>", "<p>");
+            innerXml = innerXml.Replace("</summary>", "</p>");
+            innerXml = innerXml.Replace("<para>", "<p>");
+            innerXml = innerXml.Replace("</para>", "</p>");
             //innerText = innerText.Replace("<code", "<pre class=\"code-sample\">");
             //innerText = innerText.Replace("</code>", "</pre>");
 
             // scan for <see> and <seealso> cross-reference tags and replace with <a> links with the
             // content - which // can be a cref indication to a typename, or a href.
-            var scanIndex = innerText.IndexOf(crossReferenceOpeningTagText, StringComparison.Ordinal);
+            var scanIndex = innerXml.IndexOf(crossReferenceOpeningTagText, StringComparison.Ordinal);
             while (scanIndex >= 0)
             {
-                var attrStart = innerText.IndexOf(innerCrefAttributeText, scanIndex, StringComparison.Ordinal);
+                var attrStart = innerXml.IndexOf(innerCrefAttributeText, scanIndex, StringComparison.Ordinal);
                 if (attrStart >= 0)
                 {
                     int crossRefTagEndIndex;
-                    var cref = ExtractCrefAttributeContent(innerText, attrStart, out crossRefTagEndIndex);
+                    var cref = ExtractCrefAttributeContent(innerXml, attrStart, out crossRefTagEndIndex);
                     var replacement = BaseWriter.CreateCrossReferenceTagReplacement(typeProvider, cref, version);
 
-                    var oldCrossRefTag = innerText.Substring(scanIndex, crossRefTagEndIndex - scanIndex);
-                    innerText = innerText.Replace(oldCrossRefTag, replacement);
+                    var oldCrossRefTag = innerXml.Substring(scanIndex, crossRefTagEndIndex - scanIndex);
+                    innerXml = innerXml.Replace(oldCrossRefTag, replacement);
 
                     scanIndex += replacement.Length;
                 }
                 else
                 {
-                    attrStart = innerText.IndexOf(innerHrefAttributeText, scanIndex, StringComparison.Ordinal);
+                    attrStart = innerXml.IndexOf(innerHrefAttributeText, scanIndex, StringComparison.Ordinal);
                     if (attrStart >= 0)
                     {
                         int crossRefTagEndIndex;
-                        var url = ExtractHrefAttributeContent(innerText, attrStart, out crossRefTagEndIndex);
+                        var url = ExtractHrefAttributeContent(innerXml, attrStart, out crossRefTagEndIndex);
                         var replacement = string.Format("<a href=\"{0}\">{0}</a>", url);
 
-                        var oldCrossRefTag = innerText.Substring(scanIndex, crossRefTagEndIndex - scanIndex);
-                        innerText = innerText.Replace(oldCrossRefTag, replacement);
-
+                        var oldCrossRefTag = innerXml.Substring(scanIndex, crossRefTagEndIndex - scanIndex);
+                        innerXml = innerXml.Replace(oldCrossRefTag, replacement);
                         scanIndex += replacement.Length;
                     }
                     else
                         scanIndex++;
                 }
 
-                scanIndex = innerText.IndexOf(crossReferenceOpeningTagText, scanIndex, StringComparison.Ordinal);
+                scanIndex = innerXml.IndexOf(crossReferenceOpeningTagText, scanIndex, StringComparison.Ordinal);
             }
 
-            return innerText;
+            return innerXml;
         }
 
         static string ExtractCrefAttributeContent(string nodeText, int crefAttrStart, out int crossRefTagEndIndex)

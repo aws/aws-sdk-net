@@ -120,6 +120,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceInUseException">
         /// The resource is already in use and not available for this operation.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">REST API Reference for CreateDeliveryStream Operation</seealso>
         CreateDeliveryStreamResponse CreateDeliveryStream(CreateDeliveryStreamRequest request);
 
         /// <summary>
@@ -133,6 +134,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDeliveryStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">REST API Reference for CreateDeliveryStream Operation</seealso>
         IAsyncResult BeginCreateDeliveryStream(CreateDeliveryStreamRequest request, AsyncCallback callback, object state);
 
 
@@ -144,6 +146,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDeliveryStream.</param>
         /// 
         /// <returns>Returns a  CreateDeliveryStreamResult from KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/CreateDeliveryStream">REST API Reference for CreateDeliveryStream Operation</seealso>
         CreateDeliveryStreamResponse EndCreateDeliveryStream(IAsyncResult asyncResult);
 
         #endregion
@@ -181,6 +184,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         DeleteDeliveryStreamResponse DeleteDeliveryStream(string deliveryStreamName);
 
         /// <summary>
@@ -213,6 +217,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         DeleteDeliveryStreamResponse DeleteDeliveryStream(DeleteDeliveryStreamRequest request);
 
         /// <summary>
@@ -226,6 +231,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDeliveryStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         IAsyncResult BeginDeleteDeliveryStream(DeleteDeliveryStreamRequest request, AsyncCallback callback, object state);
 
 
@@ -237,6 +243,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDeliveryStream.</param>
         /// 
         /// <returns>Returns a  DeleteDeliveryStreamResult from KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DeleteDeliveryStream">REST API Reference for DeleteDeliveryStream Operation</seealso>
         DeleteDeliveryStreamResponse EndDeleteDeliveryStream(IAsyncResult asyncResult);
 
         #endregion
@@ -255,6 +262,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream">REST API Reference for DescribeDeliveryStream Operation</seealso>
         DescribeDeliveryStreamResponse DescribeDeliveryStream(DescribeDeliveryStreamRequest request);
 
         /// <summary>
@@ -268,6 +276,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDeliveryStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream">REST API Reference for DescribeDeliveryStream Operation</seealso>
         IAsyncResult BeginDescribeDeliveryStream(DescribeDeliveryStreamRequest request, AsyncCallback callback, object state);
 
 
@@ -279,6 +288,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDeliveryStream.</param>
         /// 
         /// <returns>Returns a  DescribeDeliveryStreamResult from KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DescribeDeliveryStream">REST API Reference for DescribeDeliveryStream Operation</seealso>
         DescribeDeliveryStreamResponse EndDescribeDeliveryStream(IAsyncResult asyncResult);
 
         #endregion
@@ -302,6 +312,7 @@ namespace Amazon.KinesisFirehose
         /// </summary>
         /// 
         /// <returns>The response from the ListDeliveryStreams service method, as returned by KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         ListDeliveryStreamsResponse ListDeliveryStreams();
 
         /// <summary>
@@ -321,6 +332,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="request">Container for the necessary parameters to execute the ListDeliveryStreams service method.</param>
         /// 
         /// <returns>The response from the ListDeliveryStreams service method, as returned by KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         ListDeliveryStreamsResponse ListDeliveryStreams(ListDeliveryStreamsRequest request);
 
         /// <summary>
@@ -334,6 +346,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeliveryStreams
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         IAsyncResult BeginListDeliveryStreams(ListDeliveryStreamsRequest request, AsyncCallback callback, object state);
 
 
@@ -345,6 +358,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeliveryStreams.</param>
         /// 
         /// <returns>Returns a  ListDeliveryStreamsResult from KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">REST API Reference for ListDeliveryStreams Operation</seealso>
         ListDeliveryStreamsResponse EndListDeliveryStreams(IAsyncResult asyncResult);
 
         #endregion
@@ -416,6 +430,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         PutRecordResponse PutRecord(string deliveryStreamName, Record record);
 
         /// <summary>
@@ -481,6 +496,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         PutRecordResponse PutRecord(PutRecordRequest request);
 
         /// <summary>
@@ -494,6 +510,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRecord
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         IAsyncResult BeginPutRecord(PutRecordRequest request, AsyncCallback callback, object state);
 
 
@@ -505,6 +522,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRecord.</param>
         /// 
         /// <returns>Returns a  PutRecordResult from KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">REST API Reference for PutRecord Operation</seealso>
         PutRecordResponse EndPutRecord(IAsyncResult asyncResult);
 
         #endregion
@@ -603,6 +621,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         PutRecordBatchResponse PutRecordBatch(string deliveryStreamName, List<Record> records);
 
         /// <summary>
@@ -695,6 +714,7 @@ namespace Amazon.KinesisFirehose
         /// more information about limits and how to request an increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
         /// Kinesis Firehose Limits</a>.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         PutRecordBatchResponse PutRecordBatch(PutRecordBatchRequest request);
 
         /// <summary>
@@ -708,6 +728,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRecordBatch
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         IAsyncResult BeginPutRecordBatch(PutRecordBatchRequest request, AsyncCallback callback, object state);
 
 
@@ -719,6 +740,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutRecordBatch.</param>
         /// 
         /// <returns>Returns a  PutRecordBatchResult from KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">REST API Reference for PutRecordBatch Operation</seealso>
         PutRecordBatchResponse EndPutRecordBatch(IAsyncResult asyncResult);
 
         #endregion
@@ -784,6 +806,7 @@ namespace Amazon.KinesisFirehose
         /// <exception cref="Amazon.KinesisFirehose.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">REST API Reference for UpdateDestination Operation</seealso>
         UpdateDestinationResponse UpdateDestination(UpdateDestinationRequest request);
 
         /// <summary>
@@ -797,6 +820,7 @@ namespace Amazon.KinesisFirehose
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDestination
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">REST API Reference for UpdateDestination Operation</seealso>
         IAsyncResult BeginUpdateDestination(UpdateDestinationRequest request, AsyncCallback callback, object state);
 
 
@@ -808,6 +832,7 @@ namespace Amazon.KinesisFirehose
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDestination.</param>
         /// 
         /// <returns>Returns a  UpdateDestinationResult from KinesisFirehose.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">REST API Reference for UpdateDestination Operation</seealso>
         UpdateDestinationResponse EndUpdateDestination(IAsyncResult asyncResult);
 
         #endregion

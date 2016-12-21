@@ -80,6 +80,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection">REST API Reference for CreateProtection Operation</seealso>
         CreateProtectionResponse CreateProtection(CreateProtectionRequest request);
 
 
@@ -92,6 +93,7 @@ namespace Amazon.Shield
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection">REST API Reference for CreateProtection Operation</seealso>
         Task<CreateProtectionResponse> CreateProtectionAsync(CreateProtectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -112,6 +114,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.ResourceAlreadyExistsException">
         /// Exception indicating the specified resource already exists.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">REST API Reference for CreateSubscription Operation</seealso>
         CreateSubscriptionResponse CreateSubscription(CreateSubscriptionRequest request);
 
 
@@ -124,6 +127,7 @@ namespace Amazon.Shield
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateSubscription">REST API Reference for CreateSubscription Operation</seealso>
         Task<CreateSubscriptionResponse> CreateSubscriptionAsync(CreateSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -148,6 +152,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtection">REST API Reference for DeleteProtection Operation</seealso>
         DeleteProtectionResponse DeleteProtection(DeleteProtectionRequest request);
 
 
@@ -160,6 +165,7 @@ namespace Amazon.Shield
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtection">REST API Reference for DeleteProtection Operation</seealso>
         Task<DeleteProtectionResponse> DeleteProtectionAsync(DeleteProtectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -184,6 +190,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription">REST API Reference for DeleteSubscription Operation</seealso>
         DeleteSubscriptionResponse DeleteSubscription(DeleteSubscriptionRequest request);
 
 
@@ -196,6 +203,7 @@ namespace Amazon.Shield
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription">REST API Reference for DeleteSubscription Operation</seealso>
         Task<DeleteSubscriptionResponse> DeleteSubscriptionAsync(DeleteSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -216,6 +224,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
         /// Exception that indicates that the parameters passed to the API are invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack">REST API Reference for DescribeAttack Operation</seealso>
         DescribeAttackResponse DescribeAttack(DescribeAttackRequest request);
 
 
@@ -228,6 +237,7 @@ namespace Amazon.Shield
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack">REST API Reference for DescribeAttack Operation</seealso>
         Task<DescribeAttackResponse> DescribeAttackAsync(DescribeAttackRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -248,6 +258,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection">REST API Reference for DescribeProtection Operation</seealso>
         DescribeProtectionResponse DescribeProtection(DescribeProtectionRequest request);
 
 
@@ -260,6 +271,7 @@ namespace Amazon.Shield
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtection">REST API Reference for DescribeProtection Operation</seealso>
         Task<DescribeProtectionResponse> DescribeProtectionAsync(DescribeProtectionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -280,6 +292,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription">REST API Reference for DescribeSubscription Operation</seealso>
         DescribeSubscriptionResponse DescribeSubscription(DescribeSubscriptionRequest request);
 
 
@@ -292,6 +305,7 @@ namespace Amazon.Shield
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeSubscription">REST API Reference for DescribeSubscription Operation</seealso>
         Task<DescribeSubscriptionResponse> DescribeSubscriptionAsync(DescribeSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -315,6 +329,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.InvalidParameterException">
         /// Exception that indicates that the parameters passed to the API are invalid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks">REST API Reference for ListAttacks Operation</seealso>
         ListAttacksResponse ListAttacks(ListAttacksRequest request);
 
 
@@ -327,6 +342,7 @@ namespace Amazon.Shield
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListAttacks">REST API Reference for ListAttacks Operation</seealso>
         Task<ListAttacksResponse> ListAttacksAsync(ListAttacksRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -347,6 +363,7 @@ namespace Amazon.Shield
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections">REST API Reference for ListProtections Operation</seealso>
         ListProtectionsResponse ListProtections(ListProtectionsRequest request);
 
 
@@ -359,6 +376,7 @@ namespace Amazon.Shield
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections">REST API Reference for ListProtections Operation</seealso>
         Task<ListProtectionsResponse> ListProtectionsAsync(ListProtectionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

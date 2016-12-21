@@ -116,6 +116,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds">REST API Reference for BatchGetBuilds Operation</seealso>
         BatchGetBuildsResponse BatchGetBuilds(BatchGetBuildsRequest request);
 
         /// <summary>
@@ -129,6 +130,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetBuilds
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds">REST API Reference for BatchGetBuilds Operation</seealso>
         IAsyncResult BeginBatchGetBuilds(BatchGetBuildsRequest request, AsyncCallback callback, object state);
 
 
@@ -140,6 +142,7 @@ namespace Amazon.CodeBuild
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetBuilds.</param>
         /// 
         /// <returns>Returns a  BatchGetBuildsResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuilds">REST API Reference for BatchGetBuilds Operation</seealso>
         BatchGetBuildsResponse EndBatchGetBuilds(IAsyncResult asyncResult);
 
         #endregion
@@ -156,6 +159,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">REST API Reference for BatchGetProjects Operation</seealso>
         BatchGetProjectsResponse BatchGetProjects(BatchGetProjectsRequest request);
 
         /// <summary>
@@ -169,6 +173,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetProjects
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">REST API Reference for BatchGetProjects Operation</seealso>
         IAsyncResult BeginBatchGetProjects(BatchGetProjectsRequest request, AsyncCallback callback, object state);
 
 
@@ -180,6 +185,7 @@ namespace Amazon.CodeBuild
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetProjects.</param>
         /// 
         /// <returns>Returns a  BatchGetProjectsResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">REST API Reference for BatchGetProjects Operation</seealso>
         BatchGetProjectsResponse EndBatchGetProjects(IAsyncResult asyncResult);
 
         #endregion
@@ -203,6 +209,7 @@ namespace Amazon.CodeBuild
         /// The specified AWS resource cannot be created, because an AWS resource with the same
         /// settings already exists.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject">REST API Reference for CreateProject Operation</seealso>
         CreateProjectResponse CreateProject(CreateProjectRequest request);
 
         /// <summary>
@@ -216,6 +223,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProject
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject">REST API Reference for CreateProject Operation</seealso>
         IAsyncResult BeginCreateProject(CreateProjectRequest request, AsyncCallback callback, object state);
 
 
@@ -227,6 +235,7 @@ namespace Amazon.CodeBuild
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateProject.</param>
         /// 
         /// <returns>Returns a  CreateProjectResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject">REST API Reference for CreateProject Operation</seealso>
         CreateProjectResponse EndCreateProject(IAsyncResult asyncResult);
 
         #endregion
@@ -243,6 +252,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         DeleteProjectResponse DeleteProject(DeleteProjectRequest request);
 
         /// <summary>
@@ -256,6 +266,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProject
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         IAsyncResult BeginDeleteProject(DeleteProjectRequest request, AsyncCallback callback, object state);
 
 
@@ -267,6 +278,7 @@ namespace Amazon.CodeBuild
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProject.</param>
         /// 
         /// <returns>Returns a  DeleteProjectResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">REST API Reference for DeleteProject Operation</seealso>
         DeleteProjectResponse EndDeleteProject(IAsyncResult asyncResult);
 
         #endregion
@@ -283,6 +295,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         ListBuildsResponse ListBuilds(ListBuildsRequest request);
 
         /// <summary>
@@ -296,6 +309,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBuilds
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         IAsyncResult BeginListBuilds(ListBuildsRequest request, AsyncCallback callback, object state);
 
 
@@ -307,6 +321,7 @@ namespace Amazon.CodeBuild
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBuilds.</param>
         /// 
         /// <returns>Returns a  ListBuildsResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuilds">REST API Reference for ListBuilds Operation</seealso>
         ListBuildsResponse EndListBuilds(IAsyncResult asyncResult);
 
         #endregion
@@ -327,6 +342,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
         /// The specified AWS resource cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject">REST API Reference for ListBuildsForProject Operation</seealso>
         ListBuildsForProjectResponse ListBuildsForProject(ListBuildsForProjectRequest request);
 
         /// <summary>
@@ -340,6 +356,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBuildsForProject
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject">REST API Reference for ListBuildsForProject Operation</seealso>
         IAsyncResult BeginListBuildsForProject(ListBuildsForProjectRequest request, AsyncCallback callback, object state);
 
 
@@ -351,6 +368,7 @@ namespace Amazon.CodeBuild
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBuildsForProject.</param>
         /// 
         /// <returns>Returns a  ListBuildsForProjectResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildsForProject">REST API Reference for ListBuildsForProject Operation</seealso>
         ListBuildsForProjectResponse EndListBuildsForProject(IAsyncResult asyncResult);
 
         #endregion
@@ -364,6 +382,7 @@ namespace Amazon.CodeBuild
         /// <param name="request">Container for the necessary parameters to execute the ListCuratedEnvironmentImages service method.</param>
         /// 
         /// <returns>The response from the ListCuratedEnvironmentImages service method, as returned by CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages">REST API Reference for ListCuratedEnvironmentImages Operation</seealso>
         ListCuratedEnvironmentImagesResponse ListCuratedEnvironmentImages(ListCuratedEnvironmentImagesRequest request);
 
         /// <summary>
@@ -377,6 +396,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCuratedEnvironmentImages
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages">REST API Reference for ListCuratedEnvironmentImages Operation</seealso>
         IAsyncResult BeginListCuratedEnvironmentImages(ListCuratedEnvironmentImagesRequest request, AsyncCallback callback, object state);
 
 
@@ -388,6 +408,7 @@ namespace Amazon.CodeBuild
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCuratedEnvironmentImages.</param>
         /// 
         /// <returns>Returns a  ListCuratedEnvironmentImagesResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages">REST API Reference for ListCuratedEnvironmentImages Operation</seealso>
         ListCuratedEnvironmentImagesResponse EndListCuratedEnvironmentImages(IAsyncResult asyncResult);
 
         #endregion
@@ -405,6 +426,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
         /// The input value that was provided is not valid.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects">REST API Reference for ListProjects Operation</seealso>
         ListProjectsResponse ListProjects(ListProjectsRequest request);
 
         /// <summary>
@@ -418,6 +440,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProjects
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects">REST API Reference for ListProjects Operation</seealso>
         IAsyncResult BeginListProjects(ListProjectsRequest request, AsyncCallback callback, object state);
 
 
@@ -429,6 +452,7 @@ namespace Amazon.CodeBuild
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProjects.</param>
         /// 
         /// <returns>Returns a  ListProjectsResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects">REST API Reference for ListProjects Operation</seealso>
         ListProjectsResponse EndListProjects(IAsyncResult asyncResult);
 
         #endregion
@@ -451,6 +475,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
         /// The specified AWS resource cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">REST API Reference for StartBuild Operation</seealso>
         StartBuildResponse StartBuild(StartBuildRequest request);
 
         /// <summary>
@@ -464,6 +489,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartBuild
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">REST API Reference for StartBuild Operation</seealso>
         IAsyncResult BeginStartBuild(StartBuildRequest request, AsyncCallback callback, object state);
 
 
@@ -475,6 +501,7 @@ namespace Amazon.CodeBuild
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartBuild.</param>
         /// 
         /// <returns>Returns a  StartBuildResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">REST API Reference for StartBuild Operation</seealso>
         StartBuildResponse EndStartBuild(IAsyncResult asyncResult);
 
         #endregion
@@ -500,6 +527,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
         /// The specified AWS resource cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">REST API Reference for StopBuild Operation</seealso>
         StopBuildResponse StopBuild(StopBuildRequest request);
 
         /// <summary>
@@ -513,6 +541,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopBuild
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">REST API Reference for StopBuild Operation</seealso>
         IAsyncResult BeginStopBuild(StopBuildRequest request, AsyncCallback callback, object state);
 
 
@@ -524,6 +553,7 @@ namespace Amazon.CodeBuild
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopBuild.</param>
         /// 
         /// <returns>Returns a  StopBuildResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuild">REST API Reference for StopBuild Operation</seealso>
         StopBuildResponse EndStopBuild(IAsyncResult asyncResult);
 
         #endregion
@@ -543,6 +573,7 @@ namespace Amazon.CodeBuild
         /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
         /// The specified AWS resource cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         UpdateProjectResponse UpdateProject(UpdateProjectRequest request);
 
         /// <summary>
@@ -556,6 +587,7 @@ namespace Amazon.CodeBuild
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProject
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         IAsyncResult BeginUpdateProject(UpdateProjectRequest request, AsyncCallback callback, object state);
 
 
@@ -567,6 +599,7 @@ namespace Amazon.CodeBuild
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProject.</param>
         /// 
         /// <returns>Returns a  UpdateProjectResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">REST API Reference for UpdateProject Operation</seealso>
         UpdateProjectResponse EndUpdateProject(IAsyncResult asyncResult);
 
         #endregion
