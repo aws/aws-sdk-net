@@ -44,24 +44,24 @@ namespace Amazon.StorageGateway
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html">AWS
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders">AWS
     /// Storage Gateway Required Request Headers</a>: Describes the required headers that
     /// you must send with every POST request to AWS Storage Gateway.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html">Signing
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests">Signing
     /// Requests</a>: AWS Storage Gateway requires that you authenticate every request you
     /// send; this topic describes how sign such a request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html">Error
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">Error
     /// Responses</a>: Provides reference information about AWS Storage Gateway errors.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html">Operations
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations
     /// in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway
     /// operations, their request parameters, response elements, possible errors, and examples
     /// of requests and responses.
@@ -125,7 +125,7 @@ namespace Amazon.StorageGateway
         /// The activation process also associates your gateway with your account; for more information,
         /// see <a>UpdateGatewayInformation</a>.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// You must turn on the gateway VM before you can activate your gateway.
         /// </para>
@@ -501,7 +501,7 @@ namespace Amazon.StorageGateway
         /// Creates a cached volume on a specified cached gateway. This operation is supported
         /// only for the gateway-cached volume architecture.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Cache storage must be allocated to the gateway before you can create a cached volume.
         /// Use the <a>AddCache</a> operation to add cache storage to a gateway. 
@@ -511,8 +511,15 @@ namespace Amazon.StorageGateway
         /// In the request, you must specify the gateway, size of the volume in bytes, the iSCSI
         /// target name, an IP address on which to expose the target, and a unique client token.
         /// In response, AWS Storage Gateway creates the volume and returns information about
-        /// it such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN
-        /// that initiators can use to connect to the volume target.
+        /// it. This information includes the volume Amazon Resource Name (ARN), its size, and
+        /// the iSCSI target ARN that initiators can use to connect to the volume target.
+        /// </para>
+        ///  
+        /// <para>
+        /// Optionally, you can provide the ARN for an existing volume as the <code>SourceVolumeARN</code>
+        /// for this cached volume, which creates an exact copy of the existing volume’s latest
+        /// recovery point. The <code>VolumeSizeInBytes</code> value must be equal to or larger
+        /// than the size of the copied volume, in bytes.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCachediSCSIVolume service method.</param>
@@ -554,6 +561,53 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  CreateNFSFileShare
+
+
+        /// <summary>
+        /// Creates a file share on an existing file gateway. In Storage Gateway, a file share
+        /// is a file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes
+        /// file shares using a Network File System (NFS) interface.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNFSFileShare service method.</param>
+        /// 
+        /// <returns>The response from the CreateNFSFileShare service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        CreateNFSFileShareResponse CreateNFSFileShare(CreateNFSFileShareRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNFSFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNFSFileShare operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNFSFileShare
+        ///         operation.</returns>
+        IAsyncResult BeginCreateNFSFileShare(CreateNFSFileShareRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateNFSFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNFSFileShare.</param>
+        /// 
+        /// <returns>Returns a  CreateNFSFileShareResult from StorageGateway.</returns>
+        CreateNFSFileShareResponse EndCreateNFSFileShare(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateSnapshot
 
 
@@ -578,7 +632,7 @@ namespace Amazon.StorageGateway
         /// ID. You can use this snapshot ID to check the snapshot progress or later use it when
         /// you want to create a volume from a snapshot.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// To list or delete a snapshot, you must use the Amazon EC2 API. For more information,
         /// see DescribeSnapshots or DeleteSnapshot in the <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
@@ -602,6 +656,10 @@ namespace Amazon.StorageGateway
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.ServiceUnavailableErrorException">
+        /// An internal server error has occurred because the service is unavailable. For more
+        /// information, see the error and message fields.
         /// </exception>
         CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request);
 
@@ -670,6 +728,10 @@ namespace Amazon.StorageGateway
         /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
         /// An exception occurred because an invalid gateway request was issued to the service.
         /// For more information, see the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.ServiceUnavailableErrorException">
+        /// An internal server error has occurred because the service is unavailable. For more
+        /// information, see the error and message fields.
         /// </exception>
         CreateSnapshotFromVolumeRecoveryPointResponse CreateSnapshotFromVolumeRecoveryPoint(CreateSnapshotFromVolumeRecoveryPointRequest request);
 
@@ -767,7 +829,7 @@ namespace Amazon.StorageGateway
         /// Creates one or more virtual tapes. You write data to the virtual tapes and then archive
         /// the tapes.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Cache storage must be allocated to the gateway before you can create virtual tapes.
         /// Use the <a>AddCache</a> operation to add cache storage to a gateway. 
@@ -820,7 +882,7 @@ namespace Amazon.StorageGateway
         /// Creates a virtual tape by using your own barcode. You write data to the virtual tape
         /// and then archive the tape.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// Cache storage must be allocated to the gateway before you can create a virtual tape.
         /// Use the <a>AddCache</a> operation to add cache storage to a gateway.
@@ -957,6 +1019,51 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>Returns a  DeleteChapCredentialsResult from StorageGateway.</returns>
         DeleteChapCredentialsResponse EndDeleteChapCredentials(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteFileShare
+
+
+        /// <summary>
+        /// Deletes a file share from a file gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFileShare service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFileShare service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        DeleteFileShareResponse DeleteFileShare(DeleteFileShareRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFileShare operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFileShare
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteFileShare(DeleteFileShareRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFileShare.</param>
+        /// 
+        /// <returns>Returns a  DeleteFileShareResult from StorageGateway.</returns>
+        DeleteFileShareResponse EndDeleteFileShare(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1536,6 +1643,51 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  DescribeNFSFileShares
+
+
+        /// <summary>
+        /// Gets a description for one or more file shares from a file gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNFSFileShares service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNFSFileShares service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        DescribeNFSFileSharesResponse DescribeNFSFileShares(DescribeNFSFileSharesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNFSFileShares operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNFSFileShares operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNFSFileShares
+        ///         operation.</returns>
+        IAsyncResult BeginDescribeNFSFileShares(DescribeNFSFileSharesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeNFSFileShares operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNFSFileShares.</param>
+        /// 
+        /// <returns>Returns a  DescribeNFSFileSharesResult from StorageGateway.</returns>
+        DescribeNFSFileSharesResponse EndDescribeNFSFileShares(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeSnapshotSchedule
 
 
@@ -1974,7 +2126,7 @@ namespace Amazon.StorageGateway
         /// <para>
         /// Use this operation for a gateway-VTL that is not reachable or not functioning.
         /// </para>
-        ///  <important>
+        ///  <important> 
         /// <para>
         /// Once a gateway is disabled it cannot be enabled.
         /// </para>
@@ -2016,6 +2168,52 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>Returns a  DisableGatewayResult from StorageGateway.</returns>
         DisableGatewayResponse EndDisableGateway(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListFileShares
+
+
+        /// <summary>
+        /// Gets a list of the file shares for a specific file gateway, or the list of file shares
+        /// that belong to the calling user account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFileShares service method.</param>
+        /// 
+        /// <returns>The response from the ListFileShares service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        ListFileSharesResponse ListFileShares(ListFileSharesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFileShares operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFileShares operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFileShares
+        ///         operation.</returns>
+        IAsyncResult BeginListFileShares(ListFileSharesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFileShares operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFileShares.</param>
+        /// 
+        /// <returns>Returns a  ListFileSharesResult from StorageGateway.</returns>
+        ListFileSharesResponse EndListFileShares(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2371,7 +2569,8 @@ namespace Amazon.StorageGateway
         /// <summary>
         /// Lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The
         /// response includes only the volume ARNs. If you want additional volume information,
-        /// use the <a>DescribeStorediSCSIVolumes</a> API.
+        /// use the <a>DescribeStorediSCSIVolumes</a> or the <a>DescribeCachediSCSIVolumes</a>
+        /// API.
         /// 
         ///  
         /// <para>
@@ -2622,7 +2821,7 @@ namespace Amazon.StorageGateway
         /// the tape is consistent. If your gateway crashes, virtual tapes that have recovery
         /// points can be recovered to a new gateway.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// The virtual tape can be retrieved to only one gateway. The retrieved tape is read-only.
         /// The virtual tape can be retrieved to only a gateway-VTL. There is no charge for retrieving
@@ -2729,7 +2928,7 @@ namespace Amazon.StorageGateway
         /// The operation shuts down the gateway service component running in the storage gateway's
         /// virtual machine (VM) and not the VM.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// If you want to shut down the VM, it is recommended that you first shut down the gateway
         /// component in the VM to avoid unpredictable conditions.
@@ -2741,7 +2940,7 @@ namespace Amazon.StorageGateway
         /// see <a>ActivateGateway</a>. Your applications cannot read from or write to the gateway's
         /// storage volumes, and there are no snapshots taken.
         /// </para>
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// When you make a shutdown request, you will get a <code>200 OK</code> success response
         /// immediately. However, it might take some time for the gateway to shut down. You can
@@ -2802,7 +3001,7 @@ namespace Amazon.StorageGateway
         /// from or write to the gateway's storage volumes and you will be able to take snapshot
         /// backups.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// When you make a request, you will get a 200 OK success response immediately. However,
         /// it might take some time for the gateway to be ready. You should call <a>DescribeGatewayInformation</a>
@@ -2975,7 +3174,7 @@ namespace Amazon.StorageGateway
         /// specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway
         /// in your request.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// For Gateways activated after September 2, 2015, the gateway's ARN contains the gateway
         /// ID rather than the gateway name. However, changing the name of the gateway has no
@@ -3029,13 +3228,13 @@ namespace Amazon.StorageGateway
         /// Updates the gateway virtual machine (VM) software. The request immediately triggers
         /// the software update.
         /// 
-        ///  <note>
+        ///  <note> 
         /// <para>
         /// When you make this request, you get a <code>200 OK</code> success response immediately.
         /// However, it might take some time for the update to complete. You can call <a>DescribeGatewayInformation</a>
         /// to verify the gateway is in the <code>STATE_RUNNING</code> state.
         /// </para>
-        ///  </note> <important>
+        ///  </note> <important> 
         /// <para>
         /// A software update forces a system restart of your gateway. You can minimize the chance
         /// of any disruption to your applications by increasing your iSCSI Initiators' timeouts.
@@ -3128,6 +3327,57 @@ namespace Amazon.StorageGateway
         /// 
         /// <returns>Returns a  UpdateMaintenanceStartTimeResult from StorageGateway.</returns>
         UpdateMaintenanceStartTimeResponse EndUpdateMaintenanceStartTime(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateNFSFileShare
+
+
+        /// <summary>
+        /// Updates a file share. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// To leave a file share field unchanged, set the corresponding input field to null.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNFSFileShare service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNFSFileShare service method, as returned by StorageGateway.</returns>
+        /// <exception cref="Amazon.StorageGateway.Model.InternalServerErrorException">
+        /// An internal server error has occurred during the request. For more information, see
+        /// the error and message fields.
+        /// </exception>
+        /// <exception cref="Amazon.StorageGateway.Model.InvalidGatewayRequestException">
+        /// An exception occurred because an invalid gateway request was issued to the service.
+        /// For more information, see the error and message fields.
+        /// </exception>
+        UpdateNFSFileShareResponse UpdateNFSFileShare(UpdateNFSFileShareRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNFSFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNFSFileShare operation on AmazonStorageGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNFSFileShare
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateNFSFileShare(UpdateNFSFileShareRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateNFSFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNFSFileShare.</param>
+        /// 
+        /// <returns>Returns a  UpdateNFSFileShareResult from StorageGateway.</returns>
+        UpdateNFSFileShareResponse EndUpdateNFSFileShare(IAsyncResult asyncResult);
 
         #endregion
         

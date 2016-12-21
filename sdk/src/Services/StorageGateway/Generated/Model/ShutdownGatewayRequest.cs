@@ -37,7 +37,7 @@ namespace Amazon.StorageGateway.Model
     /// The operation shuts down the gateway service component running in the storage gateway's
     /// virtual machine (VM) and not the VM.
     /// </para>
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// If you want to shut down the VM, it is recommended that you first shut down the gateway
     /// component in the VM to avoid unpredictable conditions.
@@ -49,7 +49,7 @@ namespace Amazon.StorageGateway.Model
     /// see <a>ActivateGateway</a>. Your applications cannot read from or write to the gateway's
     /// storage volumes, and there are no snapshots taken.
     /// </para>
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// When you make a shutdown request, you will get a <code>200 OK</code> success response
     /// immediately. However, it might take some time for the gateway to shut down. You can

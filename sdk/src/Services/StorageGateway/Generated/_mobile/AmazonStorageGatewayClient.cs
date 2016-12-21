@@ -51,24 +51,24 @@ namespace Amazon.StorageGateway
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html">AWS
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders">AWS
     /// Storage Gateway Required Request Headers</a>: Describes the required headers that
     /// you must send with every POST request to AWS Storage Gateway.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html">Signing
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests">Signing
     /// Requests</a>: AWS Storage Gateway requires that you authenticate every request you
     /// send; this topic describes how sign such a request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/APIErrorResponses.html">Error
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">Error
     /// Responses</a>: Provides reference information about AWS Storage Gateway errors.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html">Operations
+    ///  <a href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations
     /// in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage Gateway
     /// operations, their request parameters, response elements, possible errors, and examples
     /// of requests and responses.
@@ -556,6 +556,37 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  CreateNFSFileShare
+
+        internal CreateNFSFileShareResponse CreateNFSFileShare(CreateNFSFileShareRequest request)
+        {
+            var marshaller = new CreateNFSFileShareRequestMarshaller();
+            var unmarshaller = CreateNFSFileShareResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNFSFileShareRequest,CreateNFSFileShareResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNFSFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNFSFileShare operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateNFSFileShareResponse> CreateNFSFileShareAsync(CreateNFSFileShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateNFSFileShareRequestMarshaller();
+            var unmarshaller = CreateNFSFileShareResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateNFSFileShareRequest,CreateNFSFileShareResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSnapshot
 
         internal CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request)
@@ -768,6 +799,37 @@ namespace Amazon.StorageGateway
             var unmarshaller = DeleteChapCredentialsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteChapCredentialsRequest,DeleteChapCredentialsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteFileShare
+
+        internal DeleteFileShareResponse DeleteFileShare(DeleteFileShareRequest request)
+        {
+            var marshaller = new DeleteFileShareRequestMarshaller();
+            var unmarshaller = DeleteFileShareResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFileShareRequest,DeleteFileShareResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFileShare operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteFileShareResponse> DeleteFileShareAsync(DeleteFileShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteFileShareRequestMarshaller();
+            var unmarshaller = DeleteFileShareResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFileShareRequest,DeleteFileShareResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1114,6 +1176,37 @@ namespace Amazon.StorageGateway
 
         #endregion
         
+        #region  DescribeNFSFileShares
+
+        internal DescribeNFSFileSharesResponse DescribeNFSFileShares(DescribeNFSFileSharesRequest request)
+        {
+            var marshaller = new DescribeNFSFileSharesRequestMarshaller();
+            var unmarshaller = DescribeNFSFileSharesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNFSFileSharesRequest,DescribeNFSFileSharesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNFSFileShares operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNFSFileShares operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DescribeNFSFileSharesResponse> DescribeNFSFileSharesAsync(DescribeNFSFileSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DescribeNFSFileSharesRequestMarshaller();
+            var unmarshaller = DescribeNFSFileSharesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeNFSFileSharesRequest,DescribeNFSFileSharesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeSnapshotSchedule
 
         internal DescribeSnapshotScheduleResponse DescribeSnapshotSchedule(DescribeSnapshotScheduleRequest request)
@@ -1420,6 +1513,37 @@ namespace Amazon.StorageGateway
             var unmarshaller = DisableGatewayResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisableGatewayRequest,DisableGatewayResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListFileShares
+
+        internal ListFileSharesResponse ListFileShares(ListFileSharesRequest request)
+        {
+            var marshaller = new ListFileSharesRequestMarshaller();
+            var unmarshaller = ListFileSharesResponseUnmarshaller.Instance;
+
+            return Invoke<ListFileSharesRequest,ListFileSharesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFileShares operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFileShares operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListFileSharesResponse> ListFileSharesAsync(ListFileSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListFileSharesRequestMarshaller();
+            var unmarshaller = ListFileSharesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFileSharesRequest,ListFileSharesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2088,6 +2212,37 @@ namespace Amazon.StorageGateway
             var unmarshaller = UpdateMaintenanceStartTimeResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateMaintenanceStartTimeRequest,UpdateMaintenanceStartTimeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateNFSFileShare
+
+        internal UpdateNFSFileShareResponse UpdateNFSFileShare(UpdateNFSFileShareRequest request)
+        {
+            var marshaller = new UpdateNFSFileShareRequestMarshaller();
+            var unmarshaller = UpdateNFSFileShareResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNFSFileShareRequest,UpdateNFSFileShareResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNFSFileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNFSFileShare operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateNFSFileShareResponse> UpdateNFSFileShareAsync(UpdateNFSFileShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateNFSFileShareRequestMarshaller();
+            var unmarshaller = UpdateNFSFileShareResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateNFSFileShareRequest,UpdateNFSFileShareResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

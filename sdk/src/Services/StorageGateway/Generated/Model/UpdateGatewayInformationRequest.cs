@@ -33,7 +33,7 @@ namespace Amazon.StorageGateway.Model
     /// specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway
     /// in your request.
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// For Gateways activated after September 2, 2015, the gateway's ARN contains the gateway
     /// ID rather than the gateway name. However, changing the name of the gateway has no

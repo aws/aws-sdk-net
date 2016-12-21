@@ -35,6 +35,7 @@ namespace Amazon.StorageGateway.Model
         private double? _progress;
         private string _tapeARN;
         private string _tapeBarcode;
+        private DateTime? _tapeCreatedDate;
         private long? _tapeSizeInBytes;
         private string _tapeStatus;
         private string _vtlDevice;
@@ -96,6 +97,21 @@ namespace Amazon.StorageGateway.Model
         internal bool IsSetTapeBarcode()
         {
             return this._tapeBarcode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TapeCreatedDate.
+        /// </summary>
+        public DateTime TapeCreatedDate
+        {
+            get { return this._tapeCreatedDate.GetValueOrDefault(); }
+            set { this._tapeCreatedDate = value; }
+        }
+
+        // Check to see if TapeCreatedDate property is set
+        internal bool IsSetTapeCreatedDate()
+        {
+            return this._tapeCreatedDate.HasValue; 
         }
 
         /// <summary>

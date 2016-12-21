@@ -31,7 +31,8 @@ namespace Amazon.StorageGateway.Model
     /// Container for the parameters to the ListVolumes operation.
     /// Lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The
     /// response includes only the volume ARNs. If you want additional volume information,
-    /// use the <a>DescribeStorediSCSIVolumes</a> API.
+    /// use the <a>DescribeStorediSCSIVolumes</a> or the <a>DescribeCachediSCSIVolumes</a>
+    /// API.
     /// 
     ///  
     /// <para>

@@ -34,7 +34,7 @@ namespace Amazon.StorageGateway.Model
     /// from or write to the gateway's storage volumes and you will be able to take snapshot
     /// backups.
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// When you make a request, you will get a 200 OK success response immediately. However,
     /// it might take some time for the gateway to be ready. You should call <a>DescribeGatewayInformation</a>

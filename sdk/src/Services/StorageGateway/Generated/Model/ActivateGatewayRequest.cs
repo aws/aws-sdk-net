@@ -37,7 +37,7 @@ namespace Amazon.StorageGateway.Model
     /// The activation process also associates your gateway with your account; for more information,
     /// see <a>UpdateGatewayInformation</a>.
     /// 
-    ///  <note>
+    ///  <note> 
     /// <para>
     /// You must turn on the gateway VM before you can activate your gateway.
     /// </para>
