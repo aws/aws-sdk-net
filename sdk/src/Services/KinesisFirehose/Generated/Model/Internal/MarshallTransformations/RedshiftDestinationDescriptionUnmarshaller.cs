@@ -82,6 +82,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.CopyCommand = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProcessingConfiguration", targetDepth))
+                {
+                    var unmarshaller = ProcessingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ProcessingConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RetryOptions", targetDepth))
                 {
                     var unmarshaller = RedshiftRetryOptionsUnmarshaller.Instance;
@@ -92,6 +98,18 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3BackupDescription", targetDepth))
+                {
+                    var unmarshaller = S3DestinationDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.S3BackupDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3BackupMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3BackupMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("S3DestinationDescription", targetDepth))

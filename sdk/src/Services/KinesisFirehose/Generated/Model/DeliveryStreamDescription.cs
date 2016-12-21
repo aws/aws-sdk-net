@@ -170,10 +170,10 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// Used when calling the <a>UpdateDestination</a> operation. Each time the destination
-        /// is updated for the delivery stream, the VersionId is changed, and the current VersionId
-        /// is required when updating the destination. This is so that the service knows it is
-        /// applying the changes to the correct version of the delivery stream.
+        /// Each time the destination is updated for a delivery stream, the version ID is changed,
+        /// and the current version ID is required when updating the destination. This is so that
+        /// the service knows it is applying the changes to the correct version of the delivery
+        /// stream.
         /// </para>
         /// </summary>
         public string VersionId

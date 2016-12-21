@@ -29,28 +29,30 @@ namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDestination operation.
-    /// Updates the specified destination of the specified delivery stream. Note: Switching
-    /// between Elasticsearch and other services is not supported. For Elasticsearch destination,
-    /// you can only update an existing Elasticsearch destination with this operation.
+    /// Updates the specified destination of the specified delivery stream.
     /// 
     ///  
     /// <para>
-    /// This operation can be used to change the destination type (for example, to replace
+    /// You can use this operation to change the destination type (for example, to replace
     /// the Amazon S3 destination with Amazon Redshift) or change the parameters associated
-    /// with a given destination (for example, to change the bucket name of the Amazon S3
-    /// destination). The update may not occur immediately. The target delivery stream remains
-    /// active while the configurations are updated, so data writes to the delivery stream
-    /// can continue during this process. The updated configurations are normally effective
-    /// within a few minutes.
+    /// with a destination (for example, to change the bucket name of the Amazon S3 destination).
+    /// The update might not occur immediately. The target delivery stream remains active
+    /// while the configurations are updated, so data writes to the delivery stream can continue
+    /// during this process. The updated configurations are usually effective within a few
+    /// minutes.
+    /// </para>
+    ///  
+    /// <para>
+    /// Note that switching between Amazon ES and other services is not supported. For an
+    /// Amazon ES destination, you can only update to another Amazon ES destination.
     /// </para>
     ///  
     /// <para>
     /// If the destination type is the same, Firehose merges the configuration parameters
-    /// specified in the <a>UpdateDestination</a> request with the destination configuration
-    /// that already exists on the delivery stream. If any of the parameters are not specified
-    /// in the update request, then the existing configuration parameters are retained. For
-    /// example, in the Amazon S3 destination, if <a>EncryptionConfiguration</a> is not specified
-    /// then the existing <a>EncryptionConfiguration</a> is maintained on the destination.
+    /// specified with the destination configuration that already exists on the delivery stream.
+    /// If any of the parameters are not specified in the call, the existing values are retained.
+    /// For example, in the Amazon S3 destination, if <a>EncryptionConfiguration</a> is not
+    /// specified then the existing <a>EncryptionConfiguration</a> is maintained on the destination.
     /// </para>
     ///  
     /// <para>
@@ -60,13 +62,12 @@ namespace Amazon.KinesisFirehose.Model
     /// </para>
     ///  
     /// <para>
-    /// Firehose uses the <b>CurrentDeliveryStreamVersionId</b> to avoid race conditions and
-    /// conflicting merges. This is a required field in every request and the service only
-    /// updates the configuration if the existing configuration matches the <b>VersionId</b>.
-    /// After the update is applied successfully, the <b>VersionId</b> is updated, which can
-    /// be retrieved with the <a>DescribeDeliveryStream</a> operation. The new <b>VersionId</b>
-    /// should be uses to set <b>CurrentDeliveryStreamVersionId</b> in the next <a>UpdateDestination</a>
-    /// operation.
+    /// Firehose uses <b>CurrentDeliveryStreamVersionId</b> to avoid race conditions and conflicting
+    /// merges. This is a required field, and the service updates the configuration only if
+    /// the existing configuration has a version ID that matches. After the update is applied
+    /// successfully, the version ID is updated, and can be retrieved using <a>DescribeDeliveryStream</a>.
+    /// You should use the new version ID to set <b>CurrentDeliveryStreamVersionId</b> in
+    /// the next call.
     /// </para>
     /// </summary>
     public partial class UpdateDestinationRequest : AmazonKinesisFirehoseRequest
@@ -75,15 +76,16 @@ namespace Amazon.KinesisFirehose.Model
         private string _deliveryStreamName;
         private string _destinationId;
         private ElasticsearchDestinationUpdate _elasticsearchDestinationUpdate;
+        private ExtendedS3DestinationUpdate _extendedS3DestinationUpdate;
         private RedshiftDestinationUpdate _redshiftDestinationUpdate;
         private S3DestinationUpdate _s3DestinationUpdate;
 
         /// <summary>
         /// Gets and sets the property CurrentDeliveryStreamVersionId. 
         /// <para>
-        /// Obtain this value from the <b>VersionId</b> result of the <a>DeliveryStreamDescription</a>
-        /// operation. This value is required, and helps the service to perform conditional operations.
-        /// For example, if there is a interleaving update and this value is null, then the update
+        /// Obtain this value from the <b>VersionId</b> result of <a>DeliveryStreamDescription</a>.
+        /// This value is required, and helps the service to perform conditional operations. For
+        /// example, if there is a interleaving update and this value is null, then the update
         /// destination fails. After the update is successful, the <b>VersionId</b> value is updated.
         /// The service then performs a merge of the old configuration with the new configuration.
         /// </para>
@@ -155,6 +157,24 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExtendedS3DestinationUpdate. 
+        /// <para>
+        /// Describes an update for a destination in Amazon S3.
+        /// </para>
+        /// </summary>
+        public ExtendedS3DestinationUpdate ExtendedS3DestinationUpdate
+        {
+            get { return this._extendedS3DestinationUpdate; }
+            set { this._extendedS3DestinationUpdate = value; }
+        }
+
+        // Check to see if ExtendedS3DestinationUpdate property is set
+        internal bool IsSetExtendedS3DestinationUpdate()
+        {
+            return this._extendedS3DestinationUpdate != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RedshiftDestinationUpdate. 
         /// <para>
         /// Describes an update for a destination in Amazon Redshift.
@@ -175,7 +195,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property S3DestinationUpdate. 
         /// <para>
-        /// Describes an update for a destination in Amazon S3.
+        /// [Deprecated] Describes an update for a destination in Amazon S3.
         /// </para>
         /// </summary>
         public S3DestinationUpdate S3DestinationUpdate

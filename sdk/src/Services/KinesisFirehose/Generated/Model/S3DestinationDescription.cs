@@ -80,7 +80,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLoggingOptions. 
         /// <para>
-        /// Describes CloudWatch logging options for your delivery stream.
+        /// The CloudWatch logging options for your delivery stream.
         /// </para>
         /// </summary>
         public CloudWatchLoggingOptions CloudWatchLoggingOptions
@@ -98,7 +98,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CompressionFormat. 
         /// <para>
-        /// The compression format. If no value is specified, the default is <code>NOCOMPRESSION</code>.
+        /// The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.
         /// </para>
         /// </summary>
         public CompressionFormat CompressionFormat
@@ -138,8 +138,7 @@ namespace Amazon.KinesisFirehose.Model
         /// You can specify an extra prefix to be added in front of the time format prefix. Note
         /// that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For
         /// more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-        /// S3 Object Name Format</a> in the <a href="http://docs.aws.amazon.com/firehose/latest/dev/">Amazon
-        /// Kinesis Firehose Developer Guide</a>.
+        /// S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer Guide</i>.
         /// </para>
         /// </summary>
         public string Prefix

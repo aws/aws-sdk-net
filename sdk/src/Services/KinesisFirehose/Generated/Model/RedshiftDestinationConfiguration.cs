@@ -36,15 +36,18 @@ namespace Amazon.KinesisFirehose.Model
         private string _clusterJDBCURL;
         private CopyCommand _copyCommand;
         private string _password;
+        private ProcessingConfiguration _processingConfiguration;
         private RedshiftRetryOptions _retryOptions;
         private string _roleARN;
+        private S3DestinationConfiguration _s3BackupConfiguration;
+        private RedshiftS3BackupMode _s3BackupMode;
         private S3DestinationConfiguration _s3Configuration;
         private string _username;
 
         /// <summary>
         /// Gets and sets the property CloudWatchLoggingOptions. 
         /// <para>
-        /// Describes CloudWatch logging options for your delivery stream.
+        /// The CloudWatch logging options for your delivery stream.
         /// </para>
         /// </summary>
         public CloudWatchLoggingOptions CloudWatchLoggingOptions
@@ -114,10 +117,28 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProcessingConfiguration. 
+        /// <para>
+        /// The data processing configuration.
+        /// </para>
+        /// </summary>
+        public ProcessingConfiguration ProcessingConfiguration
+        {
+            get { return this._processingConfiguration; }
+            set { this._processingConfiguration = value; }
+        }
+
+        // Check to see if ProcessingConfiguration property is set
+        internal bool IsSetProcessingConfiguration()
+        {
+            return this._processingConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RetryOptions. 
         /// <para>
-        /// Configures retry behavior in the event that Firehose is unable to deliver documents
-        /// to Amazon Redshift. Default value is 3600 (60 minutes).
+        /// The retry behavior in the event that Firehose is unable to deliver documents to Amazon
+        /// Redshift. Default value is 3600 (60 minutes).
         /// </para>
         /// </summary>
         public RedshiftRetryOptions RetryOptions
@@ -151,10 +172,46 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
+        /// Gets and sets the property S3BackupConfiguration. 
+        /// <para>
+        /// The configuration for backup in Amazon S3.
+        /// </para>
+        /// </summary>
+        public S3DestinationConfiguration S3BackupConfiguration
+        {
+            get { return this._s3BackupConfiguration; }
+            set { this._s3BackupConfiguration = value; }
+        }
+
+        // Check to see if S3BackupConfiguration property is set
+        internal bool IsSetS3BackupConfiguration()
+        {
+            return this._s3BackupConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3BackupMode. 
+        /// <para>
+        /// The Amazon S3 backup mode.
+        /// </para>
+        /// </summary>
+        public RedshiftS3BackupMode S3BackupMode
+        {
+            get { return this._s3BackupMode; }
+            set { this._s3BackupMode = value; }
+        }
+
+        // Check to see if S3BackupMode property is set
+        internal bool IsSetS3BackupMode()
+        {
+            return this._s3BackupMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property S3Configuration. 
         /// <para>
-        /// The S3 configuration for the intermediate location from which Amazon Redshift obtains
-        /// data. Restrictions are described in the topic for <a>CreateDeliveryStream</a>.
+        /// The configuration for the intermediate Amazon S3 location from which Amazon Redshift
+        /// obtains data. Restrictions are described in the topic for <a>CreateDeliveryStream</a>.
         /// </para>
         ///  
         /// <para>

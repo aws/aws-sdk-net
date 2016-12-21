@@ -50,36 +50,29 @@ namespace Amazon.KinesisFirehose
         /// 
         ///  
         /// <para>
-        ///  <a>CreateDeliveryStream</a> is an asynchronous operation that immediately returns.
-        /// The initial status of the delivery stream is <code>CREATING</code>. After the delivery
-        /// stream is created, its status is <code>ACTIVE</code> and it now accepts data. Attempts
-        /// to send data to a delivery stream that is not in the <code>ACTIVE</code> state cause
-        /// an exception. To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// The name of a delivery stream identifies it. You can't have two delivery streams with
-        /// the same name in the same region. Two delivery streams in different AWS accounts or
-        /// different regions in the same AWS account can have the same name.
-        /// </para>
-        ///  
-        /// <para>
         /// By default, you can create up to 20 delivery streams per region.
         /// </para>
         ///  
         /// <para>
-        /// A delivery stream can only be configured with a single destination, Amazon S3, Amazon
-        /// Elasticsearch Service, or Amazon Redshift. For correct <a>CreateDeliveryStream</a>
-        /// request syntax, specify only one destination configuration parameter: either <b>S3DestinationConfiguration</b>,
-        /// <b>ElasticsearchDestinationConfiguration</b>, or <b>RedshiftDestinationConfiguration</b>.
-        /// 
+        /// This is an asynchronous operation that immediately returns. The initial status of
+        /// the delivery stream is <code>CREATING</code>. After the delivery stream is created,
+        /// its status is <code>ACTIVE</code> and it now accepts data. Attempts to send data to
+        /// a delivery stream that is not in the <code>ACTIVE</code> state cause an exception.
+        /// To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.
         /// </para>
         ///  
         /// <para>
-        /// As part of <b>S3DestinationConfiguration</b>, optional values <b>BufferingHints</b>,
-        /// <b>EncryptionConfiguration</b>, and <b>CompressionFormat</b> can be provided. By default,
-        /// if no <b>BufferingHints</b> value is provided, Firehose buffers data up to 5 MB or
-        /// for 5 minutes, whichever condition is satisfied first. Note that <b>BufferingHints</b>
+        /// A delivery stream is configured with a single destination: Amazon S3, Amazon Elasticsearch
+        /// Service, or Amazon Redshift. You must specify only one of the following destination
+        /// configuration parameters: <b>ExtendedS3DestinationConfiguration</b>, <b>S3DestinationConfiguration</b>,
+        /// <b>ElasticsearchDestinationConfiguration</b>, or <b>RedshiftDestinationConfiguration</b>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you specify <b>S3DestinationConfiguration</b>, you can also provide the following
+        /// optional values: <b>BufferingHints</b>, <b>EncryptionConfiguration</b>, and <b>CompressionFormat</b>.
+        /// By default, if no <b>BufferingHints</b> value is provided, Firehose buffers data up
+        /// to 5 MB or for 5 minutes, whichever condition is satisfied first. Note that <b>BufferingHints</b>
         /// is a hint, so there are some cases where the service cannot adhere to these conditions
         /// strictly; for example, record boundaries are such that the size is a little over or
         /// under the configured buffering size. By default, no encryption is performed. We strongly
@@ -87,14 +80,14 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// A few notes about <b>RedshiftDestinationConfiguration</b>:
+        /// A few notes about Amazon Redshift as a destination:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// An Amazon Redshift destination requires an S3 bucket as intermediate location, as
         /// Firehose first delivers data to S3 and then uses <code>COPY</code> syntax to load
         /// data into an Amazon Redshift table. This is specified in the <b>RedshiftDestinationConfiguration.S3Configuration</b>
-        /// parameter element.
+        /// parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -105,16 +98,15 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// We strongly recommend that the username and password provided is used exclusively
-        /// for Firehose purposes, and that the permissions for the account are restricted for
-        /// Amazon Redshift <code>INSERT</code> permissions.
+        /// We strongly recommend that you use the user name and password you provide exclusively
+        /// with Firehose, and that the permissions for the account are restricted for Amazon
+        /// Redshift <code>INSERT</code> permissions.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Firehose assumes the IAM role that is configured as part of destinations. The IAM
-        /// role should allow the Firehose principal to assume the role, and the role should have
-        /// permissions that allows the service to deliver the data. For more information, see
-        /// <a href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
+        /// Firehose assumes the IAM role that is configured as part of the destination. The role
+        /// should allow the Firehose principal to assume the role, and the role should have permissions
+        /// that allows the service to deliver the data. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon
         /// S3 Bucket Access</a> in the <i>Amazon Kinesis Firehose Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -597,14 +589,17 @@ namespace Amazon.KinesisFirehose
         /// 
         ///  
         /// <para>
+        /// By default, each delivery stream can take in up to 2,000 transactions per second,
+        /// 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a>
+        /// and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
+        /// for each delivery stream. For more information about limits, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// Kinesis Firehose Limits</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Each <a>PutRecordBatch</a> request supports up to 500 records. Each record in the
         /// request can be as large as 1,000 KB (before 64-bit encoding), up to a limit of 4 MB
-        /// for the entire request. By default, each delivery stream can take in up to 2,000 transactions
-        /// per second, 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a>
-        /// and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
-        /// for each delivery stream. For more information about limits and how to request an
-        /// increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
-        /// Kinesis Firehose Limits</a>. 
+        /// for the entire request. These limits cannot be changed.
         /// </para>
         ///  
         /// <para>
@@ -623,37 +618,36 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// The <a>PutRecordBatch</a> response includes a count of any failed records, <b>FailedPutCount</b>,
-        /// and an array of responses, <b>RequestResponses</b>. The <b>FailedPutCount</b> value
-        /// is a count of records that failed. Each entry in the <b>RequestResponses</b> array
-        /// gives additional information of the processed record. Each entry in <b>RequestResponses</b>
-        /// directly correlates with a record in the request array using the same ordering, from
-        /// the top to the bottom of the request and response. <b>RequestResponses</b> always
-        /// includes the same number of records as the request array. <b>RequestResponses</b>
-        /// both successfully and unsuccessfully processed records. Firehose attempts to process
-        /// all records in each <a>PutRecordBatch</a> request. A single record failure does not
-        /// stop the processing of subsequent records.
+        /// The <a>PutRecordBatch</a> response includes a count of failed records, <b>FailedPutCount</b>,
+        /// and an array of responses, <b>RequestResponses</b>. Each entry in the <b>RequestResponses</b>
+        /// array provides additional information about the processed record, and directly correlates
+        /// with a record in the request array using the same ordering, from the top to the bottom.
+        /// The response array always includes the same number of records as the request array.
+        /// <b>RequestResponses</b> includes both successfully and unsuccessfully processed records.
+        /// Firehose attempts to process all records in each <a>PutRecordBatch</a> request. A
+        /// single record failure does not stop the processing of subsequent records.
         /// </para>
         ///  
         /// <para>
-        /// A successfully processed record includes a <b>RecordId</b> value, which is a unique
-        /// value identified for the record. An unsuccessfully processed record includes <b>ErrorCode</b>
-        /// and <b>ErrorMessage</b> values. <b>ErrorCode</b> reflects the type of error and is
-        /// one of the following values: <code>ServiceUnavailable</code> or <code>InternalFailure</code>.
-        /// <code>ErrorMessage</code> provides more detailed information about the error.
+        /// A successfully processed record includes a <b>RecordId</b> value, which is unique
+        /// for the record. An unsuccessfully processed record includes <b>ErrorCode</b> and <b>ErrorMessage</b>
+        /// values. <b>ErrorCode</b> reflects the type of error, and is one of the following values:
+        /// <code>ServiceUnavailable</code> or <code>InternalFailure</code>. <b>ErrorMessage</b>
+        /// provides more detailed information about the error.
         /// </para>
         ///  
         /// <para>
-        /// If <b>FailedPutCount</b> is greater than 0 (zero), retry the request. A retry of the
-        /// entire batch of records is possible; however, we strongly recommend that you inspect
-        /// the entire response and resend only those records that failed processing. This minimizes
-        /// duplicate records and also reduces the total bytes sent (and corresponding charges).
+        /// If there is an internal server error or a timeout, the write might have completed
+        /// or it might have failed. If <b>FailedPutCount</b> is greater than 0, retry the request,
+        /// resending only those records that might have failed processing. This minimizes the
+        /// possible duplicate records and also reduces the total bytes sent (and corresponding
+        /// charges). We recommend that you handle any duplicates at the destination.
         /// </para>
         ///  
         /// <para>
-        /// If the <a>PutRecordBatch</a> operation throws a <b>ServiceUnavailableException</b>,
-        /// back off and retry. If the exception persists, it is possible that the throughput
-        /// limits have been exceeded for the delivery stream.
+        /// If <a>PutRecordBatch</a> throws <b>ServiceUnavailableException</b>, back off and retry.
+        /// If the exception persists, it is possible that the throughput limits have been exceeded
+        /// for the delivery stream.
         /// </para>
         ///  
         /// <para>
@@ -688,14 +682,17 @@ namespace Amazon.KinesisFirehose
         /// 
         ///  
         /// <para>
+        /// By default, each delivery stream can take in up to 2,000 transactions per second,
+        /// 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a>
+        /// and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
+        /// for each delivery stream. For more information about limits, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// Kinesis Firehose Limits</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Each <a>PutRecordBatch</a> request supports up to 500 records. Each record in the
         /// request can be as large as 1,000 KB (before 64-bit encoding), up to a limit of 4 MB
-        /// for the entire request. By default, each delivery stream can take in up to 2,000 transactions
-        /// per second, 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a>
-        /// and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
-        /// for each delivery stream. For more information about limits and how to request an
-        /// increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
-        /// Kinesis Firehose Limits</a>. 
+        /// for the entire request. These limits cannot be changed.
         /// </para>
         ///  
         /// <para>
@@ -714,37 +711,36 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// The <a>PutRecordBatch</a> response includes a count of any failed records, <b>FailedPutCount</b>,
-        /// and an array of responses, <b>RequestResponses</b>. The <b>FailedPutCount</b> value
-        /// is a count of records that failed. Each entry in the <b>RequestResponses</b> array
-        /// gives additional information of the processed record. Each entry in <b>RequestResponses</b>
-        /// directly correlates with a record in the request array using the same ordering, from
-        /// the top to the bottom of the request and response. <b>RequestResponses</b> always
-        /// includes the same number of records as the request array. <b>RequestResponses</b>
-        /// both successfully and unsuccessfully processed records. Firehose attempts to process
-        /// all records in each <a>PutRecordBatch</a> request. A single record failure does not
-        /// stop the processing of subsequent records.
+        /// The <a>PutRecordBatch</a> response includes a count of failed records, <b>FailedPutCount</b>,
+        /// and an array of responses, <b>RequestResponses</b>. Each entry in the <b>RequestResponses</b>
+        /// array provides additional information about the processed record, and directly correlates
+        /// with a record in the request array using the same ordering, from the top to the bottom.
+        /// The response array always includes the same number of records as the request array.
+        /// <b>RequestResponses</b> includes both successfully and unsuccessfully processed records.
+        /// Firehose attempts to process all records in each <a>PutRecordBatch</a> request. A
+        /// single record failure does not stop the processing of subsequent records.
         /// </para>
         ///  
         /// <para>
-        /// A successfully processed record includes a <b>RecordId</b> value, which is a unique
-        /// value identified for the record. An unsuccessfully processed record includes <b>ErrorCode</b>
-        /// and <b>ErrorMessage</b> values. <b>ErrorCode</b> reflects the type of error and is
-        /// one of the following values: <code>ServiceUnavailable</code> or <code>InternalFailure</code>.
-        /// <code>ErrorMessage</code> provides more detailed information about the error.
+        /// A successfully processed record includes a <b>RecordId</b> value, which is unique
+        /// for the record. An unsuccessfully processed record includes <b>ErrorCode</b> and <b>ErrorMessage</b>
+        /// values. <b>ErrorCode</b> reflects the type of error, and is one of the following values:
+        /// <code>ServiceUnavailable</code> or <code>InternalFailure</code>. <b>ErrorMessage</b>
+        /// provides more detailed information about the error.
         /// </para>
         ///  
         /// <para>
-        /// If <b>FailedPutCount</b> is greater than 0 (zero), retry the request. A retry of the
-        /// entire batch of records is possible; however, we strongly recommend that you inspect
-        /// the entire response and resend only those records that failed processing. This minimizes
-        /// duplicate records and also reduces the total bytes sent (and corresponding charges).
+        /// If there is an internal server error or a timeout, the write might have completed
+        /// or it might have failed. If <b>FailedPutCount</b> is greater than 0, retry the request,
+        /// resending only those records that might have failed processing. This minimizes the
+        /// possible duplicate records and also reduces the total bytes sent (and corresponding
+        /// charges). We recommend that you handle any duplicates at the destination.
         /// </para>
         ///  
         /// <para>
-        /// If the <a>PutRecordBatch</a> operation throws a <b>ServiceUnavailableException</b>,
-        /// back off and retry. If the exception persists, it is possible that the throughput
-        /// limits have been exceeded for the delivery stream.
+        /// If <a>PutRecordBatch</a> throws <b>ServiceUnavailableException</b>, back off and retry.
+        /// If the exception persists, it is possible that the throughput limits have been exceeded
+        /// for the delivery stream.
         /// </para>
         ///  
         /// <para>
@@ -779,14 +775,17 @@ namespace Amazon.KinesisFirehose
         /// 
         ///  
         /// <para>
+        /// By default, each delivery stream can take in up to 2,000 transactions per second,
+        /// 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a>
+        /// and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
+        /// for each delivery stream. For more information about limits, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
+        /// Kinesis Firehose Limits</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// Each <a>PutRecordBatch</a> request supports up to 500 records. Each record in the
         /// request can be as large as 1,000 KB (before 64-bit encoding), up to a limit of 4 MB
-        /// for the entire request. By default, each delivery stream can take in up to 2,000 transactions
-        /// per second, 5,000 records per second, or 5 MB per second. Note that if you use <a>PutRecord</a>
-        /// and <a>PutRecordBatch</a>, the limits are an aggregate across these two operations
-        /// for each delivery stream. For more information about limits and how to request an
-        /// increase, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon
-        /// Kinesis Firehose Limits</a>. 
+        /// for the entire request. These limits cannot be changed.
         /// </para>
         ///  
         /// <para>
@@ -805,37 +804,36 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// The <a>PutRecordBatch</a> response includes a count of any failed records, <b>FailedPutCount</b>,
-        /// and an array of responses, <b>RequestResponses</b>. The <b>FailedPutCount</b> value
-        /// is a count of records that failed. Each entry in the <b>RequestResponses</b> array
-        /// gives additional information of the processed record. Each entry in <b>RequestResponses</b>
-        /// directly correlates with a record in the request array using the same ordering, from
-        /// the top to the bottom of the request and response. <b>RequestResponses</b> always
-        /// includes the same number of records as the request array. <b>RequestResponses</b>
-        /// both successfully and unsuccessfully processed records. Firehose attempts to process
-        /// all records in each <a>PutRecordBatch</a> request. A single record failure does not
-        /// stop the processing of subsequent records.
+        /// The <a>PutRecordBatch</a> response includes a count of failed records, <b>FailedPutCount</b>,
+        /// and an array of responses, <b>RequestResponses</b>. Each entry in the <b>RequestResponses</b>
+        /// array provides additional information about the processed record, and directly correlates
+        /// with a record in the request array using the same ordering, from the top to the bottom.
+        /// The response array always includes the same number of records as the request array.
+        /// <b>RequestResponses</b> includes both successfully and unsuccessfully processed records.
+        /// Firehose attempts to process all records in each <a>PutRecordBatch</a> request. A
+        /// single record failure does not stop the processing of subsequent records.
         /// </para>
         ///  
         /// <para>
-        /// A successfully processed record includes a <b>RecordId</b> value, which is a unique
-        /// value identified for the record. An unsuccessfully processed record includes <b>ErrorCode</b>
-        /// and <b>ErrorMessage</b> values. <b>ErrorCode</b> reflects the type of error and is
-        /// one of the following values: <code>ServiceUnavailable</code> or <code>InternalFailure</code>.
-        /// <code>ErrorMessage</code> provides more detailed information about the error.
+        /// A successfully processed record includes a <b>RecordId</b> value, which is unique
+        /// for the record. An unsuccessfully processed record includes <b>ErrorCode</b> and <b>ErrorMessage</b>
+        /// values. <b>ErrorCode</b> reflects the type of error, and is one of the following values:
+        /// <code>ServiceUnavailable</code> or <code>InternalFailure</code>. <b>ErrorMessage</b>
+        /// provides more detailed information about the error.
         /// </para>
         ///  
         /// <para>
-        /// If <b>FailedPutCount</b> is greater than 0 (zero), retry the request. A retry of the
-        /// entire batch of records is possible; however, we strongly recommend that you inspect
-        /// the entire response and resend only those records that failed processing. This minimizes
-        /// duplicate records and also reduces the total bytes sent (and corresponding charges).
+        /// If there is an internal server error or a timeout, the write might have completed
+        /// or it might have failed. If <b>FailedPutCount</b> is greater than 0, retry the request,
+        /// resending only those records that might have failed processing. This minimizes the
+        /// possible duplicate records and also reduces the total bytes sent (and corresponding
+        /// charges). We recommend that you handle any duplicates at the destination.
         /// </para>
         ///  
         /// <para>
-        /// If the <a>PutRecordBatch</a> operation throws a <b>ServiceUnavailableException</b>,
-        /// back off and retry. If the exception persists, it is possible that the throughput
-        /// limits have been exceeded for the delivery stream.
+        /// If <a>PutRecordBatch</a> throws <b>ServiceUnavailableException</b>, back off and retry.
+        /// If the exception persists, it is possible that the throughput limits have been exceeded
+        /// for the delivery stream.
         /// </para>
         ///  
         /// <para>
@@ -882,28 +880,30 @@ namespace Amazon.KinesisFirehose
 
 
         /// <summary>
-        /// Updates the specified destination of the specified delivery stream. Note: Switching
-        /// between Elasticsearch and other services is not supported. For Elasticsearch destination,
-        /// you can only update an existing Elasticsearch destination with this operation.
+        /// Updates the specified destination of the specified delivery stream.
         /// 
         ///  
         /// <para>
-        /// This operation can be used to change the destination type (for example, to replace
+        /// You can use this operation to change the destination type (for example, to replace
         /// the Amazon S3 destination with Amazon Redshift) or change the parameters associated
-        /// with a given destination (for example, to change the bucket name of the Amazon S3
-        /// destination). The update may not occur immediately. The target delivery stream remains
-        /// active while the configurations are updated, so data writes to the delivery stream
-        /// can continue during this process. The updated configurations are normally effective
-        /// within a few minutes.
+        /// with a destination (for example, to change the bucket name of the Amazon S3 destination).
+        /// The update might not occur immediately. The target delivery stream remains active
+        /// while the configurations are updated, so data writes to the delivery stream can continue
+        /// during this process. The updated configurations are usually effective within a few
+        /// minutes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note that switching between Amazon ES and other services is not supported. For an
+        /// Amazon ES destination, you can only update to another Amazon ES destination.
         /// </para>
         ///  
         /// <para>
         /// If the destination type is the same, Firehose merges the configuration parameters
-        /// specified in the <a>UpdateDestination</a> request with the destination configuration
-        /// that already exists on the delivery stream. If any of the parameters are not specified
-        /// in the update request, then the existing configuration parameters are retained. For
-        /// example, in the Amazon S3 destination, if <a>EncryptionConfiguration</a> is not specified
-        /// then the existing <a>EncryptionConfiguration</a> is maintained on the destination.
+        /// specified with the destination configuration that already exists on the delivery stream.
+        /// If any of the parameters are not specified in the call, the existing values are retained.
+        /// For example, in the Amazon S3 destination, if <a>EncryptionConfiguration</a> is not
+        /// specified then the existing <a>EncryptionConfiguration</a> is maintained on the destination.
         /// </para>
         ///  
         /// <para>
@@ -913,13 +913,12 @@ namespace Amazon.KinesisFirehose
         /// </para>
         ///  
         /// <para>
-        /// Firehose uses the <b>CurrentDeliveryStreamVersionId</b> to avoid race conditions and
-        /// conflicting merges. This is a required field in every request and the service only
-        /// updates the configuration if the existing configuration matches the <b>VersionId</b>.
-        /// After the update is applied successfully, the <b>VersionId</b> is updated, which can
-        /// be retrieved with the <a>DescribeDeliveryStream</a> operation. The new <b>VersionId</b>
-        /// should be uses to set <b>CurrentDeliveryStreamVersionId</b> in the next <a>UpdateDestination</a>
-        /// operation.
+        /// Firehose uses <b>CurrentDeliveryStreamVersionId</b> to avoid race conditions and conflicting
+        /// merges. This is a required field, and the service updates the configuration only if
+        /// the existing configuration has a version ID that matches. After the update is applied
+        /// successfully, the version ID is updated, and can be retrieved using <a>DescribeDeliveryStream</a>.
+        /// You should use the new version ID to set <b>CurrentDeliveryStreamVersionId</b> in
+        /// the next call.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDestination service method.</param>

@@ -84,6 +84,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetExtendedS3DestinationConfiguration())
+                {
+                    context.Writer.WritePropertyName("ExtendedS3DestinationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExtendedS3DestinationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExtendedS3DestinationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRedshiftDestinationConfiguration())
                 {
                     context.Writer.WritePropertyName("RedshiftDestinationConfiguration");

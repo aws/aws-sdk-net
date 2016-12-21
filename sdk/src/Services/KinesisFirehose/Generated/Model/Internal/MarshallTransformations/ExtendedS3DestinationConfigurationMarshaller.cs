@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RedshiftDestinationConfiguration Marshaller
+    /// ExtendedS3DestinationConfiguration Marshaller
     /// </summary>       
-    public class RedshiftDestinationConfigurationMarshaller : IRequestMarshaller<RedshiftDestinationConfiguration, JsonMarshallerContext> 
+    public class ExtendedS3DestinationConfigurationMarshaller : IRequestMarshaller<ExtendedS3DestinationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,8 +43,25 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RedshiftDestinationConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ExtendedS3DestinationConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBucketARN())
+            {
+                context.Writer.WritePropertyName("BucketARN");
+                context.Writer.Write(requestObject.BucketARN);
+            }
+
+            if(requestObject.IsSetBufferingHints())
+            {
+                context.Writer.WritePropertyName("BufferingHints");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BufferingHintsMarshaller.Instance;
+                marshaller.Marshall(requestObject.BufferingHints, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCloudWatchLoggingOptions())
             {
                 context.Writer.WritePropertyName("CloudWatchLoggingOptions");
@@ -56,27 +73,27 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetClusterJDBCURL())
+            if(requestObject.IsSetCompressionFormat())
             {
-                context.Writer.WritePropertyName("ClusterJDBCURL");
-                context.Writer.Write(requestObject.ClusterJDBCURL);
+                context.Writer.WritePropertyName("CompressionFormat");
+                context.Writer.Write(requestObject.CompressionFormat);
             }
 
-            if(requestObject.IsSetCopyCommand())
+            if(requestObject.IsSetEncryptionConfiguration())
             {
-                context.Writer.WritePropertyName("CopyCommand");
+                context.Writer.WritePropertyName("EncryptionConfiguration");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = CopyCommandMarshaller.Instance;
-                marshaller.Marshall(requestObject.CopyCommand, context);
+                var marshaller = EncryptionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EncryptionConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetPassword())
+            if(requestObject.IsSetPrefix())
             {
-                context.Writer.WritePropertyName("Password");
-                context.Writer.Write(requestObject.Password);
+                context.Writer.WritePropertyName("Prefix");
+                context.Writer.Write(requestObject.Prefix);
             }
 
             if(requestObject.IsSetProcessingConfiguration())
@@ -86,17 +103,6 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 
                 var marshaller = ProcessingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProcessingConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRetryOptions())
-            {
-                context.Writer.WritePropertyName("RetryOptions");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RedshiftRetryOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.RetryOptions, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -124,29 +130,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.S3BackupMode);
             }
 
-            if(requestObject.IsSetS3Configuration())
-            {
-                context.Writer.WritePropertyName("S3Configuration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = S3DestinationConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3Configuration, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetUsername())
-            {
-                context.Writer.WritePropertyName("Username");
-                context.Writer.Write(requestObject.Username);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static RedshiftDestinationConfigurationMarshaller Instance = new RedshiftDestinationConfigurationMarshaller();
+        public readonly static ExtendedS3DestinationConfigurationMarshaller Instance = new ExtendedS3DestinationConfigurationMarshaller();
 
     }
 }

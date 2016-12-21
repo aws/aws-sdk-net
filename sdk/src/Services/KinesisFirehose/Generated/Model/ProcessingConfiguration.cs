@@ -28,28 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeDeliveryStream operation.
+    /// Describes a data processing configuration.
     /// </summary>
-    public partial class DescribeDeliveryStreamResponse : AmazonWebServiceResponse
+    public partial class ProcessingConfiguration
     {
-        private DeliveryStreamDescription _deliveryStreamDescription;
+        private bool? _enabled;
+        private List<Processor> _processors = new List<Processor>();
 
         /// <summary>
-        /// Gets and sets the property DeliveryStreamDescription. 
+        /// Gets and sets the property Enabled. 
         /// <para>
-        /// Information about the delivery stream.
+        /// Enables or disables data processing.
         /// </para>
         /// </summary>
-        public DeliveryStreamDescription DeliveryStreamDescription
+        public bool Enabled
         {
-            get { return this._deliveryStreamDescription; }
-            set { this._deliveryStreamDescription = value; }
+            get { return this._enabled.GetValueOrDefault(); }
+            set { this._enabled = value; }
         }
 
-        // Check to see if DeliveryStreamDescription property is set
-        internal bool IsSetDeliveryStreamDescription()
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
         {
-            return this._deliveryStreamDescription != null;
+            return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Processors. 
+        /// <para>
+        /// The data processors.
+        /// </para>
+        /// </summary>
+        public List<Processor> Processors
+        {
+            get { return this._processors; }
+            set { this._processors = value; }
+        }
+
+        // Check to see if Processors property is set
+        internal bool IsSetProcessors()
+        {
+            return this._processors != null && this._processors.Count > 0; 
         }
 
     }

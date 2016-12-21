@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Describes CloudWatch logging options for your delivery stream.
+    /// Describes the CloudWatch logging options for your delivery stream.
     /// </summary>
     public partial class CloudWatchLoggingOptions
     {
@@ -57,7 +57,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        /// The CloudWatch group name for logging. This value is required if Enabled is true.
+        /// The CloudWatch group name for logging. This value is required if CloudWatch logging
+        /// is enabled.
         /// </para>
         /// </summary>
         public string LogGroupName
@@ -75,7 +76,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property LogStreamName. 
         /// <para>
-        /// The CloudWatch log stream name for logging. This value is required if Enabled is true.
+        /// The CloudWatch log stream name for logging. This value is required if CloudWatch logging
+        /// is enabled.
         /// </para>
         /// </summary>
         public string LogStreamName

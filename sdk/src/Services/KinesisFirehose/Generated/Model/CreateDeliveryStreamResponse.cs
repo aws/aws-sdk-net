@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Contains the output of <a>CreateDeliveryStream</a>.
+    /// This is the response object from the CreateDeliveryStream operation.
     /// </summary>
     public partial class CreateDeliveryStreamResponse : AmazonWebServiceResponse
     {

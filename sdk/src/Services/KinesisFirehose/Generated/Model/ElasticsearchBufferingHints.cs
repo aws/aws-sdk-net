@@ -62,9 +62,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  
         /// <para>
-        /// We recommend setting <b>SizeInMBs</b> to a value greater than the amount of data you
+        /// We recommend setting this parameter to a value greater than the amount of data you
         /// typically ingest into the delivery stream in 10 seconds. For example, if you typically
-        /// ingest data at 1 MB/sec, set <b>SizeInMBs</b> to be 10 MB or higher.
+        /// ingest data at 1 MB/sec, the value should be 10 MB or higher.
         /// </para>
         /// </summary>
         public int SizeInMBs

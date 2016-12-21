@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ElasticsearchDestinationDescription Object
+    /// Response Unmarshaller for ExtendedS3DestinationDescription Object
     /// </summary>  
-    public class ElasticsearchDestinationDescriptionUnmarshaller : IUnmarshaller<ElasticsearchDestinationDescription, XmlUnmarshallerContext>, IUnmarshaller<ElasticsearchDestinationDescription, JsonUnmarshallerContext>
+    public class ExtendedS3DestinationDescriptionUnmarshaller : IUnmarshaller<ExtendedS3DestinationDescription, XmlUnmarshallerContext>, IUnmarshaller<ExtendedS3DestinationDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ElasticsearchDestinationDescription IUnmarshaller<ElasticsearchDestinationDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ExtendedS3DestinationDescription IUnmarshaller<ExtendedS3DestinationDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,20 +53,26 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ElasticsearchDestinationDescription Unmarshall(JsonUnmarshallerContext context)
+        public ExtendedS3DestinationDescription Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ElasticsearchDestinationDescription unmarshalledObject = new ElasticsearchDestinationDescription();
+            ExtendedS3DestinationDescription unmarshalledObject = new ExtendedS3DestinationDescription();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BucketARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BucketARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BufferingHints", targetDepth))
                 {
-                    var unmarshaller = ElasticsearchBufferingHintsUnmarshaller.Instance;
+                    var unmarshaller = BufferingHintsUnmarshaller.Instance;
                     unmarshalledObject.BufferingHints = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -76,22 +82,22 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.CloudWatchLoggingOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DomainARN", targetDepth))
+                if (context.TestExpression("CompressionFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompressionFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IndexName", targetDepth))
+                if (context.TestExpression("EncryptionConfiguration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IndexRotationPeriod", targetDepth))
+                if (context.TestExpression("Prefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexRotationPeriod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ProcessingConfiguration", targetDepth))
@@ -100,16 +106,16 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProcessingConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RetryOptions", targetDepth))
-                {
-                    var unmarshaller = ElasticsearchRetryOptionsUnmarshaller.Instance;
-                    unmarshalledObject.RetryOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("RoleARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3BackupDescription", targetDepth))
+                {
+                    var unmarshaller = S3DestinationDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.S3BackupDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("S3BackupMode", targetDepth))
@@ -118,30 +124,18 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3BackupMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("S3DestinationDescription", targetDepth))
-                {
-                    var unmarshaller = S3DestinationDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.S3DestinationDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TypeName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TypeName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static ElasticsearchDestinationDescriptionUnmarshaller _instance = new ElasticsearchDestinationDescriptionUnmarshaller();        
+        private static ExtendedS3DestinationDescriptionUnmarshaller _instance = new ExtendedS3DestinationDescriptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ElasticsearchDestinationDescriptionUnmarshaller Instance
+        public static ExtendedS3DestinationDescriptionUnmarshaller Instance
         {
             get
             {

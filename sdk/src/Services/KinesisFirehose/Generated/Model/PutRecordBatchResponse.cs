@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Contains the output of <a>PutRecordBatch</a>.
+    /// This is the response object from the PutRecordBatch operation.
     /// </summary>
     public partial class PutRecordBatchResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property FailedPutCount. 
         /// <para>
-        /// The number of unsuccessfully written records.
+        /// The number of records that might have failed processing.
         /// </para>
         /// </summary>
         public int FailedPutCount
@@ -56,8 +56,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property RequestResponses. 
         /// <para>
-        /// The results for the individual records. The index of each element matches the same
-        /// index in which records were sent.
+        /// The results array. For each record, the index of the response element is the same
+        /// as the index used in the request array.
         /// </para>
         /// </summary>
         public List<PutRecordBatchResponseEntry> RequestResponses

@@ -28,29 +28,46 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// The destination description in Amazon ES.
+    /// Describes the configuration of a destination in Amazon S3.
     /// </summary>
-    public partial class ElasticsearchDestinationDescription
+    public partial class ExtendedS3DestinationConfiguration
     {
-        private ElasticsearchBufferingHints _bufferingHints;
+        private string _bucketARN;
+        private BufferingHints _bufferingHints;
         private CloudWatchLoggingOptions _cloudWatchLoggingOptions;
-        private string _domainARN;
-        private string _indexName;
-        private ElasticsearchIndexRotationPeriod _indexRotationPeriod;
+        private CompressionFormat _compressionFormat;
+        private EncryptionConfiguration _encryptionConfiguration;
+        private string _prefix;
         private ProcessingConfiguration _processingConfiguration;
-        private ElasticsearchRetryOptions _retryOptions;
         private string _roleARN;
-        private ElasticsearchS3BackupMode _s3BackupMode;
-        private S3DestinationDescription _s3DestinationDescription;
-        private string _typeName;
+        private S3DestinationConfiguration _s3BackupConfiguration;
+        private S3BackupMode _s3BackupMode;
+
+        /// <summary>
+        /// Gets and sets the property BucketARN. 
+        /// <para>
+        /// The ARN of the S3 bucket.
+        /// </para>
+        /// </summary>
+        public string BucketARN
+        {
+            get { return this._bucketARN; }
+            set { this._bucketARN = value; }
+        }
+
+        // Check to see if BucketARN property is set
+        internal bool IsSetBucketARN()
+        {
+            return this._bucketARN != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BufferingHints. 
         /// <para>
-        /// The buffering options.
+        /// The buffering option.
         /// </para>
         /// </summary>
-        public ElasticsearchBufferingHints BufferingHints
+        public BufferingHints BufferingHints
         {
             get { return this._bufferingHints; }
             set { this._bufferingHints = value; }
@@ -65,7 +82,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLoggingOptions. 
         /// <para>
-        /// The CloudWatch logging options.
+        /// The CloudWatch logging options for your delivery stream.
         /// </para>
         /// </summary>
         public CloudWatchLoggingOptions CloudWatchLoggingOptions
@@ -81,57 +98,61 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainARN. 
+        /// Gets and sets the property CompressionFormat. 
         /// <para>
-        /// The ARN of the Amazon ES domain.
+        /// The compression format. If no value is specified, the default is UNCOMPRESSED.
         /// </para>
         /// </summary>
-        public string DomainARN
+        public CompressionFormat CompressionFormat
         {
-            get { return this._domainARN; }
-            set { this._domainARN = value; }
+            get { return this._compressionFormat; }
+            set { this._compressionFormat = value; }
         }
 
-        // Check to see if DomainARN property is set
-        internal bool IsSetDomainARN()
+        // Check to see if CompressionFormat property is set
+        internal bool IsSetCompressionFormat()
         {
-            return this._domainARN != null;
+            return this._compressionFormat != null;
         }
 
         /// <summary>
-        /// Gets and sets the property IndexName. 
+        /// Gets and sets the property EncryptionConfiguration. 
         /// <para>
-        /// The Elasticsearch index name.
+        /// The encryption configuration. If no value is specified, the default is no encryption.
         /// </para>
         /// </summary>
-        public string IndexName
+        public EncryptionConfiguration EncryptionConfiguration
         {
-            get { return this._indexName; }
-            set { this._indexName = value; }
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
         }
 
-        // Check to see if IndexName property is set
-        internal bool IsSetIndexName()
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
         {
-            return this._indexName != null;
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>
-        /// Gets and sets the property IndexRotationPeriod. 
+        /// Gets and sets the property Prefix. 
         /// <para>
-        /// The Elasticsearch index rotation period
+        /// The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3 files.
+        /// You can specify an extra prefix to be added in front of the time format prefix. Note
+        /// that if the prefix ends with a slash, it appears as a folder in the S3 bucket. For
+        /// more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
+        /// S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer Guide</i>.
         /// </para>
         /// </summary>
-        public ElasticsearchIndexRotationPeriod IndexRotationPeriod
+        public string Prefix
         {
-            get { return this._indexRotationPeriod; }
-            set { this._indexRotationPeriod = value; }
+            get { return this._prefix; }
+            set { this._prefix = value; }
         }
 
-        // Check to see if IndexRotationPeriod property is set
-        internal bool IsSetIndexRotationPeriod()
+        // Check to see if Prefix property is set
+        internal bool IsSetPrefix()
         {
-            return this._indexRotationPeriod != null;
+            return this._prefix != null;
         }
 
         /// <summary>
@@ -153,24 +174,6 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RetryOptions. 
-        /// <para>
-        /// The Amazon ES retry options.
-        /// </para>
-        /// </summary>
-        public ElasticsearchRetryOptions RetryOptions
-        {
-            get { return this._retryOptions; }
-            set { this._retryOptions = value; }
-        }
-
-        // Check to see if RetryOptions property is set
-        internal bool IsSetRetryOptions()
-        {
-            return this._retryOptions != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// The ARN of the AWS credentials.
@@ -189,12 +192,30 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
+        /// Gets and sets the property S3BackupConfiguration. 
+        /// <para>
+        /// The configuration for backup in Amazon S3.
+        /// </para>
+        /// </summary>
+        public S3DestinationConfiguration S3BackupConfiguration
+        {
+            get { return this._s3BackupConfiguration; }
+            set { this._s3BackupConfiguration = value; }
+        }
+
+        // Check to see if S3BackupConfiguration property is set
+        internal bool IsSetS3BackupConfiguration()
+        {
+            return this._s3BackupConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property S3BackupMode. 
         /// <para>
         /// The Amazon S3 backup mode.
         /// </para>
         /// </summary>
-        public ElasticsearchS3BackupMode S3BackupMode
+        public S3BackupMode S3BackupMode
         {
             get { return this._s3BackupMode; }
             set { this._s3BackupMode = value; }
@@ -204,42 +225,6 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetS3BackupMode()
         {
             return this._s3BackupMode != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property S3DestinationDescription. 
-        /// <para>
-        /// The Amazon S3 destination.
-        /// </para>
-        /// </summary>
-        public S3DestinationDescription S3DestinationDescription
-        {
-            get { return this._s3DestinationDescription; }
-            set { this._s3DestinationDescription = value; }
-        }
-
-        // Check to see if S3DestinationDescription property is set
-        internal bool IsSetS3DestinationDescription()
-        {
-            return this._s3DestinationDescription != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TypeName. 
-        /// <para>
-        /// The Elasticsearch type name.
-        /// </para>
-        /// </summary>
-        public string TypeName
-        {
-            get { return this._typeName; }
-            set { this._typeName = value; }
-        }
-
-        // Check to see if TypeName property is set
-        internal bool IsSetTypeName()
-        {
-            return this._typeName != null;
         }
 
     }

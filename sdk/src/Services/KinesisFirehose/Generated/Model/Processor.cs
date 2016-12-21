@@ -28,28 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeDeliveryStream operation.
+    /// Describes a data processor.
     /// </summary>
-    public partial class DescribeDeliveryStreamResponse : AmazonWebServiceResponse
+    public partial class Processor
     {
-        private DeliveryStreamDescription _deliveryStreamDescription;
+        private List<ProcessorParameter> _parameters = new List<ProcessorParameter>();
+        private ProcessorType _type;
 
         /// <summary>
-        /// Gets and sets the property DeliveryStreamDescription. 
+        /// Gets and sets the property Parameters. 
         /// <para>
-        /// Information about the delivery stream.
+        /// The processor parameters.
         /// </para>
         /// </summary>
-        public DeliveryStreamDescription DeliveryStreamDescription
+        public List<ProcessorParameter> Parameters
         {
-            get { return this._deliveryStreamDescription; }
-            set { this._deliveryStreamDescription = value; }
+            get { return this._parameters; }
+            set { this._parameters = value; }
         }
 
-        // Check to see if DeliveryStreamDescription property is set
-        internal bool IsSetDeliveryStreamDescription()
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
         {
-            return this._deliveryStreamDescription != null;
+            return this._parameters != null && this._parameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of processor.
+        /// </para>
+        /// </summary>
+        public ProcessorType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

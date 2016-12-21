@@ -28,28 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeDeliveryStream operation.
+    /// Describes the processor parameter.
     /// </summary>
-    public partial class DescribeDeliveryStreamResponse : AmazonWebServiceResponse
+    public partial class ProcessorParameter
     {
-        private DeliveryStreamDescription _deliveryStreamDescription;
+        private ProcessorParameterName _parameterName;
+        private string _parameterValue;
 
         /// <summary>
-        /// Gets and sets the property DeliveryStreamDescription. 
+        /// Gets and sets the property ParameterName. 
         /// <para>
-        /// Information about the delivery stream.
+        /// The name of the parameter.
         /// </para>
         /// </summary>
-        public DeliveryStreamDescription DeliveryStreamDescription
+        public ProcessorParameterName ParameterName
         {
-            get { return this._deliveryStreamDescription; }
-            set { this._deliveryStreamDescription = value; }
+            get { return this._parameterName; }
+            set { this._parameterName = value; }
         }
 
-        // Check to see if DeliveryStreamDescription property is set
-        internal bool IsSetDeliveryStreamDescription()
+        // Check to see if ParameterName property is set
+        internal bool IsSetParameterName()
         {
-            return this._deliveryStreamDescription != null;
+            return this._parameterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParameterValue. 
+        /// <para>
+        /// The parameter value.
+        /// </para>
+        /// </summary>
+        public string ParameterValue
+        {
+            get { return this._parameterValue; }
+            set { this._parameterValue = value; }
+        }
+
+        // Check to see if ParameterValue property is set
+        internal bool IsSetParameterValue()
+        {
+            return this._parameterValue != null;
         }
 
     }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DestinationDescription Object
+    /// Response Unmarshaller for ProcessorParameter Object
     /// </summary>  
-    public class DestinationDescriptionUnmarshaller : IUnmarshaller<DestinationDescription, XmlUnmarshallerContext>, IUnmarshaller<DestinationDescription, JsonUnmarshallerContext>
+    public class ProcessorParameterUnmarshaller : IUnmarshaller<ProcessorParameter, XmlUnmarshallerContext>, IUnmarshaller<ProcessorParameter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DestinationDescription IUnmarshaller<DestinationDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ProcessorParameter IUnmarshaller<ProcessorParameter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,27 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DestinationDescription Unmarshall(JsonUnmarshallerContext context)
+        public ProcessorParameter Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DestinationDescription unmarshalledObject = new DestinationDescription();
+            ProcessorParameter unmarshalledObject = new ProcessorParameter();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DestinationId", targetDepth))
+                if (context.TestExpression("ParameterName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ParameterName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ElasticsearchDestinationDescription", targetDepth))
+                if (context.TestExpression("ParameterValue", targetDepth))
                 {
-                    var unmarshaller = ElasticsearchDestinationDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.ElasticsearchDestinationDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExtendedS3DestinationDescription", targetDepth))
-                {
-                    var unmarshaller = ExtendedS3DestinationDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.ExtendedS3DestinationDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RedshiftDestinationDescription", targetDepth))
-                {
-                    var unmarshaller = RedshiftDestinationDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.RedshiftDestinationDescription = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("S3DestinationDescription", targetDepth))
-                {
-                    var unmarshaller = S3DestinationDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.S3DestinationDescription = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParameterValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +82,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
         }
 
 
-        private static DestinationDescriptionUnmarshaller _instance = new DestinationDescriptionUnmarshaller();        
+        private static ProcessorParameterUnmarshaller _instance = new ProcessorParameterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DestinationDescriptionUnmarshaller Instance
+        public static ProcessorParameterUnmarshaller Instance
         {
             get
             {
