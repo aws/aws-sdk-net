@@ -29,8 +29,8 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeImages operation.
-    /// Returns metadata about the images in a repository, including image size and creation
-    /// date.
+    /// Returns metadata about the images in a repository, including image size, image tags,
+    /// and creation date.
     /// 
     ///  <note> 
     /// <para>
@@ -136,7 +136,7 @@ namespace Amazon.ECR.Model
         /// Gets and sets the property RegistryId. 
         /// <para>
         /// The AWS account ID associated with the registry that contains the repository in which
-        /// to list images. If you do not specify a registry, the default registry is assumed.
+        /// to describe images. If you do not specify a registry, the default registry is assumed.
         /// </para>
         /// </summary>
         public string RegistryId

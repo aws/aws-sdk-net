@@ -330,6 +330,10 @@
     <pattern>[a-zA-Z0-9-_+.]+:[a-fA-F0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ECR.Model.Layer.MediaType</property>
+    <pattern>\w{1,127}\/[-+.\w]{1,127}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ECR.Model.LayerFailure.LayerDigest</property>
     <min>0</min>
     <max>1000</max>

@@ -67,6 +67,17 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAcceptedMediaTypes())
+                {
+                    context.Writer.WritePropertyName("acceptedMediaTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAcceptedMediaTypesListValue in publicRequest.AcceptedMediaTypes)
+                    {
+                            context.Writer.Write(publicRequestAcceptedMediaTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetImageIds())
                 {
                     context.Writer.WritePropertyName("imageIds");

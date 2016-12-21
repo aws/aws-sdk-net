@@ -29,18 +29,20 @@ namespace Amazon.ECR.Model
 {
     /// <summary>
     /// Container for the parameters to the PutImage operation.
-    /// Creates or updates the image manifest associated with an image.
+    /// Creates or updates the image manifest and tags associated with an image.
     /// 
     ///  <note> 
     /// <para>
     /// This operation is used by the Amazon ECR proxy, and it is not intended for general
-    /// use by customers. Use the <code>docker</code> CLI to pull, tag, and push images.
+    /// use by customers for pulling and pushing images. In most cases, you should use the
+    /// <code>docker</code> CLI to pull, tag, and push images.
     /// </para>
     ///  </note>
     /// </summary>
     public partial class PutImageRequest : AmazonECRRequest
     {
         private string _imageManifest;
+        private string _imageTag;
         private string _registryId;
         private string _repositoryName;
 
@@ -60,6 +62,25 @@ namespace Amazon.ECR.Model
         internal bool IsSetImageManifest()
         {
             return this._imageManifest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageTag. 
+        /// <para>
+        /// The tag to associate with the image. This parameter is required for images that use
+        /// the Docker Image Manifest V2 Schema 2 or OCI formats.
+        /// </para>
+        /// </summary>
+        public string ImageTag
+        {
+            get { return this._imageTag; }
+            set { this._imageTag = value; }
+        }
+
+        // Check to see if ImageTag property is set
+        internal bool IsSetImageTag()
+        {
+            return this._imageTag != null;
         }
 
         /// <summary>

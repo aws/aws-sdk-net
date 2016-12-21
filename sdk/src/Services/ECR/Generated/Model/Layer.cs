@@ -35,12 +35,12 @@ namespace Amazon.ECR.Model
         private LayerAvailability _layerAvailability;
         private string _layerDigest;
         private long? _layerSize;
+        private string _mediaType;
 
         /// <summary>
         /// Gets and sets the property LayerAvailability. 
         /// <para>
-        /// The availability status of the image layer. Valid values are <code>AVAILABLE</code>
-        /// and <code>UNAVAILABLE</code>.
+        /// The availability status of the image layer.
         /// </para>
         /// </summary>
         public LayerAvailability LayerAvailability
@@ -89,6 +89,25 @@ namespace Amazon.ECR.Model
         internal bool IsSetLayerSize()
         {
             return this._layerSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MediaType. 
+        /// <para>
+        /// The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code>
+        /// or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.
+        /// </para>
+        /// </summary>
+        public string MediaType
+        {
+            get { return this._mediaType; }
+            set { this._mediaType = value; }
+        }
+
+        // Check to see if MediaType property is set
+        internal bool IsSetMediaType()
+        {
+            return this._mediaType != null;
         }
 
     }
