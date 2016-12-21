@@ -1,3 +1,11 @@
+### 3.3.33.0 (2016-12-21 06:01 UTC)
+* KinesisFirehose (3.3.1.0)
+	* API Update for KinesisFirehose:  Processing feature enables users to process and modify records before Amazon Firehose delivers them to destinations.
+* Route53 (3.3.3.0)
+	* API Update for Route53 : enum updates for eu-west-2 and ca-central-1
+* StorageGateway (3.3.1.0)
+	* API Update for StorageGateway: File gateway is a new mode in the AWS Storage Gateway that support a file interface into S3, alongside the current block-based volume and VTL storage. File gateway combines a service and virtual software appliance, enabling you to store and retrieve objects in Amazon S3 using industry standard file protocols such as NFS. The software appliance, or gateway, is deployed into your on-premises environment as a virtual machine (VM) running on VMware ESXi. The gateway provides access to objects in S3 as files on a Network File System (NFS) mount point.
+
 ### 3.3.32.0 (2016-12-20 00:59 UTC)
 * ApplicationDiscoveryService (3.3.1.0)
 	* API Update for ApplicationDiscoveryService : Adds new APIs to group discovered servers into Applications with get summary and neighbors. Includes additional filters for ListConfigurations and DescribeAgents API.
