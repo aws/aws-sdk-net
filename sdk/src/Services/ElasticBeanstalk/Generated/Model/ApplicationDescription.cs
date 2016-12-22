@@ -37,6 +37,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private DateTime? _dateCreated;
         private DateTime? _dateUpdated;
         private string _description;
+        private ApplicationResourceLifecycleConfig _resourceLifecycleConfig;
         private List<string> _versions = new List<string>();
 
         /// <summary>
@@ -132,6 +133,24 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceLifecycleConfig. 
+        /// <para>
+        /// The lifecycle settings for the application.
+        /// </para>
+        /// </summary>
+        public ApplicationResourceLifecycleConfig ResourceLifecycleConfig
+        {
+            get { return this._resourceLifecycleConfig; }
+            set { this._resourceLifecycleConfig = value; }
+        }
+
+        // Check to see if ResourceLifecycleConfig property is set
+        internal bool IsSetResourceLifecycleConfig()
+        {
+            return this._resourceLifecycleConfig != null;
         }
 
         /// <summary>

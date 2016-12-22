@@ -1397,6 +1397,37 @@ namespace Amazon.ElasticBeanstalk
 
         #endregion
         
+        #region  UpdateApplicationResourceLifecycle
+
+        internal UpdateApplicationResourceLifecycleResponse UpdateApplicationResourceLifecycle(UpdateApplicationResourceLifecycleRequest request)
+        {
+            var marshaller = new UpdateApplicationResourceLifecycleRequestMarshaller();
+            var unmarshaller = UpdateApplicationResourceLifecycleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApplicationResourceLifecycleRequest,UpdateApplicationResourceLifecycleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateApplicationResourceLifecycle operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApplicationResourceLifecycle operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateApplicationResourceLifecycleResponse> UpdateApplicationResourceLifecycleAsync(UpdateApplicationResourceLifecycleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateApplicationResourceLifecycleRequestMarshaller();
+            var unmarshaller = UpdateApplicationResourceLifecycleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateApplicationResourceLifecycleRequest,UpdateApplicationResourceLifecycleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateApplicationVersion
 
         internal UpdateApplicationVersionResponse UpdateApplicationVersion(UpdateApplicationVersionRequest request)

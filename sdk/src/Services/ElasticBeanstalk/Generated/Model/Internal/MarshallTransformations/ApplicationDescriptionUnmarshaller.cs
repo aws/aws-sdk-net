@@ -85,6 +85,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ResourceLifecycleConfig", targetDepth))
+                    {
+                        var unmarshaller = ApplicationResourceLifecycleConfigUnmarshaller.Instance;
+                        unmarshalledObject.ResourceLifecycleConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Versions/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

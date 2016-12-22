@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateApplication Request Marshaller
+    /// UpdateApplicationResourceLifecycle Request Marshaller
     /// </summary>       
-    public class CreateApplicationRequestMarshaller : IMarshaller<IRequest, CreateApplicationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateApplicationResourceLifecycleRequestMarshaller : IMarshaller<IRequest, UpdateApplicationResourceLifecycleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateApplicationRequest)input);
+            return this.Marshall((UpdateApplicationResourceLifecycleRequest)input);
         }
     
         /// <summary>
@@ -50,10 +50,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateApplicationRequest publicRequest)
+        public IRequest Marshall(UpdateApplicationResourceLifecycleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ElasticBeanstalk");
-            request.Parameters.Add("Action", "CreateApplication");
+            request.Parameters.Add("Action", "UpdateApplicationResourceLifecycle");
             request.Parameters.Add("Version", "2010-12-01");
 
             if(publicRequest != null)
@@ -61,10 +61,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetApplicationName())
                 {
                     request.Parameters.Add("ApplicationName", StringUtils.FromString(publicRequest.ApplicationName));
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
                 if(publicRequest.IsSetResourceLifecycleConfig())
                 {

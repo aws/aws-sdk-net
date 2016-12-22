@@ -28,39 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateApplication operation.
-    /// Creates an application that has one configuration template named <code>default</code>
-    /// and no application versions.
+    /// This is the response object from the UpdateApplicationResourceLifecycle operation.
     /// </summary>
-    public partial class CreateApplicationRequest : AmazonElasticBeanstalkRequest
+    public partial class UpdateApplicationResourceLifecycleResponse : AmazonWebServiceResponse
     {
         private string _applicationName;
-        private string _description;
         private ApplicationResourceLifecycleConfig _resourceLifecycleConfig;
-
-        /// <summary>
-        /// Empty constructor used to set  properties independently even when a simple constructor is available
-        /// </summary>
-        public CreateApplicationRequest() { }
-
-        /// <summary>
-        /// Instantiates CreateApplicationRequest with the parameterized properties
-        /// </summary>
-        /// <param name="applicationName">The name of the application. Constraint: This name must be unique within your account. If the specified name already exists, the action returns an <code>InvalidParameterValue</code> error.</param>
-        public CreateApplicationRequest(string applicationName)
-        {
-            _applicationName = applicationName;
-        }
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
         /// The name of the application.
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraint: This name must be unique within your account. If the specified name already
-        /// exists, the action returns an <code>InvalidParameterValue</code> error.
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -76,28 +54,9 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. 
-        /// <para>
-        /// Describes the application.
-        /// </para>
-        /// </summary>
-        public string Description
-        {
-            get { return this._description; }
-            set { this._description = value; }
-        }
-
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
-        {
-            return this._description != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property ResourceLifecycleConfig. 
         /// <para>
-        /// Specify an application resource lifecycle configuration to prevent your application
-        /// from accumulating too many versions.
+        /// The lifecycle configuration.
         /// </para>
         /// </summary>
         public ApplicationResourceLifecycleConfig ResourceLifecycleConfig
