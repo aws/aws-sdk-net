@@ -33,7 +33,8 @@ namespace AWSSDK.UnitTests
             .AppendLine("[session_profile]")
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
             .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
-            .Append("aws_session_token=session_aws_session_token")
+            .AppendLine("aws_session_token=session_aws_session_token")
+            .Append("unique_key=XXX")
             .ToString();
 
         private static readonly CredentialProfileOptions SessionProfileOptions = new CredentialProfileOptions()
@@ -47,7 +48,8 @@ namespace AWSSDK.UnitTests
             .AppendLine("[session_profile]")
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
             .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
-            .Append("aws_session_token=session_aws_session_token_UPDATED")
+            .AppendLine("aws_session_token=session_aws_session_token_UPDATED")
+            .Append("unique_key=XXX")
             .ToString();
 
         private static readonly CredentialProfileOptions SessionProfileOptionsUpdated = new CredentialProfileOptions()
@@ -61,7 +63,8 @@ namespace AWSSDK.UnitTests
             .AppendLine("[assume_role_mfa_profile]")
             .AppendLine("mfa_serial=mfa_serial_number")
             .AppendLine("role_arn=assume_role_arn")
-            .Append("source_profile=basic_profile")
+            .AppendLine("source_profile=basic_profile")
+            .Append("unique_key=XXX")
             .ToString();
 
         private static readonly CredentialProfileOptions AssumeRoleMfaProfileOptions = new CredentialProfileOptions()
@@ -74,11 +77,18 @@ namespace AWSSDK.UnitTests
         private static readonly string BasicProfileConfigText = new StringBuilder()
             .AppendLine("[profile basic_profile]")
             .AppendLine("aws_access_key_id=basic_aws_access_key_id")
-            .Append("aws_secret_access_key=basic_aws_secret_access_key")
+            .AppendLine("aws_secret_access_key=basic_aws_secret_access_key")
+            .Append("unique_key=XXX")
             .ToString();
 
         private static readonly string BasicProfileCredentialsText =
             BasicProfileConfigText.Replace("[profile ", "[");
+
+        private static readonly string LegacyBasicProfileCredentialsText = new StringBuilder()
+            .AppendLine("[basic_profile]")
+            .AppendLine("aws_access_key_id=basic_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=basic_aws_secret_access_key")
+            .ToString();
 
         private static readonly string BasicProfileTextConfigPartial = new StringBuilder()
             .AppendLine("[profile basic_profile]")
@@ -129,7 +139,8 @@ namespace AWSSDK.UnitTests
             .AppendLine("[updated_profile]")
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
             .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
-            .Append("aws_session_token=session_aws_session_token")
+            .AppendLine("aws_session_token=session_aws_session_token")
+            .Append("unique_key=XXX")
             .ToString();
 
         private static readonly CredentialProfileOptions UpdatedProfileTypeOptionsBefore = new CredentialProfileOptions()
@@ -143,6 +154,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("[updated_profile]")
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
             .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
+            .Append("unique_key=XXX")
             .ToString();
 
         private static readonly CredentialProfileOptions UpdatedProfileTypeOptionsAfter = new CredentialProfileOptions()
@@ -164,6 +176,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
             .AppendLine("property3=value3")
             .AppendLine("property2=value2")
+            .Append("unique_key=XXX")
             .ToString();
 
         private static readonly Dictionary<string,string> UpdatedProfileWithPropertiesBefore = new Dictionary<string, string>()
@@ -178,6 +191,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
             .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
             .AppendLine("property3=valueZ")
+            .AppendLine("unique_key=XXX")
             .Append("property4=value4")
             .ToString();
 
@@ -204,6 +218,17 @@ namespace AWSSDK.UnitTests
             using (var tester = new SharedCredentialsFileTestFixture())
             {
                 tester.AssertWriteProfile("basic_profile", BasicProfileOptions, BasicProfileCredentialsText);
+            }
+        }
+
+        [TestMethod]
+        public void StoreAssignsUniqueKeyToExistingProfile()
+        {
+            var uniqueKey = Guid.NewGuid().ToString();
+            using (var tester = new SharedCredentialsFileTestFixture(LegacyBasicProfileCredentialsText, null, false, uniqueKey))
+            {
+                var profile = tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions);
+                Assert.AreEqual(uniqueKey, profile.UniqueKey);
             }
         }
 
@@ -407,10 +432,7 @@ namespace AWSSDK.UnitTests
 
                 using (var tester = new SharedCredentialsFileTestFixture(SessionProfileText))
                 {
-                    AssertExtensions.ExpectException(() =>
-                    {
-                        tester.TestTryGetProfile("session_profile", true, true);
-                    }, typeof(InvalidDataException), new Regex("SharedCredentialsFile does not support the Session profile type."));
+                    tester.TestTryGetProfile("session_profile", false, false);
                 }
             }
             finally

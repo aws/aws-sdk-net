@@ -28,7 +28,7 @@ namespace Amazon.Runtime.Internal
         private static readonly HashSet<string> TypePropertySet =
             new HashSet<string>(typeof(CredentialProfileOptions).GetProperties().Select((p) => p.Name), StringComparer.OrdinalIgnoreCase);
 
-        private static readonly PropertyInfo[] credentialProfileProperties = typeof(CredentialProfileOptions).GetProperties();
+        private static readonly PropertyInfo[] credentialProfileReflectionProperties = typeof(CredentialProfileOptions).GetProperties();
 
         private Dictionary<string, string> nameMapping;
         private HashSet<string> mappedNames;
@@ -44,9 +44,9 @@ namespace Amazon.Runtime.Internal
             mappedNames = new HashSet<string>(nameMapping.Values.Where(v => !string.IsNullOrEmpty(v)), StringComparer.OrdinalIgnoreCase);
         }
 
-        public List<KeyValuePair<string, string>> Convert(CredentialProfileOptions profileOptions)
+        public Dictionary<string, string> Convert(CredentialProfileOptions profileOptions)
         {
-            var list = new List<KeyValuePair<string, string>>();
+            var dictionary = new Dictionary<string, string>();
             var properties = typeof(CredentialProfileOptions).GetProperties();
 
             // ensure repeatable order
@@ -65,52 +65,141 @@ namespace Amazon.Runtime.Internal
                     }
                     else
                     {
-                        list.Add(new KeyValuePair<string, string>(nameMapping[property.Name], value));
+                        dictionary.Add(nameMapping[property.Name], value);
                     }
                 }
             }
-            return list;
+            return dictionary;
+        }
+
+
+        /// <summary>
+        /// Separate the profileDictionary into its parts.
+        /// profileDictionary = profileOptions + reservedProperties + userProperties
+        /// </summary>
+        /// <param name="profileDictionary">Dictionary with everything in it</param>
+        /// <param name="reservedKeys">Keys to ignore</param>
+        /// <param name="profileOptions">The resulting CredentialProfileOptions</param>
+        /// <param name="userProperties">The properties that are left</param>
+        public void ExtractProfileParts(Dictionary<string, string> profileDictionary, HashSet<string> reservedKeys,
+            out CredentialProfileOptions profileOptions, out Dictionary<string, string> userProperties)
+        {
+            Dictionary<string, string> reservedProperties;
+            ExtractProfileParts(profileDictionary, reservedKeys, out profileOptions,
+                out reservedProperties, out userProperties);
         }
 
         /// <summary>
-        /// Remove keys related to the CredentialsProfileOptions from the dictionary
-        /// and create a CredentialsProfileOptions object out of them.
-        ///
-        /// Warning: This method modifies the contents of the properties dictionary.
+        /// Separate the profileDictionary into its parts.
+        /// profileDictionary = profileOptions + reservedProperties + userProperties
         /// </summary>
-        /// <param name="properties"></param>
-        /// <returns></returns>
-        public CredentialProfileOptions ExtractCredentialProfileOptions(Dictionary<string, string> properties)
+        /// <param name="profileDictionary">Dictionary with everything in it</param>
+        /// <param name="reservedKeys">Keys for the reservedKeys dictionary</param>
+        /// <param name="profileOptions">The resulting CredentialProfileOptions</param>
+        /// <param name="reservedProperties">The resulting reserved properties</param>
+        /// <param name="userProperties">The properties that are left</param>
+        public void ExtractProfileParts(Dictionary<string, string> profileDictionary, HashSet<string> reservedKeys,
+            out CredentialProfileOptions profileOptions, out Dictionary<string, string> reservedProperties,
+            out Dictionary<string, string> userProperties)
         {
-            var profileOptions = new CredentialProfileOptions();
+            // profileDictionary = profileOptions + reservedProperties + userProperties
+            // algorithm: userProperties = profileDictionary - profileOptions - reservedProperties
 
-            foreach (var property in credentialProfileProperties)
+            // userProperties = profileDictionary
+            userProperties = new Dictionary<string, string>(profileDictionary);
+
+            // userProperties -= profileOptions
+            profileOptions = new CredentialProfileOptions();
+            foreach (var reflectionProperty in credentialProfileReflectionProperties)
             {
                 string value = null;
-                var mappedName = nameMapping[property.Name];
+                var mappedName = nameMapping[reflectionProperty.Name];
                 if (mappedName != null)
                 {
-                    if (properties.TryGetValue(mappedName, out value))
+                    if (userProperties.TryGetValue(mappedName, out value))
                     {
-                        property.SetValue(profileOptions, value, null);
+                        reflectionProperty.SetValue(profileOptions, value, null);
+                        userProperties.Remove(mappedName);
                     }
-                    properties.Remove(mappedName);
                 }
             }
-            return profileOptions;
+
+            // userProperties -= reservedProperties
+            if (reservedKeys == null)
+            {
+                reservedProperties = null;
+            }
+            else
+            {
+                reservedProperties = new Dictionary<string, string>();
+                foreach (var key in reservedKeys)
+                {
+                    string value = null;
+                    if (userProperties.TryGetValue(key, out value))
+                    {
+                        reservedProperties.Add(key, value);
+                        userProperties.Remove(key);
+                    }
+                }
+            }
         }
 
         /// <summary>
-        /// Make sure the profileProperties dictionary doesn't contain any keys that
+        /// Validate the userProperties and then combine profileOptions, reservedProperties, and userProperties into one Dictionary.
+        /// </summary>
+        /// <param name="profileOptions"></param>
+        /// <param name="reservedPropertyNames"></param>
+        /// <param name="reservedProperties"></param>
+        /// <param name="userProperties"></param>
+        /// <returns></returns>
+        public Dictionary<string, string> CombineProfileParts(CredentialProfileOptions profileOptions,
+            HashSet<string> reservedPropertyNames, Dictionary<string, string> reservedProperties, Dictionary<string, string> userProperties)
+        {
+            ValidateNoProfileOptionsProperties(userProperties);
+            ValidateNoReservedProperties(reservedPropertyNames, userProperties);
+
+            var profileDictionary = new Dictionary<string, string>();
+            foreach (var pair in Convert(profileOptions).Concat(reservedProperties).Concat(userProperties))
+            {
+                profileDictionary.Add(pair.Key, pair.Value);
+            }
+            return profileDictionary;
+
+        }
+
+        /// <summary>
+        /// Make sure the userProperties dictionary doesn't contain any keys that are reserved.
+        /// Check is case-insensitive for added safety.
+        /// </summary>
+        /// <param name="reservedPropertyNames"></param>
+        /// <param name="userProperties"></param>
+        private static void ValidateNoReservedProperties(HashSet<string> reservedPropertyNames, Dictionary<string, string> userProperties)
+        {
+            List<string> reservedKeys = new List<string>();
+            foreach (var key in reservedPropertyNames)
+            {
+                if (userProperties.Keys.Contains(key, StringComparer.OrdinalIgnoreCase))
+                {
+                    reservedKeys.Add(key);
+                }
+            }
+
+            if (reservedKeys.Count > 0)
+                throw new ArgumentException("The profile properties cannot contain reserved names as keys: " +
+                    string.Join(" or ", reservedKeys.ToArray()));
+        }
+
+        /// <summary>
+        /// Make sure the userProperties dictionary doesn't contain any keys that
         /// overlap with the names of mapped names for CredentialProfileOptions property names.
         /// Check is case-insensitive for added safety.
         /// </summary>
-        /// <param name="profileProperties"></param>
-        public void ValidateNoProfileOptionsProperties(Dictionary<string, string> profileProperties)
+        /// <param name="userProperties"></param>
+        private void ValidateNoProfileOptionsProperties(Dictionary<string, string> userProperties)
         {
-            if (profileProperties != null)
+            if (userProperties != null)
             {
-                foreach (var key in profileProperties.Keys)
+                foreach (var key in userProperties.Keys)
                 {
                     if (mappedNames.Contains(key, StringComparer.OrdinalIgnoreCase))
                     {

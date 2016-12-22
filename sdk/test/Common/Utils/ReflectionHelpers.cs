@@ -19,11 +19,13 @@ namespace AWSSDK_DotNet.CommonTest.Utils
 {
     public static class ReflectionHelpers
     {
-        private static readonly BindingFlags InstanceFlags = BindingFlags.NonPublic | BindingFlags.Instance;
-        private static readonly BindingFlags StaticFlags = BindingFlags.NonPublic | BindingFlags.Static;
+        private static readonly BindingFlags InstanceFlags =
+            BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance;
+        private static readonly BindingFlags StaticFlags =
+            BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static;
 
         /// <summary>
-        /// Invoke a non-public instance member on the object.
+        /// Invoke an instance member on the object.
         /// Looks for a method, property, or field (in that order) on the object and calls it with the parameters provided.
         /// For properties and fields 0 parameters means get, and 1 parameter means set.
         /// For sets and void method calls, returns null.
@@ -38,7 +40,7 @@ namespace AWSSDK_DotNet.CommonTest.Utils
         }
 
         /// <summary>
-        /// Invoke a non-public static member on the type.
+        /// Invoke a static member on the type.
         /// Looks for a method, property, or field (in that order) on the type and calls it with the parameters provided.
         /// For properties and fields 0 parameters means get, and 1 parameter means set.
         /// For sets and void method calls, returns null.

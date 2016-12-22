@@ -42,6 +42,13 @@ namespace Amazon.Runtime
         internal Dictionary<string, string> Properties { get; private set; }
 
         /// <summary>
+        /// The unique key assigned to the profile by the store.
+        /// Because the unique key is assigned by the store, the
+        /// profile must be registered before the UniqueKey is populated.
+        /// </summary>
+        public string UniqueKey { get; internal set; }
+
+        /// <summary>
         /// True if the properties of the Options object can be converted into AWSCredentials, false otherwise.
         /// See <see cref="CredentialProfileOptions"/> for more details about which options are available.
         /// </summary>
@@ -101,6 +108,20 @@ namespace Amazon.Runtime
         /// <param name="properties"></param>
         /// <param name="profileStore"></param>
         internal CredentialProfile(string name, CredentialProfileOptions profileOptions, Dictionary<string, string> properties, ICredentialProfileStore profileStore)
+            : this(null, name, profileOptions, properties, profileStore)
+        {
+        }
+
+        /// <summary>
+        /// Construct a new CredentialProfile.
+        /// </summary>
+        /// <param name="uniqueKey"></param>
+        /// <param name="name"></param>
+        /// <param name="profileOptions"></param>
+        /// <param name="properties"></param>
+        /// <param name="profileStore"></param>
+        internal CredentialProfile(string uniqueKey, string name, CredentialProfileOptions profileOptions,
+            Dictionary<string, string> properties, ICredentialProfileStore profileStore)
         {
             if (string.IsNullOrEmpty(name))
             {
@@ -115,13 +136,11 @@ namespace Amazon.Runtime
                 throw new ArgumentNullException("profileStore");
             }
 
-            if (properties == null)
-                properties = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-
+            UniqueKey = uniqueKey;
             Name = name;
             Options = profileOptions;
             ProfileStore = profileStore;
-            Properties = properties;
+            Properties = properties == null ? new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase) : properties;
         }
 
         /// <summary>
@@ -169,6 +188,7 @@ namespace Amazon.Runtime
                 "Options = " + Options + "," +
                 "Properties = " + GetPropertiesString() + "," +
                 "ProfileType = " + ProfileType + "," +
+                "UniqueKey = " + UniqueKey + "," +
                 "CanCreateAWSCredentials = " + CanCreateAWSCredentials + "]";
         }
 
@@ -182,14 +202,14 @@ namespace Amazon.Runtime
                 return false;
 
             return AWSSDKUtils.AreEqual(
-                new object[] { Name, Options, ProfileType, CanCreateAWSCredentials },
-                new object[] { p.Name, p.Options, p.ProfileType, p.CanCreateAWSCredentials }) &&
+                new object[] { Name, Options, ProfileType, CanCreateAWSCredentials, UniqueKey },
+                new object[] { p.Name, p.Options, p.ProfileType, p.CanCreateAWSCredentials, p.UniqueKey }) &&
                 AWSSDKUtils.DictionariesAreEqual(Properties, p.Properties);
         }
 
         public override int GetHashCode()
         {
-            return Hashing.Hash(Name, Options, ProfileType, CanCreateAWSCredentials, GetPropertiesString());
+            return Hashing.Hash(Name, Options, ProfileType, CanCreateAWSCredentials, GetPropertiesString(), UniqueKey);
         }
     }
 }

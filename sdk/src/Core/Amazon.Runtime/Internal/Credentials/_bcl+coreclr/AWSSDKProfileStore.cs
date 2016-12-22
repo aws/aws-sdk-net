@@ -34,7 +34,7 @@ namespace Amazon.Runtime.Internal
         private const string AWSCredentialsProfileType = "AWS";
         private const string SAMLRoleProfileType = "SAML";
 
-        private static readonly HashSet<string> InvalidPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             SettingsConstants.DisplayNameField,
             SettingsConstants.ProfileTypeField
@@ -95,15 +95,16 @@ namespace Amazon.Runtime.Internal
         public bool TryGetProfile(string profileName, out CredentialProfile profile)
         {
             Dictionary<string, string> properties;
-            if (objectManager.TryGetObject(profileName, out properties))
+            string uniqueKey;
+            if (objectManager.TryGetObject(profileName, out uniqueKey, out properties))
             {
                 try
                 {
-                    var profileOptions = PropertyMapping.ExtractCredentialProfileOptions(properties);
-                    FilterOutReservedNames(properties);
-                    // properties now contains "leftover properties" that aren't part of profileOptions
+                    CredentialProfileOptions profileOptions;
+                    Dictionary<string, string> userProperties;
+                    PropertyMapping.ExtractProfileParts(properties, ReservedPropertyNames, out profileOptions, out userProperties);
 
-                    profile = new CredentialProfile(profileName, profileOptions, properties, this);
+                    profile = new CredentialProfile(uniqueKey, profileName, profileOptions, userProperties, this);
                     return true;
                 }
                 catch (ArgumentException)
@@ -127,61 +128,19 @@ namespace Amazon.Runtime.Internal
         {
             if (profile.CanCreateAWSCredentials)
             {
-                ValidateProperties(profile.Properties);
-
-                var allProperties = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-
+                var reservedProperties = new Dictionary<string, string>();
                 // set profile type field for backward compatibility
-                SetProfileTypeField(allProperties, profile.ProfileType.Value);
+                SetProfileTypeField(reservedProperties, profile.ProfileType.Value);
+                var profileDictionary = PropertyMapping.CombineProfileParts(
+                    profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
 
-                // add entries for Options properties
-                foreach (var pair in PropertyMapping.Convert(profile.Options))
-                {
-                    allProperties[pair.Key] = pair.Value;
-                }
-
-                // add entries for properties in profile.Properties dictionary
-                foreach (var pair in profile.Properties)
-                {
-                    allProperties[pair.Key] = pair.Value;
-                }
-
-                objectManager.RegisterObject(profile.Name, allProperties);
+                profile.UniqueKey = objectManager.RegisterObject(profile.Name, profileDictionary);
             }
             else
             {
                 throw new ArgumentException(String.Format(CultureInfo.InvariantCulture,
                     "Unable to register profile {0}.  The CredentialProfile provided is not a valid profile.", profile.Name));
             }
-        }
-
-        private static void FilterOutReservedNames(Dictionary<string, string> properties)
-        {
-            var keys = new List<string>(properties.Keys);
-            foreach (var key in keys)
-            {
-                if (InvalidPropertyNames.Contains(key))
-                    properties.Remove(key);
-            }
-        }
-
-        private static void ValidateProperties(Dictionary<string, string> properties)
-        {
-            // make sure the profile property keys aren't reserved for profile options
-            PropertyMapping.ValidateNoProfileOptionsProperties(properties);
-
-            List<string> invalidKeys = new List<string>();
-            foreach (var key in InvalidPropertyNames)
-            {
-                if (properties.Keys.Contains(key, StringComparer.OrdinalIgnoreCase))
-                {
-                    invalidKeys.Add(key);
-                }
-            }
-
-            if (invalidKeys.Count > 0)
-                throw new ArgumentException("The profile properties cannot contain reserved names as keys: " +
-                    string.Join(" or ",invalidKeys.ToArray()));
         }
 
         /// <summary>

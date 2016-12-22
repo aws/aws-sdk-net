@@ -81,15 +81,16 @@ namespace Amazon.Runtime.Internal.Util
         /// Update the section with the properties given.
         /// If the section doesn't exist, it will be appended to the file.
         ///
-        /// - Any properties that do exist in the section will be updated.
-        /// - A null value for a property denotes that it should be deleted from the section
-        /// - If any properties don't exist they will be appended to the end of the section
-        /// in the same order they appear in the list.
-        /// - Any existing properties not in the list will be deleted.
+        /// Notes:
+        /// 1. Any properties that do exist in the section will be updated.
+        /// 2. A null value for a property denotes that it should be deleted from the section
+        /// 3. If any properties don't exist they will be appended to the end of the section
+        /// in the same order they appear in the SortedDictionary.
+        /// 4. Any existing properties not in the SortedDictionary will be deleted.
         /// </summary>
         /// <param name="sectionName">name of the section to operate on</param>
-        /// <param name="properties">ordered list of properties to add/update/delete</param>
-        public void EditSection(string sectionName, List<KeyValuePair<string, string>> properties)
+        /// <param name="properties">properties to add/update/delete</param>
+        public void EditSection(string sectionName, SortedDictionary<string, string> properties)
         {
             EnsureSectionExists(sectionName);
 

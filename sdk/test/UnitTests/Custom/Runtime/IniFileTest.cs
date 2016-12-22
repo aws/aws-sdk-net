@@ -139,9 +139,9 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void AddProperty()
         {
-            var properties = new List<KeyValuePair<string, string>>();
-            properties.Add(new KeyValuePair<string, string>("property", "value"));
-            properties.Add(new KeyValuePair<string, string>("property2", "value2"));
+            var properties = new SortedDictionary<string, string>();
+            properties.Add("property", "value");
+            properties.Add("property2", "value2");
 
             using (var tester = new IniFileTester(ValidSection1))
             {
@@ -155,8 +155,8 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void EditProperty()
         {
-            var properties = new List<KeyValuePair<string, string>>();
-            properties.Add(new KeyValuePair<string, string>("property", "value2"));
+            var properties = new SortedDictionary<string, string>();
+            properties.Add("property", "value2");
 
             using (var tester = new IniFileTester(ValidSection1))
             {
@@ -170,9 +170,9 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void AddAndEditProperties()
         {
-            var properties = new List<KeyValuePair<string, string>>();
-            properties.Add(new KeyValuePair<string, string>("property", "value3"));
-            properties.Add(new KeyValuePair<string, string>("property2", "value2"));
+            var properties = new SortedDictionary<string, string>();
+            properties.Add("property", "value3");
+            properties.Add("property2", "value2");
 
             using (var tester = new IniFileTester(ValidSection1))
             {
@@ -188,8 +188,8 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void DeleteProperty()
         {
-            var properties = new List<KeyValuePair<string, string>>();
-            properties.Add(new KeyValuePair<string, string>("property", null));
+            var properties = new SortedDictionary<string, string>();
+            properties.Add("property", null);
 
             using (var tester = new IniFileTester(ValidSection1))
             {

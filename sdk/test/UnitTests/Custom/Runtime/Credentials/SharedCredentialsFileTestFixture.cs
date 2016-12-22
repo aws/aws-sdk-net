@@ -14,6 +14,7 @@
  */
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using AWSSDK_DotNet.CommonTest.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -30,11 +31,12 @@ namespace AWSSDK.UnitTests
         private string CredentialsFilePath { get; set; }
         private string ConfigFilePath { get; set; }
         private string DirectoryPath { get; set; }
+        private string UniqueKey { get; set; }
 
         public SharedCredentialsFile CredentialsFile { get; private set; }
 
         public SharedCredentialsFileTestFixture(string credentialsFileContents, string configFileContents = null,
-            bool createEmptyFile = false)
+            bool createEmptyFile = false, string uniqueKey = "XXX")
         {
             PrepareTempFilePaths();
 
@@ -55,7 +57,9 @@ namespace AWSSDK.UnitTests
                 File.WriteAllText(ConfigFilePath, configFileContents);
             }
 
+            UniqueKey = uniqueKey;
             CredentialsFile = new SharedCredentialsFile(CredentialsFilePath);
+            ReflectionHelpers.Invoke(CredentialsFile, "GetUniqueKey", new Func<string>(() => { return uniqueKey; }));
         }
 
         public SharedCredentialsFileTestFixture(bool createEmptyFile = false)
@@ -63,17 +67,18 @@ namespace AWSSDK.UnitTests
         {
         }
 
-        public void ReadAndAssertProfile(string profileName, CredentialProfileOptions expectedProfileOptions, Dictionary<string, string> expectedProperties)
+        public CredentialProfile ReadAndAssertProfile(string profileName, CredentialProfileOptions expectedProfileOptions)
         {
-            var expectedProfile = CredentialProfileTestHelper.GetCredentialProfile(profileName, expectedProfileOptions, expectedProperties);
-            var actualProfile = TestTryGetProfile(profileName, true, expectedProfile.CanCreateAWSCredentials);
-            Assert.AreEqual(expectedProfile, actualProfile);
-
+            return ReadAndAssertProfile(profileName, expectedProfileOptions, null);
         }
 
-        public void ReadAndAssertProfile(string profileName, CredentialProfileOptions expectedProfileOptions)
+        public CredentialProfile ReadAndAssertProfile(string profileName, CredentialProfileOptions expectedProfileOptions, Dictionary<string, string> expectedProperties)
         {
-            ReadAndAssertProfile(profileName, expectedProfileOptions, null);
+            var expectedProfile = CredentialProfileTestHelper.GetCredentialProfile(profileName, expectedProfileOptions, expectedProperties);
+            ReflectionHelpers.Invoke(expectedProfile, "UniqueKey", UniqueKey);
+            var actualProfile = TestTryGetProfile(profileName, true, expectedProfile.CanCreateAWSCredentials);
+            Assert.AreEqual(expectedProfile, actualProfile);
+            return actualProfile;
         }
 
         public CredentialProfile TestTryGetProfile(string profileName, bool expectProfile, bool expectValidProfile)

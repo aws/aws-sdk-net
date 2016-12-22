@@ -32,8 +32,16 @@ namespace Amazon.Runtime.Internal
     /// </summary>
     public class SharedCredentialsFile : ICredentialProfileStore
     {
+        private const string UniqueKeyField = "unique_key";
         private const string ProfileMarker = "profile";
         private const string ConfigFileName = "config";
+
+        private readonly Logger logger = Logger.GetLogger(typeof(SharedCredentialsFile));
+
+        private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        {
+            UniqueKeyField,
+        };
 
         /// <summary>
         /// To maintain compatibility with the CLI,
@@ -65,6 +73,9 @@ namespace Amazon.Runtime.Internal
                     { "UserIdentity", null },
                 }
             );
+
+        // this is done to facilitate repeatable unit tests in lieu of a mocking framework
+        private Func<string> GetUniqueKey = () => { return Guid.NewGuid().ToString(); };
 
         private IniFile credentialsFile;
         private IniFile configFile;
@@ -124,22 +135,31 @@ namespace Amazon.Runtime.Internal
                         profile.Name, profile.ProfileType, GetType().Name));
                 }
 
-                // make sure the property keys aren't reserved for profile options
-                PropertyMapping.ValidateNoProfileOptionsProperties(profile.Properties);
+                // assign a unique key if this is a brand new profile
+                if (profile.UniqueKey == null)
+                    profile.UniqueKey = GetUniqueKey();
 
-                var flattenedDictionary = PropertyMapping.Convert(profile.Options);
-
-                if (profile.Properties != null)
-                    flattenedDictionary.AddRange(profile.Properties);
-
-                credentialsFile.EditSection(profile.Name, flattenedDictionary);
-                credentialsFile.Persist();
+                RegisterProfileInternal(profile);
             }
             else
             {
                 throw new ArgumentException(String.Format(CultureInfo.InvariantCulture,
                     "Unable to update profile {0}.  The CredentialProfile provided is not a valid profile.", profile.Name));
             }
+        }
+
+        /// <summary>
+        /// Update the profile on disk regardless of the profile type.
+        /// </summary>
+        /// <param name="profile"></param>
+        private void RegisterProfileInternal(CredentialProfile profile)
+        {
+            var reservedProperties = new Dictionary<string, string> { { UniqueKeyField, profile.UniqueKey } };
+            var profileDictionary = PropertyMapping.CombineProfileParts(
+                profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
+
+            credentialsFile.EditSection(profile.Name, new SortedDictionary<string, string>(profileDictionary));
+            credentialsFile.Persist();
         }
 
         /// <summary>
@@ -194,19 +214,41 @@ namespace Amazon.Runtime.Internal
                 Refresh();
             }
 
-            Dictionary<string, string> properties = null;
-            if (TryGetSection(profileName, out properties))
+            Dictionary<string, string> profileDictionary = null;
+            if (TryGetSection(profileName, out profileDictionary))
             {
-                var profileOptions = PropertyMapping.ExtractCredentialProfileOptions(properties);
-                // properties now contains "leftover properties" that aren't part of profileOptions
+                CredentialProfileOptions profileOptions;
+                Dictionary<string, string> reservedProperties;
+                Dictionary<string, string> userProperties;
+                PropertyMapping.ExtractProfileParts(profileDictionary, ReservedPropertyNames,
+                    out profileOptions, out reservedProperties, out userProperties);
 
-                profile = new CredentialProfile(profileName, profileOptions, properties, this);
+                string uniqueKey;
+                bool doSave;
+                if (reservedProperties.ContainsKey(UniqueKeyField))
+                {
+                    uniqueKey = reservedProperties[UniqueKeyField];
+                    doSave = false;
+                }
+                else
+                {
+                    uniqueKey = GetUniqueKey();
+                    doSave = true;
+                }
+
+                profile = new CredentialProfile(uniqueKey, profileName, profileOptions, userProperties, this);
+
                 if (!IsSupportedProfileType(profile.ProfileType))
                 {
-                    throw new InvalidDataException(string.Format(CultureInfo.InvariantCulture,
-                        "Unable to read profile {0}. {1} does not support the {2} profile type.",
-                        profileName, GetType().Name, profile.ProfileType));
+                    logger.InfoFormat("The profile type {0} is not supported by SharedCredentialsFile.", profile.ProfileType);
+                    profile = null;
+                    return false;
                 }
+
+                // If this was a preexisting profile save it so that the unique key gets written.
+                if (doSave)
+                    RegisterProfileInternal(profile);
+
                 return true;
             }
             else

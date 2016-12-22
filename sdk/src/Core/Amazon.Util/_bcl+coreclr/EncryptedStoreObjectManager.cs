@@ -71,7 +71,8 @@ namespace Amazon.Util
         /// </summary>
         /// <param name="displayName">The display name for the object.</param>
         /// <param name="properties">The property names and values for the object.</param>
-        public void RegisterObject(string displayName, Dictionary<string, string> properties)
+        /// <returns>The unique key that was assigned to the object.</returns>
+        public string RegisterObject(string displayName, Dictionary<string, string> properties)
         {
             var settings = GetSettings();
             SettingsCollection.ObjectSettings objectSettings;
@@ -96,6 +97,7 @@ namespace Amazon.Util
                 objectSettings[pair.Key] = pair.Value;
             }
             SaveSettings(settings);
+            return objectSettings.UniqueKey;
         }
 
         /// <summary>
@@ -106,11 +108,26 @@ namespace Amazon.Util
         /// <returns>True if the object was found, false otherwise.</returns>
         public bool TryGetObject(string displayName, out Dictionary<string, string> properties)
         {
+            string uniqueKey;
+            return TryGetObject(displayName, out uniqueKey, out properties);
+        }
+
+        /// <summary>
+        /// Try to get an object form the store.
+        /// </summary>
+        /// <param name="displayName">The display name for the object.</param>
+        /// <param name="uniqueKey">The uniqueKey of the object in the store</param>
+        /// <param name="properties">The property names and values for the object.</param>
+        /// <returns>True if the object was found, false otherwise.</returns>
+        public bool TryGetObject(string displayName, out string uniqueKey, out Dictionary<string, string> properties)
+        {
             var settings = GetSettings();
             SettingsCollection.ObjectSettings objectSettings;
             properties = null;
+            uniqueKey = null;
             if (TryGetObjectSettings(displayName, settings, out objectSettings))
             {
+                uniqueKey = objectSettings.UniqueKey;
                 properties = new Dictionary<string, string>();
                 foreach (var key in objectSettings.Keys)
                 {

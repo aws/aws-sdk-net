@@ -33,10 +33,11 @@ namespace AWSSDK.UnitTests
 
         private const string AWSCredentialsProfileType = "AWS";
         private const string SAMLRoleProfileType = "SAML";
+        private const string UniqueKey = "deefa421-989c-4dd6-9dbc-baecfb5e63f6";
 
         private static readonly string InvalidProfileText = new StringBuilder()
             .AppendLine("{")
-            .AppendLine("    \"deefa421-989c-4dd6-9dbc-baecfb5e63f6\" : {")
+            .AppendLine("    \"" + UniqueKey + "\" : {")
             .AppendLine("        \"DisplayName\" : \"InvalidProfile\",")
             .AppendLine("        \"SessionType\" : \"AWS\",")
             .AppendLine("        \"AWSAccessKey\" : \"access_key_id\",")
@@ -45,7 +46,7 @@ namespace AWSSDK.UnitTests
 
         private static readonly string LegacyCredentialsTypeProfileText = new StringBuilder()
             .AppendLine("{")
-            .AppendLine("    \"deefa421-989c-4dd6-9dbc-baecfb5e63f6\" : {")
+            .AppendLine("    \"" + UniqueKey + "\" : {")
             .AppendLine("        \"DisplayName\" : \"LegacyCredentialsTypeProfile\",")
             .AppendLine("        \"CredentialsType\" : \"the_credentials_type\",")
             .AppendLine("    }")
@@ -61,7 +62,12 @@ namespace AWSSDK.UnitTests
                     var profileName = type.ToString() + Guid.NewGuid().ToString();
                     var originalProfile = CredentialProfileTestHelper.GetRandomProfile(profileName, type, tester.ProfileStore);
                     Assert.IsTrue(originalProfile.CanCreateAWSCredentials);
+                    Assert.IsNull(originalProfile.UniqueKey);
+
                     tester.ProfileStore.RegisterProfile(originalProfile);
+
+                    //make sure the store assigns a unique key
+                    Assert.IsNotNull(originalProfile.UniqueKey);
                     var readProfile = tester.TestTryGetProfile(profileName, true, true);
                     Assert.AreEqual(originalProfile, readProfile);
 
@@ -145,6 +151,16 @@ namespace AWSSDK.UnitTests
                 var profile = tester.TestTryGetProfile("LegacyCredentialsTypeProfile", true, false);
                 var credentialType = CredentialProfileUtils.GetProperty(profile, "CredentialsType");
                 Assert.AreEqual("the_credentials_type", credentialType);
+            }
+        }
+
+        [TestMethod]
+        public void ReadUniqueKeyProperty()
+        {
+            using (var tester = new AWSSDKProfileStoreTestFixture(LegacyCredentialsTypeProfileText))
+            {
+                var profile = tester.TestTryGetProfile("LegacyCredentialsTypeProfile", true, false);
+                Assert.AreEqual(UniqueKey, profile.UniqueKey);
             }
         }
 
