@@ -1,3 +1,9 @@
+### 3.3.34.0 (2016-12-21 23:44 UTC)
+* ECR (3.3.2.0)
+	* API Update for ECR : Amazon ECR now implements Docker Image Manifest V2, Schema 2 providing the ability to use multiple tags per image, support for storing Windows container images, and compatibility with the Open Container Initiative (OCI) image format. With this update, customers can also add tags to an image via PutImage and delete tags using BatchDeleteImage.
+* RDS (3.3.4.0)
+	* API Update for RDS : added support for cross region encrypted snapshot copying (CopyDBSnapshot)
+
 ### 3.3.33.0 (2016-12-21 06:01 UTC)
 * KinesisFirehose (3.3.1.0)
 	* API Update for KinesisFirehose:  Processing feature enables users to process and modify records before Amazon Firehose delivers them to destinations.
