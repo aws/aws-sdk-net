@@ -116,7 +116,10 @@ namespace Amazon.IdentityManagement.Model
         }
 
         /// <summary>
-        /// Gets and sets the property User.
+        /// Gets and sets the property User. 
+        /// <para>
+        /// The user to whom the MFA device is assigned.
+        /// </para>
         /// </summary>
         public User User
         {

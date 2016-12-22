@@ -96,10 +96,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-        /// is a string of characters that consists of the lowercase letter 'v' followed by one
-        /// or two digits, and optionally followed by a period '.' and a string of letters and
-        /// digits.
+        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// a string of characters that consists of the lowercase letter 'v' followed by one or
+        /// two digits, and optionally followed by a period '.' and a string of letters and digits.
         /// </para>
         /// </summary>
         public string VersionId

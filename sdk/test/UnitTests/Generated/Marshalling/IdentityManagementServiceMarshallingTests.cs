@@ -412,6 +412,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void CreateServiceSpecificCredentialMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateServiceSpecificCredential");
+
+            var request = InstantiateClassGenerator.Execute<CreateServiceSpecificCredentialRequest>();
+            var marshaller = new CreateServiceSpecificCredentialRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CreateServiceSpecificCredentialResponseUnmarshaller.Instance.Unmarshall(context)
+                as CreateServiceSpecificCredentialResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void CreateUserMarshallTest()
         {
             var operation = service_model.FindOperation("CreateUser");
@@ -732,6 +756,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var request = InstantiateClassGenerator.Execute<DeleteServerCertificateRequest>();
             var marshaller = new DeleteServerCertificateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void DeleteServiceSpecificCredentialMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteServiceSpecificCredential");
+
+            var request = InstantiateClassGenerator.Execute<DeleteServiceSpecificCredentialRequest>();
+            var marshaller = new DeleteServiceSpecificCredentialRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();
@@ -1900,6 +1943,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagementService")]
+        public void ListServiceSpecificCredentialsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListServiceSpecificCredentials");
+
+            var request = InstantiateClassGenerator.Execute<ListServiceSpecificCredentialsRequest>();
+            var marshaller = new ListServiceSpecificCredentialsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListServiceSpecificCredentialsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListServiceSpecificCredentialsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
         public void ListSigningCertificatesMarshallTest()
         {
             var operation = service_model.FindOperation("ListSigningCertificates");
@@ -2126,6 +2193,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
 
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void ResetServiceSpecificCredentialMarshallTest()
+        {
+            var operation = service_model.FindOperation("ResetServiceSpecificCredential");
+
+            var request = InstantiateClassGenerator.Execute<ResetServiceSpecificCredentialRequest>();
+            var marshaller = new ResetServiceSpecificCredentialRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ResetServiceSpecificCredentialResponseUnmarshaller.Instance.Unmarshall(context)
+                as ResetServiceSpecificCredentialResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
         
@@ -2364,6 +2455,25 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var request = InstantiateClassGenerator.Execute<UpdateServerCertificateRequest>();
             var marshaller = new UpdateServerCertificateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagementService")]
+        public void UpdateServiceSpecificCredentialMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateServiceSpecificCredential");
+
+            var request = InstantiateClassGenerator.Execute<UpdateServiceSpecificCredentialRequest>();
+            var marshaller = new UpdateServiceSpecificCredentialRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
             var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
             validator.Validate();

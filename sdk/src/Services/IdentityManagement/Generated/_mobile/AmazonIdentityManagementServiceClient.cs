@@ -883,6 +883,37 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  CreateServiceSpecificCredential
+
+        internal CreateServiceSpecificCredentialResponse CreateServiceSpecificCredential(CreateServiceSpecificCredentialRequest request)
+        {
+            var marshaller = new CreateServiceSpecificCredentialRequestMarshaller();
+            var unmarshaller = CreateServiceSpecificCredentialResponseUnmarshaller.Instance;
+
+            return Invoke<CreateServiceSpecificCredentialRequest,CreateServiceSpecificCredentialResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceSpecificCredential operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<CreateServiceSpecificCredentialResponse> CreateServiceSpecificCredentialAsync(CreateServiceSpecificCredentialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new CreateServiceSpecificCredentialRequestMarshaller();
+            var unmarshaller = CreateServiceSpecificCredentialResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateServiceSpecificCredentialRequest,CreateServiceSpecificCredentialResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateUser
 
         internal CreateUserResponse CreateUser(CreateUserRequest request)
@@ -1439,6 +1470,37 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DeleteServiceSpecificCredential
+
+        internal DeleteServiceSpecificCredentialResponse DeleteServiceSpecificCredential(DeleteServiceSpecificCredentialRequest request)
+        {
+            var marshaller = new DeleteServiceSpecificCredentialRequestMarshaller();
+            var unmarshaller = DeleteServiceSpecificCredentialResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteServiceSpecificCredentialRequest,DeleteServiceSpecificCredentialResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceSpecificCredential operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<DeleteServiceSpecificCredentialResponse> DeleteServiceSpecificCredentialAsync(DeleteServiceSpecificCredentialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new DeleteServiceSpecificCredentialRequestMarshaller();
+            var unmarshaller = DeleteServiceSpecificCredentialResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteServiceSpecificCredentialRequest,DeleteServiceSpecificCredentialResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteSigningCertificate
 
         internal DeleteSigningCertificateResponse DeleteSigningCertificate(DeleteSigningCertificateRequest request)
@@ -1980,7 +2042,7 @@ namespace Amazon.IdentityManagement
         /// URL encoded to be included as a part of a real HTML request.
         /// </para>
         /// </summary>
-        /// <param name="policyInputList">A list of policies for which you want the list of context keys referenced in those policies. Each document is specified as a string containing the complete, valid JSON text of an IAM policy. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
+        /// <param name="policyInputList">A list of policies for which you want the list of context keys referenced in those policies. Each document is specified as a string containing the complete, valid JSON text of an IAM policy. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2104,7 +2166,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         /// </summary>
         /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</param>
-        /// <param name="policyInputList">An optional list of additional policies for which you want the list of context keys that are referenced. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
+        /// <param name="policyInputList">An optional list of additional policies for which you want the list of context keys that are referenced. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -3559,6 +3621,37 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ListServiceSpecificCredentials
+
+        internal ListServiceSpecificCredentialsResponse ListServiceSpecificCredentials(ListServiceSpecificCredentialsRequest request)
+        {
+            var marshaller = new ListServiceSpecificCredentialsRequestMarshaller();
+            var unmarshaller = ListServiceSpecificCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<ListServiceSpecificCredentialsRequest,ListServiceSpecificCredentialsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServiceSpecificCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceSpecificCredentials operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ListServiceSpecificCredentialsResponse> ListServiceSpecificCredentialsAsync(ListServiceSpecificCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ListServiceSpecificCredentialsRequestMarshaller();
+            var unmarshaller = ListServiceSpecificCredentialsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListServiceSpecificCredentialsRequest,ListServiceSpecificCredentialsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListSigningCertificates
 
         internal ListSigningCertificatesResponse ListSigningCertificates()
@@ -3995,6 +4088,37 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ResetServiceSpecificCredential
+
+        internal ResetServiceSpecificCredentialResponse ResetServiceSpecificCredential(ResetServiceSpecificCredentialRequest request)
+        {
+            var marshaller = new ResetServiceSpecificCredentialRequestMarshaller();
+            var unmarshaller = ResetServiceSpecificCredentialResponseUnmarshaller.Instance;
+
+            return Invoke<ResetServiceSpecificCredentialRequest,ResetServiceSpecificCredentialResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetServiceSpecificCredential operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<ResetServiceSpecificCredentialResponse> ResetServiceSpecificCredentialAsync(ResetServiceSpecificCredentialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new ResetServiceSpecificCredentialRequestMarshaller();
+            var unmarshaller = ResetServiceSpecificCredentialResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ResetServiceSpecificCredentialRequest,ResetServiceSpecificCredentialResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ResyncMFADevice
 
         internal ResyncMFADeviceResponse ResyncMFADevice(ResyncMFADeviceRequest request)
@@ -4407,6 +4531,37 @@ namespace Amazon.IdentityManagement
             var unmarshaller = UpdateServerCertificateResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateServerCertificateRequest,UpdateServerCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateServiceSpecificCredential
+
+        internal UpdateServiceSpecificCredentialResponse UpdateServiceSpecificCredential(UpdateServiceSpecificCredentialRequest request)
+        {
+            var marshaller = new UpdateServiceSpecificCredentialRequestMarshaller();
+            var unmarshaller = UpdateServiceSpecificCredentialResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServiceSpecificCredentialRequest,UpdateServiceSpecificCredentialResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSpecificCredential operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<UpdateServiceSpecificCredentialResponse> UpdateServiceSpecificCredentialAsync(UpdateServiceSpecificCredentialRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new UpdateServiceSpecificCredentialRequestMarshaller();
+            var unmarshaller = UpdateServiceSpecificCredentialResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateServiceSpecificCredentialRequest,UpdateServiceSpecificCredentialResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

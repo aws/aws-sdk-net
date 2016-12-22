@@ -381,6 +381,22 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  CreateServiceSpecificCredential
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceSpecificCredential operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void CreateServiceSpecificCredentialAsync(CreateServiceSpecificCredentialRequest request, AmazonServiceCallback<CreateServiceSpecificCredentialRequest, CreateServiceSpecificCredentialResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  CreateUser
 
 
@@ -653,6 +669,22 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DeleteServiceSpecificCredential
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceSpecificCredential operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void DeleteServiceSpecificCredentialAsync(DeleteServiceSpecificCredentialRequest request, AmazonServiceCallback<DeleteServiceSpecificCredentialRequest, DeleteServiceSpecificCredentialResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  DeleteSigningCertificate
 
 
@@ -895,7 +927,7 @@ namespace Amazon.IdentityManagement
         /// URL encoded to be included as a part of a real HTML request.
         /// </para>
         /// </summary>
-        /// <param name="policyInputList">A list of policies for which you want the list of context keys referenced in those policies. Each document is specified as a string containing the complete, valid JSON text of an IAM policy. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
+        /// <param name="policyInputList">A list of policies for which you want the list of context keys referenced in those policies. Each document is specified as a string containing the complete, valid JSON text of an IAM policy. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -996,7 +1028,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         /// </summary>
         /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</param>
-        /// <param name="policyInputList">An optional list of additional policies for which you want the list of context keys that are referenced. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
+        /// <param name="policyInputList">An optional list of additional policies for which you want the list of context keys that are referenced. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -1571,6 +1603,22 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ListServiceSpecificCredentials
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServiceSpecificCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceSpecificCredentials operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void ListServiceSpecificCredentialsAsync(ListServiceSpecificCredentialsRequest request, AmazonServiceCallback<ListServiceSpecificCredentialsRequest, ListServiceSpecificCredentialsResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
         #region  ListSigningCertificates
 
 
@@ -1743,6 +1791,22 @@ namespace Amazon.IdentityManagement
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         void RemoveUserFromGroupAsync(RemoveUserFromGroupRequest request, AmazonServiceCallback<RemoveUserFromGroupRequest, RemoveUserFromGroupResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  ResetServiceSpecificCredential
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetServiceSpecificCredential operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void ResetServiceSpecificCredentialAsync(ResetServiceSpecificCredentialRequest request, AmazonServiceCallback<ResetServiceSpecificCredentialRequest, ResetServiceSpecificCredentialResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -1935,6 +1999,22 @@ namespace Amazon.IdentityManagement
         /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         void UpdateServerCertificateAsync(UpdateServerCertificateRequest request, AmazonServiceCallback<UpdateServerCertificateRequest, UpdateServerCertificateResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  UpdateServiceSpecificCredential
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSpecificCredential operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        void UpdateServiceSpecificCredentialAsync(UpdateServiceSpecificCredentialRequest request, AmazonServiceCallback<UpdateServiceSpecificCredentialRequest, UpdateServiceSpecificCredentialResponse> callback, AsyncOptions options = null);
 
 
         #endregion

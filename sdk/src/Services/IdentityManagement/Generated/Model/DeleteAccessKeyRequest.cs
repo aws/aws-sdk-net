@@ -52,7 +52,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates DeleteAccessKeyRequest with the parameterized properties
         /// </summary>
-        /// <param name="accessKeyId">The access key ID for the access key ID and secret access key you want to delete. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters that can consist of any upper or lowercased letter or digit.</param>
+        /// <param name="accessKeyId">The access key ID for the access key ID and secret access key you want to delete. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</param>
         public DeleteAccessKeyRequest(string accessKeyId)
         {
             _accessKeyId = accessKeyId;
@@ -65,8 +65,8 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-        /// is a string of characters that can consist of any upper or lowercased letter or digit.
+        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// a string of characters that can consist of any upper or lowercased letter or digit.
         /// </para>
         /// </summary>
         public string AccessKeyId
@@ -88,9 +88,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-        /// is a string of characters consisting of upper and lowercase alphanumeric characters
-        /// with no spaces. You can also include any of the following characters: =,.@-
+        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// a string of characters consisting of upper and lowercase alphanumeric characters with
+        /// no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName

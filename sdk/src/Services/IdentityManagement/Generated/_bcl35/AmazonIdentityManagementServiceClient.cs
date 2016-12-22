@@ -1628,6 +1628,89 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  CreateServiceSpecificCredential
+
+        /// <summary>
+        /// Generates a set of credentials consisting of a user name and password that can be
+        /// used to access the service specified in the request. These credentials are generated
+        /// by IAM, and can be used only for the specified service. 
+        /// 
+        ///  
+        /// <para>
+        /// You can have a maximum of two sets of service-specific credentials for each supported
+        /// service per user.
+        /// </para>
+        ///  
+        /// <para>
+        /// The only supported service at this time is AWS CodeCommit.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can reset the password to a new service-generated value by calling <a>ResetServiceSpecificCredential</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about service-specific credentials, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_ssh-keys.html">Using
+        /// IAM with AWS CodeCommit: Git Credentials, SSH Keys, and AWS Access Keys</a> in the
+        /// <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceSpecificCredential service method.</param>
+        /// 
+        /// <returns>The response from the CreateServiceSpecificCredential service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// AWS account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceNotSupportedException">
+        /// The specified service does not support service-specific credentials.
+        /// </exception>
+        public CreateServiceSpecificCredentialResponse CreateServiceSpecificCredential(CreateServiceSpecificCredentialRequest request)
+        {
+            var marshaller = new CreateServiceSpecificCredentialRequestMarshaller();
+            var unmarshaller = CreateServiceSpecificCredentialResponseUnmarshaller.Instance;
+
+            return Invoke<CreateServiceSpecificCredentialRequest,CreateServiceSpecificCredentialResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceSpecificCredential operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateServiceSpecificCredential
+        ///         operation.</returns>
+        public IAsyncResult BeginCreateServiceSpecificCredential(CreateServiceSpecificCredentialRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new CreateServiceSpecificCredentialRequestMarshaller();
+            var unmarshaller = CreateServiceSpecificCredentialResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateServiceSpecificCredentialRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateServiceSpecificCredential.</param>
+        /// 
+        /// <returns>Returns a  CreateServiceSpecificCredentialResult from IdentityManagementService.</returns>
+        public  CreateServiceSpecificCredentialResponse EndCreateServiceSpecificCredential(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateServiceSpecificCredentialResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateUser
 
         /// <summary>
@@ -2914,6 +2997,60 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DeleteServiceSpecificCredential
+
+        /// <summary>
+        /// Deletes the specified service-specific credential.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceSpecificCredential service method.</param>
+        /// 
+        /// <returns>The response from the DeleteServiceSpecificCredential service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public DeleteServiceSpecificCredentialResponse DeleteServiceSpecificCredential(DeleteServiceSpecificCredentialRequest request)
+        {
+            var marshaller = new DeleteServiceSpecificCredentialRequestMarshaller();
+            var unmarshaller = DeleteServiceSpecificCredentialResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteServiceSpecificCredentialRequest,DeleteServiceSpecificCredentialResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceSpecificCredential operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteServiceSpecificCredential
+        ///         operation.</returns>
+        public IAsyncResult BeginDeleteServiceSpecificCredential(DeleteServiceSpecificCredentialRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new DeleteServiceSpecificCredentialRequestMarshaller();
+            var unmarshaller = DeleteServiceSpecificCredentialResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteServiceSpecificCredentialRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteServiceSpecificCredential.</param>
+        /// 
+        /// <returns>Returns a  DeleteServiceSpecificCredentialResult from IdentityManagementService.</returns>
+        public  DeleteServiceSpecificCredentialResponse EndDeleteServiceSpecificCredential(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteServiceSpecificCredentialResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteSigningCertificate
 
         /// <summary>
@@ -3913,7 +4050,7 @@ namespace Amazon.IdentityManagement
         /// URL encoded to be included as a part of a real HTML request.
         /// </para>
         /// </summary>
-        /// <param name="policyInputList">A list of policies for which you want the list of context keys referenced in those policies. Each document is specified as a string containing the complete, valid JSON text of an IAM policy. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
+        /// <param name="policyInputList">A list of policies for which you want the list of context keys referenced in those policies. Each document is specified as a string containing the complete, valid JSON text of an IAM policy. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
         /// 
         /// <returns>The response from the GetContextKeysForCustomPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
@@ -4066,7 +4203,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         /// </summary>
         /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies attached to the user as well as to all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</param>
-        /// <param name="policyInputList">An optional list of additional policies for which you want the list of context keys that are referenced. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
+        /// <param name="policyInputList">An optional list of additional policies for which you want the list of context keys that are referenced. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
         /// 
         /// <returns>The response from the GetContextKeysForPrincipalPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
@@ -6761,6 +6898,68 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ListServiceSpecificCredentials
+
+        /// <summary>
+        /// Returns information about the service-specific credentials associated with the specified
+        /// IAM user. If there are none, the action returns an empty list. The service-specific
+        /// credentials returned by this action are used only for authenticating the IAM user
+        /// to a specific service. For more information about using service-specific credentials
+        /// to authenticate to an AWS service, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html">Set
+        /// Up service-specific credentials</a> in the AWS CodeCommit User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceSpecificCredentials service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceSpecificCredentials service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceNotSupportedException">
+        /// The specified service does not support service-specific credentials.
+        /// </exception>
+        public ListServiceSpecificCredentialsResponse ListServiceSpecificCredentials(ListServiceSpecificCredentialsRequest request)
+        {
+            var marshaller = new ListServiceSpecificCredentialsRequestMarshaller();
+            var unmarshaller = ListServiceSpecificCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<ListServiceSpecificCredentialsRequest,ListServiceSpecificCredentialsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListServiceSpecificCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceSpecificCredentials operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServiceSpecificCredentials
+        ///         operation.</returns>
+        public IAsyncResult BeginListServiceSpecificCredentials(ListServiceSpecificCredentialsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ListServiceSpecificCredentialsRequestMarshaller();
+            var unmarshaller = ListServiceSpecificCredentialsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListServiceSpecificCredentialsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListServiceSpecificCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServiceSpecificCredentials.</param>
+        /// 
+        /// <returns>Returns a  ListServiceSpecificCredentialsResult from IdentityManagementService.</returns>
+        public  ListServiceSpecificCredentialsResponse EndListServiceSpecificCredentials(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListServiceSpecificCredentialsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListSigningCertificates
 
         /// <summary>
@@ -7630,6 +7829,62 @@ namespace Amazon.IdentityManagement
         public  RemoveUserFromGroupResponse EndRemoveUserFromGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveUserFromGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ResetServiceSpecificCredential
+
+        /// <summary>
+        /// Resets the password for a service-specific credential. The new password is AWS generated
+        /// and cryptographically strong. It cannot be configured by the user. Resetting the password
+        /// immediately invalidates the previous password associated with this user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetServiceSpecificCredential service method.</param>
+        /// 
+        /// <returns>The response from the ResetServiceSpecificCredential service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public ResetServiceSpecificCredentialResponse ResetServiceSpecificCredential(ResetServiceSpecificCredentialRequest request)
+        {
+            var marshaller = new ResetServiceSpecificCredentialRequestMarshaller();
+            var unmarshaller = ResetServiceSpecificCredentialResponseUnmarshaller.Instance;
+
+            return Invoke<ResetServiceSpecificCredentialRequest,ResetServiceSpecificCredentialResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetServiceSpecificCredential operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetServiceSpecificCredential
+        ///         operation.</returns>
+        public IAsyncResult BeginResetServiceSpecificCredential(ResetServiceSpecificCredentialRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new ResetServiceSpecificCredentialRequestMarshaller();
+            var unmarshaller = ResetServiceSpecificCredentialResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ResetServiceSpecificCredentialRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResetServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetServiceSpecificCredential.</param>
+        /// 
+        /// <returns>Returns a  ResetServiceSpecificCredentialResult from IdentityManagementService.</returns>
+        public  ResetServiceSpecificCredentialResponse EndResetServiceSpecificCredential(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ResetServiceSpecificCredentialResponse>(asyncResult);
         }
 
         #endregion
@@ -8621,6 +8876,63 @@ namespace Amazon.IdentityManagement
         public  UpdateServerCertificateResponse EndUpdateServerCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateServerCertificateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateServiceSpecificCredential
+
+        /// <summary>
+        /// Sets the status of a service-specific credential to <code>Active</code> or <code>Inactive</code>.
+        /// Service-specific credentials that are inactive cannot be used for authentication to
+        /// the service. This action can be used to disable a user’s service-specific credential
+        /// as part of a credential rotation work flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSpecificCredential service method.</param>
+        /// 
+        /// <returns>The response from the UpdateServiceSpecificCredential service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced an entity that does not exist. The
+        /// error message describes the entity.
+        /// </exception>
+        public UpdateServiceSpecificCredentialResponse UpdateServiceSpecificCredential(UpdateServiceSpecificCredentialRequest request)
+        {
+            var marshaller = new UpdateServiceSpecificCredentialRequestMarshaller();
+            var unmarshaller = UpdateServiceSpecificCredentialResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServiceSpecificCredentialRequest,UpdateServiceSpecificCredentialResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSpecificCredential operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateServiceSpecificCredential
+        ///         operation.</returns>
+        public IAsyncResult BeginUpdateServiceSpecificCredential(UpdateServiceSpecificCredentialRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new UpdateServiceSpecificCredentialRequestMarshaller();
+            var unmarshaller = UpdateServiceSpecificCredentialResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateServiceSpecificCredentialRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateServiceSpecificCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateServiceSpecificCredential.</param>
+        /// 
+        /// <returns>Returns a  UpdateServiceSpecificCredentialResult from IdentityManagementService.</returns>
+        public  UpdateServiceSpecificCredentialResponse EndUpdateServiceSpecificCredential(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateServiceSpecificCredentialResponse>(asyncResult);
         }
 
         #endregion

@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates DeleteAccountAliasRequest with the parameterized properties
         /// </summary>
-        /// <param name="accountAlias">The name of the account alias to delete. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two dashes in a row.</param>
+        /// <param name="accountAlias">The name of the account alias to delete. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have two dashes in a row.</param>
         public DeleteAccountAliasRequest(string accountAlias)
         {
             _accountAlias = accountAlias;
@@ -58,9 +58,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-        /// is a string of characters consisting of lowercase letters, digits, and dashes. You
-        /// cannot start or finish with a dash, nor can you have two dashes in a row.
+        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// a string of characters consisting of lowercase letters, digits, and dashes. You cannot
+        /// start or finish with a dash, nor can you have two dashes in a row.
         /// </para>
         /// </summary>
         public string AccountAlias

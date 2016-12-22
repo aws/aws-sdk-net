@@ -186,17 +186,16 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// Use this only when paginating results to indicate the maximum number of items you
-        /// want in the response. If additional items exist beyond the maximum you specify, the
-        /// <code>IsTruncated</code> response element is <code>true</code>.
+        /// (Optional) Use this only when paginating results to indicate the maximum number of
+        /// items you want in the response. If additional items exist beyond the maximum you specify,
+        /// the <code>IsTruncated</code> response element is <code>true</code>.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is optional. If you do not include it, it defaults to 100. Note that
-        /// IAM might return fewer results, even when there are more results available. In that
-        /// case, the <code>IsTruncated</code> response element returns <code>true</code> and
-        /// <code>Marker</code> contains a value to include in the subsequent call that tells
-        /// the service where to continue from.
+        /// If you do not include this parameter, it defaults to 100. Note that IAM might return
+        /// fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
+        /// response element returns <code>true</code> and <code>Marker</code> contains a value
+        /// to include in the subsequent call that tells the service where to continue from.
         /// </para>
         /// </summary>
         public int MaxItems
@@ -220,11 +219,11 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-        /// is a string of characters consisting of any printable ASCII character ranging from
-        /// the space character (\u0020) through end of the ASCII character range (\u00FF). It
-        /// also includes the special characters tab (\u0009), line feed (\u000A), and carriage
-        /// return (\u000D).
+        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// a string of characters consisting of any printable ASCII character ranging from the
+        /// space character (\u0020) through end of the ASCII character range (\u00FF). It also
+        /// includes the special characters tab (\u0009), line feed (\u000A), and carriage return
+        /// (\u000D).
         /// </para>
         /// </summary>
         public List<string> PolicyInputList
@@ -414,11 +413,11 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-        /// is a string of characters consisting of any printable ASCII character ranging from
-        /// the space character (\u0020) through end of the ASCII character range (\u00FF). It
-        /// also includes the special characters tab (\u0009), line feed (\u000A), and carriage
-        /// return (\u000D).
+        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// a string of characters consisting of any printable ASCII character ranging from the
+        /// space character (\u0020) through end of the ASCII character range (\u00FF). It also
+        /// includes the special characters tab (\u0009), line feed (\u000A), and carriage return
+        /// (\u000D).
         /// </para>
         /// </summary>
         public string ResourcePolicy

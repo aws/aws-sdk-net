@@ -52,7 +52,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates UpdateLoginProfileRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">The name of the user whose password you want to update. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
+        /// <param name="userName">The name of the user whose password you want to update. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
         public UpdateLoginProfileRequest(string userName)
         {
             _userName = userName;
@@ -65,11 +65,11 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-        /// is a string of characters consisting of any printable ASCII character ranging from
-        /// the space character (\u0020) through end of the ASCII character range (\u00FF). It
-        /// also includes the special characters tab (\u0009), line feed (\u000A), and carriage
-        /// return (\u000D). However, the format can be further restricted by the account administrator
+        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// a string of characters consisting of any printable ASCII character ranging from the
+        /// space character (\u0020) through end of the ASCII character range (\u00FF). It also
+        /// includes the special characters tab (\u0009), line feed (\u000A), and carriage return
+        /// (\u000D). However, the format can be further restricted by the account administrator
         /// by setting a password policy on the AWS account. For more information, see <a>UpdateAccountPasswordPolicy</a>.
         /// </para>
         /// </summary>
@@ -111,9 +111,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter
-        /// is a string of characters consisting of upper and lowercase alphanumeric characters
-        /// with no spaces. You can also include any of the following characters: =,.@-
+        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// a string of characters consisting of upper and lowercase alphanumeric characters with
+        /// no spaces. You can also include any of the following characters: =,.@-
         /// </para>
         /// </summary>
         public string UserName
