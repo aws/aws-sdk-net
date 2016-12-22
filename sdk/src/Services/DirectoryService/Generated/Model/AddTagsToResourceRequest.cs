@@ -29,9 +29,9 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the AddTagsToResource operation.
-    /// Adds or overwrites one or more tags for the specified Amazon Directory Services directory.
-    /// Each directory can have a maximum of 50 tags. Each tag consists of a key and optional
-    /// value. Tag keys must be unique to each resource.
+    /// Adds or overwrites one or more tags for the specified directory. Each directory can
+    /// have a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys
+    /// must be unique to each resource.
     /// </summary>
     public partial class AddTagsToResourceRequest : AmazonDirectoryServiceRequest
     {
@@ -59,7 +59,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the Amazon Directory Services directory.
+        /// The tags to be assigned to the directory.
         /// </para>
         /// </summary>
         public List<Tag> Tags

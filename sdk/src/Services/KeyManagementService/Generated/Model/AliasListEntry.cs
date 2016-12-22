@@ -75,7 +75,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property TargetKeyId. 
         /// <para>
-        /// String that contains the key identifier pointed to by the alias.
+        /// String that contains the key identifier referred to by the alias.
         /// </para>
         /// </summary>
         public string TargetKeyId

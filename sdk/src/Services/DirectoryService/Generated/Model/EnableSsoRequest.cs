@@ -29,7 +29,7 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableSso operation.
-    /// Enables single-sign on for a directory.
+    /// Enables single sign-on for a directory.
     /// </summary>
     public partial class EnableSsoRequest : AmazonDirectoryServiceRequest
     {

@@ -29,18 +29,21 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the ReEncrypt operation.
-    /// Encrypts data on the server side with a new customer master key without exposing the
-    /// plaintext of the data on the client side. The data is first decrypted and then encrypted.
-    /// This operation can also be used to change the encryption context of a ciphertext.
+    /// Encrypts data on the server side with a new customer master key (CMK) without exposing
+    /// the plaintext of the data on the client side. The data is first decrypted and then
+    /// reencrypted. You can also use this operation to change the encryption context of a
+    /// ciphertext.
     /// 
     ///  
     /// <para>
-    /// Unlike other actions, <code>ReEncrypt</code> is authorized twice - once as <code>ReEncryptFrom</code>
-    /// on the source key and once as <code>ReEncryptTo</code> on the destination key. We
-    /// therefore recommend that you include the <code>"action":"kms:ReEncrypt*"</code> statement
-    /// in your key policies to permit re-encryption from or to the key. The statement is
-    /// included automatically when you authorize use of the key through the console but must
-    /// be included manually when you set a policy by using the <a>PutKeyPolicy</a> function.
+    /// Unlike other operations, <code>ReEncrypt</code> is authorized twice, once as <code>ReEncryptFrom</code>
+    /// on the source CMK and once as <code>ReEncryptTo</code> on the destination CMK. We
+    /// recommend that you include the <code>"kms:ReEncrypt*"</code> permission in your <a
+    /// href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key
+    /// policies</a> to permit reencryption from or to the CMK. This permission is automatically
+    /// included in the key policy when you create a CMK through the console, but you must
+    /// include it manually when you create a CMK programmatically or when you set a key policy
+    /// with the <a>PutKeyPolicy</a> operation.
     /// </para>
     /// </summary>
     public partial class ReEncryptRequest : AmazonKeyManagementServiceRequest
@@ -54,7 +57,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CiphertextBlob. 
         /// <para>
-        /// Ciphertext of the data to re-encrypt.
+        /// Ciphertext of the data to reencrypt.
         /// </para>
         /// </summary>
         public MemoryStream CiphertextBlob
@@ -72,7 +75,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property DestinationEncryptionContext. 
         /// <para>
-        /// Encryption context to be used when the data is re-encrypted.
+        /// Encryption context to use when the data is reencrypted.
         /// </para>
         /// </summary>
         public Dictionary<string, string> DestinationEncryptionContext
@@ -90,9 +93,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property DestinationKeyId. 
         /// <para>
-        /// A unique identifier for the customer master key used to re-encrypt the data. This
-        /// value can be a globally unique identifier, a fully specified ARN to either an alias
-        /// or a key, or an alias name prefixed by "alias/".
+        /// A unique identifier for the CMK to use to reencrypt the data. This value can be a
+        /// globally unique identifier, a fully specified ARN to either an alias or a key, or
+        /// an alias name prefixed by "alias/".
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -33,9 +33,23 @@ namespace Amazon.DirectoryService
     ///
     /// AWS Directory Service 
     /// <para>
-    /// This is the <i>AWS Directory Service API Reference</i>. This guide provides detailed
-    /// information about AWS Directory Service operations, data types, parameters, and errors.
+    /// AWS Directory Service is a web service that makes it easy for you to setup and run
+    /// directories in the AWS cloud, or connect your AWS resources with an existing on-premises
+    /// Microsoft Active Directory. This guide provides detailed information about AWS Directory
+    /// Service operations, data types, parameters, and errors. For information about AWS
+    /// Directory Services features, see <a href="https://aws.amazon.com/directoryservice/">AWS
+    /// Directory Service</a> and the <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS
+    /// Directory Service Administration Guide</a>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// AWS provides SDKs that consist of libraries and sample code for various programming
+    /// languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a
+    /// convenient way to create programmatic access to AWS Directory Service and other AWS
+    /// services. For more information about the AWS SDKs, including how to download and install
+    /// them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial interface IAmazonDirectoryService : IAmazonService, IDisposable
     {
@@ -104,9 +118,9 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Adds or overwrites one or more tags for the specified Amazon Directory Services directory.
-        /// Each directory can have a maximum of 50 tags. Each tag consists of a key and optional
-        /// value. Tag keys must be unique to each resource.
+        /// Adds or overwrites one or more tags for the specified directory. Each directory can
+        /// have a maximum of 50 tags. Each tag consists of a key and optional value. Tag keys
+        /// must be unique to each resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
         /// 
@@ -1224,7 +1238,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Enables single-sign on for a directory.
+        /// Enables single sign-on for a directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableSso service method.</param>
         /// 
@@ -1446,7 +1460,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Lists all tags on an Amazon Directory Services directory.
+        /// Lists all tags on a directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -1567,7 +1581,7 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Removes tags from an Amazon Directory Services directory.
+        /// Removes tags from a directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
         /// 

@@ -157,7 +157,7 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// A valid identifier is the unique key ID or the Amazon Resource Name (ARN) of the CMK,
-        /// or the alias name or ARN of an alias that points to the CMK. Examples:
+        /// or the alias name or ARN of an alias that refers to the CMK. Examples:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -165,7 +165,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CMK ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// CMK ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -174,7 +174,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> 
+        /// Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

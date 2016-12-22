@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// Metadata assigned to an Amazon Directory Services directory consisting of a key-value
-    /// pair.
+    /// Metadata assigned to a directory consisting of a key-value pair.
     /// </summary>
     public partial class Tag
     {

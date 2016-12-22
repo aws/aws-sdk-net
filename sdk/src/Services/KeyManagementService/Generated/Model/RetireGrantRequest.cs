@@ -29,28 +29,29 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the RetireGrant operation.
-    /// Retires a grant. You can retire a grant when you're done using it to clean up. You
+    /// Retires a grant. To clean up, you can retire a grant when you're done using it. You
     /// should revoke a grant when you intend to actively deny operations that depend on it.
     /// The following are permitted to call this API:
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// The account that created the grant
+    /// The AWS account (root user) under which the grant was created
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>RetiringPrincipal</code>, if present
+    /// The <code>RetiringPrincipal</code>, if present in the grant
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>GranteePrincipal</code>, if <code>RetireGrant</code> is a grantee operation
+    /// The <code>GranteePrincipal</code>, if <code>RetireGrant</code> is an operation specified
+    /// in the grant
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// The grant to retire must be identified by its grant token or by a combination of the
-    /// key ARN and the grant ID. A grant token is a unique variable-length base64-encoded
-    /// string. A grant ID is a 64 character unique identifier of a grant. Both are returned
-    /// by the <code>CreateGrant</code> function.
+    /// You must identify the grant to retire by its grant token or by a combination of the
+    /// grant ID and the Amazon Resource Name (ARN) of the customer master key (CMK). A grant
+    /// token is a unique variable-length base64-encoded string. A grant ID is a 64 character
+    /// unique identifier of a grant. The <a>CreateGrant</a> operation returns both.
     /// </para>
     /// </summary>
     public partial class RetireGrantRequest : AmazonKeyManagementServiceRequest
@@ -62,8 +63,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property GrantId. 
         /// <para>
-        /// Unique identifier of the grant to be retired. The grant ID is returned by the <code>CreateGrant</code>
-        /// function.
+        /// Unique identifier of the grant to retire. The grant ID is returned in the response
+        /// to a <code>CreateGrant</code> operation.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -104,16 +105,11 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// A unique identifier for the customer master key associated with the grant. This value
-        /// can be a globally unique identifier or a fully specified ARN of the key.
+        /// The Amazon Resource Name of the CMK associated with the grant. Example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ARN Example - arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Globally Unique Key ID Example - 12345678-1234-1234-1234-123456789012
+        /// arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab
         /// </para>
         ///  </li> </ul>
         /// </summary>

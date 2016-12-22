@@ -29,7 +29,7 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveTagsFromResource operation.
-    /// Removes tags from an Amazon Directory Services directory.
+    /// Removes tags from a directory.
     /// </summary>
     public partial class RemoveTagsFromResourceRequest : AmazonDirectoryServiceRequest
     {

@@ -29,7 +29,7 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists all tags on an Amazon Directory Services directory.
+    /// Lists all tags on a directory.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonDirectoryServiceRequest
     {

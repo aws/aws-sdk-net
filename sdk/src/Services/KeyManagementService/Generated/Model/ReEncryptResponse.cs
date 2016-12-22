@@ -39,8 +39,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CiphertextBlob. 
         /// <para>
-        /// The re-encrypted data. If you are using the CLI, the value is Base64 encoded. Otherwise,
-        /// it is not encoded.
+        /// The reencrypted data.
         /// </para>
         /// </summary>
         public MemoryStream CiphertextBlob
@@ -58,7 +57,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Unique identifier of the key used to re-encrypt the data.
+        /// Unique identifier of the CMK used to reencrypt the data.
         /// </para>
         /// </summary>
         public string KeyId
@@ -76,7 +75,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property SourceKeyId. 
         /// <para>
-        /// Unique identifier of the key used to originally encrypt the data.
+        /// Unique identifier of the CMK used to originally encrypt the data.
         /// </para>
         /// </summary>
         public string SourceKeyId
