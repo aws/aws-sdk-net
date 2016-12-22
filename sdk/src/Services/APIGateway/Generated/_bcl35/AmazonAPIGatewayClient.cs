@@ -4234,6 +4234,121 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  GetSdkType
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkType service method.</param>
+        /// 
+        /// <returns>The response from the GetSdkType service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetSdkTypeResponse GetSdkType(GetSdkTypeRequest request)
+        {
+            var marshaller = new GetSdkTypeRequestMarshaller();
+            var unmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
+
+            return Invoke<GetSdkTypeRequest,GetSdkTypeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSdkType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkType operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSdkType
+        ///         operation.</returns>
+        public IAsyncResult BeginGetSdkType(GetSdkTypeRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetSdkTypeRequestMarshaller();
+            var unmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetSdkTypeRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSdkType operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSdkType.</param>
+        /// 
+        /// <returns>Returns a  GetSdkTypeResult from APIGateway.</returns>
+        public  GetSdkTypeResponse EndGetSdkType(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSdkTypeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetSdkTypes
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkTypes service method.</param>
+        /// 
+        /// <returns>The response from the GetSdkTypes service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetSdkTypesResponse GetSdkTypes(GetSdkTypesRequest request)
+        {
+            var marshaller = new GetSdkTypesRequestMarshaller();
+            var unmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
+
+            return Invoke<GetSdkTypesRequest,GetSdkTypesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSdkTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkTypes operation on AmazonAPIGatewayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSdkTypes
+        ///         operation.</returns>
+        public IAsyncResult BeginGetSdkTypes(GetSdkTypesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = new GetSdkTypesRequestMarshaller();
+            var unmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetSdkTypesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSdkTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSdkTypes.</param>
+        /// 
+        /// <returns>Returns a  GetSdkTypesResult from APIGateway.</returns>
+        public  GetSdkTypesResponse EndGetSdkTypes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetSdkTypesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetStage
 
         /// <summary>

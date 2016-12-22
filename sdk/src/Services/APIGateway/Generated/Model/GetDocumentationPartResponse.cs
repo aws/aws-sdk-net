@@ -102,8 +102,10 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// A content map of API-specific key-value pairs describing the targeted API entity.
         /// The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API
-        /// does ...\" }"</code>. Only Swagger-compliant documentation-related fields are exported
-        /// and, hence, published.
+        /// does ...\" }"</code>. Only Swagger-compliant documentation-related fields from the
+        /// <literal>properties</literal> map are exported and, hence, published as part of the
+        /// API entity definitions, while the original documentation parts are exported in a Swagger
+        /// extension of <code>x-amazon-apigateway-documentation</code>.
         /// </para>
         /// </summary>
         public string Properties

@@ -32,8 +32,7 @@ namespace Amazon.APIGateway.Model
     /// 
     ///  <div class="remarks">In the API Gateway console, the built-in Lambda integration
     /// is an AWS integration.</div> <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
-    /// an API</a>, <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/.html"/>
-    /// </div>
+    /// an API</a> </div>
     /// </summary>
     public partial class GetIntegrationResponse : AmazonWebServiceResponse
     {
@@ -302,7 +301,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Uri. 
         /// <para>
         /// Specifies the integration's Uniform Resource Identifier (URI). For HTTP integrations,
-        /// the URI must be a fully formed, encoded HTTP(S) URL according to the <a href="https://www.ietf.org/rfc/rfc3986.txt"
+        /// the URI must be a fully formed, encoded HTTP(S) URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
         /// target="_blank">RFC-3986 specification</a>. For AWS integrations, the URI should be
         /// of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:{path|action}/{service_api}</code>.
         /// <code>Region</code>, <code>subdomain</code> and <code>service</code> are used to determine

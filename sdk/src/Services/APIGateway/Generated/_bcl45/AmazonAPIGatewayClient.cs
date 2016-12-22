@@ -3404,6 +3404,95 @@ namespace Amazon.APIGateway
 
         #endregion
         
+        #region  GetSdkType
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkType service method.</param>
+        /// 
+        /// <returns>The response from the GetSdkType service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.NotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetSdkTypeResponse GetSdkType(GetSdkTypeRequest request)
+        {
+            var marshaller = new GetSdkTypeRequestMarshaller();
+            var unmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
+
+            return Invoke<GetSdkTypeRequest,GetSdkTypeResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSdkType operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkType operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetSdkTypeResponse> GetSdkTypeAsync(GetSdkTypeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetSdkTypeRequestMarshaller();
+            var unmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSdkTypeRequest,GetSdkTypeResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSdkTypes
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkTypes service method.</param>
+        /// 
+        /// <returns>The response from the GetSdkTypes service method, as returned by APIGateway.</returns>
+        /// <exception cref="Amazon.APIGateway.Model.TooManyRequestsException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.APIGateway.Model.UnauthorizedException">
+        /// 
+        /// </exception>
+        public GetSdkTypesResponse GetSdkTypes(GetSdkTypesRequest request)
+        {
+            var marshaller = new GetSdkTypesRequestMarshaller();
+            var unmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
+
+            return Invoke<GetSdkTypesRequest,GetSdkTypesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSdkTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSdkTypes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task<GetSdkTypesResponse> GetSdkTypesAsync(GetSdkTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = new GetSdkTypesRequestMarshaller();
+            var unmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSdkTypesRequest,GetSdkTypesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetStage
 
 

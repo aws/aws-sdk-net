@@ -45,9 +45,9 @@ namespace Amazon.APIGateway.Model
         /// <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
         /// <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and
         /// <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any method. When
-        /// an applicable child API entity inherits the content of an entity of the same type
-        /// with more general specifications of the <code>location</code>, the child entity's
-        /// <code>method</code> attribute must match that of the parent entity exactly.
+        /// an applicable child entity inherits the content of an entity of the same type with
+        /// more general specifications of the other <code>location</code> attributes, the child
+        /// entity's <code>method</code> attribute must match that of the parent entity exactly.
         /// </para>
         /// </summary>
         public string Method
@@ -90,9 +90,10 @@ namespace Amazon.APIGateway.Model
         /// <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
         /// <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and
         /// <code>RESPONSE_BODY</code>. The default value is <code>/</code> for the root resource.
-        /// When an applicable child API entity inherits the content of an entity of the same
-        /// type with more general specifications of the <code>location</code>, the child entity's
-        /// <code>path</code> attribute must contain that of the parent entity as a prefix.
+        /// When an applicable child entity inherits the content of another entity of the same
+        /// type with more general specifications of the other <code>location</code> attributes,
+        /// the child entity's <code>path</code> attribute must match that of the parent entity
+        /// as a prefix.
         /// </para>
         /// </summary>
         public string Path
@@ -113,9 +114,9 @@ namespace Amazon.APIGateway.Model
         /// The HTTP status code of a response. It is a valid field for the API entity types of
         /// <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>.
         /// The default value is <code>*</code> for any status code. When an applicable child
-        /// API entity inherits the content of an entity of the same type with more general specifications
-        /// of the <code>location</code>, the child entity's <code>statusCode</code> attribute
-        /// must match that of the parent entity exactly.
+        /// entity inherits the content of an entity of the same type with more general specifications
+        /// of the other <code>location</code> attributes, the child entity's <code>statusCode</code>
+        /// attribute must match that of the parent entity exactly.
         /// </para>
         /// </summary>
         public string StatusCode
@@ -139,7 +140,7 @@ namespace Amazon.APIGateway.Model
         /// <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>,
         /// <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>.
         /// Content inheritance does not apply to any entity of the <code>API</code>, <code>AUTHROZER</code>,
-        /// <code>MODEL</code>, <code>METHOD</code>, or <code>RESOURCE</code> type.
+        /// <code>MODEL</code>, or <code>RESOURCE</code> type.
         /// </para>
         /// </summary>
         public DocumentationPartType Type

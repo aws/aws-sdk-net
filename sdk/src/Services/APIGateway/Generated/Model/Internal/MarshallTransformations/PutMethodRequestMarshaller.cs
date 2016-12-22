@@ -92,6 +92,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AuthorizerId);
                 }
 
+                if(publicRequest.IsSetOperationName())
+                {
+                    context.Writer.WritePropertyName("operationName");
+                    context.Writer.Write(publicRequest.OperationName);
+                }
+
                 if(publicRequest.IsSetRequestModels())
                 {
                     context.Writer.WritePropertyName("requestModels");

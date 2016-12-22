@@ -28,42 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// The collection of documentation snapshots of an API. 
+    /// Container for the parameters to the GetSdkTypes operation.
     /// 
-    ///  <div class="remarks">
-    /// <para>
-    /// Use the <a>DocumentationVersions</a> to manage documentation snapshots associated
-    /// with various API stages.
-    /// </para>
-    /// </div> <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting
-    /// an API</a>, <a>DocumentationPart</a>, <a>DocumentationVersion</a> </div>
     /// </summary>
-    public partial class GetDocumentationVersionsResponse : AmazonWebServiceResponse
+    public partial class GetSdkTypesRequest : AmazonAPIGatewayRequest
     {
-        private List<DocumentationVersion> _items = new List<DocumentationVersion>();
+        private int? _limit;
         private string _position;
 
         /// <summary>
-        /// Gets and sets the property Items. 
+        /// Gets and sets the property Limit. 
         /// <para>
-        /// The current page of <a>DocumentationVersion</a> items from the <a>DocumentationVersions</a>
-        /// collection of an API.
+        /// The maximum number of <a>SdkType</a> instances to be returned. 
         /// </para>
         /// </summary>
-        public List<DocumentationVersion> Items
+        public int Limit
         {
-            get { return this._items; }
-            set { this._items = value; }
+            get { return this._limit.GetValueOrDefault(); }
+            set { this._limit = value; }
         }
 
-        // Check to see if Items property is set
-        internal bool IsSetItems()
+        // Check to see if Limit property is set
+        internal bool IsSetLimit()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._limit.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Position.
+        /// Gets and sets the property Position. 
+        /// <para>
+        /// The position of the last fetched element in the <a>SdkTypes</a> collection.
+        /// </para>
         /// </summary>
         public string Position
         {

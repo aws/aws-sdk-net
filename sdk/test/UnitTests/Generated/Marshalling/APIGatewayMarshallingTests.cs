@@ -1796,6 +1796,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("APIGateway")]
+        public void GetSdkTypeMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSdkType");
+
+            var request = InstantiateClassGenerator.Execute<GetSdkTypeRequest>();
+            var marshaller = new GetSdkTypeRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetSdkType", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetSdkTypeResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetSdkTypeResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
+        public void GetSdkTypesMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSdkTypes");
+
+            var request = InstantiateClassGenerator.Execute<GetSdkTypesRequest>();
+            var marshaller = new GetSdkTypesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            RequestValidator.Validate("GetSdkTypes", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString());
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetSdkTypesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetSdkTypesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("APIGateway")]
         public void GetStageMarshallTest()
         {
             var operation = service_model.FindOperation("GetStage");

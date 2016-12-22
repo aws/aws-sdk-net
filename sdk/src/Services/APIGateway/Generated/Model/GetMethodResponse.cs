@@ -105,6 +105,7 @@ namespace Amazon.APIGateway.Model
         private string _httpMethod;
         private Integration _methodIntegration;
         private Dictionary<string, MethodResponse> _methodResponses = new Dictionary<string, MethodResponse>();
+        private string _operationName;
         private Dictionary<string, string> _requestModels = new Dictionary<string, string>();
         private Dictionary<string, bool> _requestParameters = new Dictionary<string, bool>();
 
@@ -275,6 +276,27 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetMethodResponses()
         {
             return this._methodResponses != null && this._methodResponses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperationName. 
+        /// <para>
+        /// A human-friendly operation identifier for the method. For example, you can assign
+        /// the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code>
+        /// method in <a href="http://petstore-demo-endpoint.execute-api.com/petstore/pets">PetStore</a>
+        /// example.
+        /// </para>
+        /// </summary>
+        public string OperationName
+        {
+            get { return this._operationName; }
+            set { this._operationName = value; }
+        }
+
+        // Check to see if OperationName property is set
+        internal bool IsSetOperationName()
+        {
+            return this._operationName != null;
         }
 
         /// <summary>

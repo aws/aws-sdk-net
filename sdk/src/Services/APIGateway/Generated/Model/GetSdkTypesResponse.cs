@@ -28,29 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// The collection of documentation snapshots of an API. 
-    /// 
-    ///  <div class="remarks">
-    /// <para>
-    /// Use the <a>DocumentationVersions</a> to manage documentation snapshots associated
-    /// with various API stages.
-    /// </para>
-    /// </div> <div class="seeAlso"> <a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting
-    /// an API</a>, <a>DocumentationPart</a>, <a>DocumentationVersion</a> </div>
+    /// The collection of <a>SdkType</a> instances.
     /// </summary>
-    public partial class GetDocumentationVersionsResponse : AmazonWebServiceResponse
+    public partial class GetSdkTypesResponse : AmazonWebServiceResponse
     {
-        private List<DocumentationVersion> _items = new List<DocumentationVersion>();
+        private List<SdkType> _items = new List<SdkType>();
         private string _position;
 
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// The current page of <a>DocumentationVersion</a> items from the <a>DocumentationVersions</a>
-        /// collection of an API.
+        /// The set of <a>SdkType</a> items that comprise this view of the <a>SdkTypes</a> collection.
         /// </para>
         /// </summary>
-        public List<DocumentationVersion> Items
+        public List<SdkType> Items
         {
             get { return this._items; }
             set { this._items = value; }
