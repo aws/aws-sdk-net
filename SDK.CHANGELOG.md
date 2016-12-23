@@ -1,3 +1,15 @@
+### 3.3.35.0 (2016-12-22 23:22 UTC)
+* APIGateway (3.3.4.0)
+	* Amazon API Gateway is adding support for generating SDKs in more languages. This update introduces two new operations used to dynamically discover these SDK types and what configuration each type accepts.
+* DirectoryService (3.3.1.4)
+	* Documentation update.
+* ElasticBeanstalk (3.3.3.0)
+	* adding a new feature for managing ApplicationVersion Lifecycle. To support this feature we have added one new API and modified two existing API.
+* IdentityManagement (3.3.1.0)
+	* Adds service-specific credentials to IAM service to make it easier to onboard CodeCommit customers. These are username/password credentials that work with a single service.
+* KeyManagementService (3.3.1.7)
+	* Documentation update.
+
 ### 3.3.34.0 (2016-12-21 23:44 UTC)
 * ECR (3.3.2.0)
 	* API Update for ECR : Amazon ECR now implements Docker Image Manifest V2, Schema 2 providing the ability to use multiple tags per image, support for storing Windows container images, and compatibility with the Open Container Initiative (OCI) image format. With this update, customers can also add tags to an image via PutImage and delete tags using BatchDeleteImage.
