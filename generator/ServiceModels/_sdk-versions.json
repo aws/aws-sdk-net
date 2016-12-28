@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.35.0",
+    "ProductVersion" : "3.3.35.1",
     "CoreVersion"    : "3.3.7.0",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -26,14 +26,14 @@
             "InPreview"    : false
         },
         "CloudFormation" : {
-            "Version" : "3.3.3.4",
+            "Version" : "3.3.3.5",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
             "InPreview"    : false
         },
         "CloudFront"     : {
-            "Version" : "3.3.2.1",
+            "Version" : "3.3.2.2",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -61,7 +61,7 @@
             "InPreview"    : false
         },
         "ConfigService"     : {
-            "Version" : "3.3.3.2",
+            "Version" : "3.3.3.3",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -75,7 +75,7 @@
             "InPreview"    : false
         },
         "CloudWatchLogs"    : {
-            "Version" : "3.3.2.0",
+            "Version" : "3.3.2.1",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -89,7 +89,7 @@
             "InPreview"    : false
         },
         "CognitoIdentity"   : {
-            "Version" : "3.3.1.0",
+            "Version" : "3.3.1.1",
             "Dependencies" : {
                 "Core" : "3.3.7.0",
                 "SecurityToken" : "3.3.0.7"
@@ -133,7 +133,7 @@
             "InPreview"    : false
         },
         "EC2"               : {
-            "Version" : "3.3.4.3",
+            "Version" : "3.3.4.4",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -154,7 +154,7 @@
             "InPreview"    : false
         },
         "ElasticBeanstalk"  : {
-            "Version" : "3.3.3.0",
+            "Version" : "3.3.3.1",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -191,7 +191,7 @@
             "InPreview"    : false
         },
         "IdentityManagement"   : {
-            "Version" : "3.3.1.0",
+            "Version" : "3.3.1.1",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -212,14 +212,14 @@
             "InPreview"    : false
         },
         "Lambda"               : {
-            "Version" : "3.3.2.3",
+            "Version" : "3.3.2.4",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
             "InPreview"    : false
         },
         "KeyManagementService" : {
-            "Version" : "3.3.1.7",
+            "Version" : "3.3.1.8",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -247,7 +247,7 @@
             "InPreview"    : false
         },
         "RDS"                  : {
-            "Version" : "3.3.4.0",
+            "Version" : "3.3.4.1",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -261,7 +261,7 @@
             "InPreview"    : false
         },
         "Route53"              : {
-            "Version" : "3.3.3.0",
+            "Version" : "3.3.3.1",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -282,7 +282,7 @@
             "InPreview"    : false
         },
         "SecurityToken"        : {
-            "Version" : "3.3.0.7",
+            "Version" : "3.3.0.8",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -317,21 +317,21 @@
             "InPreview"    : false
         },
         "SQS"                       : {
-            "Version" : "3.3.1.5",
+            "Version" : "3.3.1.6",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
             "InPreview"    : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.2.0",
+            "Version" : "3.3.2.1",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
             "InPreview"    : false
         },
         "StorageGateway"            : {
-            "Version" : "3.3.1.0",
+            "Version" : "3.3.1.1",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -345,7 +345,7 @@
             "InPreview"    : false
         },
         "DirectoryService"          : {
-            "Version" : "3.3.1.4",
+            "Version" : "3.3.1.5",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -366,7 +366,7 @@
             "InPreview"    : false
         },
         "CodePipeline"              : {
-            "Version" : "3.3.0.7",
+            "Version" : "3.3.0.8",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -387,21 +387,21 @@
             "InPreview"    : false
         },
         "KinesisFirehose"           : {
-            "Version" : "3.3.1.0",
+            "Version" : "3.3.1.1",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
             "InPreview"    : false
         },
         "AWSMarketplaceCommerceAnalytics" : {
-            "Version" : "3.3.1.0",
+            "Version" : "3.3.1.1",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
             "InPreview"    : false
         },
         "Inspector"                       : {
-            "Version" : "3.3.0.7",
+            "Version" : "3.3.0.8",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -429,7 +429,7 @@
             "InPreview"    : false
         },
         "ECR"                             : {
-            "Version" : "3.3.2.0",
+            "Version" : "3.3.2.1",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -457,7 +457,7 @@
             "InPreview"    : false
         },
         "DatabaseMigrationService"        : {
-            "Version" : "3.3.1.0",
+            "Version" : "3.3.1.1",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -513,7 +513,7 @@
             "InPreview"    : false
         },
         "Snowball"                        : {
-            "Version" : "3.3.1.3",
+            "Version" : "3.3.1.4",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -541,28 +541,28 @@
             "InPreview"    : false
         },
         "Lightsail"                       : {
-            "Version" : "3.3.0.3",
+            "Version" : "3.3.0.4",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
             "InPreview"    : false
         },
         "Polly"                           : {
-            "Version" : "3.3.0.3",
+            "Version" : "3.3.0.4",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
             "InPreview"    : false
         },
         "StepFunctions"                   : {
-            "Version" : "3.3.0.3",
+            "Version" : "3.3.0.4",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
             "InPreview"    : false
         },
         "AppStream"                       : {
-            "Version" : "3.3.0.3",
+            "Version" : "3.3.0.4",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -576,7 +576,7 @@
             "InPreview"    : false
         },
         "CodeBuild"                       : {
-            "Version" : "3.3.0.3",
+            "Version" : "3.3.0.4",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -590,14 +590,14 @@
             "InPreview"    : false
         },
         "Shield"                          : {
-            "Version" : "3.3.0.3",
+            "Version" : "3.3.0.4",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
             "InPreview"    : false
         },
         "Health"                          : {
-            "Version" : "3.3.0.3",
+            "Version" : "3.3.0.4",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
@@ -611,14 +611,14 @@
             "InPreview"    : false
         },
         "WAFRegional"                     : {
-            "Version" : "3.3.0.1",
+            "Version" : "3.3.0.2",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },
             "InPreview"    : false
         },
         "Batch"                           : {
-            "Version" : "3.3.0.0",
+            "Version" : "3.3.0.1",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },

@@ -1,3 +1,71 @@
+### 3.3.35.1 (2016-12-27 23:11 UTC)
+* AppStream (3.3.0.4)
+	* Documentation update to include cross-reference links to service REST api docs.
+* AWSMarketplaceCommerceAnalytics (3.3.1.1)
+	* Documentation update to include cross-reference links to service REST api docs.
+* Batch (3.3.0.1)
+	* Documentation update to include cross-reference links to service REST api docs.
+* CloudFormation (3.3.3.5)
+	* Documentation update to include cross-reference links to service REST api docs.
+* CloudFront (3.3.2.2)
+	* Documentation update to include cross-reference links to service REST api docs.
+* CloudWatchLogs (3.3.2.1)
+	* Documentation update to include cross-reference links to service REST api docs.
+* CodeBuild (3.3.0.4)
+	* Documentation update to include cross-reference links to service REST api docs.
+* CodePipeline (3.3.0.8)
+	* Documentation update to include cross-reference links to service REST api docs.
+* CognitoIdentity (3.3.1.1)
+	* Documentation update to include cross-reference links to service REST api docs.
+* ConfigService (3.3.3.3)
+	* Documentation update to include cross-reference links to service REST api docs.
+* DatabaseMigrationService (3.3.1.1)
+	* Documentation update to include cross-reference links to service REST api docs.
+* DirectoryService (3.3.1.5)
+	* Documentation update to include cross-reference links to service REST api docs.
+* EC2 (3.3.4.4)
+	* Documentation update to include cross-reference links to service REST api docs.
+* ECR (3.3.2.1)
+	* Documentation update to include cross-reference links to service REST api docs.
+* ElasticBeanstalk (3.3.3.1)
+	* Documentation update to include cross-reference links to service REST api docs.
+* Health (3.3.0.4)
+	* Documentation update to include cross-reference links to service REST api docs.
+* IdentityManagement (3.3.1.1)
+	* Documentation update to include cross-reference links to service REST api docs.
+* Inspector (3.3.0.8)
+	* Documentation update to include cross-reference links to service REST api docs.
+* KeyManagementService (3.3.1.8)
+	* Documentation update to include cross-reference links to service REST api docs.
+* KinesisFirehose (3.3.1.1)
+	* Documentation update to include cross-reference links to service REST api docs.
+* Lambda (3.3.2.4)
+	* Documentation update to include cross-reference links to service REST api docs.
+* Lightsail (3.3.0.4)
+	* Documentation update to include cross-reference links to service REST api docs.
+* Polly (3.3.0.4)
+	* Documentation update to include cross-reference links to service REST api docs.
+* RDS (3.3.4.1)
+	* Documentation update to include cross-reference links to service REST api docs.
+* Route53 (3.3.3.1)
+	* Documentation update to include cross-reference links to service REST api docs.
+* SecurityToken (3.3.0.8)
+	* Documentation update to include cross-reference links to service REST api docs.
+* Shield (3.3.0.4)
+	* Documentation update to include cross-reference links to service REST api docs.
+* SimpleSystemsManagement (3.3.2.1)
+	* Documentation update to include cross-reference links to service REST api docs.
+* Snowball (3.3.1.4)
+	* Documentation update to include cross-reference links to service REST api docs.
+* SQS (3.3.1.6)
+	* Documentation update to include cross-reference links to service REST api docs.
+* StepFunctions (3.3.0.4)
+	* Documentation update to include cross-reference links to service REST api docs.
+* StorageGateway (3.3.1.1)
+	* Documentation update to include cross-reference links to service REST api docs.
+* WAFRegional (3.3.0.2)
+	* Documentation update to include cross-reference links to service REST api docs.
+
 ### 3.3.35.0 (2016-12-22 23:22 UTC)
 * APIGateway (3.3.4.0)
 	* Amazon API Gateway is adding support for generating SDKs in more languages. This update introduces two new operations used to dynamically discover these SDK types and what configuration each type accepts.
