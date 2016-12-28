@@ -1,3 +1,10 @@
+### 3.3.35.2 (2016-12-28 21:01 UTC)
+* DynamoDBv2 (3.3.1.4)
+	* Updated to use new Core, version 3.3.7.1
+	* Pick up Core change to SDK cache
+* Core 3.3.7.1
+	* Fixed thread-unsafe access to dictionary
+
 ### 3.3.35.1 (2016-12-27 23:11 UTC)
 * AppStream (3.3.0.4)
 	* Documentation update to include cross-reference links to service REST api docs.
