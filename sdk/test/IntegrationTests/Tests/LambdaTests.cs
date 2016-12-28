@@ -80,7 +80,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("Lambda")]
         public void ListFunctionsTest()
         {
-            Client.ListFunctions();
+            var functions = EnumerateFunctions().ToList();
+        }
+
+        public static IEnumerable<FunctionConfiguration> EnumerateFunctions()
+        {
+            var request = new ListFunctionsRequest();
+            do
+            {
+                var response = Client.ListFunctions(request);
+                request.Marker = response.NextMarker;
+                foreach (var function in response.Functions)
+                    yield return function;
+            } while (!string.IsNullOrEmpty(request.Marker));
         }
 
 // This test depends on functionality that is only in 4.5
@@ -153,11 +165,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 CreateLambdaFunction(out functionName, out functionArn, out iamRoleName, out iamRoleArn);
 
                 // List all the functions and make sure the newly uploaded function is in the collection
-                var listResponse = Client.ListFunctions();
-                var function = listResponse.Functions.FirstOrDefault(x => x.FunctionName == functionName);
-                Assert.IsNotNull(function);
-                Assert.AreEqual("helloworld.handler", function.Handler);
-                Assert.AreEqual(iamRoleArn, function.Role);
+                UtilityMethods.WaitUntilSuccess(() =>
+                {
+                    var functions = EnumerateFunctions().ToList();
+                    var function = functions.FirstOrDefault(x => x.FunctionName == functionName);
+                    Assert.IsNotNull(function);
+                    Assert.AreEqual("helloworld.handler", function.Handler);
+                    Assert.AreEqual(iamRoleArn, function.Role);
+                });
 
                 // Get the function with a presigned URL to the uploaded code
                 var getFunctionResponse = Client.GetFunction(functionName);
