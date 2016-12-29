@@ -33,6 +33,7 @@ namespace Amazon.CodeDeploy.Model
     public partial class InstanceInfo
     {
         private DateTime? _deregisterTime;
+        private string _iamSessionArn;
         private string _iamUserArn;
         private string _instanceArn;
         private string _instanceName;
@@ -56,6 +57,24 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetDeregisterTime()
         {
             return this._deregisterTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamSessionArn. 
+        /// <para>
+        /// The ARN of the IAM session associated with the on-premises instance.
+        /// </para>
+        /// </summary>
+        public string IamSessionArn
+        {
+            get { return this._iamSessionArn; }
+            set { this._iamSessionArn = value; }
+        }
+
+        // Check to see if IamSessionArn property is set
+        internal bool IsSetIamSessionArn()
+        {
+            return this._iamSessionArn != null;
         }
 
         /// <summary>

@@ -36,7 +36,11 @@ namespace Amazon.CodeDeploy.Model
         private RevisionLocation _revisionLocation;
 
         /// <summary>
-        /// Gets and sets the property GenericRevisionInfo.
+        /// Gets and sets the property GenericRevisionInfo. 
+        /// <para>
+        /// Information about an application revision, including usage details and currently associated
+        /// deployment groups.
+        /// </para>
         /// </summary>
         public GenericRevisionInfo GenericRevisionInfo
         {
@@ -51,7 +55,10 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RevisionLocation.
+        /// Gets and sets the property RevisionLocation. 
+        /// <para>
+        /// Information about the location and type of an application revision.
+        /// </para>
         /// </summary>
         public RevisionLocation RevisionLocation
         {

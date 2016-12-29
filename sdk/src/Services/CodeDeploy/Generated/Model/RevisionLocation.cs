@@ -37,7 +37,10 @@ namespace Amazon.CodeDeploy.Model
         private S3Location _s3Location;
 
         /// <summary>
-        /// Gets and sets the property GitHubLocation.
+        /// Gets and sets the property GitHubLocation. 
+        /// <para>
+        /// Information about the location of application artifacts stored in GitHub.
+        /// </para>
         /// </summary>
         public GitHubLocation GitHubLocation
         {
@@ -79,7 +82,10 @@ namespace Amazon.CodeDeploy.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3Location.
+        /// Gets and sets the property S3Location. 
+        /// <para>
+        /// Information about the location of application artifacts stored in Amazon S3. 
+        /// </para>
         /// </summary>
         public S3Location S3Location
         {
