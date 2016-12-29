@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Attribute Object
+    /// Response Unmarshaller for TaskDefinitionPlacementConstraint Object
     /// </summary>  
-    public class AttributeUnmarshaller : IUnmarshaller<Attribute, XmlUnmarshallerContext>, IUnmarshaller<Attribute, JsonUnmarshallerContext>
+    public class TaskDefinitionPlacementConstraintUnmarshaller : IUnmarshaller<TaskDefinitionPlacementConstraint, XmlUnmarshallerContext>, IUnmarshaller<TaskDefinitionPlacementConstraint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Attribute IUnmarshaller<Attribute, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TaskDefinitionPlacementConstraint IUnmarshaller<TaskDefinitionPlacementConstraint, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Attribute Unmarshall(JsonUnmarshallerContext context)
+        public TaskDefinitionPlacementConstraint Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Attribute unmarshalledObject = new Attribute();
+            TaskDefinitionPlacementConstraint unmarshalledObject = new TaskDefinitionPlacementConstraint();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("expression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Expression = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("targetId", targetDepth))
+                if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("targetType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("value", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static AttributeUnmarshaller _instance = new AttributeUnmarshaller();        
+        private static TaskDefinitionPlacementConstraintUnmarshaller _instance = new TaskDefinitionPlacementConstraintUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AttributeUnmarshaller Instance
+        public static TaskDefinitionPlacementConstraintUnmarshaller Instance
         {
             get
             {

@@ -133,7 +133,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// A short (255 max characters) human-readable string to provide additional detail about
+        /// A short (255 max characters) human-readable string to provide additional details about
         /// a running or stopped container.
         /// </para>
         /// </summary>

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListContainerInstances Request Marshaller
+    /// ListAttributes Request Marshaller
     /// </summary>       
-    public class ListContainerInstancesRequestMarshaller : IMarshaller<IRequest, ListContainerInstancesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListAttributesRequestMarshaller : IMarshaller<IRequest, ListAttributesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListContainerInstancesRequest)input);
+            return this.Marshall((ListAttributesRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListContainerInstancesRequest publicRequest)
+        public IRequest Marshall(ListAttributesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECS");
-            string target = "AmazonEC2ContainerServiceV20141113.ListContainerInstances";
+            string target = "AmazonEC2ContainerServiceV20141113.ListAttributes";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,16 +67,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAttributeName())
+                {
+                    context.Writer.WritePropertyName("attributeName");
+                    context.Writer.Write(publicRequest.AttributeName);
+                }
+
+                if(publicRequest.IsSetAttributeValue())
+                {
+                    context.Writer.WritePropertyName("attributeValue");
+                    context.Writer.Write(publicRequest.AttributeValue);
+                }
+
                 if(publicRequest.IsSetCluster())
                 {
                     context.Writer.WritePropertyName("cluster");
                     context.Writer.Write(publicRequest.Cluster);
-                }
-
-                if(publicRequest.IsSetFilter())
-                {
-                    context.Writer.WritePropertyName("filter");
-                    context.Writer.Write(publicRequest.Filter);
                 }
 
                 if(publicRequest.IsSetMaxResults())
@@ -89,6 +95,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("nextToken");
                     context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetTargetType())
+                {
+                    context.Writer.WritePropertyName("targetType");
+                    context.Writer.Write(publicRequest.TargetType);
                 }
 
         

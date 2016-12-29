@@ -88,8 +88,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The attributes set for the container instance by the Amazon ECS container agent at
-        /// instance registration.
+        /// The attributes set for the container instance, either by the Amazon ECS container
+        /// agent at instance registration or manually with the <a>PutAttributes</a> operation.
         /// </para>
         /// </summary>
         public List<Attribute> Attributes

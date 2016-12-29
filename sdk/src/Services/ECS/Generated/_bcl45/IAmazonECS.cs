@@ -72,6 +72,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         CreateClusterResponse CreateCluster(CreateClusterRequest request);
 
 
@@ -84,6 +85,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         Task<CreateClusterResponse> CreateClusterAsync(CreateClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -139,8 +141,8 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// When the service scheduler launches new tasks, it attempts to balance them across
-        /// the Availability Zones in your cluster with the following logic:
+        /// When the service scheduler launches new tasks, it determines task placement in your
+        /// cluster with the following logic:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -149,6 +151,12 @@ namespace Amazon.ECS
         /// instance attributes).
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// By default, the service scheduler attempts to balance tasks across Availability Zones
+        /// in this manner (although you can choose a different placement strategy with the <code>placementStrategy</code>
+        /// parameter):
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         /// Sort the valid container instances by the fewest number of running tasks for this
         /// service in the same Availability Zone as the instance. For example, if zone A has
@@ -161,7 +169,7 @@ namespace Amazon.ECS
         /// Zone (based on the previous steps), favoring container instances with the fewest number
         /// of running tasks for this service.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateService service method.</param>
         /// 
@@ -181,6 +189,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">REST API Reference for CreateService Operation</seealso>
         CreateServiceResponse CreateService(CreateServiceRequest request);
 
 
@@ -193,7 +202,47 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">REST API Reference for CreateService Operation</seealso>
         Task<CreateServiceResponse> CreateServiceAsync(CreateServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAttributes
+
+
+        /// <summary>
+        /// Deletes one or more attributes from an Amazon ECS resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttributes service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAttributes service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.TargetNotFoundException">
+        /// The specified target could not be found. You can view your available container instances
+        /// with <a>ListContainerInstances</a>. Amazon ECS container instances are cluster-specific
+        /// and region-specific.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
+        DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
+        Task<DeleteAttributesResponse> DeleteAttributesAsync(DeleteAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -233,6 +282,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         DeleteClusterResponse DeleteCluster(DeleteClusterRequest request);
 
 
@@ -245,6 +295,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         Task<DeleteClusterResponse> DeleteClusterAsync(DeleteClusterRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -294,6 +345,7 @@ namespace Amazon.ECS
         /// The specified service could not be found. You can view your available services with
         /// <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">REST API Reference for DeleteService Operation</seealso>
         DeleteServiceResponse DeleteService(DeleteServiceRequest request);
 
 
@@ -306,6 +358,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">REST API Reference for DeleteService Operation</seealso>
         Task<DeleteServiceResponse> DeleteServiceAsync(DeleteServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -355,6 +408,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">REST API Reference for DeregisterContainerInstance Operation</seealso>
         DeregisterContainerInstanceResponse DeregisterContainerInstance(DeregisterContainerInstanceRequest request);
 
 
@@ -367,6 +421,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">REST API Reference for DeregisterContainerInstance Operation</seealso>
         Task<DeregisterContainerInstanceResponse> DeregisterContainerInstanceAsync(DeregisterContainerInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -403,6 +458,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">REST API Reference for DeregisterTaskDefinition Operation</seealso>
         DeregisterTaskDefinitionResponse DeregisterTaskDefinition(DeregisterTaskDefinitionRequest request);
 
 
@@ -415,6 +471,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">REST API Reference for DeregisterTaskDefinition Operation</seealso>
         Task<DeregisterTaskDefinitionResponse> DeregisterTaskDefinitionAsync(DeregisterTaskDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -439,6 +496,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         DescribeClustersResponse DescribeClusters(DescribeClustersRequest request);
 
 
@@ -451,6 +509,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         Task<DescribeClustersResponse> DescribeClustersAsync(DescribeClustersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -480,6 +539,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
         DescribeContainerInstancesResponse DescribeContainerInstances(DescribeContainerInstancesRequest request);
 
 
@@ -492,6 +552,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
         Task<DescribeContainerInstancesResponse> DescribeContainerInstancesAsync(DescribeContainerInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -520,6 +581,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         DescribeServicesResponse DescribeServices(DescribeServicesRequest request);
 
 
@@ -532,6 +594,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         Task<DescribeServicesResponse> DescribeServicesAsync(DescribeServicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -565,6 +628,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">REST API Reference for DescribeTaskDefinition Operation</seealso>
         DescribeTaskDefinitionResponse DescribeTaskDefinition(DescribeTaskDefinitionRequest request);
 
 
@@ -577,6 +641,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">REST API Reference for DescribeTaskDefinition Operation</seealso>
         Task<DescribeTaskDefinitionResponse> DescribeTaskDefinitionAsync(DescribeTaskDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -605,6 +670,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">REST API Reference for DescribeTasks Operation</seealso>
         DescribeTasksResponse DescribeTasks(DescribeTasksRequest request);
 
 
@@ -617,7 +683,47 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">REST API Reference for DescribeTasks Operation</seealso>
         Task<DescribeTasksResponse> DescribeTasksAsync(DescribeTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAttributes
+
+
+        /// <summary>
+        /// Lists the attributes for Amazon ECS resources within a specified target type and cluster.
+        /// When you specify a target type and cluster, <code>LisAttributes</code> returns a list
+        /// of attribute objects, one for each attribute on each resource. You can filter the
+        /// list of results to a single attribute name to only return results that have that name.
+        /// You can also filter the results by attribute name and value, for example, to see which
+        /// container instances in a cluster are running a Linux AMI (<code>ecs.os-type=linux</code>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttributes service method.</param>
+        /// 
+        /// <returns>The response from the ListAttributes service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
+        ListAttributesResponse ListAttributes(ListAttributesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
+        Task<ListAttributesResponse> ListAttributesAsync(ListAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -641,6 +747,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">REST API Reference for ListClusters Operation</seealso>
         ListClustersResponse ListClusters(ListClustersRequest request);
 
 
@@ -653,6 +760,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">REST API Reference for ListClusters Operation</seealso>
         Task<ListClustersResponse> ListClustersAsync(ListClustersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -661,7 +769,10 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Returns a list of container instances in a specified cluster.
+        /// Returns a list of container instances in a specified cluster. You can filter the results
+        /// of a <code>ListContainerInstances</code> operation with cluster query language statements
+        /// inside the <code>filter</code> parameter. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+        /// Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContainerInstances service method.</param>
         /// 
@@ -681,6 +792,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">REST API Reference for ListContainerInstances Operation</seealso>
         ListContainerInstancesResponse ListContainerInstances(ListContainerInstancesRequest request);
 
 
@@ -693,6 +805,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">REST API Reference for ListContainerInstances Operation</seealso>
         Task<ListContainerInstancesResponse> ListContainerInstancesAsync(ListContainerInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -721,6 +834,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">REST API Reference for ListServices Operation</seealso>
         ListServicesResponse ListServices(ListServicesRequest request);
 
 
@@ -733,6 +847,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">REST API Reference for ListServices Operation</seealso>
         Task<ListServicesResponse> ListServicesAsync(ListServicesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -766,6 +881,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">REST API Reference for ListTaskDefinitionFamilies Operation</seealso>
         ListTaskDefinitionFamiliesResponse ListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request);
 
 
@@ -778,6 +894,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">REST API Reference for ListTaskDefinitionFamilies Operation</seealso>
         Task<ListTaskDefinitionFamiliesResponse> ListTaskDefinitionFamiliesAsync(ListTaskDefinitionFamiliesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -804,6 +921,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">REST API Reference for ListTaskDefinitions Operation</seealso>
         ListTaskDefinitionsResponse ListTaskDefinitions(ListTaskDefinitionsRequest request);
 
 
@@ -816,6 +934,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">REST API Reference for ListTaskDefinitions Operation</seealso>
         Task<ListTaskDefinitionsResponse> ListTaskDefinitionsAsync(ListTaskDefinitionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -857,6 +976,7 @@ namespace Amazon.ECS
         /// The specified service could not be found. You can view your available services with
         /// <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">REST API Reference for ListTasks Operation</seealso>
         ListTasksResponse ListTasks(ListTasksRequest request);
 
 
@@ -869,7 +989,54 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">REST API Reference for ListTasks Operation</seealso>
         Task<ListTasksResponse> ListTasksAsync(ListTasksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutAttributes
+
+
+        /// <summary>
+        /// Create or update an attribute on an Amazon ECS resource. If the attribute does not
+        /// already exist on the given target, it is created; if it does exist, it is replaced
+        /// with the new value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAttributes service method.</param>
+        /// 
+        /// <returns>The response from the PutAttributes service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AttributeLimitExceededException">
+        /// You can apply up to 10 custom attributes per resource. You can view the attributes
+        /// of a resource with <a>ListAttributes</a>. You can remove existing attributes on a
+        /// resource with <a>DeleteAttributes</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.TargetNotFoundException">
+        /// The specified target could not be found. You can view your available container instances
+        /// with <a>ListContainerInstances</a>. Amazon ECS container instances are cluster-specific
+        /// and region-specific.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
+        PutAttributesResponse PutAttributes(PutAttributesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
+        Task<PutAttributesResponse> PutAttributesAsync(PutAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -913,6 +1080,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">REST API Reference for RegisterTaskDefinition Operation</seealso>
         RegisterTaskDefinitionResponse RegisterTaskDefinition(RegisterTaskDefinitionRequest request);
 
 
@@ -925,6 +1093,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">REST API Reference for RegisterTaskDefinition Operation</seealso>
         Task<RegisterTaskDefinitionResponse> RegisterTaskDefinitionAsync(RegisterTaskDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -933,15 +1102,20 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Start a task using random placement and the default Amazon ECS scheduler. To use your
-        /// own scheduler or place a task on a specific container instance, use <code>StartTask</code>
-        /// instead.
+        /// Starts a new task using the specified task definition.
         /// 
-        ///  <important> 
+        ///  
         /// <para>
-        /// The <code>count</code> parameter is limited to 10 tasks per call.
+        /// You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS
+        /// places tasks using placement constraints and placement strategies. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+        /// Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </para>
-        ///  </important>
+        ///  
+        /// <para>
+        /// Alternatively, you can use <a>StartTask</a> to use your own scheduler or place tasks
+        /// manually on specific container instances.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunTask service method.</param>
         /// 
@@ -961,6 +1135,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">REST API Reference for RunTask Operation</seealso>
         RunTaskResponse RunTask(RunTaskRequest request);
 
 
@@ -973,6 +1148,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">REST API Reference for RunTask Operation</seealso>
         Task<RunTaskResponse> RunTaskAsync(RunTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -982,14 +1158,14 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Starts a new task from the specified task definition on the specified container instance
-        /// or instances. To use the default Amazon ECS scheduler to place your task, use <code>RunTask</code>
-        /// instead.
+        /// or instances.
         /// 
-        ///  <important> 
+        ///  
         /// <para>
-        /// The list of container instances to start tasks on is limited to 10.
+        /// Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+        /// Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTask service method.</param>
         /// 
@@ -1009,6 +1185,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
         StartTaskResponse StartTask(StartTaskRequest request);
 
 
@@ -1021,6 +1198,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
         Task<StartTaskResponse> StartTaskAsync(StartTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1058,6 +1236,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">REST API Reference for StopTask Operation</seealso>
         StopTaskResponse StopTask(StopTaskRequest request);
 
 
@@ -1070,6 +1249,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">REST API Reference for StopTask Operation</seealso>
         Task<StopTaskResponse> StopTaskAsync(StopTaskRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1129,6 +1309,7 @@ namespace Amazon.ECS
         /// get stuck in that state. However, when the agent reconnects, it resumes where it stopped
         /// previously.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">REST API Reference for UpdateContainerAgent Operation</seealso>
         UpdateContainerAgentResponse UpdateContainerAgent(UpdateContainerAgentRequest request);
 
 
@@ -1141,6 +1322,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">REST API Reference for UpdateContainerAgent Operation</seealso>
         Task<UpdateContainerAgentResponse> UpdateContainerAgentAsync(UpdateContainerAgentRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1200,8 +1382,8 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// When the service scheduler launches new tasks, it attempts to balance them across
-        /// the Availability Zones in your cluster with the following logic:
+        /// When the service scheduler launches new tasks, it determines task placement in your
+        /// cluster with the following logic:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1210,6 +1392,12 @@ namespace Amazon.ECS
         /// instance attributes).
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// By default, the service scheduler attempts to balance tasks across Availability Zones
+        /// in this manner (although you can choose a different placement strategy with the <code>placementStrategy</code>
+        /// parameter):
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         /// Sort the valid container instances by the fewest number of running tasks for this
         /// service in the same Availability Zone as the instance. For example, if zone A has
@@ -1221,6 +1409,24 @@ namespace Amazon.ECS
         /// Place the new service task on a valid container instance in an optimal Availability
         /// Zone (based on the previous steps), favoring container instances with the fewest number
         /// of running tasks for this service.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// When the service scheduler stops running tasks, it attempts to maintain balance across
+        /// the Availability Zones in your cluster with the following logic: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Sort the container instances by the largest number of running tasks for this service
+        /// in the same Availability Zone as the instance. For example, if zone A has one running
+        /// service task and zones B and C each have two, container instances in either zone B
+        /// or C are considered optimal for termination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Stop the task on a container instance in an optimal Availability Zone (based on the
+        /// previous steps), favoring container instances with the largest number of running tasks
+        /// for this service.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1250,6 +1456,7 @@ namespace Amazon.ECS
         /// The specified service could not be found. You can view your available services with
         /// <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
         UpdateServiceResponse UpdateService(UpdateServiceRequest request);
 
 
@@ -1262,6 +1469,7 @@ namespace Amazon.ECS
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
         Task<UpdateServiceResponse> UpdateServiceAsync(UpdateServiceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

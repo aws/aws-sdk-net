@@ -269,6 +269,110 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type PlacementConstraintType.
+    /// </summary>
+    public class PlacementConstraintType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DistinctInstance for PlacementConstraintType
+        /// </summary>
+        public static readonly PlacementConstraintType DistinctInstance = new PlacementConstraintType("distinctInstance");
+        /// <summary>
+        /// Constant MemberOf for PlacementConstraintType
+        /// </summary>
+        public static readonly PlacementConstraintType MemberOf = new PlacementConstraintType("memberOf");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PlacementConstraintType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PlacementConstraintType FindValue(string value)
+        {
+            return FindValue<PlacementConstraintType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PlacementConstraintType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PlacementStrategyType.
+    /// </summary>
+    public class PlacementStrategyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Binpack for PlacementStrategyType
+        /// </summary>
+        public static readonly PlacementStrategyType Binpack = new PlacementStrategyType("binpack");
+        /// <summary>
+        /// Constant Random for PlacementStrategyType
+        /// </summary>
+        public static readonly PlacementStrategyType Random = new PlacementStrategyType("random");
+        /// <summary>
+        /// Constant Spread for PlacementStrategyType
+        /// </summary>
+        public static readonly PlacementStrategyType Spread = new PlacementStrategyType("spread");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PlacementStrategyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PlacementStrategyType FindValue(string value)
+        {
+            return FindValue<PlacementStrategyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PlacementStrategyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SortOrder.
     /// </summary>
     public class SortOrder : ConstantClass
@@ -312,6 +416,52 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetType.
+    /// </summary>
+    public class TargetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ContainerInstance for TargetType
+        /// </summary>
+        public static readonly TargetType ContainerInstance = new TargetType("container-instance");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetType FindValue(string value)
+        {
+            return FindValue<TargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetType(string value)
         {
             return FindValue(value);
         }
@@ -366,6 +516,52 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TaskDefinitionFamilyStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TaskDefinitionPlacementConstraintType.
+    /// </summary>
+    public class TaskDefinitionPlacementConstraintType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MemberOf for TaskDefinitionPlacementConstraintType
+        /// </summary>
+        public static readonly TaskDefinitionPlacementConstraintType MemberOf = new TaskDefinitionPlacementConstraintType("memberOf");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TaskDefinitionPlacementConstraintType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TaskDefinitionPlacementConstraintType FindValue(string value)
+        {
+            return FindValue<TaskDefinitionPlacementConstraintType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TaskDefinitionPlacementConstraintType(string value)
         {
             return FindValue(value);
         }

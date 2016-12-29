@@ -40,6 +40,8 @@ namespace Amazon.ECS.Model
         private List<ServiceEvent> _events = new List<ServiceEvent>();
         private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
         private int? _pendingCount;
+        private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
+        private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
         private string _roleArn;
         private int? _runningCount;
         private string _serviceArn;
@@ -194,6 +196,42 @@ namespace Amazon.ECS.Model
         internal bool IsSetPendingCount()
         {
             return this._pendingCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementConstraints. 
+        /// <para>
+        /// The placement constraints for the tasks in the service.
+        /// </para>
+        /// </summary>
+        public List<PlacementConstraint> PlacementConstraints
+        {
+            get { return this._placementConstraints; }
+            set { this._placementConstraints = value; }
+        }
+
+        // Check to see if PlacementConstraints property is set
+        internal bool IsSetPlacementConstraints()
+        {
+            return this._placementConstraints != null && this._placementConstraints.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementStrategy. 
+        /// <para>
+        /// The placement strategy that determines how tasks for the service are placed.
+        /// </para>
+        /// </summary>
+        public List<PlacementStrategy> PlacementStrategy
+        {
+            get { return this._placementStrategy; }
+            set { this._placementStrategy = value; }
+        }
+
+        // Check to see if PlacementStrategy property is set
+        internal bool IsSetPlacementStrategy()
+        {
+            return this._placementStrategy != null && this._placementStrategy.Count > 0; 
         }
 
         /// <summary>

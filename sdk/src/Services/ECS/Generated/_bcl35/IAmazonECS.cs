@@ -70,6 +70,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         CreateClusterResponse CreateCluster(CreateClusterRequest request);
 
         /// <summary>
@@ -83,6 +84,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCluster
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         IAsyncResult BeginCreateCluster(CreateClusterRequest request, AsyncCallback callback, object state);
 
 
@@ -94,6 +96,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCluster.</param>
         /// 
         /// <returns>Returns a  CreateClusterResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         CreateClusterResponse EndCreateCluster(IAsyncResult asyncResult);
 
         #endregion
@@ -149,8 +152,8 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// When the service scheduler launches new tasks, it attempts to balance them across
-        /// the Availability Zones in your cluster with the following logic:
+        /// When the service scheduler launches new tasks, it determines task placement in your
+        /// cluster with the following logic:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -159,6 +162,12 @@ namespace Amazon.ECS
         /// instance attributes).
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// By default, the service scheduler attempts to balance tasks across Availability Zones
+        /// in this manner (although you can choose a different placement strategy with the <code>placementStrategy</code>
+        /// parameter):
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         /// Sort the valid container instances by the fewest number of running tasks for this
         /// service in the same Availability Zone as the instance. For example, if zone A has
@@ -171,7 +180,7 @@ namespace Amazon.ECS
         /// Zone (based on the previous steps), favoring container instances with the fewest number
         /// of running tasks for this service.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateService service method.</param>
         /// 
@@ -191,6 +200,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">REST API Reference for CreateService Operation</seealso>
         CreateServiceResponse CreateService(CreateServiceRequest request);
 
         /// <summary>
@@ -204,6 +214,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateService
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">REST API Reference for CreateService Operation</seealso>
         IAsyncResult BeginCreateService(CreateServiceRequest request, AsyncCallback callback, object state);
 
 
@@ -215,7 +226,60 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateService.</param>
         /// 
         /// <returns>Returns a  CreateServiceResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">REST API Reference for CreateService Operation</seealso>
         CreateServiceResponse EndCreateService(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteAttributes
+
+
+        /// <summary>
+        /// Deletes one or more attributes from an Amazon ECS resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttributes service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAttributes service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.TargetNotFoundException">
+        /// The specified target could not be found. You can view your available container instances
+        /// with <a>ListContainerInstances</a>. Amazon ECS container instances are cluster-specific
+        /// and region-specific.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
+        DeleteAttributesResponse DeleteAttributes(DeleteAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttributes operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
+        IAsyncResult BeginDeleteAttributes(DeleteAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAttributes.</param>
+        /// 
+        /// <returns>Returns a  DeleteAttributesResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes">REST API Reference for DeleteAttributes Operation</seealso>
+        DeleteAttributesResponse EndDeleteAttributes(IAsyncResult asyncResult);
 
         #endregion
         
@@ -255,6 +319,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         DeleteClusterResponse DeleteCluster(DeleteClusterRequest request);
 
         /// <summary>
@@ -268,6 +333,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCluster
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         IAsyncResult BeginDeleteCluster(DeleteClusterRequest request, AsyncCallback callback, object state);
 
 
@@ -279,6 +345,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCluster.</param>
         /// 
         /// <returns>Returns a  DeleteClusterResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         DeleteClusterResponse EndDeleteCluster(IAsyncResult asyncResult);
 
         #endregion
@@ -328,6 +395,7 @@ namespace Amazon.ECS
         /// The specified service could not be found. You can view your available services with
         /// <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">REST API Reference for DeleteService Operation</seealso>
         DeleteServiceResponse DeleteService(DeleteServiceRequest request);
 
         /// <summary>
@@ -341,6 +409,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteService
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">REST API Reference for DeleteService Operation</seealso>
         IAsyncResult BeginDeleteService(DeleteServiceRequest request, AsyncCallback callback, object state);
 
 
@@ -352,6 +421,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteService.</param>
         /// 
         /// <returns>Returns a  DeleteServiceResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">REST API Reference for DeleteService Operation</seealso>
         DeleteServiceResponse EndDeleteService(IAsyncResult asyncResult);
 
         #endregion
@@ -401,6 +471,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">REST API Reference for DeregisterContainerInstance Operation</seealso>
         DeregisterContainerInstanceResponse DeregisterContainerInstance(DeregisterContainerInstanceRequest request);
 
         /// <summary>
@@ -414,6 +485,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterContainerInstance
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">REST API Reference for DeregisterContainerInstance Operation</seealso>
         IAsyncResult BeginDeregisterContainerInstance(DeregisterContainerInstanceRequest request, AsyncCallback callback, object state);
 
 
@@ -425,6 +497,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterContainerInstance.</param>
         /// 
         /// <returns>Returns a  DeregisterContainerInstanceResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance">REST API Reference for DeregisterContainerInstance Operation</seealso>
         DeregisterContainerInstanceResponse EndDeregisterContainerInstance(IAsyncResult asyncResult);
 
         #endregion
@@ -461,6 +534,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">REST API Reference for DeregisterTaskDefinition Operation</seealso>
         DeregisterTaskDefinitionResponse DeregisterTaskDefinition(DeregisterTaskDefinitionRequest request);
 
         /// <summary>
@@ -474,6 +548,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterTaskDefinition
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">REST API Reference for DeregisterTaskDefinition Operation</seealso>
         IAsyncResult BeginDeregisterTaskDefinition(DeregisterTaskDefinitionRequest request, AsyncCallback callback, object state);
 
 
@@ -485,6 +560,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterTaskDefinition.</param>
         /// 
         /// <returns>Returns a  DeregisterTaskDefinitionResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition">REST API Reference for DeregisterTaskDefinition Operation</seealso>
         DeregisterTaskDefinitionResponse EndDeregisterTaskDefinition(IAsyncResult asyncResult);
 
         #endregion
@@ -509,6 +585,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         DescribeClustersResponse DescribeClusters(DescribeClustersRequest request);
 
         /// <summary>
@@ -522,6 +599,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         IAsyncResult BeginDescribeClusters(DescribeClustersRequest request, AsyncCallback callback, object state);
 
 
@@ -533,6 +611,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusters.</param>
         /// 
         /// <returns>Returns a  DescribeClustersResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters">REST API Reference for DescribeClusters Operation</seealso>
         DescribeClustersResponse EndDescribeClusters(IAsyncResult asyncResult);
 
         #endregion
@@ -562,6 +641,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
         DescribeContainerInstancesResponse DescribeContainerInstances(DescribeContainerInstancesRequest request);
 
         /// <summary>
@@ -575,6 +655,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeContainerInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
         IAsyncResult BeginDescribeContainerInstances(DescribeContainerInstancesRequest request, AsyncCallback callback, object state);
 
 
@@ -586,6 +667,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeContainerInstances.</param>
         /// 
         /// <returns>Returns a  DescribeContainerInstancesResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">REST API Reference for DescribeContainerInstances Operation</seealso>
         DescribeContainerInstancesResponse EndDescribeContainerInstances(IAsyncResult asyncResult);
 
         #endregion
@@ -614,6 +696,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         DescribeServicesResponse DescribeServices(DescribeServicesRequest request);
 
         /// <summary>
@@ -627,6 +710,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeServices
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         IAsyncResult BeginDescribeServices(DescribeServicesRequest request, AsyncCallback callback, object state);
 
 
@@ -638,6 +722,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeServices.</param>
         /// 
         /// <returns>Returns a  DescribeServicesResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices">REST API Reference for DescribeServices Operation</seealso>
         DescribeServicesResponse EndDescribeServices(IAsyncResult asyncResult);
 
         #endregion
@@ -671,6 +756,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">REST API Reference for DescribeTaskDefinition Operation</seealso>
         DescribeTaskDefinitionResponse DescribeTaskDefinition(DescribeTaskDefinitionRequest request);
 
         /// <summary>
@@ -684,6 +770,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTaskDefinition
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">REST API Reference for DescribeTaskDefinition Operation</seealso>
         IAsyncResult BeginDescribeTaskDefinition(DescribeTaskDefinitionRequest request, AsyncCallback callback, object state);
 
 
@@ -695,6 +782,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTaskDefinition.</param>
         /// 
         /// <returns>Returns a  DescribeTaskDefinitionResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition">REST API Reference for DescribeTaskDefinition Operation</seealso>
         DescribeTaskDefinitionResponse EndDescribeTaskDefinition(IAsyncResult asyncResult);
 
         #endregion
@@ -723,6 +811,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">REST API Reference for DescribeTasks Operation</seealso>
         DescribeTasksResponse DescribeTasks(DescribeTasksRequest request);
 
         /// <summary>
@@ -736,6 +825,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTasks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">REST API Reference for DescribeTasks Operation</seealso>
         IAsyncResult BeginDescribeTasks(DescribeTasksRequest request, AsyncCallback callback, object state);
 
 
@@ -747,7 +837,60 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTasks.</param>
         /// 
         /// <returns>Returns a  DescribeTasksResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">REST API Reference for DescribeTasks Operation</seealso>
         DescribeTasksResponse EndDescribeTasks(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAttributes
+
+
+        /// <summary>
+        /// Lists the attributes for Amazon ECS resources within a specified target type and cluster.
+        /// When you specify a target type and cluster, <code>LisAttributes</code> returns a list
+        /// of attribute objects, one for each attribute on each resource. You can filter the
+        /// list of results to a single attribute name to only return results that have that name.
+        /// You can also filter the results by attribute name and value, for example, to see which
+        /// container instances in a cluster are running a Linux AMI (<code>ecs.os-type=linux</code>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttributes service method.</param>
+        /// 
+        /// <returns>The response from the ListAttributes service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
+        ListAttributesResponse ListAttributes(ListAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAttributes operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
+        IAsyncResult BeginListAttributes(ListAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAttributes.</param>
+        /// 
+        /// <returns>Returns a  ListAttributesResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes">REST API Reference for ListAttributes Operation</seealso>
+        ListAttributesResponse EndListAttributes(IAsyncResult asyncResult);
 
         #endregion
         
@@ -771,6 +914,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">REST API Reference for ListClusters Operation</seealso>
         ListClustersResponse ListClusters(ListClustersRequest request);
 
         /// <summary>
@@ -784,6 +928,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClusters
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">REST API Reference for ListClusters Operation</seealso>
         IAsyncResult BeginListClusters(ListClustersRequest request, AsyncCallback callback, object state);
 
 
@@ -795,6 +940,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClusters.</param>
         /// 
         /// <returns>Returns a  ListClustersResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters">REST API Reference for ListClusters Operation</seealso>
         ListClustersResponse EndListClusters(IAsyncResult asyncResult);
 
         #endregion
@@ -803,7 +949,10 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Returns a list of container instances in a specified cluster.
+        /// Returns a list of container instances in a specified cluster. You can filter the results
+        /// of a <code>ListContainerInstances</code> operation with cluster query language statements
+        /// inside the <code>filter</code> parameter. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+        /// Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContainerInstances service method.</param>
         /// 
@@ -823,6 +972,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">REST API Reference for ListContainerInstances Operation</seealso>
         ListContainerInstancesResponse ListContainerInstances(ListContainerInstancesRequest request);
 
         /// <summary>
@@ -836,6 +986,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListContainerInstances
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">REST API Reference for ListContainerInstances Operation</seealso>
         IAsyncResult BeginListContainerInstances(ListContainerInstancesRequest request, AsyncCallback callback, object state);
 
 
@@ -847,6 +998,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListContainerInstances.</param>
         /// 
         /// <returns>Returns a  ListContainerInstancesResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">REST API Reference for ListContainerInstances Operation</seealso>
         ListContainerInstancesResponse EndListContainerInstances(IAsyncResult asyncResult);
 
         #endregion
@@ -875,6 +1027,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">REST API Reference for ListServices Operation</seealso>
         ListServicesResponse ListServices(ListServicesRequest request);
 
         /// <summary>
@@ -888,6 +1041,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListServices
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">REST API Reference for ListServices Operation</seealso>
         IAsyncResult BeginListServices(ListServicesRequest request, AsyncCallback callback, object state);
 
 
@@ -899,6 +1053,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListServices.</param>
         /// 
         /// <returns>Returns a  ListServicesResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">REST API Reference for ListServices Operation</seealso>
         ListServicesResponse EndListServices(IAsyncResult asyncResult);
 
         #endregion
@@ -932,6 +1087,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">REST API Reference for ListTaskDefinitionFamilies Operation</seealso>
         ListTaskDefinitionFamiliesResponse ListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request);
 
         /// <summary>
@@ -945,6 +1101,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTaskDefinitionFamilies
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">REST API Reference for ListTaskDefinitionFamilies Operation</seealso>
         IAsyncResult BeginListTaskDefinitionFamilies(ListTaskDefinitionFamiliesRequest request, AsyncCallback callback, object state);
 
 
@@ -956,6 +1113,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTaskDefinitionFamilies.</param>
         /// 
         /// <returns>Returns a  ListTaskDefinitionFamiliesResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies">REST API Reference for ListTaskDefinitionFamilies Operation</seealso>
         ListTaskDefinitionFamiliesResponse EndListTaskDefinitionFamilies(IAsyncResult asyncResult);
 
         #endregion
@@ -982,6 +1140,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">REST API Reference for ListTaskDefinitions Operation</seealso>
         ListTaskDefinitionsResponse ListTaskDefinitions(ListTaskDefinitionsRequest request);
 
         /// <summary>
@@ -995,6 +1154,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTaskDefinitions
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">REST API Reference for ListTaskDefinitions Operation</seealso>
         IAsyncResult BeginListTaskDefinitions(ListTaskDefinitionsRequest request, AsyncCallback callback, object state);
 
 
@@ -1006,6 +1166,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTaskDefinitions.</param>
         /// 
         /// <returns>Returns a  ListTaskDefinitionsResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions">REST API Reference for ListTaskDefinitions Operation</seealso>
         ListTaskDefinitionsResponse EndListTaskDefinitions(IAsyncResult asyncResult);
 
         #endregion
@@ -1047,6 +1208,7 @@ namespace Amazon.ECS
         /// The specified service could not be found. You can view your available services with
         /// <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">REST API Reference for ListTasks Operation</seealso>
         ListTasksResponse ListTasks(ListTasksRequest request);
 
         /// <summary>
@@ -1060,6 +1222,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTasks
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">REST API Reference for ListTasks Operation</seealso>
         IAsyncResult BeginListTasks(ListTasksRequest request, AsyncCallback callback, object state);
 
 
@@ -1071,7 +1234,67 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTasks.</param>
         /// 
         /// <returns>Returns a  ListTasksResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">REST API Reference for ListTasks Operation</seealso>
         ListTasksResponse EndListTasks(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutAttributes
+
+
+        /// <summary>
+        /// Create or update an attribute on an Amazon ECS resource. If the attribute does not
+        /// already exist on the given target, it is created; if it does exist, it is replaced
+        /// with the new value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAttributes service method.</param>
+        /// 
+        /// <returns>The response from the PutAttributes service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AttributeLimitExceededException">
+        /// You can apply up to 10 custom attributes per resource. You can view the attributes
+        /// of a resource with <a>ListAttributes</a>. You can remove existing attributes on a
+        /// resource with <a>DeleteAttributes</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon ECS clusters are region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.TargetNotFoundException">
+        /// The specified target could not be found. You can view your available container instances
+        /// with <a>ListContainerInstances</a>. Amazon ECS container instances are cluster-specific
+        /// and region-specific.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
+        PutAttributesResponse PutAttributes(PutAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAttributes operation on AmazonECSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
+        IAsyncResult BeginPutAttributes(PutAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAttributes.</param>
+        /// 
+        /// <returns>Returns a  PutAttributesResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">REST API Reference for PutAttributes Operation</seealso>
+        PutAttributesResponse EndPutAttributes(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1115,6 +1338,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">REST API Reference for RegisterTaskDefinition Operation</seealso>
         RegisterTaskDefinitionResponse RegisterTaskDefinition(RegisterTaskDefinitionRequest request);
 
         /// <summary>
@@ -1128,6 +1352,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterTaskDefinition
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">REST API Reference for RegisterTaskDefinition Operation</seealso>
         IAsyncResult BeginRegisterTaskDefinition(RegisterTaskDefinitionRequest request, AsyncCallback callback, object state);
 
 
@@ -1139,6 +1364,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterTaskDefinition.</param>
         /// 
         /// <returns>Returns a  RegisterTaskDefinitionResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition">REST API Reference for RegisterTaskDefinition Operation</seealso>
         RegisterTaskDefinitionResponse EndRegisterTaskDefinition(IAsyncResult asyncResult);
 
         #endregion
@@ -1147,15 +1373,20 @@ namespace Amazon.ECS
 
 
         /// <summary>
-        /// Start a task using random placement and the default Amazon ECS scheduler. To use your
-        /// own scheduler or place a task on a specific container instance, use <code>StartTask</code>
-        /// instead.
+        /// Starts a new task using the specified task definition.
         /// 
-        ///  <important> 
+        ///  
         /// <para>
-        /// The <code>count</code> parameter is limited to 10 tasks per call.
+        /// You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS
+        /// places tasks using placement constraints and placement strategies. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+        /// Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </para>
-        ///  </important>
+        ///  
+        /// <para>
+        /// Alternatively, you can use <a>StartTask</a> to use your own scheduler or place tasks
+        /// manually on specific container instances.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunTask service method.</param>
         /// 
@@ -1175,6 +1406,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">REST API Reference for RunTask Operation</seealso>
         RunTaskResponse RunTask(RunTaskRequest request);
 
         /// <summary>
@@ -1188,6 +1420,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRunTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">REST API Reference for RunTask Operation</seealso>
         IAsyncResult BeginRunTask(RunTaskRequest request, AsyncCallback callback, object state);
 
 
@@ -1199,6 +1432,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRunTask.</param>
         /// 
         /// <returns>Returns a  RunTaskResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">REST API Reference for RunTask Operation</seealso>
         RunTaskResponse EndRunTask(IAsyncResult asyncResult);
 
         #endregion
@@ -1208,14 +1442,14 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Starts a new task from the specified task definition on the specified container instance
-        /// or instances. To use the default Amazon ECS scheduler to place your task, use <code>RunTask</code>
-        /// instead.
+        /// or instances.
         /// 
-        ///  <important> 
+        ///  
         /// <para>
-        /// The list of container instances to start tasks on is limited to 10.
+        /// Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+        /// Tasks</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
         /// </para>
-        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTask service method.</param>
         /// 
@@ -1235,6 +1469,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
         StartTaskResponse StartTask(StartTaskRequest request);
 
         /// <summary>
@@ -1248,6 +1483,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
         IAsyncResult BeginStartTask(StartTaskRequest request, AsyncCallback callback, object state);
 
 
@@ -1259,6 +1495,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartTask.</param>
         /// 
         /// <returns>Returns a  StartTaskResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">REST API Reference for StartTask Operation</seealso>
         StartTaskResponse EndStartTask(IAsyncResult asyncResult);
 
         #endregion
@@ -1296,6 +1533,7 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">REST API Reference for StopTask Operation</seealso>
         StopTaskResponse StopTask(StopTaskRequest request);
 
         /// <summary>
@@ -1309,6 +1547,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopTask
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">REST API Reference for StopTask Operation</seealso>
         IAsyncResult BeginStopTask(StopTaskRequest request, AsyncCallback callback, object state);
 
 
@@ -1320,6 +1559,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopTask.</param>
         /// 
         /// <returns>Returns a  StopTaskResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">REST API Reference for StopTask Operation</seealso>
         StopTaskResponse EndStopTask(IAsyncResult asyncResult);
 
         #endregion
@@ -1379,6 +1619,7 @@ namespace Amazon.ECS
         /// get stuck in that state. However, when the agent reconnects, it resumes where it stopped
         /// previously.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">REST API Reference for UpdateContainerAgent Operation</seealso>
         UpdateContainerAgentResponse UpdateContainerAgent(UpdateContainerAgentRequest request);
 
         /// <summary>
@@ -1392,6 +1633,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContainerAgent
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">REST API Reference for UpdateContainerAgent Operation</seealso>
         IAsyncResult BeginUpdateContainerAgent(UpdateContainerAgentRequest request, AsyncCallback callback, object state);
 
 
@@ -1403,6 +1645,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateContainerAgent.</param>
         /// 
         /// <returns>Returns a  UpdateContainerAgentResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">REST API Reference for UpdateContainerAgent Operation</seealso>
         UpdateContainerAgentResponse EndUpdateContainerAgent(IAsyncResult asyncResult);
 
         #endregion
@@ -1462,8 +1705,8 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// When the service scheduler launches new tasks, it attempts to balance them across
-        /// the Availability Zones in your cluster with the following logic:
+        /// When the service scheduler launches new tasks, it determines task placement in your
+        /// cluster with the following logic:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1472,6 +1715,12 @@ namespace Amazon.ECS
         /// instance attributes).
         /// </para>
         ///  </li> <li> 
+        /// <para>
+        /// By default, the service scheduler attempts to balance tasks across Availability Zones
+        /// in this manner (although you can choose a different placement strategy with the <code>placementStrategy</code>
+        /// parameter):
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         /// Sort the valid container instances by the fewest number of running tasks for this
         /// service in the same Availability Zone as the instance. For example, if zone A has
@@ -1483,6 +1732,24 @@ namespace Amazon.ECS
         /// Place the new service task on a valid container instance in an optimal Availability
         /// Zone (based on the previous steps), favoring container instances with the fewest number
         /// of running tasks for this service.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        /// When the service scheduler stops running tasks, it attempts to maintain balance across
+        /// the Availability Zones in your cluster with the following logic: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Sort the container instances by the largest number of running tasks for this service
+        /// in the same Availability Zone as the instance. For example, if zone A has one running
+        /// service task and zones B and C each have two, container instances in either zone B
+        /// or C are considered optimal for termination.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Stop the task on a container instance in an optimal Availability Zone (based on the
+        /// previous steps), favoring container instances with the largest number of running tasks
+        /// for this service.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1512,6 +1779,7 @@ namespace Amazon.ECS
         /// The specified service could not be found. You can view your available services with
         /// <a>ListServices</a>. Amazon ECS services are cluster-specific and region-specific.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
         UpdateServiceResponse UpdateService(UpdateServiceRequest request);
 
         /// <summary>
@@ -1525,6 +1793,7 @@ namespace Amazon.ECS
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateService
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
         IAsyncResult BeginUpdateService(UpdateServiceRequest request, AsyncCallback callback, object state);
 
 
@@ -1536,6 +1805,7 @@ namespace Amazon.ECS
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateService.</param>
         /// 
         /// <returns>Returns a  UpdateServiceResult from ECS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">REST API Reference for UpdateService Operation</seealso>
         UpdateServiceResponse EndUpdateService(IAsyncResult asyncResult);
 
         #endregion

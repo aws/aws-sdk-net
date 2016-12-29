@@ -95,6 +95,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NetworkMode);
                 }
 
+                if(publicRequest.IsSetPlacementConstraints())
+                {
+                    context.Writer.WritePropertyName("placementConstraints");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPlacementConstraintsListValue in publicRequest.PlacementConstraints)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TaskDefinitionPlacementConstraintMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPlacementConstraintsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTaskRoleArn())
                 {
                     context.Writer.WritePropertyName("taskRoleArn");

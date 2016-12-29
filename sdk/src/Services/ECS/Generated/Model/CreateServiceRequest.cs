@@ -76,8 +76,8 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
-    /// When the service scheduler launches new tasks, it attempts to balance them across
-    /// the Availability Zones in your cluster with the following logic:
+    /// When the service scheduler launches new tasks, it determines task placement in your
+    /// cluster with the following logic:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -86,6 +86,12 @@ namespace Amazon.ECS.Model
     /// instance attributes).
     /// </para>
     ///  </li> <li> 
+    /// <para>
+    /// By default, the service scheduler attempts to balance tasks across Availability Zones
+    /// in this manner (although you can choose a different placement strategy with the <code>placementStrategy</code>
+    /// parameter):
+    /// </para>
+    ///  <ul> <li> 
     /// <para>
     /// Sort the valid container instances by the fewest number of running tasks for this
     /// service in the same Availability Zone as the instance. For example, if zone A has
@@ -98,7 +104,7 @@ namespace Amazon.ECS.Model
     /// Zone (based on the previous steps), favoring container instances with the fewest number
     /// of running tasks for this service.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class CreateServiceRequest : AmazonECSRequest
     {
@@ -107,6 +113,8 @@ namespace Amazon.ECS.Model
         private DeploymentConfiguration _deploymentConfiguration;
         private int? _desiredCount;
         private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
+        private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
+        private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
         private string _role;
         private string _serviceName;
         private string _taskDefinition;
@@ -191,9 +199,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property LoadBalancers. 
         /// <para>
         /// A load balancer object representing the load balancer to use with your service. Currently,
-        /// you are limited to one load balancer per service. After you create a service, the
-        /// load balancer name, container name, and container port specified in the service definition
-        /// are immutable.
+        /// you are limited to one load balancer or target group per service. After you create
+        /// a service, the load balancer name or target group ARN, container name, and container
+        /// port specified in the service definition are immutable.
         /// </para>
         ///  
         /// <para>
@@ -222,6 +230,45 @@ namespace Amazon.ECS.Model
         internal bool IsSetLoadBalancers()
         {
             return this._loadBalancers != null && this._loadBalancers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementConstraints. 
+        /// <para>
+        /// An array of placement constraint objects to use for tasks in your service. You can
+        /// specify a maximum of 10 constraints per task (this limit includes constraints in the
+        /// task definition and those specified at run time). 
+        /// </para>
+        /// </summary>
+        public List<PlacementConstraint> PlacementConstraints
+        {
+            get { return this._placementConstraints; }
+            set { this._placementConstraints = value; }
+        }
+
+        // Check to see if PlacementConstraints property is set
+        internal bool IsSetPlacementConstraints()
+        {
+            return this._placementConstraints != null && this._placementConstraints.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementStrategy. 
+        /// <para>
+        /// The placement strategy objects to use for tasks in your service. You can specify a
+        /// maximum of 5 strategy rules per service.
+        /// </para>
+        /// </summary>
+        public List<PlacementStrategy> PlacementStrategy
+        {
+            get { return this._placementStrategy; }
+            set { this._placementStrategy = value; }
+        }
+
+        // Check to see if PlacementStrategy property is set
+        internal bool IsSetPlacementStrategy()
+        {
+            return this._placementStrategy != null && this._placementStrategy.Count > 0; 
         }
 
         /// <summary>

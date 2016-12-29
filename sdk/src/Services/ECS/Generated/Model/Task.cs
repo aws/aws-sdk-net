@@ -37,6 +37,7 @@ namespace Amazon.ECS.Model
         private List<Container> _containers = new List<Container>();
         private DateTime? _createdAt;
         private string _desiredStatus;
+        private string _group;
         private string _lastStatus;
         private TaskOverride _overrides;
         private DateTime? _startedAt;
@@ -136,6 +137,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetDesiredStatus()
         {
             return this._desiredStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Group. 
+        /// <para>
+        /// The task group associated with the task.
+        /// </para>
+        /// </summary>
+        public string Group
+        {
+            get { return this._group; }
+            set { this._group = value; }
+        }
+
+        // Check to see if Group property is set
+        internal bool IsSetGroup()
+        {
+            return this._group != null;
         }
 
         /// <summary>

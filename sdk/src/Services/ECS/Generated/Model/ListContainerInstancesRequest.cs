@@ -29,11 +29,15 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListContainerInstances operation.
-    /// Returns a list of container instances in a specified cluster.
+    /// Returns a list of container instances in a specified cluster. You can filter the results
+    /// of a <code>ListContainerInstances</code> operation with cluster query language statements
+    /// inside the <code>filter</code> parameter. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+    /// Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
     /// </summary>
     public partial class ListContainerInstancesRequest : AmazonECSRequest
     {
         private string _cluster;
+        private string _filter;
         private int? _maxResults;
         private string _nextToken;
 
@@ -54,6 +58,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetCluster()
         {
             return this._cluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// You can filter the results of a <code>ListContainerInstances</code> operation with
+        /// cluster query language statements. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+        /// Query Language</a> in the <i>Amazon EC2 Container Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public string Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
         }
 
         /// <summary>

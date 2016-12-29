@@ -35,6 +35,7 @@ namespace Amazon.ECS.Model
         private List<ContainerDefinition> _containerDefinitions = new List<ContainerDefinition>();
         private string _family;
         private NetworkMode _networkMode;
+        private List<TaskDefinitionPlacementConstraint> _placementConstraints = new List<TaskDefinitionPlacementConstraint>();
         private List<Attribute> _requiresAttributes = new List<Attribute>();
         private int? _revision;
         private TaskDefinitionStatus _status;
@@ -111,6 +112,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetNetworkMode()
         {
             return this._networkMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementConstraints. 
+        /// <para>
+        /// An array of placement constraint objects to use for tasks. 
+        /// </para>
+        /// </summary>
+        public List<TaskDefinitionPlacementConstraint> PlacementConstraints
+        {
+            get { return this._placementConstraints; }
+            set { this._placementConstraints = value; }
+        }
+
+        // Check to see if PlacementConstraints property is set
+        internal bool IsSetPlacementConstraints()
+        {
+            return this._placementConstraints != null && this._placementConstraints.Count > 0; 
         }
 
         /// <summary>
