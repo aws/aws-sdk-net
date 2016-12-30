@@ -1,3 +1,9 @@
+### 3.3.36.0 (2016-12-29 23:59 UTC)
+* CodeDeploy (3.3.2.0)
+	* Add support for IAM Session ARNs in addition to IAM User ARNs for on-premise host authentication.
+* ECS (3.3.2.0)
+	* Add the ability to customize the placement of tasks on container instances.
+
 ### 3.3.35.2 (2016-12-28 21:01 UTC)
 * DynamoDBv2 (3.3.1.4)
 	* Updated to use new Core, version 3.3.7.1
