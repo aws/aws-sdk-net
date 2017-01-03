@@ -253,7 +253,7 @@ namespace SDKDocGenerator.Writers
         private string GenerateFeedbackHTML()
         {
             var filename = FilenameGenerator.Escape(Path.GetFileNameWithoutExtension(GenerateFilename()));
-            const string baseUrl = "https://aws-portal.amazon.com/gp/aws/html-forms-controller/documentation/aws_doc_feedback_04";
+            const string baseUrl = "https://docs.aws.amazon.com/forms/aws-doc-feedback";
             var queryString = string.Format("?service_name={0}&amp;file_name={1}",
                                             "NET-Ref-V3",  // service_name
                                             filename   // guide_name
