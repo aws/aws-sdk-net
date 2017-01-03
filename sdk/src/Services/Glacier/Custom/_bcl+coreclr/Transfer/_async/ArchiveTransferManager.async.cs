@@ -238,6 +238,7 @@ namespace Amazon.Glacier.Transfer
             {
                 jobRequest.AccountId = options.AccountId;
                 jobRequest.JobParameters.SNSTopic = options.SNSTopic;
+                jobRequest.JobParameters.Tier = options.Tier;
             }
 
             var glacierClientTask = await glacierClient.InitiateJobAsync(jobRequest).ConfigureAwait(false);
