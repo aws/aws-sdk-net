@@ -33,5 +33,18 @@ namespace Amazon.Glacier.Transfer
             get;
             set;
         }
+
+        /// <summary>
+        /// Gets and sets the Glacier retrieval Tier. 
+        /// <para>
+        /// The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+        /// <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+        /// </para>
+        /// </summary>
+        public string Tier
+        {
+            get;
+            set;
+        }
     }
 }
