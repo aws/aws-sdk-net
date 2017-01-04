@@ -596,7 +596,7 @@
             },
             "InPreview"    : false
         },
-        "Health"                          : {
+        "AWSHealth"                          : {
             "Version" : "3.3.0.4",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
