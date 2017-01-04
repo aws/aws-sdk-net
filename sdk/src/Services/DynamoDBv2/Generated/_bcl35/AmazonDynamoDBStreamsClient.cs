@@ -288,6 +288,7 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent stream.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public DescribeStreamResponse DescribeStream(string streamArn)
         {
             var request = new DescribeStreamRequest();
@@ -323,6 +324,7 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent stream.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public DescribeStreamResponse DescribeStream(DescribeStreamRequest request)
         {
             var marshaller = new DescribeStreamRequestMarshaller();
@@ -342,6 +344,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeStream
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public IAsyncResult BeginDescribeStream(DescribeStreamRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeStreamRequestMarshaller();
@@ -358,6 +361,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeStream.</param>
         /// 
         /// <returns>Returns a  DescribeStreamResult from DynamoDBStreams.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         public  DescribeStreamResponse EndDescribeStream(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeStreamResponse>(asyncResult);
@@ -429,6 +433,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords">REST API Reference for GetRecords Operation</seealso>
         public GetRecordsResponse GetRecords(string shardIterator)
         {
             var request = new GetRecordsRequest();
@@ -499,6 +504,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords">REST API Reference for GetRecords Operation</seealso>
         public GetRecordsResponse GetRecords(GetRecordsRequest request)
         {
             var marshaller = new GetRecordsRequestMarshaller();
@@ -518,6 +524,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRecords
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords">REST API Reference for GetRecords Operation</seealso>
         public IAsyncResult BeginGetRecords(GetRecordsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetRecordsRequestMarshaller();
@@ -534,6 +541,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRecords.</param>
         /// 
         /// <returns>Returns a  GetRecordsResult from DynamoDBStreams.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetRecords">REST API Reference for GetRecords Operation</seealso>
         public  GetRecordsResponse EndGetRecords(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRecordsResponse>(asyncResult);
@@ -585,6 +593,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator">REST API Reference for GetShardIterator Operation</seealso>
         public GetShardIteratorResponse GetShardIterator(GetShardIteratorRequest request)
         {
             var marshaller = new GetShardIteratorRequestMarshaller();
@@ -604,6 +613,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetShardIterator
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator">REST API Reference for GetShardIterator Operation</seealso>
         public IAsyncResult BeginGetShardIterator(GetShardIteratorRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetShardIteratorRequestMarshaller();
@@ -620,6 +630,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetShardIterator.</param>
         /// 
         /// <returns>Returns a  GetShardIteratorResult from DynamoDBStreams.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/GetShardIterator">REST API Reference for GetShardIterator Operation</seealso>
         public  GetShardIteratorResponse EndGetShardIterator(IAsyncResult asyncResult)
         {
             return EndInvoke<GetShardIteratorResponse>(asyncResult);
@@ -648,6 +659,7 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent stream.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public ListStreamsResponse ListStreams()
         {
             return ListStreams(new ListStreamsRequest());
@@ -673,6 +685,7 @@ namespace Amazon.DynamoDBv2
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent stream.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public ListStreamsResponse ListStreams(ListStreamsRequest request)
         {
             var marshaller = new ListStreamsRequestMarshaller();
@@ -692,6 +705,7 @@ namespace Amazon.DynamoDBv2
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStreams
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public IAsyncResult BeginListStreams(ListStreamsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListStreamsRequestMarshaller();
@@ -708,6 +722,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStreams.</param>
         /// 
         /// <returns>Returns a  ListStreamsResult from DynamoDBStreams.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
         public  ListStreamsResponse EndListStreams(IAsyncResult asyncResult)
         {
             return EndInvoke<ListStreamsResponse>(asyncResult);

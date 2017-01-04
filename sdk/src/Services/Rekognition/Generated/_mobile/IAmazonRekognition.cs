@@ -31,7 +31,7 @@ namespace Amazon.Rekognition
     /// <summary>
     /// Interface for accessing Rekognition
     ///
-    /// This is Amazon Rekognition API guide.
+    /// This is the Amazon Rekognition API reference.
     /// </summary>
     public partial interface IAmazonRekognition : IAmazonService, IDisposable
     {

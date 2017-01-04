@@ -56,7 +56,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Confidence. 
         /// <para>
-        /// Confidence that the selected bounding box contains a face.
+        /// Confidence level that the selected bounding box contains a face.
         /// </para>
         /// </summary>
         public float Confidence

@@ -38,7 +38,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property FaceMatches. 
         /// <para>
-        /// Provides an array of <code>CompareFacesMatch </code> objects. Each object provides
+        /// Provides an array of <code>CompareFacesMatch</code> objects. Each object provides
         /// the bounding box, confidence that the bounding box contains a face, and the similarity
         /// between the face in the bounding box and the face in the source image.
         /// </para>

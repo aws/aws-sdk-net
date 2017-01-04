@@ -97,7 +97,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property SourceImage. 
         /// <para>
-        /// Source image either as bytes or an Amazon S3 object
+        /// Source image either as bytes or an S3 object
         /// </para>
         /// </summary>
         public Image SourceImage
@@ -115,7 +115,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property TargetImage. 
         /// <para>
-        /// Target image either as bytes or an Amazon S3 object
+        /// Target image either as bytes or an S3 object
         /// </para>
         /// </summary>
         public Image TargetImage

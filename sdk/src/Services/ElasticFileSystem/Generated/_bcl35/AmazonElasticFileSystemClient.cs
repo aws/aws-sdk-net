@@ -327,6 +327,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         public CreateFileSystemResponse CreateFileSystem(string creationToken)
         {
             var request = new CreateFileSystemRequest();
@@ -421,6 +422,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         public CreateFileSystemResponse CreateFileSystem(CreateFileSystemRequest request)
         {
             var marshaller = new CreateFileSystemRequestMarshaller();
@@ -440,6 +442,7 @@ namespace Amazon.ElasticFileSystem
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFileSystem
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         public IAsyncResult BeginCreateFileSystem(CreateFileSystemRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateFileSystemRequestMarshaller();
@@ -456,6 +459,7 @@ namespace Amazon.ElasticFileSystem
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFileSystem.</param>
         /// 
         /// <returns>Returns a  CreateFileSystemResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem">REST API Reference for CreateFileSystem Operation</seealso>
         public  CreateFileSystemResponse EndCreateFileSystem(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateFileSystemResponse>(asyncResult);
@@ -566,7 +570,7 @@ namespace Amazon.ElasticFileSystem
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Each Amazon EFS mount target has one corresponding requestor-managed EC2 network interface.
+        /// Each Amazon EFS mount target has one corresponding requester-managed EC2 network interface.
         /// After the network interface is created, Amazon EFS sets the <code>NetworkInterfaceId</code>
         /// field in the mount target's description to the network interface ID, and the <code>IpAddress</code>
         /// field to its address. If network interface creation fails, the entire <code>CreateMountTarget</code>
@@ -575,8 +579,8 @@ namespace Amazon.ElasticFileSystem
         ///  </li> </ul> <note> 
         /// <para>
         /// The <code>CreateMountTarget</code> call returns only after creating the network interface,
-        /// but while the mount target state is still <code>creating</code>. You can check the
-        /// mount target creation status by calling the <a>DescribeFileSystems</a> operation,
+        /// but while the mount target state is still <code>creating</code>, you can check the
+        /// mount target creation status by calling the <a>DescribeMountTargets</a> operation,
         /// which among other things returns the mount target state.
         /// </para>
         ///  </note> 
@@ -664,6 +668,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.UnsupportedAvailabilityZoneException">
         /// 
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateMountTarget">REST API Reference for CreateMountTarget Operation</seealso>
         public CreateMountTargetResponse CreateMountTarget(CreateMountTargetRequest request)
         {
             var marshaller = new CreateMountTargetRequestMarshaller();
@@ -683,6 +688,7 @@ namespace Amazon.ElasticFileSystem
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMountTarget
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateMountTarget">REST API Reference for CreateMountTarget Operation</seealso>
         public IAsyncResult BeginCreateMountTarget(CreateMountTargetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateMountTargetRequestMarshaller();
@@ -699,6 +705,7 @@ namespace Amazon.ElasticFileSystem
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMountTarget.</param>
         /// 
         /// <returns>Returns a  CreateMountTargetResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateMountTarget">REST API Reference for CreateMountTarget Operation</seealso>
         public  CreateMountTargetResponse EndCreateMountTarget(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateMountTargetResponse>(asyncResult);
@@ -735,6 +742,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public CreateTagsResponse CreateTags(CreateTagsRequest request)
         {
             var marshaller = new CreateTagsRequestMarshaller();
@@ -754,6 +762,7 @@ namespace Amazon.ElasticFileSystem
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public IAsyncResult BeginCreateTags(CreateTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new CreateTagsRequestMarshaller();
@@ -770,6 +779,7 @@ namespace Amazon.ElasticFileSystem
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTags.</param>
         /// 
         /// <returns>Returns a  CreateTagsResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags">REST API Reference for CreateTags Operation</seealso>
         public  CreateTagsResponse EndCreateTags(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTagsResponse>(asyncResult);
@@ -821,6 +831,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem">REST API Reference for DeleteFileSystem Operation</seealso>
         public DeleteFileSystemResponse DeleteFileSystem(string fileSystemId)
         {
             var request = new DeleteFileSystemRequest();
@@ -871,6 +882,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem">REST API Reference for DeleteFileSystem Operation</seealso>
         public DeleteFileSystemResponse DeleteFileSystem(DeleteFileSystemRequest request)
         {
             var marshaller = new DeleteFileSystemRequestMarshaller();
@@ -890,6 +902,7 @@ namespace Amazon.ElasticFileSystem
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteFileSystem
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem">REST API Reference for DeleteFileSystem Operation</seealso>
         public IAsyncResult BeginDeleteFileSystem(DeleteFileSystemRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteFileSystemRequestMarshaller();
@@ -906,6 +919,7 @@ namespace Amazon.ElasticFileSystem
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteFileSystem.</param>
         /// 
         /// <returns>Returns a  DeleteFileSystemResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystem">REST API Reference for DeleteFileSystem Operation</seealso>
         public  DeleteFileSystemResponse EndDeleteFileSystem(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteFileSystemResponse>(asyncResult);
@@ -971,6 +985,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
         /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget">REST API Reference for DeleteMountTarget Operation</seealso>
         public DeleteMountTargetResponse DeleteMountTarget(string mountTargetId)
         {
             var request = new DeleteMountTargetRequest();
@@ -1035,6 +1050,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
         /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget">REST API Reference for DeleteMountTarget Operation</seealso>
         public DeleteMountTargetResponse DeleteMountTarget(DeleteMountTargetRequest request)
         {
             var marshaller = new DeleteMountTargetRequestMarshaller();
@@ -1054,6 +1070,7 @@ namespace Amazon.ElasticFileSystem
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMountTarget
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget">REST API Reference for DeleteMountTarget Operation</seealso>
         public IAsyncResult BeginDeleteMountTarget(DeleteMountTargetRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteMountTargetRequestMarshaller();
@@ -1070,6 +1087,7 @@ namespace Amazon.ElasticFileSystem
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMountTarget.</param>
         /// 
         /// <returns>Returns a  DeleteMountTargetResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteMountTarget">REST API Reference for DeleteMountTarget Operation</seealso>
         public  DeleteMountTargetResponse EndDeleteMountTarget(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteMountTargetResponse>(asyncResult);
@@ -1105,6 +1123,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
         {
             var marshaller = new DeleteTagsRequestMarshaller();
@@ -1124,6 +1143,7 @@ namespace Amazon.ElasticFileSystem
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public IAsyncResult BeginDeleteTags(DeleteTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteTagsRequestMarshaller();
@@ -1140,6 +1160,7 @@ namespace Amazon.ElasticFileSystem
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTags.</param>
         /// 
         /// <returns>Returns a  DeleteTagsResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
         public  DeleteTagsResponse EndDeleteTags(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteTagsResponse>(asyncResult);
@@ -1202,6 +1223,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">REST API Reference for DescribeFileSystems Operation</seealso>
         public DescribeFileSystemsResponse DescribeFileSystems(DescribeFileSystemsRequest request)
         {
             var marshaller = new DescribeFileSystemsRequestMarshaller();
@@ -1221,6 +1243,7 @@ namespace Amazon.ElasticFileSystem
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeFileSystems
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">REST API Reference for DescribeFileSystems Operation</seealso>
         public IAsyncResult BeginDescribeFileSystems(DescribeFileSystemsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeFileSystemsRequestMarshaller();
@@ -1237,6 +1260,7 @@ namespace Amazon.ElasticFileSystem
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeFileSystems.</param>
         /// 
         /// <returns>Returns a  DescribeFileSystemsResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">REST API Reference for DescribeFileSystems Operation</seealso>
         public  DescribeFileSystemsResponse EndDescribeFileSystems(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeFileSystemsResponse>(asyncResult);
@@ -1275,6 +1299,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
         /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets">REST API Reference for DescribeMountTargets Operation</seealso>
         public DescribeMountTargetsResponse DescribeMountTargets(string fileSystemId)
         {
             var request = new DescribeMountTargetsRequest();
@@ -1312,6 +1337,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
         /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets">REST API Reference for DescribeMountTargets Operation</seealso>
         public DescribeMountTargetsResponse DescribeMountTargets(DescribeMountTargetsRequest request)
         {
             var marshaller = new DescribeMountTargetsRequestMarshaller();
@@ -1331,6 +1357,7 @@ namespace Amazon.ElasticFileSystem
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMountTargets
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets">REST API Reference for DescribeMountTargets Operation</seealso>
         public IAsyncResult BeginDescribeMountTargets(DescribeMountTargetsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeMountTargetsRequestMarshaller();
@@ -1347,6 +1374,7 @@ namespace Amazon.ElasticFileSystem
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMountTargets.</param>
         /// 
         /// <returns>Returns a  DescribeMountTargetsResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargets">REST API Reference for DescribeMountTargets Operation</seealso>
         public  DescribeMountTargetsResponse EndDescribeMountTargets(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMountTargetsResponse>(asyncResult);
@@ -1393,6 +1421,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
         /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups">REST API Reference for DescribeMountTargetSecurityGroups Operation</seealso>
         public DescribeMountTargetSecurityGroupsResponse DescribeMountTargetSecurityGroups(string mountTargetId)
         {
             var request = new DescribeMountTargetSecurityGroupsRequest();
@@ -1438,6 +1467,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.MountTargetNotFoundException">
         /// Returned if there is no mount target with the specified ID found in the caller's account.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups">REST API Reference for DescribeMountTargetSecurityGroups Operation</seealso>
         public DescribeMountTargetSecurityGroupsResponse DescribeMountTargetSecurityGroups(DescribeMountTargetSecurityGroupsRequest request)
         {
             var marshaller = new DescribeMountTargetSecurityGroupsRequestMarshaller();
@@ -1457,6 +1487,7 @@ namespace Amazon.ElasticFileSystem
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMountTargetSecurityGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups">REST API Reference for DescribeMountTargetSecurityGroups Operation</seealso>
         public IAsyncResult BeginDescribeMountTargetSecurityGroups(DescribeMountTargetSecurityGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeMountTargetSecurityGroupsRequestMarshaller();
@@ -1473,6 +1504,7 @@ namespace Amazon.ElasticFileSystem
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMountTargetSecurityGroups.</param>
         /// 
         /// <returns>Returns a  DescribeMountTargetSecurityGroupsResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeMountTargetSecurityGroups">REST API Reference for DescribeMountTargetSecurityGroups Operation</seealso>
         public  DescribeMountTargetSecurityGroupsResponse EndDescribeMountTargetSecurityGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeMountTargetSecurityGroupsResponse>(asyncResult);
@@ -1507,6 +1539,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public DescribeTagsResponse DescribeTags(string fileSystemId)
         {
             var request = new DescribeTagsRequest();
@@ -1540,6 +1573,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.InternalServerErrorException">
         /// Returned if an error occurred on the server side.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public DescribeTagsResponse DescribeTags(DescribeTagsRequest request)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -1559,6 +1593,7 @@ namespace Amazon.ElasticFileSystem
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTags
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public IAsyncResult BeginDescribeTags(DescribeTagsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeTagsRequestMarshaller();
@@ -1575,6 +1610,7 @@ namespace Amazon.ElasticFileSystem
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTags.</param>
         /// 
         /// <returns>Returns a  DescribeTagsResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">REST API Reference for DescribeTags Operation</seealso>
         public  DescribeTagsResponse EndDescribeTags(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTagsResponse>(asyncResult);
@@ -1635,6 +1671,7 @@ namespace Amazon.ElasticFileSystem
         /// <exception cref="Amazon.ElasticFileSystem.Model.SecurityGroupNotFoundException">
         /// Returned if one of the specified security groups does not exist in the subnet's VPC.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups">REST API Reference for ModifyMountTargetSecurityGroups Operation</seealso>
         public ModifyMountTargetSecurityGroupsResponse ModifyMountTargetSecurityGroups(ModifyMountTargetSecurityGroupsRequest request)
         {
             var marshaller = new ModifyMountTargetSecurityGroupsRequestMarshaller();
@@ -1654,6 +1691,7 @@ namespace Amazon.ElasticFileSystem
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyMountTargetSecurityGroups
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups">REST API Reference for ModifyMountTargetSecurityGroups Operation</seealso>
         public IAsyncResult BeginModifyMountTargetSecurityGroups(ModifyMountTargetSecurityGroupsRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ModifyMountTargetSecurityGroupsRequestMarshaller();
@@ -1670,6 +1708,7 @@ namespace Amazon.ElasticFileSystem
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyMountTargetSecurityGroups.</param>
         /// 
         /// <returns>Returns a  ModifyMountTargetSecurityGroupsResult from ElasticFileSystem.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ModifyMountTargetSecurityGroups">REST API Reference for ModifyMountTargetSecurityGroups Operation</seealso>
         public  ModifyMountTargetSecurityGroupsResponse EndModifyMountTargetSecurityGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyMountTargetSecurityGroupsResponse>(asyncResult);

@@ -36,8 +36,8 @@ namespace Amazon.Lambda
     ///  
     /// <para>
     /// This is the <i>AWS Lambda API Reference</i>. The AWS Lambda Developer Guide provides
-    /// additional information. For the service overview, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
-    /// is AWS Lambda</a>, and for information about how the service works, go to <a href="http://docs.aws.amazon.com/lamdba/latest/dg/lambda-introduction.html">AWS
+    /// additional information. For the service overview, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What
+    /// is AWS Lambda</a>, and for information about how the service works, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
     /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -209,7 +209,7 @@ namespace Amazon.Lambda
         ///  <important>
         /// <para>
         /// This event source mapping is relevant only in the AWS Lambda pull model, where AWS
-        /// Lambda invokes the function. For more information, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+        /// Lambda invokes the function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
         /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
         /// </para>
         ///  </important> 
@@ -613,9 +613,9 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
-        /// You can use this operation to retrieve Lambda limit information such as code size
-        /// and concurrency limits. For more information on limits, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS
-        /// Lambda Limits</a>. You can also retrieve resource usage statistics such as code storage
+        /// You can use this operation to retrieve Lambda limits information, such as code size
+        /// and concurrency limits. For more information about limits, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS
+        /// Lambda Limits</a>. You can also retrieve resource usage statistics, such as code storage
         /// usage and function count.
         /// </para>
         /// </summary>
@@ -1136,20 +1136,20 @@ namespace Amazon.Lambda
         /// AWS Lambda could not unzip the function zip file.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.KMSAccessDeniedException">
-        /// Lambda was unable to decrypt the environment variables becauses KMS access was denied.
-        /// Please check the Lambda function's KMS permissions.
+        /// Lambda was unable to decrypt the environment variables because KMS access was denied.
+        /// Check the Lambda function's KMS permissions.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.KMSDisabledException">
         /// Lambda was unable to decrypt the environment variables because the KMS key used is
-        /// disabled. Please check the Lambda function's KMS key settings.
+        /// disabled. Check the Lambda function's KMS key settings.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.KMSInvalidStateException">
         /// Lambda was unable to decrypt the environment variables because the KMS key used is
-        /// in an invalid state for Decrypt. Please check the function's KMS key settings.
+        /// in an invalid state for Decrypt. Check the function's KMS key settings.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
         /// Lambda was unable to decrypt the environment variables because the KMS key was not
-        /// found. Please check the function's KMS key settings.
+        /// found. Check the function's KMS key settings.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
         /// The request payload exceeded the <code>Invoke</code> request body JSON input limit.

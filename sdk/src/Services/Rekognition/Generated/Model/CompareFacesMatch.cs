@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Provide the bounding box, confidence that the bounding box actually contains a face,
-    /// and the similarity between the face in the bounding box and the face in the source
-    /// image.
+    /// For the provided the bounding box, confidence level that the bounding box actually
+    /// contains a face, and the similarity between the face in the bounding box and the face
+    /// in the source image.
     /// </summary>
     public partial class CompareFacesMatch
     {

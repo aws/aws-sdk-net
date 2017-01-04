@@ -29,10 +29,10 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchFaces operation.
-    /// For a given input face ID, searches the specified collection for matching faces. You
-    /// get a face ID when you add a face to the collection using the <a>IndexFaces</a> operation.
-    /// The operation compares the features of the input face with faces in the specified
-    /// collection. 
+    /// For a given input face ID, searches for matching faces in the collection the face
+    /// belongs to. You get a face ID when you add a face to the collection using the <a>IndexFaces</a>
+    /// operation. The operation compares the features of the input face with faces in the
+    /// specified collection. 
     /// 
     ///  <note> 
     /// <para>
@@ -67,7 +67,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property CollectionId. 
         /// <para>
-        /// ID of the collection to search.
+        /// ID of the collection the face belongs to.
         /// </para>
         /// </summary>
         public string CollectionId
@@ -122,7 +122,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property MaxFaces. 
         /// <para>
-        /// Maximum number of faces to return. The API will return the maximum number of faces
+        /// Maximum number of faces to return. The operation returns the maximum number of faces
         /// with the highest confidence in the match.
         /// </para>
         /// </summary>

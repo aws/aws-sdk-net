@@ -74,7 +74,7 @@ namespace Amazon.Rekognition.Model
         /// For example, you can specify the value as, ["ALL"] or ["DEFAULT"]. If you provide
         /// both, ["ALL", "DEFAULT"], the service uses a logical AND operator to determine which
         /// attributes to return (in this case, it is all attributes). If you specify all attributes,
-        /// Rekognition performs additional detection. 
+        /// Amazon Rekognition performs additional detection. 
         /// </para>
         /// </summary>
         public List<string> Attributes

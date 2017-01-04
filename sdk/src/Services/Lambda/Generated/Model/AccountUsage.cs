@@ -57,7 +57,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TotalCodeSize. 
         /// <para>
-        /// Total size, in megabytes, of the account's deployment packages per region.
+        /// Total size, in bytes, of the account's deployment packages per region.
         /// </para>
         /// </summary>
         public long TotalCodeSize

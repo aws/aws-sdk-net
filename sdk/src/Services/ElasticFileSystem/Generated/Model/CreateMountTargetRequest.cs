@@ -129,7 +129,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Each Amazon EFS mount target has one corresponding requestor-managed EC2 network interface.
+    /// Each Amazon EFS mount target has one corresponding requester-managed EC2 network interface.
     /// After the network interface is created, Amazon EFS sets the <code>NetworkInterfaceId</code>
     /// field in the mount target's description to the network interface ID, and the <code>IpAddress</code>
     /// field to its address. If network interface creation fails, the entire <code>CreateMountTarget</code>
@@ -138,8 +138,8 @@ namespace Amazon.ElasticFileSystem.Model
     ///  </li> </ul> <note> 
     /// <para>
     /// The <code>CreateMountTarget</code> call returns only after creating the network interface,
-    /// but while the mount target state is still <code>creating</code>. You can check the
-    /// mount target creation status by calling the <a>DescribeFileSystems</a> operation,
+    /// but while the mount target state is still <code>creating</code>, you can check the
+    /// mount target creation status by calling the <a>DescribeMountTargets</a> operation,
     /// which among other things returns the mount target state.
     /// </para>
     ///  </note> 

@@ -29,6 +29,22 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Provides the source image either as bytes or an S3 object.
+    /// 
+    ///  
+    /// <para>
+    /// The region for the S3 bucket containing the S3 object must match the region you use
+    /// for Amazon Rekognition operations.
+    /// </para>
+    ///  
+    /// <para>
+    /// You may need to Base64-encode the image bytes depending on the language you are using
+    /// and whether or not you are using the AWS SDK. For more information, see <a>example4</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For Amazon Rekognition to process an S3 object, the user must have permission to access
+    /// the S3 object. For more information, see <a>manage-access-resource-policies</a>. 
+    /// </para>
     /// </summary>
     public partial class Image
     {

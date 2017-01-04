@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Structure containing details about the detected label, including bounding box, name,
-    /// and level of confidence.
+    /// Structure containing details about the detected label, including name, and level of
+    /// confidence.
     /// </summary>
     public partial class Label
     {

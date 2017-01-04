@@ -362,7 +362,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraint: Must be compatible with the engine of the source
+        /// Constraint: Must be compatible with the engine of the source. You can restore a MariaDB
+        /// 10.1 DB instance from a MySQL 5.6 snapshot.
         /// </para>
         ///  
         /// <para>

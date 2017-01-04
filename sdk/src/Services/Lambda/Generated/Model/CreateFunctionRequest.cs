@@ -83,7 +83,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property DeadLetterConfig. 
         /// <para>
-        /// The parent object that contains the target ARN (Amazon Resource Name) of an Amazon
+        /// The parent object that contains the target Amazon Resource Name (ARN) of an Amazon
         /// SQS queue or Amazon SNS topic. 
         /// </para>
         /// </summary>
@@ -138,7 +138,8 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The name you want to assign to the function you are uploading. The function names
         /// appear in the console and are returned in the <a>ListFunctions</a> API. Function names
-        /// are used to specify functions to other AWS Lambda APIs, such as <a>Invoke</a>. 
+        /// are used to specify functions to other AWS Lambda API operations, such as <a>Invoke</a>.
+        /// 
         /// </para>
         /// </summary>
         public string FunctionName
@@ -269,8 +270,8 @@ namespace Amazon.Lambda.Model
         ///  <note> 
         /// <para>
         /// You can no longer create functions using the v0.10.42 runtime version as of November,
-        /// 2016. Existing functions will be supported until early 2017 but we recommend you migrate
-        /// them to nodejs4.3 runtime version as soon as possible.
+        /// 2016. Existing functions will be supported until early 2017, but we recommend you
+        /// migrate them to nodejs4.3 runtime version as soon as possible.
         /// </para>
         ///  </note>
         /// </summary>

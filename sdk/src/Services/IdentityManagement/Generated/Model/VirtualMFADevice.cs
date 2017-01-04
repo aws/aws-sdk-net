@@ -41,7 +41,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Base32StringSeed. 
         /// <para>
-        ///  The Base32 seed defined as specified in <a href="http://www.ietf.org/rfc/rfc3548.txt">RFC3548</a>.
+        ///  The Base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>.
         /// The <code>Base32StringSeed</code> is Base64-encoded. 
         /// </para>
         /// </summary>

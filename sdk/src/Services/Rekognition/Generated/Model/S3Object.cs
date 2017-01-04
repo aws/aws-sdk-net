@@ -29,6 +29,17 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Provides the S3 bucket name and object name.
+    /// 
+    ///  
+    /// <para>
+    /// The region for the S3 bucket containing the S3 object must match the region you use
+    /// for Amazon Rekognition operations.
+    /// </para>
+    ///  
+    /// <para>
+    /// For Amazon Rekognition to process an S3 object, the user must have permission to access
+    /// the S3 object. For more information, see <a>manage-access-resource-policies</a>. 
+    /// </para>
     /// </summary>
     public partial class S3Object
     {

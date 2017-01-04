@@ -79,7 +79,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    ///  You can provide the input image as an S3 object or as base64-encoded bytes. In response,
+    /// You can provide the input image as an S3 object or as base64-encoded bytes. In response,
     /// the API returns an array of labels. In addition, the response also includes the orientation
     /// correction. Optionally, you can specify <code>MinConfidence</code> to control the
     /// confidence threshold for the labels returned. The default is 50%. You can also add

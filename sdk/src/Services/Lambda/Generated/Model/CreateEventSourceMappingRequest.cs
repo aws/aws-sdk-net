@@ -41,7 +41,7 @@ namespace Amazon.Lambda.Model
     ///  <important>
     /// <para>
     /// This event source mapping is relevant only in the AWS Lambda pull model, where AWS
-    /// Lambda invokes the function. For more information, go to <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
+    /// Lambda invokes the function. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
     /// Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
     /// </para>
     ///  </important> 
@@ -180,8 +180,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property StartingPosition. 
         /// <para>
-        /// The position in the stream where AWS Lambda should start reading. For more information,
-        /// go to <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
+        /// The position in the stream where AWS Lambda should start reading. Valid only for Kinesis
+        /// streams. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">ShardIteratorType</a>
         /// in the <i>Amazon Kinesis API Reference</i>. 
         /// </para>
         /// </summary>
@@ -204,7 +204,7 @@ namespace Amazon.Lambda.Model
         /// iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist,
         /// the iterator returned is for the next (later) record. If the timestamp is older than
         /// the current trim horizon, the iterator returned is for the oldest untrimmed data record
-        /// (TRIM_HORIZON). 
+        /// (TRIM_HORIZON). Valid only for Kinesis streams. 
         /// </para>
         /// </summary>
         public DateTime StartingPositionTimestamp

@@ -57,8 +57,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property SearchedFaceBoundingBox. 
         /// <para>
-        /// The bounding box around the face in the input image that Rekognition used for the
-        /// search.
+        /// The bounding box around the face in the input image that Amazon Rekognition used for
+        /// the search.
         /// </para>
         /// </summary>
         public BoundingBox SearchedFaceBoundingBox

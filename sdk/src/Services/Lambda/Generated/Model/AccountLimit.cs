@@ -61,7 +61,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property CodeSizeZipped. 
         /// <para>
         /// Size, in bytes, of a single zipped code/dependencies package you can upload for your
-        /// Lambda function(.zip/.jar file). Try using AWS S3 for uploading larger files. Default
+        /// Lambda function(.zip/.jar file). Try using Amazon S3 for uploading larger files. Default
         /// limit is 50 MB.
         /// </para>
         /// </summary>

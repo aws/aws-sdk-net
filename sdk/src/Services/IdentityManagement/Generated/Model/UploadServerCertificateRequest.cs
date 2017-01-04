@@ -73,8 +73,8 @@ namespace Amazon.IdentityManagement.Model
         /// Instantiates UploadServerCertificateRequest with the parameterized properties
         /// </summary>
         /// <param name="serverCertificateName">The name for the server certificate. Do not include the path in this value. The name of the certificate cannot contain any spaces. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-</param>
-        /// <param name="certificateBody">The contents of the public key certificate in PEM-encoded format. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
-        /// <param name="privateKey">The contents of the private key in PEM-encoded format. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range (\u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
+        /// <param name="certificateBody">The contents of the public key certificate in PEM-encoded format. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
+        /// <param name="privateKey">The contents of the private key in PEM-encoded format. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of any printable ASCII character ranging from the space character (\u0020) through end of the ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</param>
         public UploadServerCertificateRequest(string serverCertificateName, string certificateBody, string privateKey)
         {
             _serverCertificateName = serverCertificateName;
@@ -89,11 +89,12 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-        /// a string of characters consisting of any printable ASCII character ranging from the
-        /// space character (\u0020) through end of the ASCII character range (\u00FF). It also
-        /// includes the special characters tab (\u0009), line feed (\u000A), and carriage return
-        /// (\u000D).
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+        /// parameter is a string of characters consisting of any printable ASCII character ranging
+        /// from the space character (\u0020) through end of the ASCII character range as well
+        /// as the printable characters in the Basic Latin and Latin-1 Supplement character set
+        /// (through \u00FF). It also includes the special characters tab (\u0009), line feed
+        /// (\u000A), and carriage return (\u000D).
         /// </para>
         /// </summary>
         public string CertificateBody
@@ -116,11 +117,12 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-        /// a string of characters consisting of any printable ASCII character ranging from the
-        /// space character (\u0020) through end of the ASCII character range (\u00FF). It also
-        /// includes the special characters tab (\u0009), line feed (\u000A), and carriage return
-        /// (\u000D).
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+        /// parameter is a string of characters consisting of any printable ASCII character ranging
+        /// from the space character (\u0020) through end of the ASCII character range as well
+        /// as the printable characters in the Basic Latin and Latin-1 Supplement character set
+        /// (through \u00FF). It also includes the special characters tab (\u0009), line feed
+        /// (\u000A), and carriage return (\u000D).
         /// </para>
         /// </summary>
         public string CertificateChain
@@ -178,11 +180,12 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-        /// a string of characters consisting of any printable ASCII character ranging from the
-        /// space character (\u0020) through end of the ASCII character range (\u00FF). It also
-        /// includes the special characters tab (\u0009), line feed (\u000A), and carriage return
-        /// (\u000D).
+        /// The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+        /// parameter is a string of characters consisting of any printable ASCII character ranging
+        /// from the space character (\u0020) through end of the ASCII character range as well
+        /// as the printable characters in the Basic Latin and Latin-1 Supplement character set
+        /// (through \u00FF). It also includes the special characters tab (\u0009), line feed
+        /// (\u000A), and carriage return (\u000D).
         /// </para>
         /// </summary>
         public string PrivateKey
