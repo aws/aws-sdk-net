@@ -33,6 +33,7 @@ namespace Amazon.Runtime.Internal
     public class SharedCredentialsFile : ICredentialProfileStore
     {
         private const string UniqueKeyField = "unique_key";
+        private const string RegionField = "region";
         private const string ProfileMarker = "profile";
         private const string ConfigFileName = "config";
 
@@ -41,6 +42,7 @@ namespace Amazon.Runtime.Internal
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             UniqueKeyField,
+            RegionField
         };
 
         /// <summary>
@@ -155,6 +157,12 @@ namespace Amazon.Runtime.Internal
         private void RegisterProfileInternal(CredentialProfile profile)
         {
             var reservedProperties = new Dictionary<string, string> { { UniqueKeyField, profile.UniqueKey } };
+
+            if (profile.Region != null)
+            {
+                reservedProperties[RegionField] = profile.Region.SystemName;
+            }
+
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
 
@@ -236,7 +244,19 @@ namespace Amazon.Runtime.Internal
                     doSave = true;
                 }
 
-                profile = new CredentialProfile(uniqueKey, profileName, profileOptions, userProperties, this);
+                string regionString;
+                RegionEndpoint region = null;
+                if (reservedProperties.TryGetValue(RegionField, out regionString))
+                {
+                    region = RegionEndpoint.GetBySystemName(regionString);
+                }
+
+                profile = new CredentialProfile(profileName, profileOptions, this)
+                {
+                    UniqueKey = uniqueKey,
+                    Properties = userProperties,
+                    Region = region
+                };
 
                 if (!IsSupportedProfileType(profile.ProfileType))
                 {

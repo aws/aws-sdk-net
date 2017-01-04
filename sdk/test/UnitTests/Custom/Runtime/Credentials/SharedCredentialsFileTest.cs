@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using AWSSDK_DotNet.IntegrationTests.Utils;
@@ -78,6 +79,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("[profile basic_profile]")
             .AppendLine("aws_access_key_id=basic_aws_access_key_id")
             .AppendLine("aws_secret_access_key=basic_aws_secret_access_key")
+            .AppendLine("region=ca-central-1")
             .Append("unique_key=XXX")
             .ToString();
 
@@ -208,7 +210,7 @@ namespace AWSSDK.UnitTests
         {
             using (var tester = new SharedCredentialsFileTestFixture(BasicProfileCredentialsText))
             {
-                tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions);
+                tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions, RegionEndpoint.CACentral1);
             }
         }
 
@@ -217,7 +219,7 @@ namespace AWSSDK.UnitTests
         {
             using (var tester = new SharedCredentialsFileTestFixture())
             {
-                tester.AssertWriteProfile("basic_profile", BasicProfileOptions, BasicProfileCredentialsText);
+                tester.AssertWriteProfile("basic_profile", BasicProfileOptions, RegionEndpoint.CACentral1, BasicProfileCredentialsText);
             }
         }
 
@@ -371,7 +373,7 @@ namespace AWSSDK.UnitTests
         {
             using (var tester = new SharedCredentialsFileTestFixture(null, BasicProfileConfigText))
             {
-                tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions);
+                tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions, RegionEndpoint.CACentral1);
             }
         }
 
@@ -381,7 +383,7 @@ namespace AWSSDK.UnitTests
             var basicProfileInConfigWithWhitespace = BasicProfileConfigText.Replace("profile basic_profile", "profile \t basic_profile");
             using (var tester = new SharedCredentialsFileTestFixture(null, basicProfileInConfigWithWhitespace))
             {
-                tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions);
+                tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions, RegionEndpoint.CACentral1);
             }
         }
 

@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using AWSSDK_DotNet.CommonTest.Utils;
@@ -67,14 +68,27 @@ namespace AWSSDK.UnitTests
         {
         }
 
-        public CredentialProfile ReadAndAssertProfile(string profileName, CredentialProfileOptions expectedProfileOptions)
+        public CredentialProfile ReadAndAssertProfile(string profileName, CredentialProfileOptions expectedProfileOptions,
+            RegionEndpoint expectedRegion)
         {
-            return ReadAndAssertProfile(profileName, expectedProfileOptions, null);
+            return ReadAndAssertProfile(profileName, expectedProfileOptions, null, expectedRegion);
         }
 
-        public CredentialProfile ReadAndAssertProfile(string profileName, CredentialProfileOptions expectedProfileOptions, Dictionary<string, string> expectedProperties)
+        public CredentialProfile ReadAndAssertProfile(string profileName, CredentialProfileOptions expectedProfileOptions,
+            Dictionary<string, string> expectedProperties)
         {
-            var expectedProfile = CredentialProfileTestHelper.GetCredentialProfile(profileName, expectedProfileOptions, expectedProperties);
+            return ReadAndAssertProfile(profileName, expectedProfileOptions, expectedProperties, null);
+        }
+
+        public CredentialProfile ReadAndAssertProfile(string profileName, CredentialProfileOptions expectedProfileOptions)
+        {
+            return ReadAndAssertProfile(profileName, expectedProfileOptions, null, null);
+        }
+
+        public CredentialProfile ReadAndAssertProfile(string profileName, CredentialProfileOptions expectedProfileOptions,
+            Dictionary<string, string> expectedProperties, RegionEndpoint expectedRegion)
+        {
+            var expectedProfile = CredentialProfileTestHelper.GetCredentialProfile(profileName, expectedProfileOptions, expectedProperties, expectedRegion);
             ReflectionHelpers.Invoke(expectedProfile, "UniqueKey", UniqueKey);
             var actualProfile = TestTryGetProfile(profileName, true, expectedProfile.CanCreateAWSCredentials);
             Assert.AreEqual(expectedProfile, actualProfile);
@@ -92,12 +106,23 @@ namespace AWSSDK.UnitTests
 
         public void AssertWriteProfile(string profileName, CredentialProfileOptions profileOptions, string expectedFileContents)
         {
-            AssertWriteProfile(profileName, profileOptions, null, expectedFileContents);
+            AssertWriteProfile(profileName, profileOptions, null, (RegionEndpoint)null, expectedFileContents);
+        }
+
+        public void AssertWriteProfile(string profileName, CredentialProfileOptions profileOptions, RegionEndpoint region, string expectedFileContents)
+        {
+            AssertWriteProfile(profileName, profileOptions, null, region, expectedFileContents);
         }
 
         public void AssertWriteProfile(string profileName, CredentialProfileOptions profileOptions, Dictionary<string, string> properties, string expectedFileContents)
         {
-            CredentialsFile.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(profileName, profileOptions, properties));
+            AssertWriteProfile(profileName, profileOptions, properties, null, expectedFileContents);
+        }
+
+        public void AssertWriteProfile(string profileName, CredentialProfileOptions profileOptions,
+            Dictionary<string, string> properties, RegionEndpoint region, string expectedFileContents)
+        {
+            CredentialsFile.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(profileName, profileOptions, properties, region));
             AssertCredentialsFileContents(expectedFileContents);
         }
 

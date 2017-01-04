@@ -34,10 +34,13 @@ namespace Amazon.Runtime.Internal
         private const string AWSCredentialsProfileType = "AWS";
         private const string SAMLRoleProfileType = "SAML";
 
+        private const string RegionField = "Region";
+
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             SettingsConstants.DisplayNameField,
-            SettingsConstants.ProfileTypeField
+            SettingsConstants.ProfileTypeField,
+            RegionField
         };
 
         private static readonly CredentialProfilePropertyMapping PropertyMapping =
@@ -102,9 +105,22 @@ namespace Amazon.Runtime.Internal
                 {
                     CredentialProfileOptions profileOptions;
                     Dictionary<string, string> userProperties;
-                    PropertyMapping.ExtractProfileParts(properties, ReservedPropertyNames, out profileOptions, out userProperties);
+                    Dictionary<string, string> reservedProperties;
+                    PropertyMapping.ExtractProfileParts(properties, ReservedPropertyNames,out profileOptions, out reservedProperties, out userProperties);
 
-                    profile = new CredentialProfile(uniqueKey, profileName, profileOptions, userProperties, this);
+                    string regionString;
+                    RegionEndpoint region = null;
+                    if (reservedProperties.TryGetValue(RegionField, out regionString))
+                    {
+                        region = RegionEndpoint.GetBySystemName(regionString);
+                    }
+
+                    profile = new CredentialProfile(profileName, profileOptions, this)
+                    {
+                        UniqueKey = uniqueKey,
+                        Properties = userProperties,
+                        Region = region
+                    };
                     return true;
                 }
                 catch (ArgumentException)
@@ -131,6 +147,10 @@ namespace Amazon.Runtime.Internal
                 var reservedProperties = new Dictionary<string, string>();
                 // set profile type field for backward compatibility
                 SetProfileTypeField(reservedProperties, profile.ProfileType.Value);
+
+                if (profile.Region != null)
+                    reservedProperties[RegionField] = profile.Region.SystemName;
+
                 var profileDictionary = PropertyMapping.CombineProfileParts(
                     profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
 

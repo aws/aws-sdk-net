@@ -49,7 +49,13 @@ namespace Amazon.Runtime.Internal
         public static void RegisterProfile(CredentialProfileManager profileManager, string profileName,
             CredentialProfileOptions profileOptions, Dictionary<string, string> properties)
         {
-            profileManager.RegisterProfileWithProperties(profileName, profileOptions, properties);
+            RegisterProfile(profileManager, profileName, profileOptions, properties, null);
+        }
+
+        public static void RegisterProfile(CredentialProfileManager profileManager, string profileName,
+            CredentialProfileOptions profileOptions, Dictionary<string, string> properties, RegionEndpoint region)
+        {
+            profileManager.RegisterProfileInternal(profileName, profileOptions, properties, region);
         }
     }
 }

@@ -12,8 +12,10 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using AWSSDK_DotNet.CommonTest.Utils;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -25,6 +27,8 @@ namespace AWSSDK.UnitTests
     /// </summary>
     public static class CredentialProfileTestHelper
     {
+        private static readonly List<RegionEndpoint> EndpointList = new List<RegionEndpoint>(RegionEndpoint.EnumerableAllRegions);
+
         public static CredentialProfileOptions GetRandomOptions(CredentialProfileType profileType)
         {
             CredentialProfileOptions options = new CredentialProfileOptions();
@@ -33,6 +37,11 @@ namespace AWSSDK.UnitTests
                 typeof(CredentialProfileOptions).GetProperty(propertyName).SetValue(options, Guid.NewGuid().ToString());
             }
             return options;
+        }
+
+        public static RegionEndpoint GetRandomRegion()
+        {
+            return EndpointList[new Random().Next(0, EndpointList.Count - 1)];
         }
 
         public static Dictionary<string, string> GetRandomProperties()
@@ -48,39 +57,54 @@ namespace AWSSDK.UnitTests
 
         public static CredentialProfile GetCredentialProfile(string profileName, CredentialProfileOptions options)
         {
-            return GetCredentialProfile(null, profileName, options, null, new MemoryCredentialProfileStore());
+            return GetCredentialProfile(null, profileName, options, null, null, new MemoryCredentialProfileStore());
         }
 
         public static CredentialProfile GetCredentialProfile(string profileName, CredentialProfileOptions options, Dictionary<string, string> properties)
         {
-            return GetCredentialProfile(null, profileName, options, properties, new MemoryCredentialProfileStore());
+            return GetCredentialProfile(null, profileName, options, properties, null, new MemoryCredentialProfileStore());
+        }
+
+        public static CredentialProfile GetCredentialProfile(string profileName, CredentialProfileOptions options, Dictionary<string, string> properties, RegionEndpoint region)
+        {
+            return GetCredentialProfile(null, profileName, options, properties, region, new MemoryCredentialProfileStore());
         }
 
         public static CredentialProfile GetCredentialProfile(string uniqueKey, string profileName, CredentialProfileOptions options, Dictionary<string, string> properties)
         {
-            return GetCredentialProfile(uniqueKey, profileName, options, properties, new MemoryCredentialProfileStore());
+            return GetCredentialProfile(uniqueKey, profileName, options, properties, null, new MemoryCredentialProfileStore());
+        }
+
+        public static CredentialProfile GetCredentialProfile(string uniqueKey, string profileName,
+            CredentialProfileOptions options, Dictionary<string, string> properties, RegionEndpoint region)
+        {
+            return GetCredentialProfile(uniqueKey, profileName, options, properties, region, new MemoryCredentialProfileStore());
         }
 
         public static CredentialProfile GetRandomProfile(string profileName, CredentialProfileType profileType, ICredentialProfileStore profileStore)
         {
-            return GetCredentialProfile(null, profileName, GetRandomOptions(profileType), GetRandomProperties(), profileStore);
+            return GetCredentialProfile(null, profileName, GetRandomOptions(profileType), GetRandomProperties(), GetRandomRegion(), profileStore);
         }
 
         public static CredentialProfile GetCredentialProfile(string profileName, CredentialProfileOptions options, ICredentialProfileStore profileStore)
         {
-            return GetCredentialProfile(null, profileName, options, null, profileStore);
+            return GetCredentialProfile(null, profileName, options, null, null, profileStore);
         }
 
         private static CredentialProfile GetCredentialProfile(string uniqueKey, string profileName, CredentialProfileOptions options,
-            Dictionary<string, string> properties, ICredentialProfileStore profileStore)
+            Dictionary<string, string> properties, RegionEndpoint region, ICredentialProfileStore profileStore)
         {
             var constructor = typeof(CredentialProfile).GetConstructor(
                 BindingFlags.NonPublic | BindingFlags.Instance,
                 null,
-                new Type[] { typeof(string), typeof(string), typeof(CredentialProfileOptions), typeof(Dictionary<string, string>), typeof(ICredentialProfileStore) },
+                new Type[] { typeof(string), typeof(CredentialProfileOptions), typeof(ICredentialProfileStore) },
                 null);
 
-            return (CredentialProfile)constructor.Invoke(new object[] { uniqueKey, profileName, options, properties, profileStore });
+            var profile = (CredentialProfile)constructor.Invoke(new object[] { profileName, options, profileStore });
+            ReflectionHelpers.Invoke(profile, "UniqueKey", uniqueKey);
+            ReflectionHelpers.Invoke(profile, "Properties", properties);
+            profile.Region = region;
+            return profile;
         }
     }
 }

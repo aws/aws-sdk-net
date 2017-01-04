@@ -199,7 +199,20 @@ namespace Amazon.Util
         /// <param name="profileOptions">The options to save as the default profile.</param>
         public void RegisterDefaultProfile(CredentialProfileOptions profileOptions)
         {
-            RegisterProfile(DefaultProfileName, profileOptions);
+            RegisterProfile(DefaultProfileName, profileOptions, null);
+        }
+
+        /// <summary>
+        /// Register a default CredentialProfile, or update the existing one.
+        /// The CredentialProfile will either be persisted to the credentials file or the encrypted store.
+        /// The destination of the new CredentialProfile depends on the availability of the encrypted store,
+        /// and how this CredentialProfileManager was constructed.
+        /// </summary>
+        /// <param name="profileOptions">The options to save as the default profile.</param>
+        /// <param name="region">The region to save in the default profile.</param>
+        public void RegisterDefaultProfile(CredentialProfileOptions profileOptions, RegionEndpoint region)
+        {
+            RegisterProfile(DefaultProfileName, profileOptions, region);
         }
 
         /// <summary>
@@ -212,7 +225,24 @@ namespace Amazon.Util
         /// <param name="profileOptions">The options to save.</param>
         public void RegisterProfile(string profileName, CredentialProfileOptions profileOptions)
         {
-            var profile = new CredentialProfile(profileName, profileOptions, primaryStore);
+            RegisterProfile(profileName, profileOptions, null);
+        }
+
+        /// <summary>
+        /// Register a new CredentialProfile, or update an existing one with the same name.
+        /// The CredentialProfile will either be persisted to the credentials file or the encrypted store.
+        /// The destination of the new CredentialProfile depends on the availability of the encrypted store,
+        /// and how this CredentialProfileManager was constructed.
+        /// </summary>
+        /// <param name="profileName">The name of the CredentialProfile.</param>
+        /// <param name="profileOptions">The options to save.</param>
+        /// <param name="region">The region to save.</param>
+        public void RegisterProfile(string profileName, CredentialProfileOptions profileOptions, RegionEndpoint region)
+        {
+            var profile = new CredentialProfile(profileName, profileOptions, primaryStore)
+            {
+                Region = region
+            };
             profile.Persist();
         }
 
@@ -225,10 +255,15 @@ namespace Amazon.Util
         /// <param name="profileName">The name of the CredentialProfile.</param>
         /// <param name="profileOptions">The options to save.</param>
         /// <param name="properties">The properties to save.</param>
-        internal void RegisterProfileWithProperties(string profileName, CredentialProfileOptions profileOptions,
-            Dictionary<string, string> properties)
+        /// <param name="region">The region to save.</param>
+        internal void RegisterProfileInternal(string profileName, CredentialProfileOptions profileOptions,
+            Dictionary<string, string> properties, RegionEndpoint region)
         {
-            var profile = new CredentialProfile(profileName, profileOptions, properties, primaryStore);
+            var profile = new CredentialProfile(profileName, profileOptions, primaryStore)
+            {
+                Properties = properties,
+                Region = region
+            };
             profile.Persist();
         }
 

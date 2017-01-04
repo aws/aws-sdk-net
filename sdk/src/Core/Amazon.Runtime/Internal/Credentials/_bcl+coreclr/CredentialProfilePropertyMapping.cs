@@ -72,7 +72,6 @@ namespace Amazon.Runtime.Internal
             return dictionary;
         }
 
-
         /// <summary>
         /// Separate the profileDictionary into its parts.
         /// profileDictionary = profileOptions + reservedProperties + userProperties
@@ -175,18 +174,21 @@ namespace Amazon.Runtime.Internal
         /// <param name="userProperties"></param>
         private static void ValidateNoReservedProperties(HashSet<string> reservedPropertyNames, Dictionary<string, string> userProperties)
         {
-            List<string> reservedKeys = new List<string>();
-            foreach (var key in reservedPropertyNames)
+            if (userProperties != null)
             {
-                if (userProperties.Keys.Contains(key, StringComparer.OrdinalIgnoreCase))
+                List<string> reservedKeys = new List<string>();
+                foreach (var key in reservedPropertyNames)
                 {
-                    reservedKeys.Add(key);
+                    if (userProperties.Keys.Contains(key, StringComparer.OrdinalIgnoreCase))
+                    {
+                        reservedKeys.Add(key);
+                    }
                 }
-            }
 
-            if (reservedKeys.Count > 0)
-                throw new ArgumentException("The profile properties cannot contain reserved names as keys: " +
-                    string.Join(" or ", reservedKeys.ToArray()));
+                if (reservedKeys.Count > 0)
+                    throw new ArgumentException("The profile properties cannot contain reserved names as keys: " +
+                        string.Join(" or ", reservedKeys.ToArray()));
+            }
         }
 
         /// <summary>

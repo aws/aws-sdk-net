@@ -26,6 +26,8 @@ namespace Amazon.Runtime
     /// </summary>
     public class CredentialProfile
     {
+        private Dictionary<string, string> properties;
+
         /// <summary>
         /// The name of the CredentialProfile
         /// </summary>
@@ -37,9 +39,26 @@ namespace Amazon.Runtime
         public CredentialProfileOptions Options { get; private set; }
 
         /// <summary>
+        /// The region to be used with this CredentialProfile
+        /// </summary>
+        public RegionEndpoint Region { get; set; }
+
+        /// <summary>
         /// An optional dictionary of name-value pairs stored with the CredentialProfile
         /// </summary>
-        internal Dictionary<string, string> Properties { get; private set; }
+        internal Dictionary<string, string> Properties
+        {
+            get
+            {
+                if (properties == null)
+                    properties = new Dictionary<string, string>();
+                return properties;
+            }
+            set
+            {
+                properties = value;
+            }
+        }
 
         /// <summary>
         /// The unique key assigned to the profile by the store.
@@ -96,32 +115,6 @@ namespace Amazon.Runtime
         /// <param name="profileOptions"></param>
         /// <param name="profileStore"></param>
         internal CredentialProfile(string name, CredentialProfileOptions profileOptions, ICredentialProfileStore profileStore)
-            : this(name, profileOptions, new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase), profileStore)
-        {
-        }
-
-        /// <summary>
-        /// Construct a new CredentialProfile.
-        /// </summary>
-        /// <param name="name"></param>
-        /// <param name="profileOptions"></param>
-        /// <param name="properties"></param>
-        /// <param name="profileStore"></param>
-        internal CredentialProfile(string name, CredentialProfileOptions profileOptions, Dictionary<string, string> properties, ICredentialProfileStore profileStore)
-            : this(null, name, profileOptions, properties, profileStore)
-        {
-        }
-
-        /// <summary>
-        /// Construct a new CredentialProfile.
-        /// </summary>
-        /// <param name="uniqueKey"></param>
-        /// <param name="name"></param>
-        /// <param name="profileOptions"></param>
-        /// <param name="properties"></param>
-        /// <param name="profileStore"></param>
-        internal CredentialProfile(string uniqueKey, string name, CredentialProfileOptions profileOptions,
-            Dictionary<string, string> properties, ICredentialProfileStore profileStore)
         {
             if (string.IsNullOrEmpty(name))
             {
@@ -136,11 +129,9 @@ namespace Amazon.Runtime
                 throw new ArgumentNullException("profileStore");
             }
 
-            UniqueKey = uniqueKey;
             Name = name;
             Options = profileOptions;
             ProfileStore = profileStore;
-            Properties = properties == null ? new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase) : properties;
         }
 
         /// <summary>
@@ -186,6 +177,7 @@ namespace Amazon.Runtime
         {
             return "[Name=" + Name + "," +
                 "Options = " + Options + "," +
+                "Region = " + (Region == null ? "" : Region.SystemName) + "," +
                 "Properties = " + GetPropertiesString() + "," +
                 "ProfileType = " + ProfileType + "," +
                 "UniqueKey = " + UniqueKey + "," +
@@ -202,14 +194,14 @@ namespace Amazon.Runtime
                 return false;
 
             return AWSSDKUtils.AreEqual(
-                new object[] { Name, Options, ProfileType, CanCreateAWSCredentials, UniqueKey },
-                new object[] { p.Name, p.Options, p.ProfileType, p.CanCreateAWSCredentials, p.UniqueKey }) &&
+                new object[] { Name, Options, Region, ProfileType, CanCreateAWSCredentials, UniqueKey },
+                new object[] { p.Name, p.Options, p.Region, p.ProfileType, p.CanCreateAWSCredentials, p.UniqueKey }) &&
                 AWSSDKUtils.DictionariesAreEqual(Properties, p.Properties);
         }
 
         public override int GetHashCode()
         {
-            return Hashing.Hash(Name, Options, ProfileType, CanCreateAWSCredentials, GetPropertiesString(), UniqueKey);
+            return Hashing.Hash(Name, Options, Region, ProfileType, CanCreateAWSCredentials, GetPropertiesString(), UniqueKey);
         }
     }
 }

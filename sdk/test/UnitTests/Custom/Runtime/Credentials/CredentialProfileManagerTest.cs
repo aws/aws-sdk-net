@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Util;
@@ -374,5 +375,30 @@ namespace AWSSDK.UnitTests
                 Assert.IsTrue(expected.SetEquals(actualListProfiles));
             }
         }
+
+        [TestMethod]
+        public void SdkStore_TestRegisterProfileWithRegion()
+        {
+            using (var fixture = new CredentialProfileManagerTestFixture(true, false))
+            {
+                fixture.ProfileManager.RegisterProfile(BasicProfileName, BasicProfileOptions, RegionEndpoint.CACentral1);
+
+                var profile = fixture.AssertProfileExistsSDK(BasicProfileName);
+                Assert.AreEqual(RegionEndpoint.CACentral1, profile.Region);
+            }
+        }
+
+        [TestMethod]
+        public void CredentialsFile_TestRegisterProfileWithRegion()
+        {
+            using (var fixture = new CredentialProfileManagerTestFixture(false, true))
+            {
+                fixture.ProfileManager.RegisterProfile(BasicProfileName, BasicProfileOptions, RegionEndpoint.CACentral1);
+
+                var profile = fixture.AssertProfileExistsCredentials(BasicProfileName);
+                Assert.AreEqual(RegionEndpoint.CACentral1, profile.Region);
+            }
+        }
+
     }
 }

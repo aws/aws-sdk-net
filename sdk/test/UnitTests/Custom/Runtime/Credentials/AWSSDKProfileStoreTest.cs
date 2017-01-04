@@ -28,7 +28,7 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class AWSSDKProfileStoreTest
     {
-        private const string HiddenFieldExceptionFormat = "The profile properties cannot contain reserved names as keys: {0}";
+        private const string ReservedFieldExceptionFormat = "The profile properties cannot contain reserved names as keys: {0}";
         private const string CredentialsFieldExceptionFormat = "The profile properties dictionary cannot contain a key named {0} because it is in the name mapping dictionary.";
 
         private const string AWSCredentialsProfileType = "AWS";
@@ -89,19 +89,25 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void RegisterProfileReservedPropertyName1()
         {
-            TestReservedPropertyName(HiddenFieldExceptionFormat, "DisplayName");
+            TestReservedPropertyName(ReservedFieldExceptionFormat, "DisplayName");
         }
 
         [TestMethod]
         public void RegisterProfileReservedPropertyName2()
         {
-            TestReservedPropertyName(HiddenFieldExceptionFormat, "ProfileType");
+            TestReservedPropertyName(ReservedFieldExceptionFormat, "ProfileType");
         }
 
         [TestMethod]
         public void RegisterProfileReservedPropertyName3()
         {
             TestReservedPropertyName(CredentialsFieldExceptionFormat, "RoleArn");
+        }
+
+        [TestMethod]
+        public void RegisterProfileReservedPropertyName4()
+        {
+            TestReservedPropertyName(ReservedFieldExceptionFormat, "Region");
         }
 
         [TestMethod]
