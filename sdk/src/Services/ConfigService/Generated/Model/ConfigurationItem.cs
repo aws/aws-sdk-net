@@ -29,13 +29,6 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// A list that contains detailed configurations of a specified resource.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Currently, the list does not contain information about non-AWS components (for example,
-    /// applications on your Amazon EC2 instances).
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class ConfigurationItem
     {

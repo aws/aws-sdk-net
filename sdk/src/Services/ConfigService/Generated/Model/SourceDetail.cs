@@ -81,23 +81,36 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property MessageType. 
         /// <para>
-        /// The type of notification that triggers AWS Config to run an evaluation. You can specify
-        /// the following notification types:
+        /// The type of notification that triggers AWS Config to run an evaluation for a rule.
+        /// You can specify the following notification types:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
         ///  <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when AWS
-        /// Config delivers a configuration item change notification.
+        /// Config delivers a configuration item as a result of a resource change.
         /// </para>
-        ///  
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation
+        /// when AWS Config delivers an oversized configuration item. AWS Config may generate
+        /// this notification type when a resource changes and the notification exceeds the maximum
+        /// size allowed by Amazon SNS.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <code>ScheduledNotification</code> - Triggers a periodic evaluation at the frequency
         /// specified for <code>MaximumExecutionFrequency</code>.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
         ///  <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic evaluation
         /// when AWS Config delivers a configuration snapshot.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you want your custom rule to be triggered by configuration changes, specify both
+        /// <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+        /// 
         /// </para>
         /// </summary>
         public MessageType MessageType

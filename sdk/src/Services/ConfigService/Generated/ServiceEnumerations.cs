@@ -425,6 +425,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly MessageType ConfigurationSnapshotDeliveryCompleted = new MessageType("ConfigurationSnapshotDeliveryCompleted");
         /// <summary>
+        /// Constant OversizedConfigurationItemChangeNotification for MessageType
+        /// </summary>
+        public static readonly MessageType OversizedConfigurationItemChangeNotification = new MessageType("OversizedConfigurationItemChangeNotification");
+        /// <summary>
         /// Constant ScheduledNotification for MessageType
         /// </summary>
         public static readonly MessageType ScheduledNotification = new MessageType("ScheduledNotification");
