@@ -75,6 +75,10 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// </summary>
         public static readonly DataSetType DailyBusinessUsageByInstanceType = new DataSetType("daily_business_usage_by_instance_type");
         /// <summary>
+        /// Constant Disbursed_amount_by_instance_hours for DataSetType
+        /// </summary>
+        public static readonly DataSetType Disbursed_amount_by_instance_hours = new DataSetType("disbursed_amount_by_instance_hours");
+        /// <summary>
         /// Constant Disbursed_amount_by_product_with_uncollected_funds for DataSetType
         /// </summary>
         public static readonly DataSetType Disbursed_amount_by_product_with_uncollected_funds = new DataSetType("disbursed_amount_by_product_with_uncollected_funds");
