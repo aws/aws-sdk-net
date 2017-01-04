@@ -245,6 +245,7 @@ namespace Amazon.Glacier.Transfer
             {
                 jobRequest.AccountId = options.AccountId;
                 jobRequest.JobParameters.SNSTopic = options.SNSTopic;
+                jobRequest.JobParameters.Tier = options.Tier;
             }
 
             var jobId = glacierClient.InitiateJob(jobRequest).JobId;
