@@ -1,3 +1,21 @@
+### 3.3.37.0 (2017-01-04 23:41 UTC)
+* AWSMarketplaceCommerceAnalytics (3.3.2.0)
+	* Added support for data set disbursed_amount_by_instance_hours, with historical data available starting 2012-09-04. New data is published to this data set every 30 days.
+* ConfigService (3.3.4.0)
+	* Added support for OversizedConfigurationItemChangeNotification message type in putConfigRule. Customers can use/write rules based on OversizedConfigurationItemChangeNotification mesage type.
+* DynamoDBv2 (3.3.1.5)
+	* Documentation update
+* ElasticFileSystem (3.3.0.8)
+	* Documentation update.
+* IdentityManagement (3.3.1.2)
+	* Documentation update
+* Lambda (3.3.2.5)
+	* Documentation update
+* RDS (3.3.4.2)
+	* Documentation update
+* Rekognition (3.3.0.4)
+	* Documentation update
+
 ### 3.3.36.0 (2016-12-29 23:59 UTC)
 * CodeDeploy (3.3.2.0)
 	* Add support for IAM Session ARNs in addition to IAM User ARNs for on-premise host authentication.
