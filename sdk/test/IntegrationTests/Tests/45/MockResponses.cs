@@ -359,7 +359,7 @@ namespace AWSSDK_DotNet.IntegrationTests
             public static HttpResponse ParseRawReponse(string rawResponse)
             {
                 var response = new HttpResponse();
-                var responseLines = rawResponse.Split('\r');
+                var responseLines = rawResponse.Split('\n');
 
                 if (responseLines.Count() == 0)
                     throw new ArgumentException("The resource does not contain a valid HTTP response.",
