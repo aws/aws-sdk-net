@@ -280,6 +280,7 @@
 	</Target>	
 	
 	<Target Name="package-netcore-extensions" DependsOnTargets="build-netcore-extensions">
+        <MakeDir Directories="..\Deployment\nuget" />
 		<Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack .\AWSSDK.Extensions.NETCore.Setup.nuspec -BasePath . -OutputDirectory ..\..\..\Deployment\nuget" WorkingDirectory="..\extensions\src\AWSSDK.Extensions.NETCore.Setup" />
 	</Target>	
 	
