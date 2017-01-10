@@ -23,7 +23,9 @@ using System.Linq;
 namespace Amazon.Util
 {
     /// <summary>
-    /// Common access to the SDK's encrypted store, regardless of which file is being accessed.
+    /// Manager to access an SDK encrypted store file.
+    /// SDK encrypted store files are loacted under the current user's AppData\Local\AWSToolkit folder.
+    /// These files are encrypted on a per user, per machine basis using the Windows Data Protection API
     /// </summary>
     internal class EncryptedStoreObjectManager
     {

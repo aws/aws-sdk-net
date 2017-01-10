@@ -97,7 +97,8 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// The proxy settings to use when calling Secure Token Service.
+        /// The proxy settings to use when calling the
+        /// Secure Token Service and the ADFS endpoint.
         /// </summary>
         public WebProxy ProxySettings
         {

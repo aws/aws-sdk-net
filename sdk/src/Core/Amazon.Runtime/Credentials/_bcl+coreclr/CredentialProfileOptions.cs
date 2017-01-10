@@ -39,7 +39,7 @@ namespace Amazon.Runtime
         public string AccessKey { get; set; }
 #if BCL
         /// <summary>
-        /// The endpoint name to be used for SAML AWSCredentials.
+        /// The endpoint name to be used for federated AWSCredentials.
         /// </summary>
         public string EndpointName { get; set; }
 #endif
@@ -53,7 +53,7 @@ namespace Amazon.Runtime
         public string MfaSerial { get; set; }
         /// <summary>
 #if BCL
-        /// The role ARN to use when creating assume role or SAML AWSCredentials.
+        /// The role ARN to use when creating assume role or federated AWSCredentials.
 #else
         /// The role ARN to use when creating assume role AWSCredentials.
 #endif
@@ -74,7 +74,8 @@ namespace Amazon.Runtime
         public string Token { get; set; }
 #if BCL
         /// <summary>
-        /// The user identity to use when creating SAML AWSCredentials.
+        /// The user identity to use when creating federated AWSCredentials.
+        /// If not set, the user identity that the code is running under will be used.
         /// </summary>
         public string UserIdentity { get; set; }
 #endif
@@ -109,7 +110,7 @@ namespace Amazon.Runtime
 
 #if BCL
             return AWSSDKUtils.AreEqual(
-                new object[] { AccessKey,  EndpointName, ExternalID, MfaSerial, RoleArn, SecretKey, SourceProfile, Token, UserIdentity},
+                new object[] { AccessKey, EndpointName, ExternalID, MfaSerial, RoleArn, SecretKey, SourceProfile, Token, UserIdentity },
                 new object[] { po.AccessKey, po.EndpointName, po.ExternalID, po.MfaSerial, po.RoleArn, po.SecretKey, po.SourceProfile, po.Token, po.UserIdentity });
 #else
             return AWSSDKUtils.AreEqual(

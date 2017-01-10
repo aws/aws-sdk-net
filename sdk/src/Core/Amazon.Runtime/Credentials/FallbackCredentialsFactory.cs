@@ -63,7 +63,7 @@ namespace Amazon.Runtime
             }
             else
             {
-                return null;
+                throw new AmazonClientException("Unable to find a default profile.");
             }
         }
 #endif

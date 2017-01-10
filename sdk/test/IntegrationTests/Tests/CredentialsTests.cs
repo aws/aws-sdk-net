@@ -114,11 +114,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         private static void TestCredentialsFile(ImmutableCredentials ic)
         {
-// StoredProfileAWSCredentials is obsolete
-#pragma warning disable 618
             var profileName = "testProfile";
             var profilesLocation = WriteCreds(profileName, ic);
+#pragma warning disable 618
             var creds = new StoredProfileAWSCredentials(profileName, profilesLocation);
+#pragma warning restore 618
             var rc = creds.GetCredentials();
             Assert.AreEqual(ic.SecretKey, rc.SecretKey);
             Assert.AreEqual(ic.AccessKey, rc.AccessKey);
@@ -128,8 +128,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             for (int i = 0; i < 4; i++)
             {
                 var shouldHaveToken = (i % 2 == 1);
-
+#pragma warning disable 618
                 creds = new StoredProfileAWSCredentials(profileName + i, profilesLocation);
+#pragma warning restore 618
                 Assert.IsNotNull(creds);
 
                 rc = creds.GetCredentials();
