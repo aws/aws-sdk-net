@@ -27,6 +27,7 @@ namespace Amazon.Runtime
     public class CredentialProfile
     {
         private Dictionary<string, string> properties;
+        private string uniqueKey;
 
         /// <summary>
         /// The name of the CredentialProfile
@@ -44,6 +45,24 @@ namespace Amazon.Runtime
         public RegionEndpoint Region { get; set; }
 
         /// <summary>
+        /// The unique key for this CredentialProfile.
+        /// </summary>
+        public string UniqueKey
+        {
+            get
+            {
+                return uniqueKey;
+            }
+            internal set
+            {
+                if (uniqueKey == null || string.Equals(uniqueKey, value, StringComparison.OrdinalIgnoreCase))
+                    uniqueKey = value;
+                else
+                    throw new ArgumentException("UniqueKey cannot be changed once it's assigned.");
+            }
+        }
+
+        /// <summary>
         /// An optional dictionary of name-value pairs stored with the CredentialProfile
         /// </summary>
         internal Dictionary<string, string> Properties
@@ -59,13 +78,6 @@ namespace Amazon.Runtime
                 properties = value;
             }
         }
-
-        /// <summary>
-        /// The unique key assigned to the profile by the store.
-        /// Because the unique key is assigned by the store, the
-        /// profile must be registered before the UniqueKey is populated.
-        /// </summary>
-        public string UniqueKey { get; internal set; }
 
         /// <summary>
         /// True if the properties of the Options object can be converted into AWSCredentials, false otherwise.

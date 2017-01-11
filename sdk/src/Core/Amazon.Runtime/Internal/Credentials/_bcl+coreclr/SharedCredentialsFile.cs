@@ -76,9 +76,6 @@ namespace Amazon.Runtime.Internal
                 }
             );
 
-        // this is done to facilitate repeatable unit tests in lieu of a mocking framework
-        private Func<string> GetUniqueKey = () => { return Guid.NewGuid().ToString(); };
-
         private IniFile credentialsFile;
         private IniFile configFile;
 
@@ -137,10 +134,6 @@ namespace Amazon.Runtime.Internal
                         profile.Name, profile.ProfileType, GetType().Name));
                 }
 
-                // assign a unique key if this is a brand new profile
-                if (profile.UniqueKey == null)
-                    profile.UniqueKey = GetUniqueKey();
-
                 RegisterProfileInternal(profile);
             }
             else
@@ -156,7 +149,10 @@ namespace Amazon.Runtime.Internal
         /// <param name="profile"></param>
         private void RegisterProfileInternal(CredentialProfile profile)
         {
-            var reservedProperties = new Dictionary<string, string> { { UniqueKeyField, profile.UniqueKey } };
+            var reservedProperties = new Dictionary<string, string>();
+
+            if (profile.UniqueKey != null)
+                reservedProperties[UniqueKeyField] = profile.UniqueKey;
 
             if (profile.Region != null)
             {
@@ -232,17 +228,7 @@ namespace Amazon.Runtime.Internal
                     out profileOptions, out reservedProperties, out userProperties);
 
                 string uniqueKey;
-                bool doSave;
-                if (reservedProperties.ContainsKey(UniqueKeyField))
-                {
-                    uniqueKey = reservedProperties[UniqueKeyField];
-                    doSave = false;
-                }
-                else
-                {
-                    uniqueKey = GetUniqueKey();
-                    doSave = true;
-                }
+                reservedProperties.TryGetValue(UniqueKeyField, out uniqueKey);
 
                 string regionString;
                 RegionEndpoint region = null;
@@ -264,10 +250,6 @@ namespace Amazon.Runtime.Internal
                     profile = null;
                     return false;
                 }
-
-                // If this was a preexisting profile save it so that the unique key gets written.
-                if (doSave)
-                    RegisterProfileInternal(profile);
 
                 return true;
             }

@@ -30,12 +30,13 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class SharedCredentialsFileTest
     {
+        private static readonly string UniqueKey = Guid.NewGuid().ToString();
+
         private static readonly string SessionProfileText = new StringBuilder()
             .AppendLine("[session_profile]")
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
             .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
-            .AppendLine("aws_session_token=session_aws_session_token")
-            .Append("unique_key=XXX")
+            .Append("aws_session_token=session_aws_session_token")
             .ToString();
 
         private static readonly CredentialProfileOptions SessionProfileOptions = new CredentialProfileOptions()
@@ -49,8 +50,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("[session_profile]")
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
             .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
-            .AppendLine("aws_session_token=session_aws_session_token_UPDATED")
-            .Append("unique_key=XXX")
+            .Append("aws_session_token=session_aws_session_token_UPDATED")
             .ToString();
 
         private static readonly CredentialProfileOptions SessionProfileOptionsUpdated = new CredentialProfileOptions()
@@ -64,8 +64,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("[assume_role_mfa_profile]")
             .AppendLine("mfa_serial=mfa_serial_number")
             .AppendLine("role_arn=assume_role_arn")
-            .AppendLine("source_profile=basic_profile")
-            .Append("unique_key=XXX")
+            .Append("source_profile=basic_profile")
             .ToString();
 
         private static readonly CredentialProfileOptions AssumeRoleMfaProfileOptions = new CredentialProfileOptions()
@@ -80,7 +79,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("aws_access_key_id=basic_aws_access_key_id")
             .AppendLine("aws_secret_access_key=basic_aws_secret_access_key")
             .AppendLine("region=ca-central-1")
-            .Append("unique_key=XXX")
+            .Append("unique_key=" + UniqueKey)
             .ToString();
 
         private static readonly string BasicProfileCredentialsText =
@@ -141,8 +140,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("[updated_profile]")
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
             .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
-            .AppendLine("aws_session_token=session_aws_session_token")
-            .Append("unique_key=XXX")
+            .Append("aws_session_token=session_aws_session_token")
             .ToString();
 
         private static readonly CredentialProfileOptions UpdatedProfileTypeOptionsBefore = new CredentialProfileOptions()
@@ -156,7 +154,6 @@ namespace AWSSDK.UnitTests
             .AppendLine("[updated_profile]")
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
             .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
-            .Append("unique_key=XXX")
             .ToString();
 
         private static readonly CredentialProfileOptions UpdatedProfileTypeOptionsAfter = new CredentialProfileOptions()
@@ -177,8 +174,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
             .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
             .AppendLine("property3=value3")
-            .AppendLine("property2=value2")
-            .Append("unique_key=XXX")
+            .Append("property2=value2")
             .ToString();
 
         private static readonly Dictionary<string,string> UpdatedProfileWithPropertiesBefore = new Dictionary<string, string>()
@@ -193,7 +189,6 @@ namespace AWSSDK.UnitTests
             .AppendLine("aws_access_key_id=session_aws_access_key_id")
             .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
             .AppendLine("property3=valueZ")
-            .AppendLine("unique_key=XXX")
             .Append("property4=value4")
             .ToString();
 
@@ -210,7 +205,7 @@ namespace AWSSDK.UnitTests
         {
             using (var tester = new SharedCredentialsFileTestFixture(BasicProfileCredentialsText))
             {
-                tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions, RegionEndpoint.CACentral1);
+                tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions, RegionEndpoint.CACentral1, UniqueKey);
             }
         }
 
@@ -219,18 +214,7 @@ namespace AWSSDK.UnitTests
         {
             using (var tester = new SharedCredentialsFileTestFixture())
             {
-                tester.AssertWriteProfile("basic_profile", BasicProfileOptions, RegionEndpoint.CACentral1, BasicProfileCredentialsText);
-            }
-        }
-
-        [TestMethod]
-        public void StoreAssignsUniqueKeyToExistingProfile()
-        {
-            var uniqueKey = Guid.NewGuid().ToString();
-            using (var tester = new SharedCredentialsFileTestFixture(LegacyBasicProfileCredentialsText, null, false, uniqueKey))
-            {
-                var profile = tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions);
-                Assert.AreEqual(uniqueKey, profile.UniqueKey);
+                tester.AssertWriteProfile("basic_profile", BasicProfileOptions, RegionEndpoint.CACentral1, UniqueKey, BasicProfileCredentialsText);
             }
         }
 
@@ -373,7 +357,7 @@ namespace AWSSDK.UnitTests
         {
             using (var tester = new SharedCredentialsFileTestFixture(null, BasicProfileConfigText))
             {
-                tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions, RegionEndpoint.CACentral1);
+                tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions, RegionEndpoint.CACentral1, UniqueKey);
             }
         }
 
@@ -383,7 +367,7 @@ namespace AWSSDK.UnitTests
             var basicProfileInConfigWithWhitespace = BasicProfileConfigText.Replace("profile basic_profile", "profile \t basic_profile");
             using (var tester = new SharedCredentialsFileTestFixture(null, basicProfileInConfigWithWhitespace))
             {
-                tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions, RegionEndpoint.CACentral1);
+                tester.ReadAndAssertProfile("basic_profile", BasicProfileOptions, RegionEndpoint.CACentral1, UniqueKey);
             }
         }
 
