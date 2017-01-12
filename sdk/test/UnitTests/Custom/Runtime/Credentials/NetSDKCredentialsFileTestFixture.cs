@@ -19,21 +19,21 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AWSSDK.UnitTests
 {
-    public class AWSSDKProfileStoreTestFixture : EncryptedStoreTestFixture
+    public class NetSDKCredentialsFileTestFixture : EncryptedStoreTestFixture
     {
         private const string ProfilesFilename = SettingsConstants.RegisteredProfiles + ".json";
 
-        public AWSSDKProfileStore ProfileStore { get; private set; }
+        public NetSDKCredentialsFile ProfileStore { get; private set; }
 
-        public AWSSDKProfileStoreTestFixture()
+        public NetSDKCredentialsFileTestFixture()
             : this(null)
         {
         }
 
-        public AWSSDKProfileStoreTestFixture(string fileContents)
+        public NetSDKCredentialsFileTestFixture(string fileContents)
             : base(ProfilesFilename, fileContents)
         {
-            ProfileStore = new AWSSDKProfileStore();
+            ProfileStore = new NetSDKCredentialsFile();
         }
 
         public CredentialProfile TestTryGetProfile(string profileName, bool expectProfile, bool expectValidProfile)

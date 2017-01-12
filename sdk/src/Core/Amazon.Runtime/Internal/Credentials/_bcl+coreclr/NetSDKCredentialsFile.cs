@@ -28,7 +28,7 @@ namespace Amazon.Runtime.Internal
     /// <para>
     /// The credentials are stored under the current users AppData folder encrypted using Windows Data Protection API.
     /// </para>
-    public class AWSSDKProfileStore : ICredentialProfileStore
+    public class NetSDKCredentialsFile : ICredentialProfileStore
     {
         // Values kept from ProfileManager to support backward compatibility.
         private const string AWSCredentialsProfileType = "AWS";
@@ -65,7 +65,7 @@ namespace Amazon.Runtime.Internal
 
         private EncryptedStoreObjectManager objectManager;
 
-        public AWSSDKProfileStore()
+        public NetSDKCredentialsFile()
         {
             objectManager = new EncryptedStoreObjectManager(SettingsConstants.RegisteredProfiles);
         }

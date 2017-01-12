@@ -149,7 +149,7 @@ namespace AWSSDK.UnitTests
                 Assert.IsTrue(fixture.ProfileManager.TryGetProfile(BasicProfileName, out profile));
                 Assert.IsNotNull(profile);
                 Assert.AreEqual(BasicProfileName, profile.Name);
-                fixture.AssertProfileStoreType(profile, typeof(AWSSDKProfileStore));
+                fixture.AssertProfileStoreType(profile, typeof(NetSDKCredentialsFile));
             }
         }
 
@@ -208,7 +208,7 @@ namespace AWSSDK.UnitTests
                 Assert.IsNotNull(secondProfile);
                 Assert.AreEqual(BasicProfileName, secondProfile.Name);
                 Assert.AreEqual(BasicProfileNewOptions.AccessKey, secondProfile.Options.AccessKey);
-                fixture.AssertProfileStoreType(secondProfile, typeof(AWSSDKProfileStore));
+                fixture.AssertProfileStoreType(secondProfile, typeof(NetSDKCredentialsFile));
             }
         }
 
@@ -292,7 +292,7 @@ namespace AWSSDK.UnitTests
                 Assert.IsNotNull(firstProfile);
                 Assert.AreEqual(BasicProfileName, firstProfile.Name);
                 Assert.AreEqual(BasicProfileOptions.AccessKey, firstProfile.Options.AccessKey);
-                fixture.AssertProfileStoreType(firstProfile, typeof(AWSSDKProfileStore));
+                fixture.AssertProfileStoreType(firstProfile, typeof(NetSDKCredentialsFile));
 
                 // make sure that if we change something on the
                 // profile and persist that it actually goes to the encrypted store
@@ -305,7 +305,7 @@ namespace AWSSDK.UnitTests
                 Assert.AreEqual(firstProfile.Name, secondProfile.Name);
                 Assert.AreNotEqual(BasicProfileOptions.AccessKey, secondProfile.Options.AccessKey);
                 Assert.AreEqual(firstProfile.Options.AccessKey, secondProfile.Options.AccessKey);
-                fixture.AssertProfileStoreType(firstProfile, typeof(AWSSDKProfileStore));
+                fixture.AssertProfileStoreType(firstProfile, typeof(NetSDKCredentialsFile));
             }
         }
 
@@ -322,7 +322,7 @@ namespace AWSSDK.UnitTests
                 Assert.IsTrue(fixture.ProfileManager.TryGetProfile(BasicProfileName, out firstProfile));
                 Assert.IsNotNull(firstProfile);
                 Assert.AreEqual(BasicProfileName, firstProfile.Name);
-                fixture.AssertProfileStoreType(firstProfile, typeof(AWSSDKProfileStore));
+                fixture.AssertProfileStoreType(firstProfile, typeof(NetSDKCredentialsFile));
 
                 // register a new one in the shared credentials file
                 fixture.ProfileManager.RegisterProfile(BasicProfileName, BasicProfileNewOptions);

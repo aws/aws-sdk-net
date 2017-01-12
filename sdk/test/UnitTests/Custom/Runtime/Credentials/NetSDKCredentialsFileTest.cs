@@ -26,7 +26,7 @@ using System.Text;
 namespace AWSSDK.UnitTests
 {
     [TestClass]
-    public class AWSSDKProfileStoreTest
+    public class NetSDKCredentialsFileTest
     {
         private const string ReservedFieldExceptionFormat = "The profile properties cannot contain reserved names as keys: {0}";
         private const string CredentialsFieldExceptionFormat = "The profile properties dictionary cannot contain a key named {0} because it is in the name mapping dictionary.";
@@ -57,7 +57,7 @@ namespace AWSSDK.UnitTests
         {
             foreach (CredentialProfileType type in Enum.GetValues(typeof(CredentialProfileType)))
             {
-                using (var tester = new AWSSDKProfileStoreTestFixture())
+                using (var tester = new NetSDKCredentialsFileTestFixture())
                 {
                     var profileName = type.ToString() + Guid.NewGuid().ToString();
                     var originalProfile = CredentialProfileTestHelper.GetRandomProfile(profileName, type, tester.ProfileStore);
@@ -120,7 +120,7 @@ namespace AWSSDK.UnitTests
         {
             AssertExtensions.ExpectException(() =>
             {
-                using (var tester = new AWSSDKProfileStoreTestFixture())
+                using (var tester = new NetSDKCredentialsFileTestFixture())
                 {
                     var profileName = Guid.NewGuid().ToString();
                     var profile = CredentialProfileTestHelper.GetRandomProfile(profileName, CredentialProfileType.Basic, tester.ProfileStore);
@@ -134,7 +134,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ProfileNotFound()
         {
-            using (var tester = new AWSSDKProfileStoreTestFixture())
+            using (var tester = new NetSDKCredentialsFileTestFixture())
             {
                 tester.TestTryGetProfile("DoesNotExist", false, false);
             }
@@ -143,7 +143,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void InvalidProfile()
         {
-            using (var tester = new AWSSDKProfileStoreTestFixture(InvalidProfileText))
+            using (var tester = new NetSDKCredentialsFileTestFixture(InvalidProfileText))
             {
                 tester.TestTryGetProfile("InvalidProfile", true, false);
             }
@@ -152,7 +152,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void LegacyCredentialsTypeProfile()
         {
-            using (var tester = new AWSSDKProfileStoreTestFixture(LegacyCredentialsTypeProfileText))
+            using (var tester = new NetSDKCredentialsFileTestFixture(LegacyCredentialsTypeProfileText))
             {
                 var profile = tester.TestTryGetProfile("LegacyCredentialsTypeProfile", true, false);
                 var credentialType = CredentialProfileUtils.GetProperty(profile, "CredentialsType");
@@ -163,7 +163,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ReadUniqueKeyProperty()
         {
-            using (var tester = new AWSSDKProfileStoreTestFixture(LegacyCredentialsTypeProfileText))
+            using (var tester = new NetSDKCredentialsFileTestFixture(LegacyCredentialsTypeProfileText))
             {
                 var profile = tester.TestTryGetProfile("LegacyCredentialsTypeProfile", true, false);
                 Assert.AreEqual(UniqueKey, profile.UniqueKey);
@@ -173,7 +173,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void UnregisterProfile()
         {
-            using (var tester = new AWSSDKProfileStoreTestFixture())
+            using (var tester = new NetSDKCredentialsFileTestFixture())
             {
                 // register
                 tester.ProfileStore.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(CredentialProfileType.Basic.ToString(),
@@ -193,7 +193,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ListProfileNamesEmpty()
         {
-            using (var tester = new AWSSDKProfileStoreTestFixture())
+            using (var tester = new NetSDKCredentialsFileTestFixture())
             {
                 var profileNames = tester.ProfileStore.ListProfileNames();
                 Assert.AreEqual(0, profileNames.Count);
@@ -203,7 +203,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ListProfileNames()
         {
-            using (var tester = new AWSSDKProfileStoreTestFixture())
+            using (var tester = new NetSDKCredentialsFileTestFixture())
             {
                 tester.ProfileStore.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(
                        "SessionProfile", CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.Session)));
@@ -217,7 +217,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ListProfileNamesExcludeInvalid()
         {
-            using (var tester = new AWSSDKProfileStoreTestFixture(InvalidProfileText))
+            using (var tester = new NetSDKCredentialsFileTestFixture(InvalidProfileText))
             {
                 tester.ProfileStore.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(
                        "SessionProfile", CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.Session)));
@@ -231,7 +231,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ListProfilesEmpty()
         {
-            using (var tester = new AWSSDKProfileStoreTestFixture())
+            using (var tester = new NetSDKCredentialsFileTestFixture())
             {
                 var profiles = tester.ProfileStore.ListProfiles();
                 Assert.AreEqual(0, profiles.Count);
@@ -241,7 +241,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ListProfiles()
         {
-            using (var tester = new AWSSDKProfileStoreTestFixture())
+            using (var tester = new NetSDKCredentialsFileTestFixture())
             {
                 tester.ProfileStore.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(
                        "SessionProfile", CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.Session)));
@@ -255,7 +255,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void ListProfilesExcludeInvalid()
         {
-            using (var tester = new AWSSDKProfileStoreTestFixture(InvalidProfileText))
+            using (var tester = new NetSDKCredentialsFileTestFixture(InvalidProfileText))
             {
                 tester.ProfileStore.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(
                     "SessionProfile", CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.Session)));
@@ -269,7 +269,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void TestReadCompatibilityBasic()
         {
-            using (var tester = new AWSSDKProfileStoreTestFixture())
+            using (var tester = new NetSDKCredentialsFileTestFixture())
             {
                 // write with old ProfileManager
                 ProfileManager.RegisterProfile("BasicProfile", "AccessKey", "SecretKey");
@@ -288,7 +288,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void TestWriteCompatibilityBasic()
         {
-            using (var tester = new AWSSDKProfileStoreTestFixture())
+            using (var tester = new NetSDKCredentialsFileTestFixture())
             {
                 // write with new CredentialProfileManager
                 CredentialProfile profile = CredentialProfileTestHelper.GetCredentialProfile(
@@ -308,7 +308,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void TestReadCompatibilitySAML()
         {
-            using (var tester = new AWSSDKProfileStoreTestFixture())
+            using (var tester = new NetSDKCredentialsFileTestFixture())
             {
                 // write with old ProfileManager
                 ProfileManager.RegisterSAMLEndpoint("EndpointName", new Uri("https://somesamlendpoint/"), null);
@@ -329,7 +329,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void TestWriteCompatibilitySAML()
         {
-            using (var tester = new AWSSDKProfileStoreTestFixture())
+            using (var tester = new NetSDKCredentialsFileTestFixture())
             {
                 // write with new CredentialProfileManager
                 CredentialProfile profile = CredentialProfileTestHelper.GetCredentialProfile(
@@ -352,7 +352,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void TestWriteCompatibilitySession()
         {
-            using (var tester = new AWSSDKProfileStoreTestFixture())
+            using (var tester = new NetSDKCredentialsFileTestFixture())
             {
                 // write a type that's not supported by ProfileManager
                 tester.ProfileStore.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(

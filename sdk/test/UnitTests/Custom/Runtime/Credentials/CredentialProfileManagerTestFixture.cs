@@ -25,13 +25,13 @@ namespace AWSSDK.UnitTests
     public class CredentialProfileManagerTestFixture : IDisposable
     {
         public SharedCredentialsFileTestFixture SharedCredentialsFixture { get; private set; }
-        public AWSSDKProfileStoreTestFixture SdkFixture { get; private set; }
+        public NetSDKCredentialsFileTestFixture SdkFixture { get; private set; }
         public CredentialProfileManager ProfileManager { get; private set; }
 
         public CredentialProfileManagerTestFixture(bool sdkStoreAvailable, bool defaultToCredentialsFile)
         {
             SharedCredentialsFixture = new SharedCredentialsFileTestFixture();
-            SdkFixture = new AWSSDKProfileStoreTestFixture();
+            SdkFixture = new NetSDKCredentialsFileTestFixture();
             if (!sdkStoreAvailable)
             {
                 MockSdkStoreAvailable(false);

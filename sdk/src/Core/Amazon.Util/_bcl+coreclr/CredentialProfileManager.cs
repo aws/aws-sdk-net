@@ -115,7 +115,7 @@ namespace Amazon.Util
             if (sdkStoreAvailable)
             {
                 // add the encrypted store and make it first or second depending the default
-                profileStoreChain.Insert(defaultToSharedCredentialsFile ? 1 : 0, new AWSSDKProfileStore());
+                profileStoreChain.Insert(defaultToSharedCredentialsFile ? 1 : 0, new NetSDKCredentialsFile());
             }
             primaryStore = profileStoreChain[0];
         }
