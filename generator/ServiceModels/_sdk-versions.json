@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.37.0",
+    "ProductVersion" : "3.3.37.1",
     "CoreVersion"    : "3.3.7.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -133,7 +133,7 @@
             "InPreview"    : false
         },
         "EC2"               : {
-            "Version" : "3.3.4.4",
+            "Version" : "3.3.4.5",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },

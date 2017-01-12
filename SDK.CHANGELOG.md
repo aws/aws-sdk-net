@@ -1,3 +1,7 @@
+### 3.3.37.1 (2017-01-12 23:02 UTC)
+* EC2 (3.3.4.5)
+	* Extended EC2 image utilities class with keys to obtain Windows Server 2012R2 images with SQL Server 2016 variants (web/express/standard).
+
 ### 3.3.37.0 (2017-01-04 23:41 UTC)
 * AWSMarketplaceCommerceAnalytics (3.3.2.0)
 	* Added support for data set disbursed_amount_by_instance_hours, with historical data available starting 2012-09-04. New data is published to this data set every 30 days.
