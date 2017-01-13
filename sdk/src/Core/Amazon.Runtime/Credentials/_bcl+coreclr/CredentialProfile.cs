@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -53,13 +53,18 @@ namespace Amazon.Runtime
             {
                 return uniqueKey;
             }
-            internal set
+            set
             {
                 if (uniqueKey == null || string.Equals(uniqueKey, value, StringComparison.OrdinalIgnoreCase))
                     uniqueKey = value;
                 else
                     throw new ArgumentException("UniqueKey cannot be changed once it's assigned.");
             }
+        }
+
+        internal void SetUniqueKeyInternal(string uniqueKey)
+        {
+            this.uniqueKey = uniqueKey;
         }
 
         /// <summary>
@@ -116,17 +121,11 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// The ProfileStore this CredentialProfile is associated with.
-        /// </summary>
-        internal ICredentialProfileStore ProfileStore { get; set; }
-
-        /// <summary>
         /// Construct a new CredentialProfile.
         /// </summary>
         /// <param name="name"></param>
         /// <param name="profileOptions"></param>
-        /// <param name="profileStore"></param>
-        internal CredentialProfile(string name, CredentialProfileOptions profileOptions, ICredentialProfileStore profileStore)
+        public CredentialProfile(string name, CredentialProfileOptions profileOptions)
         {
             if (string.IsNullOrEmpty(name))
             {
@@ -136,22 +135,9 @@ namespace Amazon.Runtime
             {
                 throw new ArgumentNullException("profileOptions");
             }
-            if (profileStore == null)
-            {
-                throw new ArgumentNullException("profileStore");
-            }
 
             Name = name;
             Options = profileOptions;
-            ProfileStore = profileStore;
-        }
-
-        /// <summary>
-        /// Persist changes to this CredentialProfile.
-        /// </summary>
-        public void Persist()
-        {
-            ProfileStore.RegisterProfile(this);
         }
 
         /// <summary>
@@ -160,10 +146,11 @@ namespace Amazon.Runtime
         ///
         /// See <see cref="CredentialProfileOptions"/> for a list of AWSCredentials returned by this method.
         /// </summary>
+        /// <param name="profileSource">The profile source, for profiles that reference other profiles.</param>
         /// <returns>AWSCredentials for this profile.</returns>
-        public AWSCredentials GetAWSCredentials()
+        public AWSCredentials GetAWSCredentials(ICredentialProfileSource profileSource)
         {
-            return GetAWSCredentials(false);
+            return GetAWSCredentials(profileSource, false);
         }
 
         /// <summary>
@@ -172,12 +159,13 @@ namespace Amazon.Runtime
         ///
         /// See <see cref="CredentialProfileOptions"/> for a list of AWSCredentials returned by this method.
         /// </summary>
+        /// <param name="profileSource">The profile source, for profiles that reference other profiles.</param>
         /// <param name="nonCallbackOnly">If true, throw a descriptive exception for any credentials that would not operate as-is.
         /// In other words, any credentials that require programmatic callbacks at runtime.</param>
         /// <returns>AWSCredentials for this profile.</returns>
-        internal AWSCredentials GetAWSCredentials(bool nonCallbackOnly)
+        internal AWSCredentials GetAWSCredentials(ICredentialProfileSource profileSource, bool nonCallbackOnly)
         {
-            return AWSCredentialsFactory.GetAWSCredentials(this, nonCallbackOnly);
+            return AWSCredentialsFactory.GetAWSCredentials(this, profileSource, nonCallbackOnly);
         }
 
         private string GetPropertiesString()

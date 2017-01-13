@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -124,7 +124,7 @@ namespace AWSSDK.UnitTests
         public void AssertWriteProfile(string profileName, CredentialProfileOptions profileOptions,
             Dictionary<string, string> properties, RegionEndpoint region, string expectedFileContents)
         {
-            CredentialsFile.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(profileName, profileOptions, properties, region));
+            CredentialsFile.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(null, profileName, profileOptions, properties, region));
             AssertWriteProfile(profileName, profileOptions, properties, null, null, expectedFileContents);
         }
 

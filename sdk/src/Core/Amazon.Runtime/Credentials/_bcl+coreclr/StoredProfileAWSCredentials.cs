@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ namespace Amazon.Runtime
     /// The profile name can be specified in the App.config using the AWSProfileName setting.
     /// </para>
     /// </summary>
-    [Obsolete("This class is obsolete and will be removed in a future release. Visit https://aws-blogs-prod.amazon.com/developer/aws-sdk-dot-net-credentialprofilemanager/ for further details.")]
+    [Obsolete("This class is obsolete and will be removed in a future release. Visit https://aws-blogs-prod.amazon.com/developer/aws-sdk-dot-net-credential-profiles/ for further details.")]
     public class StoredProfileAWSCredentials : AWSCredentials
     {
         private AWSCredentials _wrappedCredentials;
@@ -125,7 +125,7 @@ namespace Amazon.Runtime
                     var sharedCredentialsFile = new SharedCredentialsFile(credentialsFilePath);
                     CredentialProfile profile;
                     if (sharedCredentialsFile.TryGetProfile(lookupName, out profile)
-                        && AWSCredentialsFactory.TryGetAWSCredentials(profile, out _wrappedCredentials))
+                        && AWSCredentialsFactory.TryGetAWSCredentials(profile, sharedCredentialsFile, out _wrappedCredentials))
                     {
                         var logger = Logger.GetLogger(typeof(StoredProfileAWSCredentials));
                         logger.InfoFormat("Credentials found using account name {0} and looking in {1}.", lookupName, credentialsFilePath);

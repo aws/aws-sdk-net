@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,7 +27,8 @@ namespace Amazon.Runtime
     public static class FallbackCredentialsFactory
     {
 #if BCL || CORECLR
-        private static CredentialProfileManager ProfileManager = new CredentialProfileManager();
+        private static NetSDKCredentialsFile netSDKCredentialsFile = new NetSDKCredentialsFile();
+        private static SharedCredentialsFile sharedCredentialsFile = new SharedCredentialsFile();
 #endif
 
         static FallbackCredentialsFactory()
@@ -46,7 +47,9 @@ namespace Amazon.Runtime
                 () => new AppConfigAWSCredentials(),            // Test explicit keys/profile name first.
 #endif
 #if BCL || CORECLR
-                GetDefaultAWSCredentials,                       // Attempt to load the default profile.  It could be Basic, Session, AssumeRole, or SAML.
+                // Attempt to load the default profile.  It could be Basic, Session, AssumeRole, or SAML.
+                () => GetAWSCredentials(netSDKCredentialsFile, NetSDKCredentialsFile.DefaultProfileName),
+                () => GetAWSCredentials(sharedCredentialsFile, SharedCredentialsFile.DefaultProfileName),
                 () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.
 #endif
                 ECSEC2CredentialsWrapper,                       // either get ECS credentials or instance profile credentials
@@ -54,16 +57,16 @@ namespace Amazon.Runtime
         }
 
 #if BCL || CORECLR
-        private static AWSCredentials GetDefaultAWSCredentials()
+        private static AWSCredentials GetAWSCredentials(ICredentialProfileSource source, string defaultProfileName)
         {
             CredentialProfile defaultProfile;
-            if (ProfileManager.TryGetDefaultProfile(out defaultProfile))
+            if (netSDKCredentialsFile.TryGetProfile(defaultProfileName, out defaultProfile))
             {
-                return defaultProfile.GetAWSCredentials(true);
+                return defaultProfile.GetAWSCredentials(netSDKCredentialsFile, true);
             }
             else
             {
-                throw new AmazonClientException("Unable to find a default profile.");
+                throw new AmazonClientException("Unable to find a default profile is store " + source.GetType());
             }
         }
 #endif

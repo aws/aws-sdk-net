@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -243,7 +243,8 @@ using System.Diagnostics.CodeAnalysis;
 
 
 // Initialize reference type static fields inline
-[module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.Util.CredentialProfileManager.#.cctor()")]
+
+[module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.Runtime.SharedCredentialsFile.#.cctor()")]
 [module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.Runtime.FallbackRegionFactory.#.cctor()")]
 [module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.Runtime.Internal.Settings.PersistenceManager.#.cctor()")]
 [module: SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Scope = "member", Target = "Amazon.Runtime.FallbackCredentialsFactory.#.cctor()")]

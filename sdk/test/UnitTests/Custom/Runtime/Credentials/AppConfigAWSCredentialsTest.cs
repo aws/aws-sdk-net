@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -155,10 +155,11 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void NameSetSessionProfile()
         {
-            using (var fixture = new CredentialProfileManagerTestFixture(true, true))
+            using (var fixture = new SharedCredentialsFileTestFixture())
             {
-                fixture.ProfileManager.RegisterProfile(SessionProfileName, SessionProfileOptions);
-                SetConfigValues(null, null, SessionProfileName, fixture.SharedCredentialsFixture.CredentialsFile.FilePath);
+                var profile = new CredentialProfile(SessionProfileName, SessionProfileOptions);
+                fixture.CredentialsFile.RegisterProfile(profile);
+                SetConfigValues(null, null, SessionProfileName, fixture.CredentialsFile.FilePath);
                 var credentials = new AppConfigAWSCredentials().GetCredentials();
                 Assert.AreEqual(typeof(ImmutableCredentials), credentials.GetType());
                 Assert.AreEqual(AccessKeyValue, credentials.AccessKey);
@@ -170,11 +171,13 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void NameSetAssumeRoleMFAProfile()
         {
-            using (var fixture = new CredentialProfileManagerTestFixture(true, true))
+            using (var fixture = new SharedCredentialsFileTestFixture())
             {
-                fixture.ProfileManager.RegisterProfile(BasicProfileName, BasicProfileOptions);
-                fixture.ProfileManager.RegisterProfile(AssumeRoleMfaProfileName, AssumeRoleMfaProfileOptions);
-                SetConfigValues(null, null, AssumeRoleMfaProfileName, fixture.SharedCredentialsFixture.CredentialsFile.FilePath);
+                var basicProfile = new CredentialProfile(BasicProfileName, BasicProfileOptions);
+                fixture.CredentialsFile.RegisterProfile(basicProfile);
+                var assumeRoleProfile = new CredentialProfile(AssumeRoleMfaProfileName, AssumeRoleMfaProfileOptions);
+                fixture.CredentialsFile.RegisterProfile(assumeRoleProfile);
+                SetConfigValues(null, null, AssumeRoleMfaProfileName, fixture.CredentialsFile.FilePath);
                 AssertExtensions.ExpectException(() =>
                 {
                     new AppConfigAWSCredentials().GetCredentials();
@@ -185,10 +188,12 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void NameSetSAMLRoleUserIdentityProfile()
         {
-            using (var fixture = new CredentialProfileManagerTestFixture(true, false))
+            using (var fixture = new NetSDKCredentialsFileTestFixture())
             {
-                fixture.ProfileManager.RegisterProfile(SAMLRoleUserIdentityProfileName, SAMLRoleUserIdentityProfileOptions);
-                SetConfigValues(null, null, SAMLRoleUserIdentityProfileName, fixture.SharedCredentialsFixture.CredentialsFile.FilePath);
+                var profile = new CredentialProfile(SAMLRoleUserIdentityProfileName, SAMLRoleUserIdentityProfileOptions);
+                profile.UniqueKey = Guid.NewGuid().ToString();
+                fixture.ProfileStore.RegisterProfile(profile);
+                SetConfigValues(null, null, SAMLRoleUserIdentityProfileName, null);
                 AssertExtensions.ExpectException(() =>
                 {
                     new AppConfigAWSCredentials().GetCredentials();

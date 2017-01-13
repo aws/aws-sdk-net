@@ -55,55 +55,25 @@ namespace AWSSDK.UnitTests
             return properties;
         }
 
-        public static CredentialProfile GetCredentialProfile(string profileName, CredentialProfileOptions options)
+        public static CredentialProfile GetRandomProfile(string profileName, CredentialProfileType profileType)
         {
-            return GetCredentialProfile(null, profileName, options, null, null, new MemoryCredentialProfileStore());
+            return GetCredentialProfile(Guid.NewGuid().ToString(), profileName, GetRandomOptions(profileType), GetRandomProperties(), GetRandomRegion());
         }
 
-        public static CredentialProfile GetCredentialProfile(string profileName, CredentialProfileOptions options, Dictionary<string, string> properties)
+        public static CredentialProfile GetCredentialProfile(string uniqueKey, string profileName, CredentialProfileOptions options)
         {
-            return GetCredentialProfile(null, profileName, options, properties, null, new MemoryCredentialProfileStore());
+            return GetCredentialProfile(uniqueKey, profileName, options, null, null);
         }
 
-        public static CredentialProfile GetCredentialProfile(string profileName, CredentialProfileOptions options, Dictionary<string, string> properties, RegionEndpoint region)
+        public static CredentialProfile GetCredentialProfile(string uniqueKey, string profileName, CredentialProfileOptions options,
+            Dictionary<string, string> properties, RegionEndpoint region)
         {
-            return GetCredentialProfile(null, profileName, options, properties, region, new MemoryCredentialProfileStore());
-        }
-
-        public static CredentialProfile GetCredentialProfile(string uniqueKey, string profileName, CredentialProfileOptions options, Dictionary<string, string> properties)
-        {
-            return GetCredentialProfile(uniqueKey, profileName, options, properties, null, new MemoryCredentialProfileStore());
-        }
-
-        public static CredentialProfile GetCredentialProfile(string uniqueKey, string profileName,
-            CredentialProfileOptions options, Dictionary<string, string> properties, RegionEndpoint region)
-        {
-            return GetCredentialProfile(uniqueKey, profileName, options, properties, region, new MemoryCredentialProfileStore());
-        }
-
-        public static CredentialProfile GetRandomProfile(string profileName, CredentialProfileType profileType, ICredentialProfileStore profileStore)
-        {
-            return GetCredentialProfile(null, profileName, GetRandomOptions(profileType), GetRandomProperties(), GetRandomRegion(), profileStore);
-        }
-
-        public static CredentialProfile GetCredentialProfile(string profileName, CredentialProfileOptions options, ICredentialProfileStore profileStore)
-        {
-            return GetCredentialProfile(null, profileName, options, null, null, profileStore);
-        }
-
-        private static CredentialProfile GetCredentialProfile(string uniqueKey, string profileName, CredentialProfileOptions options,
-            Dictionary<string, string> properties, RegionEndpoint region, ICredentialProfileStore profileStore)
-        {
-            var constructor = typeof(CredentialProfile).GetConstructor(
-                BindingFlags.NonPublic | BindingFlags.Instance,
-                null,
-                new Type[] { typeof(string), typeof(CredentialProfileOptions), typeof(ICredentialProfileStore) },
-                null);
-
-            var profile = (CredentialProfile)constructor.Invoke(new object[] { profileName, options, profileStore });
-            ReflectionHelpers.Invoke(profile, "UniqueKey", uniqueKey);
+            var profile = new CredentialProfile(profileName, options)
+            {
+                UniqueKey = uniqueKey,
+                Region = region
+            };
             ReflectionHelpers.Invoke(profile, "Properties", properties);
-            profile.Region = region;
             return profile;
         }
     }

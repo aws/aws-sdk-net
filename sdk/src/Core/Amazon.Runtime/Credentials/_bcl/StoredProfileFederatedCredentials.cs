@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ namespace Amazon.Runtime
     /// 2. In order to use the StoredProfileFederatedCredentials class the AWSSDK.SecurityToken assembly
     /// must be available to your application at runtime.
     /// </remarks>
-    [Obsolete("This class is obsolete and will be removed in a future release. Visit https://aws-blogs-prod.amazon.com/developer/aws-sdk-dot-net-credentialprofilemanager/ for further details.")]
+    [Obsolete("This class is obsolete and will be removed in a future release. Visit https://aws-blogs-prod.amazon.com/developer/aws-sdk-dot-net-credential-profiles/ for further details.")]
     public class StoredProfileFederatedCredentials : RefreshingAWSCredentials
     {
         #region Private data

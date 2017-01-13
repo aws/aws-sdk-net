@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -55,12 +55,18 @@ namespace Amazon.Runtime
             {
                 var profileName = AWSConfigs.AWSProfileName;
                 var profilesLocation = AWSConfigs.AWSProfilesLocation;
-                var profileManager = new CredentialProfileManager(profilesLocation);
+
+                ICredentialProfileSource profileSource;
+                if (string.IsNullOrEmpty(profilesLocation))
+                    profileSource = new NetSDKCredentialsFile();
+                else
+                    profileSource = new SharedCredentialsFile(profilesLocation);
+
                 CredentialProfile profile;
-                if (profileManager.TryGetProfile(profileName, out profile))
+                if (profileSource.TryGetProfile(profileName, out profile))
                 {
                     // Will throw a descriptive exception if profile.CanCreateAWSCredentials is false.
-                    _wrappedCredentials = profile.GetAWSCredentials(true);
+                    _wrappedCredentials = profile.GetAWSCredentials(profileSource, true);
                 }
             }
 

@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2011-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ namespace Amazon.Runtime
     /// profile type for the supplied profile name and returns the appropriate profile 
     /// instance.
     /// </summary>
-    [Obsolete("This class is obsolete and will be removed in a future release. Visit https://aws-blogs-prod.amazon.com/developer/aws-sdk-dot-net-credentialprofilemanager/ for further details.")]
+    [Obsolete("This class is obsolete and will be removed in a future release. Visit https://aws-blogs-prod.amazon.com/developer/aws-sdk-dot-net-credential-profiles/ for further details.")]
     public abstract class StoredProfileCredentials
     {
         public const string DEFAULT_PROFILE_NAME = "default";

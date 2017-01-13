@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -47,86 +47,86 @@ namespace AWSSDK.UnitTests
         private static readonly MemoryCredentialProfileStore ProfileStore = new MemoryCredentialProfileStore();
 
         private static readonly CredentialProfile InvalidProfile =
-            CredentialProfileTestHelper.GetCredentialProfile("invalid_profile", new CredentialProfileOptions
+            new CredentialProfile("invalid_profile", new CredentialProfileOptions
             {
                 AccessKey = "aws_access_key_id"
-            }, ProfileStore);
+            });
 
         private static readonly CredentialProfile BasicProfile =
-            CredentialProfileTestHelper.GetCredentialProfile("basic_profile", new CredentialProfileOptions
+            new CredentialProfile("basic_profile", new CredentialProfileOptions
             {
                 AccessKey = "aws_access_key_id",
                 SecretKey = "aws_secret_access_key"
-            }, ProfileStore);
+            });
 
         private static readonly CredentialProfile SessionProfile =
-            CredentialProfileTestHelper.GetCredentialProfile("session_profile", new CredentialProfileOptions
+            new CredentialProfile("session_profile", new CredentialProfileOptions
             {
                 AccessKey = "aws_access_key_id",
                 SecretKey = "aws_secret_access_key",
                 Token = "token"
-            }, ProfileStore);
+            });
 
         private static readonly CredentialProfile AssumeRoleProfile =
-            CredentialProfileTestHelper.GetCredentialProfile("assume_role_profile", new CredentialProfileOptions
+            new CredentialProfile("assume_role_profile", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "basic_profile"
-            }, ProfileStore);
+            });
 
         private static readonly CredentialProfile AssumeRoleExternalProfile =
-            CredentialProfileTestHelper.GetCredentialProfile("assume_role_external_profile", new CredentialProfileOptions
+            new CredentialProfile("assume_role_external_profile", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "basic_profile",
                 ExternalID = "external_id"
-            }, ProfileStore);
+            });
 
         private static readonly CredentialProfile AssumeRoleMfaProfile =
-            CredentialProfileTestHelper.GetCredentialProfile("assume_role_mfa_profile", new CredentialProfileOptions
+            new CredentialProfile("assume_role_mfa_profile", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "basic_profile",
                 MfaSerial = "mfa_serial"
-            }, ProfileStore);
+            });
 
         private static readonly CredentialProfile AssumeRoleExternalMfaProfile =
-            CredentialProfileTestHelper.GetCredentialProfile("assume_role_external_mfa_profile", new CredentialProfileOptions
+            new CredentialProfile("assume_role_external_mfa_profile", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "basic_profile",
                 ExternalID = "external_id",
                 MfaSerial = "mfa_serial"
-            }, ProfileStore);
+            });
 
         private static readonly CredentialProfile SAMLRoleProfile =
-            CredentialProfileTestHelper.GetCredentialProfile("saml_role_profile", new CredentialProfileOptions
+            new CredentialProfile("saml_role_profile", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 EndpointName = "endpoint_name"
-            }, ProfileStore);
+            });
 
         private static readonly CredentialProfile SAMLRoleUserIdentityProfile =
-            CredentialProfileTestHelper.GetCredentialProfile("saml_role_user_identity_profile", new CredentialProfileOptions
+            new CredentialProfile("saml_role_user_identity_profile", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 EndpointName = "endpoint_name",
                 UserIdentity = "user_identity"
-            }, ProfileStore);
+            });
 
         private static readonly CredentialProfile AssumeRoleProfileSourceNotBasic =
-            CredentialProfileTestHelper.GetCredentialProfile("assume_role_profile_source_not_basic", new CredentialProfileOptions
+            new CredentialProfile("assume_role_profile_source_not_basic", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "session_profile"
-            }, ProfileStore);
+            });
 
         private static readonly CredentialProfile AssumeRoleProfileInvalidSource =
-            CredentialProfileTestHelper.GetCredentialProfile("assume_role_profile_invalid_source", new CredentialProfileOptions
+            new CredentialProfile("assume_role_profile_invalid_source", new CredentialProfileOptions
             {
                 RoleArn = "role_arn",
                 SourceProfile = "invalid_profile"
-            }, ProfileStore);
+            });
 
         static AWSCredentialsFactoryTest()
         {
@@ -186,7 +186,7 @@ namespace AWSSDK.UnitTests
         public void TryGetInvalidCredentials()
         {
             AWSCredentials credentials;
-            Assert.IsFalse(AWSCredentialsFactory.TryGetAWSCredentials(InvalidProfile, out credentials));
+            Assert.IsFalse(AWSCredentialsFactory.TryGetAWSCredentials(InvalidProfile, ProfileStore, out credentials));
             Assert.IsNull(credentials);
         }
 
@@ -194,7 +194,7 @@ namespace AWSSDK.UnitTests
         public void TryGetBasicCredentials()
         {
             AWSCredentials credentials;
-            Assert.IsTrue(AWSCredentialsFactory.TryGetAWSCredentials(BasicProfile, out credentials));
+            Assert.IsTrue(AWSCredentialsFactory.TryGetAWSCredentials(BasicProfile, ProfileStore, out credentials));
             Assert.IsNotNull(credentials);
             Assert.AreEqual(BasicCredentials, credentials);
         }
@@ -204,44 +204,44 @@ namespace AWSSDK.UnitTests
         {
             AssertExtensions.ExpectException(() =>
             {
-                AWSCredentialsFactory.GetAWSCredentials(InvalidProfile);
+                AWSCredentialsFactory.GetAWSCredentials(InvalidProfile, ProfileStore);
             }, typeof(InvalidDataException), string.Format(InvalidErrorFormat, InvalidProfile.Name));
         }
 
         [TestMethod]
         public void GetBasicCredentials()
         {
-            Assert.AreEqual(BasicCredentials, AWSCredentialsFactory.GetAWSCredentials(BasicProfile));
+            Assert.AreEqual(BasicCredentials, AWSCredentialsFactory.GetAWSCredentials(BasicProfile, ProfileStore));
         }
 
         [TestMethod]
         public void GetSessionCredentials()
         {
-            Assert.AreEqual(SessionCredentials, AWSCredentialsFactory.GetAWSCredentials(SessionProfile));
+            Assert.AreEqual(SessionCredentials, AWSCredentialsFactory.GetAWSCredentials(SessionProfile, ProfileStore));
         }
 
         [TestMethod]
         public void GetAssumeRoleCredentials()
         {
-            AssertAssumeRoleCredentialsAreEqual(AssumeRoleCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfile));
+            AssertAssumeRoleCredentialsAreEqual(AssumeRoleCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfile, ProfileStore));
         }
 
         [TestMethod]
         public void GetAssumeRoleExternalCredentials()
         {
-            AssertAssumeRoleCredentialsAreEqual(AssumeRoleExternalCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleExternalProfile));
+            AssertAssumeRoleCredentialsAreEqual(AssumeRoleExternalCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleExternalProfile, ProfileStore));
         }
 
         [TestMethod]
         public void GetAssumeRoleMfaCredentials()
         {
-            AssertAssumeRoleCredentialsAreEqual(AssumeRoleMfaCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleMfaProfile));
+            AssertAssumeRoleCredentialsAreEqual(AssumeRoleMfaCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleMfaProfile, ProfileStore));
         }
 
         [TestMethod]
         public void GetAssumeRoleExternalMfaCredentials()
         {
-            AssertAssumeRoleCredentialsAreEqual(AssumeRoleExternalMfaCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleExternalMfaProfile));
+            AssertAssumeRoleCredentialsAreEqual(AssumeRoleExternalMfaCredentials, AWSCredentialsFactory.GetAWSCredentials(AssumeRoleExternalMfaProfile, ProfileStore));
         }
 
         [TestMethod]
@@ -250,7 +250,7 @@ namespace AWSSDK.UnitTests
             using (var fixture = new EncryptedStoreTestFixture(SettingsConstants.RegisteredSAMLEndpoints))
             {
                 (new SAMLEndpointManager()).RegisterEndpoint(SomeSAMLEndpoint);
-                AssertFederatedCredentialsAreEqual(FederatedCredentials, AWSCredentialsFactory.GetAWSCredentials(SAMLRoleProfile));
+                AssertFederatedCredentialsAreEqual(FederatedCredentials, AWSCredentialsFactory.GetAWSCredentials(SAMLRoleProfile, ProfileStore));
             }
         }
 
@@ -260,7 +260,7 @@ namespace AWSSDK.UnitTests
             using (var fixture = new EncryptedStoreTestFixture(SettingsConstants.RegisteredSAMLEndpoints))
             {
                 (new SAMLEndpointManager()).RegisterEndpoint(SomeSAMLEndpoint);
-                AssertFederatedCredentialsAreEqual(FederatedUserIdentityCredentials, AWSCredentialsFactory.GetAWSCredentials(SAMLRoleUserIdentityProfile));
+                AssertFederatedCredentialsAreEqual(FederatedUserIdentityCredentials, AWSCredentialsFactory.GetAWSCredentials(SAMLRoleUserIdentityProfile, ProfileStore));
             }
         }
 
@@ -271,7 +271,7 @@ namespace AWSSDK.UnitTests
             {
                 throw AssertExtensions.ExpectException(() =>
                 {
-                    AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfileSourceNotBasic);
+                    AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfileSourceNotBasic, ProfileStore);
                 }, typeof(InvalidDataException), string.Format(SourceErrorFormat, SessionProfile.Name,
                 "assume_role_profile_source_not_basic")).InnerException;
             }, typeof(InvalidDataException), string.Format(SourceNotBasicFormat, SessionProfile.Name));
@@ -284,7 +284,7 @@ namespace AWSSDK.UnitTests
             {
                 throw AssertExtensions.ExpectException(() =>
                 {
-                    AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfileInvalidSource);
+                    AWSCredentialsFactory.GetAWSCredentials(AssumeRoleProfileInvalidSource, ProfileStore);
                 }, typeof(InvalidDataException), string.Format(SourceErrorFormat, InvalidProfile.Name,
                 "assume_role_profile_invalid_source")).InnerException;
             }
@@ -296,7 +296,7 @@ namespace AWSSDK.UnitTests
         {
             AssertExtensions.ExpectException(() =>
             {
-                AWSCredentialsFactory.GetAWSCredentials(AssumeRoleMfaProfile, true);
+                AWSCredentialsFactory.GetAWSCredentials(AssumeRoleMfaProfile, ProfileStore, true);
             }, typeof(InvalidOperationException), string.Format(MfaCallbackErrorFormat, AssumeRoleMfaProfile.Name));
         }
 
@@ -305,7 +305,7 @@ namespace AWSSDK.UnitTests
         {
             AssertExtensions.ExpectException(() =>
             {
-                AWSCredentialsFactory.GetAWSCredentials(SAMLRoleUserIdentityProfile, true);
+                AWSCredentialsFactory.GetAWSCredentials(SAMLRoleUserIdentityProfile, ProfileStore, true);
             }, typeof(InvalidOperationException), string.Format(UserIdentityCallbackErrorFormat, SAMLRoleUserIdentityProfile.Name));
         }
 

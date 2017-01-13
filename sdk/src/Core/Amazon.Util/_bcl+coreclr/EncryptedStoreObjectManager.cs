@@ -69,13 +69,31 @@ namespace Amazon.Util
         public string SettingsType { get; private set; }
 
         /// <summary>
-        /// Register an object.
+        /// Register an object.  Let the uniqueKey be assigned automatically.
         /// </summary>
         /// <param name="displayName">The display name for the object.</param>
         /// <param name="properties">The property names and values for the object.</param>
         /// <returns>The unique key that was assigned to the object.</returns>
         public string RegisterObject(string displayName, Dictionary<string, string> properties)
         {
+            return RegisterObject(null, displayName, properties);
+        }
+
+        /// <summary>
+        /// Register an object.
+        /// </summary>
+        /// <param name="uniqueKey">The uniqueKey for the object, or null if one should be assigned automatically.</param>
+        /// <param name="displayName">The display name for the object.</param>
+        /// <param name="properties">The property names and values for the object.</param>
+        /// <returns>The unique key that was assigned to the object.</returns>
+        public string RegisterObject(string uniqueKey, string displayName, Dictionary<string, string> properties)
+        {
+            if (!string.IsNullOrEmpty(uniqueKey) && UseDisplayNameAsUniqueKey &&
+                !string.Equals(displayName, uniqueKey, StringComparison.Ordinal))
+            {
+                throw new ArgumentException("UniqueKey cannot be specified when UseDisplayNameAsUniqueKey is set to true.");
+            }
+
             var settings = GetSettings();
             SettingsCollection.ObjectSettings objectSettings;
             if (TryGetObjectSettings(displayName, settings, out objectSettings))
@@ -85,8 +103,15 @@ namespace Amazon.Util
             }
             else
             {
-                var uniqueKey = UseDisplayNameAsUniqueKey ? displayName : Guid.NewGuid().ToString();
-                objectSettings = settings.NewObjectSettings(uniqueKey);
+                string actualUniqueKey;
+                if (UseDisplayNameAsUniqueKey)
+                    actualUniqueKey = displayName;
+                else if (string.IsNullOrEmpty(uniqueKey))
+                    actualUniqueKey = Guid.NewGuid().ToString();
+                else
+                    actualUniqueKey = uniqueKey;
+
+                objectSettings = settings.NewObjectSettings(actualUniqueKey);
             }
 
             if (!UseDisplayNameAsUniqueKey)

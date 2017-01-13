@@ -17,20 +17,6 @@ using System.Collections.Generic;
 namespace Amazon.Runtime.Internal
 {
     /// <summary>
-    /// Interface to define the necessary operations for a CredentialProfile lookup mechanism.
-    /// </summary>
-    public interface ICredentialProfileSource
-    {
-        /// <summary>
-        /// Get the profile with the given name, if one exists.
-        /// </summary>
-        /// <param name="profileName">The name of the profile to get.</param>
-        /// <param name="profile">The profile, if it was found, null otherwise.</param>
-        /// <returns>True if the profile was found, false otherwise.</returns>
-        bool TryGetProfile(string profileName, out CredentialProfile profile);
-    }
-
-    /// <summary>
     /// Interface to define the necessary operations for a CredentialProfile storage mechanism.
     /// </summary>
     public interface ICredentialProfileStore : ICredentialProfileSource

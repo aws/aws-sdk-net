@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,14 +60,12 @@ namespace AWSSDK.UnitTests
                 using (var tester = new NetSDKCredentialsFileTestFixture())
                 {
                     var profileName = type.ToString() + Guid.NewGuid().ToString();
-                    var originalProfile = CredentialProfileTestHelper.GetRandomProfile(profileName, type, tester.ProfileStore);
+                    var originalProfile = CredentialProfileTestHelper.GetRandomProfile(profileName, type);
                     Assert.IsTrue(originalProfile.CanCreateAWSCredentials);
-                    Assert.IsNull(originalProfile.UniqueKey);
+                    Assert.IsNotNull(originalProfile.UniqueKey);
 
                     tester.ProfileStore.RegisterProfile(originalProfile);
 
-                    //make sure the store assigns a unique key
-                    Assert.IsNotNull(originalProfile.UniqueKey);
                     var readProfile = tester.TestTryGetProfile(profileName, true, true);
                     Assert.AreEqual(originalProfile, readProfile);
 
@@ -123,7 +121,7 @@ namespace AWSSDK.UnitTests
                 using (var tester = new NetSDKCredentialsFileTestFixture())
                 {
                     var profileName = Guid.NewGuid().ToString();
-                    var profile = CredentialProfileTestHelper.GetRandomProfile(profileName, CredentialProfileType.Basic, tester.ProfileStore);
+                    var profile = CredentialProfileTestHelper.GetRandomProfile(profileName, CredentialProfileType.Basic);
                     var properties = CredentialProfileUtils.GetProperties(profile);
                     properties.Add(propertyName, "aargh!");
                     tester.ProfileStore.RegisterProfile(profile);
@@ -176,7 +174,8 @@ namespace AWSSDK.UnitTests
             using (var tester = new NetSDKCredentialsFileTestFixture())
             {
                 // register
-                tester.ProfileStore.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(CredentialProfileType.Basic.ToString(),
+                tester.ProfileStore.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(Guid.NewGuid().ToString(),
+                    CredentialProfileType.Basic.ToString(),
                     CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.Basic)));
                 // check that it's there
                 tester.TestTryGetProfile(CredentialProfileType.Basic.ToString(), true, true);
@@ -205,7 +204,7 @@ namespace AWSSDK.UnitTests
         {
             using (var tester = new NetSDKCredentialsFileTestFixture())
             {
-                tester.ProfileStore.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(
+                tester.ProfileStore.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(Guid.NewGuid().ToString(),
                        "SessionProfile", CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.Session)));
 
                 var profileNames = tester.ProfileStore.ListProfileNames();
@@ -220,7 +219,8 @@ namespace AWSSDK.UnitTests
             using (var tester = new NetSDKCredentialsFileTestFixture(InvalidProfileText))
             {
                 tester.ProfileStore.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(
-                       "SessionProfile", CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.Session)));
+                    Guid.NewGuid().ToString(),  "SessionProfile",
+                    CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.Session)));
 
                 var profileNames = tester.ProfileStore.ListProfileNames();
                 Assert.AreEqual(1, profileNames.Count);
@@ -244,7 +244,8 @@ namespace AWSSDK.UnitTests
             using (var tester = new NetSDKCredentialsFileTestFixture())
             {
                 tester.ProfileStore.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(
-                       "SessionProfile", CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.Session)));
+                    Guid.NewGuid().ToString(), "SessionProfile",
+                    CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.Session)));
 
                 var profiles = tester.ProfileStore.ListProfiles();
                 Assert.AreEqual(1, profiles.Count);
@@ -258,7 +259,8 @@ namespace AWSSDK.UnitTests
             using (var tester = new NetSDKCredentialsFileTestFixture(InvalidProfileText))
             {
                 tester.ProfileStore.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(
-                    "SessionProfile", CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.Session)));
+                    Guid.NewGuid().ToString(), "SessionProfile",
+                    CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.Session)));
 
                 var profiles = tester.ProfileStore.ListProfiles();
                 Assert.AreEqual(1, profiles.Count);
@@ -274,7 +276,7 @@ namespace AWSSDK.UnitTests
                 // write with old ProfileManager
                 ProfileManager.RegisterProfile("BasicProfile", "AccessKey", "SecretKey");
 
-                // read with new CredentialProfileManager
+                // read with new NetSDKCredentialsFile
                 CredentialProfile profile;
                 Assert.IsTrue(tester.ProfileStore.TryGetProfile("BasicProfile", out profile));
                 Assert.IsNotNull(profile);
@@ -290,9 +292,10 @@ namespace AWSSDK.UnitTests
         {
             using (var tester = new NetSDKCredentialsFileTestFixture())
             {
-                // write with new CredentialProfileManager
+                // write with new NetSDKCredentialsFile
                 CredentialProfile profile = CredentialProfileTestHelper.GetCredentialProfile(
-                       "BasicProfile", CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.Basic));
+                    Guid.NewGuid().ToString(), "BasicProfile",
+                    CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.Basic));
                 tester.ProfileStore.RegisterProfile(profile);
 
                 // read with old ProfileManager
@@ -314,7 +317,7 @@ namespace AWSSDK.UnitTests
                 ProfileManager.RegisterSAMLEndpoint("EndpointName", new Uri("https://somesamlendpoint/"), null);
                 ProfileManager.RegisterSAMLRoleProfile("SAMLProfile", "EndpointName", "RoleArn", "UserIdentity");
 
-                // read with new CredentialProfileManager
+                // read with new NetSDKCredentialsFile
                 CredentialProfile profile;
                 Assert.IsTrue(tester.ProfileStore.TryGetProfile("SAMLProfile", out profile));
                 Assert.IsNotNull(profile);
@@ -331,9 +334,10 @@ namespace AWSSDK.UnitTests
         {
             using (var tester = new NetSDKCredentialsFileTestFixture())
             {
-                // write with new CredentialProfileManager
+                // write with new NetSDKCredentialsFile
                 CredentialProfile profile = CredentialProfileTestHelper.GetCredentialProfile(
-                       "SAMLProfile", CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.SAMLRoleUserIdentity));
+                    Guid.NewGuid().ToString(), "SAMLProfile",
+                    CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.SAMLRoleUserIdentity));
                 tester.ProfileStore.RegisterProfile(profile);
 
                 // TODO do this with the new SAML Endpoint Manager
@@ -356,7 +360,8 @@ namespace AWSSDK.UnitTests
             {
                 // write a type that's not supported by ProfileManager
                 tester.ProfileStore.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(
-                    "SessionProfile", CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.Session)));
+                    Guid.NewGuid().ToString(), "SessionProfile",
+                    CredentialProfileTestHelper.GetRandomOptions(CredentialProfileType.Session)));
 
                 // make sure profile manager can't read it as a basic profile, and that there aren't any errors.
                 AWSCredentials credentials;

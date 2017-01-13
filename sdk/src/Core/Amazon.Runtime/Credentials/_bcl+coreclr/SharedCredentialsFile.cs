@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Amazon.Runtime.Internal
+namespace Amazon.Runtime
 {
     /// <summary>
     /// Provides access to read and write to the shared credentials INI file.
@@ -32,10 +33,14 @@ namespace Amazon.Runtime.Internal
     /// </summary>
     public class SharedCredentialsFile : ICredentialProfileStore
     {
+        public const string DefaultProfileName = "default";
+
         private const string UniqueKeyField = "unique_key";
         private const string RegionField = "region";
         private const string ProfileMarker = "profile";
         private const string ConfigFileName = "config";
+        private const string DefaultDirectoryName = ".aws";
+        private const string DefaultFileName = "credentials";
 
         private readonly Logger logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
@@ -65,21 +70,54 @@ namespace Amazon.Runtime.Internal
                 new Dictionary<string, string>()
                 {
                     { "AccessKey", "aws_access_key_id" },
+#if BCL
                     { "EndpointName", null },
+#endif
                     { "ExternalID", "external_id" },
                     { "MfaSerial", "mfa_serial" },
                     { "RoleArn", "role_arn" },
                     { "SecretKey", "aws_secret_access_key" },
                     { "SourceProfile", "source_profile" },
                     { "Token", "aws_session_token" },
+#if BCL
                     { "UserIdentity", null },
+#endif
                 }
             );
+
+        private static readonly string DefaultDirectory;
+        private static readonly string DefaultFilePath;
+
+        static SharedCredentialsFile()
+        {
+            var baseDirectory = Environment.GetEnvironmentVariable("HOME");
+
+            if (string.IsNullOrEmpty(baseDirectory))
+                baseDirectory = Environment.GetEnvironmentVariable("USERPROFILE");
+
+            if (string.IsNullOrEmpty(baseDirectory))
+#if CORECLR
+                baseDirectory = Directory.GetCurrentDirectory();
+#else
+                baseDirectory = Environment.CurrentDirectory;
+#endif
+            DefaultDirectory = Path.Combine(baseDirectory, DefaultDirectoryName);
+            DefaultFilePath = Path.Combine(DefaultDirectory, DefaultFileName);
+        }
 
         private IniFile credentialsFile;
         private IniFile configFile;
 
         public string FilePath { get; private set; }
+
+        /// <summary>
+        /// Construct a new SharedCredentialsFile in the default location.
+        /// </summary>
+        public SharedCredentialsFile()
+        {
+            FilePath = DefaultFilePath;
+            Refresh();
+        }
 
         /// <summary>
         /// Construct a new SharedCredentialsFile.
@@ -237,7 +275,7 @@ namespace Amazon.Runtime.Internal
                     region = RegionEndpoint.GetBySystemName(regionString);
                 }
 
-                profile = new CredentialProfile(profileName, profileOptions, this)
+                profile = new CredentialProfile(profileName, profileOptions)
                 {
                     UniqueKey = uniqueKey,
                     Properties = userProperties,

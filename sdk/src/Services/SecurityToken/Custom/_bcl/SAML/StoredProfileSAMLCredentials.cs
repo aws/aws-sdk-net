@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ namespace Amazon.SecurityToken.SAML
     /// Currently only the SDK store supports profiles that contain the necessary data to support 
     /// authentication and role-based credential generation.
     /// </remarks>
-    [Obsolete("This class is obsolete and will be removed in a future release. Visit https://aws-blogs-prod.amazon.com/developer/aws-sdk-dot-net-credentialprofilemanager/ for further details.")]
+    [Obsolete("This class is obsolete and will be removed in a future release. Visit https://aws-blogs-prod.amazon.com/developer/aws-sdk-dot-net-credential-profiles/ for further details.")]
     public class StoredProfileSAMLCredentials : RefreshingAWSCredentials
     {
         private const int MaxAuthenticationRetries = 3;

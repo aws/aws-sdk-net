@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Util;
 using System;
@@ -19,7 +20,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-namespace Amazon.Runtime.Internal
+namespace Amazon.Runtime
 {
     /// <summary>
     /// This class allows profiles supporting AWSCredentials to be registered with
@@ -30,6 +31,8 @@ namespace Amazon.Runtime.Internal
     /// </para>
     public class NetSDKCredentialsFile : ICredentialProfileStore
     {
+        public const string DefaultProfileName = "Default";
+
         // Values kept from ProfileManager to support backward compatibility.
         private const string AWSCredentialsProfileType = "AWS";
         private const string SAMLRoleProfileType = "SAML";
@@ -115,7 +118,7 @@ namespace Amazon.Runtime.Internal
                         region = RegionEndpoint.GetBySystemName(regionString);
                     }
 
-                    profile = new CredentialProfile(profileName, profileOptions, this)
+                    profile = new CredentialProfile(profileName, profileOptions)
                     {
                         UniqueKey = uniqueKey,
                         Properties = userProperties,
@@ -154,12 +157,14 @@ namespace Amazon.Runtime.Internal
                 var profileDictionary = PropertyMapping.CombineProfileParts(
                     profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
 
-                profile.UniqueKey = objectManager.RegisterObject(profile.Name, profileDictionary);
+                // Set the UniqueKey.  It might change if the unique key is set by the objectManger,
+                // or if this is an update to an existing profile.
+                profile.SetUniqueKeyInternal(objectManager.RegisterObject(profile.UniqueKey, profile.Name, profileDictionary));
             }
             else
             {
                 throw new ArgumentException(String.Format(CultureInfo.InvariantCulture,
-                    "Unable to register profile {0}.  The CredentialProfile provided is not a valid profile.", profile.Name));
+                    "Unable to register profile {0}.  The CredentialProfileOptions provided is not valid.", profile.Name));
             }
         }
 
@@ -174,7 +179,7 @@ namespace Amazon.Runtime.Internal
 
         /// <summary>
         /// Set the ProfileType field to maintain backward compatibility with ProfileManager.
-        /// The value is ignored when CredentialProfileManager reads it back in.
+        /// The value is ignored when it's read back in.
         /// </summary>
         /// <param name="properties"></param>
         /// <param name="profileType"></param>
