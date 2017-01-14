@@ -66,7 +66,7 @@ namespace AWSSDK.UnitTests
         }
 
         public CredentialProfile ReadAndAssertProfile(string profileName, CredentialProfileOptions expectedProfileOptions,
-            RegionEndpoint expectedRegion, string expectedUniqueKey)
+            RegionEndpoint expectedRegion, Guid? expectedUniqueKey)
         {
             return ReadAndAssertProfile(profileName, expectedProfileOptions, null, expectedRegion, expectedUniqueKey);
         }
@@ -83,7 +83,7 @@ namespace AWSSDK.UnitTests
         }
 
         public CredentialProfile ReadAndAssertProfile(string profileName, CredentialProfileOptions expectedProfileOptions,
-            Dictionary<string, string> expectedProperties, RegionEndpoint expectedRegion, string expectedUniqueKey)
+            Dictionary<string, string> expectedProperties, RegionEndpoint expectedRegion, Guid? expectedUniqueKey)
         {
             var expectedProfile = CredentialProfileTestHelper.GetCredentialProfile(expectedUniqueKey, profileName, expectedProfileOptions,
                 expectedProperties, expectedRegion);
@@ -111,7 +111,7 @@ namespace AWSSDK.UnitTests
             AssertWriteProfile(profileName, profileOptions, null, (RegionEndpoint)null, null, expectedFileContents);
         }
 
-        public void AssertWriteProfile(string profileName, CredentialProfileOptions profileOptions, RegionEndpoint region, string uniqueKey, string expectedFileContents)
+        public void AssertWriteProfile(string profileName, CredentialProfileOptions profileOptions, RegionEndpoint region, Guid? uniqueKey, string expectedFileContents)
         {
             AssertWriteProfile(profileName, profileOptions, null, region, uniqueKey, expectedFileContents);
         }
@@ -129,7 +129,7 @@ namespace AWSSDK.UnitTests
         }
 
         public void AssertWriteProfile(string profileName, CredentialProfileOptions profileOptions,
-            Dictionary<string, string> properties, RegionEndpoint region, string uniqueKey, string expectedFileContents)
+            Dictionary<string, string> properties, RegionEndpoint region, Guid? uniqueKey, string expectedFileContents)
         {
             CredentialsFile.RegisterProfile(CredentialProfileTestHelper.GetCredentialProfile(uniqueKey, profileName, profileOptions, properties, region));
             AssertCredentialsFileContents(expectedFileContents);

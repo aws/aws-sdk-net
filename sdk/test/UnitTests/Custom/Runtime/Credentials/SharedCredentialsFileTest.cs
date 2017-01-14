@@ -30,7 +30,7 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class SharedCredentialsFileTest
     {
-        private static readonly string UniqueKey = Guid.NewGuid().ToString();
+        private static readonly Guid UniqueKey = Guid.NewGuid();
 
         private static readonly string SessionProfileText = new StringBuilder()
             .AppendLine("[session_profile]")

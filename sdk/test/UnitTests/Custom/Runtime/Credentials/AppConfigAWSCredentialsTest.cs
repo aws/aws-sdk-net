@@ -191,7 +191,7 @@ namespace AWSSDK.UnitTests
             using (var fixture = new NetSDKCredentialsFileTestFixture())
             {
                 var profile = new CredentialProfile(SAMLRoleUserIdentityProfileName, SAMLRoleUserIdentityProfileOptions);
-                profile.UniqueKey = Guid.NewGuid().ToString();
+                profile.UniqueKey = Guid.NewGuid();
                 fixture.ProfileStore.RegisterProfile(profile);
                 SetConfigValues(null, null, SAMLRoleUserIdentityProfileName, null);
                 AssertExtensions.ExpectException(() =>

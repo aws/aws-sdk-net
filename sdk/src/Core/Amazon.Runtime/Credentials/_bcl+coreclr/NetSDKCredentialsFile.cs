@@ -101,8 +101,8 @@ namespace Amazon.Runtime
         public bool TryGetProfile(string profileName, out CredentialProfile profile)
         {
             Dictionary<string, string> properties;
-            string uniqueKey;
-            if (objectManager.TryGetObject(profileName, out uniqueKey, out properties))
+            string uniqueKeyStr;
+            if (objectManager.TryGetObject(profileName, out uniqueKeyStr, out properties))
             {
                 try
                 {
@@ -118,6 +118,8 @@ namespace Amazon.Runtime
                         region = RegionEndpoint.GetBySystemName(regionString);
                     }
 
+                    Guid? uniqueKey;
+                    TryParseGuid(uniqueKeyStr, out uniqueKey);
                     profile = new CredentialProfile(profileName, profileOptions)
                     {
                         UniqueKey = uniqueKey,
@@ -159,7 +161,10 @@ namespace Amazon.Runtime
 
                 // Set the UniqueKey.  It might change if the unique key is set by the objectManger,
                 // or if this is an update to an existing profile.
-                profile.SetUniqueKeyInternal(objectManager.RegisterObject(profile.UniqueKey, profile.Name, profileDictionary));
+                string newUniqueKeyStr = objectManager.RegisterObject(profile.UniqueKey.ToString(), profile.Name, profileDictionary);
+                Guid? newUniqueKey;
+                TryParseGuid(newUniqueKeyStr, out newUniqueKey);
+                profile.SetUniqueKeyInternal(newUniqueKey);
             }
             else
             {
@@ -199,6 +204,25 @@ namespace Amazon.Runtime
             else
             {
                 properties[SettingsConstants.ProfileTypeField] = profileType.ToString();
+            }
+        }
+
+        private static bool TryParseGuid(string guidString, out Guid? guid)
+        {
+            try
+            {
+                guid = new Guid(guidString);
+                return true;
+            }
+            catch (FormatException)
+            {
+                guid = null;
+                return false;
+            }
+            catch (OverflowException)
+            {
+                guid = null;
+                return false;
             }
         }
     }

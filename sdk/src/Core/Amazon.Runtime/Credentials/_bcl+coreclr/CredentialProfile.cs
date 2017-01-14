@@ -27,7 +27,7 @@ namespace Amazon.Runtime
     public class CredentialProfile
     {
         private Dictionary<string, string> properties;
-        private string uniqueKey;
+        private Guid? uniqueKey;
 
         /// <summary>
         /// The name of the CredentialProfile
@@ -47,7 +47,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// The unique key for this CredentialProfile.
         /// </summary>
-        public string UniqueKey
+        public Guid? UniqueKey
         {
             get
             {
@@ -55,14 +55,14 @@ namespace Amazon.Runtime
             }
             set
             {
-                if (uniqueKey == null || string.Equals(uniqueKey, value, StringComparison.OrdinalIgnoreCase))
+                if (uniqueKey == null || uniqueKey.Equals(value))
                     uniqueKey = value;
                 else
                     throw new ArgumentException("UniqueKey cannot be changed once it's assigned.");
             }
         }
 
-        internal void SetUniqueKeyInternal(string uniqueKey)
+        internal void SetUniqueKeyInternal(Guid? uniqueKey)
         {
             this.uniqueKey = uniqueKey;
         }

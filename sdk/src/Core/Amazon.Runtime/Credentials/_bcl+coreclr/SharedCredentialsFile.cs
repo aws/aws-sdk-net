@@ -190,7 +190,7 @@ namespace Amazon.Runtime
             var reservedProperties = new Dictionary<string, string>();
 
             if (profile.UniqueKey != null)
-                reservedProperties[UniqueKeyField] = profile.UniqueKey;
+                reservedProperties[UniqueKeyField] = profile.UniqueKey.ToString();
 
             if (profile.Region != null)
             {
@@ -265,8 +265,10 @@ namespace Amazon.Runtime
                 PropertyMapping.ExtractProfileParts(profileDictionary, ReservedPropertyNames,
                     out profileOptions, out reservedProperties, out userProperties);
 
-                string uniqueKey;
-                reservedProperties.TryGetValue(UniqueKeyField, out uniqueKey);
+                string uniqueKeyStr;
+                Guid? uniqueKey = null;
+                if (reservedProperties.TryGetValue(UniqueKeyField, out uniqueKeyStr))
+                    TryParseGuid(uniqueKeyStr, out uniqueKey);
 
                 string regionString;
                 RegionEndpoint region = null;
@@ -342,6 +344,25 @@ namespace Amazon.Runtime
         private static bool IsSupportedProfileType(CredentialProfileType? profileType)
         {
             return !profileType.HasValue || ProfileTypeWhitelist.Contains(profileType.Value);
+        }
+
+        private static bool TryParseGuid(string guidString, out Guid? guid)
+        {
+            try
+            {
+                guid = new Guid(guidString);
+                return true;
+            }
+            catch (FormatException)
+            {
+                guid = null;
+                return false;
+            }
+            catch (OverflowException)
+            {
+                guid = null;
+                return false;
+            }
         }
     }
 }
