@@ -27,7 +27,6 @@ namespace Amazon.Runtime
     public class CredentialProfile
     {
         private Dictionary<string, string> properties;
-        private Guid? uniqueKey;
 
         /// <summary>
         /// The name of the CredentialProfile
@@ -47,25 +46,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// The unique key for this CredentialProfile.
         /// </summary>
-        public Guid? UniqueKey
-        {
-            get
-            {
-                return uniqueKey;
-            }
-            set
-            {
-                if (uniqueKey == null || uniqueKey.Equals(value))
-                    uniqueKey = value;
-                else
-                    throw new ArgumentException("UniqueKey cannot be changed once it's assigned.");
-            }
-        }
-
-        internal void SetUniqueKeyInternal(Guid? uniqueKey)
-        {
-            this.uniqueKey = uniqueKey;
-        }
+        internal Guid? UniqueKey { get; set; }
 
         /// <summary>
         /// An optional dictionary of name-value pairs stored with the CredentialProfile

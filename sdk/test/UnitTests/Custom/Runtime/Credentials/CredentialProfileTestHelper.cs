@@ -70,9 +70,9 @@ namespace AWSSDK.UnitTests
         {
             var profile = new CredentialProfile(profileName, options)
             {
-                UniqueKey = uniqueKey,
                 Region = region
             };
+            CredentialProfileUtils.SetUniqueKey(profile, uniqueKey);
             ReflectionHelpers.Invoke(profile, "Properties", properties);
             return profile;
         }

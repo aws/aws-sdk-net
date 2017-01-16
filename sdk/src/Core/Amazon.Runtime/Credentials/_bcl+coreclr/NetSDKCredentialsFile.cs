@@ -167,7 +167,7 @@ namespace Amazon.Runtime
                 string newUniqueKeyStr = objectManager.RegisterObject(profile.UniqueKey.ToString(), profile.Name, profileDictionary);
                 Guid? newUniqueKey;
                 TryParseGuid(newUniqueKeyStr, out newUniqueKey);
-                profile.SetUniqueKeyInternal(newUniqueKey);
+                profile.UniqueKey = newUniqueKey;
             }
             else
             {

@@ -14,6 +14,7 @@
  */
 using Amazon;
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -191,7 +192,7 @@ namespace AWSSDK.UnitTests
             using (var fixture = new NetSDKCredentialsFileTestFixture())
             {
                 var profile = new CredentialProfile(SAMLRoleUserIdentityProfileName, SAMLRoleUserIdentityProfileOptions);
-                profile.UniqueKey = Guid.NewGuid();
+                CredentialProfileUtils.SetUniqueKey(profile, Guid.NewGuid());
                 fixture.ProfileStore.RegisterProfile(profile);
                 SetConfigValues(null, null, SAMLRoleUserIdentityProfileName, null);
                 AssertExtensions.ExpectException(() =>

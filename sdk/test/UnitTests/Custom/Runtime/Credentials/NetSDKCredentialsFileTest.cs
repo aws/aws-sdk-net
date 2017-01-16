@@ -78,7 +78,7 @@ namespace AWSSDK.UnitTests
                     var profileName = type.ToString() + Guid.NewGuid().ToString();
                     var originalProfile = CredentialProfileTestHelper.GetRandomProfile(profileName, type);
                     Assert.IsTrue(originalProfile.CanCreateAWSCredentials);
-                    Assert.IsNotNull(originalProfile.UniqueKey);
+                    Assert.IsNotNull(CredentialProfileUtils.GetUniqueKey(originalProfile));
 
                     tester.ProfileStore.RegisterProfile(originalProfile);
 
@@ -180,7 +180,7 @@ namespace AWSSDK.UnitTests
             using (var tester = new NetSDKCredentialsFileTestFixture(LegacyCredentialsTypeProfileText))
             {
                 var profile = tester.TestTryGetProfile("LegacyCredentialsTypeProfile", true, false);
-                Assert.AreEqual(UniqueKey, profile.UniqueKey);
+                Assert.AreEqual(UniqueKey, CredentialProfileUtils.GetUniqueKey(profile));
             }
         }
 
@@ -304,7 +304,7 @@ namespace AWSSDK.UnitTests
                 Assert.AreNotEqual(before.Name, after.Name);
 
                 // make sure the unique key is the same as before the rename
-                Assert.AreEqual(before.UniqueKey, after.UniqueKey);
+                Assert.AreEqual(CredentialProfileUtils.GetUniqueKey(before), CredentialProfileUtils.GetUniqueKey(after));
 
                 // make sure everything is the same, except for the name
                 ReflectionHelpers.Invoke(after, "Name", before.Name);
@@ -360,10 +360,10 @@ namespace AWSSDK.UnitTests
 
                 // make sure the name and unique key of the copy are different from the original
                 Assert.AreNotEqual(profile1.Name, profile2.Name);
-                Assert.AreNotEqual(profile1.UniqueKey, profile2.UniqueKey);
+                Assert.AreNotEqual(CredentialProfileUtils.GetUniqueKey(profile1), CredentialProfileUtils.GetUniqueKey(profile2));
 
                 // make sure everything else on the copy is the same as the original
-                ReflectionHelpers.Invoke(profile2, "SetUniqueKeyInternal", profile1.UniqueKey);
+                CredentialProfileUtils.SetUniqueKey(profile2, CredentialProfileUtils.GetUniqueKey(profile1));
                 ReflectionHelpers.Invoke(profile2, "Name", profile1.Name);
                 Assert.AreEqual(profile1, profile2);
 

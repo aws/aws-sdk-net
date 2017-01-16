@@ -578,10 +578,10 @@ namespace AWSSDK.UnitTests
 
                 // make sure the unique key is the same as before the rename
                 if (addUniqueKey)
-                    Assert.AreEqual(UniqueKey, before.UniqueKey);
+                    Assert.AreEqual(UniqueKey, CredentialProfileUtils.GetUniqueKey(before));
                 else
-                    Assert.IsNull(before.UniqueKey);
-                Assert.AreEqual(before.UniqueKey, after.UniqueKey);
+                    Assert.IsNull(CredentialProfileUtils.GetUniqueKey(before));
+                Assert.AreEqual(CredentialProfileUtils.GetUniqueKey(before), CredentialProfileUtils.GetUniqueKey(after));
 
                 // make sure everything is the same, except for the name
                 ReflectionHelpers.Invoke(after, "Name", before.Name);
@@ -668,13 +668,13 @@ namespace AWSSDK.UnitTests
                 // make sure the unique key is the changed or not present
                 if (addUniqueKey)
                 {
-                    Assert.AreEqual(UniqueKey, profile1.UniqueKey);
-                    Assert.AreNotEqual(profile1.UniqueKey, profile2.UniqueKey);
+                    Assert.AreEqual(UniqueKey, CredentialProfileUtils.GetUniqueKey(profile1));
+                    Assert.AreNotEqual(CredentialProfileUtils.GetUniqueKey(profile1), CredentialProfileUtils.GetUniqueKey(profile2));
                 }
                 else
                 {
-                    Assert.IsNull(profile1.UniqueKey);
-                    Assert.IsNull(profile2.UniqueKey);
+                    Assert.IsNull(CredentialProfileUtils.GetUniqueKey(profile1));
+                    Assert.IsNull(CredentialProfileUtils.GetUniqueKey(profile2));
                 }
 
                 // make sure the comments and everything got copied
@@ -682,7 +682,7 @@ namespace AWSSDK.UnitTests
                 if (addUniqueKey)
                 {
                     contentsAfter += profileText.Replace("basic_profile", "basic_profile2")
-                    .Replace(profile1.UniqueKey.ToString(), profile2.UniqueKey.ToString()).TrimEnd();
+                    .Replace(CredentialProfileUtils.GetUniqueKey(profile1).ToString(), CredentialProfileUtils.GetUniqueKey(profile2).ToString()).TrimEnd();
                 }
                 else
                 {
@@ -691,7 +691,7 @@ namespace AWSSDK.UnitTests
                 tester.AssertCredentialsFileContents(contentsAfter);
 
                 // make sure everything else on the copy is the same as the original
-                ReflectionHelpers.Invoke(profile2, "SetUniqueKeyInternal", profile1.UniqueKey);
+                CredentialProfileUtils.SetUniqueKey(profile2, CredentialProfileUtils.GetUniqueKey(profile1));
                 ReflectionHelpers.Invoke(profile2, "Name", profile1.Name);
                 Assert.AreEqual(profile1, profile2);
 
