@@ -215,6 +215,32 @@ namespace Amazon.Runtime
             credentialsFile.Persist();
         }
 
+        /// <summary>
+        /// Rename the profile with oldProfileName to newProfileName.
+        /// </summary>
+        /// <param name="oldProfileName">The profile to rename.</param>
+        /// <param name="newProfileName">The new name for the profile.</param>
+        public void RenameProfile(string oldProfileName, string newProfileName)
+        {
+            Refresh();
+            credentialsFile.RenameSection(oldProfileName, newProfileName);
+            credentialsFile.Persist();
+        }
+
+        /// <summary>
+        /// Make a copy of the profile with fromProfileName called toProfileName.
+        /// </summary>
+        /// <param name="fromProfileName">The name of the profile to copy from.</param>
+        /// <param name="toProfileName">The name of the new profile.</param>
+        public void CopyProfile(string fromProfileName, string toProfileName)
+        {
+            Refresh();
+            // Do the copy but make sure to replace the uniqueKey with a new one, if it's there.
+            credentialsFile.CopySection(fromProfileName, toProfileName,
+                new Dictionary<string, string> { {UniqueKeyField, Guid.NewGuid().ToString()} });
+            credentialsFile.Persist();
+        }
+
         private void Refresh()
         {
             credentialsFile = new IniFile(FilePath);

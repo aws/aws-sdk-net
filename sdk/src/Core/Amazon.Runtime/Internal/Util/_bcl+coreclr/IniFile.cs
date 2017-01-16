@@ -78,6 +78,78 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
+        /// Rename the section fromSectionName to toSectionName
+        /// </summary>
+        /// <param name="oldSectionName"></param>
+        /// <param name="newSectionName"></param>
+        public void RenameSection(string oldSectionName, string newSectionName)
+        {
+            int sectionLineNumber = 0;
+            if (TrySeekSection(oldSectionName, ref sectionLineNumber))
+            {
+                int dummyLineNumber = 0;
+                if (TrySeekSection(newSectionName, ref dummyLineNumber))
+                    throw new ArgumentException("Cannot rename section. The destination section " + newSectionName + " already exists.");
+                else
+                    Lines[sectionLineNumber] = sectionNamePrefix + newSectionName + sectionNameSuffix;
+            }
+            else
+                throw new ArgumentException("Cannot rename section. The source section " + oldSectionName + " does not exist.");
+        }
+
+        /// <summary>
+        /// Copy the section fromSectionName to toSectionName
+        /// </summary>
+        /// <param name="fromSectionName"></param>
+        /// <param name="toSectionName"></param>
+        /// <param name="replaceProperties">Any properties in the original section that are also in this dictionary will
+        /// be replaced by the value from this dictionary.</param>
+        public void CopySection(string fromSectionName, string toSectionName, Dictionary<string, string> replaceProperties)
+        {
+            int currentLineNumber = 0;
+            if (TrySeekSection(fromSectionName, ref currentLineNumber))
+            {
+                int dummyLineNumber = 0;
+                if (TrySeekSection(toSectionName, ref dummyLineNumber))
+                    throw new ArgumentException("Cannot copy section. The destination section " + toSectionName + " already exists.");
+                else
+                {
+                    // keep the first line number
+                    var firstLineNumber = currentLineNumber;
+
+                    // find the last line number (exclusive)
+                    // could be end of file or beginning of next section
+                    string dummySectionName;
+                    currentLineNumber++;
+                    while (currentLineNumber < Lines.Count
+                        && !TryParseSection(Lines[currentLineNumber], out dummySectionName))
+                    {
+                        currentLineNumber++;
+                    }
+
+                    // add the new section header to the end of the file
+                    Lines.Add(sectionNamePrefix + toSectionName + sectionNameSuffix);
+
+                    // copy the contents of the section to the end of the file
+                    for (int line = firstLineNumber + 1; line < currentLineNumber; line++)
+                    {
+                        // If the key is in replaceProperties use the value from there
+                        // otherwise just copy the line.
+                        string propertyName;
+                        string unused;
+                        if (TryParseProperty(Lines[line], out propertyName, out unused) &&
+                            replaceProperties.ContainsKey(propertyName))
+                            Lines.Add(GetPropertyLine(propertyName, replaceProperties[propertyName]));
+                        else
+                            Lines.Add(Lines[line]);
+                    }
+                }
+            }
+            else
+                throw new ArgumentException("Cannot copy section. The source section " + fromSectionName + " does not exist.");
+        }
+
+        /// <summary>
         /// Update the section with the properties given.
         /// If the section doesn't exist, it will be appended to the file.
         ///
@@ -124,7 +196,7 @@ namespace Amazon.Runtime.Internal.Util
                             else
                             {
                                 // update the line
-                                Lines[lineNumber] = propertyName + keyValueSeparator + propertiesLookup[propertyName];
+                                Lines[lineNumber] = GetPropertyLine(propertyName, propertiesLookup[propertyName]);
                             }
                         }
                         propertiesLookup.Remove(propertyName);
@@ -424,6 +496,11 @@ namespace Amazon.Runtime.Internal.Util
             propertyName = null;
             propertyValue = null;
             return false;
+        }
+
+        private string GetPropertyLine(string propertyName, string propertyValue)
+        {
+            return propertyName + keyValueSeparator + propertyValue;
         }
     }
 }

@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using System;
 using System.Collections.Generic;
 
 namespace Amazon.Runtime.Internal
@@ -66,6 +67,16 @@ namespace Amazon.Runtime.Internal
         public List<CredentialProfile> ListProfiles()
         {
             return new List<CredentialProfile>(Profiles.Values);
+        }
+
+        public void RenameProfile(string oldProfileName, string newProfileName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CopyProfile(string fromProfileName, string toProfileName)
+        {
+            throw new NotImplementedException();
         }
     }
 }

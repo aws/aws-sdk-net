@@ -16,6 +16,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Util;
+using AWSSDK_DotNet.CommonTest.Utils;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -33,8 +34,22 @@ namespace AWSSDK.UnitTests
 
         private const string AWSCredentialsProfileType = "AWS";
         private const string SAMLRoleProfileType = "SAML";
+        private const string ProfileTag = "PROFILE_TAG";
+        private const string SomeOtherKey = "SomeOtherKey";
+        private const string SomeOtherValue = "some_other_value";
 
-        private static readonly Guid UniqueKey = new Guid("deefa421-989c-4dd6-9dbc-baecfb5e63f6");
+        private static readonly Guid UniqueKey = Guid.NewGuid();
+
+        private static readonly string BasicProfileText = new StringBuilder()
+            .AppendLine("{")
+            .AppendLine("    \"" + UniqueKey + "\" : {")
+            .AppendLine("        \"DisplayName\" : \"ProfileName1\",")
+            .AppendLine("        \"SessionType\" : \"AWS\",")
+            .AppendLine("        \"AWSAccessKey\" : \"access_key_id\",")
+            .AppendLine("        \"AWSSecretKey\" : \"secret_key_id\",")
+            .AppendLine("        \"" + SomeOtherKey + "\" : \"" + SomeOtherValue + "\",")
+            .AppendLine("    }")
+            .AppendLine("}").ToString();
 
         private static readonly string InvalidProfileText = new StringBuilder()
             .AppendLine("{")
@@ -264,6 +279,123 @@ namespace AWSSDK.UnitTests
                 var profiles = tester.ProfileStore.ListProfiles();
                 Assert.AreEqual(1, profiles.Count);
                 Assert.AreEqual("SessionProfile", profiles[0].Name);
+            }
+        }
+
+        [TestMethod]
+        public void RenameProfile()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture(BasicProfileText))
+            {
+                // read the profile
+                CredentialProfile before;
+                Assert.IsTrue(tester.ProfileStore.TryGetProfile("ProfileName1", out before));
+
+                // rename it
+                tester.ProfileStore.RenameProfile("ProfileName1", "ProfileName2");
+
+                // make sure there isn't one with the original name
+                CredentialProfile profile1Reread;
+                Assert.IsFalse(tester.ProfileStore.TryGetProfile("ProfileName1", out profile1Reread));
+
+                // make sure one with the new name exists
+                CredentialProfile after;
+                Assert.IsTrue(tester.ProfileStore.TryGetProfile("ProfileName2", out after));
+                Assert.AreNotEqual(before.Name, after.Name);
+
+                // make sure the unique key is the same as before the rename
+                Assert.AreEqual(before.UniqueKey, after.UniqueKey);
+
+                // make sure everything is the same, except for the name
+                ReflectionHelpers.Invoke(after, "Name", before.Name);
+                Assert.AreEqual(before, after);
+            }
+        }
+
+
+        [TestMethod]
+        public void RenameProfileSourceDoesNotExist()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture(BasicProfileText))
+            {
+                AssertExtensions.ExpectException(() =>
+                {
+                    tester.ProfileStore.RenameProfile("ProfileNameX", "ProfileName2");
+                }, typeof(ArgumentException), "Cannot rename object. The source object ProfileNameX does not exist.");
+            }
+        }
+
+        [TestMethod]
+        public void RenameProfileTargetAlreadyExists()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture(BasicProfileText))
+            {
+                AssertExtensions.ExpectException(() =>
+                {
+                    tester.ProfileStore.RenameProfile("ProfileName1", "ProfileName1");
+                }, typeof(ArgumentException), "Cannot rename object. The destination object ProfileName1 already exists.");
+            }
+        }
+
+        [TestMethod]
+        public void CopyProfile()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture(BasicProfileText))
+            {
+                // read the profile
+                CredentialProfile profile1;
+                Assert.IsTrue(tester.ProfileStore.TryGetProfile("ProfileName1", out profile1));
+
+                // copy it
+                tester.ProfileStore.CopyProfile("ProfileName1", "ProfileName2");
+
+                // make sure the original is untouched
+                CredentialProfile profile1Reread;
+                Assert.IsTrue(tester.ProfileStore.TryGetProfile("ProfileName1", out profile1Reread));
+                Assert.AreEqual(profile1, profile1Reread);
+
+                // make sure the copy exists
+                CredentialProfile profile2;
+                Assert.IsTrue(tester.ProfileStore.TryGetProfile("ProfileName2", out profile2));
+
+                // make sure the name and unique key of the copy are different from the original
+                Assert.AreNotEqual(profile1.Name, profile2.Name);
+                Assert.AreNotEqual(profile1.UniqueKey, profile2.UniqueKey);
+
+                // make sure everything else on the copy is the same as the original
+                ReflectionHelpers.Invoke(profile2, "SetUniqueKeyInternal", profile1.UniqueKey);
+                ReflectionHelpers.Invoke(profile2, "Name", profile1.Name);
+                Assert.AreEqual(profile1, profile2);
+
+                //make sure the additional key came along
+                var someOtherValue1 = CredentialProfileUtils.GetProperty(profile1, SomeOtherKey);
+                var someOtherValue2 = CredentialProfileUtils.GetProperty(profile2, SomeOtherKey);
+                Assert.AreEqual(SomeOtherValue, someOtherValue1);
+                Assert.AreEqual(someOtherValue1, someOtherValue2);
+            }
+        }
+
+        [TestMethod]
+        public void CopyProfileSourceDoesNotExist()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture(BasicProfileText))
+            {
+                AssertExtensions.ExpectException(() =>
+                {
+                    tester.ProfileStore.CopyProfile("ProfileNameX", "ProfileName2");
+                }, typeof(ArgumentException), "Cannot copy object. The source object ProfileNameX does not exist.");
+            }
+        }
+
+        [TestMethod]
+        public void CopyProfileTargetAlreadyExists()
+        {
+            using (var tester = new NetSDKCredentialsFileTestFixture(BasicProfileText))
+            {
+                AssertExtensions.ExpectException(() =>
+                {
+                    tester.ProfileStore.CopyProfile("ProfileName1", "ProfileName1");
+                }, typeof(ArgumentException), "Cannot copy object. The destination object ProfileName1 already exists.");
             }
         }
 

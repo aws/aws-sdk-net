@@ -25,7 +25,9 @@ namespace Amazon.Util
     /// <summary>
     /// Manager to access an SDK encrypted store file.
     /// SDK encrypted store files are loacted under the current user's AppData\Local\AWSToolkit folder.
-    /// These files are encrypted on a per user, per machine basis using the Windows Data Protection API
+    /// These files are encrypted on a per user, per machine basis using the Windows Data Protection API.
+    ///
+    /// This class is not threadsafe.
     /// </summary>
     internal class EncryptedStoreObjectManager
     {
@@ -114,15 +116,18 @@ namespace Amazon.Util
                 objectSettings = settings.NewObjectSettings(actualUniqueKey);
             }
 
+            foreach (var pair in properties)
+            {
+                objectSettings[pair.Key] = pair.Value;
+            }
+
+            // Set the display name after copying all the properties.
+            // If it's a copy, the new name will overwrite the old one.
             if (!UseDisplayNameAsUniqueKey)
             {
                 objectSettings[SettingsConstants.DisplayNameField] = displayName;
             }
 
-            foreach (var pair in properties)
-            {
-                objectSettings[pair.Key] = pair.Value;
-            }
             SaveSettings(settings);
             return objectSettings.UniqueKey;
         }
@@ -177,6 +182,50 @@ namespace Amazon.Util
                 settings.Remove(objectSettings.UniqueKey);
                 SaveSettings(settings);
             }
+        }
+
+        public void RenameObject(string oldDisplayName, string newDisplayName)
+        {
+            Dictionary<string, string> fromObject;
+            Dictionary<string, string> toObject;
+
+            if (TryGetObject(oldDisplayName, out fromObject))
+            {
+                if (TryGetObject(newDisplayName, out toObject))
+                    throw new ArgumentException("Cannot rename object. The destination object " + newDisplayName + " already exists.");
+                else
+                {
+                    var settings = GetSettings();
+                    SettingsCollection.ObjectSettings objectSettings = null;
+                    if (TryGetObjectSettings(oldDisplayName, settings, out objectSettings))
+                    {
+                        objectSettings[SettingsConstants.DisplayNameField] = newDisplayName;
+                        SaveSettings(settings);
+                    }
+                }
+            }
+            else
+                throw new ArgumentException("Cannot rename object. The source object " + oldDisplayName + " does not exist.");
+
+        }
+
+        public void CopyObject(string fromDisplayName, string toDisplayName)
+        {
+            Dictionary<string, string> fromObject;
+            Dictionary<string, string> toObject;
+
+            if (TryGetObject(fromDisplayName, out fromObject))
+            {
+                if (TryGetObject(toDisplayName, out toObject))
+                    throw new ArgumentException("Cannot copy object. The destination object " + toDisplayName + " already exists.");
+                else
+                {
+                    // Register the copy.  A new unique key will be automatically assigned.
+                    RegisterObject(null, toDisplayName, fromObject);
+                }
+            }
+            else
+                throw new ArgumentException("Cannot copy object. The source object " + fromDisplayName + " does not exist.");
         }
 
         /// <summary>

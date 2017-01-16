@@ -15,6 +15,7 @@
 using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using AWSSDK_DotNet.CommonTest.Utils;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -199,6 +200,15 @@ namespace AWSSDK.UnitTests
         };
 
         private static readonly CredentialProfileOptions InvalidProfileOptions = new CredentialProfileOptions();
+
+        private static readonly string BasicProfileTextForCopyAndRename = new StringBuilder()
+            .AppendLine("[basic_profile]")
+            .AppendLine("aws_access_key_id=session_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=session_aws_secret_access_key")
+            .AppendLine("# comment")
+            .AppendLine("; other comment")
+            .AppendLine("property=value")
+            .ToString();
 
         [TestMethod]
         public void ReadBasicProfile()
@@ -528,5 +538,194 @@ namespace AWSSDK.UnitTests
                 Assert.AreEqual("session_profile", profiles[0].Name);
             }
         }
+
+        [TestMethod]
+        public void RenameProfile()
+        {
+            RenameProfile(false);
+        }
+
+        [TestMethod]
+        public void RenameProfileWithUniqueKey()
+        {
+            RenameProfile(true);
+        }
+
+        public void RenameProfile(bool addUniqueKey)
+        {
+            var profileText = BasicProfileTextForCopyAndRename;
+
+            if (addUniqueKey)
+                profileText += "unique_key=" + UniqueKey;
+
+            using (var tester = new SharedCredentialsFileTestFixture(profileText))
+            {
+                // read the profile
+                CredentialProfile before;
+                Assert.IsTrue(tester.CredentialsFile.TryGetProfile("basic_profile", out before));
+
+                // rename it
+                tester.CredentialsFile.RenameProfile("basic_profile", "basic_profile2");
+
+                // make sure there isn't one with the original name
+                CredentialProfile profile1Reread;
+                Assert.IsFalse(tester.CredentialsFile.TryGetProfile("basic_profile", out profile1Reread));
+
+                // make sure one with the new name exists
+                CredentialProfile after;
+                Assert.IsTrue(tester.CredentialsFile.TryGetProfile("basic_profile2", out after));
+                Assert.AreNotEqual(before.Name, after.Name);
+
+                // make sure the unique key is the same as before the rename
+                if (addUniqueKey)
+                    Assert.AreEqual(UniqueKey, before.UniqueKey);
+                else
+                    Assert.IsNull(before.UniqueKey);
+                Assert.AreEqual(before.UniqueKey, after.UniqueKey);
+
+                // make sure everything is the same, except for the name
+                ReflectionHelpers.Invoke(after, "Name", before.Name);
+                Assert.AreEqual(before, after);
+
+                // make sure comments and other properties are unchanged after the rename
+                tester.AssertCredentialsFileContents(profileText.Replace("basic_profile", "basic_profile2"));
+            }
+        }
+
+        [TestMethod]
+        public void RenameProfileSourceDoesNotExist()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(BasicProfileTextForCopyAndRename))
+            {
+                AssertExtensions.ExpectException(() =>
+                {
+                    tester.CredentialsFile.RenameProfile("basic_profilex", "basic_profile2");
+                }, typeof(ArgumentException), "Cannot rename section. The source section basic_profilex does not exist.");
+            }
+        }
+
+        [TestMethod]
+        public void RenameProfileTargetAlreadyExists()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(BasicProfileTextForCopyAndRename))
+            {
+                AssertExtensions.ExpectException(() =>
+                {
+                    tester.CredentialsFile.RenameProfile("basic_profile", "basic_profile");
+                }, typeof(ArgumentException), "Cannot rename section. The destination section basic_profile already exists.");
+            }
+        }
+
+        [TestMethod]
+        public void CopyProfile()
+        {
+            CopyProfile(false, false);
+        }
+
+        [TestMethod]
+        public void CopyProfileWithUniqueKey()
+        {
+            CopyProfile(true, false);
+        }
+
+        [TestMethod]
+        public void CopyProfileWithUniqueKeyAndANotherSection()
+        {
+            CopyProfile(true, true);
+        }
+
+        public void CopyProfile(bool addUniqueKey, bool addAnotherSection)
+        {
+            var profileText = BasicProfileTextForCopyAndRename;
+
+            if (addUniqueKey)
+                profileText += "unique_key=" + UniqueKey + Environment.NewLine;
+
+            var anotherSection = addAnotherSection ? "[another_section]" + Environment.NewLine + "propertyx=valuex" + Environment.NewLine: "";
+
+                using (var tester = new SharedCredentialsFileTestFixture(profileText + anotherSection))
+            {
+                // read the profile
+                CredentialProfile profile1;
+                Assert.IsTrue(tester.CredentialsFile.TryGetProfile("basic_profile", out profile1));
+
+                // copy it
+                tester.CredentialsFile.CopyProfile("basic_profile", "basic_profile2");
+
+                // make sure the original is untouched
+                CredentialProfile profile1Reread;
+                Assert.IsTrue(tester.CredentialsFile.TryGetProfile("basic_profile", out profile1Reread));
+                Assert.AreEqual(profile1, profile1Reread);
+
+                // make sure the copy exists
+                CredentialProfile profile2;
+                Assert.IsTrue(tester.CredentialsFile.TryGetProfile("basic_profile2", out profile2));
+
+                // make sure the name the copy is different from the original
+                Assert.AreNotEqual(profile1.Name, profile2.Name);
+
+
+                // make sure the unique key is the changed or not present
+                if (addUniqueKey)
+                {
+                    Assert.AreEqual(UniqueKey, profile1.UniqueKey);
+                    Assert.AreNotEqual(profile1.UniqueKey, profile2.UniqueKey);
+                }
+                else
+                {
+                    Assert.IsNull(profile1.UniqueKey);
+                    Assert.IsNull(profile2.UniqueKey);
+                }
+
+                // make sure the comments and everything got copied
+                var contentsAfter = (profileText + anotherSection).TrimEnd() + Environment.NewLine;
+                if (addUniqueKey)
+                {
+                    contentsAfter += profileText.Replace("basic_profile", "basic_profile2")
+                    .Replace(profile1.UniqueKey.ToString(), profile2.UniqueKey.ToString()).TrimEnd();
+                }
+                else
+                {
+                    contentsAfter += profileText.Replace("basic_profile", "basic_profile2");
+                }
+                tester.AssertCredentialsFileContents(contentsAfter);
+
+                // make sure everything else on the copy is the same as the original
+                ReflectionHelpers.Invoke(profile2, "SetUniqueKeyInternal", profile1.UniqueKey);
+                ReflectionHelpers.Invoke(profile2, "Name", profile1.Name);
+                Assert.AreEqual(profile1, profile2);
+
+                //make sure the additional key came along
+                var value1 = CredentialProfileUtils.GetProperty(profile1, "property");
+                var value2 = CredentialProfileUtils.GetProperty(profile2, "property");
+                Assert.AreEqual("value", value1);
+                Assert.AreEqual(value1, value2);
+            }
+        }
+
+        [TestMethod]
+        public void CopyProfileSourceDoesNotExist()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(BasicProfileTextForCopyAndRename))
+            {
+                AssertExtensions.ExpectException(() =>
+                {
+                    tester.CredentialsFile.CopyProfile("basic_profilex", "basic_profile2");
+                }, typeof(ArgumentException), "Cannot copy section. The source section basic_profilex does not exist.");
+            }
+        }
+
+        [TestMethod]
+        public void CopyProfileTargetAlreadyExists()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(BasicProfileTextForCopyAndRename))
+            {
+                AssertExtensions.ExpectException(() =>
+                {
+                    tester.CredentialsFile.CopyProfile("basic_profile", "basic_profile");
+                }, typeof(ArgumentException), "Cannot copy section. The destination section basic_profile already exists.");
+            }
+        }
+
     }
 }

@@ -29,6 +29,9 @@ namespace Amazon.Runtime
     /// <para>
     /// The credentials are stored under the current users AppData folder encrypted using Windows Data Protection API.
     /// </para>
+    /// <para>
+    /// This class is not threadsafe.
+    /// </para>
     public class NetSDKCredentialsFile : ICredentialProfileStore
     {
         public const string DefaultProfileName = "Default";
@@ -180,6 +183,26 @@ namespace Amazon.Runtime
         public void UnregisterProfile(string profileName)
         {
             objectManager.UnregisterObject(profileName);
+        }
+
+        /// <summary>
+        /// Rename the profile with oldProfileName to newProfileName.
+        /// </summary>
+        /// <param name="oldProfileName">The profile to rename.</param>
+        /// <param name="newProfileName">The new name for the profile.</param>
+        public void RenameProfile(string oldProfileName, string newProfileName)
+        {
+            objectManager.RenameObject(oldProfileName, newProfileName);
+        }
+
+        /// <summary>
+        /// Make a copy of the profile with fromProfileName called toProfileName.
+        /// </summary>
+        /// <param name="fromProfileName">The name of the profile to copy from.</param>
+        /// <param name="toProfileName">The name of the new profile.</param>
+        public void CopyProfile(string fromProfileName, string toProfileName)
+        {
+            objectManager.CopyObject(fromProfileName, toProfileName);
         }
 
         /// <summary>

@@ -22,6 +22,20 @@ namespace Amazon.Runtime.Internal
     public interface ICredentialProfileStore : ICredentialProfileSource
     {
         /// <summary>
+        /// Rename the profile with oldProfileName to newProfileName.
+        /// </summary>
+        /// <param name="oldProfileName">The profile to rename.</param>
+        /// <param name="newProfileName">The new name for the profile.</param>
+        void RenameProfile(string oldProfileName, string newProfileName);
+
+        /// <summary>
+        /// Make a copy of the profile with fromProfileName called toProfileName.
+        /// </summary>
+        /// <param name="fromProfileName">The name of the profile to copy from.</param>
+        /// <param name="toProfileName">The name of the new profile.</param>
+        void CopyProfile(string fromProfileName, string toProfileName);
+
+        /// <summary>
         /// Add the given profile to the store, or update it if one with the same name already exists.
         /// </summary>
         /// <param name="profile"></param>
