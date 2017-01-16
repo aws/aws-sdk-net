@@ -164,28 +164,28 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "+wpa81+wp8\" />\r\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Core.xml\" target=\"lib\\po" +
                     "rtable-net45+win8+wpa81+wp8\" />\r\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Core.pd" +
                     "b\" target=\"lib\\portable-net45+win8+wpa81+wp8\" />\r\n    \r\n    <file src=\".\\bin\\Rel" +
-                    "ease\\pcl\\AWSSDK.Core.dll\" target=\"lib\\uap\" />\r\n    <file src=\".\\bin\\Release\\pcl\\" +
-                    "AWSSDK.Core.xml\" target=\"lib\\uap\" />\r\n    <file src=\".\\bin\\Release\\pcl\\AWSSDK.Co" +
-                    "re.pdb\" target=\"lib\\uap\" />\r\n\r\n    <file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK" +
-                    ".Core.dll\" target=\"lib\\Xamarin.iOS10\" />\r\n    <file src=\".\\bin\\Release\\Xamarin.i" +
-                    "OS10\\AWSSDK.Core.xml\" target=\"lib\\Xamarin.iOS10\" />\r\n\r\n    <file src=\".\\bin\\Rele" +
-                    "ase\\Xamarin.iOS10\\AWSSDK.Core.dll\" target=\"lib\\Xamarin.Mac20\" />\r\n    <file src=" +
-                    "\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.xml\" target=\"lib\\Xamarin.Mac20\" />\r\n\r\n " +
-                    "   <file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.dll\" target=\"lib\\MonoTouch" +
-                    "10\" />\r\n    <file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.xml\" target=\"lib\\" +
-                    "MonoTouch10\" />\r\n\r\n    <file src=\".\\bin\\Release\\monoandroid\\AWSSDK.Core.dll\" tar" +
-                    "get=\"lib\\MonoAndroid10\" />\r\n    <file src=\".\\bin\\Release\\monoandroid\\AWSSDK.Core" +
-                    ".xml\" target=\"lib\\MonoAndroid10\" />\r\n    <file src=\".\\bin\\Release\\monoandroid\\AW" +
-                    "SSDK.Core.pdb\" target=\"lib\\MonoAndroid10\" />\r\n\r\n    <file src=\".\\bin\\Release\\win" +
-                    "dows8\\AWSSDK.Core.dll\" target=\"lib\\win8\" />\r\n    <file src=\".\\bin\\Release\\window" +
-                    "s8\\AWSSDK.Core.xml\" target=\"lib\\win8\" />\r\n    <file src=\".\\bin\\Release\\windows8\\" +
-                    "AWSSDK.Core.pdb\" target=\"lib\\win8\" />\r\n\r\n    <file src=\".\\bin\\Release\\wpa81\\AWSS" +
-                    "DK.Core.dll\" target=\"lib\\wpa81\" />\r\n    <file src=\".\\bin\\Release\\wpa81\\AWSSDK.Co" +
-                    "re.xml\" target=\"lib\\wpa81\" />\r\n    <file src=\".\\bin\\Release\\wpa81\\AWSSDK.Core.pd" +
-                    "b\" target=\"lib\\wpa81\" />\r\n\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.dll\" ta" +
-                    "rget=\"lib\\wp8\" />\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.xml\" target=\"lib" +
-                    "\\wp8\" />\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.pdb\" target=\"lib\\wp8\" />\r" +
-                    "\n\r\n");
+                    "ease\\wpa81\\AWSSDK.Core.dll\" target=\"lib\\uap\" />\r\n    <file src=\".\\bin\\Release\\wp" +
+                    "a81\\AWSSDK.Core.xml\" target=\"lib\\uap\" />\r\n    <file src=\".\\bin\\Release\\wpa81\\AWS" +
+                    "SDK.Core.pdb\" target=\"lib\\uap\" />\r\n\r\n    <file src=\".\\bin\\Release\\Xamarin.iOS10\\" +
+                    "AWSSDK.Core.dll\" target=\"lib\\Xamarin.iOS10\" />\r\n    <file src=\".\\bin\\Release\\Xam" +
+                    "arin.iOS10\\AWSSDK.Core.xml\" target=\"lib\\Xamarin.iOS10\" />\r\n\r\n    <file src=\".\\bi" +
+                    "n\\Release\\Xamarin.iOS10\\AWSSDK.Core.dll\" target=\"lib\\Xamarin.Mac20\" />\r\n    <fil" +
+                    "e src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.xml\" target=\"lib\\Xamarin.Mac20\" /" +
+                    ">\r\n\r\n    <file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.dll\" target=\"lib\\Mon" +
+                    "oTouch10\" />\r\n    <file src=\".\\bin\\Release\\Xamarin.iOS10\\AWSSDK.Core.xml\" target" +
+                    "=\"lib\\MonoTouch10\" />\r\n\r\n    <file src=\".\\bin\\Release\\monoandroid\\AWSSDK.Core.dl" +
+                    "l\" target=\"lib\\MonoAndroid10\" />\r\n    <file src=\".\\bin\\Release\\monoandroid\\AWSSD" +
+                    "K.Core.xml\" target=\"lib\\MonoAndroid10\" />\r\n    <file src=\".\\bin\\Release\\monoandr" +
+                    "oid\\AWSSDK.Core.pdb\" target=\"lib\\MonoAndroid10\" />\r\n\r\n    <file src=\".\\bin\\Relea" +
+                    "se\\windows8\\AWSSDK.Core.dll\" target=\"lib\\win8\" />\r\n    <file src=\".\\bin\\Release\\" +
+                    "windows8\\AWSSDK.Core.xml\" target=\"lib\\win8\" />\r\n    <file src=\".\\bin\\Release\\win" +
+                    "dows8\\AWSSDK.Core.pdb\" target=\"lib\\win8\" />\r\n\r\n    <file src=\".\\bin\\Release\\wpa8" +
+                    "1\\AWSSDK.Core.dll\" target=\"lib\\wpa81\" />\r\n    <file src=\".\\bin\\Release\\wpa81\\AWS" +
+                    "SDK.Core.xml\" target=\"lib\\wpa81\" />\r\n    <file src=\".\\bin\\Release\\wpa81\\AWSSDK.C" +
+                    "ore.pdb\" target=\"lib\\wpa81\" />\r\n\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.d" +
+                    "ll\" target=\"lib\\wp8\" />\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.xml\" targe" +
+                    "t=\"lib\\wp8\" />\r\n    <file src=\".\\bin\\Release\\wp8\\AWSSDK.Core.pdb\" target=\"lib\\wp" +
+                    "8\" />\r\n\r\n");
             
             #line 136 "D:\workspace\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
 	

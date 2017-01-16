@@ -104,9 +104,9 @@
     <file src=".\bin\Release\pcl\AWSSDK.Core.xml" target="lib\portable-net45+win8+wpa81+wp8" />
     <file src=".\bin\Release\pcl\AWSSDK.Core.pdb" target="lib\portable-net45+win8+wpa81+wp8" />
     
-    <file src=".\bin\Release\pcl\AWSSDK.Core.dll" target="lib\uap" />
-    <file src=".\bin\Release\pcl\AWSSDK.Core.xml" target="lib\uap" />
-    <file src=".\bin\Release\pcl\AWSSDK.Core.pdb" target="lib\uap" />
+    <file src=".\bin\Release\wpa81\AWSSDK.Core.dll" target="lib\uap" />
+    <file src=".\bin\Release\wpa81\AWSSDK.Core.xml" target="lib\uap" />
+    <file src=".\bin\Release\wpa81\AWSSDK.Core.pdb" target="lib\uap" />
 
     <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.dll" target="lib\Xamarin.iOS10" />
     <file src=".\bin\Release\Xamarin.iOS10\AWSSDK.Core.xml" target="lib\Xamarin.iOS10" />
