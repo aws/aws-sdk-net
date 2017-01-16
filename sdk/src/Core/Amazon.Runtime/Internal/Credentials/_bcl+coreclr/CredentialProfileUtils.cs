@@ -46,6 +46,16 @@ namespace Amazon.Runtime.Internal
             return value;
         }
 
+        public static Guid EnsureUniqueKey(CredentialProfile profile, SharedCredentialsFile profileStore)
+        {
+            if (!profile.UniqueKey.HasValue)
+            {
+                profile.UniqueKey = Guid.NewGuid();
+                profileStore.RegisterProfile(profile);
+            }
+            return profile.UniqueKey.Value;
+        }
+
         public static Guid? GetUniqueKey(CredentialProfile profile)
         {
             return profile.UniqueKey;
