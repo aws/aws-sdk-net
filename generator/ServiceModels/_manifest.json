@@ -425,6 +425,14 @@
         },
         {
             "active": true,
+            "model": "cur",
+            "base-name": "CostAndUsageReport",
+            "region-lookup-name": "cur",
+            "authentication-service-name": "cur",
+            "synopsis": "The AWS Cost and Usage Report Service API allows you to enable and disable the Cost and Usage report, as well as modify the report name, the data granularity, and the delivery preferences."
+        },
+        {
+            "active": true,
 
             "model": "datapipeline",
             "base-name": "DataPipeline",
