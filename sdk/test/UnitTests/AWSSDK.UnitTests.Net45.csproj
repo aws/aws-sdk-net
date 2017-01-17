@@ -178,6 +178,10 @@
       <Project>{844769FF-BA07-49FB-94A2-08EEA8AC2DC3}</Project>
       <Name>AWSSDK.ConfigService.Net45</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\src\Services\CostAndUsageReport\AWSSDK.CostAndUsageReport.Net45.csproj">
+      <Project>{E8AA0F9A-34B3-4BAC-B93C-A2CB255A6C33}</Project>
+      <Name>AWSSDK.CostAndUsageReport.Net45</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Services\DatabaseMigrationService\AWSSDK.DatabaseMigrationService.Net45.csproj">
       <Project>{F96FE0F9-FA8A-4142-9291-441097F7884B}</Project>
       <Name>AWSSDK.DatabaseMigrationService.Net45</Name>
