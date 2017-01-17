@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2011-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -120,6 +120,40 @@ namespace Amazon.Runtime
             logger.InfoFormat("Region found using EC2 instance metadata.");
         }
     }
+
+    /// <summary>
+    /// Determines region based on a <see cref="CredentialProfile"/> stored in an <see cref="ICredentialProfileSource"/>.
+    /// If the profile doesn't exist or there is no region information an InvalidOperationException is thrown.
+    /// </summary>
+    public class ProfileAWSRegion : AWSRegion
+    {
+        /// <summary>
+        /// Attempts to construct an instance of <see cref="ProfileAWSRegion"/>.
+        /// If the profile doesn't exist or there is no region information an InvalidOperationException is thrown.
+        /// </summary>
+        /// <param name="source">The ICredentialProfileSource to read the profile from.</param>
+        /// <param name="profileName">The name of the profile.</param>
+        public ProfileAWSRegion(ICredentialProfileSource source, string profileName)
+        {
+            RegionEndpoint region = null;
+            CredentialProfile profile;
+            if (source.TryGetProfile(profileName, out profile))
+            {
+                region = profile.Region;
+            }
+            else
+                throw new InvalidOperationException("Unable to find a profile named '" + profileName + "' in store " + source.GetType());
+
+            if (region == null)
+                throw new InvalidOperationException("There is no Region set in the profile named '" + profileName + "' in store " + source.GetType());
+            else
+            {
+                this.Region = region;
+                var logger = Logger.GetLogger(typeof(ProfileAWSRegion));
+                logger.InfoFormat("Region found in profile '" + profileName + "' in store " + source.GetType());
+            }
+        }
+    }
 #endif
 
     /// <summary>
@@ -127,6 +161,11 @@ namespace Amazon.Runtime
     /// </summary>
     public static class FallbackRegionFactory
     {
+#if BCL || CORECLR
+        private static NetSDKCredentialsFile netSDKCredentialsFile = new NetSDKCredentialsFile();
+        private static SharedCredentialsFile sharedCredentialsFile = new SharedCredentialsFile();
+#endif
+
         private static object _lock = new object();
 
         static FallbackRegionFactory()
@@ -147,7 +186,9 @@ namespace Amazon.Runtime
                 () => new AppConfigAWSRegion(),
 #if BCL || CORECLR
                 () => new EnvironmentVariableAWSRegion(),
-                () => new InstanceProfileAWSRegion()
+                () => new InstanceProfileAWSRegion(),
+                () => new ProfileAWSRegion(netSDKCredentialsFile, NetSDKCredentialsFile.DefaultProfileName),
+                () => new ProfileAWSRegion(sharedCredentialsFile, SharedCredentialsFile.DefaultProfileName)
 #endif
             };
 
@@ -155,7 +196,9 @@ namespace Amazon.Runtime
             {
                 () => new AppConfigAWSRegion(),
 #if BCL || CORECLR
-                () => new EnvironmentVariableAWSRegion()
+                () => new EnvironmentVariableAWSRegion(),
+                () => new ProfileAWSRegion(netSDKCredentialsFile, NetSDKCredentialsFile.DefaultProfileName),
+                () => new ProfileAWSRegion(sharedCredentialsFile, SharedCredentialsFile.DefaultProfileName)
 #endif
             };
         }

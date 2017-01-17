@@ -125,7 +125,7 @@ namespace Amazon.Runtime
         /// <param name="filePath">The path of the shared credentials file.</param>
         public SharedCredentialsFile(string filePath)
         {
-            FilePath = filePath;
+            FilePath = string.IsNullOrEmpty(filePath) ? DefaultFilePath : filePath;
             Refresh();
         }
 

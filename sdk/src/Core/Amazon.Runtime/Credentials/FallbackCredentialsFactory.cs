@@ -60,13 +60,13 @@ namespace Amazon.Runtime
         private static AWSCredentials GetAWSCredentials(ICredentialProfileSource source, string defaultProfileName)
         {
             CredentialProfile defaultProfile;
-            if (netSDKCredentialsFile.TryGetProfile(defaultProfileName, out defaultProfile))
+            if (source.TryGetProfile(defaultProfileName, out defaultProfile))
             {
-                return defaultProfile.GetAWSCredentials(netSDKCredentialsFile, true);
+                return defaultProfile.GetAWSCredentials(source, true);
             }
             else
             {
-                throw new AmazonClientException("Unable to find a default profile is store " + source.GetType());
+                throw new AmazonClientException("Unable to find a default profile in store " + source.GetType());
             }
         }
 #endif
