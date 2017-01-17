@@ -1,3 +1,13 @@
+### 3.3.38.0 (2017-01-17 05:37 UTC)
+* ConfigService (3.3.5.0)
+	* Recently we added next token implementation to some of our APIs mentioned in the title. As part of that launch we added InvalidNextTokenException to those APIs but forgot to update the model for the APIs. This item is to update the models to include InvalidNextTokenException in API response.
+* CostAndUsageReport (3.3.0.0)
+	* The AWS Cost and Usage Report Service API allows you to enable and disable the Cost & Usage report, as well as modify the report name, the data granularity, and the delivery preferences.
+* DynamoDBv2 (3.3.1.6)
+	* Snippets for the DynamoDB API.
+* ElastiCache (3.3.2.4)
+	* Adds new code examples.
+
 ### 3.3.37.1 (2017-01-12 23:02 UTC)
 * EC2 (3.3.4.5)
 	* Extended EC2 image utilities class with keys to obtain Windows Server 2012R2 images with SQL Server 2016 variants (web/express/standard).
