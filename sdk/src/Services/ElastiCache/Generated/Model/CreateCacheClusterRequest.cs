@@ -90,7 +90,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AuthToken. 
         /// <para>
-        /// The password used to access a password protected server.
+        ///  <b>Reserved parameter.</b> The password used to access a password protected server.
         /// </para>
         ///  
         /// <para>
