@@ -289,7 +289,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 },
                 Handler = "helloworld.handler",
                 //Mode = Mode.Event,
-                Runtime = Runtime.Nodejs,
+                Runtime = Runtime.Nodejs43,
                 Role = iamCreateResponse.Role.Arn
             };
 
