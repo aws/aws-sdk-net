@@ -450,6 +450,10 @@ namespace Amazon.ConfigService
         /// <param name="request">Container for the necessary parameters to execute the DescribeComplianceByConfigRule service method.</param>
         /// 
         /// <returns>The response from the DescribeComplianceByConfigRule service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>NextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
         /// One or more of the specified parameters are invalid. Verify that your parameters are
         /// valid and try again.
@@ -533,7 +537,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the DescribeComplianceByResource service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is invalid. Specify the <code>NextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
@@ -582,6 +586,10 @@ namespace Amazon.ConfigService
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigRuleEvaluationStatus service method.</param>
         /// 
         /// <returns>The response from the DescribeConfigRuleEvaluationStatus service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>NextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
         /// One or more of the specified parameters are invalid. Verify that your parameters are
         /// valid and try again.
@@ -630,6 +638,10 @@ namespace Amazon.ConfigService
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigRules service method.</param>
         /// 
         /// <returns>The response from the DescribeConfigRules service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>NextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigRuleException">
         /// One or more AWS Config rules in the request are invalid. Verify that the rule names
         /// are correct and try again.
@@ -957,7 +969,7 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the GetComplianceDetailsByConfigRule service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is invalid. Specify the <code>NextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
@@ -1162,7 +1174,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is invalid. Specify the <code>NextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidTimeRangeException">
@@ -1240,7 +1252,7 @@ namespace Amazon.ConfigService
         /// The specified limit is outside the allowable range.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
-        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// The specified next token is invalid. Specify the <code>NextToken</code> string that
         /// was returned in the previous response to get the next page of results.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
