@@ -132,6 +132,12 @@ namespace SDKDocGenerator
                 FileUtilties.FolderCopy(Path.Combine(sourceLocation, "output-files"), options.OutputFolder, true);
             }
 
+            // Write out all the redirect rules for doc cross-linking.
+            using (Stream stream = File.Open(Path.Combine(options.OutputFolder, SDKDocRedirectWriter.RedirectFileName), FileMode.Create))
+            {
+                SDKDocRedirectWriter.Write(stream);
+            }
+
             return 0;
         }
 

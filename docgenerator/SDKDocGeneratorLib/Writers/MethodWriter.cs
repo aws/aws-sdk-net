@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Reflection;
 using System.Xml.XPath;
 using System.Xml.Linq;
+using System.Text.RegularExpressions;
 
 using SDKDocGenerator.Syntax;
 
@@ -147,6 +148,64 @@ namespace SDKDocGenerator.Writers
                     + "<p> For {0} this operation is only available in asynchronous form. Please refer to <i>{1}</i><b>Async</b>.</p></div>";
 
                 writer.WriteLine(syncPatternNote, platforms, _methodInfo.Name);
+            }
+        }
+
+
+        private bool ShouldEmitRewriteRule
+        {
+            get
+            {
+                // This check is mostly to keep the generator from emitting multiple rewrite rules for the same shape.
+                // i.e. we don't want a rewrite rule for pcl, bcl35, bcl45, and coreclr. We only emit rules for bcl45
+                //      we don't want to emit rules for both Async and Sync.  We only emit rules for Async.
+                return (this._version == FrameworkVersion.DotNet45 &&
+                        !this._methodInfo.Name.EndsWith("Async", StringComparison.Ordinal) &&
+                        this._methodInfo.DeclaringType.IsClass &&
+                        !this._methodInfo.DeclaringType.IsAbstract);
+            }
+        }
+
+        private IEnumerable<string> GetSeeAlsoLinks()
+        {
+            var element = GetSummaryDocumentation();
+            if (element != null)
+            {
+                var seeAlsoList = element.XPathSelectElements("seealso");
+                if (seeAlsoList != null)
+                {
+                    return seeAlsoList.Select(e => e.Attribute("href") != null ? e.Attribute("href").Value.ToString() : null)
+                                    .Where(s => s != null)
+                                    .ToList();
+                }
+            }
+            return null;
+        }
+        protected override void WriteContent(TextWriter writer)
+        {
+            base.WriteContent(writer);
+
+            if (ShouldEmitRewriteRule)
+            {
+                var links = GetSeeAlsoLinks();
+                if (links != null)
+                {
+                    foreach(var link in links)
+                    {
+                        string serviceId;
+                        string shape;
+
+                        if (SDKDocRedirectWriter.ExtractServiceIDAndShapeFromUrl(link, out serviceId, out shape))
+                        {
+                            string docPath = string.Format("{0}{1}/{2}",
+                                                            SDKDocRedirectWriter.DocPathPrefix,
+                                                            GenerateFilepath(),
+                                                            GenerateFilename().Replace('\\', '/'));
+                            SDKDocRedirectWriter.AddRule(serviceId, shape, docPath);
+                            break;
+                        }
+                    }
+                }
             }
         }
     }

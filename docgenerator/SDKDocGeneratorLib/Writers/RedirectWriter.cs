@@ -1,0 +1,122 @@
+using System;
+using System.IO;
+using System.Text.RegularExpressions;
+using System.Collections.Generic;
+
+namespace SDKDocGenerator
+{
+    #region rules
+    public abstract class RewriteRuleBase
+    {
+        public string Pattern;
+        public string Substitution;
+        public string Flags;
+
+        public static string RuleName = "RewriteRule";
+
+        public override string ToString()
+        {
+            return string.Format("{0} {1} {2} {3}", RuleName, Pattern, Substitution, Flags);
+        }
+
+        public int CompareTo(object obj)
+        {
+            return this.ToString().CompareTo(obj.ToString());
+        }
+    }
+
+    public class SkipRule : RewriteRuleBase
+    {
+        public SkipRule(string pattern, int skipCount)
+        {
+            Pattern = pattern;
+            Substitution = "\"-\"";
+            Flags = string.Format("[S={0}]", skipCount);
+        }
+    }
+
+    public class RewriteRule : RewriteRuleBase, IComparable
+    {
+        public RewriteRule(string pattern, string substitution)
+        {
+            Pattern = pattern;
+            Substitution = substitution;
+            Flags = "[L,R,E]";
+        }
+    }
+    #endregion
+
+    public static class SDKDocRedirectWriter
+    {
+        public const string RedirectFileName = @"package.redirect.conf";
+        public const string DocPathPrefix    = @"/sdkfornet/v3/apidocs/index.html?page=";
+        public const string ToolId           = @"DotNetSDKV3";
+        
+        private static Regex UrlPattern = new Regex(".*/WebAPI/(.*)/(.*)");
+        private static IDictionary<string, ISet<RewriteRule>> _rulesForServices = new SortedDictionary<string, ISet<RewriteRule>>();
+
+        public static void Write(Stream stream)
+        {
+            using (StreamWriter writer = new StreamWriter(stream))
+            {
+                int totalRuleCount = 0;
+                foreach (var service in _rulesForServices)
+                {
+                    // count the extra skip rule per service we are adding.
+                    totalRuleCount += service.Value.Count + 1;
+                }
+
+                // skip rule for all rules
+                string sdkPattern = string.Format("!^goto/{0}/(.*)", ToolId);
+                writer.WriteLine(new SkipRule(sdkPattern, totalRuleCount));
+
+                foreach (var service in _rulesForServices)
+                {
+                    // skip rule for current service
+                    string servicePattern = string.Format("!^goto/{0}/{1}/(.*)", ToolId, service.Key);
+                    writer.WriteLine(new SkipRule(servicePattern, service.Value.Count));
+
+                    foreach (var rule in service.Value)
+                    {
+                        writer.WriteLine(rule.ToString());
+                    }
+                }
+            }
+        }
+
+        public static bool ExtractServiceIDAndShapeFromUrl(string link, out string serviceId, out string shape)
+        {
+            Match match = UrlPattern.Match(link);
+            if (match.Success && match.Groups.Count == 3)
+            {
+                serviceId = match.Groups[1].ToString();
+                shape = match.Groups[2].ToString();
+
+                return true;
+            }
+            else
+            {
+                serviceId = "";
+                shape = "";
+
+                System.Console.WriteLine("** Failed to match : " + link);
+            }
+
+            return false;
+        }
+
+        public static void AddRule(string serviceId, string shape, string docPath)
+        {
+            string requestedPath = string.Format("^goto/{0}/{1}/{2}", ToolId, serviceId, shape);
+
+            ISet<RewriteRule> set;
+            if (!_rulesForServices.TryGetValue(serviceId, out set))
+            {
+                set = new SortedSet<RewriteRule>();
+                _rulesForServices.Add(serviceId, set);
+            }
+
+            set.Add(new RewriteRule(requestedPath, docPath));
+        }
+    }
+}

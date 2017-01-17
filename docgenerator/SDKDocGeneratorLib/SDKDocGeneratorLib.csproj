@@ -62,6 +62,7 @@
     <Compile Include="Writers\NamespaceWriter.cs" />
     <Compile Include="Writers\PropertyWriter.cs" />
     <Compile Include="ReflectionWrappers.cs" />
+    <Compile Include="Writers\RedirectWriter.cs" />
     <Compile Include="Writers\TOCWriter.cs" />
   </ItemGroup>
   <ItemGroup>
