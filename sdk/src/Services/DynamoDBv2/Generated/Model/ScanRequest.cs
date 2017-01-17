@@ -29,33 +29,33 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the Scan operation.
-    /// The <i>Scan</i> operation returns one or more items and item attributes by accessing
+    /// The <code>Scan</code> operation returns one or more items and item attributes by accessing
     /// every item in a table or a secondary index. To have DynamoDB return fewer items, you
-    /// can provide a <i>ScanFilter</i> operation.
+    /// can provide a <code>FilterExpression</code> operation.
     /// 
     ///  
     /// <para>
     /// If the total number of scanned items exceeds the maximum data set size limit of 1
-    /// MB, the scan stops and results are returned to the user as a <i>LastEvaluatedKey</i>
+    /// MB, the scan stops and results are returned to the user as a <code>LastEvaluatedKey</code>
     /// value to continue the scan in a subsequent operation. The results also include the
     /// number of items exceeding the limit. A scan can result in no table data meeting the
     /// filter criteria. 
     /// </para>
     ///  
     /// <para>
-    /// By default, <i>Scan</i> operations proceed sequentially; however, for faster performance
-    /// on a large table or secondary index, applications can request a parallel <i>Scan</i>
-    /// operation by providing the <i>Segment</i> and <i>TotalSegments</i> parameters. For
-    /// more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
+    /// By default, <code>Scan</code> operations proceed sequentially; however, for faster
+    /// performance on a large table or secondary index, applications can request a parallel
+    /// <code>Scan</code> operation by providing the <code>Segment</code> and <code>TotalSegments</code>
+    /// parameters. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">Parallel
     /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// By default, <i>Scan</i> uses eventually consistent reads when accessing the data in
-    /// a table; therefore, the result set might not include the changes to data in the table
-    /// immediately before the operation began. If you need a consistent copy of the data,
-    /// as of the time that the Scan begins, you can set the <i>ConsistentRead</i> parameter
-    /// to <i>true</i>.
+    /// By default, <code>Scan</code> uses eventually consistent reads when accessing the
+    /// data in a table; therefore, the result set might not include the changes to data in
+    /// the table immediately before the operation began. If you need a consistent copy of
+    /// the data, as of the time that the Scan begins, you can set the <code>ConsistentRead</code>
+    /// parameter to <code>true</code>.
     /// </para>
     /// </summary>
     public partial class ScanRequest : AmazonDynamoDBRequest
@@ -92,29 +92,11 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AttributesToGet. <important> 
+        /// Gets and sets the property AttributesToGet. 
         /// <para>
-        /// This is a legacy parameter, for backward compatibility. New applications should use
-        /// <i>ProjectionExpression</i> instead. Do not combine legacy parameters and expression
-        /// parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i>
-        /// exception.
-        /// </para>
-        ///  
-        /// <para>
-        /// This parameter allows you to retrieve attributes of type List or Map; however, it
-        /// cannot retrieve individual elements within a List or a Map.
-        /// </para>
-        ///  </important> 
-        /// <para>
-        /// The names of one or more attributes to retrieve. If no attribute names are provided,
-        /// then all attributes will be returned. If any of the requested attributes are not found,
-        /// they will not appear in the result.
-        /// </para>
-        ///  
-        /// <para>
-        /// Note that <i>AttributesToGet</i> has no effect on provisioned throughput consumption.
-        /// DynamoDB determines capacity units consumed based on item size, not on the amount
-        /// of data that is returned to an application.
+        /// This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
+        /// information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+        /// in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<string> AttributesToGet
@@ -130,40 +112,12 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConditionalOperator. <important> 
+        /// Gets and sets the property ConditionalOperator. 
         /// <para>
-        /// This is a legacy parameter, for backward compatibility. New applications should use
-        /// <i>FilterExpression</i> instead. Do not combine legacy parameters and expression parameters
-        /// in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i>
-        /// exception.
+        /// This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information,
+        /// see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a>
+        /// in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
-        ///  </important> 
-        /// <para>
-        /// A logical operator to apply to the conditions in a <i>ScanFilter</i> map:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>AND</code> - If all of the conditions evaluate to true, then the entire map
-        /// evaluates to true.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>OR</code> - If at least one of the conditions evaluate to true, then the entire
-        /// map evaluates to true.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If you omit <i>ConditionalOperator</i>, then <code>AND</code> is the default.
-        /// </para>
-        ///  
-        /// <para>
-        /// The operation will succeed only if the entire map evaluates to true.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// This parameter does not support attributes of type List or Map.
-        /// </para>
-        ///  </note>
         /// </summary>
         public ConditionalOperator ConditionalOperator
         {
@@ -184,25 +138,25 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <i>ConsistentRead</i> is <code>false</code>, then the data returned from <i>Scan</i>
-        /// might not contain the results from other recently completed write operations (PutItem,
-        /// UpdateItem or DeleteItem).
+        /// If <code>ConsistentRead</code> is <code>false</code>, then the data returned from
+        /// <code>Scan</code> might not contain the results from other recently completed write
+        /// operations (PutItem, UpdateItem or DeleteItem).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <i>ConsistentRead</i> is <code>true</code>, then all of the write operations that
-        /// completed before the <i>Scan</i> began are guaranteed to be contained in the <i>Scan</i>
-        /// response.
+        /// If <code>ConsistentRead</code> is <code>true</code>, then all of the write operations
+        /// that completed before the <code>Scan</code> began are guaranteed to be contained in
+        /// the <code>Scan</code> response.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default setting for <i>ConsistentRead</i> is <code>false</code>.
+        /// The default setting for <code>ConsistentRead</code> is <code>false</code>.
         /// </para>
         ///  
         /// <para>
-        /// The <i>ConsistentRead</i> parameter is not supported on global secondary indexes.
-        /// If you scan a global secondary index with <i>ConsistentRead</i> set to true, you will
-        /// receive a <i>ValidationException</i>.
+        /// The <code>ConsistentRead</code> parameter is not supported on global secondary indexes.
+        /// If you scan a global secondary index with <code>ConsistentRead</code> set to true,
+        /// you will receive a <code>ValidationException</code>.
         /// </para>
         /// </summary>
         public bool ConsistentRead
@@ -221,18 +175,18 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ExclusiveStartKey. 
         /// <para>
         /// The primary key of the first item that this operation will evaluate. Use the value
-        /// that was returned for <i>LastEvaluatedKey</i> in the previous operation.
+        /// that was returned for <code>LastEvaluatedKey</code> in the previous operation.
         /// </para>
         ///  
         /// <para>
-        /// The data type for <i>ExclusiveStartKey</i> must be String, Number or Binary. No set
-        /// data types are allowed.
+        /// The data type for <code>ExclusiveStartKey</code> must be String, Number or Binary.
+        /// No set data types are allowed.
         /// </para>
         ///  
         /// <para>
-        /// In a parallel scan, a <i>Scan</i> request that includes <i>ExclusiveStartKey</i> must
-        /// specify the same segment whose previous <i>Scan</i> returned the corresponding value
-        /// of <i>LastEvaluatedKey</i>.
+        /// In a parallel scan, a <code>Scan</code> request that includes <code>ExclusiveStartKey</code>
+        /// must specify the same segment whose previous <code>Scan</code> returned the corresponding
+        /// value of <code>LastEvaluatedKey</code>.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> ExclusiveStartKey
@@ -251,7 +205,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ExpressionAttributeNames. 
         /// <para>
         /// One or more substitution tokens for attribute names in an expression. The following
-        /// are some use cases for using <i>ExpressionAttributeNames</i>:
+        /// are some use cases for using <code>ExpressionAttributeNames</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -280,7 +234,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of this attribute conflicts with a reserved word, so it cannot be used directly
         /// in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
         /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you
-        /// could specify the following for <i>ExpressionAttributeNames</i>:
+        /// could specify the following for <code>ExpressionAttributeNames</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -334,7 +288,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// You would first need to specify <i>ExpressionAttributeValues</i> as follows:
+        /// You would first need to specify <code>ExpressionAttributeValues</code> as follows:
         /// </para>
         ///  
         /// <para>
@@ -370,26 +324,20 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property FilterExpression. 
         /// <para>
-        /// A string that contains conditions that DynamoDB applies after the <i>Scan</i> operation,
-        /// but before the data is returned to you. Items that do not satisfy the <i>FilterExpression</i>
+        /// A string that contains conditions that DynamoDB applies after the <code>Scan</code>
+        /// operation, but before the data is returned to you. Items that do not satisfy the <code>FilterExpression</code>
         /// criteria are not returned.
         /// </para>
         ///  <note> 
         /// <para>
-        /// A <i>FilterExpression</i> is applied after the items have already been read; the process
-        /// of filtering does not consume any additional read capacity units.
+        /// A <code>FilterExpression</code> is applied after the items have already been read;
+        /// the process of filtering does not consume any additional read capacity units.
         /// </para>
         ///  </note> 
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
         /// Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <i>FilterExpression</i> replaces the legacy <i>ScanFilter</i> and <i>ConditionalOperator</i>
-        /// parameters.
-        /// </para>
-        ///  </note>
         /// </summary>
         public string FilterExpression
         {
@@ -429,11 +377,11 @@ namespace Amazon.DynamoDBv2.Model
         /// The maximum number of items to evaluate (not necessarily the number of matching items).
         /// If DynamoDB processes the number of items up to the limit while processing the results,
         /// it stops the operation and returns the matching values up to that point, and a key
-        /// in <i>LastEvaluatedKey</i> to apply in a subsequent operation, so that you can pick
-        /// up where you left off. Also, if the processed data set size exceeds 1 MB before DynamoDB
-        /// reaches this limit, it stops the operation and returns the matching values up to the
-        /// limit, and a key in <i>LastEvaluatedKey</i> to apply in a subsequent operation to
-        /// continue the operation. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
+        /// in <code>LastEvaluatedKey</code> to apply in a subsequent operation, so that you can
+        /// pick up where you left off. Also, if the processed data set size exceeds 1 MB before
+        /// DynamoDB reaches this limit, it stops the operation and returns the matching values
+        /// up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
+        /// operation to continue the operation. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
         /// and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -466,11 +414,6 @@ namespace Amazon.DynamoDBv2.Model
         /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing
         /// Item Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <i>ProjectionExpression</i> replaces the legacy <i>AttributesToGet</i> parameter.
-        /// </para>
-        ///  </note>
         /// </summary>
         public string ProjectionExpression
         {
@@ -500,80 +443,12 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScanFilter. <important> 
+        /// Gets and sets the property ScanFilter. 
         /// <para>
-        /// This is a legacy parameter, for backward compatibility. New applications should use
-        /// <i>FilterExpression</i> instead. Do not combine legacy parameters and expression parameters
-        /// in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i>
-        /// exception.
+        /// This is a legacy parameter. Use <code>FilterExpression</code> instead. For more information,
+        /// see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ScanFilter.html">ScanFilter</a>
+        /// in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
-        ///  </important> 
-        /// <para>
-        /// A condition that evaluates the scan results and returns only the desired values.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// This parameter does not support attributes of type List or Map.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// If you specify more than one condition in the <i>ScanFilter</i> map, then by default
-        /// all of the conditions must evaluate to true. In other words, the conditions are ANDed
-        /// together. (You can use the <i>ConditionalOperator</i> parameter to OR the conditions
-        /// instead. If you do this, then at least one of the conditions must evaluate to true,
-        /// rather than all of them.)
-        /// </para>
-        ///  
-        /// <para>
-        /// Each <i>ScanFilter</i> element consists of an attribute name to compare, along with
-        /// the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute.
-        /// The number of values in the list depends on the operator specified in <i>ComparisonOperator</i>
-        /// .
-        /// </para>
-        ///  
-        /// <para>
-        /// For type Number, value comparisons are numeric.
-        /// </para>
-        ///  
-        /// <para>
-        /// String value comparisons for greater than, equals, or less than are based on ASCII
-        /// character code values. For example, <code>a</code> is greater than <code>A</code>,
-        /// and <code>a</code> is greater than <code>B</code>. For a list of code values, see
-        /// <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares
-        /// binary values.
-        /// </para>
-        ///  
-        /// <para>
-        /// For information on specifying data types in JSON, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-        /// Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>ComparisonOperator</i> - A comparator for evaluating attributes. For example,
-        /// equals, greater than, less than, etc.
-        /// </para>
-        ///  
-        /// <para>
-        /// The following comparison operators are available:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
-        /// | IN | BETWEEN</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// For complete descriptions of all comparison operators, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Condition.html">Condition</a>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public Dictionary<string, Condition> ScanFilter
         {
@@ -590,29 +465,30 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Segment. 
         /// <para>
-        /// For a parallel <i>Scan</i> request, <i>Segment</i> identifies an individual segment
-        /// to be scanned by an application worker.
+        /// For a parallel <code>Scan</code> request, <code>Segment</code> identifies an individual
+        /// segment to be scanned by an application worker.
         /// </para>
         ///  
         /// <para>
         /// Segment IDs are zero-based, so the first segment is always 0. For example, if you
         /// want to use four application threads to scan a table or an index, then the first thread
-        /// specifies a <i>Segment</i> value of 0, the second thread specifies 1, and so on.
+        /// specifies a <code>Segment</code> value of 0, the second thread specifies 1, and so
+        /// on.
         /// </para>
         ///  
         /// <para>
-        /// The value of <i>LastEvaluatedKey</i> returned from a parallel <i>Scan</i> request
-        /// must be used as <i>ExclusiveStartKey</i> with the same segment ID in a subsequent
-        /// <i>Scan</i> operation.
+        /// The value of <code>LastEvaluatedKey</code> returned from a parallel <code>Scan</code>
+        /// request must be used as <code>ExclusiveStartKey</code> with the same segment ID in
+        /// a subsequent <code>Scan</code> operation.
         /// </para>
         ///  
         /// <para>
-        /// The value for <i>Segment</i> must be greater than or equal to 0, and less than the
-        /// value provided for <i>TotalSegments</i>.
+        /// The value for <code>Segment</code> must be greater than or equal to 0, and less than
+        /// the value provided for <code>TotalSegments</code>.
         /// </para>
         ///  
         /// <para>
-        /// If you provide <i>Segment</i>, you must also provide <i>TotalSegments</i>.
+        /// If you provide <code>Segment</code>, you must also provide <code>TotalSegments</code>.
         /// </para>
         /// </summary>
         public int Segment
@@ -631,11 +507,16 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property Select. 
         /// <para>
         /// The attributes to be returned in the result. You can retrieve all item attributes,
-        /// specific item attributes, or the count of matching items.
+        /// specific item attributes, the count of matching items, or in the case of an index,
+        /// some or all of the attributes projected into the index.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes.
+        ///  <code>ALL_ATTRIBUTES</code> - Returns all of the item attributes from the specified
+        /// table or index. If you query a local secondary index, then for each matching item
+        /// in the index DynamoDB will fetch the entire item from the parent table. If the index
+        /// is configured to project all item attributes, then all of the data can be obtained
+        /// from the local secondary index, and no fetching is required.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -650,18 +531,40 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in <i>AttributesToGet</i>.
-        /// This return value is equivalent to specifying <i>AttributesToGet</i> without specifying
-        /// any value for <i>Select</i>.
+        ///  <code>SPECIFIC_ATTRIBUTES</code> - Returns only the attributes listed in <code>AttributesToGet</code>.
+        /// This return value is equivalent to specifying <code>AttributesToGet</code> without
+        /// specifying any value for <code>Select</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you query or scan a local secondary index and request only attributes that are
+        /// projected into that index, the operation will read only the index and not the table.
+        /// If any of the requested attributes are not projected into the local secondary index,
+        /// DynamoDB will fetch each of these attributes from the parent table. This extra fetching
+        /// incurs additional throughput cost and latency.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you query or scan a global secondary index, you can only request attributes that
+        /// are projected into the index. Global secondary index queries cannot fetch attributes
+        /// from the parent table.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If neither <i>Select</i> nor <i>AttributesToGet</i> are specified, DynamoDB defaults
-        /// to <code>ALL_ATTRIBUTES</code>. You cannot use both <i>AttributesToGet</i> and <i>Select</i>
-        /// together in a single request, unless the value for <i>Select</i> is <code>SPECIFIC_ATTRIBUTES</code>.
-        /// (This usage is equivalent to specifying <i>AttributesToGet</i> without any value for
-        /// <i>Select</i>.)
+        /// If neither <code>Select</code> nor <code>AttributesToGet</code> are specified, DynamoDB
+        /// defaults to <code>ALL_ATTRIBUTES</code> when accessing a table, and <code>ALL_PROJECTED_ATTRIBUTES</code>
+        /// when accessing an index. You cannot use both <code>Select</code> and <code>AttributesToGet</code>
+        /// together in a single request, unless the value for <code>Select</code> is <code>SPECIFIC_ATTRIBUTES</code>.
+        /// (This usage is equivalent to specifying <code>AttributesToGet</code> without any value
+        /// for <code>Select</code>.)
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you use the <code>ProjectionExpression</code> parameter, then the value for <code>Select</code>
+        /// can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other value for <code>Select</code>
+        /// will return an error.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Select Select
         {
@@ -697,21 +600,22 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TotalSegments. 
         /// <para>
-        /// For a parallel <i>Scan</i> request, <i>TotalSegments</i> represents the total number
-        /// of segments into which the <i>Scan</i> operation will be divided. The value of <i>TotalSegments</i>
-        /// corresponds to the number of application workers that will perform the parallel scan.
-        /// For example, if you want to use four application threads to scan a table or an index,
-        /// specify a <i>TotalSegments</i> value of 4.
+        /// For a parallel <code>Scan</code> request, <code>TotalSegments</code> represents the
+        /// total number of segments into which the <code>Scan</code> operation will be divided.
+        /// The value of <code>TotalSegments</code> corresponds to the number of application workers
+        /// that will perform the parallel scan. For example, if you want to use four application
+        /// threads to scan a table or an index, specify a <code>TotalSegments</code> value of
+        /// 4.
         /// </para>
         ///  
         /// <para>
-        /// The value for <i>TotalSegments</i> must be greater than or equal to 1, and less than
-        /// or equal to 1000000. If you specify a <i>TotalSegments</i> value of 1, the <i>Scan</i>
-        /// operation will be sequential rather than parallel.
+        /// The value for <code>TotalSegments</code> must be greater than or equal to 1, and less
+        /// than or equal to 1000000. If you specify a <code>TotalSegments</code> value of 1,
+        /// the <code>Scan</code> operation will be sequential rather than parallel.
         /// </para>
         ///  
         /// <para>
-        /// If you specify <i>TotalSegments</i>, you must also specify <i>Segment</i>.
+        /// If you specify <code>TotalSegments</code>, you must also specify <code>Segment</code>.
         /// </para>
         /// </summary>
         public int TotalSegments

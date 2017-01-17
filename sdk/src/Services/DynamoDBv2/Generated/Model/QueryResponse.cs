@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the output of a <i>Query</i> operation.
+    /// Represents the output of a <code>Query</code> operation.
     /// </summary>
     public partial class QueryResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,15 @@ namespace Amazon.DynamoDBv2.Model
         private int? _scannedCount;
 
         /// <summary>
-        /// Gets and sets the property ConsumedCapacity.
+        /// Gets and sets the property ConsumedCapacity. 
+        /// <para>
+        /// The capacity units consumed by the <code>Query</code> operation. The data returned
+        /// includes the total provisioned throughput consumed, along with statistics for the
+        /// table and any indexes involved in the operation. <code>ConsumedCapacity</code> is
+        /// only returned if the <code>ReturnConsumedCapacity</code> parameter was specified For
+        /// more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+        /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </para>
         /// </summary>
         public ConsumedCapacity ConsumedCapacity
         {
@@ -60,13 +68,13 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you used a <i>QueryFilter</i> in the request, then <i>Count</i> is the number of
-        /// items returned after the filter was applied, and <i>ScannedCount</i> is the number
-        /// of matching items before the filter was applied.
+        /// If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is
+        /// the number of items returned after the filter was applied, and <code>ScannedCount</code>
+        /// is the number of matching items before the filter was applied.
         /// </para>
         ///  
         /// <para>
-        /// If you did not use a filter in the request, then <i>Count</i> and <i>ScannedCount</i>
+        /// If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code>
         /// are the same.
         /// </para>
         /// </summary>
@@ -110,14 +118,14 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// If <i>LastEvaluatedKey</i> is empty, then the "last page" of results has been processed
-        /// and there is no more data to be retrieved.
+        /// If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been
+        /// processed and there is no more data to be retrieved.
         /// </para>
         ///  
         /// <para>
-        /// If <i>LastEvaluatedKey</i> is not empty, it does not necessarily mean that there is
-        /// more data in the result set. The only way to know when you have reached the end of
-        /// the result set is when <i>LastEvaluatedKey</i> is empty.
+        /// If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there
+        /// is more data in the result set. The only way to know when you have reached the end
+        /// of the result set is when <code>LastEvaluatedKey</code> is empty.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> LastEvaluatedKey
@@ -135,15 +143,15 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ScannedCount. 
         /// <para>
-        /// The number of items evaluated, before any <i>QueryFilter</i> is applied. A high <i>ScannedCount</i>
-        /// value with few, or no, <i>Count</i> results indicates an inefficient <i>Query</i>
-        /// operation. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
+        /// The number of items evaluated, before any <code>QueryFilter</code> is applied. A high
+        /// <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates
+        /// an inefficient <code>Query</code> operation. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
         /// and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you did not use a filter in the request, then <i>ScannedCount</i> is the same as
-        /// <i>Count</i>.
+        /// If you did not use a filter in the request, then <code>ScannedCount</code> is the
+        /// same as <code>Count</code>.
         /// </para>
         /// </summary>
         public int ScannedCount

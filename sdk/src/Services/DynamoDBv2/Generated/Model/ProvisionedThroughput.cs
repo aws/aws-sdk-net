@@ -29,7 +29,7 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Represents the provisioned throughput settings for a specified table or index. The
-    /// settings can be modified using the <i>UpdateTable</i> operation.
+    /// settings can be modified using the <code>UpdateTable</code> operation.
     /// 
     ///  
     /// <para>
@@ -50,8 +50,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates ProvisionedThroughput with the parameterized properties
         /// </summary>
-        /// <param name="readCapacityUnits">The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <i>ThrottlingException</i>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
-        /// <param name="writeCapacityUnits">The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
+        /// <param name="readCapacityUnits">The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
+        /// <param name="writeCapacityUnits">The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         public ProvisionedThroughput(long readCapacityUnits, long writeCapacityUnits)
         {
             _readCapacityUnits = readCapacityUnits;
@@ -62,7 +62,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ReadCapacityUnits. 
         /// <para>
         /// The maximum number of strongly consistent reads consumed per second before DynamoDB
-        /// returns a <i>ThrottlingException</i>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
+        /// returns a <code>ThrottlingException</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
         /// Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -81,7 +81,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property WriteCapacityUnits. 
         /// <para>
-        /// The maximum number of writes consumed per second before DynamoDB returns a <i>ThrottlingException</i>.
+        /// The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
         /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
         /// Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>

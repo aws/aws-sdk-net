@@ -44,10 +44,10 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// For local secondary indexes, the total count of <i>NonKeyAttributes</i> summed across
-        /// all of the local secondary indexes, must not exceed 20. If you project the same attribute
-        /// into two different indexes, this counts as two distinct attributes when determining
-        /// the total.
+        /// For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed
+        /// across all of the local secondary indexes, must not exceed 20. If you project the
+        /// same attribute into two different indexes, this counts as two distinct attributes
+        /// when determining the total.
         /// </para>
         /// </summary>
         public List<string> NonKeyAttributes
@@ -74,7 +74,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>INCLUDE</code> - Only the specified table attributes are projected into the
-        /// index. The list of projected attributes are in <i>NonKeyAttributes</i>.
+        /// index. The list of projected attributes are in <code>NonKeyAttributes</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>

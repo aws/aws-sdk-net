@@ -97,7 +97,12 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Projection.
+        /// Gets and sets the property Projection. 
+        /// <para>
+        /// Represents attributes that are copied (projected) from the table into the global secondary
+        /// index. These are in addition to the primary key attributes and index key attributes,
+        /// which are automatically projected. 
+        /// </para>
         /// </summary>
         public Projection Projection
         {
@@ -112,7 +117,16 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProvisionedThroughput.
+        /// Gets and sets the property ProvisionedThroughput. 
+        /// <para>
+        /// Represents the provisioned throughput settings for the specified global secondary
+        /// index.
+        /// </para>
+        ///  
+        /// <para>
+        /// For current minimum and maximum provisioned throughput values, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+        /// in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </para>
         /// </summary>
         public ProvisionedThroughput ProvisionedThroughput
         {

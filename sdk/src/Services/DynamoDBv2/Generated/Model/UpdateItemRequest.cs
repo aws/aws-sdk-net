@@ -37,8 +37,8 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  
     /// <para>
-    /// You can also return the item's attribute values in the same <i>UpdateItem</i> operation
-    /// using the <i>ReturnValues</i> parameter.
+    /// You can also return the item's attribute values in the same <code>UpdateItem</code>
+    /// operation using the <code>ReturnValues</code> parameter.
     /// </para>
     /// </summary>
     public partial class UpdateItemRequest : AmazonDynamoDBRequest
@@ -66,7 +66,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="tableName">The name of the table containing the item to update.</param>
         /// <param name="key">The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
-        /// <param name="attributeUpdates"><important> This is a legacy parameter, for backward compatibility. New applications should use <i>UpdateExpression</i> instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i> exception. This parameter can be used for modifying top-level attributes; however, it does not support individual list or map elements. </important> The names of attributes to be modified, the action to perform on each, and the new value for each. If you are updating an attribute that is an index key attribute for any indexes on that table, the attribute type must match the index key type defined in the <i>AttributesDefinition</i> of the table description. You can use <i>UpdateItem</i> to update any non-key attributes. Attribute values cannot be null. String and Binary type attributes must have lengths greater than zero. Set type attributes must not be empty. Requests with empty values will be rejected with a <i>ValidationException</i> exception. Each <i>AttributeUpdates</i> element consists of an attribute name to modify, along with the following: <ul> <li>  <i>Value</i> - The new value, if applicable, for this attribute. </li> <li>  <i>Action</i> - A value that specifies how to perform the update. This action is only valid for an existing attribute whose data type is Number or is a set; do not use <code>ADD</code> for other data types.  If an item with the specified primary key is found in the table, the following values perform the following actions: <ul> <li>  <code>PUT</code> - Adds the specified attribute to the item. If the attribute already exists, it is replaced by the new value.  </li> <li>  <code>DELETE</code> - Removes the attribute and its value, if no value is specified for <code>DELETE</code>. The data type of the specified value must match the existing value's data type. If a set of values is specified, then those values are subtracted from the old set. For example, if the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specifies <code>[a,c]</code>, then the final attribute value is <code>[b]</code>. Specifying an empty set is an error. </li> <li>  <code>ADD</code> - Adds the specified value to the item, if the attribute does not already exist. If the attribute does exist, then the behavior of <code>ADD</code> depends on the data type of the attribute: <ul> <li> If the existing attribute is a number, and if <i>Value</i> is also a number, then <i>Value</i> is mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is subtracted from the existing attribute. <note> If you use <code>ADD</code> to increment or decrement a number value for an item that doesn't exist before the update, DynamoDB uses 0 as the initial value. Similarly, if you use <code>ADD</code> for an existing item to increment or decrement an attribute value that doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value. For example, suppose that the item you want to update doesn't have an attribute named <i>itemcount</i>, but you decide to <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the <i>itemcount</i> attribute, set its initial value to <code>0</code>, and finally add <code>3</code> to it. The result will be a new <i>itemcount</i> attribute, with a value of <code>3</code>. </note> </li> <li> If the existing data type is a set, and if <i>Value</i> is also a set, then <i>Value</i> is appended to the existing set. For example, if the attribute value is the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then the final attribute value is <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is specified for a set attribute and the attribute type specified does not match the existing set type.  Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, <i>Value</i> must also be a set of strings. </li> </ul> </li> </ul> If no item with the specified key is found in the table, the following values perform the following actions: <ul> <li>  <code>PUT</code> - Causes DynamoDB to create a new item with the specified primary key, and then adds the attribute.  </li> <li>  <code>DELETE</code> - Nothing happens, because attributes cannot be deleted from a nonexistent item. The operation succeeds, but DynamoDB does not create a new item. </li> <li>  <code>ADD</code> - Causes DynamoDB to create an item with the supplied primary key and number (or set of numbers) for the attribute value. The only data types allowed are Number and Number Set. </li> </ul> </li> </ul> If you provide any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</param>
+        /// <param name="attributeUpdates">This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         public UpdateItemRequest(string tableName, Dictionary<string, AttributeValue> key, Dictionary<string, AttributeValueUpdate> attributeUpdates)
         {
             _tableName = tableName;
@@ -79,8 +79,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </summary>
         /// <param name="tableName">The name of the table containing the item to update.</param>
         /// <param name="key">The primary key of the item to be updated. Each element consists of an attribute name and a value for that attribute. For the primary key, you must provide all of the attributes. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide values for both the partition key and the sort key.</param>
-        /// <param name="attributeUpdates"><important> This is a legacy parameter, for backward compatibility. New applications should use <i>UpdateExpression</i> instead. Do not combine legacy parameters and expression parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i> exception. This parameter can be used for modifying top-level attributes; however, it does not support individual list or map elements. </important> The names of attributes to be modified, the action to perform on each, and the new value for each. If you are updating an attribute that is an index key attribute for any indexes on that table, the attribute type must match the index key type defined in the <i>AttributesDefinition</i> of the table description. You can use <i>UpdateItem</i> to update any non-key attributes. Attribute values cannot be null. String and Binary type attributes must have lengths greater than zero. Set type attributes must not be empty. Requests with empty values will be rejected with a <i>ValidationException</i> exception. Each <i>AttributeUpdates</i> element consists of an attribute name to modify, along with the following: <ul> <li>  <i>Value</i> - The new value, if applicable, for this attribute. </li> <li>  <i>Action</i> - A value that specifies how to perform the update. This action is only valid for an existing attribute whose data type is Number or is a set; do not use <code>ADD</code> for other data types.  If an item with the specified primary key is found in the table, the following values perform the following actions: <ul> <li>  <code>PUT</code> - Adds the specified attribute to the item. If the attribute already exists, it is replaced by the new value.  </li> <li>  <code>DELETE</code> - Removes the attribute and its value, if no value is specified for <code>DELETE</code>. The data type of the specified value must match the existing value's data type. If a set of values is specified, then those values are subtracted from the old set. For example, if the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code> action specifies <code>[a,c]</code>, then the final attribute value is <code>[b]</code>. Specifying an empty set is an error. </li> <li>  <code>ADD</code> - Adds the specified value to the item, if the attribute does not already exist. If the attribute does exist, then the behavior of <code>ADD</code> depends on the data type of the attribute: <ul> <li> If the existing attribute is a number, and if <i>Value</i> is also a number, then <i>Value</i> is mathematically added to the existing attribute. If <i>Value</i> is a negative number, then it is subtracted from the existing attribute. <note> If you use <code>ADD</code> to increment or decrement a number value for an item that doesn't exist before the update, DynamoDB uses 0 as the initial value. Similarly, if you use <code>ADD</code> for an existing item to increment or decrement an attribute value that doesn't exist before the update, DynamoDB uses <code>0</code> as the initial value. For example, suppose that the item you want to update doesn't have an attribute named <i>itemcount</i>, but you decide to <code>ADD</code> the number <code>3</code> to this attribute anyway. DynamoDB will create the <i>itemcount</i> attribute, set its initial value to <code>0</code>, and finally add <code>3</code> to it. The result will be a new <i>itemcount</i> attribute, with a value of <code>3</code>. </note> </li> <li> If the existing data type is a set, and if <i>Value</i> is also a set, then <i>Value</i> is appended to the existing set. For example, if the attribute value is the set <code>[1,2]</code>, and the <code>ADD</code> action specified <code>[3]</code>, then the final attribute value is <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is specified for a set attribute and the attribute type specified does not match the existing set type.  Both sets must have the same primitive data type. For example, if the existing data type is a set of strings, <i>Value</i> must also be a set of strings. </li> </ul> </li> </ul> If no item with the specified key is found in the table, the following values perform the following actions: <ul> <li>  <code>PUT</code> - Causes DynamoDB to create a new item with the specified primary key, and then adds the attribute.  </li> <li>  <code>DELETE</code> - Nothing happens, because attributes cannot be deleted from a nonexistent item. The operation succeeds, but DynamoDB does not create a new item. </li> <li>  <code>ADD</code> - Causes DynamoDB to create an item with the supplied primary key and number (or set of numbers) for the attribute value. The only data types allowed are Number and Number Set. </li> </ul> </li> </ul> If you provide any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</param>
-        /// <param name="returnValues">Use <i>ReturnValues</i> if you want to get the item attributes as they appeared either before or after they were updated. For <i>UpdateItem</i>, the valid values are: <ul> <li>  <code>NONE</code> - If <i>ReturnValues</i> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <i>ReturnValues</i>.) </li> <li>  <code>ALL_OLD</code> - If <i>UpdateItem</i> overwrote an attribute name-value pair, then the content of the old item is returned. </li> <li>  <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned. </li> <li>  <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned. </li> <li>  <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No Read Capacity Units are consumed. Values returned are strongly consistent</param>
+        /// <param name="attributeUpdates">This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
+        /// <param name="returnValues">Use <code>ReturnValues</code> if you want to get the item attributes as they appeared either before or after they were updated. For <code>UpdateItem</code>, the valid values are: <ul> <li>  <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.) </li> <li>  <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value pair, then the content of the old item is returned. </li> <li>  <code>UPDATED_OLD</code> - The old versions of only the updated attributes are returned. </li> <li>  <code>ALL_NEW</code> - All of the attributes of the new version of the item are returned. </li> <li>  <code>UPDATED_NEW</code> - The new versions of only the updated attributes are returned. </li> </ul> There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No Read Capacity Units are consumed. Values returned are strongly consistent</param>
         public UpdateItemRequest(string tableName, Dictionary<string, AttributeValue> key, Dictionary<string, AttributeValueUpdate> attributeUpdates, ReturnValue returnValues)
         {
             _tableName = tableName;
@@ -90,136 +90,11 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AttributeUpdates. <important> 
+        /// Gets and sets the property AttributeUpdates. 
         /// <para>
-        /// This is a legacy parameter, for backward compatibility. New applications should use
-        /// <i>UpdateExpression</i> instead. Do not combine legacy parameters and expression parameters
-        /// in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i>
-        /// exception.
-        /// </para>
-        ///  
-        /// <para>
-        /// This parameter can be used for modifying top-level attributes; however, it does not
-        /// support individual list or map elements.
-        /// </para>
-        ///  </important> 
-        /// <para>
-        /// The names of attributes to be modified, the action to perform on each, and the new
-        /// value for each. If you are updating an attribute that is an index key attribute for
-        /// any indexes on that table, the attribute type must match the index key type defined
-        /// in the <i>AttributesDefinition</i> of the table description. You can use <i>UpdateItem</i>
-        /// to update any non-key attributes.
-        /// </para>
-        ///  
-        /// <para>
-        /// Attribute values cannot be null. String and Binary type attributes must have lengths
-        /// greater than zero. Set type attributes must not be empty. Requests with empty values
-        /// will be rejected with a <i>ValidationException</i> exception.
-        /// </para>
-        ///  
-        /// <para>
-        /// Each <i>AttributeUpdates</i> element consists of an attribute name to modify, along
-        /// with the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <i>Value</i> - The new value, if applicable, for this attribute.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>Action</i> - A value that specifies how to perform the update. This action is
-        /// only valid for an existing attribute whose data type is Number or is a set; do not
-        /// use <code>ADD</code> for other data types. 
-        /// </para>
-        ///  
-        /// <para>
-        /// If an item with the specified primary key is found in the table, the following values
-        /// perform the following actions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>PUT</code> - Adds the specified attribute to the item. If the attribute already
-        /// exists, it is replaced by the new value. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DELETE</code> - Removes the attribute and its value, if no value is specified
-        /// for <code>DELETE</code>. The data type of the specified value must match the existing
-        /// value's data type.
-        /// </para>
-        ///  
-        /// <para>
-        /// If a set of values is specified, then those values are subtracted from the old set.
-        /// For example, if the attribute value was the set <code>[a,b,c]</code> and the <code>DELETE</code>
-        /// action specifies <code>[a,c]</code>, then the final attribute value is <code>[b]</code>.
-        /// Specifying an empty set is an error.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ADD</code> - Adds the specified value to the item, if the attribute does not
-        /// already exist. If the attribute does exist, then the behavior of <code>ADD</code>
-        /// depends on the data type of the attribute:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// If the existing attribute is a number, and if <i>Value</i> is also a number, then
-        /// <i>Value</i> is mathematically added to the existing attribute. If <i>Value</i> is
-        /// a negative number, then it is subtracted from the existing attribute.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// If you use <code>ADD</code> to increment or decrement a number value for an item that
-        /// doesn't exist before the update, DynamoDB uses 0 as the initial value.
-        /// </para>
-        ///  
-        /// <para>
-        /// Similarly, if you use <code>ADD</code> for an existing item to increment or decrement
-        /// an attribute value that doesn't exist before the update, DynamoDB uses <code>0</code>
-        /// as the initial value. For example, suppose that the item you want to update doesn't
-        /// have an attribute named <i>itemcount</i>, but you decide to <code>ADD</code> the number
-        /// <code>3</code> to this attribute anyway. DynamoDB will create the <i>itemcount</i>
-        /// attribute, set its initial value to <code>0</code>, and finally add <code>3</code>
-        /// to it. The result will be a new <i>itemcount</i> attribute, with a value of <code>3</code>.
-        /// </para>
-        ///  </note> </li> <li> 
-        /// <para>
-        /// If the existing data type is a set, and if <i>Value</i> is also a set, then <i>Value</i>
-        /// is appended to the existing set. For example, if the attribute value is the set <code>[1,2]</code>,
-        /// and the <code>ADD</code> action specified <code>[3]</code>, then the final attribute
-        /// value is <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is specified
-        /// for a set attribute and the attribute type specified does not match the existing set
-        /// type. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Both sets must have the same primitive data type. For example, if the existing data
-        /// type is a set of strings, <i>Value</i> must also be a set of strings.
-        /// </para>
-        ///  </li> </ul> </li> </ul> 
-        /// <para>
-        /// If no item with the specified key is found in the table, the following values perform
-        /// the following actions:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>PUT</code> - Causes DynamoDB to create a new item with the specified primary
-        /// key, and then adds the attribute. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DELETE</code> - Nothing happens, because attributes cannot be deleted from
-        /// a nonexistent item. The operation succeeds, but DynamoDB does not create a new item.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ADD</code> - Causes DynamoDB to create an item with the supplied primary key
-        /// and number (or set of numbers) for the attribute value. The only data types allowed
-        /// are Number and Number Set.
-        /// </para>
-        ///  </li> </ul> </li> </ul> 
-        /// <para>
-        /// If you provide any attributes that are part of an index key, then the data types for
-        /// those attributes must match those of the schema in the table's attribute definition.
+        /// This is a legacy parameter. Use <code>UpdateExpression</code> instead. For more information,
+        /// see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributeUpdates.html">AttributeUpdates</a>
+        /// in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValueUpdate> AttributeUpdates
@@ -235,40 +110,12 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConditionalOperator. <important> 
+        /// Gets and sets the property ConditionalOperator. 
         /// <para>
-        /// This is a legacy parameter, for backward compatibility. New applications should use
-        /// <i>ConditionExpression</i> instead. Do not combine legacy parameters and expression
-        /// parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i>
-        /// exception.
+        /// This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
+        /// information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a>
+        /// in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
-        ///  </important> 
-        /// <para>
-        /// A logical operator to apply to the conditions in the <i>Expected</i> map:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>AND</code> - If all of the conditions evaluate to true, then the entire map
-        /// evaluates to true.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>OR</code> - If at least one of the conditions evaluate to true, then the entire
-        /// map evaluates to true.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If you omit <i>ConditionalOperator</i>, then <code>AND</code> is the default.
-        /// </para>
-        ///  
-        /// <para>
-        /// The operation will succeed only if the entire map evaluates to true.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// This parameter does not support attributes of type List or Map.
-        /// </para>
-        ///  </note>
         /// </summary>
         public ConditionalOperator ConditionalOperator
         {
@@ -302,8 +149,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Comparison operators: <code> = | &amp;#x3C;&amp;#x3E; | &amp;#x3C; | &amp;#x3E; |
-        /// &amp;#x3C;= | &amp;#x3E;= | BETWEEN | IN</code> 
+        /// Comparison operators: <code> = | &lt;&gt; | &lt; | &gt; | &lt;= | &gt;= | BETWEEN
+        /// | IN</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -314,12 +161,6 @@ namespace Amazon.DynamoDBv2.Model
         /// For more information on condition expressions, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying
         /// Conditions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <i>ConditionExpression</i> replaces the legacy <i>ConditionalOperator</i> and <i>Expected</i>
-        /// parameters.
-        /// </para>
-        ///  </note>
         /// </summary>
         public string ConditionExpression
         {
@@ -334,305 +175,12 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Expected. <important> 
+        /// Gets and sets the property Expected. 
         /// <para>
-        /// This is a legacy parameter, for backward compatibility. New applications should use
-        /// <i> ConditionExpression </i> instead. Do not combine legacy parameters and expression
-        /// parameters in a single API call; otherwise, DynamoDB will return a <i>ValidationException</i>
-        /// exception.
+        /// This is a legacy parameter. Use <code>ConditionExpresssion</code> instead. For more
+        /// information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html">Expected</a>
+        /// in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
-        ///  </important> 
-        /// <para>
-        /// A map of attribute/condition pairs. <i>Expected</i> provides a conditional block for
-        /// the <i>UpdateItem</i> operation.
-        /// </para>
-        ///  
-        /// <para>
-        /// Each element of <i>Expected</i> consists of an attribute name, a comparison operator,
-        /// and one or more values. DynamoDB compares the attribute with the value(s) you supplied,
-        /// using the comparison operator. For each <i>Expected</i> element, the result of the
-        /// evaluation is either true or false.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you specify more than one element in the <i>Expected</i> map, then by default all
-        /// of the conditions must evaluate to true. In other words, the conditions are ANDed
-        /// together. (You can use the <i>ConditionalOperator</i> parameter to OR the conditions
-        /// instead. If you do this, then at least one of the conditions must evaluate to true,
-        /// rather than all of them.)
-        /// </para>
-        ///  
-        /// <para>
-        /// If the <i>Expected</i> map evaluates to true, then the conditional operation succeeds;
-        /// otherwise, it fails.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <i>Expected</i> contains the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <i>AttributeValueList</i> - One or more values to evaluate against the supplied attribute.
-        /// The number of values in the list depends on the <i>ComparisonOperator</i> being used.
-        /// </para>
-        ///  
-        /// <para>
-        /// For type Number, value comparisons are numeric.
-        /// </para>
-        ///  
-        /// <para>
-        /// String value comparisons for greater than, equals, or less than are based on ASCII
-        /// character code values. For example, <code>a</code> is greater than <code>A</code>,
-        /// and <code>a</code> is greater than <code>B</code>. For a list of code values, see
-        /// <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For type Binary, DynamoDB treats each byte of the binary data as unsigned when it
-        /// compares binary values.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>ComparisonOperator</i> - A comparator for evaluating attributes in the <i>AttributeValueList</i>.
-        /// When performing the comparison, DynamoDB uses strongly consistent reads.
-        /// </para>
-        ///  
-        /// <para>
-        /// The following comparison operators are available:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
-        /// | IN | BETWEEN</code> 
-        /// </para>
-        ///  
-        /// <para>
-        /// The following are descriptions of each comparison operator.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>EQ</code> : Equal. <code>EQ</code> is supported for all datatypes, including
-        /// lists and maps.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
-        /// String, Number, Binary, String Set, Number Set, or Binary Set. If an item contains
-        /// an <i>AttributeValue</i> element of a different type than the one provided in the
-        /// request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-        /// <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6",
-        /// "2", "1"]}</code>.
-        /// </para>
-        ///   </li> <li> 
-        /// <para>
-        ///  <code>NE</code> : Not equal. <code>NE</code> is supported for all datatypes, including
-        /// lists and maps.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
-        /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <i>AttributeValue</i>
-        /// of a different type than the one provided in the request, the value does not match.
-        /// For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
-        /// does not equal <code>{"NS":["6", "2", "1"]}</code>.
-        /// </para>
-        ///   </li> <li> 
-        /// <para>
-        ///  <code>LE</code> : Less than or equal. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
-        /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
-        /// element of a different type than the one provided in the request, the value does not
-        /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-        /// Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
-        /// </para>
-        ///   </li> <li> 
-        /// <para>
-        ///  <code>LT</code> : Less than. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String,
-        /// Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i> element
-        /// of a different type than the one provided in the request, the value does not match.
-        /// For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code>
-        /// does not compare to <code>{"NS":["6", "2", "1"]}</code>.
-        /// </para>
-        ///   </li> <li> 
-        /// <para>
-        ///  <code>GE</code> : Greater than or equal. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
-        /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
-        /// element of a different type than the one provided in the request, the value does not
-        /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-        /// Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
-        /// </para>
-        ///   </li> <li> 
-        /// <para>
-        ///  <code>GT</code> : Greater than. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
-        /// String, Number, or Binary (not a set type). If an item contains an <i>AttributeValue</i>
-        /// element of a different type than the one provided in the request, the value does not
-        /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-        /// Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
-        /// </para>
-        ///   </li> <li> 
-        /// <para>
-        ///  <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
-        /// for all datatypes, including lists and maps.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// This operator tests for the existence of an attribute, not its data type. If the data
-        /// type of attribute "<code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>,
-        /// the result is a Boolean <i>true</i>. This result is because the attribute "<code>a</code>"
-        /// exists; its data type is not relevant to the <code>NOT_NULL</code> comparison operator.
-        /// </para>
-        ///  </note> </li> <li> 
-        /// <para>
-        ///  <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
-        /// for all datatypes, including lists and maps.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// This operator tests for the nonexistence of an attribute, not its data type. If the
-        /// data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>,
-        /// the result is a Boolean <i>false</i>. This is because the attribute "<code>a</code>"
-        /// exists; its data type is not relevant to the <code>NULL</code> comparison operator.
-        /// </para>
-        ///  </note> </li> <li> 
-        /// <para>
-        ///  <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
-        /// String, Number, or Binary (not a set type). If the target attribute of the comparison
-        /// is of type String, then the operator checks for a substring match. If the target attribute
-        /// of the comparison is of type Binary, then the operator looks for a subsequence of
-        /// the target that matches the input. If the target attribute of the comparison is a
-        /// set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"), then the operator
-        /// evaluates to true if it finds an exact match with any member of the set.
-        /// </para>
-        ///  
-        /// <para>
-        /// CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>", "<code>a</code>"
-        /// can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a
-        /// value in a set.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> element of type
-        /// String, Number, or Binary (not a set type). If the target attribute of the comparison
-        /// is a String, then the operator checks for the absence of a substring match. If the
-        /// target attribute of the comparison is Binary, then the operator checks for the absence
-        /// of a subsequence of the target that matches the input. If the target attribute of
-        /// the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"),
-        /// then the operator evaluates to true if it <i>does not</i> find an exact match with
-        /// any member of the set.
-        /// </para>
-        ///  
-        /// <para>
-        /// NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>",
-        /// "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map,
-        /// or a list.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>BEGINS_WITH</code> : Checks for a prefix. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <i>AttributeValueList</i> can contain only one <i>AttributeValue</i> of type String
-        /// or Binary (not a Number or a set type). The target attribute of the comparison must
-        /// be of type String or Binary (not a Number or a set type).
-        /// </para>
-        ///   </li> <li> 
-        /// <para>
-        ///  <code>IN</code> : Checks for matching elements within two sets.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <i>AttributeValueList</i> can contain one or more <i>AttributeValue</i> elements
-        /// of type String, Number, or Binary (not a set type). These attributes are compared
-        /// against an existing set type attribute of an item. If any elements of the input set
-        /// are present in the item attribute, the expression evaluates to true.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>BETWEEN</code> : Greater than or equal to the first value, and less than or
-        /// equal to the second value. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <i>AttributeValueList</i> must contain two <i>AttributeValue</i> elements of the
-        /// same type, either String, Number, or Binary (not a set type). A target attribute matches
-        /// if the target value is greater than, or equal to, the first element and less than,
-        /// or equal to, the second element. If an item contains an <i>AttributeValue</i> element
-        /// of a different type than the one provided in the request, the value does not match.
-        /// For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also,
-        /// <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code> 
-        /// </para>
-        ///  </li> </ul> </li> </ul> 
-        /// <para>
-        /// For usage examples of <i>AttributeValueList</i> and <i>ComparisonOperator</i>, see
-        /// <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
-        /// Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// For backward compatibility with previous DynamoDB releases, the following parameters
-        /// can be used instead of <i>AttributeValueList</i> and <i>ComparisonOperator</i>:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <i>Value</i> - A value for DynamoDB to compare with an attribute.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <i>Exists</i> - A Boolean value that causes DynamoDB to evaluate the value before
-        /// attempting the conditional operation:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// If <i>Exists</i> is <code>true</code>, DynamoDB will check to see if that attribute
-        /// value already exists in the table. If it is found, then the condition evaluates to
-        /// true; otherwise the condition evaluate to false.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If <i>Exists</i> is <code>false</code>, DynamoDB assumes that the attribute value
-        /// does <i>not</i> exist in the table. If in fact the value does not exist, then the
-        /// assumption is valid and the condition evaluates to true. If the value is found, despite
-        /// the assumption that it does not exist, the condition evaluates to false.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Note that the default value for <i>Exists</i> is <code>true</code>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The <i>Value</i> and <i>Exists</i> parameters are incompatible with <i>AttributeValueList</i>
-        /// and <i>ComparisonOperator</i>. Note that if you use both sets of parameters at once,
-        /// DynamoDB will return a <i>ValidationException</i> exception.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// This parameter does not support attributes of type List or Map.
-        /// </para>
-        ///  </note>
         /// </summary>
         public Dictionary<string, ExpectedAttributeValue> Expected
         {
@@ -650,7 +198,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ExpressionAttributeNames. 
         /// <para>
         /// One or more substitution tokens for attribute names in an expression. The following
-        /// are some use cases for using <i>ExpressionAttributeNames</i>:
+        /// are some use cases for using <code>ExpressionAttributeNames</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -679,7 +227,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The name of this attribute conflicts with a reserved word, so it cannot be used directly
         /// in an expression. (For the complete list of reserved words, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
         /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you
-        /// could specify the following for <i>ExpressionAttributeNames</i>:
+        /// could specify the following for <code>ExpressionAttributeNames</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -733,7 +281,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// You would first need to specify <i>ExpressionAttributeValues</i> as follows:
+        /// You would first need to specify <code>ExpressionAttributeValues</code> as follows:
         /// </para>
         ///  
         /// <para>
@@ -830,18 +378,19 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ReturnValues. 
         /// <para>
-        /// Use <i>ReturnValues</i> if you want to get the item attributes as they appeared either
-        /// before or after they were updated. For <i>UpdateItem</i>, the valid values are:
+        /// Use <code>ReturnValues</code> if you want to get the item attributes as they appeared
+        /// either before or after they were updated. For <code>UpdateItem</code>, the valid values
+        /// are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code> - If <i>ReturnValues</i> is not specified, or if its value is <code>NONE</code>,
-        /// then nothing is returned. (This setting is the default for <i>ReturnValues</i>.)
+        ///  <code>NONE</code> - If <code>ReturnValues</code> is not specified, or if its value
+        /// is <code>NONE</code>, then nothing is returned. (This setting is the default for <code>ReturnValues</code>.)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALL_OLD</code> - If <i>UpdateItem</i> overwrote an attribute name-value pair,
-        /// then the content of the old item is returned.
+        ///  <code>ALL_OLD</code> - If <code>UpdateItem</code> overwrote an attribute name-value
+        /// pair, then the content of the old item is returned.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -904,7 +453,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// The following action values are available for <i>UpdateExpression</i>.
+        /// The following action values are available for <code>UpdateExpression</code>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -946,9 +495,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the existing attribute is a number, and if <i>Value</i> is also a number, then
-        /// <i>Value</i> is mathematically added to the existing attribute. If <i>Value</i> is
-        /// a negative number, then it is subtracted from the existing attribute.
+        /// If the existing attribute is a number, and if <code>Value</code> is also a number,
+        /// then <code>Value</code> is mathematically added to the existing attribute. If <code>Value</code>
+        /// is a negative number, then it is subtracted from the existing attribute.
         /// </para>
         ///  <note> 
         /// <para>
@@ -968,7 +517,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        /// If the existing data type is a set and if <i>Value</i> is also a set, then <i>Value</i>
+        /// If the existing data type is a set and if <code>Value</code> is also a set, then <code>Value</code>
         /// is added to the existing set. For example, if the attribute value is the set <code>[1,2]</code>,
         /// and the <code>ADD</code> action specified <code>[3]</code>, then the final attribute
         /// value is <code>[1,2,3]</code>. An error occurs if an <code>ADD</code> action is specified
@@ -978,7 +527,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// Both sets must have the same primitive data type. For example, if the existing data
-        /// type is a set of strings, the <i>Value</i> must also be a set of strings.
+        /// type is a set of strings, the <code>Value</code> must also be a set of strings.
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
@@ -1011,11 +560,6 @@ namespace Amazon.DynamoDBv2.Model
         /// For more information on update expressions, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
         /// Items and Attributes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  <i>UpdateExpression</i> replaces the legacy <i>AttributeUpdates</i> parameter.
-        /// </para>
-        ///  </note>
         /// </summary>
         public string UpdateExpression
         {

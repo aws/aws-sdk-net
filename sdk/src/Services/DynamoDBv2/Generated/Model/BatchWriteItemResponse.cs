@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the output of a <i>BatchWriteItem</i> operation.
+    /// Represents the output of a <code>BatchWriteItem</code> operation.
     /// </summary>
     public partial class BatchWriteItemResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ConsumedCapacity. 
         /// <para>
-        /// The capacity units consumed by the operation.
+        /// The capacity units consumed by the entire <code>BatchWriteItem</code> operation.
         /// </para>
         ///  
         /// <para>
@@ -47,11 +47,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>TableName</i> - The table that consumed the provisioned throughput.
+        ///  <code>TableName</code> - The table that consumed the provisioned throughput.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>CapacityUnits</i> - The total number of capacity units consumed.
+        ///  <code>CapacityUnits</code> - The total number of capacity units consumed.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -70,9 +70,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ItemCollectionMetrics. 
         /// <para>
-        /// A list of tables that were processed by <i>BatchWriteItem</i> and, for each table,
-        /// information about any item collections that were affected by individual <i>DeleteItem</i>
-        /// or <i>PutItem</i> operations.
+        /// A list of tables that were processed by <code>BatchWriteItem</code> and, for each
+        /// table, information about any item collections that were affected by individual <code>DeleteItem</code>
+        /// or <code>PutItem</code> operations.
         /// </para>
         ///  
         /// <para>
@@ -80,16 +80,17 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>ItemCollectionKey</i> - The partition key value of the item collection. This is
-        /// the same as the partition key value of the item.
+        ///  <code>ItemCollectionKey</code> - The partition key value of the item collection.
+        /// This is the same as the partition key value of the item.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>SizeEstimateRange</i> - An estimate of item collection size, expressed in GB.
-        /// This is a two-element array containing a lower bound and an upper bound for the estimate.
-        /// The estimate includes the size of all the items in the table, plus the size of all
-        /// attributes projected into all of the local secondary indexes on the table. Use this
-        /// estimate to measure whether a local secondary index is approaching its size limit.
+        ///  <code>SizeEstimateRange</code> - An estimate of item collection size, expressed in
+        /// GB. This is a two-element array containing a lower bound and an upper bound for the
+        /// estimate. The estimate includes the size of all the items in the table, plus the size
+        /// of all attributes projected into all of the local secondary indexes on the table.
+        /// Use this estimate to measure whether a local secondary index is approaching its size
+        /// limit.
         /// </para>
         ///  
         /// <para>
@@ -113,38 +114,38 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property UnprocessedItems. 
         /// <para>
-        /// A map of tables and requests against those tables that were not processed. The <i>UnprocessedItems</i>
-        /// value is in the same form as <i>RequestItems</i>, so you can provide this value directly
-        /// to a subsequent <i>BatchGetItem</i> operation. For more information, see <i>RequestItems</i>
-        /// in the Request Parameters section.
+        /// A map of tables and requests against those tables that were not processed. The <code>UnprocessedItems</code>
+        /// value is in the same form as <code>RequestItems</code>, so you can provide this value
+        /// directly to a subsequent <code>BatchGetItem</code> operation. For more information,
+        /// see <code>RequestItems</code> in the Request Parameters section.
         /// </para>
         ///  
         /// <para>
-        /// Each <i>UnprocessedItems</i> entry consists of a table name and, for that table, a
-        /// list of operations to perform (<i>DeleteRequest</i> or <i>PutRequest</i>).
+        /// Each <code>UnprocessedItems</code> entry consists of a table name and, for that table,
+        /// a list of operations to perform (<code>DeleteRequest</code> or <code>PutRequest</code>).
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>DeleteRequest</i> - Perform a <i>DeleteItem</i> operation on the specified item.
-        /// The item to be deleted is identified by a <i>Key</i> subelement:
+        ///  <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the specified
+        /// item. The item to be deleted is identified by a <code>Key</code> subelement:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>Key</i> - A map of primary key attribute values that uniquely identify the item.
-        /// Each entry in this map consists of an attribute name and an attribute value.
+        ///  <code>Key</code> - A map of primary key attribute values that uniquely identify the
+        /// item. Each entry in this map consists of an attribute name and an attribute value.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <i>PutRequest</i> - Perform a <i>PutItem</i> operation on the specified item. The
-        /// item to be put is identified by an <i>Item</i> subelement:
+        ///  <code>PutRequest</code> - Perform a <code>PutItem</code> operation on the specified
+        /// item. The item to be put is identified by an <code>Item</code> subelement:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>Item</i> - A map of attributes and their values. Each entry in this map consists
-        /// of an attribute name and an attribute value. Attribute values must not be null; string
-        /// and binary type attributes must have lengths greater than zero; and set type attributes
-        /// must not be empty. Requests that contain empty values will be rejected with a <i>ValidationException</i>
-        /// exception.
+        ///  <code>Item</code> - A map of attributes and their values. Each entry in this map
+        /// consists of an attribute name and an attribute value. Attribute values must not be
+        /// null; string and binary type attributes must have lengths greater than zero; and set
+        /// type attributes must not be empty. Requests that contain empty values will be rejected
+        /// with a <code>ValidationException</code> exception.
         /// </para>
         ///  
         /// <para>
@@ -153,7 +154,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// If there are no unprocessed items remaining, the response contains an empty <i>UnprocessedItems</i>
+        /// If there are no unprocessed items remaining, the response contains an empty <code>UnprocessedItems</code>
         /// map.
         /// </para>
         /// </summary>

@@ -49,13 +49,13 @@ namespace Amazon.DynamoDBv2.Model
         /// of reading items from the table and determining whether they can be added to the index.
         /// (Not all items will qualify: For example, a partition key cannot have any duplicate
         /// values.) If an item can be added to the index, DynamoDB will do so. After all items
-        /// have been processed, the backfilling operation is complete and <i>Backfilling</i>
+        /// have been processed, the backfilling operation is complete and <code>Backfilling</code>
         /// is false.
         /// </para>
         ///  <note> 
         /// <para>
-        /// For indexes that were created during a <i>CreateTable</i> operation, the <i>Backfilling</i>
-        /// attribute does not appear in the <i>DescribeTable</i> output.
+        /// For indexes that were created during a <code>CreateTable</code> operation, the <code>Backfilling</code>
+        /// attribute does not appear in the <code>DescribeTable</code> output.
         /// </para>
         ///  </note>
         /// </summary>
@@ -133,19 +133,19 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>CREATING</i> - The index is being created.
+        ///  <code>CREATING</code> - The index is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>UPDATING</i> - The index is being updated.
+        ///  <code>UPDATING</code> - The index is being updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>DELETING</i> - The index is being deleted.
+        ///  <code>DELETING</code> - The index is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>ACTIVE</i> - The index is ready for use.
+        ///  <code>ACTIVE</code> - The index is ready for use.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -221,7 +221,12 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Projection.
+        /// Gets and sets the property Projection. 
+        /// <para>
+        /// Represents attributes that are copied (projected) from the table into the global secondary
+        /// index. These are in addition to the primary key attributes and index key attributes,
+        /// which are automatically projected. 
+        /// </para>
         /// </summary>
         public Projection Projection
         {
@@ -236,7 +241,16 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProvisionedThroughput.
+        /// Gets and sets the property ProvisionedThroughput. 
+        /// <para>
+        /// Represents the provisioned throughput settings for the specified global secondary
+        /// index.
+        /// </para>
+        ///  
+        /// <para>
+        /// For current minimum and maximum provisioned throughput values, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+        /// in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </para>
         /// </summary>
         public ProvisionedThroughputDescription ProvisionedThroughput
         {
