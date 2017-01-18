@@ -80,7 +80,7 @@ namespace AWSSDK.UnitTests
             .AppendLine("aws_access_key_id=basic_aws_access_key_id")
             .AppendLine("aws_secret_access_key=basic_aws_secret_access_key")
             .AppendLine("region=ca-central-1")
-            .Append("unique_key=" + UniqueKey)
+            .Append("vs_toolkit_artifact_guid=" + UniqueKey)
             .ToString();
 
         private static readonly string BasicProfileCredentialsText =
@@ -556,7 +556,7 @@ namespace AWSSDK.UnitTests
             var profileText = BasicProfileTextForCopyAndRename;
 
             if (addUniqueKey)
-                profileText += "unique_key=" + UniqueKey;
+                profileText += "vs_toolkit_artifact_guid=" + UniqueKey;
 
             using (var tester = new SharedCredentialsFileTestFixture(profileText))
             {
@@ -639,7 +639,7 @@ namespace AWSSDK.UnitTests
             var profileText = BasicProfileTextForCopyAndRename;
 
             if (addUniqueKey)
-                profileText += "unique_key=" + UniqueKey + Environment.NewLine;
+                profileText += "vs_toolkit_artifact_guid=" + UniqueKey + Environment.NewLine;
 
             var anotherSection = addAnotherSection ? "[another_section]" + Environment.NewLine + "propertyx=valuex" + Environment.NewLine: "";
 

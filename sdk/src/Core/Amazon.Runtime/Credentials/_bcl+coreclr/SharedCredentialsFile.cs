@@ -35,7 +35,7 @@ namespace Amazon.Runtime
     {
         public const string DefaultProfileName = "default";
 
-        private const string UniqueKeyField = "unique_key";
+        private const string UniqueKeyField = "vs_toolkit_artifact_guid";
         private const string RegionField = "region";
         private const string ProfileMarker = "profile";
         private const string ConfigFileName = "config";
