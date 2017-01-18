@@ -62,6 +62,13 @@ namespace Amazon.Rekognition.Model
         /// example, by 90 degrees), it first corrects the orientation before detecting the labels.
         /// 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the source image Exif metadata populates the orientation field, Amazon Rekognition
+        /// does not perform orientation correction and the value of OrientationCorrection will
+        /// be nil.
+        /// </para>
+        ///  </note>
         /// </summary>
         public OrientationCorrection OrientationCorrection
         {

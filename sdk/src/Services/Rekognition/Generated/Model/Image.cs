@@ -42,6 +42,12 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
+    /// If you use the Amazon CLI to call Amazon Rekognition operations, passing image bytes
+    /// using the Bytes property is not supported. You must first upload the image to an Amazon
+    /// S3 bucket and then call the operation using the S3Object property.
+    /// </para>
+    ///  
+    /// <para>
     /// For Amazon Rekognition to process an S3 object, the user must have permission to access
     /// the S3 object. For more information, see <a>manage-access-resource-policies</a>. 
     /// </para>

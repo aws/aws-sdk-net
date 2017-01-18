@@ -67,6 +67,13 @@ namespace Amazon.Rekognition.Model
         /// is, the bounding box coordinates in the response are based on the corrected orientation.
         /// 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the source image Exif metadata populates the orientation field, Amazon Rekognition
+        /// does not perform orientation correction and the value of OrientationCorrection will
+        /// be nil.
+        /// </para>
+        ///  </note>
         /// </summary>
         public OrientationCorrection OrientationCorrection
         {

@@ -61,6 +61,13 @@ namespace Amazon.Rekognition.Model
         /// it returns the degree of rotation. You can use this value to correct the orientation
         /// and also appropriately analyze the bounding box coordinates that are returned. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the source image Exif metadata populates the orientation field, Amazon Rekognition
+        /// does not perform orientation correction and the value of OrientationCorrection will
+        /// be nil.
+        /// </para>
+        ///  </note>
         /// </summary>
         public OrientationCorrection OrientationCorrection
         {
