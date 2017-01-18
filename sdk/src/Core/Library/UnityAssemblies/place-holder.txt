@@ -1,0 +1,4 @@
+This file is a place holder to force the Library\UnityAssemblies to be created. If it doesn't exist then the Visual Studio will crash when opening the Unity solution (AWSSDK.Unity.sln).
+
+The issue has been reported on the Unity forums:
+https://forum.unity3d.com/threads/visual-studio-crashing-without-library-unityassemblies.451705/
