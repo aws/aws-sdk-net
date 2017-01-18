@@ -1,3 +1,15 @@
+### 3.3.39.0 (2017-01-18 02:15 UTC)
+* DynamoDBv2 (3.3.2.0)
+	* Tagging Support for Amazon DynamoDB Tables and Indexes
+* Glacier (3.3.1.4)
+	* Doc-only Update for Glacier: Added code snippets
+* Polly (3.3.0.5)
+	* Doc-only update for Amazon Polly -- added snippets
+* Rekognition (3.3.0.5)
+	* Added code samples to Rekognition reference topics.
+* Route53 (3.3.4.0)
+	* Add ca-central-1 and eu-west-2 enum values to CloudWatchRegion enum
+
 ### 3.3.38.0 (2017-01-17 05:37 UTC)
 * ConfigService (3.3.5.0)
 	* Recently we added next token implementation to some of our APIs mentioned in the title. As part of that launch we added InvalidNextTokenException to those APIs but forgot to update the model for the APIs. This item is to update the models to include InvalidNextTokenException in API response.
