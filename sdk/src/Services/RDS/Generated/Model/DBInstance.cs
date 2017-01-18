@@ -87,6 +87,7 @@ namespace Amazon.RDS.Model
         private string _preferredMaintenanceWindow;
         private int? _promotionTier;
         private bool? _publiclyAccessible;
+        private List<string> _readReplicaDBClusterIdentifiers = new List<string>();
         private List<string> _readReplicaDBInstanceIdentifiers = new List<string>();
         private string _readReplicaSourceDBInstanceIdentifier;
         private string _secondaryAvailabilityZone;
@@ -845,6 +846,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetPubliclyAccessible()
         {
             return this._publiclyAccessible.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadReplicaDBClusterIdentifiers. 
+        /// <para>
+        /// Contains one or more identifiers of Aurora DB clusters that are read replicas of this
+        /// DB instance.
+        /// </para>
+        /// </summary>
+        public List<string> ReadReplicaDBClusterIdentifiers
+        {
+            get { return this._readReplicaDBClusterIdentifiers; }
+            set { this._readReplicaDBClusterIdentifiers = value; }
+        }
+
+        // Check to see if ReadReplicaDBClusterIdentifiers property is set
+        internal bool IsSetReadReplicaDBClusterIdentifiers()
+        {
+            return this._readReplicaDBClusterIdentifiers != null && this._readReplicaDBClusterIdentifiers.Count > 0; 
         }
 
         /// <summary>

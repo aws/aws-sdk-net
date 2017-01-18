@@ -1059,7 +1059,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
-        /// cluster as a Read Replica of another DB cluster.
+        /// cluster as a Read Replica of another DB cluster or Amazon RDS MySQL DB instance.
         /// </para>
         ///  
         /// <para>

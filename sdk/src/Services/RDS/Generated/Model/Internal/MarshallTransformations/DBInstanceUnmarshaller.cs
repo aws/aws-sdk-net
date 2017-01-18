@@ -286,6 +286,13 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.PubliclyAccessible = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ReadReplicaDBClusterIdentifiers/ReadReplicaDBClusterIdentifier", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ReadReplicaDBClusterIdentifiers.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("ReadReplicaDBInstanceIdentifiers/ReadReplicaDBInstanceIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

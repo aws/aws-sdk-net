@@ -187,6 +187,12 @@
     <Compile Include="Amazon.Util\_bcl+coreclr\*.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\UnityAssemblies\*.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="RegionEndpoint\*.cs">
       <SubType>Code</SubType>
     </Compile>
