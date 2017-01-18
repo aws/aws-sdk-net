@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.39.0",
+    "ProductVersion" : "3.3.40.0",
     "CoreVersion"    : "3.3.7.1",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -247,7 +247,7 @@
             "InPreview"    : false
         },
         "RDS"                  : {
-            "Version" : "3.3.4.2",
+            "Version" : "3.3.5.0",
             "Dependencies" : {
                 "Core" : "3.3.7.0"
             },

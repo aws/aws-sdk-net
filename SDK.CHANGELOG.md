@@ -1,3 +1,7 @@
+### 3.3.40.0 (2017-01-18 20:32 UTC)
+* RDS (3.3.5.0)
+	* We are releasing Mysql to Aurora replication feature, in rds-describe-db-instances output field, we will need to add a new field called ReadReplicaDBClusterIdentifiers.
+
 ### 3.3.39.0 (2017-01-18 02:15 UTC)
 * DynamoDBv2 (3.3.2.0)
 	* Tagging Support for Amazon DynamoDB Tables and Indexes
