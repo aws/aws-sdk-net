@@ -155,6 +155,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly CloudWatchRegion ApSoutheast2 = new CloudWatchRegion("ap-southeast-2");
         /// <summary>
+        /// Constant CaCentral1 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion CaCentral1 = new CloudWatchRegion("ca-central-1");
+        /// <summary>
         /// Constant EuCentral1 for CloudWatchRegion
         /// </summary>
         public static readonly CloudWatchRegion EuCentral1 = new CloudWatchRegion("eu-central-1");
@@ -162,6 +166,10 @@ namespace Amazon.Route53
         /// Constant EuWest1 for CloudWatchRegion
         /// </summary>
         public static readonly CloudWatchRegion EuWest1 = new CloudWatchRegion("eu-west-1");
+        /// <summary>
+        /// Constant EuWest2 for CloudWatchRegion
+        /// </summary>
+        public static readonly CloudWatchRegion EuWest2 = new CloudWatchRegion("eu-west-2");
         /// <summary>
         /// Constant SaEast1 for CloudWatchRegion
         /// </summary>
