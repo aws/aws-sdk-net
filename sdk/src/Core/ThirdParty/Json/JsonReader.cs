@@ -58,6 +58,7 @@ namespace ThirdParty.Json.LitJson
         private bool          read_started;
         private TextReader    reader;
         private bool          reader_is_owned;
+        private bool          skip_non_members;
         private object        token_value;
         private JsonToken     token;
         #endregion
@@ -72,6 +73,12 @@ namespace ThirdParty.Json.LitJson
         public bool AllowSingleQuotedStrings {
             get { return lexer.AllowSingleQuotedStrings; }
             set { lexer.AllowSingleQuotedStrings = value; }
+        }
+
+        public bool SkipNonMembers
+        {
+            get { return skip_non_members; }
+            set { skip_non_members = value; }
         }
 
         public bool EndOfInput {
@@ -118,6 +125,8 @@ namespace ThirdParty.Json.LitJson
 
             end_of_input = false;
             end_of_json  = false;
+
+            skip_non_members = false;
 
             this.reader = reader;
             reader_is_owned = owned;
