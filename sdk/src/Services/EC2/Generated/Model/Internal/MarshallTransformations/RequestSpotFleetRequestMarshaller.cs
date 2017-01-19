@@ -265,6 +265,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Placement" + "." + "GroupName", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.Placement.GroupName));
                                 }
+                                if(publicRequestSpotFleetRequestConfiglistValue.Placement.IsSetTenancy())
+                                {
+                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Placement" + "." + "Tenancy", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.Placement.Tenancy));
+                                }
                             }
                             if(publicRequestSpotFleetRequestConfiglistValue.IsSetRamdiskId())
                             {

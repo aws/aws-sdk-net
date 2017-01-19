@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// Currently, only endpoints to Amazon S3 are supported.
+    /// Use <a>DescribeVpcEndpointServices</a> to get a list of supported AWS services.
     /// </para>
     /// </summary>
     public partial class CreateVpcEndpointRequest : AmazonEC2Request

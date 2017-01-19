@@ -110,8 +110,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HostId. 
         /// <para>
-        /// The ID of the Dedicted host on which the instance resides. This parameter is not support
-        /// for the <a>ImportInstance</a> command.
+        /// The ID of the Dedicated Host on which the instance resides. This parameter is not
+        /// supported for the <a>ImportInstance</a> command.
         /// </para>
         /// </summary>
         public string HostId

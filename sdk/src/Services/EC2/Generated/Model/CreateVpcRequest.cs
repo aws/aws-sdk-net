@@ -50,8 +50,8 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// You can specify the instance tenancy value for the VPC when you create it. You can't
-    /// change this value for the VPC after you create it. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html.html">Dedicated
-    /// Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+    /// change this value for the VPC after you create it. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
+    /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateVpcRequest : AmazonEC2Request

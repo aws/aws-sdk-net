@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     {
         private string _availabilityZone;
         private string _groupName;
+        private Tenancy _tenancy;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -88,6 +89,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetGroupName()
         {
             return this._groupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tenancy. 
+        /// <para>
+        /// The tenancy of the instance (if the instance is running in a VPC). An instance with
+        /// a tenancy of <code>dedicated</code> runs on single-tenant hardware. The <code>host</code>
+        /// tenancy is not supported for Spot instances.
+        /// </para>
+        /// </summary>
+        public Tenancy Tenancy
+        {
+            get { return this._tenancy; }
+            set { this._tenancy = value; }
+        }
+
+        // Check to see if Tenancy property is set
+        internal bool IsSetTenancy()
+        {
+            return this._tenancy != null;
         }
 
     }

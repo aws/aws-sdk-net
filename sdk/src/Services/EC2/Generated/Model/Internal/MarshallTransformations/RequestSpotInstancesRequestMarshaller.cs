@@ -257,6 +257,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("LaunchSpecification" + "." + "Placement" + "." + "GroupName", StringUtils.FromString(publicRequest.LaunchSpecification.Placement.GroupName));
                         }
+                        if(publicRequest.LaunchSpecification.Placement.IsSetTenancy())
+                        {
+                            request.Parameters.Add("LaunchSpecification" + "." + "Placement" + "." + "Tenancy", StringUtils.FromString(publicRequest.LaunchSpecification.Placement.Tenancy));
+                        }
                     }
                     if(publicRequest.LaunchSpecification.IsSetRamdiskId())
                     {

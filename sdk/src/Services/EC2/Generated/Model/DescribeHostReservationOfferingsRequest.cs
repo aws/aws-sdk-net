@@ -61,8 +61,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>payment-option</code> - The payment option (<code>No Upfront</code> | <code>Partial
-        /// Upfront</code> | <code>All Upfront</code>).
+        ///  <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code>
+        /// | <code>AllUpfront</code>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

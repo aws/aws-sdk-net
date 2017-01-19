@@ -2443,7 +2443,13 @@ namespace Amazon.EC2
         /// To get a list of your Standard Reserved Instances, you can use the <a>DescribeReservedInstances</a>
         /// operation.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Only Standard Reserved Instances with a capacity reservation can be sold in the Reserved
+        /// Instance Marketplace. Convertible Reserved Instances and Standard Reserved Instances
+        /// with a regional benefit cannot be sold.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The Reserved Instance Marketplace matches sellers who want to resell Standard Reserved
         /// Instance capacity that they no longer need with buyers who want to purchase additional
@@ -3024,8 +3030,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You can specify the instance tenancy value for the VPC when you create it. You can't
-        /// change this value for the VPC after you create it. For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html.html">Dedicated
-        /// Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// change this value for the VPC after you create it. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
+        /// Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpc service method.</param>
@@ -3073,7 +3079,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// Currently, only endpoints to Amazon S3 are supported.
+        /// Use <a>DescribeVpcEndpointServices</a> to get a list of supported AWS services.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpcEndpoint service method.</param>
