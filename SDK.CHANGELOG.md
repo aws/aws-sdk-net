@@ -1,3 +1,7 @@
+### 3.3.41.0 (2017-01-19 19:23 UTC)
+* EC2 (3.3.5.0)
+	* Amazon EC2 Spot instances now support dedicated tenancy, providing the ability to run Spot instances single-tenant manner on physically isolated hardware within a VPC to satisfy security, privacy, or other compliance requirements. Dedicated Spot instances can be requested using RequestSpotInstances and RequestSpotFleet.
+
 ### 3.3.40.0 (2017-01-18 20:32 UTC)
 * RDS (3.3.5.0)
 	* We are releasing Mysql to Aurora replication feature, in rds-describe-db-instances output field, we will need to add a new field called ReadReplicaDBClusterIdentifiers.
