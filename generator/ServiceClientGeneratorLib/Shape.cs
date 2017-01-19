@@ -29,6 +29,19 @@ namespace ServiceClientGenerator
         public const string PatternKey = "pattern";
         public const string ErrorKey = "error";
         public const string ErrorCodeKey = "code";
+        
+        public static readonly HashSet<string> NullableTypes = new HashSet<string> {
+            "bool",
+            "boolean",
+            "decimal",
+            "double",
+            "DateTime",
+            "float",
+            "timestamp",
+            "int",
+            "integer",
+            "long",
+        };
 
         readonly string _name;
 
@@ -321,8 +334,7 @@ namespace ServiceClientGenerator
         {
             get
             {
-                var type = this.Type;
-                return type == "long" || type == "integer" || type == "float" || type == "double" || type == "DateTime" || type == "boolean" || type == "timestamp" || type == "int" || type == "bool";
+                return NullableTypes.Contains(this.Type);
             }
         }
 
@@ -599,43 +611,48 @@ namespace ServiceClientGenerator
         {
             get
             {
-                switch (this.Type)
-                {
-                    case "string":
-                    case "blob":
-                    case "boolean":
-                    case "double":
-                    case "integer":
-                    case "long":
-                    case "timestamp":
-                        return true;
-                    default:
-                        return false;
-                }
+                string name;
+                return TryGetPrimitiveType(out name);
             }
         }
 
         public string GetPrimitiveType()
         {
+            string type;
+            if (!TryGetPrimitiveType(out type))
+            {
+                throw new Exception("Shape is not a primitive type: " + this.Type);
+            }
+            return type;
+        }
+
+        public bool TryGetPrimitiveType(out string typeName)
+        {
+            bool ret = true;
             switch (this.Type)
             {
-                case "string":
-                    return "String";
                 case "blob":
-                    return "MemoryStream";
+                    typeName = "MemoryStream"; break;
                 case "boolean":
-                    return "Bool";
+                    typeName = "Bool"; break;
+                case "decimal":
+                    typeName = "Decimal"; break;
                 case "double":
-                    return "Double";
+                    typeName = "Double"; break;
                 case "integer":
-                    return "Int";
+                    typeName = "Int"; break;
                 case "long":
-                    return "Long";
+                    typeName = "Long"; break;
+                case "string":
+                    typeName = "String"; break;
                 case "timestamp":
-                    return "DateTime";
+                    typeName = "DateTime"; break;
                 default:
-                    throw new Exception("Shape is not a primitive type: " + this.Type);
+                    typeName = "";
+                    ret = false; break;
             }
+
+            return ret;
         }
 
         /// <summary>

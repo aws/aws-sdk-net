@@ -33,22 +33,22 @@ namespace Amazon.Budgets.Model
     /// </summary>
     public partial class Spend
     {
-        private Decimal _amount;
+        private decimal? _amount;
         private string _unit;
 
         /// <summary>
         /// Gets and sets the property Amount.
         /// </summary>
-        public Decimal Amount
+        public decimal Amount
         {
-            get { return this._amount; }
+            get { return this._amount.GetValueOrDefault(); }
             set { this._amount = value; }
         }
 
         // Check to see if Amount property is set
         internal bool IsSetAmount()
         {
-            return this._amount != null;
+            return this._amount.HasValue; 
         }
 
         /// <summary>

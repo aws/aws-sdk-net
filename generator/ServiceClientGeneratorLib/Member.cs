@@ -17,22 +17,12 @@ namespace ServiceClientGenerator
         public const string MemberKey = "member";
         public const string FlattenedKey = "flattened";
 
+        private const string UnhandledTypeDecimalErrorMessage = "Unhandled type 'decimal' : using .net's decimal type for modeled decimal type may result in loss of data.  decimal type members should explicitly opt-in via shape customization.";
+
         private readonly string _name;
         private string _newType;
         readonly string _defaultMarshallName;
 
-        readonly string[] _nullableTypes =
-        {
-            "long",
-            "integer",
-            "float",
-            "double",
-            "DateTime",
-            "boolean",
-            "timestamp",
-            "int",
-            "bool"
-        };
 
         public Member(ServiceModel model, Shape owningShape, string name, string defaultMarshallName, CustomizationsModel.PropertyInjector propertyInjector)
             : base(model, propertyInjector.Data)
@@ -442,6 +432,9 @@ namespace ServiceClientGenerator
                     var listType = DetermineType(memberShape["member"], true);
                     return string.Format("List<{0}>", listType);
 
+                case "decimal":
+                    throw new Exception(UnhandledTypeDecimalErrorMessage);
+
                 default:
                     throw new Exception("Unknown type " + typeNode.ToString());
             }
@@ -531,6 +524,9 @@ namespace ServiceClientGenerator
                     return string.Format("ListUnmarshaller<{0}, {1}>",
                         listType, listTypeUnmarshaller);
 
+                case "decimal":
+                    throw new Exception(UnhandledTypeDecimalErrorMessage);
+
                 default:
                     throw new Exception("Unknown type " + typeNode.ToString());
             }
@@ -619,6 +615,9 @@ namespace ServiceClientGenerator
                     else
                         return listTypeUnmarshallerInstantiate;
 
+                case "decimal":
+                    throw new Exception(UnhandledTypeDecimalErrorMessage);
+
                 default:
                     throw new Exception("Unknown type " + typeNode.ToString());
             }
@@ -671,7 +670,7 @@ namespace ServiceClientGenerator
                     }
                 }
                 return emittingShapeType != null
-                ? _nullableTypes.Contains(emittingShapeType, StringComparer.Ordinal) 
+                ? Shape.NullableTypes.Contains(emittingShapeType, StringComparer.Ordinal) 
                 : this.Shape.IsNullable;
             }
         }
