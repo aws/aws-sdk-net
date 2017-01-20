@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DomainValidation Object
+    /// Response Unmarshaller for RenewalSummary Object
     /// </summary>  
-    public class DomainValidationUnmarshaller : IUnmarshaller<DomainValidation, XmlUnmarshallerContext>, IUnmarshaller<DomainValidation, JsonUnmarshallerContext>
+    public class RenewalSummaryUnmarshaller : IUnmarshaller<RenewalSummary, XmlUnmarshallerContext>, IUnmarshaller<RenewalSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DomainValidation IUnmarshaller<DomainValidation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RenewalSummary IUnmarshaller<RenewalSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DomainValidation Unmarshall(JsonUnmarshallerContext context)
+        public RenewalSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DomainValidation unmarshalledObject = new DomainValidation();
+            RenewalSummary unmarshalledObject = new RenewalSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DomainName", targetDepth))
+                if (context.TestExpression("DomainValidationOptions", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<DomainValidation, DomainValidationUnmarshaller>(DomainValidationUnmarshaller.Instance);
+                    unmarshalledObject.DomainValidationOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ValidationDomain", targetDepth))
+                if (context.TestExpression("RenewalStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ValidationDomain = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ValidationEmails", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ValidationEmails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ValidationStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ValidationStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RenewalStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         }
 
 
-        private static DomainValidationUnmarshaller _instance = new DomainValidationUnmarshaller();        
+        private static RenewalSummaryUnmarshaller _instance = new RenewalSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DomainValidationUnmarshaller Instance
+        public static RenewalSummaryUnmarshaller Instance
         {
             get
             {

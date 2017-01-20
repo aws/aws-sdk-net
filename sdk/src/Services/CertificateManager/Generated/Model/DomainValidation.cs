@@ -28,19 +28,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// Structure that contains the domain name, the base validation domain to which validation
-    /// email is sent, and the email addresses used to validate the domain identity.
+    /// Contains information about the validation of each domain name in the certificate.
     /// </summary>
     public partial class DomainValidation
     {
         private string _domainName;
         private string _validationDomain;
         private List<string> _validationEmails = new List<string>();
+        private DomainStatus _validationStatus;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// Fully Qualified Domain Name (FQDN) of the form <code>www.example.com or </code> <code>example.com</code>.
+        /// A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code>
+        /// or <code>example.com</code>.
         /// </para>
         /// </summary>
         public string DomainName
@@ -58,8 +59,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property ValidationDomain. 
         /// <para>
-        /// The base validation domain that acts as the suffix of the email addresses that are
-        /// used to send the emails.
+        /// The domain name that ACM used to send domain validation emails.
         /// </para>
         /// </summary>
         public string ValidationDomain
@@ -77,7 +77,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property ValidationEmails. 
         /// <para>
-        /// A list of contact address for the domain registrant.
+        /// A list of email addresses that ACM used to send domain validation emails.
         /// </para>
         /// </summary>
         public List<string> ValidationEmails
@@ -90,6 +90,24 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetValidationEmails()
         {
             return this._validationEmails != null && this._validationEmails.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationStatus. 
+        /// <para>
+        /// The validation status of the domain name.
+        /// </para>
+        /// </summary>
+        public DomainStatus ValidationStatus
+        {
+            get { return this._validationStatus; }
+            set { this._validationStatus = value; }
+        }
+
+        // Check to see if ValidationStatus property is set
+        internal bool IsSetValidationStatus()
+        {
+            return this._validationStatus != null;
         }
 
     }

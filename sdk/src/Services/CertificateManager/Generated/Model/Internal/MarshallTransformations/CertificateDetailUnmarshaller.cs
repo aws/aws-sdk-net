@@ -136,6 +136,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.NotBefore = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RenewalSummary", targetDepth))
+                {
+                    var unmarshaller = RenewalSummaryUnmarshaller.Instance;
+                    unmarshalledObject.RenewalSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RevocationReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

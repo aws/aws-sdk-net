@@ -145,6 +145,60 @@ namespace Amazon.CertificateManager
 
 
     /// <summary>
+    /// Constants used for properties of type DomainStatus.
+    /// </summary>
+    public class DomainStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus FAILED = new DomainStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING_VALIDATION for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus PENDING_VALIDATION = new DomainStatus("PENDING_VALIDATION");
+        /// <summary>
+        /// Constant SUCCESS for DomainStatus
+        /// </summary>
+        public static readonly DomainStatus SUCCESS = new DomainStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DomainStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DomainStatus FindValue(string value)
+        {
+            return FindValue<DomainStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DomainStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FailureReason.
     /// </summary>
     public class FailureReason : ConstantClass
@@ -254,6 +308,64 @@ namespace Amazon.CertificateManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KeyAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RenewalStatus.
+    /// </summary>
+    public class RenewalStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for RenewalStatus
+        /// </summary>
+        public static readonly RenewalStatus FAILED = new RenewalStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING_AUTO_RENEWAL for RenewalStatus
+        /// </summary>
+        public static readonly RenewalStatus PENDING_AUTO_RENEWAL = new RenewalStatus("PENDING_AUTO_RENEWAL");
+        /// <summary>
+        /// Constant PENDING_VALIDATION for RenewalStatus
+        /// </summary>
+        public static readonly RenewalStatus PENDING_VALIDATION = new RenewalStatus("PENDING_VALIDATION");
+        /// <summary>
+        /// Constant SUCCESS for RenewalStatus
+        /// </summary>
+        public static readonly RenewalStatus SUCCESS = new RenewalStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RenewalStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RenewalStatus FindValue(string value)
+        {
+            return FindValue<RenewalStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RenewalStatus(string value)
         {
             return FindValue(value);
         }

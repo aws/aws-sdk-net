@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
-    /// Contains detailed metadata about an ACM Certificate. This structure is returned in
-    /// the response to a <a>DescribeCertificate</a> request.
+    /// Contains metadata about an ACM certificate. This structure is returned in the response
+    /// to a <a>DescribeCertificate</a> request.
     /// </summary>
     public partial class CertificateDetail
     {
@@ -45,6 +45,7 @@ namespace Amazon.CertificateManager.Model
         private KeyAlgorithm _keyAlgorithm;
         private DateTime? _notAfter;
         private DateTime? _notBefore;
+        private RenewalSummary _renewalSummary;
         private RevocationReason _revocationReason;
         private DateTime? _revokedAt;
         private string _serial;
@@ -114,8 +115,9 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property DomainValidationOptions. 
         /// <para>
-        /// Contains information about the email address or addresses used for domain validation.
-        /// This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
+        /// Contains information about the initial validation of each domain name that occurs
+        /// as a result of the <a>RequestCertificate</a> request. This field exists only when
+        /// the certificate type is <code>AMAZON_ISSUED</code>.
         /// </para>
         /// </summary>
         public List<DomainValidation> DomainValidationOptions
@@ -277,6 +279,26 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetNotBefore()
         {
             return this._notBefore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RenewalSummary. 
+        /// <para>
+        /// Contains information about the status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+        /// renewal</a> for the certificate. This field exists only when the certificate type
+        /// is <code>AMAZON_ISSUED</code>.
+        /// </para>
+        /// </summary>
+        public RenewalSummary RenewalSummary
+        {
+            get { return this._renewalSummary; }
+            set { this._renewalSummary = value; }
+        }
+
+        // Check to see if RenewalSummary property is set
+        internal bool IsSetRenewalSummary()
+        {
+            return this._renewalSummary != null;
         }
 
         /// <summary>

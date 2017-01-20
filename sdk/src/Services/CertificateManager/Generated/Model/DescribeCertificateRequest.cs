@@ -29,11 +29,7 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCertificate operation.
-    /// Returns a list of the fields contained in the specified ACM Certificate. For example,
-    /// this action returns the certificate status, a flag that indicates whether the certificate
-    /// is associated with any other AWS service, and the date at which the certificate request
-    /// was created. You specify the ACM Certificate on input by its Amazon Resource Name
-    /// (ARN).
+    /// Returns detailed metadata about the specified ACM Certificate.
     /// </summary>
     public partial class DescribeCertificateRequest : AmazonCertificateManagerRequest
     {
@@ -47,7 +43,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Instantiates DescribeCertificateRequest with the parameterized properties
         /// </summary>
-        /// <param name="certificateArn">String that contains an ACM Certificate ARN. The ARN must be of the form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
+        /// <param name="certificateArn">The Amazon Resource Name (ARN) of the ACM Certificate. The ARN must have the following form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         public DescribeCertificateRequest(string certificateArn)
         {
             _certificateArn = certificateArn;
@@ -56,7 +52,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// String that contains an ACM Certificate ARN. The ARN must be of the form:
+        /// The Amazon Resource Name (ARN) of the ACM Certificate. The ARN must have the following
+        /// form:
         /// </para>
         ///  
         /// <para>

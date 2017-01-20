@@ -77,7 +77,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The Fully Qualified Domain Name (FQDN) of the certificate that needs to be validated.
+        /// The fully qualified domain name (FQDN) of the certificate that needs to be validated.
         /// </para>
         /// </summary>
         public string Domain

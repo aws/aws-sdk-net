@@ -275,6 +275,7 @@ namespace Amazon.CertificateManager
         /// <exception cref="Amazon.CertificateManager.Model.TooManyTagsException">
         /// The request contains too many tags. Try the request again with fewer tags.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/AddTagsToCertificate">REST API Reference for AddTagsToCertificate Operation</seealso>
         public AddTagsToCertificateResponse AddTagsToCertificate(AddTagsToCertificateRequest request)
         {
             var marshaller = new AddTagsToCertificateRequestMarshaller();
@@ -294,6 +295,7 @@ namespace Amazon.CertificateManager
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddTagsToCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/AddTagsToCertificate">REST API Reference for AddTagsToCertificate Operation</seealso>
         public IAsyncResult BeginAddTagsToCertificate(AddTagsToCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new AddTagsToCertificateRequestMarshaller();
@@ -310,6 +312,7 @@ namespace Amazon.CertificateManager
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddTagsToCertificate.</param>
         /// 
         /// <returns>Returns a  AddTagsToCertificateResult from CertificateManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/AddTagsToCertificate">REST API Reference for AddTagsToCertificate Operation</seealso>
         public  AddTagsToCertificateResponse EndAddTagsToCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<AddTagsToCertificateResponse>(asyncResult);
@@ -346,6 +349,7 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account, or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public DeleteCertificateResponse DeleteCertificate(string certificateArn)
         {
             var request = new DeleteCertificateRequest();
@@ -381,6 +385,7 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account, or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public DeleteCertificateResponse DeleteCertificate(DeleteCertificateRequest request)
         {
             var marshaller = new DeleteCertificateRequestMarshaller();
@@ -400,6 +405,7 @@ namespace Amazon.CertificateManager
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public IAsyncResult BeginDeleteCertificate(DeleteCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DeleteCertificateRequestMarshaller();
@@ -416,6 +422,7 @@ namespace Amazon.CertificateManager
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCertificate.</param>
         /// 
         /// <returns>Returns a  DeleteCertificateResult from CertificateManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DeleteCertificate">REST API Reference for DeleteCertificate Operation</seealso>
         public  DeleteCertificateResponse EndDeleteCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCertificateResponse>(asyncResult);
@@ -426,13 +433,9 @@ namespace Amazon.CertificateManager
         #region  DescribeCertificate
 
         /// <summary>
-        /// Returns a list of the fields contained in the specified ACM Certificate. For example,
-        /// this action returns the certificate status, a flag that indicates whether the certificate
-        /// is associated with any other AWS service, and the date at which the certificate request
-        /// was created. You specify the ACM Certificate on input by its Amazon Resource Name
-        /// (ARN).
+        /// Returns detailed metadata about the specified ACM Certificate.
         /// </summary>
-        /// <param name="certificateArn">String that contains an ACM Certificate ARN. The ARN must be of the form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
+        /// <param name="certificateArn">The Amazon Resource Name (ARN) of the ACM Certificate. The ARN must have the following form:  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>  For more information about ARNs, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</param>
         /// 
         /// <returns>The response from the DescribeCertificate service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
@@ -442,6 +445,7 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account, or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         public DescribeCertificateResponse DescribeCertificate(string certificateArn)
         {
             var request = new DescribeCertificateRequest();
@@ -451,11 +455,7 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Returns a list of the fields contained in the specified ACM Certificate. For example,
-        /// this action returns the certificate status, a flag that indicates whether the certificate
-        /// is associated with any other AWS service, and the date at which the certificate request
-        /// was created. You specify the ACM Certificate on input by its Amazon Resource Name
-        /// (ARN).
+        /// Returns detailed metadata about the specified ACM Certificate.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCertificate service method.</param>
         /// 
@@ -467,6 +467,7 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account, or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         public DescribeCertificateResponse DescribeCertificate(DescribeCertificateRequest request)
         {
             var marshaller = new DescribeCertificateRequestMarshaller();
@@ -486,6 +487,7 @@ namespace Amazon.CertificateManager
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         public IAsyncResult BeginDescribeCertificate(DescribeCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new DescribeCertificateRequestMarshaller();
@@ -502,6 +504,7 @@ namespace Amazon.CertificateManager
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCertificate.</param>
         /// 
         /// <returns>Returns a  DescribeCertificateResult from CertificateManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/DescribeCertificate">REST API Reference for DescribeCertificate Operation</seealso>
         public  DescribeCertificateResponse EndDescribeCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCertificateResponse>(asyncResult);
@@ -539,6 +542,7 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account, or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">REST API Reference for GetCertificate Operation</seealso>
         public GetCertificateResponse GetCertificate(string certificateArn)
         {
             var request = new GetCertificateRequest();
@@ -575,6 +579,7 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account, or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">REST API Reference for GetCertificate Operation</seealso>
         public GetCertificateResponse GetCertificate(GetCertificateRequest request)
         {
             var marshaller = new GetCertificateRequestMarshaller();
@@ -594,6 +599,7 @@ namespace Amazon.CertificateManager
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">REST API Reference for GetCertificate Operation</seealso>
         public IAsyncResult BeginGetCertificate(GetCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new GetCertificateRequestMarshaller();
@@ -610,6 +616,7 @@ namespace Amazon.CertificateManager
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCertificate.</param>
         /// 
         /// <returns>Returns a  GetCertificateResult from CertificateManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">REST API Reference for GetCertificate Operation</seealso>
         public  GetCertificateResponse EndGetCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<GetCertificateResponse>(asyncResult);
@@ -671,6 +678,7 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account, or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
         public ImportCertificateResponse ImportCertificate(ImportCertificateRequest request)
         {
             var marshaller = new ImportCertificateRequestMarshaller();
@@ -690,6 +698,7 @@ namespace Amazon.CertificateManager
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
         public IAsyncResult BeginImportCertificate(ImportCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ImportCertificateRequestMarshaller();
@@ -706,6 +715,7 @@ namespace Amazon.CertificateManager
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportCertificate.</param>
         /// 
         /// <returns>Returns a  ImportCertificateResult from CertificateManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ImportCertificate">REST API Reference for ImportCertificate Operation</seealso>
         public  ImportCertificateResponse EndImportCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportCertificateResponse>(asyncResult);
@@ -721,6 +731,7 @@ namespace Amazon.CertificateManager
         /// </summary>
         /// 
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public ListCertificatesResponse ListCertificates()
         {
             return ListCertificates(new ListCertificatesRequest());
@@ -733,6 +744,7 @@ namespace Amazon.CertificateManager
         /// <param name="request">Container for the necessary parameters to execute the ListCertificates service method.</param>
         /// 
         /// <returns>The response from the ListCertificates service method, as returned by CertificateManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public ListCertificatesResponse ListCertificates(ListCertificatesRequest request)
         {
             var marshaller = new ListCertificatesRequestMarshaller();
@@ -752,6 +764,7 @@ namespace Amazon.CertificateManager
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCertificates
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public IAsyncResult BeginListCertificates(ListCertificatesRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListCertificatesRequestMarshaller();
@@ -768,6 +781,7 @@ namespace Amazon.CertificateManager
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCertificates.</param>
         /// 
         /// <returns>Returns a  ListCertificatesResult from CertificateManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates">REST API Reference for ListCertificates Operation</seealso>
         public  ListCertificatesResponse EndListCertificates(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCertificatesResponse>(asyncResult);
@@ -778,9 +792,10 @@ namespace Amazon.CertificateManager
         #region  ListTagsForCertificate
 
         /// <summary>
-        /// Lists the tags that have been applied to the ACM Certificate. Use the certificate
-        /// ARN to specify the certificate. To add a tag to an ACM Certificate, use the <a>AddTagsToCertificate</a>
-        /// action. To delete a tag, use the <a>RemoveTagsFromCertificate</a> action.
+        /// Lists the tags that have been applied to the ACM Certificate. Use the certificate's
+        /// Amazon Resource Name (ARN) to specify the certificate. To add a tag to an ACM Certificate,
+        /// use the <a>AddTagsToCertificate</a> action. To delete a tag, use the <a>RemoveTagsFromCertificate</a>
+        /// action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForCertificate service method.</param>
         /// 
@@ -792,6 +807,7 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account, or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">REST API Reference for ListTagsForCertificate Operation</seealso>
         public ListTagsForCertificateResponse ListTagsForCertificate(ListTagsForCertificateRequest request)
         {
             var marshaller = new ListTagsForCertificateRequestMarshaller();
@@ -811,6 +827,7 @@ namespace Amazon.CertificateManager
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">REST API Reference for ListTagsForCertificate Operation</seealso>
         public IAsyncResult BeginListTagsForCertificate(ListTagsForCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ListTagsForCertificateRequestMarshaller();
@@ -827,6 +844,7 @@ namespace Amazon.CertificateManager
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForCertificate.</param>
         /// 
         /// <returns>Returns a  ListTagsForCertificateResult from CertificateManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListTagsForCertificate">REST API Reference for ListTagsForCertificate Operation</seealso>
         public  ListTagsForCertificateResponse EndListTagsForCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForCertificateResponse>(asyncResult);
@@ -863,6 +881,7 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account, or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">REST API Reference for RemoveTagsFromCertificate Operation</seealso>
         public RemoveTagsFromCertificateResponse RemoveTagsFromCertificate(RemoveTagsFromCertificateRequest request)
         {
             var marshaller = new RemoveTagsFromCertificateRequestMarshaller();
@@ -882,6 +901,7 @@ namespace Amazon.CertificateManager
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveTagsFromCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">REST API Reference for RemoveTagsFromCertificate Operation</seealso>
         public IAsyncResult BeginRemoveTagsFromCertificate(RemoveTagsFromCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RemoveTagsFromCertificateRequestMarshaller();
@@ -898,6 +918,7 @@ namespace Amazon.CertificateManager
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveTagsFromCertificate.</param>
         /// 
         /// <returns>Returns a  RemoveTagsFromCertificateResult from CertificateManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RemoveTagsFromCertificate">REST API Reference for RemoveTagsFromCertificate Operation</seealso>
         public  RemoveTagsFromCertificateResponse EndRemoveTagsFromCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<RemoveTagsFromCertificateResponse>(asyncResult);
@@ -916,7 +937,7 @@ namespace Amazon.CertificateManager
         /// is issued. For more information, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS
         /// Certificate Manager User Guide</a>.
         /// </summary>
-        /// <param name="domainName">Fully qualified domain name (FQDN), such as www.example.com, of the site you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.</param>
+        /// <param name="domainName">Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.</param>
         /// 
         /// <returns>The response from the RequestCertificate service method, as returned by CertificateManager.</returns>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidDomainValidationOptionsException">
@@ -929,6 +950,7 @@ namespace Amazon.CertificateManager
         /// about ACM limits, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>
         /// topic.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">REST API Reference for RequestCertificate Operation</seealso>
         public RequestCertificateResponse RequestCertificate(string domainName)
         {
             var request = new RequestCertificateRequest();
@@ -959,6 +981,7 @@ namespace Amazon.CertificateManager
         /// about ACM limits, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>
         /// topic.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">REST API Reference for RequestCertificate Operation</seealso>
         public RequestCertificateResponse RequestCertificate(RequestCertificateRequest request)
         {
             var marshaller = new RequestCertificateRequestMarshaller();
@@ -978,6 +1001,7 @@ namespace Amazon.CertificateManager
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRequestCertificate
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">REST API Reference for RequestCertificate Operation</seealso>
         public IAsyncResult BeginRequestCertificate(RequestCertificateRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new RequestCertificateRequestMarshaller();
@@ -994,6 +1018,7 @@ namespace Amazon.CertificateManager
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRequestCertificate.</param>
         /// 
         /// <returns>Returns a  RequestCertificateResult from CertificateManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate">REST API Reference for RequestCertificate Operation</seealso>
         public  RequestCertificateResponse EndRequestCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<RequestCertificateResponse>(asyncResult);
@@ -1032,6 +1057,7 @@ namespace Amazon.CertificateManager
         /// The specified certificate cannot be found in the caller's account, or the caller's
         /// account cannot be found.
         /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail">REST API Reference for ResendValidationEmail Operation</seealso>
         public ResendValidationEmailResponse ResendValidationEmail(ResendValidationEmailRequest request)
         {
             var marshaller = new ResendValidationEmailRequestMarshaller();
@@ -1051,6 +1077,7 @@ namespace Amazon.CertificateManager
         /// 
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResendValidationEmail
         ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail">REST API Reference for ResendValidationEmail Operation</seealso>
         public IAsyncResult BeginResendValidationEmail(ResendValidationEmailRequest request, AsyncCallback callback, object state)
         {
             var marshaller = new ResendValidationEmailRequestMarshaller();
@@ -1067,6 +1094,7 @@ namespace Amazon.CertificateManager
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResendValidationEmail.</param>
         /// 
         /// <returns>Returns a  ResendValidationEmailResult from CertificateManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ResendValidationEmail">REST API Reference for ResendValidationEmail Operation</seealso>
         public  ResendValidationEmailResponse EndResendValidationEmail(IAsyncResult asyncResult)
         {
             return EndInvoke<ResendValidationEmailResponse>(asyncResult);
