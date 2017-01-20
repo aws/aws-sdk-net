@@ -1,3 +1,12 @@
+### 3.3.42.0 (2017-01-20 18:18 UTC)
+* AWSHealth (3.3.0.5)
+	* Update for AWS Health: Pick up updated documentation
+* CertificateManager (3.3.2.0)
+	* Update for AWS Certificate Manager: Updated response elements for DescribeCertificate API in support of managed renewal
+* Core 3.3.8.0
+	* fixed uap packages incorrectly referencing binaries in the pcl directories instead of windows8
+	* all services packages updated to require new core
+
 ### 3.3.41.0 (2017-01-19 19:23 UTC)
 * EC2 (3.3.5.0)
 	* Amazon EC2 Spot instances now support dedicated tenancy, providing the ability to run Spot instances single-tenant manner on physically isolated hardware within a VPC to satisfy security, privacy, or other compliance requirements. Dedicated Spot instances can be requested using RequestSpotInstances and RequestSpotFleet.
