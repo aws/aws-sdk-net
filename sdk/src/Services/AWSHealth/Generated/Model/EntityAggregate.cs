@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// 
+    /// The number of entities that are affected by one or more events. Returned by the <a>DescribeEntityAggregates</a>
+    /// operation.
     /// </summary>
     public partial class EntityAggregate
     {
@@ -38,7 +39,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// 
+        /// The number entities that match the criteria for the specified events.
         /// </para>
         /// </summary>
         public int Count
@@ -56,8 +57,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventArn. 
         /// <para>
-        /// The unique identifier for the event. Format: <code>arn:aws:silvermine:<i>event-region</i>::event/<i>EVENT_ID</i>
-        /// </code>. Example: <code>arn:aws:silvermine:us-east-1::event/EC2_MAINTENANCE_5331</code>
+        /// The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i>
+        /// </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
         /// 
         /// </para>
         /// </summary>

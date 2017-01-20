@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// 
+    /// Error information returned when a <a>DescribeEventDetails</a> operation cannot find
+    /// a specified event.
     /// </summary>
     public partial class EventDetailsErrorItem
     {
@@ -39,7 +40,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// 
+        /// A message that describes the error.
         /// </para>
         /// </summary>
         public string ErrorMessage
@@ -57,7 +58,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property ErrorName. 
         /// <para>
-        /// 
+        /// The name of the error.
         /// </para>
         /// </summary>
         public string ErrorName
@@ -75,8 +76,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventArn. 
         /// <para>
-        /// The unique identifier for the event. Format: <code>arn:aws:silvermine:<i>event-region</i>::event/<i>EVENT_ID</i>
-        /// </code>. Example: <code>arn:aws:silvermine:us-east-1::event/EC2_MAINTENANCE_5331</code>
+        /// The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i>
+        /// </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
         /// 
         /// </para>
         /// </summary>

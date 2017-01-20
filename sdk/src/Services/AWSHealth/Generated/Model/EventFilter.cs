@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// Event filter record.
+    /// The values to use to filter results from the <a>DescribeEvents</a> and <a>DescribeEventAggregates</a>
+    /// operations.
     /// </summary>
     public partial class EventFilter
     {
@@ -49,7 +50,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// 
+        /// A list of AWS availability zones.
         /// </para>
         /// </summary>
         public List<string> AvailabilityZones
@@ -67,7 +68,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EndTimes. 
         /// <para>
-        /// 
+        /// A list of dates and times that the event ended.
         /// </para>
         /// </summary>
         public List<DateTimeRange> EndTimes
@@ -85,7 +86,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EntityArns. 
         /// <para>
-        /// 
+        /// A list of entity ARNs (unique identifiers).
         /// </para>
         /// </summary>
         public List<string> EntityArns
@@ -103,7 +104,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EntityValues. 
         /// <para>
-        /// 
+        /// A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or
+        /// EBS volumes (<code>vol-426ab23e</code>).
         /// </para>
         /// </summary>
         public List<string> EntityValues
@@ -121,8 +123,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventArns. 
         /// <para>
-        /// A list of event ARNs (unique identifiers). For example: <code>arn:aws:silvermine:<i>region</i>:<i>service</i>:event/<i>123453434</i>
-        /// </code>.)
+        /// A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331",
+        /// "arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz"</code> 
         /// </para>
         /// </summary>
         public List<string> EventArns
@@ -140,7 +142,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventStatusCodes. 
         /// <para>
-        /// 
+        /// A list of event status codes.
         /// </para>
         /// </summary>
         public List<string> EventStatusCodes
@@ -158,7 +160,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventTypeCategories. 
         /// <para>
-        /// 
+        /// A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>,
+        /// or <code>accountNotification</code>).
         /// </para>
         /// </summary>
         public List<string> EventTypeCategories
@@ -176,6 +179,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventTypeCodes. 
         /// <para>
+        /// A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED"</code>
         /// 
         /// </para>
         /// </summary>
@@ -194,7 +198,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTimes. 
         /// <para>
-        /// 
+        /// A list of dates and times that the event was last updated.
         /// </para>
         /// </summary>
         public List<DateTimeRange> LastUpdatedTimes
@@ -212,7 +216,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// 
+        /// A list of AWS regions.
         /// </para>
         /// </summary>
         public List<string> Regions
@@ -230,7 +234,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Services. 
         /// <para>
-        /// 
+        /// The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
         /// </para>
         /// </summary>
         public List<string> Services
@@ -248,7 +252,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property StartTimes. 
         /// <para>
-        /// 
+        /// A list of dates and times that the event began.
         /// </para>
         /// </summary>
         public List<DateTimeRange> StartTimes

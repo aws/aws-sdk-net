@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// 
+    /// The number of events of each issue type. Returned by the <a>DescribeEventAggregates</a>
+    /// operation.
     /// </summary>
     public partial class EventAggregate
     {
@@ -38,7 +39,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property AggregateValue. 
         /// <para>
-        /// 
+        /// The issue type for the associated count.
         /// </para>
         /// </summary>
         public string AggregateValue
@@ -56,7 +57,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// 
+        /// The number of events of the associated issue type.
         /// </para>
         /// </summary>
         public int Count

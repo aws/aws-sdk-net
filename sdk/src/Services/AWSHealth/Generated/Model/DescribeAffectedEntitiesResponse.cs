@@ -38,7 +38,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Entities. 
         /// <para>
-        /// 
+        /// The entities that match the filter criteria.
         /// </para>
         /// </summary>
         public List<AffectedEntity> Entities

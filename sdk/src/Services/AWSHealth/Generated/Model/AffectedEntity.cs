@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// Affected Entity Information.
+    /// Information about an entity that is affected by a Health event.
     /// </summary>
     public partial class AffectedEntity
     {
@@ -43,7 +43,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// 
+        /// The 12-digit AWS account number that contains the affected entity.
         /// </para>
         /// </summary>
         public string AwsAccountId
@@ -61,6 +61,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EntityArn. 
         /// <para>
+        /// The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i>
+        /// </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code>
         /// 
         /// </para>
         /// </summary>
@@ -79,7 +81,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EntityValue. 
         /// <para>
-        /// 
+        /// The ID of the affected entity.
         /// </para>
         /// </summary>
         public string EntityValue
@@ -97,8 +99,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventArn. 
         /// <para>
-        /// The unique identifier for the event. Format: <code>arn:aws:silvermine:<i>event-region</i>::event/<i>EVENT_ID</i>
-        /// </code>. Example: <code>arn:aws:silvermine:us-east-1::event/EC2_MAINTENANCE_5331</code>
+        /// The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i>
+        /// </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
         /// 
         /// </para>
         /// </summary>
@@ -117,7 +119,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// 
+        /// The most recent time that the entity was updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -135,8 +137,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// The most recent status of this entity with respect to the given event. Valid return
-        /// values: IMPAIRED, UNIMPAIRED, UNKNOWN
+        /// The most recent status of the entity affected by the event. The possible values are
+        /// <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.
         /// </para>
         /// </summary>
         public EntityStatusCode StatusCode

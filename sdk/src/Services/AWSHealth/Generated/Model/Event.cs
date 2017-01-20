@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// Event record.
+    /// Summary information about an event, returned by the <a>DescribeEvents</a> operation.
+    /// The <a>DescribeEventDetails</a> operation also returns this information, as well as
+    /// the <a>EventDescription</a> and additional event metadata.
     /// </summary>
     public partial class Event
     {
@@ -46,8 +48,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The unique identifier for the event. Format: <code>arn:aws:silvermine:<i>event-region</i>::event/<i>EVENT_ID</i>
-        /// </code>. Example: <code>arn:aws:silvermine:us-east-1::event/EC2_MAINTENANCE_5331</code>
+        /// The unique identifier for the event. Format: <code>arn:aws:health:<i>event-region</i>::event/<i>EVENT_TYPE_PLUS_ID</i>
+        /// </code>. Example: <code>arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331</code>
         /// 
         /// </para>
         /// </summary>
@@ -66,8 +68,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The AWS availability zone of the event. External AWS availability zone names are the
-        /// only valid values we expect here E.g., us-east-1a.
+        /// The AWS Availability Zone of the event. For example, us-east-1a.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -85,7 +86,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// 
+        /// The date and time that the event ended.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -103,7 +104,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventTypeCategory. 
         /// <para>
-        /// 
+        /// The 
         /// </para>
         /// </summary>
         public EventTypeCategory EventTypeCategory
@@ -121,8 +122,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventTypeCode. 
         /// <para>
-        /// On-boarded event type code ex. AWS_EC2_SYSTEM_MAINTENANCE_EVENT. This uniquely identifies
-        /// an event type. We will be following the convention: "AWS_{service}_*".
+        /// The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>
+        /// </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.
         /// </para>
         /// </summary>
         public string EventTypeCode
@@ -140,7 +141,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// 
+        /// The most recent date and time that the event was updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -158,9 +159,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS region of the event. Internal AWS region names are the only valid values we
-        /// expect here E.g., IAD. External regions will raise validation error. You can find
-        /// a list of valid regions here: https://w.amazon.com/index.php/AWS/Regions
+        /// The AWS region name of the event.
         /// </para>
         /// </summary>
         public string Region
@@ -178,8 +177,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// Service that is affected by the event. E.g., EC2,RDS, max length 30 characters and
-        /// min length 2 characters.
+        /// The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.
         /// </para>
         /// </summary>
         public string Service
@@ -197,7 +195,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// 
+        /// The date and time that the event began.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -215,7 +213,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// 
+        /// The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>,
+        /// and <code>upcoming</code>.
         /// </para>
         /// </summary>
         public EventStatusCode StatusCode

@@ -29,12 +29,17 @@ namespace Amazon.AWSHealth.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEvents operation.
-    /// Gets a list of events, based on the specified filter criteria. Events are returned
-    /// in a summary form and do not include attached resources (if they exist) nor publicly
-    /// exposed metadata included by the service-team that posted the event. Filters allow
-    /// for a single event to be retrieved, or multiple events matching the provided criteria.
+    /// Returns information about events that meet the specified filter criteria. Events are
+    /// returned in a summary form and do not include the detailed description, any additional
+    /// metadata that depends on the event type, or any affected resources. To retrieve that
+    /// information, use the <a>DescribeEventDetails</a> and <a>DescribeAffectedEntities</a>
+    /// operations.
+    /// 
+    ///  
+    /// <para>
     /// If no filter criteria are specified, all events are returned. Results are sorted by
-    /// <code>lastModifiedTime</code>, starting with the the most recent.
+    /// <code>lastModifiedTime</code>, starting with the most recent.
+    /// </para>
     /// </summary>
     public partial class DescribeEventsRequest : AmazonAWSHealthRequest
     {
@@ -46,7 +51,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// 
+        /// Values to narrow the results returned.
         /// </para>
         /// </summary>
         public EventFilter Filter
@@ -64,7 +69,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// The locale (language) to return information in.
+        /// The locale (language) to return information in. English (en) is the default and the
+        /// only supported value at this time.
         /// </para>
         /// </summary>
         public string Locale
@@ -82,7 +88,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items to return in one batch.
+        /// The maximum number of items to return in one batch, between 10 and 100, inclusive.
         /// </para>
         /// </summary>
         public int MaxResults

@@ -28,7 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// 
+    /// Detailed information about an event. A combination of an <a>Event</a> object, an <a>EventDescription</a>
+    /// object, and additional metadata about the event. Returned by the <a>DescribeEventDetails</a>
+    /// operation.
     /// </summary>
     public partial class EventDetails
     {
@@ -39,7 +41,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Event. 
         /// <para>
-        /// 
+        /// Summary information about the event.
         /// </para>
         /// </summary>
         public Event Event
@@ -57,7 +59,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventDescription. 
         /// <para>
-        /// 
+        /// The most recent description of the event.
         /// </para>
         /// </summary>
         public EventDescription EventDescription
@@ -75,7 +77,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventMetadata. 
         /// <para>
-        /// 
+        /// Additional metadata about the event.
         /// </para>
         /// </summary>
         public Dictionary<string, string> EventMetadata

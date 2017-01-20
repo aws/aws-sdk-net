@@ -38,7 +38,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventAggregates. 
         /// <para>
-        /// 
+        /// The number of events in each category that meet the optional filter criteria.
         /// </para>
         /// </summary>
         public List<EventAggregate> EventAggregates

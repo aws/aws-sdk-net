@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// Entity filter record.
+    /// The values to use to filter results from the <a>DescribeAffectedEntities</a> operation.
     /// </summary>
     public partial class EntityFilter
     {
@@ -42,7 +42,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EntityArns. 
         /// <para>
-        /// 
+        /// A list of entity ARNs (unique identifiers).
         /// </para>
         /// </summary>
         public List<string> EntityArns
@@ -60,7 +60,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EntityValues. 
         /// <para>
-        /// 
+        /// A list of IDs for affected entities.
         /// </para>
         /// </summary>
         public List<string> EntityValues
@@ -78,8 +78,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventArns. 
         /// <para>
-        /// A list of event ARNs (unique identifiers). For example: <code>arn:aws:silvermine:<i>region</i>:<i>service</i>:event/<i>123453434</i>
-        /// </code>.)
+        /// A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331",
+        /// "arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz"</code> 
         /// </para>
         /// </summary>
         public List<string> EventArns
@@ -97,7 +97,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTimes. 
         /// <para>
-        /// 
+        /// A list of the most recent dates and times that the entity was updated.
         /// </para>
         /// </summary>
         public List<DateTimeRange> LastUpdatedTimes
@@ -115,7 +115,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property StatusCodes. 
         /// <para>
-        /// 
+        /// A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or
+        /// <code>UNKNOWN</code>).
         /// </para>
         /// </summary>
         public List<string> StatusCodes

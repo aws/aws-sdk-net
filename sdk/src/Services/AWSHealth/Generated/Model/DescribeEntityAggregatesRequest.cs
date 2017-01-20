@@ -29,7 +29,8 @@ namespace Amazon.AWSHealth.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEntityAggregates operation.
-    /// 
+    /// Returns the number of entities that are affected by each of the specified events.
+    /// If no events are specified, the counts of all affected entities are returned.
     /// </summary>
     public partial class DescribeEntityAggregatesRequest : AmazonAWSHealthRequest
     {
@@ -38,8 +39,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventArns. 
         /// <para>
-        /// A list of event ARNs (unique identifiers). For example: <code>arn:aws:silvermine:<i>region</i>:<i>service</i>:event/<i>123453434</i>
-        /// </code>.)
+        /// A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/AWS_EC2_MAINTENANCE_5331",
+        /// "arn:aws:health:us-west-1::event/AWS_EBS_LOST_VOLUME_xyz"</code> 
         /// </para>
         /// </summary>
         public List<string> EventArns

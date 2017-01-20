@@ -123,10 +123,6 @@
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AWSHealth.Model.EventDescription.LatestDescription</property>
-    <max>1024</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.AWSHealth.Model.EventDetailsErrorItem.EventArn</property>
     <max>1600</max>
     <pattern>arn:aws:health:[^:]*:[^:]*:event/[\w-]+</pattern>

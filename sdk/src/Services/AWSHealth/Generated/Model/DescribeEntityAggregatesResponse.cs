@@ -37,7 +37,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EntityAggregates. 
         /// <para>
-        /// 
+        /// The number of entities that are affected by each of the specified events.
         /// </para>
         /// </summary>
         public List<EntityAggregate> EntityAggregates

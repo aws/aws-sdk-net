@@ -29,9 +29,8 @@ namespace Amazon.AWSHealth.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEventTypes operation.
-    /// Gets a list of the event types that can be reported by Silvermine, based on the specified
-    /// filter criteria. If no filter criteria are specified, all event types are returned,
-    /// in no particular order.
+    /// Returns the event types that meet the specified filter criteria. If no filter criteria
+    /// are specified, all event types are returned, in no particular order.
     /// </summary>
     public partial class DescribeEventTypesRequest : AmazonAWSHealthRequest
     {
@@ -43,7 +42,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// 
+        /// Values to narrow the results returned.
         /// </para>
         /// </summary>
         public EventTypeFilter Filter
@@ -61,7 +60,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// The locale (language) to return information in.
+        /// The locale (language) to return information in. English (en) is the default and the
+        /// only supported value at this time.
         /// </para>
         /// </summary>
         public string Locale
@@ -79,7 +79,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items to return in one batch.
+        /// The maximum number of items to return in one batch, between 10 and 100, inclusive.
         /// </para>
         /// </summary>
         public int MaxResults

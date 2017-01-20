@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// Event Type filter record.
+    /// The values to use to filter results from the <a>DescribeEventTypes</a> operation.
     /// </summary>
     public partial class EventTypeFilter
     {
@@ -39,7 +39,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventTypeCategories. 
         /// <para>
-        /// 
+        /// A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>,
+        /// or <code>accountNotification</code>).
         /// </para>
         /// </summary>
         public List<string> EventTypeCategories
@@ -57,7 +58,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventTypeCodes. 
         /// <para>
-        /// 
+        /// A list of event type codes.
         /// </para>
         /// </summary>
         public List<string> EventTypeCodes
@@ -75,7 +76,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Services. 
         /// <para>
-        /// 
+        /// The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.
         /// </para>
         /// </summary>
         public List<string> Services

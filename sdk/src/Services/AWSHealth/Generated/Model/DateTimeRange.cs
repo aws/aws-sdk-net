@@ -28,11 +28,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// The date and time range for the timestamp field. If "from" is set and "to" is set:
-    /// match records where the timestmp between "from" and "to" inclusive. If "from" is set
-    /// and "to" is not set: match records which the timestamp value after is equal or after
-    /// "from". If "from" is not set and "to" is set: match records where the timestamp value
-    /// is equal or before "to".
+    /// A range of dates and times that is used by the <a>EventFilter</a> and <a>EntityFilter</a>
+    /// objects. If <code>from</code> is set and <code>to</code> is set: match items where
+    /// the timestamp (<code>startTime</code>, <code>endTime</code>, or <code>lastUpdatedTime</code>)
+    /// is between <code>from</code> and <code>to</code> inclusive. If <code>from</code> is
+    /// set and <code>to</code> is not set: match items where the timestamp value is equal
+    /// to or after <code>from</code>. If <code>from</code> is not set and <code>to</code>
+    /// is set: match items where the timestamp value is equal to or before <code>to</code>.
     /// </summary>
     public partial class DateTimeRange
     {
@@ -42,7 +44,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property From. 
         /// <para>
-        /// 
+        /// The starting date and time of a time range.
         /// </para>
         /// </summary>
         public DateTime From
@@ -60,7 +62,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property To. 
         /// <para>
-        /// 
+        /// The ending date and time of a time range.
         /// </para>
         /// </summary>
         public DateTime To

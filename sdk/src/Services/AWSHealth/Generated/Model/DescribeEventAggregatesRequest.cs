@@ -29,7 +29,9 @@ namespace Amazon.AWSHealth.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEventAggregates operation.
-    /// 
+    /// Returns the number of events of each event type (issue, scheduled change, and account
+    /// notification). If no filter is specified, the counts of all events in each category
+    /// are returned.
     /// </summary>
     public partial class DescribeEventAggregatesRequest : AmazonAWSHealthRequest
     {
@@ -41,7 +43,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property AggregateField. 
         /// <para>
-        /// 
+        /// The only currently supported value is <code>eventTypeCategory</code>.
         /// </para>
         /// </summary>
         public EventAggregateField AggregateField
@@ -59,7 +61,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// 
+        /// Values to narrow the results returned.
         /// </para>
         /// </summary>
         public EventFilter Filter
@@ -77,7 +79,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items to return in one batch.
+        /// The maximum number of items to return in one batch, between 10 and 100, inclusive.
         /// </para>
         /// </summary>
         public int MaxResults

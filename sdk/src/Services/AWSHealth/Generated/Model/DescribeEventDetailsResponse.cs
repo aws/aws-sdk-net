@@ -38,7 +38,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property FailedSet. 
         /// <para>
-        /// 
+        /// Error messages for any events that could not be retrieved.
         /// </para>
         /// </summary>
         public List<EventDetailsErrorItem> FailedSet
@@ -56,7 +56,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property SuccessfulSet. 
         /// <para>
-        /// 
+        /// Information about the events that could be retrieved.
         /// </para>
         /// </summary>
         public List<EventDetails> SuccessfulSet

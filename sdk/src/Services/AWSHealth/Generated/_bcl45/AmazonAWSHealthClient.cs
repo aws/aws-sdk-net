@@ -38,8 +38,72 @@ namespace Amazon.AWSHealth
     ///
     /// AWS Health 
     /// <para>
-    /// Welcome to the AWS Health API documentation.
+    /// The AWS Health API provides programmatic access to the AWS Health information that
+    /// is presented in the <a href="https://phd.aws.amazon.com/phd/home#/">AWS Personal Health
+    /// Dashboard</a>. You can get information about events that affect your AWS resources:
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeEvents</a>: Summary information about events.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeEventDetails</a>: Detailed information about one or more events.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeAffectedEntities</a>: Information about AWS resources that are affected
+    /// by one or more events.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// In addition, these operations provide information about event types and summary counts
+    /// of events or affected entities:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeEventTypes</a>: Information about the kinds of events that AWS Health
+    /// tracks.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeEventAggregates</a>: A count of the number of events that meet specified
+    /// criteria.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeEntityAggregates</a>: A count of the number of affected entities that
+    /// meet specified criteria.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The Health API requires a Business or Enterprise support plan from <a href="http://aws.amazon.com/premiumsupport/">AWS
+    /// Support</a>. Calling the Health API from an account that does not have a Business
+    /// or Enterprise support plan causes a <code>SubscriptionRequiredException</code>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For authentication of requests, AWS Health uses the <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4 Signing Process</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// See the <a href="http://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html">AWS
+    /// Health User Guide</a> for information about how to use the API.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Service Endpoint</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The HTTP endpoint for the AWS Health API is:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// https://health.us-east-1.amazonaws.com 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AmazonAWSHealthClient : AmazonServiceClient, IAmazonAWSHealth
     {
@@ -232,22 +296,26 @@ namespace Amazon.AWSHealth
 
 
         /// <summary>
-        /// Gets a list of entities that have been attached to events, based on the specified
-        /// filter criteria. Entities can refer to individual customer resources, groups of customer
-        /// resources, or any other construct, depending on the AWS service. Events that have
-        /// impact beyond that of the attached entities, or where the extent of impact is unknown,
-        /// include at least one entity indicating this. If no filter criteria are specified,
-        /// all entities are returned. Results are sorted by the <code>lastUpdatedTime</code>
+        /// Returns a list of entities that have been affected by the specified events, based
+        /// on the specified filter criteria. Entities can refer to individual customer resources,
+        /// groups of customer resources, or any other construct, depending on the AWS service.
+        /// Events that have impact beyond that of the affected entities, or where the extent
+        /// of impact is unknown, include at least one entity indicating this.
+        /// 
+        ///  
+        /// <para>
+        /// At least one event ARN is required. Results are sorted by the <code>lastUpdatedTime</code>
         /// of the entity, starting with the most recent.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAffectedEntities service method.</param>
         /// 
         /// <returns>The response from the DescribeAffectedEntities service method, as returned by AWSHealth.</returns>
         /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
-        /// 
+        /// The specified pagination token (<code>nextToken</code>) is not valid.
         /// </exception>
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
-        /// 
+        /// The specified locale is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeAffectedEntities">REST API Reference for DescribeAffectedEntities Operation</seealso>
         public DescribeAffectedEntitiesResponse DescribeAffectedEntities(DescribeAffectedEntitiesRequest request)
@@ -283,7 +351,8 @@ namespace Amazon.AWSHealth
 
 
         /// <summary>
-        /// 
+        /// Returns the number of entities that are affected by each of the specified events.
+        /// If no events are specified, the counts of all affected entities are returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEntityAggregates service method.</param>
         /// 
@@ -322,13 +391,15 @@ namespace Amazon.AWSHealth
 
 
         /// <summary>
-        /// 
+        /// Returns the number of events of each event type (issue, scheduled change, and account
+        /// notification). If no filter is specified, the counts of all events in each category
+        /// are returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventAggregates service method.</param>
         /// 
         /// <returns>The response from the DescribeEventAggregates service method, as returned by AWSHealth.</returns>
         /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
-        /// 
+        /// The specified pagination token (<code>nextToken</code>) is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventAggregates">REST API Reference for DescribeEventAggregates Operation</seealso>
         public DescribeEventAggregatesResponse DescribeEventAggregates(DescribeEventAggregatesRequest request)
@@ -364,15 +435,22 @@ namespace Amazon.AWSHealth
 
 
         /// <summary>
-        /// Gets detailed event information (excluding AffectedEntities) of an event that is affecting/has
-        /// affected the caller. This will include a detailed description pertaining to the event,
-        /// as well as any public metadata provided by the service-team that created the event.
+        /// Returns detailed information about one or more specified events. Information includes
+        /// standard event data (region, service, etc., as returned by <a>DescribeEvents</a>),
+        /// a detailed event description, and possible additional metadata that depends upon the
+        /// nature of the event. Affected entities are not included; to retrieve those, use the
+        /// <a>DescribeAffectedEntities</a> operation.
+        /// 
+        ///  
+        /// <para>
+        /// If a specified event cannot be retrieved, an error message is returned for that event.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventDetails service method.</param>
         /// 
         /// <returns>The response from the DescribeEventDetails service method, as returned by AWSHealth.</returns>
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
-        /// 
+        /// The specified locale is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventDetails">REST API Reference for DescribeEventDetails Operation</seealso>
         public DescribeEventDetailsResponse DescribeEventDetails(DescribeEventDetailsRequest request)
@@ -408,21 +486,26 @@ namespace Amazon.AWSHealth
 
 
         /// <summary>
-        /// Gets a list of events, based on the specified filter criteria. Events are returned
-        /// in a summary form and do not include attached resources (if they exist) nor publicly
-        /// exposed metadata included by the service-team that posted the event. Filters allow
-        /// for a single event to be retrieved, or multiple events matching the provided criteria.
+        /// Returns information about events that meet the specified filter criteria. Events are
+        /// returned in a summary form and do not include the detailed description, any additional
+        /// metadata that depends on the event type, or any affected resources. To retrieve that
+        /// information, use the <a>DescribeEventDetails</a> and <a>DescribeAffectedEntities</a>
+        /// operations.
+        /// 
+        ///  
+        /// <para>
         /// If no filter criteria are specified, all events are returned. Results are sorted by
-        /// <code>lastModifiedTime</code>, starting with the the most recent.
+        /// <code>lastModifiedTime</code>, starting with the most recent.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
         /// 
         /// <returns>The response from the DescribeEvents service method, as returned by AWSHealth.</returns>
         /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
-        /// 
+        /// The specified pagination token (<code>nextToken</code>) is not valid.
         /// </exception>
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
-        /// 
+        /// The specified locale is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         public DescribeEventsResponse DescribeEvents(DescribeEventsRequest request)
@@ -458,18 +541,17 @@ namespace Amazon.AWSHealth
 
 
         /// <summary>
-        /// Gets a list of the event types that can be reported by Silvermine, based on the specified
-        /// filter criteria. If no filter criteria are specified, all event types are returned,
-        /// in no particular order.
+        /// Returns the event types that meet the specified filter criteria. If no filter criteria
+        /// are specified, all event types are returned, in no particular order.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventTypes service method.</param>
         /// 
         /// <returns>The response from the DescribeEventTypes service method, as returned by AWSHealth.</returns>
         /// <exception cref="Amazon.AWSHealth.Model.InvalidPaginationTokenException">
-        /// 
+        /// The specified pagination token (<code>nextToken</code>) is not valid.
         /// </exception>
         /// <exception cref="Amazon.AWSHealth.Model.UnsupportedLocaleException">
-        /// 
+        /// The specified locale is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/DescribeEventTypes">REST API Reference for DescribeEventTypes Operation</seealso>
         public DescribeEventTypesResponse DescribeEventTypes(DescribeEventTypesRequest request)

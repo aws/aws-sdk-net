@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// 
+    /// The detailed description of the event. Included in the information returned by the
+    /// <a>DescribeEventDetails</a> operation.
     /// </summary>
     public partial class EventDescription
     {
@@ -37,7 +38,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property LatestDescription. 
         /// <para>
-        /// 
+        /// The most recent description of the event.
         /// </para>
         /// </summary>
         public string LatestDescription

@@ -38,8 +38,72 @@ namespace Amazon.AWSHealth
     ///
     /// AWS Health 
     /// <para>
-    /// Welcome to the AWS Health API documentation.
+    /// The AWS Health API provides programmatic access to the AWS Health information that
+    /// is presented in the <a href="https://phd.aws.amazon.com/phd/home#/">AWS Personal Health
+    /// Dashboard</a>. You can get information about events that affect your AWS resources:
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeEvents</a>: Summary information about events.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeEventDetails</a>: Detailed information about one or more events.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeAffectedEntities</a>: Information about AWS resources that are affected
+    /// by one or more events.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// In addition, these operations provide information about event types and summary counts
+    /// of events or affected entities:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DescribeEventTypes</a>: Information about the kinds of events that AWS Health
+    /// tracks.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeEventAggregates</a>: A count of the number of events that meet specified
+    /// criteria.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeEntityAggregates</a>: A count of the number of affected entities that
+    /// meet specified criteria.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The Health API requires a Business or Enterprise support plan from <a href="http://aws.amazon.com/premiumsupport/">AWS
+    /// Support</a>. Calling the Health API from an account that does not have a Business
+    /// or Enterprise support plan causes a <code>SubscriptionRequiredException</code>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For authentication of requests, AWS Health uses the <a href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// Version 4 Signing Process</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// See the <a href="http://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html">AWS
+    /// Health User Guide</a> for information about how to use the API.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Service Endpoint</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The HTTP endpoint for the AWS Health API is:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// https://health.us-east-1.amazonaws.com 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AmazonAWSHealthClient : AmazonServiceClient, IAmazonAWSHealth
     {

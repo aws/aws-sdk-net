@@ -28,8 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// On-boarded event type code ex. AWS_EC2_SYSTEM_MAINTENANCE_EVENT. This uniquely identifies
-    /// an event type. We will be following the convention: "AWS_{service}_*".
+    /// Metadata about a type of event that is reported by AWS Health. Data consists of the
+    /// category (for example, <code>issue</code>), the service (for example, <code>EC2</code>),
+    /// and the event type code (for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).
     /// </summary>
     public partial class EventType
     {
@@ -40,7 +41,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        /// 
+        /// A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>,
+        /// or <code>accountNotification</code>).
         /// </para>
         /// </summary>
         public EventTypeCategory Category
@@ -58,8 +60,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// On-boarded event type code ex. AWS_EC2_SYSTEM_MAINTENANCE_EVENT. This uniquely identifies
-        /// an event type. We will be following the convention: "AWS_{service}_*".
+        /// The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>
+        /// </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.
         /// </para>
         /// </summary>
         public string Code
@@ -77,8 +79,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// Service that is affected by the event. E.g., EC2,RDS, max length 30 characters and
-        /// min length 2 characters.
+        /// The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.
         /// </para>
         /// </summary>
         public string Service

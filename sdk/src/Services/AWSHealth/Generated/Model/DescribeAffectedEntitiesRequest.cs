@@ -29,13 +29,17 @@ namespace Amazon.AWSHealth.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAffectedEntities operation.
-    /// Gets a list of entities that have been attached to events, based on the specified
-    /// filter criteria. Entities can refer to individual customer resources, groups of customer
-    /// resources, or any other construct, depending on the AWS service. Events that have
-    /// impact beyond that of the attached entities, or where the extent of impact is unknown,
-    /// include at least one entity indicating this. If no filter criteria are specified,
-    /// all entities are returned. Results are sorted by the <code>lastUpdatedTime</code>
+    /// Returns a list of entities that have been affected by the specified events, based
+    /// on the specified filter criteria. Entities can refer to individual customer resources,
+    /// groups of customer resources, or any other construct, depending on the AWS service.
+    /// Events that have impact beyond that of the affected entities, or where the extent
+    /// of impact is unknown, include at least one entity indicating this.
+    /// 
+    ///  
+    /// <para>
+    /// At least one event ARN is required. Results are sorted by the <code>lastUpdatedTime</code>
     /// of the entity, starting with the most recent.
+    /// </para>
     /// </summary>
     public partial class DescribeAffectedEntitiesRequest : AmazonAWSHealthRequest
     {
@@ -47,7 +51,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// 
+        /// Values to narrow the results returned. At least one event ARN is required. 
         /// </para>
         /// </summary>
         public EntityFilter Filter
@@ -65,7 +69,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// The locale (language) to return information in.
+        /// The locale (language) to return information in. English (en) is the default and the
+        /// only supported value at this time.
         /// </para>
         /// </summary>
         public string Locale
@@ -83,7 +88,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items to return in one batch.
+        /// The maximum number of items to return in one batch, between 10 and 100, inclusive.
         /// </para>
         /// </summary>
         public int MaxResults
