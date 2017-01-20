@@ -27,6 +27,12 @@ namespace TestWrapper
                     Console.WriteLine(summary);
                     Console.WriteLine("=======================");
 
+                    var anyRan = summary.Passed > 0 || summary.Failed > 0;
+                    if (!anyRan)
+                    {
+                        break;
+                    }
+
                     allTestsPassed = summary.Failed == 0;
                     if (allTestsPassed)
                     {
