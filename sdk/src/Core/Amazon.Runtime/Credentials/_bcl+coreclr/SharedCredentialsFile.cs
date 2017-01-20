@@ -294,7 +294,14 @@ namespace Amazon.Runtime
                 string uniqueKeyStr;
                 Guid? uniqueKey = null;
                 if (reservedProperties.TryGetValue(UniqueKeyField, out uniqueKeyStr))
-                    TryParseGuid(uniqueKeyStr, out uniqueKey);
+                {
+                    if (!TryParseGuid(uniqueKeyStr, out uniqueKey))
+                    {
+                        Logger.GetLogger(GetType()).InfoFormat("Invalid value {0} for {1} in profile {2}. GUID expected.", uniqueKeyStr, UniqueKeyField, profileName);
+                        profile = null;
+                        return false;
+                    }
+                }
 
                 string regionString;
                 RegionEndpoint region = null;

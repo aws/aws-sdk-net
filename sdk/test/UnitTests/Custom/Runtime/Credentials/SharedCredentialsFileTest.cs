@@ -393,6 +393,16 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void ReadBasicProfileConfigInvalidGuid()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(null, BasicProfileConfigText.Replace(UniqueKey.ToString(), "blah")))
+            {
+                tester.TestTryGetProfile("basic_profile", false, false);
+            }
+        }
+
+
+        [TestMethod]
         public void ReadBasicProfileSplit()
         {
             using (var tester = new SharedCredentialsFileTestFixture(

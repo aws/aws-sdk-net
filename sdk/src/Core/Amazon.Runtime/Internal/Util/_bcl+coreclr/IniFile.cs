@@ -498,7 +498,7 @@ namespace Amazon.Runtime.Internal.Util
             return false;
         }
 
-        private string GetPropertyLine(string propertyName, string propertyValue)
+        private static string GetPropertyLine(string propertyName, string propertyValue)
         {
             return propertyName + keyValueSeparator + propertyValue;
         }

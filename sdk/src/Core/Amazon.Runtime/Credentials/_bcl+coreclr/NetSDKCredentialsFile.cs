@@ -14,6 +14,7 @@
  */
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Settings;
+using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
 using System.Collections.Generic;
@@ -121,8 +122,13 @@ namespace Amazon.Runtime
                         region = RegionEndpoint.GetBySystemName(regionString);
                     }
 
-                    Guid? uniqueKey;
-                    TryParseGuid(uniqueKeyStr, out uniqueKey);
+                    Guid? uniqueKey = null;
+                    if (!TryParseGuid(uniqueKeyStr, out uniqueKey))
+                    {
+                        profile = null;
+                        return false;
+                    }
+
                     profile = new CredentialProfile(profileName, profileOptions)
                     {
                         UniqueKey = uniqueKey,
@@ -166,8 +172,8 @@ namespace Amazon.Runtime
                 // or if this is an update to an existing profile.
                 string newUniqueKeyStr = objectManager.RegisterObject(profile.UniqueKey.ToString(), profile.Name, profileDictionary);
                 Guid? newUniqueKey;
-                TryParseGuid(newUniqueKeyStr, out newUniqueKey);
-                profile.UniqueKey = newUniqueKey;
+                if (TryParseGuid(newUniqueKeyStr, out newUniqueKey))
+                    profile.UniqueKey = newUniqueKey;
             }
             else
             {
