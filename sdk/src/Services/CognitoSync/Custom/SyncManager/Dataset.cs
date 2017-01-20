@@ -690,15 +690,12 @@ namespace Amazon.CognitoSync.SyncManager
         {
 
             //make sure we have the latest identity id
-#if BCL35 || UNITY
             try
             {
+#if BCL35 || UNITY
                 CognitoCredentials.GetIdentityId();
 #else
             await CognitoCredentials.GetIdentityIdAsync().ConfigureAwait(false);
-            
-            try
-            {
 #endif
                 bool resume = true;
                 List<string> mergedDatasets = LocalMergedDatasets;
